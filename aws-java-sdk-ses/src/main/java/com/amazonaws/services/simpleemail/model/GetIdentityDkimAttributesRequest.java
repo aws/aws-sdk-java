@@ -20,7 +20,15 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Represents a request for the status of Amazon SES Easy DKIM signing for an
+ * identity. For domain identities, this request also returns the DKIM tokens
+ * that are required for Easy DKIM signing, and whether Amazon SES successfully
+ * verified that these tokens were published. For more information about Easy
+ * DKIM, see the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html"
+ * >Amazon SES Developer Guide</a>.
+ * </p>
  */
 public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

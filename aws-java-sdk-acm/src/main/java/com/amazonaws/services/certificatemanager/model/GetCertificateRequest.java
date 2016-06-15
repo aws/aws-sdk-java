@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * 
  */
 public class GetCertificateRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -54,8 +54,8 @@ public class GetCertificateRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param certificateArn
-     *        String that contains a certificate ARN in the following format:
-     *        </p>
+     *        String that contains a certificate ARN in the following
+     *        format:</p>
      *        <p>
      *        <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      *        </p>
@@ -82,8 +82,8 @@ public class GetCertificateRequest extends AmazonWebServiceRequest implements
      * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.
      * </p>
      * 
-     * @return String that contains a certificate ARN in the following format:
-     *         </p>
+     * @return String that contains a certificate ARN in the following
+     *         format:</p>
      *         <p>
      *         <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      *         </p>
@@ -111,8 +111,8 @@ public class GetCertificateRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param certificateArn
-     *        String that contains a certificate ARN in the following format:
-     *        </p>
+     *        String that contains a certificate ARN in the following
+     *        format:</p>
      *        <p>
      *        <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      *        </p>

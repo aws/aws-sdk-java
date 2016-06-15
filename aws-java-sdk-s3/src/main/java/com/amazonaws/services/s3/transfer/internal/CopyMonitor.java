@@ -22,15 +22,11 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
-import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
@@ -55,34 +51,25 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
     private final ExecutorService threadPool;
     /** A reference to the original copy request received. */
     private final CopyObjectRequest origReq;
-    /**
-     * Thread pool used for scheduling the monitor to check if the copy
-     * operation is completed.
-     */
-    private ScheduledExecutorService timedThreadPool;
     /** Reference to the CopyCallable that is used for initiating copy requests. */
     private final CopyCallable multipartCopyCallable;
     private final CopyImpl transfer;
-    private final ProgressListenerChain progressListenerChain;
+    private final ProgressListenerChain listener;
 
-    /*
-     * State for tracking the upload's progress
-     */
-    private String uploadId;
     private final List<Future<PartETag>> futures = new ArrayList<Future<PartETag>>();
 
     /*
      * State for clients wishing to poll for completion
      */
     private boolean isCopyDone = false;
-    private Future<CopyResult> nextFuture;
+    private Future<CopyResult> future;
 
     public synchronized Future<CopyResult> getFuture() {
-        return nextFuture;
+        return future;
     }
 
-    private synchronized void setNextFuture(Future<CopyResult> nextFuture) {
-        this.nextFuture = nextFuture;
+    private synchronized void setFuture(Future<CopyResult> future) {
+        this.future = future;
     }
 
     public synchronized boolean isDone() {
@@ -92,10 +79,6 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
     private synchronized void markAllDone() {
         isCopyDone = true;
     }
-
-    // TODO: this could be configured in the configuration object (which we're
-    // not using right now)
-    private int pollInterval = 5000;
 
     /**
      * Constructs a new watcher for copy operation, and then immediately submits
@@ -123,7 +106,7 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
         CopyMonitor copyMonitor = new CopyMonitor(manager, transfer,
                 threadPool, multipartCopyCallable, copyObjectRequest,
                 progressListenerChain);
-        copyMonitor.setNextFuture(threadPool.submit(copyMonitor));
+        copyMonitor.setFuture(threadPool.submit(copyMonitor));
         return copyMonitor;
     }
 
@@ -134,129 +117,42 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
 
         this.s3 = manager.getAmazonS3Client();
         this.multipartCopyCallable = multipartCopyCallable;
-        this.threadPool = threadPool;
         this.origReq = copyObjectRequest;
+        this.listener = progressListenerChain;
         this.transfer = transfer;
-        this.progressListenerChain = progressListenerChain;
+        this.threadPool = threadPool;
     }
 
     @Override
     public CopyResult call() throws Exception {
         try {
-            if (uploadId == null) {
-                return copy();
+            CopyResult result = multipartCopyCallable.call();
+
+            if (result == null) {
+                futures.addAll(multipartCopyCallable.getFutures());
+                setFuture(threadPool.submit(new CompleteMultipartCopy(multipartCopyCallable.getMultipartUploadId(), s3, origReq, futures, listener, this)));
             } else {
-                return poll();
+                copyComplete();
             }
+            return result;
         } catch (CancellationException e) {
             transfer.setState(TransferState.Canceled);
-            publishProgress(progressListenerChain, ProgressEventType.TRANSFER_CANCELED_EVENT);
+            publishProgress(listener, ProgressEventType.TRANSFER_CANCELED_EVENT);
             throw new AmazonClientException("Upload canceled");
         } catch (Exception e) {
             transfer.setState(TransferState.Failed);
-            publishProgress(progressListenerChain, ProgressEventType.TRANSFER_FAILED_EVENT);
+            publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
             throw e;
         }
     }
 
-    public void setTimedThreadPool(ScheduledExecutorService timedThreadPool) {
-        this.timedThreadPool = timedThreadPool;
-    }
-
-    /**
-     * Polls for a result from a multi-part copy operation and either returns it
-     * if complete, or reschedules to poll again later if not.
-     */
-    private CopyResult poll() throws InterruptedException {
-        for (Future<PartETag> f : futures) {
-            if (!f.isDone()) {
-                reschedule();
-                return null;
-            }
-        }
-
-        for (Future<PartETag> f : futures) {
-            if (f.isCancelled()) {
-                throw new CancellationException();
-            }
-        }
-
-        return completeMultipartUpload();
-    }
-
-    /**
-     * Initiates the copy operation and checks on the result. If it has
-     * completed, returns the result; otherwise, reschedules to check back
-     * later.
-     */
-    private CopyResult copy() throws Exception, InterruptedException {
-        CopyResult result = multipartCopyCallable.call();
-
-        if (result != null) {
-            copyComplete();
-        } else {
-            uploadId = multipartCopyCallable.getMultipartUploadId();
-            futures.addAll(multipartCopyCallable.getFutures());
-            reschedule();
-        }
-
-        return result;
-    }
-
-    private void copyComplete() {
+    void copyComplete() {
         markAllDone();
         transfer.setState(TransferState.Completed);
         // AmazonS3Client takes care of all the events for single part uploads,
         // so we only need to send a completed event for multipart uploads.
         if (multipartCopyCallable.isMultipartCopy()) {
-            publishProgress(progressListenerChain, ProgressEventType.TRANSFER_COMPLETED_EVENT);
+            publishProgress(listener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
         }
-    }
-
-    private void reschedule()  {
-        setNextFuture(timedThreadPool.schedule(new Callable<CopyResult>() {
-            public CopyResult call() throws Exception {
-                setNextFuture(threadPool.submit(CopyMonitor.this));
-                return null;
-            }
-        }, pollInterval, TimeUnit.MILLISECONDS));
-    }
-
-    /**
-     * Completes the multipart upload and returns the result.
-     */
-    private CopyResult completeMultipartUpload() {
-        CompleteMultipartUploadRequest req = new CompleteMultipartUploadRequest(
-                origReq.getDestinationBucketName(),
-                origReq.getDestinationKey(), uploadId,
-                collectPartETags())
-            .withGeneralProgressListener(origReq.getGeneralProgressListener())
-            .withRequestMetricCollector(origReq.getRequestMetricCollector())
-            ;
-        CompleteMultipartUploadResult result = s3.completeMultipartUpload(req);
-        copyComplete();
-
-        CopyResult copyResult = new CopyResult();
-        copyResult.setSourceBucketName(origReq.getSourceBucketName());
-        copyResult.setSourceKey(origReq.getSourceKey());
-        copyResult.setDestinationBucketName(result
-                .getBucketName());
-        copyResult.setDestinationKey(result.getKey());
-        copyResult.setETag(result.getETag());
-        copyResult.setVersionId(result.getVersionId());
-        return copyResult;
-    }
-
-    private List<PartETag> collectPartETags() {
-        final List<PartETag> partETags = new ArrayList<PartETag>(futures.size());
-        for (Future<PartETag> future : futures) {
-            try {
-                partETags.add(future.get());
-            } catch (Exception e) {
-                throw new AmazonClientException("Unable to copy part: "
-                        + e.getCause().getMessage(), e.getCause());
-            }
-        }
-        return partETags;
     }
 }

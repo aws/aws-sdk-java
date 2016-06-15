@@ -265,7 +265,10 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the KMS key does not exist, or when
      *         the S3 bucket and the KMS key are not in the same region.
      * @throws KmsKeyDisabledException
-     *         This exception is thrown when the KMS key is disabled.
+     *         This exception is deprecated.
+     * @throws KmsException
+     *         This exception is thrown when there is an issue with the
+     *         specified KMS key and the trail can’t be updated.
      * @throws InvalidCloudWatchLogsLogGroupArnException
      *         This exception is thrown when the provided CloudWatch log group
      *         is not valid.
@@ -841,7 +844,10 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the KMS key does not exist, or when
      *         the S3 bucket and the KMS key are not in the same region.
      * @throws KmsKeyDisabledException
-     *         This exception is thrown when the KMS key is disabled.
+     *         This exception is deprecated.
+     * @throws KmsException
+     *         This exception is thrown when there is an issue with the
+     *         specified KMS key and the trail can’t be updated.
      * @throws InvalidCloudWatchLogsLogGroupArnException
      *         This exception is thrown when the provided CloudWatch log group
      *         is not valid.

@@ -78,6 +78,30 @@ public class IdentityNotificationAttributesStaxUnmarshaller implements
                                     .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression(
+                        "HeadersInBounceNotificationsEnabled", targetDepth)) {
+                    identityNotificationAttributes
+                            .setHeadersInBounceNotificationsEnabled(BooleanStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression(
+                        "HeadersInComplaintNotificationsEnabled", targetDepth)) {
+                    identityNotificationAttributes
+                            .setHeadersInComplaintNotificationsEnabled(BooleanStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression(
+                        "HeadersInDeliveryNotificationsEnabled", targetDepth)) {
+                    identityNotificationAttributes
+                            .setHeadersInDeliveryNotificationsEnabled(BooleanStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return identityNotificationAttributes;

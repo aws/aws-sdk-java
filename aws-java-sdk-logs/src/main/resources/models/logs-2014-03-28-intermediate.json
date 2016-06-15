@@ -23,8 +23,8 @@
     "xmlProtocol" : false,
     "jsonProtocol" : true,
     "serviceName" : "Amazon CloudWatch Logs",
-    "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "cborProtocol" : false,
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
@@ -60,12 +60,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CancelExportTaskResult",
       "asyncReturnType" : "CancelExportTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelExportTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CancelExportTaskResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, CancelExportTaskResult>",
-      "authenticated" : true,
       "methodName" : "cancelExportTask"
     },
     "CreateExportTask" : {
@@ -105,12 +105,12 @@
         "documentation" : "<p>Returned if the specified resource already exists.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateExportTaskResult",
       "asyncReturnType" : "CreateExportTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateExportTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateExportTaskResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateExportTaskRequest, CreateExportTaskResult>",
-      "authenticated" : true,
       "methodName" : "createExportTask"
     },
     "CreateLogGroup" : {
@@ -147,12 +147,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateLogGroupResult",
       "asyncReturnType" : "CreateLogGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateLogGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateLogGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLogGroupRequest, CreateLogGroupResult>",
-      "authenticated" : true,
       "methodName" : "createLogGroup"
     },
     "CreateLogStream" : {
@@ -186,12 +186,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateLogStreamResult",
       "asyncReturnType" : "CreateLogStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateLogStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateLogStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLogStreamRequest, CreateLogStreamResult>",
-      "authenticated" : true,
       "methodName" : "createLogStream"
     },
     "DeleteDestination" : {
@@ -225,12 +225,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteDestinationResult",
       "asyncReturnType" : "DeleteDestinationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDestinationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDestinationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDestinationRequest, DeleteDestinationResult>",
-      "authenticated" : true,
       "methodName" : "deleteDestination"
     },
     "DeleteLogGroup" : {
@@ -264,12 +264,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteLogGroupResult",
       "asyncReturnType" : "DeleteLogGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteLogGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteLogGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLogGroupRequest, DeleteLogGroupResult>",
-      "authenticated" : true,
       "methodName" : "deleteLogGroup"
     },
     "DeleteLogStream" : {
@@ -303,12 +303,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteLogStreamResult",
       "asyncReturnType" : "DeleteLogStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteLogStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteLogStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLogStreamRequest, DeleteLogStreamResult>",
-      "authenticated" : true,
       "methodName" : "deleteLogStream"
     },
     "DeleteMetricFilter" : {
@@ -342,12 +342,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteMetricFilterResult",
       "asyncReturnType" : "DeleteMetricFilterResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteMetricFilterResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteMetricFilterResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteMetricFilterRequest, DeleteMetricFilterResult>",
-      "authenticated" : true,
       "methodName" : "deleteMetricFilter"
     },
     "DeleteRetentionPolicy" : {
@@ -381,12 +381,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteRetentionPolicyResult",
       "asyncReturnType" : "DeleteRetentionPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteRetentionPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteRetentionPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, DeleteRetentionPolicyResult>",
-      "authenticated" : true,
       "methodName" : "deleteRetentionPolicy"
     },
     "DeleteSubscriptionFilter" : {
@@ -420,12 +420,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteSubscriptionFilterResult",
       "asyncReturnType" : "DeleteSubscriptionFilterResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteSubscriptionFilterResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteSubscriptionFilterResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionFilterRequest, DeleteSubscriptionFilterResult>",
-      "authenticated" : true,
       "methodName" : "deleteSubscriptionFilter"
     },
     "DescribeDestinations" : {
@@ -453,12 +453,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeDestinationsResult",
       "asyncReturnType" : "DescribeDestinationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDestinationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDestinationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDestinationsRequest, DescribeDestinationsResult>",
-      "authenticated" : true,
       "methodName" : "describeDestinations"
     },
     "DescribeExportTasks" : {
@@ -486,12 +486,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeExportTasksResult",
       "asyncReturnType" : "DescribeExportTasksResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeExportTasksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeExportTasksResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeExportTasksRequest, DescribeExportTasksResult>",
-      "authenticated" : true,
       "methodName" : "describeExportTasks"
     },
     "DescribeLogGroups" : {
@@ -519,12 +519,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeLogGroupsResult",
       "asyncReturnType" : "DescribeLogGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLogGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLogGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLogGroupsRequest, DescribeLogGroupsResult>",
-      "authenticated" : true,
       "methodName" : "describeLogGroups"
     },
     "DescribeLogStreams" : {
@@ -555,12 +555,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeLogStreamsResult",
       "asyncReturnType" : "DescribeLogStreamsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLogStreamsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLogStreamsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLogStreamsRequest, DescribeLogStreamsResult>",
-      "authenticated" : true,
       "methodName" : "describeLogStreams"
     },
     "DescribeMetricFilters" : {
@@ -591,12 +591,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeMetricFiltersResult",
       "asyncReturnType" : "DescribeMetricFiltersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMetricFiltersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeMetricFiltersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeMetricFiltersRequest, DescribeMetricFiltersResult>",
-      "authenticated" : true,
       "methodName" : "describeMetricFilters"
     },
     "DescribeSubscriptionFilters" : {
@@ -627,12 +627,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeSubscriptionFiltersResult",
       "asyncReturnType" : "DescribeSubscriptionFiltersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeSubscriptionFiltersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeSubscriptionFiltersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSubscriptionFiltersRequest, DescribeSubscriptionFiltersResult>",
-      "authenticated" : true,
       "methodName" : "describeSubscriptionFilters"
     },
     "FilterLogEvents" : {
@@ -663,12 +663,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "FilterLogEventsResult",
       "asyncReturnType" : "FilterLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<FilterLogEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<FilterLogEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<FilterLogEventsRequest, FilterLogEventsResult>",
-      "authenticated" : true,
       "methodName" : "filterLogEvents"
     },
     "GetLogEvents" : {
@@ -699,12 +699,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetLogEventsResult",
       "asyncReturnType" : "GetLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetLogEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetLogEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetLogEventsRequest, GetLogEventsResult>",
-      "authenticated" : true,
       "methodName" : "getLogEvents"
     },
     "PutDestination" : {
@@ -735,12 +735,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutDestinationResult",
       "asyncReturnType" : "PutDestinationResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutDestinationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutDestinationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutDestinationRequest, PutDestinationResult>",
-      "authenticated" : true,
       "methodName" : "putDestination"
     },
     "PutDestinationPolicy" : {
@@ -771,12 +771,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutDestinationPolicyResult",
       "asyncReturnType" : "PutDestinationPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutDestinationPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutDestinationPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutDestinationPolicyRequest, PutDestinationPolicyResult>",
-      "authenticated" : true,
       "methodName" : "putDestinationPolicy"
     },
     "PutLogEvents" : {
@@ -816,12 +816,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutLogEventsResult",
       "asyncReturnType" : "PutLogEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutLogEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutLogEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutLogEventsRequest, PutLogEventsResult>",
-      "authenticated" : true,
       "methodName" : "putLogEvents"
     },
     "PutMetricFilter" : {
@@ -858,12 +858,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutMetricFilterResult",
       "asyncReturnType" : "PutMetricFilterResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutMetricFilterResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutMetricFilterResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, PutMetricFilterResult>",
-      "authenticated" : true,
       "methodName" : "putMetricFilter"
     },
     "PutRetentionPolicy" : {
@@ -897,12 +897,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutRetentionPolicyResult",
       "asyncReturnType" : "PutRetentionPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRetentionPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRetentionPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, PutRetentionPolicyResult>",
-      "authenticated" : true,
       "methodName" : "putRetentionPolicy"
     },
     "PutSubscriptionFilter" : {
@@ -939,12 +939,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutSubscriptionFilterResult",
       "asyncReturnType" : "PutSubscriptionFilterResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutSubscriptionFilterResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutSubscriptionFilterResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutSubscriptionFilterRequest, PutSubscriptionFilterResult>",
-      "authenticated" : true,
       "methodName" : "putSubscriptionFilter"
     },
     "TestMetricFilter" : {
@@ -972,12 +972,12 @@
         "documentation" : "<p>Returned if the service cannot complete the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "TestMetricFilterResult",
       "asyncReturnType" : "TestMetricFilterResult",
       "asyncFutureType" : "java.util.concurrent.Future<TestMetricFilterResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TestMetricFilterResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestMetricFilterRequest, TestMetricFilterResult>",
-      "authenticated" : true,
       "methodName" : "testMetricFilter"
     }
   },

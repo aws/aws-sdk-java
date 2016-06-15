@@ -19,7 +19,9 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A list of IP address filters that exist under your AWS account.
+ * </p>
  */
 public class ListReceiptFiltersResult implements Serializable, Cloneable {
 

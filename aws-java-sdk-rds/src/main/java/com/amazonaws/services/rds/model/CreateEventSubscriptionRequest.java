@@ -50,8 +50,9 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest
      * events are returned.
      * </p>
      * <p>
-     * Valid values: db-instance | db-parameter-group | db-security-group |
-     * db-snapshot
+     * Valid values: <code>db-instance</code> | <code>db-cluster</code> |
+     * <code>db-parameter-group</code> | <code>db-security-group</code> |
+     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
      * </p>
      */
     private String sourceType;
@@ -238,8 +239,9 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest
      * events are returned.
      * </p>
      * <p>
-     * Valid values: db-instance | db-parameter-group | db-security-group |
-     * db-snapshot
+     * Valid values: <code>db-instance</code> | <code>db-cluster</code> |
+     * <code>db-parameter-group</code> | <code>db-security-group</code> |
+     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
      * </p>
      * 
      * @param sourceType
@@ -248,8 +250,9 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest
      *        instance, you would set this parameter to db-instance. if this
      *        value is not specified, all events are returned.</p>
      *        <p>
-     *        Valid values: db-instance | db-parameter-group | db-security-group
-     *        | db-snapshot
+     *        Valid values: <code>db-instance</code> | <code>db-cluster</code> |
+     *        <code>db-parameter-group</code> | <code>db-security-group</code> |
+     *        <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
      */
 
     public void setSourceType(String sourceType) {
@@ -264,8 +267,9 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest
      * events are returned.
      * </p>
      * <p>
-     * Valid values: db-instance | db-parameter-group | db-security-group |
-     * db-snapshot
+     * Valid values: <code>db-instance</code> | <code>db-cluster</code> |
+     * <code>db-parameter-group</code> | <code>db-security-group</code> |
+     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
      * </p>
      * 
      * @return The type of source that will be generating the events. For
@@ -273,8 +277,10 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest
      *         instance, you would set this parameter to db-instance. if this
      *         value is not specified, all events are returned.</p>
      *         <p>
-     *         Valid values: db-instance | db-parameter-group |
-     *         db-security-group | db-snapshot
+     *         Valid values: <code>db-instance</code> | <code>db-cluster</code>
+     *         | <code>db-parameter-group</code> |
+     *         <code>db-security-group</code> | <code>db-snapshot</code> |
+     *         <code>db-cluster-snapshot</code>
      */
 
     public String getSourceType() {
@@ -289,8 +295,9 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest
      * events are returned.
      * </p>
      * <p>
-     * Valid values: db-instance | db-parameter-group | db-security-group |
-     * db-snapshot
+     * Valid values: <code>db-instance</code> | <code>db-cluster</code> |
+     * <code>db-parameter-group</code> | <code>db-security-group</code> |
+     * <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
      * </p>
      * 
      * @param sourceType
@@ -299,8 +306,9 @@ public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest
      *        instance, you would set this parameter to db-instance. if this
      *        value is not specified, all events are returned.</p>
      *        <p>
-     *        Valid values: db-instance | db-parameter-group | db-security-group
-     *        | db-snapshot
+     *        Valid values: <code>db-instance</code> | <code>db-cluster</code> |
+     *        <code>db-parameter-group</code> | <code>db-security-group</code> |
+     *        <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

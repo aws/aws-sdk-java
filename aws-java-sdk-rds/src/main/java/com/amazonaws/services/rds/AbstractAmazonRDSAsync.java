@@ -1575,6 +1575,21 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements
     }
 
     @Override
+    public java.util.concurrent.Future<DBCluster> promoteReadReplicaDBClusterAsync(
+            PromoteReadReplicaDBClusterRequest request) {
+
+        return promoteReadReplicaDBClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBCluster> promoteReadReplicaDBClusterAsync(
+            PromoteReadReplicaDBClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<PromoteReadReplicaDBClusterRequest, DBCluster> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ReservedDBInstance> purchaseReservedDBInstancesOfferingAsync(
             PurchaseReservedDBInstancesOfferingRequest request) {
 

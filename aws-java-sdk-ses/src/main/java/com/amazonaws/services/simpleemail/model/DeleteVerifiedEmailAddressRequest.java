@@ -20,7 +20,10 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Represents a request to delete an email address from the list of email
+ * addresses you have attempted to verify under your AWS account.
+ * </p>
  */
 public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

@@ -63,12 +63,12 @@
         "documentation" : "<p>The requested operation would cause the resource to exceed the allowed service limit. Please resolve the issue before retrying.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateAliasResult",
       "asyncReturnType" : "CreateAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAliasRequest, CreateAliasResult>",
-      "authenticated" : true,
       "methodName" : "createAlias"
     },
     "CreateBuild" : {
@@ -102,12 +102,12 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateBuildResult",
       "asyncReturnType" : "CreateBuildResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateBuildResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateBuildResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateBuildRequest, CreateBuildResult>",
-      "authenticated" : true,
       "methodName" : "createBuild"
     },
     "CreateFleet" : {
@@ -147,12 +147,12 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateFleetResult",
       "asyncReturnType" : "CreateFleetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateFleetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateFleetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateFleetRequest, CreateFleetResult>",
-      "authenticated" : true,
       "methodName" : "createFleet"
     },
     "CreateGameSession" : {
@@ -198,12 +198,12 @@
         "documentation" : "<p>The specified fleet has no available instances to fulfill a request to create a new game session. Such requests should only be retried once the fleet capacity has been increased. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateGameSessionResult",
       "asyncReturnType" : "CreateGameSessionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateGameSessionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateGameSessionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateGameSessionRequest, CreateGameSessionResult>",
-      "authenticated" : true,
       "methodName" : "createGameSession"
     },
     "CreatePlayerSession" : {
@@ -246,12 +246,12 @@
         "documentation" : "<p>A service resource associated with the request could not be found. Such requests should not be retried by clients.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreatePlayerSessionResult",
       "asyncReturnType" : "CreatePlayerSessionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePlayerSessionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePlayerSessionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePlayerSessionRequest, CreatePlayerSessionResult>",
-      "authenticated" : true,
       "methodName" : "createPlayerSession"
     },
     "CreatePlayerSessions" : {
@@ -294,12 +294,12 @@
         "documentation" : "<p>A service resource associated with the request could not be found. Such requests should not be retried by clients.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreatePlayerSessionsResult",
       "asyncReturnType" : "CreatePlayerSessionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePlayerSessionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePlayerSessionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePlayerSessionsRequest, CreatePlayerSessionsResult>",
-      "authenticated" : true,
       "methodName" : "createPlayerSessions"
     },
     "DeleteAlias" : {
@@ -333,12 +333,12 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteAliasResult",
       "asyncReturnType" : "DeleteAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult>",
-      "authenticated" : true,
       "methodName" : "deleteAlias"
     },
     "DeleteBuild" : {
@@ -372,12 +372,12 @@
         "documentation" : "<p>One or more parameters specified as part of the request are invalid. Please correct the invalid parameters before retrying.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteBuildResult",
       "asyncReturnType" : "DeleteBuildResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteBuildResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteBuildResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteBuildRequest, DeleteBuildResult>",
-      "authenticated" : true,
       "methodName" : "deleteBuild"
     },
     "DeleteFleet" : {
@@ -417,12 +417,12 @@
         "documentation" : "<p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Please resolve the conflict before retrying.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteFleetResult",
       "asyncReturnType" : "DeleteFleetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteFleetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteFleetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, DeleteFleetResult>",
-      "authenticated" : true,
       "methodName" : "deleteFleet"
     },
     "DeleteScalingPolicy" : {
@@ -456,12 +456,12 @@
         "documentation" : "<p>A service resource associated with the request could not be found. Such requests should not be retried by clients.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteScalingPolicyResult",
       "asyncReturnType" : "DeleteScalingPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteScalingPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteScalingPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, DeleteScalingPolicyResult>",
-      "authenticated" : true,
       "methodName" : "deleteScalingPolicy"
     },
     "DescribeAlias" : {
@@ -495,12 +495,12 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeAliasResult",
       "asyncReturnType" : "DescribeAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAliasRequest, DescribeAliasResult>",
-      "authenticated" : true,
       "methodName" : "describeAlias"
     },
     "DescribeBuild" : {
@@ -534,12 +534,12 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeBuildResult",
       "asyncReturnType" : "DescribeBuildResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeBuildResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeBuildResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeBuildRequest, DescribeBuildResult>",
-      "authenticated" : true,
       "methodName" : "describeBuild"
     },
     "DescribeEC2InstanceLimits" : {
@@ -570,12 +570,12 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeEC2InstanceLimitsResult",
       "asyncReturnType" : "DescribeEC2InstanceLimitsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEC2InstanceLimitsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEC2InstanceLimitsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEC2InstanceLimitsRequest, DescribeEC2InstanceLimitsResult>",
-      "authenticated" : true,
       "methodName" : "describeEC2InstanceLimits"
     },
     "DescribeFleetAttributes" : {
@@ -609,12 +609,12 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeFleetAttributesResult",
       "asyncReturnType" : "DescribeFleetAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeFleetAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeFleetAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeFleetAttributesRequest, DescribeFleetAttributesResult>",
-      "authenticated" : true,
       "methodName" : "describeFleetAttributes"
     },
     "DescribeFleetCapacity" : {
@@ -648,12 +648,12 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeFleetCapacityResult",
       "asyncReturnType" : "DescribeFleetCapacityResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeFleetCapacityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeFleetCapacityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeFleetCapacityRequest, DescribeFleetCapacityResult>",
-      "authenticated" : true,
       "methodName" : "describeFleetCapacity"
     },
     "DescribeFleetEvents" : {
@@ -687,12 +687,12 @@
         "documentation" : "<p>One or more parameters specified as part of the request are invalid. Please correct the invalid parameters before retrying.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeFleetEventsResult",
       "asyncReturnType" : "DescribeFleetEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeFleetEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeFleetEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeFleetEventsRequest, DescribeFleetEventsResult>",
-      "authenticated" : true,
       "methodName" : "describeFleetEvents"
     },
     "DescribeFleetPortSettings" : {
@@ -726,12 +726,12 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeFleetPortSettingsResult",
       "asyncReturnType" : "DescribeFleetPortSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeFleetPortSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeFleetPortSettingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeFleetPortSettingsRequest, DescribeFleetPortSettingsResult>",
-      "authenticated" : true,
       "methodName" : "describeFleetPortSettings"
     },
     "DescribeFleetUtilization" : {
@@ -765,12 +765,12 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeFleetUtilizationResult",
       "asyncReturnType" : "DescribeFleetUtilizationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeFleetUtilizationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeFleetUtilizationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeFleetUtilizationRequest, DescribeFleetUtilizationResult>",
-      "authenticated" : true,
       "methodName" : "describeFleetUtilization"
     },
     "DescribeGameSessionDetails" : {
@@ -807,12 +807,12 @@
         "documentation" : "<p>The service is unable to resolve the routing for a particular alias because it has a terminal <a>RoutingStrategy</a> associated with it. The message returned in this exception is the message defined in the TerminalRoutingStrategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeGameSessionDetailsResult",
       "asyncReturnType" : "DescribeGameSessionDetailsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeGameSessionDetailsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeGameSessionDetailsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeGameSessionDetailsRequest, DescribeGameSessionDetailsResult>",
-      "authenticated" : true,
       "methodName" : "describeGameSessionDetails"
     },
     "DescribeGameSessions" : {
@@ -849,12 +849,12 @@
         "documentation" : "<p>The service is unable to resolve the routing for a particular alias because it has a terminal <a>RoutingStrategy</a> associated with it. The message returned in this exception is the message defined in the TerminalRoutingStrategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeGameSessionsResult",
       "asyncReturnType" : "DescribeGameSessionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeGameSessionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeGameSessionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeGameSessionsRequest, DescribeGameSessionsResult>",
-      "authenticated" : true,
       "methodName" : "describeGameSessions"
     },
     "DescribePlayerSessions" : {
@@ -888,12 +888,12 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribePlayerSessionsResult",
       "asyncReturnType" : "DescribePlayerSessionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribePlayerSessionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribePlayerSessionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribePlayerSessionsRequest, DescribePlayerSessionsResult>",
-      "authenticated" : true,
       "methodName" : "describePlayerSessions"
     },
     "DescribeScalingPolicies" : {
@@ -927,12 +927,12 @@
         "documentation" : "<p>A service resource associated with the request could not be found. Such requests should not be retried by clients.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeScalingPoliciesResult",
       "asyncReturnType" : "DescribeScalingPoliciesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeScalingPoliciesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeScalingPoliciesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeScalingPoliciesRequest, DescribeScalingPoliciesResult>",
-      "authenticated" : true,
       "methodName" : "describeScalingPolicies"
     },
     "GetGameSessionLogUrl" : {
@@ -966,12 +966,12 @@
         "documentation" : "<p>One or more parameters specified as part of the request are invalid. Please correct the invalid parameters before retrying.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetGameSessionLogUrlResult",
       "asyncReturnType" : "GetGameSessionLogUrlResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetGameSessionLogUrlResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetGameSessionLogUrlResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetGameSessionLogUrlRequest, GetGameSessionLogUrlResult>",
-      "authenticated" : true,
       "methodName" : "getGameSessionLogUrl"
     },
     "ListAliases" : {
@@ -1002,12 +1002,12 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListAliasesResult",
       "asyncReturnType" : "ListAliasesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAliasesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAliasesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAliasesRequest, ListAliasesResult>",
-      "authenticated" : true,
       "methodName" : "listAliases"
     },
     "ListBuilds" : {
@@ -1038,12 +1038,12 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListBuildsResult",
       "asyncReturnType" : "ListBuildsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListBuildsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListBuildsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListBuildsRequest, ListBuildsResult>",
-      "authenticated" : true,
       "methodName" : "listBuilds"
     },
     "ListFleets" : {
@@ -1077,12 +1077,12 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListFleetsResult",
       "asyncReturnType" : "ListFleetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListFleetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListFleetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListFleetsRequest, ListFleetsResult>",
-      "authenticated" : true,
       "methodName" : "listFleets"
     },
     "PutScalingPolicy" : {
@@ -1116,12 +1116,12 @@
         "documentation" : "<p>A service resource associated with the request could not be found. Such requests should not be retried by clients.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutScalingPolicyResult",
       "asyncReturnType" : "PutScalingPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutScalingPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutScalingPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutScalingPolicyRequest, PutScalingPolicyResult>",
-      "authenticated" : true,
       "methodName" : "putScalingPolicy"
     },
     "RequestUploadCredentials" : {
@@ -1155,12 +1155,12 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RequestUploadCredentialsResult",
       "asyncReturnType" : "RequestUploadCredentialsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RequestUploadCredentialsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RequestUploadCredentialsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RequestUploadCredentialsRequest, RequestUploadCredentialsResult>",
-      "authenticated" : true,
       "methodName" : "requestUploadCredentials"
     },
     "ResolveAlias" : {
@@ -1197,12 +1197,12 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ResolveAliasResult",
       "asyncReturnType" : "ResolveAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResolveAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ResolveAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResolveAliasRequest, ResolveAliasResult>",
-      "authenticated" : true,
       "methodName" : "resolveAlias"
     },
     "UpdateAlias" : {
@@ -1236,12 +1236,12 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateAliasResult",
       "asyncReturnType" : "UpdateAliasResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateAliasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateAliasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateAliasRequest, UpdateAliasResult>",
-      "authenticated" : true,
       "methodName" : "updateAlias"
     },
     "UpdateBuild" : {
@@ -1275,12 +1275,12 @@
         "documentation" : "<p>The service encountered an unrecoverable internal failure while processing the request. Such requests can be retried by clients, either immediately or after a back-off period.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateBuildResult",
       "asyncReturnType" : "UpdateBuildResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateBuildResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateBuildResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateBuildRequest, UpdateBuildResult>",
-      "authenticated" : true,
       "methodName" : "updateBuild"
     },
     "UpdateFleetAttributes" : {
@@ -1323,12 +1323,12 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateFleetAttributesResult",
       "asyncReturnType" : "UpdateFleetAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateFleetAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateFleetAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateFleetAttributesRequest, UpdateFleetAttributesResult>",
-      "authenticated" : true,
       "methodName" : "updateFleetAttributes"
     },
     "UpdateFleetCapacity" : {
@@ -1371,12 +1371,12 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateFleetCapacityResult",
       "asyncReturnType" : "UpdateFleetCapacityResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateFleetCapacityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateFleetCapacityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateFleetCapacityRequest, UpdateFleetCapacityResult>",
-      "authenticated" : true,
       "methodName" : "updateFleetCapacity"
     },
     "UpdateFleetPortSettings" : {
@@ -1419,12 +1419,12 @@
         "documentation" : "<p>The client failed authentication. Such requests should not be retried without valid authentication credentials.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateFleetPortSettingsResult",
       "asyncReturnType" : "UpdateFleetPortSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateFleetPortSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateFleetPortSettingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateFleetPortSettingsRequest, UpdateFleetPortSettingsResult>",
-      "authenticated" : true,
       "methodName" : "updateFleetPortSettings"
     },
     "UpdateGameSession" : {
@@ -1464,12 +1464,12 @@
         "documentation" : "<p>One or more parameters specified as part of the request are invalid. Please correct the invalid parameters before retrying.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateGameSessionResult",
       "asyncReturnType" : "UpdateGameSessionResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateGameSessionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateGameSessionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateGameSessionRequest, UpdateGameSessionResult>",
-      "authenticated" : true,
       "methodName" : "updateGameSession"
     }
   },

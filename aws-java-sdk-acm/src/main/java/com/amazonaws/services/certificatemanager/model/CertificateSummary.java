@@ -63,7 +63,7 @@ public class CertificateSummary implements Serializable, Cloneable {
      * 
      * @param certificateArn
      *        Amazon Resource Name (ARN) of the certificate. This is of the
-     *        form: </p>
+     *        form:</p>
      *        <p>
      *        <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      *        </p>
@@ -91,7 +91,7 @@ public class CertificateSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @return Amazon Resource Name (ARN) of the certificate. This is of the
-     *         form: </p>
+     *         form:</p>
      *         <p>
      *         <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      *         </p>
@@ -120,7 +120,7 @@ public class CertificateSummary implements Serializable, Cloneable {
      * 
      * @param certificateArn
      *        Amazon Resource Name (ARN) of the certificate. This is of the
-     *        form: </p>
+     *        form:</p>
      *        <p>
      *        <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      *        </p>

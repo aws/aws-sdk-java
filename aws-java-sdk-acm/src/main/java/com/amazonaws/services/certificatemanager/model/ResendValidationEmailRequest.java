@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * 
  */
 public class ResendValidationEmailRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -58,6 +58,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS and the following five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -85,7 +86,6 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      */
     private String validationDomain;
 
@@ -109,7 +109,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        certificate ARN is generated and returned by the
      *        <a>RequestCertificate</a> action as soon as the request is made.
      *        By default, using this parameter causes email to be sent to all
-     *        top-level domains you specified in the certificate request. </p>
+     *        top-level domains you specified in the certificate request.</p>
      *        <p>
      *        The ARN must be of the form:
      *        </p>
@@ -140,7 +140,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *         certificate ARN is generated and returned by the
      *         <a>RequestCertificate</a> action as soon as the request is made.
      *         By default, using this parameter causes email to be sent to all
-     *         top-level domains you specified in the certificate request. </p>
+     *         top-level domains you specified in the certificate request.</p>
      *         <p>
      *         The ARN must be of the form:
      *         </p>
@@ -172,7 +172,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        certificate ARN is generated and returned by the
      *        <a>RequestCertificate</a> action as soon as the request is made.
      *        By default, using this parameter causes email to be sent to all
-     *        top-level domains you specified in the certificate request. </p>
+     *        top-level domains you specified in the certificate request.</p>
      *        <p>
      *        The ARN must be of the form:
      *        </p>
@@ -244,6 +244,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS and the following five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -271,7 +272,6 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param validationDomain
      *        The base validation domain that will act as the suffix of the
@@ -282,7 +282,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        specify a <b>ValidationDomain</b> of
      *        <code>subdomain.example.com</code>, ACM sends email to the domain
      *        registrant, technical contact, and administrative contact in WHOIS
-     *        and the following five addresses:
+     *        and the following five addresses:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -309,7 +309,6 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        webmaster@subdomain.example.com
      *        </p>
      *        </li>
-     *        </ul>
      */
 
     public void setValidationDomain(String validationDomain) {
@@ -326,6 +325,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS and the following five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -353,7 +353,6 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @return The base validation domain that will act as the suffix of the
      *         email addresses that are used to send the emails. This must be
@@ -363,7 +362,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *         specify a <b>ValidationDomain</b> of
      *         <code>subdomain.example.com</code>, ACM sends email to the domain
      *         registrant, technical contact, and administrative contact in
-     *         WHOIS and the following five addresses:
+     *         WHOIS and the following five addresses:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -390,7 +389,6 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *         webmaster@subdomain.example.com
      *         </p>
      *         </li>
-     *         </ul>
      */
 
     public String getValidationDomain() {
@@ -407,6 +405,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS and the following five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -434,7 +433,6 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param validationDomain
      *        The base validation domain that will act as the suffix of the
@@ -445,7 +443,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        specify a <b>ValidationDomain</b> of
      *        <code>subdomain.example.com</code>, ACM sends email to the domain
      *        registrant, technical contact, and administrative contact in WHOIS
-     *        and the following five addresses:
+     *        and the following five addresses:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -472,7 +470,6 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        webmaster@subdomain.example.com
      *        </p>
      *        </li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

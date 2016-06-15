@@ -168,6 +168,8 @@ public enum RDSActions implements Action {
     ModifyOptionGroup("rds:ModifyOptionGroup"),
     /** Action for the PromoteReadReplica operation. */
     PromoteReadReplica("rds:PromoteReadReplica"),
+    /** Action for the PromoteReadReplicaDBCluster operation. */
+    PromoteReadReplicaDBCluster("rds:PromoteReadReplicaDBCluster"),
     /** Action for the PurchaseReservedDBInstancesOffering operation. */
     PurchaseReservedDBInstancesOffering(
             "rds:PurchaseReservedDBInstancesOffering"),

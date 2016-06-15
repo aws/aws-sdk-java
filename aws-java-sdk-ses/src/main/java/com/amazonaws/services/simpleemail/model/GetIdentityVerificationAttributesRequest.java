@@ -20,7 +20,14 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Represents a request to return the Amazon SES verification status of a list
+ * of identities. For domain identities, this request also returns the
+ * verification token. For information about verifying identities with Amazon
+ * SES, see the <a href=
+ * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html"
+ * >Amazon SES Developer Guide</a>.
+ * </p>
  */
 public class GetIdentityVerificationAttributesRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

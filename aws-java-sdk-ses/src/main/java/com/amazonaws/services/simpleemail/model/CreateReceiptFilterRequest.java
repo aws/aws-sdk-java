@@ -20,7 +20,13 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Represents a request to create a new IP address filter. You use IP address
+ * filters when you receive email with Amazon SES. For more information, see the
+ * <a href=
+ * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+ * >Amazon SES Developer Guide</a>.
+ * </p>
  */
 public class CreateReceiptFilterRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

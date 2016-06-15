@@ -19,7 +19,9 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Represents the notification attributes for a list of identities.
+ * </p>
  */
 public class GetIdentityNotificationAttributesResult implements Serializable,
         Cloneable {

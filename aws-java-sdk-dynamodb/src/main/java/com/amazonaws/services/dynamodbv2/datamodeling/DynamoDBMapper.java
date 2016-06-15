@@ -467,14 +467,14 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         Map<String, AttributeValue> key = new HashMap<String, AttributeValue>();
         for (final DynamoDBMappingsRegistry.Mapping mapping : mappings.getPrimaryKeys()) {
             Object getterResult =
-                    mapping.getValueOf(keyObject);
+                    mapping.bean().get(keyObject);
 
             AttributeValue keyAttributeValue =
-                    converter.convert(mapping.getter(), getterResult);
+                    converter.convert(mapping.bean().getter(), getterResult);
 
             if (keyAttributeValue == null) {
                 throw new DynamoDBMappingException(
-                        "Null key found for " + mapping.getter());
+                        "Null key found for " + mapping.bean().getter());
             }
 
             key.put(mapping.getAttributeName(), keyAttributeValue);
@@ -502,14 +502,6 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     private <T> T createKeyObject(Class<T> clazz, Object hashKey, Object rangeKey) {
         final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
 
-        //ensure hash key exists
-        //ideally, we should throw this on mapping creation but for legacy reasons cannot
-        mappings.getHashKey();
-
-        if ( rangeKey != null && !mappings.hasRangeKey() ) {
-            throw new DynamoDBMappingException("No method annotated with " + DynamoDBRangeKey.class + " for class " + clazz);
-        }
-
         T keyObject = null;
         try {
             keyObject = clazz.newInstance();
@@ -517,13 +509,14 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             throw new DynamoDBMappingException("Failed to instantiate class", e);
         }
 
-        for ( final DynamoDBMappingsRegistry.Mapping mapping : mappings.getPrimaryKeys() ) {
-            if ( mapping.isHashKey() ) {
-                mapping.setValueOf(keyObject, hashKey);
-            } else if ( mapping.isRangeKey() ) {
-                mapping.setValueOf(keyObject, rangeKey);
-            }
+        mappings.getHashKey().bean().set(keyObject, hashKey);
+
+        if (mappings.hasRangeKey()) {
+            mappings.getRangeKey().bean().set(keyObject, rangeKey);
+        } else if (rangeKey != null) {
+            throw new DynamoDBMappingException("No method annotated with " + DynamoDBRangeKey.class + " for class " + clazz);
         }
+
         return keyObject;
     }
 
@@ -552,7 +545,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             if ( mapping.isHashKey() || mapping.isIndexHashKey() ) {
 
                 Object getterReturnResult =
-                        mapping.getValueOf(obj);
+                        mapping.bean().get(obj);
 
                 if (getterReturnResult != null) {
                     conditions.put(
@@ -560,7 +553,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                         new Condition()
                             .withComparisonOperator(ComparisonOperator.EQ)
                             .withAttributeValueList(
-                                converter.convert(mapping.getter(), getterReturnResult)));
+                                converter.convert(mapping.bean().getter(), getterReturnResult)));
                 }
             }
         }
@@ -674,16 +667,6 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         save(object, saveExpression, config);
     }
 
-    private boolean needAutoGenerateAssignableKey(Class<?> clazz, Object object) {
-        final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
-
-        //ensure hash key exists
-        //ideally, we should throw this on mapping creation but for legacy reasons cannot
-        mappings.getHashKey();
-
-        return mappings.anyPrimaryKeyAutoGeneratable(object);
-    }
-
     @Override
     public <T extends Object> void save(T object, DynamoDBMapperConfig config) {
         save(object, null, config);
@@ -706,7 +689,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
          * to be auto-generated.
          */
         boolean forcePut = (finalConfig.getSaveBehavior() == SaveBehavior.CLOBBER)
-                || needAutoGenerateAssignableKey(clazz, object);
+                || registry.mappingsOf(clazz).anyKeyGeneratable(object, finalConfig.getSaveBehavior());
 
         SaveObjectHandler saveObjectHandler;
 
@@ -909,16 +892,13 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
              * First handle primary keys
              */
             for ( final DynamoDBMappingsRegistry.Mapping mapping : mappings.getPrimaryKeys() ) {
-                Object getterResult = mapping.getValueOf(object);
-
-                if ( mapping.canAutoGenerate(getterResult, object, getLocalSaveBehavior()) ) {
-                    onAutoGenerateAssignableKey(mapping, getterResult);
-
+                if ( mapping.canGenerate(object, getLocalSaveBehavior()) ) {
+                    onAutoGenerateAssignableKey(mapping);
                 } else {
-                    AttributeValue newAttributeValue = converter.convert(mapping.getter(), getterResult);
+                    AttributeValue newAttributeValue = converter.convert(mapping.bean().getter(), mapping.bean().get(object));
                     if ( newAttributeValue == null ) {
                         throw new DynamoDBMappingException(
-                                "Null or empty value for primary key: " + mapping.getter());
+                                "Null or empty value for primary key: " + mapping.bean().getter());
                     }
 
                     if ( newAttributeValue.getS() == null
@@ -928,7 +908,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                         throw new DynamoDBMappingException(
                                 "Keys must be scalar values (String, Number, "
                                 + "or Binary). Got " + newAttributeValue
-                                + " for key " + mapping.getter());
+                                + " for key " + mapping.bean().getter());
                     }
 
                     onPrimaryKeyAttributeValue(mapping.getAttributeName(), newAttributeValue);
@@ -939,27 +919,18 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
              * Next construct an update for every non-key property
              */
             for ( final DynamoDBMappingsRegistry.Mapping mapping : mappings.getMappings() ) {
-
-                // Skip any key methods, since they are handled separately
-                if ( mappings.getPrimaryKeys().contains(mapping) ) {
+                if ( mapping.isPrimaryKey() ) {
                     continue;
-                }
-
-                Object getterResult = mapping.getValueOf(object);
-
-                if ( mapping.canAutoGenerate(getterResult, object, getLocalSaveBehavior()) ) {
-                    if ( mapping.isAutoGeneratedKey() ) {
-                        // There still might be index keys that need to be auto-generated
-                        onAutoGenerateAssignableKey(mapping, getterResult);
+                } else if ( mapping.canGenerate(object, getLocalSaveBehavior()) ) {
+                    if ( mapping.bean().annotations().indexed() ) {
+                        onAutoGenerateAssignableKey(mapping);
                     } else if ( mapping.isVersion() ) {
-                        // If this is a versioned field, update it
-                        onVersionAttribute(mapping, getterResult);
+                        onVersionAttribute(mapping);
                     } else {
-                        onAutoGenerate(mapping, getterResult);
+                        onAutoGenerate(mapping);
                     }
                 } else {
-                    // Otherwise apply the update value for this attribute.
-                    AttributeValue currentValue = converter.convert(mapping.getter(), getterResult);
+                    AttributeValue currentValue = converter.convert(mapping.bean().getter(), mapping.bean().get(object));
                     if ( currentValue != null ) {
                         onNonKeyAttribute(mapping.getAttributeName(), currentValue);
                     } else {
@@ -1127,23 +1098,21 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         /**
          * Auto-generates the attribute value.
          * @param mapping The mapping details.
-         * @param getterResult The current attribute value.
          */
-        private void onAutoGenerate(DynamoDBMappingsRegistry.Mapping mapping, Object getterResult) {
-            Object newVersion = mapping.autoGenerate(getterResult);
-            AttributeValue newVersionValue = converter.convert(mapping.getter(), newVersion);
+        private void onAutoGenerate(DynamoDBMappingsRegistry.Mapping mapping) {
+            Object newVersion = mapping.bean().generate(mapping.bean().get(object));
+            AttributeValue newVersionValue = converter.convert(mapping.bean().getter(), newVersion);
             updateValues.put(mapping.getAttributeName(), new AttributeValueUpdate().withAction("PUT").withValue(newVersionValue));
-            inMemoryUpdates.add(new ValueUpdate(mapping.getter(), newVersionValue, object, converter));
+            inMemoryUpdates.add(new ValueUpdate(mapping, newVersionValue, object, converter));
         }
 
         /**
          * Auto-generates the key.
          * @param mapping The mapping details.
-         * @param getterResult The current attribute value.
          */
-        private void onAutoGenerateAssignableKey(DynamoDBMappingsRegistry.Mapping mapping, Object getterResult) {
+        private void onAutoGenerateAssignableKey(DynamoDBMappingsRegistry.Mapping mapping) {
             // Generate the new key value first, then ensure it doesn't exist.
-            onAutoGenerate(mapping, getterResult);
+            onAutoGenerate(mapping);
 
             if ( getLocalSaveBehavior() != SaveBehavior.CLOBBER
                     && !internalExpectedValueAssertions.containsKey(mapping.getAttributeName())) {
@@ -1158,9 +1127,8 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         /**
          * Auto-generates the version.
          * @param mapping The mapping details.
-         * @param getterResult The current attribute value.
          */
-        private void onVersionAttribute(DynamoDBMappingsRegistry.Mapping mapping, Object getterResult) {
+        private void onVersionAttribute(DynamoDBMappingsRegistry.Mapping mapping) {
             if ( getLocalSaveBehavior() != SaveBehavior.CLOBBER
                     && !internalExpectedValueAssertions.containsKey(mapping.getAttributeName())) {
                 // First establish the expected (current) value for the
@@ -1169,7 +1137,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
                 // For new objects, insist that the value doesn't exist.
                 // For existing ones, insist it has the old value.
-                AttributeValue currentValue = converter.convert(mapping.getter(), getterResult);
+                AttributeValue currentValue = converter.convert(mapping.bean().getter(), mapping.bean().get(object));
                 expected.setExists(currentValue != null);
                 if ( currentValue != null ) {
                     expected.setValue(currentValue);
@@ -1178,7 +1146,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             }
 
             // Generate the new version value
-            onAutoGenerate(mapping, getterResult);
+            onAutoGenerate(mapping);
         }
     }
 
@@ -1220,15 +1188,12 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             for ( final DynamoDBMappingsRegistry.Mapping mapping : mappings.getMappings() ) {
 
                 if ( mapping.isVersion() ) {
-                    Object getterResult = mapping.getValueOf(object);
-                    String attributeName = mapping.getAttributeName();
-
                     ExpectedAttributeValue expected = new ExpectedAttributeValue();
-                    AttributeValue currentValue = converter.convert(mapping.getter(), getterResult);
+                    AttributeValue currentValue = converter.convert(mapping.bean().getter(), mapping.bean().get(object));
                     expected.setExists(currentValue != null);
                     if ( currentValue != null )
                         expected.setValue(currentValue);
-                    internalAssertions.put(attributeName, expected);
+                    internalAssertions.put(mapping.getAttributeName(), expected);
                     break;
                 }
             }
@@ -1314,22 +1279,16 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             // Look at every getter and construct a value object for it
             final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
             for ( final DynamoDBMappingsRegistry.Mapping mapping : mappings.getMappings() ) {
-                Object getterResult =
-                        mapping.getValueOf(toWrite);
-
-                String attributeName = mapping.getAttributeName();
-
                 AttributeValue currentValue = null;
-                if ( mapping.canAutoGenerate(getterResult, toWrite, config.getSaveBehavior()) && !mapping.isVersion() ) {
-                    Object newVersion = mapping.autoGenerate(getterResult);
-                    currentValue = converter.convert(mapping.getter(), newVersion);
-                    inMemoryUpdates.add(new ValueUpdate(mapping.getter(), currentValue, toWrite, converter));
+                if ( mapping.canGenerate(toWrite, config.getSaveBehavior()) && !mapping.isVersion() ) {
+                    Object newVersion = mapping.bean().generate(mapping.bean().get(toWrite));
+                    currentValue = converter.convert(mapping.bean().getter(), newVersion);
+                    inMemoryUpdates.add(new ValueUpdate(mapping, currentValue, toWrite, converter));
                 } else {
-                    currentValue = converter.convert(mapping.getter(), getterResult);
+                    currentValue = converter.convert(mapping.bean().getter(), mapping.bean().get(toWrite));
                 }
-
                 if ( currentValue != null ) {
-                    attributeValues.put(attributeName, currentValue);
+                    attributeValues.put(mapping.getAttributeName(), currentValue);
                 }
             }
 
@@ -1694,28 +1653,26 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     private final class ValueUpdate {
-
-        private final Method method;
+        private final DynamoDBMappingsRegistry.Mapping mapping;
         private final AttributeValue newValue;
         private final Object target;
         private final ItemConverter converter;
 
         public ValueUpdate(
-                Method method,
+                DynamoDBMappingsRegistry.Mapping mapping,
                 AttributeValue newValue,
                 Object target,
                 ItemConverter converter) {
 
-            this.method = method;
+            this.mapping = mapping;
             this.newValue = newValue;
             this.target = target;
             this.converter = converter;
         }
 
         public void apply() {
-            final DynamoDBMappingsRegistry.Mapping mapping = registry.mappingOf(method);
-            Object pojo = converter.unconvert(method, mapping.setter(), newValue);
-            mapping.setValueOf(target, pojo);
+            Object pojo = converter.unconvert(mapping.bean().getter(), mapping.bean().setter(), newValue);
+            mapping.bean().set(target, pojo);
         }
     }
 

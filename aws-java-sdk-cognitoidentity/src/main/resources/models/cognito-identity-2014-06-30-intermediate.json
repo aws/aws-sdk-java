@@ -23,10 +23,10 @@
     "jsonProtocol" : true,
     "serviceName" : "Amazon Cognito Identity",
     "cborProtocol" : false,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "xmlProtocol" : false
   },
   "operations" : {
     "CreateIdentityPool" : {
@@ -66,12 +66,12 @@
         "documentation" : "Thrown when the total number of user pools has exceeded a preset limit."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateIdentityPoolResult",
       "asyncReturnType" : "CreateIdentityPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateIdentityPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateIdentityPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateIdentityPoolRequest, CreateIdentityPoolResult>",
-      "authenticated" : true,
       "methodName" : "createIdentityPool"
     },
     "DeleteIdentities" : {
@@ -102,12 +102,12 @@
         "documentation" : "Thrown when the service encounters an error during processing the request."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteIdentitiesResult",
       "asyncReturnType" : "DeleteIdentitiesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteIdentitiesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteIdentitiesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteIdentitiesRequest, DeleteIdentitiesResult>",
-      "authenticated" : true,
       "methodName" : "deleteIdentities"
     },
     "DeleteIdentityPool" : {
@@ -144,12 +144,12 @@
         "documentation" : "Thrown when the service encounters an error during processing the request."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteIdentityPoolResult",
       "asyncReturnType" : "DeleteIdentityPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteIdentityPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteIdentityPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteIdentityPoolRequest, DeleteIdentityPoolResult>",
-      "authenticated" : true,
       "methodName" : "deleteIdentityPool"
     },
     "DescribeIdentity" : {
@@ -186,12 +186,12 @@
         "documentation" : "Thrown when the service encounters an error during processing the request."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeIdentityResult",
       "asyncReturnType" : "DescribeIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeIdentityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeIdentityRequest, DescribeIdentityResult>",
-      "authenticated" : true,
       "methodName" : "describeIdentity"
     },
     "DescribeIdentityPool" : {
@@ -228,12 +228,12 @@
         "documentation" : "Thrown when the service encounters an error during processing the request."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeIdentityPoolResult",
       "asyncReturnType" : "DescribeIdentityPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeIdentityPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeIdentityPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeIdentityPoolRequest, DescribeIdentityPoolResult>",
-      "authenticated" : true,
       "methodName" : "describeIdentityPool"
     },
     "GetCredentialsForIdentity" : {
@@ -279,12 +279,12 @@
         "documentation" : "<p>An exception thrown when a dependent service such as Facebook or Twitter is not responding</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetCredentialsForIdentityResult",
       "asyncReturnType" : "GetCredentialsForIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCredentialsForIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCredentialsForIdentityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCredentialsForIdentityRequest, GetCredentialsForIdentityResult>",
-      "authenticated" : true,
       "methodName" : "getCredentialsForIdentity"
     },
     "GetId" : {
@@ -330,12 +330,12 @@
         "documentation" : "<p>An exception thrown when a dependent service such as Facebook or Twitter is not responding</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetIdResult",
       "asyncReturnType" : "GetIdResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetIdResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetIdResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdRequest, GetIdResult>",
-      "authenticated" : true,
       "methodName" : "getId"
     },
     "GetIdentityPoolRoles" : {
@@ -375,12 +375,12 @@
         "documentation" : "Thrown when the service encounters an error during processing the request."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetIdentityPoolRolesResult",
       "asyncReturnType" : "GetIdentityPoolRolesResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetIdentityPoolRolesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetIdentityPoolRolesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIdentityPoolRolesRequest, GetIdentityPoolRolesResult>",
-      "authenticated" : true,
       "methodName" : "getIdentityPoolRoles"
     },
     "GetOpenIdToken" : {
@@ -423,12 +423,12 @@
         "documentation" : "<p>An exception thrown when a dependent service such as Facebook or Twitter is not responding</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetOpenIdTokenResult",
       "asyncReturnType" : "GetOpenIdTokenResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetOpenIdTokenResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetOpenIdTokenResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetOpenIdTokenRequest, GetOpenIdTokenResult>",
-      "authenticated" : true,
       "methodName" : "getOpenIdToken"
     },
     "GetOpenIdTokenForDeveloperIdentity" : {
@@ -471,12 +471,12 @@
         "documentation" : "<p>The provided developer user identifier is already registered with Cognito under a different identity ID.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetOpenIdTokenForDeveloperIdentityResult",
       "asyncReturnType" : "GetOpenIdTokenForDeveloperIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetOpenIdTokenForDeveloperIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetOpenIdTokenForDeveloperIdentityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetOpenIdTokenForDeveloperIdentityRequest, GetOpenIdTokenForDeveloperIdentityResult>",
-      "authenticated" : true,
       "methodName" : "getOpenIdTokenForDeveloperIdentity"
     },
     "ListIdentities" : {
@@ -513,12 +513,12 @@
         "documentation" : "Thrown when the service encounters an error during processing the request."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListIdentitiesResult",
       "asyncReturnType" : "ListIdentitiesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListIdentitiesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListIdentitiesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListIdentitiesRequest, ListIdentitiesResult>",
-      "authenticated" : true,
       "methodName" : "listIdentities"
     },
     "ListIdentityPools" : {
@@ -552,12 +552,12 @@
         "documentation" : "Thrown when the service encounters an error during processing the request."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListIdentityPoolsResult",
       "asyncReturnType" : "ListIdentityPoolsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListIdentityPoolsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListIdentityPoolsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListIdentityPoolsRequest, ListIdentityPoolsResult>",
-      "authenticated" : true,
       "methodName" : "listIdentityPools"
     },
     "LookupDeveloperIdentity" : {
@@ -597,12 +597,12 @@
         "documentation" : "Thrown when the service encounters an error during processing the request."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "LookupDeveloperIdentityResult",
       "asyncReturnType" : "LookupDeveloperIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<LookupDeveloperIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<LookupDeveloperIdentityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<LookupDeveloperIdentityRequest, LookupDeveloperIdentityResult>",
-      "authenticated" : true,
       "methodName" : "lookupDeveloperIdentity"
     },
     "MergeDeveloperIdentities" : {
@@ -642,12 +642,12 @@
         "documentation" : "Thrown when the service encounters an error during processing the request."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "MergeDeveloperIdentitiesResult",
       "asyncReturnType" : "MergeDeveloperIdentitiesResult",
       "asyncFutureType" : "java.util.concurrent.Future<MergeDeveloperIdentitiesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<MergeDeveloperIdentitiesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<MergeDeveloperIdentitiesRequest, MergeDeveloperIdentitiesResult>",
-      "authenticated" : true,
       "methodName" : "mergeDeveloperIdentities"
     },
     "SetIdentityPoolRoles" : {
@@ -690,12 +690,12 @@
         "documentation" : "<p>Thrown if there are parallel requests to modify a resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SetIdentityPoolRolesResult",
       "asyncReturnType" : "SetIdentityPoolRolesResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetIdentityPoolRolesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetIdentityPoolRolesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetIdentityPoolRolesRequest, SetIdentityPoolRolesResult>",
-      "authenticated" : true,
       "methodName" : "setIdentityPoolRoles"
     },
     "UnlinkDeveloperIdentity" : {
@@ -735,12 +735,12 @@
         "documentation" : "Thrown when the service encounters an error during processing the request."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UnlinkDeveloperIdentityResult",
       "asyncReturnType" : "UnlinkDeveloperIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<UnlinkDeveloperIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UnlinkDeveloperIdentityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UnlinkDeveloperIdentityRequest, UnlinkDeveloperIdentityResult>",
-      "authenticated" : true,
       "methodName" : "unlinkDeveloperIdentity"
     },
     "UnlinkIdentity" : {
@@ -783,12 +783,12 @@
         "documentation" : "<p>An exception thrown when a dependent service such as Facebook or Twitter is not responding</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UnlinkIdentityResult",
       "asyncReturnType" : "UnlinkIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<UnlinkIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UnlinkIdentityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UnlinkIdentityRequest, UnlinkIdentityResult>",
-      "authenticated" : true,
       "methodName" : "unlinkIdentity"
     },
     "UpdateIdentityPool" : {
@@ -834,12 +834,12 @@
         "documentation" : "Thrown when the total number of user pools has exceeded a preset limit."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateIdentityPoolResult",
       "asyncReturnType" : "UpdateIdentityPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateIdentityPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateIdentityPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateIdentityPoolRequest, UpdateIdentityPoolResult>",
-      "authenticated" : true,
       "methodName" : "updateIdentityPool"
     }
   },

@@ -19,7 +19,10 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Represents your Amazon SES daily sending quota, maximum send rate, and the
+ * number of emails you have sent in the last 24 hours.
+ * </p>
  */
 public class GetSendQuotaResult implements Serializable, Cloneable {
 
@@ -35,8 +38,12 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
      * The maximum number of emails that Amazon SES can accept from the user's
      * account per second.
      * </p>
-     * <note>The rate at which Amazon SES accepts the user's messages might be
-     * less than the maximum send rate.</note>
+     * <note>
+     * <p>
+     * The rate at which Amazon SES accepts the user's messages might be less
+     * than the maximum send rate.
+     * </p>
+     * </note>
      */
     private Double maxSendRate;
     /**
@@ -98,14 +105,20 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
      * The maximum number of emails that Amazon SES can accept from the user's
      * account per second.
      * </p>
-     * <note>The rate at which Amazon SES accepts the user's messages might be
-     * less than the maximum send rate.</note>
+     * <note>
+     * <p>
+     * The rate at which Amazon SES accepts the user's messages might be less
+     * than the maximum send rate.
+     * </p>
+     * </note>
      * 
      * @param maxSendRate
      *        The maximum number of emails that Amazon SES can accept from the
-     *        user's account per second.</p> <note>The rate at which Amazon SES
-     *        accepts the user's messages might be less than the maximum send
-     *        rate.
+     *        user's account per second.</p> <note>
+     *        <p>
+     *        The rate at which Amazon SES accepts the user's messages might be
+     *        less than the maximum send rate.
+     *        </p>
      */
 
     public void setMaxSendRate(Double maxSendRate) {
@@ -117,13 +130,19 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
      * The maximum number of emails that Amazon SES can accept from the user's
      * account per second.
      * </p>
-     * <note>The rate at which Amazon SES accepts the user's messages might be
-     * less than the maximum send rate.</note>
+     * <note>
+     * <p>
+     * The rate at which Amazon SES accepts the user's messages might be less
+     * than the maximum send rate.
+     * </p>
+     * </note>
      * 
      * @return The maximum number of emails that Amazon SES can accept from the
-     *         user's account per second.</p> <note>The rate at which Amazon SES
-     *         accepts the user's messages might be less than the maximum send
-     *         rate.
+     *         user's account per second.</p> <note>
+     *         <p>
+     *         The rate at which Amazon SES accepts the user's messages might be
+     *         less than the maximum send rate.
+     *         </p>
      */
 
     public Double getMaxSendRate() {
@@ -135,14 +154,20 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
      * The maximum number of emails that Amazon SES can accept from the user's
      * account per second.
      * </p>
-     * <note>The rate at which Amazon SES accepts the user's messages might be
-     * less than the maximum send rate.</note>
+     * <note>
+     * <p>
+     * The rate at which Amazon SES accepts the user's messages might be less
+     * than the maximum send rate.
+     * </p>
+     * </note>
      * 
      * @param maxSendRate
      *        The maximum number of emails that Amazon SES can accept from the
-     *        user's account per second.</p> <note>The rate at which Amazon SES
-     *        accepts the user's messages might be less than the maximum send
-     *        rate.
+     *        user's account per second.</p> <note>
+     *        <p>
+     *        The rate at which Amazon SES accepts the user's messages might be
+     *        less than the maximum send rate.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

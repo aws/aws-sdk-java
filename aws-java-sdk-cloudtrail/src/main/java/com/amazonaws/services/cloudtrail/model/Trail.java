@@ -54,8 +54,7 @@ public class Trail implements Serializable, Cloneable {
     private String s3KeyPrefix;
     /**
      * <p>
-     * Specifies the name of the Amazon SNS topic that CloudTrail uses to send
-     * notifications when log files are delivered.
+     * This field is deprecated. Use SnsTopicARN.
      * </p>
      */
     @Deprecated
@@ -309,13 +308,11 @@ public class Trail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the Amazon SNS topic that CloudTrail uses to send
-     * notifications when log files are delivered.
+     * This field is deprecated. Use SnsTopicARN.
      * </p>
      * 
      * @param snsTopicName
-     *        Specifies the name of the Amazon SNS topic that CloudTrail uses to
-     *        send notifications when log files are delivered.
+     *        This field is deprecated. Use SnsTopicARN.
      */
     @Deprecated
     public void setSnsTopicName(String snsTopicName) {
@@ -324,12 +321,10 @@ public class Trail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the Amazon SNS topic that CloudTrail uses to send
-     * notifications when log files are delivered.
+     * This field is deprecated. Use SnsTopicARN.
      * </p>
      * 
-     * @return Specifies the name of the Amazon SNS topic that CloudTrail uses
-     *         to send notifications when log files are delivered.
+     * @return This field is deprecated. Use SnsTopicARN.
      */
     @Deprecated
     public String getSnsTopicName() {
@@ -338,13 +333,11 @@ public class Trail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the Amazon SNS topic that CloudTrail uses to send
-     * notifications when log files are delivered.
+     * This field is deprecated. Use SnsTopicARN.
      * </p>
      * 
      * @param snsTopicName
-     *        Specifies the name of the Amazon SNS topic that CloudTrail uses to
-     *        send notifications when log files are delivered.
+     *        This field is deprecated. Use SnsTopicARN.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

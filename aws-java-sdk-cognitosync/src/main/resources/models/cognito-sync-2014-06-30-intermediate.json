@@ -21,9 +21,9 @@
     "endpointPrefix" : "cognito-sync",
     "signingName" : "cognito-sync",
     "jsonProtocol" : true,
+    "xmlProtocol" : false,
     "serviceName" : "Amazon Cognito Sync",
     "cborProtocol" : false,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"

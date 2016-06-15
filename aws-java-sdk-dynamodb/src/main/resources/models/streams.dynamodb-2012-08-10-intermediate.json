@@ -21,12 +21,12 @@
     "endpointPrefix" : "streams.dynamodb",
     "signingName" : "dynamodb",
     "xmlProtocol" : false,
+    "jsonProtocol" : true,
     "serviceName" : "Amazon DynamoDB Streams",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
     "DescribeStream" : {
@@ -54,12 +54,12 @@
         "documentation" : "<p>An error occurred on the server side.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeStreamResult",
       "asyncReturnType" : "DescribeStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult>",
-      "authenticated" : true,
       "methodName" : "describeStream"
     },
     "GetRecords" : {
@@ -96,12 +96,12 @@
         "documentation" : "<p>The operation attempted to read past the oldest stream record in a shard.</p> <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> <ul> <li><p>You request a shard iterator with a sequence number older than the trim point (24 hours).</p> </li> <li><p>You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</p> </li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetRecordsResult",
       "asyncReturnType" : "GetRecordsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRecordsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRecordsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRecordsRequest, GetRecordsResult>",
-      "authenticated" : true,
       "methodName" : "getRecords"
     },
     "GetShardIterator" : {
@@ -132,12 +132,12 @@
         "documentation" : "<p>The operation attempted to read past the oldest stream record in a shard.</p> <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> <ul> <li><p>You request a shard iterator with a sequence number older than the trim point (24 hours).</p> </li> <li><p>You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</p> </li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetShardIteratorResult",
       "asyncReturnType" : "GetShardIteratorResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetShardIteratorResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetShardIteratorResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetShardIteratorRequest, GetShardIteratorResult>",
-      "authenticated" : true,
       "methodName" : "getShardIterator"
     },
     "ListStreams" : {
@@ -165,12 +165,12 @@
         "documentation" : "<p>An error occurred on the server side.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListStreamsResult",
       "asyncReturnType" : "ListStreamsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListStreamsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListStreamsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult>",
-      "authenticated" : true,
       "methodName" : "listStreams"
     }
   },
@@ -1876,12 +1876,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, AttributeValue>",
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+          "entryType" : "Map.Entry<String, AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -2703,12 +2703,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, AttributeValue>",
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+            "entryType" : "Map.Entry<String, AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -7882,12 +7882,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, AttributeValue>",
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+          "entryType" : "Map.Entry<String, AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -8001,12 +8001,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, AttributeValue>",
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+          "entryType" : "Map.Entry<String, AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -8120,12 +8120,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, AttributeValue>",
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+          "entryType" : "Map.Entry<String, AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -8418,12 +8418,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, AttributeValue>",
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+            "entryType" : "Map.Entry<String, AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8750,12 +8750,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, AttributeValue>",
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+            "entryType" : "Map.Entry<String, AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8870,12 +8870,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, AttributeValue>",
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
+            "entryType" : "Map.Entry<String, AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,

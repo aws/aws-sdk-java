@@ -14,20 +14,21 @@
  */
 package com.amazonaws.http;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import com.amazonaws.Request;
+import com.amazonaws.metrics.MetricInputStreamEntity;
+import com.amazonaws.metrics.ServiceMetricType;
+import com.amazonaws.metrics.ThroughputMetricType;
+import com.amazonaws.metrics.internal.ServiceMetricTypeGuesser;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.entity.BasicHttpEntity;
 import org.apache.http.entity.InputStreamEntity;
 
-import com.amazonaws.Request;
-import com.amazonaws.metrics.MetricInputStreamEntity;
-import com.amazonaws.metrics.ServiceMetricType;
-import com.amazonaws.metrics.ThroughputMetricType;
-import com.amazonaws.metrics.internal.ServiceMetricTypeGuesser;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 /**
  * Custom implementation of {@link RequestEntity} that delegates to an
@@ -100,19 +101,23 @@ public class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
                 .guessThroughputMetricType(request,
                         ServiceMetricType.UPLOAD_THROUGHPUT_NAME_SUFFIX,
                         ServiceMetricType.UPLOAD_BYTE_COUNT_NAME_SUFFIX);
-        if (type == null) {
-            inputStreamRequestEntity =
-                new InputStreamEntity(request.getContent(), contentLength);
-        } else {
-            inputStreamRequestEntity =
-                new MetricInputStreamEntity(type, request.getContent(), contentLength);
-        }
+
+        content = getContent(request);
+        inputStreamRequestEntity = (type == null) ? new InputStreamEntity(content, contentLength) :
+                new MetricInputStreamEntity(type, content, contentLength);
         inputStreamRequestEntity.setContentType(contentType);
-        content = request.getContent();
 
         setContent(content);
         setContentType(contentType);
         setContentLength(contentLength);
+    }
+
+    /**
+     * @return The request content input stream or an empty input stream if there is no content.
+     */
+    private InputStream getContent(Request<?> request) {
+        return (request.getContent() == null) ? new ByteArrayInputStream(new byte[0]) :
+                request.getContent();
     }
 
     @Override

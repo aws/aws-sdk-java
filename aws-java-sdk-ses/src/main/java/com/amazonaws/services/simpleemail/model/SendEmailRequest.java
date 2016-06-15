@@ -20,7 +20,12 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Represents a request to send a single formatted email using Amazon SES. For
+ * more information, see the <a href=
+ * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html"
+ * >Amazon SES Developer Guide</a>.
+ * </p>
  */
 public class SendEmailRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

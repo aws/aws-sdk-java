@@ -19,7 +19,9 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * An empty element returned on a successful request.
+ * </p>
  */
 public class CloneReceiptRuleSetResult implements Serializable, Cloneable {
 

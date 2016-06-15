@@ -20,7 +20,11 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Represents a request to return a list of all identities (email addresses and
+ * domains) that you have attempted to verify under your AWS account, regardless
+ * of verification status.
+ * </p>
  */
 public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

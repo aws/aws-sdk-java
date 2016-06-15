@@ -19,7 +19,9 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Represents the requested sending authorization policies.
+ * </p>
  */
 public class GetIdentityPoliciesResult implements Serializable, Cloneable {
 

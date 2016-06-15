@@ -1655,7 +1655,6 @@ public class TransferManager {
                                                      copyObjectRequest, metadata, listenerChain);
         CopyMonitor watcher = CopyMonitor.create(this, copy, executorService,
                                                  copyCallable, copyObjectRequest, listenerChain);
-        watcher.setTimedThreadPool(timedThreadPool);
         copy.setMonitor(watcher);
         return copy;
     }

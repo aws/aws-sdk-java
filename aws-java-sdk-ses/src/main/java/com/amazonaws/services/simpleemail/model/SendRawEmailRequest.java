@@ -20,7 +20,12 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Represents a request to send a single raw email using Amazon SES. For more
+ * information, see the <a href=
+ * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html"
+ * >Amazon SES Developer Guide</a>.
+ * </p>
  */
 public class SendRawEmailRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -39,10 +44,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
      * 2047</a>.
      * </p>
-     * <note>If you specify the <code>Source</code> parameter and have feedback
+     * <note>
+     * <p>
+     * If you specify the <code>Source</code> parameter and have feedback
      * forwarding enabled, then bounces and complaints will be sent to this
      * email address. This takes precedence over any <i>Return-Path</i> header
-     * that you might include in the raw text of the message. </note>
+     * that you might include in the raw text of the message.
+     * </p>
+     * </note>
      */
     private String source;
     /**
@@ -57,18 +66,36 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * The raw text of the message. The client is responsible for ensuring the
      * following:
      * </p>
-     * <p>
      * <ul>
-     * <li>Message must contain a header and a body, separated by a blank line.</li>
-     * <li>All required header fields must be present.</li>
-     * <li>Each part of a multipart MIME message must be formatted properly.</li>
-     * <li>MIME content types must be among those supported by Amazon SES. For
-     * more information, go to the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html"
-     * >Amazon SES Developer Guide</a>.</li>
-     * <li>Content must be base64-encoded, if MIME requires it.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Message must contain a header and a body, separated by a blank line.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All required header fields must be present.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each part of a multipart MIME message must be formatted properly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MIME content types must be among those supported by Amazon SES. For more
+     * information, go to the <a href=
+     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html"
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Content must be base64-encoded, if MIME requires it.
+     * </p>
+     * </li>
+     * </ul>
      */
     private RawMessage rawMessage;
     /**
@@ -84,11 +111,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * both the <code>FromArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>FromArn</code> parameter.
      * </p>
-     * <note>For information about when to use this parameter, see the
-     * description of <code>SendRawEmail</code> in this guide, or see the <a
-     * href=
+     * <note>
+     * <p>
+     * For information about when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
-     * >Amazon SES Developer Guide</a>. </note>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </note>
      */
     private String fromArn;
     /**
@@ -113,11 +143,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * both the <code>SourceArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>SourceArn</code> parameter.
      * </p>
-     * <note>For information about when to use this parameter, see the
-     * description of <code>SendRawEmail</code> in this guide, or see the <a
-     * href=
+     * <note>
+     * <p>
+     * For information about when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
-     * >Amazon SES Developer Guide</a>. </note>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </note>
      */
     private String sourceArn;
     /**
@@ -143,11 +176,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * corresponding X-header, Amazon SES uses the value of the
      * <code>ReturnPathArn</code> parameter.
      * </p>
-     * <note>For information about when to use this parameter, see the
-     * description of <code>SendRawEmail</code> in this guide, or see the <a
-     * href=
+     * <note>
+     * <p>
+     * For information about when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
-     * >Amazon SES Developer Guide</a>. </note>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </note>
      */
     private String returnPathArn;
 
@@ -167,19 +203,36 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * @param rawMessage
      *        The raw text of the message. The client is responsible for
      *        ensuring the following:</p>
-     *        <p>
      *        <ul>
-     *        <li>Message must contain a header and a body, separated by a blank
-     *        line.</li>
-     *        <li>All required header fields must be present.</li>
-     *        <li>Each part of a multipart MIME message must be formatted
-     *        properly.</li>
-     *        <li>MIME content types must be among those supported by Amazon
-     *        SES. For more information, go to the <a href=
+     *        <li>
+     *        <p>
+     *        Message must contain a header and a body, separated by a blank
+     *        line.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        All required header fields must be present.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Each part of a multipart MIME message must be formatted properly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MIME content types must be among those supported by Amazon SES.
+     *        For more information, go to the <a href=
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html"
-     *        >Amazon SES Developer Guide</a>.</li>
-     *        <li>Content must be base64-encoded, if MIME requires it.</li>
-     *        </ul>
+     *        >Amazon SES Developer Guide</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Content must be base64-encoded, if MIME requires it.
+     *        </p>
+     *        </li>
      */
     public SendRawEmailRequest(RawMessage rawMessage) {
         setRawMessage(rawMessage);
@@ -199,10 +252,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
      * 2047</a>.
      * </p>
-     * <note>If you specify the <code>Source</code> parameter and have feedback
+     * <note>
+     * <p>
+     * If you specify the <code>Source</code> parameter and have feedback
      * forwarding enabled, then bounces and complaints will be sent to this
      * email address. This takes precedence over any <i>Return-Path</i> header
-     * that you might include in the raw text of the message. </note>
+     * that you might include in the raw text of the message.
+     * </p>
+     * </note>
      * 
      * @param source
      *        The identity's email address. If you do not provide a value for
@@ -217,11 +274,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
      *        2047</a>.
      *        </p>
-     *        <note>If you specify the <code>Source</code> parameter and have
-     *        feedback forwarding enabled, then bounces and complaints will be
-     *        sent to this email address. This takes precedence over any
+     *        <note>
+     *        <p>
+     *        If you specify the <code>Source</code> parameter and have feedback
+     *        forwarding enabled, then bounces and complaints will be sent to
+     *        this email address. This takes precedence over any
      *        <i>Return-Path</i> header that you might include in the raw text
      *        of the message.
+     *        </p>
      */
 
     public void setSource(String source) {
@@ -242,10 +302,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
      * 2047</a>.
      * </p>
-     * <note>If you specify the <code>Source</code> parameter and have feedback
+     * <note>
+     * <p>
+     * If you specify the <code>Source</code> parameter and have feedback
      * forwarding enabled, then bounces and complaints will be sent to this
      * email address. This takes precedence over any <i>Return-Path</i> header
-     * that you might include in the raw text of the message. </note>
+     * that you might include in the raw text of the message.
+     * </p>
+     * </note>
      * 
      * @return The identity's email address. If you do not provide a value for
      *         this parameter, you must specify a "From" address in the raw text
@@ -259,11 +323,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *         information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
      *         2047</a>.
      *         </p>
-     *         <note>If you specify the <code>Source</code> parameter and have
+     *         <note>
+     *         <p>
+     *         If you specify the <code>Source</code> parameter and have
      *         feedback forwarding enabled, then bounces and complaints will be
      *         sent to this email address. This takes precedence over any
      *         <i>Return-Path</i> header that you might include in the raw text
      *         of the message.
+     *         </p>
      */
 
     public String getSource() {
@@ -284,10 +351,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
      * 2047</a>.
      * </p>
-     * <note>If you specify the <code>Source</code> parameter and have feedback
+     * <note>
+     * <p>
+     * If you specify the <code>Source</code> parameter and have feedback
      * forwarding enabled, then bounces and complaints will be sent to this
      * email address. This takes precedence over any <i>Return-Path</i> header
-     * that you might include in the raw text of the message. </note>
+     * that you might include in the raw text of the message.
+     * </p>
+     * </note>
      * 
      * @param source
      *        The identity's email address. If you do not provide a value for
@@ -302,11 +373,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
      *        2047</a>.
      *        </p>
-     *        <note>If you specify the <code>Source</code> parameter and have
-     *        feedback forwarding enabled, then bounces and complaints will be
-     *        sent to this email address. This takes precedence over any
+     *        <note>
+     *        <p>
+     *        If you specify the <code>Source</code> parameter and have feedback
+     *        forwarding enabled, then bounces and complaints will be sent to
+     *        this email address. This takes precedence over any
      *        <i>Return-Path</i> header that you might include in the raw text
      *        of the message.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -408,35 +482,70 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * The raw text of the message. The client is responsible for ensuring the
      * following:
      * </p>
-     * <p>
      * <ul>
-     * <li>Message must contain a header and a body, separated by a blank line.</li>
-     * <li>All required header fields must be present.</li>
-     * <li>Each part of a multipart MIME message must be formatted properly.</li>
-     * <li>MIME content types must be among those supported by Amazon SES. For
-     * more information, go to the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html"
-     * >Amazon SES Developer Guide</a>.</li>
-     * <li>Content must be base64-encoded, if MIME requires it.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Message must contain a header and a body, separated by a blank line.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All required header fields must be present.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each part of a multipart MIME message must be formatted properly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MIME content types must be among those supported by Amazon SES. For more
+     * information, go to the <a href=
+     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html"
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Content must be base64-encoded, if MIME requires it.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param rawMessage
      *        The raw text of the message. The client is responsible for
      *        ensuring the following:</p>
-     *        <p>
      *        <ul>
-     *        <li>Message must contain a header and a body, separated by a blank
-     *        line.</li>
-     *        <li>All required header fields must be present.</li>
-     *        <li>Each part of a multipart MIME message must be formatted
-     *        properly.</li>
-     *        <li>MIME content types must be among those supported by Amazon
-     *        SES. For more information, go to the <a href=
+     *        <li>
+     *        <p>
+     *        Message must contain a header and a body, separated by a blank
+     *        line.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        All required header fields must be present.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Each part of a multipart MIME message must be formatted properly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MIME content types must be among those supported by Amazon SES.
+     *        For more information, go to the <a href=
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html"
-     *        >Amazon SES Developer Guide</a>.</li>
-     *        <li>Content must be base64-encoded, if MIME requires it.</li>
-     *        </ul>
+     *        >Amazon SES Developer Guide</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Content must be base64-encoded, if MIME requires it.
+     *        </p>
+     *        </li>
      */
 
     public void setRawMessage(RawMessage rawMessage) {
@@ -448,34 +557,69 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * The raw text of the message. The client is responsible for ensuring the
      * following:
      * </p>
-     * <p>
      * <ul>
-     * <li>Message must contain a header and a body, separated by a blank line.</li>
-     * <li>All required header fields must be present.</li>
-     * <li>Each part of a multipart MIME message must be formatted properly.</li>
-     * <li>MIME content types must be among those supported by Amazon SES. For
-     * more information, go to the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html"
-     * >Amazon SES Developer Guide</a>.</li>
-     * <li>Content must be base64-encoded, if MIME requires it.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Message must contain a header and a body, separated by a blank line.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All required header fields must be present.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each part of a multipart MIME message must be formatted properly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MIME content types must be among those supported by Amazon SES. For more
+     * information, go to the <a href=
+     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html"
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Content must be base64-encoded, if MIME requires it.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The raw text of the message. The client is responsible for
      *         ensuring the following:</p>
-     *         <p>
      *         <ul>
-     *         <li>Message must contain a header and a body, separated by a
-     *         blank line.</li>
-     *         <li>All required header fields must be present.</li>
-     *         <li>Each part of a multipart MIME message must be formatted
-     *         properly.</li>
-     *         <li>MIME content types must be among those supported by Amazon
-     *         SES. For more information, go to the <a href=
+     *         <li>
+     *         <p>
+     *         Message must contain a header and a body, separated by a blank
+     *         line.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         All required header fields must be present.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Each part of a multipart MIME message must be formatted properly.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIME content types must be among those supported by Amazon SES.
+     *         For more information, go to the <a href=
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html"
-     *         >Amazon SES Developer Guide</a>.</li>
-     *         <li>Content must be base64-encoded, if MIME requires it.</li>
-     *         </ul>
+     *         >Amazon SES Developer Guide</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Content must be base64-encoded, if MIME requires it.
+     *         </p>
+     *         </li>
      */
 
     public RawMessage getRawMessage() {
@@ -487,35 +631,70 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * The raw text of the message. The client is responsible for ensuring the
      * following:
      * </p>
-     * <p>
      * <ul>
-     * <li>Message must contain a header and a body, separated by a blank line.</li>
-     * <li>All required header fields must be present.</li>
-     * <li>Each part of a multipart MIME message must be formatted properly.</li>
-     * <li>MIME content types must be among those supported by Amazon SES. For
-     * more information, go to the <a href=
-     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html"
-     * >Amazon SES Developer Guide</a>.</li>
-     * <li>Content must be base64-encoded, if MIME requires it.</li>
-     * </ul>
+     * <li>
+     * <p>
+     * Message must contain a header and a body, separated by a blank line.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All required header fields must be present.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each part of a multipart MIME message must be formatted properly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MIME content types must be among those supported by Amazon SES. For more
+     * information, go to the <a href=
+     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html"
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Content must be base64-encoded, if MIME requires it.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param rawMessage
      *        The raw text of the message. The client is responsible for
      *        ensuring the following:</p>
-     *        <p>
      *        <ul>
-     *        <li>Message must contain a header and a body, separated by a blank
-     *        line.</li>
-     *        <li>All required header fields must be present.</li>
-     *        <li>Each part of a multipart MIME message must be formatted
-     *        properly.</li>
-     *        <li>MIME content types must be among those supported by Amazon
-     *        SES. For more information, go to the <a href=
+     *        <li>
+     *        <p>
+     *        Message must contain a header and a body, separated by a blank
+     *        line.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        All required header fields must be present.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Each part of a multipart MIME message must be formatted properly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MIME content types must be among those supported by Amazon SES.
+     *        For more information, go to the <a href=
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html"
-     *        >Amazon SES Developer Guide</a>.</li>
-     *        <li>Content must be base64-encoded, if MIME requires it.</li>
-     *        </ul>
+     *        >Amazon SES Developer Guide</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Content must be base64-encoded, if MIME requires it.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -538,11 +717,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * both the <code>FromArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>FromArn</code> parameter.
      * </p>
-     * <note>For information about when to use this parameter, see the
-     * description of <code>SendRawEmail</code> in this guide, or see the <a
-     * href=
+     * <note>
+     * <p>
+     * For information about when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
-     * >Amazon SES Developer Guide</a>. </note>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </note>
      * 
      * @param fromArn
      *        This parameter is used only for sending authorization. It is the
@@ -556,11 +738,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        corresponding X-header, Amazon SES uses the value of the
      *        <code>FromArn</code> parameter.
      *        </p>
-     *        <note>For information about when to use this parameter, see the
+     *        <note>
+     *        <p>
+     *        For information about when to use this parameter, see the
      *        description of <code>SendRawEmail</code> in this guide, or see the
      *        <a href=
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
+     *        </p>
      */
 
     public void setFromArn(String fromArn) {
@@ -580,11 +765,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * both the <code>FromArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>FromArn</code> parameter.
      * </p>
-     * <note>For information about when to use this parameter, see the
-     * description of <code>SendRawEmail</code> in this guide, or see the <a
-     * href=
+     * <note>
+     * <p>
+     * For information about when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
-     * >Amazon SES Developer Guide</a>. </note>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </note>
      * 
      * @return This parameter is used only for sending authorization. It is the
      *         ARN of the identity that is associated with the sending
@@ -597,11 +785,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *         corresponding X-header, Amazon SES uses the value of the
      *         <code>FromArn</code> parameter.
      *         </p>
-     *         <note>For information about when to use this parameter, see the
+     *         <note>
+     *         <p>
+     *         For information about when to use this parameter, see the
      *         description of <code>SendRawEmail</code> in this guide, or see
      *         the <a href=
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *         >Amazon SES Developer Guide</a>.
+     *         </p>
      */
 
     public String getFromArn() {
@@ -621,11 +812,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * both the <code>FromArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>FromArn</code> parameter.
      * </p>
-     * <note>For information about when to use this parameter, see the
-     * description of <code>SendRawEmail</code> in this guide, or see the <a
-     * href=
+     * <note>
+     * <p>
+     * For information about when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
-     * >Amazon SES Developer Guide</a>. </note>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </note>
      * 
      * @param fromArn
      *        This parameter is used only for sending authorization. It is the
@@ -639,11 +833,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        corresponding X-header, Amazon SES uses the value of the
      *        <code>FromArn</code> parameter.
      *        </p>
-     *        <note>For information about when to use this parameter, see the
+     *        <note>
+     *        <p>
+     *        For information about when to use this parameter, see the
      *        description of <code>SendRawEmail</code> in this guide, or see the
      *        <a href=
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -675,11 +872,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * both the <code>SourceArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>SourceArn</code> parameter.
      * </p>
-     * <note>For information about when to use this parameter, see the
-     * description of <code>SendRawEmail</code> in this guide, or see the <a
-     * href=
+     * <note>
+     * <p>
+     * For information about when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
-     * >Amazon SES Developer Guide</a>. </note>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </note>
      * 
      * @param sourceArn
      *        This parameter is used only for sending authorization. It is the
@@ -703,11 +903,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        corresponding X-header, Amazon SES uses the value of the
      *        <code>SourceArn</code> parameter.
      *        </p>
-     *        <note>For information about when to use this parameter, see the
+     *        <note>
+     *        <p>
+     *        For information about when to use this parameter, see the
      *        description of <code>SendRawEmail</code> in this guide, or see the
      *        <a href=
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
+     *        </p>
      */
 
     public void setSourceArn(String sourceArn) {
@@ -736,11 +939,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * both the <code>SourceArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>SourceArn</code> parameter.
      * </p>
-     * <note>For information about when to use this parameter, see the
-     * description of <code>SendRawEmail</code> in this guide, or see the <a
-     * href=
+     * <note>
+     * <p>
+     * For information about when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
-     * >Amazon SES Developer Guide</a>. </note>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </note>
      * 
      * @return This parameter is used only for sending authorization. It is the
      *         ARN of the identity that is associated with the sending
@@ -764,11 +970,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *         corresponding X-header, Amazon SES uses the value of the
      *         <code>SourceArn</code> parameter.
      *         </p>
-     *         <note>For information about when to use this parameter, see the
+     *         <note>
+     *         <p>
+     *         For information about when to use this parameter, see the
      *         description of <code>SendRawEmail</code> in this guide, or see
      *         the <a href=
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *         >Amazon SES Developer Guide</a>.
+     *         </p>
      */
 
     public String getSourceArn() {
@@ -797,11 +1006,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * both the <code>SourceArn</code> parameter and the corresponding X-header,
      * Amazon SES uses the value of the <code>SourceArn</code> parameter.
      * </p>
-     * <note>For information about when to use this parameter, see the
-     * description of <code>SendRawEmail</code> in this guide, or see the <a
-     * href=
+     * <note>
+     * <p>
+     * For information about when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
-     * >Amazon SES Developer Guide</a>. </note>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </note>
      * 
      * @param sourceArn
      *        This parameter is used only for sending authorization. It is the
@@ -825,11 +1037,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        corresponding X-header, Amazon SES uses the value of the
      *        <code>SourceArn</code> parameter.
      *        </p>
-     *        <note>For information about when to use this parameter, see the
+     *        <note>
+     *        <p>
+     *        For information about when to use this parameter, see the
      *        description of <code>SendRawEmail</code> in this guide, or see the
      *        <a href=
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -862,11 +1077,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * corresponding X-header, Amazon SES uses the value of the
      * <code>ReturnPathArn</code> parameter.
      * </p>
-     * <note>For information about when to use this parameter, see the
-     * description of <code>SendRawEmail</code> in this guide, or see the <a
-     * href=
+     * <note>
+     * <p>
+     * For information about when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
-     * >Amazon SES Developer Guide</a>. </note>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </note>
      * 
      * @param returnPathArn
      *        This parameter is used only for sending authorization. It is the
@@ -891,11 +1109,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        and the corresponding X-header, Amazon SES uses the value of the
      *        <code>ReturnPathArn</code> parameter.
      *        </p>
-     *        <note>For information about when to use this parameter, see the
+     *        <note>
+     *        <p>
+     *        For information about when to use this parameter, see the
      *        description of <code>SendRawEmail</code> in this guide, or see the
      *        <a href=
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
+     *        </p>
      */
 
     public void setReturnPathArn(String returnPathArn) {
@@ -925,11 +1146,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * corresponding X-header, Amazon SES uses the value of the
      * <code>ReturnPathArn</code> parameter.
      * </p>
-     * <note>For information about when to use this parameter, see the
-     * description of <code>SendRawEmail</code> in this guide, or see the <a
-     * href=
+     * <note>
+     * <p>
+     * For information about when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
-     * >Amazon SES Developer Guide</a>. </note>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </note>
      * 
      * @return This parameter is used only for sending authorization. It is the
      *         ARN of the identity that is associated with the sending
@@ -953,11 +1177,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *         and the corresponding X-header, Amazon SES uses the value of the
      *         <code>ReturnPathArn</code> parameter.
      *         </p>
-     *         <note>For information about when to use this parameter, see the
+     *         <note>
+     *         <p>
+     *         For information about when to use this parameter, see the
      *         description of <code>SendRawEmail</code> in this guide, or see
      *         the <a href=
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *         >Amazon SES Developer Guide</a>.
+     *         </p>
      */
 
     public String getReturnPathArn() {
@@ -987,11 +1214,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * corresponding X-header, Amazon SES uses the value of the
      * <code>ReturnPathArn</code> parameter.
      * </p>
-     * <note>For information about when to use this parameter, see the
-     * description of <code>SendRawEmail</code> in this guide, or see the <a
-     * href=
+     * <note>
+     * <p>
+     * For information about when to use this parameter, see the description of
+     * <code>SendRawEmail</code> in this guide, or see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
-     * >Amazon SES Developer Guide</a>. </note>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </note>
      * 
      * @param returnPathArn
      *        This parameter is used only for sending authorization. It is the
@@ -1016,11 +1246,14 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        and the corresponding X-header, Amazon SES uses the value of the
      *        <code>ReturnPathArn</code> parameter.
      *        </p>
-     *        <note>For information about when to use this parameter, see the
+     *        <note>
+     *        <p>
+     *        For information about when to use this parameter, see the
      *        description of <code>SendRawEmail</code> in this guide, or see the
      *        <a href=
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

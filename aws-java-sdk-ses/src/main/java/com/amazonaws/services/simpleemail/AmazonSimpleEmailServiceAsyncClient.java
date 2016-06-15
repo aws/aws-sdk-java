@@ -31,10 +31,13 @@ import com.amazonaws.annotation.ThreadSafe;
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html"
  * >Amazon SES Developer Guide</a>.
  * </p>
- * <note>For a list of Amazon SES endpoints to use in service requests, see <a
- * href
- * ="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
- * and Amazon SES</a> in the Amazon SES Developer Guide. </note>
+ * <note>
+ * <p>
+ * For a list of Amazon SES endpoints to use in service requests, see <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html"
+ * >Regions and Amazon SES</a> in the Amazon SES Developer Guide.
+ * </p>
+ * </note>
  */
 @ThreadSafe
 public class AmazonSimpleEmailServiceAsyncClient extends
@@ -1513,6 +1516,42 @@ public class AmazonSimpleEmailServiceAsyncClient extends
 
                         try {
                             result = setIdentityFeedbackForwardingEnabled(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetIdentityHeadersInNotificationsEnabledResult> setIdentityHeadersInNotificationsEnabledAsync(
+            SetIdentityHeadersInNotificationsEnabledRequest request) {
+
+        return setIdentityHeadersInNotificationsEnabledAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetIdentityHeadersInNotificationsEnabledResult> setIdentityHeadersInNotificationsEnabledAsync(
+            final SetIdentityHeadersInNotificationsEnabledRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetIdentityHeadersInNotificationsEnabledRequest, SetIdentityHeadersInNotificationsEnabledResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<SetIdentityHeadersInNotificationsEnabledResult>() {
+                    @Override
+                    public SetIdentityHeadersInNotificationsEnabledResult call()
+                            throws Exception {
+                        SetIdentityHeadersInNotificationsEnabledResult result;
+
+                        try {
+                            result = setIdentityHeadersInNotificationsEnabled(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

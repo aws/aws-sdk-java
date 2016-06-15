@@ -19,7 +19,9 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Represents the custom MAIL FROM attributes for a list of identities.
+ * </p>
  */
 public class GetIdentityMailFromDomainAttributesResult implements Serializable,
         Cloneable {

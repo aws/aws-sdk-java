@@ -15,36 +15,25 @@
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.annotation.SdkInternalApi;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAnnotationRegistry.AnnotationMap;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAutoGeneratorRegistry.Generator;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.SaveBehavior;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBReflectionRegistry.BeanProperty;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties.BeanProperty;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.BooleanToBooleanMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CustomMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.CustomUnmarshaller;
+import com.amazonaws.services.dynamodbv2.model.KeyType;
 
 /**
  * Reflection assistant for {@link DynamoDBMapper}
  */
 @SdkInternalApi
 final class DynamoDBMappingsRegistry {
-
-    /**
-     * The logging utility.
-     */
-    private static final Log log = LogFactory.getLog(DynamoDBMappingsRegistry.class);
 
     /**
      * The default instance.
@@ -65,28 +54,13 @@ final class DynamoDBMappingsRegistry {
     private final ConcurrentMap<Class<?>, Mappings> mappings = new ConcurrentHashMap<Class<?>, Mappings>();
 
     /**
-     * The reflection registry.
-     */
-    private final DynamoDBReflectionRegistry reflectionRegistry = new DynamoDBReflectionRegistry();
-
-    /**
-     * The annotation registry.
-     */
-    private final DynamoDBAnnotationRegistry annotationRegistry = new DynamoDBAnnotationRegistry();
-
-    /**
-     * The auto-generator registry.
-     */
-    private final DynamoDBAutoGeneratorRegistry generatorRegistry = new DynamoDBAutoGeneratorRegistry();
-
-    /**
      * Gets the mapping definition for a given class.
      * @param clazz The class.
      * @return The mapping definition.
      */
     final Mappings mappingsOf(final Class<?> clazz) {
         if (!mappings.containsKey(clazz)) {
-            mappings.putIfAbsent(clazz, new Mappings(clazz, this));
+            mappings.putIfAbsent(clazz, new Mappings(clazz));
         }
         return mappings.get(clazz);
     }
@@ -101,100 +75,33 @@ final class DynamoDBMappingsRegistry {
     }
 
     /**
-     * Get the collection of mappings for the given clazz.
-     * @param clazz The class.
-     * @param mappings The mappings.
-     * @return The mappings.
-     */
-    private final Collection<Mapping> map(final Class<?> clazz, final Mappings mappings) {
-        final Collection<BeanProperty> properties = reflectionRegistry.beanPropertiesOf(clazz);
-        final Collection<Mapping> map = new ArrayList<Mapping>(properties.size());
-
-        for (final BeanProperty property : properties) {
-            if (!clazz.equals(property.getDeclaringType())) {
-                final AnnotationMap annotations = annotationRegistry.annotationsOf(property.getDeclaringType());
-                if (!annotations.isTable() && !annotations.isDocument()) {
-                    continue;
-                }
-            }
-
-            final AnnotationMap annotations = annotationRegistry.annotationsOf(property.getGetter(), property.getField());
-
-            if (annotations.isIgnore()) {
-                continue;
-            }
-
-            final Generator<Object> generator = generatorRegistry.generatorOf(property.getGetterType(), annotations);
-
-            String attributeName = annotations.getAttributeName();
-            if (attributeName == null) {
-                attributeName = property.getFieldName();
-            }
-
-            map.add(new Mapping(mappings, property, annotations, generator, attributeName));
-        }
-
-        return map;
-    }
-
-    /**
      * Holds the properties for mapping an object.
      */
     static final class Mappings {
-        private final Class<?> objectType;
-        private final AnnotationMap annotations;
+        private final Class<Object> objectType;
         private final Map<String, Mapping> byNames = new HashMap<String, Mapping>();
         private final Map<Method, Mapping> byGetters = new HashMap<Method, Mapping>();
-        private final Collection<Mapping> primaryKeys = new HashSet<Mapping>();
-        private Mapping hashKey, rangeKey;
+        private final Map<KeyType, Mapping> byKeyTypes = new HashMap<KeyType, Mapping>();
 
         /**
          * Constructs a mapping definition for the specified class.
          * @param clazz The class.
-         * @param registry The mappings registry.
          */
-        private Mappings(final Class<?> clazz, final DynamoDBMappingsRegistry registry) {
-            objectType = clazz;
-            annotations = registry.annotationRegistry.annotationsOf(clazz);
-
-            for (final Mapping mapping : registry.map(clazz, this)) {
+        private Mappings(final Class<?> clazz) {
+            objectType = (Class<Object>)clazz;
+            for (final Map.Entry<String,BeanProperty<Object,Object>> bean : StandardBeanProperties.of(objectType).entrySet()) {
+                final Mapping mapping = new Mapping(bean.getKey(), bean.getValue());
                 if (byNames.containsKey(mapping.getAttributeName())) {
-                    throw new DynamoDBMappingException("Class " + getObjectType().getName() + " maps duplicate attributes named " + mapping.getAttributeName());
+                    throw new DynamoDBMappingException(objectType +
+                        " maps duplicate attributes named " + mapping.getAttributeName());
                 }
-
-                if (mapping.isHashKey()) {
-                    if (hasHashKey()) {
-                        throw new DynamoDBMappingException("Class " + getObjectType().getName() + " maps @DynamoDBHashKey to multiple attributes");
-                    }
-                    hashKey = mapping;
-                    primaryKeys.add(mapping);
+                if (mapping.isPrimaryKey() && byKeyTypes.put(mapping.bean().annotations().keyType(), mapping) != null) {
+                    throw new DynamoDBMappingException(objectType +
+                        " maps multiple " + mapping.bean().annotations().keyType() +  " key attributes");
                 }
-
-                if (mapping.isRangeKey()) {
-                    if (hasRangeKey()) {
-                        throw new DynamoDBMappingException("Class " + getObjectType().getName() + " maps @DynamoDBRangeKey to multiple attributes");
-                    }
-                    rangeKey = mapping;
-                    primaryKeys.add(mapping);
-                }
-
                 byNames.put(mapping.getAttributeName(), mapping);
                 byGetters.put(mapping.getter(), mapping);
             }
-
-            //verify that hash key exists, for legacy reasons we can't throw an exception here but we should,
-            //instead we throw in getHashKey until a new version can allow for this change
-            if (annotations.isTable() && !hasHashKey()) {
-                log.warn("Class " + getObjectType().getName() + " does not map a @DynamoDBHashKey attribute");
-            }
-        }
-
-        /**
-         * Gets the object type.
-         * @return The object type.
-         */
-        final Class<?> getObjectType() {
-            return objectType;
         }
 
         /**
@@ -213,7 +120,7 @@ final class DynamoDBMappingsRegistry {
         final Mapping getMapping(final Method method) {
             final Mapping mapping = byGetters.get(method);
             if (mapping == null) {
-                throw new DynamoDBMappingException("Class " + getObjectType().getName() + " does not map any getter named " + method.getName());
+                throw new DynamoDBMappingException(objectType + " does not map any getter named " + method.getName());
             }
             return mapping;
         }
@@ -223,15 +130,7 @@ final class DynamoDBMappingsRegistry {
          * @return The key attributes.
          */
         final Collection<Mapping> getPrimaryKeys() {
-            return primaryKeys;
-        }
-
-        /**
-         * Determines if the mapping has a hash key attribute.
-         * @return True if range key is present, false otherwise.
-         */
-        final boolean hasHashKey() {
-            return (hashKey != null);
+            return byKeyTypes.values();
         }
 
         /**
@@ -239,11 +138,11 @@ final class DynamoDBMappingsRegistry {
          * @return The range key attribute.
          */
         final Mapping getHashKey() {
-            if (!hasHashKey()) {
-                throw new DynamoDBMappingException("Class " + getObjectType().getName() + " does not map a @DynamoDBHashKey attribute" +
+            if (!byKeyTypes.containsKey(KeyType.HASH)) {
+                throw new DynamoDBMappingException(objectType + " does not map a @DynamoDBHashKey attribute" +
                     "; ensure a public, zero-parameter get method/field is annotated");
             }
-            return hashKey;
+            return byKeyTypes.get(KeyType.HASH);
         }
 
         /**
@@ -251,7 +150,7 @@ final class DynamoDBMappingsRegistry {
          * @return True if range key is present, false otherwise.
          */
         final boolean hasRangeKey() {
-            return (rangeKey != null);
+            return byKeyTypes.containsKey(KeyType.RANGE);
         }
 
         /**
@@ -259,40 +158,22 @@ final class DynamoDBMappingsRegistry {
          * @return The attribute mapping.
          */
         final Mapping getRangeKey() {
-            return rangeKey;
-        }
-
-        /**
-         * Determines if this is a document type.
-         * @return True if document type, false otherwise.
-         */
-        final boolean isDocument() {
-            return annotations.isDocument();
-        }
-
-        /**
-         * Gets the table name; does not account for any overrides.
-         * @return The table name.
-         */
-        final String getTableName() {
-            if (!annotations.isTable()) {
-                throw new DynamoDBMappingException("Class " + getObjectType().getName() + " must be annotated with @DynamoDBTable");
-            }
-            return annotations.getTableName();
+            return byKeyTypes.get(KeyType.RANGE);
         }
 
         /**
          * Determnes if any of the primary keys require auto-generation.
-         * @param objectValue The object to evaluate.
+         * @param object The object to evaluate.
+         * @param saveBehaviour The save behaviour.
          * @return True if any keys should be auto-generated.
          */
-        final boolean anyPrimaryKeyAutoGeneratable(final Object objectValue) {
-            for (final Mapping primaryKey : getPrimaryKeys()) {
-                if (primaryKey.isAutoGeneratedKey()) {
-                    final Object primaryKeyValue = primaryKey.getValueOf(objectValue);
-                    if (primaryKey.getAutoGenerator().canGenerate(primaryKeyValue)) {
-                        return true;
-                    }
+        final boolean anyKeyGeneratable(final Object object, final SaveBehavior saveBehavior) {
+            if (byKeyTypes.isEmpty()) {
+                throw new DynamoDBMappingException("no key(s) present on " + objectType);
+            }
+            for (final Mapping primaryKey : byKeyTypes.values()) {
+                if (primaryKey.canGenerate(object, saveBehavior)) {
+                    return true;
                 }
             }
             return false;
@@ -303,34 +184,25 @@ final class DynamoDBMappingsRegistry {
      * Holds the properties for mapping an object attribute.
      */
     static final class Mapping {
-        private final Mappings mappings;
-        private final BeanProperty property;
-        private final AnnotationMap annotations;
-        private final Generator<Object> generator;
+        private final BeanProperty<Object,Object> bean;
         private final String attributeName;
 
         /**
          * Constructs an object attribute mapping for the specified method.
-         * @param mappings The parent mappings reference.
-         * @param property The reflection property.
-         * @param annotations The annotations.
-         * @param generator The generator.
+         * @param bean The bean property.
          * @param attributeName The attribute name.
          */
-        private Mapping(final Mappings mappings, final BeanProperty property, final AnnotationMap annotations, final Generator<Object> generator, final String attributeName) {
-            this.mappings = mappings;
-            this.property = property;
-            this.annotations = annotations;
-            this.generator = generator;
+        private Mapping(final String attributeName, final BeanProperty<Object,Object> bean) {
             this.attributeName = attributeName;
+            this.bean = bean;
         }
 
         /**
-         * Gets the auto-generator for this attribute.
-         * @return The auto-generator.
+         * Gets the bean property.
+         * @return The bean property.
          */
-        private final Generator<Object> getAutoGenerator() {
-            return generator;
+        final BeanProperty<Object,Object> bean() {
+            return this.bean;
         }
 
         /**
@@ -338,33 +210,7 @@ final class DynamoDBMappingsRegistry {
          * @return The getter method.
          */
         final Method getter() {
-            return property.getGetter();
-        }
-
-        /**
-         * Gets the setter method for this attribute.
-         * @return The setter method.
-         */
-        final Method setter() {
-            return property.getSetter();
-        }
-
-        /**
-         * Tries to get the attribute value from the object.
-         * @param target The target object.
-         * @return The attribute value.
-         */
-        final Object getValueOf(final Object target) {
-            return property.getValueOf(target);
-        }
-
-        /**
-         * Tries to set the attribute value on the object.
-         * @param target The target object.
-         * @param value The value.
-         */
-        final void setValueOf(final Object target, final Object value) {
-            property.setValueOf(target, value);
+            return bean.getter();
         }
 
         /**
@@ -372,23 +218,7 @@ final class DynamoDBMappingsRegistry {
          *         False otherwise.
          */
         final boolean isPrimaryKey() {
-            return isHashKey() || isRangeKey();
-        }
-
-        /**
-         * Determines if this attribute maps to an auto-generated key.
-         * @return True if it maps, false otherwise.
-         */
-        final boolean isAutoGeneratedKey() {
-            return annotations.isAutoGeneratedKey();
-        }
-
-        /**
-         * Determines if this attribute maps to an auto-generated timestamp.
-         * @return True if it maps, false otherwise.
-         */
-        final boolean isAutoGeneratedTimestamp() {
-            return annotations.isAutoGeneratedTimestamp();
+            return bean.annotations().keyType() != null;
         }
 
         /**
@@ -396,7 +226,7 @@ final class DynamoDBMappingsRegistry {
          * @return True if it maps, false otherwise.
          */
         final boolean isHashKey() {
-            return annotations.isHashKey();
+            return bean.annotations().hashKey() != null;
         }
 
         /**
@@ -404,23 +234,7 @@ final class DynamoDBMappingsRegistry {
          * @return True if it maps, false otherwise.
          */
         final boolean isIndexHashKey() {
-            return annotations.isIndexHashKey();
-        }
-
-        /**
-         * Determines if this attribute maps to an index range key.
-         * @return True if it maps, false otherwise.
-         */
-        final boolean isIndexRangeKey() {
-            return annotations.isIndexRangeKey();
-        }
-
-        /**
-         * Determines if this attribute maps to a range key.
-         * @return True if it maps, false otherwise.
-         */
-        final boolean isRangeKey() {
-            return annotations.isRangeKey();
+            return bean.annotations().indexHashKey() != null;
         }
 
         /**
@@ -428,7 +242,7 @@ final class DynamoDBMappingsRegistry {
          * @return True if it maps, false otherwise.
          */
         final boolean isVersion() {
-            return annotations.isVersion();
+            return bean.annotations().versioned();
         }
 
         /**
@@ -440,52 +254,13 @@ final class DynamoDBMappingsRegistry {
         }
 
         /**
-         * Gets the global secondary index names if applicable.
-         * @return The names.
-         */
-        final Collection<String> getGlobalSecondaryIndexNamesOfIndexHashKey() {
-            final Collection<String> indexNames = annotations.getGlobalSecondaryIndexNamesOfIndexHashKey();
-            if (indexNames.isEmpty()) {
-                throw new DynamoDBMappingException(
-                    "@DynamoDBIndexHashKey annotation on getter " + getter() +
-                    " doesn't contain any index name.");
-            }
-            return indexNames;
-        }
-
-        /**
-         * Gets the global secondary index names if applicable.
-         * @return The names.
-         */
-        final Collection<String> getGlobalSecondaryIndexNamesOfIndexRangeKey() {
-            return annotations.getGlobalSecondaryIndexNamesOfIndexRangeKey();
-        }
-
-        /**
-         * Gets the local secondary index names if applicable.
-         * @return The index names.
-         */
-        final Collection<String> getLocalSecondaryIndexNamesOfIndexRangeKey() {
-            return annotations.getLocalSecondaryIndexNamesOfIndexRangeKey();
-        }
-
-        /**
-         * Determines if this attribute maps to an auto-generate strategy.
-         * @return The auto-generate strategy.
-         */
-        final DynamoDBAutoGenerateStrategy getAutoGenerateStrategy() {
-            return annotations.getAutoGenerateStrategy();
-        }
-
-        /**
          * Gets the custom marshaller.
          * @return The marshaller or null if default should be used.
          */
         final ArgumentMarshaller getCustomMarshaller() {
-            final Class<? extends DynamoDBMarshaller<?>> marshallerClass = annotations.getMarshallerClass();
-            if (marshallerClass != null) {
-                return new CustomMarshaller(marshallerClass);
-            } else if (annotations.isNativeBoolean()) {
+            if (bean.annotations().marshalling() != null) {
+                return new CustomMarshaller(bean.annotations().marshalling().marshallerClass());
+            } else if (bean.annotations().nativeBoolean() != null) {
                 return BooleanToBooleanMarshaller.instance();
             }
             return null;
@@ -496,39 +271,34 @@ final class DynamoDBMappingsRegistry {
          * @return The unmarshaller or null if default should be used.
          */
         final ArgumentUnmarshaller getCustomUnmarshaller() {
-            final Class<? extends DynamoDBMarshaller<?>> marshallerClass = annotations.getMarshallerClass();
-            if (marshallerClass != null) {
-                return new CustomUnmarshaller(property.getGetterType(), marshallerClass);
+            if (bean.annotations().marshalling() != null) {
+                return new CustomUnmarshaller(bean.valueType(), bean.annotations().marshalling().marshallerClass());
             }
             return null;
         }
 
         /**
          * Determines if the mapping value can be auto-generated.
-         * @param value The current mapped value.
-         * @param objectValue The object instance.
+         * @param object The object instance.
          * @param saveBehaviour The save behaviour.
          * @return True if can be auto-generated, false otherwise.
          */
-        final boolean canAutoGenerate(final Object value, final Object objectValue, final SaveBehavior saveBehavior) {
-            if (!getAutoGenerator().canGenerate(value)) {
+        final boolean canGenerate(final Object object, final SaveBehavior saveBehavior) {
+            if (bean.getGenerateStrategy() == null) {
                 return false;
-            } else if (isPrimaryKey() || isIndexHashKey() || isIndexRangeKey()) {
-                return isAutoGeneratedKey();
-            } else if (DynamoDBAutoGenerateStrategy.CREATE == getAutoGenerateStrategy()) {
-                return (saveBehavior == SaveBehavior.CLOBBER || saveBehavior == SaveBehavior.UPDATE || mappings.anyPrimaryKeyAutoGeneratable(objectValue));
-            } else {
+            } else if (DynamoDBAutoGenerateStrategy.ALWAYS == bean.getGenerateStrategy()) {
                 return true;
+            } else if (bean.get(object) != null) {
+                return false;
+            } else if (bean.annotations().keyType() != null || bean.annotations().indexed()) {
+                return true;
+            } else if (saveBehavior == SaveBehavior.CLOBBER || saveBehavior == SaveBehavior.UPDATE) {
+                return true;
+            } else if (instance().mappingsOf(object.getClass()).anyKeyGeneratable(object, saveBehavior)) {
+                return true;
+            } else {
+                return false;
             }
-        }
-
-        /**
-         * Auto-genertes the value given the current value.
-         * @param value The current value.
-         * @return The auto-generated value.
-         */
-        final Object autoGenerate(final Object value) {
-            return getAutoGenerator().generate(value);
         }
     }
 

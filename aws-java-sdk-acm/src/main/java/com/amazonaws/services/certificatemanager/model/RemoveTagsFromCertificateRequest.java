@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * 
  */
 public class RemoveTagsFromCertificateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -63,7 +63,7 @@ public class RemoveTagsFromCertificateRequest extends AmazonWebServiceRequest
      * 
      * @param certificateArn
      *        String that contains the ARN of the ACM Certificate with one or
-     *        more tags that you want to remove. This must be of the form: </p>
+     *        more tags that you want to remove. This must be of the form:</p>
      *        <p>
      *        <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      *        </p>
@@ -92,7 +92,7 @@ public class RemoveTagsFromCertificateRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return String that contains the ARN of the ACM Certificate with one or
-     *         more tags that you want to remove. This must be of the form: </p>
+     *         more tags that you want to remove. This must be of the form:</p>
      *         <p>
      *         <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      *         </p>
@@ -122,7 +122,7 @@ public class RemoveTagsFromCertificateRequest extends AmazonWebServiceRequest
      * 
      * @param certificateArn
      *        String that contains the ARN of the ACM Certificate with one or
-     *        more tags that you want to remove. This must be of the form: </p>
+     *        more tags that you want to remove. This must be of the form:</p>
      *        <p>
      *        <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      *        </p>

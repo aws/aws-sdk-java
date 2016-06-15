@@ -19,7 +19,9 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Represents a unique message ID.
+ * </p>
  */
 public class SendRawEmailResult implements Serializable, Cloneable {
 

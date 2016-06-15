@@ -74,11 +74,15 @@ public class LambdaAction implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
      * Lambda Developer Guide</a>.
      * </p>
-     * <important>There is a 30-second timeout on <code>RequestResponse</code>
-     * invocations. You should use <code>Event</code> invocation in most cases.
-     * Use <code>RequestResponse</code> only when you want to make a mail flow
+     * <important>
+     * <p>
+     * There is a 30-second timeout on <code>RequestResponse</code> invocations.
+     * You should use <code>Event</code> invocation in most cases. Use
+     * <code>RequestResponse</code> only when you want to make a mail flow
      * decision, such as whether to stop the receipt rule or the receipt rule
-     * set.</important>
+     * set.
+     * </p>
+     * </important>
      */
     private String invocationType;
 
@@ -236,11 +240,15 @@ public class LambdaAction implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
      * Lambda Developer Guide</a>.
      * </p>
-     * <important>There is a 30-second timeout on <code>RequestResponse</code>
-     * invocations. You should use <code>Event</code> invocation in most cases.
-     * Use <code>RequestResponse</code> only when you want to make a mail flow
+     * <important>
+     * <p>
+     * There is a 30-second timeout on <code>RequestResponse</code> invocations.
+     * You should use <code>Event</code> invocation in most cases. Use
+     * <code>RequestResponse</code> only when you want to make a mail flow
      * decision, such as whether to stop the receipt rule or the receipt rule
-     * set.</important>
+     * set.
+     * </p>
+     * </important>
      * 
      * @param invocationType
      *        The invocation type of the AWS Lambda function. An invocation type
@@ -250,12 +258,14 @@ public class LambdaAction implements Serializable, Cloneable {
      *        asynchronously. The default value is <code>Event</code>. For
      *        information about AWS Lambda invocation types, see the <a href=
      *        "http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     *        Lambda Developer Guide</a>.</p> <important>There is a 30-second
-     *        timeout on <code>RequestResponse</code> invocations. You should
-     *        use <code>Event</code> invocation in most cases. Use
-     *        <code>RequestResponse</code> only when you want to make a mail
-     *        flow decision, such as whether to stop the receipt rule or the
-     *        receipt rule set.
+     *        Lambda Developer Guide</a>.</p> <important>
+     *        <p>
+     *        There is a 30-second timeout on <code>RequestResponse</code>
+     *        invocations. You should use <code>Event</code> invocation in most
+     *        cases. Use <code>RequestResponse</code> only when you want to make
+     *        a mail flow decision, such as whether to stop the receipt rule or
+     *        the receipt rule set.
+     *        </p>
      * @see InvocationType
      */
 
@@ -274,11 +284,15 @@ public class LambdaAction implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
      * Lambda Developer Guide</a>.
      * </p>
-     * <important>There is a 30-second timeout on <code>RequestResponse</code>
-     * invocations. You should use <code>Event</code> invocation in most cases.
-     * Use <code>RequestResponse</code> only when you want to make a mail flow
+     * <important>
+     * <p>
+     * There is a 30-second timeout on <code>RequestResponse</code> invocations.
+     * You should use <code>Event</code> invocation in most cases. Use
+     * <code>RequestResponse</code> only when you want to make a mail flow
      * decision, such as whether to stop the receipt rule or the receipt rule
-     * set.</important>
+     * set.
+     * </p>
+     * </important>
      * 
      * @return The invocation type of the AWS Lambda function. An invocation
      *         type of <code>RequestResponse</code> means that the execution of
@@ -287,12 +301,14 @@ public class LambdaAction implements Serializable, Cloneable {
      *         asynchronously. The default value is <code>Event</code>. For
      *         information about AWS Lambda invocation types, see the <a href=
      *         "http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     *         Lambda Developer Guide</a>.</p> <important>There is a 30-second
-     *         timeout on <code>RequestResponse</code> invocations. You should
-     *         use <code>Event</code> invocation in most cases. Use
-     *         <code>RequestResponse</code> only when you want to make a mail
-     *         flow decision, such as whether to stop the receipt rule or the
-     *         receipt rule set.
+     *         Lambda Developer Guide</a>.</p> <important>
+     *         <p>
+     *         There is a 30-second timeout on <code>RequestResponse</code>
+     *         invocations. You should use <code>Event</code> invocation in most
+     *         cases. Use <code>RequestResponse</code> only when you want to
+     *         make a mail flow decision, such as whether to stop the receipt
+     *         rule or the receipt rule set.
+     *         </p>
      * @see InvocationType
      */
 
@@ -311,11 +327,15 @@ public class LambdaAction implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
      * Lambda Developer Guide</a>.
      * </p>
-     * <important>There is a 30-second timeout on <code>RequestResponse</code>
-     * invocations. You should use <code>Event</code> invocation in most cases.
-     * Use <code>RequestResponse</code> only when you want to make a mail flow
+     * <important>
+     * <p>
+     * There is a 30-second timeout on <code>RequestResponse</code> invocations.
+     * You should use <code>Event</code> invocation in most cases. Use
+     * <code>RequestResponse</code> only when you want to make a mail flow
      * decision, such as whether to stop the receipt rule or the receipt rule
-     * set.</important>
+     * set.
+     * </p>
+     * </important>
      * 
      * @param invocationType
      *        The invocation type of the AWS Lambda function. An invocation type
@@ -325,12 +345,14 @@ public class LambdaAction implements Serializable, Cloneable {
      *        asynchronously. The default value is <code>Event</code>. For
      *        information about AWS Lambda invocation types, see the <a href=
      *        "http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     *        Lambda Developer Guide</a>.</p> <important>There is a 30-second
-     *        timeout on <code>RequestResponse</code> invocations. You should
-     *        use <code>Event</code> invocation in most cases. Use
-     *        <code>RequestResponse</code> only when you want to make a mail
-     *        flow decision, such as whether to stop the receipt rule or the
-     *        receipt rule set.
+     *        Lambda Developer Guide</a>.</p> <important>
+     *        <p>
+     *        There is a 30-second timeout on <code>RequestResponse</code>
+     *        invocations. You should use <code>Event</code> invocation in most
+     *        cases. Use <code>RequestResponse</code> only when you want to make
+     *        a mail flow decision, such as whether to stop the receipt rule or
+     *        the receipt rule set.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InvocationType
@@ -352,11 +374,15 @@ public class LambdaAction implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
      * Lambda Developer Guide</a>.
      * </p>
-     * <important>There is a 30-second timeout on <code>RequestResponse</code>
-     * invocations. You should use <code>Event</code> invocation in most cases.
-     * Use <code>RequestResponse</code> only when you want to make a mail flow
+     * <important>
+     * <p>
+     * There is a 30-second timeout on <code>RequestResponse</code> invocations.
+     * You should use <code>Event</code> invocation in most cases. Use
+     * <code>RequestResponse</code> only when you want to make a mail flow
      * decision, such as whether to stop the receipt rule or the receipt rule
-     * set.</important>
+     * set.
+     * </p>
+     * </important>
      * 
      * @param invocationType
      *        The invocation type of the AWS Lambda function. An invocation type
@@ -366,12 +392,14 @@ public class LambdaAction implements Serializable, Cloneable {
      *        asynchronously. The default value is <code>Event</code>. For
      *        information about AWS Lambda invocation types, see the <a href=
      *        "http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     *        Lambda Developer Guide</a>.</p> <important>There is a 30-second
-     *        timeout on <code>RequestResponse</code> invocations. You should
-     *        use <code>Event</code> invocation in most cases. Use
-     *        <code>RequestResponse</code> only when you want to make a mail
-     *        flow decision, such as whether to stop the receipt rule or the
-     *        receipt rule set.
+     *        Lambda Developer Guide</a>.</p> <important>
+     *        <p>
+     *        There is a 30-second timeout on <code>RequestResponse</code>
+     *        invocations. You should use <code>Event</code> invocation in most
+     *        cases. Use <code>RequestResponse</code> only when you want to make
+     *        a mail flow decision, such as whether to stop the receipt rule or
+     *        the receipt rule set.
+     *        </p>
      * @see InvocationType
      */
 
@@ -390,11 +418,15 @@ public class LambdaAction implements Serializable, Cloneable {
      * href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
      * Lambda Developer Guide</a>.
      * </p>
-     * <important>There is a 30-second timeout on <code>RequestResponse</code>
-     * invocations. You should use <code>Event</code> invocation in most cases.
-     * Use <code>RequestResponse</code> only when you want to make a mail flow
+     * <important>
+     * <p>
+     * There is a 30-second timeout on <code>RequestResponse</code> invocations.
+     * You should use <code>Event</code> invocation in most cases. Use
+     * <code>RequestResponse</code> only when you want to make a mail flow
      * decision, such as whether to stop the receipt rule or the receipt rule
-     * set.</important>
+     * set.
+     * </p>
+     * </important>
      * 
      * @param invocationType
      *        The invocation type of the AWS Lambda function. An invocation type
@@ -404,12 +436,14 @@ public class LambdaAction implements Serializable, Cloneable {
      *        asynchronously. The default value is <code>Event</code>. For
      *        information about AWS Lambda invocation types, see the <a href=
      *        "http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     *        Lambda Developer Guide</a>.</p> <important>There is a 30-second
-     *        timeout on <code>RequestResponse</code> invocations. You should
-     *        use <code>Event</code> invocation in most cases. Use
-     *        <code>RequestResponse</code> only when you want to make a mail
-     *        flow decision, such as whether to stop the receipt rule or the
-     *        receipt rule set.
+     *        Lambda Developer Guide</a>.</p> <important>
+     *        <p>
+     *        There is a 30-second timeout on <code>RequestResponse</code>
+     *        invocations. You should use <code>Event</code> invocation in most
+     *        cases. Use <code>RequestResponse</code> only when you want to make
+     *        a mail flow decision, such as whether to stop the receipt rule or
+     *        the receipt rule set.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InvocationType

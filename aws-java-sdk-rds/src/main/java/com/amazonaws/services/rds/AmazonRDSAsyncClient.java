@@ -3282,6 +3282,41 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DBCluster> promoteReadReplicaDBClusterAsync(
+            PromoteReadReplicaDBClusterRequest request) {
+
+        return promoteReadReplicaDBClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBCluster> promoteReadReplicaDBClusterAsync(
+            final PromoteReadReplicaDBClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PromoteReadReplicaDBClusterRequest, DBCluster> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DBCluster>() {
+                    @Override
+                    public DBCluster call() throws Exception {
+                        DBCluster result;
+
+                        try {
+                            result = promoteReadReplicaDBCluster(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<ReservedDBInstance> purchaseReservedDBInstancesOfferingAsync(
             PurchaseReservedDBInstancesOfferingRequest request) {
 

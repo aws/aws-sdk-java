@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
-import java.lang.reflect.Method;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -71,15 +70,12 @@ class DynamoDBTableSchemaParser {
         final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
 
         // Primary keys
-        Method pHashKeyGetter = mappings.getHashKey().getter();
-        AttributeDefinition pHashAttrDefinition = getKeyAttributeDefinition(pHashKeyGetter, converter);
+        AttributeDefinition pHashAttrDefinition = getKeyAttributeDefinition(mappings.getHashKey(), converter);
         createTableRequest.withKeySchema(new KeySchemaElement(pHashAttrDefinition.getAttributeName(), KeyType.HASH));
         // Primary range
-        Method pRangeKeyGetter = null;
         AttributeDefinition pRangeAttrDefinition = null;
         if (mappings.hasRangeKey()) {
-            pRangeKeyGetter = mappings.getRangeKey().getter();
-            pRangeAttrDefinition = getKeyAttributeDefinition(pRangeKeyGetter, converter);
+            pRangeAttrDefinition = getKeyAttributeDefinition(mappings.getRangeKey(), converter);
             createTableRequest.withKeySchema(new KeySchemaElement(pRangeAttrDefinition.getAttributeName(), KeyType.RANGE));
         }
 
@@ -97,11 +93,11 @@ class DynamoDBTableSchemaParser {
         // Hash key definition
         putAfterCheckConflict(attrDefinitions, pHashAttrDefinition);
         // Range key definition
-        if (pRangeKeyGetter != null) {
+        if (mappings.hasRangeKey()) {
             putAfterCheckConflict(attrDefinitions, pRangeAttrDefinition);
         }
-        for (Method indexKeyGetter : indexesInfo.getIndexKeyGetters()) {
-            AttributeDefinition indexKeyAttrDefinition = getKeyAttributeDefinition(indexKeyGetter, converter);
+        for (DynamoDBMappingsRegistry.Mapping indexKeyMapping : indexesInfo.getIndexKeyMappings()) {
+            AttributeDefinition indexKeyAttrDefinition = getKeyAttributeDefinition(indexKeyMapping, converter);
             putAfterCheckConflict(attrDefinitions, indexKeyAttrDefinition);
         }
         createTableRequest.setAttributeDefinitions(attrDefinitions.values());
@@ -134,31 +130,17 @@ class DynamoDBTableSchemaParser {
                 String pHashName = mappings.getHashKey().getAttributeName();
 
                 for (final DynamoDBMappingsRegistry.Mapping mapping : mappings.getMappings()) {
-                    String attributeName = mapping.getAttributeName();
-
-                    if (mapping.isIndexHashKey()) {
-                        Collection<String> gsiNames = mapping.getGlobalSecondaryIndexNamesOfIndexHashKey();
-                        for (String gsi : gsiNames) {
-                            tableIndexInfo.addGsiKeys(gsi, attributeName, null);
-                        }
-                        tableIndexInfo.addIndexKeyGetter(mapping.getter());
+                    for (String gsi : mapping.bean().annotations().globalSecondaryIndexNames(KeyType.HASH)) {
+                        tableIndexInfo.addGsiKeys(gsi, mapping.getAttributeName(), null);
+                        tableIndexInfo.addIndexKeyMapping(mapping);
                     }
-
-                    if (mapping.isIndexRangeKey()) {
-                        Collection<String> gsiNames = mapping.getGlobalSecondaryIndexNamesOfIndexRangeKey();
-                        Collection<String> lsiNames = mapping.getLocalSecondaryIndexNamesOfIndexRangeKey();
-                        if (gsiNames.isEmpty() && lsiNames.isEmpty()) {
-                            throw new DynamoDBMappingException(
-                                    "@DynamoDBIndexRangeKey annotation on getter " + mapping.getter() +
-                                    " doesn't contain any index name.");
-                        }
-                        for (String gsi : gsiNames) {
-                            tableIndexInfo.addGsiKeys(gsi, null, attributeName);
-                        }
-                        for (String lsi : lsiNames) {
-                            tableIndexInfo.addLsiRangeKey(lsi, pHashName, attributeName);
-                        }
-                        tableIndexInfo.addIndexKeyGetter(mapping.getter());
+                    for (String gsi : mapping.bean().annotations().globalSecondaryIndexNames(KeyType.RANGE)) {
+                        tableIndexInfo.addGsiKeys(gsi, null, mapping.getAttributeName());
+                        tableIndexInfo.addIndexKeyMapping(mapping);
+                    }
+                    for (String lsi : mapping.bean().annotations().localSecondaryIndexNames()) {
+                        tableIndexInfo.addLsiRangeKey(lsi, pHashName, mapping.getAttributeName());
+                        tableIndexInfo.addIndexKeyMapping(mapping);
                     }
                 } // end of for loop
                 tableIndexesInfoCache.put(clazz, tableIndexInfo);
@@ -168,18 +150,17 @@ class DynamoDBTableSchemaParser {
     }
 
     private static AttributeDefinition getKeyAttributeDefinition(
-            Method keyGetter,
+            DynamoDBMappingsRegistry.Mapping keyMapping,
             ItemConverter converter) {
 
-        DynamoDBMapperFieldModel fieldModel = converter.getFieldModel(keyGetter);
+        DynamoDBMapperFieldModel fieldModel = converter.getFieldModel(keyMapping.getter());
 
-        String keyAttrName = fieldModel.getDynamoDBAttributeName();
         DynamoDBAttributeType keyType = fieldModel.getDynamoDBAttributeType();
 
         if (keyType == DynamoDBAttributeType.S ||
             keyType == DynamoDBAttributeType.N ||
             keyType == DynamoDBAttributeType.B) {
-            return new AttributeDefinition(keyAttrName, keyType.toString());
+            return new AttributeDefinition(keyMapping.getAttributeName(), keyType.toString());
         }
 
         throw new DynamoDBMappingException(
@@ -219,7 +200,7 @@ class DynamoDBTableSchemaParser {
         private final Map<String, GlobalSecondaryIndex> gsiNameToGsiDefinition = new HashMap<String, GlobalSecondaryIndex>();
 
         /** All getter methods of index key attributes. */
-        private final Set<Method> indexKeyGetters = new HashSet<Method>();
+        private final Set<DynamoDBMappingsRegistry.Mapping> indexKeyMappings = new HashSet<DynamoDBMappingsRegistry.Mapping>();
 
         /**
          * Returns the names of all the annotated local secondary indexes that
@@ -396,12 +377,12 @@ class DynamoDBTableSchemaParser {
             }
         }
 
-        private void addIndexKeyGetter(Method indexKeyGetter) {
-            indexKeyGetters.add(indexKeyGetter);
+        private void addIndexKeyMapping(DynamoDBMappingsRegistry.Mapping indexKeyMapping) {
+            indexKeyMappings.add(indexKeyMapping);
         }
 
-        private Set<Method> getIndexKeyGetters() {
-            return Collections.unmodifiableSet(indexKeyGetters);
+        private Set<DynamoDBMappingsRegistry.Mapping> getIndexKeyMappings() {
+            return Collections.unmodifiableSet(indexKeyMappings);
         }
 
         private Collection<LocalSecondaryIndex> getLocalSecondaryIndexes() {

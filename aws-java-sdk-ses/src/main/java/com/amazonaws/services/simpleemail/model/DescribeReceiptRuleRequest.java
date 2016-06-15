@@ -20,7 +20,13 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Represents a request to return the details of a receipt rule. You use receipt
+ * rules to receive email with Amazon SES. For more information, see the <a
+ * href=
+ * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+ * >Amazon SES Developer Guide</a>.
+ * </p>
  */
 public class DescribeReceiptRuleRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

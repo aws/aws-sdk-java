@@ -536,6 +536,12 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DBCluster promoteReadReplicaDBCluster(
+            PromoteReadReplicaDBClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ReservedDBInstance purchaseReservedDBInstancesOffering(
             PurchaseReservedDBInstancesOfferingRequest request) {
         throw new java.lang.UnsupportedOperationException();

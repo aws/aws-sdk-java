@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "iot",
     "signingName" : "execute-api",
+    "jsonProtocol" : true,
     "serviceName" : "AWS IoT",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "xmlProtocol" : false,
-    "jsonProtocol" : true
+    "xmlProtocol" : false
   },
   "operations" : {
     "AcceptCertificateTransfer" : {

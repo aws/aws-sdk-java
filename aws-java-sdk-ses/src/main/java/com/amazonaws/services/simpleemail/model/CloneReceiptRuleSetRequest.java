@@ -20,7 +20,13 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Represents a request to create a receipt rule set by cloning an existing one.
+ * You use receipt rule sets to receive email with Amazon SES. For more
+ * information, see the <a href=
+ * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+ * >Amazon SES Developer Guide</a>.
+ * </p>
  */
 public class CloneReceiptRuleSetRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -30,10 +36,22 @@ public class CloneReceiptRuleSetRequest extends AmazonWebServiceRequest
      * The name of the rule set to create. The name must:
      * </p>
      * <ul>
-     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).</li>
-     * <li>Start and end with a letter or number.</li>
-     * <li>Contain less than 64 characters.</li>
+     * <li>
+     * <p>
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     * underscores (_), or dashes (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start and end with a letter or number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Contain less than 64 characters.
+     * </p>
+     * </li>
      * </ul>
      */
     private String ruleSetName;
@@ -49,19 +67,43 @@ public class CloneReceiptRuleSetRequest extends AmazonWebServiceRequest
      * The name of the rule set to create. The name must:
      * </p>
      * <ul>
-     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).</li>
-     * <li>Start and end with a letter or number.</li>
-     * <li>Contain less than 64 characters.</li>
+     * <li>
+     * <p>
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     * underscores (_), or dashes (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start and end with a letter or number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Contain less than 64 characters.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param ruleSetName
      *        The name of the rule set to create. The name must:</p>
      *        <ul>
-     *        <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *        (.), underscores (_), or dashes (-).</li>
-     *        <li>Start and end with a letter or number.</li>
-     *        <li>Contain less than 64 characters.</li>
+     *        <li>
+     *        <p>
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     *        underscores (_), or dashes (-).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Start and end with a letter or number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Contain less than 64 characters.
+     *        </p>
+     *        </li>
      */
 
     public void setRuleSetName(String ruleSetName) {
@@ -73,18 +115,42 @@ public class CloneReceiptRuleSetRequest extends AmazonWebServiceRequest
      * The name of the rule set to create. The name must:
      * </p>
      * <ul>
-     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).</li>
-     * <li>Start and end with a letter or number.</li>
-     * <li>Contain less than 64 characters.</li>
+     * <li>
+     * <p>
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     * underscores (_), or dashes (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start and end with a letter or number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Contain less than 64 characters.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The name of the rule set to create. The name must:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-).</li>
-     *         <li>Start and end with a letter or number.</li>
-     *         <li>Contain less than 64 characters.</li>
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start and end with a letter or number.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Contain less than 64 characters.
+     *         </p>
+     *         </li>
      */
 
     public String getRuleSetName() {
@@ -96,19 +162,43 @@ public class CloneReceiptRuleSetRequest extends AmazonWebServiceRequest
      * The name of the rule set to create. The name must:
      * </p>
      * <ul>
-     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).</li>
-     * <li>Start and end with a letter or number.</li>
-     * <li>Contain less than 64 characters.</li>
+     * <li>
+     * <p>
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     * underscores (_), or dashes (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start and end with a letter or number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Contain less than 64 characters.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param ruleSetName
      *        The name of the rule set to create. The name must:</p>
      *        <ul>
-     *        <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *        (.), underscores (_), or dashes (-).</li>
-     *        <li>Start and end with a letter or number.</li>
-     *        <li>Contain less than 64 characters.</li>
+     *        <li>
+     *        <p>
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     *        underscores (_), or dashes (-).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Start and end with a letter or number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Contain less than 64 characters.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

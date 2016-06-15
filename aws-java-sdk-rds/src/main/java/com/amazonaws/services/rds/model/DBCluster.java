@@ -196,6 +196,20 @@ public class DBCluster implements Serializable, Cloneable {
     private String preferredMaintenanceWindow;
     /**
      * <p>
+     * Contains the identifier of the source DB cluster if this DB cluster is a
+     * Read Replica.
+     * </p>
+     */
+    private String replicationSourceIdentifier;
+    /**
+     * <p>
+     * Contains one or more identifiers of the Read Replicas associated with
+     * this DB cluster.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> readReplicaIdentifiers;
+    /**
+     * <p>
      * Provides the list of instances that make up the DB cluster.
      * </p>
      */
@@ -1233,6 +1247,144 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Contains the identifier of the source DB cluster if this DB cluster is a
+     * Read Replica.
+     * </p>
+     * 
+     * @param replicationSourceIdentifier
+     *        Contains the identifier of the source DB cluster if this DB
+     *        cluster is a Read Replica.
+     */
+
+    public void setReplicationSourceIdentifier(
+            String replicationSourceIdentifier) {
+        this.replicationSourceIdentifier = replicationSourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * Contains the identifier of the source DB cluster if this DB cluster is a
+     * Read Replica.
+     * </p>
+     * 
+     * @return Contains the identifier of the source DB cluster if this DB
+     *         cluster is a Read Replica.
+     */
+
+    public String getReplicationSourceIdentifier() {
+        return this.replicationSourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * Contains the identifier of the source DB cluster if this DB cluster is a
+     * Read Replica.
+     * </p>
+     * 
+     * @param replicationSourceIdentifier
+     *        Contains the identifier of the source DB cluster if this DB
+     *        cluster is a Read Replica.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBCluster withReplicationSourceIdentifier(
+            String replicationSourceIdentifier) {
+        setReplicationSourceIdentifier(replicationSourceIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains one or more identifiers of the Read Replicas associated with
+     * this DB cluster.
+     * </p>
+     * 
+     * @return Contains one or more identifiers of the Read Replicas associated
+     *         with this DB cluster.
+     */
+
+    public java.util.List<String> getReadReplicaIdentifiers() {
+        if (readReplicaIdentifiers == null) {
+            readReplicaIdentifiers = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return readReplicaIdentifiers;
+    }
+
+    /**
+     * <p>
+     * Contains one or more identifiers of the Read Replicas associated with
+     * this DB cluster.
+     * </p>
+     * 
+     * @param readReplicaIdentifiers
+     *        Contains one or more identifiers of the Read Replicas associated
+     *        with this DB cluster.
+     */
+
+    public void setReadReplicaIdentifiers(
+            java.util.Collection<String> readReplicaIdentifiers) {
+        if (readReplicaIdentifiers == null) {
+            this.readReplicaIdentifiers = null;
+            return;
+        }
+
+        this.readReplicaIdentifiers = new com.amazonaws.internal.SdkInternalList<String>(
+                readReplicaIdentifiers);
+    }
+
+    /**
+     * <p>
+     * Contains one or more identifiers of the Read Replicas associated with
+     * this DB cluster.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setReadReplicaIdentifiers(java.util.Collection)} or
+     * {@link #withReadReplicaIdentifiers(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param readReplicaIdentifiers
+     *        Contains one or more identifiers of the Read Replicas associated
+     *        with this DB cluster.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBCluster withReadReplicaIdentifiers(
+            String... readReplicaIdentifiers) {
+        if (this.readReplicaIdentifiers == null) {
+            setReadReplicaIdentifiers(new com.amazonaws.internal.SdkInternalList<String>(
+                    readReplicaIdentifiers.length));
+        }
+        for (String ele : readReplicaIdentifiers) {
+            this.readReplicaIdentifiers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains one or more identifiers of the Read Replicas associated with
+     * this DB cluster.
+     * </p>
+     * 
+     * @param readReplicaIdentifiers
+     *        Contains one or more identifiers of the Read Replicas associated
+     *        with this DB cluster.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBCluster withReadReplicaIdentifiers(
+            java.util.Collection<String> readReplicaIdentifiers) {
+        setReadReplicaIdentifiers(readReplicaIdentifiers);
+        return this;
+    }
+
+    /**
+     * <p>
      * Provides the list of instances that make up the DB cluster.
      * </p>
      * 
@@ -1655,6 +1807,12 @@ public class DBCluster implements Serializable, Cloneable {
         if (getPreferredMaintenanceWindow() != null)
             sb.append("PreferredMaintenanceWindow: "
                     + getPreferredMaintenanceWindow() + ",");
+        if (getReplicationSourceIdentifier() != null)
+            sb.append("ReplicationSourceIdentifier: "
+                    + getReplicationSourceIdentifier() + ",");
+        if (getReadReplicaIdentifiers() != null)
+            sb.append("ReadReplicaIdentifiers: " + getReadReplicaIdentifiers()
+                    + ",");
         if (getDBClusterMembers() != null)
             sb.append("DBClusterMembers: " + getDBClusterMembers() + ",");
         if (getVpcSecurityGroups() != null)
@@ -1805,6 +1963,20 @@ public class DBCluster implements Serializable, Cloneable {
                 && other.getPreferredMaintenanceWindow().equals(
                         this.getPreferredMaintenanceWindow()) == false)
             return false;
+        if (other.getReplicationSourceIdentifier() == null
+                ^ this.getReplicationSourceIdentifier() == null)
+            return false;
+        if (other.getReplicationSourceIdentifier() != null
+                && other.getReplicationSourceIdentifier().equals(
+                        this.getReplicationSourceIdentifier()) == false)
+            return false;
+        if (other.getReadReplicaIdentifiers() == null
+                ^ this.getReadReplicaIdentifiers() == null)
+            return false;
+        if (other.getReadReplicaIdentifiers() != null
+                && other.getReadReplicaIdentifiers().equals(
+                        this.getReadReplicaIdentifiers()) == false)
+            return false;
         if (other.getDBClusterMembers() == null
                 ^ this.getDBClusterMembers() == null)
             return false;
@@ -1923,6 +2095,14 @@ public class DBCluster implements Serializable, Cloneable {
                 * hashCode
                 + ((getPreferredMaintenanceWindow() == null) ? 0
                         : getPreferredMaintenanceWindow().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getReplicationSourceIdentifier() == null) ? 0
+                        : getReplicationSourceIdentifier().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getReadReplicaIdentifiers() == null) ? 0
+                        : getReadReplicaIdentifiers().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getDBClusterMembers() == null) ? 0 : getDBClusterMembers()

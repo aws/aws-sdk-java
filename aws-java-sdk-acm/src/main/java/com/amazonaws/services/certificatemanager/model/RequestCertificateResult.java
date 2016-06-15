@@ -19,7 +19,7 @@ package com.amazonaws.services.certificatemanager.model;
 import java.io.Serializable;
 
 /**
- * <p/>
+ * 
  */
 public class RequestCertificateResult implements Serializable, Cloneable {
 
@@ -45,7 +45,7 @@ public class RequestCertificateResult implements Serializable, Cloneable {
      * 
      * @param certificateArn
      *        String that contains the ARN of the issued certificate. This must
-     *        be of the form: </p>
+     *        be of the form:</p>
      *        <p>
      *        <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      */
@@ -64,7 +64,7 @@ public class RequestCertificateResult implements Serializable, Cloneable {
      * </p>
      * 
      * @return String that contains the ARN of the issued certificate. This must
-     *         be of the form: </p>
+     *         be of the form:</p>
      *         <p>
      *         <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      */
@@ -84,7 +84,7 @@ public class RequestCertificateResult implements Serializable, Cloneable {
      * 
      * @param certificateArn
      *        String that contains the ARN of the issued certificate. This must
-     *        be of the form: </p>
+     *        be of the form:</p>
      *        <p>
      *        <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * @return Returns a reference to this object so that method calls can be

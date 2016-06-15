@@ -43,6 +43,8 @@ public class VersionInfoUtils {
     /** Shared logger for any issues while loading version information */
     private static final Log log = LogFactory.getLog(VersionInfoUtils.class);
 
+    private static final String UNKNOWN = "unknown";
+
     /**
      * Returns the current version for the AWS SDK in which this class is
      * running. Version information is obtained from from the
@@ -172,6 +174,6 @@ public class VersionInfoUtils {
      * @return the input with spaces replaced by underscores
      */
     private static String replaceSpaces(final String input) {
-        return input.replace(' ', '_');
+        return input == null ? UNKNOWN : input.replace(' ', '_');
     }
 }

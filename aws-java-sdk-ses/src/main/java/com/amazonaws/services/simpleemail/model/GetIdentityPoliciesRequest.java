@@ -20,7 +20,14 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Represents a request to return the requested sending authorization policies
+ * for an identity. Sending authorization is an Amazon SES feature that enables
+ * you to authorize other senders to use your identities. For information, see
+ * the <a href=
+ * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
+ * >Amazon SES Developer Guide</a>.
+ * </p>
  */
 public class GetIdentityPoliciesRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

@@ -20,7 +20,10 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Represents a request to send a bounce message to the sender of an email you
+ * received through Amazon SES.
+ * </p>
  */
 public class SendBounceRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

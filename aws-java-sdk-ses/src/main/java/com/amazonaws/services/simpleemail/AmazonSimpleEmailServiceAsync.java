@@ -30,10 +30,13 @@ import com.amazonaws.services.simpleemail.model.*;
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html"
  * >Amazon SES Developer Guide</a>.
  * </p>
- * <note>For a list of Amazon SES endpoints to use in service requests, see <a
- * href
- * ="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
- * and Amazon SES</a> in the Amazon SES Developer Guide. </note>
+ * <note>
+ * <p>
+ * For a list of Amazon SES endpoints to use in service requests, see <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html"
+ * >Regions and Amazon SES</a> in the Amazon SES Developer Guide.
+ * </p>
+ * </note>
  */
 public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService {
 
@@ -53,6 +56,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param cloneReceiptRuleSetRequest
+     *        Represents a request to create a receipt rule set by cloning an
+     *        existing one. You use receipt rule sets to receive email with
+     *        Amazon SES. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the CloneReceiptRuleSet
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.CloneReceiptRuleSet
@@ -76,6 +84,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param cloneReceiptRuleSetRequest
+     *        Represents a request to create a receipt rule set by cloning an
+     *        existing one. You use receipt rule sets to receive email with
+     *        Amazon SES. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -103,6 +116,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param createReceiptFilterRequest
+     *        Represents a request to create a new IP address filter. You use IP
+     *        address filters when you receive email with Amazon SES. For more
+     *        information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the CreateReceiptFilter
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.CreateReceiptFilter
@@ -124,6 +142,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param createReceiptFilterRequest
+     *        Represents a request to create a new IP address filter. You use IP
+     *        address filters when you receive email with Amazon SES. For more
+     *        information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -151,6 +174,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param createReceiptRuleRequest
+     *        Represents a request to create a receipt rule. You use receipt
+     *        rules to receive email with Amazon SES. For more information, see
+     *        the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the CreateReceiptRule
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.CreateReceiptRule
@@ -172,6 +200,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param createReceiptRuleRequest
+     *        Represents a request to create a receipt rule. You use receipt
+     *        rules to receive email with Amazon SES. For more information, see
+     *        the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -199,6 +232,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param createReceiptRuleSetRequest
+     *        Represents a request to create an empty receipt rule set. You use
+     *        receipt rule sets to receive email with Amazon SES. For more
+     *        information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the CreateReceiptRuleSet
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.CreateReceiptRuleSet
@@ -220,6 +258,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param createReceiptRuleSetRequest
+     *        Represents a request to create an empty receipt rule set. You use
+     *        receipt rule sets to receive email with Amazon SES. For more
+     *        information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -235,14 +278,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Deletes the specified identity (email address or domain) from the list of
-     * verified identities.
+     * Deletes the specified identity (an email address or a domain) from the
+     * list of verified identities.
      * </p>
      * <p>
      * This action is throttled at one request per second.
      * </p>
      * 
      * @param deleteIdentityRequest
+     *        Represents a request to delete one of your Amazon SES identities
+     *        (an email address or domain).
      * @return A Java Future containing the result of the DeleteIdentity
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.DeleteIdentity
@@ -252,14 +297,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Deletes the specified identity (email address or domain) from the list of
-     * verified identities.
+     * Deletes the specified identity (an email address or a domain) from the
+     * list of verified identities.
      * </p>
      * <p>
      * This action is throttled at one request per second.
      * </p>
      * 
      * @param deleteIdentityRequest
+     *        Represents a request to delete one of your Amazon SES identities
+     *        (an email address or domain).
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -276,11 +323,15 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     /**
      * <p>
      * Deletes the specified sending authorization policy for the given identity
-     * (email address or domain). This API returns successfully even if a policy
-     * with the specified name does not exist.
+     * (an email address or a domain). This API returns successfully even if a
+     * policy with the specified name does not exist.
      * </p>
-     * <note>This API is for the identity owner only. If you have not verified
-     * the identity, this API will return an error.</note>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the
+     * identity, this API will return an error.
+     * </p>
+     * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to
      * authorize other senders to use its identities. For information about
@@ -293,6 +344,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteIdentityPolicyRequest
+     *        Represents a request to delete a sending authorization policy for
+     *        an identity. Sending authorization is an Amazon SES feature that
+     *        enables you to authorize other senders to use your identities. For
+     *        information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the DeleteIdentityPolicy
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.DeleteIdentityPolicy
@@ -303,11 +360,15 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     /**
      * <p>
      * Deletes the specified sending authorization policy for the given identity
-     * (email address or domain). This API returns successfully even if a policy
-     * with the specified name does not exist.
+     * (an email address or a domain). This API returns successfully even if a
+     * policy with the specified name does not exist.
      * </p>
-     * <note>This API is for the identity owner only. If you have not verified
-     * the identity, this API will return an error.</note>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the
+     * identity, this API will return an error.
+     * </p>
+     * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to
      * authorize other senders to use its identities. For information about
@@ -320,6 +381,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteIdentityPolicyRequest
+     *        Represents a request to delete a sending authorization policy for
+     *        an identity. Sending authorization is an Amazon SES feature that
+     *        enables you to authorize other senders to use your identities. For
+     *        information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -347,6 +414,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteReceiptFilterRequest
+     *        Represents a request to delete an IP address filter. You use IP
+     *        address filters when you receive email with Amazon SES. For more
+     *        information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the DeleteReceiptFilter
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.DeleteReceiptFilter
@@ -368,6 +440,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteReceiptFilterRequest
+     *        Represents a request to delete an IP address filter. You use IP
+     *        address filters when you receive email with Amazon SES. For more
+     *        information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -395,6 +472,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteReceiptRuleRequest
+     *        Represents a request to delete a receipt rule. You use receipt
+     *        rules to receive email with Amazon SES. For more information, see
+     *        the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the DeleteReceiptRule
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.DeleteReceiptRule
@@ -416,6 +498,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteReceiptRuleRequest
+     *        Represents a request to delete a receipt rule. You use receipt
+     *        rules to receive email with Amazon SES. For more information, see
+     *        the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -434,7 +521,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Deletes the specified receipt rule set and all of the receipt rules it
      * contains.
      * </p>
-     * <note>The currently active rule set cannot be deleted.</note>
+     * <note>
+     * <p>
+     * The currently active rule set cannot be deleted.
+     * </p>
+     * </note>
      * <p>
      * For information about managing receipt rule sets, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
@@ -445,6 +536,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteReceiptRuleSetRequest
+     *        Represents a request to delete a receipt rule set and all of the
+     *        receipt rules it contains. You use receipt rule sets to receive
+     *        email with Amazon SES. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the DeleteReceiptRuleSet
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.DeleteReceiptRuleSet
@@ -457,7 +553,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Deletes the specified receipt rule set and all of the receipt rules it
      * contains.
      * </p>
-     * <note>The currently active rule set cannot be deleted.</note>
+     * <note>
+     * <p>
+     * The currently active rule set cannot be deleted.
+     * </p>
+     * </note>
      * <p>
      * For information about managing receipt rule sets, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
@@ -468,6 +568,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteReceiptRuleSetRequest
+     *        Represents a request to delete a receipt rule set and all of the
+     *        receipt rules it contains. You use receipt rule sets to receive
+     *        email with Amazon SES. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -485,14 +590,21 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <p>
      * Deletes the specified email address from the list of verified addresses.
      * </p>
-     * <important>The DeleteVerifiedEmailAddress action is deprecated as of the
-     * May 15, 2012 release of Domain Verification. The DeleteIdentity action is
-     * now preferred.</important>
+     * <important>
+     * <p>
+     * The DeleteVerifiedEmailAddress action is deprecated as of the May 15,
+     * 2012 release of Domain Verification. The DeleteIdentity action is now
+     * preferred.
+     * </p>
+     * </important>
      * <p>
      * This action is throttled at one request per second.
      * </p>
      * 
      * @param deleteVerifiedEmailAddressRequest
+     *        Represents a request to delete an email address from the list of
+     *        email addresses you have attempted to verify under your AWS
+     *        account.
      * @return A Java Future containing the result of the
      *         DeleteVerifiedEmailAddress operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.DeleteVerifiedEmailAddress
@@ -504,14 +616,21 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <p>
      * Deletes the specified email address from the list of verified addresses.
      * </p>
-     * <important>The DeleteVerifiedEmailAddress action is deprecated as of the
-     * May 15, 2012 release of Domain Verification. The DeleteIdentity action is
-     * now preferred.</important>
+     * <important>
+     * <p>
+     * The DeleteVerifiedEmailAddress action is deprecated as of the May 15,
+     * 2012 release of Domain Verification. The DeleteIdentity action is now
+     * preferred.
+     * </p>
+     * </important>
      * <p>
      * This action is throttled at one request per second.
      * </p>
      * 
      * @param deleteVerifiedEmailAddressRequest
+     *        Represents a request to delete an email address from the list of
+     *        email addresses you have attempted to verify under your AWS
+     *        account.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -540,6 +659,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param describeActiveReceiptRuleSetRequest
+     *        Represents a request to return the metadata and receipt rules for
+     *        the receipt rule set that is currently active. You use receipt
+     *        rule sets to receive email with Amazon SES. For more information,
+     *        see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the
      *         DescribeActiveReceiptRuleSet operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.DescribeActiveReceiptRuleSet
@@ -562,6 +687,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param describeActiveReceiptRuleSetRequest
+     *        Represents a request to return the metadata and receipt rules for
+     *        the receipt rule set that is currently active. You use receipt
+     *        rule sets to receive email with Amazon SES. For more information,
+     *        see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -589,6 +720,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param describeReceiptRuleRequest
+     *        Represents a request to return the details of a receipt rule. You
+     *        use receipt rules to receive email with Amazon SES. For more
+     *        information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the DescribeReceiptRule
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.DescribeReceiptRule
@@ -610,6 +746,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param describeReceiptRuleRequest
+     *        Represents a request to return the details of a receipt rule. You
+     *        use receipt rules to receive email with Amazon SES. For more
+     *        information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -637,6 +778,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param describeReceiptRuleSetRequest
+     *        Represents a request to return the details of a receipt rule set.
+     *        You use receipt rule sets to receive email with Amazon SES. For
+     *        more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the DescribeReceiptRuleSet
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.DescribeReceiptRuleSet
@@ -658,6 +804,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param describeReceiptRuleSetRequest
+     *        Represents a request to return the details of a receipt rule set.
+     *        You use receipt rule sets to receive email with Amazon SES. For
+     *        more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -683,12 +834,24 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * information for each:
      * </p>
      * <ul>
-     * <li>Whether Easy DKIM signing is enabled or disabled.</li>
-     * <li>A set of DKIM tokens that represent the identity. If the identity is
-     * an email address, the tokens represent the domain of that address.</li>
-     * <li>Whether Amazon SES has successfully verified the DKIM tokens
-     * published in the domain's DNS. This information is only returned for
-     * domain name identities, not for email addresses.</li>
+     * <li>
+     * <p>
+     * Whether Easy DKIM signing is enabled or disabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A set of DKIM tokens that represent the identity. If the identity is an
+     * email address, the tokens represent the domain of that address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Whether Amazon SES has successfully verified the DKIM tokens published in
+     * the domain's DNS. This information is only returned for domain name
+     * identities, not for email addresses.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * This action is throttled at one request per second and can only get DKIM
@@ -702,6 +865,14 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityDkimAttributesRequest
+     *        Represents a request for the status of Amazon SES Easy DKIM
+     *        signing for an identity. For domain identities, this request also
+     *        returns the DKIM tokens that are required for Easy DKIM signing,
+     *        and whether Amazon SES successfully verified that these tokens
+     *        were published. For more information about Easy DKIM, see the <a
+     *        href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the
      *         GetIdentityDkimAttributes operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.GetIdentityDkimAttributes
@@ -721,12 +892,24 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * information for each:
      * </p>
      * <ul>
-     * <li>Whether Easy DKIM signing is enabled or disabled.</li>
-     * <li>A set of DKIM tokens that represent the identity. If the identity is
-     * an email address, the tokens represent the domain of that address.</li>
-     * <li>Whether Amazon SES has successfully verified the DKIM tokens
-     * published in the domain's DNS. This information is only returned for
-     * domain name identities, not for email addresses.</li>
+     * <li>
+     * <p>
+     * Whether Easy DKIM signing is enabled or disabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A set of DKIM tokens that represent the identity. If the identity is an
+     * email address, the tokens represent the domain of that address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Whether Amazon SES has successfully verified the DKIM tokens published in
+     * the domain's DNS. This information is only returned for domain name
+     * identities, not for email addresses.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * This action is throttled at one request per second and can only get DKIM
@@ -740,6 +923,14 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityDkimAttributesRequest
+     *        Represents a request for the status of Amazon SES Easy DKIM
+     *        signing for an identity. For domain identities, this request also
+     *        returns the DKIM tokens that are required for Easy DKIM signing,
+     *        and whether Amazon SES successfully verified that these tokens
+     *        were published. For more information about Easy DKIM, see the <a
+     *        href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -764,6 +955,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityMailFromDomainAttributesRequest
+     *        Represents a request to return the Amazon SES custom MAIL FROM
+     *        attributes for a list of identities. For information about using a
+     *        custom MAIL FROM domain, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the
      *         GetIdentityMailFromDomainAttributes operation returned by the
      *         service.
@@ -783,6 +979,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityMailFromDomainAttributesRequest
+     *        Represents a request to return the Amazon SES custom MAIL FROM
+     *        attributes for a list of identities. For information about using a
+     *        custom MAIL FROM domain, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -815,6 +1016,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityNotificationAttributesRequest
+     *        Represents a request to return the notification attributes for a
+     *        list of identities you verified with Amazon SES. For information
+     *        about Amazon SES notifications, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the
      *         GetIdentityNotificationAttributes operation returned by the
      *         service.
@@ -840,6 +1046,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityNotificationAttributesRequest
+     *        Represents a request to return the notification attributes for a
+     *        list of identities you verified with Amazon SES. For information
+     *        about Amazon SES notifications, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -858,12 +1069,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     /**
      * <p>
      * Returns the requested sending authorization policies for the given
-     * identity (email address or domain). The policies are returned as a map of
-     * policy names to policy contents. You can retrieve a maximum of 20
+     * identity (an email address or a domain). The policies are returned as a
+     * map of policy names to policy contents. You can retrieve a maximum of 20
      * policies at a time.
      * </p>
-     * <note>This API is for the identity owner only. If you have not verified
-     * the identity, this API will return an error.</note>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the
+     * identity, this API will return an error.
+     * </p>
+     * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to
      * authorize other senders to use its identities. For information about
@@ -876,6 +1091,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityPoliciesRequest
+     *        Represents a request to return the requested sending authorization
+     *        policies for an identity. Sending authorization is an Amazon SES
+     *        feature that enables you to authorize other senders to use your
+     *        identities. For information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the GetIdentityPolicies
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.GetIdentityPolicies
@@ -886,12 +1107,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     /**
      * <p>
      * Returns the requested sending authorization policies for the given
-     * identity (email address or domain). The policies are returned as a map of
-     * policy names to policy contents. You can retrieve a maximum of 20
+     * identity (an email address or a domain). The policies are returned as a
+     * map of policy names to policy contents. You can retrieve a maximum of 20
      * policies at a time.
      * </p>
-     * <note>This API is for the identity owner only. If you have not verified
-     * the identity, this API will return an error.</note>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the
+     * identity, this API will return an error.
+     * </p>
+     * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to
      * authorize other senders to use its identities. For information about
@@ -904,6 +1129,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityPoliciesRequest
+     *        Represents a request to return the requested sending authorization
+     *        policies for an identity. Sending authorization is an Amazon SES
+     *        feature that enables you to authorize other senders to use your
+     *        identities. For information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -929,6 +1160,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityVerificationAttributesRequest
+     *        Represents a request to return the Amazon SES verification status
+     *        of a list of identities. For domain identities, this request also
+     *        returns the verification token. For information about verifying
+     *        identities with Amazon SES, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the
      *         GetIdentityVerificationAttributes operation returned by the
      *         service.
@@ -949,6 +1186,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityVerificationAttributesRequest
+     *        Represents a request to return the Amazon SES verification status
+     *        of a list of identities. For domain identities, this request also
+     *        returns the verification token. For information about verifying
+     *        identities with Amazon SES, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1085,13 +1328,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     /**
      * <p>
      * Returns a list containing all of the identities (email addresses and
-     * domains) for a specific AWS Account, regardless of verification status.
+     * domains) for your AWS account, regardless of verification status.
      * </p>
      * <p>
      * This action is throttled at one request per second.
      * </p>
      * 
      * @param listIdentitiesRequest
+     *        Represents a request to return a list of all identities (email
+     *        addresses and domains) that you have attempted to verify under
+     *        your AWS account, regardless of verification status.
      * @return A Java Future containing the result of the ListIdentities
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.ListIdentities
@@ -1102,13 +1348,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     /**
      * <p>
      * Returns a list containing all of the identities (email addresses and
-     * domains) for a specific AWS Account, regardless of verification status.
+     * domains) for your AWS account, regardless of verification status.
      * </p>
      * <p>
      * This action is throttled at one request per second.
      * </p>
      * 
      * @param listIdentitiesRequest
+     *        Represents a request to return a list of all identities (email
+     *        addresses and domains) that you have attempted to verify under
+     *        your AWS account, regardless of verification status.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1142,12 +1391,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     /**
      * <p>
      * Returns a list of sending authorization policies that are attached to the
-     * given identity (email address or domain). This API returns only a list.
-     * If you want the actual policy content, you can use
+     * given identity (an email address or a domain). This API returns only a
+     * list. If you want the actual policy content, you can use
      * <code>GetIdentityPolicies</code>.
      * </p>
-     * <note>This API is for the identity owner only. If you have not verified
-     * the identity, this API will return an error.</note>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the
+     * identity, this API will return an error.
+     * </p>
+     * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to
      * authorize other senders to use its identities. For information about
@@ -1160,6 +1413,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param listIdentityPoliciesRequest
+     *        Represents a request to return a list of sending authorization
+     *        policies that are attached to an identity. Sending authorization
+     *        is an Amazon SES feature that enables you to authorize other
+     *        senders to use your identities. For information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the ListIdentityPolicies
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.ListIdentityPolicies
@@ -1170,12 +1429,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     /**
      * <p>
      * Returns a list of sending authorization policies that are attached to the
-     * given identity (email address or domain). This API returns only a list.
-     * If you want the actual policy content, you can use
+     * given identity (an email address or a domain). This API returns only a
+     * list. If you want the actual policy content, you can use
      * <code>GetIdentityPolicies</code>.
      * </p>
-     * <note>This API is for the identity owner only. If you have not verified
-     * the identity, this API will return an error.</note>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the
+     * identity, this API will return an error.
+     * </p>
+     * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to
      * authorize other senders to use its identities. For information about
@@ -1188,6 +1451,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param listIdentityPoliciesRequest
+     *        Represents a request to return a list of sending authorization
+     *        policies that are attached to an identity. Sending authorization
+     *        is an Amazon SES feature that enables you to authorize other
+     *        senders to use your identities. For information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1203,7 +1472,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Lists the IP address filters associated with your account.
+     * Lists the IP address filters associated with your AWS account.
      * </p>
      * <p>
      * For information about managing IP address filters, see the <a href=
@@ -1215,6 +1484,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param listReceiptFiltersRequest
+     *        : Represents a request to list the IP address filters that exist
+     *        under your AWS account. You use IP address filters when you
+     *        receive email with Amazon SES. For more information, see the <a
+     *        href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the ListReceiptFilters
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.ListReceiptFilters
@@ -1224,7 +1499,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Lists the IP address filters associated with your account.
+     * Lists the IP address filters associated with your AWS account.
      * </p>
      * <p>
      * For information about managing IP address filters, see the <a href=
@@ -1236,6 +1511,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param listReceiptFiltersRequest
+     *        : Represents a request to list the IP address filters that exist
+     *        under your AWS account. You use IP address filters when you
+     *        receive email with Amazon SES. For more information, see the <a
+     *        href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1266,6 +1547,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param listReceiptRuleSetsRequest
+     *        Represents a request to list the receipt rule sets that exist
+     *        under your AWS account. You use receipt rule sets to receive email
+     *        with Amazon SES. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the ListReceiptRuleSets
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.ListReceiptRuleSets
@@ -1290,6 +1576,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param listReceiptRuleSetsRequest
+     *        Represents a request to list the receipt rule sets that exist
+     *        under your AWS account. You use receipt rule sets to receive email
+     *        with Amazon SES. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1308,9 +1599,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Returns a list containing all of the email addresses that have been
      * verified.
      * </p>
-     * <important>The ListVerifiedEmailAddresses action is deprecated as of the
-     * May 15, 2012 release of Domain Verification. The ListIdentities action is
-     * now preferred.</important>
+     * <important>
+     * <p>
+     * The ListVerifiedEmailAddresses action is deprecated as of the May 15,
+     * 2012 release of Domain Verification. The ListIdentities action is now
+     * preferred.
+     * </p>
+     * </important>
      * <p>
      * This action is throttled at one request per second.
      * </p>
@@ -1328,9 +1623,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Returns a list containing all of the email addresses that have been
      * verified.
      * </p>
-     * <important>The ListVerifiedEmailAddresses action is deprecated as of the
-     * May 15, 2012 release of Domain Verification. The ListIdentities action is
-     * now preferred.</important>
+     * <important>
+     * <p>
+     * The ListVerifiedEmailAddresses action is deprecated as of the May 15,
+     * 2012 release of Domain Verification. The ListIdentities action is now
+     * preferred.
+     * </p>
+     * </important>
      * <p>
      * This action is throttled at one request per second.
      * </p>
@@ -1370,10 +1669,14 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     /**
      * <p>
      * Adds or updates a sending authorization policy for the specified identity
-     * (email address or domain).
+     * (an email address or a domain).
      * </p>
-     * <note>This API is for the identity owner only. If you have not verified
-     * the identity, this API will return an error.</note>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the
+     * identity, this API will return an error.
+     * </p>
+     * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to
      * authorize other senders to use its identities. For information about
@@ -1386,6 +1689,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param putIdentityPolicyRequest
+     *        Represents a request to add or update a sending authorization
+     *        policy for an identity. Sending authorization is an Amazon SES
+     *        feature that enables you to authorize other senders to use your
+     *        identities. For information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the PutIdentityPolicy
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.PutIdentityPolicy
@@ -1396,10 +1705,14 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     /**
      * <p>
      * Adds or updates a sending authorization policy for the specified identity
-     * (email address or domain).
+     * (an email address or a domain).
      * </p>
-     * <note>This API is for the identity owner only. If you have not verified
-     * the identity, this API will return an error.</note>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the
+     * identity, this API will return an error.
+     * </p>
+     * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to
      * authorize other senders to use its identities. For information about
@@ -1412,6 +1725,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param putIdentityPolicyRequest
+     *        Represents a request to add or update a sending authorization
+     *        policy for an identity. Sending authorization is an Amazon SES
+     *        feature that enables you to authorize other senders to use your
+     *        identities. For information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1429,9 +1748,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <p>
      * Reorders the receipt rules within a receipt rule set.
      * </p>
-     * <note>All of the rules in the rule set must be represented in this
-     * request. That is, this API will return an error if the reorder request
-     * doesn't explicitly position all of the rules.</note>
+     * <note>
+     * <p>
+     * All of the rules in the rule set must be represented in this request.
+     * That is, this API will return an error if the reorder request doesn't
+     * explicitly position all of the rules.
+     * </p>
+     * </note>
      * <p>
      * For information about managing receipt rule sets, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
@@ -1442,6 +1765,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param reorderReceiptRuleSetRequest
+     *        Represents a request to reorder the receipt rules within a receipt
+     *        rule set. You use receipt rule sets to receive email with Amazon
+     *        SES. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the ReorderReceiptRuleSet
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.ReorderReceiptRuleSet
@@ -1453,9 +1781,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <p>
      * Reorders the receipt rules within a receipt rule set.
      * </p>
-     * <note>All of the rules in the rule set must be represented in this
-     * request. That is, this API will return an error if the reorder request
-     * doesn't explicitly position all of the rules.</note>
+     * <note>
+     * <p>
+     * All of the rules in the rule set must be represented in this request.
+     * That is, this API will return an error if the reorder request doesn't
+     * explicitly position all of the rules.
+     * </p>
+     * </note>
      * <p>
      * For information about managing receipt rule sets, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
@@ -1466,6 +1798,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param reorderReceiptRuleSetRequest
+     *        Represents a request to reorder the receipt rules within a receipt
+     *        rule set. You use receipt rule sets to receive email with Amazon
+     *        SES. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1485,8 +1822,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * received through Amazon SES. You can only use this API on an email up to
      * 24 hours after you receive it.
      * </p>
-     * <note>You cannot use this API to send generic bounces for mail that was
-     * not received by Amazon SES.</note>
+     * <note>
+     * <p>
+     * You cannot use this API to send generic bounces for mail that was not
+     * received by Amazon SES.
+     * </p>
+     * </note>
      * <p>
      * For information about receiving email through Amazon SES, see the <a
      * href=
@@ -1498,6 +1839,8 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param sendBounceRequest
+     *        Represents a request to send a bounce message to the sender of an
+     *        email you received through Amazon SES.
      * @return A Java Future containing the result of the SendBounce operation
      *         returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.SendBounce
@@ -1511,8 +1854,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * received through Amazon SES. You can only use this API on an email up to
      * 24 hours after you receive it.
      * </p>
-     * <note>You cannot use this API to send generic bounces for mail that was
-     * not received by Amazon SES.</note>
+     * <note>
+     * <p>
+     * You cannot use this API to send generic bounces for mail that was not
+     * received by Amazon SES.
+     * </p>
+     * </note>
      * <p>
      * For information about receiving email through Amazon SES, see the <a
      * href=
@@ -1524,6 +1871,8 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param sendBounceRequest
+     *        Represents a request to send a bounce message to the sender of an
+     *        email you received through Amazon SES.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1546,29 +1895,49 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * There are several important points to know about <code>SendEmail</code>:
      * </p>
      * <ul>
-     * <li>You can only send email from verified email addresses and domains;
+     * <li>
+     * <p>
+     * You can only send email from verified email addresses and domains;
      * otherwise, you will get an "Email address not verified" error. If your
      * account is still in the Amazon SES sandbox, you must also verify every
      * recipient email address except for the recipients provided by the Amazon
      * SES mailbox simulator. For more information, go to the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html"
-     * >Amazon SES Developer Guide</a>.</li>
-     * <li>The total size of the message cannot exceed 10 MB. This includes any
-     * attachments that are part of the message.</li>
-     * <li>Amazon SES has a limit on the total number of recipients per message.
-     * The combined number of To:, CC: and BCC: email addresses cannot exceed
-     * 50. If you need to send an email message to a larger audience, you can
-     * divide your recipient list into groups of 50 or fewer, and then call
-     * Amazon SES repeatedly to send the message to each group.</li>
-     * <li>For every message that you send, the total number of recipients (To:,
-     * CC: and BCC:) is counted against your sending quota - the maximum number
-     * of emails you can send in a 24-hour period. For information about your
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The total size of the message cannot exceed 10 MB. This includes any
+     * attachments that are part of the message.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SES has a limit on the total number of recipients per message. The
+     * combined number of To:, CC: and BCC: email addresses cannot exceed 50. If
+     * you need to send an email message to a larger audience, you can divide
+     * your recipient list into groups of 50 or fewer, and then call Amazon SES
+     * repeatedly to send the message to each group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For every message that you send, the total number of recipients (To:, CC:
+     * and BCC:) is counted against your sending quota - the maximum number of
+     * emails you can send in a 24-hour period. For information about your
      * sending quota, go to the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html"
-     * >Amazon SES Developer Guide</a>.</li>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sendEmailRequest
+     *        Represents a request to send a single formatted email using Amazon
+     *        SES. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the SendEmail operation
      *         returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.SendEmail
@@ -1585,29 +1954,49 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * There are several important points to know about <code>SendEmail</code>:
      * </p>
      * <ul>
-     * <li>You can only send email from verified email addresses and domains;
+     * <li>
+     * <p>
+     * You can only send email from verified email addresses and domains;
      * otherwise, you will get an "Email address not verified" error. If your
      * account is still in the Amazon SES sandbox, you must also verify every
      * recipient email address except for the recipients provided by the Amazon
      * SES mailbox simulator. For more information, go to the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html"
-     * >Amazon SES Developer Guide</a>.</li>
-     * <li>The total size of the message cannot exceed 10 MB. This includes any
-     * attachments that are part of the message.</li>
-     * <li>Amazon SES has a limit on the total number of recipients per message.
-     * The combined number of To:, CC: and BCC: email addresses cannot exceed
-     * 50. If you need to send an email message to a larger audience, you can
-     * divide your recipient list into groups of 50 or fewer, and then call
-     * Amazon SES repeatedly to send the message to each group.</li>
-     * <li>For every message that you send, the total number of recipients (To:,
-     * CC: and BCC:) is counted against your sending quota - the maximum number
-     * of emails you can send in a 24-hour period. For information about your
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The total size of the message cannot exceed 10 MB. This includes any
+     * attachments that are part of the message.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SES has a limit on the total number of recipients per message. The
+     * combined number of To:, CC: and BCC: email addresses cannot exceed 50. If
+     * you need to send an email message to a larger audience, you can divide
+     * your recipient list into groups of 50 or fewer, and then call Amazon SES
+     * repeatedly to send the message to each group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For every message that you send, the total number of recipients (To:, CC:
+     * and BCC:) is counted against your sending quota - the maximum number of
+     * emails you can send in a 24-hour period. For information about your
      * sending quota, go to the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html"
-     * >Amazon SES Developer Guide</a>.</li>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sendEmailRequest
+     *        Represents a request to send a single formatted email using Amazon
+     *        SES. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1633,44 +2022,84 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <code>SendRawEmail</code>:
      * </p>
      * <ul>
-     * <li>You can only send email from verified email addresses and domains;
+     * <li>
+     * <p>
+     * You can only send email from verified email addresses and domains;
      * otherwise, you will get an "Email address not verified" error. If your
      * account is still in the Amazon SES sandbox, you must also verify every
      * recipient email address except for the recipients provided by the Amazon
      * SES mailbox simulator. For more information, go to the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html"
-     * >Amazon SES Developer Guide</a>.</li>
-     * <li>The total size of the message cannot exceed 10 MB. This includes any
-     * attachments that are part of the message.</li>
-     * <li>Amazon SES has a limit on the total number of recipients per message.
-     * The combined number of To:, CC: and BCC: email addresses cannot exceed
-     * 50. If you need to send an email message to a larger audience, you can
-     * divide your recipient list into groups of 50 or fewer, and then call
-     * Amazon SES repeatedly to send the message to each group.</li>
-     * <li>The To:, CC:, and BCC: headers in the raw message can contain a group
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The total size of the message cannot exceed 10 MB. This includes any
+     * attachments that are part of the message.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SES has a limit on the total number of recipients per message. The
+     * combined number of To:, CC: and BCC: email addresses cannot exceed 50. If
+     * you need to send an email message to a larger audience, you can divide
+     * your recipient list into groups of 50 or fewer, and then call Amazon SES
+     * repeatedly to send the message to each group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The To:, CC:, and BCC: headers in the raw message can contain a group
      * list. Note that each recipient in a group list counts towards the
-     * 50-recipient limit.</li>
-     * <li>For every message that you send, the total number of recipients (To:,
-     * CC: and BCC:) is counted against your sending quota - the maximum number
-     * of emails you can send in a 24-hour period. For information about your
+     * 50-recipient limit.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For every message that you send, the total number of recipients (To:, CC:
+     * and BCC:) is counted against your sending quota - the maximum number of
+     * emails you can send in a 24-hour period. For information about your
      * sending quota, go to the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html"
-     * >Amazon SES Developer Guide</a>.</li>
-     * <li>If you are using sending authorization to send on behalf of another
-     * user, <code>SendRawEmail</code> enables you to specify the cross-account
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are using sending authorization to send on behalf of another user,
+     * <code>SendRawEmail</code> enables you to specify the cross-account
      * identity for the email's "Source," "From," and "Return-Path" parameters
      * in one of two ways: you can pass optional parameters
      * <code>SourceArn</code>, <code>FromArn</code>, and/or
      * <code>ReturnPathArn</code> to the API, or you can include the following
      * X-headers in the header of your raw email:
+     * </p>
      * <ul>
-     * <li><code>X-SES-SOURCE-ARN</code></li>
-     * <li><code>X-SES-FROM-ARN</code></li>
-     * <li><code>X-SES-RETURN-PATH-ARN</code></li>
+     * <li>
+     * <p>
+     * <code>X-SES-SOURCE-ARN</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>X-SES-FROM-ARN</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>X-SES-RETURN-PATH-ARN</code>
+     * </p>
+     * </li>
      * </ul>
-     * <important>Do not include these X-headers in the DKIM signature, because
-     * they are removed by Amazon SES before sending the email.</important> For
-     * the most common sending authorization use case, we recommend that you
+     * <important>
+     * <p>
+     * Do not include these X-headers in the DKIM signature, because they are
+     * removed by Amazon SES before sending the email.
+     * </p>
+     * </important>
+     * <p>
+     * For the most common sending authorization use case, we recommend that you
      * specify the <code>SourceIdentityArn</code> and do not specify either the
      * <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The
      * same note applies to the corresponding X-headers.) If you only specify
@@ -1679,10 +2108,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <code>SourceIdentityArn</code>. For more information about sending
      * authorization, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
-     * >Amazon SES Developer Guide</a>.</li>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sendRawEmailRequest
+     *        Represents a request to send a single raw email using Amazon SES.
+     *        For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the SendRawEmail operation
      *         returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.SendRawEmail
@@ -1702,44 +2137,84 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <code>SendRawEmail</code>:
      * </p>
      * <ul>
-     * <li>You can only send email from verified email addresses and domains;
+     * <li>
+     * <p>
+     * You can only send email from verified email addresses and domains;
      * otherwise, you will get an "Email address not verified" error. If your
      * account is still in the Amazon SES sandbox, you must also verify every
      * recipient email address except for the recipients provided by the Amazon
      * SES mailbox simulator. For more information, go to the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html"
-     * >Amazon SES Developer Guide</a>.</li>
-     * <li>The total size of the message cannot exceed 10 MB. This includes any
-     * attachments that are part of the message.</li>
-     * <li>Amazon SES has a limit on the total number of recipients per message.
-     * The combined number of To:, CC: and BCC: email addresses cannot exceed
-     * 50. If you need to send an email message to a larger audience, you can
-     * divide your recipient list into groups of 50 or fewer, and then call
-     * Amazon SES repeatedly to send the message to each group.</li>
-     * <li>The To:, CC:, and BCC: headers in the raw message can contain a group
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The total size of the message cannot exceed 10 MB. This includes any
+     * attachments that are part of the message.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SES has a limit on the total number of recipients per message. The
+     * combined number of To:, CC: and BCC: email addresses cannot exceed 50. If
+     * you need to send an email message to a larger audience, you can divide
+     * your recipient list into groups of 50 or fewer, and then call Amazon SES
+     * repeatedly to send the message to each group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The To:, CC:, and BCC: headers in the raw message can contain a group
      * list. Note that each recipient in a group list counts towards the
-     * 50-recipient limit.</li>
-     * <li>For every message that you send, the total number of recipients (To:,
-     * CC: and BCC:) is counted against your sending quota - the maximum number
-     * of emails you can send in a 24-hour period. For information about your
+     * 50-recipient limit.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For every message that you send, the total number of recipients (To:, CC:
+     * and BCC:) is counted against your sending quota - the maximum number of
+     * emails you can send in a 24-hour period. For information about your
      * sending quota, go to the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html"
-     * >Amazon SES Developer Guide</a>.</li>
-     * <li>If you are using sending authorization to send on behalf of another
-     * user, <code>SendRawEmail</code> enables you to specify the cross-account
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are using sending authorization to send on behalf of another user,
+     * <code>SendRawEmail</code> enables you to specify the cross-account
      * identity for the email's "Source," "From," and "Return-Path" parameters
      * in one of two ways: you can pass optional parameters
      * <code>SourceArn</code>, <code>FromArn</code>, and/or
      * <code>ReturnPathArn</code> to the API, or you can include the following
      * X-headers in the header of your raw email:
+     * </p>
      * <ul>
-     * <li><code>X-SES-SOURCE-ARN</code></li>
-     * <li><code>X-SES-FROM-ARN</code></li>
-     * <li><code>X-SES-RETURN-PATH-ARN</code></li>
+     * <li>
+     * <p>
+     * <code>X-SES-SOURCE-ARN</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>X-SES-FROM-ARN</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>X-SES-RETURN-PATH-ARN</code>
+     * </p>
+     * </li>
      * </ul>
-     * <important>Do not include these X-headers in the DKIM signature, because
-     * they are removed by Amazon SES before sending the email.</important> For
-     * the most common sending authorization use case, we recommend that you
+     * <important>
+     * <p>
+     * Do not include these X-headers in the DKIM signature, because they are
+     * removed by Amazon SES before sending the email.
+     * </p>
+     * </important>
+     * <p>
+     * For the most common sending authorization use case, we recommend that you
      * specify the <code>SourceIdentityArn</code> and do not specify either the
      * <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The
      * same note applies to the corresponding X-headers.) If you only specify
@@ -1748,10 +2223,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <code>SourceIdentityArn</code>. For more information about sending
      * authorization, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
-     * >Amazon SES Developer Guide</a>.</li>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sendRawEmailRequest
+     *        Represents a request to send a single raw email using Amazon SES.
+     *        For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1769,8 +2250,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <p>
      * Sets the specified receipt rule set as the active receipt rule set.
      * </p>
-     * <note>To disable your email-receiving through Amazon SES completely, you
-     * can call this API with RuleSetName set to null.</note>
+     * <note>
+     * <p>
+     * To disable your email-receiving through Amazon SES completely, you can
+     * call this API with RuleSetName set to null.
+     * </p>
+     * </note>
      * <p>
      * For information about managing receipt rule sets, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
@@ -1781,6 +2266,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param setActiveReceiptRuleSetRequest
+     *        Represents a request to set a receipt rule set as the active
+     *        receipt rule set. You use receipt rule sets to receive email with
+     *        Amazon SES. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the
      *         SetActiveReceiptRuleSet operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.SetActiveReceiptRuleSet
@@ -1792,8 +2282,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <p>
      * Sets the specified receipt rule set as the active receipt rule set.
      * </p>
-     * <note>To disable your email-receiving through Amazon SES completely, you
-     * can call this API with RuleSetName set to null.</note>
+     * <note>
+     * <p>
+     * To disable your email-receiving through Amazon SES completely, you can
+     * call this API with RuleSetName set to null.
+     * </p>
+     * </note>
      * <p>
      * For information about managing receipt rule sets, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
@@ -1804,6 +2298,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param setActiveReceiptRuleSetRequest
+     *        Represents a request to set a receipt rule set as the active
+     *        receipt rule set. You use receipt rule sets to receive email with
+     *        Amazon SES. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1822,12 +2321,20 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Enables or disables Easy DKIM signing of email sent from an identity:
      * </p>
      * <ul>
-     * <li>If Easy DKIM signing is enabled for a domain name identity (e.g.,
+     * <li>
+     * <p>
+     * If Easy DKIM signing is enabled for a domain name identity (e.g.,
      * <code>example.com</code>), then Amazon SES will DKIM-sign all email sent
      * by addresses under that domain name (e.g., <code>user@example.com</code>
-     * ).</li>
-     * <li>If Easy DKIM signing is enabled for an email address, then Amazon SES
-     * will DKIM-sign all email sent by that email address.</li>
+     * ).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If Easy DKIM signing is enabled for an email address, then Amazon SES
+     * will DKIM-sign all email sent by that email address.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For email addresses (e.g., <code>user@example.com</code>), you can only
@@ -1845,6 +2352,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param setIdentityDkimEnabledRequest
+     *        Represents a request to enable or disable Amazon SES Easy DKIM
+     *        signing for an identity. For more information about setting up
+     *        Easy DKIM, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the SetIdentityDkimEnabled
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.SetIdentityDkimEnabled
@@ -1857,12 +2369,20 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Enables or disables Easy DKIM signing of email sent from an identity:
      * </p>
      * <ul>
-     * <li>If Easy DKIM signing is enabled for a domain name identity (e.g.,
+     * <li>
+     * <p>
+     * If Easy DKIM signing is enabled for a domain name identity (e.g.,
      * <code>example.com</code>), then Amazon SES will DKIM-sign all email sent
      * by addresses under that domain name (e.g., <code>user@example.com</code>
-     * ).</li>
-     * <li>If Easy DKIM signing is enabled for an email address, then Amazon SES
-     * will DKIM-sign all email sent by that email address.</li>
+     * ).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If Easy DKIM signing is enabled for an email address, then Amazon SES
+     * will DKIM-sign all email sent by that email address.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For email addresses (e.g., <code>user@example.com</code>), you can only
@@ -1880,6 +2400,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param setIdentityDkimEnabledRequest
+     *        Represents a request to enable or disable Amazon SES Easy DKIM
+     *        signing for an identity. For more information about setting up
+     *        Easy DKIM, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1895,13 +2420,18 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Given an identity (email address or domain), enables or disables whether
-     * Amazon SES forwards bounce and complaint notifications as email. Feedback
-     * forwarding can only be disabled when Amazon Simple Notification Service
-     * (Amazon SNS) topics are specified for both bounces and complaints.
+     * Given an identity (an email address or a domain), enables or disables
+     * whether Amazon SES forwards bounce and complaint notifications as email.
+     * Feedback forwarding can only be disabled when Amazon Simple Notification
+     * Service (Amazon SNS) topics are specified for both bounces and
+     * complaints.
      * </p>
-     * <note>Feedback forwarding does not apply to delivery notifications.
-     * Delivery notifications are only available through Amazon SNS.</note>
+     * <note>
+     * <p>
+     * Feedback forwarding does not apply to delivery notifications. Delivery
+     * notifications are only available through Amazon SNS.
+     * </p>
+     * </note>
      * <p>
      * This action is throttled at one request per second.
      * </p>
@@ -1913,6 +2443,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param setIdentityFeedbackForwardingEnabledRequest
+     *        Represents a request to enable or disable whether Amazon SES
+     *        forwards you bounce and complaint notifications through email. For
+     *        information about email feedback forwarding, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-email.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the
      *         SetIdentityFeedbackForwardingEnabled operation returned by the
      *         service.
@@ -1924,13 +2459,18 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Given an identity (email address or domain), enables or disables whether
-     * Amazon SES forwards bounce and complaint notifications as email. Feedback
-     * forwarding can only be disabled when Amazon Simple Notification Service
-     * (Amazon SNS) topics are specified for both bounces and complaints.
+     * Given an identity (an email address or a domain), enables or disables
+     * whether Amazon SES forwards bounce and complaint notifications as email.
+     * Feedback forwarding can only be disabled when Amazon Simple Notification
+     * Service (Amazon SNS) topics are specified for both bounces and
+     * complaints.
      * </p>
-     * <note>Feedback forwarding does not apply to delivery notifications.
-     * Delivery notifications are only available through Amazon SNS.</note>
+     * <note>
+     * <p>
+     * Feedback forwarding does not apply to delivery notifications. Delivery
+     * notifications are only available through Amazon SNS.
+     * </p>
+     * </note>
      * <p>
      * This action is throttled at one request per second.
      * </p>
@@ -1942,6 +2482,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param setIdentityFeedbackForwardingEnabledRequest
+     *        Represents a request to enable or disable whether Amazon SES
+     *        forwards you bounce and complaint notifications through email. For
+     *        information about email feedback forwarding, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-email.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1959,20 +2504,99 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Enables or disables the custom MAIL FROM domain setup for a verified
-     * identity (email address or domain).
+     * Given an identity (an email address or a domain), sets whether Amazon SES
+     * includes the original email headers in the Amazon Simple Notification
+     * Service (Amazon SNS) notifications of a specified type.
      * </p>
-     * <important>To send emails using the specified MAIL FROM domain, you must
-     * add an MX record to your MAIL FROM domain's DNS settings. If you want
-     * your emails to pass Sender Policy Framework (SPF) checks, you must also
-     * add or update an SPF record. For more information, see the <a href=
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * <p>
+     * For more information about using notifications with Amazon SES, see the
+     * <a href=
+     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html"
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * 
+     * @param setIdentityHeadersInNotificationsEnabledRequest
+     *        Represents a request to set whether Amazon SES includes the
+     *        original email headers in the Amazon SNS notifications of a
+     *        specified type. For information about notifications, see the <a
+     *        href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html"
+     *        >Amazon SES Developer Guide</a>.
+     * @return A Java Future containing the result of the
+     *         SetIdentityHeadersInNotificationsEnabled operation returned by
+     *         the service.
+     * @sample 
+     *         AmazonSimpleEmailServiceAsync.SetIdentityHeadersInNotificationsEnabled
+     */
+    java.util.concurrent.Future<SetIdentityHeadersInNotificationsEnabledResult> setIdentityHeadersInNotificationsEnabledAsync(
+            SetIdentityHeadersInNotificationsEnabledRequest setIdentityHeadersInNotificationsEnabledRequest);
+
+    /**
+     * <p>
+     * Given an identity (an email address or a domain), sets whether Amazon SES
+     * includes the original email headers in the Amazon Simple Notification
+     * Service (Amazon SNS) notifications of a specified type.
+     * </p>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * <p>
+     * For more information about using notifications with Amazon SES, see the
+     * <a href=
+     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html"
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * 
+     * @param setIdentityHeadersInNotificationsEnabledRequest
+     *        Represents a request to set whether Amazon SES includes the
+     *        original email headers in the Amazon SNS notifications of a
+     *        specified type. For information about notifications, see the <a
+     *        href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html"
+     *        >Amazon SES Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         SetIdentityHeadersInNotificationsEnabled operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.
+     *         SetIdentityHeadersInNotificationsEnabled
+     */
+    java.util.concurrent.Future<SetIdentityHeadersInNotificationsEnabledResult> setIdentityHeadersInNotificationsEnabledAsync(
+            SetIdentityHeadersInNotificationsEnabledRequest setIdentityHeadersInNotificationsEnabledRequest,
+            com.amazonaws.handlers.AsyncHandler<SetIdentityHeadersInNotificationsEnabledRequest, SetIdentityHeadersInNotificationsEnabledResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables or disables the custom MAIL FROM domain setup for a verified
+     * identity (an email address or a domain).
+     * </p>
+     * <important>
+     * <p>
+     * To send emails using the specified MAIL FROM domain, you must add an MX
+     * record to your MAIL FROM domain's DNS settings. If you want your emails
+     * to pass Sender Policy Framework (SPF) checks, you must also add or update
+     * an SPF record. For more information, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html"
-     * >Amazon SES Developer Guide</a>.</important>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </important>
      * <p>
      * This action is throttled at one request per second.
      * </p>
      * 
      * @param setIdentityMailFromDomainRequest
+     *        Represents a request to enable or disable the Amazon SES custom
+     *        MAIL FROM domain setup for a verified identity. For information
+     *        about using a custom MAIL FROM domain, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the
      *         SetIdentityMailFromDomain operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.SetIdentityMailFromDomain
@@ -1983,19 +2607,28 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     /**
      * <p>
      * Enables or disables the custom MAIL FROM domain setup for a verified
-     * identity (email address or domain).
+     * identity (an email address or a domain).
      * </p>
-     * <important>To send emails using the specified MAIL FROM domain, you must
-     * add an MX record to your MAIL FROM domain's DNS settings. If you want
-     * your emails to pass Sender Policy Framework (SPF) checks, you must also
-     * add or update an SPF record. For more information, see the <a href=
+     * <important>
+     * <p>
+     * To send emails using the specified MAIL FROM domain, you must add an MX
+     * record to your MAIL FROM domain's DNS settings. If you want your emails
+     * to pass Sender Policy Framework (SPF) checks, you must also add or update
+     * an SPF record. For more information, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html"
-     * >Amazon SES Developer Guide</a>.</important>
+     * >Amazon SES Developer Guide</a>.
+     * </p>
+     * </important>
      * <p>
      * This action is throttled at one request per second.
      * </p>
      * 
      * @param setIdentityMailFromDomainRequest
+     *        Represents a request to enable or disable the Amazon SES custom
+     *        MAIL FROM domain setup for a verified identity. For information
+     *        about using a custom MAIL FROM domain, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2011,14 +2644,18 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Given an identity (email address or domain), sets the Amazon Simple
+     * Given an identity (an email address or a domain), sets the Amazon Simple
      * Notification Service (Amazon SNS) topic to which Amazon SES will publish
      * bounce, complaint, and/or delivery notifications for emails sent with
      * that identity as the <code>Source</code>.
      * </p>
-     * <note>Unless feedback forwarding is enabled, you must specify Amazon SNS
-     * topics for bounce and complaint notifications. For more information, see
-     * <code>SetIdentityFeedbackForwardingEnabled</code>. </note>
+     * <note>
+     * <p>
+     * Unless feedback forwarding is enabled, you must specify Amazon SNS topics
+     * for bounce and complaint notifications. For more information, see
+     * <code>SetIdentityFeedbackForwardingEnabled</code>.
+     * </p>
+     * </note>
      * <p>
      * This action is throttled at one request per second.
      * </p>
@@ -2029,6 +2666,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param setIdentityNotificationTopicRequest
+     *        Represents a request to specify the Amazon SNS topic to which
+     *        Amazon SES will publish bounce, complaint, or delivery
+     *        notifications for emails sent with that identity as the Source.
+     *        For information about Amazon SES notifications, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the
      *         SetIdentityNotificationTopic operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.SetIdentityNotificationTopic
@@ -2038,14 +2681,18 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Given an identity (email address or domain), sets the Amazon Simple
+     * Given an identity (an email address or a domain), sets the Amazon Simple
      * Notification Service (Amazon SNS) topic to which Amazon SES will publish
      * bounce, complaint, and/or delivery notifications for emails sent with
      * that identity as the <code>Source</code>.
      * </p>
-     * <note>Unless feedback forwarding is enabled, you must specify Amazon SNS
-     * topics for bounce and complaint notifications. For more information, see
-     * <code>SetIdentityFeedbackForwardingEnabled</code>. </note>
+     * <note>
+     * <p>
+     * Unless feedback forwarding is enabled, you must specify Amazon SNS topics
+     * for bounce and complaint notifications. For more information, see
+     * <code>SetIdentityFeedbackForwardingEnabled</code>.
+     * </p>
+     * </note>
      * <p>
      * This action is throttled at one request per second.
      * </p>
@@ -2056,6 +2703,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param setIdentityNotificationTopicRequest
+     *        Represents a request to specify the Amazon SNS topic to which
+     *        Amazon SES will publish bounce, complaint, or delivery
+     *        notifications for emails sent with that identity as the Source.
+     *        For information about Amazon SES notifications, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2083,6 +2736,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param setReceiptRulePositionRequest
+     *        Represents a request to set the position of a receipt rule in a
+     *        receipt rule set. You use receipt rule sets to receive email with
+     *        Amazon SES. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the SetReceiptRulePosition
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.SetReceiptRulePosition
@@ -2104,6 +2762,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param setReceiptRulePositionRequest
+     *        Represents a request to set the position of a receipt rule in a
+     *        receipt rule set. You use receipt rule sets to receive email with
+     *        Amazon SES. For more information, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2131,6 +2794,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param updateReceiptRuleRequest
+     *        Represents a request to update a receipt rule. You use receipt
+     *        rules to receive email with Amazon SES. For more information, see
+     *        the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the UpdateReceiptRule
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.UpdateReceiptRule
@@ -2152,6 +2820,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param updateReceiptRuleRequest
+     *        Represents a request to update a receipt rule. You use receipt
+     *        rules to receive email with Amazon SES. For more information, see
+     *        the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2190,6 +2863,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyDomainDkimRequest
+     *        Represents a request to generate the CNAME records needed to set
+     *        up Easy DKIM with Amazon SES. For more information about setting
+     *        up Easy DKIM, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the VerifyDomainDkim
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.VerifyDomainDkim
@@ -2222,6 +2900,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyDomainDkimRequest
+     *        Represents a request to generate the CNAME records needed to set
+     *        up Easy DKIM with Amazon SES. For more information about setting
+     *        up Easy DKIM, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2244,6 +2927,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyDomainIdentityRequest
+     *        Represents a request to begin Amazon SES domain verification and
+     *        to generate the TXT records that you must publish to the DNS
+     *        server of your domain to complete the verification. For
+     *        information about domain verification, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domains.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the VerifyDomainIdentity
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.VerifyDomainIdentity
@@ -2260,6 +2949,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyDomainIdentityRequest
+     *        Represents a request to begin Amazon SES domain verification and
+     *        to generate the TXT records that you must publish to the DNS
+     *        server of your domain to complete the verification. For
+     *        information about domain verification, see the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domains.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2278,14 +2973,23 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Verifies an email address. This action causes a confirmation email
      * message to be sent to the specified address.
      * </p>
-     * <important>The VerifyEmailAddress action is deprecated as of the May 15,
-     * 2012 release of Domain Verification. The VerifyEmailIdentity action is
-     * now preferred.</important>
+     * <important>
+     * <p>
+     * The VerifyEmailAddress action is deprecated as of the May 15, 2012
+     * release of Domain Verification. The VerifyEmailIdentity action is now
+     * preferred.
+     * </p>
+     * </important>
      * <p>
      * This action is throttled at one request per second.
      * </p>
      * 
      * @param verifyEmailAddressRequest
+     *        Represents a request to begin email address verification with
+     *        Amazon SES. For information about email address verification, see
+     *        the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the VerifyEmailAddress
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.VerifyEmailAddress
@@ -2298,14 +3002,23 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Verifies an email address. This action causes a confirmation email
      * message to be sent to the specified address.
      * </p>
-     * <important>The VerifyEmailAddress action is deprecated as of the May 15,
-     * 2012 release of Domain Verification. The VerifyEmailIdentity action is
-     * now preferred.</important>
+     * <important>
+     * <p>
+     * The VerifyEmailAddress action is deprecated as of the May 15, 2012
+     * release of Domain Verification. The VerifyEmailIdentity action is now
+     * preferred.
+     * </p>
+     * </important>
      * <p>
      * This action is throttled at one request per second.
      * </p>
      * 
      * @param verifyEmailAddressRequest
+     *        Represents a request to begin email address verification with
+     *        Amazon SES. For information about email address verification, see
+     *        the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2329,6 +3042,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyEmailIdentityRequest
+     *        Represents a request to begin email address verification with
+     *        Amazon SES. For information about email address verification, see
+     *        the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html"
+     *        >Amazon SES Developer Guide</a>.
      * @return A Java Future containing the result of the VerifyEmailIdentity
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.VerifyEmailIdentity
@@ -2346,6 +3064,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyEmailIdentityRequest
+     *        Represents a request to begin email address verification with
+     *        Amazon SES. For information about email address verification, see
+     *        the <a href=
+     *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html"
+     *        >Amazon SES Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

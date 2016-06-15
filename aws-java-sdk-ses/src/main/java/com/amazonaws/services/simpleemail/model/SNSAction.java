@@ -35,9 +35,13 @@ import java.io.Serializable;
  * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html"
  * >Amazon SES Developer Guide</a>.
  * </p>
- * <important>You can only publish emails that are 150 KB or less (including the
- * header) to Amazon SNS. Larger emails will bounce. If you anticipate emails
- * larger than 150 KB, use the S3 action instead.</important>
+ * <important>
+ * <p>
+ * You can only publish emails that are 150 KB or less (including the header) to
+ * Amazon SNS. Larger emails will bounce. If you anticipate emails larger than
+ * 150 KB, use the S3 action instead.
+ * </p>
+ * </important>
  * <p>
  * For information about using a receipt rule to publish an Amazon SNS
  * notification, see the <a href=

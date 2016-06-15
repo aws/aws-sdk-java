@@ -30,7 +30,7 @@ public class DomainValidation implements Serializable, Cloneable {
     /**
      * <p>
      * Fully Qualified Domain Name (FQDN) of the form
-     * <code>www.example.com or </code><code>example.com</code>
+     * <code>www.example.com or </code> <code>example.com</code>.
      * </p>
      */
     private String domainName;
@@ -51,12 +51,12 @@ public class DomainValidation implements Serializable, Cloneable {
     /**
      * <p>
      * Fully Qualified Domain Name (FQDN) of the form
-     * <code>www.example.com or </code><code>example.com</code>
+     * <code>www.example.com or </code> <code>example.com</code>.
      * </p>
      * 
      * @param domainName
      *        Fully Qualified Domain Name (FQDN) of the form
-     *        <code>www.example.com or </code><code>example.com</code>
+     *        <code>www.example.com or </code> <code>example.com</code>.
      */
 
     public void setDomainName(String domainName) {
@@ -66,11 +66,11 @@ public class DomainValidation implements Serializable, Cloneable {
     /**
      * <p>
      * Fully Qualified Domain Name (FQDN) of the form
-     * <code>www.example.com or </code><code>example.com</code>
+     * <code>www.example.com or </code> <code>example.com</code>.
      * </p>
      * 
      * @return Fully Qualified Domain Name (FQDN) of the form
-     *         <code>www.example.com or </code><code>example.com</code>
+     *         <code>www.example.com or </code> <code>example.com</code>.
      */
 
     public String getDomainName() {
@@ -80,12 +80,12 @@ public class DomainValidation implements Serializable, Cloneable {
     /**
      * <p>
      * Fully Qualified Domain Name (FQDN) of the form
-     * <code>www.example.com or </code><code>example.com</code>
+     * <code>www.example.com or </code> <code>example.com</code>.
      * </p>
      * 
      * @param domainName
      *        Fully Qualified Domain Name (FQDN) of the form
-     *        <code>www.example.com or </code><code>example.com</code>
+     *        <code>www.example.com or </code> <code>example.com</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

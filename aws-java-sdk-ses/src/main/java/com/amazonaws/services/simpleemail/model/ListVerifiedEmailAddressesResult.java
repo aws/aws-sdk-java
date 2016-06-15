@@ -19,7 +19,10 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A list of email addresses that you have verified with Amazon SES under your
+ * AWS account.
+ * </p>
  */
 public class ListVerifiedEmailAddressesResult implements Serializable,
         Cloneable {

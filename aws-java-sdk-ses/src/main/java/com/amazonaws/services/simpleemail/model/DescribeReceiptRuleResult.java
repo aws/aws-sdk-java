@@ -19,7 +19,9 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Represents the details of a receipt rule.
+ * </p>
  */
 public class DescribeReceiptRuleResult implements Serializable, Cloneable {
 

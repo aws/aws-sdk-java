@@ -181,6 +181,22 @@ public class DBClusterStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("ReplicationSourceIdentifier",
+                        targetDepth)) {
+                    dBCluster
+                            .setReplicationSourceIdentifier(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression(
+                        "ReadReplicaIdentifiers/ReadReplicaIdentifier",
+                        targetDepth)) {
+                    dBCluster.withReadReplicaIdentifiers(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("DBClusterMembers/DBClusterMember",
                         targetDepth)) {
                     dBCluster

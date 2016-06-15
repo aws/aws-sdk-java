@@ -549,7 +549,6 @@ public class DynamoDBMapperConfig {
      */
     public static class DefaultTableNameResolver implements TableNameResolver {
         public static final DefaultTableNameResolver INSTANCE = new DefaultTableNameResolver();
-        private final DynamoDBMappingsRegistry registry = DynamoDBMappingsRegistry.instance();
 
         @Override
         public String getTableName(Class<?> clazz, DynamoDBMapperConfig config) {
@@ -562,9 +561,12 @@ public class DynamoDBMapperConfig {
                 }
             }
 
-            final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
+            final StandardAnnotationMaps.AnnotationMap annotations = StandardAnnotationMaps.of(clazz);
+            if (annotations.table() == null) {
+                throw new DynamoDBMappingException("@DynamoDBTable not present on " + clazz);
+            }
 
-            final String tableName = mappings.getTableName();
+            final String tableName = annotations.table().tableName();
             final String prefix = override == null
                 ? null : override.getTableNamePrefix();
             return prefix == null ? tableName : prefix + tableName;

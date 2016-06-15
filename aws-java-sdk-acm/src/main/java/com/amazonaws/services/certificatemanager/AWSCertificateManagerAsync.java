@@ -33,7 +33,7 @@ import com.amazonaws.services.certificatemanager.model.*;
  * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
  * Certificate Manager User Guide</a>. For more information about using the ACM
  * API, see the <a
- * href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html"> AWS
+ * href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html">AWS
  * Certificate Manager API Reference</a>.
  * </p>
  */
@@ -121,9 +121,13 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * action or be retrieved by calling the <a>GetCertificate</a> action. The
      * certificate will not be available for use by other AWS services.
      * </p>
-     * <note>You cannot delete an ACM Certificate that is being used by another
-     * AWS service. To delete a certificate that is in use, the certificate
-     * association must first be removed. </note>
+     * <note>
+     * <p>
+     * You cannot delete an ACM Certificate that is being used by another AWS
+     * service. To delete a certificate that is in use, the certificate
+     * association must first be removed.
+     * </p>
+     * </note>
      * 
      * @param deleteCertificateRequest
      * @return A Java Future containing the result of the DeleteCertificate
@@ -141,9 +145,13 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * action or be retrieved by calling the <a>GetCertificate</a> action. The
      * certificate will not be available for use by other AWS services.
      * </p>
-     * <note>You cannot delete an ACM Certificate that is being used by another
-     * AWS service. To delete a certificate that is in use, the certificate
-     * association must first be removed. </note>
+     * <note>
+     * <p>
+     * You cannot delete an ACM Certificate that is being used by another AWS
+     * service. To delete a certificate that is in use, the certificate
+     * association must first be removed.
+     * </p>
+     * </note>
      * 
      * @param deleteCertificateRequest
      * @param asyncHandler
@@ -208,8 +216,12 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * base64 encoded. If you want to decode the certificate chain to see the
      * individual certificate fields, you can use OpenSSL.
      * </p>
-     * <note> Currently, ACM Certificates can be used only with Elastic Load
-     * Balancing and Amazon CloudFront. </note>
+     * <note>
+     * <p>
+     * Currently, ACM Certificates can be used only with Elastic Load Balancing
+     * and Amazon CloudFront.
+     * </p>
+     * </note>
      * 
      * @param getCertificateRequest
      * @return A Java Future containing the result of the GetCertificate
@@ -228,8 +240,12 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * base64 encoded. If you want to decode the certificate chain to see the
      * individual certificate fields, you can use OpenSSL.
      * </p>
-     * <note> Currently, ACM Certificates can be used only with Elastic Load
-     * Balancing and Amazon CloudFront. </note>
+     * <note>
+     * <p>
+     * Currently, ACM Certificates can be used only with Elastic Load Balancing
+     * and Amazon CloudFront.
+     * </p>
+     * </note>
      * 
      * @param getCertificateRequest
      * @param asyncHandler
@@ -247,14 +263,9 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
 
     /**
      * <p>
-     * Retrieves a list of the ACM Certificate ARNs, and the domain name for
-     * each ARN, owned by the calling account. You can filter the list based on
-     * the <code>CertificateStatuses</code> parameter, and you can display up to
-     * <code>MaxItems</code> certificates at one time. If you have more than
-     * <code>MaxItems</code> certificates, use the <code>NextToken</code> marker
-     * from the response object in your next call to the
-     * <code>ListCertificates</code> action to retrieve the next set of
-     * certificate ARNs.
+     * Retrieves a list of ACM Certificates and the domain name for each. You
+     * can optionally filter the list to return only the certificates that match
+     * the specified status.
      * </p>
      * 
      * @param listCertificatesRequest
@@ -267,14 +278,9 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
 
     /**
      * <p>
-     * Retrieves a list of the ACM Certificate ARNs, and the domain name for
-     * each ARN, owned by the calling account. You can filter the list based on
-     * the <code>CertificateStatuses</code> parameter, and you can display up to
-     * <code>MaxItems</code> certificates at one time. If you have more than
-     * <code>MaxItems</code> certificates, use the <code>NextToken</code> marker
-     * from the response object in your next call to the
-     * <code>ListCertificates</code> action to retrieve the next set of
-     * certificate ARNs.
+     * Retrieves a list of ACM Certificates and the domain name for each. You
+     * can optionally filter the list to return only the certificates that match
+     * the specified status.
      * </p>
      * 
      * @param listCertificatesRequest
@@ -388,7 +394,7 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * email is sent to the domain owner to request approval to issue the
      * certificate. After receiving approval from the domain owner, the ACM
      * Certificate is issued. For more information, see the <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html"> AWS
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">AWS
      * Certificate Manager User Guide </a>.
      * </p>
      * 
@@ -409,7 +415,7 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * email is sent to the domain owner to request approval to issue the
      * certificate. After receiving approval from the domain owner, the ACM
      * Certificate is issued. For more information, see the <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html"> AWS
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">AWS
      * Certificate Manager User Guide </a>.
      * </p>
      * 

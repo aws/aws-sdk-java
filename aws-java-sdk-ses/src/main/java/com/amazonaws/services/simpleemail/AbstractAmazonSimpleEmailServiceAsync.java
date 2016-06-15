@@ -625,6 +625,21 @@ public class AbstractAmazonSimpleEmailServiceAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<SetIdentityHeadersInNotificationsEnabledResult> setIdentityHeadersInNotificationsEnabledAsync(
+            SetIdentityHeadersInNotificationsEnabledRequest request) {
+
+        return setIdentityHeadersInNotificationsEnabledAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetIdentityHeadersInNotificationsEnabledResult> setIdentityHeadersInNotificationsEnabledAsync(
+            SetIdentityHeadersInNotificationsEnabledRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetIdentityHeadersInNotificationsEnabledRequest, SetIdentityHeadersInNotificationsEnabledResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SetIdentityMailFromDomainResult> setIdentityMailFromDomainAsync(
             SetIdentityMailFromDomainRequest request) {
 

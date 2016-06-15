@@ -20,7 +20,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This exception is thrown when the KMS key is disabled.
+ * This exception is deprecated.
  * </p>
  */
 public class KmsKeyDisabledException extends AmazonServiceException {

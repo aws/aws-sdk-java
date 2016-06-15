@@ -34,7 +34,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
  * Certificate Manager User Guide</a>. For more information about using the ACM
  * API, see the <a
- * href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html"> AWS
+ * href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html">AWS
  * Certificate Manager API Reference</a>.
  * </p>
  */

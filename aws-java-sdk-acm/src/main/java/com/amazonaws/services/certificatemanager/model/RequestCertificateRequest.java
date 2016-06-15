@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * 
  */
 public class RequestCertificateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -66,6 +66,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -93,7 +94,6 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      */
     private java.util.List<DomainValidationOption> domainValidationOptions;
 
@@ -362,6 +362,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -389,7 +390,6 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @return The base validation domain that will act as the suffix of the
      *         email addresses that are used to send the emails. This must be
@@ -398,7 +398,8 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *         certificate for <code>test.example.com</code> and specify
      *         <b>DomainValidationOptions</b> of <code>example.com</code>, ACM
      *         sends email to the domain registrant, technical contact, and
-     *         administrative contact in WHOIS and the following five addresses:
+     *         administrative contact in WHOIS and the following five
+     *         addresses:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -425,7 +426,6 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *         webmaster@example.com
      *         </p>
      *         </li>
-     *         </ul>
      */
 
     public java.util.List<DomainValidationOption> getDomainValidationOptions() {
@@ -442,6 +442,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -469,7 +470,6 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param domainValidationOptions
      *        The base validation domain that will act as the suffix of the
@@ -479,7 +479,8 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        certificate for <code>test.example.com</code> and specify
      *        <b>DomainValidationOptions</b> of <code>example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
-     *        administrative contact in WHOIS and the following five addresses:
+     *        administrative contact in WHOIS and the following five
+     *        addresses:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -506,7 +507,6 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        webmaster@example.com
      *        </p>
      *        </li>
-     *        </ul>
      */
 
     public void setDomainValidationOptions(
@@ -530,6 +530,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -557,7 +558,6 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setDomainValidationOptions(java.util.Collection)} or
@@ -573,7 +573,8 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        certificate for <code>test.example.com</code> and specify
      *        <b>DomainValidationOptions</b> of <code>example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
-     *        administrative contact in WHOIS and the following five addresses:
+     *        administrative contact in WHOIS and the following five
+     *        addresses:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -600,7 +601,6 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        webmaster@example.com
      *        </p>
      *        </li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -627,6 +627,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -654,7 +655,6 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param domainValidationOptions
      *        The base validation domain that will act as the suffix of the
@@ -664,7 +664,8 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        certificate for <code>test.example.com</code> and specify
      *        <b>DomainValidationOptions</b> of <code>example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
-     *        administrative contact in WHOIS and the following five addresses:
+     *        administrative contact in WHOIS and the following five
+     *        addresses:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -691,7 +692,6 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        webmaster@example.com
      *        </p>
      *        </li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

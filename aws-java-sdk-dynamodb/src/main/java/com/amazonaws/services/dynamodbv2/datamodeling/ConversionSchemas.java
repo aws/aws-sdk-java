@@ -273,10 +273,10 @@ public final class ConversionSchemas {
 
             for (final DynamoDBMappingsRegistry.Mapping mapping : mappings.getMappings()) {
                 Object getterResult =
-                        mapping.getValueOf(object);
+                        mapping.bean().get(object);
 
                 if (getterResult != null) {
-                    AttributeValue value = convert(mapping.getter(), getterResult);
+                    AttributeValue value = convert(mapping.bean().getter(), getterResult);
                     if (value != null) {
                         result.put(mapping.getAttributeName(), value);
                     }
@@ -386,7 +386,7 @@ public final class ConversionSchemas {
             }
 
             Class<?> clazz = (Class<?>) localType;
-            if (!registry.mappingsOf(clazz).isDocument()) {
+            if (!StandardAnnotationMaps.of(clazz).has(DynamoDBDocument.class)) {
                 throw new DynamoDBMappingException(
                         "Cannot marshall type " + type
                         + " without a custom marshaler or @DynamoDBDocument "
@@ -422,9 +422,9 @@ public final class ConversionSchemas {
                 String attributeName = mapping.getAttributeName();
                 AttributeValue av = value.get(attributeName);
                 if (av != null) {
-                    ArgumentUnmarshaller unmarshaller = getUnmarshaller(mapping.getter(), mapping.setter());
-                    Object unmarshalled = unmarshall(unmarshaller, mapping.setter(), av);
-                    mapping.setValueOf(result, unmarshalled);
+                    ArgumentUnmarshaller unmarshaller = getUnmarshaller(mapping.bean().getter(), mapping.bean().setter());
+                    Object unmarshalled = unmarshall(unmarshaller, mapping.bean().setter(), av);
+                    mapping.bean().set(result, unmarshalled);
                 }
             }
 
@@ -571,7 +571,7 @@ public final class ConversionSchemas {
             }
 
             Class<?> clazz = (Class<?>) localType;
-            if (!registry.mappingsOf(clazz).isDocument()) {
+            if (!StandardAnnotationMaps.of(clazz).has(DynamoDBDocument.class)) {
                 throw new DynamoDBMappingException(
                         "Cannot unmarshall to type " + type
                         + " without a custom marshaler or @DynamoDBDocument "

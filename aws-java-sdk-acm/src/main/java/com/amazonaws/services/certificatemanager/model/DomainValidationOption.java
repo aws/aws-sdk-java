@@ -42,6 +42,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS for the base domain and the following five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -69,7 +70,6 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * </p>
      */
     private String validationDomain;
 
@@ -127,6 +127,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS for the base domain and the following five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -154,7 +155,6 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param validationDomain
      *        The domain to which validation email is sent. This is the base
@@ -166,7 +166,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *        <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
      *        administrative contact in WHOIS for the base domain and the
-     *        following five addresses:
+     *        following five addresses:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -193,7 +193,6 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *        webmaster@subdomain.example.com
      *        </p>
      *        </li>
-     *        </ul>
      */
 
     public void setValidationDomain(String validationDomain) {
@@ -210,6 +209,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS for the base domain and the following five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -237,7 +237,6 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @return The domain to which validation email is sent. This is the base
      *         validation domain that will act as the suffix of the email
@@ -248,7 +247,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *         <b>ValidationDomain</b> of <code>subdomain.example.com</code>,
      *         ACM sends email to the domain registrant, technical contact, and
      *         administrative contact in WHOIS for the base domain and the
-     *         following five addresses:
+     *         following five addresses:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -275,7 +274,6 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *         webmaster@subdomain.example.com
      *         </p>
      *         </li>
-     *         </ul>
      */
 
     public String getValidationDomain() {
@@ -292,6 +290,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS for the base domain and the following five addresses:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -319,7 +318,6 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param validationDomain
      *        The domain to which validation email is sent. This is the base
@@ -331,7 +329,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *        <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
      *        administrative contact in WHOIS for the base domain and the
-     *        following five addresses:
+     *        following five addresses:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -358,7 +356,6 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *        webmaster@subdomain.example.com
      *        </p>
      *        </li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

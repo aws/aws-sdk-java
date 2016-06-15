@@ -14,9 +14,20 @@
  */
 package com.amazonaws.http;
 
-import com.amazonaws.*;
+import com.amazonaws.AbortedException;
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.AmazonWebServiceResponse;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.Request;
+import com.amazonaws.RequestClientOptions;
 import com.amazonaws.RequestClientOptions.Marker;
+import com.amazonaws.ResetException;
+import com.amazonaws.Response;
+import com.amazonaws.ResponseMetadata;
+import com.amazonaws.SDKGlobalTime;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -49,11 +60,24 @@ import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.retry.RetryUtils;
 import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
 import com.amazonaws.retry.internal.AuthRetryParameters;
-import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.util.CapacityManager;
+import com.amazonaws.util.CollectionUtils;
+import com.amazonaws.util.CountingInputStream;
+import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.FakeIOException;
+import com.amazonaws.util.ImmutableMapParameter;
+import com.amazonaws.util.ResponseMetadataCache;
+import com.amazonaws.util.TimingInfo;
+import com.amazonaws.util.UnreliableFilterInputStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.*;
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpEntityEnclosingRequest;
+import org.apache.http.HttpStatus;
+import org.apache.http.StatusLine;
 import org.apache.http.annotation.ThreadSafe;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.protocol.HttpClientContext;
@@ -65,12 +89,28 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.UUID;
 
 import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
-import static com.amazonaws.event.SDKProgressPublisher.*;
-import static com.amazonaws.util.AWSRequestMetrics.Field.*;
+import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
+import static com.amazonaws.event.SDKProgressPublisher
+        .publishRequestContentLength;
+import static com.amazonaws.event.SDKProgressPublisher
+        .publishResponseContentLength;
+import static com.amazonaws.util.AWSRequestMetrics.Field
+        .HttpClientPoolAvailableCount;
+import static com.amazonaws.util.AWSRequestMetrics.Field
+        .HttpClientPoolLeasedCount;
+import static com.amazonaws.util.AWSRequestMetrics.Field
+        .HttpClientPoolPendingCount;
 import static com.amazonaws.util.IOUtils.closeQuietly;
 
 @ThreadSafe
@@ -319,6 +359,8 @@ public class AmazonHttpClient {
                     getNonNullResponseHandler(errorResponseHandler), executionContext);
         } catch (InterruptedException ie) {
             throw handleInterruptedException(executionContext, ie);
+        } catch (AbortedException ae) {
+            throw handleAbortedException(executionContext, ae);
         }
     }
 
@@ -442,6 +484,29 @@ public class AmazonHttpClient {
         } else {
             Thread.currentThread().interrupt();
             return new AmazonClientException(e);
+        }
+    }
+
+    /**
+     * Determine if an aborted exception is caused by the client execution timer
+     * interrupting the current thread. If so throws {@link
+     * ClientExecutionTimeoutException} else throws the original {@link
+     * AbortedException}
+     *
+     * @param executionContext execution context for the current execution.
+     * @param ae               aborted exception that occurred
+     * @return {@link ClientExecutionTimeoutException} if the {@link
+     * AbortedException} was caused by the {@link ClientExecutionTimer}.
+     * Otherwise throws the original {@link AbortedException}
+     */
+    private RuntimeException handleAbortedException(final ExecutionContext
+                                                            executionContext,
+                                                    final AbortedException ae) {
+        if (executionContext.getClientExecutionTrackerTask()
+                .hasTimeoutExpired()) {
+            return new ClientExecutionTimeoutException();
+        } else {
+            return ae;
         }
     }
 

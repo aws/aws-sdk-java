@@ -19,7 +19,10 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A list of all identities that you have attempted to verify under your AWS
+ * account, regardless of verification status.
+ * </p>
  */
 public class ListIdentitiesResult implements Serializable, Cloneable {
 

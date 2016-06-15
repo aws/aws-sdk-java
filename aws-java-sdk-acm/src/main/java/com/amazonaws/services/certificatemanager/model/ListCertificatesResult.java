@@ -19,36 +19,36 @@ package com.amazonaws.services.certificatemanager.model;
 import java.io.Serializable;
 
 /**
- * <p/>
+ * 
  */
 public class ListCertificatesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the list has been truncated, this value is present and should be used
-     * for the <code>NextToken</code> input parameter on your next call to
-     * <code>ListCertificates</code>.
+     * When the list is truncated, this value is present and contains the value
+     * to use for the <code>NextToken</code> parameter in a subsequent
+     * pagination request.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * A list of the certificate ARNs.
+     * A list of ACM Certificates.
      * </p>
      */
     private java.util.List<CertificateSummary> certificateSummaryList;
 
     /**
      * <p>
-     * If the list has been truncated, this value is present and should be used
-     * for the <code>NextToken</code> input parameter on your next call to
-     * <code>ListCertificates</code>.
+     * When the list is truncated, this value is present and contains the value
+     * to use for the <code>NextToken</code> parameter in a subsequent
+     * pagination request.
      * </p>
      * 
      * @param nextToken
-     *        If the list has been truncated, this value is present and should
-     *        be used for the <code>NextToken</code> input parameter on your
-     *        next call to <code>ListCertificates</code>.
+     *        When the list is truncated, this value is present and contains the
+     *        value to use for the <code>NextToken</code> parameter in a
+     *        subsequent pagination request.
      */
 
     public void setNextToken(String nextToken) {
@@ -57,14 +57,14 @@ public class ListCertificatesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the list has been truncated, this value is present and should be used
-     * for the <code>NextToken</code> input parameter on your next call to
-     * <code>ListCertificates</code>.
+     * When the list is truncated, this value is present and contains the value
+     * to use for the <code>NextToken</code> parameter in a subsequent
+     * pagination request.
      * </p>
      * 
-     * @return If the list has been truncated, this value is present and should
-     *         be used for the <code>NextToken</code> input parameter on your
-     *         next call to <code>ListCertificates</code>.
+     * @return When the list is truncated, this value is present and contains
+     *         the value to use for the <code>NextToken</code> parameter in a
+     *         subsequent pagination request.
      */
 
     public String getNextToken() {
@@ -73,15 +73,15 @@ public class ListCertificatesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the list has been truncated, this value is present and should be used
-     * for the <code>NextToken</code> input parameter on your next call to
-     * <code>ListCertificates</code>.
+     * When the list is truncated, this value is present and contains the value
+     * to use for the <code>NextToken</code> parameter in a subsequent
+     * pagination request.
      * </p>
      * 
      * @param nextToken
-     *        If the list has been truncated, this value is present and should
-     *        be used for the <code>NextToken</code> input parameter on your
-     *        next call to <code>ListCertificates</code>.
+     *        When the list is truncated, this value is present and contains the
+     *        value to use for the <code>NextToken</code> parameter in a
+     *        subsequent pagination request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -93,10 +93,10 @@ public class ListCertificatesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the certificate ARNs.
+     * A list of ACM Certificates.
      * </p>
      * 
-     * @return A list of the certificate ARNs.
+     * @return A list of ACM Certificates.
      */
 
     public java.util.List<CertificateSummary> getCertificateSummaryList() {
@@ -105,11 +105,11 @@ public class ListCertificatesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the certificate ARNs.
+     * A list of ACM Certificates.
      * </p>
      * 
      * @param certificateSummaryList
-     *        A list of the certificate ARNs.
+     *        A list of ACM Certificates.
      */
 
     public void setCertificateSummaryList(
@@ -125,7 +125,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the certificate ARNs.
+     * A list of ACM Certificates.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -135,7 +135,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param certificateSummaryList
-     *        A list of the certificate ARNs.
+     *        A list of ACM Certificates.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -154,11 +154,11 @@ public class ListCertificatesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the certificate ARNs.
+     * A list of ACM Certificates.
      * </p>
      * 
      * @param certificateSummaryList
-     *        A list of the certificate ARNs.
+     *        A list of ACM Certificates.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

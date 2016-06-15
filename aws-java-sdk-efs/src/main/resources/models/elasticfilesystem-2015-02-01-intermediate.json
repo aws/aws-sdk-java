@@ -20,10 +20,10 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "elasticfilesystem",
     "signingName" : "elasticfilesystem",
+    "xmlProtocol" : false,
     "jsonProtocol" : true,
     "serviceName" : "EFS",
     "cborProtocol" : false,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -60,12 +60,12 @@
         "documentation" : "<p>Returned if the AWS account has already created maximum number of file systems allowed per account. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateFileSystemResult",
       "asyncReturnType" : "CreateFileSystemResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateFileSystemResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateFileSystemResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateFileSystemRequest, CreateFileSystemResult>",
+      "authenticated" : true,
       "methodName" : "createFileSystem"
     },
     "CreateMountTarget" : {
@@ -123,12 +123,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateMountTargetResult",
       "asyncReturnType" : "CreateMountTargetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateMountTargetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateMountTargetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateMountTargetRequest, CreateMountTargetResult>",
+      "authenticated" : true,
       "methodName" : "createMountTarget"
     },
     "CreateTags" : {
@@ -159,12 +159,12 @@
         "documentation" : "<p>Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateTagsResult",
       "asyncReturnType" : "CreateTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult>",
+      "authenticated" : true,
       "methodName" : "createTags"
     },
     "DeleteFileSystem" : {
@@ -198,12 +198,12 @@
         "documentation" : "<p>Returned if a file system has mount targets. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteFileSystemResult",
       "asyncReturnType" : "DeleteFileSystemResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteFileSystemResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteFileSystemResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteFileSystemRequest, DeleteFileSystemResult>",
+      "authenticated" : true,
       "methodName" : "deleteFileSystem"
     },
     "DeleteMountTarget" : {
@@ -237,12 +237,12 @@
         "documentation" : "<p>Returned if there is no mount target with the specified ID found in the caller's account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteMountTargetResult",
       "asyncReturnType" : "DeleteMountTargetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteMountTargetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteMountTargetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteMountTargetRequest, DeleteMountTargetResult>",
+      "authenticated" : true,
       "methodName" : "deleteMountTarget"
     },
     "DeleteTags" : {
@@ -273,12 +273,12 @@
         "documentation" : "<p>Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteTagsResult",
       "asyncReturnType" : "DeleteTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult>",
+      "authenticated" : true,
       "methodName" : "deleteTags"
     },
     "DescribeFileSystems" : {
@@ -309,12 +309,12 @@
         "documentation" : "<p>Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeFileSystemsResult",
       "asyncReturnType" : "DescribeFileSystemsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeFileSystemsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeFileSystemsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeFileSystemsRequest, DescribeFileSystemsResult>",
+      "authenticated" : true,
       "methodName" : "describeFileSystems"
     },
     "DescribeMountTargetSecurityGroups" : {
@@ -348,12 +348,12 @@
         "documentation" : "<p>Returned if the mount target is not in the correct state for the operation.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeMountTargetSecurityGroupsResult",
       "asyncReturnType" : "DescribeMountTargetSecurityGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMountTargetSecurityGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeMountTargetSecurityGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeMountTargetSecurityGroupsRequest, DescribeMountTargetSecurityGroupsResult>",
+      "authenticated" : true,
       "methodName" : "describeMountTargetSecurityGroups"
     },
     "DescribeMountTargets" : {
@@ -387,12 +387,12 @@
         "documentation" : "<p>Returned if there is no mount target with the specified ID found in the caller's account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeMountTargetsResult",
       "asyncReturnType" : "DescribeMountTargetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMountTargetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeMountTargetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeMountTargetsRequest, DescribeMountTargetsResult>",
+      "authenticated" : true,
       "methodName" : "describeMountTargets"
     },
     "DescribeTags" : {
@@ -423,12 +423,12 @@
         "documentation" : "<p>Returned if the specified <code>FileSystemId</code> does not exist in the requester's AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeTagsResult",
       "asyncReturnType" : "DescribeTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult>",
+      "authenticated" : true,
       "methodName" : "describeTags"
     },
     "ModifyMountTargetSecurityGroups" : {
@@ -468,12 +468,12 @@
         "documentation" : "<p>Returned if one of the specified security groups does not exist in the subnet's VPC.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ModifyMountTargetSecurityGroupsResult",
       "asyncReturnType" : "ModifyMountTargetSecurityGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyMountTargetSecurityGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyMountTargetSecurityGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyMountTargetSecurityGroupsRequest, ModifyMountTargetSecurityGroupsResult>",
+      "authenticated" : true,
       "methodName" : "modifyMountTargetSecurityGroups"
     }
   },

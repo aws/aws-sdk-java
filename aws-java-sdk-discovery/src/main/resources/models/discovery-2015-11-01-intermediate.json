@@ -63,12 +63,12 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateTagsResult",
       "asyncReturnType" : "CreateTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult>",
-      "authenticated" : true,
       "methodName" : "createTags"
     },
     "DeleteTags" : {
@@ -105,12 +105,12 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteTagsResult",
       "asyncReturnType" : "DeleteTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult>",
-      "authenticated" : true,
       "methodName" : "deleteTags"
     },
     "DescribeAgents" : {
@@ -144,12 +144,12 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeAgentsResult",
       "asyncReturnType" : "DescribeAgentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAgentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAgentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAgentsRequest, DescribeAgentsResult>",
-      "authenticated" : true,
       "methodName" : "describeAgents"
     },
     "DescribeConfigurations" : {
@@ -183,12 +183,12 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeConfigurationsResult",
       "asyncReturnType" : "DescribeConfigurationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigurationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationsRequest, DescribeConfigurationsResult>",
-      "authenticated" : true,
       "methodName" : "describeConfigurations"
     },
     "DescribeExportConfigurations" : {
@@ -225,12 +225,12 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeExportConfigurationsResult",
       "asyncReturnType" : "DescribeExportConfigurationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeExportConfigurationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeExportConfigurationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeExportConfigurationsRequest, DescribeExportConfigurationsResult>",
-      "authenticated" : true,
       "methodName" : "describeExportConfigurations"
     },
     "DescribeTags" : {
@@ -267,12 +267,12 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeTagsResult",
       "asyncReturnType" : "DescribeTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult>",
-      "authenticated" : true,
       "methodName" : "describeTags"
     },
     "ExportConfigurations" : {
@@ -309,12 +309,12 @@
         "documentation" : "<p>This operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ExportConfigurationsResult",
       "asyncReturnType" : "ExportConfigurationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ExportConfigurationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ExportConfigurationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ExportConfigurationsRequest, ExportConfigurationsResult>",
-      "authenticated" : true,
       "methodName" : "exportConfigurations"
     },
     "ListConfigurations" : {
@@ -351,12 +351,12 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListConfigurationsResult",
       "asyncReturnType" : "ListConfigurationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListConfigurationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListConfigurationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListConfigurationsRequest, ListConfigurationsResult>",
-      "authenticated" : true,
       "methodName" : "listConfigurations"
     },
     "StartDataCollectionByAgentIds" : {
@@ -390,12 +390,12 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "StartDataCollectionByAgentIdsResult",
       "asyncReturnType" : "StartDataCollectionByAgentIdsResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartDataCollectionByAgentIdsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartDataCollectionByAgentIdsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartDataCollectionByAgentIdsRequest, StartDataCollectionByAgentIdsResult>",
-      "authenticated" : true,
       "methodName" : "startDataCollectionByAgentIds"
     },
     "StopDataCollectionByAgentIds" : {
@@ -429,12 +429,12 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "StopDataCollectionByAgentIdsResult",
       "asyncReturnType" : "StopDataCollectionByAgentIdsResult",
       "asyncFutureType" : "java.util.concurrent.Future<StopDataCollectionByAgentIdsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StopDataCollectionByAgentIdsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopDataCollectionByAgentIdsRequest, StopDataCollectionByAgentIdsResult>",
-      "authenticated" : true,
       "methodName" : "stopDataCollectionByAgentIds"
     }
   },
@@ -4188,12 +4188,12 @@
                 "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                 "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
               },
-              "entryType" : "Map.Entry<String, String>",
               "templateType" : "java.util.Map<String,String>",
               "templateImplType" : "java.util.HashMap<String,String>",
               "keySimple" : true,
               "valueSimple" : true,
-              "valueList" : false
+              "valueList" : false,
+              "entryType" : "Map.Entry<String, String>"
             },
             "enumType" : null,
             "xmlNameSpaceUri" : null,
@@ -4501,12 +4501,12 @@
                   "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                   "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
                 },
-                "entryType" : "Map.Entry<String, String>",
                 "templateType" : "java.util.Map<String,String>",
                 "templateImplType" : "java.util.HashMap<String,String>",
                 "keySimple" : true,
                 "valueSimple" : true,
-                "valueList" : false
+                "valueList" : false,
+                "entryType" : "Map.Entry<String, String>"
               },
               "enumType" : null,
               "xmlNameSpaceUri" : null,
@@ -7268,12 +7268,12 @@
                 "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                 "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
               },
-              "entryType" : "Map.Entry<String, String>",
               "templateType" : "java.util.Map<String,String>",
               "templateImplType" : "java.util.HashMap<String,String>",
               "keySimple" : true,
               "valueSimple" : true,
-              "valueList" : false
+              "valueList" : false,
+              "entryType" : "Map.Entry<String, String>"
             },
             "enumType" : null,
             "xmlNameSpaceUri" : null,
@@ -7476,12 +7476,12 @@
                   "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                   "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
                 },
-                "entryType" : "Map.Entry<String, String>",
                 "templateType" : "java.util.Map<String,String>",
                 "templateImplType" : "java.util.HashMap<String,String>",
                 "keySimple" : true,
                 "valueSimple" : true,
-                "valueList" : false
+                "valueList" : false,
+                "entryType" : "Map.Entry<String, String>"
               },
               "enumType" : null,
               "xmlNameSpaceUri" : null,

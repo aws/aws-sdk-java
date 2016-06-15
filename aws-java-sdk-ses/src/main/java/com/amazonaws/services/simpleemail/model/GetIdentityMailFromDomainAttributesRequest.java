@@ -20,7 +20,13 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Represents a request to return the Amazon SES custom MAIL FROM attributes for
+ * a list of identities. For information about using a custom MAIL FROM domain,
+ * see the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html"
+ * >Amazon SES Developer Guide</a>.
+ * </p>
  */
 public class GetIdentityMailFromDomainAttributesRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

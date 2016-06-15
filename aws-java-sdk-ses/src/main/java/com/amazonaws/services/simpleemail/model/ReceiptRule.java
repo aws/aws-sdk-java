@@ -43,10 +43,22 @@ public class ReceiptRule implements Serializable, Cloneable {
      * The name of the receipt rule. The name must:
      * </p>
      * <ul>
-     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).</li>
-     * <li>Start and end with a letter or number.</li>
-     * <li>Contain less than 64 characters.</li>
+     * <li>
+     * <p>
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     * underscores (_), or dashes (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start and end with a letter or number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Contain less than 64 characters.
+     * </p>
+     * </li>
      * </ul>
      */
     private String name;
@@ -97,19 +109,43 @@ public class ReceiptRule implements Serializable, Cloneable {
      * The name of the receipt rule. The name must:
      * </p>
      * <ul>
-     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).</li>
-     * <li>Start and end with a letter or number.</li>
-     * <li>Contain less than 64 characters.</li>
+     * <li>
+     * <p>
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     * underscores (_), or dashes (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start and end with a letter or number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Contain less than 64 characters.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param name
      *        The name of the receipt rule. The name must:</p>
      *        <ul>
-     *        <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *        (.), underscores (_), or dashes (-).</li>
-     *        <li>Start and end with a letter or number.</li>
-     *        <li>Contain less than 64 characters.</li>
+     *        <li>
+     *        <p>
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     *        underscores (_), or dashes (-).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Start and end with a letter or number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Contain less than 64 characters.
+     *        </p>
+     *        </li>
      */
 
     public void setName(String name) {
@@ -121,18 +157,42 @@ public class ReceiptRule implements Serializable, Cloneable {
      * The name of the receipt rule. The name must:
      * </p>
      * <ul>
-     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).</li>
-     * <li>Start and end with a letter or number.</li>
-     * <li>Contain less than 64 characters.</li>
+     * <li>
+     * <p>
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     * underscores (_), or dashes (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start and end with a letter or number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Contain less than 64 characters.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The name of the receipt rule. The name must:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-).</li>
-     *         <li>Start and end with a letter or number.</li>
-     *         <li>Contain less than 64 characters.</li>
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start and end with a letter or number.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Contain less than 64 characters.
+     *         </p>
+     *         </li>
      */
 
     public String getName() {
@@ -144,19 +204,43 @@ public class ReceiptRule implements Serializable, Cloneable {
      * The name of the receipt rule. The name must:
      * </p>
      * <ul>
-     * <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-     * underscores (_), or dashes (-).</li>
-     * <li>Start and end with a letter or number.</li>
-     * <li>Contain less than 64 characters.</li>
+     * <li>
+     * <p>
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     * underscores (_), or dashes (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Start and end with a letter or number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Contain less than 64 characters.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param name
      *        The name of the receipt rule. The name must:</p>
      *        <ul>
-     *        <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *        (.), underscores (_), or dashes (-).</li>
-     *        <li>Start and end with a letter or number.</li>
-     *        <li>Contain less than 64 characters.</li>
+     *        <li>
+     *        <p>
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
+     *        underscores (_), or dashes (-).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Start and end with a letter or number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Contain less than 64 characters.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

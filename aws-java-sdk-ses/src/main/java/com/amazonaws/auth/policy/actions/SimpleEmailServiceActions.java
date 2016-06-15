@@ -95,6 +95,9 @@ public enum SimpleEmailServiceActions implements Action {
     /** Action for the SetIdentityFeedbackForwardingEnabled operation. */
     SetIdentityFeedbackForwardingEnabled(
             "ses:SetIdentityFeedbackForwardingEnabled"),
+    /** Action for the SetIdentityHeadersInNotificationsEnabled operation. */
+    SetIdentityHeadersInNotificationsEnabled(
+            "ses:SetIdentityHeadersInNotificationsEnabled"),
     /** Action for the SetIdentityMailFromDomain operation. */
     SetIdentityMailFromDomain("ses:SetIdentityMailFromDomain"),
     /** Action for the SetIdentityNotificationTopic operation. */

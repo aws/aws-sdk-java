@@ -20,7 +20,10 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Represents a request to delete one of your Amazon SES identities (an email
+ * address or domain).
+ * </p>
  */
 public class DeleteIdentityRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

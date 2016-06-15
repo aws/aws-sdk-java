@@ -68,36 +68,23 @@ public class DynamoDBMappingsRegistryTest {
     @Test
     public void testMappings() {
         final DynamoDBMappingsRegistry.Mappings mappings = DynamoDBMappingsRegistry.instance().mappingsOf(TestObject.class);
-
-        assertEquals(TestObject.class, mappings.getObjectType());
         assertEquals(2, mappings.getPrimaryKeys().size());
         assertEquals(8, mappings.getMappings().size());
-        assertNotNull(mappings.getTableName());
     }
 
     @Test
     public void testHashKey() {
         final DynamoDBMappingsRegistry.Mappings mappings = DynamoDBMappingsRegistry.instance().mappingsOf(TestObject.class);
-
         assertNotNull(mappings.getHashKey());
         assertTrue(mappings.getPrimaryKeys().contains(mappings.getHashKey()));
-
-        for (final DynamoDBMappingsRegistry.Mapping m : mappings.getMappings()) {
-            assertEquals((mappings.getHashKey() == m), m.isHashKey());
-        }
     }
 
     @Test
     public void testRangeKey() {
         final DynamoDBMappingsRegistry.Mappings mappings = DynamoDBMappingsRegistry.instance().mappingsOf(TestObject.class);
-
         assertNotNull(mappings.getRangeKey());
         assertTrue(mappings.hasRangeKey());
         assertTrue(mappings.getPrimaryKeys().contains(mappings.getHashKey()));
-
-        for (final DynamoDBMappingsRegistry.Mapping m : mappings.getMappings()) {
-            assertEquals((mappings.getRangeKey() == m), m.isRangeKey());
-        }
     }
 
     @Test
@@ -118,7 +105,7 @@ public class DynamoDBMappingsRegistryTest {
     }
 
     @DynamoDBTable(tableName="aws-java-sdk-test")
-    public class NonMappedInheritedProperties {
+    public class NonMappedInheritedProperties extends AbstractNonMappedInheritedProperties {
         private String doUse;
         public String getDoUse() {
             return this.doUse;

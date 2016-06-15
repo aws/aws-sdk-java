@@ -30,6 +30,7 @@ import com.amazonaws.codegen.model.service.Operation;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.naming.DefaultNamingStrategy;
 import com.amazonaws.codegen.naming.NamingStrategy;
+import com.amazonaws.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -151,8 +152,12 @@ public class IntermediateModelBuilder {
             if (operation.getOutput() != null) {
                 String outputShapeName = operation.getOutput().getShape();
                 // TODO need to figure this out for wrapper outputs.
-                // Not a problem right now because output is only referenced by JSON protocols
-                if (service.getShape(outputShapeName).isWrapper()) {
+                // See [JAVA-1556]
+
+                // Only link when output shape is not a result wrapper. When it is a result wrapper
+                // we only preserve the single member the wrapper has in the intermediate model
+                // so this lookup will fail.
+                if (StringUtils.isNullOrEmpty(operation.getOutput().getResultWrapper())) {
                     entry.getValue().setOutputShape(model.getShapeByC2jName(outputShapeName));
                 }
             }

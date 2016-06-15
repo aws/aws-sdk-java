@@ -60,6 +60,36 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
      * </p>
      */
     private Boolean forwardingEnabled;
+    /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Bounce</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * bounce notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in bounce notifications.
+     * </p>
+     */
+    private Boolean headersInBounceNotificationsEnabled;
+    /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Complaint</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * complaint notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in complaint notifications.
+     * </p>
+     */
+    private Boolean headersInComplaintNotificationsEnabled;
+    /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Delivery</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * delivery notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in delivery notifications.
+     * </p>
+     */
+    private Boolean headersInDeliveryNotificationsEnabled;
 
     /**
      * <p>
@@ -298,6 +328,279 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Bounce</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * bounce notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in bounce notifications.
+     * </p>
+     * 
+     * @param headersInBounceNotificationsEnabled
+     *        Describes whether Amazon SES includes the original email headers
+     *        in Amazon SNS notifications of type <code>Bounce</code>. A value
+     *        of <code>true</code> specifies that Amazon SES will include
+     *        headers in bounce notifications, and a value of <code>false</code>
+     *        specifies that Amazon SES will not include headers in bounce
+     *        notifications.
+     */
+
+    public void setHeadersInBounceNotificationsEnabled(
+            Boolean headersInBounceNotificationsEnabled) {
+        this.headersInBounceNotificationsEnabled = headersInBounceNotificationsEnabled;
+    }
+
+    /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Bounce</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * bounce notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in bounce notifications.
+     * </p>
+     * 
+     * @return Describes whether Amazon SES includes the original email headers
+     *         in Amazon SNS notifications of type <code>Bounce</code>. A value
+     *         of <code>true</code> specifies that Amazon SES will include
+     *         headers in bounce notifications, and a value of
+     *         <code>false</code> specifies that Amazon SES will not include
+     *         headers in bounce notifications.
+     */
+
+    public Boolean getHeadersInBounceNotificationsEnabled() {
+        return this.headersInBounceNotificationsEnabled;
+    }
+
+    /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Bounce</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * bounce notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in bounce notifications.
+     * </p>
+     * 
+     * @param headersInBounceNotificationsEnabled
+     *        Describes whether Amazon SES includes the original email headers
+     *        in Amazon SNS notifications of type <code>Bounce</code>. A value
+     *        of <code>true</code> specifies that Amazon SES will include
+     *        headers in bounce notifications, and a value of <code>false</code>
+     *        specifies that Amazon SES will not include headers in bounce
+     *        notifications.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public IdentityNotificationAttributes withHeadersInBounceNotificationsEnabled(
+            Boolean headersInBounceNotificationsEnabled) {
+        setHeadersInBounceNotificationsEnabled(headersInBounceNotificationsEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Bounce</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * bounce notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in bounce notifications.
+     * </p>
+     * 
+     * @return Describes whether Amazon SES includes the original email headers
+     *         in Amazon SNS notifications of type <code>Bounce</code>. A value
+     *         of <code>true</code> specifies that Amazon SES will include
+     *         headers in bounce notifications, and a value of
+     *         <code>false</code> specifies that Amazon SES will not include
+     *         headers in bounce notifications.
+     */
+
+    public Boolean isHeadersInBounceNotificationsEnabled() {
+        return this.headersInBounceNotificationsEnabled;
+    }
+
+    /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Complaint</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * complaint notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in complaint notifications.
+     * </p>
+     * 
+     * @param headersInComplaintNotificationsEnabled
+     *        Describes whether Amazon SES includes the original email headers
+     *        in Amazon SNS notifications of type <code>Complaint</code>. A
+     *        value of <code>true</code> specifies that Amazon SES will include
+     *        headers in complaint notifications, and a value of
+     *        <code>false</code> specifies that Amazon SES will not include
+     *        headers in complaint notifications.
+     */
+
+    public void setHeadersInComplaintNotificationsEnabled(
+            Boolean headersInComplaintNotificationsEnabled) {
+        this.headersInComplaintNotificationsEnabled = headersInComplaintNotificationsEnabled;
+    }
+
+    /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Complaint</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * complaint notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in complaint notifications.
+     * </p>
+     * 
+     * @return Describes whether Amazon SES includes the original email headers
+     *         in Amazon SNS notifications of type <code>Complaint</code>. A
+     *         value of <code>true</code> specifies that Amazon SES will include
+     *         headers in complaint notifications, and a value of
+     *         <code>false</code> specifies that Amazon SES will not include
+     *         headers in complaint notifications.
+     */
+
+    public Boolean getHeadersInComplaintNotificationsEnabled() {
+        return this.headersInComplaintNotificationsEnabled;
+    }
+
+    /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Complaint</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * complaint notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in complaint notifications.
+     * </p>
+     * 
+     * @param headersInComplaintNotificationsEnabled
+     *        Describes whether Amazon SES includes the original email headers
+     *        in Amazon SNS notifications of type <code>Complaint</code>. A
+     *        value of <code>true</code> specifies that Amazon SES will include
+     *        headers in complaint notifications, and a value of
+     *        <code>false</code> specifies that Amazon SES will not include
+     *        headers in complaint notifications.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public IdentityNotificationAttributes withHeadersInComplaintNotificationsEnabled(
+            Boolean headersInComplaintNotificationsEnabled) {
+        setHeadersInComplaintNotificationsEnabled(headersInComplaintNotificationsEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Complaint</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * complaint notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in complaint notifications.
+     * </p>
+     * 
+     * @return Describes whether Amazon SES includes the original email headers
+     *         in Amazon SNS notifications of type <code>Complaint</code>. A
+     *         value of <code>true</code> specifies that Amazon SES will include
+     *         headers in complaint notifications, and a value of
+     *         <code>false</code> specifies that Amazon SES will not include
+     *         headers in complaint notifications.
+     */
+
+    public Boolean isHeadersInComplaintNotificationsEnabled() {
+        return this.headersInComplaintNotificationsEnabled;
+    }
+
+    /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Delivery</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * delivery notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in delivery notifications.
+     * </p>
+     * 
+     * @param headersInDeliveryNotificationsEnabled
+     *        Describes whether Amazon SES includes the original email headers
+     *        in Amazon SNS notifications of type <code>Delivery</code>. A value
+     *        of <code>true</code> specifies that Amazon SES will include
+     *        headers in delivery notifications, and a value of
+     *        <code>false</code> specifies that Amazon SES will not include
+     *        headers in delivery notifications.
+     */
+
+    public void setHeadersInDeliveryNotificationsEnabled(
+            Boolean headersInDeliveryNotificationsEnabled) {
+        this.headersInDeliveryNotificationsEnabled = headersInDeliveryNotificationsEnabled;
+    }
+
+    /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Delivery</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * delivery notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in delivery notifications.
+     * </p>
+     * 
+     * @return Describes whether Amazon SES includes the original email headers
+     *         in Amazon SNS notifications of type <code>Delivery</code>. A
+     *         value of <code>true</code> specifies that Amazon SES will include
+     *         headers in delivery notifications, and a value of
+     *         <code>false</code> specifies that Amazon SES will not include
+     *         headers in delivery notifications.
+     */
+
+    public Boolean getHeadersInDeliveryNotificationsEnabled() {
+        return this.headersInDeliveryNotificationsEnabled;
+    }
+
+    /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Delivery</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * delivery notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in delivery notifications.
+     * </p>
+     * 
+     * @param headersInDeliveryNotificationsEnabled
+     *        Describes whether Amazon SES includes the original email headers
+     *        in Amazon SNS notifications of type <code>Delivery</code>. A value
+     *        of <code>true</code> specifies that Amazon SES will include
+     *        headers in delivery notifications, and a value of
+     *        <code>false</code> specifies that Amazon SES will not include
+     *        headers in delivery notifications.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public IdentityNotificationAttributes withHeadersInDeliveryNotificationsEnabled(
+            Boolean headersInDeliveryNotificationsEnabled) {
+        setHeadersInDeliveryNotificationsEnabled(headersInDeliveryNotificationsEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether Amazon SES includes the original email headers in
+     * Amazon SNS notifications of type <code>Delivery</code>. A value of
+     * <code>true</code> specifies that Amazon SES will include headers in
+     * delivery notifications, and a value of <code>false</code> specifies that
+     * Amazon SES will not include headers in delivery notifications.
+     * </p>
+     * 
+     * @return Describes whether Amazon SES includes the original email headers
+     *         in Amazon SNS notifications of type <code>Delivery</code>. A
+     *         value of <code>true</code> specifies that Amazon SES will include
+     *         headers in delivery notifications, and a value of
+     *         <code>false</code> specifies that Amazon SES will not include
+     *         headers in delivery notifications.
+     */
+
+    public Boolean isHeadersInDeliveryNotificationsEnabled() {
+        return this.headersInDeliveryNotificationsEnabled;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -316,7 +619,16 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
         if (getDeliveryTopic() != null)
             sb.append("DeliveryTopic: " + getDeliveryTopic() + ",");
         if (getForwardingEnabled() != null)
-            sb.append("ForwardingEnabled: " + getForwardingEnabled());
+            sb.append("ForwardingEnabled: " + getForwardingEnabled() + ",");
+        if (getHeadersInBounceNotificationsEnabled() != null)
+            sb.append("HeadersInBounceNotificationsEnabled: "
+                    + getHeadersInBounceNotificationsEnabled() + ",");
+        if (getHeadersInComplaintNotificationsEnabled() != null)
+            sb.append("HeadersInComplaintNotificationsEnabled: "
+                    + getHeadersInComplaintNotificationsEnabled() + ",");
+        if (getHeadersInDeliveryNotificationsEnabled() != null)
+            sb.append("HeadersInDeliveryNotificationsEnabled: "
+                    + getHeadersInDeliveryNotificationsEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -354,6 +666,27 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
                 && other.getForwardingEnabled().equals(
                         this.getForwardingEnabled()) == false)
             return false;
+        if (other.getHeadersInBounceNotificationsEnabled() == null
+                ^ this.getHeadersInBounceNotificationsEnabled() == null)
+            return false;
+        if (other.getHeadersInBounceNotificationsEnabled() != null
+                && other.getHeadersInBounceNotificationsEnabled().equals(
+                        this.getHeadersInBounceNotificationsEnabled()) == false)
+            return false;
+        if (other.getHeadersInComplaintNotificationsEnabled() == null
+                ^ this.getHeadersInComplaintNotificationsEnabled() == null)
+            return false;
+        if (other.getHeadersInComplaintNotificationsEnabled() != null
+                && other.getHeadersInComplaintNotificationsEnabled().equals(
+                        this.getHeadersInComplaintNotificationsEnabled()) == false)
+            return false;
+        if (other.getHeadersInDeliveryNotificationsEnabled() == null
+                ^ this.getHeadersInDeliveryNotificationsEnabled() == null)
+            return false;
+        if (other.getHeadersInDeliveryNotificationsEnabled() != null
+                && other.getHeadersInDeliveryNotificationsEnabled().equals(
+                        this.getHeadersInDeliveryNotificationsEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -377,6 +710,19 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
                 * hashCode
                 + ((getForwardingEnabled() == null) ? 0
                         : getForwardingEnabled().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getHeadersInBounceNotificationsEnabled() == null) ? 0
+                        : getHeadersInBounceNotificationsEnabled().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getHeadersInComplaintNotificationsEnabled() == null) ? 0
+                        : getHeadersInComplaintNotificationsEnabled()
+                                .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getHeadersInDeliveryNotificationsEnabled() == null) ? 0
+                        : getHeadersInDeliveryNotificationsEnabled().hashCode());
         return hashCode;
     }
 

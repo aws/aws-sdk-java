@@ -41,9 +41,13 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * <code>BouncedRecipientInfo</code> must be a recipient of the original
      * bounced message.
      * </p>
-     * <note>Do not prepend the <code>FinalRecipient</code> email address with
+     * <note>
+     * <p>
+     * Do not prepend the <code>FinalRecipient</code> email address with
      * <code>rfc 822;</code>, as described in <a
-     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</note>
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.
+     * </p>
+     * </note>
      */
     private String finalRecipient;
     /**
@@ -104,9 +108,13 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * <code>BouncedRecipientInfo</code> must be a recipient of the original
      * bounced message.
      * </p>
-     * <note>Do not prepend the <code>FinalRecipient</code> email address with
+     * <note>
+     * <p>
+     * Do not prepend the <code>FinalRecipient</code> email address with
      * <code>rfc 822;</code>, as described in <a
-     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</note>
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.
+     * </p>
+     * </note>
      * 
      * @param finalRecipient
      *        The email address to which the message was ultimately delivered.
@@ -116,10 +124,12 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *        <code>BouncedRecipientInfo</code> structure. Either
      *        <code>FinalRecipient</code> or the recipient in
      *        <code>BouncedRecipientInfo</code> must be a recipient of the
-     *        original bounced message.</p> <note>Do not prepend the
-     *        <code>FinalRecipient</code> email address with
+     *        original bounced message.</p> <note>
+     *        <p>
+     *        Do not prepend the <code>FinalRecipient</code> email address with
      *        <code>rfc 822;</code>, as described in <a
      *        href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.
+     *        </p>
      */
 
     public void setFinalRecipient(String finalRecipient) {
@@ -136,9 +146,13 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * <code>BouncedRecipientInfo</code> must be a recipient of the original
      * bounced message.
      * </p>
-     * <note>Do not prepend the <code>FinalRecipient</code> email address with
+     * <note>
+     * <p>
+     * Do not prepend the <code>FinalRecipient</code> email address with
      * <code>rfc 822;</code>, as described in <a
-     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</note>
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.
+     * </p>
+     * </note>
      * 
      * @return The email address to which the message was ultimately delivered.
      *         This corresponds to the <code>Final-Recipient</code> in the DSN.
@@ -147,10 +161,12 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *         <code>BouncedRecipientInfo</code> structure. Either
      *         <code>FinalRecipient</code> or the recipient in
      *         <code>BouncedRecipientInfo</code> must be a recipient of the
-     *         original bounced message.</p> <note>Do not prepend the
-     *         <code>FinalRecipient</code> email address with
+     *         original bounced message.</p> <note>
+     *         <p>
+     *         Do not prepend the <code>FinalRecipient</code> email address with
      *         <code>rfc 822;</code>, as described in <a
      *         href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.
+     *         </p>
      */
 
     public String getFinalRecipient() {
@@ -167,9 +183,13 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * <code>BouncedRecipientInfo</code> must be a recipient of the original
      * bounced message.
      * </p>
-     * <note>Do not prepend the <code>FinalRecipient</code> email address with
+     * <note>
+     * <p>
+     * Do not prepend the <code>FinalRecipient</code> email address with
      * <code>rfc 822;</code>, as described in <a
-     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</note>
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.
+     * </p>
+     * </note>
      * 
      * @param finalRecipient
      *        The email address to which the message was ultimately delivered.
@@ -179,10 +199,12 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *        <code>BouncedRecipientInfo</code> structure. Either
      *        <code>FinalRecipient</code> or the recipient in
      *        <code>BouncedRecipientInfo</code> must be a recipient of the
-     *        original bounced message.</p> <note>Do not prepend the
-     *        <code>FinalRecipient</code> email address with
+     *        original bounced message.</p> <note>
+     *        <p>
+     *        Do not prepend the <code>FinalRecipient</code> email address with
      *        <code>rfc 822;</code>, as described in <a
      *        href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

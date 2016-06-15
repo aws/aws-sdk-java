@@ -19,7 +19,10 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Returns a TXT record that you must publish to the DNS server of your domain
+ * to complete domain verification with Amazon SES.
+ * </p>
  */
 public class VerifyDomainIdentityResult implements Serializable, Cloneable {
 

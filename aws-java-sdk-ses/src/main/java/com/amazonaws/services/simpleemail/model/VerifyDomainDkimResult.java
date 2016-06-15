@@ -19,7 +19,10 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Returns CNAME records that you must publish to the DNS server of your domain
+ * to set up Easy DKIM with Amazon SES.
+ * </p>
  */
 public class VerifyDomainDkimResult implements Serializable, Cloneable {
 

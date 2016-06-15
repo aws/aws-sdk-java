@@ -41,8 +41,12 @@ public class RawMessage implements Serializable, Cloneable {
      * "From," and "Return-Path" addresses. For more information, see the
      * documentation for <code>SendRawEmail</code>.
      * </p>
-     * <important>Do not include these X-headers in the DKIM signature, because
-     * they are removed by Amazon SES before sending the email.</important>
+     * <important>
+     * <p>
+     * Do not include these X-headers in the DKIM signature, because they are
+     * removed by Amazon SES before sending the email.
+     * </p>
+     * </important>
      * <p>
      * For more information, go to the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html"
@@ -68,7 +72,7 @@ public class RawMessage implements Serializable, Cloneable {
      *        The raw data of the message. The client must ensure that the
      *        message format complies with Internet email standards regarding
      *        email header fields, MIME types, MIME encoding, and base64
-     *        encoding (if necessary). </p>
+     *        encoding (if necessary).</p>
      *        <p>
      *        The To:, CC:, and BCC: headers in the raw message can contain a
      *        group list.
@@ -80,9 +84,12 @@ public class RawMessage implements Serializable, Cloneable {
      *        more information, see the documentation for
      *        <code>SendRawEmail</code>.
      *        </p>
-     *        <important>Do not include these X-headers in the DKIM signature,
-     *        because they are removed by Amazon SES before sending the
-     *        email.</important>
+     *        <important>
+     *        <p>
+     *        Do not include these X-headers in the DKIM signature, because they
+     *        are removed by Amazon SES before sending the email.
+     *        </p>
+     *        </important>
      *        <p>
      *        For more information, go to the <a href=
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html"
@@ -108,8 +115,12 @@ public class RawMessage implements Serializable, Cloneable {
      * "From," and "Return-Path" addresses. For more information, see the
      * documentation for <code>SendRawEmail</code>.
      * </p>
-     * <important>Do not include these X-headers in the DKIM signature, because
-     * they are removed by Amazon SES before sending the email.</important>
+     * <important>
+     * <p>
+     * Do not include these X-headers in the DKIM signature, because they are
+     * removed by Amazon SES before sending the email.
+     * </p>
+     * </important>
      * <p>
      * For more information, go to the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html"
@@ -133,7 +144,7 @@ public class RawMessage implements Serializable, Cloneable {
      *        The raw data of the message. The client must ensure that the
      *        message format complies with Internet email standards regarding
      *        email header fields, MIME types, MIME encoding, and base64
-     *        encoding (if necessary). </p>
+     *        encoding (if necessary).</p>
      *        <p>
      *        The To:, CC:, and BCC: headers in the raw message can contain a
      *        group list.
@@ -145,9 +156,12 @@ public class RawMessage implements Serializable, Cloneable {
      *        more information, see the documentation for
      *        <code>SendRawEmail</code>.
      *        </p>
-     *        <important>Do not include these X-headers in the DKIM signature,
-     *        because they are removed by Amazon SES before sending the
-     *        email.</important>
+     *        <important>
+     *        <p>
+     *        Do not include these X-headers in the DKIM signature, because they
+     *        are removed by Amazon SES before sending the email.
+     *        </p>
+     *        </important>
      *        <p>
      *        For more information, go to the <a href=
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html"
@@ -174,8 +188,12 @@ public class RawMessage implements Serializable, Cloneable {
      * "From," and "Return-Path" addresses. For more information, see the
      * documentation for <code>SendRawEmail</code>.
      * </p>
-     * <important>Do not include these X-headers in the DKIM signature, because
-     * they are removed by Amazon SES before sending the email.</important>
+     * <important>
+     * <p>
+     * Do not include these X-headers in the DKIM signature, because they are
+     * removed by Amazon SES before sending the email.
+     * </p>
+     * </important>
      * <p>
      * For more information, go to the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html"
@@ -195,7 +213,7 @@ public class RawMessage implements Serializable, Cloneable {
      * @return The raw data of the message. The client must ensure that the
      *         message format complies with Internet email standards regarding
      *         email header fields, MIME types, MIME encoding, and base64
-     *         encoding (if necessary). </p>
+     *         encoding (if necessary).</p>
      *         <p>
      *         The To:, CC:, and BCC: headers in the raw message can contain a
      *         group list.
@@ -207,9 +225,12 @@ public class RawMessage implements Serializable, Cloneable {
      *         more information, see the documentation for
      *         <code>SendRawEmail</code>.
      *         </p>
-     *         <important>Do not include these X-headers in the DKIM signature,
-     *         because they are removed by Amazon SES before sending the
-     *         email.</important>
+     *         <important>
+     *         <p>
+     *         Do not include these X-headers in the DKIM signature, because
+     *         they are removed by Amazon SES before sending the email.
+     *         </p>
+     *         </important>
      *         <p>
      *         For more information, go to the <a href=
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html"
@@ -236,8 +257,12 @@ public class RawMessage implements Serializable, Cloneable {
      * "From," and "Return-Path" addresses. For more information, see the
      * documentation for <code>SendRawEmail</code>.
      * </p>
-     * <important>Do not include these X-headers in the DKIM signature, because
-     * they are removed by Amazon SES before sending the email.</important>
+     * <important>
+     * <p>
+     * Do not include these X-headers in the DKIM signature, because they are
+     * removed by Amazon SES before sending the email.
+     * </p>
+     * </important>
      * <p>
      * For more information, go to the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html"
@@ -248,7 +273,7 @@ public class RawMessage implements Serializable, Cloneable {
      *        The raw data of the message. The client must ensure that the
      *        message format complies with Internet email standards regarding
      *        email header fields, MIME types, MIME encoding, and base64
-     *        encoding (if necessary). </p>
+     *        encoding (if necessary).</p>
      *        <p>
      *        The To:, CC:, and BCC: headers in the raw message can contain a
      *        group list.
@@ -260,9 +285,12 @@ public class RawMessage implements Serializable, Cloneable {
      *        more information, see the documentation for
      *        <code>SendRawEmail</code>.
      *        </p>
-     *        <important>Do not include these X-headers in the DKIM signature,
-     *        because they are removed by Amazon SES before sending the
-     *        email.</important>
+     *        <important>
+     *        <p>
+     *        Do not include these X-headers in the DKIM signature, because they
+     *        are removed by Amazon SES before sending the email.
+     *        </p>
+     *        </important>
      *        <p>
      *        For more information, go to the <a href=
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html"

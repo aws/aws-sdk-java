@@ -31,8 +31,9 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest
      * string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.
+     * Constraints: Must contain no more than 255 alphanumeric characters.
+     * Cannot contain periods, underscores, spaces, or hyphens. Must not be
+     * <code>default</code>.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -60,8 +61,9 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest
      * string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.
+     * Constraints: Must contain no more than 255 alphanumeric characters.
+     * Cannot contain periods, underscores, spaces, or hyphens. Must not be
+     * <code>default</code>.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -72,8 +74,8 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest
      *        lowercase string.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
-     *        characters, periods, underscores, spaces, or hyphens. Must not be
-     *        default.
+     *        characters. Cannot contain periods, underscores, spaces, or
+     *        hyphens. Must not be <code>default</code>.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -89,8 +91,9 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest
      * string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.
+     * Constraints: Must contain no more than 255 alphanumeric characters.
+     * Cannot contain periods, underscores, spaces, or hyphens. Must not be
+     * <code>default</code>.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -100,8 +103,8 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest
      *         lowercase string.</p>
      *         <p>
      *         Constraints: Must contain no more than 255 alphanumeric
-     *         characters, periods, underscores, spaces, or hyphens. Must not be
-     *         default.
+     *         characters. Cannot contain periods, underscores, spaces, or
+     *         hyphens. Must not be <code>default</code>.
      *         </p>
      *         <p>
      *         Example: <code>mySubnetgroup</code>
@@ -117,8 +120,9 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest
      * string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters,
-     * periods, underscores, spaces, or hyphens. Must not be default.
+     * Constraints: Must contain no more than 255 alphanumeric characters.
+     * Cannot contain periods, underscores, spaces, or hyphens. Must not be
+     * <code>default</code>.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -129,8 +133,8 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest
      *        lowercase string.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
-     *        characters, periods, underscores, spaces, or hyphens. Must not be
-     *        default.
+     *        characters. Cannot contain periods, underscores, spaces, or
+     *        hyphens. Must not be <code>default</code>.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>

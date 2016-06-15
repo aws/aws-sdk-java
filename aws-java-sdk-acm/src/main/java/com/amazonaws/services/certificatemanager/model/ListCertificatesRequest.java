@@ -20,160 +20,43 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * 
  */
 public class ListCertificatesRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
     /**
      * <p>
-     * Identifies the statuses of the ACM Certificates for which you want to
-     * retrieve the ARNs. This can be one or more of the following values:
-     * <ul>
-     * <li>
-     * <p>
-     * <code>PENDING_VALIDATION</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ISSUED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>INACTIVE</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>EXPIRED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>VALIDATION_TIMED_OUT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>REVOKED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>FAILED</code>
-     * </p>
-     * </li>
-     * </ul>
+     * The status or statuses on which to filter the list of ACM Certificates.
      * </p>
      */
     private java.util.List<String> certificateStatuses;
     /**
      * <p>
-     * String that contains an opaque marker of the next ACM Certificate ARN to
-     * be displayed. Use this parameter when paginating results, and only in a
-     * subsequent request after you've received a response where the results
-     * have been truncated. Set it to an empty string the first time you call
-     * this action, and set it to the value of the <code>NextToken</code>
-     * element you receive in the response object for subsequent calls.
+     * Use this parameter only when paginating results and only in a subsequent
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextToken</code> from the response you just received.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * Specify this parameter when paginating results to indicate the maximum
-     * number of ACM Certificates that you want to display for each response. If
-     * there are additional certificates beyond the maximum you specify, use the
-     * <code>NextToken</code> value in your next call to the
-     * <code>ListCertificates</code> action.
+     * Use this parameter when paginating results to specify the maximum number
+     * of items to return in the response. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> element is sent in the
+     * response. Use this <code>NextToken</code> value in a subsequent request
+     * to retrieve additional items.
      * </p>
      */
     private Integer maxItems;
 
     /**
      * <p>
-     * Identifies the statuses of the ACM Certificates for which you want to
-     * retrieve the ARNs. This can be one or more of the following values:
-     * <ul>
-     * <li>
-     * <p>
-     * <code>PENDING_VALIDATION</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ISSUED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>INACTIVE</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>EXPIRED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>VALIDATION_TIMED_OUT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>REVOKED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>FAILED</code>
-     * </p>
-     * </li>
-     * </ul>
+     * The status or statuses on which to filter the list of ACM Certificates.
      * </p>
      * 
-     * @return Identifies the statuses of the ACM Certificates for which you
-     *         want to retrieve the ARNs. This can be one or more of the
-     *         following values:
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>PENDING_VALIDATION</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>ISSUED</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>INACTIVE</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>EXPIRED</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>VALIDATION_TIMED_OUT</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>REVOKED</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>FAILED</code>
-     *         </p>
-     *         </li>
-     *         </ul>
+     * @return The status or statuses on which to filter the list of ACM
+     *         Certificates.
      * @see CertificateStatus
      */
 
@@ -183,88 +66,12 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Identifies the statuses of the ACM Certificates for which you want to
-     * retrieve the ARNs. This can be one or more of the following values:
-     * <ul>
-     * <li>
-     * <p>
-     * <code>PENDING_VALIDATION</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ISSUED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>INACTIVE</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>EXPIRED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>VALIDATION_TIMED_OUT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>REVOKED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>FAILED</code>
-     * </p>
-     * </li>
-     * </ul>
+     * The status or statuses on which to filter the list of ACM Certificates.
      * </p>
      * 
      * @param certificateStatuses
-     *        Identifies the statuses of the ACM Certificates for which you want
-     *        to retrieve the ARNs. This can be one or more of the following
-     *        values:
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>PENDING_VALIDATION</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ISSUED</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>INACTIVE</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>EXPIRED</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>VALIDATION_TIMED_OUT</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>REVOKED</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>FAILED</code>
-     *        </p>
-     *        </li>
-     *        </ul>
+     *        The status or statuses on which to filter the list of ACM
+     *        Certificates.
      * @see CertificateStatus
      */
 
@@ -281,45 +88,7 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Identifies the statuses of the ACM Certificates for which you want to
-     * retrieve the ARNs. This can be one or more of the following values:
-     * <ul>
-     * <li>
-     * <p>
-     * <code>PENDING_VALIDATION</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ISSUED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>INACTIVE</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>EXPIRED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>VALIDATION_TIMED_OUT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>REVOKED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>FAILED</code>
-     * </p>
-     * </li>
-     * </ul>
+     * The status or statuses on which to filter the list of ACM Certificates.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -329,46 +98,8 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param certificateStatuses
-     *        Identifies the statuses of the ACM Certificates for which you want
-     *        to retrieve the ARNs. This can be one or more of the following
-     *        values:
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>PENDING_VALIDATION</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ISSUED</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>INACTIVE</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>EXPIRED</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>VALIDATION_TIMED_OUT</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>REVOKED</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>FAILED</code>
-     *        </p>
-     *        </li>
-     *        </ul>
+     *        The status or statuses on which to filter the list of ACM
+     *        Certificates.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateStatus
@@ -388,88 +119,12 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Identifies the statuses of the ACM Certificates for which you want to
-     * retrieve the ARNs. This can be one or more of the following values:
-     * <ul>
-     * <li>
-     * <p>
-     * <code>PENDING_VALIDATION</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ISSUED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>INACTIVE</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>EXPIRED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>VALIDATION_TIMED_OUT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>REVOKED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>FAILED</code>
-     * </p>
-     * </li>
-     * </ul>
+     * The status or statuses on which to filter the list of ACM Certificates.
      * </p>
      * 
      * @param certificateStatuses
-     *        Identifies the statuses of the ACM Certificates for which you want
-     *        to retrieve the ARNs. This can be one or more of the following
-     *        values:
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>PENDING_VALIDATION</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ISSUED</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>INACTIVE</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>EXPIRED</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>VALIDATION_TIMED_OUT</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>REVOKED</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>FAILED</code>
-     *        </p>
-     *        </li>
-     *        </ul>
+     *        The status or statuses on which to filter the list of ACM
+     *        Certificates.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateStatus
@@ -483,88 +138,12 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Identifies the statuses of the ACM Certificates for which you want to
-     * retrieve the ARNs. This can be one or more of the following values:
-     * <ul>
-     * <li>
-     * <p>
-     * <code>PENDING_VALIDATION</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ISSUED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>INACTIVE</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>EXPIRED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>VALIDATION_TIMED_OUT</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>REVOKED</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>FAILED</code>
-     * </p>
-     * </li>
-     * </ul>
+     * The status or statuses on which to filter the list of ACM Certificates.
      * </p>
      * 
      * @param certificateStatuses
-     *        Identifies the statuses of the ACM Certificates for which you want
-     *        to retrieve the ARNs. This can be one or more of the following
-     *        values:
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>PENDING_VALIDATION</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ISSUED</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>INACTIVE</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>EXPIRED</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>VALIDATION_TIMED_OUT</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>REVOKED</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>FAILED</code>
-     *        </p>
-     *        </li>
-     *        </ul>
+     *        The status or statuses on which to filter the list of ACM
+     *        Certificates.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateStatus
@@ -587,22 +166,16 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * String that contains an opaque marker of the next ACM Certificate ARN to
-     * be displayed. Use this parameter when paginating results, and only in a
-     * subsequent request after you've received a response where the results
-     * have been truncated. Set it to an empty string the first time you call
-     * this action, and set it to the value of the <code>NextToken</code>
-     * element you receive in the response object for subsequent calls.
+     * Use this parameter only when paginating results and only in a subsequent
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextToken</code> from the response you just received.
      * </p>
      * 
      * @param nextToken
-     *        String that contains an opaque marker of the next ACM Certificate
-     *        ARN to be displayed. Use this parameter when paginating results,
-     *        and only in a subsequent request after you've received a response
-     *        where the results have been truncated. Set it to an empty string
-     *        the first time you call this action, and set it to the value of
-     *        the <code>NextToken</code> element you receive in the response
-     *        object for subsequent calls.
+     *        Use this parameter only when paginating results and only in a
+     *        subsequent request after you receive a response with truncated
+     *        results. Set it to the value of <code>NextToken</code> from the
+     *        response you just received.
      */
 
     public void setNextToken(String nextToken) {
@@ -611,21 +184,15 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * String that contains an opaque marker of the next ACM Certificate ARN to
-     * be displayed. Use this parameter when paginating results, and only in a
-     * subsequent request after you've received a response where the results
-     * have been truncated. Set it to an empty string the first time you call
-     * this action, and set it to the value of the <code>NextToken</code>
-     * element you receive in the response object for subsequent calls.
+     * Use this parameter only when paginating results and only in a subsequent
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextToken</code> from the response you just received.
      * </p>
      * 
-     * @return String that contains an opaque marker of the next ACM Certificate
-     *         ARN to be displayed. Use this parameter when paginating results,
-     *         and only in a subsequent request after you've received a response
-     *         where the results have been truncated. Set it to an empty string
-     *         the first time you call this action, and set it to the value of
-     *         the <code>NextToken</code> element you receive in the response
-     *         object for subsequent calls.
+     * @return Use this parameter only when paginating results and only in a
+     *         subsequent request after you receive a response with truncated
+     *         results. Set it to the value of <code>NextToken</code> from the
+     *         response you just received.
      */
 
     public String getNextToken() {
@@ -634,22 +201,16 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * String that contains an opaque marker of the next ACM Certificate ARN to
-     * be displayed. Use this parameter when paginating results, and only in a
-     * subsequent request after you've received a response where the results
-     * have been truncated. Set it to an empty string the first time you call
-     * this action, and set it to the value of the <code>NextToken</code>
-     * element you receive in the response object for subsequent calls.
+     * Use this parameter only when paginating results and only in a subsequent
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextToken</code> from the response you just received.
      * </p>
      * 
      * @param nextToken
-     *        String that contains an opaque marker of the next ACM Certificate
-     *        ARN to be displayed. Use this parameter when paginating results,
-     *        and only in a subsequent request after you've received a response
-     *        where the results have been truncated. Set it to an empty string
-     *        the first time you call this action, and set it to the value of
-     *        the <code>NextToken</code> element you receive in the response
-     *        object for subsequent calls.
+     *        Use this parameter only when paginating results and only in a
+     *        subsequent request after you receive a response with truncated
+     *        results. Set it to the value of <code>NextToken</code> from the
+     *        response you just received.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -661,19 +222,19 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify this parameter when paginating results to indicate the maximum
-     * number of ACM Certificates that you want to display for each response. If
-     * there are additional certificates beyond the maximum you specify, use the
-     * <code>NextToken</code> value in your next call to the
-     * <code>ListCertificates</code> action.
+     * Use this parameter when paginating results to specify the maximum number
+     * of items to return in the response. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> element is sent in the
+     * response. Use this <code>NextToken</code> value in a subsequent request
+     * to retrieve additional items.
      * </p>
      * 
      * @param maxItems
-     *        Specify this parameter when paginating results to indicate the
-     *        maximum number of ACM Certificates that you want to display for
-     *        each response. If there are additional certificates beyond the
-     *        maximum you specify, use the <code>NextToken</code> value in your
-     *        next call to the <code>ListCertificates</code> action.
+     *        Use this parameter when paginating results to specify the maximum
+     *        number of items to return in the response. If additional items
+     *        exist beyond the number you specify, the <code>NextToken</code>
+     *        element is sent in the response. Use this <code>NextToken</code>
+     *        value in a subsequent request to retrieve additional items.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -682,18 +243,18 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify this parameter when paginating results to indicate the maximum
-     * number of ACM Certificates that you want to display for each response. If
-     * there are additional certificates beyond the maximum you specify, use the
-     * <code>NextToken</code> value in your next call to the
-     * <code>ListCertificates</code> action.
+     * Use this parameter when paginating results to specify the maximum number
+     * of items to return in the response. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> element is sent in the
+     * response. Use this <code>NextToken</code> value in a subsequent request
+     * to retrieve additional items.
      * </p>
      * 
-     * @return Specify this parameter when paginating results to indicate the
-     *         maximum number of ACM Certificates that you want to display for
-     *         each response. If there are additional certificates beyond the
-     *         maximum you specify, use the <code>NextToken</code> value in your
-     *         next call to the <code>ListCertificates</code> action.
+     * @return Use this parameter when paginating results to specify the maximum
+     *         number of items to return in the response. If additional items
+     *         exist beyond the number you specify, the <code>NextToken</code>
+     *         element is sent in the response. Use this <code>NextToken</code>
+     *         value in a subsequent request to retrieve additional items.
      */
 
     public Integer getMaxItems() {
@@ -702,19 +263,19 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify this parameter when paginating results to indicate the maximum
-     * number of ACM Certificates that you want to display for each response. If
-     * there are additional certificates beyond the maximum you specify, use the
-     * <code>NextToken</code> value in your next call to the
-     * <code>ListCertificates</code> action.
+     * Use this parameter when paginating results to specify the maximum number
+     * of items to return in the response. If additional items exist beyond the
+     * number you specify, the <code>NextToken</code> element is sent in the
+     * response. Use this <code>NextToken</code> value in a subsequent request
+     * to retrieve additional items.
      * </p>
      * 
      * @param maxItems
-     *        Specify this parameter when paginating results to indicate the
-     *        maximum number of ACM Certificates that you want to display for
-     *        each response. If there are additional certificates beyond the
-     *        maximum you specify, use the <code>NextToken</code> value in your
-     *        next call to the <code>ListCertificates</code> action.
+     *        Use this parameter when paginating results to specify the maximum
+     *        number of items to return in the response. If additional items
+     *        exist beyond the number you specify, the <code>NextToken</code>
+     *        element is sent in the response. Use this <code>NextToken</code>
+     *        value in a subsequent request to retrieve additional items.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

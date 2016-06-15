@@ -252,6 +252,12 @@ public class AbstractAmazonSimpleEmailService implements
     }
 
     @Override
+    public SetIdentityHeadersInNotificationsEnabledResult setIdentityHeadersInNotificationsEnabled(
+            SetIdentityHeadersInNotificationsEnabledRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SetIdentityMailFromDomainResult setIdentityMailFromDomain(
             SetIdentityMailFromDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();

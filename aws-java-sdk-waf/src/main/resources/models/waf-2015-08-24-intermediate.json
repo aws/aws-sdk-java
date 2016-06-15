@@ -20,10 +20,10 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "waf",
     "signingName" : "waf",
-    "xmlProtocol" : false,
     "jsonProtocol" : true,
     "serviceName" : "WAF",
     "cborProtocol" : false,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -66,12 +66,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateByteMatchSetResult",
       "asyncReturnType" : "CreateByteMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateByteMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateByteMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateByteMatchSetRequest, CreateByteMatchSetResult>",
-      "authenticated" : true,
       "methodName" : "createByteMatchSet"
     },
     "CreateIPSet" : {
@@ -111,12 +111,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateIPSetResult",
       "asyncReturnType" : "CreateIPSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateIPSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateIPSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateIPSetRequest, CreateIPSetResult>",
-      "authenticated" : true,
       "methodName" : "createIPSet"
     },
     "CreateRule" : {
@@ -153,12 +153,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateRuleResult",
       "asyncReturnType" : "CreateRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateRuleRequest, CreateRuleResult>",
-      "authenticated" : true,
       "methodName" : "createRule"
     },
     "CreateSizeConstraintSet" : {
@@ -198,12 +198,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateSizeConstraintSetResult",
       "asyncReturnType" : "CreateSizeConstraintSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateSizeConstraintSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateSizeConstraintSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateSizeConstraintSetRequest, CreateSizeConstraintSetResult>",
-      "authenticated" : true,
       "methodName" : "createSizeConstraintSet"
     },
     "CreateSqlInjectionMatchSet" : {
@@ -243,12 +243,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateSqlInjectionMatchSetResult",
       "asyncReturnType" : "CreateSqlInjectionMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateSqlInjectionMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateSqlInjectionMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateSqlInjectionMatchSetRequest, CreateSqlInjectionMatchSetResult>",
-      "authenticated" : true,
       "methodName" : "createSqlInjectionMatchSet"
     },
     "CreateWebACL" : {
@@ -288,12 +288,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateWebACLResult",
       "asyncReturnType" : "CreateWebACLResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateWebACLResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateWebACLResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateWebACLRequest, CreateWebACLResult>",
-      "authenticated" : true,
       "methodName" : "createWebACL"
     },
     "CreateXssMatchSet" : {
@@ -333,12 +333,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateXssMatchSetResult",
       "asyncReturnType" : "CreateXssMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateXssMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateXssMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateXssMatchSetRequest, CreateXssMatchSetResult>",
-      "authenticated" : true,
       "methodName" : "createXssMatchSet"
     },
     "DeleteByteMatchSet" : {
@@ -378,12 +378,12 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteByteMatchSetResult",
       "asyncReturnType" : "DeleteByteMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteByteMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteByteMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteByteMatchSetRequest, DeleteByteMatchSetResult>",
-      "authenticated" : true,
       "methodName" : "deleteByteMatchSet"
     },
     "DeleteIPSet" : {
@@ -423,12 +423,12 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteIPSetResult",
       "asyncReturnType" : "DeleteIPSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteIPSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteIPSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteIPSetRequest, DeleteIPSetResult>",
-      "authenticated" : true,
       "methodName" : "deleteIPSet"
     },
     "DeleteRule" : {
@@ -468,12 +468,12 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteRuleResult",
       "asyncReturnType" : "DeleteRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult>",
-      "authenticated" : true,
       "methodName" : "deleteRule"
     },
     "DeleteSizeConstraintSet" : {
@@ -513,12 +513,12 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteSizeConstraintSetResult",
       "asyncReturnType" : "DeleteSizeConstraintSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteSizeConstraintSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteSizeConstraintSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSizeConstraintSetRequest, DeleteSizeConstraintSetResult>",
-      "authenticated" : true,
       "methodName" : "deleteSizeConstraintSet"
     },
     "DeleteSqlInjectionMatchSet" : {
@@ -558,12 +558,12 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteSqlInjectionMatchSetResult",
       "asyncReturnType" : "DeleteSqlInjectionMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteSqlInjectionMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteSqlInjectionMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSqlInjectionMatchSetRequest, DeleteSqlInjectionMatchSetResult>",
-      "authenticated" : true,
       "methodName" : "deleteSqlInjectionMatchSet"
     },
     "DeleteWebACL" : {
@@ -603,12 +603,12 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteWebACLResult",
       "asyncReturnType" : "DeleteWebACLResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteWebACLResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteWebACLResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteWebACLRequest, DeleteWebACLResult>",
-      "authenticated" : true,
       "methodName" : "deleteWebACL"
     },
     "DeleteXssMatchSet" : {
@@ -648,12 +648,12 @@
         "documentation" : "<p>The operation failed because you tried to delete an object that isn't empty. For example:</p> <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code> objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or more IP addresses.</li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteXssMatchSetResult",
       "asyncReturnType" : "DeleteXssMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteXssMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteXssMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteXssMatchSetRequest, DeleteXssMatchSetResult>",
-      "authenticated" : true,
       "methodName" : "deleteXssMatchSet"
     },
     "GetByteMatchSet" : {
@@ -684,12 +684,12 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetByteMatchSetResult",
       "asyncReturnType" : "GetByteMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetByteMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetByteMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetByteMatchSetRequest, GetByteMatchSetResult>",
-      "authenticated" : true,
       "methodName" : "getByteMatchSet"
     },
     "GetChangeToken" : {
@@ -714,12 +714,12 @@
         "documentation" : "<p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetChangeTokenResult",
       "asyncReturnType" : "GetChangeTokenResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetChangeTokenResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetChangeTokenResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetChangeTokenRequest, GetChangeTokenResult>",
-      "authenticated" : true,
       "methodName" : "getChangeToken"
     },
     "GetChangeTokenStatus" : {
@@ -747,12 +747,12 @@
         "documentation" : "<p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetChangeTokenStatusResult",
       "asyncReturnType" : "GetChangeTokenStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetChangeTokenStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetChangeTokenStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetChangeTokenStatusRequest, GetChangeTokenStatusResult>",
-      "authenticated" : true,
       "methodName" : "getChangeTokenStatus"
     },
     "GetIPSet" : {
@@ -783,12 +783,12 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetIPSetResult",
       "asyncReturnType" : "GetIPSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetIPSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetIPSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetIPSetRequest, GetIPSetResult>",
-      "authenticated" : true,
       "methodName" : "getIPSet"
     },
     "GetRule" : {
@@ -819,12 +819,12 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetRuleResult",
       "asyncReturnType" : "GetRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRuleRequest, GetRuleResult>",
-      "authenticated" : true,
       "methodName" : "getRule"
     },
     "GetSampledRequests" : {
@@ -852,12 +852,12 @@
         "documentation" : "<p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetSampledRequestsResult",
       "asyncReturnType" : "GetSampledRequestsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSampledRequestsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetSampledRequestsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSampledRequestsRequest, GetSampledRequestsResult>",
-      "authenticated" : true,
       "methodName" : "getSampledRequests"
     },
     "GetSizeConstraintSet" : {
@@ -888,12 +888,12 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetSizeConstraintSetResult",
       "asyncReturnType" : "GetSizeConstraintSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSizeConstraintSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetSizeConstraintSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSizeConstraintSetRequest, GetSizeConstraintSetResult>",
-      "authenticated" : true,
       "methodName" : "getSizeConstraintSet"
     },
     "GetSqlInjectionMatchSet" : {
@@ -924,12 +924,12 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetSqlInjectionMatchSetResult",
       "asyncReturnType" : "GetSqlInjectionMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetSqlInjectionMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetSqlInjectionMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetSqlInjectionMatchSetRequest, GetSqlInjectionMatchSetResult>",
-      "authenticated" : true,
       "methodName" : "getSqlInjectionMatchSet"
     },
     "GetWebACL" : {
@@ -960,12 +960,12 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetWebACLResult",
       "asyncReturnType" : "GetWebACLResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetWebACLResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetWebACLResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetWebACLRequest, GetWebACLResult>",
-      "authenticated" : true,
       "methodName" : "getWebACL"
     },
     "GetXssMatchSet" : {
@@ -996,12 +996,12 @@
         "documentation" : "<p>The operation failed because the referenced object doesn't exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetXssMatchSetResult",
       "asyncReturnType" : "GetXssMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetXssMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetXssMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetXssMatchSetRequest, GetXssMatchSetResult>",
-      "authenticated" : true,
       "methodName" : "getXssMatchSet"
     },
     "ListByteMatchSets" : {
@@ -1029,12 +1029,12 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListByteMatchSetsResult",
       "asyncReturnType" : "ListByteMatchSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListByteMatchSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListByteMatchSetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListByteMatchSetsRequest, ListByteMatchSetsResult>",
-      "authenticated" : true,
       "methodName" : "listByteMatchSets"
     },
     "ListIPSets" : {
@@ -1062,12 +1062,12 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListIPSetsResult",
       "asyncReturnType" : "ListIPSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListIPSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListIPSetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListIPSetsRequest, ListIPSetsResult>",
-      "authenticated" : true,
       "methodName" : "listIPSets"
     },
     "ListRules" : {
@@ -1095,12 +1095,12 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListRulesResult",
       "asyncReturnType" : "ListRulesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRulesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRulesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRulesRequest, ListRulesResult>",
-      "authenticated" : true,
       "methodName" : "listRules"
     },
     "ListSizeConstraintSets" : {
@@ -1128,12 +1128,12 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListSizeConstraintSetsResult",
       "asyncReturnType" : "ListSizeConstraintSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListSizeConstraintSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListSizeConstraintSetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListSizeConstraintSetsRequest, ListSizeConstraintSetsResult>",
-      "authenticated" : true,
       "methodName" : "listSizeConstraintSets"
     },
     "ListSqlInjectionMatchSets" : {
@@ -1161,12 +1161,12 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListSqlInjectionMatchSetsResult",
       "asyncReturnType" : "ListSqlInjectionMatchSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListSqlInjectionMatchSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListSqlInjectionMatchSetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListSqlInjectionMatchSetsRequest, ListSqlInjectionMatchSetsResult>",
-      "authenticated" : true,
       "methodName" : "listSqlInjectionMatchSets"
     },
     "ListWebACLs" : {
@@ -1194,12 +1194,12 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListWebACLsResult",
       "asyncReturnType" : "ListWebACLsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListWebACLsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListWebACLsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListWebACLsRequest, ListWebACLsResult>",
-      "authenticated" : true,
       "methodName" : "listWebACLs"
     },
     "ListXssMatchSets" : {
@@ -1227,12 +1227,12 @@
         "documentation" : "<p>The operation failed because you tried to create, update, or delete an object by using an invalid account identifier.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListXssMatchSetsResult",
       "asyncReturnType" : "ListXssMatchSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListXssMatchSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListXssMatchSetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListXssMatchSetsRequest, ListXssMatchSetsResult>",
-      "authenticated" : true,
       "methodName" : "listXssMatchSets"
     },
     "UpdateByteMatchSet" : {
@@ -1278,12 +1278,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateByteMatchSetResult",
       "asyncReturnType" : "UpdateByteMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateByteMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateByteMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateByteMatchSetRequest, UpdateByteMatchSetResult>",
-      "authenticated" : true,
       "methodName" : "updateByteMatchSet"
     },
     "UpdateIPSet" : {
@@ -1332,12 +1332,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateIPSetResult",
       "asyncReturnType" : "UpdateIPSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateIPSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateIPSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateIPSetRequest, UpdateIPSetResult>",
-      "authenticated" : true,
       "methodName" : "updateIPSet"
     },
     "UpdateRule" : {
@@ -1386,12 +1386,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateRuleResult",
       "asyncReturnType" : "UpdateRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRuleRequest, UpdateRuleResult>",
-      "authenticated" : true,
       "methodName" : "updateRule"
     },
     "UpdateSizeConstraintSet" : {
@@ -1440,12 +1440,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateSizeConstraintSetResult",
       "asyncReturnType" : "UpdateSizeConstraintSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateSizeConstraintSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateSizeConstraintSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateSizeConstraintSetRequest, UpdateSizeConstraintSetResult>",
-      "authenticated" : true,
       "methodName" : "updateSizeConstraintSet"
     },
     "UpdateSqlInjectionMatchSet" : {
@@ -1491,12 +1491,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateSqlInjectionMatchSetResult",
       "asyncReturnType" : "UpdateSqlInjectionMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateSqlInjectionMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateSqlInjectionMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateSqlInjectionMatchSetRequest, UpdateSqlInjectionMatchSetResult>",
-      "authenticated" : true,
       "methodName" : "updateSqlInjectionMatchSet"
     },
     "UpdateWebACL" : {
@@ -1545,12 +1545,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateWebACLResult",
       "asyncReturnType" : "UpdateWebACLResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateWebACLResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateWebACLResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateWebACLRequest, UpdateWebACLResult>",
-      "authenticated" : true,
       "methodName" : "updateWebACL"
     },
     "UpdateXssMatchSet" : {
@@ -1596,12 +1596,12 @@
         "documentation" : "<p>The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/limits.html\">Limits</a> in the <i>AWS WAF Developer Guide</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateXssMatchSetResult",
       "asyncReturnType" : "UpdateXssMatchSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateXssMatchSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateXssMatchSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateXssMatchSetRequest, UpdateXssMatchSetResult>",
-      "authenticated" : true,
       "methodName" : "updateXssMatchSet"
     }
   },

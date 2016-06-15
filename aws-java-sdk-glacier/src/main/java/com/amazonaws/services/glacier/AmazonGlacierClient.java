@@ -1508,7 +1508,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<GetJobOutputResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata()
                             .withPayloadJson(false)
-                            .withHasStreamingSuccessResponse(false),
+                            .withHasStreamingSuccessResponse(true),
                             new GetJobOutputResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
