@@ -158,6 +158,89 @@ public final class ConversionSchemas {
 
     static final ConversionSchema DEFAULT = V2_COMPATIBLE;
 
+    /**
+     * A ConversionSchema builder that defaults to the {@link #V1} schema.
+     */
+    public static final Builder v1Builder(String name) {
+      return new Builder(name,
+              V1MarshallerSet.marshallers(), 
+              V1MarshallerSet.setMarshallers(), 
+              StandardUnmarshallerSet.unmarshallers(),
+              StandardUnmarshallerSet.setUnmarshallers());
+    }
+    
+    /**
+     * A ConversionSchema builder that defaults to the
+     * {@link #V2_COMPATIBLE} schema.
+     */
+    public static final Builder v2CompatibleBuilder(String name) {
+      return new Builder(name,
+              V2CompatibleMarshallerSet.marshallers(), 
+              V2CompatibleMarshallerSet.setMarshallers(), 
+              StandardUnmarshallerSet.unmarshallers(),
+              StandardUnmarshallerSet.setUnmarshallers());
+    }
+    
+    /**
+     * A ConversionSchema builder that defaults to the {@link #V2} schema.
+     */
+    public static final Builder v2Builder(String name) {
+      return new Builder(name,
+              V2MarshallerSet.marshallers(), 
+              V2MarshallerSet.setMarshallers(), 
+              StandardUnmarshallerSet.unmarshallers(),
+              StandardUnmarshallerSet.setUnmarshallers());
+    }
+    
+    public static class Builder {
+      
+      private final String name;
+      private final List<Pair<ArgumentMarshaller>> marshallers;
+      private final List<Pair<ArgumentMarshaller>> setMarshallers;
+      private final List<Pair<ArgumentUnmarshaller>> unmarshallers;
+      private final List<Pair<ArgumentUnmarshaller>> setUnmarshallers;
+      
+      Builder(String name,
+              List<Pair<ArgumentMarshaller>> marshallers,
+              List<Pair<ArgumentMarshaller>> setMarshallers,
+              List<Pair<ArgumentUnmarshaller>> unmarshallers,
+              List<Pair<ArgumentUnmarshaller>> setUnmarshallers) {
+        this.name = name;
+        this.marshallers = marshallers;
+        this.setMarshallers = setMarshallers;
+        this.unmarshallers = unmarshallers;
+        this.setUnmarshallers = setUnmarshallers;
+      }
+      
+      /**
+       * Adds marshaling of a type to the schema.
+       * Types are in LIFO order, so the last type added will be the first
+       * matched.
+       */
+      public void addType(Class<?> clazz, ArgumentMarshaller marshaller,
+              ArgumentUnmarshaller unmarshaller) {
+        this.marshallers.add(0, Pair.of(clazz, marshaller));
+        this.unmarshallers.add(0, Pair.of(clazz, unmarshaller));
+      }
+      
+      /**
+       * Adds marshaling of a Set of a type to the schema.
+       * Types are in LIFO order, so the last type added will be the first
+       * matched.
+       */
+      public void addSetType(Class<?> clazz, ArgumentMarshaller marshaller,
+              ArgumentUnmarshaller unmarshaller) {
+        this.setMarshallers.add(0, Pair.of(clazz, marshaller));
+        this.setUnmarshallers.add(0, Pair.of(clazz, unmarshaller));
+      }
+      
+      public ConversionSchema build() {
+        return new StandardConversionSchema(
+                name,
+                new AbstractMarshallerSet(marshallers, setMarshallers),
+                new StandardUnmarshallerSet(unmarshallers, setUnmarshallers)) ;
+      }
+    }
 
     static class StandardConversionSchema implements ConversionSchema {
 
