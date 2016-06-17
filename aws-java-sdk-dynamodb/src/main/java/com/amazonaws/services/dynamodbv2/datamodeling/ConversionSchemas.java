@@ -125,10 +125,7 @@ public final class ConversionSchemas {
      * you don't accidentally start writing values using these types.
      */
     public static final ConversionSchema V1 =
-            new StandardConversionSchema(
-                    "V1ConversionSchema",
-                    new V1MarshallerSet(),
-                    new StandardUnmarshallerSet());
+            v1Builder("V1ConversionSchema").build();
 
     /**
      * A V2 conversion schema which retains backwards compatibility with the
@@ -137,10 +134,7 @@ public final class ConversionSchemas {
      * is currently the default conversion schema.
      */
     public static final ConversionSchema V2_COMPATIBLE =
-            new StandardConversionSchema(
-                    "V2CompatibleConversionSchema",
-                    new V2CompatibleMarshallerSet(),
-                    new StandardUnmarshallerSet());
+            v2CompatibleBuilder("V2CompatibleConversionSchema").build();
 
     /**
      * The native V2 conversion schema. This schema breaks compatibility with
@@ -151,17 +145,14 @@ public final class ConversionSchemas {
      * booleans.
      */
     public static final ConversionSchema V2 =
-            new StandardConversionSchema(
-                    "V2ConversionSchema",
-                    new V2MarshallerSet(),
-                    new StandardUnmarshallerSet());
+            v2Builder("V2ConversionSchema").build();
 
     static final ConversionSchema DEFAULT = V2_COMPATIBLE;
 
     /**
-     * A ConversionSchema builder that defaults to the {@link #V1} schema.
+     * A ConversionSchema builder that defaults to building {@link #V1}.
      */
-    public static final Builder v1Builder(String name) {
+    public static Builder v1Builder(String name) {
       return new Builder(name,
               V1MarshallerSet.marshallers(), 
               V1MarshallerSet.setMarshallers(), 
@@ -170,10 +161,10 @@ public final class ConversionSchemas {
     }
     
     /**
-     * A ConversionSchema builder that defaults to the
-     * {@link #V2_COMPATIBLE} schema.
+     * A ConversionSchema builder that defaults to building
+     * {@link #V2_COMPATIBLE}.
      */
-    public static final Builder v2CompatibleBuilder(String name) {
+    public static Builder v2CompatibleBuilder(String name) {
       return new Builder(name,
               V2CompatibleMarshallerSet.marshallers(), 
               V2CompatibleMarshallerSet.setMarshallers(), 
@@ -182,9 +173,9 @@ public final class ConversionSchemas {
     }
     
     /**
-     * A ConversionSchema builder that defaults to the {@link #V2} schema.
+     * A ConversionSchema builder that defaults to building {@link #V2}.
      */
-    public static final Builder v2Builder(String name) {
+    public static Builder v2Builder(String name) {
       return new Builder(name,
               V2MarshallerSet.marshallers(), 
               V2MarshallerSet.setMarshallers(), 
@@ -217,10 +208,11 @@ public final class ConversionSchemas {
        * Types are in LIFO order, so the last type added will be the first
        * matched.
        */
-      public void addType(Class<?> clazz, ArgumentMarshaller marshaller,
+      public Builder addType(Class<?> clazz, ArgumentMarshaller marshaller,
               ArgumentUnmarshaller unmarshaller) {
         this.marshallers.add(0, Pair.of(clazz, marshaller));
         this.unmarshallers.add(0, Pair.of(clazz, unmarshaller));
+        return this;
       }
       
       /**
@@ -228,10 +220,11 @@ public final class ConversionSchemas {
        * Types are in LIFO order, so the last type added will be the first
        * matched.
        */
-      public void addSetType(Class<?> clazz, ArgumentMarshaller marshaller,
+      public Builder addSetType(Class<?> clazz, ArgumentMarshaller marshaller,
               ArgumentUnmarshaller unmarshaller) {
         this.setMarshallers.add(0, Pair.of(clazz, marshaller));
         this.setUnmarshallers.add(0, Pair.of(clazz, unmarshaller));
+        return this;
       }
       
       public ConversionSchema build() {
@@ -715,11 +708,7 @@ public final class ConversionSchemas {
         ArgumentUnmarshaller getMemberUnmarshaller(Type memberType);
     }
 
-    static final class V2MarshallerSet extends AbstractMarshallerSet {
-
-        public V2MarshallerSet() {
-            super(marshallers(), setMarshallers());
-        }
+    static final class V2MarshallerSet {
 
         private static List<Pair<ArgumentMarshaller>> marshallers() {
             List<Pair<ArgumentMarshaller>> list =
@@ -762,12 +751,7 @@ public final class ConversionSchemas {
         }
     }
 
-    static final class V2CompatibleMarshallerSet
-            extends AbstractMarshallerSet {
-
-        public V2CompatibleMarshallerSet() {
-            super(marshallers(), setMarshallers());
-        }
+    static final class V2CompatibleMarshallerSet {
 
         private static List<Pair<ArgumentMarshaller>> marshallers() {
             List<Pair<ArgumentMarshaller>> list =
@@ -810,11 +794,7 @@ public final class ConversionSchemas {
         }
     }
 
-    static final class V1MarshallerSet extends AbstractMarshallerSet {
-
-        public V1MarshallerSet() {
-            super(marshallers(), setMarshallers());
-        }
+    static final class V1MarshallerSet {
 
         private static List<Pair<ArgumentMarshaller>> marshallers() {
             List<Pair<ArgumentMarshaller>> list =
