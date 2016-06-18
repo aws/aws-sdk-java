@@ -208,7 +208,8 @@ public final class ConversionSchemas {
        * Types are in LIFO order, so the last type added will be the first
        * matched.
        */
-      public Builder addType(Class<?> clazz, ArgumentMarshaller marshaller,
+      public Builder addFirstType(Class<?> clazz,
+              ArgumentMarshaller marshaller,
               ArgumentUnmarshaller unmarshaller) {
         this.marshallers.add(0, Pair.of(clazz, marshaller));
         this.unmarshallers.add(0, Pair.of(clazz, unmarshaller));
@@ -220,7 +221,8 @@ public final class ConversionSchemas {
        * Types are in LIFO order, so the last type added will be the first
        * matched.
        */
-      public Builder addSetType(Class<?> clazz, ArgumentMarshaller marshaller,
+      public Builder addFirstSetType(Class<?> clazz,
+              ArgumentMarshaller marshaller,
               ArgumentUnmarshaller unmarshaller) {
         this.setMarshallers.add(0, Pair.of(clazz, marshaller));
         this.setUnmarshallers.add(0, Pair.of(clazz, unmarshaller));
