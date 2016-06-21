@@ -265,10 +265,10 @@ class DynamoDBReflector {
                     setter = getter.getDeclaringClass().getMethod(setterName, getter.getReturnType());
                 } catch ( NoSuchMethodException e ) {
                     throw new DynamoDBMappingException("Expected a public, one-argument method called " + setterName
-                            + " on class " + getter.getDeclaringClass(), e);
+                            + " on " + getter.getDeclaringClass(), e);
                 } catch ( SecurityException e ) {
                     throw new DynamoDBMappingException("No access to public, one-argument method called " + setterName
-                            + " on class " + getter.getDeclaringClass(), e);
+                            + " on " + getter.getDeclaringClass(), e);
                 }
                 setterCache.put(getter, setter);
             }
