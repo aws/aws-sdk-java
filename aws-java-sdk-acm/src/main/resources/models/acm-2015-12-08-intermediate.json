@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "acm",
     "signingName" : "acm",
+    "jsonProtocol" : true,
     "serviceName" : "ACM",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
     "AddTagsToCertificate" : {
@@ -38,8 +38,8 @@
         "variableType" : "AddTagsToCertificateRequest",
         "variableDeclarationType" : "AddTagsToCertificateRequest",
         "documentation" : "",
-        "variableSetterType" : "AddTagsToCertificateRequest",
-        "simpleType" : "AddTagsToCertificateRequest"
+        "simpleType" : "AddTagsToCertificateRequest",
+        "variableSetterType" : "AddTagsToCertificateRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -77,8 +77,8 @@
         "variableType" : "DeleteCertificateRequest",
         "variableDeclarationType" : "DeleteCertificateRequest",
         "documentation" : "",
-        "variableSetterType" : "DeleteCertificateRequest",
-        "simpleType" : "DeleteCertificateRequest"
+        "simpleType" : "DeleteCertificateRequest",
+        "variableSetterType" : "DeleteCertificateRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -113,8 +113,8 @@
         "variableType" : "DescribeCertificateRequest",
         "variableDeclarationType" : "DescribeCertificateRequest",
         "documentation" : "",
-        "variableSetterType" : "DescribeCertificateRequest",
-        "simpleType" : "DescribeCertificateRequest"
+        "simpleType" : "DescribeCertificateRequest",
+        "variableSetterType" : "DescribeCertificateRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -146,8 +146,8 @@
         "variableType" : "GetCertificateRequest",
         "variableDeclarationType" : "GetCertificateRequest",
         "documentation" : "",
-        "variableSetterType" : "GetCertificateRequest",
-        "simpleType" : "GetCertificateRequest"
+        "simpleType" : "GetCertificateRequest",
+        "variableSetterType" : "GetCertificateRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -182,8 +182,8 @@
         "variableType" : "ListCertificatesRequest",
         "variableDeclarationType" : "ListCertificatesRequest",
         "documentation" : "",
-        "variableSetterType" : "ListCertificatesRequest",
-        "simpleType" : "ListCertificatesRequest"
+        "simpleType" : "ListCertificatesRequest",
+        "variableSetterType" : "ListCertificatesRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -209,8 +209,8 @@
         "variableType" : "ListTagsForCertificateRequest",
         "variableDeclarationType" : "ListTagsForCertificateRequest",
         "documentation" : "",
-        "variableSetterType" : "ListTagsForCertificateRequest",
-        "simpleType" : "ListTagsForCertificateRequest"
+        "simpleType" : "ListTagsForCertificateRequest",
+        "variableSetterType" : "ListTagsForCertificateRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -242,8 +242,8 @@
         "variableType" : "RemoveTagsFromCertificateRequest",
         "variableDeclarationType" : "RemoveTagsFromCertificateRequest",
         "documentation" : "",
-        "variableSetterType" : "RemoveTagsFromCertificateRequest",
-        "simpleType" : "RemoveTagsFromCertificateRequest"
+        "simpleType" : "RemoveTagsFromCertificateRequest",
+        "variableSetterType" : "RemoveTagsFromCertificateRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -278,8 +278,8 @@
         "variableType" : "RequestCertificateRequest",
         "variableDeclarationType" : "RequestCertificateRequest",
         "documentation" : "",
-        "variableSetterType" : "RequestCertificateRequest",
-        "simpleType" : "RequestCertificateRequest"
+        "simpleType" : "RequestCertificateRequest",
+        "variableSetterType" : "RequestCertificateRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -311,8 +311,8 @@
         "variableType" : "ResendValidationEmailRequest",
         "variableDeclarationType" : "ResendValidationEmailRequest",
         "documentation" : "",
-        "variableSetterType" : "ResendValidationEmailRequest",
-        "simpleType" : "ResendValidationEmailRequest"
+        "simpleType" : "ResendValidationEmailRequest",
+        "variableSetterType" : "ResendValidationEmailRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -361,8 +361,8 @@
         "variableType" : "InvalidTagException",
         "variableDeclarationType" : "InvalidTagException",
         "documentation" : null,
-        "variableSetterType" : "InvalidTagException",
-        "simpleType" : "InvalidTagException"
+        "simpleType" : "InvalidTagException",
+        "variableSetterType" : "InvalidTagException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -393,8 +393,8 @@
         "variableType" : "TooManyTagsException",
         "variableDeclarationType" : "TooManyTagsException",
         "documentation" : null,
-        "variableSetterType" : "TooManyTagsException",
-        "simpleType" : "TooManyTagsException"
+        "simpleType" : "TooManyTagsException",
+        "variableSetterType" : "TooManyTagsException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -425,8 +425,8 @@
         "variableType" : "DeleteCertificateResult",
         "variableDeclarationType" : "DeleteCertificateResult",
         "documentation" : null,
-        "variableSetterType" : "DeleteCertificateResult",
-        "simpleType" : "DeleteCertificateResult"
+        "simpleType" : "DeleteCertificateResult",
+        "variableSetterType" : "DeleteCertificateResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -463,16 +463,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>String that contains the ARN of the issued certificate. This must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "certificateArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -512,8 +512,8 @@
         "variableType" : "RequestCertificateResult",
         "variableDeclarationType" : "RequestCertificateResult",
         "documentation" : null,
-        "variableSetterType" : "RequestCertificateResult",
-        "simpleType" : "RequestCertificateResult"
+        "simpleType" : "RequestCertificateResult",
+        "variableSetterType" : "RequestCertificateResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -538,16 +538,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>String that contains the ARN of the issued certificate. This must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "certificateArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -604,16 +604,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "certificateArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -656,16 +656,16 @@
           "variableType" : "java.util.List<Tag>",
           "variableDeclarationType" : "java.util.List<Tag>",
           "documentation" : "<p>The key-value pair that defines the tag to remove.</p>",
-          "variableSetterType" : "java.util.Collection<Tag>",
-          "simpleType" : "List<Tag>"
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "setterModel" : {
           "variableName" : "tags",
           "variableType" : "java.util.List<Tag>",
           "variableDeclarationType" : "java.util.List<Tag>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<Tag>",
-          "simpleType" : "List<Tag>"
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Tag>",
@@ -701,16 +701,16 @@
               "variableType" : "Tag",
               "variableDeclarationType" : "Tag",
               "documentation" : "",
-              "variableSetterType" : "Tag",
-              "simpleType" : "Tag"
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Tag",
               "variableDeclarationType" : "Tag",
               "documentation" : "",
-              "variableSetterType" : "Tag",
-              "simpleType" : "Tag"
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
             },
             "getterModel" : {
               "returnType" : "Tag",
@@ -749,9 +749,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "simpleType" : "Tag"
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -771,8 +771,8 @@
         "variableType" : "RemoveTagsFromCertificateRequest",
         "variableDeclarationType" : "RemoveTagsFromCertificateRequest",
         "documentation" : null,
-        "variableSetterType" : "RemoveTagsFromCertificateRequest",
-        "simpleType" : "RemoveTagsFromCertificateRequest"
+        "simpleType" : "RemoveTagsFromCertificateRequest",
+        "variableSetterType" : "RemoveTagsFromCertificateRequest"
       },
       "marshaller" : {
         "action" : "RemoveTagsFromCertificate",
@@ -801,16 +801,16 @@
             "variableType" : "java.util.List<Tag>",
             "variableDeclarationType" : "java.util.List<Tag>",
             "documentation" : "<p>The key-value pair that defines the tag to remove.</p>",
-            "variableSetterType" : "java.util.Collection<Tag>",
-            "simpleType" : "List<Tag>"
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "setterModel" : {
             "variableName" : "tags",
             "variableType" : "java.util.List<Tag>",
             "variableDeclarationType" : "java.util.List<Tag>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<Tag>",
-            "simpleType" : "List<Tag>"
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Tag>",
@@ -846,16 +846,16 @@
                 "variableType" : "Tag",
                 "variableDeclarationType" : "Tag",
                 "documentation" : "",
-                "variableSetterType" : "Tag",
-                "simpleType" : "Tag"
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Tag",
                 "variableDeclarationType" : "Tag",
                 "documentation" : "",
-                "variableSetterType" : "Tag",
-                "simpleType" : "Tag"
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
               },
               "getterModel" : {
                 "returnType" : "Tag",
@@ -894,9 +894,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "simpleType" : "Tag"
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -920,16 +920,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "certificateArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -986,16 +986,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>String that contains the ARN of the ACM Certificate to which the tag is to be applied. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "certificateArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1038,16 +1038,16 @@
           "variableType" : "java.util.List<Tag>",
           "variableDeclarationType" : "java.util.List<Tag>",
           "documentation" : "<p>The key-value pair that defines the tag. The tag value is optional.</p>",
-          "variableSetterType" : "java.util.Collection<Tag>",
-          "simpleType" : "List<Tag>"
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "setterModel" : {
           "variableName" : "tags",
           "variableType" : "java.util.List<Tag>",
           "variableDeclarationType" : "java.util.List<Tag>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<Tag>",
-          "simpleType" : "List<Tag>"
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Tag>",
@@ -1083,16 +1083,16 @@
               "variableType" : "Tag",
               "variableDeclarationType" : "Tag",
               "documentation" : "",
-              "variableSetterType" : "Tag",
-              "simpleType" : "Tag"
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Tag",
               "variableDeclarationType" : "Tag",
               "documentation" : "",
-              "variableSetterType" : "Tag",
-              "simpleType" : "Tag"
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
             },
             "getterModel" : {
               "returnType" : "Tag",
@@ -1131,9 +1131,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "simpleType" : "Tag"
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1153,8 +1153,8 @@
         "variableType" : "AddTagsToCertificateRequest",
         "variableDeclarationType" : "AddTagsToCertificateRequest",
         "documentation" : null,
-        "variableSetterType" : "AddTagsToCertificateRequest",
-        "simpleType" : "AddTagsToCertificateRequest"
+        "simpleType" : "AddTagsToCertificateRequest",
+        "variableSetterType" : "AddTagsToCertificateRequest"
       },
       "marshaller" : {
         "action" : "AddTagsToCertificate",
@@ -1183,16 +1183,16 @@
             "variableType" : "java.util.List<Tag>",
             "variableDeclarationType" : "java.util.List<Tag>",
             "documentation" : "<p>The key-value pair that defines the tag. The tag value is optional.</p>",
-            "variableSetterType" : "java.util.Collection<Tag>",
-            "simpleType" : "List<Tag>"
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "setterModel" : {
             "variableName" : "tags",
             "variableType" : "java.util.List<Tag>",
             "variableDeclarationType" : "java.util.List<Tag>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<Tag>",
-            "simpleType" : "List<Tag>"
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Tag>",
@@ -1228,16 +1228,16 @@
                 "variableType" : "Tag",
                 "variableDeclarationType" : "Tag",
                 "documentation" : "",
-                "variableSetterType" : "Tag",
-                "simpleType" : "Tag"
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Tag",
                 "variableDeclarationType" : "Tag",
                 "documentation" : "",
-                "variableSetterType" : "Tag",
-                "simpleType" : "Tag"
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
               },
               "getterModel" : {
                 "returnType" : "Tag",
@@ -1276,9 +1276,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "simpleType" : "Tag"
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1302,16 +1302,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>String that contains the ARN of the ACM Certificate to which the tag is to be applied. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "certificateArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1368,16 +1368,16 @@
           "variableType" : "java.util.List<Tag>",
           "variableDeclarationType" : "java.util.List<Tag>",
           "documentation" : "<p>The key-value pairs that define the applied tags.</p>",
-          "variableSetterType" : "java.util.Collection<Tag>",
-          "simpleType" : "List<Tag>"
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "setterModel" : {
           "variableName" : "tags",
           "variableType" : "java.util.List<Tag>",
           "variableDeclarationType" : "java.util.List<Tag>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<Tag>",
-          "simpleType" : "List<Tag>"
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Tag>",
@@ -1413,16 +1413,16 @@
               "variableType" : "Tag",
               "variableDeclarationType" : "Tag",
               "documentation" : "",
-              "variableSetterType" : "Tag",
-              "simpleType" : "Tag"
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Tag",
               "variableDeclarationType" : "Tag",
               "documentation" : "",
-              "variableSetterType" : "Tag",
-              "simpleType" : "Tag"
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
             },
             "getterModel" : {
               "returnType" : "Tag",
@@ -1461,9 +1461,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "simpleType" : "Tag"
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1483,8 +1483,8 @@
         "variableType" : "ListTagsForCertificateResult",
         "variableDeclarationType" : "ListTagsForCertificateResult",
         "documentation" : null,
-        "variableSetterType" : "ListTagsForCertificateResult",
-        "simpleType" : "ListTagsForCertificateResult"
+        "simpleType" : "ListTagsForCertificateResult",
+        "variableSetterType" : "ListTagsForCertificateResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1509,16 +1509,16 @@
             "variableType" : "java.util.List<Tag>",
             "variableDeclarationType" : "java.util.List<Tag>",
             "documentation" : "<p>The key-value pairs that define the applied tags.</p>",
-            "variableSetterType" : "java.util.Collection<Tag>",
-            "simpleType" : "List<Tag>"
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "setterModel" : {
             "variableName" : "tags",
             "variableType" : "java.util.List<Tag>",
             "variableDeclarationType" : "java.util.List<Tag>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<Tag>",
-            "simpleType" : "List<Tag>"
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Tag>",
@@ -1554,16 +1554,16 @@
                 "variableType" : "Tag",
                 "variableDeclarationType" : "Tag",
                 "documentation" : "",
-                "variableSetterType" : "Tag",
-                "simpleType" : "Tag"
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Tag",
                 "variableDeclarationType" : "Tag",
                 "documentation" : "",
-                "variableSetterType" : "Tag",
-                "simpleType" : "Tag"
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
               },
               "getterModel" : {
                 "returnType" : "Tag",
@@ -1602,9 +1602,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "simpleType" : "Tag"
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1641,16 +1641,16 @@
           "variableType" : "CertificateDetail",
           "variableDeclarationType" : "CertificateDetail",
           "documentation" : "<p>Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM Certificate.</p>",
-          "variableSetterType" : "CertificateDetail",
-          "simpleType" : "CertificateDetail"
+          "simpleType" : "CertificateDetail",
+          "variableSetterType" : "CertificateDetail"
         },
         "setterModel" : {
           "variableName" : "certificate",
           "variableType" : "CertificateDetail",
           "variableDeclarationType" : "CertificateDetail",
           "documentation" : "",
-          "variableSetterType" : "CertificateDetail",
-          "simpleType" : "CertificateDetail"
+          "simpleType" : "CertificateDetail",
+          "variableSetterType" : "CertificateDetail"
         },
         "getterModel" : {
           "returnType" : "CertificateDetail",
@@ -1690,8 +1690,8 @@
         "variableType" : "DescribeCertificateResult",
         "variableDeclarationType" : "DescribeCertificateResult",
         "documentation" : null,
-        "variableSetterType" : "DescribeCertificateResult",
-        "simpleType" : "DescribeCertificateResult"
+        "simpleType" : "DescribeCertificateResult",
+        "variableSetterType" : "DescribeCertificateResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1716,16 +1716,16 @@
             "variableType" : "CertificateDetail",
             "variableDeclarationType" : "CertificateDetail",
             "documentation" : "<p>Contains a <a>CertificateDetail</a> structure that lists the fields of an ACM Certificate.</p>",
-            "variableSetterType" : "CertificateDetail",
-            "simpleType" : "CertificateDetail"
+            "simpleType" : "CertificateDetail",
+            "variableSetterType" : "CertificateDetail"
           },
           "setterModel" : {
             "variableName" : "certificate",
             "variableType" : "CertificateDetail",
             "variableDeclarationType" : "CertificateDetail",
             "documentation" : "",
-            "variableSetterType" : "CertificateDetail",
-            "simpleType" : "CertificateDetail"
+            "simpleType" : "CertificateDetail",
+            "variableSetterType" : "CertificateDetail"
           },
           "getterModel" : {
             "returnType" : "CertificateDetail",
@@ -1779,8 +1779,8 @@
         "variableType" : "AddTagsToCertificateResult",
         "variableDeclarationType" : "AddTagsToCertificateResult",
         "documentation" : null,
-        "variableSetterType" : "AddTagsToCertificateResult",
-        "simpleType" : "AddTagsToCertificateResult"
+        "simpleType" : "AddTagsToCertificateResult",
+        "variableSetterType" : "AddTagsToCertificateResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1817,16 +1817,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "certificateArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1869,16 +1869,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "domainName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1918,8 +1918,8 @@
         "variableType" : "CertificateSummary",
         "variableDeclarationType" : "CertificateSummary",
         "documentation" : null,
-        "variableSetterType" : "CertificateSummary",
-        "simpleType" : "CertificateSummary"
+        "simpleType" : "CertificateSummary",
+        "variableSetterType" : "CertificateSummary"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1944,16 +1944,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "domainName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1997,16 +1997,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "certificateArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2060,8 +2060,8 @@
         "variableType" : "ResourceInUseException",
         "variableDeclarationType" : "ResourceInUseException",
         "documentation" : null,
-        "variableSetterType" : "ResourceInUseException",
-        "simpleType" : "ResourceInUseException"
+        "simpleType" : "ResourceInUseException",
+        "variableSetterType" : "ResourceInUseException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -2092,8 +2092,8 @@
         "variableType" : "RemoveTagsFromCertificateResult",
         "variableDeclarationType" : "RemoveTagsFromCertificateResult",
         "documentation" : null,
-        "variableSetterType" : "RemoveTagsFromCertificateResult",
-        "simpleType" : "RemoveTagsFromCertificateResult"
+        "simpleType" : "RemoveTagsFromCertificateResult",
+        "variableSetterType" : "RemoveTagsFromCertificateResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2130,16 +2130,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>String that contains the ARN of the ACM Certificate for which you want to list the tags. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "certificateArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2179,8 +2179,8 @@
         "variableType" : "ListTagsForCertificateRequest",
         "variableDeclarationType" : "ListTagsForCertificateRequest",
         "documentation" : null,
-        "variableSetterType" : "ListTagsForCertificateRequest",
-        "simpleType" : "ListTagsForCertificateRequest"
+        "simpleType" : "ListTagsForCertificateRequest",
+        "variableSetterType" : "ListTagsForCertificateRequest"
       },
       "marshaller" : {
         "action" : "ListTagsForCertificate",
@@ -2209,16 +2209,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>String that contains the ARN of the ACM Certificate for which you want to list the tags. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "certificateArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2272,8 +2272,8 @@
         "variableType" : "ResourceNotFoundException",
         "variableDeclarationType" : "ResourceNotFoundException",
         "documentation" : null,
-        "variableSetterType" : "ResourceNotFoundException",
-        "simpleType" : "ResourceNotFoundException"
+        "simpleType" : "ResourceNotFoundException",
+        "variableSetterType" : "ResourceNotFoundException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -2307,16 +2307,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Fully qualified domain name (FQDN), such as www.example.com, of the site you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "domainName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2359,16 +2359,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "subjectAlternativeNames",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -2404,16 +2404,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -2452,9 +2452,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2477,16 +2477,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "idempotencyToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2529,16 +2529,16 @@
           "variableType" : "java.util.List<DomainValidationOption>",
           "variableDeclarationType" : "java.util.List<DomainValidationOption>",
           "documentation" : "<p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>test.example.com</code> and specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p> <ul> <li> <p>admin@example.com</p> </li> <li> <p>administrator@example.com</p> </li> <li> <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li> <li> <p>webmaster@example.com</p> </li> </ul>",
-          "variableSetterType" : "java.util.Collection<DomainValidationOption>",
-          "simpleType" : "List<DomainValidationOption>"
+          "simpleType" : "List<DomainValidationOption>",
+          "variableSetterType" : "java.util.Collection<DomainValidationOption>"
         },
         "setterModel" : {
           "variableName" : "domainValidationOptions",
           "variableType" : "java.util.List<DomainValidationOption>",
           "variableDeclarationType" : "java.util.List<DomainValidationOption>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<DomainValidationOption>",
-          "simpleType" : "List<DomainValidationOption>"
+          "simpleType" : "List<DomainValidationOption>",
+          "variableSetterType" : "java.util.Collection<DomainValidationOption>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<DomainValidationOption>",
@@ -2574,16 +2574,16 @@
               "variableType" : "DomainValidationOption",
               "variableDeclarationType" : "DomainValidationOption",
               "documentation" : "",
-              "variableSetterType" : "DomainValidationOption",
-              "simpleType" : "DomainValidationOption"
+              "simpleType" : "DomainValidationOption",
+              "variableSetterType" : "DomainValidationOption"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "DomainValidationOption",
               "variableDeclarationType" : "DomainValidationOption",
               "documentation" : "",
-              "variableSetterType" : "DomainValidationOption",
-              "simpleType" : "DomainValidationOption"
+              "simpleType" : "DomainValidationOption",
+              "variableSetterType" : "DomainValidationOption"
             },
             "getterModel" : {
               "returnType" : "DomainValidationOption",
@@ -2622,9 +2622,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "DomainValidationOption",
           "templateType" : "java.util.List<DomainValidationOption>",
-          "templateImplType" : "java.util.ArrayList<DomainValidationOption>",
-          "simpleType" : "DomainValidationOption"
+          "templateImplType" : "java.util.ArrayList<DomainValidationOption>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2644,8 +2644,8 @@
         "variableType" : "RequestCertificateRequest",
         "variableDeclarationType" : "RequestCertificateRequest",
         "documentation" : null,
-        "variableSetterType" : "RequestCertificateRequest",
-        "simpleType" : "RequestCertificateRequest"
+        "simpleType" : "RequestCertificateRequest",
+        "variableSetterType" : "RequestCertificateRequest"
       },
       "marshaller" : {
         "action" : "RequestCertificate",
@@ -2674,16 +2674,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "idempotencyToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2727,16 +2727,16 @@
             "variableType" : "java.util.List<DomainValidationOption>",
             "variableDeclarationType" : "java.util.List<DomainValidationOption>",
             "documentation" : "<p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>test.example.com</code> and specify <b>DomainValidationOptions</b> of <code>example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p> <ul> <li> <p>admin@example.com</p> </li> <li> <p>administrator@example.com</p> </li> <li> <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li> <li> <p>webmaster@example.com</p> </li> </ul>",
-            "variableSetterType" : "java.util.Collection<DomainValidationOption>",
-            "simpleType" : "List<DomainValidationOption>"
+            "simpleType" : "List<DomainValidationOption>",
+            "variableSetterType" : "java.util.Collection<DomainValidationOption>"
           },
           "setterModel" : {
             "variableName" : "domainValidationOptions",
             "variableType" : "java.util.List<DomainValidationOption>",
             "variableDeclarationType" : "java.util.List<DomainValidationOption>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<DomainValidationOption>",
-            "simpleType" : "List<DomainValidationOption>"
+            "simpleType" : "List<DomainValidationOption>",
+            "variableSetterType" : "java.util.Collection<DomainValidationOption>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<DomainValidationOption>",
@@ -2772,16 +2772,16 @@
                 "variableType" : "DomainValidationOption",
                 "variableDeclarationType" : "DomainValidationOption",
                 "documentation" : "",
-                "variableSetterType" : "DomainValidationOption",
-                "simpleType" : "DomainValidationOption"
+                "simpleType" : "DomainValidationOption",
+                "variableSetterType" : "DomainValidationOption"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "DomainValidationOption",
                 "variableDeclarationType" : "DomainValidationOption",
                 "documentation" : "",
-                "variableSetterType" : "DomainValidationOption",
-                "simpleType" : "DomainValidationOption"
+                "simpleType" : "DomainValidationOption",
+                "variableSetterType" : "DomainValidationOption"
               },
               "getterModel" : {
                 "returnType" : "DomainValidationOption",
@@ -2820,9 +2820,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "DomainValidationOption",
             "templateType" : "java.util.List<DomainValidationOption>",
-            "templateImplType" : "java.util.ArrayList<DomainValidationOption>",
-            "simpleType" : "DomainValidationOption"
+            "templateImplType" : "java.util.ArrayList<DomainValidationOption>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2846,16 +2846,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Fully qualified domain name (FQDN), such as www.example.com, of the site you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "domainName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2899,16 +2899,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "subjectAlternativeNames",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -2944,16 +2944,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -2992,9 +2992,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3031,16 +3031,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>String that contains the ACM Certificate represented by the ARN specified at input.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "certificate",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3083,16 +3083,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The certificate chain that contains the root certificate issued by the certificate authority (CA).</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "certificateChain",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3132,8 +3132,8 @@
         "variableType" : "GetCertificateResult",
         "variableDeclarationType" : "GetCertificateResult",
         "documentation" : null,
-        "variableSetterType" : "GetCertificateResult",
-        "simpleType" : "GetCertificateResult"
+        "simpleType" : "GetCertificateResult",
+        "variableSetterType" : "GetCertificateResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -3158,16 +3158,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The certificate chain that contains the root certificate issued by the certificate authority (CA).</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "certificateChain",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3211,16 +3211,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>String that contains the ACM Certificate represented by the ARN specified at input.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "certificate",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3304,8 +3304,8 @@
         "variableType" : "RevocationReason",
         "variableDeclarationType" : "RevocationReason",
         "documentation" : null,
-        "variableSetterType" : "RevocationReason",
-        "simpleType" : "RevocationReason"
+        "simpleType" : "RevocationReason",
+        "variableSetterType" : "RevocationReason"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -3342,16 +3342,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>String that contains an ACM Certificate ARN. The ARN must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "certificateArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3391,8 +3391,8 @@
         "variableType" : "DescribeCertificateRequest",
         "variableDeclarationType" : "DescribeCertificateRequest",
         "documentation" : null,
-        "variableSetterType" : "DescribeCertificateRequest",
-        "simpleType" : "DescribeCertificateRequest"
+        "simpleType" : "DescribeCertificateRequest",
+        "variableSetterType" : "DescribeCertificateRequest"
       },
       "marshaller" : {
         "action" : "DescribeCertificate",
@@ -3421,16 +3421,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>String that contains an ACM Certificate ARN. The ARN must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "certificateArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3487,16 +3487,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "certificateArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3539,16 +3539,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The fully qualified domain name (FQDN) for the certificate, such as www.example.com or example.com.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "domainName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3591,16 +3591,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>One or more domain names (subject alternative names) included in the certificate request. After the certificate is issued, this list includes the domain names bound to the public key contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "subjectAlternativeNames",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -3636,16 +3636,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -3684,9 +3684,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3709,16 +3709,16 @@
           "variableType" : "java.util.List<DomainValidation>",
           "variableDeclarationType" : "java.util.List<DomainValidation>",
           "documentation" : "<p>Contains information about the email address or addresses used for domain validation.</p>",
-          "variableSetterType" : "java.util.Collection<DomainValidation>",
-          "simpleType" : "List<DomainValidation>"
+          "simpleType" : "List<DomainValidation>",
+          "variableSetterType" : "java.util.Collection<DomainValidation>"
         },
         "setterModel" : {
           "variableName" : "domainValidationOptions",
           "variableType" : "java.util.List<DomainValidation>",
           "variableDeclarationType" : "java.util.List<DomainValidation>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<DomainValidation>",
-          "simpleType" : "List<DomainValidation>"
+          "simpleType" : "List<DomainValidation>",
+          "variableSetterType" : "java.util.Collection<DomainValidation>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<DomainValidation>",
@@ -3754,16 +3754,16 @@
               "variableType" : "DomainValidation",
               "variableDeclarationType" : "DomainValidation",
               "documentation" : "",
-              "variableSetterType" : "DomainValidation",
-              "simpleType" : "DomainValidation"
+              "simpleType" : "DomainValidation",
+              "variableSetterType" : "DomainValidation"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "DomainValidation",
               "variableDeclarationType" : "DomainValidation",
               "documentation" : "",
-              "variableSetterType" : "DomainValidation",
-              "simpleType" : "DomainValidation"
+              "simpleType" : "DomainValidation",
+              "variableSetterType" : "DomainValidation"
             },
             "getterModel" : {
               "returnType" : "DomainValidation",
@@ -3802,9 +3802,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "DomainValidation",
           "templateType" : "java.util.List<DomainValidation>",
-          "templateImplType" : "java.util.ArrayList<DomainValidation>",
-          "simpleType" : "DomainValidation"
+          "templateImplType" : "java.util.ArrayList<DomainValidation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3827,16 +3827,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The serial number of the certificate.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "serial",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3879,16 +3879,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The X.500 distinguished name of the entity associated with the public key contained in the certificate.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "subject",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3931,16 +3931,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The X.500 distinguished name of the CA that issued and signed the certificate.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "issuer",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3983,16 +3983,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>The time at which the certificate was requested.</p>",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "createdAt",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -4035,16 +4035,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>The time at which the certificate was issued.</p>",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "issuedAt",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -4087,16 +4087,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The status of the certificate.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "status",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4139,16 +4139,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.</p>",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "revokedAt",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -4191,16 +4191,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The reason the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "revocationReason",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4243,16 +4243,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>The time before which the certificate is not valid.</p>",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "notBefore",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -4295,16 +4295,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>The time after which the certificate is not valid.</p>",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "notAfter",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -4347,16 +4347,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The algorithm used to generate the key pair (the public and private key). Currently the only supported value is <code>RSA_2048</code>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "keyAlgorithm",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4399,16 +4399,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The algorithm used to generate a signature. Currently the only supported value is <code>SHA256WITHRSA</code>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "signatureAlgorithm",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4451,16 +4451,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by multiple AWS resources.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "inUseBy",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -4496,16 +4496,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -4544,9 +4544,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4566,8 +4566,8 @@
         "variableType" : "CertificateDetail",
         "variableDeclarationType" : "CertificateDetail",
         "documentation" : null,
-        "variableSetterType" : "CertificateDetail",
-        "simpleType" : "CertificateDetail"
+        "simpleType" : "CertificateDetail",
+        "variableSetterType" : "CertificateDetail"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -4592,16 +4592,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The status of the certificate.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "status",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4645,16 +4645,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The reason the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "revocationReason",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4698,16 +4698,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>The time at which the certificate was issued.</p>",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "issuedAt",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -4751,16 +4751,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The fully qualified domain name (FQDN) for the certificate, such as www.example.com or example.com.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "domainName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4804,16 +4804,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The X.500 distinguished name of the CA that issued and signed the certificate.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "issuer",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4857,16 +4857,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by multiple AWS resources.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "inUseBy",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -4902,16 +4902,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -4950,9 +4950,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4976,16 +4976,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>The time at which the certificate was requested.</p>",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "createdAt",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -5029,16 +5029,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>One or more domain names (subject alternative names) included in the certificate request. After the certificate is issued, this list includes the domain names bound to the public key contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "subjectAlternativeNames",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -5074,16 +5074,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -5122,9 +5122,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5148,16 +5148,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The algorithm used to generate a signature. Currently the only supported value is <code>SHA256WITHRSA</code>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "signatureAlgorithm",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5201,16 +5201,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>The time after which the certificate is not valid.</p>",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "notAfter",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -5254,16 +5254,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The X.500 distinguished name of the entity associated with the public key contained in the certificate.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "subject",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5307,16 +5307,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.</p>",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "revokedAt",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -5360,16 +5360,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The algorithm used to generate the key pair (the public and private key). Currently the only supported value is <code>RSA_2048</code>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "keyAlgorithm",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5413,16 +5413,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The serial number of the certificate.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "serial",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5466,16 +5466,16 @@
             "variableType" : "java.util.List<DomainValidation>",
             "variableDeclarationType" : "java.util.List<DomainValidation>",
             "documentation" : "<p>Contains information about the email address or addresses used for domain validation.</p>",
-            "variableSetterType" : "java.util.Collection<DomainValidation>",
-            "simpleType" : "List<DomainValidation>"
+            "simpleType" : "List<DomainValidation>",
+            "variableSetterType" : "java.util.Collection<DomainValidation>"
           },
           "setterModel" : {
             "variableName" : "domainValidationOptions",
             "variableType" : "java.util.List<DomainValidation>",
             "variableDeclarationType" : "java.util.List<DomainValidation>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<DomainValidation>",
-            "simpleType" : "List<DomainValidation>"
+            "simpleType" : "List<DomainValidation>",
+            "variableSetterType" : "java.util.Collection<DomainValidation>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<DomainValidation>",
@@ -5511,16 +5511,16 @@
                 "variableType" : "DomainValidation",
                 "variableDeclarationType" : "DomainValidation",
                 "documentation" : "",
-                "variableSetterType" : "DomainValidation",
-                "simpleType" : "DomainValidation"
+                "simpleType" : "DomainValidation",
+                "variableSetterType" : "DomainValidation"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "DomainValidation",
                 "variableDeclarationType" : "DomainValidation",
                 "documentation" : "",
-                "variableSetterType" : "DomainValidation",
-                "simpleType" : "DomainValidation"
+                "simpleType" : "DomainValidation",
+                "variableSetterType" : "DomainValidation"
               },
               "getterModel" : {
                 "returnType" : "DomainValidation",
@@ -5559,9 +5559,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "DomainValidation",
             "templateType" : "java.util.List<DomainValidation>",
-            "templateImplType" : "java.util.ArrayList<DomainValidation>",
-            "simpleType" : "DomainValidation"
+            "templateImplType" : "java.util.ArrayList<DomainValidation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5585,16 +5585,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>The time before which the certificate is not valid.</p>",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "notBefore",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -5638,16 +5638,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "certificateArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5701,8 +5701,8 @@
         "variableType" : "RequestInProgressException",
         "variableDeclarationType" : "RequestInProgressException",
         "documentation" : null,
-        "variableSetterType" : "RequestInProgressException",
-        "simpleType" : "RequestInProgressException"
+        "simpleType" : "RequestInProgressException",
+        "variableSetterType" : "RequestInProgressException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -5736,16 +5736,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5788,16 +5788,16 @@
           "variableType" : "java.util.List<CertificateSummary>",
           "variableDeclarationType" : "java.util.List<CertificateSummary>",
           "documentation" : "<p>A list of ACM Certificates.</p>",
-          "variableSetterType" : "java.util.Collection<CertificateSummary>",
-          "simpleType" : "List<CertificateSummary>"
+          "simpleType" : "List<CertificateSummary>",
+          "variableSetterType" : "java.util.Collection<CertificateSummary>"
         },
         "setterModel" : {
           "variableName" : "certificateSummaryList",
           "variableType" : "java.util.List<CertificateSummary>",
           "variableDeclarationType" : "java.util.List<CertificateSummary>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<CertificateSummary>",
-          "simpleType" : "List<CertificateSummary>"
+          "simpleType" : "List<CertificateSummary>",
+          "variableSetterType" : "java.util.Collection<CertificateSummary>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<CertificateSummary>",
@@ -5833,16 +5833,16 @@
               "variableType" : "CertificateSummary",
               "variableDeclarationType" : "CertificateSummary",
               "documentation" : "",
-              "variableSetterType" : "CertificateSummary",
-              "simpleType" : "CertificateSummary"
+              "simpleType" : "CertificateSummary",
+              "variableSetterType" : "CertificateSummary"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "CertificateSummary",
               "variableDeclarationType" : "CertificateSummary",
               "documentation" : "",
-              "variableSetterType" : "CertificateSummary",
-              "simpleType" : "CertificateSummary"
+              "simpleType" : "CertificateSummary",
+              "variableSetterType" : "CertificateSummary"
             },
             "getterModel" : {
               "returnType" : "CertificateSummary",
@@ -5881,9 +5881,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "CertificateSummary",
           "templateType" : "java.util.List<CertificateSummary>",
-          "templateImplType" : "java.util.ArrayList<CertificateSummary>",
-          "simpleType" : "CertificateSummary"
+          "templateImplType" : "java.util.ArrayList<CertificateSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5903,8 +5903,8 @@
         "variableType" : "ListCertificatesResult",
         "variableDeclarationType" : "ListCertificatesResult",
         "documentation" : null,
-        "variableSetterType" : "ListCertificatesResult",
-        "simpleType" : "ListCertificatesResult"
+        "simpleType" : "ListCertificatesResult",
+        "variableSetterType" : "ListCertificatesResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -5929,16 +5929,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5982,16 +5982,16 @@
             "variableType" : "java.util.List<CertificateSummary>",
             "variableDeclarationType" : "java.util.List<CertificateSummary>",
             "documentation" : "<p>A list of ACM Certificates.</p>",
-            "variableSetterType" : "java.util.Collection<CertificateSummary>",
-            "simpleType" : "List<CertificateSummary>"
+            "simpleType" : "List<CertificateSummary>",
+            "variableSetterType" : "java.util.Collection<CertificateSummary>"
           },
           "setterModel" : {
             "variableName" : "certificateSummaryList",
             "variableType" : "java.util.List<CertificateSummary>",
             "variableDeclarationType" : "java.util.List<CertificateSummary>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<CertificateSummary>",
-            "simpleType" : "List<CertificateSummary>"
+            "simpleType" : "List<CertificateSummary>",
+            "variableSetterType" : "java.util.Collection<CertificateSummary>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<CertificateSummary>",
@@ -6027,16 +6027,16 @@
                 "variableType" : "CertificateSummary",
                 "variableDeclarationType" : "CertificateSummary",
                 "documentation" : "",
-                "variableSetterType" : "CertificateSummary",
-                "simpleType" : "CertificateSummary"
+                "simpleType" : "CertificateSummary",
+                "variableSetterType" : "CertificateSummary"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "CertificateSummary",
                 "variableDeclarationType" : "CertificateSummary",
                 "documentation" : "",
-                "variableSetterType" : "CertificateSummary",
-                "simpleType" : "CertificateSummary"
+                "simpleType" : "CertificateSummary",
+                "variableSetterType" : "CertificateSummary"
               },
               "getterModel" : {
                 "returnType" : "CertificateSummary",
@@ -6075,9 +6075,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "CertificateSummary",
             "templateType" : "java.util.List<CertificateSummary>",
-            "templateImplType" : "java.util.ArrayList<CertificateSummary>",
-            "simpleType" : "CertificateSummary"
+            "templateImplType" : "java.util.ArrayList<CertificateSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6132,8 +6132,8 @@
         "variableType" : "CertificateStatus",
         "variableDeclarationType" : "CertificateStatus",
         "documentation" : null,
-        "variableSetterType" : "CertificateStatus",
-        "simpleType" : "CertificateStatus"
+        "simpleType" : "CertificateStatus",
+        "variableSetterType" : "CertificateStatus"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6167,8 +6167,8 @@
         "variableType" : "ResendValidationEmailResult",
         "variableDeclarationType" : "ResendValidationEmailResult",
         "documentation" : null,
-        "variableSetterType" : "ResendValidationEmailResult",
-        "simpleType" : "ResendValidationEmailResult"
+        "simpleType" : "ResendValidationEmailResult",
+        "variableSetterType" : "ResendValidationEmailResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6205,16 +6205,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Fully Qualified Domain Name (FQDN) of the certificate being requested.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "domainName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6257,16 +6257,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The domain to which validation email is sent. This is the base validation domain that will act as the suffix of the email addresses. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS for the base domain and the following five addresses:</p> <ul> <li> <p>admin@subdomain.example.com</p> </li> <li> <p>administrator@subdomain.example.com</p> </li> <li> <p>hostmaster@subdomain.example.com</p> </li> <li> <p>postmaster@subdomain.example.com</p> </li> <li> <p>webmaster@subdomain.example.com</p> </li> </ul>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "validationDomain",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6306,8 +6306,8 @@
         "variableType" : "DomainValidationOption",
         "variableDeclarationType" : "DomainValidationOption",
         "documentation" : null,
-        "variableSetterType" : "DomainValidationOption",
-        "simpleType" : "DomainValidationOption"
+        "simpleType" : "DomainValidationOption",
+        "variableSetterType" : "DomainValidationOption"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6332,16 +6332,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Fully Qualified Domain Name (FQDN) of the certificate being requested.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "domainName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6385,16 +6385,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The domain to which validation email is sent. This is the base validation domain that will act as the suffix of the email addresses. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS for the base domain and the following five addresses:</p> <ul> <li> <p>admin@subdomain.example.com</p> </li> <li> <p>administrator@subdomain.example.com</p> </li> <li> <p>hostmaster@subdomain.example.com</p> </li> <li> <p>postmaster@subdomain.example.com</p> </li> <li> <p>webmaster@subdomain.example.com</p> </li> </ul>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "validationDomain",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6448,8 +6448,8 @@
         "variableType" : "InvalidStateException",
         "variableDeclarationType" : "InvalidStateException",
         "documentation" : null,
-        "variableSetterType" : "InvalidStateException",
-        "simpleType" : "InvalidStateException"
+        "simpleType" : "InvalidStateException",
+        "variableSetterType" : "InvalidStateException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -6483,16 +6483,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>String that contains the ARN of the ACM Certificate to be deleted. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "certificateArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6532,8 +6532,8 @@
         "variableType" : "DeleteCertificateRequest",
         "variableDeclarationType" : "DeleteCertificateRequest",
         "documentation" : null,
-        "variableSetterType" : "DeleteCertificateRequest",
-        "simpleType" : "DeleteCertificateRequest"
+        "simpleType" : "DeleteCertificateRequest",
+        "variableSetterType" : "DeleteCertificateRequest"
       },
       "marshaller" : {
         "action" : "DeleteCertificate",
@@ -6562,16 +6562,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>String that contains the ARN of the ACM Certificate to be deleted. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "certificateArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6628,16 +6628,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Fully Qualified Domain Name (FQDN) of the form <code>www.example.com or </code> <code>example.com</code>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "domainName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6680,16 +6680,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>A list of contact address for the domain registrant.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "validationEmails",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -6725,16 +6725,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -6773,9 +6773,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6798,16 +6798,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The base validation domain that acts as the suffix of the email addresses that are used to send the emails.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "validationDomain",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6847,8 +6847,8 @@
         "variableType" : "DomainValidation",
         "variableDeclarationType" : "DomainValidation",
         "documentation" : null,
-        "variableSetterType" : "DomainValidation",
-        "simpleType" : "DomainValidation"
+        "simpleType" : "DomainValidation",
+        "variableSetterType" : "DomainValidation"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6873,16 +6873,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>A list of contact address for the domain registrant.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "validationEmails",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -6918,16 +6918,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -6966,9 +6966,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6992,16 +6992,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Fully Qualified Domain Name (FQDN) of the form <code>www.example.com or </code> <code>example.com</code>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "domainName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7045,16 +7045,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The base validation domain that acts as the suffix of the email addresses that are used to send the emails.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "validationDomain",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7111,16 +7111,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request.</p> <p>The ARN must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "certificateArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7163,16 +7163,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Fully Qualified Domain Name (FQDN) of the certificate that needs to be validated.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "domain",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7215,16 +7215,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p> <ul> <li> <p>admin@subdomain.example.com</p> </li> <li> <p>administrator@subdomain.example.com</p> </li> <li> <p>hostmaster@subdomain.example.com</p> </li> <li> <p>postmaster@subdomain.example.com</p> </li> <li> <p>webmaster@subdomain.example.com</p> </li> </ul>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "validationDomain",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7264,8 +7264,8 @@
         "variableType" : "ResendValidationEmailRequest",
         "variableDeclarationType" : "ResendValidationEmailRequest",
         "documentation" : null,
-        "variableSetterType" : "ResendValidationEmailRequest",
-        "simpleType" : "ResendValidationEmailRequest"
+        "simpleType" : "ResendValidationEmailRequest",
+        "variableSetterType" : "ResendValidationEmailRequest"
       },
       "marshaller" : {
         "action" : "ResendValidationEmail",
@@ -7294,16 +7294,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Fully Qualified Domain Name (FQDN) of the certificate that needs to be validated.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "domain",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7347,16 +7347,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p> <ul> <li> <p>admin@subdomain.example.com</p> </li> <li> <p>administrator@subdomain.example.com</p> </li> <li> <p>hostmaster@subdomain.example.com</p> </li> <li> <p>postmaster@subdomain.example.com</p> </li> <li> <p>webmaster@subdomain.example.com</p> </li> </ul>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "validationDomain",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7400,16 +7400,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request.</p> <p>The ARN must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "certificateArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7469,8 +7469,8 @@
         "variableType" : "KeyAlgorithm",
         "variableDeclarationType" : "KeyAlgorithm",
         "documentation" : null,
-        "variableSetterType" : "KeyAlgorithm",
-        "simpleType" : "KeyAlgorithm"
+        "simpleType" : "KeyAlgorithm",
+        "variableSetterType" : "KeyAlgorithm"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7507,16 +7507,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>String that contains a certificate ARN in the following format:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "certificateArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7556,8 +7556,8 @@
         "variableType" : "GetCertificateRequest",
         "variableDeclarationType" : "GetCertificateRequest",
         "documentation" : null,
-        "variableSetterType" : "GetCertificateRequest",
-        "simpleType" : "GetCertificateRequest"
+        "simpleType" : "GetCertificateRequest",
+        "variableSetterType" : "GetCertificateRequest"
       },
       "marshaller" : {
         "action" : "GetCertificate",
@@ -7586,16 +7586,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>String that contains a certificate ARN in the following format:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "certificateArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7649,8 +7649,8 @@
         "variableType" : "InvalidDomainValidationOptionsException",
         "variableDeclarationType" : "InvalidDomainValidationOptionsException",
         "documentation" : null,
-        "variableSetterType" : "InvalidDomainValidationOptionsException",
-        "simpleType" : "InvalidDomainValidationOptionsException"
+        "simpleType" : "InvalidDomainValidationOptionsException",
+        "variableSetterType" : "InvalidDomainValidationOptionsException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -7681,8 +7681,8 @@
         "variableType" : "InvalidArnException",
         "variableDeclarationType" : "InvalidArnException",
         "documentation" : null,
-        "variableSetterType" : "InvalidArnException",
-        "simpleType" : "InvalidArnException"
+        "simpleType" : "InvalidArnException",
+        "variableSetterType" : "InvalidArnException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -7716,16 +7716,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>The status or statuses on which to filter the list of ACM Certificates.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "certificateStatuses",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -7761,16 +7761,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -7809,9 +7809,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : "CertificateStatus",
@@ -7834,16 +7834,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7886,16 +7886,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "maxItems",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -7935,8 +7935,8 @@
         "variableType" : "ListCertificatesRequest",
         "variableDeclarationType" : "ListCertificatesRequest",
         "documentation" : null,
-        "variableSetterType" : "ListCertificatesRequest",
-        "simpleType" : "ListCertificatesRequest"
+        "simpleType" : "ListCertificatesRequest",
+        "variableSetterType" : "ListCertificatesRequest"
       },
       "marshaller" : {
         "action" : "ListCertificates",
@@ -7965,16 +7965,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>The status or statuses on which to filter the list of ACM Certificates.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "certificateStatuses",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -8010,16 +8010,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -8058,9 +8058,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : "CertificateStatus",
@@ -8084,16 +8084,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8137,16 +8137,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "maxItems",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -8200,8 +8200,8 @@
         "variableType" : "LimitExceededException",
         "variableDeclarationType" : "LimitExceededException",
         "documentation" : null,
-        "variableSetterType" : "LimitExceededException",
-        "simpleType" : "LimitExceededException"
+        "simpleType" : "LimitExceededException",
+        "variableSetterType" : "LimitExceededException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -8235,16 +8235,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The key of the tag.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "key",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8287,16 +8287,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The value of the tag.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "value",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8336,8 +8336,8 @@
         "variableType" : "Tag",
         "variableDeclarationType" : "Tag",
         "documentation" : null,
-        "variableSetterType" : "Tag",
-        "simpleType" : "Tag"
+        "simpleType" : "Tag",
+        "variableSetterType" : "Tag"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -8362,16 +8362,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The value of the tag.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "value",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8415,16 +8415,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The key of the tag.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "key",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",

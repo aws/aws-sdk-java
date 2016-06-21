@@ -20,6 +20,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.util.LinkedList;
+import java.util.List;
 
 import com.amazonaws.util.StringUtils;
 
@@ -61,6 +63,15 @@ class ReflectionUtils {
             return fieldNameWithUpperCamelCase;
         }
 
+    }
+
+    /**
+     * Returns the declared field that corresponds to the given method.
+     * @param getter The getter method.
+     * @return The field.
+     */
+    static final Field getDeclaredFieldByGetter(final Method getter) {
+        return getClassFieldByName(getter.getDeclaringClass(), getFieldNameByGetter(getter, true));
     }
 
     /**
@@ -149,4 +160,43 @@ class ReflectionUtils {
 
         return (Class<?>) localType;
     }
+
+    /**
+     * Returns all the getter methods for the specified type.
+     * @param clazz The declaring class.
+     * @return The getter methods.
+     */
+    static final List<Method> getters(final Class<?> clazz) {
+        final List<Method> getters = new LinkedList<Method>();
+        for (final Method method : clazz.getMethods()) {
+            if (isGetter(method)) {
+                getters.add(method);
+            }
+        }
+        return getters;
+    }
+
+    /**
+     * Returns true if the method is a valid getter property.
+     * @param method The getter method.
+     * @return True if a getter method, false otherwise.
+     */
+    private static final boolean isGetter(final Method method) {
+        if (!method.getName().startsWith("get") && !method.getName().startsWith("is")) {
+            return false;
+        } else if (method.getParameterTypes().length != 0) {
+            return false;
+        } else if (method.getReturnType() == Void.TYPE) {
+            return false;
+        } else if (method.isBridge()) {
+            return false;
+        } else if (method.isSynthetic()) {
+            return false;
+        } else if (method.getDeclaringClass() == Object.class) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 }

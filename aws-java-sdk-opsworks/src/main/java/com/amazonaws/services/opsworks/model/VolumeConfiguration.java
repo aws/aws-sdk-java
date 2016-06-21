@@ -55,9 +55,21 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * The volume type:
      * </p>
      * <ul>
-     * <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
-     * <li><code>gp2</code> - General Purpose (SSD)</li>
+     * <li>
+     * <p>
+     * <code>standard</code> - Magnetic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> - Provisioned IOPS (SSD)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>gp2</code> - General Purpose (SSD)
+     * </p>
+     * </li>
      * </ul>
      */
     private String volumeType;
@@ -246,17 +258,41 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * The volume type:
      * </p>
      * <ul>
-     * <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
-     * <li><code>gp2</code> - General Purpose (SSD)</li>
+     * <li>
+     * <p>
+     * <code>standard</code> - Magnetic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> - Provisioned IOPS (SSD)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>gp2</code> - General Purpose (SSD)
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param volumeType
      *        The volume type:</p>
      *        <ul>
-     *        <li><code>standard</code> - Magnetic</li>
-     *        <li><code>io1</code> - Provisioned IOPS (SSD)</li>
-     *        <li><code>gp2</code> - General Purpose (SSD)</li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code> - Magnetic
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code> - Provisioned IOPS (SSD)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>gp2</code> - General Purpose (SSD)
+     *        </p>
+     *        </li>
      */
 
     public void setVolumeType(String volumeType) {
@@ -268,16 +304,40 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * The volume type:
      * </p>
      * <ul>
-     * <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
-     * <li><code>gp2</code> - General Purpose (SSD)</li>
+     * <li>
+     * <p>
+     * <code>standard</code> - Magnetic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> - Provisioned IOPS (SSD)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>gp2</code> - General Purpose (SSD)
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The volume type:</p>
      *         <ul>
-     *         <li><code>standard</code> - Magnetic</li>
-     *         <li><code>io1</code> - Provisioned IOPS (SSD)</li>
-     *         <li><code>gp2</code> - General Purpose (SSD)</li>
+     *         <li>
+     *         <p>
+     *         <code>standard</code> - Magnetic
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>io1</code> - Provisioned IOPS (SSD)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>gp2</code> - General Purpose (SSD)
+     *         </p>
+     *         </li>
      */
 
     public String getVolumeType() {
@@ -289,17 +349,41 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * The volume type:
      * </p>
      * <ul>
-     * <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li>
-     * <li><code>gp2</code> - General Purpose (SSD)</li>
+     * <li>
+     * <p>
+     * <code>standard</code> - Magnetic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code> - Provisioned IOPS (SSD)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>gp2</code> - General Purpose (SSD)
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param volumeType
      *        The volume type:</p>
      *        <ul>
-     *        <li><code>standard</code> - Magnetic</li>
-     *        <li><code>io1</code> - Provisioned IOPS (SSD)</li>
-     *        <li><code>gp2</code> - General Purpose (SSD)</li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code> - Magnetic
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code> - Provisioned IOPS (SSD)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>gp2</code> - General Purpose (SSD)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

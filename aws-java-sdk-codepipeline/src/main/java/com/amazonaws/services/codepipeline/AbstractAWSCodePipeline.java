@@ -157,6 +157,12 @@ public class AbstractAWSCodePipeline implements AWSCodePipeline {
     }
 
     @Override
+    public RetryStageExecutionResult retryStageExecution(
+            RetryStageExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartPipelineExecutionResult startPipelineExecution(
             StartPipelineExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();

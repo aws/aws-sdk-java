@@ -34,7 +34,8 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The layer type. A stack cannot have more than one built-in layer of the
-     * same type. It can have any number of custom layers.
+     * same type. It can have any number of custom layers. Built-in layers are
+     * not available in Chef 12 stacks.
      * </p>
      */
     private String type;
@@ -222,12 +223,14 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The layer type. A stack cannot have more than one built-in layer of the
-     * same type. It can have any number of custom layers.
+     * same type. It can have any number of custom layers. Built-in layers are
+     * not available in Chef 12 stacks.
      * </p>
      * 
      * @param type
      *        The layer type. A stack cannot have more than one built-in layer
      *        of the same type. It can have any number of custom layers.
+     *        Built-in layers are not available in Chef 12 stacks.
      * @see LayerType
      */
 
@@ -238,11 +241,13 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The layer type. A stack cannot have more than one built-in layer of the
-     * same type. It can have any number of custom layers.
+     * same type. It can have any number of custom layers. Built-in layers are
+     * not available in Chef 12 stacks.
      * </p>
      * 
      * @return The layer type. A stack cannot have more than one built-in layer
      *         of the same type. It can have any number of custom layers.
+     *         Built-in layers are not available in Chef 12 stacks.
      * @see LayerType
      */
 
@@ -253,12 +258,14 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The layer type. A stack cannot have more than one built-in layer of the
-     * same type. It can have any number of custom layers.
+     * same type. It can have any number of custom layers. Built-in layers are
+     * not available in Chef 12 stacks.
      * </p>
      * 
      * @param type
      *        The layer type. A stack cannot have more than one built-in layer
      *        of the same type. It can have any number of custom layers.
+     *        Built-in layers are not available in Chef 12 stacks.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see LayerType
@@ -272,12 +279,14 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The layer type. A stack cannot have more than one built-in layer of the
-     * same type. It can have any number of custom layers.
+     * same type. It can have any number of custom layers. Built-in layers are
+     * not available in Chef 12 stacks.
      * </p>
      * 
      * @param type
      *        The layer type. A stack cannot have more than one built-in layer
      *        of the same type. It can have any number of custom layers.
+     *        Built-in layers are not available in Chef 12 stacks.
      * @see LayerType
      */
 
@@ -288,12 +297,14 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The layer type. A stack cannot have more than one built-in layer of the
-     * same type. It can have any number of custom layers.
+     * same type. It can have any number of custom layers. Built-in layers are
+     * not available in Chef 12 stacks.
      * </p>
      * 
      * @param type
      *        The layer type. A stack cannot have more than one built-in layer
      *        of the same type. It can have any number of custom layers.
+     *        Built-in layers are not available in Chef 12 stacks.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see LayerType

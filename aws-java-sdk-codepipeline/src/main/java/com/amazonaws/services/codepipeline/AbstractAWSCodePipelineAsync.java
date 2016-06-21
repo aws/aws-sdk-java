@@ -345,6 +345,21 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline
     }
 
     @Override
+    public java.util.concurrent.Future<RetryStageExecutionResult> retryStageExecutionAsync(
+            RetryStageExecutionRequest request) {
+
+        return retryStageExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetryStageExecutionResult> retryStageExecutionAsync(
+            RetryStageExecutionRequest request,
+            com.amazonaws.handlers.AsyncHandler<RetryStageExecutionRequest, RetryStageExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartPipelineExecutionResult> startPipelineExecutionAsync(
             StartPipelineExecutionRequest request) {
 

@@ -35,8 +35,12 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * <p>
      * The version number of the pipeline.
      * </p>
-     * <note>A newly-created pipeline is always assigned a version number of
-     * <code>1</code>.</note>
+     * <note>
+     * <p>
+     * A newly-created pipeline is always assigned a version number of
+     * <code>1</code>.
+     * </p>
+     * </note>
      */
     private Integer pipelineVersion;
     /**
@@ -105,12 +109,19 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * <p>
      * The version number of the pipeline.
      * </p>
-     * <note>A newly-created pipeline is always assigned a version number of
-     * <code>1</code>.</note>
+     * <note>
+     * <p>
+     * A newly-created pipeline is always assigned a version number of
+     * <code>1</code>.
+     * </p>
+     * </note>
      * 
      * @param pipelineVersion
-     *        The version number of the pipeline.</p> <note>A newly-created
-     *        pipeline is always assigned a version number of <code>1</code>.
+     *        The version number of the pipeline.</p> <note>
+     *        <p>
+     *        A newly-created pipeline is always assigned a version number of
+     *        <code>1</code>.
+     *        </p>
      */
 
     public void setPipelineVersion(Integer pipelineVersion) {
@@ -121,11 +132,18 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * <p>
      * The version number of the pipeline.
      * </p>
-     * <note>A newly-created pipeline is always assigned a version number of
-     * <code>1</code>.</note>
+     * <note>
+     * <p>
+     * A newly-created pipeline is always assigned a version number of
+     * <code>1</code>.
+     * </p>
+     * </note>
      * 
-     * @return The version number of the pipeline.</p> <note>A newly-created
-     *         pipeline is always assigned a version number of <code>1</code>.
+     * @return The version number of the pipeline.</p> <note>
+     *         <p>
+     *         A newly-created pipeline is always assigned a version number of
+     *         <code>1</code>.
+     *         </p>
      */
 
     public Integer getPipelineVersion() {
@@ -136,12 +154,19 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * <p>
      * The version number of the pipeline.
      * </p>
-     * <note>A newly-created pipeline is always assigned a version number of
-     * <code>1</code>.</note>
+     * <note>
+     * <p>
+     * A newly-created pipeline is always assigned a version number of
+     * <code>1</code>.
+     * </p>
+     * </note>
      * 
      * @param pipelineVersion
-     *        The version number of the pipeline.</p> <note>A newly-created
-     *        pipeline is always assigned a version number of <code>1</code>.
+     *        The version number of the pipeline.</p> <note>
+     *        <p>
+     *        A newly-created pipeline is always assigned a version number of
+     *        <code>1</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

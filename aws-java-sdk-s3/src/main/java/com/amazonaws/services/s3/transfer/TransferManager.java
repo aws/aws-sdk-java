@@ -996,7 +996,7 @@ public class TransferManager {
             new DownloadCallable(s3, latch,
                 getObjectRequest, resumeExistingDownload, download, file,
                 origStartingByte, fileLength, timeoutMillis, timedThreadPool,
-                lastFullyDownloadedPart, isDownloadParallel));
+                executorService, lastFullyDownloadedPart, isDownloadParallel));
         download.setMonitor(new DownloadMonitor(download, future));
         latch.countDown();
         return download;

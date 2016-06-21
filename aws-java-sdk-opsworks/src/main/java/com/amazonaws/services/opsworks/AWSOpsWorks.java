@@ -44,25 +44,51 @@ import com.amazonaws.services.opsworks.model.*;
  * applications in your preferred language. For more information, see:
  * </p>
  * <ul>
- * <li><a href=
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS
- * CLI</a></li>
- * <li><a href=
+ * CLI</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html"
- * >AWS SDK for Java</a></li>
- * <li><a href=
+ * >AWS SDK for Java</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm"
- * >AWS SDK for .NET</a></li>
- * <li><a href=
+ * >AWS SDK for .NET</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html"
- * >AWS SDK for PHP 2</a></li>
- * <li><a href=
- * "http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html">AWS
- * SDK for Ruby</a></li>
- * <li><a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS SDK
- * for Node.js</a></li>
- * <li><a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK
- * for Python(Boto)</a></li>
+ * >AWS SDK for PHP 2</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://docs.aws.amazon.com/sdkforruby/api/">AWS SDK for Ruby</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS SDK for
+ * Node.js</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK for
+ * Python(Boto)</a>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Endpoints</b>
@@ -78,15 +104,18 @@ import com.amazonaws.services.opsworks.model.*;
  * <p>
  * When you call <a>CreateStack</a>, <a>CloneStack</a>, or <a>UpdateStack</a> we
  * recommend you use the <code>ConfigurationManager</code> parameter to specify
- * the Chef version. The recommended value for Linux stacks is currently 12 (the
- * default is 11.4). Windows stacks use Chef 12.2. For more information, see <a
+ * the Chef version. The recommended and default value for Linux stacks is
+ * currently 12. Windows stacks use Chef 12.2. For more information, see <a
  * href=
  * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html"
  * >Chef Versions</a>.
  * </p>
- * <note>You can specify Chef 12, 11.10, or 11.4 for your Linux stack. We
- * recommend migrating your existing Linux stacks to Chef 12 as soon as
- * possible.</note>
+ * <note>
+ * <p>
+ * You can specify Chef 12, 11.10, or 11.4 for your Linux stack. We recommend
+ * migrating your existing Linux stacks to Chef 12 as soon as possible.
+ * </p>
+ * </note>
  */
 public interface AWSOpsWorks {
 
@@ -153,11 +182,22 @@ public interface AWSOpsWorks {
      * Assign a registered instance to a layer.
      * </p>
      * <ul>
-     * <li>You can assign registered on-premises instances to any layer type.</li>
-     * <li>You can assign registered Amazon EC2 instances only to custom layers.
+     * <li>
+     * <p>
+     * You can assign registered on-premises instances to any layer type.
+     * </p>
      * </li>
-     * <li>You cannot use this action with instances that were created with AWS
-     * OpsWorks.</li>
+     * <li>
+     * <p>
+     * You can assign registered Amazon EC2 instances only to custom layers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot use this action with instances that were created with AWS
+     * OpsWorks.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Required Permissions</b>: To use this action, an AWS Identity and
@@ -171,7 +211,7 @@ public interface AWSOpsWorks {
      * @param assignInstanceRequest
      * @return Result of the AssignInstance operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.AssignInstance
@@ -201,7 +241,7 @@ public interface AWSOpsWorks {
      * @param assignVolumeRequest
      * @return Result of the AssignVolume operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.AssignVolume
@@ -229,7 +269,7 @@ public interface AWSOpsWorks {
      * @return Result of the AssociateElasticIp operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.AssociateElasticIp
@@ -266,7 +306,7 @@ public interface AWSOpsWorks {
      * @return Result of the AttachElasticLoadBalancer operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.AttachElasticLoadBalancer
@@ -292,7 +332,7 @@ public interface AWSOpsWorks {
      * @param cloneStackRequest
      * @return Result of the CloneStack operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.CloneStack
@@ -317,7 +357,7 @@ public interface AWSOpsWorks {
      * @param createAppRequest
      * @return Result of the CreateApp operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.CreateApp
@@ -344,7 +384,7 @@ public interface AWSOpsWorks {
      * @param createDeploymentRequest
      * @return Result of the CreateDeployment operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.CreateDeployment
@@ -371,7 +411,7 @@ public interface AWSOpsWorks {
      * @param createInstanceRequest
      * @return Result of the CreateInstance operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.CreateInstance
@@ -407,7 +447,7 @@ public interface AWSOpsWorks {
      * @param createLayerRequest
      * @return Result of the CreateLayer operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.CreateLayer
@@ -431,7 +471,7 @@ public interface AWSOpsWorks {
      * @param createStackRequest
      * @return Result of the CreateStack operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @sample AWSOpsWorks.CreateStack
      */
     CreateStackResult createStack(CreateStackRequest createStackRequest);
@@ -452,7 +492,7 @@ public interface AWSOpsWorks {
      * @return Result of the CreateUserProfile operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @sample AWSOpsWorks.CreateUserProfile
      */
     CreateUserProfileResult createUserProfile(
@@ -474,7 +514,7 @@ public interface AWSOpsWorks {
      * @param deleteAppRequest
      * @return Result of the DeleteApp operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeleteApp
@@ -503,7 +543,7 @@ public interface AWSOpsWorks {
      * @param deleteInstanceRequest
      * @return Result of the DeleteInstance operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeleteInstance
@@ -531,7 +571,7 @@ public interface AWSOpsWorks {
      * @param deleteLayerRequest
      * @return Result of the DeleteLayer operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeleteLayer
@@ -558,7 +598,7 @@ public interface AWSOpsWorks {
      * @param deleteStackRequest
      * @return Result of the DeleteStack operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeleteStack
@@ -581,7 +621,7 @@ public interface AWSOpsWorks {
      * @return Result of the DeleteUserProfile operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeleteUserProfile
@@ -602,14 +642,15 @@ public interface AWSOpsWorks {
      * explicitly grants permissions. For more information on user permissions,
      * see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
-     * />.
+     * >http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-
+     * users.html</a>.
      * </p>
      * 
      * @param deregisterEcsClusterRequest
      * @return Result of the DeregisterEcsCluster operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeregisterEcsCluster
@@ -637,7 +678,7 @@ public interface AWSOpsWorks {
      * @return Result of the DeregisterElasticIp operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeregisterElasticIp
@@ -665,7 +706,7 @@ public interface AWSOpsWorks {
      * @return Result of the DeregisterInstance operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeregisterInstance
@@ -690,7 +731,7 @@ public interface AWSOpsWorks {
      * @return Result of the DeregisterRdsDbInstance operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeregisterRdsDbInstance
@@ -717,7 +758,7 @@ public interface AWSOpsWorks {
      * @param deregisterVolumeRequest
      * @return Result of the DeregisterVolume operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DeregisterVolume
@@ -737,7 +778,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribeAgentVersions operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeAgentVersions
@@ -766,7 +807,7 @@ public interface AWSOpsWorks {
      * @param describeAppsRequest
      * @return Result of the DescribeApps operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeApps
@@ -794,7 +835,7 @@ public interface AWSOpsWorks {
      * @param describeCommandsRequest
      * @return Result of the DescribeCommands operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeCommands
@@ -824,7 +865,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribeDeployments operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeDeployments
@@ -853,7 +894,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribeEcsClusters operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeEcsClusters
@@ -885,7 +926,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribeElasticIps operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeElasticIps
@@ -915,7 +956,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribeElasticLoadBalancers operation returned by
      *         the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeElasticLoadBalancers
@@ -945,7 +986,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribeInstances operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeInstances
@@ -974,7 +1015,7 @@ public interface AWSOpsWorks {
      * @param describeLayersRequest
      * @return Result of the DescribeLayers operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeLayers
@@ -1004,7 +1045,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribeLoadBasedAutoScaling operation returned by
      *         the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeLoadBasedAutoScaling
@@ -1049,7 +1090,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribePermissions operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribePermissions
@@ -1079,7 +1120,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribeRaidArrays operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeRaidArrays
@@ -1104,7 +1145,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribeRdsDbInstances operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeRdsDbInstances
@@ -1129,7 +1170,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribeServiceErrors operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeServiceErrors
@@ -1154,7 +1195,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribeStackProvisioningParameters operation
      *         returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeStackProvisioningParameters
@@ -1181,7 +1222,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribeStackSummary operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeStackSummary
@@ -1205,7 +1246,7 @@ public interface AWSOpsWorks {
      * @param describeStacksRequest
      * @return Result of the DescribeStacks operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeStacks
@@ -1235,7 +1276,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribeTimeBasedAutoScaling operation returned by
      *         the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeTimeBasedAutoScaling
@@ -1259,7 +1300,7 @@ public interface AWSOpsWorks {
      * @return Result of the DescribeUserProfiles operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeUserProfiles
@@ -1288,7 +1329,7 @@ public interface AWSOpsWorks {
      * @param describeVolumesRequest
      * @return Result of the DescribeVolumes operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DescribeVolumes
@@ -1339,7 +1380,7 @@ public interface AWSOpsWorks {
      * @return Result of the DisassociateElasticIp operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.DisassociateElasticIp
@@ -1365,7 +1406,7 @@ public interface AWSOpsWorks {
      * @return Result of the GetHostnameSuggestion operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.GetHostnameSuggestion
@@ -1374,7 +1415,11 @@ public interface AWSOpsWorks {
             GetHostnameSuggestionRequest getHostnameSuggestionRequest);
 
     /**
-     * <note>This action can be used only with Windows stacks.</note>
+     * <note>
+     * <p>
+     * This action can be used only with Windows stacks.
+     * </p>
+     * </note>
      * <p>
      * Grants RDP access to a Windows instance for a specified time period.
      * </p>
@@ -1382,7 +1427,7 @@ public interface AWSOpsWorks {
      * @param grantAccessRequest
      * @return Result of the GrantAccess operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.GrantAccess
@@ -1407,7 +1452,7 @@ public interface AWSOpsWorks {
      * @param rebootInstanceRequest
      * @return Result of the RebootInstance operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.RebootInstance
@@ -1436,7 +1481,7 @@ public interface AWSOpsWorks {
      * @return Result of the RegisterEcsCluster operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.RegisterEcsCluster
@@ -1466,7 +1511,7 @@ public interface AWSOpsWorks {
      * @return Result of the RegisterElasticIp operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.RegisterElasticIp
@@ -1479,15 +1524,18 @@ public interface AWSOpsWorks {
      * Registers instances with a specified stack that were created outside of
      * AWS OpsWorks.
      * </p>
-     * <note>We do not recommend using this action to register instances. The
-     * complete registration operation has two primary steps, installing the AWS
-     * OpsWorks agent on the instance and registering the instance with the
-     * stack. <code>RegisterInstance</code> handles only the second step. You
-     * should instead use the AWS CLI <code>register</code> command, which
-     * performs the entire registration operation. For more information, see <a
-     * href=
+     * <note>
+     * <p>
+     * We do not recommend using this action to register instances. The complete
+     * registration operation has two primary steps, installing the AWS OpsWorks
+     * agent on the instance and registering the instance with the stack.
+     * <code>RegisterInstance</code> handles only the second step. You should
+     * instead use the AWS CLI <code>register</code> command, which performs the
+     * entire registration operation. For more information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"
-     * > Registering an Instance with an AWS OpsWorks Stack</a>.</note>
+     * > Registering an Instance with an AWS OpsWorks Stack</a>.
+     * </p>
+     * </note>
      * <p>
      * <b>Required Permissions</b>: To use this action, an IAM user must have a
      * Manage permissions level for the stack or an attached policy that
@@ -1500,7 +1548,7 @@ public interface AWSOpsWorks {
      * @param registerInstanceRequest
      * @return Result of the RegisterInstance operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.RegisterInstance
@@ -1525,7 +1573,7 @@ public interface AWSOpsWorks {
      * @return Result of the RegisterRdsDbInstance operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.RegisterRdsDbInstance
@@ -1554,7 +1602,7 @@ public interface AWSOpsWorks {
      * @param registerVolumeRequest
      * @return Result of the RegisterVolume operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.RegisterVolume
@@ -1590,7 +1638,7 @@ public interface AWSOpsWorks {
      * @return Result of the SetLoadBasedAutoScaling operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.SetLoadBasedAutoScaling
@@ -1616,7 +1664,7 @@ public interface AWSOpsWorks {
      * @param setPermissionRequest
      * @return Result of the SetPermission operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.SetPermission
@@ -1643,7 +1691,7 @@ public interface AWSOpsWorks {
      * @return Result of the SetTimeBasedAutoScaling operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.SetTimeBasedAutoScaling
@@ -1669,7 +1717,7 @@ public interface AWSOpsWorks {
      * @param startInstanceRequest
      * @return Result of the StartInstance operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.StartInstance
@@ -1692,7 +1740,7 @@ public interface AWSOpsWorks {
      * @param startStackRequest
      * @return Result of the StartStack operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.StartStack
@@ -1720,7 +1768,7 @@ public interface AWSOpsWorks {
      * @param stopInstanceRequest
      * @return Result of the StopInstance operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.StopInstance
@@ -1743,7 +1791,7 @@ public interface AWSOpsWorks {
      * @param stopStackRequest
      * @return Result of the StopStack operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.StopStack
@@ -1769,7 +1817,7 @@ public interface AWSOpsWorks {
      * @param unassignInstanceRequest
      * @return Result of the UnassignInstance operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UnassignInstance
@@ -1796,7 +1844,7 @@ public interface AWSOpsWorks {
      * @param unassignVolumeRequest
      * @return Result of the UnassignVolume operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UnassignVolume
@@ -1820,7 +1868,7 @@ public interface AWSOpsWorks {
      * @param updateAppRequest
      * @return Result of the UpdateApp operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateApp
@@ -1846,7 +1894,7 @@ public interface AWSOpsWorks {
      * @param updateElasticIpRequest
      * @return Result of the UpdateElasticIp operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateElasticIp
@@ -1870,7 +1918,7 @@ public interface AWSOpsWorks {
      * @param updateInstanceRequest
      * @return Result of the UpdateInstance operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateInstance
@@ -1894,7 +1942,7 @@ public interface AWSOpsWorks {
      * @param updateLayerRequest
      * @return Result of the UpdateLayer operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateLayer
@@ -1917,7 +1965,7 @@ public interface AWSOpsWorks {
      * @return Result of the UpdateMyUserProfile operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @sample AWSOpsWorks.UpdateMyUserProfile
      */
     UpdateMyUserProfileResult updateMyUserProfile(
@@ -1940,7 +1988,7 @@ public interface AWSOpsWorks {
      * @return Result of the UpdateRdsDbInstance operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateRdsDbInstance
@@ -1964,7 +2012,7 @@ public interface AWSOpsWorks {
      * @param updateStackRequest
      * @return Result of the UpdateStack operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateStack
@@ -1987,7 +2035,7 @@ public interface AWSOpsWorks {
      * @return Result of the UpdateUserProfile operation returned by the
      *         service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateUserProfile
@@ -2014,7 +2062,7 @@ public interface AWSOpsWorks {
      * @param updateVolumeRequest
      * @return Result of the UpdateVolume operation returned by the service.
      * @throws ValidationException
-     *         Indicates that a request was invalid.
+     *         Indicates that a request was not valid.
      * @throws ResourceNotFoundException
      *         Indicates that a resource was not found.
      * @sample AWSOpsWorks.UpdateVolume

@@ -58,7 +58,7 @@ public class OutputArtifact implements Serializable, Cloneable {
      * </p>
      * 
      * @param name
-     *        The name of the output of an artifact, such as "My App". </p>
+     *        The name of the output of an artifact, such as "My App".</p>
      *        <p>
      *        The input artifact of an action must exactly match the output
      *        artifact declared in a preceding action, but the input artifact
@@ -90,7 +90,7 @@ public class OutputArtifact implements Serializable, Cloneable {
      * Output artifact names must be unique within a pipeline.
      * </p>
      * 
-     * @return The name of the output of an artifact, such as "My App". </p>
+     * @return The name of the output of an artifact, such as "My App".</p>
      *         <p>
      *         The input artifact of an action must exactly match the output
      *         artifact declared in a preceding action, but the input artifact
@@ -123,7 +123,7 @@ public class OutputArtifact implements Serializable, Cloneable {
      * </p>
      * 
      * @param name
-     *        The name of the output of an artifact, such as "My App". </p>
+     *        The name of the output of an artifact, such as "My App".</p>
      *        <p>
      *        The input artifact of an action must exactly match the output
      *        artifact declared in a preceding action, but the input artifact

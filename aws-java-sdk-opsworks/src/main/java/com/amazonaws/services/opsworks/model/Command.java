@@ -66,10 +66,26 @@ public class Command implements Serializable, Cloneable {
      * The command status:
      * </p>
      * <ul>
-     * <li>failed</li>
-     * <li>successful</li>
-     * <li>skipped</li>
-     * <li>pending</li>
+     * <li>
+     * <p>
+     * failed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * successful
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * skipped
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pending
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -90,16 +106,56 @@ public class Command implements Serializable, Cloneable {
      * The command type:
      * </p>
      * <ul>
-     * <li> <code>deploy</code></li>
-     * <li> <code>rollback</code></li>
-     * <li> <code>start</code></li>
-     * <li> <code>stop</code></li>
-     * <li> <code>restart</code></li>
-     * <li> <code>undeploy</code></li>
-     * <li> <code>update_dependencies</code></li>
-     * <li> <code>install_dependencies</code></li>
-     * <li> <code>update_custom_cookbooks</code></li>
-     * <li> <code>execute_recipes</code></li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rollback</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>restart</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>undeploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>install_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_custom_cookbooks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>execute_recipes</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private String type;
@@ -355,19 +411,51 @@ public class Command implements Serializable, Cloneable {
      * The command status:
      * </p>
      * <ul>
-     * <li>failed</li>
-     * <li>successful</li>
-     * <li>skipped</li>
-     * <li>pending</li>
+     * <li>
+     * <p>
+     * failed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * successful
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * skipped
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pending
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The command status:</p>
      *        <ul>
-     *        <li>failed</li>
-     *        <li>successful</li>
-     *        <li>skipped</li>
-     *        <li>pending</li>
+     *        <li>
+     *        <p>
+     *        failed
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        successful
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        skipped
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pending
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -379,18 +467,50 @@ public class Command implements Serializable, Cloneable {
      * The command status:
      * </p>
      * <ul>
-     * <li>failed</li>
-     * <li>successful</li>
-     * <li>skipped</li>
-     * <li>pending</li>
+     * <li>
+     * <p>
+     * failed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * successful
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * skipped
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pending
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The command status:</p>
      *         <ul>
-     *         <li>failed</li>
-     *         <li>successful</li>
-     *         <li>skipped</li>
-     *         <li>pending</li>
+     *         <li>
+     *         <p>
+     *         failed
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         successful
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         skipped
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         pending
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -402,19 +522,51 @@ public class Command implements Serializable, Cloneable {
      * The command status:
      * </p>
      * <ul>
-     * <li>failed</li>
-     * <li>successful</li>
-     * <li>skipped</li>
-     * <li>pending</li>
+     * <li>
+     * <p>
+     * failed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * successful
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * skipped
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pending
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The command status:</p>
      *        <ul>
-     *        <li>failed</li>
-     *        <li>successful</li>
-     *        <li>skipped</li>
-     *        <li>pending</li>
+     *        <li>
+     *        <p>
+     *        failed
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        successful
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        skipped
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pending
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -511,31 +663,111 @@ public class Command implements Serializable, Cloneable {
      * The command type:
      * </p>
      * <ul>
-     * <li> <code>deploy</code></li>
-     * <li> <code>rollback</code></li>
-     * <li> <code>start</code></li>
-     * <li> <code>stop</code></li>
-     * <li> <code>restart</code></li>
-     * <li> <code>undeploy</code></li>
-     * <li> <code>update_dependencies</code></li>
-     * <li> <code>install_dependencies</code></li>
-     * <li> <code>update_custom_cookbooks</code></li>
-     * <li> <code>execute_recipes</code></li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rollback</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>restart</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>undeploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>install_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_custom_cookbooks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>execute_recipes</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
      *        The command type:</p>
      *        <ul>
-     *        <li> <code>deploy</code></li>
-     *        <li> <code>rollback</code></li>
-     *        <li> <code>start</code></li>
-     *        <li> <code>stop</code></li>
-     *        <li> <code>restart</code></li>
-     *        <li> <code>undeploy</code></li>
-     *        <li> <code>update_dependencies</code></li>
-     *        <li> <code>install_dependencies</code></li>
-     *        <li> <code>update_custom_cookbooks</code></li>
-     *        <li> <code>execute_recipes</code></li>
+     *        <li>
+     *        <p>
+     *        <code>deploy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rollback</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stop</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>restart</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>undeploy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>update_dependencies</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>install_dependencies</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>update_custom_cookbooks</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>execute_recipes</code>
+     *        </p>
+     *        </li>
      */
 
     public void setType(String type) {
@@ -547,30 +779,110 @@ public class Command implements Serializable, Cloneable {
      * The command type:
      * </p>
      * <ul>
-     * <li> <code>deploy</code></li>
-     * <li> <code>rollback</code></li>
-     * <li> <code>start</code></li>
-     * <li> <code>stop</code></li>
-     * <li> <code>restart</code></li>
-     * <li> <code>undeploy</code></li>
-     * <li> <code>update_dependencies</code></li>
-     * <li> <code>install_dependencies</code></li>
-     * <li> <code>update_custom_cookbooks</code></li>
-     * <li> <code>execute_recipes</code></li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rollback</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>restart</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>undeploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>install_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_custom_cookbooks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>execute_recipes</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The command type:</p>
      *         <ul>
-     *         <li> <code>deploy</code></li>
-     *         <li> <code>rollback</code></li>
-     *         <li> <code>start</code></li>
-     *         <li> <code>stop</code></li>
-     *         <li> <code>restart</code></li>
-     *         <li> <code>undeploy</code></li>
-     *         <li> <code>update_dependencies</code></li>
-     *         <li> <code>install_dependencies</code></li>
-     *         <li> <code>update_custom_cookbooks</code></li>
-     *         <li> <code>execute_recipes</code></li>
+     *         <li>
+     *         <p>
+     *         <code>deploy</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>rollback</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>start</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stop</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>restart</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>undeploy</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>update_dependencies</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>install_dependencies</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>update_custom_cookbooks</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>execute_recipes</code>
+     *         </p>
+     *         </li>
      */
 
     public String getType() {
@@ -582,31 +894,111 @@ public class Command implements Serializable, Cloneable {
      * The command type:
      * </p>
      * <ul>
-     * <li> <code>deploy</code></li>
-     * <li> <code>rollback</code></li>
-     * <li> <code>start</code></li>
-     * <li> <code>stop</code></li>
-     * <li> <code>restart</code></li>
-     * <li> <code>undeploy</code></li>
-     * <li> <code>update_dependencies</code></li>
-     * <li> <code>install_dependencies</code></li>
-     * <li> <code>update_custom_cookbooks</code></li>
-     * <li> <code>execute_recipes</code></li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rollback</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>restart</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>undeploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>install_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>update_custom_cookbooks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>execute_recipes</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
      *        The command type:</p>
      *        <ul>
-     *        <li> <code>deploy</code></li>
-     *        <li> <code>rollback</code></li>
-     *        <li> <code>start</code></li>
-     *        <li> <code>stop</code></li>
-     *        <li> <code>restart</code></li>
-     *        <li> <code>undeploy</code></li>
-     *        <li> <code>update_dependencies</code></li>
-     *        <li> <code>install_dependencies</code></li>
-     *        <li> <code>update_custom_cookbooks</code></li>
-     *        <li> <code>execute_recipes</code></li>
+     *        <li>
+     *        <p>
+     *        <code>deploy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rollback</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stop</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>restart</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>undeploy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>update_dependencies</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>install_dependencies</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>update_custom_cookbooks</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>execute_recipes</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -23,7 +23,7 @@ import java.util.concurrent.ConcurrentMap;
 
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.SaveBehavior;
-import com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties.BeanProperty;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties.Bean;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.BooleanToBooleanMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CustomMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.CustomUnmarshaller;
@@ -89,7 +89,7 @@ final class DynamoDBMappingsRegistry {
          */
         private Mappings(final Class<?> clazz) {
             objectType = (Class<Object>)clazz;
-            for (final Map.Entry<String,BeanProperty<Object,Object>> bean : StandardBeanProperties.of(objectType).entrySet()) {
+            for (final Map.Entry<String,Bean<Object,Object>> bean : StandardBeanProperties.of(objectType).entrySet()) {
                 final Mapping mapping = new Mapping(bean.getKey(), bean.getValue());
                 if (byNames.containsKey(mapping.getAttributeName())) {
                     throw new DynamoDBMappingException(objectType +
@@ -184,7 +184,7 @@ final class DynamoDBMappingsRegistry {
      * Holds the properties for mapping an object attribute.
      */
     static final class Mapping {
-        private final BeanProperty<Object,Object> bean;
+        private final Bean<Object,Object> bean;
         private final String attributeName;
 
         /**
@@ -192,7 +192,7 @@ final class DynamoDBMappingsRegistry {
          * @param bean The bean property.
          * @param attributeName The attribute name.
          */
-        private Mapping(final String attributeName, final BeanProperty<Object,Object> bean) {
+        private Mapping(final String attributeName, final Bean<Object,Object> bean) {
             this.attributeName = attributeName;
             this.bean = bean;
         }
@@ -201,7 +201,7 @@ final class DynamoDBMappingsRegistry {
          * Gets the bean property.
          * @return The bean property.
          */
-        final BeanProperty<Object,Object> bean() {
+        final Bean<Object,Object> bean() {
             return this.bean;
         }
 
@@ -272,7 +272,7 @@ final class DynamoDBMappingsRegistry {
          */
         final ArgumentUnmarshaller getCustomUnmarshaller() {
             if (bean.annotations().marshalling() != null) {
-                return new CustomUnmarshaller(bean.valueType(), bean.annotations().marshalling().marshallerClass());
+                return new CustomUnmarshaller(bean.reflect().valueType(), bean.annotations().marshalling().marshallerClass());
             }
             return null;
         }

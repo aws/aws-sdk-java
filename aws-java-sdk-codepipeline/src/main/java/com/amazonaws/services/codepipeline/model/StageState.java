@@ -43,6 +43,13 @@ public class StageState implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<ActionState> actionStates;
+    /**
+     * <p>
+     * Information about the latest execution in the stage, including its ID and
+     * status.
+     * </p>
+     */
+    private StageExecution latestExecution;
 
     /**
      * <p>
@@ -206,6 +213,53 @@ public class StageState implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the latest execution in the stage, including its ID and
+     * status.
+     * </p>
+     * 
+     * @param latestExecution
+     *        Information about the latest execution in the stage, including its
+     *        ID and status.
+     */
+
+    public void setLatestExecution(StageExecution latestExecution) {
+        this.latestExecution = latestExecution;
+    }
+
+    /**
+     * <p>
+     * Information about the latest execution in the stage, including its ID and
+     * status.
+     * </p>
+     * 
+     * @return Information about the latest execution in the stage, including
+     *         its ID and status.
+     */
+
+    public StageExecution getLatestExecution() {
+        return this.latestExecution;
+    }
+
+    /**
+     * <p>
+     * Information about the latest execution in the stage, including its ID and
+     * status.
+     * </p>
+     * 
+     * @param latestExecution
+     *        Information about the latest execution in the stage, including its
+     *        ID and status.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public StageState withLatestExecution(StageExecution latestExecution) {
+        setLatestExecution(latestExecution);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -223,7 +277,9 @@ public class StageState implements Serializable, Cloneable {
             sb.append("InboundTransitionState: " + getInboundTransitionState()
                     + ",");
         if (getActionStates() != null)
-            sb.append("ActionStates: " + getActionStates());
+            sb.append("ActionStates: " + getActionStates() + ",");
+        if (getLatestExecution() != null)
+            sb.append("LatestExecution: " + getLatestExecution());
         sb.append("}");
         return sb.toString();
     }
@@ -255,6 +311,12 @@ public class StageState implements Serializable, Cloneable {
         if (other.getActionStates() != null
                 && other.getActionStates().equals(this.getActionStates()) == false)
             return false;
+        if (other.getLatestExecution() == null
+                ^ this.getLatestExecution() == null)
+            return false;
+        if (other.getLatestExecution() != null
+                && other.getLatestExecution().equals(this.getLatestExecution()) == false)
+            return false;
         return true;
     }
 
@@ -272,6 +334,10 @@ public class StageState implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getActionStates() == null) ? 0 : getActionStates()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLatestExecution() == null) ? 0 : getLatestExecution()
                         .hashCode());
         return hashCode;
     }

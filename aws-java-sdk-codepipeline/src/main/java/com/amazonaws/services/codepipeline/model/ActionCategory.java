@@ -25,7 +25,8 @@ public enum ActionCategory {
     Build("Build"),
     Deploy("Deploy"),
     Test("Test"),
-    Invoke("Invoke");
+    Invoke("Invoke"),
+    Approval("Approval");
 
     private String value;
 

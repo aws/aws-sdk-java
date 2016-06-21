@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "gamelift",
     "signingName" : "gamelift",
-    "jsonProtocol" : true,
+    "xmlProtocol" : false,
     "serviceName" : "Amazon GameLift",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "xmlProtocol" : false
+    "jsonProtocol" : true
   },
   "operations" : {
     "CreateAlias" : {

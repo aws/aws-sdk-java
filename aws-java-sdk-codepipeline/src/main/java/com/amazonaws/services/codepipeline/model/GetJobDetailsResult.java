@@ -50,7 +50,7 @@ public class GetJobDetailsResult implements Serializable, Cloneable {
      * </note>
      * 
      * @param jobDetails
-     *        The details of the job. </p> <note>
+     *        The details of the job.</p> <note>
      *        <p>
      *        If AWSSessionCredentials is used, a long-running job can call
      *        GetJobDetails again to obtain new credentials.
@@ -72,7 +72,7 @@ public class GetJobDetailsResult implements Serializable, Cloneable {
      * </p>
      * </note>
      * 
-     * @return The details of the job. </p> <note>
+     * @return The details of the job.</p> <note>
      *         <p>
      *         If AWSSessionCredentials is used, a long-running job can call
      *         GetJobDetails again to obtain new credentials.
@@ -95,7 +95,7 @@ public class GetJobDetailsResult implements Serializable, Cloneable {
      * </note>
      * 
      * @param jobDetails
-     *        The details of the job. </p> <note>
+     *        The details of the job.</p> <note>
      *        <p>
      *        If AWSSessionCredentials is used, a long-running job can call
      *        GetJobDetails again to obtain new credentials.

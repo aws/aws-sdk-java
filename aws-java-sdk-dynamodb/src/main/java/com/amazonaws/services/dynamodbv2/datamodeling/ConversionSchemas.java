@@ -272,9 +272,7 @@ public final class ConversionSchemas {
             final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
 
             for (final DynamoDBMappingsRegistry.Mapping mapping : mappings.getMappings()) {
-                Object getterResult =
-                        mapping.bean().get(object);
-
+                Object getterResult = mapping.bean().get(object);
                 if (getterResult != null) {
                     AttributeValue value = convert(mapping.bean().getter(), getterResult);
                     if (value != null) {

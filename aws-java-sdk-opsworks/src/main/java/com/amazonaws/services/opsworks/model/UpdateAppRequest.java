@@ -104,9 +104,13 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements
      * Exceeding it will cause an exception with the message,
      * "Environment: is too large (maximum is 10KB)."
      * </p>
-     * <note>This parameter is supported only by Chef 11.10 stacks. If you have
+     * <note>
+     * <p>
+     * This parameter is supported only by Chef 11.10 stacks. If you have
      * specified one or more environment variables, you cannot modify the
-     * stack's Chef version. </note>
+     * stack's Chef version.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<EnvironmentVariable> environment;
 
@@ -707,9 +711,13 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements
      * Exceeding it will cause an exception with the message,
      * "Environment: is too large (maximum is 10KB)."
      * </p>
-     * <note>This parameter is supported only by Chef 11.10 stacks. If you have
+     * <note>
+     * <p>
+     * This parameter is supported only by Chef 11.10 stacks. If you have
      * specified one or more environment variables, you cannot modify the
-     * stack's Chef version. </note>
+     * stack's Chef version.
+     * </p>
+     * </note>
      * 
      * @return An array of <code>EnvironmentVariable</code> objects that specify
      *         environment variables to be associated with the app. After you
@@ -726,9 +734,12 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements
      *         exception with the message,
      *         "Environment: is too large (maximum is 10KB)."
      *         </p>
-     *         <note>This parameter is supported only by Chef 11.10 stacks. If
-     *         you have specified one or more environment variables, you cannot
+     *         <note>
+     *         <p>
+     *         This parameter is supported only by Chef 11.10 stacks. If you
+     *         have specified one or more environment variables, you cannot
      *         modify the stack's Chef version.
+     *         </p>
      */
 
     public java.util.List<EnvironmentVariable> getEnvironment() {
@@ -755,9 +766,13 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements
      * Exceeding it will cause an exception with the message,
      * "Environment: is too large (maximum is 10KB)."
      * </p>
-     * <note>This parameter is supported only by Chef 11.10 stacks. If you have
+     * <note>
+     * <p>
+     * This parameter is supported only by Chef 11.10 stacks. If you have
      * specified one or more environment variables, you cannot modify the
-     * stack's Chef version. </note>
+     * stack's Chef version.
+     * </p>
+     * </note>
      * 
      * @param environment
      *        An array of <code>EnvironmentVariable</code> objects that specify
@@ -774,9 +789,12 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements
      *        most if not all use cases. Exceeding it will cause an exception
      *        with the message, "Environment: is too large (maximum is 10KB)."
      *        </p>
-     *        <note>This parameter is supported only by Chef 11.10 stacks. If
-     *        you have specified one or more environment variables, you cannot
-     *        modify the stack's Chef version.
+     *        <note>
+     *        <p>
+     *        This parameter is supported only by Chef 11.10 stacks. If you have
+     *        specified one or more environment variables, you cannot modify the
+     *        stack's Chef version.
+     *        </p>
      */
 
     public void setEnvironment(
@@ -807,9 +825,13 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements
      * Exceeding it will cause an exception with the message,
      * "Environment: is too large (maximum is 10KB)."
      * </p>
-     * <note>This parameter is supported only by Chef 11.10 stacks. If you have
+     * <note>
+     * <p>
+     * This parameter is supported only by Chef 11.10 stacks. If you have
      * specified one or more environment variables, you cannot modify the
-     * stack's Chef version. </note>
+     * stack's Chef version.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setEnvironment(java.util.Collection)} or
@@ -832,9 +854,12 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements
      *        most if not all use cases. Exceeding it will cause an exception
      *        with the message, "Environment: is too large (maximum is 10KB)."
      *        </p>
-     *        <note>This parameter is supported only by Chef 11.10 stacks. If
-     *        you have specified one or more environment variables, you cannot
-     *        modify the stack's Chef version.
+     *        <note>
+     *        <p>
+     *        This parameter is supported only by Chef 11.10 stacks. If you have
+     *        specified one or more environment variables, you cannot modify the
+     *        stack's Chef version.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -867,9 +892,13 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements
      * Exceeding it will cause an exception with the message,
      * "Environment: is too large (maximum is 10KB)."
      * </p>
-     * <note>This parameter is supported only by Chef 11.10 stacks. If you have
+     * <note>
+     * <p>
+     * This parameter is supported only by Chef 11.10 stacks. If you have
      * specified one or more environment variables, you cannot modify the
-     * stack's Chef version. </note>
+     * stack's Chef version.
+     * </p>
+     * </note>
      * 
      * @param environment
      *        An array of <code>EnvironmentVariable</code> objects that specify
@@ -886,9 +915,12 @@ public class UpdateAppRequest extends AmazonWebServiceRequest implements
      *        most if not all use cases. Exceeding it will cause an exception
      *        with the message, "Environment: is too large (maximum is 10KB)."
      *        </p>
-     *        <note>This parameter is supported only by Chef 11.10 stacks. If
-     *        you have specified one or more environment variables, you cannot
-     *        modify the stack's Chef version.
+     *        <note>
+     *        <p>
+     *        This parameter is supported only by Chef 11.10 stacks. If you have
+     *        specified one or more environment variables, you cannot modify the
+     *        stack's Chef version.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

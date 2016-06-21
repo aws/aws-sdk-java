@@ -44,25 +44,51 @@ import com.amazonaws.services.opsworks.model.*;
  * applications in your preferred language. For more information, see:
  * </p>
  * <ul>
- * <li><a href=
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS
- * CLI</a></li>
- * <li><a href=
+ * CLI</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html"
- * >AWS SDK for Java</a></li>
- * <li><a href=
+ * >AWS SDK for Java</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm"
- * >AWS SDK for .NET</a></li>
- * <li><a href=
+ * >AWS SDK for .NET</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html"
- * >AWS SDK for PHP 2</a></li>
- * <li><a href=
- * "http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html">AWS
- * SDK for Ruby</a></li>
- * <li><a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS SDK
- * for Node.js</a></li>
- * <li><a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK
- * for Python(Boto)</a></li>
+ * >AWS SDK for PHP 2</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://docs.aws.amazon.com/sdkforruby/api/">AWS SDK for Ruby</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS SDK for
+ * Node.js</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK for
+ * Python(Boto)</a>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Endpoints</b>
@@ -78,15 +104,18 @@ import com.amazonaws.services.opsworks.model.*;
  * <p>
  * When you call <a>CreateStack</a>, <a>CloneStack</a>, or <a>UpdateStack</a> we
  * recommend you use the <code>ConfigurationManager</code> parameter to specify
- * the Chef version. The recommended value for Linux stacks is currently 12 (the
- * default is 11.4). Windows stacks use Chef 12.2. For more information, see <a
+ * the Chef version. The recommended and default value for Linux stacks is
+ * currently 12. Windows stacks use Chef 12.2. For more information, see <a
  * href=
  * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html"
  * >Chef Versions</a>.
  * </p>
- * <note>You can specify Chef 12, 11.10, or 11.4 for your Linux stack. We
- * recommend migrating your existing Linux stacks to Chef 12 as soon as
- * possible.</note>
+ * <note>
+ * <p>
+ * You can specify Chef 12, 11.10, or 11.4 for your Linux stack. We recommend
+ * migrating your existing Linux stacks to Chef 12 as soon as possible.
+ * </p>
+ * </note>
  */
 public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
@@ -95,11 +124,22 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * Assign a registered instance to a layer.
      * </p>
      * <ul>
-     * <li>You can assign registered on-premises instances to any layer type.</li>
-     * <li>You can assign registered Amazon EC2 instances only to custom layers.
+     * <li>
+     * <p>
+     * You can assign registered on-premises instances to any layer type.
+     * </p>
      * </li>
-     * <li>You cannot use this action with instances that were created with AWS
-     * OpsWorks.</li>
+     * <li>
+     * <p>
+     * You can assign registered Amazon EC2 instances only to custom layers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot use this action with instances that were created with AWS
+     * OpsWorks.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Required Permissions</b>: To use this action, an AWS Identity and
@@ -123,11 +163,22 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * Assign a registered instance to a layer.
      * </p>
      * <ul>
-     * <li>You can assign registered on-premises instances to any layer type.</li>
-     * <li>You can assign registered Amazon EC2 instances only to custom layers.
+     * <li>
+     * <p>
+     * You can assign registered on-premises instances to any layer type.
+     * </p>
      * </li>
-     * <li>You cannot use this action with instances that were created with AWS
-     * OpsWorks.</li>
+     * <li>
+     * <p>
+     * You can assign registered Amazon EC2 instances only to custom layers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot use this action with instances that were created with AWS
+     * OpsWorks.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Required Permissions</b>: To use this action, an AWS Identity and
@@ -1001,7 +1052,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * explicitly grants permissions. For more information on user permissions,
      * see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
-     * />.
+     * >http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-
+     * users.html</a>.
      * </p>
      * 
      * @param deregisterEcsClusterRequest
@@ -1025,7 +1077,8 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * explicitly grants permissions. For more information on user permissions,
      * see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
-     * />.
+     * >http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-
+     * users.html</a>.
      * </p>
      * 
      * @param deregisterEcsClusterRequest
@@ -2527,7 +2580,11 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
             com.amazonaws.handlers.AsyncHandler<GetHostnameSuggestionRequest, GetHostnameSuggestionResult> asyncHandler);
 
     /**
-     * <note>This action can be used only with Windows stacks.</note>
+     * <note>
+     * <p>
+     * This action can be used only with Windows stacks.
+     * </p>
+     * </note>
      * <p>
      * Grants RDP access to a Windows instance for a specified time period.
      * </p>
@@ -2541,7 +2598,11 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
             GrantAccessRequest grantAccessRequest);
 
     /**
-     * <note>This action can be used only with Windows stacks.</note>
+     * <note>
+     * <p>
+     * This action can be used only with Windows stacks.
+     * </p>
+     * </note>
      * <p>
      * Grants RDP access to a Windows instance for a specified time period.
      * </p>
@@ -2731,15 +2792,18 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * Registers instances with a specified stack that were created outside of
      * AWS OpsWorks.
      * </p>
-     * <note>We do not recommend using this action to register instances. The
-     * complete registration operation has two primary steps, installing the AWS
-     * OpsWorks agent on the instance and registering the instance with the
-     * stack. <code>RegisterInstance</code> handles only the second step. You
-     * should instead use the AWS CLI <code>register</code> command, which
-     * performs the entire registration operation. For more information, see <a
-     * href=
+     * <note>
+     * <p>
+     * We do not recommend using this action to register instances. The complete
+     * registration operation has two primary steps, installing the AWS OpsWorks
+     * agent on the instance and registering the instance with the stack.
+     * <code>RegisterInstance</code> handles only the second step. You should
+     * instead use the AWS CLI <code>register</code> command, which performs the
+     * entire registration operation. For more information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"
-     * > Registering an Instance with an AWS OpsWorks Stack</a>.</note>
+     * > Registering an Instance with an AWS OpsWorks Stack</a>.
+     * </p>
+     * </note>
      * <p>
      * <b>Required Permissions</b>: To use this action, an IAM user must have a
      * Manage permissions level for the stack or an attached policy that
@@ -2762,15 +2826,18 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * Registers instances with a specified stack that were created outside of
      * AWS OpsWorks.
      * </p>
-     * <note>We do not recommend using this action to register instances. The
-     * complete registration operation has two primary steps, installing the AWS
-     * OpsWorks agent on the instance and registering the instance with the
-     * stack. <code>RegisterInstance</code> handles only the second step. You
-     * should instead use the AWS CLI <code>register</code> command, which
-     * performs the entire registration operation. For more information, see <a
-     * href=
+     * <note>
+     * <p>
+     * We do not recommend using this action to register instances. The complete
+     * registration operation has two primary steps, installing the AWS OpsWorks
+     * agent on the instance and registering the instance with the stack.
+     * <code>RegisterInstance</code> handles only the second step. You should
+     * instead use the AWS CLI <code>register</code> command, which performs the
+     * entire registration operation. For more information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"
-     * > Registering an Instance with an AWS OpsWorks Stack</a>.</note>
+     * > Registering an Instance with an AWS OpsWorks Stack</a>.
+     * </p>
+     * </note>
      * <p>
      * <b>Required Permissions</b>: To use this action, an IAM user must have a
      * Manage permissions level for the stack or an attached policy that

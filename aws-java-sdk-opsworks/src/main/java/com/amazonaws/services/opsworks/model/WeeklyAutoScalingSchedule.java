@@ -24,10 +24,17 @@ import java.io.Serializable;
  * consists of a set of key-value pairs.
  * </p>
  * <ul>
- * <li>The key is the time period (a UTC hour) and must be an integer from 0 -
- * 23.</li>
- * <li>The value indicates whether the instance should be online or offline for
- * the specified period, and must be set to "on" or "off"</li>
+ * <li>
+ * <p>
+ * The key is the time period (a UTC hour) and must be an integer from 0 - 23.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The value indicates whether the instance should be online or offline for the
+ * specified period, and must be set to "on" or "off"
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * The default setting for all time periods is off, so you use the following

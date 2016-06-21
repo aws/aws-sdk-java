@@ -69,6 +69,8 @@ public enum CodepipelineActions implements Action {
     PutThirdPartyJobFailureResult("codepipeline:PutThirdPartyJobFailureResult"),
     /** Action for the PutThirdPartyJobSuccessResult operation. */
     PutThirdPartyJobSuccessResult("codepipeline:PutThirdPartyJobSuccessResult"),
+    /** Action for the RetryStageExecution operation. */
+    RetryStageExecution("codepipeline:RetryStageExecution"),
     /** Action for the StartPipelineExecution operation. */
     StartPipelineExecution("codepipeline:StartPipelineExecution"),
     /** Action for the UpdatePipeline operation. */

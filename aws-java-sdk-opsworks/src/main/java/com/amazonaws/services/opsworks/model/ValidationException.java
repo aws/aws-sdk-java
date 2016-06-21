@@ -20,7 +20,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Indicates that a request was invalid.
+ * Indicates that a request was not valid.
  * </p>
  */
 public class ValidationException extends AmazonServiceException {

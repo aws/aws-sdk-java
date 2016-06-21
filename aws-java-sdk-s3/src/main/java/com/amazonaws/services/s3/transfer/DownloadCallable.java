@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
@@ -62,7 +61,9 @@ final class DownloadCallable implements Callable<File> {
     private final File dstfile;
     private final long origStartingByte;
     private final long timeout;
-    private final ScheduledExecutorService executor;
+    private final ScheduledExecutorService timedExecutor;
+    /** The thread pool in which parts are downloaded downloaded. */
+    private final ExecutorService executor;
     private final List<Future<File>> futureFiles;
     private final boolean isDownloadParallel;
     private Integer lastFullyMergedPartNumber;
@@ -73,7 +74,8 @@ final class DownloadCallable implements Callable<File> {
             GetObjectRequest req, boolean resumeExistingDownload,
             DownloadImpl download, File dstfile, long origStartingByte,
             long expectedFileLength, long timeout,
-            ScheduledExecutorService executor,
+            ScheduledExecutorService timedExecutor,
+            ExecutorService executor,
             Integer lastFullyDownloadedPartNumber, boolean isDownloadParallel)
     {
         if (s3 == null || latch == null || req == null || dstfile == null || download == null)
@@ -87,6 +89,7 @@ final class DownloadCallable implements Callable<File> {
         this.origStartingByte = origStartingByte;
         this.expectedFileLength = expectedFileLength;
         this.timeout = timeout;
+        this.timedExecutor = timedExecutor;
         this.executor = executor;
         this.futureFiles = new ArrayList<Future<File>>();
         this.lastFullyMergedPartNumber = lastFullyDownloadedPartNumber;
@@ -106,7 +109,7 @@ final class DownloadCallable implements Callable<File> {
             latch.await();
 
             if (isTimeoutEnabled()) {
-                executor.schedule(new Runnable() {
+                timedExecutor.schedule(new Runnable() {
                     public void run() {
                         try {
                             if (download.getState() != TransferState.Completed) {

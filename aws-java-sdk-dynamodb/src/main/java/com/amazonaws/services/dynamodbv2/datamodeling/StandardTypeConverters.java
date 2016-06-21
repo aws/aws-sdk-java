@@ -14,11 +14,7 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
-import static com.amazonaws.services.dynamodbv2.model.ScalarAttributeType.N;
-import static com.amazonaws.services.dynamodbv2.model.ScalarAttributeType.S;
-
 import com.amazonaws.annotation.SdkInternalApi;
-import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
 import com.amazonaws.util.DateUtils;
 
 import java.math.BigDecimal;
@@ -38,7 +34,7 @@ enum StandardTypeConverters {
     /**
      * {@link Date} to {@link Calendar}
      */
-    DATE_TO_CALENDAR(null, Date.class, Calendar.class, null, new DynamoDBTypeConverter<Date,Calendar>() {
+    DATE_TO_CALENDAR(Date.class, Calendar.class, null, new DynamoDBTypeConverter<Date,Calendar>() {
         @Override
         public final Date convert(final Calendar object) {
             return object.getTime();
@@ -52,23 +48,9 @@ enum StandardTypeConverters {
     }),
 
     /**
-     * {@link Date} to {@link Date}
-     */
-    DATE_TO_DATE(null, Date.class, Date.class, null, new DynamoDBTypeConverter<Date,Date>() {
-        @Override
-        public final Date convert(final Date object) {
-            return object;
-        }
-        @Override
-        public final Date unconvert(final Date object) {
-            return object;
-        }
-    }),
-
-    /**
      * {@link Date} to {@link Long}
      */
-    DATE_TO_LONG(null, Date.class, Long.class, null, new DynamoDBTypeConverter<Date,Long>() {
+    DATE_TO_LONG(Date.class, Long.class, null, new DynamoDBTypeConverter<Date,Long>() {
         @Override
         public final Date convert(final Long object) {
             return new Date(object);
@@ -82,7 +64,7 @@ enum StandardTypeConverters {
     /**
      * {@link String} to {@link BigDecimal}
      */
-    STRING_TO_BIGDECIMAL(N, String.class, BigDecimal.class, null, new DynamoDBTypeConverter<String,BigDecimal>() {
+    STRING_TO_BIGDECIMAL(String.class, BigDecimal.class, null, new DynamoDBTypeConverter<String,BigDecimal>() {
         @Override
         public final String convert(final BigDecimal object) {
             return object.toString();
@@ -96,7 +78,7 @@ enum StandardTypeConverters {
     /**
      * {@link String} to {@link BigInteger}
      */
-    STRING_TO_BIGINTEGER(N, String.class, BigInteger.class, null, new DynamoDBTypeConverter<String,BigInteger>() {
+    STRING_TO_BIGINTEGER(String.class, BigInteger.class, null, new DynamoDBTypeConverter<String,BigInteger>() {
         @Override
         public final String convert(final BigInteger object) {
             return object.toString();
@@ -110,7 +92,7 @@ enum StandardTypeConverters {
     /**
      * {@link String} to {@link Boolean}
      */
-    STRING_TO_BOOLEAN(N, String.class, Boolean.class, Boolean.TYPE, new DynamoDBTypeConverter<String,Boolean>() {
+    STRING_TO_BOOLEAN(String.class, Boolean.class, Boolean.TYPE, new DynamoDBTypeConverter<String,Boolean>() {
         @Override
         public final String convert(final Boolean object) {
             return Boolean.TRUE.equals(object) ? "1" : "0";
@@ -124,7 +106,7 @@ enum StandardTypeConverters {
     /**
      * {@link String} to {@link Byte}
      */
-    STRING_TO_BYTE(N, String.class, Byte.class, Byte.TYPE, new DynamoDBTypeConverter<String,Byte>() {
+    STRING_TO_BYTE(String.class, Byte.class, Byte.TYPE, new DynamoDBTypeConverter<String,Byte>() {
         @Override
         public final String convert(final Byte object) {
             return object.toString();
@@ -138,7 +120,7 @@ enum StandardTypeConverters {
     /**
      * {@link String} to {@link Calendar}
      */
-    STRING_TO_CALENDAR(S, String.class, Calendar.class, null, new DynamoDBTypeConverter<String,Calendar>() {
+    STRING_TO_CALENDAR(String.class, Calendar.class, null, new DynamoDBTypeConverter<String,Calendar>() {
         @Override
         public final String convert(final Calendar object) {
             return DateUtils.formatISO8601Date(object.getTime());
@@ -154,7 +136,7 @@ enum StandardTypeConverters {
     /**
      * {@link String} to {@link Character}
      */
-    STRING_TO_CHARACTER(null, String.class, Character.class, Character.TYPE, new DynamoDBTypeConverter<String,Character>() {
+    STRING_TO_CHARACTER(String.class, Character.class, Character.TYPE, new DynamoDBTypeConverter<String,Character>() {
         @Override
         public final String convert(final Character object) {
             return object.toString();
@@ -168,7 +150,7 @@ enum StandardTypeConverters {
     /**
      * {@link String} to {@link Date}
      */
-    STRING_TO_DATE(S, String.class, Date.class, null, new DynamoDBTypeConverter<String,Date>() {
+    STRING_TO_DATE(String.class, Date.class, null, new DynamoDBTypeConverter<String,Date>() {
         @Override
         public final String convert(final Date object) {
             return DateUtils.formatISO8601Date(object);
@@ -182,7 +164,7 @@ enum StandardTypeConverters {
     /**
      * {@link String} to {@link Double}
      */
-    STRING_TO_DOUBLE(N, String.class, Double.class, Double.TYPE, new DynamoDBTypeConverter<String,Double>() {
+    STRING_TO_DOUBLE(String.class, Double.class, Double.TYPE, new DynamoDBTypeConverter<String,Double>() {
         @Override
         public final String convert(final Double object) {
             return object.toString();
@@ -196,7 +178,7 @@ enum StandardTypeConverters {
     /**
      * {@link String} to {@link Float}
      */
-    STRING_TO_FLOAT(N, String.class, Float.class, Float.TYPE, new DynamoDBTypeConverter<String,Float>() {
+    STRING_TO_FLOAT(String.class, Float.class, Float.TYPE, new DynamoDBTypeConverter<String,Float>() {
         @Override
         public final String convert(final Float object) {
             return object.toString();
@@ -210,7 +192,7 @@ enum StandardTypeConverters {
     /**
      * {@link String} to {@link Integer}
      */
-    STRING_TO_INTEGER(N, String.class, Integer.class, Integer.TYPE, new DynamoDBTypeConverter<String,Integer>() {
+    STRING_TO_INTEGER(String.class, Integer.class, Integer.TYPE, new DynamoDBTypeConverter<String,Integer>() {
         @Override
         public final String convert(final Integer object) {
             return object.toString();
@@ -224,7 +206,7 @@ enum StandardTypeConverters {
     /**
      * {@link String} to {@link Long}
      */
-    STRING_TO_LONG(N, String.class, Long.class, Long.TYPE, new DynamoDBTypeConverter<String,Long>() {
+    STRING_TO_LONG(String.class, Long.class, Long.TYPE, new DynamoDBTypeConverter<String,Long>() {
         @Override
         public final String convert(final Long object) {
             return object.toString();
@@ -238,7 +220,7 @@ enum StandardTypeConverters {
     /**
      * {@link String} to {@link Short}
      */
-    STRING_TO_SHORT(N, String.class, Short.class, Short.TYPE, new DynamoDBTypeConverter<String,Short>() {
+    STRING_TO_SHORT(String.class, Short.class, Short.TYPE, new DynamoDBTypeConverter<String,Short>() {
         @Override
         public final String convert(final Short object) {
             return object.toString();
@@ -250,23 +232,9 @@ enum StandardTypeConverters {
     }),
 
     /**
-     * {@link String} to {@link String}
-     */
-    STRING_TO_STRING(S, String.class, String.class, null, new DynamoDBTypeConverter<String,String>() {
-        @Override
-        public final String convert(final String object) {
-            return object;
-        }
-        @Override
-        public final String unconvert(final String object) {
-            return object;
-        }
-    }),
-
-    /**
      * {@link String} to {@link UUID}
      */
-    STRING_TO_UUID(S, String.class, UUID.class, null, new DynamoDBTypeConverter<String,UUID>() {
+    STRING_TO_UUID(String.class, UUID.class, null, new DynamoDBTypeConverter<String,UUID>() {
         @Override
         public final String convert(final UUID object) {
             return object.toString();
@@ -278,29 +246,15 @@ enum StandardTypeConverters {
     }),
 
     /**
-     * {@link UUID} to {@link String}
+     * Default, no conversion.
      */
-    UUID_TO_STRING(null, UUID.class, String.class, null, new DynamoDBTypeConverter<UUID,String>() {
+    DEFAULT(Object.class, Object.class, null, new DynamoDBTypeConverter<Object,Object>() {
         @Override
-        public final UUID convert(final String object) {
-            return UUID.fromString(object);
-        }
-        @Override
-        public final String unconvert(final UUID object) {
-            return object.toString();
-        }
-    }),
-
-    /**
-     * {@link UUID} to {@link UUID}
-     */
-    UUID_TO_UUID(null, UUID.class, UUID.class, null, new DynamoDBTypeConverter<UUID,UUID>() {
-        @Override
-        public final UUID convert(final UUID object) {
+        public final Object convert(final Object object) {
             return object;
         }
         @Override
-        public final UUID unconvert(final UUID object) {
+        public final Object unconvert(final Object object) {
             return object;
         }
     });
@@ -311,34 +265,26 @@ enum StandardTypeConverters {
     private final DynamoDBTypeConverter<?,?> converter;
 
     /**
-     * The scalar attribute type (for native conversions).
-     */
-    private final ScalarAttributeType scalarAttributeType;
-
-    /**
      * The type conversions.
      */
-    private final Class<?> sourceType, targetType, primitiveTargetType;
+    private final Class<?> sourceType, targetType, targetPrimitiveType;
 
     /**
      * Constructs the conversion.
-     * @param scalarAttributeType The scalar attribute type (for native conversions).
      * @param sourceType The type conversion.
      * @param targetType The type conversion.
-     * @param primitiveTargetType The primitive type conversion (or null if not applicable).
+     * @param targetPrimitiveType The primitive type conversion (or null if not applicable).
      * @param converter The converter.
      */
     private StandardTypeConverters(
-        final ScalarAttributeType scalarAttributeType,
         final Class<?> sourceType,
         final Class<?> targetType,
-        final Class<?> primitiveTargetType,
+        final Class<?> targetPrimitiveType,
         final DynamoDBTypeConverter<?,?> converter) {
         this.converter = converter;
-        this.scalarAttributeType = scalarAttributeType;
         this.sourceType = sourceType;
         this.targetType = targetType;
-        this.primitiveTargetType = primitiveTargetType;
+        this.targetPrimitiveType = targetPrimitiveType;
     }
 
     /**
@@ -347,14 +293,6 @@ enum StandardTypeConverters {
      */
     final <S,T> DynamoDBTypeConverter<S,T> converter() {
         return (DynamoDBTypeConverter<S,T>)this.converter;
-    }
-
-    /**
-     * Gets the scalar attribute type.
-     * @return The scalar attribute type.
-     */
-    final ScalarAttributeType scalarAttributeType() {
-        return this.scalarAttributeType;
     }
 
     /**
@@ -374,11 +312,11 @@ enum StandardTypeConverters {
     }
 
     /**
-     * Gets the primitive target conversion type.
-     * @return The primitive target conversion type, or null if not applicable.
+     * Gets the target primitive conversion type.
+     * @return The target primitive conversion type, or null if not applicable.
      */
-    final <T> Class<T> primitiveTargetType() {
-        return (Class<T>)this.primitiveTargetType;
+    final <T> Class<T> targetPrimitiveType() {
+        return (Class<T>)this.targetPrimitiveType;
     }
 
     /**
@@ -389,11 +327,11 @@ enum StandardTypeConverters {
      * @return True if assiganble, false otherwise.
      */
     final <S,T> boolean isAssignableFrom(final Class<S> sourceType, final Class<T> targetType, final boolean primitive) {
-        if (this.sourceType == sourceType) {
+        if (this != DEFAULT && this.sourceType().isAssignableFrom(sourceType)) {
             if (!targetType.isPrimitive()) {
-                return this.targetType.isAssignableFrom(targetType);
-            } else if (primitive && this.primitiveTargetType != null) {
-                return this.primitiveTargetType.isAssignableFrom(targetType);
+                return this.targetType().isAssignableFrom(targetType);
+            } else if (primitive && this.targetPrimitiveType() != null) {
+                return this.targetPrimitiveType().isAssignableFrom(targetType);
             }
         }
         return false;
@@ -409,10 +347,12 @@ enum StandardTypeConverters {
     static final <S,T> DynamoDBTypeConverter<S,T> of(final Class<S> sourceType, final Class<T> targetType, final boolean primitive) {
         if (targetType.isEnum()) {
             return (DynamoDBTypeConverter<S,T>)new StringToEnum(targetType);
+        } else if (sourceType == targetType) {
+            return DEFAULT.converter();
         }
-        for (final StandardTypeConverters c : StandardTypeConverters.values()) {
-            if (c.isAssignableFrom(sourceType, targetType, primitive)) {
-                return c.converter();
+        for (final StandardTypeConverters standard : StandardTypeConverters.values()) {
+            if (standard.isAssignableFrom(sourceType, targetType, primitive)) {
+                return standard.converter();
             }
         }
         throw new DynamoDBMappingException("unsupported " + sourceType + " to " + targetType);
@@ -421,12 +361,9 @@ enum StandardTypeConverters {
     /**
      * {@link Enum} converter.
      */
-    static final class StringToEnum<T extends Enum<T>> implements DynamoDBTypeConverter<String,T> {
+    private static final class StringToEnum<T extends Enum<T>> implements DynamoDBTypeConverter<String,T> {
         private final Class<T> targetType;
-        public StringToEnum(final Class<T> targetType) {
-            if (!targetType.isEnum()) {
-                throw new DynamoDBMappingException("unsupported " + targetType + "; expected Enum");
-            }
+        private StringToEnum(final Class<T> targetType) {
             this.targetType = targetType;
         }
         @Override

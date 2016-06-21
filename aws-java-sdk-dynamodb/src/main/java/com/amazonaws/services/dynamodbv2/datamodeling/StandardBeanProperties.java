@@ -31,35 +31,71 @@ final class StandardBeanProperties {
 
     /**
      * Gets the bean properties for a given class.
-     * @param objectType The class.
+     * @param clazz The class.
      * @return The bean properties.
      */
-    static final <T,V> Map<String,BeanProperty<T,V>> of(final Class<T> objectType) {
-        return new Builder<T,V>(objectType).build();
+    static final <T,V> Map<String,Bean<T,V>> of(final Class<T> clazz) {
+        final Map<String,Bean<T,V>> map = new LinkedHashMap<String,Bean<T,V>>();
+        for (final Method m : ReflectionUtils.getters(clazz)) {
+            if (m.getDeclaringClass() != clazz) {
+                final AnnotationMap annotations =  StandardAnnotationMaps.of(m.getDeclaringClass());
+                if (annotations.table() == null && annotations.document() == null) {
+                    continue;
+                }
+            }
+            final String name = ReflectionUtils.getFieldNameByGetter(m, true);
+            final Bean<T,V> bean = new Bean(m, new MethodReflect(m));
+            flatten(bean, bean.annotations.attributeName(name), map);
+        }
+        return map;
+    }
+
+    /**
+     * Flattens or adds the bean to the mapping.
+     * @param bean The bean property.
+     * @param name The attribute name override.
+     * @param map The bean mappings.
+     */
+    private static <T,V> void flatten(Bean<T,V> bean, String name, final Map<String,Bean<T,V>> map) {
+        if (bean.annotations.ignored()) {
+            return;
+        } else if (bean.annotations.flattened() != null) {
+            final Map<String,String> attributes = bean.annotations.attributes();
+            final Reflect<T,T> declaring = (Reflect<T,T>)bean.reflect;
+            for (final Method m : ReflectionUtils.getters(bean.reflect.valueType())) {
+                name = ReflectionUtils.getFieldNameByGetter(m, true);
+                if ((name = attributes.remove(name)) != null) {
+                    bean = new Bean(m, new DeclaringMethodReflect(m, declaring));
+                    flatten(bean, name, map);
+                }
+            }
+            if (!attributes.isEmpty()) { //<- this should be empty by now
+                throw new DynamoDBMappingException("contains unknown flattened attribute(s): " + attributes);
+            }
+        } else if (map.put(name, bean) != null) {
+            throw new DynamoDBMappingException("must not duplicate attribute named " + name);
+        } else if (bean.annotations.keyType() != null && bean.getGenerateStrategy() == DynamoDBAutoGenerateStrategy.ALWAYS) {
+            throw new DynamoDBMappingException("must not have auto-generated key with ALWAYS strategy");
+        }
     }
 
     /**
      * Holds the reflection bean properties for a given property.
      */
-    static final class BeanProperty<T,V> implements DynamoDBAutoGenerator<V> {
+    static final class Bean<T,V> implements DynamoDBAutoGenerator<V>, Reflect<T,V> {
         private final DynamoDBAutoGenerator<V> generator;
+        private final MethodReflect<T,V> reflect;
         private final AnnotationMap annotations;
-        private final Method getter, setter;
-        private final Field field;
 
         /**
          * Constructs an object property mapping for the specified method.
          * @param getter The getter method.
-         * @param setter The setter method.
-         * @param field The field.
-         * @param annotations The annotations map.
+         * @param reflect The reflection property.
          */
-        private BeanProperty(final Method getter, final Method setter, final Field field, final AnnotationMap annotations) {
-            this.getter = getter;
-            this.setter = setter;
-            this.field = field;
-            this.annotations = annotations;
-            this.generator = annotations.autoGenerator(valueType());
+        private Bean(final Method getter, final MethodReflect<T,V> reflect) {
+            this.annotations = StandardAnnotationMaps.of(getter, ReflectionUtils.getDeclaredFieldByGetter(getter));
+            this.generator = annotations.autoGenerator(reflect.valueType());
+            this.reflect = reflect;
         }
 
         /**
@@ -71,11 +107,19 @@ final class StandardBeanProperties {
         }
 
         /**
+         * Gets the property's value type.
+         * @return The value type.
+         */
+        final Reflect<T,V> reflect() {
+            return this.reflect;
+        }
+
+        /**
          * Gets the getter method for this property.
          * @return The getter method.
          */
         final Method getter() {
-            return this.getter;
+            return reflect.getter;
         }
 
         /**
@@ -83,52 +127,34 @@ final class StandardBeanProperties {
          * @return The setter method.
          */
         final Method setter() {
-            if (this.setter == null) {
-                throw new DynamoDBMappingException("no access to public/one-argument setter for " + getter);
+            if (reflect.setter == null) {
+                throw new DynamoDBMappingException("no access to public/one-argument setter for " + reflect.getter);
             }
-            return this.setter;
+            return reflect.setter;
         }
 
         /**
-         * Gets the field for this property.
-         * @return The field.
+         * {@inheritDoc}
          */
-        final Field field() {
-            return this.field;
+        @Override
+        public Class<V> valueType() {
+            return reflect.valueType();
         }
 
         /**
-         * Gets the property's value type.
-         * @return The value type.
+         * {@inheritDoc}
          */
-        final Class<V> valueType() {
-            return (Class<V>)getter().getReturnType();
+        @Override
+        public V get(final T object) {
+            return reflect.get(object);
         }
 
         /**
-         * Gets the field value from the object instance.
-         * @param object The object instance.
-         * @return The field value.
+         * {@inheritDoc}
          */
-        final V get(T object) {
-            try {
-                return (V)getter().invoke(object);
-            } catch (final Exception e) {
-                throw new DynamoDBMappingException("could not invoke " + getter + " on " + object.getClass(), e);
-            }
-        }
-
-        /**
-         * Sets the field value on the object instance.
-         * @param object The object instance.
-         * @param value The field value.
-         */
-        final void set(T object, final V value) {
-            try {
-                setter().invoke(object, value);
-            } catch (final Exception e) {
-                throw new DynamoDBMappingException("could not invoke " + setter + " on " + object.getClass(), e);
-            }
+        @Override
+        public void set(final T object, final V value) {
+            reflect.set(object, value);
         }
 
         /**
@@ -149,89 +175,98 @@ final class StandardBeanProperties {
     }
 
     /**
-     * {@link Bean} iterator.
+     * Get/set reflection operations.
+     * @param <T> The object type.
+     * @param <V> The value type.
      */
-    static final class Builder<T,V> {
-        private final Map<String,BeanProperty<T,V>> map = new LinkedHashMap<String,BeanProperty<T,V>>();
-        private final Class<T> objectType;
+    static interface Reflect<T,V> {
+        /**
+         * Gets the property's value type.
+         * @return The value type.
+         */
+        public Class<V> valueType();
 
         /**
-         * Constructs a new bean property iterator.
-         * @param objectType The object type.
+         * Gets the value from the object instance.
+         * @param object The object instance.
+         * @return The value.
          */
-        private Builder(final Class<T> objectType) {
-            this.objectType = objectType;
+        public V get(T object);
+
+        /**
+         * Sets the value on the object instance.
+         * @param object The object instance.
+         * @param value The value.
+         */
+        public void set(T object, V value);
+    }
+
+    /**
+     * Get/set reflection operations.
+     */
+    private static class MethodReflect<T,V> implements Reflect<T,V> {
+        private final Method getter, setter;
+        private MethodReflect(final Method getter) {
+            this.setter = ReflectionUtils.getDeclaredSetterByGetter(getter);
+            this.getter = getter;
         }
-
-        /**
-         * Builds the bean property mappings.
-         * @param clazz The object type.
-         */
-        private void build(final Class<T> clazz) {
-            for (final Method m : clazz.getMethods()) {
-                if (!m.getName().startsWith("get") && !m.getName().startsWith("is")) {
-                    continue;
-                } else if (m.getReturnType() == Void.TYPE || m.getParameterTypes().length != 0) {
-                    continue;
-                } else if (m.isBridge() || m.isSynthetic()) {
-                    continue;
-                } else if (m.getDeclaringClass() == Object.class) {
-                    continue;
-                } else if (m.getDeclaringClass() != clazz) {
-                    final AnnotationMap annotations = StandardAnnotationMaps.of(m.getDeclaringClass());
-                    if (annotations.table() == null && annotations.document() == null) {
-                        continue;
-                    }
+        @Override
+        public Class<V> valueType() {
+            return (Class<V>)getter.getReturnType();
+        }
+        @Override
+        public V get(final T object) {
+            try {
+                return (V)getter.invoke(object);
+            } catch (final Exception e) {
+                throw new DynamoDBMappingException("could not invoke " + getter + " on " + object.getClass(), e);
+            }
+        }
+        @Override
+        public void set(T object, final V value) {
+            try {
+                setter.invoke(object, value);
+            } catch (final Exception e) {
+                if (setter == null) {
+                    throw new DynamoDBMappingException("no access to public/one-argument setter for " + getter);
                 }
-                build(m);
+                throw new DynamoDBMappingException("could not invoke " + setter + " on " + object.getClass(), e);
             }
         }
+    }
 
-        /**
-         * Builds the bean property mapping.
-         * @param getter The getter method.
-         */
-        private void build(final Method getter) {
-            final String upper, lower;
-            try {
-                upper = getter.getName().substring((getter.getName().startsWith("is") ? "is" : "get").length());
-                lower = StringUtils.lowerCase(upper.substring(0, 1)) + upper.substring(1);
-            } catch (final RuntimeException e) {
-                throw new DynamoDBMappingException("getter must begin with 'get' or 'is', and contain at least one character: " + getter, e);
-            }
+    /**
+     * Get/set reflection operations with a declaring property.
+     */
+    private static class DeclaringMethodReflect<T,V> extends MethodReflect<T,V> {
+        private final Reflect<T,T> declaring;
 
-            Field field = null;
-            try {
-                field = getter.getDeclaringClass().getDeclaredField(lower);
-            } catch (final SecurityException e) {
-                throw new DynamoDBMappingException("no access to field for " + getter, e);
-            } catch (final NoSuchFieldException no) {}
-
-            final AnnotationMap annotations = StandardAnnotationMaps.of(getter, field);
-            if (annotations.ignored()) {
-                return;
-            }
-
-            Method setter = null;
-            try {
-                setter = getter.getDeclaringClass().getMethod("set" + upper, getter.getReturnType());
-            } catch (final Exception no) {}
-
-            final BeanProperty<T,V> bean = new BeanProperty(getter, setter, field, annotations);
-
-            final String name = annotations.attributeName(lower);
-            if (map.put(name, bean) != null) {
-                throw new DynamoDBMappingException("must not duplicate attribute named " + name);
-            }
+        private DeclaringMethodReflect(final Method getter, final Reflect<T,T> declaring) {
+            super(getter);
+            this.declaring = declaring;
         }
 
-        /**
-         * Builds the bean properties.
-         * @return The built bean properties.
-         */
-        public Map<String,BeanProperty<T,V>> build() {
-            build(this.objectType);
-            return this.map;
+        @Override
+        public V get(final T object) {
+            final T declaringObject = declaring.get(object);
+            if (declaringObject == null) {
+                return null;
+            }
+            return super.get(declaringObject);
+        }
+
+        @Override
+        public void set(final T object, final V value) {
+            T declaringObject = declaring.get(object);
+            if (declaringObject == null) {
+                try {
+                    declaringObject = declaring.valueType().newInstance();
+                } catch (final Exception e) {
+                    throw new DynamoDBMappingException("could not instantiate " + declaring.valueType(), e);
+                }
+                declaring.set(object, declaringObject);
+            }
+            super.set(declaringObject, value);
         }
     }
 

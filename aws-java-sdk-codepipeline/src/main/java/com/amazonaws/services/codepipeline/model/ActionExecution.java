@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents information about how an action runs.
+ * Represents information about the run of an action.
  * </p>
  */
 public class ActionExecution implements Serializable, Cloneable {

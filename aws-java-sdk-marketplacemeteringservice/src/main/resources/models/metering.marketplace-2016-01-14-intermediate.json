@@ -38,8 +38,8 @@
         "variableType" : "MeterUsageRequest",
         "variableDeclarationType" : "MeterUsageRequest",
         "documentation" : "",
-        "variableSetterType" : "MeterUsageRequest",
-        "simpleType" : "MeterUsageRequest"
+        "simpleType" : "MeterUsageRequest",
+        "variableSetterType" : "MeterUsageRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -97,8 +97,8 @@
         "variableType" : "TimestampOutOfBoundsException",
         "variableDeclarationType" : "TimestampOutOfBoundsException",
         "documentation" : null,
-        "variableSetterType" : "TimestampOutOfBoundsException",
-        "simpleType" : "TimestampOutOfBoundsException"
+        "simpleType" : "TimestampOutOfBoundsException",
+        "variableSetterType" : "TimestampOutOfBoundsException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -129,8 +129,8 @@
         "variableType" : "InternalServiceErrorException",
         "variableDeclarationType" : "InternalServiceErrorException",
         "documentation" : null,
-        "variableSetterType" : "InternalServiceErrorException",
-        "simpleType" : "InternalServiceErrorException"
+        "simpleType" : "InternalServiceErrorException",
+        "variableSetterType" : "InternalServiceErrorException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -161,8 +161,8 @@
         "variableType" : "InvalidUsageDimensionException",
         "variableDeclarationType" : "InvalidUsageDimensionException",
         "documentation" : null,
-        "variableSetterType" : "InvalidUsageDimensionException",
-        "simpleType" : "InvalidUsageDimensionException"
+        "simpleType" : "InvalidUsageDimensionException",
+        "variableSetterType" : "InvalidUsageDimensionException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -193,8 +193,8 @@
         "variableType" : "ThrottlingException",
         "variableDeclarationType" : "ThrottlingException",
         "documentation" : null,
-        "variableSetterType" : "ThrottlingException",
-        "simpleType" : "ThrottlingException"
+        "simpleType" : "ThrottlingException",
+        "variableSetterType" : "ThrottlingException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -228,16 +228,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "productCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -252,10 +252,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -280,16 +280,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "timestamp",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -304,10 +304,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -332,16 +332,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "usageDimension",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -356,10 +356,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -384,16 +384,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>Consumption value for the hour.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "usageQuantity",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -408,10 +408,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -436,16 +436,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>",
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "dryRun",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "",
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -460,10 +460,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -485,8 +485,8 @@
         "variableType" : "MeterUsageRequest",
         "variableDeclarationType" : "MeterUsageRequest",
         "documentation" : null,
-        "variableSetterType" : "MeterUsageRequest",
-        "simpleType" : "MeterUsageRequest"
+        "simpleType" : "MeterUsageRequest",
+        "variableSetterType" : "MeterUsageRequest"
       },
       "marshaller" : {
         "action" : "MeterUsage",
@@ -515,16 +515,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "productCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -539,10 +539,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -568,16 +568,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>",
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "dryRun",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "",
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -592,10 +592,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -621,16 +621,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>Consumption value for the hour.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "usageQuantity",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -645,10 +645,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -674,16 +674,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "timestamp",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -698,10 +698,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -727,16 +727,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "usageDimension",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -751,10 +751,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -793,16 +793,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "meteringRecordId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -817,10 +817,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -842,8 +842,8 @@
         "variableType" : "MeterUsageResult",
         "variableDeclarationType" : "MeterUsageResult",
         "documentation" : null,
-        "variableSetterType" : "MeterUsageResult",
-        "simpleType" : "MeterUsageResult"
+        "simpleType" : "MeterUsageResult",
+        "variableSetterType" : "MeterUsageResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -868,16 +868,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "meteringRecordId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -892,10 +892,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -931,8 +931,8 @@
         "variableType" : "DuplicateRequestException",
         "variableDeclarationType" : "DuplicateRequestException",
         "documentation" : null,
-        "variableSetterType" : "DuplicateRequestException",
-        "simpleType" : "DuplicateRequestException"
+        "simpleType" : "DuplicateRequestException",
+        "variableSetterType" : "DuplicateRequestException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -963,8 +963,8 @@
         "variableType" : "InvalidEndpointRegionException",
         "variableDeclarationType" : "InvalidEndpointRegionException",
         "documentation" : null,
-        "variableSetterType" : "InvalidEndpointRegionException",
-        "simpleType" : "InvalidEndpointRegionException"
+        "simpleType" : "InvalidEndpointRegionException",
+        "variableSetterType" : "InvalidEndpointRegionException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -995,8 +995,8 @@
         "variableType" : "InvalidProductCodeException",
         "variableDeclarationType" : "InvalidProductCodeException",
         "documentation" : null,
-        "variableSetterType" : "InvalidProductCodeException",
-        "simpleType" : "InvalidProductCodeException"
+        "simpleType" : "InvalidProductCodeException",
+        "variableSetterType" : "InvalidProductCodeException"
       },
       "marshaller" : null,
       "unmarshaller" : null,

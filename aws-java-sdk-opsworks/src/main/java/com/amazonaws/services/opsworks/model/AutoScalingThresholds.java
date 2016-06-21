@@ -83,12 +83,16 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * parameter takes a list of up to five alarm names, which are case
      * sensitive and must be in the same region as the stack.
      * </p>
-     * <note>To use custom alarms, you must update your service role to allow
+     * <note>
+     * <p>
+     * To use custom alarms, you must update your service role to allow
      * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks
      * update the role for you when you first use this feature or you can edit
      * the role manually. For more information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
-     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.</note>
+     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> alarms;
 
@@ -433,23 +437,30 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * parameter takes a list of up to five alarm names, which are case
      * sensitive and must be in the same region as the stack.
      * </p>
-     * <note>To use custom alarms, you must update your service role to allow
+     * <note>
+     * <p>
+     * To use custom alarms, you must update your service role to allow
      * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks
      * update the role for you when you first use this feature or you can edit
      * the role manually. For more information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
-     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.</note>
+     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.
+     * </p>
+     * </note>
      * 
      * @return Custom Cloudwatch auto scaling alarms, to be used as thresholds.
      *         This parameter takes a list of up to five alarm names, which are
      *         case sensitive and must be in the same region as the stack.</p>
-     *         <note>To use custom alarms, you must update your service role to
-     *         allow <code>cloudwatch:DescribeAlarms</code>. You can either have
-     *         AWS OpsWorks update the role for you when you first use this
-     *         feature or you can edit the role manually. For more information,
-     *         see <a href=
+     *         <note>
+     *         <p>
+     *         To use custom alarms, you must update your service role to allow
+     *         <code>cloudwatch:DescribeAlarms</code>. You can either have AWS
+     *         OpsWorks update the role for you when you first use this feature
+     *         or you can edit the role manually. For more information, see <a
+     *         href=
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
      *         >Allowing AWS OpsWorks to Act on Your Behalf</a>.
+     *         </p>
      */
 
     public java.util.List<String> getAlarms() {
@@ -465,24 +476,31 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * parameter takes a list of up to five alarm names, which are case
      * sensitive and must be in the same region as the stack.
      * </p>
-     * <note>To use custom alarms, you must update your service role to allow
+     * <note>
+     * <p>
+     * To use custom alarms, you must update your service role to allow
      * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks
      * update the role for you when you first use this feature or you can edit
      * the role manually. For more information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
-     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.</note>
+     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.
+     * </p>
+     * </note>
      * 
      * @param alarms
      *        Custom Cloudwatch auto scaling alarms, to be used as thresholds.
      *        This parameter takes a list of up to five alarm names, which are
      *        case sensitive and must be in the same region as the stack.</p>
-     *        <note>To use custom alarms, you must update your service role to
-     *        allow <code>cloudwatch:DescribeAlarms</code>. You can either have
-     *        AWS OpsWorks update the role for you when you first use this
-     *        feature or you can edit the role manually. For more information,
-     *        see <a href=
+     *        <note>
+     *        <p>
+     *        To use custom alarms, you must update your service role to allow
+     *        <code>cloudwatch:DescribeAlarms</code>. You can either have AWS
+     *        OpsWorks update the role for you when you first use this feature
+     *        or you can edit the role manually. For more information, see <a
+     *        href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
      *        >Allowing AWS OpsWorks to Act on Your Behalf</a>.
+     *        </p>
      */
 
     public void setAlarms(java.util.Collection<String> alarms) {
@@ -500,12 +518,16 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * parameter takes a list of up to five alarm names, which are case
      * sensitive and must be in the same region as the stack.
      * </p>
-     * <note>To use custom alarms, you must update your service role to allow
+     * <note>
+     * <p>
+     * To use custom alarms, you must update your service role to allow
      * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks
      * update the role for you when you first use this feature or you can edit
      * the role manually. For more information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
-     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.</note>
+     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setAlarms(java.util.Collection)} or
@@ -517,13 +539,16 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      *        Custom Cloudwatch auto scaling alarms, to be used as thresholds.
      *        This parameter takes a list of up to five alarm names, which are
      *        case sensitive and must be in the same region as the stack.</p>
-     *        <note>To use custom alarms, you must update your service role to
-     *        allow <code>cloudwatch:DescribeAlarms</code>. You can either have
-     *        AWS OpsWorks update the role for you when you first use this
-     *        feature or you can edit the role manually. For more information,
-     *        see <a href=
+     *        <note>
+     *        <p>
+     *        To use custom alarms, you must update your service role to allow
+     *        <code>cloudwatch:DescribeAlarms</code>. You can either have AWS
+     *        OpsWorks update the role for you when you first use this feature
+     *        or you can edit the role manually. For more information, see <a
+     *        href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
      *        >Allowing AWS OpsWorks to Act on Your Behalf</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -545,24 +570,31 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * parameter takes a list of up to five alarm names, which are case
      * sensitive and must be in the same region as the stack.
      * </p>
-     * <note>To use custom alarms, you must update your service role to allow
+     * <note>
+     * <p>
+     * To use custom alarms, you must update your service role to allow
      * <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks
      * update the role for you when you first use this feature or you can edit
      * the role manually. For more information, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
-     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.</note>
+     * >Allowing AWS OpsWorks to Act on Your Behalf</a>.
+     * </p>
+     * </note>
      * 
      * @param alarms
      *        Custom Cloudwatch auto scaling alarms, to be used as thresholds.
      *        This parameter takes a list of up to five alarm names, which are
      *        case sensitive and must be in the same region as the stack.</p>
-     *        <note>To use custom alarms, you must update your service role to
-     *        allow <code>cloudwatch:DescribeAlarms</code>. You can either have
-     *        AWS OpsWorks update the role for you when you first use this
-     *        feature or you can edit the role manually. For more information,
-     *        see <a href=
+     *        <note>
+     *        <p>
+     *        To use custom alarms, you must update your service role to allow
+     *        <code>cloudwatch:DescribeAlarms</code>. You can either have AWS
+     *        OpsWorks update the role for you when you first use this feature
+     *        or you can edit the role manually. For more information, see <a
+     *        href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
      *        >Allowing AWS OpsWorks to Act on Your Behalf</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

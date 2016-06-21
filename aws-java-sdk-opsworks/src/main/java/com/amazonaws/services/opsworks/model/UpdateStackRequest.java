@@ -64,16 +64,43 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * The stack's operating system, which must be set to one of the following:
      * </p>
      * <ul>
-     * <li>A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>,
-     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
-     * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
-     * want to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a href=
+     * <li>
+     * <p>
+     * A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Ubuntu operating system, such as
+     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * <code>Ubuntu 12.04 LTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Red Hat Enterprise Linux 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
+     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to
+     * use when you create instances. For more information on how to use custom
+     * AMIs with OpsWorks, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Using Custom AMIs</a>.</li>
+     * >Using Custom AMIs</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default option is the stack's current operating system. For more
@@ -92,17 +119,61 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * integers to the layer's short name. The other themes are:
      * </p>
      * <ul>
-     * <li> <code>Baked_Goods</code></li>
-     * <li> <code>Clouds</code></li>
-     * <li> <code>Europe_Cities</code></li>
-     * <li> <code>Fruits</code></li>
-     * <li> <code>Greek_Deities</code></li>
-     * <li> <code>Legendary_creatures_from_Japan</code></li>
-     * <li> <code>Planets_and_Moons</code></li>
-     * <li> <code>Roman_Deities</code></li>
-     * <li> <code>Scottish_Islands</code></li>
-     * <li> <code>US_Cities</code></li>
-     * <li> <code>Wild_Cats</code></li>
+     * <li>
+     * <p>
+     * <code>Baked_Goods</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Clouds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Europe_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fruits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Greek_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Legendary_creatures_from_Japan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Planets_and_Moons</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Roman_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Scottish_Islands</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>US_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Wild_Cats</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To obtain a generated host name, call <code>GetHostNameSuggestion</code>,
@@ -216,16 +287,24 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * <code>UseOpsworksSecurityGroups</code> has the following settings:
      * </p>
      * <ul>
-     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * <li>
+     * <p>
+     * True - AWS OpsWorks automatically associates the appropriate built-in
      * security group with each layer (default setting). You can associate
      * additional security groups with a layer after you create it, but you
-     * cannot delete the built-in security group.</li>
-     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * cannot delete the built-in security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * False - AWS OpsWorks does not associate built-in security groups with
      * layers. You must create appropriate EC2 security groups and associate a
      * security group with each layer that you create. However, you can still
      * manually associate a built-in security group with a layer on. Custom
      * security groups are required only for those layers that need custom
-     * settings.</li>
+     * settings.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -239,13 +318,21 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
+     * <li>
+     * <p>
+     * Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
      * automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</li>
-     * <li>Fixed version - Set this parameter to your preferred agent version.
-     * To update the agent version, you must edit the stack configuration and
+     * soon as they are available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Fixed version - Set this parameter to your preferred agent version. To
+     * update the agent version, you must edit the stack configuration and
      * specify a new version. AWS OpsWorks then automatically installs that
-     * version on the stack's instances.</li>
+     * version on the stack's instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default setting is <code>LATEST</code>. To specify an agent version,
@@ -253,8 +340,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
-     * <note>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</note>
+     * <note>
+     * <p>
+     * You can also specify an agent version when you create or update an
+     * instance, which overrides the stack's default setting.
+     * </p>
+     * </note>
      */
     private String agentVersion;
 
@@ -526,16 +617,43 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * The stack's operating system, which must be set to one of the following:
      * </p>
      * <ul>
-     * <li>A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>,
-     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
-     * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
-     * want to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a href=
+     * <li>
+     * <p>
+     * A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Ubuntu operating system, such as
+     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * <code>Ubuntu 12.04 LTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Red Hat Enterprise Linux 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
+     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to
+     * use when you create instances. For more information on how to use custom
+     * AMIs with OpsWorks, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Using Custom AMIs</a>.</li>
+     * >Using Custom AMIs</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default option is the stack's current operating system. For more
@@ -548,16 +666,45 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        The stack's operating system, which must be set to one of the
      *        following:</p>
      *        <ul>
-     *        <li>A supported Linux operating system: An Amazon Linux version,
-     *        such as <code>Amazon Linux 2015.03</code>,
-     *        <code>Red Hat Enterprise Linux 7</code>,
-     *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *        <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     *        <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
-     *        you want to use when you create instances. For more information on
-     *        how to use custom AMIs with OpsWorks, see <a href=
+     *        <li>
+     *        <p>
+     *        A supported Linux operating system: An Amazon Linux version, such
+     *        as <code>Amazon Linux 2016.03</code>,
+     *        <code>Amazon Linux 2015.09</code>, or
+     *        <code>Amazon Linux 2015.03</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A supported Ubuntu operating system, such as
+     *        <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     *        <code>Ubuntu 12.04 LTS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Red Hat Enterprise Linux 7</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A supported Windows operating system, such as
+     *        <code>Microsoft Windows Server 2012 R2 Base</code>,
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>
+     *        , or
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A custom AMI: <code>Custom</code>. You specify the custom AMI you
+     *        want to use when you create instances. For more information on how
+     *        to use custom AMIs with OpsWorks, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *        >Using Custom AMIs</a>.</li>
+     *        >Using Custom AMIs</a>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The default option is the stack's current operating system. For
@@ -575,16 +722,43 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * The stack's operating system, which must be set to one of the following:
      * </p>
      * <ul>
-     * <li>A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>,
-     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
-     * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
-     * want to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a href=
+     * <li>
+     * <p>
+     * A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Ubuntu operating system, such as
+     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * <code>Ubuntu 12.04 LTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Red Hat Enterprise Linux 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
+     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to
+     * use when you create instances. For more information on how to use custom
+     * AMIs with OpsWorks, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Using Custom AMIs</a>.</li>
+     * >Using Custom AMIs</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default option is the stack's current operating system. For more
@@ -596,16 +770,46 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return The stack's operating system, which must be set to one of the
      *         following:</p>
      *         <ul>
-     *         <li>A supported Linux operating system: An Amazon Linux version,
-     *         such as <code>Amazon Linux 2015.03</code>,
-     *         <code>Red Hat Enterprise Linux 7</code>,
-     *         <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     *         <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
-     *         you want to use when you create instances. For more information
-     *         on how to use custom AMIs with OpsWorks, see <a href=
+     *         <li>
+     *         <p>
+     *         A supported Linux operating system: An Amazon Linux version, such
+     *         as <code>Amazon Linux 2016.03</code>,
+     *         <code>Amazon Linux 2015.09</code>, or
+     *         <code>Amazon Linux 2015.03</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A supported Ubuntu operating system, such as
+     *         <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     *         <code>Ubuntu 12.04 LTS</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Red Hat Enterprise Linux 7</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A supported Windows operating system, such as
+     *         <code>Microsoft Windows Server 2012 R2 Base</code>,
+     *         <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     *         <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>
+     *         , or
+     *         <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>
+     *         .
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A custom AMI: <code>Custom</code>. You specify the custom AMI you
+     *         want to use when you create instances. For more information on
+     *         how to use custom AMIs with OpsWorks, see <a href=
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *         >Using Custom AMIs</a>.</li>
+     *         >Using Custom AMIs</a>.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         The default option is the stack's current operating system. For
@@ -623,16 +827,43 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * The stack's operating system, which must be set to one of the following:
      * </p>
      * <ul>
-     * <li>A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>,
-     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
-     * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
-     * want to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a href=
+     * <li>
+     * <p>
+     * A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Ubuntu operating system, such as
+     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * <code>Ubuntu 12.04 LTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Red Hat Enterprise Linux 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
+     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to
+     * use when you create instances. For more information on how to use custom
+     * AMIs with OpsWorks, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Using Custom AMIs</a>.</li>
+     * >Using Custom AMIs</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default option is the stack's current operating system. For more
@@ -645,16 +876,45 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        The stack's operating system, which must be set to one of the
      *        following:</p>
      *        <ul>
-     *        <li>A supported Linux operating system: An Amazon Linux version,
-     *        such as <code>Amazon Linux 2015.03</code>,
-     *        <code>Red Hat Enterprise Linux 7</code>,
-     *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *        <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     *        <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
-     *        you want to use when you create instances. For more information on
-     *        how to use custom AMIs with OpsWorks, see <a href=
+     *        <li>
+     *        <p>
+     *        A supported Linux operating system: An Amazon Linux version, such
+     *        as <code>Amazon Linux 2016.03</code>,
+     *        <code>Amazon Linux 2015.09</code>, or
+     *        <code>Amazon Linux 2015.03</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A supported Ubuntu operating system, such as
+     *        <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     *        <code>Ubuntu 12.04 LTS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Red Hat Enterprise Linux 7</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A supported Windows operating system, such as
+     *        <code>Microsoft Windows Server 2012 R2 Base</code>,
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>
+     *        , or
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A custom AMI: <code>Custom</code>. You specify the custom AMI you
+     *        want to use when you create instances. For more information on how
+     *        to use custom AMIs with OpsWorks, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *        >Using Custom AMIs</a>.</li>
+     *        >Using Custom AMIs</a>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The default option is the stack's current operating system. For
@@ -679,17 +939,61 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * integers to the layer's short name. The other themes are:
      * </p>
      * <ul>
-     * <li> <code>Baked_Goods</code></li>
-     * <li> <code>Clouds</code></li>
-     * <li> <code>Europe_Cities</code></li>
-     * <li> <code>Fruits</code></li>
-     * <li> <code>Greek_Deities</code></li>
-     * <li> <code>Legendary_creatures_from_Japan</code></li>
-     * <li> <code>Planets_and_Moons</code></li>
-     * <li> <code>Roman_Deities</code></li>
-     * <li> <code>Scottish_Islands</code></li>
-     * <li> <code>US_Cities</code></li>
-     * <li> <code>Wild_Cats</code></li>
+     * <li>
+     * <p>
+     * <code>Baked_Goods</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Clouds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Europe_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fruits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Greek_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Legendary_creatures_from_Japan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Planets_and_Moons</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Roman_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Scottish_Islands</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>US_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Wild_Cats</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To obtain a generated host name, call <code>GetHostNameSuggestion</code>,
@@ -704,17 +1008,61 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        appending integers to the layer's short name. The other themes
      *        are:</p>
      *        <ul>
-     *        <li> <code>Baked_Goods</code></li>
-     *        <li> <code>Clouds</code></li>
-     *        <li> <code>Europe_Cities</code></li>
-     *        <li> <code>Fruits</code></li>
-     *        <li> <code>Greek_Deities</code></li>
-     *        <li> <code>Legendary_creatures_from_Japan</code></li>
-     *        <li> <code>Planets_and_Moons</code></li>
-     *        <li> <code>Roman_Deities</code></li>
-     *        <li> <code>Scottish_Islands</code></li>
-     *        <li> <code>US_Cities</code></li>
-     *        <li> <code>Wild_Cats</code></li>
+     *        <li>
+     *        <p>
+     *        <code>Baked_Goods</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Clouds</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Europe_Cities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Fruits</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Greek_Deities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Legendary_creatures_from_Japan</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Planets_and_Moons</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Roman_Deities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Scottish_Islands</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>US_Cities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Wild_Cats</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        To obtain a generated host name, call
@@ -735,17 +1083,61 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * integers to the layer's short name. The other themes are:
      * </p>
      * <ul>
-     * <li> <code>Baked_Goods</code></li>
-     * <li> <code>Clouds</code></li>
-     * <li> <code>Europe_Cities</code></li>
-     * <li> <code>Fruits</code></li>
-     * <li> <code>Greek_Deities</code></li>
-     * <li> <code>Legendary_creatures_from_Japan</code></li>
-     * <li> <code>Planets_and_Moons</code></li>
-     * <li> <code>Roman_Deities</code></li>
-     * <li> <code>Scottish_Islands</code></li>
-     * <li> <code>US_Cities</code></li>
-     * <li> <code>Wild_Cats</code></li>
+     * <li>
+     * <p>
+     * <code>Baked_Goods</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Clouds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Europe_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fruits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Greek_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Legendary_creatures_from_Japan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Planets_and_Moons</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Roman_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Scottish_Islands</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>US_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Wild_Cats</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To obtain a generated host name, call <code>GetHostNameSuggestion</code>,
@@ -759,17 +1151,61 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         appending integers to the layer's short name. The other themes
      *         are:</p>
      *         <ul>
-     *         <li> <code>Baked_Goods</code></li>
-     *         <li> <code>Clouds</code></li>
-     *         <li> <code>Europe_Cities</code></li>
-     *         <li> <code>Fruits</code></li>
-     *         <li> <code>Greek_Deities</code></li>
-     *         <li> <code>Legendary_creatures_from_Japan</code></li>
-     *         <li> <code>Planets_and_Moons</code></li>
-     *         <li> <code>Roman_Deities</code></li>
-     *         <li> <code>Scottish_Islands</code></li>
-     *         <li> <code>US_Cities</code></li>
-     *         <li> <code>Wild_Cats</code></li>
+     *         <li>
+     *         <p>
+     *         <code>Baked_Goods</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Clouds</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Europe_Cities</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Fruits</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Greek_Deities</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Legendary_creatures_from_Japan</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Planets_and_Moons</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Roman_Deities</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Scottish_Islands</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>US_Cities</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Wild_Cats</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         To obtain a generated host name, call
@@ -790,17 +1226,61 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * integers to the layer's short name. The other themes are:
      * </p>
      * <ul>
-     * <li> <code>Baked_Goods</code></li>
-     * <li> <code>Clouds</code></li>
-     * <li> <code>Europe_Cities</code></li>
-     * <li> <code>Fruits</code></li>
-     * <li> <code>Greek_Deities</code></li>
-     * <li> <code>Legendary_creatures_from_Japan</code></li>
-     * <li> <code>Planets_and_Moons</code></li>
-     * <li> <code>Roman_Deities</code></li>
-     * <li> <code>Scottish_Islands</code></li>
-     * <li> <code>US_Cities</code></li>
-     * <li> <code>Wild_Cats</code></li>
+     * <li>
+     * <p>
+     * <code>Baked_Goods</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Clouds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Europe_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fruits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Greek_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Legendary_creatures_from_Japan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Planets_and_Moons</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Roman_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Scottish_Islands</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>US_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Wild_Cats</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To obtain a generated host name, call <code>GetHostNameSuggestion</code>,
@@ -815,17 +1295,61 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        appending integers to the layer's short name. The other themes
      *        are:</p>
      *        <ul>
-     *        <li> <code>Baked_Goods</code></li>
-     *        <li> <code>Clouds</code></li>
-     *        <li> <code>Europe_Cities</code></li>
-     *        <li> <code>Fruits</code></li>
-     *        <li> <code>Greek_Deities</code></li>
-     *        <li> <code>Legendary_creatures_from_Japan</code></li>
-     *        <li> <code>Planets_and_Moons</code></li>
-     *        <li> <code>Roman_Deities</code></li>
-     *        <li> <code>Scottish_Islands</code></li>
-     *        <li> <code>US_Cities</code></li>
-     *        <li> <code>Wild_Cats</code></li>
+     *        <li>
+     *        <p>
+     *        <code>Baked_Goods</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Clouds</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Europe_Cities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Fruits</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Greek_Deities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Legendary_creatures_from_Japan</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Planets_and_Moons</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Roman_Deities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Scottish_Islands</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>US_Cities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Wild_Cats</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        To obtain a generated host name, call
@@ -1540,16 +2064,24 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * <code>UseOpsworksSecurityGroups</code> has the following settings:
      * </p>
      * <ul>
-     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * <li>
+     * <p>
+     * True - AWS OpsWorks automatically associates the appropriate built-in
      * security group with each layer (default setting). You can associate
      * additional security groups with a layer after you create it, but you
-     * cannot delete the built-in security group.</li>
-     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * cannot delete the built-in security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * False - AWS OpsWorks does not associate built-in security groups with
      * layers. You must create appropriate EC2 security groups and associate a
      * security group with each layer that you create. However, you can still
      * manually associate a built-in security group with a layer on. Custom
      * security groups are required only for those layers that need custom
-     * settings.</li>
+     * settings.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1568,16 +2100,24 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        <code>UseOpsworksSecurityGroups</code> has the following settings:
      *        </p>
      *        <ul>
-     *        <li>True - AWS OpsWorks automatically associates the appropriate
+     *        <li>
+     *        <p>
+     *        True - AWS OpsWorks automatically associates the appropriate
      *        built-in security group with each layer (default setting). You can
      *        associate additional security groups with a layer after you create
-     *        it, but you cannot delete the built-in security group.</li>
-     *        <li>False - AWS OpsWorks does not associate built-in security
-     *        groups with layers. You must create appropriate EC2 security
-     *        groups and associate a security group with each layer that you
-     *        create. However, you can still manually associate a built-in
-     *        security group with a layer on. Custom security groups are
-     *        required only for those layers that need custom settings.</li>
+     *        it, but you cannot delete the built-in security group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        False - AWS OpsWorks does not associate built-in security groups
+     *        with layers. You must create appropriate EC2 security groups and
+     *        associate a security group with each layer that you create.
+     *        However, you can still manually associate a built-in security
+     *        group with a layer on. Custom security groups are required only
+     *        for those layers that need custom settings.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information, see <a href=
@@ -1602,16 +2142,24 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * <code>UseOpsworksSecurityGroups</code> has the following settings:
      * </p>
      * <ul>
-     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * <li>
+     * <p>
+     * True - AWS OpsWorks automatically associates the appropriate built-in
      * security group with each layer (default setting). You can associate
      * additional security groups with a layer after you create it, but you
-     * cannot delete the built-in security group.</li>
-     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * cannot delete the built-in security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * False - AWS OpsWorks does not associate built-in security groups with
      * layers. You must create appropriate EC2 security groups and associate a
      * security group with each layer that you create. However, you can still
      * manually associate a built-in security group with a layer on. Custom
      * security groups are required only for those layers that need custom
-     * settings.</li>
+     * settings.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1630,16 +2178,24 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         settings:
      *         </p>
      *         <ul>
-     *         <li>True - AWS OpsWorks automatically associates the appropriate
+     *         <li>
+     *         <p>
+     *         True - AWS OpsWorks automatically associates the appropriate
      *         built-in security group with each layer (default setting). You
      *         can associate additional security groups with a layer after you
-     *         create it, but you cannot delete the built-in security group.</li>
-     *         <li>False - AWS OpsWorks does not associate built-in security
-     *         groups with layers. You must create appropriate EC2 security
-     *         groups and associate a security group with each layer that you
-     *         create. However, you can still manually associate a built-in
-     *         security group with a layer on. Custom security groups are
-     *         required only for those layers that need custom settings.</li>
+     *         create it, but you cannot delete the built-in security group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         False - AWS OpsWorks does not associate built-in security groups
+     *         with layers. You must create appropriate EC2 security groups and
+     *         associate a security group with each layer that you create.
+     *         However, you can still manually associate a built-in security
+     *         group with a layer on. Custom security groups are required only
+     *         for those layers that need custom settings.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For more information, see <a href=
@@ -1664,16 +2220,24 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * <code>UseOpsworksSecurityGroups</code> has the following settings:
      * </p>
      * <ul>
-     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * <li>
+     * <p>
+     * True - AWS OpsWorks automatically associates the appropriate built-in
      * security group with each layer (default setting). You can associate
      * additional security groups with a layer after you create it, but you
-     * cannot delete the built-in security group.</li>
-     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * cannot delete the built-in security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * False - AWS OpsWorks does not associate built-in security groups with
      * layers. You must create appropriate EC2 security groups and associate a
      * security group with each layer that you create. However, you can still
      * manually associate a built-in security group with a layer on. Custom
      * security groups are required only for those layers that need custom
-     * settings.</li>
+     * settings.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1692,16 +2256,24 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        <code>UseOpsworksSecurityGroups</code> has the following settings:
      *        </p>
      *        <ul>
-     *        <li>True - AWS OpsWorks automatically associates the appropriate
+     *        <li>
+     *        <p>
+     *        True - AWS OpsWorks automatically associates the appropriate
      *        built-in security group with each layer (default setting). You can
      *        associate additional security groups with a layer after you create
-     *        it, but you cannot delete the built-in security group.</li>
-     *        <li>False - AWS OpsWorks does not associate built-in security
-     *        groups with layers. You must create appropriate EC2 security
-     *        groups and associate a security group with each layer that you
-     *        create. However, you can still manually associate a built-in
-     *        security group with a layer on. Custom security groups are
-     *        required only for those layers that need custom settings.</li>
+     *        it, but you cannot delete the built-in security group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        False - AWS OpsWorks does not associate built-in security groups
+     *        with layers. You must create appropriate EC2 security groups and
+     *        associate a security group with each layer that you create.
+     *        However, you can still manually associate a built-in security
+     *        group with a layer on. Custom security groups are required only
+     *        for those layers that need custom settings.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information, see <a href=
@@ -1730,16 +2302,24 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * <code>UseOpsworksSecurityGroups</code> has the following settings:
      * </p>
      * <ul>
-     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * <li>
+     * <p>
+     * True - AWS OpsWorks automatically associates the appropriate built-in
      * security group with each layer (default setting). You can associate
      * additional security groups with a layer after you create it, but you
-     * cannot delete the built-in security group.</li>
-     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * cannot delete the built-in security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * False - AWS OpsWorks does not associate built-in security groups with
      * layers. You must create appropriate EC2 security groups and associate a
      * security group with each layer that you create. However, you can still
      * manually associate a built-in security group with a layer on. Custom
      * security groups are required only for those layers that need custom
-     * settings.</li>
+     * settings.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1758,16 +2338,24 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         settings:
      *         </p>
      *         <ul>
-     *         <li>True - AWS OpsWorks automatically associates the appropriate
+     *         <li>
+     *         <p>
+     *         True - AWS OpsWorks automatically associates the appropriate
      *         built-in security group with each layer (default setting). You
      *         can associate additional security groups with a layer after you
-     *         create it, but you cannot delete the built-in security group.</li>
-     *         <li>False - AWS OpsWorks does not associate built-in security
-     *         groups with layers. You must create appropriate EC2 security
-     *         groups and associate a security group with each layer that you
-     *         create. However, you can still manually associate a built-in
-     *         security group with a layer on. Custom security groups are
-     *         required only for those layers that need custom settings.</li>
+     *         create it, but you cannot delete the built-in security group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         False - AWS OpsWorks does not associate built-in security groups
+     *         with layers. You must create appropriate EC2 security groups and
+     *         associate a security group with each layer that you create.
+     *         However, you can still manually associate a built-in security
+     *         group with a layer on. Custom security groups are required only
+     *         for those layers that need custom settings.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For more information, see <a href=
@@ -1784,13 +2372,21 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
+     * <li>
+     * <p>
+     * Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
      * automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</li>
-     * <li>Fixed version - Set this parameter to your preferred agent version.
-     * To update the agent version, you must edit the stack configuration and
+     * soon as they are available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Fixed version - Set this parameter to your preferred agent version. To
+     * update the agent version, you must edit the stack configuration and
      * specify a new version. AWS OpsWorks then automatically installs that
-     * version on the stack's instances.</li>
+     * version on the stack's instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default setting is <code>LATEST</code>. To specify an agent version,
@@ -1798,20 +2394,32 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
-     * <note>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</note>
+     * <note>
+     * <p>
+     * You can also specify an agent version when you create or update an
+     * instance, which overrides the stack's default setting.
+     * </p>
+     * </note>
      * 
      * @param agentVersion
      *        The default AWS OpsWorks agent version. You have the following
      *        options:</p>
      *        <ul>
-     *        <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS
+     *        <li>
+     *        <p>
+     *        Auto-update - Set this parameter to <code>LATEST</code>. AWS
      *        OpsWorks automatically installs new agent versions on the stack's
-     *        instances as soon as they are available.</li>
-     *        <li>Fixed version - Set this parameter to your preferred agent
+     *        instances as soon as they are available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Fixed version - Set this parameter to your preferred agent
      *        version. To update the agent version, you must edit the stack
      *        configuration and specify a new version. AWS OpsWorks then
-     *        automatically installs that version on the stack's instances.</li>
+     *        automatically installs that version on the stack's instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The default setting is <code>LATEST</code>. To specify an agent
@@ -1819,8 +2427,11 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        abbreviated number shown on the console. For a list of available
      *        agent version numbers, call <a>DescribeAgentVersions</a>.
      *        </p>
-     *        <note>You can also specify an agent version when you create or
-     *        update an instance, which overrides the stack's default setting.
+     *        <note>
+     *        <p>
+     *        You can also specify an agent version when you create or update an
+     *        instance, which overrides the stack's default setting.
+     *        </p>
      */
 
     public void setAgentVersion(String agentVersion) {
@@ -1832,13 +2443,21 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
+     * <li>
+     * <p>
+     * Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
      * automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</li>
-     * <li>Fixed version - Set this parameter to your preferred agent version.
-     * To update the agent version, you must edit the stack configuration and
+     * soon as they are available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Fixed version - Set this parameter to your preferred agent version. To
+     * update the agent version, you must edit the stack configuration and
      * specify a new version. AWS OpsWorks then automatically installs that
-     * version on the stack's instances.</li>
+     * version on the stack's instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default setting is <code>LATEST</code>. To specify an agent version,
@@ -1846,19 +2465,31 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
-     * <note>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</note>
+     * <note>
+     * <p>
+     * You can also specify an agent version when you create or update an
+     * instance, which overrides the stack's default setting.
+     * </p>
+     * </note>
      * 
      * @return The default AWS OpsWorks agent version. You have the following
      *         options:</p>
      *         <ul>
-     *         <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS
+     *         <li>
+     *         <p>
+     *         Auto-update - Set this parameter to <code>LATEST</code>. AWS
      *         OpsWorks automatically installs new agent versions on the stack's
-     *         instances as soon as they are available.</li>
-     *         <li>Fixed version - Set this parameter to your preferred agent
+     *         instances as soon as they are available.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Fixed version - Set this parameter to your preferred agent
      *         version. To update the agent version, you must edit the stack
      *         configuration and specify a new version. AWS OpsWorks then
-     *         automatically installs that version on the stack's instances.</li>
+     *         automatically installs that version on the stack's instances.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         The default setting is <code>LATEST</code>. To specify an agent
@@ -1866,8 +2497,11 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         abbreviated number shown on the console. For a list of available
      *         agent version numbers, call <a>DescribeAgentVersions</a>.
      *         </p>
-     *         <note>You can also specify an agent version when you create or
-     *         update an instance, which overrides the stack's default setting.
+     *         <note>
+     *         <p>
+     *         You can also specify an agent version when you create or update
+     *         an instance, which overrides the stack's default setting.
+     *         </p>
      */
 
     public String getAgentVersion() {
@@ -1879,13 +2513,21 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
+     * <li>
+     * <p>
+     * Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
      * automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</li>
-     * <li>Fixed version - Set this parameter to your preferred agent version.
-     * To update the agent version, you must edit the stack configuration and
+     * soon as they are available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Fixed version - Set this parameter to your preferred agent version. To
+     * update the agent version, you must edit the stack configuration and
      * specify a new version. AWS OpsWorks then automatically installs that
-     * version on the stack's instances.</li>
+     * version on the stack's instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default setting is <code>LATEST</code>. To specify an agent version,
@@ -1893,20 +2535,32 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
-     * <note>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</note>
+     * <note>
+     * <p>
+     * You can also specify an agent version when you create or update an
+     * instance, which overrides the stack's default setting.
+     * </p>
+     * </note>
      * 
      * @param agentVersion
      *        The default AWS OpsWorks agent version. You have the following
      *        options:</p>
      *        <ul>
-     *        <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS
+     *        <li>
+     *        <p>
+     *        Auto-update - Set this parameter to <code>LATEST</code>. AWS
      *        OpsWorks automatically installs new agent versions on the stack's
-     *        instances as soon as they are available.</li>
-     *        <li>Fixed version - Set this parameter to your preferred agent
+     *        instances as soon as they are available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Fixed version - Set this parameter to your preferred agent
      *        version. To update the agent version, you must edit the stack
      *        configuration and specify a new version. AWS OpsWorks then
-     *        automatically installs that version on the stack's instances.</li>
+     *        automatically installs that version on the stack's instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The default setting is <code>LATEST</code>. To specify an agent
@@ -1914,8 +2568,11 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        abbreviated number shown on the console. For a list of available
      *        agent version numbers, call <a>DescribeAgentVersions</a>.
      *        </p>
-     *        <note>You can also specify an agent version when you create or
-     *        update an instance, which overrides the stack's default setting.
+     *        <note>
+     *        <p>
+     *        You can also specify an agent version when you create or update an
+     *        instance, which overrides the stack's default setting.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

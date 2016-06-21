@@ -47,10 +47,18 @@ public class Source implements Serializable, Cloneable {
      * This parameter depends on the repository type.
      * </p>
      * <ul>
-     * <li>For Amazon S3 bundles, set <code>Username</code> to the appropriate
-     * IAM access key ID.</li>
-     * <li>For HTTP bundles, Git repositories, and Subversion repositories, set
-     * <code>Username</code> to the user name.</li>
+     * <li>
+     * <p>
+     * For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM
+     * access key ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For HTTP bundles, Git repositories, and Subversion repositories, set
+     * <code>Username</code> to the user name.
+     * </p>
+     * </li>
      * </ul>
      */
     private String username;
@@ -59,16 +67,25 @@ public class Source implements Serializable, Cloneable {
      * When included in a request, the parameter depends on the repository type.
      * </p>
      * <ul>
-     * <li>For Amazon S3 bundles, set <code>Password</code> to the appropriate
-     * IAM secret access key.</li>
-     * <li>For HTTP bundles and Subversion repositories, set
-     * <code>Password</code> to the password.</li>
+     * <li>
+     * <p>
+     * For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM
+     * secret access key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For HTTP bundles and Subversion repositories, set <code>Password</code>
+     * to the password.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on how to safely handle IAM credentials, see <a
      * href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * />.
+     * >http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-
+     * practices.html</a>.
      * </p>
      * <p>
      * In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
@@ -217,19 +234,35 @@ public class Source implements Serializable, Cloneable {
      * This parameter depends on the repository type.
      * </p>
      * <ul>
-     * <li>For Amazon S3 bundles, set <code>Username</code> to the appropriate
-     * IAM access key ID.</li>
-     * <li>For HTTP bundles, Git repositories, and Subversion repositories, set
-     * <code>Username</code> to the user name.</li>
+     * <li>
+     * <p>
+     * For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM
+     * access key ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For HTTP bundles, Git repositories, and Subversion repositories, set
+     * <code>Username</code> to the user name.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param username
-     *        This parameter depends on the repository type. </p>
+     *        This parameter depends on the repository type.</p>
      *        <ul>
-     *        <li>For Amazon S3 bundles, set <code>Username</code> to the
-     *        appropriate IAM access key ID.</li>
-     *        <li>For HTTP bundles, Git repositories, and Subversion
-     *        repositories, set <code>Username</code> to the user name.</li>
+     *        <li>
+     *        <p>
+     *        For Amazon S3 bundles, set <code>Username</code> to the
+     *        appropriate IAM access key ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For HTTP bundles, Git repositories, and Subversion repositories,
+     *        set <code>Username</code> to the user name.
+     *        </p>
+     *        </li>
      */
 
     public void setUsername(String username) {
@@ -241,18 +274,34 @@ public class Source implements Serializable, Cloneable {
      * This parameter depends on the repository type.
      * </p>
      * <ul>
-     * <li>For Amazon S3 bundles, set <code>Username</code> to the appropriate
-     * IAM access key ID.</li>
-     * <li>For HTTP bundles, Git repositories, and Subversion repositories, set
-     * <code>Username</code> to the user name.</li>
+     * <li>
+     * <p>
+     * For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM
+     * access key ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For HTTP bundles, Git repositories, and Subversion repositories, set
+     * <code>Username</code> to the user name.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return This parameter depends on the repository type. </p>
+     * @return This parameter depends on the repository type.</p>
      *         <ul>
-     *         <li>For Amazon S3 bundles, set <code>Username</code> to the
-     *         appropriate IAM access key ID.</li>
-     *         <li>For HTTP bundles, Git repositories, and Subversion
-     *         repositories, set <code>Username</code> to the user name.</li>
+     *         <li>
+     *         <p>
+     *         For Amazon S3 bundles, set <code>Username</code> to the
+     *         appropriate IAM access key ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For HTTP bundles, Git repositories, and Subversion repositories,
+     *         set <code>Username</code> to the user name.
+     *         </p>
+     *         </li>
      */
 
     public String getUsername() {
@@ -264,19 +313,35 @@ public class Source implements Serializable, Cloneable {
      * This parameter depends on the repository type.
      * </p>
      * <ul>
-     * <li>For Amazon S3 bundles, set <code>Username</code> to the appropriate
-     * IAM access key ID.</li>
-     * <li>For HTTP bundles, Git repositories, and Subversion repositories, set
-     * <code>Username</code> to the user name.</li>
+     * <li>
+     * <p>
+     * For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM
+     * access key ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For HTTP bundles, Git repositories, and Subversion repositories, set
+     * <code>Username</code> to the user name.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param username
-     *        This parameter depends on the repository type. </p>
+     *        This parameter depends on the repository type.</p>
      *        <ul>
-     *        <li>For Amazon S3 bundles, set <code>Username</code> to the
-     *        appropriate IAM access key ID.</li>
-     *        <li>For HTTP bundles, Git repositories, and Subversion
-     *        repositories, set <code>Username</code> to the user name.</li>
+     *        <li>
+     *        <p>
+     *        For Amazon S3 bundles, set <code>Username</code> to the
+     *        appropriate IAM access key ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For HTTP bundles, Git repositories, and Subversion repositories,
+     *        set <code>Username</code> to the user name.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -291,16 +356,25 @@ public class Source implements Serializable, Cloneable {
      * When included in a request, the parameter depends on the repository type.
      * </p>
      * <ul>
-     * <li>For Amazon S3 bundles, set <code>Password</code> to the appropriate
-     * IAM secret access key.</li>
-     * <li>For HTTP bundles and Subversion repositories, set
-     * <code>Password</code> to the password.</li>
+     * <li>
+     * <p>
+     * For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM
+     * secret access key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For HTTP bundles and Subversion repositories, set <code>Password</code>
+     * to the password.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on how to safely handle IAM credentials, see <a
      * href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * />.
+     * >http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-
+     * practices.html</a>.
      * </p>
      * <p>
      * In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
@@ -309,18 +383,27 @@ public class Source implements Serializable, Cloneable {
      * 
      * @param password
      *        When included in a request, the parameter depends on the
-     *        repository type. </p>
+     *        repository type.</p>
      *        <ul>
-     *        <li>For Amazon S3 bundles, set <code>Password</code> to the
-     *        appropriate IAM secret access key.</li>
-     *        <li>For HTTP bundles and Subversion repositories, set
-     *        <code>Password</code> to the password.</li>
+     *        <li>
+     *        <p>
+     *        For Amazon S3 bundles, set <code>Password</code> to the
+     *        appropriate IAM secret access key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For HTTP bundles and Subversion repositories, set
+     *        <code>Password</code> to the password.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information on how to safely handle IAM credentials, see
      *        <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     *        />.
+     *        >http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best
+     *        -practices.html</a>.
      *        </p>
      *        <p>
      *        In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
@@ -336,16 +419,25 @@ public class Source implements Serializable, Cloneable {
      * When included in a request, the parameter depends on the repository type.
      * </p>
      * <ul>
-     * <li>For Amazon S3 bundles, set <code>Password</code> to the appropriate
-     * IAM secret access key.</li>
-     * <li>For HTTP bundles and Subversion repositories, set
-     * <code>Password</code> to the password.</li>
+     * <li>
+     * <p>
+     * For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM
+     * secret access key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For HTTP bundles and Subversion repositories, set <code>Password</code>
+     * to the password.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on how to safely handle IAM credentials, see <a
      * href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * />.
+     * >http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-
+     * practices.html</a>.
      * </p>
      * <p>
      * In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
@@ -353,18 +445,27 @@ public class Source implements Serializable, Cloneable {
      * </p>
      * 
      * @return When included in a request, the parameter depends on the
-     *         repository type. </p>
+     *         repository type.</p>
      *         <ul>
-     *         <li>For Amazon S3 bundles, set <code>Password</code> to the
-     *         appropriate IAM secret access key.</li>
-     *         <li>For HTTP bundles and Subversion repositories, set
-     *         <code>Password</code> to the password.</li>
+     *         <li>
+     *         <p>
+     *         For Amazon S3 bundles, set <code>Password</code> to the
+     *         appropriate IAM secret access key.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For HTTP bundles and Subversion repositories, set
+     *         <code>Password</code> to the password.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For more information on how to safely handle IAM credentials, see
      *         <a href=
      *         "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     *         />.
+     *         >http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-
+     *         best-practices.html</a>.
      *         </p>
      *         <p>
      *         In responses, AWS OpsWorks returns
@@ -380,16 +481,25 @@ public class Source implements Serializable, Cloneable {
      * When included in a request, the parameter depends on the repository type.
      * </p>
      * <ul>
-     * <li>For Amazon S3 bundles, set <code>Password</code> to the appropriate
-     * IAM secret access key.</li>
-     * <li>For HTTP bundles and Subversion repositories, set
-     * <code>Password</code> to the password.</li>
+     * <li>
+     * <p>
+     * For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM
+     * secret access key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For HTTP bundles and Subversion repositories, set <code>Password</code>
+     * to the password.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on how to safely handle IAM credentials, see <a
      * href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     * />.
+     * >http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-
+     * practices.html</a>.
      * </p>
      * <p>
      * In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
@@ -398,18 +508,27 @@ public class Source implements Serializable, Cloneable {
      * 
      * @param password
      *        When included in a request, the parameter depends on the
-     *        repository type. </p>
+     *        repository type.</p>
      *        <ul>
-     *        <li>For Amazon S3 bundles, set <code>Password</code> to the
-     *        appropriate IAM secret access key.</li>
-     *        <li>For HTTP bundles and Subversion repositories, set
-     *        <code>Password</code> to the password.</li>
+     *        <li>
+     *        <p>
+     *        For Amazon S3 bundles, set <code>Password</code> to the
+     *        appropriate IAM secret access key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For HTTP bundles and Subversion repositories, set
+     *        <code>Password</code> to the password.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information on how to safely handle IAM credentials, see
      *        <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
-     *        />.
+     *        >http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best
+     *        -practices.html</a>.
      *        </p>
      *        <p>
      *        In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>

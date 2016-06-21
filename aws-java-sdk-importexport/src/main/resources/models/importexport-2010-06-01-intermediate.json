@@ -66,12 +66,12 @@
         "documentation" : "The client tool version is invalid."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CancelJobResult",
       "asyncReturnType" : "CancelJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CancelJobResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult>",
-      "authenticated" : true,
       "methodName" : "cancelJob"
     },
     "CreateJob" : {
@@ -141,12 +141,12 @@
         "documentation" : "The client tool version is invalid."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateJobResult",
       "asyncReturnType" : "CreateJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateJobResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult>",
-      "authenticated" : true,
       "methodName" : "createJob"
     },
     "GetShippingLabel" : {
@@ -189,12 +189,12 @@
         "documentation" : "One or more parameters had an invalid value."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetShippingLabelResult",
       "asyncReturnType" : "GetShippingLabelResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetShippingLabelResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetShippingLabelResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetShippingLabelRequest, GetShippingLabelResult>",
-      "authenticated" : true,
       "methodName" : "getShippingLabel"
     },
     "GetStatus" : {
@@ -231,12 +231,12 @@
         "documentation" : "The client tool version is invalid."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetStatusResult",
       "asyncReturnType" : "GetStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetStatusRequest, GetStatusResult>",
-      "authenticated" : true,
       "methodName" : "getStatus"
     },
     "ListJobs" : {
@@ -267,12 +267,12 @@
         "documentation" : "The client tool version is invalid."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListJobsResult",
       "asyncReturnType" : "ListJobsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListJobsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListJobsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult>",
-      "authenticated" : true,
       "methodName" : "listJobs"
     },
     "UpdateJob" : {
@@ -348,12 +348,12 @@
         "documentation" : "The client tool version is invalid."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateJobResult",
       "asyncReturnType" : "UpdateJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateJobResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateJobRequest, UpdateJobResult>",
-      "authenticated" : true,
       "methodName" : "updateJob"
     }
   },

@@ -80,9 +80,21 @@ public class Deployment implements Serializable, Cloneable {
      * The deployment status:
      * </p>
      * <ul>
-     * <li>running</li>
-     * <li>successful</li>
-     * <li>failed</li>
+     * <li>
+     * <p>
+     * running
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * successful
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * failed
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -470,17 +482,41 @@ public class Deployment implements Serializable, Cloneable {
      * The deployment status:
      * </p>
      * <ul>
-     * <li>running</li>
-     * <li>successful</li>
-     * <li>failed</li>
+     * <li>
+     * <p>
+     * running
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * successful
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * failed
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The deployment status:</p>
      *        <ul>
-     *        <li>running</li>
-     *        <li>successful</li>
-     *        <li>failed</li>
+     *        <li>
+     *        <p>
+     *        running
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        successful
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        failed
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -492,16 +528,40 @@ public class Deployment implements Serializable, Cloneable {
      * The deployment status:
      * </p>
      * <ul>
-     * <li>running</li>
-     * <li>successful</li>
-     * <li>failed</li>
+     * <li>
+     * <p>
+     * running
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * successful
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * failed
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The deployment status:</p>
      *         <ul>
-     *         <li>running</li>
-     *         <li>successful</li>
-     *         <li>failed</li>
+     *         <li>
+     *         <p>
+     *         running
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         successful
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         failed
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -513,17 +573,41 @@ public class Deployment implements Serializable, Cloneable {
      * The deployment status:
      * </p>
      * <ul>
-     * <li>running</li>
-     * <li>successful</li>
-     * <li>failed</li>
+     * <li>
+     * <p>
+     * running
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * successful
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * failed
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The deployment status:</p>
      *        <ul>
-     *        <li>running</li>
-     *        <li>successful</li>
-     *        <li>failed</li>
+     *        <li>
+     *        <p>
+     *        running
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        successful
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        failed
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

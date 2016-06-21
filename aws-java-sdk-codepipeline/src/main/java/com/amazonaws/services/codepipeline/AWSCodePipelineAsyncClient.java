@@ -24,7 +24,10 @@ import com.amazonaws.annotation.ThreadSafe;
  * overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * <fullname>AWS CodePipeline</fullname> <b>Overview</b>
+ * <fullname>AWS CodePipeline</fullname>
+ * <p>
+ * <b>Overview</b>
+ * </p>
  * <p>
  * This is the AWS CodePipeline API Reference. This guide provides descriptions
  * of the actions and data types for AWS CodePipeline. Some functionality for
@@ -43,21 +46,48 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  * <p>
  * You can work with pipelines by calling:
- * <ul>
- * <li><a>CreatePipeline</a>, which creates a uniquely-named pipeline.</li>
- * <li><a>DeletePipeline</a>, which deletes the specified pipeline.</li>
- * <li><a>GetPipeline</a>, which returns information about a pipeline structure.
- * </li>
- * <li><a>GetPipelineState</a>, which returns information about the current
- * state of the stages and actions of a pipeline.</li>
- * <li><a>ListPipelines</a>, which gets a summary of all of the pipelines
- * associated with your account.</li>
- * <li><a>StartPipelineExecution</a>, which runs the the most recent revision of
- * an artifact through the pipeline.</li>
- * <li><a>UpdatePipeline</a>, which updates a pipeline with edits or changes to
- * the structure of the pipeline.</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreatePipeline</a>, which creates a uniquely-named pipeline.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeletePipeline</a>, which deletes the specified pipeline.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetPipeline</a>, which returns information about a pipeline structure.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetPipelineState</a>, which returns information about the current state of
+ * the stages and actions of a pipeline.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListPipelines</a>, which gets a summary of all of the pipelines associated
+ * with your account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StartPipelineExecution</a>, which runs the the most recent revision of an
+ * artifact through the pipeline.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the
+ * structure of the pipeline.
+ * </p>
+ * </li>
+ * </ul>
  * <p>
  * Pipelines include <i>stages</i>, which are which are logical groupings of
  * gates and actions. Each stage contains one or more actions that must complete
@@ -91,10 +121,18 @@ import com.amazonaws.annotation.ThreadSafe;
  * You can work with transitions by calling:
  * </p>
  * <ul>
- * <li><a>DisableStageTransition</a>, which prevents artifacts from
- * transitioning to the next stage in a pipeline.</li>
- * <li><a>EnableStageTransition</a>, which enables transition of artifacts
- * between stages in a pipeline.</li>
+ * <li>
+ * <p>
+ * <a>DisableStageTransition</a>, which prevents artifacts from transitioning to
+ * the next stage in a pipeline.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>EnableStageTransition</a>, which enables transition of artifacts between
+ * stages in a pipeline.
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Using the API to integrate with AWS CodePipeline</b>
@@ -105,40 +143,79 @@ import com.amazonaws.annotation.ThreadSafe;
  * standard API user. In order to integrate with AWS CodePipeline, developers
  * will need to work with the following items:
  * </p>
- * <ul>
- * <li>Jobs, which are instances of an action. For example, a job for a source
- * action might import a revision of an artifact from a source.
+ * <p>
+ * <b>Jobs</b>, which are instances of an action. For example, a job for a
+ * source action might import a revision of an artifact from a source.
+ * </p>
  * <p>
  * You can work with jobs by calling:
  * </p>
  * <ul>
- * <li><a>AcknowledgeJob</a>, which confirms whether a job worker has received
- * the specified job,</li>
- * <li><a>GetJobDetails</a>, which returns the details of a job,</li>
- * <li><a>PollForJobs</a>, which determines whether there are any jobs to act
- * upon,</li>
- * <li><a>PutJobFailureResult</a>, which provides details of a job failure, and</li>
- * <li><a>PutJobSuccessResult</a>, which provides details of a job success.</li>
- * </ul>
+ * <li>
+ * <p>
+ * <a>AcknowledgeJob</a>, which confirms whether a job worker has received the
+ * specified job,
+ * </p>
  * </li>
- * <li>Third party jobs, which are instances of an action created by a partner
- * action and integrated into AWS CodePipeline. Partner actions are created by
- * members of the AWS Partner Network.
+ * <li>
+ * <p>
+ * <a>GetJobDetails</a>, which returns the details of a job,
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PollForJobs</a>, which determines whether there are any jobs to act upon,
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PutJobFailureResult</a>, which provides details of a job failure, and
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PutJobSuccessResult</a>, which provides details of a job success.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Third party jobs</b>, which are instances of an action created by a
+ * partner action and integrated into AWS CodePipeline. Partner actions are
+ * created by members of the AWS Partner Network.
+ * </p>
  * <p>
  * You can work with third party jobs by calling:
  * </p>
  * <ul>
- * <li><a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has
- * received the specified job,</li>
- * <li><a>GetThirdPartyJobDetails</a>, which requests the details of a job for a
- * partner action,</li>
- * <li><a>PollForThirdPartyJobs</a>, which determines whether there are any jobs
- * to act upon,</li>
- * <li><a>PutThirdPartyJobFailureResult</a>, which provides details of a job
- * failure, and</li>
- * <li><a>PutThirdPartyJobSuccessResult</a>, which provides details of a job
- * success.</li>
- * </ul>
+ * <li>
+ * <p>
+ * <a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has
+ * received the specified job,
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetThirdPartyJobDetails</a>, which requests the details of a job for a
+ * partner action,
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PollForThirdPartyJobs</a>, which determines whether there are any jobs to
+ * act upon,
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PutThirdPartyJobFailureResult</a>, which provides details of a job
+ * failure, and
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PutThirdPartyJobSuccessResult</a>, which provides details of a job
+ * success.
+ * </p>
  * </li>
  * </ul>
  */
@@ -1095,6 +1172,41 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
 
                         try {
                             result = putThirdPartyJobSuccessResult(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetryStageExecutionResult> retryStageExecutionAsync(
+            RetryStageExecutionRequest request) {
+
+        return retryStageExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetryStageExecutionResult> retryStageExecutionAsync(
+            final RetryStageExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RetryStageExecutionRequest, RetryStageExecutionResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<RetryStageExecutionResult>() {
+                    @Override
+                    public RetryStageExecutionResult call() throws Exception {
+                        RetryStageExecutionResult result;
+
+                        try {
+                            result = retryStageExecution(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

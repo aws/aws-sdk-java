@@ -72,6 +72,12 @@ public class StageStateJsonUnmarshaller implements
                                     ActionStateJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }
+                if (context.testExpression("latestExecution", targetDepth)) {
+                    context.nextToken();
+                    stageState
+                            .setLatestExecution(StageExecutionJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

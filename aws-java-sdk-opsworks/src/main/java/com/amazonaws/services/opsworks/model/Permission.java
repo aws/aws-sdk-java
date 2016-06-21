@@ -57,11 +57,31 @@ public class Permission implements Serializable, Cloneable {
      * The user's permission level, which must be the following:
      * </p>
      * <ul>
-     * <li> <code>deny</code></li>
-     * <li> <code>show</code></li>
-     * <li> <code>deploy</code></li>
-     * <li> <code>manage</code></li>
-     * <li> <code>iam_only</code></li>
+     * <li>
+     * <p>
+     * <code>deny</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>show</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>manage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam_only</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on the permissions associated with these levels, see
@@ -286,11 +306,31 @@ public class Permission implements Serializable, Cloneable {
      * The user's permission level, which must be the following:
      * </p>
      * <ul>
-     * <li> <code>deny</code></li>
-     * <li> <code>show</code></li>
-     * <li> <code>deploy</code></li>
-     * <li> <code>manage</code></li>
-     * <li> <code>iam_only</code></li>
+     * <li>
+     * <p>
+     * <code>deny</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>show</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>manage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam_only</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on the permissions associated with these levels, see
@@ -302,11 +342,31 @@ public class Permission implements Serializable, Cloneable {
      * @param level
      *        The user's permission level, which must be the following:</p>
      *        <ul>
-     *        <li> <code>deny</code></li>
-     *        <li> <code>show</code></li>
-     *        <li> <code>deploy</code></li>
-     *        <li> <code>manage</code></li>
-     *        <li> <code>iam_only</code></li>
+     *        <li>
+     *        <p>
+     *        <code>deny</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>show</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deploy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>manage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>iam_only</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information on the permissions associated with these
@@ -324,11 +384,31 @@ public class Permission implements Serializable, Cloneable {
      * The user's permission level, which must be the following:
      * </p>
      * <ul>
-     * <li> <code>deny</code></li>
-     * <li> <code>show</code></li>
-     * <li> <code>deploy</code></li>
-     * <li> <code>manage</code></li>
-     * <li> <code>iam_only</code></li>
+     * <li>
+     * <p>
+     * <code>deny</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>show</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>manage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam_only</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on the permissions associated with these levels, see
@@ -339,11 +419,31 @@ public class Permission implements Serializable, Cloneable {
      * 
      * @return The user's permission level, which must be the following:</p>
      *         <ul>
-     *         <li> <code>deny</code></li>
-     *         <li> <code>show</code></li>
-     *         <li> <code>deploy</code></li>
-     *         <li> <code>manage</code></li>
-     *         <li> <code>iam_only</code></li>
+     *         <li>
+     *         <p>
+     *         <code>deny</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>show</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deploy</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>manage</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>iam_only</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For more information on the permissions associated with these
@@ -361,11 +461,31 @@ public class Permission implements Serializable, Cloneable {
      * The user's permission level, which must be the following:
      * </p>
      * <ul>
-     * <li> <code>deny</code></li>
-     * <li> <code>show</code></li>
-     * <li> <code>deploy</code></li>
-     * <li> <code>manage</code></li>
-     * <li> <code>iam_only</code></li>
+     * <li>
+     * <p>
+     * <code>deny</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>show</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>manage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam_only</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on the permissions associated with these levels, see
@@ -377,11 +497,31 @@ public class Permission implements Serializable, Cloneable {
      * @param level
      *        The user's permission level, which must be the following:</p>
      *        <ul>
-     *        <li> <code>deny</code></li>
-     *        <li> <code>show</code></li>
-     *        <li> <code>deploy</code></li>
-     *        <li> <code>manage</code></li>
-     *        <li> <code>iam_only</code></li>
+     *        <li>
+     *        <p>
+     *        <code>deny</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>show</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deploy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>manage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>iam_only</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information on the permissions associated with these

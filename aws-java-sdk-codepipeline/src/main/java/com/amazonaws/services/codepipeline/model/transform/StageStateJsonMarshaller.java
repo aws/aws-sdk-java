@@ -71,6 +71,11 @@ public class StageStateJsonMarshaller {
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (stageState.getLatestExecution() != null) {
+                jsonGenerator.writeFieldName("latestExecution");
+                StageExecutionJsonMarshaller.getInstance().marshall(
+                        stageState.getLatestExecution(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

@@ -53,9 +53,17 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * you cannot change the ID later.
      * </p>
      * <ul>
-     * <li>If your account supports EC2 Classic, the default value is no VPC.</li>
-     * <li>If your account does not support EC2 Classic, the default value is
-     * the default VPC for the specified region.</li>
+     * <li>
+     * <p>
+     * If your account supports EC2 Classic, the default value is no VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your account does not support EC2 Classic, the default value is the
+     * default VPC for the specified region.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the VPC ID corresponds to a default VPC and you have specified either
@@ -70,9 +78,16 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * If you specify a nondefault VPC ID, note the following:
      * </p>
      * <ul>
-     * <li>It must belong to a VPC in your account that is in the specified
-     * region.</li>
-     * <li>You must specify a value for <code>DefaultSubnetId</code>.</li>
+     * <li>
+     * <p>
+     * It must belong to a VPC in your account that is in the specified region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must specify a value for <code>DefaultSubnetId</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on how to use AWS OpsWorks with a VPC, see <a href=
@@ -127,16 +142,42 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * The stack's operating system, which must be set to one of the following.
      * </p>
      * <ul>
-     * <li>A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>,
-     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
-     * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
-     * want to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a href=
+     * <li>
+     * <p>
+     * A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Ubuntu operating system, such as
+     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * <code>Ubuntu 12.04 LTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Red Hat Enterprise Linux 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
+     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to
+     * use when you create instances. For more information on how to use custom
+     * AMIs with OpsWorks, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Using Custom AMIs</a>.</li>
+     * >Using Custom AMIs</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default option is the parent stack's operating system. For more
@@ -144,9 +185,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      * >AWS OpsWorks Operating Systems</a>.
      * </p>
-     * <note>You can specify a different Linux operating system for the cloned
-     * stack, but you cannot change from Linux to Windows or Windows to
-     * Linux.</note>
+     * <note>
+     * <p>
+     * You can specify a different Linux operating system for the cloned stack,
+     * but you cannot change from Linux to Windows or Windows to Linux.
+     * </p>
+     * </note>
      */
     private String defaultOs;
     /**
@@ -158,17 +202,61 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * integers to the layer's short name. The other themes are:
      * </p>
      * <ul>
-     * <li> <code>Baked_Goods</code></li>
-     * <li> <code>Clouds</code></li>
-     * <li> <code>Europe_Cities</code></li>
-     * <li> <code>Fruits</code></li>
-     * <li> <code>Greek_Deities</code></li>
-     * <li> <code>Legendary_creatures_from_Japan</code></li>
-     * <li> <code>Planets_and_Moons</code></li>
-     * <li> <code>Roman_Deities</code></li>
-     * <li> <code>Scottish_Islands</code></li>
-     * <li> <code>US_Cities</code></li>
-     * <li> <code>Wild_Cats</code></li>
+     * <li>
+     * <p>
+     * <code>Baked_Goods</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Clouds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Europe_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fruits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Greek_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Legendary_creatures_from_Japan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Planets_and_Moons</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Roman_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Scottish_Islands</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>US_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Wild_Cats</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To obtain a generated host name, call <code>GetHostNameSuggestion</code>,
@@ -220,7 +308,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * The configuration manager. When you clone a stack we recommend that you
      * use the configuration manager to specify the Chef version: 12, 11.10, or
      * 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
-     * Linux stacks is currently 11.4.
+     * Linux stacks is currently 12.
      * </p>
      */
     private StackConfigurationManager configurationManager;
@@ -253,16 +341,24 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * following settings:
      * </p>
      * <ul>
-     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * <li>
+     * <p>
+     * True - AWS OpsWorks automatically associates the appropriate built-in
      * security group with each layer (default setting). You can associate
      * additional security groups with a layer after you create it but you
-     * cannot delete the built-in security group.</li>
-     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * cannot delete the built-in security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * False - AWS OpsWorks does not associate built-in security groups with
      * layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon
      * EC2) security groups and associate a security group with each layer that
      * you create. However, you can still manually associate a built-in security
      * group with a layer on creation; custom security groups are required only
-     * for those layers that need custom settings.</li>
+     * for those layers that need custom settings.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -316,13 +412,21 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
+     * <li>
+     * <p>
+     * Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
      * automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</li>
-     * <li>Fixed version - Set this parameter to your preferred agent version.
-     * To update the agent version, you must edit the stack configuration and
+     * soon as they are available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Fixed version - Set this parameter to your preferred agent version. To
+     * update the agent version, you must edit the stack configuration and
      * specify a new version. AWS OpsWorks then automatically installs that
-     * version on the stack's instances.</li>
+     * version on the stack's instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default setting is <code>LATEST</code>. To specify an agent version,
@@ -330,8 +434,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
-     * <note>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</note>
+     * <note>
+     * <p>
+     * You can also specify an agent version when you create or update an
+     * instance, which overrides the stack's default setting.
+     * </p>
+     * </note>
      */
     private String agentVersion;
 
@@ -483,9 +591,17 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * you cannot change the ID later.
      * </p>
      * <ul>
-     * <li>If your account supports EC2 Classic, the default value is no VPC.</li>
-     * <li>If your account does not support EC2 Classic, the default value is
-     * the default VPC for the specified region.</li>
+     * <li>
+     * <p>
+     * If your account supports EC2 Classic, the default value is no VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your account does not support EC2 Classic, the default value is the
+     * default VPC for the specified region.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the VPC ID corresponds to a default VPC and you have specified either
@@ -500,9 +616,16 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * If you specify a nondefault VPC ID, note the following:
      * </p>
      * <ul>
-     * <li>It must belong to a VPC in your account that is in the specified
-     * region.</li>
-     * <li>You must specify a value for <code>DefaultSubnetId</code>.</li>
+     * <li>
+     * <p>
+     * It must belong to a VPC in your account that is in the specified region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must specify a value for <code>DefaultSubnetId</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on how to use AWS OpsWorks with a VPC, see <a href=
@@ -518,10 +641,17 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        must be in the specified region. All instances are launched into
      *        this VPC, and you cannot change the ID later.</p>
      *        <ul>
-     *        <li>If your account supports EC2 Classic, the default value is no
-     *        VPC.</li>
-     *        <li>If your account does not support EC2 Classic, the default
-     *        value is the default VPC for the specified region.</li>
+     *        <li>
+     *        <p>
+     *        If your account supports EC2 Classic, the default value is no VPC.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your account does not support EC2 Classic, the default value is
+     *        the default VPC for the specified region.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If the VPC ID corresponds to a default VPC and you have specified
@@ -536,9 +666,17 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        If you specify a nondefault VPC ID, note the following:
      *        </p>
      *        <ul>
-     *        <li>It must belong to a VPC in your account that is in the
-     *        specified region.</li>
-     *        <li>You must specify a value for <code>DefaultSubnetId</code>.</li>
+     *        <li>
+     *        <p>
+     *        It must belong to a VPC in your account that is in the specified
+     *        region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You must specify a value for <code>DefaultSubnetId</code>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information on how to use AWS OpsWorks with a VPC, see <a
@@ -561,9 +699,17 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * you cannot change the ID later.
      * </p>
      * <ul>
-     * <li>If your account supports EC2 Classic, the default value is no VPC.</li>
-     * <li>If your account does not support EC2 Classic, the default value is
-     * the default VPC for the specified region.</li>
+     * <li>
+     * <p>
+     * If your account supports EC2 Classic, the default value is no VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your account does not support EC2 Classic, the default value is the
+     * default VPC for the specified region.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the VPC ID corresponds to a default VPC and you have specified either
@@ -578,9 +724,16 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * If you specify a nondefault VPC ID, note the following:
      * </p>
      * <ul>
-     * <li>It must belong to a VPC in your account that is in the specified
-     * region.</li>
-     * <li>You must specify a value for <code>DefaultSubnetId</code>.</li>
+     * <li>
+     * <p>
+     * It must belong to a VPC in your account that is in the specified region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must specify a value for <code>DefaultSubnetId</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on how to use AWS OpsWorks with a VPC, see <a href=
@@ -595,10 +748,18 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         It must be in the specified region. All instances are launched
      *         into this VPC, and you cannot change the ID later.</p>
      *         <ul>
-     *         <li>If your account supports EC2 Classic, the default value is no
-     *         VPC.</li>
-     *         <li>If your account does not support EC2 Classic, the default
-     *         value is the default VPC for the specified region.</li>
+     *         <li>
+     *         <p>
+     *         If your account supports EC2 Classic, the default value is no
+     *         VPC.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If your account does not support EC2 Classic, the default value
+     *         is the default VPC for the specified region.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If the VPC ID corresponds to a default VPC and you have specified
@@ -613,9 +774,17 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         If you specify a nondefault VPC ID, note the following:
      *         </p>
      *         <ul>
-     *         <li>It must belong to a VPC in your account that is in the
-     *         specified region.</li>
-     *         <li>You must specify a value for <code>DefaultSubnetId</code>.</li>
+     *         <li>
+     *         <p>
+     *         It must belong to a VPC in your account that is in the specified
+     *         region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You must specify a value for <code>DefaultSubnetId</code>.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For more information on how to use AWS OpsWorks with a VPC, see
@@ -638,9 +807,17 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * you cannot change the ID later.
      * </p>
      * <ul>
-     * <li>If your account supports EC2 Classic, the default value is no VPC.</li>
-     * <li>If your account does not support EC2 Classic, the default value is
-     * the default VPC for the specified region.</li>
+     * <li>
+     * <p>
+     * If your account supports EC2 Classic, the default value is no VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your account does not support EC2 Classic, the default value is the
+     * default VPC for the specified region.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the VPC ID corresponds to a default VPC and you have specified either
@@ -655,9 +832,16 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * If you specify a nondefault VPC ID, note the following:
      * </p>
      * <ul>
-     * <li>It must belong to a VPC in your account that is in the specified
-     * region.</li>
-     * <li>You must specify a value for <code>DefaultSubnetId</code>.</li>
+     * <li>
+     * <p>
+     * It must belong to a VPC in your account that is in the specified region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must specify a value for <code>DefaultSubnetId</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on how to use AWS OpsWorks with a VPC, see <a href=
@@ -673,10 +857,17 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        must be in the specified region. All instances are launched into
      *        this VPC, and you cannot change the ID later.</p>
      *        <ul>
-     *        <li>If your account supports EC2 Classic, the default value is no
-     *        VPC.</li>
-     *        <li>If your account does not support EC2 Classic, the default
-     *        value is the default VPC for the specified region.</li>
+     *        <li>
+     *        <p>
+     *        If your account supports EC2 Classic, the default value is no VPC.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your account does not support EC2 Classic, the default value is
+     *        the default VPC for the specified region.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If the VPC ID corresponds to a default VPC and you have specified
@@ -691,9 +882,17 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        If you specify a nondefault VPC ID, note the following:
      *        </p>
      *        <ul>
-     *        <li>It must belong to a VPC in your account that is in the
-     *        specified region.</li>
-     *        <li>You must specify a value for <code>DefaultSubnetId</code>.</li>
+     *        <li>
+     *        <p>
+     *        It must belong to a VPC in your account that is in the specified
+     *        region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You must specify a value for <code>DefaultSubnetId</code>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information on how to use AWS OpsWorks with a VPC, see <a
@@ -988,16 +1187,42 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * The stack's operating system, which must be set to one of the following.
      * </p>
      * <ul>
-     * <li>A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>,
-     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
-     * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
-     * want to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a href=
+     * <li>
+     * <p>
+     * A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Ubuntu operating system, such as
+     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * <code>Ubuntu 12.04 LTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Red Hat Enterprise Linux 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
+     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to
+     * use when you create instances. For more information on how to use custom
+     * AMIs with OpsWorks, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Using Custom AMIs</a>.</li>
+     * >Using Custom AMIs</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default option is the parent stack's operating system. For more
@@ -1005,24 +1230,55 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      * >AWS OpsWorks Operating Systems</a>.
      * </p>
-     * <note>You can specify a different Linux operating system for the cloned
-     * stack, but you cannot change from Linux to Windows or Windows to
-     * Linux.</note>
+     * <note>
+     * <p>
+     * You can specify a different Linux operating system for the cloned stack,
+     * but you cannot change from Linux to Windows or Windows to Linux.
+     * </p>
+     * </note>
      * 
      * @param defaultOs
      *        The stack's operating system, which must be set to one of the
      *        following.</p>
      *        <ul>
-     *        <li>A supported Linux operating system: An Amazon Linux version,
-     *        such as <code>Amazon Linux 2015.03</code>,
-     *        <code>Red Hat Enterprise Linux 7</code>,
-     *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *        <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     *        <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
-     *        you want to use when you create instances. For more information on
-     *        how to use custom AMIs with OpsWorks, see <a href=
+     *        <li>
+     *        <p>
+     *        A supported Linux operating system: An Amazon Linux version, such
+     *        as <code>Amazon Linux 2016.03</code>,
+     *        <code>Amazon Linux 2015.09</code>, or
+     *        <code>Amazon Linux 2015.03</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A supported Ubuntu operating system, such as
+     *        <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     *        <code>Ubuntu 12.04 LTS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Red Hat Enterprise Linux 7</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Microsoft Windows Server 2012 R2 Base</code>,
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>
+     *        , or
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A custom AMI: <code>Custom</code>. You specify the custom AMI you
+     *        want to use when you create instances. For more information on how
+     *        to use custom AMIs with OpsWorks, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *        >Using Custom AMIs</a>.</li>
+     *        >Using Custom AMIs</a>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The default option is the parent stack's operating system. For
@@ -1030,9 +1286,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      *        >AWS OpsWorks Operating Systems</a>.
      *        </p>
-     *        <note>You can specify a different Linux operating system for the
-     *        cloned stack, but you cannot change from Linux to Windows or
-     *        Windows to Linux.
+     *        <note>
+     *        <p>
+     *        You can specify a different Linux operating system for the cloned
+     *        stack, but you cannot change from Linux to Windows or Windows to
+     *        Linux.
+     *        </p>
      */
 
     public void setDefaultOs(String defaultOs) {
@@ -1044,16 +1303,42 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * The stack's operating system, which must be set to one of the following.
      * </p>
      * <ul>
-     * <li>A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>,
-     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
-     * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
-     * want to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a href=
+     * <li>
+     * <p>
+     * A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Ubuntu operating system, such as
+     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * <code>Ubuntu 12.04 LTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Red Hat Enterprise Linux 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
+     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to
+     * use when you create instances. For more information on how to use custom
+     * AMIs with OpsWorks, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Using Custom AMIs</a>.</li>
+     * >Using Custom AMIs</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default option is the parent stack's operating system. For more
@@ -1061,23 +1346,55 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      * >AWS OpsWorks Operating Systems</a>.
      * </p>
-     * <note>You can specify a different Linux operating system for the cloned
-     * stack, but you cannot change from Linux to Windows or Windows to
-     * Linux.</note>
+     * <note>
+     * <p>
+     * You can specify a different Linux operating system for the cloned stack,
+     * but you cannot change from Linux to Windows or Windows to Linux.
+     * </p>
+     * </note>
      * 
      * @return The stack's operating system, which must be set to one of the
      *         following.</p>
      *         <ul>
-     *         <li>A supported Linux operating system: An Amazon Linux version,
-     *         such as <code>Amazon Linux 2015.03</code>,
-     *         <code>Red Hat Enterprise Linux 7</code>,
-     *         <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     *         <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
-     *         you want to use when you create instances. For more information
-     *         on how to use custom AMIs with OpsWorks, see <a href=
+     *         <li>
+     *         <p>
+     *         A supported Linux operating system: An Amazon Linux version, such
+     *         as <code>Amazon Linux 2016.03</code>,
+     *         <code>Amazon Linux 2015.09</code>, or
+     *         <code>Amazon Linux 2015.03</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A supported Ubuntu operating system, such as
+     *         <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     *         <code>Ubuntu 12.04 LTS</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Red Hat Enterprise Linux 7</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Microsoft Windows Server 2012 R2 Base</code>,
+     *         <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     *         <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>
+     *         , or
+     *         <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>
+     *         .
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A custom AMI: <code>Custom</code>. You specify the custom AMI you
+     *         want to use when you create instances. For more information on
+     *         how to use custom AMIs with OpsWorks, see <a href=
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *         >Using Custom AMIs</a>.</li>
+     *         >Using Custom AMIs</a>.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         The default option is the parent stack's operating system. For
@@ -1085,9 +1402,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      *         >AWS OpsWorks Operating Systems</a>.
      *         </p>
-     *         <note>You can specify a different Linux operating system for the
-     *         cloned stack, but you cannot change from Linux to Windows or
-     *         Windows to Linux.
+     *         <note>
+     *         <p>
+     *         You can specify a different Linux operating system for the cloned
+     *         stack, but you cannot change from Linux to Windows or Windows to
+     *         Linux.
+     *         </p>
      */
 
     public String getDefaultOs() {
@@ -1099,16 +1419,42 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * The stack's operating system, which must be set to one of the following.
      * </p>
      * <ul>
-     * <li>A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>,
-     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
-     * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     * <li>A custom AMI: <code>Custom</code>. You specify the custom AMI you
-     * want to use when you create instances. For more information on how to use
-     * custom AMIs with OpsWorks, see <a href=
+     * <li>
+     * <p>
+     * A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Ubuntu operating system, such as
+     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * <code>Ubuntu 12.04 LTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Red Hat Enterprise Linux 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
+     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to
+     * use when you create instances. For more information on how to use custom
+     * AMIs with OpsWorks, see <a href=
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     * >Using Custom AMIs</a>.</li>
+     * >Using Custom AMIs</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default option is the parent stack's operating system. For more
@@ -1116,24 +1462,55 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      * >AWS OpsWorks Operating Systems</a>.
      * </p>
-     * <note>You can specify a different Linux operating system for the cloned
-     * stack, but you cannot change from Linux to Windows or Windows to
-     * Linux.</note>
+     * <note>
+     * <p>
+     * You can specify a different Linux operating system for the cloned stack,
+     * but you cannot change from Linux to Windows or Windows to Linux.
+     * </p>
+     * </note>
      * 
      * @param defaultOs
      *        The stack's operating system, which must be set to one of the
      *        following.</p>
      *        <ul>
-     *        <li>A supported Linux operating system: An Amazon Linux version,
-     *        such as <code>Amazon Linux 2015.03</code>,
-     *        <code>Red Hat Enterprise Linux 7</code>,
-     *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *        <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     *        <li>A custom AMI: <code>Custom</code>. You specify the custom AMI
-     *        you want to use when you create instances. For more information on
-     *        how to use custom AMIs with OpsWorks, see <a href=
+     *        <li>
+     *        <p>
+     *        A supported Linux operating system: An Amazon Linux version, such
+     *        as <code>Amazon Linux 2016.03</code>,
+     *        <code>Amazon Linux 2015.09</code>, or
+     *        <code>Amazon Linux 2015.03</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A supported Ubuntu operating system, such as
+     *        <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     *        <code>Ubuntu 12.04 LTS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Red Hat Enterprise Linux 7</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Microsoft Windows Server 2012 R2 Base</code>,
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>
+     *        , or
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A custom AMI: <code>Custom</code>. You specify the custom AMI you
+     *        want to use when you create instances. For more information on how
+     *        to use custom AMIs with OpsWorks, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *        >Using Custom AMIs</a>.</li>
+     *        >Using Custom AMIs</a>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The default option is the parent stack's operating system. For
@@ -1141,9 +1518,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      *        >AWS OpsWorks Operating Systems</a>.
      *        </p>
-     *        <note>You can specify a different Linux operating system for the
-     *        cloned stack, but you cannot change from Linux to Windows or
-     *        Windows to Linux.
+     *        <note>
+     *        <p>
+     *        You can specify a different Linux operating system for the cloned
+     *        stack, but you cannot change from Linux to Windows or Windows to
+     *        Linux.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1162,17 +1542,61 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * integers to the layer's short name. The other themes are:
      * </p>
      * <ul>
-     * <li> <code>Baked_Goods</code></li>
-     * <li> <code>Clouds</code></li>
-     * <li> <code>Europe_Cities</code></li>
-     * <li> <code>Fruits</code></li>
-     * <li> <code>Greek_Deities</code></li>
-     * <li> <code>Legendary_creatures_from_Japan</code></li>
-     * <li> <code>Planets_and_Moons</code></li>
-     * <li> <code>Roman_Deities</code></li>
-     * <li> <code>Scottish_Islands</code></li>
-     * <li> <code>US_Cities</code></li>
-     * <li> <code>Wild_Cats</code></li>
+     * <li>
+     * <p>
+     * <code>Baked_Goods</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Clouds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Europe_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fruits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Greek_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Legendary_creatures_from_Japan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Planets_and_Moons</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Roman_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Scottish_Islands</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>US_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Wild_Cats</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To obtain a generated host name, call <code>GetHostNameSuggestion</code>,
@@ -1187,17 +1611,61 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        appending integers to the layer's short name. The other themes
      *        are:</p>
      *        <ul>
-     *        <li> <code>Baked_Goods</code></li>
-     *        <li> <code>Clouds</code></li>
-     *        <li> <code>Europe_Cities</code></li>
-     *        <li> <code>Fruits</code></li>
-     *        <li> <code>Greek_Deities</code></li>
-     *        <li> <code>Legendary_creatures_from_Japan</code></li>
-     *        <li> <code>Planets_and_Moons</code></li>
-     *        <li> <code>Roman_Deities</code></li>
-     *        <li> <code>Scottish_Islands</code></li>
-     *        <li> <code>US_Cities</code></li>
-     *        <li> <code>Wild_Cats</code></li>
+     *        <li>
+     *        <p>
+     *        <code>Baked_Goods</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Clouds</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Europe_Cities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Fruits</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Greek_Deities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Legendary_creatures_from_Japan</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Planets_and_Moons</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Roman_Deities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Scottish_Islands</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>US_Cities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Wild_Cats</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        To obtain a generated host name, call
@@ -1218,17 +1686,61 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * integers to the layer's short name. The other themes are:
      * </p>
      * <ul>
-     * <li> <code>Baked_Goods</code></li>
-     * <li> <code>Clouds</code></li>
-     * <li> <code>Europe_Cities</code></li>
-     * <li> <code>Fruits</code></li>
-     * <li> <code>Greek_Deities</code></li>
-     * <li> <code>Legendary_creatures_from_Japan</code></li>
-     * <li> <code>Planets_and_Moons</code></li>
-     * <li> <code>Roman_Deities</code></li>
-     * <li> <code>Scottish_Islands</code></li>
-     * <li> <code>US_Cities</code></li>
-     * <li> <code>Wild_Cats</code></li>
+     * <li>
+     * <p>
+     * <code>Baked_Goods</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Clouds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Europe_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fruits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Greek_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Legendary_creatures_from_Japan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Planets_and_Moons</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Roman_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Scottish_Islands</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>US_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Wild_Cats</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To obtain a generated host name, call <code>GetHostNameSuggestion</code>,
@@ -1242,17 +1754,61 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         appending integers to the layer's short name. The other themes
      *         are:</p>
      *         <ul>
-     *         <li> <code>Baked_Goods</code></li>
-     *         <li> <code>Clouds</code></li>
-     *         <li> <code>Europe_Cities</code></li>
-     *         <li> <code>Fruits</code></li>
-     *         <li> <code>Greek_Deities</code></li>
-     *         <li> <code>Legendary_creatures_from_Japan</code></li>
-     *         <li> <code>Planets_and_Moons</code></li>
-     *         <li> <code>Roman_Deities</code></li>
-     *         <li> <code>Scottish_Islands</code></li>
-     *         <li> <code>US_Cities</code></li>
-     *         <li> <code>Wild_Cats</code></li>
+     *         <li>
+     *         <p>
+     *         <code>Baked_Goods</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Clouds</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Europe_Cities</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Fruits</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Greek_Deities</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Legendary_creatures_from_Japan</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Planets_and_Moons</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Roman_Deities</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Scottish_Islands</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>US_Cities</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Wild_Cats</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         To obtain a generated host name, call
@@ -1273,17 +1829,61 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * integers to the layer's short name. The other themes are:
      * </p>
      * <ul>
-     * <li> <code>Baked_Goods</code></li>
-     * <li> <code>Clouds</code></li>
-     * <li> <code>Europe_Cities</code></li>
-     * <li> <code>Fruits</code></li>
-     * <li> <code>Greek_Deities</code></li>
-     * <li> <code>Legendary_creatures_from_Japan</code></li>
-     * <li> <code>Planets_and_Moons</code></li>
-     * <li> <code>Roman_Deities</code></li>
-     * <li> <code>Scottish_Islands</code></li>
-     * <li> <code>US_Cities</code></li>
-     * <li> <code>Wild_Cats</code></li>
+     * <li>
+     * <p>
+     * <code>Baked_Goods</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Clouds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Europe_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fruits</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Greek_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Legendary_creatures_from_Japan</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Planets_and_Moons</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Roman_Deities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Scottish_Islands</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>US_Cities</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Wild_Cats</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To obtain a generated host name, call <code>GetHostNameSuggestion</code>,
@@ -1298,17 +1898,61 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        appending integers to the layer's short name. The other themes
      *        are:</p>
      *        <ul>
-     *        <li> <code>Baked_Goods</code></li>
-     *        <li> <code>Clouds</code></li>
-     *        <li> <code>Europe_Cities</code></li>
-     *        <li> <code>Fruits</code></li>
-     *        <li> <code>Greek_Deities</code></li>
-     *        <li> <code>Legendary_creatures_from_Japan</code></li>
-     *        <li> <code>Planets_and_Moons</code></li>
-     *        <li> <code>Roman_Deities</code></li>
-     *        <li> <code>Scottish_Islands</code></li>
-     *        <li> <code>US_Cities</code></li>
-     *        <li> <code>Wild_Cats</code></li>
+     *        <li>
+     *        <p>
+     *        <code>Baked_Goods</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Clouds</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Europe_Cities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Fruits</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Greek_Deities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Legendary_creatures_from_Japan</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Planets_and_Moons</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Roman_Deities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Scottish_Islands</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>US_Cities</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Wild_Cats</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        To obtain a generated host name, call
@@ -1584,14 +2228,14 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * The configuration manager. When you clone a stack we recommend that you
      * use the configuration manager to specify the Chef version: 12, 11.10, or
      * 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
-     * Linux stacks is currently 11.4.
+     * Linux stacks is currently 12.
      * </p>
      * 
      * @param configurationManager
      *        The configuration manager. When you clone a stack we recommend
      *        that you use the configuration manager to specify the Chef
      *        version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows
-     *        stacks. The default value for Linux stacks is currently 11.4.
+     *        stacks. The default value for Linux stacks is currently 12.
      */
 
     public void setConfigurationManager(
@@ -1604,13 +2248,13 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * The configuration manager. When you clone a stack we recommend that you
      * use the configuration manager to specify the Chef version: 12, 11.10, or
      * 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
-     * Linux stacks is currently 11.4.
+     * Linux stacks is currently 12.
      * </p>
      * 
      * @return The configuration manager. When you clone a stack we recommend
      *         that you use the configuration manager to specify the Chef
      *         version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows
-     *         stacks. The default value for Linux stacks is currently 11.4.
+     *         stacks. The default value for Linux stacks is currently 12.
      */
 
     public StackConfigurationManager getConfigurationManager() {
@@ -1622,14 +2266,14 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * The configuration manager. When you clone a stack we recommend that you
      * use the configuration manager to specify the Chef version: 12, 11.10, or
      * 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
-     * Linux stacks is currently 11.4.
+     * Linux stacks is currently 12.
      * </p>
      * 
      * @param configurationManager
      *        The configuration manager. When you clone a stack we recommend
      *        that you use the configuration manager to specify the Chef
      *        version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows
-     *        stacks. The default value for Linux stacks is currently 11.4.
+     *        stacks. The default value for Linux stacks is currently 12.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1772,16 +2416,24 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * following settings:
      * </p>
      * <ul>
-     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * <li>
+     * <p>
+     * True - AWS OpsWorks automatically associates the appropriate built-in
      * security group with each layer (default setting). You can associate
      * additional security groups with a layer after you create it but you
-     * cannot delete the built-in security group.</li>
-     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * cannot delete the built-in security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * False - AWS OpsWorks does not associate built-in security groups with
      * layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon
      * EC2) security groups and associate a security group with each layer that
      * you create. However, you can still manually associate a built-in security
      * group with a layer on creation; custom security groups are required only
-     * for those layers that need custom settings.</li>
+     * for those layers that need custom settings.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1800,17 +2452,25 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        <code>UseOpsworksSecurityGroups</code> has the following settings:
      *        </p>
      *        <ul>
-     *        <li>True - AWS OpsWorks automatically associates the appropriate
+     *        <li>
+     *        <p>
+     *        True - AWS OpsWorks automatically associates the appropriate
      *        built-in security group with each layer (default setting). You can
      *        associate additional security groups with a layer after you create
-     *        it but you cannot delete the built-in security group.</li>
-     *        <li>False - AWS OpsWorks does not associate built-in security
-     *        groups with layers. You must create appropriate Amazon Elastic
-     *        Compute Cloud (Amazon EC2) security groups and associate a
-     *        security group with each layer that you create. However, you can
-     *        still manually associate a built-in security group with a layer on
-     *        creation; custom security groups are required only for those
-     *        layers that need custom settings.</li>
+     *        it but you cannot delete the built-in security group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        False - AWS OpsWorks does not associate built-in security groups
+     *        with layers. You must create appropriate Amazon Elastic Compute
+     *        Cloud (Amazon EC2) security groups and associate a security group
+     *        with each layer that you create. However, you can still manually
+     *        associate a built-in security group with a layer on creation;
+     *        custom security groups are required only for those layers that
+     *        need custom settings.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information, see <a href=
@@ -1835,16 +2495,24 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * following settings:
      * </p>
      * <ul>
-     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * <li>
+     * <p>
+     * True - AWS OpsWorks automatically associates the appropriate built-in
      * security group with each layer (default setting). You can associate
      * additional security groups with a layer after you create it but you
-     * cannot delete the built-in security group.</li>
-     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * cannot delete the built-in security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * False - AWS OpsWorks does not associate built-in security groups with
      * layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon
      * EC2) security groups and associate a security group with each layer that
      * you create. However, you can still manually associate a built-in security
      * group with a layer on creation; custom security groups are required only
-     * for those layers that need custom settings.</li>
+     * for those layers that need custom settings.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1863,17 +2531,25 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         settings:
      *         </p>
      *         <ul>
-     *         <li>True - AWS OpsWorks automatically associates the appropriate
+     *         <li>
+     *         <p>
+     *         True - AWS OpsWorks automatically associates the appropriate
      *         built-in security group with each layer (default setting). You
      *         can associate additional security groups with a layer after you
-     *         create it but you cannot delete the built-in security group.</li>
-     *         <li>False - AWS OpsWorks does not associate built-in security
-     *         groups with layers. You must create appropriate Amazon Elastic
-     *         Compute Cloud (Amazon EC2) security groups and associate a
-     *         security group with each layer that you create. However, you can
-     *         still manually associate a built-in security group with a layer
-     *         on creation; custom security groups are required only for those
-     *         layers that need custom settings.</li>
+     *         create it but you cannot delete the built-in security group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         False - AWS OpsWorks does not associate built-in security groups
+     *         with layers. You must create appropriate Amazon Elastic Compute
+     *         Cloud (Amazon EC2) security groups and associate a security group
+     *         with each layer that you create. However, you can still manually
+     *         associate a built-in security group with a layer on creation;
+     *         custom security groups are required only for those layers that
+     *         need custom settings.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For more information, see <a href=
@@ -1898,16 +2574,24 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * following settings:
      * </p>
      * <ul>
-     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * <li>
+     * <p>
+     * True - AWS OpsWorks automatically associates the appropriate built-in
      * security group with each layer (default setting). You can associate
      * additional security groups with a layer after you create it but you
-     * cannot delete the built-in security group.</li>
-     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * cannot delete the built-in security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * False - AWS OpsWorks does not associate built-in security groups with
      * layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon
      * EC2) security groups and associate a security group with each layer that
      * you create. However, you can still manually associate a built-in security
      * group with a layer on creation; custom security groups are required only
-     * for those layers that need custom settings.</li>
+     * for those layers that need custom settings.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1926,17 +2610,25 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        <code>UseOpsworksSecurityGroups</code> has the following settings:
      *        </p>
      *        <ul>
-     *        <li>True - AWS OpsWorks automatically associates the appropriate
+     *        <li>
+     *        <p>
+     *        True - AWS OpsWorks automatically associates the appropriate
      *        built-in security group with each layer (default setting). You can
      *        associate additional security groups with a layer after you create
-     *        it but you cannot delete the built-in security group.</li>
-     *        <li>False - AWS OpsWorks does not associate built-in security
-     *        groups with layers. You must create appropriate Amazon Elastic
-     *        Compute Cloud (Amazon EC2) security groups and associate a
-     *        security group with each layer that you create. However, you can
-     *        still manually associate a built-in security group with a layer on
-     *        creation; custom security groups are required only for those
-     *        layers that need custom settings.</li>
+     *        it but you cannot delete the built-in security group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        False - AWS OpsWorks does not associate built-in security groups
+     *        with layers. You must create appropriate Amazon Elastic Compute
+     *        Cloud (Amazon EC2) security groups and associate a security group
+     *        with each layer that you create. However, you can still manually
+     *        associate a built-in security group with a layer on creation;
+     *        custom security groups are required only for those layers that
+     *        need custom settings.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information, see <a href=
@@ -1965,16 +2657,24 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * following settings:
      * </p>
      * <ul>
-     * <li>True - AWS OpsWorks automatically associates the appropriate built-in
+     * <li>
+     * <p>
+     * True - AWS OpsWorks automatically associates the appropriate built-in
      * security group with each layer (default setting). You can associate
      * additional security groups with a layer after you create it but you
-     * cannot delete the built-in security group.</li>
-     * <li>False - AWS OpsWorks does not associate built-in security groups with
+     * cannot delete the built-in security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * False - AWS OpsWorks does not associate built-in security groups with
      * layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon
      * EC2) security groups and associate a security group with each layer that
      * you create. However, you can still manually associate a built-in security
      * group with a layer on creation; custom security groups are required only
-     * for those layers that need custom settings.</li>
+     * for those layers that need custom settings.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1993,17 +2693,25 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         settings:
      *         </p>
      *         <ul>
-     *         <li>True - AWS OpsWorks automatically associates the appropriate
+     *         <li>
+     *         <p>
+     *         True - AWS OpsWorks automatically associates the appropriate
      *         built-in security group with each layer (default setting). You
      *         can associate additional security groups with a layer after you
-     *         create it but you cannot delete the built-in security group.</li>
-     *         <li>False - AWS OpsWorks does not associate built-in security
-     *         groups with layers. You must create appropriate Amazon Elastic
-     *         Compute Cloud (Amazon EC2) security groups and associate a
-     *         security group with each layer that you create. However, you can
-     *         still manually associate a built-in security group with a layer
-     *         on creation; custom security groups are required only for those
-     *         layers that need custom settings.</li>
+     *         create it but you cannot delete the built-in security group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         False - AWS OpsWorks does not associate built-in security groups
+     *         with layers. You must create appropriate Amazon Elastic Compute
+     *         Cloud (Amazon EC2) security groups and associate a security group
+     *         with each layer that you create. However, you can still manually
+     *         associate a built-in security group with a layer on creation;
+     *         custom security groups are required only for those layers that
+     *         need custom settings.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For more information, see <a href=
@@ -2401,13 +3109,21 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
+     * <li>
+     * <p>
+     * Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
      * automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</li>
-     * <li>Fixed version - Set this parameter to your preferred agent version.
-     * To update the agent version, you must edit the stack configuration and
+     * soon as they are available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Fixed version - Set this parameter to your preferred agent version. To
+     * update the agent version, you must edit the stack configuration and
      * specify a new version. AWS OpsWorks then automatically installs that
-     * version on the stack's instances.</li>
+     * version on the stack's instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default setting is <code>LATEST</code>. To specify an agent version,
@@ -2415,20 +3131,32 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
-     * <note>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</note>
+     * <note>
+     * <p>
+     * You can also specify an agent version when you create or update an
+     * instance, which overrides the stack's default setting.
+     * </p>
+     * </note>
      * 
      * @param agentVersion
      *        The default AWS OpsWorks agent version. You have the following
      *        options:</p>
      *        <ul>
-     *        <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS
+     *        <li>
+     *        <p>
+     *        Auto-update - Set this parameter to <code>LATEST</code>. AWS
      *        OpsWorks automatically installs new agent versions on the stack's
-     *        instances as soon as they are available.</li>
-     *        <li>Fixed version - Set this parameter to your preferred agent
+     *        instances as soon as they are available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Fixed version - Set this parameter to your preferred agent
      *        version. To update the agent version, you must edit the stack
      *        configuration and specify a new version. AWS OpsWorks then
-     *        automatically installs that version on the stack's instances.</li>
+     *        automatically installs that version on the stack's instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The default setting is <code>LATEST</code>. To specify an agent
@@ -2436,8 +3164,11 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        abbreviated number shown on the console. For a list of available
      *        agent version numbers, call <a>DescribeAgentVersions</a>.
      *        </p>
-     *        <note>You can also specify an agent version when you create or
-     *        update an instance, which overrides the stack's default setting.
+     *        <note>
+     *        <p>
+     *        You can also specify an agent version when you create or update an
+     *        instance, which overrides the stack's default setting.
+     *        </p>
      */
 
     public void setAgentVersion(String agentVersion) {
@@ -2449,13 +3180,21 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
+     * <li>
+     * <p>
+     * Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
      * automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</li>
-     * <li>Fixed version - Set this parameter to your preferred agent version.
-     * To update the agent version, you must edit the stack configuration and
+     * soon as they are available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Fixed version - Set this parameter to your preferred agent version. To
+     * update the agent version, you must edit the stack configuration and
      * specify a new version. AWS OpsWorks then automatically installs that
-     * version on the stack's instances.</li>
+     * version on the stack's instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default setting is <code>LATEST</code>. To specify an agent version,
@@ -2463,19 +3202,31 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
-     * <note>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</note>
+     * <note>
+     * <p>
+     * You can also specify an agent version when you create or update an
+     * instance, which overrides the stack's default setting.
+     * </p>
+     * </note>
      * 
      * @return The default AWS OpsWorks agent version. You have the following
      *         options:</p>
      *         <ul>
-     *         <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS
+     *         <li>
+     *         <p>
+     *         Auto-update - Set this parameter to <code>LATEST</code>. AWS
      *         OpsWorks automatically installs new agent versions on the stack's
-     *         instances as soon as they are available.</li>
-     *         <li>Fixed version - Set this parameter to your preferred agent
+     *         instances as soon as they are available.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Fixed version - Set this parameter to your preferred agent
      *         version. To update the agent version, you must edit the stack
      *         configuration and specify a new version. AWS OpsWorks then
-     *         automatically installs that version on the stack's instances.</li>
+     *         automatically installs that version on the stack's instances.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         The default setting is <code>LATEST</code>. To specify an agent
@@ -2483,8 +3234,11 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         abbreviated number shown on the console. For a list of available
      *         agent version numbers, call <a>DescribeAgentVersions</a>.
      *         </p>
-     *         <note>You can also specify an agent version when you create or
-     *         update an instance, which overrides the stack's default setting.
+     *         <note>
+     *         <p>
+     *         You can also specify an agent version when you create or update
+     *         an instance, which overrides the stack's default setting.
+     *         </p>
      */
 
     public String getAgentVersion() {
@@ -2496,13 +3250,21 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
+     * <li>
+     * <p>
+     * Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks
      * automatically installs new agent versions on the stack's instances as
-     * soon as they are available.</li>
-     * <li>Fixed version - Set this parameter to your preferred agent version.
-     * To update the agent version, you must edit the stack configuration and
+     * soon as they are available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Fixed version - Set this parameter to your preferred agent version. To
+     * update the agent version, you must edit the stack configuration and
      * specify a new version. AWS OpsWorks then automatically installs that
-     * version on the stack's instances.</li>
+     * version on the stack's instances.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default setting is <code>LATEST</code>. To specify an agent version,
@@ -2510,20 +3272,32 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
-     * <note>You can also specify an agent version when you create or update an
-     * instance, which overrides the stack's default setting.</note>
+     * <note>
+     * <p>
+     * You can also specify an agent version when you create or update an
+     * instance, which overrides the stack's default setting.
+     * </p>
+     * </note>
      * 
      * @param agentVersion
      *        The default AWS OpsWorks agent version. You have the following
      *        options:</p>
      *        <ul>
-     *        <li>Auto-update - Set this parameter to <code>LATEST</code>. AWS
+     *        <li>
+     *        <p>
+     *        Auto-update - Set this parameter to <code>LATEST</code>. AWS
      *        OpsWorks automatically installs new agent versions on the stack's
-     *        instances as soon as they are available.</li>
-     *        <li>Fixed version - Set this parameter to your preferred agent
+     *        instances as soon as they are available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Fixed version - Set this parameter to your preferred agent
      *        version. To update the agent version, you must edit the stack
      *        configuration and specify a new version. AWS OpsWorks then
-     *        automatically installs that version on the stack's instances.</li>
+     *        automatically installs that version on the stack's instances.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The default setting is <code>LATEST</code>. To specify an agent
@@ -2531,8 +3305,11 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        abbreviated number shown on the console. For a list of available
      *        agent version numbers, call <a>DescribeAgentVersions</a>.
      *        </p>
-     *        <note>You can also specify an agent version when you create or
-     *        update an instance, which overrides the stack's default setting.
+     *        <note>
+     *        <p>
+     *        You can also specify an agent version when you create or update an
+     *        instance, which overrides the stack's default setting.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

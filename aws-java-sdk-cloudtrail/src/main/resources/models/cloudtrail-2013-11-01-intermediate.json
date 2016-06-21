@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "cloudtrail",
     "signingName" : "cloudtrail",
+    "jsonProtocol" : true,
     "serviceName" : "CloudTrail",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "xmlProtocol" : false,
-    "jsonProtocol" : true
+    "xmlProtocol" : false
   },
   "operations" : {
     "AddTags" : {

@@ -48,4 +48,11 @@ public @interface DynamoDBAttribute {
      * should differ from the name used by the getter / setter.
      */
     String attributeName() default "";
+
+    /**
+     * Optional parameter when using {@link DynamoDBFlattened}; identifies
+     * the field/property name on the target class to map as the attribute.
+     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBFlattened
+     */
+    String mappedBy() default "";
 }

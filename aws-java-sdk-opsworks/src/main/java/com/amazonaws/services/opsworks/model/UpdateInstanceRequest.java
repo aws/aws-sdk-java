@@ -69,12 +69,39 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * following.
      * </p>
      * <ul>
-     * <li>A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>,
-     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
-     * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     * <li>A custom AMI: <code>Custom</code>.</li>
+     * <li>
+     * <p>
+     * A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Ubuntu operating system, such as
+     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * <code>Ubuntu 12.04 LTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Red Hat Enterprise Linux 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
+     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A custom AMI: <code>Custom</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on the supported operating systems, see <a href=
@@ -92,9 +119,12 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      * >Using Custom AMIs</a>.
      * </p>
-     * <note>You can specify a different Linux operating system for the updated
-     * stack, but you cannot change from Linux to Windows or Windows to
-     * Linux.</note>
+     * <note>
+     * <p>
+     * You can specify a different Linux operating system for the updated stack,
+     * but you cannot change from Linux to Windows or Windows to Linux.
+     * </p>
+     * </note>
      */
     private String os;
     /**
@@ -105,8 +135,12 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      * >Instances</a>
      * </p>
-     * <note>If you specify a custom AMI, you must set <code>Os</code> to
-     * <code>Custom</code>.</note>
+     * <note>
+     * <p>
+     * If you specify a custom AMI, you must set <code>Os</code> to
+     * <code>Custom</code>.
+     * </p>
+     * </note>
      */
     private String amiId;
     /**
@@ -154,12 +188,19 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li><code>INHERIT</code> - Use the stack's default agent version setting.
+     * <li>
+     * <p>
+     * <code>INHERIT</code> - Use the stack's default agent version setting.
+     * </p>
      * </li>
-     * <li><i>version_number</i> - Use the specified agent version. This value
+     * <li>
+     * <p>
+     * <i>version_number</i> - Use the specified agent version. This value
      * overrides the stack's default setting. To update the agent version, you
      * must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.</li>
+     * OpsWorks then automatically installs that version on the instance.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default setting is <code>INHERIT</code>. To specify an agent version,
@@ -509,12 +550,39 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * following.
      * </p>
      * <ul>
-     * <li>A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>,
-     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
-     * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     * <li>A custom AMI: <code>Custom</code>.</li>
+     * <li>
+     * <p>
+     * A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Ubuntu operating system, such as
+     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * <code>Ubuntu 12.04 LTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Red Hat Enterprise Linux 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
+     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A custom AMI: <code>Custom</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on the supported operating systems, see <a href=
@@ -532,20 +600,52 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      * >Using Custom AMIs</a>.
      * </p>
-     * <note>You can specify a different Linux operating system for the updated
-     * stack, but you cannot change from Linux to Windows or Windows to
-     * Linux.</note>
+     * <note>
+     * <p>
+     * You can specify a different Linux operating system for the updated stack,
+     * but you cannot change from Linux to Windows or Windows to Linux.
+     * </p>
+     * </note>
      * 
      * @param os
      *        The instance's operating system, which must be set to one of the
      *        following.</p>
      *        <ul>
-     *        <li>A supported Linux operating system: An Amazon Linux version,
-     *        such as <code>Amazon Linux 2015.03</code>,
-     *        <code>Red Hat Enterprise Linux 7</code>,
-     *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *        <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     *        <li>A custom AMI: <code>Custom</code>.</li>
+     *        <li>
+     *        <p>
+     *        A supported Linux operating system: An Amazon Linux version, such
+     *        as <code>Amazon Linux 2016.03</code>,
+     *        <code>Amazon Linux 2015.09</code>, or
+     *        <code>Amazon Linux 2015.03</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A supported Ubuntu operating system, such as
+     *        <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     *        <code>Ubuntu 12.04 LTS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Red Hat Enterprise Linux 7</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A supported Windows operating system, such as
+     *        <code>Microsoft Windows Server 2012 R2 Base</code>,
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>
+     *        , or
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A custom AMI: <code>Custom</code>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information on the supported operating systems, see <a
@@ -564,9 +664,12 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      *        >Using Custom AMIs</a>.
      *        </p>
-     *        <note>You can specify a different Linux operating system for the
-     *        updated stack, but you cannot change from Linux to Windows or
-     *        Windows to Linux.
+     *        <note>
+     *        <p>
+     *        You can specify a different Linux operating system for the updated
+     *        stack, but you cannot change from Linux to Windows or Windows to
+     *        Linux.
+     *        </p>
      */
 
     public void setOs(String os) {
@@ -579,12 +682,39 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * following.
      * </p>
      * <ul>
-     * <li>A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>,
-     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
-     * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     * <li>A custom AMI: <code>Custom</code>.</li>
+     * <li>
+     * <p>
+     * A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Ubuntu operating system, such as
+     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * <code>Ubuntu 12.04 LTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Red Hat Enterprise Linux 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
+     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A custom AMI: <code>Custom</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on the supported operating systems, see <a href=
@@ -602,19 +732,52 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      * >Using Custom AMIs</a>.
      * </p>
-     * <note>You can specify a different Linux operating system for the updated
-     * stack, but you cannot change from Linux to Windows or Windows to
-     * Linux.</note>
+     * <note>
+     * <p>
+     * You can specify a different Linux operating system for the updated stack,
+     * but you cannot change from Linux to Windows or Windows to Linux.
+     * </p>
+     * </note>
      * 
      * @return The instance's operating system, which must be set to one of the
      *         following.</p>
      *         <ul>
-     *         <li>A supported Linux operating system: An Amazon Linux version,
-     *         such as <code>Amazon Linux 2015.03</code>,
-     *         <code>Red Hat Enterprise Linux 7</code>,
-     *         <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *         <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     *         <li>A custom AMI: <code>Custom</code>.</li>
+     *         <li>
+     *         <p>
+     *         A supported Linux operating system: An Amazon Linux version, such
+     *         as <code>Amazon Linux 2016.03</code>,
+     *         <code>Amazon Linux 2015.09</code>, or
+     *         <code>Amazon Linux 2015.03</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A supported Ubuntu operating system, such as
+     *         <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     *         <code>Ubuntu 12.04 LTS</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Red Hat Enterprise Linux 7</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A supported Windows operating system, such as
+     *         <code>Microsoft Windows Server 2012 R2 Base</code>,
+     *         <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     *         <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>
+     *         , or
+     *         <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>
+     *         .
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A custom AMI: <code>Custom</code>.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For more information on the supported operating systems, see <a
@@ -633,9 +796,12 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      *         >Using Custom AMIs</a>.
      *         </p>
-     *         <note>You can specify a different Linux operating system for the
+     *         <note>
+     *         <p>
+     *         You can specify a different Linux operating system for the
      *         updated stack, but you cannot change from Linux to Windows or
      *         Windows to Linux.
+     *         </p>
      */
 
     public String getOs() {
@@ -648,12 +814,39 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * following.
      * </p>
      * <ul>
-     * <li>A supported Linux operating system: An Amazon Linux version, such as
-     * <code>Amazon Linux 2015.03</code>,
-     * <code>Red Hat Enterprise Linux 7</code>, <code>Ubuntu 12.04 LTS</code>,
-     * or <code>Ubuntu 14.04 LTS</code>.</li>
-     * <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     * <li>A custom AMI: <code>Custom</code>.</li>
+     * <li>
+     * <p>
+     * A supported Linux operating system: An Amazon Linux version, such as
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Ubuntu operating system, such as
+     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     * <code>Ubuntu 12.04 LTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Red Hat Enterprise Linux 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>,
+     * or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A custom AMI: <code>Custom</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on the supported operating systems, see <a href=
@@ -671,20 +864,52 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      * >Using Custom AMIs</a>.
      * </p>
-     * <note>You can specify a different Linux operating system for the updated
-     * stack, but you cannot change from Linux to Windows or Windows to
-     * Linux.</note>
+     * <note>
+     * <p>
+     * You can specify a different Linux operating system for the updated stack,
+     * but you cannot change from Linux to Windows or Windows to Linux.
+     * </p>
+     * </note>
      * 
      * @param os
      *        The instance's operating system, which must be set to one of the
      *        following.</p>
      *        <ul>
-     *        <li>A supported Linux operating system: An Amazon Linux version,
-     *        such as <code>Amazon Linux 2015.03</code>,
-     *        <code>Red Hat Enterprise Linux 7</code>,
-     *        <code>Ubuntu 12.04 LTS</code>, or <code>Ubuntu 14.04 LTS</code>.</li>
-     *        <li><code>Microsoft Windows Server 2012 R2 Base</code>.</li>
-     *        <li>A custom AMI: <code>Custom</code>.</li>
+     *        <li>
+     *        <p>
+     *        A supported Linux operating system: An Amazon Linux version, such
+     *        as <code>Amazon Linux 2016.03</code>,
+     *        <code>Amazon Linux 2015.09</code>, or
+     *        <code>Amazon Linux 2015.03</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A supported Ubuntu operating system, such as
+     *        <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
+     *        <code>Ubuntu 12.04 LTS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Red Hat Enterprise Linux 7</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A supported Windows operating system, such as
+     *        <code>Microsoft Windows Server 2012 R2 Base</code>,
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>
+     *        , or
+     *        <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A custom AMI: <code>Custom</code>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information on the supported operating systems, see <a
@@ -703,9 +928,12 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      *        >Using Custom AMIs</a>.
      *        </p>
-     *        <note>You can specify a different Linux operating system for the
-     *        updated stack, but you cannot change from Linux to Windows or
-     *        Windows to Linux.
+     *        <note>
+     *        <p>
+     *        You can specify a different Linux operating system for the updated
+     *        stack, but you cannot change from Linux to Windows or Windows to
+     *        Linux.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -723,16 +951,23 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      * >Instances</a>
      * </p>
-     * <note>If you specify a custom AMI, you must set <code>Os</code> to
-     * <code>Custom</code>.</note>
+     * <note>
+     * <p>
+     * If you specify a custom AMI, you must set <code>Os</code> to
+     * <code>Custom</code>.
+     * </p>
+     * </note>
      * 
      * @param amiId
      *        A custom AMI ID to be used to create the instance. The AMI must be
      *        based on one of the supported operating systems. For more
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *        >Instances</a></p> <note>If you specify a custom AMI, you must set
-     *        <code>Os</code> to <code>Custom</code>.
+     *        >Instances</a> </p> <note>
+     *        <p>
+     *        If you specify a custom AMI, you must set <code>Os</code> to
+     *        <code>Custom</code>.
+     *        </p>
      */
 
     public void setAmiId(String amiId) {
@@ -747,15 +982,22 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      * >Instances</a>
      * </p>
-     * <note>If you specify a custom AMI, you must set <code>Os</code> to
-     * <code>Custom</code>.</note>
+     * <note>
+     * <p>
+     * If you specify a custom AMI, you must set <code>Os</code> to
+     * <code>Custom</code>.
+     * </p>
+     * </note>
      * 
      * @return A custom AMI ID to be used to create the instance. The AMI must
      *         be based on one of the supported operating systems. For more
      *         information, see <a href=
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *         >Instances</a></p> <note>If you specify a custom AMI, you must
-     *         set <code>Os</code> to <code>Custom</code>.
+     *         >Instances</a> </p> <note>
+     *         <p>
+     *         If you specify a custom AMI, you must set <code>Os</code> to
+     *         <code>Custom</code>.
+     *         </p>
      */
 
     public String getAmiId() {
@@ -770,16 +1012,23 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      * >Instances</a>
      * </p>
-     * <note>If you specify a custom AMI, you must set <code>Os</code> to
-     * <code>Custom</code>.</note>
+     * <note>
+     * <p>
+     * If you specify a custom AMI, you must set <code>Os</code> to
+     * <code>Custom</code>.
+     * </p>
+     * </note>
      * 
      * @param amiId
      *        A custom AMI ID to be used to create the instance. The AMI must be
      *        based on one of the supported operating systems. For more
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
-     *        >Instances</a></p> <note>If you specify a custom AMI, you must set
-     *        <code>Os</code> to <code>Custom</code>.
+     *        >Instances</a> </p> <note>
+     *        <p>
+     *        If you specify a custom AMI, you must set <code>Os</code> to
+     *        <code>Custom</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1151,12 +1400,19 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li><code>INHERIT</code> - Use the stack's default agent version setting.
+     * <li>
+     * <p>
+     * <code>INHERIT</code> - Use the stack's default agent version setting.
+     * </p>
      * </li>
-     * <li><i>version_number</i> - Use the specified agent version. This value
+     * <li>
+     * <p>
+     * <i>version_number</i> - Use the specified agent version. This value
      * overrides the stack's default setting. To update the agent version, you
      * must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.</li>
+     * OpsWorks then automatically installs that version on the instance.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default setting is <code>INHERIT</code>. To specify an agent version,
@@ -1169,13 +1425,21 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        The default AWS OpsWorks agent version. You have the following
      *        options:</p>
      *        <ul>
-     *        <li><code>INHERIT</code> - Use the stack's default agent version
-     *        setting.</li>
-     *        <li><i>version_number</i> - Use the specified agent version. This
+     *        <li>
+     *        <p>
+     *        <code>INHERIT</code> - Use the stack's default agent version
+     *        setting.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>version_number</i> - Use the specified agent version. This
      *        value overrides the stack's default setting. To update the agent
      *        version, you must edit the instance configuration and specify a
      *        new version. AWS OpsWorks then automatically installs that version
-     *        on the instance.</li>
+     *        on the instance.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The default setting is <code>INHERIT</code>. To specify an agent
@@ -1193,12 +1457,19 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li><code>INHERIT</code> - Use the stack's default agent version setting.
+     * <li>
+     * <p>
+     * <code>INHERIT</code> - Use the stack's default agent version setting.
+     * </p>
      * </li>
-     * <li><i>version_number</i> - Use the specified agent version. This value
+     * <li>
+     * <p>
+     * <i>version_number</i> - Use the specified agent version. This value
      * overrides the stack's default setting. To update the agent version, you
      * must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.</li>
+     * OpsWorks then automatically installs that version on the instance.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default setting is <code>INHERIT</code>. To specify an agent version,
@@ -1210,13 +1481,21 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @return The default AWS OpsWorks agent version. You have the following
      *         options:</p>
      *         <ul>
-     *         <li><code>INHERIT</code> - Use the stack's default agent version
-     *         setting.</li>
-     *         <li><i>version_number</i> - Use the specified agent version. This
+     *         <li>
+     *         <p>
+     *         <code>INHERIT</code> - Use the stack's default agent version
+     *         setting.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>version_number</i> - Use the specified agent version. This
      *         value overrides the stack's default setting. To update the agent
      *         version, you must edit the instance configuration and specify a
      *         new version. AWS OpsWorks then automatically installs that
-     *         version on the instance.</li>
+     *         version on the instance.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         The default setting is <code>INHERIT</code>. To specify an agent
@@ -1234,12 +1513,19 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * The default AWS OpsWorks agent version. You have the following options:
      * </p>
      * <ul>
-     * <li><code>INHERIT</code> - Use the stack's default agent version setting.
+     * <li>
+     * <p>
+     * <code>INHERIT</code> - Use the stack's default agent version setting.
+     * </p>
      * </li>
-     * <li><i>version_number</i> - Use the specified agent version. This value
+     * <li>
+     * <p>
+     * <i>version_number</i> - Use the specified agent version. This value
      * overrides the stack's default setting. To update the agent version, you
      * must edit the instance configuration and specify a new version. AWS
-     * OpsWorks then automatically installs that version on the instance.</li>
+     * OpsWorks then automatically installs that version on the instance.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The default setting is <code>INHERIT</code>. To specify an agent version,
@@ -1252,13 +1538,21 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        The default AWS OpsWorks agent version. You have the following
      *        options:</p>
      *        <ul>
-     *        <li><code>INHERIT</code> - Use the stack's default agent version
-     *        setting.</li>
-     *        <li><i>version_number</i> - Use the specified agent version. This
+     *        <li>
+     *        <p>
+     *        <code>INHERIT</code> - Use the stack's default agent version
+     *        setting.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>version_number</i> - Use the specified agent version. This
      *        value overrides the stack's default setting. To update the agent
      *        version, you must edit the instance configuration and specify a
      *        new version. AWS OpsWorks then automatically installs that version
-     *        on the instance.</li>
+     *        on the instance.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The default setting is <code>INHERIT</code>. To specify an agent

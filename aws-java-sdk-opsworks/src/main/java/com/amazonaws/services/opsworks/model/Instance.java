@@ -274,20 +274,81 @@ public class Instance implements Serializable, Cloneable {
      * The instance status:
      * </p>
      * <ul>
-     * <li> <code>booting</code></li>
-     * <li> <code>connection_lost</code></li>
-     * <li> <code>online</code></li>
-     * <li> <code>pending</code></li>
-     * <li> <code>rebooting</code></li>
-     * <li> <code>requested</code></li>
-     * <li> <code>running_setup</code></li>
-     * <li> <code>setup_failed</code></li>
-     * <li> <code>shutting_down</code></li>
-     * <li> <code>start_failed</code></li>
-     * <li> <code>stopped</code></li>
-     * <li> <code>stopping</code></li>
-     * <li> <code>terminated</code></li>
-     * <li> <code>terminating</code></li>
+     * <li>
+     * <p>
+     * <code>booting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_lost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>online</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rebooting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>requested</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>running_setup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>shutting_down</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopped</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopping</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminating</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -2239,39 +2300,161 @@ public class Instance implements Serializable, Cloneable {
      * The instance status:
      * </p>
      * <ul>
-     * <li> <code>booting</code></li>
-     * <li> <code>connection_lost</code></li>
-     * <li> <code>online</code></li>
-     * <li> <code>pending</code></li>
-     * <li> <code>rebooting</code></li>
-     * <li> <code>requested</code></li>
-     * <li> <code>running_setup</code></li>
-     * <li> <code>setup_failed</code></li>
-     * <li> <code>shutting_down</code></li>
-     * <li> <code>start_failed</code></li>
-     * <li> <code>stopped</code></li>
-     * <li> <code>stopping</code></li>
-     * <li> <code>terminated</code></li>
-     * <li> <code>terminating</code></li>
+     * <li>
+     * <p>
+     * <code>booting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_lost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>online</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rebooting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>requested</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>running_setup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>shutting_down</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopped</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopping</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminating</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The instance status:</p>
      *        <ul>
-     *        <li> <code>booting</code></li>
-     *        <li> <code>connection_lost</code></li>
-     *        <li> <code>online</code></li>
-     *        <li> <code>pending</code></li>
-     *        <li> <code>rebooting</code></li>
-     *        <li> <code>requested</code></li>
-     *        <li> <code>running_setup</code></li>
-     *        <li> <code>setup_failed</code></li>
-     *        <li> <code>shutting_down</code></li>
-     *        <li> <code>start_failed</code></li>
-     *        <li> <code>stopped</code></li>
-     *        <li> <code>stopping</code></li>
-     *        <li> <code>terminated</code></li>
-     *        <li> <code>terminating</code></li>
+     *        <li>
+     *        <p>
+     *        <code>booting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>connection_lost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>online</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rebooting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>requested</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>running_setup</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>setup_failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>shutting_down</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start_failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stop_failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stopped</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stopping</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>terminated</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>terminating</code>
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -2283,38 +2466,160 @@ public class Instance implements Serializable, Cloneable {
      * The instance status:
      * </p>
      * <ul>
-     * <li> <code>booting</code></li>
-     * <li> <code>connection_lost</code></li>
-     * <li> <code>online</code></li>
-     * <li> <code>pending</code></li>
-     * <li> <code>rebooting</code></li>
-     * <li> <code>requested</code></li>
-     * <li> <code>running_setup</code></li>
-     * <li> <code>setup_failed</code></li>
-     * <li> <code>shutting_down</code></li>
-     * <li> <code>start_failed</code></li>
-     * <li> <code>stopped</code></li>
-     * <li> <code>stopping</code></li>
-     * <li> <code>terminated</code></li>
-     * <li> <code>terminating</code></li>
+     * <li>
+     * <p>
+     * <code>booting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_lost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>online</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rebooting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>requested</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>running_setup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>shutting_down</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopped</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopping</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminating</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The instance status:</p>
      *         <ul>
-     *         <li> <code>booting</code></li>
-     *         <li> <code>connection_lost</code></li>
-     *         <li> <code>online</code></li>
-     *         <li> <code>pending</code></li>
-     *         <li> <code>rebooting</code></li>
-     *         <li> <code>requested</code></li>
-     *         <li> <code>running_setup</code></li>
-     *         <li> <code>setup_failed</code></li>
-     *         <li> <code>shutting_down</code></li>
-     *         <li> <code>start_failed</code></li>
-     *         <li> <code>stopped</code></li>
-     *         <li> <code>stopping</code></li>
-     *         <li> <code>terminated</code></li>
-     *         <li> <code>terminating</code></li>
+     *         <li>
+     *         <p>
+     *         <code>booting</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>connection_lost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>online</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>pending</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>rebooting</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>requested</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>running_setup</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>setup_failed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>shutting_down</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>start_failed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stop_failed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stopped</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stopping</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>terminated</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>terminating</code>
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -2326,39 +2631,161 @@ public class Instance implements Serializable, Cloneable {
      * The instance status:
      * </p>
      * <ul>
-     * <li> <code>booting</code></li>
-     * <li> <code>connection_lost</code></li>
-     * <li> <code>online</code></li>
-     * <li> <code>pending</code></li>
-     * <li> <code>rebooting</code></li>
-     * <li> <code>requested</code></li>
-     * <li> <code>running_setup</code></li>
-     * <li> <code>setup_failed</code></li>
-     * <li> <code>shutting_down</code></li>
-     * <li> <code>start_failed</code></li>
-     * <li> <code>stopped</code></li>
-     * <li> <code>stopping</code></li>
-     * <li> <code>terminated</code></li>
-     * <li> <code>terminating</code></li>
+     * <li>
+     * <p>
+     * <code>booting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_lost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>online</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rebooting</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>requested</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>running_setup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>shutting_down</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stop_failed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopped</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stopping</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminated</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>terminating</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The instance status:</p>
      *        <ul>
-     *        <li> <code>booting</code></li>
-     *        <li> <code>connection_lost</code></li>
-     *        <li> <code>online</code></li>
-     *        <li> <code>pending</code></li>
-     *        <li> <code>rebooting</code></li>
-     *        <li> <code>requested</code></li>
-     *        <li> <code>running_setup</code></li>
-     *        <li> <code>setup_failed</code></li>
-     *        <li> <code>shutting_down</code></li>
-     *        <li> <code>start_failed</code></li>
-     *        <li> <code>stopped</code></li>
-     *        <li> <code>stopping</code></li>
-     *        <li> <code>terminated</code></li>
-     *        <li> <code>terminating</code></li>
+     *        <li>
+     *        <p>
+     *        <code>booting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>connection_lost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>online</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rebooting</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>requested</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>running_setup</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>setup_failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>shutting_down</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start_failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stop_failed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stopped</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stopping</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>terminated</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>terminating</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

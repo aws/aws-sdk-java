@@ -55,11 +55,31 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * strings. You cannot set your own permissions level.
      * </p>
      * <ul>
-     * <li> <code>deny</code></li>
-     * <li> <code>show</code></li>
-     * <li> <code>deploy</code></li>
-     * <li> <code>manage</code></li>
-     * <li> <code>iam_only</code></li>
+     * <li>
+     * <p>
+     * <code>deny</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>show</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>manage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam_only</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on the permissions associated with these levels, see
@@ -264,11 +284,31 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * strings. You cannot set your own permissions level.
      * </p>
      * <ul>
-     * <li> <code>deny</code></li>
-     * <li> <code>show</code></li>
-     * <li> <code>deploy</code></li>
-     * <li> <code>manage</code></li>
-     * <li> <code>iam_only</code></li>
+     * <li>
+     * <p>
+     * <code>deny</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>show</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>manage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam_only</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on the permissions associated with these levels, see
@@ -281,11 +321,31 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      *        The user's permission level, which must be set to one of the
      *        following strings. You cannot set your own permissions level.</p>
      *        <ul>
-     *        <li> <code>deny</code></li>
-     *        <li> <code>show</code></li>
-     *        <li> <code>deploy</code></li>
-     *        <li> <code>manage</code></li>
-     *        <li> <code>iam_only</code></li>
+     *        <li>
+     *        <p>
+     *        <code>deny</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>show</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deploy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>manage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>iam_only</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information on the permissions associated with these
@@ -304,11 +364,31 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * strings. You cannot set your own permissions level.
      * </p>
      * <ul>
-     * <li> <code>deny</code></li>
-     * <li> <code>show</code></li>
-     * <li> <code>deploy</code></li>
-     * <li> <code>manage</code></li>
-     * <li> <code>iam_only</code></li>
+     * <li>
+     * <p>
+     * <code>deny</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>show</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>manage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam_only</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on the permissions associated with these levels, see
@@ -320,11 +400,31 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * @return The user's permission level, which must be set to one of the
      *         following strings. You cannot set your own permissions level.</p>
      *         <ul>
-     *         <li> <code>deny</code></li>
-     *         <li> <code>show</code></li>
-     *         <li> <code>deploy</code></li>
-     *         <li> <code>manage</code></li>
-     *         <li> <code>iam_only</code></li>
+     *         <li>
+     *         <p>
+     *         <code>deny</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>show</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deploy</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>manage</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>iam_only</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         For more information on the permissions associated with these
@@ -343,11 +443,31 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * strings. You cannot set your own permissions level.
      * </p>
      * <ul>
-     * <li> <code>deny</code></li>
-     * <li> <code>show</code></li>
-     * <li> <code>deploy</code></li>
-     * <li> <code>manage</code></li>
-     * <li> <code>iam_only</code></li>
+     * <li>
+     * <p>
+     * <code>deny</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>show</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deploy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>manage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam_only</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information on the permissions associated with these levels, see
@@ -360,11 +480,31 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      *        The user's permission level, which must be set to one of the
      *        following strings. You cannot set your own permissions level.</p>
      *        <ul>
-     *        <li> <code>deny</code></li>
-     *        <li> <code>show</code></li>
-     *        <li> <code>deploy</code></li>
-     *        <li> <code>manage</code></li>
-     *        <li> <code>iam_only</code></li>
+     *        <li>
+     *        <p>
+     *        <code>deny</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>show</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deploy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>manage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>iam_only</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For more information on the permissions associated with these
