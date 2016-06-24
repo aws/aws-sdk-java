@@ -229,8 +229,8 @@ public class AWS4Signer extends AbstractAWSSigner implements
                 AWS4_SIGNING_ALGORITHM);
 
         // Add the important parameters for v4 signing
-        final String timeStamp = AWS4SignerUtils.formatTimestamp(System
-                .currentTimeMillis());
+        final String timeStamp = signerRequestParams
+                .getFormattedSigningDateTime();
 
         addPreSignInformationToRequest(request, sanitizedCredentials,
                 signerRequestParams, timeStamp, expirationInSeconds);
