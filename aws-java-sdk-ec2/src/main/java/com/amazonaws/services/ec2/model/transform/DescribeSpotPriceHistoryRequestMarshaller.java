@@ -48,7 +48,7 @@ public class DescribeSpotPriceHistoryRequestMarshaller
         Request<DescribeSpotPriceHistoryRequest> request = new DefaultRequest<DescribeSpotPriceHistoryRequest>(
                 describeSpotPriceHistoryRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotPriceHistory");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeSpotPriceHistoryRequest.getStartTime() != null) {

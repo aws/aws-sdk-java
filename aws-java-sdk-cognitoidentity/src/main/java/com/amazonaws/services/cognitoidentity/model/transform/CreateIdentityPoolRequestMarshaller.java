@@ -139,6 +139,19 @@ public class CreateIdentityPoolRequestMarshaller
                 jsonGenerator.writeEndArray();
             }
 
+            java.util.List<String> samlProviderARNsList = createIdentityPoolRequest
+                    .getSamlProviderARNs();
+            if (samlProviderARNsList != null) {
+                jsonGenerator.writeFieldName("SamlProviderARNs");
+                jsonGenerator.writeStartArray();
+                for (String samlProviderARNsListValue : samlProviderARNsList) {
+                    if (samlProviderARNsListValue != null) {
+                        jsonGenerator.writeValue(samlProviderARNsListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();

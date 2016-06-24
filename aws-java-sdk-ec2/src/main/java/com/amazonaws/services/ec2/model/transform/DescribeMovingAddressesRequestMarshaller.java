@@ -48,7 +48,7 @@ public class DescribeMovingAddressesRequestMarshaller
         Request<DescribeMovingAddressesRequest> request = new DefaultRequest<DescribeMovingAddressesRequest>(
                 describeMovingAddressesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeMovingAddresses");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> publicIpsList = (com.amazonaws.internal.SdkInternalList<String>) describeMovingAddressesRequest

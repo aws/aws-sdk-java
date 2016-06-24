@@ -48,7 +48,7 @@ public class DescribeSpotFleetRequestHistoryRequestMarshaller
         Request<DescribeSpotFleetRequestHistoryRequest> request = new DefaultRequest<DescribeSpotFleetRequestHistoryRequest>(
                 describeSpotFleetRequestHistoryRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotFleetRequestHistory");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeSpotFleetRequestHistoryRequest.getSpotFleetRequestId() != null) {

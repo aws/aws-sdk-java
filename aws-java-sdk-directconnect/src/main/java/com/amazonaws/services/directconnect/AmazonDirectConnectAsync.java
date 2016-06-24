@@ -700,6 +700,60 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
 
     /**
      * <p>
+     * Returns the LOA-CFA for a Connection.
+     * </p>
+     * <p>
+     * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is
+     * a document that your APN partner or service provider uses when
+     * establishing your cross connect to AWS at the colocation facility. For
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html"
+     * >Requesting Cross Connects at AWS Direct Connect Locations</a> in the AWS
+     * Direct Connect user guide.
+     * </p>
+     * 
+     * @param describeConnectionLoaRequest
+     *        Container for the parameters to the DescribeConnectionLoa
+     *        operation.
+     * @return A Java Future containing the result of the DescribeConnectionLoa
+     *         operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DescribeConnectionLoa
+     */
+    java.util.concurrent.Future<DescribeConnectionLoaResult> describeConnectionLoaAsync(
+            DescribeConnectionLoaRequest describeConnectionLoaRequest);
+
+    /**
+     * <p>
+     * Returns the LOA-CFA for a Connection.
+     * </p>
+     * <p>
+     * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is
+     * a document that your APN partner or service provider uses when
+     * establishing your cross connect to AWS at the colocation facility. For
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html"
+     * >Requesting Cross Connects at AWS Direct Connect Locations</a> in the AWS
+     * Direct Connect user guide.
+     * </p>
+     * 
+     * @param describeConnectionLoaRequest
+     *        Container for the parameters to the DescribeConnectionLoa
+     *        operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeConnectionLoa
+     *         operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DescribeConnectionLoa
+     */
+    java.util.concurrent.Future<DescribeConnectionLoaResult> describeConnectionLoaAsync(
+            DescribeConnectionLoaRequest describeConnectionLoaRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeConnectionLoaRequest, DescribeConnectionLoaResult> asyncHandler);
+
+    /**
+     * <p>
      * Displays all connections in this region.
      * </p>
      * <p>
@@ -806,6 +860,58 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
     java.util.concurrent.Future<DescribeConnectionsOnInterconnectResult> describeConnectionsOnInterconnectAsync(
             DescribeConnectionsOnInterconnectRequest describeConnectionsOnInterconnectRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeConnectionsOnInterconnectRequest, DescribeConnectionsOnInterconnectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the LOA-CFA for an Interconnect.
+     * </p>
+     * <p>
+     * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is
+     * a document that is used when establishing your cross connect to AWS at
+     * the colocation facility. For more information, see <a href=
+     * "http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html"
+     * >Requesting Cross Connects at AWS Direct Connect Locations</a> in the AWS
+     * Direct Connect user guide.
+     * </p>
+     * 
+     * @param describeInterconnectLoaRequest
+     *        Container for the parameters to the DescribeInterconnectLoa
+     *        operation.
+     * @return A Java Future containing the result of the
+     *         DescribeInterconnectLoa operation returned by the service.
+     * @sample AmazonDirectConnectAsync.DescribeInterconnectLoa
+     */
+    java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(
+            DescribeInterconnectLoaRequest describeInterconnectLoaRequest);
+
+    /**
+     * <p>
+     * Returns the LOA-CFA for an Interconnect.
+     * </p>
+     * <p>
+     * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is
+     * a document that is used when establishing your cross connect to AWS at
+     * the colocation facility. For more information, see <a href=
+     * "http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html"
+     * >Requesting Cross Connects at AWS Direct Connect Locations</a> in the AWS
+     * Direct Connect user guide.
+     * </p>
+     * 
+     * @param describeInterconnectLoaRequest
+     *        Container for the parameters to the DescribeInterconnectLoa
+     *        operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeInterconnectLoa operation returned by the service.
+     * @sample AmazonDirectConnectAsyncHandler.DescribeInterconnectLoa
+     */
+    java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(
+            DescribeInterconnectLoaRequest describeInterconnectLoaRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInterconnectLoaRequest, DescribeInterconnectLoaResult> asyncHandler);
 
     /**
      * <p>

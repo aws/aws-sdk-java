@@ -1820,6 +1820,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeIdentityIdFormatResult> describeIdentityIdFormatAsync(
+            DescribeIdentityIdFormatRequest request) {
+
+        return describeIdentityIdFormatAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIdentityIdFormatResult> describeIdentityIdFormatAsync(
+            DescribeIdentityIdFormatRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeIdentityIdFormatRequest, DescribeIdentityIdFormatResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeImageAttributeResult> describeImageAttributeAsync(
             DescribeImageAttributeRequest request) {
 
@@ -3844,6 +3859,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     public java.util.concurrent.Future<ModifyIdFormatResult> modifyIdFormatAsync(
             ModifyIdFormatRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyIdFormatRequest, ModifyIdFormatResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyIdentityIdFormatResult> modifyIdentityIdFormatAsync(
+            ModifyIdentityIdFormatRequest request) {
+
+        return modifyIdentityIdFormatAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyIdentityIdFormatResult> modifyIdentityIdFormatAsync(
+            ModifyIdentityIdFormatRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyIdentityIdFormatRequest, ModifyIdentityIdFormatResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

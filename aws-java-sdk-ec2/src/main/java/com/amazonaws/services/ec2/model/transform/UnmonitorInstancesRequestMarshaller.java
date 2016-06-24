@@ -48,7 +48,7 @@ public class UnmonitorInstancesRequestMarshaller
         Request<UnmonitorInstancesRequest> request = new DefaultRequest<UnmonitorInstancesRequest>(
                 unmonitorInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "UnmonitorInstances");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) unmonitorInstancesRequest

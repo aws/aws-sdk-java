@@ -48,7 +48,7 @@ public class ReportInstanceStatusRequestMarshaller
         Request<ReportInstanceStatusRequest> request = new DefaultRequest<ReportInstanceStatusRequest>(
                 reportInstanceStatusRequest, "AmazonEC2");
         request.addParameter("Action", "ReportInstanceStatus");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> instancesList = (com.amazonaws.internal.SdkInternalList<String>) reportInstanceStatusRequest

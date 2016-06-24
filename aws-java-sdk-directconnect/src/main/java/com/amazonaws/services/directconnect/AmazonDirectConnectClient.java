@@ -1081,6 +1081,70 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Returns the LOA-CFA for a Connection.
+     * </p>
+     * <p>
+     * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is
+     * a document that your APN partner or service provider uses when
+     * establishing your cross connect to AWS at the colocation facility. For
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html"
+     * >Requesting Cross Connects at AWS Direct Connect Locations</a> in the AWS
+     * Direct Connect user guide.
+     * </p>
+     * 
+     * @param describeConnectionLoaRequest
+     *        Container for the parameters to the DescribeConnectionLoa
+     *        operation.
+     * @return Result of the DescribeConnectionLoa operation returned by the
+     *         service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred during the API call. The error
+     *         message will contain additional details about the cause.
+     * @throws DirectConnectClientException
+     *         The API was called with invalid parameters. The error message
+     *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DescribeConnectionLoa
+     */
+    @Override
+    public DescribeConnectionLoaResult describeConnectionLoa(
+            DescribeConnectionLoaRequest describeConnectionLoaRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeConnectionLoaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeConnectionLoaRequest> request = null;
+        Response<DescribeConnectionLoaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeConnectionLoaRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeConnectionLoaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeConnectionLoaResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeConnectionLoaResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Displays all connections in this region.
      * </p>
      * <p>
@@ -1194,6 +1258,69 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                             new JsonOperationMetadata().withPayloadJson(true)
                                     .withHasStreamingSuccessResponse(false),
                             new DescribeConnectionsOnInterconnectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the LOA-CFA for an Interconnect.
+     * </p>
+     * <p>
+     * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is
+     * a document that is used when establishing your cross connect to AWS at
+     * the colocation facility. For more information, see <a href=
+     * "http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html"
+     * >Requesting Cross Connects at AWS Direct Connect Locations</a> in the AWS
+     * Direct Connect user guide.
+     * </p>
+     * 
+     * @param describeInterconnectLoaRequest
+     *        Container for the parameters to the DescribeInterconnectLoa
+     *        operation.
+     * @return Result of the DescribeInterconnectLoa operation returned by the
+     *         service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred during the API call. The error
+     *         message will contain additional details about the cause.
+     * @throws DirectConnectClientException
+     *         The API was called with invalid parameters. The error message
+     *         will contain additional details about the cause.
+     * @sample AmazonDirectConnect.DescribeInterconnectLoa
+     */
+    @Override
+    public DescribeInterconnectLoaResult describeInterconnectLoa(
+            DescribeInterconnectLoaRequest describeInterconnectLoaRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeInterconnectLoaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInterconnectLoaRequest> request = null;
+        Response<DescribeInterconnectLoaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInterconnectLoaRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeInterconnectLoaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInterconnectLoaResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeInterconnectLoaResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

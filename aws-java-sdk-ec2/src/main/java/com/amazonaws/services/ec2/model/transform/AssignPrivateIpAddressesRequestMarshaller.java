@@ -48,7 +48,7 @@ public class AssignPrivateIpAddressesRequestMarshaller
         Request<AssignPrivateIpAddressesRequest> request = new DefaultRequest<AssignPrivateIpAddressesRequest>(
                 assignPrivateIpAddressesRequest, "AmazonEC2");
         request.addParameter("Action", "AssignPrivateIpAddresses");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (assignPrivateIpAddressesRequest.getNetworkInterfaceId() != null) {

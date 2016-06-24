@@ -47,7 +47,7 @@ public class CreateImageRequestMarshaller implements
         Request<CreateImageRequest> request = new DefaultRequest<CreateImageRequest>(
                 createImageRequest, "AmazonEC2");
         request.addParameter("Action", "CreateImage");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createImageRequest.getInstanceId() != null) {

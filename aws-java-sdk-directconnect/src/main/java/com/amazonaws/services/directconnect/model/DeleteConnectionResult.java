@@ -64,6 +64,13 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      * </p>
      */
     private String partnerName;
+    /**
+     * <p>
+     * The time of the most recent call to DescribeConnectionLoa for this
+     * Connection.
+     * </p>
+     */
+    private java.util.Date loaIssueTime;
 
     /**
      * <p>
@@ -421,6 +428,53 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time of the most recent call to DescribeConnectionLoa for this
+     * Connection.
+     * </p>
+     * 
+     * @param loaIssueTime
+     *        The time of the most recent call to DescribeConnectionLoa for this
+     *        Connection.
+     */
+
+    public void setLoaIssueTime(java.util.Date loaIssueTime) {
+        this.loaIssueTime = loaIssueTime;
+    }
+
+    /**
+     * <p>
+     * The time of the most recent call to DescribeConnectionLoa for this
+     * Connection.
+     * </p>
+     * 
+     * @return The time of the most recent call to DescribeConnectionLoa for
+     *         this Connection.
+     */
+
+    public java.util.Date getLoaIssueTime() {
+        return this.loaIssueTime;
+    }
+
+    /**
+     * <p>
+     * The time of the most recent call to DescribeConnectionLoa for this
+     * Connection.
+     * </p>
+     * 
+     * @param loaIssueTime
+     *        The time of the most recent call to DescribeConnectionLoa for this
+     *        Connection.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DeleteConnectionResult withLoaIssueTime(java.util.Date loaIssueTime) {
+        setLoaIssueTime(loaIssueTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -449,7 +503,9 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
         if (getVlan() != null)
             sb.append("Vlan: " + getVlan() + ",");
         if (getPartnerName() != null)
-            sb.append("PartnerName: " + getPartnerName());
+            sb.append("PartnerName: " + getPartnerName() + ",");
+        if (getLoaIssueTime() != null)
+            sb.append("LoaIssueTime: " + getLoaIssueTime());
         sb.append("}");
         return sb.toString();
     }
@@ -511,6 +567,11 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
         if (other.getPartnerName() != null
                 && other.getPartnerName().equals(this.getPartnerName()) == false)
             return false;
+        if (other.getLoaIssueTime() == null ^ this.getLoaIssueTime() == null)
+            return false;
+        if (other.getLoaIssueTime() != null
+                && other.getLoaIssueTime().equals(this.getLoaIssueTime()) == false)
+            return false;
         return true;
     }
 
@@ -546,6 +607,10 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getPartnerName() == null) ? 0 : getPartnerName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLoaIssueTime() == null) ? 0 : getLoaIssueTime()
+                        .hashCode());
         return hashCode;
     }
 

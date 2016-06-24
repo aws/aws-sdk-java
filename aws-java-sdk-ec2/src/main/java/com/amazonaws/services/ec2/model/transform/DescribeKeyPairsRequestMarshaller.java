@@ -47,7 +47,7 @@ public class DescribeKeyPairsRequestMarshaller implements
         Request<DescribeKeyPairsRequest> request = new DefaultRequest<DescribeKeyPairsRequest>(
                 describeKeyPairsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeKeyPairs");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> keyNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeKeyPairsRequest

@@ -48,7 +48,7 @@ public class DescribeRouteTablesRequestMarshaller
         Request<DescribeRouteTablesRequest> request = new DefaultRequest<DescribeRouteTablesRequest>(
                 describeRouteTablesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeRouteTables");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> routeTableIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeRouteTablesRequest

@@ -42,7 +42,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     * ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$*
+     * ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      */
     private String groupName;
@@ -58,7 +58,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     * ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$*
+     * ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      */
     private String description;
@@ -92,7 +92,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     *        ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$*
+     *        ._-:/()#,@[]+=&amp;;{}!$*
      * @param description
      *        A description for the security group. This is informational only.
      *        </p>
@@ -104,7 +104,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     *        ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$
+     *        ._-:/()#,@[]+=&amp;;{}!$
      **/
     public CreateSecurityGroupRequest(String groupName, String description) {
         setGroupName(groupName);
@@ -123,7 +123,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     * ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$*
+     * ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
      * @param groupName
@@ -136,7 +136,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     *        ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$
+     *        ._-:/()#,@[]+=&amp;;{}!$
      **/
 
     public void setGroupName(String groupName) {
@@ -155,7 +155,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     * ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$*
+     * ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
      * @return The name of the security group.</p>
@@ -167,7 +167,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      *         </p>
      *         <p>
      *         Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     *         ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$
+     *         ._-:/()#,@[]+=&amp;;{}!$
      **/
 
     public String getGroupName() {
@@ -186,7 +186,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     * ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$*
+     * ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
      * @param groupName
@@ -199,7 +199,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     *        ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$*
+     *        ._-:/()#,@[]+=&amp;;{}!$*
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -221,7 +221,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     * ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$*
+     * ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
      * @param description
@@ -235,7 +235,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     *        ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$
+     *        ._-:/()#,@[]+=&amp;;{}!$
      **/
 
     public void setDescription(String description) {
@@ -254,7 +254,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     * ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$*
+     * ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
      * @return A description for the security group. This is informational
@@ -267,7 +267,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      *         </p>
      *         <p>
      *         Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     *         ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$
+     *         ._-:/()#,@[]+=&amp;;{}!$
      **/
 
     public String getDescription() {
@@ -286,7 +286,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     * ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$*
+     * ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
      * @param description
@@ -300,7 +300,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
-     *        ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$*
+     *        ._-:/()#,@[]+=&amp;;{}!$*
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

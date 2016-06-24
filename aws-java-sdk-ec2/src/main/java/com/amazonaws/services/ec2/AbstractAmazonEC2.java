@@ -638,6 +638,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeIdentityIdFormatResult describeIdentityIdFormat(
+            DescribeIdentityIdFormatRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeImageAttributeResult describeImageAttribute(
             DescribeImageAttributeRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -1241,6 +1247,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ModifyIdFormatResult modifyIdFormat(ModifyIdFormatRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyIdentityIdFormatResult modifyIdentityIdFormat(
+            ModifyIdentityIdFormatRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

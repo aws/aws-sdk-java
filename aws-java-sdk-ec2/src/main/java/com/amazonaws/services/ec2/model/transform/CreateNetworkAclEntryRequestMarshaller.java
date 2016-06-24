@@ -48,7 +48,7 @@ public class CreateNetworkAclEntryRequestMarshaller
         Request<CreateNetworkAclEntryRequest> request = new DefaultRequest<CreateNetworkAclEntryRequest>(
                 createNetworkAclEntryRequest, "AmazonEC2");
         request.addParameter("Action", "CreateNetworkAclEntry");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createNetworkAclEntryRequest.getNetworkAclId() != null) {

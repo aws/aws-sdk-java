@@ -48,7 +48,7 @@ public class DescribeSnapshotAttributeRequestMarshaller
         Request<DescribeSnapshotAttributeRequest> request = new DefaultRequest<DescribeSnapshotAttributeRequest>(
                 describeSnapshotAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSnapshotAttribute");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeSnapshotAttributeRequest.getSnapshotId() != null) {

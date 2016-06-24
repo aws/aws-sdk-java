@@ -47,7 +47,7 @@ public class AttachVolumeRequestMarshaller implements
         Request<AttachVolumeRequest> request = new DefaultRequest<AttachVolumeRequest>(
                 attachVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "AttachVolume");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (attachVolumeRequest.getVolumeId() != null) {

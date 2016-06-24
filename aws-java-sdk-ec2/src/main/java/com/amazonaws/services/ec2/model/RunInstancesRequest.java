@@ -103,15 +103,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
      * <p>
-     * Data to configure the instance, or a script to run during instance
-     * launch. For more information, see <a href=
+     * The user data to make available to the instance. For more information,
+     * see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
      * >Running Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). For API calls, the text must be
-     * base64-encoded. For command line tools, the encoding is performed for
-     * you, and you can load the text from a file.
+     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command
+     * line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.
      * </p>
      */
     private String userData;
@@ -859,27 +859,28 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Data to configure the instance, or a script to run during instance
-     * launch. For more information, see <a href=
+     * The user data to make available to the instance. For more information,
+     * see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
      * >Running Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). For API calls, the text must be
-     * base64-encoded. For command line tools, the encoding is performed for
-     * you, and you can load the text from a file.
+     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command
+     * line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.
      * </p>
      * 
      * @param userData
-     *        Data to configure the instance, or a script to run during instance
-     *        launch. For more information, see <a href=
+     *        The user data to make available to the instance. For more
+     *        information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
      *        >Running Commands on Your Linux Instance at Launch</a> (Linux) and
      *        <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *        >Adding User Data</a> (Windows). For API calls, the text must be
-     *        base64-encoded. For command line tools, the encoding is performed
-     *        for you, and you can load the text from a file.
+     *        >Adding User Data</a> (Windows). If you are using an AWS SDK or
+     *        command line tool, Base64-encoding is performed for you, and you
+     *        can load the text from a file. Otherwise, you must provide
+     *        Base64-encoded text.
      */
 
     public void setUserData(String userData) {
@@ -888,26 +889,27 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Data to configure the instance, or a script to run during instance
-     * launch. For more information, see <a href=
+     * The user data to make available to the instance. For more information,
+     * see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
      * >Running Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). For API calls, the text must be
-     * base64-encoded. For command line tools, the encoding is performed for
-     * you, and you can load the text from a file.
+     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command
+     * line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.
      * </p>
      * 
-     * @return Data to configure the instance, or a script to run during
-     *         instance launch. For more information, see <a href=
+     * @return The user data to make available to the instance. For more
+     *         information, see <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
      *         >Running Commands on Your Linux Instance at Launch</a> (Linux)
      *         and <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *         >Adding User Data</a> (Windows). For API calls, the text must be
-     *         base64-encoded. For command line tools, the encoding is performed
-     *         for you, and you can load the text from a file.
+     *         >Adding User Data</a> (Windows). If you are using an AWS SDK or
+     *         command line tool, Base64-encoding is performed for you, and you
+     *         can load the text from a file. Otherwise, you must provide
+     *         Base64-encoded text.
      */
 
     public String getUserData() {
@@ -916,27 +918,28 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Data to configure the instance, or a script to run during instance
-     * launch. For more information, see <a href=
+     * The user data to make available to the instance. For more information,
+     * see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
      * >Running Commands on Your Linux Instance at Launch</a> (Linux) and <a
      * href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). For API calls, the text must be
-     * base64-encoded. For command line tools, the encoding is performed for
-     * you, and you can load the text from a file.
+     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command
+     * line tool, Base64-encoding is performed for you, and you can load the
+     * text from a file. Otherwise, you must provide Base64-encoded text.
      * </p>
      * 
      * @param userData
-     *        Data to configure the instance, or a script to run during instance
-     *        launch. For more information, see <a href=
+     *        The user data to make available to the instance. For more
+     *        information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html"
      *        >Running Commands on Your Linux Instance at Launch</a> (Linux) and
      *        <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *        >Adding User Data</a> (Windows). For API calls, the text must be
-     *        base64-encoded. For command line tools, the encoding is performed
-     *        for you, and you can load the text from a file.
+     *        >Adding User Data</a> (Windows). If you are using an AWS SDK or
+     *        command line tool, Base64-encoding is performed for you, and you
+     *        can load the text from a file. Otherwise, you must provide
+     *        Base64-encoded text.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -417,9 +417,6 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Constraints: Cannot be specified if the DB instance is a Read Replica.
-     * This parameter cannot be used with SQL Server DB instances. Multi-AZ for
-     * SQL Server DB instances is set using the Mirroring option in an option
-     * group associated with the DB instance.
      * </p>
      */
     private Boolean multiAZ;
@@ -3407,9 +3404,6 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Constraints: Cannot be specified if the DB instance is a Read Replica.
-     * This parameter cannot be used with SQL Server DB instances. Multi-AZ for
-     * SQL Server DB instances is set using the Mirroring option in an option
-     * group associated with the DB instance.
      * </p>
      * 
      * @param multiAZ
@@ -3420,10 +3414,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *        <code>true</code> for this request. </p>
      *        <p>
      *        Constraints: Cannot be specified if the DB instance is a Read
-     *        Replica. This parameter cannot be used with SQL Server DB
-     *        instances. Multi-AZ for SQL Server DB instances is set using the
-     *        Mirroring option in an option group associated with the DB
-     *        instance.
+     *        Replica.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -3439,9 +3430,6 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Constraints: Cannot be specified if the DB instance is a Read Replica.
-     * This parameter cannot be used with SQL Server DB instances. Multi-AZ for
-     * SQL Server DB instances is set using the Mirroring option in an option
-     * group associated with the DB instance.
      * </p>
      * 
      * @return Specifies if the DB instance is a Multi-AZ deployment. Changing
@@ -3451,10 +3439,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *         <code>true</code> for this request. </p>
      *         <p>
      *         Constraints: Cannot be specified if the DB instance is a Read
-     *         Replica. This parameter cannot be used with SQL Server DB
-     *         instances. Multi-AZ for SQL Server DB instances is set using the
-     *         Mirroring option in an option group associated with the DB
-     *         instance.
+     *         Replica.
      */
 
     public Boolean getMultiAZ() {
@@ -3470,9 +3455,6 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Constraints: Cannot be specified if the DB instance is a Read Replica.
-     * This parameter cannot be used with SQL Server DB instances. Multi-AZ for
-     * SQL Server DB instances is set using the Mirroring option in an option
-     * group associated with the DB instance.
      * </p>
      * 
      * @param multiAZ
@@ -3483,10 +3465,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *        <code>true</code> for this request. </p>
      *        <p>
      *        Constraints: Cannot be specified if the DB instance is a Read
-     *        Replica. This parameter cannot be used with SQL Server DB
-     *        instances. Multi-AZ for SQL Server DB instances is set using the
-     *        Mirroring option in an option group associated with the DB
-     *        instance.
+     *        Replica.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -3505,9 +3484,6 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Constraints: Cannot be specified if the DB instance is a Read Replica.
-     * This parameter cannot be used with SQL Server DB instances. Multi-AZ for
-     * SQL Server DB instances is set using the Mirroring option in an option
-     * group associated with the DB instance.
      * </p>
      * 
      * @return Specifies if the DB instance is a Multi-AZ deployment. Changing
@@ -3517,10 +3493,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
      *         <code>true</code> for this request. </p>
      *         <p>
      *         Constraints: Cannot be specified if the DB instance is a Read
-     *         Replica. This parameter cannot be used with SQL Server DB
-     *         instances. Multi-AZ for SQL Server DB instances is set using the
-     *         Mirroring option in an option group associated with the DB
-     *         instance.
+     *         Replica.
      */
 
     public Boolean isMultiAZ() {

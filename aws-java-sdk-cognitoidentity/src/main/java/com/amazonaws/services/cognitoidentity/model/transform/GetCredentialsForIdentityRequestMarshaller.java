@@ -92,6 +92,10 @@ public class GetCredentialsForIdentityRequestMarshaller
                 }
                 jsonGenerator.writeEndObject();
             }
+            if (getCredentialsForIdentityRequest.getCustomRoleArn() != null) {
+                jsonGenerator.writeFieldName("CustomRoleArn").writeValue(
+                        getCredentialsForIdentityRequest.getCustomRoleArn());
+            }
 
             jsonGenerator.writeEndObject();
 

@@ -48,7 +48,7 @@ public class ModifyImageAttributeRequestMarshaller
         Request<ModifyImageAttributeRequest> request = new DefaultRequest<ModifyImageAttributeRequest>(
                 modifyImageAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyImageAttribute");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifyImageAttributeRequest.getImageId() != null) {

@@ -3852,6 +3852,42 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeIdentityIdFormatResult> describeIdentityIdFormatAsync(
+            DescribeIdentityIdFormatRequest request) {
+
+        return describeIdentityIdFormatAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIdentityIdFormatResult> describeIdentityIdFormatAsync(
+            final DescribeIdentityIdFormatRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeIdentityIdFormatRequest, DescribeIdentityIdFormatResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeIdentityIdFormatResult>() {
+                    @Override
+                    public DescribeIdentityIdFormatResult call()
+                            throws Exception {
+                        DescribeIdentityIdFormatResult result;
+
+                        try {
+                            result = describeIdentityIdFormat(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeImageAttributeResult> describeImageAttributeAsync(
             DescribeImageAttributeRequest request) {
 
@@ -7356,6 +7392,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
 
                         try {
                             result = modifyIdFormat(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyIdentityIdFormatResult> modifyIdentityIdFormatAsync(
+            ModifyIdentityIdFormatRequest request) {
+
+        return modifyIdentityIdFormatAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyIdentityIdFormatResult> modifyIdentityIdFormatAsync(
+            final ModifyIdentityIdFormatRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyIdentityIdFormatRequest, ModifyIdentityIdFormatResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ModifyIdentityIdFormatResult>() {
+                    @Override
+                    public ModifyIdentityIdFormatResult call() throws Exception {
+                        ModifyIdentityIdFormatResult result;
+
+                        try {
+                            result = modifyIdentityIdFormat(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

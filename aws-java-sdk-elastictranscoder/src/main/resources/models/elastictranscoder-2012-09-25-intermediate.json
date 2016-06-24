@@ -4922,10 +4922,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "Preset",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Preset>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Preset>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Preset>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5168,10 +5168,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "Preset",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Preset>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Preset>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Preset>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6018,10 +6018,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "Artwork",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Artwork>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artwork>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artwork>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6159,10 +6159,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "Artwork",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Artwork>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artwork>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artwork>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7352,10 +7352,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "Warning",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Warning>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7546,10 +7546,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "Warning",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Warning>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9195,10 +9195,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "Job",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Job>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9441,10 +9441,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "Job",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Job>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10081,10 +10081,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "Warning",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Warning>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10275,10 +10275,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "Warning",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Warning>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10796,10 +10796,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "Permission",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Permission>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Permission>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Permission>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11043,10 +11043,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "Permission",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Permission>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Permission>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Permission>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11420,10 +11420,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "String",
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12034,10 +12034,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "String",
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12531,10 +12531,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "JobWatermark",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<JobWatermark>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12701,10 +12701,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "Clip",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Clip>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12999,10 +12999,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "JobWatermark",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<JobWatermark>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13542,10 +13542,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "Clip",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Clip>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13726,10 +13726,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "CaptionSource",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<CaptionSource>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionSource>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionSource>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13844,10 +13844,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "CaptionFormat",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<CaptionFormat>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionFormat>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionFormat>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13985,10 +13985,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "CaptionFormat",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<CaptionFormat>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionFormat>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionFormat>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14104,10 +14104,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "CaptionSource",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<CaptionSource>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionSource>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionSource>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15069,10 +15069,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "JobWatermark",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<JobWatermark>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15239,10 +15239,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "Clip",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Clip>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16066,10 +16066,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "JobWatermark",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<JobWatermark>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16609,10 +16609,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "Clip",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Clip>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16794,10 +16794,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "Pipeline",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Pipeline>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Pipeline>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Pipeline>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17040,10 +17040,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "Pipeline",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Pipeline>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Pipeline>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Pipeline>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17578,10 +17578,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "String",
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17829,10 +17829,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "String",
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19345,10 +19345,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "String",
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19749,10 +19749,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "String",
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22202,10 +22202,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "Warning",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Warning>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22396,10 +22396,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "Warning",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Warning>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24241,10 +24241,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "String",
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24435,10 +24435,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "String",
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27408,10 +27408,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "JobOutput",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<JobOutput>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobOutput>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobOutput>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27578,10 +27578,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "Playlist",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Playlist>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Playlist>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Playlist>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27748,12 +27748,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -27995,10 +27995,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "JobOutput",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<JobOutput>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobOutput>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobOutput>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28220,10 +28220,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "Playlist",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Playlist>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Playlist>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Playlist>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28551,12 +28551,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -29298,10 +29298,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "Job",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Job>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29544,10 +29544,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "Job",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Job>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29760,12 +29760,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -30503,10 +30503,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "PresetWatermark",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<PresetWatermark>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PresetWatermark>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PresetWatermark>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31121,10 +31121,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "PresetWatermark",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<PresetWatermark>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PresetWatermark>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PresetWatermark>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31399,12 +31399,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -31741,10 +31741,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "CreateJobOutput",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<CreateJobOutput>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobOutput>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobOutput>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31911,10 +31911,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "CreateJobPlaylist",
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<CreateJobPlaylist>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32029,12 +32029,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -32175,10 +32175,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "CreateJobOutput",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<CreateJobOutput>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobOutput>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobOutput>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32347,10 +32347,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "CreateJobPlaylist",
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<CreateJobPlaylist>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32572,12 +32572,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -32810,10 +32810,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "simpleType" : "String",
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32951,10 +32951,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "simpleType" : "String",
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,

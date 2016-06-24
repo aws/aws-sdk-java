@@ -49,6 +49,13 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
     private String location;
 
     private String bandwidth;
+    /**
+     * <p>
+     * The time of the most recent call to DescribeInterconnectLoa for this
+     * Interconnect.
+     * </p>
+     */
+    private java.util.Date loaIssueTime;
 
     /**
      * @param interconnectId
@@ -239,6 +246,53 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time of the most recent call to DescribeInterconnectLoa for this
+     * Interconnect.
+     * </p>
+     * 
+     * @param loaIssueTime
+     *        The time of the most recent call to DescribeInterconnectLoa for
+     *        this Interconnect.
+     */
+
+    public void setLoaIssueTime(java.util.Date loaIssueTime) {
+        this.loaIssueTime = loaIssueTime;
+    }
+
+    /**
+     * <p>
+     * The time of the most recent call to DescribeInterconnectLoa for this
+     * Interconnect.
+     * </p>
+     * 
+     * @return The time of the most recent call to DescribeInterconnectLoa for
+     *         this Interconnect.
+     */
+
+    public java.util.Date getLoaIssueTime() {
+        return this.loaIssueTime;
+    }
+
+    /**
+     * <p>
+     * The time of the most recent call to DescribeInterconnectLoa for this
+     * Interconnect.
+     * </p>
+     * 
+     * @param loaIssueTime
+     *        The time of the most recent call to DescribeInterconnectLoa for
+     *        this Interconnect.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateInterconnectResult withLoaIssueTime(java.util.Date loaIssueTime) {
+        setLoaIssueTime(loaIssueTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -261,7 +315,9 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
         if (getLocation() != null)
             sb.append("Location: " + getLocation() + ",");
         if (getBandwidth() != null)
-            sb.append("Bandwidth: " + getBandwidth());
+            sb.append("Bandwidth: " + getBandwidth() + ",");
+        if (getLoaIssueTime() != null)
+            sb.append("LoaIssueTime: " + getLoaIssueTime());
         sb.append("}");
         return sb.toString();
     }
@@ -311,6 +367,11 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
         if (other.getBandwidth() != null
                 && other.getBandwidth().equals(this.getBandwidth()) == false)
             return false;
+        if (other.getLoaIssueTime() == null ^ this.getLoaIssueTime() == null)
+            return false;
+        if (other.getLoaIssueTime() != null
+                && other.getLoaIssueTime().equals(this.getLoaIssueTime()) == false)
+            return false;
         return true;
     }
 
@@ -337,6 +398,10 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
                 + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode
                 + ((getBandwidth() == null) ? 0 : getBandwidth().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLoaIssueTime() == null) ? 0 : getLoaIssueTime()
+                        .hashCode());
         return hashCode;
     }
 

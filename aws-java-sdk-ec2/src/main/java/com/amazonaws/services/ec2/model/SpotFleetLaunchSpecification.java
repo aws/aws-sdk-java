@@ -47,7 +47,10 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<GroupIdentifier> securityGroups;
     /**
      * <p>
-     * The Base64-encoded MIME user data to make available to the instances.
+     * The user data to make available to the instances. If you are using an AWS
+     * SDK or command line tool, Base64-encoding is performed for you, and you
+     * can load the text from a file. Otherwise, you must provide Base64-encoded
+     * text.
      * </p>
      */
     private String userData;
@@ -335,12 +338,17 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded MIME user data to make available to the instances.
+     * The user data to make available to the instances. If you are using an AWS
+     * SDK or command line tool, Base64-encoding is performed for you, and you
+     * can load the text from a file. Otherwise, you must provide Base64-encoded
+     * text.
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded MIME user data to make available to the
-     *        instances.
+     *        The user data to make available to the instances. If you are using
+     *        an AWS SDK or command line tool, Base64-encoding is performed for
+     *        you, and you can load the text from a file. Otherwise, you must
+     *        provide Base64-encoded text.
      */
 
     public void setUserData(String userData) {
@@ -349,11 +357,16 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded MIME user data to make available to the instances.
+     * The user data to make available to the instances. If you are using an AWS
+     * SDK or command line tool, Base64-encoding is performed for you, and you
+     * can load the text from a file. Otherwise, you must provide Base64-encoded
+     * text.
      * </p>
      * 
-     * @return The Base64-encoded MIME user data to make available to the
-     *         instances.
+     * @return The user data to make available to the instances. If you are
+     *         using an AWS SDK or command line tool, Base64-encoding is
+     *         performed for you, and you can load the text from a file.
+     *         Otherwise, you must provide Base64-encoded text.
      */
 
     public String getUserData() {
@@ -362,12 +375,17 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded MIME user data to make available to the instances.
+     * The user data to make available to the instances. If you are using an AWS
+     * SDK or command line tool, Base64-encoding is performed for you, and you
+     * can load the text from a file. Otherwise, you must provide Base64-encoded
+     * text.
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded MIME user data to make available to the
-     *        instances.
+     *        The user data to make available to the instances. If you are using
+     *        an AWS SDK or command line tool, Base64-encoding is performed for
+     *        you, and you can load the text from a file. Otherwise, you must
+     *        provide Base64-encoded text.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

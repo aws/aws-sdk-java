@@ -40,6 +40,15 @@ public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest
      * </p>
      */
     private java.util.Map<String, String> logins;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role to be assumed when multiple
+     * roles were received in the token from the identity provider. For example,
+     * a SAML-based identity provider. This parameter is optional for identity
+     * providers that do not support role customization.
+     * </p>
+     */
+    private String customRoleArn;
 
     /**
      * <p>
@@ -153,6 +162,69 @@ public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role to be assumed when multiple
+     * roles were received in the token from the identity provider. For example,
+     * a SAML-based identity provider. This parameter is optional for identity
+     * providers that do not support role customization.
+     * </p>
+     * 
+     * @param customRoleArn
+     *        The Amazon Resource Name (ARN) of the role to be assumed when
+     *        multiple roles were received in the token from the identity
+     *        provider. For example, a SAML-based identity provider. This
+     *        parameter is optional for identity providers that do not support
+     *        role customization.
+     */
+
+    public void setCustomRoleArn(String customRoleArn) {
+        this.customRoleArn = customRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role to be assumed when multiple
+     * roles were received in the token from the identity provider. For example,
+     * a SAML-based identity provider. This parameter is optional for identity
+     * providers that do not support role customization.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the role to be assumed when
+     *         multiple roles were received in the token from the identity
+     *         provider. For example, a SAML-based identity provider. This
+     *         parameter is optional for identity providers that do not support
+     *         role customization.
+     */
+
+    public String getCustomRoleArn() {
+        return this.customRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role to be assumed when multiple
+     * roles were received in the token from the identity provider. For example,
+     * a SAML-based identity provider. This parameter is optional for identity
+     * providers that do not support role customization.
+     * </p>
+     * 
+     * @param customRoleArn
+     *        The Amazon Resource Name (ARN) of the role to be assumed when
+     *        multiple roles were received in the token from the identity
+     *        provider. For example, a SAML-based identity provider. This
+     *        parameter is optional for identity providers that do not support
+     *        role customization.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public GetCredentialsForIdentityRequest withCustomRoleArn(
+            String customRoleArn) {
+        setCustomRoleArn(customRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -167,7 +239,9 @@ public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest
         if (getIdentityId() != null)
             sb.append("IdentityId: " + getIdentityId() + ",");
         if (getLogins() != null)
-            sb.append("Logins: " + getLogins());
+            sb.append("Logins: " + getLogins() + ",");
+        if (getCustomRoleArn() != null)
+            sb.append("CustomRoleArn: " + getCustomRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -192,6 +266,11 @@ public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest
         if (other.getLogins() != null
                 && other.getLogins().equals(this.getLogins()) == false)
             return false;
+        if (other.getCustomRoleArn() == null ^ this.getCustomRoleArn() == null)
+            return false;
+        if (other.getCustomRoleArn() != null
+                && other.getCustomRoleArn().equals(this.getCustomRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -204,6 +283,10 @@ public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest
                 + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode());
         hashCode = prime * hashCode
                 + ((getLogins() == null) ? 0 : getLogins().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCustomRoleArn() == null) ? 0 : getCustomRoleArn()
+                        .hashCode());
         return hashCode;
     }
 

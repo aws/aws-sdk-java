@@ -39,8 +39,9 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list
+     * of available services, use the <a>DescribeVpcEndpointServices</a>
+     * request.
      * </p>
      */
     private String serviceName;
@@ -113,13 +114,14 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list
+     * of available services, use the <a>DescribeVpcEndpointServices</a>
+     * request.
      * </p>
      * 
      * @param serviceName
      *        The AWS service name, in the form
-     *        <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a
+     *        <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a
      *        list of available services, use the
      *        <a>DescribeVpcEndpointServices</a> request.
      */
@@ -131,13 +133,14 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list
+     * of available services, use the <a>DescribeVpcEndpointServices</a>
+     * request.
      * </p>
      * 
      * @return The AWS service name, in the form
-     *         <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a
-     *         list of available services, use the
+     *         <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get
+     *         a list of available services, use the
      *         <a>DescribeVpcEndpointServices</a> request.
      */
 
@@ -148,13 +151,14 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The AWS service name, in the form
-     * <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.
+     * <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list
+     * of available services, use the <a>DescribeVpcEndpointServices</a>
+     * request.
      * </p>
      * 
      * @param serviceName
      *        The AWS service name, in the form
-     *        <code>com.amazonaws.<i>region</i>.<i>service</i></code>. To get a
+     *        <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a
      *        list of available services, use the
      *        <a>DescribeVpcEndpointServices</a> request.
      * @return Returns a reference to this object so that method calls can be

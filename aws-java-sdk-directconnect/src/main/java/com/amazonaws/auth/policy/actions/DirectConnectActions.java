@@ -57,11 +57,15 @@ public enum DirectConnectActions implements Action {
     DeleteInterconnect("directconnect:DeleteInterconnect"),
     /** Action for the DeleteVirtualInterface operation. */
     DeleteVirtualInterface("directconnect:DeleteVirtualInterface"),
+    /** Action for the DescribeConnectionLoa operation. */
+    DescribeConnectionLoa("directconnect:DescribeConnectionLoa"),
     /** Action for the DescribeConnections operation. */
     DescribeConnections("directconnect:DescribeConnections"),
     /** Action for the DescribeConnectionsOnInterconnect operation. */
     DescribeConnectionsOnInterconnect(
             "directconnect:DescribeConnectionsOnInterconnect"),
+    /** Action for the DescribeInterconnectLoa operation. */
+    DescribeInterconnectLoa("directconnect:DescribeInterconnectLoa"),
     /** Action for the DescribeInterconnects operation. */
     DescribeInterconnects("directconnect:DescribeInterconnects"),
     /** Action for the DescribeLocations operation. */

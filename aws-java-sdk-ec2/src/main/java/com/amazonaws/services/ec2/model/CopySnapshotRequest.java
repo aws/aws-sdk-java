@@ -88,12 +88,12 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
     private String presignedUrl;
     /**
      * <p>
-     * Specifies whether the destination snapshot should be encrypted. There is
-     * no way to create an unencrypted snapshot copy from an encrypted snapshot;
-     * however, you can encrypt a copy of an unencrypted snapshot with this
-     * flag. The default CMK for EBS is used unless a non-default AWS Key
-     * Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>.
-     * For more information, see <a href=
+     * Specifies whether the destination snapshot should be encrypted. You can
+     * encrypt a copy of an unencrypted snapshot using this flag, but you cannot
+     * use it to create an unencrypted copy from an encrypted snapshot. Your
+     * default CMK for EBS is used unless a non-default AWS Key Management
+     * Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
      * >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
@@ -490,12 +490,12 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the destination snapshot should be encrypted. There is
-     * no way to create an unencrypted snapshot copy from an encrypted snapshot;
-     * however, you can encrypt a copy of an unencrypted snapshot with this
-     * flag. The default CMK for EBS is used unless a non-default AWS Key
-     * Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>.
-     * For more information, see <a href=
+     * Specifies whether the destination snapshot should be encrypted. You can
+     * encrypt a copy of an unencrypted snapshot using this flag, but you cannot
+     * use it to create an unencrypted copy from an encrypted snapshot. Your
+     * default CMK for EBS is used unless a non-default AWS Key Management
+     * Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
      * >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
@@ -503,12 +503,11 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * 
      * @param encrypted
      *        Specifies whether the destination snapshot should be encrypted.
-     *        There is no way to create an unencrypted snapshot copy from an
-     *        encrypted snapshot; however, you can encrypt a copy of an
-     *        unencrypted snapshot with this flag. The default CMK for EBS is
-     *        used unless a non-default AWS Key Management Service (AWS KMS) CMK
-     *        is specified with <code>KmsKeyId</code>. For more information, see
-     *        <a href=
+     *        You can encrypt a copy of an unencrypted snapshot using this flag,
+     *        but you cannot use it to create an unencrypted copy from an
+     *        encrypted snapshot. Your default CMK for EBS is used unless a
+     *        non-default AWS Key Management Service (AWS KMS) CMK is specified
+     *        with <code>KmsKeyId</code>. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
      *        >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *        User Guide</i>.
@@ -520,24 +519,23 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the destination snapshot should be encrypted. There is
-     * no way to create an unencrypted snapshot copy from an encrypted snapshot;
-     * however, you can encrypt a copy of an unencrypted snapshot with this
-     * flag. The default CMK for EBS is used unless a non-default AWS Key
-     * Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>.
-     * For more information, see <a href=
+     * Specifies whether the destination snapshot should be encrypted. You can
+     * encrypt a copy of an unencrypted snapshot using this flag, but you cannot
+     * use it to create an unencrypted copy from an encrypted snapshot. Your
+     * default CMK for EBS is used unless a non-default AWS Key Management
+     * Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
      * >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
      * 
      * @return Specifies whether the destination snapshot should be encrypted.
-     *         There is no way to create an unencrypted snapshot copy from an
-     *         encrypted snapshot; however, you can encrypt a copy of an
-     *         unencrypted snapshot with this flag. The default CMK for EBS is
-     *         used unless a non-default AWS Key Management Service (AWS KMS)
-     *         CMK is specified with <code>KmsKeyId</code>. For more
-     *         information, see <a href=
+     *         You can encrypt a copy of an unencrypted snapshot using this
+     *         flag, but you cannot use it to create an unencrypted copy from an
+     *         encrypted snapshot. Your default CMK for EBS is used unless a
+     *         non-default AWS Key Management Service (AWS KMS) CMK is specified
+     *         with <code>KmsKeyId</code>. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
      *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *         User Guide</i>.
@@ -549,12 +547,12 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the destination snapshot should be encrypted. There is
-     * no way to create an unencrypted snapshot copy from an encrypted snapshot;
-     * however, you can encrypt a copy of an unencrypted snapshot with this
-     * flag. The default CMK for EBS is used unless a non-default AWS Key
-     * Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>.
-     * For more information, see <a href=
+     * Specifies whether the destination snapshot should be encrypted. You can
+     * encrypt a copy of an unencrypted snapshot using this flag, but you cannot
+     * use it to create an unencrypted copy from an encrypted snapshot. Your
+     * default CMK for EBS is used unless a non-default AWS Key Management
+     * Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
      * >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
@@ -562,12 +560,11 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * 
      * @param encrypted
      *        Specifies whether the destination snapshot should be encrypted.
-     *        There is no way to create an unencrypted snapshot copy from an
-     *        encrypted snapshot; however, you can encrypt a copy of an
-     *        unencrypted snapshot with this flag. The default CMK for EBS is
-     *        used unless a non-default AWS Key Management Service (AWS KMS) CMK
-     *        is specified with <code>KmsKeyId</code>. For more information, see
-     *        <a href=
+     *        You can encrypt a copy of an unencrypted snapshot using this flag,
+     *        but you cannot use it to create an unencrypted copy from an
+     *        encrypted snapshot. Your default CMK for EBS is used unless a
+     *        non-default AWS Key Management Service (AWS KMS) CMK is specified
+     *        with <code>KmsKeyId</code>. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
      *        >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *        User Guide</i>.
@@ -582,24 +579,23 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the destination snapshot should be encrypted. There is
-     * no way to create an unencrypted snapshot copy from an encrypted snapshot;
-     * however, you can encrypt a copy of an unencrypted snapshot with this
-     * flag. The default CMK for EBS is used unless a non-default AWS Key
-     * Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>.
-     * For more information, see <a href=
+     * Specifies whether the destination snapshot should be encrypted. You can
+     * encrypt a copy of an unencrypted snapshot using this flag, but you cannot
+     * use it to create an unencrypted copy from an encrypted snapshot. Your
+     * default CMK for EBS is used unless a non-default AWS Key Management
+     * Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
      * >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
      * 
      * @return Specifies whether the destination snapshot should be encrypted.
-     *         There is no way to create an unencrypted snapshot copy from an
-     *         encrypted snapshot; however, you can encrypt a copy of an
-     *         unencrypted snapshot with this flag. The default CMK for EBS is
-     *         used unless a non-default AWS Key Management Service (AWS KMS)
-     *         CMK is specified with <code>KmsKeyId</code>. For more
-     *         information, see <a href=
+     *         You can encrypt a copy of an unencrypted snapshot using this
+     *         flag, but you cannot use it to create an unencrypted copy from an
+     *         encrypted snapshot. Your default CMK for EBS is used unless a
+     *         non-default AWS Key Management Service (AWS KMS) CMK is specified
+     *         with <code>KmsKeyId</code>. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html"
      *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *         User Guide</i>.

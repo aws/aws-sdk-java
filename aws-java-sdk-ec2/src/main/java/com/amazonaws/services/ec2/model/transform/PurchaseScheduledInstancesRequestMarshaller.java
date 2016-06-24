@@ -48,7 +48,7 @@ public class PurchaseScheduledInstancesRequestMarshaller
         Request<PurchaseScheduledInstancesRequest> request = new DefaultRequest<PurchaseScheduledInstancesRequest>(
                 purchaseScheduledInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "PurchaseScheduledInstances");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         request.addParameter("ClientToken", IdempotentUtils

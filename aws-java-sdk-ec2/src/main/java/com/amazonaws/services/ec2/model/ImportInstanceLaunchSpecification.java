@@ -52,7 +52,10 @@ public class ImportInstanceLaunchSpecification implements Serializable,
     private String additionalInfo;
     /**
      * <p>
-     * The Base64-encoded MIME user data to be made available to the instance.
+     * The user data to make available to the instance. If you are using an AWS
+     * SDK or command line tool, Base64-encoding is performed for you, and you
+     * can load the text from a file. Otherwise, you must provide Base64-encoded
+     * text.
      * </p>
      */
     private UserData userData;
@@ -380,12 +383,17 @@ public class ImportInstanceLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * The Base64-encoded MIME user data to be made available to the instance.
+     * The user data to make available to the instance. If you are using an AWS
+     * SDK or command line tool, Base64-encoding is performed for you, and you
+     * can load the text from a file. Otherwise, you must provide Base64-encoded
+     * text.
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded MIME user data to be made available to the
-     *        instance.
+     *        The user data to make available to the instance. If you are using
+     *        an AWS SDK or command line tool, Base64-encoding is performed for
+     *        you, and you can load the text from a file. Otherwise, you must
+     *        provide Base64-encoded text.
      */
 
     public void setUserData(UserData userData) {
@@ -394,11 +402,16 @@ public class ImportInstanceLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * The Base64-encoded MIME user data to be made available to the instance.
+     * The user data to make available to the instance. If you are using an AWS
+     * SDK or command line tool, Base64-encoding is performed for you, and you
+     * can load the text from a file. Otherwise, you must provide Base64-encoded
+     * text.
      * </p>
      * 
-     * @return The Base64-encoded MIME user data to be made available to the
-     *         instance.
+     * @return The user data to make available to the instance. If you are using
+     *         an AWS SDK or command line tool, Base64-encoding is performed for
+     *         you, and you can load the text from a file. Otherwise, you must
+     *         provide Base64-encoded text.
      */
 
     public UserData getUserData() {
@@ -407,12 +420,17 @@ public class ImportInstanceLaunchSpecification implements Serializable,
 
     /**
      * <p>
-     * The Base64-encoded MIME user data to be made available to the instance.
+     * The user data to make available to the instance. If you are using an AWS
+     * SDK or command line tool, Base64-encoding is performed for you, and you
+     * can load the text from a file. Otherwise, you must provide Base64-encoded
+     * text.
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded MIME user data to be made available to the
-     *        instance.
+     *        The user data to make available to the instance. If you are using
+     *        an AWS SDK or command line tool, Base64-encoding is performed for
+     *        you, and you can load the text from a file. Otherwise, you must
+     *        provide Base64-encoded text.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

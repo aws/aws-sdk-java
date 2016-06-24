@@ -47,7 +47,7 @@ public class ReleaseAddressRequestMarshaller implements
         Request<ReleaseAddressRequest> request = new DefaultRequest<ReleaseAddressRequest>(
                 releaseAddressRequest, "AmazonEC2");
         request.addParameter("Action", "ReleaseAddress");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (releaseAddressRequest.getPublicIp() != null) {

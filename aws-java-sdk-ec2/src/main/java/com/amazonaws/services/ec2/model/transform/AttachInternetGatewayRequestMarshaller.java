@@ -48,7 +48,7 @@ public class AttachInternetGatewayRequestMarshaller
         Request<AttachInternetGatewayRequest> request = new DefaultRequest<AttachInternetGatewayRequest>(
                 attachInternetGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "AttachInternetGateway");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (attachInternetGatewayRequest.getInternetGatewayId() != null) {

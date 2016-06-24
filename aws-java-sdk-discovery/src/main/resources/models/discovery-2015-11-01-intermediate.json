@@ -63,9 +63,9 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateTagsResult",
       "asyncReturnType" : "CreateTagsResult",
-      "authenticated" : true,
       "asyncFutureType" : "java.util.concurrent.Future<CreateTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult>",
@@ -105,9 +105,9 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteTagsResult",
       "asyncReturnType" : "DeleteTagsResult",
-      "authenticated" : true,
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult>",
@@ -144,9 +144,9 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeAgentsResult",
       "asyncReturnType" : "DescribeAgentsResult",
-      "authenticated" : true,
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAgentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAgentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAgentsRequest, DescribeAgentsResult>",
@@ -183,9 +183,9 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeConfigurationsResult",
       "asyncReturnType" : "DescribeConfigurationsResult",
-      "authenticated" : true,
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigurationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationsRequest, DescribeConfigurationsResult>",
@@ -225,9 +225,9 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeExportConfigurationsResult",
       "asyncReturnType" : "DescribeExportConfigurationsResult",
-      "authenticated" : true,
       "asyncFutureType" : "java.util.concurrent.Future<DescribeExportConfigurationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeExportConfigurationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeExportConfigurationsRequest, DescribeExportConfigurationsResult>",
@@ -267,9 +267,9 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeTagsResult",
       "asyncReturnType" : "DescribeTagsResult",
-      "authenticated" : true,
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult>",
@@ -309,9 +309,9 @@
         "documentation" : "<p>This operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ExportConfigurationsResult",
       "asyncReturnType" : "ExportConfigurationsResult",
-      "authenticated" : true,
       "asyncFutureType" : "java.util.concurrent.Future<ExportConfigurationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ExportConfigurationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ExportConfigurationsRequest, ExportConfigurationsResult>",
@@ -351,9 +351,9 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListConfigurationsResult",
       "asyncReturnType" : "ListConfigurationsResult",
-      "authenticated" : true,
       "asyncFutureType" : "java.util.concurrent.Future<ListConfigurationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListConfigurationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListConfigurationsRequest, ListConfigurationsResult>",
@@ -390,9 +390,9 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "StartDataCollectionByAgentIdsResult",
       "asyncReturnType" : "StartDataCollectionByAgentIdsResult",
-      "authenticated" : true,
       "asyncFutureType" : "java.util.concurrent.Future<StartDataCollectionByAgentIdsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartDataCollectionByAgentIdsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartDataCollectionByAgentIdsRequest, StartDataCollectionByAgentIdsResult>",
@@ -429,9 +429,9 @@
         "documentation" : "<p>The server experienced an internal error. Try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "StopDataCollectionByAgentIdsResult",
       "asyncReturnType" : "StopDataCollectionByAgentIdsResult",
-      "authenticated" : true,
       "asyncFutureType" : "java.util.concurrent.Future<StopDataCollectionByAgentIdsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StopDataCollectionByAgentIdsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopDataCollectionByAgentIdsRequest, StopDataCollectionByAgentIdsResult>",
@@ -799,9 +799,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "TagFilter",
+          "map" : false,
           "templateType" : "java.util.List<TagFilter>",
-          "templateImplType" : "java.util.ArrayList<TagFilter>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1048,9 +1048,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "TagFilter",
+            "map" : false,
             "templateType" : "java.util.List<TagFilter>",
-            "templateImplType" : "java.util.ArrayList<TagFilter>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1286,9 +1286,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "ConfigurationTag",
+          "map" : false,
           "templateType" : "java.util.List<ConfigurationTag>",
-          "templateImplType" : "java.util.ArrayList<ConfigurationTag>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<ConfigurationTag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1532,9 +1532,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "ConfigurationTag",
+            "map" : false,
             "templateType" : "java.util.List<ConfigurationTag>",
-            "templateImplType" : "java.util.ArrayList<ConfigurationTag>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<ConfigurationTag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1716,9 +1716,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1857,9 +1857,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2153,9 +2153,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2298,9 +2298,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2430,9 +2430,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "AgentConfigurationStatus",
+          "map" : false,
           "templateType" : "java.util.List<AgentConfigurationStatus>",
-          "templateImplType" : "java.util.ArrayList<AgentConfigurationStatus>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<AgentConfigurationStatus>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2571,9 +2571,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "AgentConfigurationStatus",
+            "map" : false,
             "templateType" : "java.util.List<AgentConfigurationStatus>",
-            "templateImplType" : "java.util.ArrayList<AgentConfigurationStatus>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<AgentConfigurationStatus>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2938,9 +2938,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3083,9 +3083,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3267,9 +3267,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Filter",
+          "map" : false,
           "templateType" : "java.util.List<Filter>",
-          "templateImplType" : "java.util.ArrayList<Filter>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<Filter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3569,9 +3569,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Filter",
+            "map" : false,
             "templateType" : "java.util.List<Filter>",
-            "templateImplType" : "java.util.ArrayList<Filter>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<Filter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3807,9 +3807,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "AgentConfigurationStatus",
+          "map" : false,
           "templateType" : "java.util.List<AgentConfigurationStatus>",
-          "templateImplType" : "java.util.ArrayList<AgentConfigurationStatus>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<AgentConfigurationStatus>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3948,9 +3948,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "AgentConfigurationStatus",
+            "map" : false,
             "templateType" : "java.util.List<AgentConfigurationStatus>",
-            "templateImplType" : "java.util.ArrayList<AgentConfigurationStatus>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<AgentConfigurationStatus>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4211,9 +4211,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Map<String,String>",
+          "map" : true,
           "templateType" : "java.util.List<java.util.Map<String,String>>",
-          "templateImplType" : "java.util.ArrayList<java.util.Map<String,String>>",
-          "map" : true
+          "templateImplType" : "java.util.ArrayList<java.util.Map<String,String>>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4524,9 +4524,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Map<String,String>",
+            "map" : true,
             "templateType" : "java.util.List<java.util.Map<String,String>>",
-            "templateImplType" : "java.util.ArrayList<java.util.Map<String,String>>",
-            "map" : true
+            "templateImplType" : "java.util.ArrayList<java.util.Map<String,String>>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5358,9 +5358,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5713,9 +5713,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5845,9 +5845,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5963,9 +5963,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Tag",
+          "map" : false,
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6108,9 +6108,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Tag",
+            "map" : false,
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6227,9 +6227,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6359,9 +6359,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6714,9 +6714,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6846,9 +6846,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "ExportInfo",
+          "map" : false,
           "templateType" : "java.util.List<ExportInfo>",
-          "templateImplType" : "java.util.ArrayList<ExportInfo>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<ExportInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7092,9 +7092,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "ExportInfo",
+            "map" : false,
             "templateType" : "java.util.List<ExportInfo>",
-            "templateImplType" : "java.util.ArrayList<ExportInfo>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<ExportInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7291,9 +7291,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Map<String,String>",
+          "map" : true,
           "templateType" : "java.util.List<java.util.Map<String,String>>",
-          "templateImplType" : "java.util.ArrayList<java.util.Map<String,String>>",
-          "map" : true
+          "templateImplType" : "java.util.ArrayList<java.util.Map<String,String>>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7499,9 +7499,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Map<String,String>",
+            "map" : true,
             "templateType" : "java.util.List<java.util.Map<String,String>>",
-            "templateImplType" : "java.util.ArrayList<java.util.Map<String,String>>",
-            "map" : true
+            "templateImplType" : "java.util.ArrayList<java.util.Map<String,String>>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7663,9 +7663,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "AgentInfo",
+          "map" : false,
           "templateType" : "java.util.List<AgentInfo>",
-          "templateImplType" : "java.util.ArrayList<AgentInfo>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<AgentInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7856,9 +7856,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "AgentInfo",
+            "map" : false,
             "templateType" : "java.util.List<AgentInfo>",
-            "templateImplType" : "java.util.ArrayList<AgentInfo>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<AgentInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8041,9 +8041,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8159,9 +8159,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "Tag",
+          "map" : false,
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8304,9 +8304,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "Tag",
+            "map" : false,
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8423,9 +8423,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8607,9 +8607,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8853,9 +8853,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10054,9 +10054,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "simpleType" : "AgentNetworkInfo",
+          "map" : false,
           "templateType" : "java.util.List<AgentNetworkInfo>",
-          "templateImplType" : "java.util.ArrayList<AgentNetworkInfo>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<AgentNetworkInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10351,9 +10351,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "simpleType" : "AgentNetworkInfo",
+            "map" : false,
             "templateType" : "java.util.List<AgentNetworkInfo>",
-            "templateImplType" : "java.util.ArrayList<AgentNetworkInfo>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<AgentNetworkInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10748,9 +10748,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "simpleType" : "String",
+          "map" : false,
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "map" : false
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10893,9 +10893,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "simpleType" : "String",
+            "map" : false,
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "map" : false
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,

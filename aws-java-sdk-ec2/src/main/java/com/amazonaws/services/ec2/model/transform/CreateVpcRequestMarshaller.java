@@ -46,7 +46,7 @@ public class CreateVpcRequestMarshaller implements
         Request<CreateVpcRequest> request = new DefaultRequest<CreateVpcRequest>(
                 createVpcRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpc");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createVpcRequest.getCidrBlock() != null) {

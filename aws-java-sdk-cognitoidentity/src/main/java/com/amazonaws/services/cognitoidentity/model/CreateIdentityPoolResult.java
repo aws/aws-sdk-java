@@ -53,10 +53,18 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
     private java.util.List<String> openIdConnectProviderARNs;
     /**
      * <p>
-     * A list representing a Cognito User Identity Pool and its client ID.
+     * A list representing an Amazon Cognito Identity User Pool and its client
+     * ID.
      * </p>
      */
     private java.util.List<CognitoIdentityProvider> cognitoIdentityProviders;
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) of the SAML provider for your
+     * identity pool.
+     * </p>
+     */
+    private java.util.List<String> samlProviderARNs;
 
     /**
      * An identity pool ID in the format REGION:GUID.
@@ -372,11 +380,12 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list representing a Cognito User Identity Pool and its client ID.
+     * A list representing an Amazon Cognito Identity User Pool and its client
+     * ID.
      * </p>
      * 
-     * @return A list representing a Cognito User Identity Pool and its client
-     *         ID.
+     * @return A list representing an Amazon Cognito Identity User Pool and its
+     *         client ID.
      */
 
     public java.util.List<CognitoIdentityProvider> getCognitoIdentityProviders() {
@@ -385,12 +394,13 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list representing a Cognito User Identity Pool and its client ID.
+     * A list representing an Amazon Cognito Identity User Pool and its client
+     * ID.
      * </p>
      * 
      * @param cognitoIdentityProviders
-     *        A list representing a Cognito User Identity Pool and its client
-     *        ID.
+     *        A list representing an Amazon Cognito Identity User Pool and its
+     *        client ID.
      */
 
     public void setCognitoIdentityProviders(
@@ -406,7 +416,8 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list representing a Cognito User Identity Pool and its client ID.
+     * A list representing an Amazon Cognito Identity User Pool and its client
+     * ID.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -416,8 +427,8 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param cognitoIdentityProviders
-     *        A list representing a Cognito User Identity Pool and its client
-     *        ID.
+     *        A list representing an Amazon Cognito Identity User Pool and its
+     *        client ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -436,12 +447,13 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list representing a Cognito User Identity Pool and its client ID.
+     * A list representing an Amazon Cognito Identity User Pool and its client
+     * ID.
      * </p>
      * 
      * @param cognitoIdentityProviders
-     *        A list representing a Cognito User Identity Pool and its client
-     *        ID.
+     *        A list representing an Amazon Cognito Identity User Pool and its
+     *        client ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -449,6 +461,92 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
     public CreateIdentityPoolResult withCognitoIdentityProviders(
             java.util.Collection<CognitoIdentityProvider> cognitoIdentityProviders) {
         setCognitoIdentityProviders(cognitoIdentityProviders);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) of the SAML provider for your
+     * identity pool.
+     * </p>
+     * 
+     * @return An array of Amazon Resource Names (ARNs) of the SAML provider for
+     *         your identity pool.
+     */
+
+    public java.util.List<String> getSamlProviderARNs() {
+        return samlProviderARNs;
+    }
+
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) of the SAML provider for your
+     * identity pool.
+     * </p>
+     * 
+     * @param samlProviderARNs
+     *        An array of Amazon Resource Names (ARNs) of the SAML provider for
+     *        your identity pool.
+     */
+
+    public void setSamlProviderARNs(
+            java.util.Collection<String> samlProviderARNs) {
+        if (samlProviderARNs == null) {
+            this.samlProviderARNs = null;
+            return;
+        }
+
+        this.samlProviderARNs = new java.util.ArrayList<String>(
+                samlProviderARNs);
+    }
+
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) of the SAML provider for your
+     * identity pool.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setSamlProviderARNs(java.util.Collection)} or
+     * {@link #withSamlProviderARNs(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param samlProviderARNs
+     *        An array of Amazon Resource Names (ARNs) of the SAML provider for
+     *        your identity pool.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateIdentityPoolResult withSamlProviderARNs(
+            String... samlProviderARNs) {
+        if (this.samlProviderARNs == null) {
+            setSamlProviderARNs(new java.util.ArrayList<String>(
+                    samlProviderARNs.length));
+        }
+        for (String ele : samlProviderARNs) {
+            this.samlProviderARNs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) of the SAML provider for your
+     * identity pool.
+     * </p>
+     * 
+     * @param samlProviderARNs
+     *        An array of Amazon Resource Names (ARNs) of the SAML provider for
+     *        your identity pool.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateIdentityPoolResult withSamlProviderARNs(
+            java.util.Collection<String> samlProviderARNs) {
+        setSamlProviderARNs(samlProviderARNs);
         return this;
     }
 
@@ -482,7 +580,9 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
                     + getOpenIdConnectProviderARNs() + ",");
         if (getCognitoIdentityProviders() != null)
             sb.append("CognitoIdentityProviders: "
-                    + getCognitoIdentityProviders());
+                    + getCognitoIdentityProviders() + ",");
+        if (getSamlProviderARNs() != null)
+            sb.append("SamlProviderARNs: " + getSamlProviderARNs());
         sb.append("}");
         return sb.toString();
     }
@@ -545,6 +645,13 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
                 && other.getCognitoIdentityProviders().equals(
                         this.getCognitoIdentityProviders()) == false)
             return false;
+        if (other.getSamlProviderARNs() == null
+                ^ this.getSamlProviderARNs() == null)
+            return false;
+        if (other.getSamlProviderARNs() != null
+                && other.getSamlProviderARNs().equals(
+                        this.getSamlProviderARNs()) == false)
+            return false;
         return true;
     }
 
@@ -581,6 +688,10 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
                 * hashCode
                 + ((getCognitoIdentityProviders() == null) ? 0
                         : getCognitoIdentityProviders().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSamlProviderARNs() == null) ? 0 : getSamlProviderARNs()
+                        .hashCode());
         return hashCode;
     }
 

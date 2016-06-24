@@ -48,7 +48,7 @@ public class DeleteInternetGatewayRequestMarshaller
         Request<DeleteInternetGatewayRequest> request = new DefaultRequest<DeleteInternetGatewayRequest>(
                 deleteInternetGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteInternetGateway");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (deleteInternetGatewayRequest.getInternetGatewayId() != null) {

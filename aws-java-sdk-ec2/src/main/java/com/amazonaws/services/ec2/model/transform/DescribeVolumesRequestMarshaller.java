@@ -47,7 +47,7 @@ public class DescribeVolumesRequestMarshaller implements
         Request<DescribeVolumesRequest> request = new DefaultRequest<DescribeVolumesRequest>(
                 describeVolumesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVolumes");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> volumeIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVolumesRequest

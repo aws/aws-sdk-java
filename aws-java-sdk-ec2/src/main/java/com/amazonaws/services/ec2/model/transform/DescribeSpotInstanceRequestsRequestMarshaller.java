@@ -48,7 +48,7 @@ public class DescribeSpotInstanceRequestsRequestMarshaller
         Request<DescribeSpotInstanceRequestsRequest> request = new DefaultRequest<DescribeSpotInstanceRequestsRequest>(
                 describeSpotInstanceRequestsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotInstanceRequests");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> spotInstanceRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotInstanceRequestsRequest

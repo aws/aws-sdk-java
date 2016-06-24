@@ -48,7 +48,7 @@ public class DescribeScheduledInstanceAvailabilityRequestMarshaller
         Request<DescribeScheduledInstanceAvailabilityRequest> request = new DefaultRequest<DescribeScheduledInstanceAvailabilityRequest>(
                 describeScheduledInstanceAvailabilityRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeScheduledInstanceAvailability");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         ScheduledInstanceRecurrenceRequest recurrence = describeScheduledInstanceAvailabilityRequest

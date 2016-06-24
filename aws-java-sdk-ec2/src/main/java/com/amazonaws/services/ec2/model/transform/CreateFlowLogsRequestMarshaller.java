@@ -47,7 +47,7 @@ public class CreateFlowLogsRequestMarshaller implements
         Request<CreateFlowLogsRequest> request = new DefaultRequest<CreateFlowLogsRequest>(
                 createFlowLogsRequest, "AmazonEC2");
         request.addParameter("Action", "CreateFlowLogs");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> resourceIdsList = (com.amazonaws.internal.SdkInternalList<String>) createFlowLogsRequest

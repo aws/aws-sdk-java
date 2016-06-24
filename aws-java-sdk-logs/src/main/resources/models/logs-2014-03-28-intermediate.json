@@ -20,13 +20,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "logs",
     "signingName" : "logs",
+    "xmlProtocol" : false,
+    "jsonProtocol" : true,
     "serviceName" : "Amazon CloudWatch Logs",
     "cborProtocol" : false,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
   },
   "operations" : {
     "CancelExportTask" : {

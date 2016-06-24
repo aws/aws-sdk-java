@@ -71,6 +71,10 @@ public class InterconnectJsonMarshaller {
                 jsonGenerator.writeFieldName("bandwidth").writeValue(
                         interconnect.getBandwidth());
             }
+            if (interconnect.getLoaIssueTime() != null) {
+                jsonGenerator.writeFieldName("loaIssueTime").writeValue(
+                        interconnect.getLoaIssueTime());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

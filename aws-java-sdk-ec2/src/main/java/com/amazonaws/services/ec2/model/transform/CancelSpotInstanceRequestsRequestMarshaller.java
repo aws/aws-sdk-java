@@ -48,7 +48,7 @@ public class CancelSpotInstanceRequestsRequestMarshaller
         Request<CancelSpotInstanceRequestsRequest> request = new DefaultRequest<CancelSpotInstanceRequestsRequest>(
                 cancelSpotInstanceRequestsRequest, "AmazonEC2");
         request.addParameter("Action", "CancelSpotInstanceRequests");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> spotInstanceRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) cancelSpotInstanceRequestsRequest

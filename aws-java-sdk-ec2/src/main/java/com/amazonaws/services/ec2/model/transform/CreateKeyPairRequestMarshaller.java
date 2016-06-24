@@ -47,7 +47,7 @@ public class CreateKeyPairRequestMarshaller implements
         Request<CreateKeyPairRequest> request = new DefaultRequest<CreateKeyPairRequest>(
                 createKeyPairRequest, "AmazonEC2");
         request.addParameter("Action", "CreateKeyPair");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createKeyPairRequest.getKeyName() != null) {

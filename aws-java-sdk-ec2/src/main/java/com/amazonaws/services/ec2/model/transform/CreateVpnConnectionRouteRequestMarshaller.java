@@ -48,7 +48,7 @@ public class CreateVpnConnectionRouteRequestMarshaller
         Request<CreateVpnConnectionRouteRequest> request = new DefaultRequest<CreateVpnConnectionRouteRequest>(
                 createVpnConnectionRouteRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpnConnectionRoute");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createVpnConnectionRouteRequest.getVpnConnectionId() != null) {

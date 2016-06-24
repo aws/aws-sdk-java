@@ -21,12 +21,12 @@
     "endpointPrefix" : "cloudsearch",
     "signingName" : "cloudsearch",
     "jsonProtocol" : false,
+    "xmlProtocol" : true,
     "serviceName" : "Amazon CloudSearch",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller",
-    "xmlProtocol" : true
+    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "BuildSuggesters" : {

@@ -48,7 +48,7 @@ public class CreateSpotDatafeedSubscriptionRequestMarshaller
         Request<CreateSpotDatafeedSubscriptionRequest> request = new DefaultRequest<CreateSpotDatafeedSubscriptionRequest>(
                 createSpotDatafeedSubscriptionRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSpotDatafeedSubscription");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createSpotDatafeedSubscriptionRequest.getBucket() != null) {

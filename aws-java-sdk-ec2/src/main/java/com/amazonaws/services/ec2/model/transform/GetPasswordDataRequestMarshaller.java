@@ -47,7 +47,7 @@ public class GetPasswordDataRequestMarshaller implements
         Request<GetPasswordDataRequest> request = new DefaultRequest<GetPasswordDataRequest>(
                 getPasswordDataRequest, "AmazonEC2");
         request.addParameter("Action", "GetPasswordData");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (getPasswordDataRequest.getInstanceId() != null) {

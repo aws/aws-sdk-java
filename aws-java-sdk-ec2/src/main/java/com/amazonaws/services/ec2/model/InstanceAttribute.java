@@ -51,7 +51,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
     private String ramdiskId;
     /**
      * <p>
-     * The Base64-encoded MIME user data.
+     * The user data.
      * </p>
      */
     private String userData;
@@ -279,11 +279,11 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded MIME user data.
+     * The user data.
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded MIME user data.
+     *        The user data.
      */
 
     public void setUserData(String userData) {
@@ -292,10 +292,10 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded MIME user data.
+     * The user data.
      * </p>
      * 
-     * @return The Base64-encoded MIME user data.
+     * @return The user data.
      */
 
     public String getUserData() {
@@ -304,11 +304,11 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded MIME user data.
+     * The user data.
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded MIME user data.
+     *        The user data.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

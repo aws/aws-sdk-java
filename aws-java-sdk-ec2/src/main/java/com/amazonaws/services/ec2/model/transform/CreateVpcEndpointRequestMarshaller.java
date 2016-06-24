@@ -47,7 +47,7 @@ public class CreateVpcEndpointRequestMarshaller implements
         Request<CreateVpcEndpointRequest> request = new DefaultRequest<CreateVpcEndpointRequest>(
                 createVpcEndpointRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpcEndpoint");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createVpcEndpointRequest.getVpcId() != null) {

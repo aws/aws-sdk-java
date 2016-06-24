@@ -48,7 +48,7 @@ public class DeleteNetworkInterfaceRequestMarshaller
         Request<DeleteNetworkInterfaceRequest> request = new DefaultRequest<DeleteNetworkInterfaceRequest>(
                 deleteNetworkInterfaceRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteNetworkInterface");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (deleteNetworkInterfaceRequest.getNetworkInterfaceId() != null) {

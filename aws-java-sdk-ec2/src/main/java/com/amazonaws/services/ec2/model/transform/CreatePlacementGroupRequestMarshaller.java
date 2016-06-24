@@ -48,7 +48,7 @@ public class CreatePlacementGroupRequestMarshaller
         Request<CreatePlacementGroupRequest> request = new DefaultRequest<CreatePlacementGroupRequest>(
                 createPlacementGroupRequest, "AmazonEC2");
         request.addParameter("Action", "CreatePlacementGroup");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createPlacementGroupRequest.getGroupName() != null) {

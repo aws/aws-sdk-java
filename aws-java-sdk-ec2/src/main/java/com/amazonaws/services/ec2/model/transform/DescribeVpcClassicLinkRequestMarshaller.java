@@ -48,7 +48,7 @@ public class DescribeVpcClassicLinkRequestMarshaller
         Request<DescribeVpcClassicLinkRequest> request = new DefaultRequest<DescribeVpcClassicLinkRequest>(
                 describeVpcClassicLinkRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpcClassicLink");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> vpcIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcClassicLinkRequest

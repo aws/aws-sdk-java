@@ -125,7 +125,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      *        169.254.169.253 IP address, or the reserved IP address at the base
      *        of the VPC network range "plus two" will succeed. If disabled, the
      *        Amazon provided DNS service in the VPC that resolves public DNS
-     *        hostnames to IP addresses is not enabled. </p>
+     *        hostnames to IP addresses is not enabled.</p>
      *        <p>
      *        You cannot modify the DNS resolution and DNS hostnames attributes
      *        in the same request. Use separate requests for each attribute.
@@ -154,8 +154,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      *         169.254.169.253 IP address, or the reserved IP address at the
      *         base of the VPC network range "plus two" will succeed. If
      *         disabled, the Amazon provided DNS service in the VPC that
-     *         resolves public DNS hostnames to IP addresses is not enabled.
-     *         </p>
+     *         resolves public DNS hostnames to IP addresses is not enabled.</p>
      *         <p>
      *         You cannot modify the DNS resolution and DNS hostnames attributes
      *         in the same request. Use separate requests for each attribute.
@@ -185,7 +184,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      *        169.254.169.253 IP address, or the reserved IP address at the base
      *        of the VPC network range "plus two" will succeed. If disabled, the
      *        Amazon provided DNS service in the VPC that resolves public DNS
-     *        hostnames to IP addresses is not enabled. </p>
+     *        hostnames to IP addresses is not enabled.</p>
      *        <p>
      *        You cannot modify the DNS resolution and DNS hostnames attributes
      *        in the same request. Use separate requests for each attribute.
@@ -218,8 +217,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      *         169.254.169.253 IP address, or the reserved IP address at the
      *         base of the VPC network range "plus two" will succeed. If
      *         disabled, the Amazon provided DNS service in the VPC that
-     *         resolves public DNS hostnames to IP addresses is not enabled.
-     *         </p>
+     *         resolves public DNS hostnames to IP addresses is not enabled.</p>
      *         <p>
      *         You cannot modify the DNS resolution and DNS hostnames attributes
      *         in the same request. Use separate requests for each attribute.

@@ -48,7 +48,7 @@ public class RevokeSecurityGroupEgressRequestMarshaller
         Request<RevokeSecurityGroupEgressRequest> request = new DefaultRequest<RevokeSecurityGroupEgressRequest>(
                 revokeSecurityGroupEgressRequest, "AmazonEC2");
         request.addParameter("Action", "RevokeSecurityGroupEgress");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (revokeSecurityGroupEgressRequest.getGroupId() != null) {

@@ -48,7 +48,7 @@ public class DescribeVpnGatewaysRequestMarshaller
         Request<DescribeVpnGatewaysRequest> request = new DefaultRequest<DescribeVpnGatewaysRequest>(
                 describeVpnGatewaysRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpnGateways");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> vpnGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpnGatewaysRequest

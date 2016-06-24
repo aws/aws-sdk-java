@@ -47,7 +47,7 @@ public class ModifyVpcEndpointRequestMarshaller implements
         Request<ModifyVpcEndpointRequest> request = new DefaultRequest<ModifyVpcEndpointRequest>(
                 modifyVpcEndpointRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyVpcEndpoint");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifyVpcEndpointRequest.getVpcEndpointId() != null) {

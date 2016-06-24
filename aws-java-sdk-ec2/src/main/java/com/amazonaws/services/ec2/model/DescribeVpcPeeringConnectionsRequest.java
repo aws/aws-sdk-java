@@ -70,7 +70,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      * <li>
      * <p>
      * <code>requester-vpc-info.cidr-block</code> - The CIDR block of the
-     * requester&apos;s VPC.
+     * requester's VPC.
      * </p>
      * </li>
      * <li>
@@ -263,7 +263,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      * <li>
      * <p>
      * <code>requester-vpc-info.cidr-block</code> - The CIDR block of the
-     * requester&apos;s VPC.
+     * requester's VPC.
      * </p>
      * </li>
      * <li>
@@ -350,7 +350,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      *         <li>
      *         <p>
      *         <code>requester-vpc-info.cidr-block</code> - The CIDR block of
-     *         the requester&apos;s VPC.
+     *         the requester's VPC.
      *         </p>
      *         </li>
      *         <li>
@@ -452,7 +452,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      * <li>
      * <p>
      * <code>requester-vpc-info.cidr-block</code> - The CIDR block of the
-     * requester&apos;s VPC.
+     * requester's VPC.
      * </p>
      * </li>
      * <li>
@@ -540,7 +540,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      *        <li>
      *        <p>
      *        <code>requester-vpc-info.cidr-block</code> - The CIDR block of the
-     *        requester&apos;s VPC.
+     *        requester's VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -645,7 +645,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      * <li>
      * <p>
      * <code>requester-vpc-info.cidr-block</code> - The CIDR block of the
-     * requester&apos;s VPC.
+     * requester's VPC.
      * </p>
      * </li>
      * <li>
@@ -739,7 +739,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      *        <li>
      *        <p>
      *        <code>requester-vpc-info.cidr-block</code> - The CIDR block of the
-     *        requester&apos;s VPC.
+     *        requester's VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -847,7 +847,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      * <li>
      * <p>
      * <code>requester-vpc-info.cidr-block</code> - The CIDR block of the
-     * requester&apos;s VPC.
+     * requester's VPC.
      * </p>
      * </li>
      * <li>
@@ -935,7 +935,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      *        <li>
      *        <p>
      *        <code>requester-vpc-info.cidr-block</code> - The CIDR block of the
-     *        requester&apos;s VPC.
+     *        requester's VPC.
      *        </p>
      *        </li>
      *        <li>

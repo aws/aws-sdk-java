@@ -117,8 +117,10 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
     private String ramdisk;
     /**
      * <p>
-     * Changes the instance's user data to the specified base64-encoded value.
-     * For command line tools, base64 encoding is performed for you.
+     * Changes the instance's user data to the specified value. If you are using
+     * an AWS SDK or command line tool, Base64-encoding is performed for you,
+     * and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      */
     private String userData;
@@ -894,14 +896,17 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Changes the instance's user data to the specified base64-encoded value.
-     * For command line tools, base64 encoding is performed for you.
+     * Changes the instance's user data to the specified value. If you are using
+     * an AWS SDK or command line tool, Base64-encoding is performed for you,
+     * and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      * 
      * @param userData
-     *        Changes the instance's user data to the specified base64-encoded
-     *        value. For command line tools, base64 encoding is performed for
-     *        you.
+     *        Changes the instance's user data to the specified value. If you
+     *        are using an AWS SDK or command line tool, Base64-encoding is
+     *        performed for you, and you can load the text from a file.
+     *        Otherwise, you must provide Base64-encoded text.
      */
 
     public void setUserData(String userData) {
@@ -910,13 +915,16 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Changes the instance's user data to the specified base64-encoded value.
-     * For command line tools, base64 encoding is performed for you.
+     * Changes the instance's user data to the specified value. If you are using
+     * an AWS SDK or command line tool, Base64-encoding is performed for you,
+     * and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      * 
-     * @return Changes the instance's user data to the specified base64-encoded
-     *         value. For command line tools, base64 encoding is performed for
-     *         you.
+     * @return Changes the instance's user data to the specified value. If you
+     *         are using an AWS SDK or command line tool, Base64-encoding is
+     *         performed for you, and you can load the text from a file.
+     *         Otherwise, you must provide Base64-encoded text.
      */
 
     public String getUserData() {
@@ -925,14 +933,17 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Changes the instance's user data to the specified base64-encoded value.
-     * For command line tools, base64 encoding is performed for you.
+     * Changes the instance's user data to the specified value. If you are using
+     * an AWS SDK or command line tool, Base64-encoding is performed for you,
+     * and you can load the text from a file. Otherwise, you must provide
+     * Base64-encoded text.
      * </p>
      * 
      * @param userData
-     *        Changes the instance's user data to the specified base64-encoded
-     *        value. For command line tools, base64 encoding is performed for
-     *        you.
+     *        Changes the instance's user data to the specified value. If you
+     *        are using an AWS SDK or command line tool, Base64-encoding is
+     *        performed for you, and you can load the text from a file.
+     *        Otherwise, you must provide Base64-encoded text.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

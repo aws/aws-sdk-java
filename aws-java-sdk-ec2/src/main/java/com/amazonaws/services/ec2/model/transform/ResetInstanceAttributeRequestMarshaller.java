@@ -48,7 +48,7 @@ public class ResetInstanceAttributeRequestMarshaller
         Request<ResetInstanceAttributeRequest> request = new DefaultRequest<ResetInstanceAttributeRequest>(
                 resetInstanceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ResetInstanceAttribute");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (resetInstanceAttributeRequest.getInstanceId() != null) {

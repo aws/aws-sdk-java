@@ -225,6 +225,21 @@ public class AbstractAmazonDirectConnectAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeConnectionLoaResult> describeConnectionLoaAsync(
+            DescribeConnectionLoaRequest request) {
+
+        return describeConnectionLoaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConnectionLoaResult> describeConnectionLoaAsync(
+            DescribeConnectionLoaRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeConnectionLoaRequest, DescribeConnectionLoaResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeConnectionsResult> describeConnectionsAsync(
             DescribeConnectionsRequest request) {
 
@@ -275,6 +290,21 @@ public class AbstractAmazonDirectConnectAsync extends
     public java.util.concurrent.Future<DescribeConnectionsOnInterconnectResult> describeConnectionsOnInterconnectAsync(
             DescribeConnectionsOnInterconnectRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeConnectionsOnInterconnectRequest, DescribeConnectionsOnInterconnectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(
+            DescribeInterconnectLoaRequest request) {
+
+        return describeInterconnectLoaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(
+            DescribeInterconnectLoaRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeInterconnectLoaRequest, DescribeInterconnectLoaResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

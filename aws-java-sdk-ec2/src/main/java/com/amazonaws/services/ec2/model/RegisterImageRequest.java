@@ -102,7 +102,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * any instances that you launch from the AMI.
      * </p>
      * <p>
-     * There is no way to disable enhanced networking at this time.
+     * There is no way to disable <code>sriovNetSupport</code> at this time.
      * </p>
      * <p>
      * This option is supported only for HVM AMIs. Specifying this option with a
@@ -668,7 +668,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * any instances that you launch from the AMI.
      * </p>
      * <p>
-     * There is no way to disable enhanced networking at this time.
+     * There is no way to disable <code>sriovNetSupport</code> at this time.
      * </p>
      * <p>
      * This option is supported only for HVM AMIs. Specifying this option with a
@@ -679,7 +679,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *        Set to <code>simple</code> to enable enhanced networking for the
      *        AMI and any instances that you launch from the AMI.</p>
      *        <p>
-     *        There is no way to disable enhanced networking at this time.
+     *        There is no way to disable <code>sriovNetSupport</code> at this
+     *        time.
      *        </p>
      *        <p>
      *        This option is supported only for HVM AMIs. Specifying this option
@@ -697,7 +698,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * any instances that you launch from the AMI.
      * </p>
      * <p>
-     * There is no way to disable enhanced networking at this time.
+     * There is no way to disable <code>sriovNetSupport</code> at this time.
      * </p>
      * <p>
      * This option is supported only for HVM AMIs. Specifying this option with a
@@ -707,7 +708,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @return Set to <code>simple</code> to enable enhanced networking for the
      *         AMI and any instances that you launch from the AMI.</p>
      *         <p>
-     *         There is no way to disable enhanced networking at this time.
+     *         There is no way to disable <code>sriovNetSupport</code> at this
+     *         time.
      *         </p>
      *         <p>
      *         This option is supported only for HVM AMIs. Specifying this
@@ -725,7 +727,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * any instances that you launch from the AMI.
      * </p>
      * <p>
-     * There is no way to disable enhanced networking at this time.
+     * There is no way to disable <code>sriovNetSupport</code> at this time.
      * </p>
      * <p>
      * This option is supported only for HVM AMIs. Specifying this option with a
@@ -736,7 +738,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *        Set to <code>simple</code> to enable enhanced networking for the
      *        AMI and any instances that you launch from the AMI.</p>
      *        <p>
-     *        There is no way to disable enhanced networking at this time.
+     *        There is no way to disable <code>sriovNetSupport</code> at this
+     *        time.
      *        </p>
      *        <p>
      *        This option is supported only for HVM AMIs. Specifying this option

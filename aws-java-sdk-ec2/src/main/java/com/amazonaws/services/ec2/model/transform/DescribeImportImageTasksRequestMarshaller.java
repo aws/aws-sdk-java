@@ -48,7 +48,7 @@ public class DescribeImportImageTasksRequestMarshaller
         Request<DescribeImportImageTasksRequest> request = new DefaultRequest<DescribeImportImageTasksRequest>(
                 describeImportImageTasksRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeImportImageTasks");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> importTaskIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeImportImageTasksRequest

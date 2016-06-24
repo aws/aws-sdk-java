@@ -48,7 +48,7 @@ public class EnableVpcClassicLinkRequestMarshaller
         Request<EnableVpcClassicLinkRequest> request = new DefaultRequest<EnableVpcClassicLinkRequest>(
                 enableVpcClassicLinkRequest, "AmazonEC2");
         request.addParameter("Action", "EnableVpcClassicLink");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (enableVpcClassicLinkRequest.getVpcId() != null) {

@@ -83,6 +83,12 @@ public class CreateInterconnectResultJsonUnmarshaller implements
                     createInterconnectResult.setBandwidth(context
                             .getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("loaIssueTime", targetDepth)) {
+                    context.nextToken();
+                    createInterconnectResult.setLoaIssueTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

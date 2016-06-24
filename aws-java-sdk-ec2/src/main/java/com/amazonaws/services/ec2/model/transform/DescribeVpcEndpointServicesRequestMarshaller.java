@@ -48,7 +48,7 @@ public class DescribeVpcEndpointServicesRequestMarshaller
         Request<DescribeVpcEndpointServicesRequest> request = new DefaultRequest<DescribeVpcEndpointServicesRequest>(
                 describeVpcEndpointServicesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpcEndpointServices");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (describeVpcEndpointServicesRequest.getMaxResults() != null) {

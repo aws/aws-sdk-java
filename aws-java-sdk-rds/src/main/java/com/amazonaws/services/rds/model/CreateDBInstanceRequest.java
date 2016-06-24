@@ -670,10 +670,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true. Do
-     * not set this value if you want a Multi-AZ deployment for a SQL Server DB
-     * instance. Multi-AZ for SQL Server is set using the Mirroring option in an
-     * option group.
+     * AvailabilityZone parameter if the MultiAZ parameter is set to true.
      * </p>
      */
     private Boolean multiAZ;
@@ -5555,18 +5552,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true. Do
-     * not set this value if you want a Multi-AZ deployment for a SQL Server DB
-     * instance. Multi-AZ for SQL Server is set using the Mirroring option in an
-     * option group.
+     * AvailabilityZone parameter if the MultiAZ parameter is set to true.
      * </p>
      * 
      * @param multiAZ
      *        Specifies if the DB instance is a Multi-AZ deployment. You cannot
      *        set the AvailabilityZone parameter if the MultiAZ parameter is set
-     *        to true. Do not set this value if you want a Multi-AZ deployment
-     *        for a SQL Server DB instance. Multi-AZ for SQL Server is set using
-     *        the Mirroring option in an option group.
+     *        to true.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -5576,17 +5568,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true. Do
-     * not set this value if you want a Multi-AZ deployment for a SQL Server DB
-     * instance. Multi-AZ for SQL Server is set using the Mirroring option in an
-     * option group.
+     * AvailabilityZone parameter if the MultiAZ parameter is set to true.
      * </p>
      * 
      * @return Specifies if the DB instance is a Multi-AZ deployment. You cannot
      *         set the AvailabilityZone parameter if the MultiAZ parameter is
-     *         set to true. Do not set this value if you want a Multi-AZ
-     *         deployment for a SQL Server DB instance. Multi-AZ for SQL Server
-     *         is set using the Mirroring option in an option group.
+     *         set to true.
      */
 
     public Boolean getMultiAZ() {
@@ -5596,18 +5583,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true. Do
-     * not set this value if you want a Multi-AZ deployment for a SQL Server DB
-     * instance. Multi-AZ for SQL Server is set using the Mirroring option in an
-     * option group.
+     * AvailabilityZone parameter if the MultiAZ parameter is set to true.
      * </p>
      * 
      * @param multiAZ
      *        Specifies if the DB instance is a Multi-AZ deployment. You cannot
      *        set the AvailabilityZone parameter if the MultiAZ parameter is set
-     *        to true. Do not set this value if you want a Multi-AZ deployment
-     *        for a SQL Server DB instance. Multi-AZ for SQL Server is set using
-     *        the Mirroring option in an option group.
+     *        to true.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -5620,17 +5602,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true. Do
-     * not set this value if you want a Multi-AZ deployment for a SQL Server DB
-     * instance. Multi-AZ for SQL Server is set using the Mirroring option in an
-     * option group.
+     * AvailabilityZone parameter if the MultiAZ parameter is set to true.
      * </p>
      * 
      * @return Specifies if the DB instance is a Multi-AZ deployment. You cannot
      *         set the AvailabilityZone parameter if the MultiAZ parameter is
-     *         set to true. Do not set this value if you want a Multi-AZ
-     *         deployment for a SQL Server DB instance. Multi-AZ for SQL Server
-     *         is set using the Mirroring option in an option group.
+     *         set to true.
      */
 
     public Boolean isMultiAZ() {

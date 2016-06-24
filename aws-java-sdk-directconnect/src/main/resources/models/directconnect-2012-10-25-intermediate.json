@@ -20,10 +20,10 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "directconnect",
     "signingName" : "directconnect",
-    "xmlProtocol" : false,
     "jsonProtocol" : true,
     "serviceName" : "AWS Direct Connect",
     "cborProtocol" : false,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -458,6 +458,39 @@
       "authenticated" : true,
       "methodName" : "deleteVirtualInterface"
     },
+    "DescribeConnectionLoa" : {
+      "documentation" : "<p>Returns the LOA-CFA for a Connection.</p> <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that your APN partner or service provider uses when establishing your cross connect to AWS at the colocation facility. For more information, see <a href=\"http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html\">Requesting Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect user guide.</p>",
+      "operationName" : "DescribeConnectionLoa",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "describeConnectionLoaRequest",
+        "variableType" : "DescribeConnectionLoaRequest",
+        "variableDeclarationType" : "DescribeConnectionLoaRequest",
+        "documentation" : "<p>Container for the parameters to the DescribeConnectionLoa operation.</p>",
+        "simpleType" : "DescribeConnectionLoaRequest",
+        "variableSetterType" : "DescribeConnectionLoaRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "DescribeConnectionLoaResult",
+        "documentation" : "<p>The response received when DescribeConnectionLoa is called.</p>"
+      },
+      "exceptions" : [ {
+        "exceptionName" : "DirectConnectServerException",
+        "documentation" : "<p>A server-side error occurred during the API call. The error message will contain additional details about the cause.</p>"
+      }, {
+        "exceptionName" : "DirectConnectClientException",
+        "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "DescribeConnectionLoaResult",
+      "asyncReturnType" : "DescribeConnectionLoaResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeConnectionLoaResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DescribeConnectionLoaResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConnectionLoaRequest, DescribeConnectionLoaResult>",
+      "authenticated" : true,
+      "methodName" : "describeConnectionLoa"
+    },
     "DescribeConnections" : {
       "documentation" : "<p>Displays all connections in this region.</p> <p>If a connection ID is provided, the call returns only that particular connection.</p>",
       "operationName" : "DescribeConnections",
@@ -523,6 +556,39 @@
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConnectionsOnInterconnectRequest, DescribeConnectionsOnInterconnectResult>",
       "authenticated" : true,
       "methodName" : "describeConnectionsOnInterconnect"
+    },
+    "DescribeInterconnectLoa" : {
+      "documentation" : "<p>Returns the LOA-CFA for an Interconnect.</p> <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when establishing your cross connect to AWS at the colocation facility. For more information, see <a href=\"http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html\">Requesting Cross Connects at AWS Direct Connect Locations</a> in the AWS Direct Connect user guide.</p>",
+      "operationName" : "DescribeInterconnectLoa",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "describeInterconnectLoaRequest",
+        "variableType" : "DescribeInterconnectLoaRequest",
+        "variableDeclarationType" : "DescribeInterconnectLoaRequest",
+        "documentation" : "<p>Container for the parameters to the DescribeInterconnectLoa operation.</p>",
+        "simpleType" : "DescribeInterconnectLoaRequest",
+        "variableSetterType" : "DescribeInterconnectLoaRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "DescribeInterconnectLoaResult",
+        "documentation" : "<p>The response received when DescribeInterconnectLoa is called.</p>"
+      },
+      "exceptions" : [ {
+        "exceptionName" : "DirectConnectServerException",
+        "documentation" : "<p>A server-side error occurred during the API call. The error message will contain additional details about the cause.</p>"
+      }, {
+        "exceptionName" : "DirectConnectClientException",
+        "documentation" : "<p>The API was called with invalid parameters. The error message will contain additional details about the cause.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "DescribeInterconnectLoaResult",
+      "asyncReturnType" : "DescribeInterconnectLoaResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeInterconnectLoaResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DescribeInterconnectLoaResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInterconnectLoaRequest, DescribeInterconnectLoaResult>",
+      "authenticated" : true,
+      "methodName" : "describeInterconnectLoa"
     },
     "DescribeInterconnects" : {
       "documentation" : "<p>Returns a list of interconnects owned by the AWS account.</p> <p>If an interconnect ID is provided, it will only return this particular interconnect.</p>",
@@ -1780,11 +1846,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "RouteFilterPrefix",
           "templateType" : "java.util.List<RouteFilterPrefix>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2451,11 +2517,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "RouteFilterPrefix",
             "templateType" : "java.util.List<RouteFilterPrefix>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3523,11 +3589,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "RouteFilterPrefix",
           "templateType" : "java.util.List<RouteFilterPrefix>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4194,11 +4260,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "RouteFilterPrefix",
             "templateType" : "java.util.List<RouteFilterPrefix>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4599,6 +4665,44 @@
         }
       }
     },
+    "LoaContentType" : {
+      "c2jName" : "LoaContentType",
+      "documentation" : "<p>A standard media type indicating the content type of the LOA-CFA document. Currently, the only supported value is \"application/pdf\".</p> <p>Default: application/pdf</p>",
+      "shapeName" : "LoaContentType",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : [ {
+        "name" : "Applicationpdf",
+        "value" : "application/pdf"
+      } ],
+      "variable" : {
+        "variableName" : "loaContentType",
+        "variableType" : "LoaContentType",
+        "variableDeclarationType" : "LoaContentType",
+        "documentation" : null,
+        "simpleType" : "LoaContentType",
+        "variableSetterType" : "LoaContentType"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "DescribeLocationsResult" : {
       "c2jName" : "Locations",
       "documentation" : "<p>A location is a network facility where AWS Direct Connect routers are available to be connected. Generally, these are colocation hubs where many network providers have equipment, and where cross connects can be delivered. Locations include a name and facility code, and must be provided when creating a connection.</p>",
@@ -4711,11 +4815,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Location",
           "templateType" : "java.util.List<Location>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Location>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Location>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4852,11 +4956,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Location",
             "templateType" : "java.util.List<Location>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Location>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Location>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5410,6 +5514,58 @@
         "getterDocumentation" : "/**<p>The name of the AWS Direct Connect service provider associated with the connection.</p>\n@return The name of the AWS Direct Connect service provider associated with the connection.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the AWS Direct Connect service provider associated with the connection.</p>\n@param partnerName The name of the AWS Direct Connect service provider associated with the connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The name of the AWS Direct Connect service provider associated with the connection.</p>\n@param partnerName The name of the AWS Direct Connect service provider associated with the connection.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+        "name" : "LoaIssueTime",
+        "c2jName" : "loaIssueTime",
+        "c2jShape" : "LoaIssueTime",
+        "variable" : {
+          "variableName" : "loaIssueTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "setterModel" : {
+          "variableName" : "loaIssueTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "loaIssueTime",
+          "marshallLocationName" : "loaIssueTime",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+        "getterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@return The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+        "fluentSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -5538,6 +5694,59 @@
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param region \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**\n@param region \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "LoaIssueTime" : {
+          "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+          "name" : "LoaIssueTime",
+          "c2jName" : "loaIssueTime",
+          "c2jShape" : "LoaIssueTime",
+          "variable" : {
+            "variableName" : "loaIssueTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "setterModel" : {
+            "variableName" : "loaIssueTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "loaIssueTime",
+            "marshallLocationName" : "loaIssueTime",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+          "getterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@return The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+          "fluentSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ConnectionName" : {
           "documentation" : "",
@@ -6024,11 +6233,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Connection",
           "templateType" : "java.util.List<Connection>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6165,11 +6374,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Connection",
             "templateType" : "java.util.List<Connection>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7275,11 +7484,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "RouteFilterPrefix",
           "templateType" : "java.util.List<RouteFilterPrefix>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7946,11 +8155,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "RouteFilterPrefix",
             "templateType" : "java.util.List<RouteFilterPrefix>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8178,38 +8387,6 @@
         }
       }
     },
-    "DirectConnectServerException" : {
-      "c2jName" : "DirectConnectServerException",
-      "documentation" : "<p>A server-side error occurred during the API call. The error message will contain additional details about the cause.</p>",
-      "shapeName" : "DirectConnectServerException",
-      "deprecated" : false,
-      "required" : null,
-      "hasPayloadMember" : false,
-      "hasHeaderMember" : false,
-      "hasStatusCodeMember" : false,
-      "hasStreamingMember" : false,
-      "wrapper" : false,
-      "members" : [ ],
-      "enums" : null,
-      "variable" : {
-        "variableName" : "directConnectServerException",
-        "variableType" : "DirectConnectServerException",
-        "variableDeclarationType" : "DirectConnectServerException",
-        "documentation" : null,
-        "simpleType" : "DirectConnectServerException",
-        "variableSetterType" : "DirectConnectServerException"
-      },
-      "marshaller" : null,
-      "unmarshaller" : null,
-      "errorCode" : "DirectConnectServerException",
-      "customization" : {
-        "artificialResultWrapper" : null,
-        "skipGeneratingModelClass" : false,
-        "skipGeneratingMarshaller" : false,
-        "skipGeneratingUnmarshaller" : false
-      },
-      "membersAsMap" : { }
-    },
     "DescribeLocationsRequest" : {
       "c2jName" : "DescribeLocationsRequest",
       "documentation" : null,
@@ -8241,6 +8418,38 @@
       },
       "unmarshaller" : null,
       "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "DirectConnectServerException" : {
+      "c2jName" : "DirectConnectServerException",
+      "documentation" : "<p>A server-side error occurred during the API call. The error message will contain additional details about the cause.</p>",
+      "shapeName" : "DirectConnectServerException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "directConnectServerException",
+        "variableType" : "DirectConnectServerException",
+        "variableDeclarationType" : "DirectConnectServerException",
+        "documentation" : null,
+        "simpleType" : "DirectConnectServerException",
+        "variableSetterType" : "DirectConnectServerException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "DirectConnectServerException",
       "customization" : {
         "artificialResultWrapper" : null,
         "skipGeneratingModelClass" : false,
@@ -10646,11 +10855,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "RouteFilterPrefix",
           "templateType" : "java.util.List<RouteFilterPrefix>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11317,11 +11526,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "RouteFilterPrefix",
             "templateType" : "java.util.List<RouteFilterPrefix>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11661,11 +11870,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Connection",
           "templateType" : "java.util.List<Connection>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11802,11 +12011,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Connection",
             "templateType" : "java.util.List<Connection>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Connection>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11819,6 +12028,147 @@
           "getterDocumentation" : "/**<p>A list of connections.</p>\n@return A list of connections.*/",
           "fluentSetterDocumentation" : "/**<p>A list of connections.</p>\n@param connections A list of connections.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>A list of connections.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setConnections(java.util.Collection)} or {@link #withConnections(java.util.Collection)} if you want to override the existing values.</p>\n@param connections A list of connections.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "DescribeInterconnectLoaResult" : {
+      "c2jName" : "DescribeInterconnectLoaResponse",
+      "documentation" : "<p>The response received when DescribeInterconnectLoa is called.</p>",
+      "shapeName" : "DescribeInterconnectLoaResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "",
+        "name" : "Loa",
+        "c2jName" : "loa",
+        "c2jShape" : "Loa",
+        "variable" : {
+          "variableName" : "loa",
+          "variableType" : "Loa",
+          "variableDeclarationType" : "Loa",
+          "documentation" : "",
+          "simpleType" : "Loa",
+          "variableSetterType" : "Loa"
+        },
+        "setterModel" : {
+          "variableName" : "loa",
+          "variableType" : "Loa",
+          "variableDeclarationType" : "Loa",
+          "documentation" : "",
+          "simpleType" : "Loa",
+          "variableSetterType" : "Loa"
+        },
+        "getterModel" : {
+          "returnType" : "Loa",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "loa",
+          "marshallLocationName" : "loa",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : false,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param loa */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param loa \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param loa \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "describeInterconnectLoaResult",
+        "variableType" : "DescribeInterconnectLoaResult",
+        "variableDeclarationType" : "DescribeInterconnectLoaResult",
+        "documentation" : null,
+        "simpleType" : "DescribeInterconnectLoaResult",
+        "variableSetterType" : "DescribeInterconnectLoaResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Loa" : {
+          "documentation" : "",
+          "name" : "Loa",
+          "c2jName" : "loa",
+          "c2jShape" : "Loa",
+          "variable" : {
+            "variableName" : "loa",
+            "variableType" : "Loa",
+            "variableDeclarationType" : "Loa",
+            "documentation" : "",
+            "simpleType" : "Loa",
+            "variableSetterType" : "Loa"
+          },
+          "setterModel" : {
+            "variableName" : "loa",
+            "variableType" : "Loa",
+            "variableDeclarationType" : "Loa",
+            "documentation" : "",
+            "simpleType" : "Loa",
+            "variableSetterType" : "Loa"
+          },
+          "getterModel" : {
+            "returnType" : "Loa",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "loa",
+            "marshallLocationName" : "loa",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : false,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param loa */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param loa \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param loa \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -12184,11 +12534,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "VirtualGateway",
           "templateType" : "java.util.List<VirtualGateway>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualGateway>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualGateway>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12325,11 +12675,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "VirtualGateway",
             "templateType" : "java.util.List<VirtualGateway>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualGateway>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualGateway>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12969,6 +13319,58 @@
         "getterDocumentation" : "/**<p>The name of the AWS Direct Connect service provider associated with the connection.</p>\n@return The name of the AWS Direct Connect service provider associated with the connection.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the AWS Direct Connect service provider associated with the connection.</p>\n@param partnerName The name of the AWS Direct Connect service provider associated with the connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The name of the AWS Direct Connect service provider associated with the connection.</p>\n@param partnerName The name of the AWS Direct Connect service provider associated with the connection.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+        "name" : "LoaIssueTime",
+        "c2jName" : "loaIssueTime",
+        "c2jShape" : "LoaIssueTime",
+        "variable" : {
+          "variableName" : "loaIssueTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "setterModel" : {
+          "variableName" : "loaIssueTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "loaIssueTime",
+          "marshallLocationName" : "loaIssueTime",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+        "getterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@return The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+        "fluentSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -13097,6 +13499,59 @@
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param region \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**\n@param region \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "LoaIssueTime" : {
+          "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+          "name" : "LoaIssueTime",
+          "c2jName" : "loaIssueTime",
+          "c2jShape" : "LoaIssueTime",
+          "variable" : {
+            "variableName" : "loaIssueTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "setterModel" : {
+            "variableName" : "loaIssueTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "loaIssueTime",
+            "marshallLocationName" : "loaIssueTime",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+          "getterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@return The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+          "fluentSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ConnectionName" : {
           "documentation" : "",
@@ -14656,6 +15111,58 @@
         "getterDocumentation" : "/**<p>The name of the AWS Direct Connect service provider associated with the connection.</p>\n@return The name of the AWS Direct Connect service provider associated with the connection.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the AWS Direct Connect service provider associated with the connection.</p>\n@param partnerName The name of the AWS Direct Connect service provider associated with the connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The name of the AWS Direct Connect service provider associated with the connection.</p>\n@param partnerName The name of the AWS Direct Connect service provider associated with the connection.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+        "name" : "LoaIssueTime",
+        "c2jName" : "loaIssueTime",
+        "c2jShape" : "LoaIssueTime",
+        "variable" : {
+          "variableName" : "loaIssueTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "setterModel" : {
+          "variableName" : "loaIssueTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "loaIssueTime",
+          "marshallLocationName" : "loaIssueTime",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+        "getterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@return The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+        "fluentSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -14784,6 +15291,59 @@
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param region \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**\n@param region \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "LoaIssueTime" : {
+          "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+          "name" : "LoaIssueTime",
+          "c2jName" : "loaIssueTime",
+          "c2jShape" : "LoaIssueTime",
+          "variable" : {
+            "variableName" : "loaIssueTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "setterModel" : {
+            "variableName" : "loaIssueTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "loaIssueTime",
+            "marshallLocationName" : "loaIssueTime",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+          "getterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@return The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+          "fluentSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ConnectionName" : {
           "documentation" : "",
@@ -15155,6 +15715,361 @@
           "getterDocumentation" : "/**<p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)</p> <p>Default: None</p>\n@return Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)</p> <p>Default: None*/",
           "fluentSetterDocumentation" : "/**<p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)</p> <p>Default: None</p>\n@param bandwidth Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)</p> <p>Default: None\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)</p> <p>Default: None</p>\n@param bandwidth Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections), or 500Mbps (for hosted connections)</p> <p>Default: None\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "DescribeInterconnectLoaRequest" : {
+      "c2jName" : "DescribeInterconnectLoaRequest",
+      "documentation" : "<p>Container for the parameters to the DescribeInterconnectLoa operation.</p>",
+      "shapeName" : "DescribeInterconnectLoaRequest",
+      "deprecated" : false,
+      "required" : [ "interconnectId" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "",
+        "name" : "InterconnectId",
+        "c2jName" : "interconnectId",
+        "c2jShape" : "InterconnectId",
+        "variable" : {
+          "variableName" : "interconnectId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "interconnectId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "interconnectId",
+          "marshallLocationName" : "interconnectId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param interconnectId */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param interconnectId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param interconnectId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>",
+        "name" : "ProviderName",
+        "c2jName" : "providerName",
+        "c2jShape" : "ProviderName",
+        "variable" : {
+          "variableName" : "providerName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "providerName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "providerName",
+          "marshallLocationName" : "providerName",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@param providerName The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None*/",
+        "getterDocumentation" : "/**<p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@return The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@param providerName The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@param providerName The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "",
+        "name" : "LoaContentType",
+        "c2jName" : "loaContentType",
+        "c2jShape" : "LoaContentType",
+        "variable" : {
+          "variableName" : "loaContentType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "loaContentType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "loaContentType",
+          "marshallLocationName" : "loaContentType",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "LoaContentType",
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param loaContentType \n@see LoaContentType*/",
+        "getterDocumentation" : "/**\n@return \n@see LoaContentType*/",
+        "fluentSetterDocumentation" : "/**\n@param loaContentType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LoaContentType*/",
+        "varargSetterDocumentation" : "/**\n@param loaContentType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LoaContentType*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "describeInterconnectLoaRequest",
+        "variableType" : "DescribeInterconnectLoaRequest",
+        "variableDeclarationType" : "DescribeInterconnectLoaRequest",
+        "documentation" : null,
+        "simpleType" : "DescribeInterconnectLoaRequest",
+        "variableSetterType" : "DescribeInterconnectLoaRequest"
+      },
+      "marshaller" : {
+        "action" : "DescribeInterconnectLoa",
+        "verb" : "POST",
+        "target" : "OvertureService.DescribeInterconnectLoa",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "InterconnectId" : {
+          "documentation" : "",
+          "name" : "InterconnectId",
+          "c2jName" : "interconnectId",
+          "c2jShape" : "InterconnectId",
+          "variable" : {
+            "variableName" : "interconnectId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "interconnectId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "interconnectId",
+            "marshallLocationName" : "interconnectId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param interconnectId */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param interconnectId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param interconnectId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "LoaContentType" : {
+          "documentation" : "",
+          "name" : "LoaContentType",
+          "c2jName" : "loaContentType",
+          "c2jShape" : "LoaContentType",
+          "variable" : {
+            "variableName" : "loaContentType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "loaContentType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "loaContentType",
+            "marshallLocationName" : "loaContentType",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "LoaContentType",
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param loaContentType \n@see LoaContentType*/",
+          "getterDocumentation" : "/**\n@return \n@see LoaContentType*/",
+          "fluentSetterDocumentation" : "/**\n@param loaContentType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LoaContentType*/",
+          "varargSetterDocumentation" : "/**\n@param loaContentType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LoaContentType*/"
+        },
+        "ProviderName" : {
+          "documentation" : "<p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>",
+          "name" : "ProviderName",
+          "c2jName" : "providerName",
+          "c2jShape" : "ProviderName",
+          "variable" : {
+            "variableName" : "providerName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "providerName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "providerName",
+            "marshallLocationName" : "providerName",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@param providerName The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None*/",
+          "getterDocumentation" : "/**<p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@return The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@param providerName The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@param providerName The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -16292,6 +17207,58 @@
         "getterDocumentation" : "/**\n@return */",
         "fluentSetterDocumentation" : "/**\n@param bandwidth \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**\n@param bandwidth \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>",
+        "name" : "LoaIssueTime",
+        "c2jName" : "loaIssueTime",
+        "c2jShape" : "LoaIssueTime",
+        "variable" : {
+          "variableName" : "loaIssueTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "setterModel" : {
+          "variableName" : "loaIssueTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "loaIssueTime",
+          "marshallLocationName" : "loaIssueTime",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@param loaIssueTime The time of the most recent call to DescribeInterconnectLoa for this Interconnect.*/",
+        "getterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@return The time of the most recent call to DescribeInterconnectLoa for this Interconnect.*/",
+        "fluentSetterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@param loaIssueTime The time of the most recent call to DescribeInterconnectLoa for this Interconnect.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@param loaIssueTime The time of the most recent call to DescribeInterconnectLoa for this Interconnect.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -16473,6 +17440,59 @@
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param interconnectId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**\n@param interconnectId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "LoaIssueTime" : {
+          "documentation" : "<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>",
+          "name" : "LoaIssueTime",
+          "c2jName" : "loaIssueTime",
+          "c2jShape" : "LoaIssueTime",
+          "variable" : {
+            "variableName" : "loaIssueTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "setterModel" : {
+            "variableName" : "loaIssueTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "loaIssueTime",
+            "marshallLocationName" : "loaIssueTime",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@param loaIssueTime The time of the most recent call to DescribeInterconnectLoa for this Interconnect.*/",
+          "getterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@return The time of the most recent call to DescribeInterconnectLoa for this Interconnect.*/",
+          "fluentSetterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@param loaIssueTime The time of the most recent call to DescribeInterconnectLoa for this Interconnect.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@param loaIssueTime The time of the most recent call to DescribeInterconnectLoa for this Interconnect.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Location" : {
           "documentation" : "",
@@ -17414,11 +18434,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "RouteFilterPrefix",
           "templateType" : "java.util.List<RouteFilterPrefix>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17873,11 +18893,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "RouteFilterPrefix",
             "templateType" : "java.util.List<RouteFilterPrefix>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18727,6 +19747,58 @@
         "getterDocumentation" : "/**<p>The name of the AWS Direct Connect service provider associated with the connection.</p>\n@return The name of the AWS Direct Connect service provider associated with the connection.*/",
         "fluentSetterDocumentation" : "/**<p>The name of the AWS Direct Connect service provider associated with the connection.</p>\n@param partnerName The name of the AWS Direct Connect service provider associated with the connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The name of the AWS Direct Connect service provider associated with the connection.</p>\n@param partnerName The name of the AWS Direct Connect service provider associated with the connection.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+        "name" : "LoaIssueTime",
+        "c2jName" : "loaIssueTime",
+        "c2jShape" : "LoaIssueTime",
+        "variable" : {
+          "variableName" : "loaIssueTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "setterModel" : {
+          "variableName" : "loaIssueTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "loaIssueTime",
+          "marshallLocationName" : "loaIssueTime",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+        "getterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@return The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+        "fluentSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -18855,6 +19927,59 @@
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param region \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**\n@param region \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "LoaIssueTime" : {
+          "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+          "name" : "LoaIssueTime",
+          "c2jName" : "loaIssueTime",
+          "c2jShape" : "LoaIssueTime",
+          "variable" : {
+            "variableName" : "loaIssueTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "setterModel" : {
+            "variableName" : "loaIssueTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "loaIssueTime",
+            "marshallLocationName" : "loaIssueTime",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+          "getterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@return The time of the most recent call to DescribeConnectionLoa for this Connection.*/",
+          "fluentSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The time of the most recent call to DescribeConnectionLoa for this Connection.</p>\n@param loaIssueTime The time of the most recent call to DescribeConnectionLoa for this Connection.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ConnectionName" : {
           "documentation" : "",
@@ -20464,11 +21589,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "RouteFilterPrefix",
           "templateType" : "java.util.List<RouteFilterPrefix>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21135,11 +22260,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "RouteFilterPrefix",
             "templateType" : "java.util.List<RouteFilterPrefix>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22976,6 +24101,58 @@
         "getterDocumentation" : "/**\n@return */",
         "fluentSetterDocumentation" : "/**\n@param bandwidth \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**\n@param bandwidth \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>",
+        "name" : "LoaIssueTime",
+        "c2jName" : "loaIssueTime",
+        "c2jShape" : "LoaIssueTime",
+        "variable" : {
+          "variableName" : "loaIssueTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "setterModel" : {
+          "variableName" : "loaIssueTime",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "loaIssueTime",
+          "marshallLocationName" : "loaIssueTime",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@param loaIssueTime The time of the most recent call to DescribeInterconnectLoa for this Interconnect.*/",
+        "getterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@return The time of the most recent call to DescribeInterconnectLoa for this Interconnect.*/",
+        "fluentSetterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@param loaIssueTime The time of the most recent call to DescribeInterconnectLoa for this Interconnect.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@param loaIssueTime The time of the most recent call to DescribeInterconnectLoa for this Interconnect.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -23157,6 +24334,59 @@
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param interconnectId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**\n@param interconnectId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "LoaIssueTime" : {
+          "documentation" : "<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>",
+          "name" : "LoaIssueTime",
+          "c2jName" : "loaIssueTime",
+          "c2jShape" : "LoaIssueTime",
+          "variable" : {
+            "variableName" : "loaIssueTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "setterModel" : {
+            "variableName" : "loaIssueTime",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "loaIssueTime",
+            "marshallLocationName" : "loaIssueTime",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@param loaIssueTime The time of the most recent call to DescribeInterconnectLoa for this Interconnect.*/",
+          "getterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@return The time of the most recent call to DescribeInterconnectLoa for this Interconnect.*/",
+          "fluentSetterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@param loaIssueTime The time of the most recent call to DescribeInterconnectLoa for this Interconnect.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The time of the most recent call to DescribeInterconnectLoa for this Interconnect.</p>\n@param loaIssueTime The time of the most recent call to DescribeInterconnectLoa for this Interconnect.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Location" : {
           "documentation" : "",
@@ -23343,6 +24573,9 @@
       }, {
         "name" : "Available",
         "value" : "available"
+      }, {
+        "name" : "Down",
+        "value" : "down"
       }, {
         "name" : "Deleting",
         "value" : "deleting"
@@ -23621,6 +24854,252 @@
         }
       }
     },
+    "Loa" : {
+      "c2jName" : "Loa",
+      "documentation" : "<p>A structure containing the Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.</p>",
+      "shapeName" : "Loa",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "",
+        "name" : "LoaContent",
+        "c2jName" : "loaContent",
+        "c2jShape" : "LoaContent",
+        "variable" : {
+          "variableName" : "loaContent",
+          "variableType" : "java.nio.ByteBuffer",
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "documentation" : "",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "setterModel" : {
+          "variableName" : "loaContent",
+          "variableType" : "java.nio.ByteBuffer",
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "documentation" : "",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "getterModel" : {
+          "returnType" : "java.nio.ByteBuffer",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "loaContent",
+          "marshallLocationName" : "loaContent",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param loaContent */",
+        "getterDocumentation" : "/**\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param loaContent \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param loaContent \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "",
+        "name" : "LoaContentType",
+        "c2jName" : "loaContentType",
+        "c2jShape" : "LoaContentType",
+        "variable" : {
+          "variableName" : "loaContentType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "loaContentType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "loaContentType",
+          "marshallLocationName" : "loaContentType",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "LoaContentType",
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param loaContentType \n@see LoaContentType*/",
+        "getterDocumentation" : "/**\n@return \n@see LoaContentType*/",
+        "fluentSetterDocumentation" : "/**\n@param loaContentType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LoaContentType*/",
+        "varargSetterDocumentation" : "/**\n@param loaContentType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LoaContentType*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "loa",
+        "variableType" : "Loa",
+        "variableDeclarationType" : "Loa",
+        "documentation" : null,
+        "simpleType" : "Loa",
+        "variableSetterType" : "Loa"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "LoaContentType" : {
+          "documentation" : "",
+          "name" : "LoaContentType",
+          "c2jName" : "loaContentType",
+          "c2jShape" : "LoaContentType",
+          "variable" : {
+            "variableName" : "loaContentType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "loaContentType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "loaContentType",
+            "marshallLocationName" : "loaContentType",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "LoaContentType",
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param loaContentType \n@see LoaContentType*/",
+          "getterDocumentation" : "/**\n@return \n@see LoaContentType*/",
+          "fluentSetterDocumentation" : "/**\n@param loaContentType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LoaContentType*/",
+          "varargSetterDocumentation" : "/**\n@param loaContentType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LoaContentType*/"
+        },
+        "LoaContent" : {
+          "documentation" : "",
+          "name" : "LoaContent",
+          "c2jName" : "loaContent",
+          "c2jShape" : "LoaContent",
+          "variable" : {
+            "variableName" : "loaContent",
+            "variableType" : "java.nio.ByteBuffer",
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "documentation" : "",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "setterModel" : {
+            "variableName" : "loaContent",
+            "variableType" : "java.nio.ByteBuffer",
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "documentation" : "",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "getterModel" : {
+            "returnType" : "java.nio.ByteBuffer",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "loaContent",
+            "marshallLocationName" : "loaContent",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param loaContent */",
+          "getterDocumentation" : "/**\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param loaContent \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param loaContent \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "DescribeVirtualGatewaysRequest" : {
       "c2jName" : "DescribeVirtualGatewaysRequest",
       "documentation" : null,
@@ -23772,11 +25251,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Interconnect",
           "templateType" : "java.util.List<Interconnect>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Interconnect>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Interconnect>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23913,11 +25392,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Interconnect",
             "templateType" : "java.util.List<Interconnect>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Interconnect>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Interconnect>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -23930,6 +25409,361 @@
           "getterDocumentation" : "/**<p>A list of interconnects.</p>\n@return A list of interconnects.*/",
           "fluentSetterDocumentation" : "/**<p>A list of interconnects.</p>\n@param interconnects A list of interconnects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>A list of interconnects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setInterconnects(java.util.Collection)} or {@link #withInterconnects(java.util.Collection)} if you want to override the existing values.</p>\n@param interconnects A list of interconnects.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "DescribeConnectionLoaRequest" : {
+      "c2jName" : "DescribeConnectionLoaRequest",
+      "documentation" : "<p>Container for the parameters to the DescribeConnectionLoa operation.</p>",
+      "shapeName" : "DescribeConnectionLoaRequest",
+      "deprecated" : false,
+      "required" : [ "connectionId" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "",
+        "name" : "ConnectionId",
+        "c2jName" : "connectionId",
+        "c2jShape" : "ConnectionId",
+        "variable" : {
+          "variableName" : "connectionId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "connectionId",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "connectionId",
+          "marshallLocationName" : "connectionId",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param connectionId */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param connectionId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param connectionId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>",
+        "name" : "ProviderName",
+        "c2jName" : "providerName",
+        "c2jShape" : "ProviderName",
+        "variable" : {
+          "variableName" : "providerName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "providerName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "providerName",
+          "marshallLocationName" : "providerName",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@param providerName The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None*/",
+        "getterDocumentation" : "/**<p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@return The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@param providerName The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@param providerName The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "",
+        "name" : "LoaContentType",
+        "c2jName" : "loaContentType",
+        "c2jShape" : "LoaContentType",
+        "variable" : {
+          "variableName" : "loaContentType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "loaContentType",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "loaContentType",
+          "marshallLocationName" : "loaContentType",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "LoaContentType",
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param loaContentType \n@see LoaContentType*/",
+        "getterDocumentation" : "/**\n@return \n@see LoaContentType*/",
+        "fluentSetterDocumentation" : "/**\n@param loaContentType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LoaContentType*/",
+        "varargSetterDocumentation" : "/**\n@param loaContentType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LoaContentType*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "describeConnectionLoaRequest",
+        "variableType" : "DescribeConnectionLoaRequest",
+        "variableDeclarationType" : "DescribeConnectionLoaRequest",
+        "documentation" : null,
+        "simpleType" : "DescribeConnectionLoaRequest",
+        "variableSetterType" : "DescribeConnectionLoaRequest"
+      },
+      "marshaller" : {
+        "action" : "DescribeConnectionLoa",
+        "verb" : "POST",
+        "target" : "OvertureService.DescribeConnectionLoa",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "ConnectionId" : {
+          "documentation" : "",
+          "name" : "ConnectionId",
+          "c2jName" : "connectionId",
+          "c2jShape" : "ConnectionId",
+          "variable" : {
+            "variableName" : "connectionId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "connectionId",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "connectionId",
+            "marshallLocationName" : "connectionId",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param connectionId */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param connectionId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param connectionId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "LoaContentType" : {
+          "documentation" : "",
+          "name" : "LoaContentType",
+          "c2jName" : "loaContentType",
+          "c2jShape" : "LoaContentType",
+          "variable" : {
+            "variableName" : "loaContentType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "loaContentType",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "loaContentType",
+            "marshallLocationName" : "loaContentType",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "LoaContentType",
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param loaContentType \n@see LoaContentType*/",
+          "getterDocumentation" : "/**\n@return \n@see LoaContentType*/",
+          "fluentSetterDocumentation" : "/**\n@param loaContentType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LoaContentType*/",
+          "varargSetterDocumentation" : "/**\n@param loaContentType \n@return Returns a reference to this object so that method calls can be chained together.\n@see LoaContentType*/"
+        },
+        "ProviderName" : {
+          "documentation" : "<p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>",
+          "name" : "ProviderName",
+          "c2jName" : "providerName",
+          "c2jShape" : "ProviderName",
+          "variable" : {
+            "variableName" : "providerName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "providerName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "providerName",
+            "marshallLocationName" : "providerName",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@param providerName The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None*/",
+          "getterDocumentation" : "/**<p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@return The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@param providerName The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None</p>\n@param providerName The name of the APN partner or service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p> <p>Default: None\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -24045,11 +25879,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "VirtualInterface",
           "templateType" : "java.util.List<VirtualInterface>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualInterface>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualInterface>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24186,11 +26020,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "VirtualInterface",
             "templateType" : "java.util.List<VirtualInterface>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualInterface>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<VirtualInterface>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24630,11 +26464,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "RouteFilterPrefix",
           "templateType" : "java.util.List<RouteFilterPrefix>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25089,11 +26923,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "RouteFilterPrefix",
             "templateType" : "java.util.List<RouteFilterPrefix>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25300,6 +27134,147 @@
           "getterDocumentation" : "/**\n@return \n@see VirtualInterfaceState*/",
           "fluentSetterDocumentation" : "/**\n@param virtualInterfaceState \n@return Returns a reference to this object so that method calls can be chained together.\n@see VirtualInterfaceState*/",
           "varargSetterDocumentation" : "/**\n@param virtualInterfaceState \n@return Returns a reference to this object so that method calls can be chained together.\n@see VirtualInterfaceState*/"
+        }
+      }
+    },
+    "DescribeConnectionLoaResult" : {
+      "c2jName" : "DescribeConnectionLoaResponse",
+      "documentation" : "<p>The response received when DescribeConnectionLoa is called.</p>",
+      "shapeName" : "DescribeConnectionLoaResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "",
+        "name" : "Loa",
+        "c2jName" : "loa",
+        "c2jShape" : "Loa",
+        "variable" : {
+          "variableName" : "loa",
+          "variableType" : "Loa",
+          "variableDeclarationType" : "Loa",
+          "documentation" : "",
+          "simpleType" : "Loa",
+          "variableSetterType" : "Loa"
+        },
+        "setterModel" : {
+          "variableName" : "loa",
+          "variableType" : "Loa",
+          "variableDeclarationType" : "Loa",
+          "documentation" : "",
+          "simpleType" : "Loa",
+          "variableSetterType" : "Loa"
+        },
+        "getterModel" : {
+          "returnType" : "Loa",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "loa",
+          "marshallLocationName" : "loa",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : false,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**\n@param loa */",
+        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**\n@param loa \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param loa \n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "describeConnectionLoaResult",
+        "variableType" : "DescribeConnectionLoaResult",
+        "variableDeclarationType" : "DescribeConnectionLoaResult",
+        "documentation" : null,
+        "simpleType" : "DescribeConnectionLoaResult",
+        "variableSetterType" : "DescribeConnectionLoaResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Loa" : {
+          "documentation" : "",
+          "name" : "Loa",
+          "c2jName" : "loa",
+          "c2jShape" : "Loa",
+          "variable" : {
+            "variableName" : "loa",
+            "variableType" : "Loa",
+            "variableDeclarationType" : "Loa",
+            "documentation" : "",
+            "simpleType" : "Loa",
+            "variableSetterType" : "Loa"
+          },
+          "setterModel" : {
+            "variableName" : "loa",
+            "variableType" : "Loa",
+            "variableDeclarationType" : "Loa",
+            "documentation" : "",
+            "simpleType" : "Loa",
+            "variableSetterType" : "Loa"
+          },
+          "getterModel" : {
+            "returnType" : "Loa",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "loa",
+            "marshallLocationName" : "loa",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : false,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**\n@param loa */",
+          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**\n@param loa \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param loa \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     }

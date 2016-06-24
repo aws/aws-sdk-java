@@ -83,6 +83,10 @@ public class ConnectionJsonMarshaller {
                 jsonGenerator.writeFieldName("partnerName").writeValue(
                         connection.getPartnerName());
             }
+            if (connection.getLoaIssueTime() != null) {
+                jsonGenerator.writeFieldName("loaIssueTime").writeValue(
+                        connection.getLoaIssueTime());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

@@ -48,7 +48,7 @@ public class ModifyInstancePlacementRequestMarshaller
         Request<ModifyInstancePlacementRequest> request = new DefaultRequest<ModifyInstancePlacementRequest>(
                 modifyInstancePlacementRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyInstancePlacement");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (modifyInstancePlacementRequest.getInstanceId() != null) {

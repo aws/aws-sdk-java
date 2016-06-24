@@ -48,7 +48,7 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller
         Request<AuthorizeSecurityGroupIngressRequest> request = new DefaultRequest<AuthorizeSecurityGroupIngressRequest>(
                 authorizeSecurityGroupIngressRequest, "AmazonEC2");
         request.addParameter("Action", "AuthorizeSecurityGroupIngress");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (authorizeSecurityGroupIngressRequest.getGroupName() != null) {

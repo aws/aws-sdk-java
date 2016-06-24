@@ -47,7 +47,7 @@ public class DescribeHostsRequestMarshaller implements
         Request<DescribeHostsRequest> request = new DefaultRequest<DescribeHostsRequest>(
                 describeHostsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeHosts");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> hostIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeHostsRequest

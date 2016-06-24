@@ -47,7 +47,7 @@ public class DescribeFlowLogsRequestMarshaller implements
         Request<DescribeFlowLogsRequest> request = new DefaultRequest<DescribeFlowLogsRequest>(
                 describeFlowLogsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeFlowLogs");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> flowLogIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeFlowLogsRequest

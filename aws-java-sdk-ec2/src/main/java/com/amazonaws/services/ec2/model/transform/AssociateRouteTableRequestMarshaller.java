@@ -48,7 +48,7 @@ public class AssociateRouteTableRequestMarshaller
         Request<AssociateRouteTableRequest> request = new DefaultRequest<AssociateRouteTableRequest>(
                 associateRouteTableRequest, "AmazonEC2");
         request.addParameter("Action", "AssociateRouteTable");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (associateRouteTableRequest.getSubnetId() != null) {

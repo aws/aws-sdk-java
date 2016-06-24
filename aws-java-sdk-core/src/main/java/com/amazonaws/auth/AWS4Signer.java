@@ -32,10 +32,28 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.nio.charset.Charset;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import static com.amazonaws.auth.internal.SignerConstants.*;
+import static com.amazonaws.auth.internal.SignerConstants.AUTHORIZATION;
+import static com.amazonaws.auth.internal.SignerConstants.AWS4_SIGNING_ALGORITHM;
+import static com.amazonaws.auth.internal.SignerConstants.AWS4_TERMINATOR;
+import static com.amazonaws.auth.internal.SignerConstants.HOST;
+import static com.amazonaws.auth.internal.SignerConstants.LINE_SEPARATOR;
+import static com.amazonaws.auth.internal.SignerConstants.PRESIGN_URL_MAX_EXPIRATION_SECONDS;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_ALGORITHM;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_CONTENT_SHA256;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_CREDENTIAL;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_DATE;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_EXPIRES;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_SECURITY_TOKEN;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_SIGNATURE;
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_SIGNED_HEADER;
 
 /**
  * Signer implementation that signs requests with the AWS4 signing protocol.
@@ -229,8 +247,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
                 AWS4_SIGNING_ALGORITHM);
 
         // Add the important parameters for v4 signing
-        final String timeStamp = signerRequestParams
-                .getFormattedSigningDateTime();
+        final String timeStamp = signerRequestParams.getFormattedSigningDateTime();
 
         addPreSignInformationToRequest(request, sanitizedCredentials,
                 signerRequestParams, timeStamp, expirationInSeconds);

@@ -117,6 +117,12 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public DescribeConnectionLoaResult describeConnectionLoa(
+            DescribeConnectionLoaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeConnectionsResult describeConnections(
             DescribeConnectionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -130,6 +136,12 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     @Override
     public DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(
             DescribeConnectionsOnInterconnectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeInterconnectLoaResult describeInterconnectLoa(
+            DescribeInterconnectLoaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

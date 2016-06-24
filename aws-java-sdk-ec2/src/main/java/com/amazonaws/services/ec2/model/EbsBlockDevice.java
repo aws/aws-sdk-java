@@ -68,23 +68,23 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports.
-     * For io1, this represents the number of IOPS that are provisioned for the
-     * volume. For <code>gp2</code>, this represents the baseline performance of
-     * the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information on General Purpose SSD baseline
-     * performance, I/O credits, and bursting, see <a href=
+     * For <code>io1</code>, this represents the number of IOPS that are
+     * provisioned for the volume. For <code>gp2</code>, this represents the
+     * baseline performance of the volume and the rate at which the volume
+     * accumulates I/O credits for bursting. For more information about General
+     * Purpose SSD baseline performance, I/O credits, and bursting, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
      * >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
      * <p>
-     * Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS
-     * for <code>gp2</code> volumes.
+     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and
+     * 100-10000 IOPS for <code>gp2</code> volumes.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create
-     * <code><code>io1</code></code> volumes; it is not used in requests to
-     * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>io1</code> volumes; it is not used in requests to create
+     * <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      * <code>standard</code> volumes.
      * </p>
      */
@@ -419,45 +419,45 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports.
-     * For io1, this represents the number of IOPS that are provisioned for the
-     * volume. For <code>gp2</code>, this represents the baseline performance of
-     * the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information on General Purpose SSD baseline
-     * performance, I/O credits, and bursting, see <a href=
+     * For <code>io1</code>, this represents the number of IOPS that are
+     * provisioned for the volume. For <code>gp2</code>, this represents the
+     * baseline performance of the volume and the rate at which the volume
+     * accumulates I/O credits for bursting. For more information about General
+     * Purpose SSD baseline performance, I/O credits, and bursting, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
      * >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
      * <p>
-     * Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS
-     * for <code>gp2</code> volumes.
+     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and
+     * 100-10000 IOPS for <code>gp2</code> volumes.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create
-     * <code><code>io1</code></code> volumes; it is not used in requests to
-     * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>io1</code> volumes; it is not used in requests to create
+     * <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      * <code>standard</code> volumes.
      * </p>
      * 
      * @param iops
      *        The number of I/O operations per second (IOPS) that the volume
-     *        supports. For io1, this represents the number of IOPS that are
-     *        provisioned for the volume. For <code>gp2</code>, this represents
-     *        the baseline performance of the volume and the rate at which the
-     *        volume accumulates I/O credits for bursting. For more information
-     *        on General Purpose SSD baseline performance, I/O credits, and
-     *        bursting, see <a href=
+     *        supports. For <code>io1</code>, this represents the number of IOPS
+     *        that are provisioned for the volume. For <code>gp2</code>, this
+     *        represents the baseline performance of the volume and the rate at
+     *        which the volume accumulates I/O credits for bursting. For more
+     *        information about General Purpose SSD baseline performance, I/O
+     *        credits, and bursting, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
      *        >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute
      *        Cloud User Guide</i>.</p>
      *        <p>
-     *        Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000
-     *        IOPS for <code>gp2</code> volumes.
+     *        Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes
+     *        and 100-10000 IOPS for <code>gp2</code> volumes.
      *        </p>
      *        <p>
      *        Condition: This parameter is required for requests to create
-     *        <code><code>io1</code></code> volumes; it is not used in requests
-     *        to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     *        <code>io1</code> volumes; it is not used in requests to create
+     *        <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      *        <code>standard</code> volumes.
      */
 
@@ -468,45 +468,45 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports.
-     * For io1, this represents the number of IOPS that are provisioned for the
-     * volume. For <code>gp2</code>, this represents the baseline performance of
-     * the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information on General Purpose SSD baseline
-     * performance, I/O credits, and bursting, see <a href=
+     * For <code>io1</code>, this represents the number of IOPS that are
+     * provisioned for the volume. For <code>gp2</code>, this represents the
+     * baseline performance of the volume and the rate at which the volume
+     * accumulates I/O credits for bursting. For more information about General
+     * Purpose SSD baseline performance, I/O credits, and bursting, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
      * >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
      * <p>
-     * Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS
-     * for <code>gp2</code> volumes.
+     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and
+     * 100-10000 IOPS for <code>gp2</code> volumes.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create
-     * <code><code>io1</code></code> volumes; it is not used in requests to
-     * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>io1</code> volumes; it is not used in requests to create
+     * <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      * <code>standard</code> volumes.
      * </p>
      * 
      * @return The number of I/O operations per second (IOPS) that the volume
-     *         supports. For io1, this represents the number of IOPS that are
-     *         provisioned for the volume. For <code>gp2</code>, this represents
-     *         the baseline performance of the volume and the rate at which the
-     *         volume accumulates I/O credits for bursting. For more information
-     *         on General Purpose SSD baseline performance, I/O credits, and
-     *         bursting, see <a href=
+     *         supports. For <code>io1</code>, this represents the number of
+     *         IOPS that are provisioned for the volume. For <code>gp2</code>,
+     *         this represents the baseline performance of the volume and the
+     *         rate at which the volume accumulates I/O credits for bursting.
+     *         For more information about General Purpose SSD baseline
+     *         performance, I/O credits, and bursting, see <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
      *         >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute
      *         Cloud User Guide</i>.</p>
      *         <p>
-     *         Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000
-     *         IOPS for <code>gp2</code> volumes.
+     *         Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes
+     *         and 100-10000 IOPS for <code>gp2</code> volumes.
      *         </p>
      *         <p>
      *         Condition: This parameter is required for requests to create
-     *         <code><code>io1</code></code> volumes; it is not used in requests
-     *         to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>,
-     *         or <code>standard</code> volumes.
+     *         <code>io1</code> volumes; it is not used in requests to create
+     *         <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     *         <code>standard</code> volumes.
      */
 
     public Integer getIops() {
@@ -516,45 +516,45 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports.
-     * For io1, this represents the number of IOPS that are provisioned for the
-     * volume. For <code>gp2</code>, this represents the baseline performance of
-     * the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information on General Purpose SSD baseline
-     * performance, I/O credits, and bursting, see <a href=
+     * For <code>io1</code>, this represents the number of IOPS that are
+     * provisioned for the volume. For <code>gp2</code>, this represents the
+     * baseline performance of the volume and the rate at which the volume
+     * accumulates I/O credits for bursting. For more information about General
+     * Purpose SSD baseline performance, I/O credits, and bursting, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
      * >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
      * <p>
-     * Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000 IOPS
-     * for <code>gp2</code> volumes.
+     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and
+     * 100-10000 IOPS for <code>gp2</code> volumes.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create
-     * <code><code>io1</code></code> volumes; it is not used in requests to
-     * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>io1</code> volumes; it is not used in requests to create
+     * <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      * <code>standard</code> volumes.
      * </p>
      * 
      * @param iops
      *        The number of I/O operations per second (IOPS) that the volume
-     *        supports. For io1, this represents the number of IOPS that are
-     *        provisioned for the volume. For <code>gp2</code>, this represents
-     *        the baseline performance of the volume and the rate at which the
-     *        volume accumulates I/O credits for bursting. For more information
-     *        on General Purpose SSD baseline performance, I/O credits, and
-     *        bursting, see <a href=
+     *        supports. For <code>io1</code>, this represents the number of IOPS
+     *        that are provisioned for the volume. For <code>gp2</code>, this
+     *        represents the baseline performance of the volume and the rate at
+     *        which the volume accumulates I/O credits for bursting. For more
+     *        information about General Purpose SSD baseline performance, I/O
+     *        credits, and bursting, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"
      *        >Amazon EBS Volume Types</a> in the <i>Amazon Elastic Compute
      *        Cloud User Guide</i>.</p>
      *        <p>
-     *        Constraint: Range is 100-20000 IOPS for io1 volumes and 100-10000
-     *        IOPS for <code>gp2</code> volumes.
+     *        Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes
+     *        and 100-10000 IOPS for <code>gp2</code> volumes.
      *        </p>
      *        <p>
      *        Condition: This parameter is required for requests to create
-     *        <code><code>io1</code></code> volumes; it is not used in requests
-     *        to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     *        <code>io1</code> volumes; it is not used in requests to create
+     *        <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      *        <code>standard</code> volumes.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

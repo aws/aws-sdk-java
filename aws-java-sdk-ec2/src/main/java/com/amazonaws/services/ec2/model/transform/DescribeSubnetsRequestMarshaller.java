@@ -47,7 +47,7 @@ public class DescribeSubnetsRequestMarshaller implements
         Request<DescribeSubnetsRequest> request = new DefaultRequest<DescribeSubnetsRequest>(
                 describeSubnetsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSubnets");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> subnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSubnetsRequest

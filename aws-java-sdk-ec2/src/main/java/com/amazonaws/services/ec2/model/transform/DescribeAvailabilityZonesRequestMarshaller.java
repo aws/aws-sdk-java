@@ -48,7 +48,7 @@ public class DescribeAvailabilityZonesRequestMarshaller
         Request<DescribeAvailabilityZonesRequest> request = new DefaultRequest<DescribeAvailabilityZonesRequest>(
                 describeAvailabilityZonesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeAvailabilityZones");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> zoneNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAvailabilityZonesRequest

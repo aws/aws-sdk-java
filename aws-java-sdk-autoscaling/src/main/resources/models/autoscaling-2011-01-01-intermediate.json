@@ -20,13 +20,13 @@
     "jsonVersion" : null,
     "endpointPrefix" : "autoscaling",
     "signingName" : "autoscaling",
+    "xmlProtocol" : true,
     "serviceName" : "Auto Scaling",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller",
-    "jsonProtocol" : false,
-    "xmlProtocol" : true
+    "jsonProtocol" : false
   },
   "operations" : {
     "AttachInstances" : {
@@ -51,13 +51,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "attachInstances",
       "syncReturnType" : "AttachInstancesResult",
       "asyncReturnType" : "AttachInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<AttachInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AttachInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AttachInstancesRequest, AttachInstancesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "attachInstances"
     },
     "AttachLoadBalancers" : {
       "documentation" : "<p>Attaches one or more load balancers to the specified Auto Scaling group.</p> <p>To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html\">Attach a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -81,13 +81,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "attachLoadBalancers",
       "syncReturnType" : "AttachLoadBalancersResult",
       "asyncReturnType" : "AttachLoadBalancersResult",
       "asyncFutureType" : "java.util.concurrent.Future<AttachLoadBalancersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AttachLoadBalancersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AttachLoadBalancersRequest, AttachLoadBalancersResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "attachLoadBalancers"
     },
     "CompleteLifecycleAction" : {
       "documentation" : "<p>Completes the lifecycle action for the specified token or instance with the specified result.</p> <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>(Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke your Lambda function when Auto Scaling launches or terminates instances.</li> <li>(Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish lifecycle notifications to the target.</li> <li>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</li> <li>If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state.</li> <li><b>If you finish before the timeout period ends, complete the lifecycle action.</b></li> </ol> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html\">Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -111,13 +111,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "completeLifecycleAction",
       "syncReturnType" : "CompleteLifecycleActionResult",
       "asyncReturnType" : "CompleteLifecycleActionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CompleteLifecycleActionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CompleteLifecycleActionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CompleteLifecycleActionRequest, CompleteLifecycleActionResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "completeLifecycleAction"
     },
     "CreateAutoScalingGroup" : {
       "documentation" : "<p>Creates an Auto Scaling group with the specified name and attributes.</p> <p>If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per region, the call fails. For information about viewing and updating this limit, see <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html\">Auto Scaling Groups</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -147,13 +147,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createAutoScalingGroup",
       "syncReturnType" : "CreateAutoScalingGroupResult",
       "asyncReturnType" : "CreateAutoScalingGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAutoScalingGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAutoScalingGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAutoScalingGroupRequest, CreateAutoScalingGroupResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "createAutoScalingGroup"
     },
     "CreateLaunchConfiguration" : {
       "documentation" : "<p>Creates a launch configuration.</p> <p>If you exceed your maximum limit of launch configurations, which by default is 100 per region, the call fails. For information about viewing and updating this limit, see <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html\">Launch Configurations</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -183,13 +183,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createLaunchConfiguration",
       "syncReturnType" : "CreateLaunchConfigurationResult",
       "asyncReturnType" : "CreateLaunchConfigurationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateLaunchConfigurationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateLaunchConfigurationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLaunchConfigurationRequest, CreateLaunchConfigurationResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "createLaunchConfiguration"
     },
     "CreateOrUpdateTags" : {
       "documentation" : "<p>Creates or updates tags for the specified Auto Scaling group.</p> <p>When you specify a tag with a key that already exists, the operation overwrites the previous tag definition, and you do not get an error message.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html\">Tagging Auto Scaling Groups and Instances</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -219,13 +219,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createOrUpdateTags",
       "syncReturnType" : "CreateOrUpdateTagsResult",
       "asyncReturnType" : "CreateOrUpdateTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateOrUpdateTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateOrUpdateTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateOrUpdateTagsRequest, CreateOrUpdateTagsResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "createOrUpdateTags"
     },
     "DeleteAutoScalingGroup" : {
       "documentation" : "<p>Deletes the specified Auto Scaling group.</p> <p>If the group has instances or scaling activities in progress, you must specify the option to force the deletion in order for it to succeed.</p> <p>If the group has policies, deleting the group deletes the policies, the underlying alarm actions, and any alarm that no longer has an associated action.</p> <p>To remove instances from the Auto Scaling group before deleting it, call <a>DetachInstances</a> with the list of instances and the option to decrement the desired capacity so that Auto Scaling does not launch replacement instances.</p> <p>To terminate all instances before deleting the Auto Scaling group, call <a>UpdateAutoScalingGroup</a> and set the minimum size and desired capacity of the Auto Scaling group to zero.</p>",
@@ -255,13 +255,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteAutoScalingGroup",
       "syncReturnType" : "DeleteAutoScalingGroupResult",
       "asyncReturnType" : "DeleteAutoScalingGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteAutoScalingGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteAutoScalingGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAutoScalingGroupRequest, DeleteAutoScalingGroupResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "deleteAutoScalingGroup"
     },
     "DeleteLaunchConfiguration" : {
       "documentation" : "<p>Deletes the specified launch configuration.</p> <p>The launch configuration must not be attached to an Auto Scaling group. When this call completes, the launch configuration is no longer available for use.</p>",
@@ -288,13 +288,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteLaunchConfiguration",
       "syncReturnType" : "DeleteLaunchConfigurationResult",
       "asyncReturnType" : "DeleteLaunchConfigurationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteLaunchConfigurationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteLaunchConfigurationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLaunchConfigurationRequest, DeleteLaunchConfigurationResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "deleteLaunchConfiguration"
     },
     "DeleteLifecycleHook" : {
       "documentation" : "<p>Deletes the specified lifecycle hook.</p> <p>If there are any outstanding lifecycle actions, they are completed first (<code>ABANDON</code> for launching instances, <code>CONTINUE</code> for terminating instances).</p>",
@@ -318,13 +318,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteLifecycleHook",
       "syncReturnType" : "DeleteLifecycleHookResult",
       "asyncReturnType" : "DeleteLifecycleHookResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteLifecycleHookResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteLifecycleHookResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLifecycleHookRequest, DeleteLifecycleHookResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "deleteLifecycleHook"
     },
     "DeleteNotificationConfiguration" : {
       "documentation" : "<p>Deletes the specified notification.</p>",
@@ -348,13 +348,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteNotificationConfiguration",
       "syncReturnType" : "DeleteNotificationConfigurationResult",
       "asyncReturnType" : "DeleteNotificationConfigurationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteNotificationConfigurationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteNotificationConfigurationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteNotificationConfigurationRequest, DeleteNotificationConfigurationResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "deleteNotificationConfiguration"
     },
     "DeletePolicy" : {
       "documentation" : "<p>Deletes the specified Auto Scaling policy.</p> <p>Deleting a policy deletes the underlying alarm action, but does not delete the alarm, even if it no longer has an associated action.</p>",
@@ -378,13 +378,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deletePolicy",
       "syncReturnType" : "DeletePolicyResult",
       "asyncReturnType" : "DeletePolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeletePolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeletePolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, DeletePolicyResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "deletePolicy"
     },
     "DeleteScheduledAction" : {
       "documentation" : "<p>Deletes the specified scheduled action.</p>",
@@ -408,13 +408,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteScheduledAction",
       "syncReturnType" : "DeleteScheduledActionResult",
       "asyncReturnType" : "DeleteScheduledActionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteScheduledActionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteScheduledActionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteScheduledActionRequest, DeleteScheduledActionResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "deleteScheduledAction"
     },
     "DeleteTags" : {
       "documentation" : "<p>Deletes the specified tags.</p>",
@@ -438,13 +438,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteTags",
       "syncReturnType" : "DeleteTagsResult",
       "asyncReturnType" : "DeleteTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "deleteTags"
     },
     "DescribeAccountLimits" : {
       "documentation" : "<p>Describes the current Auto Scaling resource limits for your AWS account.</p> <p>For information about requesting an increase in these limits, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html\">AWS Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>",
@@ -468,13 +468,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeAccountLimits",
       "syncReturnType" : "DescribeAccountLimitsResult",
       "asyncReturnType" : "DescribeAccountLimitsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAccountLimitsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAccountLimitsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeAccountLimits"
     },
     "DescribeAdjustmentTypes" : {
       "documentation" : "<p>Describes the policy adjustment types for use with <a>PutScalingPolicy</a>.</p>",
@@ -498,13 +498,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeAdjustmentTypes",
       "syncReturnType" : "DescribeAdjustmentTypesResult",
       "asyncReturnType" : "DescribeAdjustmentTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAdjustmentTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAdjustmentTypesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAdjustmentTypesRequest, DescribeAdjustmentTypesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeAdjustmentTypes"
     },
     "DescribeAutoScalingGroups" : {
       "documentation" : "<p>Describes one or more Auto Scaling groups. If a list of names is not provided, the call describes all Auto Scaling groups.</p>",
@@ -531,13 +531,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeAutoScalingGroups",
       "syncReturnType" : "DescribeAutoScalingGroupsResult",
       "asyncReturnType" : "DescribeAutoScalingGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAutoScalingGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAutoScalingGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAutoScalingGroupsRequest, DescribeAutoScalingGroupsResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeAutoScalingGroups"
     },
     "DescribeAutoScalingInstances" : {
       "documentation" : "<p>Describes one or more Auto Scaling instances. If a list is not provided, the call describes all instances.</p>",
@@ -564,13 +564,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeAutoScalingInstances",
       "syncReturnType" : "DescribeAutoScalingInstancesResult",
       "asyncReturnType" : "DescribeAutoScalingInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAutoScalingInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAutoScalingInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAutoScalingInstancesRequest, DescribeAutoScalingInstancesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeAutoScalingInstances"
     },
     "DescribeAutoScalingNotificationTypes" : {
       "documentation" : "<p>Describes the notification types that are supported by Auto Scaling.</p>",
@@ -594,13 +594,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeAutoScalingNotificationTypes",
       "syncReturnType" : "DescribeAutoScalingNotificationTypesResult",
       "asyncReturnType" : "DescribeAutoScalingNotificationTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAutoScalingNotificationTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAutoScalingNotificationTypesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAutoScalingNotificationTypesRequest, DescribeAutoScalingNotificationTypesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeAutoScalingNotificationTypes"
     },
     "DescribeLaunchConfigurations" : {
       "documentation" : "<p>Describes one or more launch configurations. If you omit the list of names, then the call describes all launch configurations.</p>",
@@ -627,13 +627,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeLaunchConfigurations",
       "syncReturnType" : "DescribeLaunchConfigurationsResult",
       "asyncReturnType" : "DescribeLaunchConfigurationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLaunchConfigurationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLaunchConfigurationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLaunchConfigurationsRequest, DescribeLaunchConfigurationsResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeLaunchConfigurations"
     },
     "DescribeLifecycleHookTypes" : {
       "documentation" : "<p>Describes the available types of lifecycle hooks.</p>",
@@ -657,13 +657,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeLifecycleHookTypes",
       "syncReturnType" : "DescribeLifecycleHookTypesResult",
       "asyncReturnType" : "DescribeLifecycleHookTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLifecycleHookTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLifecycleHookTypesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLifecycleHookTypesRequest, DescribeLifecycleHookTypesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeLifecycleHookTypes"
     },
     "DescribeLifecycleHooks" : {
       "documentation" : "<p>Describes the lifecycle hooks for the specified Auto Scaling group.</p>",
@@ -687,13 +687,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeLifecycleHooks",
       "syncReturnType" : "DescribeLifecycleHooksResult",
       "asyncReturnType" : "DescribeLifecycleHooksResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLifecycleHooksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLifecycleHooksResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLifecycleHooksRequest, DescribeLifecycleHooksResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeLifecycleHooks"
     },
     "DescribeLoadBalancers" : {
       "documentation" : "<p>Describes the load balancers for the specified Auto Scaling group.</p>",
@@ -717,13 +717,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeLoadBalancers",
       "syncReturnType" : "DescribeLoadBalancersResult",
       "asyncReturnType" : "DescribeLoadBalancersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLoadBalancersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLoadBalancersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancersRequest, DescribeLoadBalancersResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeLoadBalancers"
     },
     "DescribeMetricCollectionTypes" : {
       "documentation" : "<p>Describes the available CloudWatch metrics for Auto Scaling.</p> <p>Note that the <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request this metric when calling <a>EnableMetricsCollection</a>.</p>",
@@ -747,13 +747,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeMetricCollectionTypes",
       "syncReturnType" : "DescribeMetricCollectionTypesResult",
       "asyncReturnType" : "DescribeMetricCollectionTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeMetricCollectionTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeMetricCollectionTypesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeMetricCollectionTypesRequest, DescribeMetricCollectionTypesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeMetricCollectionTypes"
     },
     "DescribeNotificationConfigurations" : {
       "documentation" : "<p>Describes the notification actions associated with the specified Auto Scaling group.</p>",
@@ -780,13 +780,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeNotificationConfigurations",
       "syncReturnType" : "DescribeNotificationConfigurationsResult",
       "asyncReturnType" : "DescribeNotificationConfigurationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeNotificationConfigurationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeNotificationConfigurationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeNotificationConfigurationsRequest, DescribeNotificationConfigurationsResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeNotificationConfigurations"
     },
     "DescribePolicies" : {
       "documentation" : "<p>Describes the policies for the specified Auto Scaling group.</p>",
@@ -813,13 +813,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describePolicies",
       "syncReturnType" : "DescribePoliciesResult",
       "asyncReturnType" : "DescribePoliciesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribePoliciesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribePoliciesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribePoliciesRequest, DescribePoliciesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describePolicies"
     },
     "DescribeScalingActivities" : {
       "documentation" : "<p>Describes one or more scaling activities for the specified Auto Scaling group. If you omit the <code>ActivityIds</code>, the call returns all activities from the past six weeks. Activities are sorted by the start time. Activities still in progress appear first on the list.</p>",
@@ -846,13 +846,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeScalingActivities",
       "syncReturnType" : "DescribeScalingActivitiesResult",
       "asyncReturnType" : "DescribeScalingActivitiesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeScalingActivitiesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeScalingActivitiesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeScalingActivitiesRequest, DescribeScalingActivitiesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeScalingActivities"
     },
     "DescribeScalingProcessTypes" : {
       "documentation" : "<p>Describes the scaling process types for use with <a>ResumeProcesses</a> and <a>SuspendProcesses</a>.</p>",
@@ -876,13 +876,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeScalingProcessTypes",
       "syncReturnType" : "DescribeScalingProcessTypesResult",
       "asyncReturnType" : "DescribeScalingProcessTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeScalingProcessTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeScalingProcessTypesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeScalingProcessTypesRequest, DescribeScalingProcessTypesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeScalingProcessTypes"
     },
     "DescribeScheduledActions" : {
       "documentation" : "<p>Describes the actions scheduled for your Auto Scaling group that haven't run. To describe the actions that have already run, use <a>DescribeScalingActivities</a>.</p>",
@@ -909,13 +909,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeScheduledActions",
       "syncReturnType" : "DescribeScheduledActionsResult",
       "asyncReturnType" : "DescribeScheduledActionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeScheduledActionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeScheduledActionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeScheduledActionsRequest, DescribeScheduledActionsResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeScheduledActions"
     },
     "DescribeTags" : {
       "documentation" : "<p>Describes the specified tags.</p> <p>You can use filters to limit the results. For example, you can query for the tags for a specific Auto Scaling group. You can specify multiple values for a filter. A tag must match at least one of the specified values for it to be included in the results.</p> <p>You can also specify multiple filters. The result includes information for a particular tag only if it matches all the filters. If there's no match, no special message is returned.</p>",
@@ -942,13 +942,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeTags",
       "syncReturnType" : "DescribeTagsResult",
       "asyncReturnType" : "DescribeTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeTags"
     },
     "DescribeTerminationPolicyTypes" : {
       "documentation" : "<p>Describes the termination policies supported by Auto Scaling.</p>",
@@ -972,13 +972,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeTerminationPolicyTypes",
       "syncReturnType" : "DescribeTerminationPolicyTypesResult",
       "asyncReturnType" : "DescribeTerminationPolicyTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTerminationPolicyTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTerminationPolicyTypesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTerminationPolicyTypesRequest, DescribeTerminationPolicyTypesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "describeTerminationPolicyTypes"
     },
     "DetachInstances" : {
       "documentation" : "<p>Removes one or more instances from the specified Auto Scaling group.</p> <p>After the instances are detached, you can manage them independently from the rest of the Auto Scaling group.</p> <p>If you do not specify the option to decrement the desired capacity, Auto Scaling launches instances to replace the ones that are detached.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html\">Detach EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -1002,13 +1002,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "detachInstances",
       "syncReturnType" : "DetachInstancesResult",
       "asyncReturnType" : "DetachInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DetachInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DetachInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DetachInstancesRequest, DetachInstancesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "detachInstances"
     },
     "DetachLoadBalancers" : {
       "documentation" : "<p>Removes one or more load balancers from the specified Auto Scaling group.</p> <p>When you detach a load balancer, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the load balancer using <a>DescribeLoadBalancers</a>. Note that the instances remain running.</p>",
@@ -1032,13 +1032,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "detachLoadBalancers",
       "syncReturnType" : "DetachLoadBalancersResult",
       "asyncReturnType" : "DetachLoadBalancersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DetachLoadBalancersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DetachLoadBalancersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DetachLoadBalancersRequest, DetachLoadBalancersResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "detachLoadBalancers"
     },
     "DisableMetricsCollection" : {
       "documentation" : "<p>Disables monitoring of the specified metrics for the specified Auto Scaling group.</p>",
@@ -1062,13 +1062,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "disableMetricsCollection",
       "syncReturnType" : "DisableMetricsCollectionResult",
       "asyncReturnType" : "DisableMetricsCollectionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableMetricsCollectionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableMetricsCollectionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableMetricsCollectionRequest, DisableMetricsCollectionResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "disableMetricsCollection"
     },
     "EnableMetricsCollection" : {
       "documentation" : "<p>Enables monitoring of the specified metrics for the specified Auto Scaling group.</p> <p>You can only enable metrics collection if <code>InstanceMonitoring</code> in the launch configuration for the group is set to <code>True</code>.</p>",
@@ -1092,13 +1092,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "enableMetricsCollection",
       "syncReturnType" : "EnableMetricsCollectionResult",
       "asyncReturnType" : "EnableMetricsCollectionResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableMetricsCollectionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnableMetricsCollectionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableMetricsCollectionRequest, EnableMetricsCollectionResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "enableMetricsCollection"
     },
     "EnterStandby" : {
       "documentation" : "<p>Moves the specified instances into <code>Standby</code> mode.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html\">Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -1122,13 +1122,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "enterStandby",
       "syncReturnType" : "EnterStandbyResult",
       "asyncReturnType" : "EnterStandbyResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnterStandbyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnterStandbyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnterStandbyRequest, EnterStandbyResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "enterStandby"
     },
     "ExecutePolicy" : {
       "documentation" : "<p>Executes the specified policy.</p>",
@@ -1155,13 +1155,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "executePolicy",
       "syncReturnType" : "ExecutePolicyResult",
       "asyncReturnType" : "ExecutePolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<ExecutePolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ExecutePolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ExecutePolicyRequest, ExecutePolicyResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "executePolicy"
     },
     "ExitStandby" : {
       "documentation" : "<p>Moves the specified instances out of <code>Standby</code> mode.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html\">Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -1185,13 +1185,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "exitStandby",
       "syncReturnType" : "ExitStandbyResult",
       "asyncReturnType" : "ExitStandbyResult",
       "asyncFutureType" : "java.util.concurrent.Future<ExitStandbyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ExitStandbyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ExitStandbyRequest, ExitStandbyResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "exitStandby"
     },
     "PutLifecycleHook" : {
       "documentation" : "<p>Creates or updates a lifecycle hook for the specified Auto Scaling Group.</p> <p>A lifecycle hook tells Auto Scaling that you want to perform an action on an instance that is not actively in service; for example, either when the instance launches or before the instance terminates.</p> <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>(Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke your Lambda function when Auto Scaling launches or terminates instances.</li> <li>(Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish lifecycle notifications to the target.</li> <li><b>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</b></li> <li>If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state.</li> <li>If you finish before the timeout period ends, complete the lifecycle action.</li> </ol> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html\">Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p> <p>If you exceed your maximum limit of lifecycle hooks, which by default is 50 per region, the call fails. For information about updating this limit, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html\">AWS Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>",
@@ -1218,13 +1218,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "putLifecycleHook",
       "syncReturnType" : "PutLifecycleHookResult",
       "asyncReturnType" : "PutLifecycleHookResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutLifecycleHookResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutLifecycleHookResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutLifecycleHookRequest, PutLifecycleHookResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "putLifecycleHook"
     },
     "PutNotificationConfiguration" : {
       "documentation" : "<p> Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to this topic can have messages for events delivered to an endpoint such as a web server or email address. </p> <p>For more information see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html\">Getting Notifications When Your Auto Scaling Group Changes</a> in the <i>Auto Scaling Developer Guide</i>.</p> <p>This configuration overwrites an existing configuration.</p>",
@@ -1251,13 +1251,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "putNotificationConfiguration",
       "syncReturnType" : "PutNotificationConfigurationResult",
       "asyncReturnType" : "PutNotificationConfigurationResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutNotificationConfigurationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutNotificationConfigurationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutNotificationConfigurationRequest, PutNotificationConfigurationResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "putNotificationConfiguration"
     },
     "PutScalingPolicy" : {
       "documentation" : "<p>Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the parameters you want to change. Any existing parameter not changed in an update to an existing policy is not changed in this update request.</p> <p>If you exceed your maximum limit of step adjustments, which by default is 20 per region, the call fails. For information about updating this limit, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html\">AWS Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>",
@@ -1284,13 +1284,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "putScalingPolicy",
       "syncReturnType" : "PutScalingPolicyResult",
       "asyncReturnType" : "PutScalingPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutScalingPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutScalingPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutScalingPolicyRequest, PutScalingPolicyResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "putScalingPolicy"
     },
     "PutScheduledUpdateGroupAction" : {
       "documentation" : "<p> Creates or updates a scheduled scaling action for an Auto Scaling group. When updating a scheduled scaling action, if you leave a parameter unspecified, the corresponding value remains unchanged in the affected Auto Scaling group. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html\">Scheduled Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -1320,13 +1320,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "putScheduledUpdateGroupAction",
       "syncReturnType" : "PutScheduledUpdateGroupActionResult",
       "asyncReturnType" : "PutScheduledUpdateGroupActionResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutScheduledUpdateGroupActionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutScheduledUpdateGroupActionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutScheduledUpdateGroupActionRequest, PutScheduledUpdateGroupActionResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "putScheduledUpdateGroupAction"
     },
     "RecordLifecycleActionHeartbeat" : {
       "documentation" : "<p>Records a heartbeat for the lifecycle action associated with the specified token or instance. This extends the timeout by the length of time defined using <a>PutLifecycleHook</a>.</p> <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>(Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke your Lambda function when Auto Scaling launches or terminates instances.</li> <li>(Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish lifecycle notifications to the target.</li> <li>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</li> <li><b>If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state.</b></li> <li>If you finish before the timeout period ends, complete the lifecycle action.</li> </ol> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html\">Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -1350,13 +1350,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "recordLifecycleActionHeartbeat",
       "syncReturnType" : "RecordLifecycleActionHeartbeatResult",
       "asyncReturnType" : "RecordLifecycleActionHeartbeatResult",
       "asyncFutureType" : "java.util.concurrent.Future<RecordLifecycleActionHeartbeatResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RecordLifecycleActionHeartbeatResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RecordLifecycleActionHeartbeatRequest, RecordLifecycleActionHeartbeatResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "recordLifecycleActionHeartbeat"
     },
     "ResumeProcesses" : {
       "documentation" : "<p>Resumes the specified suspended Auto Scaling processes, or all suspended process, for the specified Auto Scaling group.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html\">Suspending and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -1383,13 +1383,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "resumeProcesses",
       "syncReturnType" : "ResumeProcessesResult",
       "asyncReturnType" : "ResumeProcessesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResumeProcessesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ResumeProcessesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResumeProcessesRequest, ResumeProcessesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "resumeProcesses"
     },
     "SetDesiredCapacity" : {
       "documentation" : "<p>Sets the size of the specified Auto Scaling group.</p> <p>For more information about desired capacity, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html\">What Is Auto Scaling?</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -1416,13 +1416,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "setDesiredCapacity",
       "syncReturnType" : "SetDesiredCapacityResult",
       "asyncReturnType" : "SetDesiredCapacityResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetDesiredCapacityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetDesiredCapacityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetDesiredCapacityRequest, SetDesiredCapacityResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "setDesiredCapacity"
     },
     "SetInstanceHealth" : {
       "documentation" : "<p>Sets the health status of the specified instance.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html\">Health Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -1446,13 +1446,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "setInstanceHealth",
       "syncReturnType" : "SetInstanceHealthResult",
       "asyncReturnType" : "SetInstanceHealthResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetInstanceHealthResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetInstanceHealthResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetInstanceHealthRequest, SetInstanceHealthResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "setInstanceHealth"
     },
     "SetInstanceProtection" : {
       "documentation" : "<p>Updates the instance protection settings of the specified instances.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection\">Instance Protection</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -1479,13 +1479,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "setInstanceProtection",
       "syncReturnType" : "SetInstanceProtectionResult",
       "asyncReturnType" : "SetInstanceProtectionResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetInstanceProtectionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetInstanceProtectionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetInstanceProtectionRequest, SetInstanceProtectionResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "setInstanceProtection"
     },
     "SuspendProcesses" : {
       "documentation" : "<p>Suspends the specified Auto Scaling processes, or all processes, for the specified Auto Scaling group.</p> <p>Note that if you suspend either the <code>Launch</code> or <code>Terminate</code> process types, it can prevent other process types from functioning properly.</p> <p>To resume processes that have been suspended, use <a>ResumeProcesses</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html\">Suspending and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling Developer Guide</i>.</p>",
@@ -1512,13 +1512,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "suspendProcesses",
       "syncReturnType" : "SuspendProcessesResult",
       "asyncReturnType" : "SuspendProcessesResult",
       "asyncFutureType" : "java.util.concurrent.Future<SuspendProcessesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SuspendProcessesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SuspendProcessesRequest, SuspendProcessesResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "suspendProcesses"
     },
     "TerminateInstanceInAutoScalingGroup" : {
       "documentation" : "<p>Terminates the specified instance and optionally adjusts the desired group size.</p> <p>This call simply makes a termination request. The instance is not terminated immediately.</p>",
@@ -1545,13 +1545,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "terminateInstanceInAutoScalingGroup",
       "syncReturnType" : "TerminateInstanceInAutoScalingGroupResult",
       "asyncReturnType" : "TerminateInstanceInAutoScalingGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<TerminateInstanceInAutoScalingGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TerminateInstanceInAutoScalingGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TerminateInstanceInAutoScalingGroupRequest, TerminateInstanceInAutoScalingGroupResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "terminateInstanceInAutoScalingGroup"
     },
     "UpdateAutoScalingGroup" : {
       "documentation" : "<p>Updates the configuration for the specified Auto Scaling group.</p> <p>To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code> set to <code>False</code>, you must first disable the collection of group metrics. Otherwise, you will get an error. If you have previously enabled the collection of group metrics, you can disable it using <a>DisableMetricsCollection</a>.</p> <p>The new settings are registered upon the completion of this call. Any launch configuration settings take effect on any triggers after this call returns. Scaling activities that are currently in progress aren't affected.</p> <p>Note the following:</p> <ul> <li> <p>If you specify a new value for <code>MinSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MinSize</code>.</p> </li> <li> <p>If you specify a new value for <code>MaxSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MaxSize</code>.</p> </li> <li> <p>All other optional parameters are left unchanged if not specified.</p> </li> </ul>",
@@ -1578,13 +1578,13 @@
         "documentation" : "<p>You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updateAutoScalingGroup",
       "syncReturnType" : "UpdateAutoScalingGroupResult",
       "asyncReturnType" : "UpdateAutoScalingGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateAutoScalingGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateAutoScalingGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateAutoScalingGroupRequest, UpdateAutoScalingGroupResult>",
-      "authenticated" : true
+      "authenticated" : true,
+      "methodName" : "updateAutoScalingGroup"
     }
   },
   "shapes" : {
@@ -1735,11 +1735,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "NotificationConfiguration",
           "templateType" : "java.util.List<NotificationConfiguration>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NotificationConfiguration>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NotificationConfiguration>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1981,11 +1981,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "NotificationConfiguration",
             "templateType" : "java.util.List<NotificationConfiguration>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NotificationConfiguration>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NotificationConfiguration>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2113,11 +2113,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Filter",
           "templateType" : "java.util.List<Filter>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Filter>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Filter>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2362,11 +2362,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Filter",
             "templateType" : "java.util.List<Filter>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Filter>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Filter>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2860,11 +2860,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3213,11 +3213,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4916,11 +4916,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5271,11 +5271,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6206,11 +6206,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6666,11 +6666,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7816,11 +7816,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "TagDescription",
           "templateType" : "java.util.List<TagDescription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagDescription>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagDescription>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8009,11 +8009,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "TagDescription",
             "templateType" : "java.util.List<TagDescription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagDescription>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagDescription>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8246,11 +8246,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8444,11 +8444,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9373,11 +9373,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9514,11 +9514,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11132,11 +11132,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11458,11 +11458,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11867,11 +11867,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12198,11 +12198,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12853,11 +12853,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12971,11 +12971,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13193,11 +13193,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Instance",
           "templateType" : "java.util.List<Instance>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13363,11 +13363,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "SuspendedProcess",
           "templateType" : "java.util.List<SuspendedProcess>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SuspendedProcess>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SuspendedProcess>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13585,11 +13585,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "EnabledMetric",
           "templateType" : "java.util.List<EnabledMetric>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnabledMetric>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnabledMetric>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13755,11 +13755,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "TagDescription",
           "templateType" : "java.util.List<TagDescription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagDescription>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagDescription>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13873,11 +13873,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14331,11 +14331,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14503,11 +14503,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Instance",
             "templateType" : "java.util.List<Instance>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Instance>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14728,11 +14728,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "TagDescription",
             "templateType" : "java.util.List<TagDescription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagDescription>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagDescription>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15006,11 +15006,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15125,11 +15125,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15244,11 +15244,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "EnabledMetric",
             "templateType" : "java.util.List<EnabledMetric>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnabledMetric>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnabledMetric>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15363,11 +15363,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "SuspendedProcess",
             "templateType" : "java.util.List<SuspendedProcess>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SuspendedProcess>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SuspendedProcess>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15654,11 +15654,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Activity",
           "templateType" : "java.util.List<Activity>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15795,11 +15795,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Activity",
             "templateType" : "java.util.List<Activity>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15979,11 +15979,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16177,11 +16177,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17395,11 +17395,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17536,11 +17536,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17759,11 +17759,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17957,11 +17957,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18124,11 +18124,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "LoadBalancerState",
           "templateType" : "java.util.List<LoadBalancerState>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancerState>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancerState>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18370,11 +18370,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "LoadBalancerState",
             "templateType" : "java.util.List<LoadBalancerState>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancerState>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LoadBalancerState>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18667,11 +18667,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18785,11 +18785,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19034,11 +19034,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19259,11 +19259,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20938,11 +20938,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21136,11 +21136,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21268,11 +21268,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21413,11 +21413,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22505,11 +22505,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "StepAdjustment",
           "templateType" : "java.util.List<StepAdjustment>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<StepAdjustment>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<StepAdjustment>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22727,11 +22727,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Alarm",
           "templateType" : "java.util.List<Alarm>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Alarm>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Alarm>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23186,11 +23186,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "StepAdjustment",
             "templateType" : "java.util.List<StepAdjustment>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<StepAdjustment>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<StepAdjustment>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -23411,11 +23411,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Alarm",
             "templateType" : "java.util.List<Alarm>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Alarm>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Alarm>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -23702,11 +23702,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23952,11 +23952,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24084,11 +24084,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24439,11 +24439,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25245,11 +25245,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25496,11 +25496,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25874,11 +25874,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Activity",
           "templateType" : "java.util.List<Activity>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26120,11 +26120,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Activity",
             "templateType" : "java.util.List<Activity>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26252,11 +26252,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Activity",
           "templateType" : "java.util.List<Activity>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26393,11 +26393,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Activity",
             "templateType" : "java.util.List<Activity>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26560,11 +26560,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26701,11 +26701,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26907,11 +26907,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27052,11 +27052,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28227,11 +28227,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28425,11 +28425,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28948,11 +28948,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "AutoScalingInstanceDetails",
           "templateType" : "java.util.List<AutoScalingInstanceDetails>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingInstanceDetails>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingInstanceDetails>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29194,11 +29194,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "AutoScalingInstanceDetails",
             "templateType" : "java.util.List<AutoScalingInstanceDetails>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingInstanceDetails>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingInstanceDetails>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29326,11 +29326,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "AdjustmentType",
           "templateType" : "java.util.List<AdjustmentType>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AdjustmentType>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AdjustmentType>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29467,11 +29467,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "AdjustmentType",
             "templateType" : "java.util.List<AdjustmentType>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AdjustmentType>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AdjustmentType>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -30160,11 +30160,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -30515,11 +30515,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32418,11 +32418,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32536,11 +32536,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32862,11 +32862,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -33032,11 +33032,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -33389,11 +33389,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -33667,11 +33667,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -33892,11 +33892,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34011,11 +34011,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34302,11 +34302,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "ScheduledUpdateGroupAction",
           "templateType" : "java.util.List<ScheduledUpdateGroupAction>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ScheduledUpdateGroupAction>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ScheduledUpdateGroupAction>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -34548,11 +34548,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "ScheduledUpdateGroupAction",
             "templateType" : "java.util.List<ScheduledUpdateGroupAction>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ScheduledUpdateGroupAction>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ScheduledUpdateGroupAction>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34680,11 +34680,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -35035,11 +35035,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -35167,11 +35167,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "ProcessType",
           "templateType" : "java.util.List<ProcessType>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ProcessType>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ProcessType>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -35308,11 +35308,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "ProcessType",
             "templateType" : "java.util.List<ProcessType>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ProcessType>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ProcessType>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -36314,11 +36314,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -36484,11 +36484,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -36810,11 +36810,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "BlockDeviceMapping",
           "templateType" : "java.util.List<BlockDeviceMapping>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -37527,11 +37527,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -38070,11 +38070,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -38401,11 +38401,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "BlockDeviceMapping",
             "templateType" : "java.util.List<BlockDeviceMapping>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -38585,11 +38585,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -38783,11 +38783,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -38915,11 +38915,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -39056,11 +39056,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -39721,11 +39721,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -40023,11 +40023,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -41117,11 +41117,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Activity",
           "templateType" : "java.util.List<Activity>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -41258,11 +41258,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Activity",
             "templateType" : "java.util.List<Activity>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activity>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -42406,11 +42406,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -42656,11 +42656,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -43190,11 +43190,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -43360,11 +43360,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -43738,11 +43738,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "BlockDeviceMapping",
           "templateType" : "java.util.List<BlockDeviceMapping>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -44407,11 +44407,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -44950,11 +44950,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -45228,11 +45228,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "BlockDeviceMapping",
             "templateType" : "java.util.List<BlockDeviceMapping>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -45395,11 +45395,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "AutoScalingGroup",
           "templateType" : "java.util.List<AutoScalingGroup>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -45641,11 +45641,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "AutoScalingGroup",
             "templateType" : "java.util.List<AutoScalingGroup>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -46023,11 +46023,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "ScalingPolicy",
           "templateType" : "java.util.List<ScalingPolicy>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ScalingPolicy>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ScalingPolicy>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -46269,11 +46269,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "ScalingPolicy",
             "templateType" : "java.util.List<ScalingPolicy>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ScalingPolicy>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ScalingPolicy>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -46440,11 +46440,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "MetricCollectionType",
           "templateType" : "java.util.List<MetricCollectionType>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricCollectionType>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricCollectionType>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -46558,11 +46558,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "MetricGranularityType",
           "templateType" : "java.util.List<MetricGranularityType>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricGranularityType>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricGranularityType>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -46699,11 +46699,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "MetricGranularityType",
             "templateType" : "java.util.List<MetricGranularityType>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricGranularityType>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricGranularityType>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -46818,11 +46818,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "MetricCollectionType",
             "templateType" : "java.util.List<MetricCollectionType>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricCollectionType>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MetricCollectionType>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -47418,11 +47418,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "StepAdjustment",
           "templateType" : "java.util.List<StepAdjustment>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<StepAdjustment>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<StepAdjustment>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -47615,11 +47615,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "StepAdjustment",
             "templateType" : "java.util.List<StepAdjustment>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<StepAdjustment>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<StepAdjustment>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -49157,11 +49157,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -49512,11 +49512,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -49696,11 +49696,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -49999,11 +49999,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -50131,11 +50131,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "LaunchConfiguration",
           "templateType" : "java.util.List<LaunchConfiguration>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LaunchConfiguration>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LaunchConfiguration>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -50377,11 +50377,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "LaunchConfiguration",
             "templateType" : "java.util.List<LaunchConfiguration>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LaunchConfiguration>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LaunchConfiguration>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -50650,11 +50650,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -51005,11 +51005,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -51387,11 +51387,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "LifecycleHook",
           "templateType" : "java.util.List<LifecycleHook>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LifecycleHook>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LifecycleHook>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -51528,11 +51528,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "LifecycleHook",
             "templateType" : "java.util.List<LifecycleHook>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LifecycleHook>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LifecycleHook>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,

@@ -20,33 +20,35 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A provider representing a Cognito User Identity Pool and its client ID.
+ * A provider representing an Amazon Cognito Identity User Pool and its client
+ * ID.
  * </p>
  */
 public class CognitoIdentityProvider implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The provider name for a Cognito User Identity Pool. For example,
+     * The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
      * </p>
      */
     private String providerName;
     /**
      * <p>
-     * The client ID for the Cognito User Identity Pool.
+     * The client ID for the Amazon Cognito Identity User Pool.
      * </p>
      */
     private String clientId;
 
     /**
      * <p>
-     * The provider name for a Cognito User Identity Pool. For example,
+     * The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
      * </p>
      * 
      * @param providerName
-     *        The provider name for a Cognito User Identity Pool. For example,
+     *        The provider name for an Amazon Cognito Identity User Pool. For
+     *        example,
      *        <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
      *        .
      */
@@ -57,11 +59,12 @@ public class CognitoIdentityProvider implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The provider name for a Cognito User Identity Pool. For example,
+     * The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
      * </p>
      * 
-     * @return The provider name for a Cognito User Identity Pool. For example,
+     * @return The provider name for an Amazon Cognito Identity User Pool. For
+     *         example,
      *         <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
      *         .
      */
@@ -72,12 +75,13 @@ public class CognitoIdentityProvider implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The provider name for a Cognito User Identity Pool. For example,
+     * The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
      * </p>
      * 
      * @param providerName
-     *        The provider name for a Cognito User Identity Pool. For example,
+     *        The provider name for an Amazon Cognito Identity User Pool. For
+     *        example,
      *        <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
      *        .
      * @return Returns a reference to this object so that method calls can be
@@ -91,11 +95,11 @@ public class CognitoIdentityProvider implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The client ID for the Cognito User Identity Pool.
+     * The client ID for the Amazon Cognito Identity User Pool.
      * </p>
      * 
      * @param clientId
-     *        The client ID for the Cognito User Identity Pool.
+     *        The client ID for the Amazon Cognito Identity User Pool.
      */
 
     public void setClientId(String clientId) {
@@ -104,10 +108,10 @@ public class CognitoIdentityProvider implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The client ID for the Cognito User Identity Pool.
+     * The client ID for the Amazon Cognito Identity User Pool.
      * </p>
      * 
-     * @return The client ID for the Cognito User Identity Pool.
+     * @return The client ID for the Amazon Cognito Identity User Pool.
      */
 
     public String getClientId() {
@@ -116,11 +120,11 @@ public class CognitoIdentityProvider implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The client ID for the Cognito User Identity Pool.
+     * The client ID for the Amazon Cognito Identity User Pool.
      * </p>
      * 
      * @param clientId
-     *        The client ID for the Cognito User Identity Pool.
+     *        The client ID for the Amazon Cognito Identity User Pool.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

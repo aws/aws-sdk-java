@@ -20,25 +20,31 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the user data to be made available to an instance.
+ * Describes the user data for an instance.
  * </p>
  */
 public class UserData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded MIME user data for the instance.
+     * The user data. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide Base64-encoded text.
      * </p>
      */
     private String data;
 
     /**
      * <p>
-     * The Base64-encoded MIME user data for the instance.
+     * The user data. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide Base64-encoded text.
      * </p>
      * 
      * @param data
-     *        The Base64-encoded MIME user data for the instance.
+     *        The user data. If you are using an AWS SDK or command line tool,
+     *        Base64-encoding is performed for you, and you can load the text
+     *        from a file. Otherwise, you must provide Base64-encoded text.
      */
 
     public void setData(String data) {
@@ -47,10 +53,14 @@ public class UserData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded MIME user data for the instance.
+     * The user data. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide Base64-encoded text.
      * </p>
      * 
-     * @return The Base64-encoded MIME user data for the instance.
+     * @return The user data. If you are using an AWS SDK or command line tool,
+     *         Base64-encoding is performed for you, and you can load the text
+     *         from a file. Otherwise, you must provide Base64-encoded text.
      */
 
     public String getData() {
@@ -59,11 +69,15 @@ public class UserData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded MIME user data for the instance.
+     * The user data. If you are using an AWS SDK or command line tool,
+     * Base64-encoding is performed for you, and you can load the text from a
+     * file. Otherwise, you must provide Base64-encoded text.
      * </p>
      * 
      * @param data
-     *        The Base64-encoded MIME user data for the instance.
+     *        The user data. If you are using an AWS SDK or command line tool,
+     *        Base64-encoding is performed for you, and you can load the text
+     *        from a file. Otherwise, you must provide Base64-encoded text.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

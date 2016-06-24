@@ -20,10 +20,10 @@
     "jsonVersion" : "1.0",
     "endpointPrefix" : "streams.dynamodb",
     "signingName" : "dynamodb",
+    "xmlProtocol" : false,
     "jsonProtocol" : true,
     "serviceName" : "Amazon DynamoDB Streams",
     "cborProtocol" : false,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"

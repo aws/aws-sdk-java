@@ -48,7 +48,7 @@ public class CreateSecurityGroupRequestMarshaller
         Request<CreateSecurityGroupRequest> request = new DefaultRequest<CreateSecurityGroupRequest>(
                 createSecurityGroupRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSecurityGroup");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createSecurityGroupRequest.getGroupName() != null) {

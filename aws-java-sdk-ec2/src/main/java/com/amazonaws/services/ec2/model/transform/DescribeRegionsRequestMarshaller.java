@@ -47,7 +47,7 @@ public class DescribeRegionsRequestMarshaller implements
         Request<DescribeRegionsRequest> request = new DefaultRequest<DescribeRegionsRequest>(
                 describeRegionsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeRegions");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> regionNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeRegionsRequest

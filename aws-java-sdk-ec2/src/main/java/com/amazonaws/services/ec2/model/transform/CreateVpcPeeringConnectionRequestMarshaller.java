@@ -48,7 +48,7 @@ public class CreateVpcPeeringConnectionRequestMarshaller
         Request<CreateVpcPeeringConnectionRequest> request = new DefaultRequest<CreateVpcPeeringConnectionRequest>(
                 createVpcPeeringConnectionRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpcPeeringConnection");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (createVpcPeeringConnectionRequest.getVpcId() != null) {

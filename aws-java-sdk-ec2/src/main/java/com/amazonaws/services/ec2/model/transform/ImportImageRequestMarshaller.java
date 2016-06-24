@@ -47,7 +47,7 @@ public class ImportImageRequestMarshaller implements
         Request<ImportImageRequest> request = new DefaultRequest<ImportImageRequest>(
                 importImageRequest, "AmazonEC2");
         request.addParameter("Action", "ImportImage");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (importImageRequest.getDescription() != null) {

@@ -47,7 +47,7 @@ public class RebootInstancesRequestMarshaller implements
         Request<RebootInstancesRequest> request = new DefaultRequest<RebootInstancesRequest>(
                 rebootInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RebootInstances");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) rebootInstancesRequest

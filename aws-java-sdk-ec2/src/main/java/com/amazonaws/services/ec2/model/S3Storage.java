@@ -52,15 +52,14 @@ public class S3Storage implements Serializable, Cloneable {
     private String aWSAccessKeyId;
     /**
      * <p>
-     * A base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission
-     * to upload items into Amazon S3 on your behalf. For command line tools,
-     * base64 encoding is performed for you.
+     * An Amazon S3 upload policy that gives Amazon EC2 permission to upload
+     * items into Amazon S3 on your behalf.
      * </p>
      */
     private String uploadPolicy;
     /**
      * <p>
-     * The signature of the Base64 encoded JSON document.
+     * The signature of the JSON document.
      * </p>
      */
     private String uploadPolicySignature;
@@ -229,15 +228,13 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission
-     * to upload items into Amazon S3 on your behalf. For command line tools,
-     * base64 encoding is performed for you.
+     * An Amazon S3 upload policy that gives Amazon EC2 permission to upload
+     * items into Amazon S3 on your behalf.
      * </p>
      * 
      * @param uploadPolicy
-     *        A base64-encoded Amazon S3 upload policy that gives Amazon EC2
-     *        permission to upload items into Amazon S3 on your behalf. For
-     *        command line tools, base64 encoding is performed for you.
+     *        An Amazon S3 upload policy that gives Amazon EC2 permission to
+     *        upload items into Amazon S3 on your behalf.
      */
 
     public void setUploadPolicy(String uploadPolicy) {
@@ -246,14 +243,12 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission
-     * to upload items into Amazon S3 on your behalf. For command line tools,
-     * base64 encoding is performed for you.
+     * An Amazon S3 upload policy that gives Amazon EC2 permission to upload
+     * items into Amazon S3 on your behalf.
      * </p>
      * 
-     * @return A base64-encoded Amazon S3 upload policy that gives Amazon EC2
-     *         permission to upload items into Amazon S3 on your behalf. For
-     *         command line tools, base64 encoding is performed for you.
+     * @return An Amazon S3 upload policy that gives Amazon EC2 permission to
+     *         upload items into Amazon S3 on your behalf.
      */
 
     public String getUploadPolicy() {
@@ -262,15 +257,13 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission
-     * to upload items into Amazon S3 on your behalf. For command line tools,
-     * base64 encoding is performed for you.
+     * An Amazon S3 upload policy that gives Amazon EC2 permission to upload
+     * items into Amazon S3 on your behalf.
      * </p>
      * 
      * @param uploadPolicy
-     *        A base64-encoded Amazon S3 upload policy that gives Amazon EC2
-     *        permission to upload items into Amazon S3 on your behalf. For
-     *        command line tools, base64 encoding is performed for you.
+     *        An Amazon S3 upload policy that gives Amazon EC2 permission to
+     *        upload items into Amazon S3 on your behalf.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -282,11 +275,11 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The signature of the Base64 encoded JSON document.
+     * The signature of the JSON document.
      * </p>
      * 
      * @param uploadPolicySignature
-     *        The signature of the Base64 encoded JSON document.
+     *        The signature of the JSON document.
      */
 
     public void setUploadPolicySignature(String uploadPolicySignature) {
@@ -295,10 +288,10 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The signature of the Base64 encoded JSON document.
+     * The signature of the JSON document.
      * </p>
      * 
-     * @return The signature of the Base64 encoded JSON document.
+     * @return The signature of the JSON document.
      */
 
     public String getUploadPolicySignature() {
@@ -307,11 +300,11 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The signature of the Base64 encoded JSON document.
+     * The signature of the JSON document.
      * </p>
      * 
      * @param uploadPolicySignature
-     *        The signature of the Base64 encoded JSON document.
+     *        The signature of the JSON document.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

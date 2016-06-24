@@ -48,7 +48,7 @@ public class DescribeNetworkAclsRequestMarshaller
         Request<DescribeNetworkAclsRequest> request = new DefaultRequest<DescribeNetworkAclsRequest>(
                 describeNetworkAclsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeNetworkAcls");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> networkAclIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkAclsRequest

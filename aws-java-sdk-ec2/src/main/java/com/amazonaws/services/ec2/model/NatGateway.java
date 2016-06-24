@@ -992,7 +992,7 @@ public class NatGateway implements Serializable, Cloneable {
      * 
      * @param failureMessage
      *        If the NAT gateway could not be created, specifies the error
-     *        message for the failure, that corresponds to the error code. </p>
+     *        message for the failure, that corresponds to the error code.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1081,7 +1081,7 @@ public class NatGateway implements Serializable, Cloneable {
      * </ul>
      * 
      * @return If the NAT gateway could not be created, specifies the error
-     *         message for the failure, that corresponds to the error code. </p>
+     *         message for the failure, that corresponds to the error code.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1171,7 +1171,7 @@ public class NatGateway implements Serializable, Cloneable {
      * 
      * @param failureMessage
      *        If the NAT gateway could not be created, specifies the error
-     *        message for the failure, that corresponds to the error code. </p>
+     *        message for the failure, that corresponds to the error code.</p>
      *        <ul>
      *        <li>
      *        <p>

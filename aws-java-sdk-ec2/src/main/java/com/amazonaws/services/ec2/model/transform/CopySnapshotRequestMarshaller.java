@@ -47,7 +47,7 @@ public class CopySnapshotRequestMarshaller implements
         Request<CopySnapshotRequest> request = new DefaultRequest<CopySnapshotRequest>(
                 copySnapshotRequest, "AmazonEC2");
         request.addParameter("Action", "CopySnapshot");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (copySnapshotRequest.getSourceRegion() != null) {

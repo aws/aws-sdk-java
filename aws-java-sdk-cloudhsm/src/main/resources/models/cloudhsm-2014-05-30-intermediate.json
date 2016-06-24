@@ -21,12 +21,12 @@
     "endpointPrefix" : "cloudhsm",
     "signingName" : "cloudhsm",
     "xmlProtocol" : false,
-    "jsonProtocol" : true,
     "serviceName" : "CloudHSM",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "jsonProtocol" : true
   },
   "operations" : {
     "AddTagsToResource" : {

@@ -48,7 +48,7 @@ public class DescribeClassicLinkInstancesRequestMarshaller
         Request<DescribeClassicLinkInstancesRequest> request = new DefaultRequest<DescribeClassicLinkInstancesRequest>(
                 describeClassicLinkInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeClassicLinkInstances");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeClassicLinkInstancesRequest

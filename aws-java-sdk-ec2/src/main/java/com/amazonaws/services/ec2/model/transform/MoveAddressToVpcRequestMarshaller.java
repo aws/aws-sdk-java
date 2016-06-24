@@ -47,7 +47,7 @@ public class MoveAddressToVpcRequestMarshaller implements
         Request<MoveAddressToVpcRequest> request = new DefaultRequest<MoveAddressToVpcRequest>(
                 moveAddressToVpcRequest, "AmazonEC2");
         request.addParameter("Action", "MoveAddressToVpc");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (moveAddressToVpcRequest.getPublicIp() != null) {

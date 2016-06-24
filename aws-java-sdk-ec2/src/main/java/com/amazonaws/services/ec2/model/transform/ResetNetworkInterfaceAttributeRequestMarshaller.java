@@ -48,7 +48,7 @@ public class ResetNetworkInterfaceAttributeRequestMarshaller
         Request<ResetNetworkInterfaceAttributeRequest> request = new DefaultRequest<ResetNetworkInterfaceAttributeRequest>(
                 resetNetworkInterfaceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ResetNetworkInterfaceAttribute");
-        request.addParameter("Version", "2015-10-01");
+        request.addParameter("Version", "2016-04-01");
         request.setHttpMethod(HttpMethodName.POST);
 
         if (resetNetworkInterfaceAttributeRequest.getNetworkInterfaceId() != null) {
