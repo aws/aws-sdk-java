@@ -1,7 +1,7 @@
 <#macro content serviceModelRoot>
     private void init() {
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
-        setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
+        setEndpointPrefix(ENDPOINT_PREFIX);
 <#if serviceModelRoot.metadata.defaultEndpoint?has_content>
         // calling this.setEndPoint(...) will also modify the signer accordingly
         setEndpoint("${serviceModelRoot.metadata.defaultEndpoint}");

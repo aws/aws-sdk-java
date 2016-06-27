@@ -20,10 +20,10 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "cognito-idp",
     "signingName" : "cognito-idp",
-    "xmlProtocol" : false,
     "jsonProtocol" : true,
     "serviceName" : "Amazon Cognito Identity Provider",
     "cborProtocol" : false,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"

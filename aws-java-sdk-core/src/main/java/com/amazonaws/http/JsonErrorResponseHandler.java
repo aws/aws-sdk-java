@@ -82,6 +82,7 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
         if (requestId != null) {
             ase.setRequestId(requestId);
         }
+        ase.setHttpHeaders(response.getHeaders());
         return ase;
     }
 

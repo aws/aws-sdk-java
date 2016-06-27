@@ -58,9 +58,6 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "${metadata.signingName}";
 
-    /** The region metadata service name for computing region endpoints. */
-    private static final String DEFAULT_ENDPOINT_PREFIX = "${metadata.endpointPrefix}";
-
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ${clientConfigFactory} configFactory = new ${clientConfigFactory}();
 

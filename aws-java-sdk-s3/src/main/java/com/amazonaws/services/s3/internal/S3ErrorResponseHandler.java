@@ -14,7 +14,16 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import static com.amazonaws.util.StringUtils.UTF8;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.http.HttpResponse;
+import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.services.s3.Headers;
+import com.amazonaws.services.s3.model.AmazonS3Exception;
+import com.amazonaws.util.IOUtils;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -26,16 +35,7 @@ import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.http.HttpMethodName;
-import com.amazonaws.http.HttpResponse;
-import com.amazonaws.http.HttpResponseHandler;
-import com.amazonaws.services.s3.Headers;
-import com.amazonaws.services.s3.model.AmazonS3Exception;
-import com.amazonaws.util.IOUtils;
+import static com.amazonaws.util.StringUtils.UTF8;
 
 /**
  * Response handler for S3 error responses. S3 error responses are different
@@ -64,7 +64,13 @@ public class S3ErrorResponseHandler implements
     @Override
     public AmazonServiceException handle(HttpResponse httpResponse)
             throws XMLStreamException {
+        final AmazonServiceException exception = createException(httpResponse);
+        exception.setHttpHeaders(httpResponse.getHeaders());
+        return exception;
+    }
 
+    private AmazonServiceException createException(HttpResponse httpResponse) throws
+                                                                              XMLStreamException {
         final InputStream is = httpResponse.getContent();
         String xmlContent = null;
         /*

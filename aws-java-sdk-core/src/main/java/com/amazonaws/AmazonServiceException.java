@@ -16,6 +16,8 @@ package com.amazonaws;
 
 import com.amazonaws.util.StringUtils;
 
+import java.util.Map;
+
 /**
  * Extension of AmazonClientException that represents an error response returned
  * by an Amazon web service. Receiving an exception of this type indicates that
@@ -95,6 +97,11 @@ public class AmazonServiceException extends AmazonClientException {
      * The name of the Amazon service that sent this error response.
      */
     private String serviceName;
+
+    /**
+     * All HTTP headers in the response for additional context and debugging.
+     */
+    private Map<String, String> httpHeaders;
 
     /**
      * The raw response payload.
@@ -290,5 +297,19 @@ public class AmazonServiceException extends AmazonClientException {
      */
     public void setRawResponse(byte[] rawResponse) {
         this.rawResponse = rawResponse == null ? null : rawResponse.clone();
+    }
+
+    /**
+     * @return A Map of HTTP headers associated with the error response.
+     */
+    public Map<String, String> getHttpHeaders() {
+        return httpHeaders;
+    }
+
+    /**
+     * Sets the headers present in the error response.
+     */
+    public void setHttpHeaders(Map<String, String> httpHeaders) {
+        this.httpHeaders = httpHeaders;
     }
 }

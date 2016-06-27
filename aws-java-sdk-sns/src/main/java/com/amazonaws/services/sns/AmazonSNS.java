@@ -47,6 +47,15 @@ import com.amazonaws.services.sns.model.*;
 public interface AmazonSNS {
 
     /**
+     * The region metadata service name for computing region endpoints. You can
+     * use this value to retrieve metadata (such as supported regions) of the
+     * service.
+     *
+     * @see RegionUtils#getRegionsForService(String)
+     */
+    String ENDPOINT_PREFIX = "sns";
+
+    /**
      * Overrides the default endpoint for this client
      * ("https://sns.us-east-1.amazonaws.com"). Callers can use this method to
      * control which AWS region they want to work with.

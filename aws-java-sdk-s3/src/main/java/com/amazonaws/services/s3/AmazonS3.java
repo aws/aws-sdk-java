@@ -2062,8 +2062,22 @@ public interface AmazonS3 extends S3DirectSpi {
      * @see AmazonS3#getObject(String, String)
      * @see AmazonS3#getObject(GetObjectRequest)
      */
-    public ObjectMetadata getObject(GetObjectRequest getObjectRequest, File destinationFile)
+    ObjectMetadata getObject(GetObjectRequest getObjectRequest, File destinationFile)
             throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * <p>
+     * Retrieves and decodes the contents of an S3 object to a String.
+     * </p>
+     *
+     * @param bucketName
+     *            The name of the bucket containing the object to retrieve.
+     * @param key
+     *            The key of the object to retrieve.
+     * @return contents of the object as a String
+     */
+    String getObjectAsString(String bucketName, String key)
+            throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
@@ -2401,6 +2415,24 @@ public interface AmazonS3 extends S3DirectSpi {
     public PutObjectResult putObject(
             String bucketName, String key, InputStream input, ObjectMetadata metadata)
             throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * <p>
+     * Encodes a String into the contents of an S3 object.
+     * </p>
+     * <p>
+     * String will be encoded to bytes with UTF-8 encoding.
+     * </p>
+     *
+     * @param bucketName
+     *            The name of the bucket to place the new object in.
+     * @param key
+     *            The key of the object to create.
+     * @param content
+     *            The String to encode
+     */
+    public PutObjectResult putObject(String bucketName, String key, String content)
+            throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>

@@ -139,6 +139,15 @@ import com.amazonaws.services.gamelift.model.*;
 public interface AmazonGameLift {
 
     /**
+     * The region metadata service name for computing region endpoints. You can
+     * use this value to retrieve metadata (such as supported regions) of the
+     * service.
+     *
+     * @see RegionUtils#getRegionsForService(String)
+     */
+    String ENDPOINT_PREFIX = "gamelift";
+
+    /**
      * Overrides the default endpoint for this client
      * ("https://gamelift.us-east-1.amazonaws.com"). Callers can use this method
      * to control which AWS region they want to work with.

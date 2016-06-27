@@ -32,6 +32,15 @@ import com.amazonaws.services.devicefarm.model.*;
 public interface AWSDeviceFarm {
 
     /**
+     * The region metadata service name for computing region endpoints. You can
+     * use this value to retrieve metadata (such as supported regions) of the
+     * service.
+     *
+     * @see RegionUtils#getRegionsForService(String)
+     */
+    String ENDPOINT_PREFIX = "devicefarm";
+
+    /**
      * Overrides the default endpoint for this client
      * ("https://devicefarm.us-west-2.amazonaws.com"). Callers can use this
      * method to control which AWS region they want to work with.

@@ -33,6 +33,15 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 public interface AmazonKinesisFirehose {
 
     /**
+     * The region metadata service name for computing region endpoints. You can
+     * use this value to retrieve metadata (such as supported regions) of the
+     * service.
+     *
+     * @see RegionUtils#getRegionsForService(String)
+     */
+    String ENDPOINT_PREFIX = "firehose";
+
+    /**
      * Overrides the default endpoint for this client
      * ("https://firehose.us-east-1.amazonaws.com"). Callers can use this method
      * to control which AWS region they want to work with.

@@ -14,14 +14,13 @@
  */
 package com.amazonaws.regions;
 
-import com.amazonaws.AmazonWebServiceClient;
 
 /**
  * Abbreviations for looking up information about a specific service. Used in
  * {@link Region#getServiceEndpoint(String)} and related methods.
  *
- * @deprecated use {@link AmazonWebServiceClient#getEndpointPrefix()} instead for retrieving
- *             the specific service abbreviation.
+ * @deprecated use the constant ENDPOINT_PREFIX from the specific service client
+ *             interface instead for retrieving the specific service abbreviation.
  */
 
 @Deprecated

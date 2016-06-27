@@ -21,9 +21,9 @@
     "endpointPrefix" : "monitoring",
     "signingName" : "monitoring",
     "jsonProtocol" : false,
+    "xmlProtocol" : true,
     "serviceName" : "CloudWatch",
     "cborProtocol" : false,
-    "xmlProtocol" : true,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"

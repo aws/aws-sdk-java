@@ -23,7 +23,9 @@ package com.amazonaws.http;
  *            The output of this response handler.
  */
 public interface HttpResponseHandler<T> {
-    public static final String X_AMZN_REQUEST_ID_HEADER = "x-amzn-RequestId";
+
+    String X_AMZN_REQUEST_ID_HEADER = "x-amzn-RequestId";
+
     /**
      * Accepts an HTTP response object, and returns an object of type T.
      * Individual implementations may choose to handle the response however they
@@ -37,7 +39,7 @@ public interface HttpResponseHandler<T> {
      * @throws Exception
      *             If any problems are encountered handling the response.
      */
-    public T handle(HttpResponse response) throws Exception;
+    T handle(HttpResponse response) throws Exception;
 
     /**
      * Indicates if this response handler requires that the underlying HTTP
@@ -59,6 +61,6 @@ public interface HttpResponseHandler<T> {
      *         connection be left open, and not automatically closed, otherwise
      *         false.
      */
-    public boolean needsConnectionLeftOpen();
+    boolean needsConnectionLeftOpen();
 
 }

@@ -62,9 +62,6 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "inspector";
 
-    /** The region metadata service name for computing region endpoints. */
-    private static final String DEFAULT_ENDPOINT_PREFIX = "inspector";
-
     /**
      * Client configuration factory providing ClientConfigurations tailored to
      * this client
@@ -275,7 +272,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
 
     private void init() {
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
-        setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
+        setEndpointPrefix(ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
         setEndpoint("https://inspector.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();

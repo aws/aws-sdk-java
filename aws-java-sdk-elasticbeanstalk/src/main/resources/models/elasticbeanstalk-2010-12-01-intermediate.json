@@ -20,13 +20,13 @@
     "jsonVersion" : null,
     "endpointPrefix" : "elasticbeanstalk",
     "signingName" : "elasticbeanstalk",
-    "jsonProtocol" : false,
+    "xmlProtocol" : true,
     "serviceName" : "Elastic Beanstalk",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller",
-    "xmlProtocol" : true
+    "jsonProtocol" : false
   },
   "operations" : {
     "AbortEnvironmentUpdate" : {
@@ -52,12 +52,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "abortEnvironmentUpdate",
+      "authenticated" : true,
       "syncReturnType" : "AbortEnvironmentUpdateResult",
       "asyncReturnType" : "AbortEnvironmentUpdateResult",
       "asyncFutureType" : "java.util.concurrent.Future<AbortEnvironmentUpdateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AbortEnvironmentUpdateResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, AbortEnvironmentUpdateResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, AbortEnvironmentUpdateResult>"
     },
     "ApplyEnvironmentManagedAction" : {
       "documentation" : "<p>Applies a scheduled managed action immediately. A managed action can be applied only if its status is <code>Scheduled</code>. Get the status and action ID of a managed action with <a>DescribeEnvironmentManagedActions</a>.</p>",
@@ -85,12 +85,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "applyEnvironmentManagedAction",
+      "authenticated" : true,
       "syncReturnType" : "ApplyEnvironmentManagedActionResult",
       "asyncReturnType" : "ApplyEnvironmentManagedActionResult",
       "asyncFutureType" : "java.util.concurrent.Future<ApplyEnvironmentManagedActionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ApplyEnvironmentManagedActionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ApplyEnvironmentManagedActionRequest, ApplyEnvironmentManagedActionResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ApplyEnvironmentManagedActionRequest, ApplyEnvironmentManagedActionResult>"
     },
     "CheckDNSAvailability" : {
       "documentation" : "<p> Checks if the specified CNAME is available. </p>",
@@ -112,12 +112,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "checkDNSAvailability",
+      "authenticated" : true,
       "syncReturnType" : "CheckDNSAvailabilityResult",
       "asyncReturnType" : "CheckDNSAvailabilityResult",
       "asyncFutureType" : "java.util.concurrent.Future<CheckDNSAvailabilityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CheckDNSAvailabilityResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CheckDNSAvailabilityRequest, CheckDNSAvailabilityResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CheckDNSAvailabilityRequest, CheckDNSAvailabilityResult>"
     },
     "ComposeEnvironments" : {
       "documentation" : "<p>Create or update a group of environments that each run a separate component of a single application. Takes a list of version labels that specify application source bundles for each of the environments to create or update. The name of each environment and other required information must be included in the source bundles in an environment manifest named <code>env.yaml</code>. See <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html\">Compose Environments</a> for details.</p>",
@@ -145,12 +145,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "composeEnvironments",
+      "authenticated" : true,
       "syncReturnType" : "ComposeEnvironmentsResult",
       "asyncReturnType" : "ComposeEnvironmentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ComposeEnvironmentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ComposeEnvironmentsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ComposeEnvironmentsRequest, ComposeEnvironmentsResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ComposeEnvironmentsRequest, ComposeEnvironmentsResult>"
     },
     "CreateApplication" : {
       "documentation" : "<p> Creates an application that has one configuration template named <code>default</code> and no application versions. </p>",
@@ -175,12 +175,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createApplication",
+      "authenticated" : true,
       "syncReturnType" : "CreateApplicationResult",
       "asyncReturnType" : "CreateApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateApplicationResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult>"
     },
     "CreateApplicationVersion" : {
       "documentation" : "<p>Creates an application version for the specified application.</p> <note>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version. </note>",
@@ -214,12 +214,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createApplicationVersion",
+      "authenticated" : true,
       "syncReturnType" : "CreateApplicationVersionResult",
       "asyncReturnType" : "CreateApplicationVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateApplicationVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateApplicationVersionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateApplicationVersionRequest, CreateApplicationVersionResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateApplicationVersionRequest, CreateApplicationVersionResult>"
     },
     "CreateConfigurationTemplate" : {
       "documentation" : "<p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a> </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>",
@@ -250,12 +250,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createConfigurationTemplate",
+      "authenticated" : true,
       "syncReturnType" : "CreateConfigurationTemplateResult",
       "asyncReturnType" : "CreateConfigurationTemplateResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateConfigurationTemplateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateConfigurationTemplateResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResult>"
     },
     "CreateEnvironment" : {
       "documentation" : "<p>Launches an environment for the specified application using the specified configuration.</p>",
@@ -283,12 +283,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createEnvironment",
+      "authenticated" : true,
       "syncReturnType" : "CreateEnvironmentResult",
       "asyncReturnType" : "CreateEnvironmentResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateEnvironmentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateEnvironmentResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateEnvironmentRequest, CreateEnvironmentResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateEnvironmentRequest, CreateEnvironmentResult>"
     },
     "CreateStorageLocation" : {
       "documentation" : "<p> Creates the Amazon S3 storage location for the account. </p> <p> This location is used to store user log files. </p>",
@@ -319,12 +319,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createStorageLocation",
+      "authenticated" : true,
       "syncReturnType" : "CreateStorageLocationResult",
       "asyncReturnType" : "CreateStorageLocationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateStorageLocationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateStorageLocationResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStorageLocationRequest, CreateStorageLocationResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStorageLocationRequest, CreateStorageLocationResult>"
     },
     "DeleteApplication" : {
       "documentation" : "<p> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket. </p> <note>You cannot delete an application that has a running environment. </note>",
@@ -349,12 +349,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteApplication",
+      "authenticated" : true,
       "syncReturnType" : "DeleteApplicationResult",
       "asyncReturnType" : "DeleteApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteApplicationResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult>"
     },
     "DeleteApplicationVersion" : {
       "documentation" : "<p> Deletes the specified version from the specified application. </p> <note>You cannot delete an application version that is associated with a running environment.</note>",
@@ -388,12 +388,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteApplicationVersion",
+      "authenticated" : true,
       "syncReturnType" : "DeleteApplicationVersionResult",
       "asyncReturnType" : "DeleteApplicationVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteApplicationVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteApplicationVersionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteApplicationVersionRequest, DeleteApplicationVersionResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteApplicationVersionRequest, DeleteApplicationVersionResult>"
     },
     "DeleteConfigurationTemplate" : {
       "documentation" : "<p>Deletes the specified configuration template.</p> <note>When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.</note>",
@@ -418,12 +418,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteConfigurationTemplate",
+      "authenticated" : true,
       "syncReturnType" : "DeleteConfigurationTemplateResult",
       "asyncReturnType" : "DeleteConfigurationTemplateResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteConfigurationTemplateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteConfigurationTemplateResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConfigurationTemplateRequest, DeleteConfigurationTemplateResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConfigurationTemplateRequest, DeleteConfigurationTemplateResult>"
     },
     "DeleteEnvironmentConfiguration" : {
       "documentation" : "<p>Deletes the draft configuration associated with the running environment.</p> <p>Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using <a>DescribeConfigurationSettings</a> while the update is in progress or if the update fails. The <code>DeploymentStatus</code> for the draft configuration indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action.</p>",
@@ -445,12 +445,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteEnvironmentConfiguration",
+      "authenticated" : true,
       "syncReturnType" : "DeleteEnvironmentConfigurationResult",
       "asyncReturnType" : "DeleteEnvironmentConfigurationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteEnvironmentConfigurationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteEnvironmentConfigurationResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentConfigurationRequest, DeleteEnvironmentConfigurationResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentConfigurationRequest, DeleteEnvironmentConfigurationResult>"
     },
     "DescribeApplicationVersions" : {
       "documentation" : "<p>Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage bucket.</p>",
@@ -472,12 +472,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeApplicationVersions",
+      "authenticated" : true,
       "syncReturnType" : "DescribeApplicationVersionsResult",
       "asyncReturnType" : "DescribeApplicationVersionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeApplicationVersionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeApplicationVersionsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeApplicationVersionsRequest, DescribeApplicationVersionsResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeApplicationVersionsRequest, DescribeApplicationVersionsResult>"
     },
     "DescribeApplications" : {
       "documentation" : "<p>Returns the descriptions of existing applications.</p>",
@@ -499,12 +499,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeApplications",
+      "authenticated" : true,
       "syncReturnType" : "DescribeApplicationsResult",
       "asyncReturnType" : "DescribeApplicationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeApplicationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeApplicationsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeApplicationsRequest, DescribeApplicationsResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeApplicationsRequest, DescribeApplicationsResult>"
     },
     "DescribeConfigurationOptions" : {
       "documentation" : "<p> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed. </p>",
@@ -529,12 +529,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeConfigurationOptions",
+      "authenticated" : true,
       "syncReturnType" : "DescribeConfigurationOptionsResult",
       "asyncReturnType" : "DescribeConfigurationOptionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationOptionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigurationOptionsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationOptionsRequest, DescribeConfigurationOptionsResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationOptionsRequest, DescribeConfigurationOptionsResult>"
     },
     "DescribeConfigurationSettings" : {
       "documentation" : "<p> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment. </p> <p> When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy. </p> <p>Related Topics</p> <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>",
@@ -559,12 +559,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeConfigurationSettings",
+      "authenticated" : true,
       "syncReturnType" : "DescribeConfigurationSettingsResult",
       "asyncReturnType" : "DescribeConfigurationSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigurationSettingsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationSettingsRequest, DescribeConfigurationSettingsResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationSettingsRequest, DescribeConfigurationSettingsResult>"
     },
     "DescribeEnvironmentHealth" : {
       "documentation" : "<p>Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>",
@@ -592,12 +592,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeEnvironmentHealth",
+      "authenticated" : true,
       "syncReturnType" : "DescribeEnvironmentHealthResult",
       "asyncReturnType" : "DescribeEnvironmentHealthResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEnvironmentHealthResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEnvironmentHealthResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentHealthRequest, DescribeEnvironmentHealthResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentHealthRequest, DescribeEnvironmentHealthResult>"
     },
     "DescribeEnvironmentManagedActionHistory" : {
       "documentation" : "<p>Lists an environment's completed and failed managed actions.</p>",
@@ -622,12 +622,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeEnvironmentManagedActionHistory",
+      "authenticated" : true,
       "syncReturnType" : "DescribeEnvironmentManagedActionHistoryResult",
       "asyncReturnType" : "DescribeEnvironmentManagedActionHistoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEnvironmentManagedActionHistoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEnvironmentManagedActionHistoryResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentManagedActionHistoryRequest, DescribeEnvironmentManagedActionHistoryResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentManagedActionHistoryRequest, DescribeEnvironmentManagedActionHistoryResult>"
     },
     "DescribeEnvironmentManagedActions" : {
       "documentation" : "<p>Lists an environment's upcoming and in-progress managed actions.</p>",
@@ -652,12 +652,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeEnvironmentManagedActions",
+      "authenticated" : true,
       "syncReturnType" : "DescribeEnvironmentManagedActionsResult",
       "asyncReturnType" : "DescribeEnvironmentManagedActionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEnvironmentManagedActionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEnvironmentManagedActionsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentManagedActionsRequest, DescribeEnvironmentManagedActionsResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentManagedActionsRequest, DescribeEnvironmentManagedActionsResult>"
     },
     "DescribeEnvironmentResources" : {
       "documentation" : "<p>Returns AWS resources for this environment.</p>",
@@ -682,12 +682,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeEnvironmentResources",
+      "authenticated" : true,
       "syncReturnType" : "DescribeEnvironmentResourcesResult",
       "asyncReturnType" : "DescribeEnvironmentResourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEnvironmentResourcesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEnvironmentResourcesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentResourcesRequest, DescribeEnvironmentResourcesResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentResourcesRequest, DescribeEnvironmentResourcesResult>"
     },
     "DescribeEnvironments" : {
       "documentation" : "<p>Returns descriptions for existing environments.</p>",
@@ -709,12 +709,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeEnvironments",
+      "authenticated" : true,
       "syncReturnType" : "DescribeEnvironmentsResult",
       "asyncReturnType" : "DescribeEnvironmentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEnvironmentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEnvironmentsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentsRequest, DescribeEnvironmentsResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentsRequest, DescribeEnvironmentsResult>"
     },
     "DescribeEvents" : {
       "documentation" : "<p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</note>",
@@ -736,12 +736,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeEvents",
+      "authenticated" : true,
       "syncReturnType" : "DescribeEventsResult",
       "asyncReturnType" : "DescribeEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEventsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult>"
     },
     "DescribeInstancesHealth" : {
       "documentation" : "<p>Returns more detailed information about the health of the specified instances (for example, CPU utilization, load average, and causes). The <b>DescribeInstancesHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>",
@@ -769,12 +769,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "describeInstancesHealth",
+      "authenticated" : true,
       "syncReturnType" : "DescribeInstancesHealthResult",
       "asyncReturnType" : "DescribeInstancesHealthResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeInstancesHealthResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeInstancesHealthResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInstancesHealthRequest, DescribeInstancesHealthResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInstancesHealthRequest, DescribeInstancesHealthResult>"
     },
     "ListAvailableSolutionStacks" : {
       "documentation" : "<p> Returns a list of the available solution stack names. </p>",
@@ -796,12 +796,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listAvailableSolutionStacks",
+      "authenticated" : true,
       "syncReturnType" : "ListAvailableSolutionStacksResult",
       "asyncReturnType" : "ListAvailableSolutionStacksResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAvailableSolutionStacksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAvailableSolutionStacksResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResult>"
     },
     "RebuildEnvironment" : {
       "documentation" : "<p> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart. </p>",
@@ -826,12 +826,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "rebuildEnvironment",
+      "authenticated" : true,
       "syncReturnType" : "RebuildEnvironmentResult",
       "asyncReturnType" : "RebuildEnvironmentResult",
       "asyncFutureType" : "java.util.concurrent.Future<RebuildEnvironmentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RebuildEnvironmentResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebuildEnvironmentRequest, RebuildEnvironmentResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebuildEnvironmentRequest, RebuildEnvironmentResult>"
     },
     "RequestEnvironmentInfo" : {
       "documentation" : "<p> Initiates a request to compile the specified type of information of the deployed environment. </p> <p> Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from the application server log files of every Amazon EC2 instance in your environment. </p> <p> Setting the <code>InfoType</code> to <code>bundle</code> compresses the application server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy and .NET containers do not support bundle logs. </p> <p> Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. </p> <p>Related Topics</p> <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>",
@@ -853,12 +853,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "requestEnvironmentInfo",
+      "authenticated" : true,
       "syncReturnType" : "RequestEnvironmentInfoResult",
       "asyncReturnType" : "RequestEnvironmentInfoResult",
       "asyncFutureType" : "java.util.concurrent.Future<RequestEnvironmentInfoResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RequestEnvironmentInfoResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RequestEnvironmentInfoRequest, RequestEnvironmentInfoResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RequestEnvironmentInfoRequest, RequestEnvironmentInfoResult>"
     },
     "RestartAppServer" : {
       "documentation" : "<p>Causes the environment to restart the application container server running on each Amazon EC2 instance.</p>",
@@ -880,12 +880,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "restartAppServer",
+      "authenticated" : true,
       "syncReturnType" : "RestartAppServerResult",
       "asyncReturnType" : "RestartAppServerResult",
       "asyncFutureType" : "java.util.concurrent.Future<RestartAppServerResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RestartAppServerResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RestartAppServerRequest, RestartAppServerResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RestartAppServerRequest, RestartAppServerResult>"
     },
     "RetrieveEnvironmentInfo" : {
       "documentation" : "<p>Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request.</p> <p>Related Topics</p> <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>",
@@ -907,12 +907,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "retrieveEnvironmentInfo",
+      "authenticated" : true,
       "syncReturnType" : "RetrieveEnvironmentInfoResult",
       "asyncReturnType" : "RetrieveEnvironmentInfoResult",
       "asyncFutureType" : "java.util.concurrent.Future<RetrieveEnvironmentInfoResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RetrieveEnvironmentInfoResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RetrieveEnvironmentInfoRequest, RetrieveEnvironmentInfoResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RetrieveEnvironmentInfoRequest, RetrieveEnvironmentInfoResult>"
     },
     "SwapEnvironmentCNAMEs" : {
       "documentation" : "<p> Swaps the CNAMEs of two environments. </p>",
@@ -934,12 +934,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "swapEnvironmentCNAMEs",
+      "authenticated" : true,
       "syncReturnType" : "SwapEnvironmentCNAMEsResult",
       "asyncReturnType" : "SwapEnvironmentCNAMEsResult",
       "asyncFutureType" : "java.util.concurrent.Future<SwapEnvironmentCNAMEsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SwapEnvironmentCNAMEsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResult>"
     },
     "TerminateEnvironment" : {
       "documentation" : "<p> Terminates the specified environment. </p>",
@@ -964,12 +964,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "terminateEnvironment",
+      "authenticated" : true,
       "syncReturnType" : "TerminateEnvironmentResult",
       "asyncReturnType" : "TerminateEnvironmentResult",
       "asyncFutureType" : "java.util.concurrent.Future<TerminateEnvironmentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TerminateEnvironmentResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TerminateEnvironmentRequest, TerminateEnvironmentResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TerminateEnvironmentRequest, TerminateEnvironmentResult>"
     },
     "UpdateApplication" : {
       "documentation" : "<p>Updates the specified application to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </note>",
@@ -991,12 +991,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "updateApplication",
+      "authenticated" : true,
       "syncReturnType" : "UpdateApplicationResult",
       "asyncReturnType" : "UpdateApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateApplicationResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult>"
     },
     "UpdateApplicationVersion" : {
       "documentation" : "<p> Updates the specified application version to have the specified properties. </p> <note> If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear properties, specify an empty string. </note>",
@@ -1018,12 +1018,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "updateApplicationVersion",
+      "authenticated" : true,
       "syncReturnType" : "UpdateApplicationVersionResult",
       "asyncReturnType" : "UpdateApplicationVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateApplicationVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateApplicationVersionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateApplicationVersionRequest, UpdateApplicationVersionResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateApplicationVersionRequest, UpdateApplicationVersionResult>"
     },
     "UpdateConfigurationTemplate" : {
       "documentation" : "<p> Updates the specified configuration template to have the specified properties or configuration option values. </p> <note> If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string. </note> <p>Related Topics</p> <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>",
@@ -1051,12 +1051,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "updateConfigurationTemplate",
+      "authenticated" : true,
       "syncReturnType" : "UpdateConfigurationTemplateResult",
       "asyncReturnType" : "UpdateConfigurationTemplateResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateConfigurationTemplateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateConfigurationTemplateResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateConfigurationTemplateRequest, UpdateConfigurationTemplateResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateConfigurationTemplateRequest, UpdateConfigurationTemplateResult>"
     },
     "UpdateEnvironment" : {
       "documentation" : "<p> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment. </p> <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <a>DescribeConfigurationSettings</a> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>",
@@ -1084,12 +1084,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "updateEnvironment",
+      "authenticated" : true,
       "syncReturnType" : "UpdateEnvironmentResult",
       "asyncReturnType" : "UpdateEnvironmentResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateEnvironmentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateEnvironmentResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult>"
     },
     "ValidateConfigurationSettings" : {
       "documentation" : "<p> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid. </p> <p> This action returns a list of messages indicating any errors or warnings associated with the selection of option values. </p>",
@@ -1117,12 +1117,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "validateConfigurationSettings",
+      "authenticated" : true,
       "syncReturnType" : "ValidateConfigurationSettingsResult",
       "asyncReturnType" : "ValidateConfigurationSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ValidateConfigurationSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ValidateConfigurationSettingsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ValidateConfigurationSettingsRequest, ValidateConfigurationSettingsResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ValidateConfigurationSettingsRequest, ValidateConfigurationSettingsResult>"
     }
   },
   "shapes" : {

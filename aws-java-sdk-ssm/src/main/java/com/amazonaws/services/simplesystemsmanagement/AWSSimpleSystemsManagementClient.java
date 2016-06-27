@@ -248,9 +248,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "ssm";
 
-    /** The region metadata service name for computing region endpoints. */
-    private static final String DEFAULT_ENDPOINT_PREFIX = "ssm";
-
     /**
      * Client configuration factory providing ClientConfigurations tailored to
      * this client
@@ -538,7 +535,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
 
     private void init() {
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
-        setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
+        setEndpointPrefix(ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
         setEndpoint("https://ssm.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();

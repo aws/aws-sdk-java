@@ -366,6 +366,13 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     }
 
     @Override
+    public String getObjectAsString(String bucketName, String key)
+            throws AmazonServiceException, AmazonClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+
+    }
+
+    @Override
     public void deleteBucket(String bucketName) throws AmazonClientException,
             AmazonServiceException {
         deleteBucket(new DeleteBucketRequest(bucketName));
@@ -395,6 +402,13 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     @Override
     public PutObjectResult putObject(PutObjectRequest putObjectRequest)
             throws AmazonClientException, AmazonServiceException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+
+    }
+
+    @Override
+    public PutObjectResult putObject(String bucketName, String key, String content)
+            throws AmazonServiceException, AmazonClientException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
 
     }

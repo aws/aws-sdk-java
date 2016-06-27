@@ -41,6 +41,15 @@ import com.amazonaws.services.directconnect.model.*;
 public interface AmazonDirectConnect {
 
     /**
+     * The region metadata service name for computing region endpoints. You can
+     * use this value to retrieve metadata (such as supported regions) of the
+     * service.
+     *
+     * @see RegionUtils#getRegionsForService(String)
+     */
+    String ENDPOINT_PREFIX = "directconnect";
+
+    /**
      * Overrides the default endpoint for this client
      * ("https://directconnect.us-east-1.amazonaws.com/"). Callers can use this
      * method to control which AWS region they want to work with.

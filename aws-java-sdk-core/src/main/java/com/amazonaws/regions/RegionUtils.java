@@ -88,7 +88,10 @@ public class RegionUtils {
     /**
      * Returns a list of the regions that support the service given.
      *
-     * @see ServiceAbbreviations
+     * @param serviceAbbreviation
+     *         The service endpoint prefix which can be retrieved from the
+     *         constant ENDPOINT_PREFIX of the specific service client interface.
+     *
      */
     public static List<Region> getRegionsForService(
             String serviceAbbreviation) {

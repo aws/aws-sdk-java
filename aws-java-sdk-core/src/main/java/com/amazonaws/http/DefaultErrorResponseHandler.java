@@ -14,19 +14,19 @@
  */
 package com.amazonaws.http;
 
-import java.io.IOException;
-import java.util.List;
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.IOUtils;
+import com.amazonaws.util.XpathUtils;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.util.IOUtils;
-import com.amazonaws.util.XpathUtils;
+import java.io.IOException;
+import java.util.List;
 
 /**
  * Implementation of HttpResponseHandler that handles only error responses from
@@ -64,6 +64,15 @@ public class DefaultErrorResponseHandler
 
     @Override
     public AmazonServiceException handle(HttpResponse errorResponse) throws Exception {
+        AmazonServiceException ase = createAse(errorResponse);
+        if (ase != null) {
+            ase.setHttpHeaders(errorResponse.getHeaders());
+            return ase;
+        }
+        throw new AmazonClientException("Unable to unmarshall error response from service");
+    }
+
+    private AmazonServiceException createAse(HttpResponse errorResponse) throws Exception {
         // Try to read the error response
         String content = "";
         try {
@@ -98,8 +107,7 @@ public class DefaultErrorResponseHandler
                 return ase;
             }
         }
-
-        throw new AmazonClientException("Unable to unmarshall error response from service");
+        return null;
     }
 
     /**

@@ -88,9 +88,6 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "redshift";
 
-    /** The region metadata service name for computing region endpoints. */
-    private static final String DEFAULT_ENDPOINT_PREFIX = "redshift";
-
     /**
      * Client configuration factory providing ClientConfigurations tailored to
      * this client
@@ -414,7 +411,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
-        setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
+        setEndpointPrefix(ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
         this.setEndpoint("redshift.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();

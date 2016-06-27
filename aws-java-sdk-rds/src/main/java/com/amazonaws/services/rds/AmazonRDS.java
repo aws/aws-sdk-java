@@ -111,6 +111,15 @@ import com.amazonaws.services.rds.model.*;
 public interface AmazonRDS {
 
     /**
+     * The region metadata service name for computing region endpoints. You can
+     * use this value to retrieve metadata (such as supported regions) of the
+     * service.
+     *
+     * @see RegionUtils#getRegionsForService(String)
+     */
+    String ENDPOINT_PREFIX = "rds";
+
+    /**
      * Overrides the default endpoint for this client ("rds.amazonaws.com").
      * Callers can use this method to control which AWS region they want to work
      * with.
