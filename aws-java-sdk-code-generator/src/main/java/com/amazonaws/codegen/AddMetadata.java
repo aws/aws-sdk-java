@@ -58,19 +58,8 @@ final class AddMetadata {
                 .withEndpointPrefix(serviceMetadata.getEndpointPrefix())
                 .withSigningName(serviceMetadata.getSigningName());
 
-        if (customizationConfig.getCustomExceptionUnmarshallerImpl() == null) {
-            metadata.setExceptionUnmarshallerImpl(Utils.getProtocolDefaultExceptionUnmarshaller(serviceMetadata
-                    .getProtocol()));
-        } else {
-            metadata.setExceptionUnmarshallerImpl(customizationConfig.getCustomExceptionUnmarshallerImpl());
-        }
-
         final String jsonVersion = getJsonVersion(metadata, serviceMetadata);
         metadata.setJsonVersion(jsonVersion);
-        if (jsonVersion != null) {
-            metadata.setJsonContentVersion("application/x-amz-json-"
-                    + jsonVersion);
-        }
 
         // TODO: iterate through all the operations and check whether any of
         // them accept stream input

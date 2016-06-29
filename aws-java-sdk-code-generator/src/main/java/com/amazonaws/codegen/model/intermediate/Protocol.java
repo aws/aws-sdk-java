@@ -15,49 +15,53 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
+import com.amazonaws.codegen.protocol.AwsCborProtocolMetadataProvider;
+import com.amazonaws.codegen.protocol.AwsJsonProtocolMetadataProvider;
+import com.amazonaws.codegen.protocol.Ec2ProtocolMetdataProvider;
+import com.amazonaws.codegen.protocol.ProtocolMetadataProvider;
+import com.amazonaws.codegen.protocol.QueryProtocolMetadataProvider;
+import com.amazonaws.codegen.protocol.RestJsonProtocolMetdataProvider;
+import com.amazonaws.codegen.protocol.RestXmlProtocolMetadataProvider;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum Protocol {
-    EC2("ec2"),
-    JSON("json"),
-    REST_JSON("rest-json"),
-    CBOR("cbor"),
-    REST_CBOR("rest-cbor"),
-    QUERY("query"),
-    REST_XML("rest-xml");
+    EC2("ec2", new Ec2ProtocolMetdataProvider()),
+    JSON("json", new AwsJsonProtocolMetadataProvider()),
+    REST_JSON("rest-json", new RestJsonProtocolMetdataProvider()),
+    CBOR("cbor", new AwsCborProtocolMetadataProvider()),
+    QUERY("query", new QueryProtocolMetadataProvider()),
+    REST_XML("rest-xml", new RestXmlProtocolMetadataProvider()),;
 
     private String protocol;
+    private ProtocolMetadataProvider metadataProvider;
 
-    private Protocol(String protocol) {
+    Protocol(String protocol, ProtocolMetadataProvider metadataProvider) {
         this.protocol = protocol;
+        this.metadataProvider = metadataProvider;
     }
 
     @JsonCreator
-    public static Protocol fromValue(String protocol) {
-        if (protocol == null)
+    public static Protocol fromValue(String strProtocol) {
+        if (strProtocol == null) {
             return null;
-        if (EC2.protocol.equals(protocol))
-            return EC2;
-        if (JSON.protocol.equals(protocol))
-            return JSON;
-        if (REST_JSON.protocol.equals(protocol))
-            return REST_JSON;
-        if (CBOR.protocol.equals(protocol))
-            return CBOR;
-        if (REST_CBOR.protocol.equals(protocol))
-            return REST_CBOR;
-        if (QUERY.protocol.equals(protocol))
-            return QUERY;
-        if (REST_XML.protocol.equals(protocol))
-            return REST_XML;
+        }
 
-        throw new IllegalArgumentException(
-                "Unknown enum value for Protocol : " + protocol);
+        for (Protocol protocol : Protocol.values()) {
+            if (protocol.protocol.equals(strProtocol)) {
+                return protocol;
+            }
+        }
+
+        throw new IllegalArgumentException("Unknown enum value for Protocol : " + strProtocol);
     }
 
     @JsonValue
     public String getValue() {
         return protocol;
+    }
+
+    public ProtocolMetadataProvider getProvider() {
+        return metadataProvider;
     }
 }

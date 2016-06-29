@@ -48,8 +48,6 @@ import com.amazonaws.protocol.json.*;
 public class InvokeRequestMarshaller implements
         Marshaller<Request<InvokeRequest>, InvokeRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
-
     private final SdkJsonProtocolFactory protocolFactory;
 
     public InvokeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
@@ -99,7 +97,7 @@ public class InvokeRequestMarshaller implements
 
         request.setContent(BinaryUtils.toStream(invokeRequest.getPayload()));
         if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+            request.addHeader("Content-Type", protocolFactory.getContentType());
         }
 
         return request;

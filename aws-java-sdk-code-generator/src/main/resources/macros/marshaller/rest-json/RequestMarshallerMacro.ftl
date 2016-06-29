@@ -3,7 +3,7 @@
 <#local metadata = dataModel.metadata/>
 <#local shapeName = dataModel.shapeName/>
 <#local customConfig = dataModel.customConfig/>
-<#local contentType = (metadata.jsonContentVersion)!""/>
+<#local contentType = (metadata.contentType)!""/>
 
 <@LicenseCommentBlockMacro.content />
 
@@ -40,12 +40,6 @@ import com.amazonaws.protocol.json.*;
  */
 public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>, ${shapeName}> {
 
-    <#-- The empty content type seems to be working for all services. If the
-         C2j model has the json version specified, we honor that; else
-         default to empty string.
-    -->
-    private static final String DEFAULT_CONTENT_TYPE = "${contentType}";
-
     private final SdkJsonProtocolFactory protocolFactory;
 
     public ${shapeName}Marshaller(SdkJsonProtocolFactory protocolFactory) {
@@ -77,12 +71,12 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
                 <#if (member.http.isStreaming)>
                 request.setContent(${shape.variable.variableName}.get${member.name}());
                 if (!request.getHeaders().containsKey("Content-Type")) {
-                    request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+                    request.addHeader("Content-Type", protocolFactory.getContentType());
                 }
                 <#elseif (member.http.isPayload) && member.variable.variableType = "java.nio.ByteBuffer">
                 request.setContent(BinaryUtils.toStream(${shape.variable.variableName}.get${member.name}()));
                 if (!request.getHeaders().containsKey("Content-Type")) {
-                    request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+                    request.addHeader("Content-Type", protocolFactory.getContentType());
                 }
                 <#elseif (member.http.isPayload)>
                 try {
@@ -99,7 +93,7 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
                     request.setContent(new ByteArrayInputStream(content));
                     request.addHeader("Content-Length", Integer.toString(content.length));
                     if (!request.getHeaders().containsKey("Content-Type")) {
-                        request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+                        request.addHeader("Content-Type", protocolFactory.getContentType());
                     }
                 } catch(Throwable t) {
                     throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
@@ -111,7 +105,7 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
         <#-- rest-json requires a zero-byte content if there is no request member bound to the body -->
         request.setContent(new ByteArrayInputStream(new byte[0]));
         if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+            request.addHeader("Content-Type", protocolFactory.getContentType());
         }
         <#else>
         try {
@@ -126,7 +120,7 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
             request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length", Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+                request.addHeader("Content-Type", protocolFactory.getContentType());
             }
         } catch(Throwable t) {
             throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);

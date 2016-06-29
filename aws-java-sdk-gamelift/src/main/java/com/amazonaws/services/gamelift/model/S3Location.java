@@ -41,7 +41,12 @@ public class S3Location implements Serializable, Cloneable {
      * </p>
      */
     private String key;
-
+    /**
+     * <p>
+     * Amazon resource number for the cross-account access role that allows
+     * GameLift access to the S3 bucket.
+     * </p>
+     */
     private String roleArn;
 
     /**
@@ -127,7 +132,14 @@ public class S3Location implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Amazon resource number for the cross-account access role that allows
+     * GameLift access to the S3 bucket.
+     * </p>
+     * 
      * @param roleArn
+     *        Amazon resource number for the cross-account access role that
+     *        allows GameLift access to the S3 bucket.
      */
 
     public void setRoleArn(String roleArn) {
@@ -135,7 +147,13 @@ public class S3Location implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Amazon resource number for the cross-account access role that allows
+     * GameLift access to the S3 bucket.
+     * </p>
+     * 
+     * @return Amazon resource number for the cross-account access role that
+     *         allows GameLift access to the S3 bucket.
      */
 
     public String getRoleArn() {
@@ -143,7 +161,14 @@ public class S3Location implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Amazon resource number for the cross-account access role that allows
+     * GameLift access to the S3 bucket.
+     * </p>
+     * 
      * @param roleArn
+     *        Amazon resource number for the cross-account access role that
+     *        allows GameLift access to the S3 bucket.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

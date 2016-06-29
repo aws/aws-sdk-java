@@ -82,6 +82,10 @@ public class FileSystemDescriptionJsonMarshaller {
                 FileSystemSizeJsonMarshaller.getInstance().marshall(
                         fileSystemDescription.getSizeInBytes(), jsonGenerator);
             }
+            if (fileSystemDescription.getPerformanceMode() != null) {
+                jsonGenerator.writeFieldName("PerformanceMode").writeValue(
+                        fileSystemDescription.getPerformanceMode());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

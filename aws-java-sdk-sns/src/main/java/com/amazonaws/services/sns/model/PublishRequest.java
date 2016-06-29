@@ -31,14 +31,36 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * <p>
      * The topic you want to publish to.
      * </p>
+     * <p>
+     * If you don't specify a value for the <code>TopicArn</code> parameter, you
+     * must specify a value for the <code>PhoneNumber</code> or
+     * <code>TargetArn</code> parameters.
+     * </p>
      */
     private String topicArn;
     /**
      * <p>
      * Either TopicArn or EndpointArn, but not both.
      * </p>
+     * <p>
+     * If you don't specify a value for the <code>TargetArn</code> parameter,
+     * you must specify a value for the <code>PhoneNumber</code> or
+     * <code>TopicArn</code> parameters.
+     * </p>
      */
     private String targetArn;
+    /**
+     * <p>
+     * The phone number to which you want to deliver an SMS message. Use E.164
+     * format.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>PhoneNumber</code> parameter,
+     * you must specify a value for the <code>TargetArn</code> or
+     * <code>TopicArn</code> parameters.
+     * </p>
+     */
+    private String phoneNumber;
     /**
      * <p>
      * The message you want to send to the topic.
@@ -59,26 +81,59 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * JSON-specific constraints:
-     * <ul>
-     * <li>Keys in the JSON object that correspond to supported transport
-     * protocols must have simple JSON string values.</li>
-     * <li>The values will be parsed (unescaped) before they are used in
-     * outgoing messages.</li>
-     * <li>Outbound notifications are JSON encoded (meaning that the characters
-     * will be reescaped for sending).</li>
-     * <li>Values have a minimum length of 0 (the empty string, "", is allowed).
-     * </li>
-     * <li>Values have a maximum length bounded by the overall message size (so,
-     * including multiple protocols may limit message sizes).</li>
-     * <li>Non-string values will cause the key to be ignored.</li>
-     * <li>Keys that do not correspond to supported transport protocols are
-     * ignored.</li>
-     * <li>Duplicate keys are not allowed.</li>
-     * <li>Failure to parse or validate any key or value in the message will
-     * cause the <code>Publish</code> call to return an error (no partial
-     * delivery).</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Keys in the JSON object that correspond to supported transport protocols
+     * must have simple JSON string values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The values will be parsed (unescaped) before they are used in outgoing
+     * messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Outbound notifications are JSON encoded (meaning that the characters will
+     * be reescaped for sending).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Values have a minimum length of 0 (the empty string, "", is allowed).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Values have a maximum length bounded by the overall message size (so,
+     * including multiple protocols may limit message sizes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-string values will cause the key to be ignored.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Keys that do not correspond to supported transport protocols are ignored.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Duplicate keys are not allowed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failure to parse or validate any key or value in the message will cause
+     * the <code>Publish</code> call to return an error (no partial delivery).
+     * </p>
+     * </li>
+     * </ul>
      */
     private String message;
     /**
@@ -104,9 +159,17 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * <code>Message</code> parameter must:
      * </p>
      * <ul>
-     * <li>be a syntactically valid JSON object; and</li>
-     * <li>contain at least a top-level JSON key of "default" with a value that
-     * is a string.</li>
+     * <li>
+     * <p>
+     * be a syntactically valid JSON object; and
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * contain at least a top-level JSON key of "default" with a value that is a
+     * string.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * You can define other top-level keys that define the message you want to
@@ -145,9 +208,14 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * members.
      * 
      * @param topicArn
-     *        The topic you want to publish to.
+     *        The topic you want to publish to.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>TopicArn</code>
+     *        parameter, you must specify a value for the
+     *        <code>PhoneNumber</code> or <code>TargetArn</code> parameters.
      * @param message
-     *        The message you want to send to the topic.</p>
+     *        The message you want to send to the topic.
+     *        </p>
      *        <p>
      *        If you want to send the same message to all transport protocols,
      *        include the text of the message as a String value.
@@ -165,25 +233,61 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        <p>
      *        JSON-specific constraints:
+     *        </p>
      *        <ul>
-     *        <li>Keys in the JSON object that correspond to supported transport
-     *        protocols must have simple JSON string values.</li>
-     *        <li>The values will be parsed (unescaped) before they are used in
-     *        outgoing messages.</li>
-     *        <li>Outbound notifications are JSON encoded (meaning that the
-     *        characters will be reescaped for sending).</li>
-     *        <li>Values have a minimum length of 0 (the empty string, "", is
-     *        allowed).</li>
-     *        <li>Values have a maximum length bounded by the overall message
-     *        size (so, including multiple protocols may limit message sizes).</li>
-     *        <li>Non-string values will cause the key to be ignored.</li>
-     *        <li>Keys that do not correspond to supported transport protocols
-     *        are ignored.</li>
-     *        <li>Duplicate keys are not allowed.</li>
-     *        <li>Failure to parse or validate any key or value in the message
-     *        will cause the <code>Publish</code> call to return an error (no
-     *        partial delivery).</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Keys in the JSON object that correspond to supported transport
+     *        protocols must have simple JSON string values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The values will be parsed (unescaped) before they are used in
+     *        outgoing messages.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Outbound notifications are JSON encoded (meaning that the
+     *        characters will be reescaped for sending).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Values have a minimum length of 0 (the empty string, "", is
+     *        allowed).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Values have a maximum length bounded by the overall message size
+     *        (so, including multiple protocols may limit message sizes).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Non-string values will cause the key to be ignored.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Keys that do not correspond to supported transport protocols are
+     *        ignored.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Duplicate keys are not allowed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failure to parse or validate any key or value in the message will
+     *        cause the <code>Publish</code> call to return an error (no partial
+     *        delivery).
+     *        </p>
+     *        </li>
      */
     public PublishRequest(String topicArn, String message) {
         setTopicArn(topicArn);
@@ -196,9 +300,14 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * members.
      * 
      * @param topicArn
-     *        The topic you want to publish to.
+     *        The topic you want to publish to.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>TopicArn</code>
+     *        parameter, you must specify a value for the
+     *        <code>PhoneNumber</code> or <code>TargetArn</code> parameters.
      * @param message
-     *        The message you want to send to the topic.</p>
+     *        The message you want to send to the topic.
+     *        </p>
      *        <p>
      *        If you want to send the same message to all transport protocols,
      *        include the text of the message as a String value.
@@ -216,31 +325,66 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        <p>
      *        JSON-specific constraints:
+     *        </p>
      *        <ul>
-     *        <li>Keys in the JSON object that correspond to supported transport
-     *        protocols must have simple JSON string values.</li>
-     *        <li>The values will be parsed (unescaped) before they are used in
-     *        outgoing messages.</li>
-     *        <li>Outbound notifications are JSON encoded (meaning that the
-     *        characters will be reescaped for sending).</li>
-     *        <li>Values have a minimum length of 0 (the empty string, "", is
-     *        allowed).</li>
-     *        <li>Values have a maximum length bounded by the overall message
-     *        size (so, including multiple protocols may limit message sizes).</li>
-     *        <li>Non-string values will cause the key to be ignored.</li>
-     *        <li>Keys that do not correspond to supported transport protocols
-     *        are ignored.</li>
-     *        <li>Duplicate keys are not allowed.</li>
-     *        <li>Failure to parse or validate any key or value in the message
-     *        will cause the <code>Publish</code> call to return an error (no
-     *        partial delivery).</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Keys in the JSON object that correspond to supported transport
+     *        protocols must have simple JSON string values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The values will be parsed (unescaped) before they are used in
+     *        outgoing messages.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Outbound notifications are JSON encoded (meaning that the
+     *        characters will be reescaped for sending).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Values have a minimum length of 0 (the empty string, "", is
+     *        allowed).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Values have a maximum length bounded by the overall message size
+     *        (so, including multiple protocols may limit message sizes).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Non-string values will cause the key to be ignored.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Keys that do not correspond to supported transport protocols are
+     *        ignored.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Duplicate keys are not allowed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failure to parse or validate any key or value in the message will
+     *        cause the <code>Publish</code> call to return an error (no partial
+     *        delivery).
+     *        </p>
+     *        </li>
      * @param subject
      *        Optional parameter to be used as the "Subject" line when the
      *        message is delivered to email endpoints. This field will also be
      *        included, if present, in the standard JSON messages delivered to
-     *        other endpoints.
-     *        </p>
+     *        other endpoints.</p>
      *        <p>
      *        Constraints: Subjects must be ASCII text that begins with a
      *        letter, number, or punctuation mark; must not include line breaks
@@ -256,9 +400,18 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * <p>
      * The topic you want to publish to.
      * </p>
+     * <p>
+     * If you don't specify a value for the <code>TopicArn</code> parameter, you
+     * must specify a value for the <code>PhoneNumber</code> or
+     * <code>TargetArn</code> parameters.
+     * </p>
      * 
      * @param topicArn
-     *        The topic you want to publish to.
+     *        The topic you want to publish to.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>TopicArn</code>
+     *        parameter, you must specify a value for the
+     *        <code>PhoneNumber</code> or <code>TargetArn</code> parameters.
      */
 
     public void setTopicArn(String topicArn) {
@@ -269,8 +422,17 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * <p>
      * The topic you want to publish to.
      * </p>
+     * <p>
+     * If you don't specify a value for the <code>TopicArn</code> parameter, you
+     * must specify a value for the <code>PhoneNumber</code> or
+     * <code>TargetArn</code> parameters.
+     * </p>
      * 
-     * @return The topic you want to publish to.
+     * @return The topic you want to publish to.</p>
+     *         <p>
+     *         If you don't specify a value for the <code>TopicArn</code>
+     *         parameter, you must specify a value for the
+     *         <code>PhoneNumber</code> or <code>TargetArn</code> parameters.
      */
 
     public String getTopicArn() {
@@ -281,9 +443,18 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * <p>
      * The topic you want to publish to.
      * </p>
+     * <p>
+     * If you don't specify a value for the <code>TopicArn</code> parameter, you
+     * must specify a value for the <code>PhoneNumber</code> or
+     * <code>TargetArn</code> parameters.
+     * </p>
      * 
      * @param topicArn
-     *        The topic you want to publish to.
+     *        The topic you want to publish to.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>TopicArn</code>
+     *        parameter, you must specify a value for the
+     *        <code>PhoneNumber</code> or <code>TargetArn</code> parameters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -297,9 +468,18 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * <p>
      * Either TopicArn or EndpointArn, but not both.
      * </p>
+     * <p>
+     * If you don't specify a value for the <code>TargetArn</code> parameter,
+     * you must specify a value for the <code>PhoneNumber</code> or
+     * <code>TopicArn</code> parameters.
+     * </p>
      * 
      * @param targetArn
-     *        Either TopicArn or EndpointArn, but not both.
+     *        Either TopicArn or EndpointArn, but not both.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>TargetArn</code>
+     *        parameter, you must specify a value for the
+     *        <code>PhoneNumber</code> or <code>TopicArn</code> parameters.
      */
 
     public void setTargetArn(String targetArn) {
@@ -310,8 +490,17 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * <p>
      * Either TopicArn or EndpointArn, but not both.
      * </p>
+     * <p>
+     * If you don't specify a value for the <code>TargetArn</code> parameter,
+     * you must specify a value for the <code>PhoneNumber</code> or
+     * <code>TopicArn</code> parameters.
+     * </p>
      * 
-     * @return Either TopicArn or EndpointArn, but not both.
+     * @return Either TopicArn or EndpointArn, but not both.</p>
+     *         <p>
+     *         If you don't specify a value for the <code>TargetArn</code>
+     *         parameter, you must specify a value for the
+     *         <code>PhoneNumber</code> or <code>TopicArn</code> parameters.
      */
 
     public String getTargetArn() {
@@ -322,15 +511,98 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * <p>
      * Either TopicArn or EndpointArn, but not both.
      * </p>
+     * <p>
+     * If you don't specify a value for the <code>TargetArn</code> parameter,
+     * you must specify a value for the <code>PhoneNumber</code> or
+     * <code>TopicArn</code> parameters.
+     * </p>
      * 
      * @param targetArn
-     *        Either TopicArn or EndpointArn, but not both.
+     *        Either TopicArn or EndpointArn, but not both.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>TargetArn</code>
+     *        parameter, you must specify a value for the
+     *        <code>PhoneNumber</code> or <code>TopicArn</code> parameters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
     public PublishRequest withTargetArn(String targetArn) {
         setTargetArn(targetArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The phone number to which you want to deliver an SMS message. Use E.164
+     * format.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>PhoneNumber</code> parameter,
+     * you must specify a value for the <code>TargetArn</code> or
+     * <code>TopicArn</code> parameters.
+     * </p>
+     * 
+     * @param phoneNumber
+     *        The phone number to which you want to deliver an SMS message. Use
+     *        E.164 format.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>PhoneNumber</code>
+     *        parameter, you must specify a value for the <code>TargetArn</code>
+     *        or <code>TopicArn</code> parameters.
+     */
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     * <p>
+     * The phone number to which you want to deliver an SMS message. Use E.164
+     * format.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>PhoneNumber</code> parameter,
+     * you must specify a value for the <code>TargetArn</code> or
+     * <code>TopicArn</code> parameters.
+     * </p>
+     * 
+     * @return The phone number to which you want to deliver an SMS message. Use
+     *         E.164 format.</p>
+     *         <p>
+     *         If you don't specify a value for the <code>PhoneNumber</code>
+     *         parameter, you must specify a value for the
+     *         <code>TargetArn</code> or <code>TopicArn</code> parameters.
+     */
+
+    public String getPhoneNumber() {
+        return this.phoneNumber;
+    }
+
+    /**
+     * <p>
+     * The phone number to which you want to deliver an SMS message. Use E.164
+     * format.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>PhoneNumber</code> parameter,
+     * you must specify a value for the <code>TargetArn</code> or
+     * <code>TopicArn</code> parameters.
+     * </p>
+     * 
+     * @param phoneNumber
+     *        The phone number to which you want to deliver an SMS message. Use
+     *        E.164 format.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>PhoneNumber</code>
+     *        parameter, you must specify a value for the <code>TargetArn</code>
+     *        or <code>TopicArn</code> parameters.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public PublishRequest withPhoneNumber(String phoneNumber) {
+        setPhoneNumber(phoneNumber);
         return this;
     }
 
@@ -354,26 +626,59 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * JSON-specific constraints:
-     * <ul>
-     * <li>Keys in the JSON object that correspond to supported transport
-     * protocols must have simple JSON string values.</li>
-     * <li>The values will be parsed (unescaped) before they are used in
-     * outgoing messages.</li>
-     * <li>Outbound notifications are JSON encoded (meaning that the characters
-     * will be reescaped for sending).</li>
-     * <li>Values have a minimum length of 0 (the empty string, "", is allowed).
-     * </li>
-     * <li>Values have a maximum length bounded by the overall message size (so,
-     * including multiple protocols may limit message sizes).</li>
-     * <li>Non-string values will cause the key to be ignored.</li>
-     * <li>Keys that do not correspond to supported transport protocols are
-     * ignored.</li>
-     * <li>Duplicate keys are not allowed.</li>
-     * <li>Failure to parse or validate any key or value in the message will
-     * cause the <code>Publish</code> call to return an error (no partial
-     * delivery).</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Keys in the JSON object that correspond to supported transport protocols
+     * must have simple JSON string values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The values will be parsed (unescaped) before they are used in outgoing
+     * messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Outbound notifications are JSON encoded (meaning that the characters will
+     * be reescaped for sending).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Values have a minimum length of 0 (the empty string, "", is allowed).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Values have a maximum length bounded by the overall message size (so,
+     * including multiple protocols may limit message sizes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-string values will cause the key to be ignored.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Keys that do not correspond to supported transport protocols are ignored.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Duplicate keys are not allowed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failure to parse or validate any key or value in the message will cause
+     * the <code>Publish</code> call to return an error (no partial delivery).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param message
      *        The message you want to send to the topic.</p>
@@ -394,25 +699,61 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        <p>
      *        JSON-specific constraints:
+     *        </p>
      *        <ul>
-     *        <li>Keys in the JSON object that correspond to supported transport
-     *        protocols must have simple JSON string values.</li>
-     *        <li>The values will be parsed (unescaped) before they are used in
-     *        outgoing messages.</li>
-     *        <li>Outbound notifications are JSON encoded (meaning that the
-     *        characters will be reescaped for sending).</li>
-     *        <li>Values have a minimum length of 0 (the empty string, "", is
-     *        allowed).</li>
-     *        <li>Values have a maximum length bounded by the overall message
-     *        size (so, including multiple protocols may limit message sizes).</li>
-     *        <li>Non-string values will cause the key to be ignored.</li>
-     *        <li>Keys that do not correspond to supported transport protocols
-     *        are ignored.</li>
-     *        <li>Duplicate keys are not allowed.</li>
-     *        <li>Failure to parse or validate any key or value in the message
-     *        will cause the <code>Publish</code> call to return an error (no
-     *        partial delivery).</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Keys in the JSON object that correspond to supported transport
+     *        protocols must have simple JSON string values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The values will be parsed (unescaped) before they are used in
+     *        outgoing messages.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Outbound notifications are JSON encoded (meaning that the
+     *        characters will be reescaped for sending).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Values have a minimum length of 0 (the empty string, "", is
+     *        allowed).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Values have a maximum length bounded by the overall message size
+     *        (so, including multiple protocols may limit message sizes).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Non-string values will cause the key to be ignored.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Keys that do not correspond to supported transport protocols are
+     *        ignored.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Duplicate keys are not allowed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failure to parse or validate any key or value in the message will
+     *        cause the <code>Publish</code> call to return an error (no partial
+     *        delivery).
+     *        </p>
+     *        </li>
      */
 
     public void setMessage(String message) {
@@ -439,26 +780,59 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * JSON-specific constraints:
-     * <ul>
-     * <li>Keys in the JSON object that correspond to supported transport
-     * protocols must have simple JSON string values.</li>
-     * <li>The values will be parsed (unescaped) before they are used in
-     * outgoing messages.</li>
-     * <li>Outbound notifications are JSON encoded (meaning that the characters
-     * will be reescaped for sending).</li>
-     * <li>Values have a minimum length of 0 (the empty string, "", is allowed).
-     * </li>
-     * <li>Values have a maximum length bounded by the overall message size (so,
-     * including multiple protocols may limit message sizes).</li>
-     * <li>Non-string values will cause the key to be ignored.</li>
-     * <li>Keys that do not correspond to supported transport protocols are
-     * ignored.</li>
-     * <li>Duplicate keys are not allowed.</li>
-     * <li>Failure to parse or validate any key or value in the message will
-     * cause the <code>Publish</code> call to return an error (no partial
-     * delivery).</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Keys in the JSON object that correspond to supported transport protocols
+     * must have simple JSON string values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The values will be parsed (unescaped) before they are used in outgoing
+     * messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Outbound notifications are JSON encoded (meaning that the characters will
+     * be reescaped for sending).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Values have a minimum length of 0 (the empty string, "", is allowed).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Values have a maximum length bounded by the overall message size (so,
+     * including multiple protocols may limit message sizes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-string values will cause the key to be ignored.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Keys that do not correspond to supported transport protocols are ignored.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Duplicate keys are not allowed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failure to parse or validate any key or value in the message will cause
+     * the <code>Publish</code> call to return an error (no partial delivery).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The message you want to send to the topic.</p>
      *         <p>
@@ -478,25 +852,61 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         <p>
      *         JSON-specific constraints:
+     *         </p>
      *         <ul>
-     *         <li>Keys in the JSON object that correspond to supported
-     *         transport protocols must have simple JSON string values.</li>
-     *         <li>The values will be parsed (unescaped) before they are used in
-     *         outgoing messages.</li>
-     *         <li>Outbound notifications are JSON encoded (meaning that the
-     *         characters will be reescaped for sending).</li>
-     *         <li>Values have a minimum length of 0 (the empty string, "", is
-     *         allowed).</li>
-     *         <li>Values have a maximum length bounded by the overall message
-     *         size (so, including multiple protocols may limit message sizes).</li>
-     *         <li>Non-string values will cause the key to be ignored.</li>
-     *         <li>Keys that do not correspond to supported transport protocols
-     *         are ignored.</li>
-     *         <li>Duplicate keys are not allowed.</li>
-     *         <li>Failure to parse or validate any key or value in the message
-     *         will cause the <code>Publish</code> call to return an error (no
-     *         partial delivery).</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Keys in the JSON object that correspond to supported transport
+     *         protocols must have simple JSON string values.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The values will be parsed (unescaped) before they are used in
+     *         outgoing messages.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Outbound notifications are JSON encoded (meaning that the
+     *         characters will be reescaped for sending).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Values have a minimum length of 0 (the empty string, "", is
+     *         allowed).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Values have a maximum length bounded by the overall message size
+     *         (so, including multiple protocols may limit message sizes).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Non-string values will cause the key to be ignored.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Keys that do not correspond to supported transport protocols are
+     *         ignored.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Duplicate keys are not allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Failure to parse or validate any key or value in the message will
+     *         cause the <code>Publish</code> call to return an error (no
+     *         partial delivery).
+     *         </p>
+     *         </li>
      */
 
     public String getMessage() {
@@ -523,26 +933,59 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * JSON-specific constraints:
-     * <ul>
-     * <li>Keys in the JSON object that correspond to supported transport
-     * protocols must have simple JSON string values.</li>
-     * <li>The values will be parsed (unescaped) before they are used in
-     * outgoing messages.</li>
-     * <li>Outbound notifications are JSON encoded (meaning that the characters
-     * will be reescaped for sending).</li>
-     * <li>Values have a minimum length of 0 (the empty string, "", is allowed).
-     * </li>
-     * <li>Values have a maximum length bounded by the overall message size (so,
-     * including multiple protocols may limit message sizes).</li>
-     * <li>Non-string values will cause the key to be ignored.</li>
-     * <li>Keys that do not correspond to supported transport protocols are
-     * ignored.</li>
-     * <li>Duplicate keys are not allowed.</li>
-     * <li>Failure to parse or validate any key or value in the message will
-     * cause the <code>Publish</code> call to return an error (no partial
-     * delivery).</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Keys in the JSON object that correspond to supported transport protocols
+     * must have simple JSON string values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The values will be parsed (unescaped) before they are used in outgoing
+     * messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Outbound notifications are JSON encoded (meaning that the characters will
+     * be reescaped for sending).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Values have a minimum length of 0 (the empty string, "", is allowed).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Values have a maximum length bounded by the overall message size (so,
+     * including multiple protocols may limit message sizes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-string values will cause the key to be ignored.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Keys that do not correspond to supported transport protocols are ignored.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Duplicate keys are not allowed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failure to parse or validate any key or value in the message will cause
+     * the <code>Publish</code> call to return an error (no partial delivery).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param message
      *        The message you want to send to the topic.</p>
@@ -563,25 +1006,61 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        <p>
      *        JSON-specific constraints:
+     *        </p>
      *        <ul>
-     *        <li>Keys in the JSON object that correspond to supported transport
-     *        protocols must have simple JSON string values.</li>
-     *        <li>The values will be parsed (unescaped) before they are used in
-     *        outgoing messages.</li>
-     *        <li>Outbound notifications are JSON encoded (meaning that the
-     *        characters will be reescaped for sending).</li>
-     *        <li>Values have a minimum length of 0 (the empty string, "", is
-     *        allowed).</li>
-     *        <li>Values have a maximum length bounded by the overall message
-     *        size (so, including multiple protocols may limit message sizes).</li>
-     *        <li>Non-string values will cause the key to be ignored.</li>
-     *        <li>Keys that do not correspond to supported transport protocols
-     *        are ignored.</li>
-     *        <li>Duplicate keys are not allowed.</li>
-     *        <li>Failure to parse or validate any key or value in the message
-     *        will cause the <code>Publish</code> call to return an error (no
-     *        partial delivery).</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Keys in the JSON object that correspond to supported transport
+     *        protocols must have simple JSON string values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The values will be parsed (unescaped) before they are used in
+     *        outgoing messages.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Outbound notifications are JSON encoded (meaning that the
+     *        characters will be reescaped for sending).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Values have a minimum length of 0 (the empty string, "", is
+     *        allowed).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Values have a maximum length bounded by the overall message size
+     *        (so, including multiple protocols may limit message sizes).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Non-string values will cause the key to be ignored.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Keys that do not correspond to supported transport protocols are
+     *        ignored.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Duplicate keys are not allowed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failure to parse or validate any key or value in the message will
+     *        cause the <code>Publish</code> call to return an error (no partial
+     *        delivery).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -684,9 +1163,17 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * <code>Message</code> parameter must:
      * </p>
      * <ul>
-     * <li>be a syntactically valid JSON object; and</li>
-     * <li>contain at least a top-level JSON key of "default" with a value that
-     * is a string.</li>
+     * <li>
+     * <p>
+     * be a syntactically valid JSON object; and
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * contain at least a top-level JSON key of "default" with a value that is a
+     * string.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * You can define other top-level keys that define the message you want to
@@ -711,9 +1198,17 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *        set <code>MessageStructure</code> to <code>json</code>, the value
      *        of the <code>Message</code> parameter must: </p>
      *        <ul>
-     *        <li>be a syntactically valid JSON object; and</li>
-     *        <li>contain at least a top-level JSON key of "default" with a
-     *        value that is a string.</li>
+     *        <li>
+     *        <p>
+     *        be a syntactically valid JSON object; and
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        contain at least a top-level JSON key of "default" with a value
+     *        that is a string.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        You can define other top-level keys that define the message you
@@ -744,9 +1239,17 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * <code>Message</code> parameter must:
      * </p>
      * <ul>
-     * <li>be a syntactically valid JSON object; and</li>
-     * <li>contain at least a top-level JSON key of "default" with a value that
-     * is a string.</li>
+     * <li>
+     * <p>
+     * be a syntactically valid JSON object; and
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * contain at least a top-level JSON key of "default" with a value that is a
+     * string.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * You can define other top-level keys that define the message you want to
@@ -770,9 +1273,17 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *         If you set <code>MessageStructure</code> to <code>json</code>,
      *         the value of the <code>Message</code> parameter must: </p>
      *         <ul>
-     *         <li>be a syntactically valid JSON object; and</li>
-     *         <li>contain at least a top-level JSON key of "default" with a
-     *         value that is a string.</li>
+     *         <li>
+     *         <p>
+     *         be a syntactically valid JSON object; and
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         contain at least a top-level JSON key of "default" with a value
+     *         that is a string.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         You can define other top-level keys that define the message you
@@ -803,9 +1314,17 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * <code>Message</code> parameter must:
      * </p>
      * <ul>
-     * <li>be a syntactically valid JSON object; and</li>
-     * <li>contain at least a top-level JSON key of "default" with a value that
-     * is a string.</li>
+     * <li>
+     * <p>
+     * be a syntactically valid JSON object; and
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * contain at least a top-level JSON key of "default" with a value that is a
+     * string.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * You can define other top-level keys that define the message you want to
@@ -830,9 +1349,17 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *        set <code>MessageStructure</code> to <code>json</code>, the value
      *        of the <code>Message</code> parameter must: </p>
      *        <ul>
-     *        <li>be a syntactically valid JSON object; and</li>
-     *        <li>contain at least a top-level JSON key of "default" with a
-     *        value that is a string.</li>
+     *        <li>
+     *        <p>
+     *        be a syntactically valid JSON object; and
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        contain at least a top-level JSON key of "default" with a value
+     *        that is a string.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        You can define other top-level keys that define the message you
@@ -942,6 +1469,8 @@ public class PublishRequest extends AmazonWebServiceRequest implements
             sb.append("TopicArn: " + getTopicArn() + ",");
         if (getTargetArn() != null)
             sb.append("TargetArn: " + getTargetArn() + ",");
+        if (getPhoneNumber() != null)
+            sb.append("PhoneNumber: " + getPhoneNumber() + ",");
         if (getMessage() != null)
             sb.append("Message: " + getMessage() + ",");
         if (getSubject() != null)
@@ -973,6 +1502,11 @@ public class PublishRequest extends AmazonWebServiceRequest implements
             return false;
         if (other.getTargetArn() != null
                 && other.getTargetArn().equals(this.getTargetArn()) == false)
+            return false;
+        if (other.getPhoneNumber() == null ^ this.getPhoneNumber() == null)
+            return false;
+        if (other.getPhoneNumber() != null
+                && other.getPhoneNumber().equals(this.getPhoneNumber()) == false)
             return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
@@ -1010,6 +1544,9 @@ public class PublishRequest extends AmazonWebServiceRequest implements
                 + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode());
         hashCode = prime * hashCode
                 + ((getTargetArn() == null) ? 0 : getTargetArn().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPhoneNumber() == null) ? 0 : getPhoneNumber().hashCode());
         hashCode = prime * hashCode
                 + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode

@@ -31,15 +31,31 @@ public class GetPlatformApplicationAttributesResult implements Serializable,
      * Attributes include the following:
      * </p>
      * <ul>
-     * <li> <code>EventEndpointCreated</code> -- Topic ARN to which
-     * EndpointCreated event notifications should be sent.</li>
-     * <li> <code>EventEndpointDeleted</code> -- Topic ARN to which
-     * EndpointDeleted event notifications should be sent.</li>
-     * <li> <code>EventEndpointUpdated</code> -- Topic ARN to which
-     * EndpointUpdate event notifications should be sent.</li>
-     * <li> <code>EventDeliveryFailure</code> -- Topic ARN to which
-     * DeliveryFailure event notifications should be sent upon Direct Publish
-     * delivery failure (permanent) to one of the application's endpoints.</li>
+     * <li>
+     * <p>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
+     * event notifications should be sent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
+     * event notifications should be sent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
+     * event notifications should be sent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
+     * event notifications should be sent upon Direct Publish delivery failure
+     * (permanent) to one of the application's endpoints.
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
@@ -49,29 +65,61 @@ public class GetPlatformApplicationAttributesResult implements Serializable,
      * Attributes include the following:
      * </p>
      * <ul>
-     * <li> <code>EventEndpointCreated</code> -- Topic ARN to which
-     * EndpointCreated event notifications should be sent.</li>
-     * <li> <code>EventEndpointDeleted</code> -- Topic ARN to which
-     * EndpointDeleted event notifications should be sent.</li>
-     * <li> <code>EventEndpointUpdated</code> -- Topic ARN to which
-     * EndpointUpdate event notifications should be sent.</li>
-     * <li> <code>EventDeliveryFailure</code> -- Topic ARN to which
-     * DeliveryFailure event notifications should be sent upon Direct Publish
-     * delivery failure (permanent) to one of the application's endpoints.</li>
+     * <li>
+     * <p>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
+     * event notifications should be sent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
+     * event notifications should be sent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
+     * event notifications should be sent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
+     * event notifications should be sent upon Direct Publish delivery failure
+     * (permanent) to one of the application's endpoints.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Attributes include the following:</p>
      *         <ul>
-     *         <li> <code>EventEndpointCreated</code> -- Topic ARN to which
-     *         EndpointCreated event notifications should be sent.</li>
-     *         <li> <code>EventEndpointDeleted</code> -- Topic ARN to which
-     *         EndpointDeleted event notifications should be sent.</li>
-     *         <li> <code>EventEndpointUpdated</code> -- Topic ARN to which
-     *         EndpointUpdate event notifications should be sent.</li>
-     *         <li> <code>EventDeliveryFailure</code> -- Topic ARN to which
+     *         <li>
+     *         <p>
+     *         <code>EventEndpointCreated</code> -- Topic ARN to which
+     *         EndpointCreated event notifications should be sent.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EventEndpointDeleted</code> -- Topic ARN to which
+     *         EndpointDeleted event notifications should be sent.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EventEndpointUpdated</code> -- Topic ARN to which
+     *         EndpointUpdate event notifications should be sent.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EventDeliveryFailure</code> -- Topic ARN to which
      *         DeliveryFailure event notifications should be sent upon Direct
      *         Publish delivery failure (permanent) to one of the application's
-     *         endpoints.</li>
+     *         endpoints.
+     *         </p>
+     *         </li>
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -86,30 +134,62 @@ public class GetPlatformApplicationAttributesResult implements Serializable,
      * Attributes include the following:
      * </p>
      * <ul>
-     * <li> <code>EventEndpointCreated</code> -- Topic ARN to which
-     * EndpointCreated event notifications should be sent.</li>
-     * <li> <code>EventEndpointDeleted</code> -- Topic ARN to which
-     * EndpointDeleted event notifications should be sent.</li>
-     * <li> <code>EventEndpointUpdated</code> -- Topic ARN to which
-     * EndpointUpdate event notifications should be sent.</li>
-     * <li> <code>EventDeliveryFailure</code> -- Topic ARN to which
-     * DeliveryFailure event notifications should be sent upon Direct Publish
-     * delivery failure (permanent) to one of the application's endpoints.</li>
+     * <li>
+     * <p>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
+     * event notifications should be sent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
+     * event notifications should be sent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
+     * event notifications should be sent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
+     * event notifications should be sent upon Direct Publish delivery failure
+     * (permanent) to one of the application's endpoints.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attributes
      *        Attributes include the following:</p>
      *        <ul>
-     *        <li> <code>EventEndpointCreated</code> -- Topic ARN to which
-     *        EndpointCreated event notifications should be sent.</li>
-     *        <li> <code>EventEndpointDeleted</code> -- Topic ARN to which
-     *        EndpointDeleted event notifications should be sent.</li>
-     *        <li> <code>EventEndpointUpdated</code> -- Topic ARN to which
-     *        EndpointUpdate event notifications should be sent.</li>
-     *        <li> <code>EventDeliveryFailure</code> -- Topic ARN to which
+     *        <li>
+     *        <p>
+     *        <code>EventEndpointCreated</code> -- Topic ARN to which
+     *        EndpointCreated event notifications should be sent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EventEndpointDeleted</code> -- Topic ARN to which
+     *        EndpointDeleted event notifications should be sent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EventEndpointUpdated</code> -- Topic ARN to which
+     *        EndpointUpdate event notifications should be sent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EventDeliveryFailure</code> -- Topic ARN to which
      *        DeliveryFailure event notifications should be sent upon Direct
      *        Publish delivery failure (permanent) to one of the application's
-     *        endpoints.</li>
+     *        endpoints.
+     *        </p>
+     *        </li>
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -123,30 +203,62 @@ public class GetPlatformApplicationAttributesResult implements Serializable,
      * Attributes include the following:
      * </p>
      * <ul>
-     * <li> <code>EventEndpointCreated</code> -- Topic ARN to which
-     * EndpointCreated event notifications should be sent.</li>
-     * <li> <code>EventEndpointDeleted</code> -- Topic ARN to which
-     * EndpointDeleted event notifications should be sent.</li>
-     * <li> <code>EventEndpointUpdated</code> -- Topic ARN to which
-     * EndpointUpdate event notifications should be sent.</li>
-     * <li> <code>EventDeliveryFailure</code> -- Topic ARN to which
-     * DeliveryFailure event notifications should be sent upon Direct Publish
-     * delivery failure (permanent) to one of the application's endpoints.</li>
+     * <li>
+     * <p>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
+     * event notifications should be sent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
+     * event notifications should be sent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
+     * event notifications should be sent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
+     * event notifications should be sent upon Direct Publish delivery failure
+     * (permanent) to one of the application's endpoints.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attributes
      *        Attributes include the following:</p>
      *        <ul>
-     *        <li> <code>EventEndpointCreated</code> -- Topic ARN to which
-     *        EndpointCreated event notifications should be sent.</li>
-     *        <li> <code>EventEndpointDeleted</code> -- Topic ARN to which
-     *        EndpointDeleted event notifications should be sent.</li>
-     *        <li> <code>EventEndpointUpdated</code> -- Topic ARN to which
-     *        EndpointUpdate event notifications should be sent.</li>
-     *        <li> <code>EventDeliveryFailure</code> -- Topic ARN to which
+     *        <li>
+     *        <p>
+     *        <code>EventEndpointCreated</code> -- Topic ARN to which
+     *        EndpointCreated event notifications should be sent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EventEndpointDeleted</code> -- Topic ARN to which
+     *        EndpointDeleted event notifications should be sent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EventEndpointUpdated</code> -- Topic ARN to which
+     *        EndpointUpdate event notifications should be sent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EventDeliveryFailure</code> -- Topic ARN to which
      *        DeliveryFailure event notifications should be sent upon Direct
      *        Publish delivery failure (permanent) to one of the application's
-     *        endpoints.</li>
+     *        endpoints.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

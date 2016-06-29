@@ -20,26 +20,25 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class DescribeMountTargetSecurityGroupsRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the mount target whose security groups you want to retrieve.
+     * ID of the mount target whose security groups you want to retrieve.
      * </p>
      */
     private String mountTargetId;
 
     /**
      * <p>
-     * The ID of the mount target whose security groups you want to retrieve.
+     * ID of the mount target whose security groups you want to retrieve.
      * </p>
      * 
      * @param mountTargetId
-     *        The ID of the mount target whose security groups you want to
-     *        retrieve.
+     *        ID of the mount target whose security groups you want to retrieve.
      */
 
     public void setMountTargetId(String mountTargetId) {
@@ -48,10 +47,10 @@ public class DescribeMountTargetSecurityGroupsRequest extends
 
     /**
      * <p>
-     * The ID of the mount target whose security groups you want to retrieve.
+     * ID of the mount target whose security groups you want to retrieve.
      * </p>
      * 
-     * @return The ID of the mount target whose security groups you want to
+     * @return ID of the mount target whose security groups you want to
      *         retrieve.
      */
 
@@ -61,12 +60,11 @@ public class DescribeMountTargetSecurityGroupsRequest extends
 
     /**
      * <p>
-     * The ID of the mount target whose security groups you want to retrieve.
+     * ID of the mount target whose security groups you want to retrieve.
      * </p>
      * 
      * @param mountTargetId
-     *        The ID of the mount target whose security groups you want to
-     *        retrieve.
+     *        ID of the mount target whose security groups you want to retrieve.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -20,25 +20,25 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class DeleteMountTargetRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
     /**
      * <p>
-     * String. The ID of the mount target to delete.
+     * ID of the mount target to delete (String).
      * </p>
      */
     private String mountTargetId;
 
     /**
      * <p>
-     * String. The ID of the mount target to delete.
+     * ID of the mount target to delete (String).
      * </p>
      * 
      * @param mountTargetId
-     *        String. The ID of the mount target to delete.
+     *        ID of the mount target to delete (String).
      */
 
     public void setMountTargetId(String mountTargetId) {
@@ -47,10 +47,10 @@ public class DeleteMountTargetRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * String. The ID of the mount target to delete.
+     * ID of the mount target to delete (String).
      * </p>
      * 
-     * @return String. The ID of the mount target to delete.
+     * @return ID of the mount target to delete (String).
      */
 
     public String getMountTargetId() {
@@ -59,11 +59,11 @@ public class DeleteMountTargetRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * String. The ID of the mount target to delete.
+     * ID of the mount target to delete (String).
      * </p>
      * 
      * @param mountTargetId
-     *        String. The ID of the mount target to delete.
+     *        ID of the mount target to delete (String).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

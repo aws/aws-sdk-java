@@ -172,6 +172,11 @@ public class RegisterImageRequestMarshaller implements
                     .fromString(registerImageRequest.getSriovNetSupport()));
         }
 
+        if (registerImageRequest.getEnaSupport() != null) {
+            request.addParameter("EnaSupport", StringUtils
+                    .fromBoolean(registerImageRequest.getEnaSupport()));
+        }
+
         return request;
     }
 

@@ -63,6 +63,11 @@ public class DynamoDBActionJsonUnmarshaller implements
                     dynamoDBAction.setRoleArn(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("operation", targetDepth)) {
+                    context.nextToken();
+                    dynamoDBAction.setOperation(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("hashKeyField", targetDepth)) {
                     context.nextToken();
                     dynamoDBAction.setHashKeyField(context.getUnmarshaller(

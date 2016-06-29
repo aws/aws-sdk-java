@@ -36,7 +36,17 @@ public class HostedZoneConfig implements Serializable, Cloneable {
      * </p>
      */
     private String comment;
-
+    /**
+     * <p>
+     * <code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     * Boolean value that indicates whether a hosted zone is private.
+     * </p>
+     * <p>
+     * <code>CreateHostedZone</code> requests: When you're creating a private
+     * hosted zone (when you specify values for VPCId and VPCRegion), you can
+     * optionally specify true for PrivateZone.
+     * </p>
+     */
     private Boolean privateZone;
 
     /**
@@ -93,7 +103,21 @@ public class HostedZoneConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * <code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     * Boolean value that indicates whether a hosted zone is private.
+     * </p>
+     * <p>
+     * <code>CreateHostedZone</code> requests: When you're creating a private
+     * hosted zone (when you specify values for VPCId and VPCRegion), you can
+     * optionally specify true for PrivateZone.
+     * </p>
+     * 
      * @param privateZone
+     *        GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     *        Boolean value that indicates whether a hosted zone is private.</p>
+     *        <p>
+     *        <code>CreateHostedZone
      */
 
     public void setPrivateZone(Boolean privateZone) {
@@ -101,7 +125,21 @@ public class HostedZoneConfig implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * <code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     * Boolean value that indicates whether a hosted zone is private.
+     * </p>
+     * <p>
+     * <code>CreateHostedZone</code> requests: When you're creating a private
+     * hosted zone (when you specify values for VPCId and VPCRegion), you can
+     * optionally specify true for PrivateZone.
+     * </p>
+     * 
+     * @return GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     *         Boolean value that indicates whether a hosted zone is
+     *         private.</p>
+     *         <p>
+     *         <code>CreateHostedZone
      */
 
     public Boolean getPrivateZone() {
@@ -109,7 +147,21 @@ public class HostedZoneConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * <code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     * Boolean value that indicates whether a hosted zone is private.
+     * </p>
+     * <p>
+     * <code>CreateHostedZone</code> requests: When you're creating a private
+     * hosted zone (when you specify values for VPCId and VPCRegion), you can
+     * optionally specify true for PrivateZone.
+     * </p>
+     * 
      * @param privateZone
+     *        GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     *        Boolean value that indicates whether a hosted zone is private.</p>
+     *        <p>
+     *        <code>CreateHostedZone
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -120,7 +172,21 @@ public class HostedZoneConfig implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * <code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     * Boolean value that indicates whether a hosted zone is private.
+     * </p>
+     * <p>
+     * <code>CreateHostedZone</code> requests: When you're creating a private
+     * hosted zone (when you specify values for VPCId and VPCRegion), you can
+     * optionally specify true for PrivateZone.
+     * </p>
+     * 
+     * @return GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     *         Boolean value that indicates whether a hosted zone is
+     *         private.</p>
+     *         <p>
+     *         <code>CreateHostedZone
      */
 
     public Boolean isPrivateZone() {

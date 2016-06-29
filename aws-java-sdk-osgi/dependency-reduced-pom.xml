@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.11</version>
+    <version>1.11.12</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.11</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.12</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.11</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.12</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -522,10 +522,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.11</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.12</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.11</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.12</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -926,10 +926,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.11</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.12</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.11</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.12</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1328,16 +1328,30 @@
             <version>2.7</version>
             <executions>
               <execution>
+                <id>default-resources</id>
+                <phase>process-resources</phase>
+                <goals>
+                  <goal>resources</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>default-testResources</id>
+                <phase>process-test-resources</phase>
+                <goals>
+                  <goal>testResources</goal>
+                </goals>
+              </execution>
+              <execution>
                 <id>copy-resources</id>
                 <phase>process-resources</phase>
                 <goals>
                   <goal>copy-resources</goal>
                 </goals>
                 <configuration>
-                  <outputDirectory>${zip.generation.additional.files}</outputDirectory>
+                  <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files</outputDirectory>
                   <resources>
                     <resource>
-                      <directory>${zip.generation.additional.files.sources}</directory>
+                      <directory>/var/sdk/additional-files-to-copy</directory>
                     </resource>
                   </resources>
                 </configuration>
@@ -1354,6 +1368,66 @@
                 <goals>
                   <goal>copy</goal>
                 </goals>
+                <configuration>
+                  <artifactItems>
+                    <artifactItem>
+                      <groupId>javax.mail</groupId>
+                      <artifactId>javax.mail-api</artifactId>
+                      <version>1.4.6</version>
+                      <type>jar</type>
+                      <overWrite>true</overWrite>
+                      <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
+                    </artifactItem>
+                    <artifactItem>
+                      <groupId>org.freemarker</groupId>
+                      <artifactId>freemarker</artifactId>
+                      <version>2.3.9</version>
+                      <type>jar</type>
+                      <overWrite>true</overWrite>
+                      <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
+                    </artifactItem>
+                    <artifactItem>
+                      <groupId>org.aspectj</groupId>
+                      <artifactId>aspectjrt</artifactId>
+                      <version>1.8.2</version>
+                      <type>jar</type>
+                      <overWrite>true</overWrite>
+                      <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
+                    </artifactItem>
+                    <artifactItem>
+                      <groupId>org.springframework</groupId>
+                      <artifactId>spring-beans</artifactId>
+                      <version>3.0.7.RELEASE</version>
+                      <type>jar</type>
+                      <overWrite>true</overWrite>
+                      <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
+                    </artifactItem>
+                    <artifactItem>
+                      <groupId>org.springframework</groupId>
+                      <artifactId>spring-core</artifactId>
+                      <version>3.0.7.RELEASE</version>
+                      <type>jar</type>
+                      <overWrite>true</overWrite>
+                      <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
+                    </artifactItem>
+                    <artifactItem>
+                      <groupId>org.springframework</groupId>
+                      <artifactId>spring-context</artifactId>
+                      <version>3.0.7.RELEASE</version>
+                      <type>jar</type>
+                      <overWrite>true</overWrite>
+                      <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
+                    </artifactItem>
+                    <artifactItem>
+                      <groupId>org.springframework</groupId>
+                      <artifactId>spring-test</artifactId>
+                      <version>3.0.7.RELEASE</version>
+                      <type>jar</type>
+                      <overWrite>true</overWrite>
+                      <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
+                    </artifactItem>
+                  </artifactItems>
+                </configuration>
               </execution>
             </executions>
             <configuration>
@@ -1361,58 +1435,58 @@
                 <artifactItem>
                   <groupId>javax.mail</groupId>
                   <artifactId>javax.mail-api</artifactId>
-                  <version>${javax.mail.version}</version>
+                  <version>1.4.6</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
+                  <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
                 </artifactItem>
                 <artifactItem>
                   <groupId>org.freemarker</groupId>
                   <artifactId>freemarker</artifactId>
-                  <version>${freemarker.version}</version>
+                  <version>2.3.9</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
+                  <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
                 </artifactItem>
                 <artifactItem>
                   <groupId>org.aspectj</groupId>
                   <artifactId>aspectjrt</artifactId>
-                  <version>${aspectj.version}</version>
+                  <version>1.8.2</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
+                  <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
                 </artifactItem>
                 <artifactItem>
                   <groupId>org.springframework</groupId>
                   <artifactId>spring-beans</artifactId>
-                  <version>${spring.version}</version>
+                  <version>3.0.7.RELEASE</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
+                  <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
                 </artifactItem>
                 <artifactItem>
                   <groupId>org.springframework</groupId>
                   <artifactId>spring-core</artifactId>
-                  <version>${spring.version}</version>
+                  <version>3.0.7.RELEASE</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
+                  <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
                 </artifactItem>
                 <artifactItem>
                   <groupId>org.springframework</groupId>
                   <artifactId>spring-context</artifactId>
-                  <version>${spring.version}</version>
+                  <version>3.0.7.RELEASE</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
+                  <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
                 </artifactItem>
                 <artifactItem>
                   <groupId>org.springframework</groupId>
                   <artifactId>spring-test</artifactId>
-                  <version>${spring.version}</version>
+                  <version>3.0.7.RELEASE</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
+                  <outputDirectory>/home/tomcat/.jenkins/jobs/StageRelease/workspace/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
                 </artifactItem>
               </artifactItems>
             </configuration>
@@ -1427,6 +1501,12 @@
                 <goals>
                   <goal>single</goal>
                 </goals>
+                <configuration>
+                  <descriptors>
+                    <descriptor>src/assembly/sdk-zip-archive-assembly.xml</descriptor>
+                  </descriptors>
+                  <tarLongFileMode>gnu</tarLongFileMode>
+                </configuration>
               </execution>
             </executions>
             <configuration>
@@ -1439,6 +1519,7 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
+            <version>1.5.0</version>
             <executions>
               <execution>
                 <phase>package</phase>
@@ -1446,9 +1527,9 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/${project.build.finalName}-${zip.assembly.id}/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.12-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
-                  <commandlineArgs>-r ../${zip.artifact.name} .</commandlineArgs>
+                  <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>
               </execution>
             </executions>

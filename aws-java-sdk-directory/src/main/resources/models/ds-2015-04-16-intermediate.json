@@ -1,7 +1,6 @@
 {
   "metadata" : {
     "apiVersion" : "2015-04-16",
-    "exceptionUnmarshallerImpl" : null,
     "protocol" : "json",
     "checksumFormat" : null,
     "documentation" : "<fullname>AWS Directory Service</fullname> <p>This is the <i>AWS Directory Service API Reference</i>. This guide provides detailed information about AWS Directory Service operations, data types, parameters, and errors.</p>",
@@ -16,16 +15,16 @@
     "serviceAbbreviation" : "Directory Service",
     "serviceFullName" : "AWS Directory Service",
     "hasApiWithStreamInput" : false,
-    "jsonContentVersion" : "application/x-amz-json-1.1",
+    "contentType" : null,
     "jsonVersion" : "1.1",
     "endpointPrefix" : "ds",
     "signingName" : "ds",
-    "jsonProtocol" : true,
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "serviceName" : "Directory Service",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
+    "jsonProtocol" : true,
     "xmlProtocol" : false
   },
   "operations" : {
@@ -28724,5 +28723,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "exceptionUnmarshallerImpl" : null
 }

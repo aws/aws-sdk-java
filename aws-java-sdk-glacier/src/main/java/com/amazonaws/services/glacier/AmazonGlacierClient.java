@@ -115,6 +115,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
+                    .withContentTypeOverride("")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("LimitExceededException")

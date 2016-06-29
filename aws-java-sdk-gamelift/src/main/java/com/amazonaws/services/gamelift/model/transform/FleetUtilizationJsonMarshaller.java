@@ -51,6 +51,11 @@ public class FleetUtilizationJsonMarshaller {
                 jsonGenerator.writeFieldName("FleetId").writeValue(
                         fleetUtilization.getFleetId());
             }
+            if (fleetUtilization.getActiveServerProcessCount() != null) {
+                jsonGenerator.writeFieldName("ActiveServerProcessCount")
+                        .writeValue(
+                                fleetUtilization.getActiveServerProcessCount());
+            }
             if (fleetUtilization.getActiveGameSessionCount() != null) {
                 jsonGenerator.writeFieldName("ActiveGameSessionCount")
                         .writeValue(

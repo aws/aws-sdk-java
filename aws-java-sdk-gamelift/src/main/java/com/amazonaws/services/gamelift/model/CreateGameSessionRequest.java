@@ -50,7 +50,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
     private Integer maximumPlayerSessionCount;
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
+     * Descriptive label associated with a game session. Session names do not
      * need to be unique.
      * </p>
      */
@@ -58,7 +58,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Set of properties used to administer a game session. These properties are
-     * passed to your game server.
+     * passed to the server process hosting it.
      * </p>
      */
     private java.util.List<GameProperty> gameProperties;
@@ -207,13 +207,13 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
+     * Descriptive label associated with a game session. Session names do not
      * need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this game session. Session names
-     *        do not need to be unique.
+     *        Descriptive label associated with a game session. Session names do
+     *        not need to be unique.
      */
 
     public void setName(String name) {
@@ -222,12 +222,12 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
+     * Descriptive label associated with a game session. Session names do not
      * need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with this game session. Session
-     *         names do not need to be unique.
+     * @return Descriptive label associated with a game session. Session names
+     *         do not need to be unique.
      */
 
     public String getName() {
@@ -236,13 +236,13 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
+     * Descriptive label associated with a game session. Session names do not
      * need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this game session. Session names
-     *        do not need to be unique.
+     *        Descriptive label associated with a game session. Session names do
+     *        not need to be unique.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -255,11 +255,11 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Set of properties used to administer a game session. These properties are
-     * passed to your game server.
+     * passed to the server process hosting it.
      * </p>
      * 
      * @return Set of properties used to administer a game session. These
-     *         properties are passed to your game server.
+     *         properties are passed to the server process hosting it.
      */
 
     public java.util.List<GameProperty> getGameProperties() {
@@ -269,12 +269,12 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Set of properties used to administer a game session. These properties are
-     * passed to your game server.
+     * passed to the server process hosting it.
      * </p>
      * 
      * @param gameProperties
      *        Set of properties used to administer a game session. These
-     *        properties are passed to your game server.
+     *        properties are passed to the server process hosting it.
      */
 
     public void setGameProperties(
@@ -291,7 +291,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Set of properties used to administer a game session. These properties are
-     * passed to your game server.
+     * passed to the server process hosting it.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -302,7 +302,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      * 
      * @param gameProperties
      *        Set of properties used to administer a game session. These
-     *        properties are passed to your game server.
+     *        properties are passed to the server process hosting it.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -322,12 +322,12 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Set of properties used to administer a game session. These properties are
-     * passed to your game server.
+     * passed to the server process hosting it.
      * </p>
      * 
      * @param gameProperties
      *        Set of properties used to administer a game session. These
-     *        properties are passed to your game server.
+     *        properties are passed to the server process hosting it.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

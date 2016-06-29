@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Input for ListSubscriptions action.
+ * </p>
  */
 public class ListSubscriptionsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

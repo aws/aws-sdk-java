@@ -25,20 +25,20 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string, present if provided by caller in the request.
+     * Present if provided by caller in the request (String).
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * An array of file system descriptions.
+     * Array of file system descriptions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FileSystemDescription> fileSystems;
     /**
      * <p>
-     * A string, present if there are more file systems than returned in the
-     * response. You can use the <code>NextMarker</code> in the subsequent
+     * Present if there are more file systems than returned in the response
+     * (String). You can use the <code>NextMarker</code> in the subsequent
      * request to fetch the descriptions.
      * </p>
      */
@@ -46,11 +46,11 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string, present if provided by caller in the request.
+     * Present if provided by caller in the request (String).
      * </p>
      * 
      * @param marker
-     *        A string, present if provided by caller in the request.
+     *        Present if provided by caller in the request (String).
      */
 
     public void setMarker(String marker) {
@@ -59,10 +59,10 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string, present if provided by caller in the request.
+     * Present if provided by caller in the request (String).
      * </p>
      * 
-     * @return A string, present if provided by caller in the request.
+     * @return Present if provided by caller in the request (String).
      */
 
     public String getMarker() {
@@ -71,11 +71,11 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string, present if provided by caller in the request.
+     * Present if provided by caller in the request (String).
      * </p>
      * 
      * @param marker
-     *        A string, present if provided by caller in the request.
+     *        Present if provided by caller in the request (String).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -87,10 +87,10 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of file system descriptions.
+     * Array of file system descriptions.
      * </p>
      * 
-     * @return An array of file system descriptions.
+     * @return Array of file system descriptions.
      */
 
     public java.util.List<FileSystemDescription> getFileSystems() {
@@ -102,11 +102,11 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of file system descriptions.
+     * Array of file system descriptions.
      * </p>
      * 
      * @param fileSystems
-     *        An array of file system descriptions.
+     *        Array of file system descriptions.
      */
 
     public void setFileSystems(
@@ -122,7 +122,7 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of file system descriptions.
+     * Array of file system descriptions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -132,7 +132,7 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param fileSystems
-     *        An array of file system descriptions.
+     *        Array of file system descriptions.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -151,11 +151,11 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of file system descriptions.
+     * Array of file system descriptions.
      * </p>
      * 
      * @param fileSystems
-     *        An array of file system descriptions.
+     *        Array of file system descriptions.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -168,14 +168,14 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string, present if there are more file systems than returned in the
-     * response. You can use the <code>NextMarker</code> in the subsequent
+     * Present if there are more file systems than returned in the response
+     * (String). You can use the <code>NextMarker</code> in the subsequent
      * request to fetch the descriptions.
      * </p>
      * 
      * @param nextMarker
-     *        A string, present if there are more file systems than returned in
-     *        the response. You can use the <code>NextMarker</code> in the
+     *        Present if there are more file systems than returned in the
+     *        response (String). You can use the <code>NextMarker</code> in the
      *        subsequent request to fetch the descriptions.
      */
 
@@ -185,13 +185,13 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string, present if there are more file systems than returned in the
-     * response. You can use the <code>NextMarker</code> in the subsequent
+     * Present if there are more file systems than returned in the response
+     * (String). You can use the <code>NextMarker</code> in the subsequent
      * request to fetch the descriptions.
      * </p>
      * 
-     * @return A string, present if there are more file systems than returned in
-     *         the response. You can use the <code>NextMarker</code> in the
+     * @return Present if there are more file systems than returned in the
+     *         response (String). You can use the <code>NextMarker</code> in the
      *         subsequent request to fetch the descriptions.
      */
 
@@ -201,14 +201,14 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string, present if there are more file systems than returned in the
-     * response. You can use the <code>NextMarker</code> in the subsequent
+     * Present if there are more file systems than returned in the response
+     * (String). You can use the <code>NextMarker</code> in the subsequent
      * request to fetch the descriptions.
      * </p>
      * 
      * @param nextMarker
-     *        A string, present if there are more file systems than returned in
-     *        the response. You can use the <code>NextMarker</code> in the
+     *        Present if there are more file systems than returned in the
+     *        response (String). You can use the <code>NextMarker</code> in the
      *        subsequent request to fetch the descriptions.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

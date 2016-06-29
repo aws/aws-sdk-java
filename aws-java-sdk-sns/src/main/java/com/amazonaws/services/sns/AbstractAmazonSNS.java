@@ -53,6 +53,12 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
+    public CheckIfPhoneNumberIsOptedOutResult checkIfPhoneNumberIsOptedOut(
+            CheckIfPhoneNumberIsOptedOutRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ConfirmSubscriptionResult confirmSubscription(
             ConfirmSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -129,6 +135,12 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
+    public GetSMSAttributesResult getSMSAttributes(
+            GetSMSAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetSubscriptionAttributesResult getSubscriptionAttributes(
             GetSubscriptionAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -156,6 +168,12 @@ public class AbstractAmazonSNS implements AmazonSNS {
     @Override
     public ListEndpointsByPlatformApplicationResult listEndpointsByPlatformApplication(
             ListEndpointsByPlatformApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPhoneNumbersOptedOutResult listPhoneNumbersOptedOut(
+            ListPhoneNumbersOptedOutRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -223,6 +241,12 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
+    public OptInPhoneNumberResult optInPhoneNumber(
+            OptInPhoneNumberRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PublishResult publish(PublishRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -260,6 +284,12 @@ public class AbstractAmazonSNS implements AmazonSNS {
     @Override
     public SetPlatformApplicationAttributesResult setPlatformApplicationAttributes(
             SetPlatformApplicationAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetSMSAttributesResult setSMSAttributes(
+            SetSMSAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

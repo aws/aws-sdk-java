@@ -55,6 +55,10 @@ public class DynamoDBActionJsonMarshaller {
                 jsonGenerator.writeFieldName("roleArn").writeValue(
                         dynamoDBAction.getRoleArn());
             }
+            if (dynamoDBAction.getOperation() != null) {
+                jsonGenerator.writeFieldName("operation").writeValue(
+                        dynamoDBAction.getOperation());
+            }
             if (dynamoDBAction.getHashKeyField() != null) {
                 jsonGenerator.writeFieldName("hashKeyField").writeValue(
                         dynamoDBAction.getHashKeyField());

@@ -98,8 +98,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
     private String virtualizationType;
     /**
      * <p>
-     * Set to <code>simple</code> to enable enhanced networking for the AMI and
-     * any instances that you launch from the AMI.
+     * Set to <code>simple</code> to enable enhanced networking with the Intel
+     * 82599 Virtual Function interface for the AMI and any instances that you
+     * launch from the AMI.
      * </p>
      * <p>
      * There is no way to disable <code>sriovNetSupport</code> at this time.
@@ -110,6 +111,17 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String sriovNetSupport;
+    /**
+     * <p>
+     * Set to <code>true</code> to enable enhanced networking with ENA for the
+     * AMI and any instances that you launch from the AMI.
+     * </p>
+     * <p>
+     * This option is supported only for HVM AMIs. Specifying this option with a
+     * PV AMI can make instances launched from the AMI unreachable.
+     * </p>
+     */
+    private Boolean enaSupport;
 
     /**
      * Default constructor for RegisterImageRequest object. Callers should use
@@ -664,8 +676,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Set to <code>simple</code> to enable enhanced networking for the AMI and
-     * any instances that you launch from the AMI.
+     * Set to <code>simple</code> to enable enhanced networking with the Intel
+     * 82599 Virtual Function interface for the AMI and any instances that you
+     * launch from the AMI.
      * </p>
      * <p>
      * There is no way to disable <code>sriovNetSupport</code> at this time.
@@ -676,8 +689,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param sriovNetSupport
-     *        Set to <code>simple</code> to enable enhanced networking for the
-     *        AMI and any instances that you launch from the AMI.</p>
+     *        Set to <code>simple</code> to enable enhanced networking with the
+     *        Intel 82599 Virtual Function interface for the AMI and any
+     *        instances that you launch from the AMI.</p>
      *        <p>
      *        There is no way to disable <code>sriovNetSupport</code> at this
      *        time.
@@ -694,8 +708,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Set to <code>simple</code> to enable enhanced networking for the AMI and
-     * any instances that you launch from the AMI.
+     * Set to <code>simple</code> to enable enhanced networking with the Intel
+     * 82599 Virtual Function interface for the AMI and any instances that you
+     * launch from the AMI.
      * </p>
      * <p>
      * There is no way to disable <code>sriovNetSupport</code> at this time.
@@ -705,8 +720,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * PV AMI can make instances launched from the AMI unreachable.
      * </p>
      * 
-     * @return Set to <code>simple</code> to enable enhanced networking for the
-     *         AMI and any instances that you launch from the AMI.</p>
+     * @return Set to <code>simple</code> to enable enhanced networking with the
+     *         Intel 82599 Virtual Function interface for the AMI and any
+     *         instances that you launch from the AMI.</p>
      *         <p>
      *         There is no way to disable <code>sriovNetSupport</code> at this
      *         time.
@@ -723,8 +739,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Set to <code>simple</code> to enable enhanced networking for the AMI and
-     * any instances that you launch from the AMI.
+     * Set to <code>simple</code> to enable enhanced networking with the Intel
+     * 82599 Virtual Function interface for the AMI and any instances that you
+     * launch from the AMI.
      * </p>
      * <p>
      * There is no way to disable <code>sriovNetSupport</code> at this time.
@@ -735,8 +752,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param sriovNetSupport
-     *        Set to <code>simple</code> to enable enhanced networking for the
-     *        AMI and any instances that you launch from the AMI.</p>
+     *        Set to <code>simple</code> to enable enhanced networking with the
+     *        Intel 82599 Virtual Function interface for the AMI and any
+     *        instances that you launch from the AMI.</p>
      *        <p>
      *        There is no way to disable <code>sriovNetSupport</code> at this
      *        time.
@@ -752,6 +770,99 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
     public RegisterImageRequest withSriovNetSupport(String sriovNetSupport) {
         setSriovNetSupport(sriovNetSupport);
         return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable enhanced networking with ENA for the
+     * AMI and any instances that you launch from the AMI.
+     * </p>
+     * <p>
+     * This option is supported only for HVM AMIs. Specifying this option with a
+     * PV AMI can make instances launched from the AMI unreachable.
+     * </p>
+     * 
+     * @param enaSupport
+     *        Set to <code>true</code> to enable enhanced networking with ENA
+     *        for the AMI and any instances that you launch from the AMI.</p>
+     *        <p>
+     *        This option is supported only for HVM AMIs. Specifying this option
+     *        with a PV AMI can make instances launched from the AMI
+     *        unreachable.
+     */
+
+    public void setEnaSupport(Boolean enaSupport) {
+        this.enaSupport = enaSupport;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable enhanced networking with ENA for the
+     * AMI and any instances that you launch from the AMI.
+     * </p>
+     * <p>
+     * This option is supported only for HVM AMIs. Specifying this option with a
+     * PV AMI can make instances launched from the AMI unreachable.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to enable enhanced networking with ENA
+     *         for the AMI and any instances that you launch from the AMI.</p>
+     *         <p>
+     *         This option is supported only for HVM AMIs. Specifying this
+     *         option with a PV AMI can make instances launched from the AMI
+     *         unreachable.
+     */
+
+    public Boolean getEnaSupport() {
+        return this.enaSupport;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable enhanced networking with ENA for the
+     * AMI and any instances that you launch from the AMI.
+     * </p>
+     * <p>
+     * This option is supported only for HVM AMIs. Specifying this option with a
+     * PV AMI can make instances launched from the AMI unreachable.
+     * </p>
+     * 
+     * @param enaSupport
+     *        Set to <code>true</code> to enable enhanced networking with ENA
+     *        for the AMI and any instances that you launch from the AMI.</p>
+     *        <p>
+     *        This option is supported only for HVM AMIs. Specifying this option
+     *        with a PV AMI can make instances launched from the AMI
+     *        unreachable.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RegisterImageRequest withEnaSupport(Boolean enaSupport) {
+        setEnaSupport(enaSupport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable enhanced networking with ENA for the
+     * AMI and any instances that you launch from the AMI.
+     * </p>
+     * <p>
+     * This option is supported only for HVM AMIs. Specifying this option with a
+     * PV AMI can make instances launched from the AMI unreachable.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to enable enhanced networking with ENA
+     *         for the AMI and any instances that you launch from the AMI.</p>
+     *         <p>
+     *         This option is supported only for HVM AMIs. Specifying this
+     *         option with a PV AMI can make instances launched from the AMI
+     *         unreachable.
+     */
+
+    public Boolean isEnaSupport() {
+        return this.enaSupport;
     }
 
     /**
@@ -798,7 +909,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
         if (getVirtualizationType() != null)
             sb.append("VirtualizationType: " + getVirtualizationType() + ",");
         if (getSriovNetSupport() != null)
-            sb.append("SriovNetSupport: " + getSriovNetSupport());
+            sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
+        if (getEnaSupport() != null)
+            sb.append("EnaSupport: " + getEnaSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -869,6 +982,11 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
         if (other.getSriovNetSupport() != null
                 && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
             return false;
+        if (other.getEnaSupport() == null ^ this.getEnaSupport() == null)
+            return false;
+        if (other.getEnaSupport() != null
+                && other.getEnaSupport().equals(this.getEnaSupport()) == false)
+            return false;
         return true;
     }
 
@@ -910,6 +1028,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
         return hashCode;
     }
 

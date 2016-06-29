@@ -14,27 +14,6 @@
  */
 package com.amazonaws.services.s3.transfer;
 
-import static com.amazonaws.services.s3.internal.ServiceUtils.APPEND_MODE;
-import static com.amazonaws.services.s3.internal.ServiceUtils.OVERWRITE_MODE;
-
-import java.io.File;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AbortedException;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -80,6 +59,27 @@ import com.amazonaws.services.s3.transfer.internal.UploadCallable;
 import com.amazonaws.services.s3.transfer.internal.UploadImpl;
 import com.amazonaws.services.s3.transfer.internal.UploadMonitor;
 import com.amazonaws.util.VersionInfoUtils;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.io.File;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import static com.amazonaws.services.s3.internal.ServiceUtils.APPEND_MODE;
+import static com.amazonaws.services.s3.internal.ServiceUtils.OVERWRITE_MODE;
 
 /**
  * High level utility for managing transfers to Amazon S3.
@@ -1612,10 +1612,10 @@ public class TransferManager {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-
     public Copy copy(final CopyObjectRequest copyObjectRequest,
-                     final TransferStateChangeListener stateChangeListener)
-        throws AmazonServiceException, AmazonClientException {
+                     final TransferStateChangeListener stateChangeListener) throws
+                                                                            AmazonServiceException,
+                                                                            AmazonClientException {
         return copy(copyObjectRequest, s3, stateChangeListener);
     }
 
@@ -1639,53 +1639,43 @@ public class TransferManager {
      * available.
      * </p>
      *
-     * @param copyObjectRequest
-     *            The request containing all the parameters for the copy.
-     * @param srcS3
-     *            An AmazonS3 client constructed for the region in which the source object's bucket is located.
-     * @param stateChangeListener
-     *            The transfer state change listener to monitor the copy request
+     * @param copyObjectRequest   The request containing all the parameters for the copy.
+     * @param srcS3               An AmazonS3 client constructed for the region in which the source
+     *                            object's bucket is located.
+     * @param stateChangeListener The transfer state change listener to monitor the copy request
      * @return A new <code>Copy</code> object to use to check the state of the
-     *         copy request being processed.
-     *
-     * @throws AmazonClientException
-     *             If any errors are encountered in the client while making the
-     *             request or handling the response.
-     * @throws AmazonServiceException
-     *             If any errors occurred in Amazon S3 while processing the
-     *             request.
+     * copy request being processed.
+     * @throws AmazonClientException  If any errors are encountered in the client while making the
+     *                                request or handling the response.
+     * @throws AmazonServiceException If any errors occurred in Amazon S3 while processing the
+     *                                request.
      */
-    public Copy copy(final CopyObjectRequest copyObjectRequest,
-            final AmazonS3 srcS3,
-            final TransferStateChangeListener stateChangeListener)
-            throws AmazonServiceException, AmazonClientException {
+    public Copy copy(final CopyObjectRequest copyObjectRequest, final AmazonS3 srcS3,
+                     final TransferStateChangeListener stateChangeListener) throws
+                                                                            AmazonServiceException,
+                                                                            AmazonClientException {
 
         appendSingleObjectUserAgent(copyObjectRequest);
 
         assertParameterNotNull(copyObjectRequest.getSourceBucketName(),
-                "The source bucket name must be specified when a copy request is initiated.");
+                               "The source bucket name must be specified when a copy request is initiated.");
         assertParameterNotNull(copyObjectRequest.getSourceKey(),
-                "The source object key must be specified when a copy request is initiated.");
-        assertParameterNotNull(
-                copyObjectRequest.getDestinationBucketName(),
-                "The destination bucket name must be specified when a copy request is initiated.");
-        assertParameterNotNull(
-                copyObjectRequest.getDestinationKey(),
-                "The destination object key must be specified when a copy request is initiated.");
-        assertParameterNotNull(srcS3,
-                "The srcS3 parameter is mandatory");
+                               "The source object key must be specified when a copy request is initiated.");
+        assertParameterNotNull(copyObjectRequest.getDestinationBucketName(),
+                               "The destination bucket name must be specified when a copy request is initiated.");
+        assertParameterNotNull(copyObjectRequest.getDestinationKey(),
+                               "The destination object key must be specified when a copy request is initiated.");
+        assertParameterNotNull(srcS3, "The srcS3 parameter is mandatory");
 
-        String description = "Copying object from "
-                + copyObjectRequest.getSourceBucketName() + "/"
-                + copyObjectRequest.getSourceKey() + " to "
-                + copyObjectRequest.getDestinationBucketName() + "/"
-                + copyObjectRequest.getDestinationKey();
+        String description =
+                "Copying object from " + copyObjectRequest.getSourceBucketName() + "/" +
+                copyObjectRequest.getSourceKey() + " to " +
+                copyObjectRequest.getDestinationBucketName() + "/" +
+                copyObjectRequest.getDestinationKey();
 
-        GetObjectMetadataRequest getObjectMetadataRequest =
-                new GetObjectMetadataRequest(
-                        copyObjectRequest.getSourceBucketName(),
-                        copyObjectRequest.getSourceKey())
-                        .withSSECustomerKey(copyObjectRequest.getSourceSSECustomerKey());
+        GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
+                copyObjectRequest.getSourceBucketName(), copyObjectRequest.getSourceKey())
+                .withSSECustomerKey(copyObjectRequest.getSourceSSECustomerKey());
 
         ObjectMetadata metadata = srcS3.getObjectMetadata(getObjectMetadataRequest);
 
@@ -1694,12 +1684,13 @@ public class TransferManager {
 
         ProgressListenerChain listenerChain = new ProgressListenerChain(
                 new TransferProgressUpdatingListener(transferProgress));
-        CopyImpl copy = new CopyImpl(description, transferProgress,
-                listenerChain, stateChangeListener);
-        CopyCallable copyCallable = new CopyCallable(this, executorService, copy,
-                                                     copyObjectRequest, metadata, listenerChain);
-        CopyMonitor watcher = CopyMonitor.create(this, copy, executorService,
-                                                 copyCallable, copyObjectRequest, listenerChain);
+        CopyImpl copy = new CopyImpl(description, transferProgress, listenerChain,
+                                     stateChangeListener);
+        CopyCallable copyCallable = new CopyCallable(this, executorService, copy, copyObjectRequest,
+                                                     metadata, listenerChain);
+        CopyMonitor watcher = CopyMonitor
+                .create(this, copy, executorService, copyCallable, copyObjectRequest,
+                        listenerChain);
         copy.setMonitor(watcher);
         return copy;
     }

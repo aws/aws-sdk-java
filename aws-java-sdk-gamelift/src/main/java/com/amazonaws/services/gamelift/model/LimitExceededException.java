@@ -21,7 +21,7 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * The requested operation would cause the resource to exceed the allowed
- * service limit. Please resolve the issue before retrying.
+ * service limit. Resolve the issue before retrying.
  * </p>
  */
 public class LimitExceededException extends AmazonServiceException {

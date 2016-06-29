@@ -20,32 +20,31 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class ModifyMountTargetSecurityGroupsRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the mount target whose security groups you want to modify.
+     * ID of the mount target whose security groups you want to modify.
      * </p>
      */
     private String mountTargetId;
     /**
      * <p>
-     * An array of up to five VPC security group IDs.
+     * Array of up to five VPC security group IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
 
     /**
      * <p>
-     * The ID of the mount target whose security groups you want to modify.
+     * ID of the mount target whose security groups you want to modify.
      * </p>
      * 
      * @param mountTargetId
-     *        The ID of the mount target whose security groups you want to
-     *        modify.
+     *        ID of the mount target whose security groups you want to modify.
      */
 
     public void setMountTargetId(String mountTargetId) {
@@ -54,11 +53,10 @@ public class ModifyMountTargetSecurityGroupsRequest extends
 
     /**
      * <p>
-     * The ID of the mount target whose security groups you want to modify.
+     * ID of the mount target whose security groups you want to modify.
      * </p>
      * 
-     * @return The ID of the mount target whose security groups you want to
-     *         modify.
+     * @return ID of the mount target whose security groups you want to modify.
      */
 
     public String getMountTargetId() {
@@ -67,12 +65,11 @@ public class ModifyMountTargetSecurityGroupsRequest extends
 
     /**
      * <p>
-     * The ID of the mount target whose security groups you want to modify.
+     * ID of the mount target whose security groups you want to modify.
      * </p>
      * 
      * @param mountTargetId
-     *        The ID of the mount target whose security groups you want to
-     *        modify.
+     *        ID of the mount target whose security groups you want to modify.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -85,10 +82,10 @@ public class ModifyMountTargetSecurityGroupsRequest extends
 
     /**
      * <p>
-     * An array of up to five VPC security group IDs.
+     * Array of up to five VPC security group IDs.
      * </p>
      * 
-     * @return An array of up to five VPC security group IDs.
+     * @return Array of up to five VPC security group IDs.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -100,11 +97,11 @@ public class ModifyMountTargetSecurityGroupsRequest extends
 
     /**
      * <p>
-     * An array of up to five VPC security group IDs.
+     * Array of up to five VPC security group IDs.
      * </p>
      * 
      * @param securityGroups
-     *        An array of up to five VPC security group IDs.
+     *        Array of up to five VPC security group IDs.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -119,7 +116,7 @@ public class ModifyMountTargetSecurityGroupsRequest extends
 
     /**
      * <p>
-     * An array of up to five VPC security group IDs.
+     * Array of up to five VPC security group IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -129,7 +126,7 @@ public class ModifyMountTargetSecurityGroupsRequest extends
      * </p>
      * 
      * @param securityGroups
-     *        An array of up to five VPC security group IDs.
+     *        Array of up to five VPC security group IDs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -148,11 +145,11 @@ public class ModifyMountTargetSecurityGroupsRequest extends
 
     /**
      * <p>
-     * An array of up to five VPC security group IDs.
+     * Array of up to five VPC security group IDs.
      * </p>
      * 
      * @param securityGroups
-     *        An array of up to five VPC security group IDs.
+     *        Array of up to five VPC security group IDs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

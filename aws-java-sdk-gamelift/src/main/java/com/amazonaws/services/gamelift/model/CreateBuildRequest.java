@@ -29,8 +29,9 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this build. Build names do not need to
-     * be unique. A build name can be changed later using <a>UpdateBuild</a>.
+     * Descriptive label associated with a build. Build names do not need to be
+     * unique. A build name can be changed later using
+     * <code><a>UpdateBuild</a></code>.
      * </p>
      */
     private String name;
@@ -38,7 +39,7 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      * <p>
      * Version associated with this build. Version strings do not need to be
      * unique to a build. A build version can be changed later using
-     * <a>UpdateBuild</a>.
+     * <code><a>UpdateBuild</a></code>.
      * </p>
      */
     private String version;
@@ -47,14 +48,15 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this build. Build names do not need to
-     * be unique. A build name can be changed later using <a>UpdateBuild</a>.
+     * Descriptive label associated with a build. Build names do not need to be
+     * unique. A build name can be changed later using
+     * <code><a>UpdateBuild</a></code>.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this build. Build names do not
-     *        need to be unique. A build name can be changed later using
-     *        <a>UpdateBuild</a>.
+     *        Descriptive label associated with a build. Build names do not need
+     *        to be unique. A build name can be changed later using
+     *        <code><a>UpdateBuild</a></code>.
      */
 
     public void setName(String name) {
@@ -63,13 +65,14 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this build. Build names do not need to
-     * be unique. A build name can be changed later using <a>UpdateBuild</a>.
+     * Descriptive label associated with a build. Build names do not need to be
+     * unique. A build name can be changed later using
+     * <code><a>UpdateBuild</a></code>.
      * </p>
      * 
-     * @return Descriptive label associated with this build. Build names do not
+     * @return Descriptive label associated with a build. Build names do not
      *         need to be unique. A build name can be changed later using
-     *         <a>UpdateBuild</a>.
+     *         <code><a>UpdateBuild</a></code>.
      */
 
     public String getName() {
@@ -78,14 +81,15 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this build. Build names do not need to
-     * be unique. A build name can be changed later using <a>UpdateBuild</a>.
+     * Descriptive label associated with a build. Build names do not need to be
+     * unique. A build name can be changed later using
+     * <code><a>UpdateBuild</a></code>.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this build. Build names do not
-     *        need to be unique. A build name can be changed later using
-     *        <a>UpdateBuild</a>.
+     *        Descriptive label associated with a build. Build names do not need
+     *        to be unique. A build name can be changed later using
+     *        <code><a>UpdateBuild</a></code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -99,13 +103,13 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      * <p>
      * Version associated with this build. Version strings do not need to be
      * unique to a build. A build version can be changed later using
-     * <a>UpdateBuild</a>.
+     * <code><a>UpdateBuild</a></code>.
      * </p>
      * 
      * @param version
      *        Version associated with this build. Version strings do not need to
      *        be unique to a build. A build version can be changed later using
-     *        <a>UpdateBuild</a>.
+     *        <code><a>UpdateBuild</a></code>.
      */
 
     public void setVersion(String version) {
@@ -116,12 +120,12 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      * <p>
      * Version associated with this build. Version strings do not need to be
      * unique to a build. A build version can be changed later using
-     * <a>UpdateBuild</a>.
+     * <code><a>UpdateBuild</a></code>.
      * </p>
      * 
      * @return Version associated with this build. Version strings do not need
      *         to be unique to a build. A build version can be changed later
-     *         using <a>UpdateBuild</a>.
+     *         using <code><a>UpdateBuild</a></code>.
      */
 
     public String getVersion() {
@@ -132,13 +136,13 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      * <p>
      * Version associated with this build. Version strings do not need to be
      * unique to a build. A build version can be changed later using
-     * <a>UpdateBuild</a>.
+     * <code><a>UpdateBuild</a></code>.
      * </p>
      * 
      * @param version
      *        Version associated with this build. Version strings do not need to
      *        be unique to a build. A build version can be changed later using
-     *        <a>UpdateBuild</a>.
+     *        <code><a>UpdateBuild</a></code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

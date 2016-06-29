@@ -37,8 +37,8 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * <p>
      * A flag that indicates whether there are more resource record sets to be
      * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the
-     * <a>ListResourceRecordSetsResponse$NextRecordName</a> element.
+     * for the next page of results by using the <code>NextRecordName</code>
+     * element.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -48,16 +48,14 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the name of the next record in the list.
-     * This element is present only if
-     * <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      */
     private String nextRecordName;
     /**
      * <p>
      * If the results were truncated, the type of the next record in the list.
-     * This element is present only if
-     * <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      */
     private String nextRecordType;
@@ -170,8 +168,8 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * <p>
      * A flag that indicates whether there are more resource record sets to be
      * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the
-     * <a>ListResourceRecordSetsResponse$NextRecordName</a> element.
+     * for the next page of results by using the <code>NextRecordName</code>
+     * element.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -181,7 +179,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *        A flag that indicates whether there are more resource record sets
      *        to be listed. If your results were truncated, you can make a
      *        follow-up request for the next page of results by using the
-     *        <a>ListResourceRecordSetsResponse$NextRecordName</a> element.</p>
+     *        <code>NextRecordName</code> element.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
@@ -194,8 +192,8 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * <p>
      * A flag that indicates whether there are more resource record sets to be
      * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the
-     * <a>ListResourceRecordSetsResponse$NextRecordName</a> element.
+     * for the next page of results by using the <code>NextRecordName</code>
+     * element.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -204,7 +202,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * @return A flag that indicates whether there are more resource record sets
      *         to be listed. If your results were truncated, you can make a
      *         follow-up request for the next page of results by using the
-     *         <a>ListResourceRecordSetsResponse$NextRecordName</a> element.</p>
+     *         <code>NextRecordName</code> element.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
@@ -217,8 +215,8 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * <p>
      * A flag that indicates whether there are more resource record sets to be
      * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the
-     * <a>ListResourceRecordSetsResponse$NextRecordName</a> element.
+     * for the next page of results by using the <code>NextRecordName</code>
+     * element.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -228,7 +226,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *        A flag that indicates whether there are more resource record sets
      *        to be listed. If your results were truncated, you can make a
      *        follow-up request for the next page of results by using the
-     *        <a>ListResourceRecordSetsResponse$NextRecordName</a> element.</p>
+     *        <code>NextRecordName</code> element.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be
@@ -244,8 +242,8 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * <p>
      * A flag that indicates whether there are more resource record sets to be
      * listed. If your results were truncated, you can make a follow-up request
-     * for the next page of results by using the
-     * <a>ListResourceRecordSetsResponse$NextRecordName</a> element.
+     * for the next page of results by using the <code>NextRecordName</code>
+     * element.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -254,7 +252,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * @return A flag that indicates whether there are more resource record sets
      *         to be listed. If your results were truncated, you can make a
      *         follow-up request for the next page of results by using the
-     *         <a>ListResourceRecordSetsResponse$NextRecordName</a> element.</p>
+     *         <code>NextRecordName</code> element.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
@@ -266,14 +264,13 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the name of the next record in the list.
-     * This element is present only if
-     * <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @param nextRecordName
      *        If the results were truncated, the name of the next record in the
-     *        list. This element is present only if
-     *        <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     *        list. This element is present only if <code>IsTruncated</code> is
+     *        true.
      */
 
     public void setNextRecordName(String nextRecordName) {
@@ -283,13 +280,12 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the name of the next record in the list.
-     * This element is present only if
-     * <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @return If the results were truncated, the name of the next record in the
-     *         list. This element is present only if
-     *         <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     *         list. This element is present only if <code>IsTruncated</code> is
+     *         true.
      */
 
     public String getNextRecordName() {
@@ -299,14 +295,13 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the name of the next record in the list.
-     * This element is present only if
-     * <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @param nextRecordName
      *        If the results were truncated, the name of the next record in the
-     *        list. This element is present only if
-     *        <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     *        list. This element is present only if <code>IsTruncated</code> is
+     *        true.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -319,14 +314,13 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the type of the next record in the list.
-     * This element is present only if
-     * <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @param nextRecordType
      *        If the results were truncated, the type of the next record in the
-     *        list. This element is present only if
-     *        <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     *        list. This element is present only if <code>IsTruncated</code> is
+     *        true.
      * @see RRType
      */
 
@@ -337,13 +331,12 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the type of the next record in the list.
-     * This element is present only if
-     * <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @return If the results were truncated, the type of the next record in the
-     *         list. This element is present only if
-     *         <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     *         list. This element is present only if <code>IsTruncated</code> is
+     *         true.
      * @see RRType
      */
 
@@ -354,14 +347,13 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the type of the next record in the list.
-     * This element is present only if
-     * <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @param nextRecordType
      *        If the results were truncated, the type of the next record in the
-     *        list. This element is present only if
-     *        <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     *        list. This element is present only if <code>IsTruncated</code> is
+     *        true.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RRType
@@ -375,14 +367,13 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the type of the next record in the list.
-     * This element is present only if
-     * <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @param nextRecordType
      *        If the results were truncated, the type of the next record in the
-     *        list. This element is present only if
-     *        <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     *        list. This element is present only if <code>IsTruncated</code> is
+     *        true.
      * @see RRType
      */
 
@@ -393,14 +384,13 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the type of the next record in the list.
-     * This element is present only if
-     * <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     * This element is present only if <code>IsTruncated</code> is true.
      * </p>
      * 
      * @param nextRecordType
      *        If the results were truncated, the type of the next record in the
-     *        list. This element is present only if
-     *        <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
+     *        list. This element is present only if <code>IsTruncated</code> is
+     *        true.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RRType

@@ -15,11 +15,11 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
-import java.util.Map;
-
 import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Map;
 
 public class IntermediateModel {
 
@@ -84,4 +84,17 @@ public class IntermediateModel {
         }
         return customizationConfig.getCustomClientConfigFactory();
     }
+
+    /**
+     * @return Exception unmarshaller implementation to use. Currently only needed by XML based
+     * protocols.
+     */
+    public String getExceptionUnmarshallerImpl() {
+        if (customizationConfig.getCustomExceptionUnmarshallerImpl() != null) {
+            return customizationConfig.getCustomExceptionUnmarshallerImpl();
+        } else {
+            return metadata.getProtocolDefaultExceptionUmarshallerImpl();
+        }
+    }
+
 }

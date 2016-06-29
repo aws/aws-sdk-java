@@ -1,7 +1,6 @@
 {
   "metadata" : {
     "apiVersion" : "2015-04-08",
-    "exceptionUnmarshallerImpl" : null,
     "protocol" : "json",
     "checksumFormat" : null,
     "documentation" : "<fullname>Amazon WorkSpaces Service</fullname> <p>This is the <i>Amazon WorkSpaces API Reference</i>. This guide provides detailed information about Amazon WorkSpaces operations, data types, parameters, and errors.</p>",
@@ -16,17 +15,17 @@
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon WorkSpaces",
     "hasApiWithStreamInput" : false,
-    "jsonContentVersion" : "application/x-amz-json-1.1",
+    "contentType" : null,
     "jsonVersion" : "1.1",
     "endpointPrefix" : "workspaces",
     "signingName" : "workspaces",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "xmlProtocol" : false,
     "serviceName" : "Amazon WorkSpaces",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "CreateTags" : {
@@ -14159,5 +14158,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "exceptionUnmarshallerImpl" : null,
   "clientConfigFactory" : "ClientConfigurationFactory"
 }

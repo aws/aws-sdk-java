@@ -20,16 +20,16 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class DescribeFileSystemsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of file systems to return
-     * in the response. This parameter value must be greater than 0. The number
-     * of items Amazon EFS returns will be the minimum of the
+     * (Optional) Specifies the maximum number of file systems to return in the
+     * response (integer). This parameter value must be greater than 0. The
+     * number of items that Amazon EFS returns is the minimum of the
      * <code>MaxItems</code> parameter specified in the request and the
      * service's internal maximum number of items per page.
      * </p>
@@ -37,42 +37,44 @@ public class DescribeFileSystemsRequest extends AmazonWebServiceRequest
     private Integer maxItems;
     /**
      * <p>
-     * Optional string. Opaque pagination token returned from a previous
-     * <code>DescribeFileSystems</code> operation. If present, specifies to
-     * continue the list from where the returning call had left off.
+     * (Optional) Opaque pagination token returned from a previous
+     * <code>DescribeFileSystems</code> operation (String). If present,
+     * specifies to continue the list from where the returning call had left
+     * off.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Optional string. Restricts the list to the file system with this creation
-     * token (you specify a creation token at the time of creating an Amazon EFS
-     * file system).
+     * (Optional) Restricts the list to the file system with this creation token
+     * (String). You specify a creation token when you create an Amazon EFS file
+     * system.
      * </p>
      */
     private String creationToken;
     /**
      * <p>
-     * Optional string. File system ID whose description you want to retrieve.
+     * (Optional) ID of the file system whose description you want to retrieve
+     * (String).
      * </p>
      */
     private String fileSystemId;
 
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of file systems to return
-     * in the response. This parameter value must be greater than 0. The number
-     * of items Amazon EFS returns will be the minimum of the
+     * (Optional) Specifies the maximum number of file systems to return in the
+     * response (integer). This parameter value must be greater than 0. The
+     * number of items that Amazon EFS returns is the minimum of the
      * <code>MaxItems</code> parameter specified in the request and the
      * service's internal maximum number of items per page.
      * </p>
      * 
      * @param maxItems
-     *        Optional integer. Specifies the maximum number of file systems to
-     *        return in the response. This parameter value must be greater than
-     *        0. The number of items Amazon EFS returns will be the minimum of
-     *        the <code>MaxItems</code> parameter specified in the request and
-     *        the service's internal maximum number of items per page.
+     *        (Optional) Specifies the maximum number of file systems to return
+     *        in the response (integer). This parameter value must be greater
+     *        than 0. The number of items that Amazon EFS returns is the minimum
+     *        of the <code>MaxItems</code> parameter specified in the request
+     *        and the service's internal maximum number of items per page.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -81,18 +83,19 @@ public class DescribeFileSystemsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of file systems to return
-     * in the response. This parameter value must be greater than 0. The number
-     * of items Amazon EFS returns will be the minimum of the
+     * (Optional) Specifies the maximum number of file systems to return in the
+     * response (integer). This parameter value must be greater than 0. The
+     * number of items that Amazon EFS returns is the minimum of the
      * <code>MaxItems</code> parameter specified in the request and the
      * service's internal maximum number of items per page.
      * </p>
      * 
-     * @return Optional integer. Specifies the maximum number of file systems to
-     *         return in the response. This parameter value must be greater than
-     *         0. The number of items Amazon EFS returns will be the minimum of
-     *         the <code>MaxItems</code> parameter specified in the request and
-     *         the service's internal maximum number of items per page.
+     * @return (Optional) Specifies the maximum number of file systems to return
+     *         in the response (integer). This parameter value must be greater
+     *         than 0. The number of items that Amazon EFS returns is the
+     *         minimum of the <code>MaxItems</code> parameter specified in the
+     *         request and the service's internal maximum number of items per
+     *         page.
      */
 
     public Integer getMaxItems() {
@@ -101,19 +104,19 @@ public class DescribeFileSystemsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of file systems to return
-     * in the response. This parameter value must be greater than 0. The number
-     * of items Amazon EFS returns will be the minimum of the
+     * (Optional) Specifies the maximum number of file systems to return in the
+     * response (integer). This parameter value must be greater than 0. The
+     * number of items that Amazon EFS returns is the minimum of the
      * <code>MaxItems</code> parameter specified in the request and the
      * service's internal maximum number of items per page.
      * </p>
      * 
      * @param maxItems
-     *        Optional integer. Specifies the maximum number of file systems to
-     *        return in the response. This parameter value must be greater than
-     *        0. The number of items Amazon EFS returns will be the minimum of
-     *        the <code>MaxItems</code> parameter specified in the request and
-     *        the service's internal maximum number of items per page.
+     *        (Optional) Specifies the maximum number of file systems to return
+     *        in the response (integer). This parameter value must be greater
+     *        than 0. The number of items that Amazon EFS returns is the minimum
+     *        of the <code>MaxItems</code> parameter specified in the request
+     *        and the service's internal maximum number of items per page.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -125,15 +128,17 @@ public class DescribeFileSystemsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional string. Opaque pagination token returned from a previous
-     * <code>DescribeFileSystems</code> operation. If present, specifies to
-     * continue the list from where the returning call had left off.
+     * (Optional) Opaque pagination token returned from a previous
+     * <code>DescribeFileSystems</code> operation (String). If present,
+     * specifies to continue the list from where the returning call had left
+     * off.
      * </p>
      * 
      * @param marker
-     *        Optional string. Opaque pagination token returned from a previous
-     *        <code>DescribeFileSystems</code> operation. If present, specifies
-     *        to continue the list from where the returning call had left off.
+     *        (Optional) Opaque pagination token returned from a previous
+     *        <code>DescribeFileSystems</code> operation (String). If present,
+     *        specifies to continue the list from where the returning call had
+     *        left off.
      */
 
     public void setMarker(String marker) {
@@ -142,14 +147,16 @@ public class DescribeFileSystemsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional string. Opaque pagination token returned from a previous
-     * <code>DescribeFileSystems</code> operation. If present, specifies to
-     * continue the list from where the returning call had left off.
+     * (Optional) Opaque pagination token returned from a previous
+     * <code>DescribeFileSystems</code> operation (String). If present,
+     * specifies to continue the list from where the returning call had left
+     * off.
      * </p>
      * 
-     * @return Optional string. Opaque pagination token returned from a previous
-     *         <code>DescribeFileSystems</code> operation. If present, specifies
-     *         to continue the list from where the returning call had left off.
+     * @return (Optional) Opaque pagination token returned from a previous
+     *         <code>DescribeFileSystems</code> operation (String). If present,
+     *         specifies to continue the list from where the returning call had
+     *         left off.
      */
 
     public String getMarker() {
@@ -158,15 +165,17 @@ public class DescribeFileSystemsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional string. Opaque pagination token returned from a previous
-     * <code>DescribeFileSystems</code> operation. If present, specifies to
-     * continue the list from where the returning call had left off.
+     * (Optional) Opaque pagination token returned from a previous
+     * <code>DescribeFileSystems</code> operation (String). If present,
+     * specifies to continue the list from where the returning call had left
+     * off.
      * </p>
      * 
      * @param marker
-     *        Optional string. Opaque pagination token returned from a previous
-     *        <code>DescribeFileSystems</code> operation. If present, specifies
-     *        to continue the list from where the returning call had left off.
+     *        (Optional) Opaque pagination token returned from a previous
+     *        <code>DescribeFileSystems</code> operation (String). If present,
+     *        specifies to continue the list from where the returning call had
+     *        left off.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -178,15 +187,15 @@ public class DescribeFileSystemsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional string. Restricts the list to the file system with this creation
-     * token (you specify a creation token at the time of creating an Amazon EFS
-     * file system).
+     * (Optional) Restricts the list to the file system with this creation token
+     * (String). You specify a creation token when you create an Amazon EFS file
+     * system.
      * </p>
      * 
      * @param creationToken
-     *        Optional string. Restricts the list to the file system with this
-     *        creation token (you specify a creation token at the time of
-     *        creating an Amazon EFS file system).
+     *        (Optional) Restricts the list to the file system with this
+     *        creation token (String). You specify a creation token when you
+     *        create an Amazon EFS file system.
      */
 
     public void setCreationToken(String creationToken) {
@@ -195,14 +204,14 @@ public class DescribeFileSystemsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional string. Restricts the list to the file system with this creation
-     * token (you specify a creation token at the time of creating an Amazon EFS
-     * file system).
+     * (Optional) Restricts the list to the file system with this creation token
+     * (String). You specify a creation token when you create an Amazon EFS file
+     * system.
      * </p>
      * 
-     * @return Optional string. Restricts the list to the file system with this
-     *         creation token (you specify a creation token at the time of
-     *         creating an Amazon EFS file system).
+     * @return (Optional) Restricts the list to the file system with this
+     *         creation token (String). You specify a creation token when you
+     *         create an Amazon EFS file system.
      */
 
     public String getCreationToken() {
@@ -211,15 +220,15 @@ public class DescribeFileSystemsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional string. Restricts the list to the file system with this creation
-     * token (you specify a creation token at the time of creating an Amazon EFS
-     * file system).
+     * (Optional) Restricts the list to the file system with this creation token
+     * (String). You specify a creation token when you create an Amazon EFS file
+     * system.
      * </p>
      * 
      * @param creationToken
-     *        Optional string. Restricts the list to the file system with this
-     *        creation token (you specify a creation token at the time of
-     *        creating an Amazon EFS file system).
+     *        (Optional) Restricts the list to the file system with this
+     *        creation token (String). You specify a creation token when you
+     *        create an Amazon EFS file system.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -231,12 +240,13 @@ public class DescribeFileSystemsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional string. File system ID whose description you want to retrieve.
+     * (Optional) ID of the file system whose description you want to retrieve
+     * (String).
      * </p>
      * 
      * @param fileSystemId
-     *        Optional string. File system ID whose description you want to
-     *        retrieve.
+     *        (Optional) ID of the file system whose description you want to
+     *        retrieve (String).
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -245,11 +255,12 @@ public class DescribeFileSystemsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional string. File system ID whose description you want to retrieve.
+     * (Optional) ID of the file system whose description you want to retrieve
+     * (String).
      * </p>
      * 
-     * @return Optional string. File system ID whose description you want to
-     *         retrieve.
+     * @return (Optional) ID of the file system whose description you want to
+     *         retrieve (String).
      */
 
     public String getFileSystemId() {
@@ -258,12 +269,13 @@ public class DescribeFileSystemsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional string. File system ID whose description you want to retrieve.
+     * (Optional) ID of the file system whose description you want to retrieve
+     * (String).
      * </p>
      * 
      * @param fileSystemId
-     *        Optional string. File system ID whose description you want to
-     *        retrieve.
+     *        (Optional) ID of the file system whose description you want to
+     *        retrieve (String).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

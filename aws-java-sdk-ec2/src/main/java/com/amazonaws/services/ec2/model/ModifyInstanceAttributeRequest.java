@@ -153,11 +153,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
     private Boolean ebsOptimized;
     /**
      * <p>
-     * Set to <code>simple</code> to enable enhanced networking for the
-     * instance.
+     * Set to <code>simple</code> to enable enhanced networking with the Intel
+     * 82599 Virtual Function interface for the instance.
      * </p>
      * <p>
-     * There is no way to disable enhanced networking at this time.
+     * There is no way to disable enhanced networking with the Intel 82599
+     * Virtual Function interface at this time.
      * </p>
      * <p>
      * This option is supported only for HVM instances. Specifying this option
@@ -165,6 +166,17 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * </p>
      */
     private String sriovNetSupport;
+    /**
+     * <p>
+     * Set to <code>true</code> to enable enhanced networking with ENA for the
+     * instance.
+     * </p>
+     * <p>
+     * This option is supported only for HVM instances. Specifying this option
+     * with a PV instance can make it unreachable.
+     * </p>
+     */
+    private Boolean enaSupport;
 
     /**
      * Default constructor for ModifyInstanceAttributeRequest object. Callers
@@ -1201,11 +1213,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Set to <code>simple</code> to enable enhanced networking for the
-     * instance.
+     * Set to <code>simple</code> to enable enhanced networking with the Intel
+     * 82599 Virtual Function interface for the instance.
      * </p>
      * <p>
-     * There is no way to disable enhanced networking at this time.
+     * There is no way to disable enhanced networking with the Intel 82599
+     * Virtual Function interface at this time.
      * </p>
      * <p>
      * This option is supported only for HVM instances. Specifying this option
@@ -1213,10 +1226,11 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param sriovNetSupport
-     *        Set to <code>simple</code> to enable enhanced networking for the
-     *        instance.</p>
+     *        Set to <code>simple</code> to enable enhanced networking with the
+     *        Intel 82599 Virtual Function interface for the instance.</p>
      *        <p>
-     *        There is no way to disable enhanced networking at this time.
+     *        There is no way to disable enhanced networking with the Intel
+     *        82599 Virtual Function interface at this time.
      *        </p>
      *        <p>
      *        This option is supported only for HVM instances. Specifying this
@@ -1229,21 +1243,23 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Set to <code>simple</code> to enable enhanced networking for the
-     * instance.
+     * Set to <code>simple</code> to enable enhanced networking with the Intel
+     * 82599 Virtual Function interface for the instance.
      * </p>
      * <p>
-     * There is no way to disable enhanced networking at this time.
+     * There is no way to disable enhanced networking with the Intel 82599
+     * Virtual Function interface at this time.
      * </p>
      * <p>
      * This option is supported only for HVM instances. Specifying this option
      * with a PV instance can make it unreachable.
      * </p>
      * 
-     * @return Set to <code>simple</code> to enable enhanced networking for the
-     *         instance.</p>
+     * @return Set to <code>simple</code> to enable enhanced networking with the
+     *         Intel 82599 Virtual Function interface for the instance.</p>
      *         <p>
-     *         There is no way to disable enhanced networking at this time.
+     *         There is no way to disable enhanced networking with the Intel
+     *         82599 Virtual Function interface at this time.
      *         </p>
      *         <p>
      *         This option is supported only for HVM instances. Specifying this
@@ -1256,11 +1272,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Set to <code>simple</code> to enable enhanced networking for the
-     * instance.
+     * Set to <code>simple</code> to enable enhanced networking with the Intel
+     * 82599 Virtual Function interface for the instance.
      * </p>
      * <p>
-     * There is no way to disable enhanced networking at this time.
+     * There is no way to disable enhanced networking with the Intel 82599
+     * Virtual Function interface at this time.
      * </p>
      * <p>
      * This option is supported only for HVM instances. Specifying this option
@@ -1268,10 +1285,11 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param sriovNetSupport
-     *        Set to <code>simple</code> to enable enhanced networking for the
-     *        instance.</p>
+     *        Set to <code>simple</code> to enable enhanced networking with the
+     *        Intel 82599 Virtual Function interface for the instance.</p>
      *        <p>
-     *        There is no way to disable enhanced networking at this time.
+     *        There is no way to disable enhanced networking with the Intel
+     *        82599 Virtual Function interface at this time.
      *        </p>
      *        <p>
      *        This option is supported only for HVM instances. Specifying this
@@ -1284,6 +1302,95 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
             String sriovNetSupport) {
         setSriovNetSupport(sriovNetSupport);
         return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable enhanced networking with ENA for the
+     * instance.
+     * </p>
+     * <p>
+     * This option is supported only for HVM instances. Specifying this option
+     * with a PV instance can make it unreachable.
+     * </p>
+     * 
+     * @param enaSupport
+     *        Set to <code>true</code> to enable enhanced networking with ENA
+     *        for the instance.</p>
+     *        <p>
+     *        This option is supported only for HVM instances. Specifying this
+     *        option with a PV instance can make it unreachable.
+     */
+
+    public void setEnaSupport(Boolean enaSupport) {
+        this.enaSupport = enaSupport;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable enhanced networking with ENA for the
+     * instance.
+     * </p>
+     * <p>
+     * This option is supported only for HVM instances. Specifying this option
+     * with a PV instance can make it unreachable.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to enable enhanced networking with ENA
+     *         for the instance.</p>
+     *         <p>
+     *         This option is supported only for HVM instances. Specifying this
+     *         option with a PV instance can make it unreachable.
+     */
+
+    public Boolean getEnaSupport() {
+        return this.enaSupport;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable enhanced networking with ENA for the
+     * instance.
+     * </p>
+     * <p>
+     * This option is supported only for HVM instances. Specifying this option
+     * with a PV instance can make it unreachable.
+     * </p>
+     * 
+     * @param enaSupport
+     *        Set to <code>true</code> to enable enhanced networking with ENA
+     *        for the instance.</p>
+     *        <p>
+     *        This option is supported only for HVM instances. Specifying this
+     *        option with a PV instance can make it unreachable.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyInstanceAttributeRequest withEnaSupport(Boolean enaSupport) {
+        setEnaSupport(enaSupport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable enhanced networking with ENA for the
+     * instance.
+     * </p>
+     * <p>
+     * This option is supported only for HVM instances. Specifying this option
+     * with a PV instance can make it unreachable.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to enable enhanced networking with ENA
+     *         for the instance.</p>
+     *         <p>
+     *         This option is supported only for HVM instances. Specifying this
+     *         option with a PV instance can make it unreachable.
+     */
+
+    public Boolean isEnaSupport() {
+        return this.enaSupport;
     }
 
     /**
@@ -1340,7 +1447,9 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
         if (getEbsOptimized() != null)
             sb.append("EbsOptimized: " + getEbsOptimized() + ",");
         if (getSriovNetSupport() != null)
-            sb.append("SriovNetSupport: " + getSriovNetSupport());
+            sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
+        if (getEnaSupport() != null)
+            sb.append("EnaSupport: " + getEnaSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -1433,6 +1542,11 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
         if (other.getSriovNetSupport() != null
                 && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
             return false;
+        if (other.getEnaSupport() == null ^ this.getEnaSupport() == null)
+            return false;
+        if (other.getEnaSupport() != null
+                && other.getEnaSupport().equals(this.getEnaSupport()) == false)
+            return false;
         return true;
     }
 
@@ -1483,6 +1597,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
                 * hashCode
                 + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
         return hashCode;
     }
 

@@ -48,8 +48,6 @@ import com.amazonaws.protocol.json.*;
 public class GetApiKeysRequestMarshaller implements
         Marshaller<Request<GetApiKeysRequest>, GetApiKeysRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
-
     private final SdkJsonProtocolFactory protocolFactory;
 
     public GetApiKeysRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
@@ -85,7 +83,7 @@ public class GetApiKeysRequestMarshaller implements
 
         request.setContent(new ByteArrayInputStream(new byte[0]));
         if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+            request.addHeader("Content-Type", protocolFactory.getContentType());
         }
 
         return request;

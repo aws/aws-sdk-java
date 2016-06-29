@@ -19,7 +19,7 @@ package com.amazonaws.services.elasticfilesystem.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p/>
  */
 public class DescribeMountTargetsResult implements Serializable, Cloneable {
 

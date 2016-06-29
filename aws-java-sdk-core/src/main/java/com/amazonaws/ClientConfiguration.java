@@ -98,7 +98,12 @@ public class ClientConfiguration {
     /**
      * The default on whether to throttle retries.
      */
-    public static final boolean DEFAULT_THROTTLE_RETRIES = false;
+    public static final boolean DEFAULT_THROTTLE_RETRIES = true;
+
+    /**
+     * The default on whether to cache response metadata.
+     */
+    public static final boolean DEFAULT_CACHE_RESPONSE_METADATA = true;
 
     /**
      * The default response metadata cache size.
@@ -238,7 +243,20 @@ public class ClientConfiguration {
     private boolean tcpKeepAlive = DEFAULT_TCP_KEEP_ALIVE;
 
     /**
-     * Size of the response metadata cache.
+     * Whether or not to cache response metadata.
+     * <p>
+     * Response metadata is typically used for troubleshooting issues with AWS support staff when
+     * services aren't acting as expected.
+     * </p>
+     * <p>
+     * While this feature is useful for debugging it adds overhead and disabling it may
+     * be desired in high throughput applications.
+     * </p>
+     */
+    private boolean cacheResponseMetadata = DEFAULT_CACHE_RESPONSE_METADATA;
+
+    /**
+     * Size of the response metadata cache, if it is enabled.
      * <p>
      * Response metadata is typically used for troubleshooting issues with AWS support staff when
      * services aren't acting as expected.
@@ -306,6 +324,7 @@ public class ClientConfiguration {
         this.dnsResolver = other.dnsResolver;
         this.useExpectContinue = other.useExpectContinue;
         this.apacheHttpClientConfig = new ApacheHttpClientConfig(other.apacheHttpClientConfig);
+        this.cacheResponseMetadata = other.cacheResponseMetadata;
     }
 
     /**
@@ -1656,6 +1675,57 @@ public class ClientConfiguration {
      */
     public ClientConfiguration withDnsResolver(final DnsResolver resolver) {
         setDnsResolver(resolver);
+        return this;
+    }
+
+    /**
+     * Returns whether or not to cache response metadata.
+     * <p>
+     * Response metadata is typically used for troubleshooting issues with AWS support staff when
+     * services aren't acting as expected.
+     * </p>
+     * <p>
+     * While this feature is useful for debugging it adds overhead and disabling it may
+     * be desired in high throughput applications.
+     * </p>
+     *
+     * @return true if response metadata will be cached
+     */
+    public boolean getCacheResponseMetadata() { return cacheResponseMetadata; }
+
+    /**
+     * Sets whether or not to cache response metadata.
+     * <p>
+     * Response metadata is typically used for troubleshooting issues with AWS support staff when
+     * services aren't acting as expected.
+     * </p>
+     * <p>
+     * While this feature is useful for debugging it adds overhead and disabling it may
+     * be desired in high throughput applications.
+     * </p>
+     *
+     * @param shouldCache true if response metadata should be cached
+     */
+    public void setCacheResponseMetadata(boolean shouldCache) {
+        this.cacheResponseMetadata = shouldCache;
+    }
+
+    /**
+     * Sets whether or not to cache response metadata.
+     * <p>
+     * Response metadata is typically used for troubleshooting issues with AWS support staff when
+     * services aren't acting as expected.
+     * </p>
+     * <p>
+     * While this feature is useful for debugging it adds overhead and disabling it may
+     * be desired in high throughput applications.
+     * </p>
+     *
+     * @param shouldCache true if response metadata should be cached
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withCacheResponseMetadata(final boolean shouldCache) {
+        setCacheResponseMetadata(shouldCache);
         return this;
     }
 

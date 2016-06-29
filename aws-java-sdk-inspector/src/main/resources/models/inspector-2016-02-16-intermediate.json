@@ -1,7 +1,6 @@
 {
   "metadata" : {
     "apiVersion" : "2016-02-16",
-    "exceptionUnmarshallerImpl" : null,
     "protocol" : "json",
     "checksumFormat" : null,
     "documentation" : "<fullname>Amazon Inspector</fullname> <p>Amazon Inspector enables you to analyze the behavior of your AWS resources and to identify potential security issues. For more information, see <a href=\"http://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html\"> Amazon Inspector User Guide</a>.</p>",
@@ -16,17 +15,17 @@
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Inspector",
     "hasApiWithStreamInput" : false,
-    "jsonContentVersion" : "application/x-amz-json-1.1",
+    "contentType" : null,
     "jsonVersion" : "1.1",
     "endpointPrefix" : "inspector",
     "signingName" : "inspector",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "serviceName" : "Amazon Inspector",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "AddAttributesToFindings" : {
@@ -40271,5 +40270,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "exceptionUnmarshallerImpl" : null
 }

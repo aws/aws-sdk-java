@@ -1,7 +1,6 @@
 {
   "metadata" : {
     "apiVersion" : "2016-01-01",
-    "exceptionUnmarshallerImpl" : null,
     "protocol" : "json",
     "checksumFormat" : null,
     "documentation" : "<fullname>AWS Database Migration Service</fullname> <p> AWS Database Migration Service (AWS DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, MariaDB, Amazon Aurora, and MySQL. The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL. </p>",
@@ -16,17 +15,17 @@
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Database Migration Service",
     "hasApiWithStreamInput" : false,
-    "jsonContentVersion" : "application/x-amz-json-1.1",
+    "contentType" : null,
     "jsonVersion" : "1.1",
     "endpointPrefix" : "dms",
     "signingName" : "dms",
+    "jsonProtocol" : true,
     "xmlProtocol" : false,
+    "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
     "serviceName" : "AWS Database Migration Service",
-    "cborProtocol" : false,
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "AddTagsToResource" : {
@@ -32324,5 +32323,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "exceptionUnmarshallerImpl" : null,
   "clientConfigFactory" : "ClientConfigurationFactory"
 }

@@ -32,6 +32,16 @@ public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String creationToken;
+    /**
+     * <p>
+     * The <code>PerformanceMode</code> of the file system. We recommend
+     * <code>generalPurpose</code> performance mode for most file systems. File
+     * systems using the <code>maxIO</code> performance mode can scale to higher
+     * levels of aggregate throughput than general purpose mode file systems,
+     * with a tradeoff of slightly higher latencies for most file operations.
+     * </p>
+     */
+    private String performanceMode;
 
     /**
      * <p>
@@ -81,6 +91,127 @@ public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The <code>PerformanceMode</code> of the file system. We recommend
+     * <code>generalPurpose</code> performance mode for most file systems. File
+     * systems using the <code>maxIO</code> performance mode can scale to higher
+     * levels of aggregate throughput than general purpose mode file systems,
+     * with a tradeoff of slightly higher latencies for most file operations.
+     * </p>
+     * 
+     * @param performanceMode
+     *        The <code>PerformanceMode</code> of the file system. We recommend
+     *        <code>generalPurpose</code> performance mode for most file
+     *        systems. File systems using the <code>maxIO</code> performance
+     *        mode can scale to higher levels of aggregate throughput than
+     *        general purpose mode file systems, with a tradeoff of slightly
+     *        higher latencies for most file operations.
+     * @see PerformanceMode
+     */
+
+    public void setPerformanceMode(String performanceMode) {
+        this.performanceMode = performanceMode;
+    }
+
+    /**
+     * <p>
+     * The <code>PerformanceMode</code> of the file system. We recommend
+     * <code>generalPurpose</code> performance mode for most file systems. File
+     * systems using the <code>maxIO</code> performance mode can scale to higher
+     * levels of aggregate throughput than general purpose mode file systems,
+     * with a tradeoff of slightly higher latencies for most file operations.
+     * </p>
+     * 
+     * @return The <code>PerformanceMode</code> of the file system. We recommend
+     *         <code>generalPurpose</code> performance mode for most file
+     *         systems. File systems using the <code>maxIO</code> performance
+     *         mode can scale to higher levels of aggregate throughput than
+     *         general purpose mode file systems, with a tradeoff of slightly
+     *         higher latencies for most file operations.
+     * @see PerformanceMode
+     */
+
+    public String getPerformanceMode() {
+        return this.performanceMode;
+    }
+
+    /**
+     * <p>
+     * The <code>PerformanceMode</code> of the file system. We recommend
+     * <code>generalPurpose</code> performance mode for most file systems. File
+     * systems using the <code>maxIO</code> performance mode can scale to higher
+     * levels of aggregate throughput than general purpose mode file systems,
+     * with a tradeoff of slightly higher latencies for most file operations.
+     * </p>
+     * 
+     * @param performanceMode
+     *        The <code>PerformanceMode</code> of the file system. We recommend
+     *        <code>generalPurpose</code> performance mode for most file
+     *        systems. File systems using the <code>maxIO</code> performance
+     *        mode can scale to higher levels of aggregate throughput than
+     *        general purpose mode file systems, with a tradeoff of slightly
+     *        higher latencies for most file operations.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see PerformanceMode
+     */
+
+    public CreateFileSystemRequest withPerformanceMode(String performanceMode) {
+        setPerformanceMode(performanceMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>PerformanceMode</code> of the file system. We recommend
+     * <code>generalPurpose</code> performance mode for most file systems. File
+     * systems using the <code>maxIO</code> performance mode can scale to higher
+     * levels of aggregate throughput than general purpose mode file systems,
+     * with a tradeoff of slightly higher latencies for most file operations.
+     * </p>
+     * 
+     * @param performanceMode
+     *        The <code>PerformanceMode</code> of the file system. We recommend
+     *        <code>generalPurpose</code> performance mode for most file
+     *        systems. File systems using the <code>maxIO</code> performance
+     *        mode can scale to higher levels of aggregate throughput than
+     *        general purpose mode file systems, with a tradeoff of slightly
+     *        higher latencies for most file operations.
+     * @see PerformanceMode
+     */
+
+    public void setPerformanceMode(PerformanceMode performanceMode) {
+        this.performanceMode = performanceMode.toString();
+    }
+
+    /**
+     * <p>
+     * The <code>PerformanceMode</code> of the file system. We recommend
+     * <code>generalPurpose</code> performance mode for most file systems. File
+     * systems using the <code>maxIO</code> performance mode can scale to higher
+     * levels of aggregate throughput than general purpose mode file systems,
+     * with a tradeoff of slightly higher latencies for most file operations.
+     * </p>
+     * 
+     * @param performanceMode
+     *        The <code>PerformanceMode</code> of the file system. We recommend
+     *        <code>generalPurpose</code> performance mode for most file
+     *        systems. File systems using the <code>maxIO</code> performance
+     *        mode can scale to higher levels of aggregate throughput than
+     *        general purpose mode file systems, with a tradeoff of slightly
+     *        higher latencies for most file operations.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see PerformanceMode
+     */
+
+    public CreateFileSystemRequest withPerformanceMode(
+            PerformanceMode performanceMode) {
+        setPerformanceMode(performanceMode);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -93,7 +224,9 @@ public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCreationToken() != null)
-            sb.append("CreationToken: " + getCreationToken());
+            sb.append("CreationToken: " + getCreationToken() + ",");
+        if (getPerformanceMode() != null)
+            sb.append("PerformanceMode: " + getPerformanceMode());
         sb.append("}");
         return sb.toString();
     }
@@ -113,6 +246,12 @@ public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
         if (other.getCreationToken() != null
                 && other.getCreationToken().equals(this.getCreationToken()) == false)
             return false;
+        if (other.getPerformanceMode() == null
+                ^ this.getPerformanceMode() == null)
+            return false;
+        if (other.getPerformanceMode() != null
+                && other.getPerformanceMode().equals(this.getPerformanceMode()) == false)
+            return false;
         return true;
     }
 
@@ -124,6 +263,10 @@ public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
         hashCode = prime
                 * hashCode
                 + ((getCreationToken() == null) ? 0 : getCreationToken()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPerformanceMode() == null) ? 0 : getPerformanceMode()
                         .hashCode());
         return hashCode;
     }

@@ -78,7 +78,7 @@ public class GetUploadRequestMarshaller implements
             request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", jsonGenerator.getContentType());
+            request.addHeader("Content-Type", protocolFactory.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -20,38 +20,39 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Optional. Maximum number of mount targets to return in the response. It
+     * (Optional) Maximum number of mount targets to return in the response. It
      * must be an integer with a value greater than zero.
      * </p>
      */
     private Integer maxItems;
     /**
      * <p>
-     * Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.
+     * (Optional) Opaque pagination token returned from a previous
+     * <code>DescribeMountTargets</code> operation (String). If present, it
+     * specifies to continue the list from where the previous returning call
+     * left off.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Optional. String. The ID of the file system whose mount targets you want
-     * to list. It must be included in your request if
+     * (Optional) ID of the file system whose mount targets you want to list
+     * (String). It must be included in your request if
      * <code>MountTargetId</code> is not included.
      * </p>
      */
     private String fileSystemId;
     /**
      * <p>
-     * Optional. String. The ID of the mount target that you want to have
-     * described. It must be included in your request if
+     * (Optional) ID of the mount target that you want to have described
+     * (String). It must be included in your request if
      * <code>FileSystemId</code> is not included.
      * </p>
      */
@@ -59,12 +60,12 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. Maximum number of mount targets to return in the response. It
+     * (Optional) Maximum number of mount targets to return in the response. It
      * must be an integer with a value greater than zero.
      * </p>
      * 
      * @param maxItems
-     *        Optional. Maximum number of mount targets to return in the
+     *        (Optional) Maximum number of mount targets to return in the
      *        response. It must be an integer with a value greater than zero.
      */
 
@@ -74,11 +75,11 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. Maximum number of mount targets to return in the response. It
+     * (Optional) Maximum number of mount targets to return in the response. It
      * must be an integer with a value greater than zero.
      * </p>
      * 
-     * @return Optional. Maximum number of mount targets to return in the
+     * @return (Optional) Maximum number of mount targets to return in the
      *         response. It must be an integer with a value greater than zero.
      */
 
@@ -88,12 +89,12 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. Maximum number of mount targets to return in the response. It
+     * (Optional) Maximum number of mount targets to return in the response. It
      * must be an integer with a value greater than zero.
      * </p>
      * 
      * @param maxItems
-     *        Optional. Maximum number of mount targets to return in the
+     *        (Optional) Maximum number of mount targets to return in the
      *        response. It must be an integer with a value greater than zero.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -106,16 +107,17 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.
+     * (Optional) Opaque pagination token returned from a previous
+     * <code>DescribeMountTargets</code> operation (String). If present, it
+     * specifies to continue the list from where the previous returning call
+     * left off.
      * </p>
      * 
      * @param marker
-     *        Optional. String. Opaque pagination token returned from a previous
-     *        <code>DescribeMountTargets</code> operation. If present, it
-     *        specifies to continue the list from where the previous returning
-     *        call left off.
+     *        (Optional) Opaque pagination token returned from a previous
+     *        <code>DescribeMountTargets</code> operation (String). If present,
+     *        it specifies to continue the list from where the previous
+     *        returning call left off.
      */
 
     public void setMarker(String marker) {
@@ -124,13 +126,14 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.
+     * (Optional) Opaque pagination token returned from a previous
+     * <code>DescribeMountTargets</code> operation (String). If present, it
+     * specifies to continue the list from where the previous returning call
+     * left off.
      * </p>
      * 
-     * @return Optional. String. Opaque pagination token returned from a
-     *         previous <code>DescribeMountTargets</code> operation. If present,
+     * @return (Optional) Opaque pagination token returned from a previous
+     *         <code>DescribeMountTargets</code> operation (String). If present,
      *         it specifies to continue the list from where the previous
      *         returning call left off.
      */
@@ -141,16 +144,17 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.
+     * (Optional) Opaque pagination token returned from a previous
+     * <code>DescribeMountTargets</code> operation (String). If present, it
+     * specifies to continue the list from where the previous returning call
+     * left off.
      * </p>
      * 
      * @param marker
-     *        Optional. String. Opaque pagination token returned from a previous
-     *        <code>DescribeMountTargets</code> operation. If present, it
-     *        specifies to continue the list from where the previous returning
-     *        call left off.
+     *        (Optional) Opaque pagination token returned from a previous
+     *        <code>DescribeMountTargets</code> operation (String). If present,
+     *        it specifies to continue the list from where the previous
+     *        returning call left off.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -162,14 +166,14 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. The ID of the file system whose mount targets you want
-     * to list. It must be included in your request if
+     * (Optional) ID of the file system whose mount targets you want to list
+     * (String). It must be included in your request if
      * <code>MountTargetId</code> is not included.
      * </p>
      * 
      * @param fileSystemId
-     *        Optional. String. The ID of the file system whose mount targets
-     *        you want to list. It must be included in your request if
+     *        (Optional) ID of the file system whose mount targets you want to
+     *        list (String). It must be included in your request if
      *        <code>MountTargetId</code> is not included.
      */
 
@@ -179,13 +183,13 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. The ID of the file system whose mount targets you want
-     * to list. It must be included in your request if
+     * (Optional) ID of the file system whose mount targets you want to list
+     * (String). It must be included in your request if
      * <code>MountTargetId</code> is not included.
      * </p>
      * 
-     * @return Optional. String. The ID of the file system whose mount targets
-     *         you want to list. It must be included in your request if
+     * @return (Optional) ID of the file system whose mount targets you want to
+     *         list (String). It must be included in your request if
      *         <code>MountTargetId</code> is not included.
      */
 
@@ -195,14 +199,14 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. The ID of the file system whose mount targets you want
-     * to list. It must be included in your request if
+     * (Optional) ID of the file system whose mount targets you want to list
+     * (String). It must be included in your request if
      * <code>MountTargetId</code> is not included.
      * </p>
      * 
      * @param fileSystemId
-     *        Optional. String. The ID of the file system whose mount targets
-     *        you want to list. It must be included in your request if
+     *        (Optional) ID of the file system whose mount targets you want to
+     *        list (String). It must be included in your request if
      *        <code>MountTargetId</code> is not included.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -215,14 +219,14 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. The ID of the mount target that you want to have
-     * described. It must be included in your request if
+     * (Optional) ID of the mount target that you want to have described
+     * (String). It must be included in your request if
      * <code>FileSystemId</code> is not included.
      * </p>
      * 
      * @param mountTargetId
-     *        Optional. String. The ID of the mount target that you want to have
-     *        described. It must be included in your request if
+     *        (Optional) ID of the mount target that you want to have described
+     *        (String). It must be included in your request if
      *        <code>FileSystemId</code> is not included.
      */
 
@@ -232,13 +236,13 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. The ID of the mount target that you want to have
-     * described. It must be included in your request if
+     * (Optional) ID of the mount target that you want to have described
+     * (String). It must be included in your request if
      * <code>FileSystemId</code> is not included.
      * </p>
      * 
-     * @return Optional. String. The ID of the mount target that you want to
-     *         have described. It must be included in your request if
+     * @return (Optional) ID of the mount target that you want to have described
+     *         (String). It must be included in your request if
      *         <code>FileSystemId</code> is not included.
      */
 
@@ -248,14 +252,14 @@ public class DescribeMountTargetsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Optional. String. The ID of the mount target that you want to have
-     * described. It must be included in your request if
+     * (Optional) ID of the mount target that you want to have described
+     * (String). It must be included in your request if
      * <code>FileSystemId</code> is not included.
      * </p>
      * 
      * @param mountTargetId
-     *        Optional. String. The ID of the mount target that you want to have
-     *        described. It must be included in your request if
+     *        (Optional) ID of the mount target that you want to have described
+     *        (String). It must be included in your request if
      *        <code>FileSystemId</code> is not included.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

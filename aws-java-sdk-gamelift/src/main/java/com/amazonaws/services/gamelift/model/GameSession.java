@@ -33,7 +33,7 @@ public class GameSession implements Serializable, Cloneable {
     private String gameSessionId;
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
+     * Descriptive label associated with a game session. Session names do not
      * need to be unique.
      * </p>
      */
@@ -73,8 +73,8 @@ public class GameSession implements Serializable, Cloneable {
     private Integer maximumPlayerSessionCount;
     /**
      * <p>
-     * Current status of the game session. A game session must be in an ACTIVE
-     * state to have player sessions.
+     * Current status of the game session. A game session must be in an
+     * <code>ACTIVE</code> state to have player sessions.
      * </p>
      */
     private String status;
@@ -86,10 +86,18 @@ public class GameSession implements Serializable, Cloneable {
     private java.util.List<GameProperty> gameProperties;
     /**
      * <p>
-     * IP address of the game session.
+     * IP address of the game session. To connect to a GameLift server process,
+     * an app needs both the IP address and port number.
      * </p>
      */
     private String ipAddress;
+    /**
+     * <p>
+     * Port number for the game session. To connect to a GameLift server
+     * process, an app needs both the IP address and port number.
+     * </p>
+     */
+    private Integer port;
     /**
      * <p>
      * Indicates whether or not the game session is accepting new players.
@@ -140,13 +148,13 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
+     * Descriptive label associated with a game session. Session names do not
      * need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this game session. Session names
-     *        do not need to be unique.
+     *        Descriptive label associated with a game session. Session names do
+     *        not need to be unique.
      */
 
     public void setName(String name) {
@@ -155,12 +163,12 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
+     * Descriptive label associated with a game session. Session names do not
      * need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with this game session. Session
-     *         names do not need to be unique.
+     * @return Descriptive label associated with a game session. Session names
+     *         do not need to be unique.
      */
 
     public String getName() {
@@ -169,13 +177,13 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
+     * Descriptive label associated with a game session. Session names do not
      * need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this game session. Session names
-     *        do not need to be unique.
+     *        Descriptive label associated with a game session. Session names do
+     *        not need to be unique.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -415,13 +423,13 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the game session. A game session must be in an ACTIVE
-     * state to have player sessions.
+     * Current status of the game session. A game session must be in an
+     * <code>ACTIVE</code> state to have player sessions.
      * </p>
      * 
      * @param status
      *        Current status of the game session. A game session must be in an
-     *        ACTIVE state to have player sessions.
+     *        <code>ACTIVE</code> state to have player sessions.
      * @see GameSessionStatus
      */
 
@@ -431,12 +439,12 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the game session. A game session must be in an ACTIVE
-     * state to have player sessions.
+     * Current status of the game session. A game session must be in an
+     * <code>ACTIVE</code> state to have player sessions.
      * </p>
      * 
      * @return Current status of the game session. A game session must be in an
-     *         ACTIVE state to have player sessions.
+     *         <code>ACTIVE</code> state to have player sessions.
      * @see GameSessionStatus
      */
 
@@ -446,13 +454,13 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the game session. A game session must be in an ACTIVE
-     * state to have player sessions.
+     * Current status of the game session. A game session must be in an
+     * <code>ACTIVE</code> state to have player sessions.
      * </p>
      * 
      * @param status
      *        Current status of the game session. A game session must be in an
-     *        ACTIVE state to have player sessions.
+     *        <code>ACTIVE</code> state to have player sessions.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see GameSessionStatus
@@ -465,13 +473,13 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the game session. A game session must be in an ACTIVE
-     * state to have player sessions.
+     * Current status of the game session. A game session must be in an
+     * <code>ACTIVE</code> state to have player sessions.
      * </p>
      * 
      * @param status
      *        Current status of the game session. A game session must be in an
-     *        ACTIVE state to have player sessions.
+     *        <code>ACTIVE</code> state to have player sessions.
      * @see GameSessionStatus
      */
 
@@ -481,13 +489,13 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the game session. A game session must be in an ACTIVE
-     * state to have player sessions.
+     * Current status of the game session. A game session must be in an
+     * <code>ACTIVE</code> state to have player sessions.
      * </p>
      * 
      * @param status
      *        Current status of the game session. A game session must be in an
-     *        ACTIVE state to have player sessions.
+     *        <code>ACTIVE</code> state to have player sessions.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see GameSessionStatus
@@ -577,11 +585,13 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * IP address of the game session.
+     * IP address of the game session. To connect to a GameLift server process,
+     * an app needs both the IP address and port number.
      * </p>
      * 
      * @param ipAddress
-     *        IP address of the game session.
+     *        IP address of the game session. To connect to a GameLift server
+     *        process, an app needs both the IP address and port number.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -590,10 +600,12 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * IP address of the game session.
+     * IP address of the game session. To connect to a GameLift server process,
+     * an app needs both the IP address and port number.
      * </p>
      * 
-     * @return IP address of the game session.
+     * @return IP address of the game session. To connect to a GameLift server
+     *         process, an app needs both the IP address and port number.
      */
 
     public String getIpAddress() {
@@ -602,17 +614,66 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * IP address of the game session.
+     * IP address of the game session. To connect to a GameLift server process,
+     * an app needs both the IP address and port number.
      * </p>
      * 
      * @param ipAddress
-     *        IP address of the game session.
+     *        IP address of the game session. To connect to a GameLift server
+     *        process, an app needs both the IP address and port number.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
     public GameSession withIpAddress(String ipAddress) {
         setIpAddress(ipAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Port number for the game session. To connect to a GameLift server
+     * process, an app needs both the IP address and port number.
+     * </p>
+     * 
+     * @param port
+     *        Port number for the game session. To connect to a GameLift server
+     *        process, an app needs both the IP address and port number.
+     */
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
+    /**
+     * <p>
+     * Port number for the game session. To connect to a GameLift server
+     * process, an app needs both the IP address and port number.
+     * </p>
+     * 
+     * @return Port number for the game session. To connect to a GameLift server
+     *         process, an app needs both the IP address and port number.
+     */
+
+    public Integer getPort() {
+        return this.port;
+    }
+
+    /**
+     * <p>
+     * Port number for the game session. To connect to a GameLift server
+     * process, an app needs both the IP address and port number.
+     * </p>
+     * 
+     * @param port
+     *        Port number for the game session. To connect to a GameLift server
+     *        process, an app needs both the IP address and port number.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public GameSession withPort(Integer port) {
+        setPort(port);
         return this;
     }
 
@@ -735,6 +796,8 @@ public class GameSession implements Serializable, Cloneable {
             sb.append("GameProperties: " + getGameProperties() + ",");
         if (getIpAddress() != null)
             sb.append("IpAddress: " + getIpAddress() + ",");
+        if (getPort() != null)
+            sb.append("Port: " + getPort() + ",");
         if (getPlayerSessionCreationPolicy() != null)
             sb.append("PlayerSessionCreationPolicy: "
                     + getPlayerSessionCreationPolicy());
@@ -808,6 +871,11 @@ public class GameSession implements Serializable, Cloneable {
         if (other.getIpAddress() != null
                 && other.getIpAddress().equals(this.getIpAddress()) == false)
             return false;
+        if (other.getPort() == null ^ this.getPort() == null)
+            return false;
+        if (other.getPort() != null
+                && other.getPort().equals(this.getPort()) == false)
+            return false;
         if (other.getPlayerSessionCreationPolicy() == null
                 ^ this.getPlayerSessionCreationPolicy() == null)
             return false;
@@ -855,6 +923,8 @@ public class GameSession implements Serializable, Cloneable {
                         .hashCode());
         hashCode = prime * hashCode
                 + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
+        hashCode = prime * hashCode
+                + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getPlayerSessionCreationPolicy() == null) ? 0

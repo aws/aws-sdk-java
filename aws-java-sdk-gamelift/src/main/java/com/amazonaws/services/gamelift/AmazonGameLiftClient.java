@@ -49,11 +49,7 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * managed Amazon Web Services (AWS) service for developers who need a scalable,
  * server-based solution for multiplayer games. Amazon GameLift provides setup
  * and deployment of game servers, and handles infrastructure scaling and
- * session management. For more information about the GameLift service,
- * including a feature overview, getting started guide, and tutorial, see the
- * accompanying <a
- * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
- * GameLift Developer Guide</a>.
+ * session management.
  * </p>
  * <p>
  * This reference describes the low-level service API for GameLift. You can call
@@ -61,15 +57,32 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * SDK</a> for your preferred language. The AWS SDK includes a set of high-level
  * GameLift actions multiplayer game sessions. Alternatively, you can use the <a
  * href="https://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool,
- * which includes commands for GameLift. For administrative actions, you can use
- * the Amazon GameLift console.
+ * which includes commands for GameLift. For administrative actions, you can
+ * also use the Amazon GameLift console.
  * </p>
  * <p>
- * <b>Managing Game and Player Sessions Through GameLift</b>
+ * <b>More Resources</b>
+ * </p>
+ * <ul>
+ * <li><a
+ * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
+ * GameLift Developer Guide</a>: Learn more about GameLift features and how to
+ * use them</li>
+ * <li><a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and
+ * GameLift Tutorials</a>: Get started fast with walkthroughs and sample
+ * projects</li>
+ * <li><a href="https://aws.amazon.com/blogs/gamedev/">GameDev Blog</a>: Stay up
+ * to date with new features and techniques</li>
+ * <li><a href=
+ * "https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html"
+ * >GameDev Forums</a>: Connect with the GameDev community</li>
+ * </ul>
+ * <p>
+ * <b>Manage Games and Players Through GameLift</b>
  * </p>
  * <p>
  * Call these actions from your game clients and/or services to create and
- * manage multiplayer game sessions.
+ * manage multiplayer game sessions and player sessions.
  * </p>
  * <ul>
  * <li><b>Game sessions</b>
@@ -94,16 +107,17 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * <b>Setting Up Game Servers</b>
+ * <b>Set Up and Manage Game Servers</b>
  * </p>
  * <p>
  * Use these administrative actions to configure GameLift to host your game
- * servers. When configuring GameLift, you'll need to (1) configure a build for
- * your game and provide build files, and (2) set up one or more fleets to host
- * game sessions.
+ * servers. When setting up GameLift, you'll need to (1) configure a build for
+ * your game and upload build files, and (2) set up one or more fleets to host
+ * game sessions. Once you've created and activated a fleet, you can assign
+ * aliases to it, scale capacity, track performance and utilization, etc.
  * </p>
  * <ul>
- * <li><b>Build actions:</b>
+ * <li><b>Manage your builds:</b>
  * <ul>
  * <li><a>ListBuilds</a></li>
  * <li><a>CreateBuild</a></li>
@@ -113,11 +127,11 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * <li><a>RequestUploadCredentials</a></li>
  * </ul>
  * </li>
- * <li><b>Fleet actions:</b>
+ * <li><b>Manage your fleets:</b>
  * <ul>
  * <li><a>ListFleets</a></li>
  * <li><a>CreateFleet</a></li>
- * <li>Describe fleet actions:
+ * <li>Describe fleets:
  * <ul>
  * <li><a>DescribeFleetAttributes</a></li>
  * <li><a>DescribeFleetCapacity</a></li>
@@ -125,19 +139,21 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * <li><a>DescribeFleetUtilization</a></li>
  * <li><a>DescribeEC2InstanceLimits</a></li>
  * <li><a>DescribeFleetEvents</a></li>
+ * <li><a>DescribeRuntimeConfiguration</a></li>
  * </ul>
  * </li>
- * <li>Update fleet actions:
+ * <li>Update fleets:
  * <ul>
  * <li><a>UpdateFleetAttributes</a></li>
  * <li><a>UpdateFleetCapacity</a></li>
  * <li><a>UpdateFleetPortSettings</a></li>
+ * <li><a>UpdateRuntimeConfiguration</a></li>
  * </ul>
  * </li>
  * <li><a>DeleteFleet</a></li>
  * </ul>
  * </li>
- * <li><b>Alias actions:</b>
+ * <li><b>Manage fleet aliases:</b>
  * <ul>
  * <li><a>ListAliases</a></li>
  * <li><a>CreateAlias</a></li>
@@ -147,7 +163,7 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * <li><a>ResolveAlias</a></li>
  * </ul>
  * </li>
- * <li><b>Scaling policy actions:</b>
+ * <li><b>Manage autoscaling:</b>
  * <ul>
  * <li><a>PutScalingPolicy</a></li>
  * <li><a>DescribeScalingPolicies</a></li>
@@ -155,6 +171,11 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * </ul>
  * </li>
  * </ul>
+ * <p>
+ * To view changes to the API, see the GameLift <a href=
+ * "http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html"
+ * >Document History</a> page.
+ * </p>
  */
 @ThreadSafe
 public class AmazonGameLiftClient extends AmazonWebServiceClient implements
@@ -428,22 +449,22 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *        Represents the input for a request action.
      * @return Result of the CreateAlias operation returned by the service.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws ConflictException
      *         The requested operation would cause a conflict with the current
-     *         state of a service resource associated with the request. Please
-     *         resolve the conflict before retrying this request.
+     *         state of a service resource associated with the request. Resolve
+     *         the conflict before retrying this request.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws LimitExceededException
      *         The requested operation would cause the resource to exceed the
-     *         allowed service limit. Please resolve the issue before retrying.
+     *         allowed service limit. Resolve the issue before retrying.
      * @sample AmazonGameLift.CreateAlias
      */
     @Override
@@ -485,25 +506,27 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * <p>
      * Initializes a new build record and generates information required to
      * upload a game build to Amazon GameLift. Once the build record has been
-     * created and is in an INITIALIZED state, you can upload your game build.
+     * created and is in an <code>INITIALIZED</code> state, you can upload your
+     * game build.
      * </p>
      * <important>
      * <p>
-     * To create a build, use the CLI command <code>upload-build</code>, which
-     * creates a new build record and uploads the build files in one step. (See
-     * the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">
-     * Amazon GameLift Developer Guide</a> for more details on the CLI and the
-     * upload process.) Call the <code>CreateBuild</code> action only if you
-     * have your own Amazon Simple Storage Service (Amazon S3) client and need
-     * to manually upload your build files.
+     * Do not use this API action unless you are using your own Amazon Simple
+     * Storage Service (Amazon S3) client and need to manually upload your build
+     * files. Instead, to create a build, use the CLI command
+     * <code>upload-build</code>, which creates a new build record and uploads
+     * the build files in one step. (See the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
+     * GameLift Developer Guide</a> for more details on the CLI and the upload
+     * process.)
      * </p>
      * </important>
      * <p>
      * To create a new build, optionally specify a build name and version. This
      * metadata is stored with other properties in the build record and is
-     * displayed in the GameLift console (but not visible to players). If
+     * displayed in the GameLift console (it is not visible to players). If
      * successful, this action returns the newly created build record along with
-     * an Amazon S3 storage location and AWS account credentials. Use the
+     * the Amazon S3 storage location and AWS account credentials. Use the
      * location and credentials to upload your game build.
      * </p>
      * 
@@ -511,19 +534,19 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *        Represents the input for a request action.
      * @return Result of the CreateBuild operation returned by the service.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws ConflictException
      *         The requested operation would cause a conflict with the current
-     *         state of a service resource associated with the request. Please
-     *         resolve the conflict before retrying this request.
+     *         state of a service resource associated with the request. Resolve
+     *         the conflict before retrying this request.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @sample AmazonGameLift.CreateBuild
      */
     @Override
@@ -563,48 +586,56 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a new fleet to host game servers. A fleet consists of a set of
-     * Amazon Elastic Compute Cloud (Amazon EC2) instances of a certain type,
-     * which defines the CPU, memory, storage, and networking capacity of each
-     * host in the fleet. See <a
+     * Creates a new fleet to run your game servers. A fleet is a set of Amazon
+     * Elastic Compute Cloud (Amazon EC2) instances, each of which can run
+     * multiple server processes to host game sessions. You configure a fleet to
+     * create instances with certain hardware specifications (see <a
      * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
-     * Types</a> for more information. Each instance in the fleet hosts a game
-     * server created from the specified game build. Once a fleet is in an
-     * ACTIVE state, it can begin hosting game sessions.
+     * Types</a> for more information), and deploy a specified game build to
+     * each instance. A newly created fleet passes through several states; once
+     * it reaches the <code>ACTIVE</code> state, it can begin hosting game
+     * sessions.
      * </p>
      * <p>
-     * To create a new fleet, provide a name and the EC2 instance type for the
-     * new fleet, and specify the build and server launch path. Builds must be
-     * in a READY state before they can be used to build fleets. When
-     * configuring the new fleet, you can optionally (1) provide a set of launch
-     * parameters to be passed to a game server when activated; (2) limit
-     * incoming traffic to a specified range of IP addresses and port numbers;
-     * (3) set game session protection for all instances in the fleet, and (4)
-     * configure Amazon GameLift to store game session logs by specifying the
-     * path to the logs stored in your game server files. If the call is
-     * successful, Amazon GameLift performs the following tasks:
+     * To create a new fleet, provide a fleet name, an EC2 instance type, and a
+     * build ID of the game build to deploy. You can also configure the new
+     * fleet with the following settings: (1) a runtime configuration describing
+     * what server processes to run on each instance in the fleet (required to
+     * create fleet), (2) access permissions for inbound traffic, (3) fleet-wide
+     * game session protection, and (4) the location of default log files for
+     * GameLift to upload and store.
+     * </p>
+     * <p>
+     * If the <code>CreateFleet</code> call is successful, Amazon GameLift
+     * performs the following tasks:
      * </p>
      * <ul>
-     * <li>Creates a fleet record and sets the state to NEW.</li>
-     * <li>Sets the fleet's capacity to 1 "desired" and 1 "active" EC2 instance
-     * count.</li>
-     * <li>Creates an EC2 instance and begins the process of initializing the
-     * fleet and activating a game server on the instance.</li>
+     * <li>Creates a fleet record and sets the state to <code>NEW</code>
+     * (followed by other states as the fleet is activated).</li>
+     * <li>Sets the fleet's capacity to 1 "desired", which causes GameLift to
+     * start one new EC2 instance.</li>
+     * <li>Starts launching server processes on the instance. If the fleet is
+     * configured to run multiple server processes per instance, GameLift
+     * staggers each launch by a few seconds.</li>
      * <li>Begins writing events to the fleet event log, which can be accessed
      * in the GameLift console.</li>
+     * <li>Sets the fleet's status to <code>ACTIVE</code> once one server
+     * process in the fleet is ready to host a game session.</li>
      * </ul>
      * <p>
-     * Once a fleet is created, use the following actions to change certain
-     * fleet properties (server launch parameters and log paths cannot be
-     * changed):
+     * After a fleet is created, use the following actions to change fleet
+     * properties and configuration:
      * </p>
      * <ul>
      * <li><a>UpdateFleetAttributes</a> -- Update fleet metadata, including name
      * and description.</li>
      * <li><a>UpdateFleetCapacity</a> -- Increase or decrease the number of
      * instances you want the fleet to maintain.</li>
-     * <li><a>UpdateFleetPortSettings</a> -- Change the IP addresses and ports
-     * that allow access to incoming traffic.</li>
+     * <li><a>UpdateFleetPortSettings</a> -- Change the IP address and port
+     * ranges that allow access to incoming traffic.</li>
+     * <li><a>UpdateRuntimeConfiguration</a> -- Change how server processes are
+     * launched in the fleet, including launch path, launch parameters, and the
+     * number of concurrent processes.</li>
      * </ul>
      * 
      * @param createFleetRequest
@@ -612,24 +643,24 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * @return Result of the CreateFleet operation returned by the service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws ConflictException
      *         The requested operation would cause a conflict with the current
-     *         state of a service resource associated with the request. Please
-     *         resolve the conflict before retrying this request.
+     *         state of a service resource associated with the request. Resolve
+     *         the conflict before retrying this request.
      * @throws LimitExceededException
      *         The requested operation would cause the resource to exceed the
-     *         allowed service limit. Please resolve the issue before retrying.
+     *         allowed service limit. Resolve the issue before retrying.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @sample AmazonGameLift.CreateFleet
      */
     @Override
@@ -671,9 +702,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * <p>
      * Creates a multiplayer game session for players. This action creates a
      * game session record and assigns the new session to an instance in the
-     * specified fleet, which activates the server initialization process in
-     * your game server. A fleet must be in an ACTIVE state before a game
-     * session can be created for it.
+     * specified fleet, which initializes a new server process to host the game
+     * session. A fleet must be in an <code>ACTIVE</code> state before a game
+     * session can be created in it.
      * </p>
      * <p>
      * To create a game session, specify either a fleet ID or an alias ID and
@@ -691,19 +722,19 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws ConflictException
      *         The requested operation would cause a conflict with the current
-     *         state of a service resource associated with the request. Please
-     *         resolve the conflict before retrying this request.
+     *         state of a service resource associated with the request. Resolve
+     *         the conflict before retrying this request.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidFleetStatusException
      *         The requested operation would cause a conflict with the current
      *         state of a resource associated with the request and/or the fleet.
-     *         Please resolve the conflict before retrying.
+     *         Resolve the conflict before retrying.
      * @throws TerminalRoutingStrategyException
      *         The service is unable to resolve the routing for a particular
      *         alias because it has a terminal <a>RoutingStrategy</a> associated
@@ -713,10 +744,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         alias is modified.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws FleetCapacityExceededException
      *         The specified fleet has no available instances to fulfill a
      *         request to create a new game session. Such requests should only
@@ -763,9 +794,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Adds a player to a game session and creates a player session record. A
-     * game session must be in an ACTIVE state, have a creation policy of
-     * ALLOW_ALL, and have an open player slot before players can be added to
-     * the session.
+     * game session must be in an <code>ACTIVE</code> state, have a creation
+     * policy of <code>ALLOW_ALL</code>, and have an open player slot before
+     * players can be added to the session.
      * </p>
      * <p>
      * To create a player session, specify a game session ID and player ID. If
@@ -779,15 +810,15 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidGameSessionStatusException
      *         The requested operation would cause a conflict with the current
      *         state of a resource associated with the request and/or the game
-     *         instance. Such requests should not be retried by clients without
+     *         instance. Clients should not retry such requests without
      *         resolving the conflict.
      * @throws GameSessionFullException
      *         The game instance is currently full and cannot allow the
@@ -802,10 +833,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         alias is modified.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @sample AmazonGameLift.CreatePlayerSession
      */
     @Override
@@ -850,9 +881,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * Adds a group of players to a game session. Similar to
      * <a>CreatePlayerSession</a>, this action allows you to add multiple
      * players in a single call, which is useful for games that provide party
-     * and/or matchmaking features. A game session must be in an ACTIVE state,
-     * have a creation policy of ALLOW_ALL, and have an open player slot before
-     * players can be added to the session.
+     * and/or matchmaking features. A game session must be in an
+     * <code>ACTIVE</code> state, have a creation policy of
+     * <code>ALLOW_ALL</code>, and have an open player slot before players can
+     * be added to the session.
      * </p>
      * <p>
      * To create player sessions, specify a game session ID and a list of player
@@ -866,15 +898,15 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidGameSessionStatusException
      *         The requested operation would cause a conflict with the current
      *         state of a resource associated with the request and/or the game
-     *         instance. Such requests should not be retried by clients without
+     *         instance. Clients should not retry such requests without
      *         resolving the conflict.
      * @throws GameSessionFullException
      *         The game instance is currently full and cannot allow the
@@ -889,10 +921,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         alias is modified.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @sample AmazonGameLift.CreatePlayerSessions
      */
     @Override
@@ -935,7 +967,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Deletes an alias. This action removes all record of the alias; game
-     * clients attempting to access a game server using the deleted alias
+     * clients attempting to access a server process using the deleted alias
      * receive an error. To delete an alias, specify the alias ID to be deleted.
      * </p>
      * 
@@ -943,18 +975,18 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *        Represents the input for a request action.
      * @return Result of the DeleteAlias operation returned by the service.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @sample AmazonGameLift.DeleteAlias
      */
     @Override
@@ -999,26 +1031,26 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * To delete a build, specify its ID. Deleting a build does not affect the
-     * status of any active fleets, but you can no longer create new fleets for
-     * the deleted build.
+     * status of any active fleets using the build, but you can no longer create
+     * new fleets with the deleted build.
      * </p>
      * 
      * @param deleteBuildRequest
      *        Represents the input for a request action.
      * @return Result of the DeleteBuild operation returned by the service.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @sample AmazonGameLift.DeleteBuild
      */
     @Override
@@ -1071,25 +1103,21 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * @return Result of the DeleteFleet operation returned by the service.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws InvalidFleetStatusException
      *         The requested operation would cause a conflict with the current
      *         state of a resource associated with the request and/or the fleet.
-     *         Please resolve the conflict before retrying.
+     *         Resolve the conflict before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
-     * @throws InvalidFleetStatusException
-     *         The requested operation would cause a conflict with the current
-     *         state of a resource associated with the request and/or the fleet.
-     *         Please resolve the conflict before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @sample AmazonGameLift.DeleteFleet
      */
     @Override
@@ -1141,17 +1169,17 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @sample AmazonGameLift.DeleteScalingPolicy
      */
     @Override
@@ -1201,18 +1229,18 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *        Represents the input for a request action.
      * @return Result of the DescribeAlias operation returned by the service.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @sample AmazonGameLift.DescribeAlias
      */
     @Override
@@ -1261,18 +1289,18 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *        Represents the input for a request action.
      * @return Result of the DescribeBuild operation returned by the service.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @sample AmazonGameLift.DescribeBuild
      */
     @Override
@@ -1331,14 +1359,14 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @sample AmazonGameLift.DescribeEC2InstanceLimits
      */
     @Override
@@ -1382,10 +1410,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * <p>
      * Retrieves fleet properties, including metadata, status, and
      * configuration, for one or more fleets. You can request attributes for all
-     * fleets, or specify a list of one or more fleet IDs. When requesting all
-     * fleets, use the pagination parameters to retrieve results as a set of
-     * sequential pages. If successful, a <a>FleetAttributes</a> object is
-     * returned for each requested fleet ID. When specifying a list of fleet
+     * fleets, or specify a list of one or more fleet IDs. When requesting
+     * multiple fleets, use the pagination parameters to retrieve results as a
+     * set of sequential pages. If successful, a <a>FleetAttributes</a> object
+     * is returned for each requested fleet ID. When specifying a list of fleet
      * IDs, attribute objects are returned only for fleets that currently exist.
      * </p>
      * <note>
@@ -1402,17 +1430,17 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @sample AmazonGameLift.DescribeFleetAttributes
      */
     @Override
@@ -1458,11 +1486,11 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * This information includes the number of instances that have been
      * requested for the fleet and the number currently active. You can request
      * capacity for all fleets, or specify a list of one or more fleet IDs. When
-     * requesting all fleets, use the pagination parameters to retrieve results
-     * as a set of sequential pages. If successful, a <a>FleetCapacity</a>
-     * object is returned for each requested fleet ID. When specifying a list of
-     * fleet IDs, attribute objects are returned only for fleets that currently
-     * exist.
+     * requesting multiple fleets, use the pagination parameters to retrieve
+     * results as a set of sequential pages. If successful, a
+     * <a>FleetCapacity</a> object is returned for each requested fleet ID. When
+     * specifying a list of fleet IDs, attribute objects are returned only for
+     * fleets that currently exist.
      * </p>
      * <note>
      * <p>
@@ -1478,17 +1506,17 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @sample AmazonGameLift.DescribeFleetCapacity
      */
     @Override
@@ -1530,10 +1558,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Retrieves entries from the fleet event log. You can specify a time range
-     * to limit the result set. Use the pagination parameters to retrieve
-     * results as a set of sequential pages. If successful, a collection of
-     * event log entries matching the request are returned.
+     * Retrieves entries from the specified fleet's event log. You can specify a
+     * time range to limit the result set. Use the pagination parameters to
+     * retrieve results as a set of sequential pages. If successful, a
+     * collection of event log entries matching the request are returned.
      * </p>
      * 
      * @param describeFleetEventsRequest
@@ -1542,17 +1570,17 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @sample AmazonGameLift.DescribeFleetEvents
      */
     @Override
@@ -1594,11 +1622,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Retrieves the port settings for a fleet. Port settings are used to limit
-     * incoming traffic access to game servers in the fleet. To get a fleet's
-     * port settings, specify a fleet ID. If successful, an <a>IpPermission</a>
-     * object is returned for the requested fleet ID. If the requested fleet has
-     * been deleted, the result set will be empty.
+     * Retrieves the inbound connection permissions for a fleet. Connection
+     * permissions include a range of IP addresses and port settings that
+     * incoming traffic can use to access server processes in the fleet. To get
+     * a fleet's inbound connection permissions, specify a fleet ID. If
+     * successful, a collection of <a>IpPermission</a> objects is returned for
+     * the requested fleet ID. If the requested fleet has been deleted, the
+     * result set is empty.
      * </p>
      * 
      * @param describeFleetPortSettingsRequest
@@ -1607,17 +1637,17 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @sample AmazonGameLift.DescribeFleetPortSettings
      */
     @Override
@@ -1661,7 +1691,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * <p>
      * Retrieves utilization statistics for one or more fleets. You can request
      * utilization data for all fleets, or specify a list of one or more fleet
-     * IDs. When requesting all fleets, use the pagination parameters to
+     * IDs. When requesting multiple fleets, use the pagination parameters to
      * retrieve results as a set of sequential pages. If successful, a
      * <a>FleetUtilization</a> object is returned for each requested fleet ID.
      * When specifying a list of fleet IDs, utilization objects are returned
@@ -1681,17 +1711,17 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @sample AmazonGameLift.DescribeFleetUtilization
      */
     @Override
@@ -1735,9 +1765,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * <p>
      * Retrieves properties, including the protection policy in force, for one
      * or more game sessions. This action can be used in several ways: (1)
-     * provide a <i>GameSessionId</i> to request details for a specific game
-     * session; (2) provide either a <i>FleetId</i> or an <i>AliasId</i> to
-     * request properties for all game sessions running on a fleet.
+     * provide a <code>GameSessionId</code> to request details for a specific
+     * game session; (2) provide either a <code>FleetId</code> or an
+     * <code>AliasId</code> to request properties for all game sessions running
+     * on a fleet.
      * </p>
      * <p>
      * To get game session record(s), specify just one of the following: game
@@ -1753,17 +1784,17 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         the service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws TerminalRoutingStrategyException
      *         The service is unable to resolve the routing for a particular
      *         alias because it has a terminal <a>RoutingStrategy</a> associated
@@ -1813,10 +1844,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Retrieves properties for one or more game sessions. This action can be
-     * used in several ways: (1) provide a <i>GameSessionId</i> to request
-     * properties for a specific game session; (2) provide a <i>FleetId</i> or
-     * an <i>AliasId</i> to request properties for all game sessions running on
-     * a fleet.
+     * used in several ways: (1) provide a <code>GameSessionId</code> to request
+     * properties for a specific game session; (2) provide a
+     * <code>FleetId</code> or an <code>AliasId</code> to request properties for
+     * all game sessions running on a fleet.
      * </p>
      * <p>
      * To get game session record(s), specify just one of the following: game
@@ -1832,17 +1863,17 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws TerminalRoutingStrategyException
      *         The service is unable to resolve the routing for a particular
      *         alias because it has a terminal <a>RoutingStrategy</a> associated
@@ -1892,12 +1923,12 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Retrieves properties for one or more player sessions. This action can be
-     * used in several ways: (1) provide a <i>PlayerSessionId</i> parameter to
-     * request properties for a specific player session; (2) provide a
-     * <i>GameSessionId</i> parameter to request properties for all player
-     * sessions in the specified game session; (3) provide a <i>PlayerId</i>
-     * parameter to request properties for all player sessions of a specified
-     * player.
+     * used in several ways: (1) provide a <code>PlayerSessionId</code>
+     * parameter to request properties for a specific player session; (2)
+     * provide a <code>GameSessionId</code> parameter to request properties for
+     * all player sessions in the specified game session; (3) provide a
+     * <code>PlayerId</code> parameter to request properties for all player
+     * sessions of a specified player.
      * </p>
      * <p>
      * To get game session record(s), specify only one of the following: a
@@ -1914,17 +1945,17 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @sample AmazonGameLift.DescribePlayerSessions
      */
     @Override
@@ -1966,6 +1997,70 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Retrieves the current runtime configuration for the specified fleet. The
+     * runtime configuration tells GameLift how to launch server processes on
+     * instances in the fleet.
+     * </p>
+     * 
+     * @param describeRuntimeConfigurationRequest
+     *        Represents the input for a request action.
+     * @return Result of the DescribeRuntimeConfiguration operation returned by
+     *         the service.
+     * @throws UnauthorizedException
+     *         The client failed authentication. Clients should not retry such
+     *         requests
+     * @throws NotFoundException
+     *         A service resource associated with the request could not be
+     *         found. Clients should not retry such requests
+     * @throws InternalServiceException
+     *         The service encountered an unrecoverable internal failure while
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
+     * @throws InvalidRequestException
+     *         One or more parameters specified as part of the request are
+     *         invalid. Correct the invalid parameters before retrying.
+     * @sample AmazonGameLift.DescribeRuntimeConfiguration
+     */
+    @Override
+    public DescribeRuntimeConfigurationResult describeRuntimeConfiguration(
+            DescribeRuntimeConfigurationRequest describeRuntimeConfigurationRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeRuntimeConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRuntimeConfigurationRequest> request = null;
+        Response<DescribeRuntimeConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRuntimeConfigurationRequestMarshaller(
+                        protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(describeRuntimeConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRuntimeConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeRuntimeConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves all scaling policies applied to a fleet.
      * </p>
      * <p>
@@ -1982,17 +2077,17 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @sample AmazonGameLift.DescribeScalingPolicies
      */
     @Override
@@ -2053,17 +2148,17 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @sample AmazonGameLift.GetGameSessionLogUrl
      */
     @Override
@@ -2119,15 +2214,15 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *        Represents the input for a request action.
      * @return Result of the ListAliases operation returned by the service.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @sample AmazonGameLift.ListAliases
      */
     @Override
@@ -2167,9 +2262,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Retrieves build records for all builds associated with an AWS account.
-     * You can filter the result set by build status. Use the pagination
-     * parameters to retrieve results in a set of sequential pages.
+     * Retrieves build records for all builds associated with the AWS account in
+     * use. You can limit results to builds in a specific state using the
+     * <code>Status</code> parameter. Use the pagination parameters to retrieve
+     * results in a set of sequential pages.
      * </p>
      * <note>
      * <p>
@@ -2181,15 +2277,15 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *        Represents the input for a request action.
      * @return Result of the ListBuilds operation returned by the service.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @sample AmazonGameLift.ListBuilds
      */
     @Override
@@ -2244,17 +2340,17 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * @return Result of the ListFleets operation returned by the service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @sample AmazonGameLift.ListFleets
      */
     @Override
@@ -2295,18 +2391,19 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Creates or updates a scaling policy for a fleet. An active scaling policy
-     * prompts GameLift to track a certain metric for a fleet and automatically
-     * change the fleet's capacity in specific circumstances. Each scaling
-     * policy contains one rule statement. Fleets can have multiple scaling
-     * policies in force simultaneously.
+     * prompts Amazon GameLift to track a certain metric for a fleet and
+     * automatically change the fleet's capacity in specific circumstances. Each
+     * scaling policy contains one rule statement. Fleets can have multiple
+     * scaling policies in force simultaneously.
      * </p>
      * <p>
      * A scaling policy rule statement has the following structure:
      * </p>
      * <p>
-     * If <i>[MetricName]</i> is <i>[ComparisonOperator]</i> <i>[Threshold]</i>
-     * for <i>[EvaluationPeriods]</i> minutes, then
-     * <i>[ScalingAdjustmentType]</i> to/by <i>[ScalingAdjustment]</i>.
+     * If <code>[MetricName]</code> is <code>[ComparisonOperator]</code>
+     * <code>[Threshold]</code> for <code>[EvaluationPeriods]</code> minutes,
+     * then <code>[ScalingAdjustmentType]</code> to/by
+     * <code>[ScalingAdjustment]</code>.
      * </p>
      * <p>
      * For example, this policy:
@@ -2330,17 +2427,17 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * @return Result of the PutScalingPolicy operation returned by the service.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @sample AmazonGameLift.PutScalingPolicy
      */
     @Override
@@ -2389,16 +2486,16 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * <important>
      * <p>
      * Call this action only if you need credentials for a build created with
-     * <a>CreateBuild</a>. This is a rare situation; in most cases, builds are
-     * created using the CLI command <code>upload-build</code>, which creates a
-     * build record and also uploads build files.
+     * <code><a>CreateBuild</a></code>. This is a rare situation; in most cases,
+     * builds are created using the CLI command <code>upload-build</code>, which
+     * creates a build record and also uploads build files.
      * </p>
      * </important>
      * <p>
      * Upload credentials are returned when you create the build, but they have
      * a limited lifespan. You can get fresh credentials and use them to
-     * re-upload game files until the state of that build changes to READY. Once
-     * this happens, you must create a brand new build.
+     * re-upload game files until the state of that build changes to
+     * <code>READY</code>. Once this happens, you must create a brand new build.
      * </p>
      * 
      * @param requestUploadCredentialsRequest
@@ -2406,18 +2503,18 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * @return Result of the RequestUploadCredentials operation returned by the
      *         service.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @sample AmazonGameLift.RequestUploadCredentials
      */
     @Override
@@ -2466,14 +2563,14 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *        Represents the input for a request action.
      * @return Result of the ResolveAlias operation returned by the service.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws TerminalRoutingStrategyException
      *         The service is unable to resolve the routing for a particular
      *         alias because it has a terminal <a>RoutingStrategy</a> associated
@@ -2483,8 +2580,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         alias is modified.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @sample AmazonGameLift.ResolveAlias
      */
     @Override
@@ -2535,18 +2632,18 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *        Represents the input for a request action.
      * @return Result of the UpdateAlias operation returned by the service.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @sample AmazonGameLift.UpdateAlias
      */
     @Override
@@ -2596,18 +2693,18 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *        Represents the input for a request action.
      * @return Result of the UpdateBuild operation returned by the service.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @sample AmazonGameLift.UpdateBuild
      */
     @Override
@@ -2658,28 +2755,28 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws ConflictException
      *         The requested operation would cause a conflict with the current
-     *         state of a service resource associated with the request. Please
-     *         resolve the conflict before retrying this request.
+     *         state of a service resource associated with the request. Resolve
+     *         the conflict before retrying this request.
      * @throws InvalidFleetStatusException
      *         The requested operation would cause a conflict with the current
      *         state of a resource associated with the request and/or the fleet.
-     *         Please resolve the conflict before retrying.
+     *         Resolve the conflict before retrying.
      * @throws LimitExceededException
      *         The requested operation would cause the resource to exceed the
-     *         allowed service limit. Please resolve the issue before retrying.
+     *         allowed service limit. Resolve the issue before retrying.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @sample AmazonGameLift.UpdateFleetAttributes
      */
     @Override
@@ -2722,27 +2819,26 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Updates capacity settings for a fleet. Use this action to specify the
-     * number of EC2 instances (hosts) you want this fleet to contain. Before
-     * calling this action, you may want to call
+     * number of EC2 instances (hosts) that you want this fleet to contain.
+     * Before calling this action, you may want to call
      * <a>DescribeEC2InstanceLimits</a> to get the maximum capacity based on the
      * fleet's EC2 instance type.
      * </p>
      * <p>
-     * If you're using auto-scaling (see <a>PutScalingPolicy</a>), you may want
-     * to specify a minimum and/or maximum capacity. If you don't provide these
-     * boundaries, auto-scaling can set capacity anywhere between zero and the
-     * <a href=
+     * If you're using autoscaling (see <a>PutScalingPolicy</a>), you may want
+     * to specify a minimum and/or maximum capacity. If you don't provide these,
+     * autoscaling can set capacity anywhere between zero and the <a href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift"
      * >service limits</a>.
      * </p>
      * <p>
-     * To update fleet capacity, specify the fleet ID and the desired number of
-     * instances. If successful, Amazon GameLift starts or terminates instances
-     * so that the fleet's active instance count matches the desired instance
-     * count. You can view a fleet's current capacity information by calling
-     * <a>DescribeFleetCapacity</a>. If the desired instance count is higher
-     * than the instance type's limit, the "Limit Exceeded" exception will
-     * occur.
+     * To update fleet capacity, specify the fleet ID and the number of
+     * instances you want the fleet to host. If successful, Amazon GameLift
+     * starts or terminates instances so that the fleet's active instance count
+     * matches the desired instance count. You can view a fleet's current
+     * capacity information by calling <a>DescribeFleetCapacity</a>. If the
+     * desired instance count is higher than the instance type's limit, the
+     * "Limit Exceeded" exception occurs.
      * </p>
      * 
      * @param updateFleetCapacityRequest
@@ -2751,28 +2847,28 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws ConflictException
      *         The requested operation would cause a conflict with the current
-     *         state of a service resource associated with the request. Please
-     *         resolve the conflict before retrying this request.
+     *         state of a service resource associated with the request. Resolve
+     *         the conflict before retrying this request.
      * @throws LimitExceededException
      *         The requested operation would cause the resource to exceed the
-     *         allowed service limit. Please resolve the issue before retrying.
+     *         allowed service limit. Resolve the issue before retrying.
      * @throws InvalidFleetStatusException
      *         The requested operation would cause a conflict with the current
      *         state of a resource associated with the request and/or the fleet.
-     *         Please resolve the conflict before retrying.
+     *         Resolve the conflict before retrying.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @sample AmazonGameLift.UpdateFleetCapacity
      */
     @Override
@@ -2816,11 +2912,11 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * <p>
      * Updates port settings for a fleet. To update settings, specify the fleet
      * ID to be updated and list the permissions you want to update. List the
-     * permissions you want to add in <i>InboundPermissionAuthorizations</i>,
-     * and permissions you want to remove in
-     * <i>InboundPermissionRevocations</i>. Permissions to be removed must match
-     * existing fleet permissions. If successful, the fleet ID for the updated
-     * fleet is returned.
+     * permissions you want to add in
+     * <code>InboundPermissionAuthorizations</code>, and permissions you want to
+     * remove in <code>InboundPermissionRevocations</code>. Permissions to be
+     * removed must match existing fleet permissions. If successful, the fleet
+     * ID for the updated fleet is returned.
      * </p>
      * 
      * @param updateFleetPortSettingsRequest
@@ -2829,28 +2925,28 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws ConflictException
      *         The requested operation would cause a conflict with the current
-     *         state of a service resource associated with the request. Please
-     *         resolve the conflict before retrying this request.
+     *         state of a service resource associated with the request. Resolve
+     *         the conflict before retrying this request.
      * @throws InvalidFleetStatusException
      *         The requested operation would cause a conflict with the current
      *         state of a resource associated with the request and/or the fleet.
-     *         Please resolve the conflict before retrying.
+     *         Resolve the conflict before retrying.
      * @throws LimitExceededException
      *         The requested operation would cause the resource to exceed the
-     *         allowed service limit. Please resolve the issue before retrying.
+     *         allowed service limit. Resolve the issue before retrying.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @sample AmazonGameLift.UpdateFleetPortSettings
      */
     @Override
@@ -2907,26 +3003,26 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      *         service.
      * @throws NotFoundException
      *         A service resource associated with the request could not be
-     *         found. Such requests should not be retried by clients.
+     *         found. Clients should not retry such requests
      * @throws ConflictException
      *         The requested operation would cause a conflict with the current
-     *         state of a service resource associated with the request. Please
-     *         resolve the conflict before retrying this request.
+     *         state of a service resource associated with the request. Resolve
+     *         the conflict before retrying this request.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
-     *         processing the request. Such requests can be retried by clients,
-     *         either immediately or after a back-off period.
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
      * @throws UnauthorizedException
-     *         The client failed authentication. Such requests should not be
-     *         retried without valid authentication credentials.
+     *         The client failed authentication. Clients should not retry such
+     *         requests
      * @throws InvalidGameSessionStatusException
      *         The requested operation would cause a conflict with the current
      *         state of a resource associated with the request and/or the game
-     *         instance. Such requests should not be retried by clients without
+     *         instance. Clients should not retry such requests without
      *         resolving the conflict.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
-     *         invalid. Please correct the invalid parameters before retrying.
+     *         invalid. Correct the invalid parameters before retrying.
      * @sample AmazonGameLift.UpdateGameSession
      */
     @Override
@@ -2956,6 +3052,89 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new UpdateGameSessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the current runtime configuration for the specified fleet, which
+     * tells GameLift how to launch server processes on instances in the fleet.
+     * You can update a fleet's runtime configuration at any time after the
+     * fleet is created; it does not need to be in an <code>ACTIVE</code> state.
+     * </p>
+     * <p>
+     * To update runtime configuration, specify the fleet ID and provide a
+     * <code>RuntimeConfiguration</code> object with the updated collection of
+     * server process configurations.
+     * </p>
+     * <p>
+     * Each instance in a GameLift fleet checks regularly for an updated runtime
+     * configuration and changes how it launches server processes to comply with
+     * the latest version. Existing server processes are not affected by the
+     * update; they continue to run until they end, while GameLift simply adds
+     * new server processes to fit the current runtime configuration. As a
+     * result, the runtime configuration changes are applied gradually as
+     * existing processes shut down and new processes are launched in GameLift's
+     * normal process recycling activity.
+     * </p>
+     * 
+     * @param updateRuntimeConfigurationRequest
+     *        Represents the input for a request action.
+     * @return Result of the UpdateRuntimeConfiguration operation returned by
+     *         the service.
+     * @throws UnauthorizedException
+     *         The client failed authentication. Clients should not retry such
+     *         requests
+     * @throws NotFoundException
+     *         A service resource associated with the request could not be
+     *         found. Clients should not retry such requests
+     * @throws InternalServiceException
+     *         The service encountered an unrecoverable internal failure while
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
+     * @throws InvalidRequestException
+     *         One or more parameters specified as part of the request are
+     *         invalid. Correct the invalid parameters before retrying.
+     * @throws InvalidFleetStatusException
+     *         The requested operation would cause a conflict with the current
+     *         state of a resource associated with the request and/or the fleet.
+     *         Resolve the conflict before retrying.
+     * @sample AmazonGameLift.UpdateRuntimeConfiguration
+     */
+    @Override
+    public UpdateRuntimeConfigurationResult updateRuntimeConfiguration(
+            UpdateRuntimeConfigurationRequest updateRuntimeConfigurationRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateRuntimeConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRuntimeConfigurationRequest> request = null;
+        Response<UpdateRuntimeConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRuntimeConfigurationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateRuntimeConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRuntimeConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateRuntimeConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -38,9 +38,8 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more geo locations to be listed.
      * If your results were truncated, you can make a follow-up request for the
      * next page of results by using the values included in the
-     * <a>ListGeoLocationsResponse$NextContinentCode</a>,
-     * <a>ListGeoLocationsResponse$NextCountryCode</a> and
-     * <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.
+     * <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
+     * <code>NextSubdivisionCode</code> elements.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -51,17 +50,16 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * <p>
      * If the results were truncated, the continent code of the next geo
      * location in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo
-     * location to list is a continent location.
+     * <code>IsTruncated</code> is true and the next geo location to list is a
+     * continent location.
      * </p>
      */
     private String nextContinentCode;
     /**
      * <p>
      * If the results were truncated, the country code of the next geo location
-     * in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo
-     * location to list is not a continent location.
+     * in the list. This element is present only if <code>IsTruncated</code> is
+     * true and the next geo location to list is not a continent location.
      * </p>
      */
     private String nextCountryCode;
@@ -69,8 +67,8 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * <p>
      * If the results were truncated, the subdivision code of the next geo
      * location in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo
-     * location has a subdivision.
+     * <code>IsTruncated</code> is true and the next geo location has a
+     * subdivision.
      * </p>
      */
     private String nextSubdivisionCode;
@@ -176,9 +174,8 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more geo locations to be listed.
      * If your results were truncated, you can make a follow-up request for the
      * next page of results by using the values included in the
-     * <a>ListGeoLocationsResponse$NextContinentCode</a>,
-     * <a>ListGeoLocationsResponse$NextCountryCode</a> and
-     * <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.
+     * <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
+     * <code>NextSubdivisionCode</code> elements.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -188,9 +185,9 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      *        A flag that indicates whether there are more geo locations to be
      *        listed. If your results were truncated, you can make a follow-up
      *        request for the next page of results by using the values included
-     *        in the <a>ListGeoLocationsResponse$NextContinentCode</a>,
-     *        <a>ListGeoLocationsResponse$NextCountryCode</a> and
-     *        <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.</p>
+     *        in the <code>NextContinentCode</code>,
+     *        <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code>
+     *        elements.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
@@ -204,9 +201,8 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more geo locations to be listed.
      * If your results were truncated, you can make a follow-up request for the
      * next page of results by using the values included in the
-     * <a>ListGeoLocationsResponse$NextContinentCode</a>,
-     * <a>ListGeoLocationsResponse$NextCountryCode</a> and
-     * <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.
+     * <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
+     * <code>NextSubdivisionCode</code> elements.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -215,9 +211,9 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * @return A flag that indicates whether there are more geo locations to be
      *         listed. If your results were truncated, you can make a follow-up
      *         request for the next page of results by using the values included
-     *         in the <a>ListGeoLocationsResponse$NextContinentCode</a>,
-     *         <a>ListGeoLocationsResponse$NextCountryCode</a> and
-     *         <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.</p>
+     *         in the <code>NextContinentCode</code>,
+     *         <code>NextCountryCode</code>, and
+     *         <code>NextSubdivisionCode</code> elements.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
@@ -231,9 +227,8 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more geo locations to be listed.
      * If your results were truncated, you can make a follow-up request for the
      * next page of results by using the values included in the
-     * <a>ListGeoLocationsResponse$NextContinentCode</a>,
-     * <a>ListGeoLocationsResponse$NextCountryCode</a> and
-     * <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.
+     * <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
+     * <code>NextSubdivisionCode</code> elements.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -243,9 +238,9 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      *        A flag that indicates whether there are more geo locations to be
      *        listed. If your results were truncated, you can make a follow-up
      *        request for the next page of results by using the values included
-     *        in the <a>ListGeoLocationsResponse$NextContinentCode</a>,
-     *        <a>ListGeoLocationsResponse$NextCountryCode</a> and
-     *        <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.</p>
+     *        in the <code>NextContinentCode</code>,
+     *        <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code>
+     *        elements.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be
@@ -262,9 +257,8 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * A flag that indicates whether there are more geo locations to be listed.
      * If your results were truncated, you can make a follow-up request for the
      * next page of results by using the values included in the
-     * <a>ListGeoLocationsResponse$NextContinentCode</a>,
-     * <a>ListGeoLocationsResponse$NextCountryCode</a> and
-     * <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.
+     * <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
+     * <code>NextSubdivisionCode</code> elements.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -273,9 +267,9 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * @return A flag that indicates whether there are more geo locations to be
      *         listed. If your results were truncated, you can make a follow-up
      *         request for the next page of results by using the values included
-     *         in the <a>ListGeoLocationsResponse$NextContinentCode</a>,
-     *         <a>ListGeoLocationsResponse$NextCountryCode</a> and
-     *         <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.</p>
+     *         in the <code>NextContinentCode</code>,
+     *         <code>NextCountryCode</code>, and
+     *         <code>NextSubdivisionCode</code> elements.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
@@ -288,15 +282,15 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * <p>
      * If the results were truncated, the continent code of the next geo
      * location in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo
-     * location to list is a continent location.
+     * <code>IsTruncated</code> is true and the next geo location to list is a
+     * continent location.
      * </p>
      * 
      * @param nextContinentCode
      *        If the results were truncated, the continent code of the next geo
      *        location in the list. This element is present only if
-     *        <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
-     *        geo location to list is a continent location.
+     *        <code>IsTruncated</code> is true and the next geo location to list
+     *        is a continent location.
      */
 
     public void setNextContinentCode(String nextContinentCode) {
@@ -307,14 +301,14 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * <p>
      * If the results were truncated, the continent code of the next geo
      * location in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo
-     * location to list is a continent location.
+     * <code>IsTruncated</code> is true and the next geo location to list is a
+     * continent location.
      * </p>
      * 
      * @return If the results were truncated, the continent code of the next geo
      *         location in the list. This element is present only if
-     *         <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
-     *         geo location to list is a continent location.
+     *         <code>IsTruncated</code> is true and the next geo location to
+     *         list is a continent location.
      */
 
     public String getNextContinentCode() {
@@ -325,15 +319,15 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * <p>
      * If the results were truncated, the continent code of the next geo
      * location in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo
-     * location to list is a continent location.
+     * <code>IsTruncated</code> is true and the next geo location to list is a
+     * continent location.
      * </p>
      * 
      * @param nextContinentCode
      *        If the results were truncated, the continent code of the next geo
      *        location in the list. This element is present only if
-     *        <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
-     *        geo location to list is a continent location.
+     *        <code>IsTruncated</code> is true and the next geo location to list
+     *        is a continent location.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -346,16 +340,15 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the country code of the next geo location
-     * in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo
-     * location to list is not a continent location.
+     * in the list. This element is present only if <code>IsTruncated</code> is
+     * true and the next geo location to list is not a continent location.
      * </p>
      * 
      * @param nextCountryCode
      *        If the results were truncated, the country code of the next geo
      *        location in the list. This element is present only if
-     *        <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
-     *        geo location to list is not a continent location.
+     *        <code>IsTruncated</code> is true and the next geo location to list
+     *        is not a continent location.
      */
 
     public void setNextCountryCode(String nextCountryCode) {
@@ -365,15 +358,14 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the country code of the next geo location
-     * in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo
-     * location to list is not a continent location.
+     * in the list. This element is present only if <code>IsTruncated</code> is
+     * true and the next geo location to list is not a continent location.
      * </p>
      * 
      * @return If the results were truncated, the country code of the next geo
      *         location in the list. This element is present only if
-     *         <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
-     *         geo location to list is not a continent location.
+     *         <code>IsTruncated</code> is true and the next geo location to
+     *         list is not a continent location.
      */
 
     public String getNextCountryCode() {
@@ -383,16 +375,15 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
     /**
      * <p>
      * If the results were truncated, the country code of the next geo location
-     * in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo
-     * location to list is not a continent location.
+     * in the list. This element is present only if <code>IsTruncated</code> is
+     * true and the next geo location to list is not a continent location.
      * </p>
      * 
      * @param nextCountryCode
      *        If the results were truncated, the country code of the next geo
      *        location in the list. This element is present only if
-     *        <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
-     *        geo location to list is not a continent location.
+     *        <code>IsTruncated</code> is true and the next geo location to list
+     *        is not a continent location.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -406,15 +397,15 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * <p>
      * If the results were truncated, the subdivision code of the next geo
      * location in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo
-     * location has a subdivision.
+     * <code>IsTruncated</code> is true and the next geo location has a
+     * subdivision.
      * </p>
      * 
      * @param nextSubdivisionCode
      *        If the results were truncated, the subdivision code of the next
      *        geo location in the list. This element is present only if
-     *        <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
-     *        geo location has a subdivision.
+     *        <code>IsTruncated</code> is true and the next geo location has a
+     *        subdivision.
      */
 
     public void setNextSubdivisionCode(String nextSubdivisionCode) {
@@ -425,14 +416,14 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * <p>
      * If the results were truncated, the subdivision code of the next geo
      * location in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo
-     * location has a subdivision.
+     * <code>IsTruncated</code> is true and the next geo location has a
+     * subdivision.
      * </p>
      * 
      * @return If the results were truncated, the subdivision code of the next
      *         geo location in the list. This element is present only if
-     *         <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
-     *         geo location has a subdivision.
+     *         <code>IsTruncated</code> is true and the next geo location has a
+     *         subdivision.
      */
 
     public String getNextSubdivisionCode() {
@@ -443,15 +434,15 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * <p>
      * If the results were truncated, the subdivision code of the next geo
      * location in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo
-     * location has a subdivision.
+     * <code>IsTruncated</code> is true and the next geo location has a
+     * subdivision.
      * </p>
      * 
      * @param nextSubdivisionCode
      *        If the results were truncated, the subdivision code of the next
      *        geo location in the list. This element is present only if
-     *        <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
-     *        geo location has a subdivision.
+     *        <code>IsTruncated</code> is true and the next geo location has a
+     *        subdivision.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

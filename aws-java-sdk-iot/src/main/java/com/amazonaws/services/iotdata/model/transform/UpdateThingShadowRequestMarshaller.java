@@ -48,8 +48,6 @@ import com.amazonaws.protocol.json.*;
 public class UpdateThingShadowRequestMarshaller implements
         Marshaller<Request<UpdateThingShadowRequest>, UpdateThingShadowRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
-
     private final SdkJsonProtocolFactory protocolFactory;
 
     public UpdateThingShadowRequestMarshaller(
@@ -84,7 +82,7 @@ public class UpdateThingShadowRequestMarshaller implements
         request.setContent(BinaryUtils.toStream(updateThingShadowRequest
                 .getPayload()));
         if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+            request.addHeader("Content-Type", protocolFactory.getContentType());
         }
 
         return request;

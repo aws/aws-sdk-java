@@ -1,7 +1,6 @@
 {
   "metadata" : {
     "apiVersion" : "2012-08-10",
-    "exceptionUnmarshallerImpl" : null,
     "protocol" : "json",
     "checksumFormat" : null,
     "documentation" : "<fullname>Amazon DynamoDB</fullname> <p>Amazon DynamoDB Streams provides API actions for accessing streams and processing stream records. To learn more about application development with Streams, see <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html\">Capturing Table Activity with DynamoDB Streams</a> in the Amazon DynamoDB Developer Guide.</p> <p>The following are short descriptions of each low-level DynamoDB Streams action:</p> <ul> <li> <p> <i>DescribeStream</i> - Returns detailed information about a particular stream.</p> </li> <li> <p> <i>GetRecords</i> - Retrieves the stream records from within a shard.</p> </li> <li> <p> <i>GetShardIterator</i> - Returns information on how to retrieve the streams record from a shard with a given shard ID.</p> </li> <li> <p> <i>ListStreams</i> - Returns a list of all the streams associated with the current AWS account and endpoint.</p> </li> </ul>",
@@ -16,17 +15,17 @@
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon DynamoDB Streams",
     "hasApiWithStreamInput" : false,
-    "jsonContentVersion" : "application/x-amz-json-1.0",
+    "contentType" : null,
     "jsonVersion" : "1.0",
     "endpointPrefix" : "streams.dynamodb",
     "signingName" : "dynamodb",
-    "xmlProtocol" : false,
-    "jsonProtocol" : true,
     "serviceName" : "Amazon DynamoDB Streams",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true,
+    "xmlProtocol" : false
   },
   "operations" : {
     "DescribeStream" : {
@@ -9122,5 +9121,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "exceptionUnmarshallerImpl" : null
 }

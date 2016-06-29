@@ -36,12 +36,6 @@ import java.io.Serializable;
  * <li>You can't create alias resource record sets for failover, geolocation, or
  * latency resource record sets in a private hosted zone.</li>
  * </ul>
- * <p>
- * For more information and an example, see <a href=
- * "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
- * >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53
- * API Reference</i>.
- * </p>
  */
 public class AliasTarget implements Serializable, Cloneable {
 
@@ -71,12 +65,6 @@ public class AliasTarget implements Serializable, Cloneable {
      * resource record set cannot reference a resource record set in a different
      * hosted zone.)</li>
      * </ul>
-     * <p>
-     * For more information and an example, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     * >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon Route
-     * 53 API Reference</i>.
-     * </p>
      */
     private String hostedZoneId;
     /**
@@ -121,12 +109,6 @@ public class AliasTarget implements Serializable, Cloneable {
      * of the <code>Name</code> element for a resource record set in the current
      * hosted zone.</li>
      * </ul>
-     * <p>
-     * For more information and an example, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     * >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon Route
-     * 53 API Reference</i>.
-     * </p>
      */
     private String dNSName;
     /**
@@ -173,11 +155,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * resource record set or a group of resource record sets (for example, a
      * group of weighted resource record sets), but it is not another alias
      * resource record set, we recommend that you associate a health check with
-     * all of the resource record sets in the alias target. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
-     * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53
-     * Developer Guide</i>.</li>
+     * all of the resource record sets in the alias target.</li>
      * <li>If you specify an ELB load balancer in <code>AliasTarget</code>,
      * Elastic Load Balancing routes queries only to the healthy Amazon EC2
      * instances that are registered with the load balancer. If no Amazon EC2
@@ -244,61 +222,46 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li><b>Another Amazon Route 53 resource record set in your hosted
      *        zone:</b> Specify the hosted zone ID of your hosted zone. (An
      *        alias resource record set cannot reference a resource record set
-     *        in a different hosted zone.)</li>
-     *        </ul>
-     *        <p>
-     *        For more information and an example, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     *        >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon
-     *        Route 53 API Reference
+     *        in a different hosted zone.)
      * @param dNSName
      *        Alias resource record sets only:</i> The external DNS name
      *        associated with the AWS Resource. The value that you specify
-     *        depends on where you want to route queries:
-     *        </p>
+     *        depends on where you want to route queries:</p>
      *        <ul>
      *        <li><b>A CloudFront distribution:</b> Specify the domain name that
      *        CloudFront assigned when you created your distribution. Your
      *        CloudFront distribution must include an alternate domain name that
      *        matches the name of the resource record set. For example, if the
      *        name of the resource record set is <code>acme.example.com</code>,
-     *        your CloudFront distribution must include
-     *        <code>acme.example.com</code> as one of the alternate domain
-     *        names. For more information, see <a href=
+     *        your CloudFront distribution must include <code>acme.example.com
+     *        </code> as one of the alternate domain names. For more
+     *        information, see <a href=
      *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html"
      *        >Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon
-     *        CloudFront Developer Guide</i>.</li>
-     *        <li><b>An ELB load balancer:</b> Specify the DNS name associated
-     *        with the load balancer. You can get the DNS name by using the AWS
-     *        Management Console, the ELB API, or the AWS CLI. Use the same
-     *        method to get values for <code>HostedZoneId</code> and
-     *        <code>DNSName</code>. If you get one value from the console and
-     *        the other value from the API or the CLI, creating the resource
-     *        record set will fail.</li>
+     *        CloudFront Developer Guide</i>.</li> <li><b>An ELB load
+     *        balancer:</b> Specify the DNS name associated with the load
+     *        balancer. You can get the DNS name by using the AWS Management
+     *        Console, the ELB API, or the AWS CLI. Use the same method to get
+     *        values for <code>HostedZoneId</code> and <code>DNSName</code>. If
+     *        you get one value from the console and the other value from the
+     *        API or the CLI, creating the resource record set will fail.</li>
      *        <li><b>An Elastic Beanstalk environment:</b> Specify the CNAME
      *        attribute for the environment. (The environment must have a
-     *        regionalized domain name.)</li>
-     *        <li><b>An Amazon S3 bucket that is configured as a static
-     *        website:</b> Specify the domain name of the Amazon S3 website
-     *        endpoint in which you created the bucket; for example,
-     *        <code>s3-website-us-east-1.amazonaws.com</code>. For more
-     *        information about valid values, see the table <a href=
+     *        regionalized domain name.) </li> <li><b>An Amazon S3 bucket that
+     *        is configured as a static website:</b> Specify the domain name of
+     *        the Amazon S3 website endpoint in which you created the bucket;
+     *        for example, <code>s3-website-us-east-1.amazonaws.com</code>. For
+     *        more information about valid values, see the table <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region"
      *        >Amazon Simple Storage Service (S3) Website Endpoints</a> in the
      *        <i>Amazon Web Services General Reference</i>. For more information
      *        about using Amazon S3 buckets for websites, see <a href=
      *        "http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html"
      *        >Hosting a Static Website on Amazon S3</a> in the <i>Amazon Simple
-     *        Storage Service Developer Guide</i>.</li>
-     *        <li><b>Another Amazon Route 53 resource record set:</b> Specify
-     *        the value of the <code>Name</code> element for a resource record
-     *        set in the current hosted zone.</li>
-     *        </ul>
-     *        <p>
-     *        For more information and an example, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     *        >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon
-     *        Route 53 API Reference
+     *        Storage Service Developer Guide</i>.</li> <li><b>Another Amazon
+     *        Route 53 resource record set:</b> Specify the value of the <code>
+     *        Name</code> element for a resource record set in the current
+     *        hosted zone.
      */
     public AliasTarget(String hostedZoneId, String dNSName) {
         setHostedZoneId(hostedZoneId);
@@ -331,12 +294,6 @@ public class AliasTarget implements Serializable, Cloneable {
      * resource record set cannot reference a resource record set in a different
      * hosted zone.)</li>
      * </ul>
-     * <p>
-     * For more information and an example, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     * >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon Route
-     * 53 API Reference</i>.
-     * </p>
      * 
      * @param hostedZoneId
      *        Alias resource record sets only:</i> The value you use depends on
@@ -361,13 +318,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li><b>Another Amazon Route 53 resource record set in your hosted
      *        zone:</b> Specify the hosted zone ID of your hosted zone. (An
      *        alias resource record set cannot reference a resource record set
-     *        in a different hosted zone.)</li>
-     *        </ul>
-     *        <p>
-     *        For more information and an example, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     *        >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon
-     *        Route 53 API Reference
+     *        in a different hosted zone.)
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -400,12 +351,6 @@ public class AliasTarget implements Serializable, Cloneable {
      * resource record set cannot reference a resource record set in a different
      * hosted zone.)</li>
      * </ul>
-     * <p>
-     * For more information and an example, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     * >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon Route
-     * 53 API Reference</i>.
-     * </p>
      * 
      * @return Alias resource record sets only:</i> The value you use depends on
      *         where you want to route queries:</p>
@@ -429,13 +374,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <li><b>Another Amazon Route 53 resource record set in your hosted
      *         zone:</b> Specify the hosted zone ID of your hosted zone. (An
      *         alias resource record set cannot reference a resource record set
-     *         in a different hosted zone.)</li>
-     *         </ul>
-     *         <p>
-     *         For more information and an example, see <a href=
-     *         "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     *         >Example: Creating Alias Resource Record Sets</a> in the
-     *         <i>Amazon Route 53 API Reference
+     *         in a different hosted zone.)
      */
 
     public String getHostedZoneId() {
@@ -468,12 +407,6 @@ public class AliasTarget implements Serializable, Cloneable {
      * resource record set cannot reference a resource record set in a different
      * hosted zone.)</li>
      * </ul>
-     * <p>
-     * For more information and an example, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     * >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon Route
-     * 53 API Reference</i>.
-     * </p>
      * 
      * @param hostedZoneId
      *        Alias resource record sets only:</i> The value you use depends on
@@ -498,13 +431,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li><b>Another Amazon Route 53 resource record set in your hosted
      *        zone:</b> Specify the hosted zone ID of your hosted zone. (An
      *        alias resource record set cannot reference a resource record set
-     *        in a different hosted zone.)</li>
-     *        </ul>
-     *        <p>
-     *        For more information and an example, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     *        >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon
-     *        Route 53 API Reference
+     *        in a different hosted zone.)
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -556,12 +483,6 @@ public class AliasTarget implements Serializable, Cloneable {
      * of the <code>Name</code> element for a resource record set in the current
      * hosted zone.</li>
      * </ul>
-     * <p>
-     * For more information and an example, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     * >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon Route
-     * 53 API Reference</i>.
-     * </p>
      * 
      * @param dNSName
      *        Alias resource record sets only:</i> The external DNS name
@@ -603,13 +524,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        Storage Service Developer Guide</i>.</li>
      *        <li><b>Another Amazon Route 53 resource record set:</b> Specify
      *        the value of the <code>Name</code> element for a resource record
-     *        set in the current hosted zone.</li>
-     *        </ul>
-     *        <p>
-     *        For more information and an example, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     *        >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon
-     *        Route 53 API Reference
+     *        set in the current hosted zone.
      */
 
     public void setDNSName(String dNSName) {
@@ -658,12 +573,6 @@ public class AliasTarget implements Serializable, Cloneable {
      * of the <code>Name</code> element for a resource record set in the current
      * hosted zone.</li>
      * </ul>
-     * <p>
-     * For more information and an example, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     * >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon Route
-     * 53 API Reference</i>.
-     * </p>
      * 
      * @return Alias resource record sets only:</i> The external DNS name
      *         associated with the AWS Resource. The value that you specify
@@ -705,13 +614,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         Simple Storage Service Developer Guide</i>.</li>
      *         <li><b>Another Amazon Route 53 resource record set:</b> Specify
      *         the value of the <code>Name</code> element for a resource record
-     *         set in the current hosted zone.</li>
-     *         </ul>
-     *         <p>
-     *         For more information and an example, see <a href=
-     *         "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     *         >Example: Creating Alias Resource Record Sets</a> in the
-     *         <i>Amazon Route 53 API Reference
+     *         set in the current hosted zone.
      */
 
     public String getDNSName() {
@@ -760,12 +663,6 @@ public class AliasTarget implements Serializable, Cloneable {
      * of the <code>Name</code> element for a resource record set in the current
      * hosted zone.</li>
      * </ul>
-     * <p>
-     * For more information and an example, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     * >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon Route
-     * 53 API Reference</i>.
-     * </p>
      * 
      * @param dNSName
      *        Alias resource record sets only:</i> The external DNS name
@@ -807,13 +704,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        Storage Service Developer Guide</i>.</li>
      *        <li><b>Another Amazon Route 53 resource record set:</b> Specify
      *        the value of the <code>Name</code> element for a resource record
-     *        set in the current hosted zone.</li>
-     *        </ul>
-     *        <p>
-     *        For more information and an example, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html"
-     *        >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon
-     *        Route 53 API Reference
+     *        set in the current hosted zone.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -867,11 +758,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * resource record set or a group of resource record sets (for example, a
      * group of weighted resource record sets), but it is not another alias
      * resource record set, we recommend that you associate a health check with
-     * all of the resource record sets in the alias target. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
-     * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53
-     * Developer Guide</i>.</li>
+     * all of the resource record sets in the alias target.</li>
      * <li>If you specify an ELB load balancer in <code>AliasTarget</code>,
      * Elastic Load Balancing routes queries only to the healthy Amazon EC2
      * instances that are registered with the load balancer. If no Amazon EC2
@@ -945,11 +832,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        resource record sets (for example, a group of weighted resource
      *        record sets), but it is not another alias resource record set, we
      *        recommend that you associate a health check with all of the
-     *        resource record sets in the alias target. For more information,
-     *        see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
-     *        >What Happens When You Omit Health Checks?</a> in the <i>Amazon
-     *        Route 53 Developer Guide</i>.</li>
+     *        resource record sets in the alias target.</li>
      *        <li>If you specify an ELB load balancer in
      *        <code>AliasTarget</code>, Elastic Load Balancing routes queries
      *        only to the healthy Amazon EC2 instances that are registered with
@@ -1028,11 +911,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * resource record set or a group of resource record sets (for example, a
      * group of weighted resource record sets), but it is not another alias
      * resource record set, we recommend that you associate a health check with
-     * all of the resource record sets in the alias target. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
-     * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53
-     * Developer Guide</i>.</li>
+     * all of the resource record sets in the alias target.</li>
      * <li>If you specify an ELB load balancer in <code>AliasTarget</code>,
      * Elastic Load Balancing routes queries only to the healthy Amazon EC2
      * instances that are registered with the load balancer. If no Amazon EC2
@@ -1105,11 +984,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         resource record sets (for example, a group of weighted resource
      *         record sets), but it is not another alias resource record set, we
      *         recommend that you associate a health check with all of the
-     *         resource record sets in the alias target. For more information,
-     *         see <a href=
-     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
-     *         >What Happens When You Omit Health Checks?</a> in the <i>Amazon
-     *         Route 53 Developer Guide</i>.</li>
+     *         resource record sets in the alias target.</li>
      *         <li>If you specify an ELB load balancer in
      *         <code>AliasTarget</code>, Elastic Load Balancing routes queries
      *         only to the healthy Amazon EC2 instances that are registered with
@@ -1189,11 +1064,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * resource record set or a group of resource record sets (for example, a
      * group of weighted resource record sets), but it is not another alias
      * resource record set, we recommend that you associate a health check with
-     * all of the resource record sets in the alias target. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
-     * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53
-     * Developer Guide</i>.</li>
+     * all of the resource record sets in the alias target.</li>
      * <li>If you specify an ELB load balancer in <code>AliasTarget</code>,
      * Elastic Load Balancing routes queries only to the healthy Amazon EC2
      * instances that are registered with the load balancer. If no Amazon EC2
@@ -1267,11 +1138,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        resource record sets (for example, a group of weighted resource
      *        record sets), but it is not another alias resource record set, we
      *        recommend that you associate a health check with all of the
-     *        resource record sets in the alias target. For more information,
-     *        see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
-     *        >What Happens When You Omit Health Checks?</a> in the <i>Amazon
-     *        Route 53 Developer Guide</i>.</li>
+     *        resource record sets in the alias target.</li>
      *        <li>If you specify an ELB load balancer in
      *        <code>AliasTarget</code>, Elastic Load Balancing routes queries
      *        only to the healthy Amazon EC2 instances that are registered with
@@ -1353,11 +1220,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * resource record set or a group of resource record sets (for example, a
      * group of weighted resource record sets), but it is not another alias
      * resource record set, we recommend that you associate a health check with
-     * all of the resource record sets in the alias target. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
-     * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53
-     * Developer Guide</i>.</li>
+     * all of the resource record sets in the alias target.</li>
      * <li>If you specify an ELB load balancer in <code>AliasTarget</code>,
      * Elastic Load Balancing routes queries only to the healthy Amazon EC2
      * instances that are registered with the load balancer. If no Amazon EC2
@@ -1430,11 +1293,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         resource record sets (for example, a group of weighted resource
      *         record sets), but it is not another alias resource record set, we
      *         recommend that you associate a health check with all of the
-     *         resource record sets in the alias target. For more information,
-     *         see <a href=
-     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
-     *         >What Happens When You Omit Health Checks?</a> in the <i>Amazon
-     *         Route 53 Developer Guide</i>.</li>
+     *         resource record sets in the alias target.</li>
      *         <li>If you specify an ELB load balancer in
      *         <code>AliasTarget</code>, Elastic Load Balancing routes queries
      *         only to the healthy Amazon EC2 instances that are registered with

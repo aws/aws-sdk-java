@@ -37,8 +37,8 @@ public class ListFleetsRequest extends AmazonWebServiceRequest implements
     private String buildId;
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.
      * </p>
      */
     private Integer limit;
@@ -106,13 +106,14 @@ public class ListFleetsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. You can use this parameter
-     *        with <i>NextToken</i> to get results as a set of sequential pages.
+     *        Maximum number of results to return. Use this parameter with
+     *        <code>NextToken</code> to get results as a set of sequential
+     *        pages.
      */
 
     public void setLimit(Integer limit) {
@@ -121,12 +122,12 @@ public class ListFleetsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.
      * </p>
      * 
-     * @return Maximum number of results to return. You can use this parameter
-     *         with <i>NextToken</i> to get results as a set of sequential
+     * @return Maximum number of results to return. Use this parameter with
+     *         <code>NextToken</code> to get results as a set of sequential
      *         pages.
      */
 
@@ -136,13 +137,14 @@ public class ListFleetsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. You can use this parameter
-     *        with <i>NextToken</i> to get results as a set of sequential pages.
+     *        Maximum number of results to return. Use this parameter with
+     *        <code>NextToken</code> to get results as a set of sequential
+     *        pages.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

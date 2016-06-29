@@ -48,8 +48,6 @@ import com.amazonaws.protocol.json.*;
 public class PutRestApiRequestMarshaller implements
         Marshaller<Request<PutRestApiRequest>, PutRestApiRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
-
     private final SdkJsonProtocolFactory protocolFactory;
 
     public PutRestApiRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
@@ -102,7 +100,7 @@ public class PutRestApiRequestMarshaller implements
 
         request.setContent(BinaryUtils.toStream(putRestApiRequest.getBody()));
         if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+            request.addHeader("Content-Type", protocolFactory.getContentType());
         }
 
         return request;

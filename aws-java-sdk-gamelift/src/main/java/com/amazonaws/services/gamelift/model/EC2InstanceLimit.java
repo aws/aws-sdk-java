@@ -29,11 +29,12 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of EC2 instances used in the fleet. EC2 instance types define the
-     * CPU, memory, storage, and networking capacity of the fleetaposs hosts.
-     * Amazon GameLift supports the EC2 instance types listed below. See <a
+     * Name of an EC2 instance type that is supported in Amazon GameLift. A
+     * fleet instance type determines the computing resources of each instance
+     * in the fleet, including CPU, memory, storage, and networking capacity.
+     * GameLift supports the following EC2 instance types. See <a
      * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
-     * Types</a> for detailed descriptions of each.
+     * Types</a> for detailed descriptions.
      * </p>
      */
     private String eC2InstanceType;
@@ -53,20 +54,22 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of EC2 instances used in the fleet. EC2 instance types define the
-     * CPU, memory, storage, and networking capacity of the fleetaposs hosts.
-     * Amazon GameLift supports the EC2 instance types listed below. See <a
+     * Name of an EC2 instance type that is supported in Amazon GameLift. A
+     * fleet instance type determines the computing resources of each instance
+     * in the fleet, including CPU, memory, storage, and networking capacity.
+     * GameLift supports the following EC2 instance types. See <a
      * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
-     * Types</a> for detailed descriptions of each.
+     * Types</a> for detailed descriptions.
      * </p>
      * 
      * @param eC2InstanceType
-     *        Type of EC2 instances used in the fleet. EC2 instance types define
-     *        the CPU, memory, storage, and networking capacity of the
-     *        fleetaposs hosts. Amazon GameLift supports the EC2 instance types
-     *        listed below. See <a
+     *        Name of an EC2 instance type that is supported in Amazon GameLift.
+     *        A fleet instance type determines the computing resources of each
+     *        instance in the fleet, including CPU, memory, storage, and
+     *        networking capacity. GameLift supports the following EC2 instance
+     *        types. See <a
      *        href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     *        Instance Types</a> for detailed descriptions of each.
+     *        Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
 
@@ -76,19 +79,21 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of EC2 instances used in the fleet. EC2 instance types define the
-     * CPU, memory, storage, and networking capacity of the fleetaposs hosts.
-     * Amazon GameLift supports the EC2 instance types listed below. See <a
+     * Name of an EC2 instance type that is supported in Amazon GameLift. A
+     * fleet instance type determines the computing resources of each instance
+     * in the fleet, including CPU, memory, storage, and networking capacity.
+     * GameLift supports the following EC2 instance types. See <a
      * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
-     * Types</a> for detailed descriptions of each.
+     * Types</a> for detailed descriptions.
      * </p>
      * 
-     * @return Type of EC2 instances used in the fleet. EC2 instance types
-     *         define the CPU, memory, storage, and networking capacity of the
-     *         fleetaposs hosts. Amazon GameLift supports the EC2 instance types
-     *         listed below. See <a
+     * @return Name of an EC2 instance type that is supported in Amazon
+     *         GameLift. A fleet instance type determines the computing
+     *         resources of each instance in the fleet, including CPU, memory,
+     *         storage, and networking capacity. GameLift supports the following
+     *         EC2 instance types. See <a
      *         href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     *         Instance Types</a> for detailed descriptions of each.
+     *         Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
 
@@ -98,20 +103,22 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of EC2 instances used in the fleet. EC2 instance types define the
-     * CPU, memory, storage, and networking capacity of the fleetaposs hosts.
-     * Amazon GameLift supports the EC2 instance types listed below. See <a
+     * Name of an EC2 instance type that is supported in Amazon GameLift. A
+     * fleet instance type determines the computing resources of each instance
+     * in the fleet, including CPU, memory, storage, and networking capacity.
+     * GameLift supports the following EC2 instance types. See <a
      * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
-     * Types</a> for detailed descriptions of each.
+     * Types</a> for detailed descriptions.
      * </p>
      * 
      * @param eC2InstanceType
-     *        Type of EC2 instances used in the fleet. EC2 instance types define
-     *        the CPU, memory, storage, and networking capacity of the
-     *        fleetaposs hosts. Amazon GameLift supports the EC2 instance types
-     *        listed below. See <a
+     *        Name of an EC2 instance type that is supported in Amazon GameLift.
+     *        A fleet instance type determines the computing resources of each
+     *        instance in the fleet, including CPU, memory, storage, and
+     *        networking capacity. GameLift supports the following EC2 instance
+     *        types. See <a
      *        href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     *        Instance Types</a> for detailed descriptions of each.
+     *        Instance Types</a> for detailed descriptions.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EC2InstanceType
@@ -124,20 +131,22 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of EC2 instances used in the fleet. EC2 instance types define the
-     * CPU, memory, storage, and networking capacity of the fleetaposs hosts.
-     * Amazon GameLift supports the EC2 instance types listed below. See <a
+     * Name of an EC2 instance type that is supported in Amazon GameLift. A
+     * fleet instance type determines the computing resources of each instance
+     * in the fleet, including CPU, memory, storage, and networking capacity.
+     * GameLift supports the following EC2 instance types. See <a
      * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
-     * Types</a> for detailed descriptions of each.
+     * Types</a> for detailed descriptions.
      * </p>
      * 
      * @param eC2InstanceType
-     *        Type of EC2 instances used in the fleet. EC2 instance types define
-     *        the CPU, memory, storage, and networking capacity of the
-     *        fleetaposs hosts. Amazon GameLift supports the EC2 instance types
-     *        listed below. See <a
+     *        Name of an EC2 instance type that is supported in Amazon GameLift.
+     *        A fleet instance type determines the computing resources of each
+     *        instance in the fleet, including CPU, memory, storage, and
+     *        networking capacity. GameLift supports the following EC2 instance
+     *        types. See <a
      *        href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     *        Instance Types</a> for detailed descriptions of each.
+     *        Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
 
@@ -147,20 +156,22 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of EC2 instances used in the fleet. EC2 instance types define the
-     * CPU, memory, storage, and networking capacity of the fleetaposs hosts.
-     * Amazon GameLift supports the EC2 instance types listed below. See <a
+     * Name of an EC2 instance type that is supported in Amazon GameLift. A
+     * fleet instance type determines the computing resources of each instance
+     * in the fleet, including CPU, memory, storage, and networking capacity.
+     * GameLift supports the following EC2 instance types. See <a
      * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
-     * Types</a> for detailed descriptions of each.
+     * Types</a> for detailed descriptions.
      * </p>
      * 
      * @param eC2InstanceType
-     *        Type of EC2 instances used in the fleet. EC2 instance types define
-     *        the CPU, memory, storage, and networking capacity of the
-     *        fleetaposs hosts. Amazon GameLift supports the EC2 instance types
-     *        listed below. See <a
+     *        Name of an EC2 instance type that is supported in Amazon GameLift.
+     *        A fleet instance type determines the computing resources of each
+     *        instance in the fleet, including CPU, memory, storage, and
+     *        networking capacity. GameLift supports the following EC2 instance
+     *        types. See <a
      *        href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     *        Instance Types</a> for detailed descriptions of each.
+     *        Instance Types</a> for detailed descriptions.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EC2InstanceType

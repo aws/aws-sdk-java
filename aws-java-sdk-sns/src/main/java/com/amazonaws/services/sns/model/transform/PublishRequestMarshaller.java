@@ -59,6 +59,11 @@ public class PublishRequestMarshaller implements
                     StringUtils.fromString(publishRequest.getTargetArn()));
         }
 
+        if (publishRequest.getPhoneNumber() != null) {
+            request.addParameter("PhoneNumber",
+                    StringUtils.fromString(publishRequest.getPhoneNumber()));
+        }
+
         if (publishRequest.getMessage() != null) {
             request.addParameter("Message",
                     StringUtils.fromString(publishRequest.getMessage()));

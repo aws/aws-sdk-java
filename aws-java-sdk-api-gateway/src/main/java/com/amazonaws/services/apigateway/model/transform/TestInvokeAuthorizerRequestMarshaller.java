@@ -49,8 +49,6 @@ public class TestInvokeAuthorizerRequestMarshaller
         implements
         Marshaller<Request<TestInvokeAuthorizerRequest>, TestInvokeAuthorizerRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
-
     private final SdkJsonProtocolFactory protocolFactory;
 
     public TestInvokeAuthorizerRequestMarshaller(
@@ -165,7 +163,8 @@ public class TestInvokeAuthorizerRequestMarshaller
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+                request.addHeader("Content-Type",
+                        protocolFactory.getContentType());
             }
         } catch (Throwable t) {
             throw new AmazonClientException(

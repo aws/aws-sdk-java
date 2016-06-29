@@ -37,7 +37,7 @@ public class GeoLocation implements Serializable, Cloneable {
      * <p>
      * Constraint: Specifying <code>ContinentCode</code> with either
      * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <code>InvalidInput</code> error.
      * </p>
      */
     private String continentCode;
@@ -60,7 +60,7 @@ public class GeoLocation implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
      * </p>
      */
     private String subdivisionCode;
@@ -77,7 +77,7 @@ public class GeoLocation implements Serializable, Cloneable {
      * <p>
      * Constraint: Specifying <code>ContinentCode</code> with either
      * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <code>InvalidInput</code> error.
      * </p>
      * 
      * @param continentCode
@@ -91,7 +91,7 @@ public class GeoLocation implements Serializable, Cloneable {
      *        <p>
      *        Constraint: Specifying <code>ContinentCode</code> with either
      *        <code>CountryCode</code> or <code>SubdivisionCode</code> returns
-     *        an <a>InvalidInput</a> error.
+     *        an <code>InvalidInput</code> error.
      */
 
     public void setContinentCode(String continentCode) {
@@ -110,7 +110,7 @@ public class GeoLocation implements Serializable, Cloneable {
      * <p>
      * Constraint: Specifying <code>ContinentCode</code> with either
      * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <code>InvalidInput</code> error.
      * </p>
      * 
      * @return The code for a continent geo location. Note: only continent
@@ -123,7 +123,7 @@ public class GeoLocation implements Serializable, Cloneable {
      *         <p>
      *         Constraint: Specifying <code>ContinentCode</code> with either
      *         <code>CountryCode</code> or <code>SubdivisionCode</code> returns
-     *         an <a>InvalidInput</a> error.
+     *         an <code>InvalidInput</code> error.
      */
 
     public String getContinentCode() {
@@ -142,7 +142,7 @@ public class GeoLocation implements Serializable, Cloneable {
      * <p>
      * Constraint: Specifying <code>ContinentCode</code> with either
      * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <code>InvalidInput</code> error.
      * </p>
      * 
      * @param continentCode
@@ -156,7 +156,7 @@ public class GeoLocation implements Serializable, Cloneable {
      *        <p>
      *        Constraint: Specifying <code>ContinentCode</code> with either
      *        <code>CountryCode</code> or <code>SubdivisionCode</code> returns
-     *        an <a>InvalidInput</a> error.
+     *        an <code>InvalidInput</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -250,7 +250,7 @@ public class GeoLocation implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @param subdivisionCode
@@ -259,7 +259,8 @@ public class GeoLocation implements Serializable, Cloneable {
      *        code.</p>
      *        <p>
      *        Constraint: Specifying <code>SubdivisionCode</code> without
-     *        <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     *        <code>CountryCode</code> returns an <code>InvalidInput</code>
+     *        error.
      */
 
     public void setSubdivisionCode(String subdivisionCode) {
@@ -273,7 +274,7 @@ public class GeoLocation implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @return The code for a country's subdivision (e.g., a province of
@@ -281,7 +282,8 @@ public class GeoLocation implements Serializable, Cloneable {
      *         country code.</p>
      *         <p>
      *         Constraint: Specifying <code>SubdivisionCode</code> without
-     *         <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     *         <code>CountryCode</code> returns an <code>InvalidInput</code>
+     *         error.
      */
 
     public String getSubdivisionCode() {
@@ -295,7 +297,7 @@ public class GeoLocation implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @param subdivisionCode
@@ -304,7 +306,8 @@ public class GeoLocation implements Serializable, Cloneable {
      *        code.</p>
      *        <p>
      *        Constraint: Specifying <code>SubdivisionCode</code> without
-     *        <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     *        <code>CountryCode</code> returns an <code>InvalidInput</code>
+     *        error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

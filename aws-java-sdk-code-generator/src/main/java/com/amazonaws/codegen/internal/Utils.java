@@ -19,7 +19,11 @@ import com.amazonaws.codegen.model.intermediate.IntermediateModel;
 import com.amazonaws.codegen.model.intermediate.Protocol;
 import com.amazonaws.codegen.model.intermediate.ShapeMarshaller;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
-import com.amazonaws.codegen.model.service.*;
+import com.amazonaws.codegen.model.service.Input;
+import com.amazonaws.codegen.model.service.Operation;
+import com.amazonaws.codegen.model.service.ServiceMetadata;
+import com.amazonaws.codegen.model.service.Shape;
+import com.amazonaws.codegen.model.service.XmlNamespace;
 import com.amazonaws.util.StringUtils;
 
 import java.io.Closeable;
@@ -96,26 +100,6 @@ public class Utils {
             return endpoint.substring("https://".length());
         }
         return endpoint;
-    }
-
-    public static String getProtocolDefaultExceptionUnmarshaller(String protocol) {
-        Protocol awsProtocol = Protocol.fromValue(protocol);
-        switch (awsProtocol) {
-        case EC2:
-            return "LegacyErrorUnmarshaller";
-        case QUERY:
-        case REST_XML:
-            return "StandardErrorUnmarshaller";
-            // JSON protocols have the Error Unmarshaller hard coded in the templates. They are not
-            // configurable like XML based protocols
-        case JSON:
-        case REST_JSON:
-        case CBOR:
-        case REST_CBOR:
-            return null;
-        default:
-            throw new RuntimeException("Unknown protocol " + protocol);
-        }
     }
 
     public static File createDirectory(String path) {

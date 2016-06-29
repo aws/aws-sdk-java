@@ -51,7 +51,7 @@ public class SdkJsonProtocolFactory {
      * Returns the {@link SdkJsonGenerator} to be used for marshalling the request.
      */
     public StructuredJsonGenerator createGenerator() {
-        return getSdkFactory().createWriter(metadata.getProtocolVersion());
+        return getSdkFactory().createWriter(getContentType());
     }
 
     /**
@@ -75,6 +75,13 @@ public class SdkJsonProtocolFactory {
                 .getCustomErrorCodeFieldName());
     }
 
+    /**
+     * @return Content type to send in requests.
+     */
+    public String getContentType() {
+        return getContentTypeResolver().resolveContentType(metadata);
+    }
+
     private void createErrorUnmarshallers() {
         for (JsonErrorShapeMetadata errorMetadata : metadata.getErrorShapeMetadata()) {
             errorUnmarshallers.add(new JsonErrorUnmarshaller(errorMetadata.getModeledClass(),
@@ -88,12 +95,20 @@ public class SdkJsonProtocolFactory {
      * @return Instance of {@link SdkStructuredJsonFactory} to use in creating handlers.
      */
     private SdkStructuredJsonFactory getSdkFactory() {
-        return isCborEnabled(metadata.isSupportsCbor()) ?
-                SdkStructuredCborFactory.SDK_CBOR_FACTORY :
+        return isCborEnabled() ? SdkStructuredCborFactory.SDK_CBOR_FACTORY :
                 SdkStructuredPlainJsonFactory.SDK_JSON_FACTORY;
     }
 
-    private static boolean isCborEnabled(boolean supportsCbor) {
-        return supportsCbor && !SDKGlobalConfiguration.isCborDisabled();
+    /**
+     * @return Content type resolver implementation to use.
+     */
+    private JsonContentTypeResolver getContentTypeResolver() {
+        return isCborEnabled() ? JsonContentTypeResolver.CBOR : JsonContentTypeResolver.JSON;
     }
+
+    private boolean isCborEnabled() {
+        return metadata.isSupportsCbor() && !SDKGlobalConfiguration.isCborDisabled();
+    }
+
+
 }

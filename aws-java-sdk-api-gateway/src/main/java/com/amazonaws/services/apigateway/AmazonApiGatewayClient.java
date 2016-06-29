@@ -73,6 +73,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
+                    .withContentTypeOverride("")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("UnauthorizedException")

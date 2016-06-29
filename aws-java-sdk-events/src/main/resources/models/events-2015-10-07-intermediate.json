@@ -1,7 +1,6 @@
 {
   "metadata" : {
     "apiVersion" : "2015-10-07",
-    "exceptionUnmarshallerImpl" : null,
     "protocol" : "json",
     "checksumFormat" : null,
     "documentation" : "<p>Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule. For example, you can configure rules to: </p> <ul> <li>Automatically invoke an AWS Lambda function to update DNS entries when an event notifies you that Amazon EC2 instance enters the running state.</li> <li>Direct specific API records from CloudTrail to an Amazon Kinesis stream for detailed analysis of potential security or availability risks.</li> <li>Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.</li> </ul> <p> For more information about Amazon CloudWatch Events features, see the <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide\">Amazon CloudWatch Developer Guide</a>. </p>",
@@ -16,17 +15,17 @@
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon CloudWatch Events",
     "hasApiWithStreamInput" : false,
-    "jsonContentVersion" : "application/x-amz-json-1.1",
+    "contentType" : null,
     "jsonVersion" : "1.1",
     "endpointPrefix" : "events",
     "signingName" : "events",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "serviceName" : "Amazon CloudWatch Events",
     "cborProtocol" : false,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "xmlProtocol" : false
   },
   "operations" : {
     "DeleteRule" : {
@@ -38,8 +37,8 @@
         "variableType" : "DeleteRuleRequest",
         "variableDeclarationType" : "DeleteRuleRequest",
         "documentation" : "<p>Container for the parameters to the <a>DeleteRule</a> operation.</p>",
-        "variableSetterType" : "DeleteRuleRequest",
-        "simpleType" : "DeleteRuleRequest"
+        "simpleType" : "DeleteRuleRequest",
+        "variableSetterType" : "DeleteRuleRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -54,12 +53,12 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "DeleteRuleResult",
+      "asyncReturnType" : "DeleteRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult>",
       "authenticated" : true,
-      "syncReturnType" : "DeleteRuleResult",
-      "asyncReturnType" : "DeleteRuleResult",
       "methodName" : "deleteRule"
     },
     "DescribeRule" : {
@@ -71,8 +70,8 @@
         "variableType" : "DescribeRuleRequest",
         "variableDeclarationType" : "DescribeRuleRequest",
         "documentation" : "<p>Container for the parameters to the <a>DescribeRule</a> operation.</p>",
-        "variableSetterType" : "DescribeRuleRequest",
-        "simpleType" : "DescribeRuleRequest"
+        "simpleType" : "DescribeRuleRequest",
+        "variableSetterType" : "DescribeRuleRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -87,12 +86,12 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "DescribeRuleResult",
+      "asyncReturnType" : "DescribeRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeRuleRequest, DescribeRuleResult>",
       "authenticated" : true,
-      "syncReturnType" : "DescribeRuleResult",
-      "asyncReturnType" : "DescribeRuleResult",
       "methodName" : "describeRule"
     },
     "DisableRule" : {
@@ -104,8 +103,8 @@
         "variableType" : "DisableRuleRequest",
         "variableDeclarationType" : "DisableRuleRequest",
         "documentation" : "<p>Container for the parameters to the <a>DisableRule</a> operation.</p>",
-        "variableSetterType" : "DisableRuleRequest",
-        "simpleType" : "DisableRuleRequest"
+        "simpleType" : "DisableRuleRequest",
+        "variableSetterType" : "DisableRuleRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -123,12 +122,12 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "DisableRuleResult",
+      "asyncReturnType" : "DisableRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableRuleRequest, DisableRuleResult>",
       "authenticated" : true,
-      "syncReturnType" : "DisableRuleResult",
-      "asyncReturnType" : "DisableRuleResult",
       "methodName" : "disableRule"
     },
     "EnableRule" : {
@@ -140,8 +139,8 @@
         "variableType" : "EnableRuleRequest",
         "variableDeclarationType" : "EnableRuleRequest",
         "documentation" : "<p>Container for the parameters to the <a>EnableRule</a> operation.</p>",
-        "variableSetterType" : "EnableRuleRequest",
-        "simpleType" : "EnableRuleRequest"
+        "simpleType" : "EnableRuleRequest",
+        "variableSetterType" : "EnableRuleRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -159,12 +158,12 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "EnableRuleResult",
+      "asyncReturnType" : "EnableRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnableRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableRuleRequest, EnableRuleResult>",
       "authenticated" : true,
-      "syncReturnType" : "EnableRuleResult",
-      "asyncReturnType" : "EnableRuleResult",
       "methodName" : "enableRule"
     },
     "ListRuleNamesByTarget" : {
@@ -176,8 +175,8 @@
         "variableType" : "ListRuleNamesByTargetRequest",
         "variableDeclarationType" : "ListRuleNamesByTargetRequest",
         "documentation" : "<p>Container for the parameters to the <a>ListRuleNamesByTarget</a> operation.</p>",
-        "variableSetterType" : "ListRuleNamesByTargetRequest",
-        "simpleType" : "ListRuleNamesByTargetRequest"
+        "simpleType" : "ListRuleNamesByTargetRequest",
+        "variableSetterType" : "ListRuleNamesByTargetRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -189,12 +188,12 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "ListRuleNamesByTargetResult",
+      "asyncReturnType" : "ListRuleNamesByTargetResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRuleNamesByTargetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRuleNamesByTargetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRuleNamesByTargetRequest, ListRuleNamesByTargetResult>",
       "authenticated" : true,
-      "syncReturnType" : "ListRuleNamesByTargetResult",
-      "asyncReturnType" : "ListRuleNamesByTargetResult",
       "methodName" : "listRuleNamesByTarget"
     },
     "ListRules" : {
@@ -206,8 +205,8 @@
         "variableType" : "ListRulesRequest",
         "variableDeclarationType" : "ListRulesRequest",
         "documentation" : "<p>Container for the parameters to the <a>ListRules</a> operation.</p>",
-        "variableSetterType" : "ListRulesRequest",
-        "simpleType" : "ListRulesRequest"
+        "simpleType" : "ListRulesRequest",
+        "variableSetterType" : "ListRulesRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -219,12 +218,12 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "ListRulesResult",
+      "asyncReturnType" : "ListRulesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRulesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRulesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRulesRequest, ListRulesResult>",
       "authenticated" : true,
-      "syncReturnType" : "ListRulesResult",
-      "asyncReturnType" : "ListRulesResult",
       "methodName" : "listRules"
     },
     "ListTargetsByRule" : {
@@ -236,8 +235,8 @@
         "variableType" : "ListTargetsByRuleRequest",
         "variableDeclarationType" : "ListTargetsByRuleRequest",
         "documentation" : "<p>Container for the parameters to the <a>ListTargetsByRule</a> operation.</p>",
-        "variableSetterType" : "ListTargetsByRuleRequest",
-        "simpleType" : "ListTargetsByRuleRequest"
+        "simpleType" : "ListTargetsByRuleRequest",
+        "variableSetterType" : "ListTargetsByRuleRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -252,12 +251,12 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "ListTargetsByRuleResult",
+      "asyncReturnType" : "ListTargetsByRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTargetsByRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTargetsByRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTargetsByRuleRequest, ListTargetsByRuleResult>",
       "authenticated" : true,
-      "syncReturnType" : "ListTargetsByRuleResult",
-      "asyncReturnType" : "ListTargetsByRuleResult",
       "methodName" : "listTargetsByRule"
     },
     "PutEvents" : {
@@ -269,8 +268,8 @@
         "variableType" : "PutEventsRequest",
         "variableDeclarationType" : "PutEventsRequest",
         "documentation" : "<p>Container for the parameters to the <a>PutEvents</a> operation.</p>",
-        "variableSetterType" : "PutEventsRequest",
-        "simpleType" : "PutEventsRequest"
+        "simpleType" : "PutEventsRequest",
+        "variableSetterType" : "PutEventsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -282,12 +281,12 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "PutEventsResult",
+      "asyncReturnType" : "PutEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutEventsRequest, PutEventsResult>",
       "authenticated" : true,
-      "syncReturnType" : "PutEventsResult",
-      "asyncReturnType" : "PutEventsResult",
       "methodName" : "putEvents"
     },
     "PutRule" : {
@@ -299,8 +298,8 @@
         "variableType" : "PutRuleRequest",
         "variableDeclarationType" : "PutRuleRequest",
         "documentation" : "<p>Container for the parameters to the <a>PutRule</a> operation.</p>",
-        "variableSetterType" : "PutRuleRequest",
-        "simpleType" : "PutRuleRequest"
+        "simpleType" : "PutRuleRequest",
+        "variableSetterType" : "PutRuleRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -321,12 +320,12 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "PutRuleResult",
+      "asyncReturnType" : "PutRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRuleRequest, PutRuleResult>",
       "authenticated" : true,
-      "syncReturnType" : "PutRuleResult",
-      "asyncReturnType" : "PutRuleResult",
       "methodName" : "putRule"
     },
     "PutTargets" : {
@@ -338,8 +337,8 @@
         "variableType" : "PutTargetsRequest",
         "variableDeclarationType" : "PutTargetsRequest",
         "documentation" : "<p>Container for the parameters to the <a>PutTargets</a> operation.</p>",
-        "variableSetterType" : "PutTargetsRequest",
-        "simpleType" : "PutTargetsRequest"
+        "simpleType" : "PutTargetsRequest",
+        "variableSetterType" : "PutTargetsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -360,12 +359,12 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "PutTargetsResult",
+      "asyncReturnType" : "PutTargetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutTargetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutTargetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutTargetsRequest, PutTargetsResult>",
       "authenticated" : true,
-      "syncReturnType" : "PutTargetsResult",
-      "asyncReturnType" : "PutTargetsResult",
       "methodName" : "putTargets"
     },
     "RemoveTargets" : {
@@ -377,8 +376,8 @@
         "variableType" : "RemoveTargetsRequest",
         "variableDeclarationType" : "RemoveTargetsRequest",
         "documentation" : "<p>Container for the parameters to the <a>RemoveTargets</a> operation.</p>",
-        "variableSetterType" : "RemoveTargetsRequest",
-        "simpleType" : "RemoveTargetsRequest"
+        "simpleType" : "RemoveTargetsRequest",
+        "variableSetterType" : "RemoveTargetsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -396,12 +395,12 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "RemoveTargetsResult",
+      "asyncReturnType" : "RemoveTargetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTargetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTargetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTargetsRequest, RemoveTargetsResult>",
       "authenticated" : true,
-      "syncReturnType" : "RemoveTargetsResult",
-      "asyncReturnType" : "RemoveTargetsResult",
       "methodName" : "removeTargets"
     },
     "TestEventPattern" : {
@@ -413,8 +412,8 @@
         "variableType" : "TestEventPatternRequest",
         "variableDeclarationType" : "TestEventPatternRequest",
         "documentation" : "<p>Container for the parameters to the <a>TestEventPattern</a> operation.</p>",
-        "variableSetterType" : "TestEventPatternRequest",
-        "simpleType" : "TestEventPatternRequest"
+        "simpleType" : "TestEventPatternRequest",
+        "variableSetterType" : "TestEventPatternRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -429,12 +428,12 @@
         "documentation" : "<p>This exception occurs due to unexpected causes.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "TestEventPatternResult",
+      "asyncReturnType" : "TestEventPatternResult",
       "asyncFutureType" : "java.util.concurrent.Future<TestEventPatternResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TestEventPatternResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestEventPatternRequest, TestEventPatternResult>",
       "authenticated" : true,
-      "syncReturnType" : "TestEventPatternResult",
-      "asyncReturnType" : "TestEventPatternResult",
       "methodName" : "testEventPattern"
     }
   },
@@ -460,16 +459,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "<p>Indicates whether the event matches the event pattern.</p>",
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "result",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "",
-          "variableSetterType" : "Boolean",
-          "simpleType" : "Boolean"
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -509,8 +508,8 @@
         "variableType" : "TestEventPatternResult",
         "variableDeclarationType" : "TestEventPatternResult",
         "documentation" : null,
-        "variableSetterType" : "TestEventPatternResult",
-        "simpleType" : "TestEventPatternResult"
+        "simpleType" : "TestEventPatternResult",
+        "variableSetterType" : "TestEventPatternResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -535,16 +534,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "<p>Indicates whether the event matches the event pattern.</p>",
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "result",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "",
-            "variableSetterType" : "Boolean",
-            "simpleType" : "Boolean"
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -598,8 +597,8 @@
         "variableType" : "ConcurrentModificationException",
         "variableDeclarationType" : "ConcurrentModificationException",
         "documentation" : null,
-        "variableSetterType" : "ConcurrentModificationException",
-        "simpleType" : "ConcurrentModificationException"
+        "simpleType" : "ConcurrentModificationException",
+        "variableSetterType" : "ConcurrentModificationException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -633,16 +632,16 @@
           "variableType" : "java.util.List<PutEventsRequestEntry>",
           "variableDeclarationType" : "java.util.List<PutEventsRequestEntry>",
           "documentation" : "<p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>",
-          "variableSetterType" : "java.util.Collection<PutEventsRequestEntry>",
-          "simpleType" : "List<PutEventsRequestEntry>"
+          "simpleType" : "List<PutEventsRequestEntry>",
+          "variableSetterType" : "java.util.Collection<PutEventsRequestEntry>"
         },
         "setterModel" : {
           "variableName" : "entries",
           "variableType" : "java.util.List<PutEventsRequestEntry>",
           "variableDeclarationType" : "java.util.List<PutEventsRequestEntry>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<PutEventsRequestEntry>",
-          "simpleType" : "List<PutEventsRequestEntry>"
+          "simpleType" : "List<PutEventsRequestEntry>",
+          "variableSetterType" : "java.util.Collection<PutEventsRequestEntry>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<PutEventsRequestEntry>",
@@ -678,16 +677,16 @@
               "variableType" : "PutEventsRequestEntry",
               "variableDeclarationType" : "PutEventsRequestEntry",
               "documentation" : "",
-              "variableSetterType" : "PutEventsRequestEntry",
-              "simpleType" : "PutEventsRequestEntry"
+              "simpleType" : "PutEventsRequestEntry",
+              "variableSetterType" : "PutEventsRequestEntry"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "PutEventsRequestEntry",
               "variableDeclarationType" : "PutEventsRequestEntry",
               "documentation" : "",
-              "variableSetterType" : "PutEventsRequestEntry",
-              "simpleType" : "PutEventsRequestEntry"
+              "simpleType" : "PutEventsRequestEntry",
+              "variableSetterType" : "PutEventsRequestEntry"
             },
             "getterModel" : {
               "returnType" : "PutEventsRequestEntry",
@@ -724,11 +723,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<PutEventsRequestEntry>",
-          "templateImplType" : "java.util.ArrayList<PutEventsRequestEntry>",
-          "simpleType" : "PutEventsRequestEntry",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "PutEventsRequestEntry",
+          "templateType" : "java.util.List<PutEventsRequestEntry>",
+          "templateImplType" : "java.util.ArrayList<PutEventsRequestEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -748,8 +747,8 @@
         "variableType" : "PutEventsRequest",
         "variableDeclarationType" : "PutEventsRequest",
         "documentation" : null,
-        "variableSetterType" : "PutEventsRequest",
-        "simpleType" : "PutEventsRequest"
+        "simpleType" : "PutEventsRequest",
+        "variableSetterType" : "PutEventsRequest"
       },
       "marshaller" : {
         "action" : "PutEvents",
@@ -778,16 +777,16 @@
             "variableType" : "java.util.List<PutEventsRequestEntry>",
             "variableDeclarationType" : "java.util.List<PutEventsRequestEntry>",
             "documentation" : "<p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>",
-            "variableSetterType" : "java.util.Collection<PutEventsRequestEntry>",
-            "simpleType" : "List<PutEventsRequestEntry>"
+            "simpleType" : "List<PutEventsRequestEntry>",
+            "variableSetterType" : "java.util.Collection<PutEventsRequestEntry>"
           },
           "setterModel" : {
             "variableName" : "entries",
             "variableType" : "java.util.List<PutEventsRequestEntry>",
             "variableDeclarationType" : "java.util.List<PutEventsRequestEntry>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<PutEventsRequestEntry>",
-            "simpleType" : "List<PutEventsRequestEntry>"
+            "simpleType" : "List<PutEventsRequestEntry>",
+            "variableSetterType" : "java.util.Collection<PutEventsRequestEntry>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<PutEventsRequestEntry>",
@@ -823,16 +822,16 @@
                 "variableType" : "PutEventsRequestEntry",
                 "variableDeclarationType" : "PutEventsRequestEntry",
                 "documentation" : "",
-                "variableSetterType" : "PutEventsRequestEntry",
-                "simpleType" : "PutEventsRequestEntry"
+                "simpleType" : "PutEventsRequestEntry",
+                "variableSetterType" : "PutEventsRequestEntry"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "PutEventsRequestEntry",
                 "variableDeclarationType" : "PutEventsRequestEntry",
                 "documentation" : "",
-                "variableSetterType" : "PutEventsRequestEntry",
-                "simpleType" : "PutEventsRequestEntry"
+                "simpleType" : "PutEventsRequestEntry",
+                "variableSetterType" : "PutEventsRequestEntry"
               },
               "getterModel" : {
                 "returnType" : "PutEventsRequestEntry",
@@ -869,11 +868,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<PutEventsRequestEntry>",
-            "templateImplType" : "java.util.ArrayList<PutEventsRequestEntry>",
-            "simpleType" : "PutEventsRequestEntry",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "PutEventsRequestEntry",
+            "templateType" : "java.util.List<PutEventsRequestEntry>",
+            "templateImplType" : "java.util.ArrayList<PutEventsRequestEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -910,16 +909,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Amazon Resource Name (ARN) of the target resource that you want to list the rules for.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "targetArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -962,16 +961,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The token returned by a previous call to indicate that there is more data available.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1014,16 +1013,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The maximum number of results to return.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "limit",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -1063,8 +1062,8 @@
         "variableType" : "ListRuleNamesByTargetRequest",
         "variableDeclarationType" : "ListRuleNamesByTargetRequest",
         "documentation" : null,
-        "variableSetterType" : "ListRuleNamesByTargetRequest",
-        "simpleType" : "ListRuleNamesByTargetRequest"
+        "simpleType" : "ListRuleNamesByTargetRequest",
+        "variableSetterType" : "ListRuleNamesByTargetRequest"
       },
       "marshaller" : {
         "action" : "ListRuleNamesByTarget",
@@ -1093,16 +1092,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The token returned by a previous call to indicate that there is more data available.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1146,16 +1145,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) of the target resource that you want to list the rules for.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "targetArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1199,16 +1198,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The maximum number of results to return.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "limit",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -1265,16 +1264,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The number of failed entries.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "failedEntryCount",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -1317,16 +1316,16 @@
           "variableType" : "java.util.List<RemoveTargetsResultEntry>",
           "variableDeclarationType" : "java.util.List<RemoveTargetsResultEntry>",
           "documentation" : "<p>An array of failed target entries.</p>",
-          "variableSetterType" : "java.util.Collection<RemoveTargetsResultEntry>",
-          "simpleType" : "List<RemoveTargetsResultEntry>"
+          "simpleType" : "List<RemoveTargetsResultEntry>",
+          "variableSetterType" : "java.util.Collection<RemoveTargetsResultEntry>"
         },
         "setterModel" : {
           "variableName" : "failedEntries",
           "variableType" : "java.util.List<RemoveTargetsResultEntry>",
           "variableDeclarationType" : "java.util.List<RemoveTargetsResultEntry>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<RemoveTargetsResultEntry>",
-          "simpleType" : "List<RemoveTargetsResultEntry>"
+          "simpleType" : "List<RemoveTargetsResultEntry>",
+          "variableSetterType" : "java.util.Collection<RemoveTargetsResultEntry>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<RemoveTargetsResultEntry>",
@@ -1362,16 +1361,16 @@
               "variableType" : "RemoveTargetsResultEntry",
               "variableDeclarationType" : "RemoveTargetsResultEntry",
               "documentation" : "",
-              "variableSetterType" : "RemoveTargetsResultEntry",
-              "simpleType" : "RemoveTargetsResultEntry"
+              "simpleType" : "RemoveTargetsResultEntry",
+              "variableSetterType" : "RemoveTargetsResultEntry"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "RemoveTargetsResultEntry",
               "variableDeclarationType" : "RemoveTargetsResultEntry",
               "documentation" : "",
-              "variableSetterType" : "RemoveTargetsResultEntry",
-              "simpleType" : "RemoveTargetsResultEntry"
+              "simpleType" : "RemoveTargetsResultEntry",
+              "variableSetterType" : "RemoveTargetsResultEntry"
             },
             "getterModel" : {
               "returnType" : "RemoveTargetsResultEntry",
@@ -1408,11 +1407,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<RemoveTargetsResultEntry>",
-          "templateImplType" : "java.util.ArrayList<RemoveTargetsResultEntry>",
-          "simpleType" : "RemoveTargetsResultEntry",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "RemoveTargetsResultEntry",
+          "templateType" : "java.util.List<RemoveTargetsResultEntry>",
+          "templateImplType" : "java.util.ArrayList<RemoveTargetsResultEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1432,8 +1431,8 @@
         "variableType" : "RemoveTargetsResult",
         "variableDeclarationType" : "RemoveTargetsResult",
         "documentation" : null,
-        "variableSetterType" : "RemoveTargetsResult",
-        "simpleType" : "RemoveTargetsResult"
+        "simpleType" : "RemoveTargetsResult",
+        "variableSetterType" : "RemoveTargetsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1458,16 +1457,16 @@
             "variableType" : "java.util.List<RemoveTargetsResultEntry>",
             "variableDeclarationType" : "java.util.List<RemoveTargetsResultEntry>",
             "documentation" : "<p>An array of failed target entries.</p>",
-            "variableSetterType" : "java.util.Collection<RemoveTargetsResultEntry>",
-            "simpleType" : "List<RemoveTargetsResultEntry>"
+            "simpleType" : "List<RemoveTargetsResultEntry>",
+            "variableSetterType" : "java.util.Collection<RemoveTargetsResultEntry>"
           },
           "setterModel" : {
             "variableName" : "failedEntries",
             "variableType" : "java.util.List<RemoveTargetsResultEntry>",
             "variableDeclarationType" : "java.util.List<RemoveTargetsResultEntry>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<RemoveTargetsResultEntry>",
-            "simpleType" : "List<RemoveTargetsResultEntry>"
+            "simpleType" : "List<RemoveTargetsResultEntry>",
+            "variableSetterType" : "java.util.Collection<RemoveTargetsResultEntry>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<RemoveTargetsResultEntry>",
@@ -1503,16 +1502,16 @@
                 "variableType" : "RemoveTargetsResultEntry",
                 "variableDeclarationType" : "RemoveTargetsResultEntry",
                 "documentation" : "",
-                "variableSetterType" : "RemoveTargetsResultEntry",
-                "simpleType" : "RemoveTargetsResultEntry"
+                "simpleType" : "RemoveTargetsResultEntry",
+                "variableSetterType" : "RemoveTargetsResultEntry"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "RemoveTargetsResultEntry",
                 "variableDeclarationType" : "RemoveTargetsResultEntry",
                 "documentation" : "",
-                "variableSetterType" : "RemoveTargetsResultEntry",
-                "simpleType" : "RemoveTargetsResultEntry"
+                "simpleType" : "RemoveTargetsResultEntry",
+                "variableSetterType" : "RemoveTargetsResultEntry"
               },
               "getterModel" : {
                 "returnType" : "RemoveTargetsResultEntry",
@@ -1549,11 +1548,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<RemoveTargetsResultEntry>",
-            "templateImplType" : "java.util.ArrayList<RemoveTargetsResultEntry>",
-            "simpleType" : "RemoveTargetsResultEntry",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "RemoveTargetsResultEntry",
+            "templateType" : "java.util.List<RemoveTargetsResultEntry>",
+            "templateImplType" : "java.util.ArrayList<RemoveTargetsResultEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1577,16 +1576,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The number of failed entries.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "failedEntryCount",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -1640,8 +1639,8 @@
         "variableType" : "DeleteRuleResult",
         "variableDeclarationType" : "DeleteRuleResult",
         "documentation" : null,
-        "variableSetterType" : "DeleteRuleResult",
-        "simpleType" : "DeleteRuleResult"
+        "simpleType" : "DeleteRuleResult",
+        "variableSetterType" : "DeleteRuleResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1675,8 +1674,8 @@
         "variableType" : "DisableRuleResult",
         "variableDeclarationType" : "DisableRuleResult",
         "documentation" : null,
-        "variableSetterType" : "DisableRuleResult",
-        "simpleType" : "DisableRuleResult"
+        "simpleType" : "DisableRuleResult",
+        "variableSetterType" : "DisableRuleResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1713,16 +1712,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the rule you want to describe details for.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1762,8 +1761,8 @@
         "variableType" : "DescribeRuleRequest",
         "variableDeclarationType" : "DescribeRuleRequest",
         "documentation" : null,
-        "variableSetterType" : "DescribeRuleRequest",
-        "simpleType" : "DescribeRuleRequest"
+        "simpleType" : "DescribeRuleRequest",
+        "variableSetterType" : "DescribeRuleRequest"
       },
       "marshaller" : {
         "action" : "DescribeRule",
@@ -1792,16 +1791,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the rule you want to describe details for.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1858,16 +1857,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the event submitted to Amazon CloudWatch Events.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "eventId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1910,16 +1909,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The error code representing why the event submission failed on this entry.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1962,16 +1961,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The error message explaining why the event submission failed on this entry.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorMessage",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2011,8 +2010,8 @@
         "variableType" : "PutEventsResultEntry",
         "variableDeclarationType" : "PutEventsResultEntry",
         "documentation" : null,
-        "variableSetterType" : "PutEventsResultEntry",
-        "simpleType" : "PutEventsResultEntry"
+        "simpleType" : "PutEventsResultEntry",
+        "variableSetterType" : "PutEventsResultEntry"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2037,16 +2036,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The error message explaining why the event submission failed on this entry.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorMessage",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2090,16 +2089,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the event submitted to Amazon CloudWatch Events.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "eventId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2143,16 +2142,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The error code representing why the event submission failed on this entry.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2209,16 +2208,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>Timestamp of event, per <a href=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</a>. If no timestamp is provided, the timestamp of the <a>PutEvents</a> call will be used.</p>",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "setterModel" : {
           "variableName" : "time",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "variableSetterType" : "java.util.Date",
-          "simpleType" : "Date"
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -2261,16 +2260,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The source of the event.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "source",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2313,16 +2312,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "resources",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -2358,16 +2357,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -2404,11 +2403,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simpleType" : "String",
           "simple" : true,
-          "map" : false
+          "map" : false,
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2431,16 +2430,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Free-form string used to decide what fields to expect in the event detail.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "detailType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2483,16 +2482,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>In the JSON sense, an object containing fields, which may also contain nested sub-objects. No constraints are imposed on its contents.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "detail",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2532,8 +2531,8 @@
         "variableType" : "PutEventsRequestEntry",
         "variableDeclarationType" : "PutEventsRequestEntry",
         "documentation" : null,
-        "variableSetterType" : "PutEventsRequestEntry",
-        "simpleType" : "PutEventsRequestEntry"
+        "simpleType" : "PutEventsRequestEntry",
+        "variableSetterType" : "PutEventsRequestEntry"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2558,16 +2557,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The source of the event.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "source",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2611,16 +2610,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>In the JSON sense, an object containing fields, which may also contain nested sub-objects. No constraints are imposed on its contents.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "detail",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2664,16 +2663,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>Timestamp of event, per <a href=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</a>. If no timestamp is provided, the timestamp of the <a>PutEvents</a> call will be used.</p>",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "setterModel" : {
             "variableName" : "time",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "variableSetterType" : "java.util.Date",
-            "simpleType" : "Date"
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -2717,16 +2716,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Free-form string used to decide what fields to expect in the event detail.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "detailType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2770,16 +2769,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "resources",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -2815,16 +2814,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -2861,11 +2860,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simpleType" : "String",
             "simple" : true,
-            "map" : false
+            "map" : false,
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2899,8 +2898,8 @@
         "variableType" : "LimitExceededException",
         "variableDeclarationType" : "LimitExceededException",
         "documentation" : null,
-        "variableSetterType" : "LimitExceededException",
-        "simpleType" : "LimitExceededException"
+        "simpleType" : "LimitExceededException",
+        "variableSetterType" : "LimitExceededException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -2934,16 +2933,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The unique target assignment ID.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "id",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2986,16 +2985,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Amazon Resource Name (ARN) associated of the target.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "arn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3038,16 +3037,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Valid JSON text passed to the target. For more information about JSON text, see <a href=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "input",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3090,16 +3089,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. For more information about JSON paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "inputPath",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3139,8 +3138,8 @@
         "variableType" : "Target",
         "variableDeclarationType" : "Target",
         "documentation" : null,
-        "variableSetterType" : "Target",
-        "simpleType" : "Target"
+        "simpleType" : "Target",
+        "variableSetterType" : "Target"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -3165,16 +3164,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Valid JSON text passed to the target. For more information about JSON text, see <a href=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "input",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3218,16 +3217,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The unique target assignment ID.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "id",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3271,16 +3270,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) associated of the target.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "arn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3324,16 +3323,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. For more information about JSON paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "inputPath",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3390,16 +3389,16 @@
           "variableType" : "java.util.List<Target>",
           "variableDeclarationType" : "java.util.List<Target>",
           "documentation" : "<p>Lists the targets assigned to the rule.</p>",
-          "variableSetterType" : "java.util.Collection<Target>",
-          "simpleType" : "List<Target>"
+          "simpleType" : "List<Target>",
+          "variableSetterType" : "java.util.Collection<Target>"
         },
         "setterModel" : {
           "variableName" : "targets",
           "variableType" : "java.util.List<Target>",
           "variableDeclarationType" : "java.util.List<Target>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<Target>",
-          "simpleType" : "List<Target>"
+          "simpleType" : "List<Target>",
+          "variableSetterType" : "java.util.Collection<Target>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Target>",
@@ -3435,16 +3434,16 @@
               "variableType" : "Target",
               "variableDeclarationType" : "Target",
               "documentation" : "",
-              "variableSetterType" : "Target",
-              "simpleType" : "Target"
+              "simpleType" : "Target",
+              "variableSetterType" : "Target"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Target",
               "variableDeclarationType" : "Target",
               "documentation" : "",
-              "variableSetterType" : "Target",
-              "simpleType" : "Target"
+              "simpleType" : "Target",
+              "variableSetterType" : "Target"
             },
             "getterModel" : {
               "returnType" : "Target",
@@ -3481,11 +3480,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<Target>",
-          "templateImplType" : "java.util.ArrayList<Target>",
-          "simpleType" : "Target",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "Target",
+          "templateType" : "java.util.List<Target>",
+          "templateImplType" : "java.util.ArrayList<Target>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3508,16 +3507,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Indicates that there are additional results to retrieve.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3557,8 +3556,8 @@
         "variableType" : "ListTargetsByRuleResult",
         "variableDeclarationType" : "ListTargetsByRuleResult",
         "documentation" : null,
-        "variableSetterType" : "ListTargetsByRuleResult",
-        "simpleType" : "ListTargetsByRuleResult"
+        "simpleType" : "ListTargetsByRuleResult",
+        "variableSetterType" : "ListTargetsByRuleResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -3583,16 +3582,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Indicates that there are additional results to retrieve.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3636,16 +3635,16 @@
             "variableType" : "java.util.List<Target>",
             "variableDeclarationType" : "java.util.List<Target>",
             "documentation" : "<p>Lists the targets assigned to the rule.</p>",
-            "variableSetterType" : "java.util.Collection<Target>",
-            "simpleType" : "List<Target>"
+            "simpleType" : "List<Target>",
+            "variableSetterType" : "java.util.Collection<Target>"
           },
           "setterModel" : {
             "variableName" : "targets",
             "variableType" : "java.util.List<Target>",
             "variableDeclarationType" : "java.util.List<Target>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<Target>",
-            "simpleType" : "List<Target>"
+            "simpleType" : "List<Target>",
+            "variableSetterType" : "java.util.Collection<Target>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Target>",
@@ -3681,16 +3680,16 @@
                 "variableType" : "Target",
                 "variableDeclarationType" : "Target",
                 "documentation" : "",
-                "variableSetterType" : "Target",
-                "simpleType" : "Target"
+                "simpleType" : "Target",
+                "variableSetterType" : "Target"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Target",
                 "variableDeclarationType" : "Target",
                 "documentation" : "",
-                "variableSetterType" : "Target",
-                "simpleType" : "Target"
+                "simpleType" : "Target",
+                "variableSetterType" : "Target"
               },
               "getterModel" : {
                 "returnType" : "Target",
@@ -3727,11 +3726,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<Target>",
-            "templateImplType" : "java.util.ArrayList<Target>",
-            "simpleType" : "Target",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "Target",
+            "templateType" : "java.util.List<Target>",
+            "templateImplType" : "java.util.ArrayList<Target>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3768,16 +3767,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the target requested to be removed by Amazon CloudWatch Events.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "targetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3820,16 +3819,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The error code representing why the target removal failed on this entry.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3872,16 +3871,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The error message explaining why the target removal failed on this entry.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorMessage",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3921,8 +3920,8 @@
         "variableType" : "RemoveTargetsResultEntry",
         "variableDeclarationType" : "RemoveTargetsResultEntry",
         "documentation" : null,
-        "variableSetterType" : "RemoveTargetsResultEntry",
-        "simpleType" : "RemoveTargetsResultEntry"
+        "simpleType" : "RemoveTargetsResultEntry",
+        "variableSetterType" : "RemoveTargetsResultEntry"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -3947,16 +3946,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The error message explaining why the target removal failed on this entry.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorMessage",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4000,16 +3999,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The error code representing why the target removal failed on this entry.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4053,16 +4052,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the target requested to be removed by Amazon CloudWatch Events.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "targetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4119,16 +4118,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the rule whose targets you want to list.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "rule",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4171,16 +4170,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The token returned by a previous call to indicate that there is more data available.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4223,16 +4222,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The maximum number of results to return.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "limit",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -4272,8 +4271,8 @@
         "variableType" : "ListTargetsByRuleRequest",
         "variableDeclarationType" : "ListTargetsByRuleRequest",
         "documentation" : null,
-        "variableSetterType" : "ListTargetsByRuleRequest",
-        "simpleType" : "ListTargetsByRuleRequest"
+        "simpleType" : "ListTargetsByRuleRequest",
+        "variableSetterType" : "ListTargetsByRuleRequest"
       },
       "marshaller" : {
         "action" : "ListTargetsByRule",
@@ -4302,16 +4301,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The token returned by a previous call to indicate that there is more data available.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4355,16 +4354,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the rule whose targets you want to list.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "rule",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4408,16 +4407,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The maximum number of results to return.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "limit",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -4474,16 +4473,16 @@
           "variableType" : "java.util.List<Rule>",
           "variableDeclarationType" : "java.util.List<Rule>",
           "documentation" : "<p>List of rules matching the specified criteria.</p>",
-          "variableSetterType" : "java.util.Collection<Rule>",
-          "simpleType" : "List<Rule>"
+          "simpleType" : "List<Rule>",
+          "variableSetterType" : "java.util.Collection<Rule>"
         },
         "setterModel" : {
           "variableName" : "rules",
           "variableType" : "java.util.List<Rule>",
           "variableDeclarationType" : "java.util.List<Rule>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<Rule>",
-          "simpleType" : "List<Rule>"
+          "simpleType" : "List<Rule>",
+          "variableSetterType" : "java.util.Collection<Rule>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Rule>",
@@ -4519,16 +4518,16 @@
               "variableType" : "Rule",
               "variableDeclarationType" : "Rule",
               "documentation" : "",
-              "variableSetterType" : "Rule",
-              "simpleType" : "Rule"
+              "simpleType" : "Rule",
+              "variableSetterType" : "Rule"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Rule",
               "variableDeclarationType" : "Rule",
               "documentation" : "",
-              "variableSetterType" : "Rule",
-              "simpleType" : "Rule"
+              "simpleType" : "Rule",
+              "variableSetterType" : "Rule"
             },
             "getterModel" : {
               "returnType" : "Rule",
@@ -4565,11 +4564,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<Rule>",
-          "templateImplType" : "java.util.ArrayList<Rule>",
-          "simpleType" : "Rule",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "Rule",
+          "templateType" : "java.util.List<Rule>",
+          "templateImplType" : "java.util.ArrayList<Rule>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4592,16 +4591,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Indicates that there are additional results to retrieve.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4641,8 +4640,8 @@
         "variableType" : "ListRulesResult",
         "variableDeclarationType" : "ListRulesResult",
         "documentation" : null,
-        "variableSetterType" : "ListRulesResult",
-        "simpleType" : "ListRulesResult"
+        "simpleType" : "ListRulesResult",
+        "variableSetterType" : "ListRulesResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -4667,16 +4666,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Indicates that there are additional results to retrieve.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4720,16 +4719,16 @@
             "variableType" : "java.util.List<Rule>",
             "variableDeclarationType" : "java.util.List<Rule>",
             "documentation" : "<p>List of rules matching the specified criteria.</p>",
-            "variableSetterType" : "java.util.Collection<Rule>",
-            "simpleType" : "List<Rule>"
+            "simpleType" : "List<Rule>",
+            "variableSetterType" : "java.util.Collection<Rule>"
           },
           "setterModel" : {
             "variableName" : "rules",
             "variableType" : "java.util.List<Rule>",
             "variableDeclarationType" : "java.util.List<Rule>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<Rule>",
-            "simpleType" : "List<Rule>"
+            "simpleType" : "List<Rule>",
+            "variableSetterType" : "java.util.Collection<Rule>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Rule>",
@@ -4765,16 +4764,16 @@
                 "variableType" : "Rule",
                 "variableDeclarationType" : "Rule",
                 "documentation" : "",
-                "variableSetterType" : "Rule",
-                "simpleType" : "Rule"
+                "simpleType" : "Rule",
+                "variableSetterType" : "Rule"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Rule",
                 "variableDeclarationType" : "Rule",
                 "documentation" : "",
-                "variableSetterType" : "Rule",
-                "simpleType" : "Rule"
+                "simpleType" : "Rule",
+                "variableSetterType" : "Rule"
               },
               "getterModel" : {
                 "returnType" : "Rule",
@@ -4811,11 +4810,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<Rule>",
-            "templateImplType" : "java.util.ArrayList<Rule>",
-            "simpleType" : "Rule",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "Rule",
+            "templateType" : "java.util.List<Rule>",
+            "templateImplType" : "java.util.ArrayList<Rule>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4852,16 +4851,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ID of the target submitted to Amazon CloudWatch Events.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "targetId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4904,16 +4903,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The error code representing why the target submission failed on this entry.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4956,16 +4955,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The error message explaining why the target submission failed on this entry.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "errorMessage",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5005,8 +5004,8 @@
         "variableType" : "PutTargetsResultEntry",
         "variableDeclarationType" : "PutTargetsResultEntry",
         "documentation" : null,
-        "variableSetterType" : "PutTargetsResultEntry",
-        "simpleType" : "PutTargetsResultEntry"
+        "simpleType" : "PutTargetsResultEntry",
+        "variableSetterType" : "PutTargetsResultEntry"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -5031,16 +5030,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The error message explaining why the target submission failed on this entry.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorMessage",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5084,16 +5083,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The error code representing why the target submission failed on this entry.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "errorCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5137,16 +5136,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ID of the target submitted to Amazon CloudWatch Events.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "targetId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5203,16 +5202,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Amazon Resource Name (ARN) that identifies the rule.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "ruleArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5252,8 +5251,8 @@
         "variableType" : "PutRuleResult",
         "variableDeclarationType" : "PutRuleResult",
         "documentation" : null,
-        "variableSetterType" : "PutRuleResult",
-        "simpleType" : "PutRuleResult"
+        "simpleType" : "PutRuleResult",
+        "variableSetterType" : "PutRuleResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -5278,16 +5277,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) that identifies the rule.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "ruleArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5344,16 +5343,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the rule you want to add targets to.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "rule",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5396,16 +5395,16 @@
           "variableType" : "java.util.List<Target>",
           "variableDeclarationType" : "java.util.List<Target>",
           "documentation" : "<p>List of targets you want to update or add to the rule.</p>",
-          "variableSetterType" : "java.util.Collection<Target>",
-          "simpleType" : "List<Target>"
+          "simpleType" : "List<Target>",
+          "variableSetterType" : "java.util.Collection<Target>"
         },
         "setterModel" : {
           "variableName" : "targets",
           "variableType" : "java.util.List<Target>",
           "variableDeclarationType" : "java.util.List<Target>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<Target>",
-          "simpleType" : "List<Target>"
+          "simpleType" : "List<Target>",
+          "variableSetterType" : "java.util.Collection<Target>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Target>",
@@ -5441,16 +5440,16 @@
               "variableType" : "Target",
               "variableDeclarationType" : "Target",
               "documentation" : "",
-              "variableSetterType" : "Target",
-              "simpleType" : "Target"
+              "simpleType" : "Target",
+              "variableSetterType" : "Target"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Target",
               "variableDeclarationType" : "Target",
               "documentation" : "",
-              "variableSetterType" : "Target",
-              "simpleType" : "Target"
+              "simpleType" : "Target",
+              "variableSetterType" : "Target"
             },
             "getterModel" : {
               "returnType" : "Target",
@@ -5487,11 +5486,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<Target>",
-          "templateImplType" : "java.util.ArrayList<Target>",
-          "simpleType" : "Target",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "Target",
+          "templateType" : "java.util.List<Target>",
+          "templateImplType" : "java.util.ArrayList<Target>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5511,8 +5510,8 @@
         "variableType" : "PutTargetsRequest",
         "variableDeclarationType" : "PutTargetsRequest",
         "documentation" : null,
-        "variableSetterType" : "PutTargetsRequest",
-        "simpleType" : "PutTargetsRequest"
+        "simpleType" : "PutTargetsRequest",
+        "variableSetterType" : "PutTargetsRequest"
       },
       "marshaller" : {
         "action" : "PutTargets",
@@ -5541,16 +5540,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the rule you want to add targets to.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "rule",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5594,16 +5593,16 @@
             "variableType" : "java.util.List<Target>",
             "variableDeclarationType" : "java.util.List<Target>",
             "documentation" : "<p>List of targets you want to update or add to the rule.</p>",
-            "variableSetterType" : "java.util.Collection<Target>",
-            "simpleType" : "List<Target>"
+            "simpleType" : "List<Target>",
+            "variableSetterType" : "java.util.Collection<Target>"
           },
           "setterModel" : {
             "variableName" : "targets",
             "variableType" : "java.util.List<Target>",
             "variableDeclarationType" : "java.util.List<Target>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<Target>",
-            "simpleType" : "List<Target>"
+            "simpleType" : "List<Target>",
+            "variableSetterType" : "java.util.Collection<Target>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Target>",
@@ -5639,16 +5638,16 @@
                 "variableType" : "Target",
                 "variableDeclarationType" : "Target",
                 "documentation" : "",
-                "variableSetterType" : "Target",
-                "simpleType" : "Target"
+                "simpleType" : "Target",
+                "variableSetterType" : "Target"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Target",
                 "variableDeclarationType" : "Target",
                 "documentation" : "",
-                "variableSetterType" : "Target",
-                "simpleType" : "Target"
+                "simpleType" : "Target",
+                "variableSetterType" : "Target"
               },
               "getterModel" : {
                 "returnType" : "Target",
@@ -5685,11 +5684,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<Target>",
-            "templateImplType" : "java.util.ArrayList<Target>",
-            "simpleType" : "Target",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "Target",
+            "templateType" : "java.util.List<Target>",
+            "templateImplType" : "java.util.ArrayList<Target>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5726,16 +5725,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the rule that you want to enable.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5775,8 +5774,8 @@
         "variableType" : "EnableRuleRequest",
         "variableDeclarationType" : "EnableRuleRequest",
         "documentation" : null,
-        "variableSetterType" : "EnableRuleRequest",
-        "simpleType" : "EnableRuleRequest"
+        "simpleType" : "EnableRuleRequest",
+        "variableSetterType" : "EnableRuleRequest"
       },
       "marshaller" : {
         "action" : "EnableRule",
@@ -5805,16 +5804,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the rule that you want to enable.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5871,16 +5870,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the rule you want to remove targets from.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "rule",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5923,16 +5922,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>The list of target IDs to remove from the rule.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "ids",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -5968,16 +5967,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -6014,11 +6013,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simpleType" : "String",
           "simple" : true,
-          "map" : false
+          "map" : false,
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6038,8 +6037,8 @@
         "variableType" : "RemoveTargetsRequest",
         "variableDeclarationType" : "RemoveTargetsRequest",
         "documentation" : null,
-        "variableSetterType" : "RemoveTargetsRequest",
-        "simpleType" : "RemoveTargetsRequest"
+        "simpleType" : "RemoveTargetsRequest",
+        "variableSetterType" : "RemoveTargetsRequest"
       },
       "marshaller" : {
         "action" : "RemoveTargets",
@@ -6068,16 +6067,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the rule you want to remove targets from.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "rule",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6121,16 +6120,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>The list of target IDs to remove from the rule.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "ids",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -6166,16 +6165,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -6212,11 +6211,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simpleType" : "String",
             "simple" : true,
-            "map" : false
+            "map" : false,
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6253,16 +6252,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the rule that you are creating or updating.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6305,16 +6304,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "scheduleExpression",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6357,16 +6356,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The event pattern.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "eventPattern",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6409,16 +6408,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Indicates whether the rule is enabled or disabled.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "state",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6461,16 +6460,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A description of the rule.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "description",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6513,16 +6512,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "roleArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6562,8 +6561,8 @@
         "variableType" : "PutRuleRequest",
         "variableDeclarationType" : "PutRuleRequest",
         "documentation" : null,
-        "variableSetterType" : "PutRuleRequest",
-        "simpleType" : "PutRuleRequest"
+        "simpleType" : "PutRuleRequest",
+        "variableSetterType" : "PutRuleRequest"
       },
       "marshaller" : {
         "action" : "PutRule",
@@ -6592,16 +6591,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the rule that you are creating or updating.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6645,16 +6644,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A description of the rule.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "description",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6698,16 +6697,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Indicates whether the rule is enabled or disabled.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "state",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6751,16 +6750,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "scheduleExpression",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6804,16 +6803,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The event pattern.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "eventPattern",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6857,16 +6856,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "roleArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6920,8 +6919,8 @@
         "variableType" : "EnableRuleResult",
         "variableDeclarationType" : "EnableRuleResult",
         "documentation" : null,
-        "variableSetterType" : "EnableRuleResult",
-        "simpleType" : "EnableRuleResult"
+        "simpleType" : "EnableRuleResult",
+        "variableSetterType" : "EnableRuleResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6958,16 +6957,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the rule you want to disable.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7007,8 +7006,8 @@
         "variableType" : "DisableRuleRequest",
         "variableDeclarationType" : "DisableRuleRequest",
         "documentation" : null,
-        "variableSetterType" : "DisableRuleRequest",
-        "simpleType" : "DisableRuleRequest"
+        "simpleType" : "DisableRuleRequest",
+        "variableSetterType" : "DisableRuleRequest"
       },
       "marshaller" : {
         "action" : "DisableRule",
@@ -7037,16 +7036,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the rule you want to disable.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7103,16 +7102,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The number of failed entries.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "failedEntryCount",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -7155,16 +7154,16 @@
           "variableType" : "java.util.List<PutEventsResultEntry>",
           "variableDeclarationType" : "java.util.List<PutEventsResultEntry>",
           "documentation" : "<p>A list of successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry will have the event ID in it. If not, then the ErrorCode and ErrorMessage can be used to identify the problem with the entry.</p>",
-          "variableSetterType" : "java.util.Collection<PutEventsResultEntry>",
-          "simpleType" : "List<PutEventsResultEntry>"
+          "simpleType" : "List<PutEventsResultEntry>",
+          "variableSetterType" : "java.util.Collection<PutEventsResultEntry>"
         },
         "setterModel" : {
           "variableName" : "entries",
           "variableType" : "java.util.List<PutEventsResultEntry>",
           "variableDeclarationType" : "java.util.List<PutEventsResultEntry>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<PutEventsResultEntry>",
-          "simpleType" : "List<PutEventsResultEntry>"
+          "simpleType" : "List<PutEventsResultEntry>",
+          "variableSetterType" : "java.util.Collection<PutEventsResultEntry>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<PutEventsResultEntry>",
@@ -7200,16 +7199,16 @@
               "variableType" : "PutEventsResultEntry",
               "variableDeclarationType" : "PutEventsResultEntry",
               "documentation" : "",
-              "variableSetterType" : "PutEventsResultEntry",
-              "simpleType" : "PutEventsResultEntry"
+              "simpleType" : "PutEventsResultEntry",
+              "variableSetterType" : "PutEventsResultEntry"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "PutEventsResultEntry",
               "variableDeclarationType" : "PutEventsResultEntry",
               "documentation" : "",
-              "variableSetterType" : "PutEventsResultEntry",
-              "simpleType" : "PutEventsResultEntry"
+              "simpleType" : "PutEventsResultEntry",
+              "variableSetterType" : "PutEventsResultEntry"
             },
             "getterModel" : {
               "returnType" : "PutEventsResultEntry",
@@ -7246,11 +7245,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<PutEventsResultEntry>",
-          "templateImplType" : "java.util.ArrayList<PutEventsResultEntry>",
-          "simpleType" : "PutEventsResultEntry",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "PutEventsResultEntry",
+          "templateType" : "java.util.List<PutEventsResultEntry>",
+          "templateImplType" : "java.util.ArrayList<PutEventsResultEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7270,8 +7269,8 @@
         "variableType" : "PutEventsResult",
         "variableDeclarationType" : "PutEventsResult",
         "documentation" : null,
-        "variableSetterType" : "PutEventsResult",
-        "simpleType" : "PutEventsResult"
+        "simpleType" : "PutEventsResult",
+        "variableSetterType" : "PutEventsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7296,16 +7295,16 @@
             "variableType" : "java.util.List<PutEventsResultEntry>",
             "variableDeclarationType" : "java.util.List<PutEventsResultEntry>",
             "documentation" : "<p>A list of successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry will have the event ID in it. If not, then the ErrorCode and ErrorMessage can be used to identify the problem with the entry.</p>",
-            "variableSetterType" : "java.util.Collection<PutEventsResultEntry>",
-            "simpleType" : "List<PutEventsResultEntry>"
+            "simpleType" : "List<PutEventsResultEntry>",
+            "variableSetterType" : "java.util.Collection<PutEventsResultEntry>"
           },
           "setterModel" : {
             "variableName" : "entries",
             "variableType" : "java.util.List<PutEventsResultEntry>",
             "variableDeclarationType" : "java.util.List<PutEventsResultEntry>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<PutEventsResultEntry>",
-            "simpleType" : "List<PutEventsResultEntry>"
+            "simpleType" : "List<PutEventsResultEntry>",
+            "variableSetterType" : "java.util.Collection<PutEventsResultEntry>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<PutEventsResultEntry>",
@@ -7341,16 +7340,16 @@
                 "variableType" : "PutEventsResultEntry",
                 "variableDeclarationType" : "PutEventsResultEntry",
                 "documentation" : "",
-                "variableSetterType" : "PutEventsResultEntry",
-                "simpleType" : "PutEventsResultEntry"
+                "simpleType" : "PutEventsResultEntry",
+                "variableSetterType" : "PutEventsResultEntry"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "PutEventsResultEntry",
                 "variableDeclarationType" : "PutEventsResultEntry",
                 "documentation" : "",
-                "variableSetterType" : "PutEventsResultEntry",
-                "simpleType" : "PutEventsResultEntry"
+                "simpleType" : "PutEventsResultEntry",
+                "variableSetterType" : "PutEventsResultEntry"
               },
               "getterModel" : {
                 "returnType" : "PutEventsResultEntry",
@@ -7387,11 +7386,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<PutEventsResultEntry>",
-            "templateImplType" : "java.util.ArrayList<PutEventsResultEntry>",
-            "simpleType" : "PutEventsResultEntry",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "PutEventsResultEntry",
+            "templateType" : "java.util.List<PutEventsResultEntry>",
+            "templateImplType" : "java.util.ArrayList<PutEventsResultEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7415,16 +7414,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The number of failed entries.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "failedEntryCount",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -7484,8 +7483,8 @@
         "variableType" : "RuleState",
         "variableDeclarationType" : "RuleState",
         "documentation" : null,
-        "variableSetterType" : "RuleState",
-        "simpleType" : "RuleState"
+        "simpleType" : "RuleState",
+        "variableSetterType" : "RuleState"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7522,16 +7521,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The rule's name.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7574,16 +7573,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Amazon Resource Name (ARN) of the rule.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "arn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7626,16 +7625,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The event pattern of the rule.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "eventPattern",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7678,16 +7677,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The rule's state.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "state",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7730,16 +7729,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The description of the rule.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "description",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7782,16 +7781,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "scheduleExpression",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7834,16 +7833,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Amazon Resource Name (ARN) associated with the role that is used for target invocation.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "roleArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7883,8 +7882,8 @@
         "variableType" : "Rule",
         "variableDeclarationType" : "Rule",
         "documentation" : null,
-        "variableSetterType" : "Rule",
-        "simpleType" : "Rule"
+        "simpleType" : "Rule",
+        "variableSetterType" : "Rule"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7909,16 +7908,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The rule's name.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7962,16 +7961,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The description of the rule.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "description",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8015,16 +8014,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The rule's state.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "state",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8068,16 +8067,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "scheduleExpression",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8121,16 +8120,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The event pattern of the rule.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "eventPattern",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8174,16 +8173,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) of the rule.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "arn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8227,16 +8226,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) associated with the role that is used for target invocation.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "roleArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8293,16 +8292,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The prefix matching the rule name.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "namePrefix",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8345,16 +8344,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The token returned by a previous call to indicate that there is more data available.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8397,16 +8396,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The maximum number of results to return.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "limit",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -8446,8 +8445,8 @@
         "variableType" : "ListRulesRequest",
         "variableDeclarationType" : "ListRulesRequest",
         "documentation" : null,
-        "variableSetterType" : "ListRulesRequest",
-        "simpleType" : "ListRulesRequest"
+        "simpleType" : "ListRulesRequest",
+        "variableSetterType" : "ListRulesRequest"
       },
       "marshaller" : {
         "action" : "ListRules",
@@ -8476,16 +8475,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The token returned by a previous call to indicate that there is more data available.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8529,16 +8528,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The prefix matching the rule name.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "namePrefix",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8582,16 +8581,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The maximum number of results to return.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "limit",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -8645,8 +8644,8 @@
         "variableType" : "InvalidEventPatternException",
         "variableDeclarationType" : "InvalidEventPatternException",
         "documentation" : null,
-        "variableSetterType" : "InvalidEventPatternException",
-        "simpleType" : "InvalidEventPatternException"
+        "simpleType" : "InvalidEventPatternException",
+        "variableSetterType" : "InvalidEventPatternException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -8680,16 +8679,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The rule's name.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8732,16 +8731,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Amazon Resource Name (ARN) associated with the rule.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "arn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8784,16 +8783,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The event pattern.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "eventPattern",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8836,16 +8835,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "scheduleExpression",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8888,16 +8887,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Specifies whether the rule is enabled or disabled.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "state",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8940,16 +8939,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The rule's description.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "description",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8992,16 +8991,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "roleArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9041,8 +9040,8 @@
         "variableType" : "DescribeRuleResult",
         "variableDeclarationType" : "DescribeRuleResult",
         "documentation" : null,
-        "variableSetterType" : "DescribeRuleResult",
-        "simpleType" : "DescribeRuleResult"
+        "simpleType" : "DescribeRuleResult",
+        "variableSetterType" : "DescribeRuleResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -9067,16 +9066,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The rule's name.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9120,16 +9119,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The rule's description.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "description",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9173,16 +9172,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Specifies whether the rule is enabled or disabled.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "state",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9226,16 +9225,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "scheduleExpression",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9279,16 +9278,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The event pattern.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "eventPattern",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9332,16 +9331,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) associated with the rule.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "arn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9385,16 +9384,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "roleArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9451,16 +9450,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The number of failed entries.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "failedEntryCount",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -9503,16 +9502,16 @@
           "variableType" : "java.util.List<PutTargetsResultEntry>",
           "variableDeclarationType" : "java.util.List<PutTargetsResultEntry>",
           "documentation" : "<p>An array of failed target entries.</p>",
-          "variableSetterType" : "java.util.Collection<PutTargetsResultEntry>",
-          "simpleType" : "List<PutTargetsResultEntry>"
+          "simpleType" : "List<PutTargetsResultEntry>",
+          "variableSetterType" : "java.util.Collection<PutTargetsResultEntry>"
         },
         "setterModel" : {
           "variableName" : "failedEntries",
           "variableType" : "java.util.List<PutTargetsResultEntry>",
           "variableDeclarationType" : "java.util.List<PutTargetsResultEntry>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<PutTargetsResultEntry>",
-          "simpleType" : "List<PutTargetsResultEntry>"
+          "simpleType" : "List<PutTargetsResultEntry>",
+          "variableSetterType" : "java.util.Collection<PutTargetsResultEntry>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<PutTargetsResultEntry>",
@@ -9548,16 +9547,16 @@
               "variableType" : "PutTargetsResultEntry",
               "variableDeclarationType" : "PutTargetsResultEntry",
               "documentation" : "",
-              "variableSetterType" : "PutTargetsResultEntry",
-              "simpleType" : "PutTargetsResultEntry"
+              "simpleType" : "PutTargetsResultEntry",
+              "variableSetterType" : "PutTargetsResultEntry"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "PutTargetsResultEntry",
               "variableDeclarationType" : "PutTargetsResultEntry",
               "documentation" : "",
-              "variableSetterType" : "PutTargetsResultEntry",
-              "simpleType" : "PutTargetsResultEntry"
+              "simpleType" : "PutTargetsResultEntry",
+              "variableSetterType" : "PutTargetsResultEntry"
             },
             "getterModel" : {
               "returnType" : "PutTargetsResultEntry",
@@ -9594,11 +9593,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<PutTargetsResultEntry>",
-          "templateImplType" : "java.util.ArrayList<PutTargetsResultEntry>",
-          "simpleType" : "PutTargetsResultEntry",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "PutTargetsResultEntry",
+          "templateType" : "java.util.List<PutTargetsResultEntry>",
+          "templateImplType" : "java.util.ArrayList<PutTargetsResultEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9618,8 +9617,8 @@
         "variableType" : "PutTargetsResult",
         "variableDeclarationType" : "PutTargetsResult",
         "documentation" : null,
-        "variableSetterType" : "PutTargetsResult",
-        "simpleType" : "PutTargetsResult"
+        "simpleType" : "PutTargetsResult",
+        "variableSetterType" : "PutTargetsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -9644,16 +9643,16 @@
             "variableType" : "java.util.List<PutTargetsResultEntry>",
             "variableDeclarationType" : "java.util.List<PutTargetsResultEntry>",
             "documentation" : "<p>An array of failed target entries.</p>",
-            "variableSetterType" : "java.util.Collection<PutTargetsResultEntry>",
-            "simpleType" : "List<PutTargetsResultEntry>"
+            "simpleType" : "List<PutTargetsResultEntry>",
+            "variableSetterType" : "java.util.Collection<PutTargetsResultEntry>"
           },
           "setterModel" : {
             "variableName" : "failedEntries",
             "variableType" : "java.util.List<PutTargetsResultEntry>",
             "variableDeclarationType" : "java.util.List<PutTargetsResultEntry>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<PutTargetsResultEntry>",
-            "simpleType" : "List<PutTargetsResultEntry>"
+            "simpleType" : "List<PutTargetsResultEntry>",
+            "variableSetterType" : "java.util.Collection<PutTargetsResultEntry>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<PutTargetsResultEntry>",
@@ -9689,16 +9688,16 @@
                 "variableType" : "PutTargetsResultEntry",
                 "variableDeclarationType" : "PutTargetsResultEntry",
                 "documentation" : "",
-                "variableSetterType" : "PutTargetsResultEntry",
-                "simpleType" : "PutTargetsResultEntry"
+                "simpleType" : "PutTargetsResultEntry",
+                "variableSetterType" : "PutTargetsResultEntry"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "PutTargetsResultEntry",
                 "variableDeclarationType" : "PutTargetsResultEntry",
                 "documentation" : "",
-                "variableSetterType" : "PutTargetsResultEntry",
-                "simpleType" : "PutTargetsResultEntry"
+                "simpleType" : "PutTargetsResultEntry",
+                "variableSetterType" : "PutTargetsResultEntry"
               },
               "getterModel" : {
                 "returnType" : "PutTargetsResultEntry",
@@ -9735,11 +9734,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<PutTargetsResultEntry>",
-            "templateImplType" : "java.util.ArrayList<PutTargetsResultEntry>",
-            "simpleType" : "PutTargetsResultEntry",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "PutTargetsResultEntry",
+            "templateType" : "java.util.List<PutTargetsResultEntry>",
+            "templateImplType" : "java.util.ArrayList<PutTargetsResultEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9763,16 +9762,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The number of failed entries.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "failedEntryCount",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -9829,16 +9828,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>List of rules names that can invoke the given target.</p>",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "setterModel" : {
           "variableName" : "ruleNames",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "variableSetterType" : "java.util.Collection<String>",
-          "simpleType" : "List<String>"
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -9874,16 +9873,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "variableSetterType" : "String",
-              "simpleType" : "String"
+              "simpleType" : "String",
+              "variableSetterType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -9920,11 +9919,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simpleType" : "String",
           "simple" : true,
-          "map" : false
+          "map" : false,
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9947,16 +9946,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Indicates that there are additional results to retrieve.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9996,8 +9995,8 @@
         "variableType" : "ListRuleNamesByTargetResult",
         "variableDeclarationType" : "ListRuleNamesByTargetResult",
         "documentation" : null,
-        "variableSetterType" : "ListRuleNamesByTargetResult",
-        "simpleType" : "ListRuleNamesByTargetResult"
+        "simpleType" : "ListRuleNamesByTargetResult",
+        "variableSetterType" : "ListRuleNamesByTargetResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -10022,16 +10021,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Indicates that there are additional results to retrieve.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10075,16 +10074,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>List of rules names that can invoke the given target.</p>",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "setterModel" : {
             "variableName" : "ruleNames",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "variableSetterType" : "java.util.Collection<String>",
-            "simpleType" : "List<String>"
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -10120,16 +10119,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "variableSetterType" : "String",
-                "simpleType" : "String"
+                "simpleType" : "String",
+                "variableSetterType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -10166,11 +10165,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simpleType" : "String",
             "simple" : true,
-            "map" : false
+            "map" : false,
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10207,16 +10206,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The event pattern you want to test.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "eventPattern",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10259,16 +10258,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The event in the JSON format to test against the event pattern.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "event",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10308,8 +10307,8 @@
         "variableType" : "TestEventPatternRequest",
         "variableDeclarationType" : "TestEventPatternRequest",
         "documentation" : null,
-        "variableSetterType" : "TestEventPatternRequest",
-        "simpleType" : "TestEventPatternRequest"
+        "simpleType" : "TestEventPatternRequest",
+        "variableSetterType" : "TestEventPatternRequest"
       },
       "marshaller" : {
         "action" : "TestEventPattern",
@@ -10338,16 +10337,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The event in the JSON format to test against the event pattern.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "event",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10391,16 +10390,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The event pattern you want to test.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "eventPattern",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10454,8 +10453,8 @@
         "variableType" : "ResourceNotFoundException",
         "variableDeclarationType" : "ResourceNotFoundException",
         "documentation" : null,
-        "variableSetterType" : "ResourceNotFoundException",
-        "simpleType" : "ResourceNotFoundException"
+        "simpleType" : "ResourceNotFoundException",
+        "variableSetterType" : "ResourceNotFoundException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -10489,16 +10488,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the rule to be deleted.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10538,8 +10537,8 @@
         "variableType" : "DeleteRuleRequest",
         "variableDeclarationType" : "DeleteRuleRequest",
         "documentation" : null,
-        "variableSetterType" : "DeleteRuleRequest",
-        "simpleType" : "DeleteRuleRequest"
+        "simpleType" : "DeleteRuleRequest",
+        "variableSetterType" : "DeleteRuleRequest"
       },
       "marshaller" : {
         "action" : "DeleteRule",
@@ -10568,16 +10567,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the rule to be deleted.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10631,8 +10630,8 @@
         "variableType" : "InternalException",
         "variableDeclarationType" : "InternalException",
         "documentation" : null,
-        "variableSetterType" : "InternalException",
-        "simpleType" : "InternalException"
+        "simpleType" : "InternalException",
+        "variableSetterType" : "InternalException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -10679,5 +10678,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "exceptionUnmarshallerImpl" : null
 }

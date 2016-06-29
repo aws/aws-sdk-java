@@ -95,8 +95,19 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * </p>
      */
     private Boolean ebsOptimized;
-
+    /**
+     * <p>
+     * Indicates whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
+     * </p>
+     */
     private String sriovNetSupport;
+    /**
+     * <p>
+     * Indicates whether enhanced networking with ENA is enabled.
+     * </p>
+     */
+    private Boolean enaSupport;
     /**
      * <p>
      * Indicates whether source/destination checking is enabled. A value of
@@ -700,7 +711,14 @@ public class InstanceAttribute implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
+     * </p>
+     * 
      * @param sriovNetSupport
+     *        Indicates whether enhanced networking with the Intel 82599 Virtual
+     *        Function interface is enabled.
      */
 
     public void setSriovNetSupport(String sriovNetSupport) {
@@ -708,7 +726,13 @@ public class InstanceAttribute implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
+     * </p>
+     * 
+     * @return Indicates whether enhanced networking with the Intel 82599
+     *         Virtual Function interface is enabled.
      */
 
     public String getSriovNetSupport() {
@@ -716,7 +740,14 @@ public class InstanceAttribute implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
+     * </p>
+     * 
      * @param sriovNetSupport
+     *        Indicates whether enhanced networking with the Intel 82599 Virtual
+     *        Function interface is enabled.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -724,6 +755,59 @@ public class InstanceAttribute implements Serializable, Cloneable {
     public InstanceAttribute withSriovNetSupport(String sriovNetSupport) {
         setSriovNetSupport(sriovNetSupport);
         return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether enhanced networking with ENA is enabled.
+     * </p>
+     * 
+     * @param enaSupport
+     *        Indicates whether enhanced networking with ENA is enabled.
+     */
+
+    public void setEnaSupport(Boolean enaSupport) {
+        this.enaSupport = enaSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether enhanced networking with ENA is enabled.
+     * </p>
+     * 
+     * @return Indicates whether enhanced networking with ENA is enabled.
+     */
+
+    public Boolean getEnaSupport() {
+        return this.enaSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether enhanced networking with ENA is enabled.
+     * </p>
+     * 
+     * @param enaSupport
+     *        Indicates whether enhanced networking with ENA is enabled.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public InstanceAttribute withEnaSupport(Boolean enaSupport) {
+        setEnaSupport(enaSupport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether enhanced networking with ENA is enabled.
+     * </p>
+     * 
+     * @return Indicates whether enhanced networking with ENA is enabled.
+     */
+
+    public Boolean isEnaSupport() {
+        return this.enaSupport;
     }
 
     /**
@@ -920,6 +1004,8 @@ public class InstanceAttribute implements Serializable, Cloneable {
             sb.append("EbsOptimized: " + getEbsOptimized() + ",");
         if (getSriovNetSupport() != null)
             sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
+        if (getEnaSupport() != null)
+            sb.append("EnaSupport: " + getEnaSupport() + ",");
         if (getSourceDestCheck() != null)
             sb.append("SourceDestCheck: " + getSourceDestCheck() + ",");
         if (getGroups() != null)
@@ -1006,6 +1092,11 @@ public class InstanceAttribute implements Serializable, Cloneable {
         if (other.getSriovNetSupport() != null
                 && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
             return false;
+        if (other.getEnaSupport() == null ^ this.getEnaSupport() == null)
+            return false;
+        if (other.getEnaSupport() != null
+                && other.getEnaSupport().equals(this.getEnaSupport()) == false)
+            return false;
         if (other.getSourceDestCheck() == null
                 ^ this.getSourceDestCheck() == null)
             return false;
@@ -1065,6 +1156,8 @@ public class InstanceAttribute implements Serializable, Cloneable {
                 * hashCode
                 + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck()

@@ -19,7 +19,9 @@ package com.amazonaws.services.sns.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Response for ConfirmSubscriptions action.
+ * </p>
  */
 public class ConfirmSubscriptionResult implements Serializable, Cloneable {
 

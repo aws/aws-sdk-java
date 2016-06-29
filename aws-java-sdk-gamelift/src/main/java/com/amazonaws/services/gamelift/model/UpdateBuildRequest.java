@@ -29,14 +29,14 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique identifier for the build you want to update.
+     * Unique identifier of the build you want to update.
      * </p>
      */
     private String buildId;
     /**
      * <p>
-     * Descriptive label associated with this build. Build names do not need to
-     * be unique.
+     * Descriptive label associated with a build. Build names do not need to be
+     * unique.
      * </p>
      */
     private String name;
@@ -50,11 +50,11 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique identifier for the build you want to update.
+     * Unique identifier of the build you want to update.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier for the build you want to update.
+     *        Unique identifier of the build you want to update.
      */
 
     public void setBuildId(String buildId) {
@@ -63,10 +63,10 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique identifier for the build you want to update.
+     * Unique identifier of the build you want to update.
      * </p>
      * 
-     * @return Unique identifier for the build you want to update.
+     * @return Unique identifier of the build you want to update.
      */
 
     public String getBuildId() {
@@ -75,11 +75,11 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique identifier for the build you want to update.
+     * Unique identifier of the build you want to update.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier for the build you want to update.
+     *        Unique identifier of the build you want to update.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -91,13 +91,13 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this build. Build names do not need to
-     * be unique.
+     * Descriptive label associated with a build. Build names do not need to be
+     * unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this build. Build names do not
-     *        need to be unique.
+     *        Descriptive label associated with a build. Build names do not need
+     *        to be unique.
      */
 
     public void setName(String name) {
@@ -106,11 +106,11 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this build. Build names do not need to
-     * be unique.
+     * Descriptive label associated with a build. Build names do not need to be
+     * unique.
      * </p>
      * 
-     * @return Descriptive label associated with this build. Build names do not
+     * @return Descriptive label associated with a build. Build names do not
      *         need to be unique.
      */
 
@@ -120,13 +120,13 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this build. Build names do not need to
-     * be unique.
+     * Descriptive label associated with a build. Build names do not need to be
+     * unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this build. Build names do not
-     *        need to be unique.
+     *        Descriptive label associated with a build. Build names do not need
+     *        to be unique.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

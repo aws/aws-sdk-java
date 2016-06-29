@@ -15,15 +15,16 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
+import com.amazonaws.codegen.protocol.ProtocolMetadataProvider;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Metadata {
 
     private String apiVersion;
 
-    private String exceptionUnmarshallerImpl;
-
     private Protocol protocol;
+
+    private ProtocolMetadataProvider protocolMetadataProvider;
 
     // TODO Not sure if this is needed.Remove if not needed.
     private String checksumFormat;
@@ -52,7 +53,7 @@ public class Metadata {
 
     private boolean hasApiWithStreamInput;
 
-    private String jsonContentVersion;
+    private String contentType;
 
     private String jsonVersion;
 
@@ -79,6 +80,7 @@ public class Metadata {
 
     public void setProtocol(Protocol protocol) {
         this.protocol = protocol;
+        this.protocolMetadataProvider = protocol.getProvider();
     }
 
     public Metadata withProtocol(Protocol protocol) {
@@ -86,17 +88,12 @@ public class Metadata {
         return this;
     }
 
-    public String getExceptionUnmarshallerImpl() {
-        return exceptionUnmarshallerImpl;
-    }
-
-    public void setExceptionUnmarshallerImpl(String protocolDefaultExceptionUnmarshallerImpl) {
-        this.exceptionUnmarshallerImpl = protocolDefaultExceptionUnmarshallerImpl;
-    }
-
-    public Metadata withExceptionUnmarshallerImpl(String protocolDefaultExceptionUnmarshallerImpl) {
-        setExceptionUnmarshallerImpl(protocolDefaultExceptionUnmarshallerImpl);
-        return this;
+    /**
+     * @return The default implementation of exception unmarshallers to use when no custom one is
+     * provided through {@link com.amazonaws.codegen.model.config.customization.CustomizationConfig}
+     */
+    public String getProtocolDefaultExceptionUmarshallerImpl() {
+        return protocolMetadataProvider.getExceptionUnmarshallerImpl();
     }
 
     public String getChecksumFormat() {
@@ -305,19 +302,6 @@ public class Metadata {
         return this;
     }
 
-    public String getJsonContentVersion() {
-        return jsonContentVersion;
-    }
-
-    public void setJsonContentVersion(String jsonContentVersion) {
-        this.jsonContentVersion = jsonContentVersion;
-    }
-
-    public Metadata withJsonContentVersion(String jsonContentVersion) {
-        setJsonContentVersion(jsonContentVersion);
-        return this;
-    }
-
     public String getJsonVersion() {
         return jsonVersion;
     }
@@ -332,21 +316,15 @@ public class Metadata {
     }
 
     public boolean isCborProtocol() {
-        return protocol == Protocol.CBOR || protocol == Protocol.REST_CBOR;
+        return protocolMetadataProvider.isCborProtocol();
     }
 
     public boolean isJsonProtocol() {
-        return protocol == Protocol.REST_JSON ||
-               protocol == Protocol.JSON ||
-               protocol == Protocol.CBOR ||
-               protocol == Protocol.REST_CBOR;
+        return protocolMetadataProvider.isJsonProtocol();
     }
 
     public boolean isXmlProtocol() {
-        return protocol == Protocol.QUERY ||
-               protocol == Protocol.REST_XML ||
-               protocol == Protocol.EC2;
-
+        return protocolMetadataProvider.isXmlProtocol();
     }
 
     public String getEndpointPrefix() {
@@ -375,57 +353,23 @@ public class Metadata {
         return this;
     }
 
-    public String getUnmarshallerContextClassName() {
-        switch (protocol) {
-        case EC2:
-        case QUERY:
-        case REST_XML:
-            return "StaxUnmarshallerContext";
-        case JSON:
-        case REST_JSON:
-        case CBOR:
-        case REST_CBOR:
-            return "JsonUnmarshallerContext";
-        default:
-            throw new RuntimeException(
-                    "Unable to identify the unmarshaller context class name for "
-                            + protocol.getValue());
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+    public String getContentType() {
+        if (contentType != null) {
+            return contentType;
         }
+        return protocolMetadataProvider.getContentType();
+    }
+
+    public String getUnmarshallerContextClassName() {
+        return protocolMetadataProvider.getUnmarshallerContextClassName();
     }
 
     public String getUnmarshallerClassSuffix() {
-        switch (protocol) {
-        case EC2:
-        case QUERY:
-        case REST_XML:
-            return "StaxUnmarshaller";
-        case JSON:
-        case REST_JSON:
-        case CBOR:
-        case REST_CBOR:
-            return "JsonUnmarshaller";
-        default:
-            throw new RuntimeException(
-                    "Unable to identify the unmarshaller class name suffix for "
-                            + protocol.getValue());
-        }
+        return protocolMetadataProvider.getUnmarshallerClassSuffix();
     }
 
-    public String getProtocolDefaultExceptionUnmarshallerType() {
-        switch (protocol) {
-        case EC2:
-        case QUERY:
-        case REST_XML:
-            return "StandardErrorUnmarshaller";
-        case JSON:
-        case REST_JSON:
-        case CBOR:
-        case REST_CBOR:
-            return "JsonErrorUnmarshaller";
-        default:
-            throw new RuntimeException(
-                    "Unable to identify the protocol specific default exception unsmarshaller class name for "
-                            + protocol.getValue());
-        }
-    }
 }

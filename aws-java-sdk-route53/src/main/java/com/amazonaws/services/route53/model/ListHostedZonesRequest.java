@@ -28,13 +28,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * hosted zones is displayed on a single page. You can control the length of the
  * page that is displayed by using the <code>MaxItems</code> parameter. You can
  * use the <code>Marker</code> parameter to control the hosted zone that the
- * list begins with. For more information about listing hosted zones, see <a
- * href=
- * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ListInfoOnHostedZone.html"
- * >Listing the Hosted Zones for an AWS Account</a> in the <i>Amazon Route 53
- * Developer Guide</i>.
+ * list begins with.
  * </p>
- * <note> Amazon Route 53 returns a maximum of 100 items. If you set
+ * <note>Amazon Route 53 returns a maximum of 100 items. If you set
  * <code>MaxItems</code> to a value greater than 100, Amazon Route 53 returns
  * only the first 100.</note>
  */

@@ -55,10 +55,10 @@ public class ListHostedZonesResult implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates where to continue listing hosted zones. If
-     * <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make
-     * another request to <code>ListHostedZones</code> and include the value of
-     * the <code>NextMarker</code> element in the <code>Marker</code> element to
-     * get the next page of results.
+     * <code>IsTruncated</code> is <code>true</code>, make another request to
+     * <code>ListHostedZones</code> and include the value of the
+     * <code>NextMarker</code> element in the <code>Marker</code> element to get
+     * the next page of results.
      * </p>
      */
     private String nextMarker;
@@ -66,12 +66,10 @@ public class ListHostedZonesResult implements Serializable, Cloneable {
      * <p>
      * The maximum number of hosted zones to be included in the response body.
      * If the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of
-     * <a>ListHostedZonesResponse$IsTruncated</a> in the response is
-     * <code>true</code>. Call <code>ListHostedZones</code> again and specify
-     * the value of <a>ListHostedZonesResponse$NextMarker</a> in the
-     * <a>ListHostedZonesRequest$Marker</a> element to get the next page of
-     * results.
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
+     * response is <code>true</code>. Call <code>ListHostedZones</code> again
+     * and specify the value of <code>NextMarker</code> in the
+     * <code>Marker</code> parameter to get the next page of results.
      * </p>
      */
     private String maxItems;
@@ -318,18 +316,18 @@ public class ListHostedZonesResult implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates where to continue listing hosted zones. If
-     * <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make
-     * another request to <code>ListHostedZones</code> and include the value of
-     * the <code>NextMarker</code> element in the <code>Marker</code> element to
-     * get the next page of results.
+     * <code>IsTruncated</code> is <code>true</code>, make another request to
+     * <code>ListHostedZones</code> and include the value of the
+     * <code>NextMarker</code> element in the <code>Marker</code> element to get
+     * the next page of results.
      * </p>
      * 
      * @param nextMarker
      *        Indicates where to continue listing hosted zones. If
-     *        <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>,
-     *        make another request to <code>ListHostedZones</code> and include
-     *        the value of the <code>NextMarker</code> element in the
-     *        <code>Marker</code> element to get the next page of results.
+     *        <code>IsTruncated</code> is <code>true</code>, make another
+     *        request to <code>ListHostedZones</code> and include the value of
+     *        the <code>NextMarker</code> element in the <code>Marker</code>
+     *        element to get the next page of results.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -339,17 +337,17 @@ public class ListHostedZonesResult implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates where to continue listing hosted zones. If
-     * <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make
-     * another request to <code>ListHostedZones</code> and include the value of
-     * the <code>NextMarker</code> element in the <code>Marker</code> element to
-     * get the next page of results.
+     * <code>IsTruncated</code> is <code>true</code>, make another request to
+     * <code>ListHostedZones</code> and include the value of the
+     * <code>NextMarker</code> element in the <code>Marker</code> element to get
+     * the next page of results.
      * </p>
      * 
      * @return Indicates where to continue listing hosted zones. If
-     *         <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>,
-     *         make another request to <code>ListHostedZones</code> and include
-     *         the value of the <code>NextMarker</code> element in the
-     *         <code>Marker</code> element to get the next page of results.
+     *         <code>IsTruncated</code> is <code>true</code>, make another
+     *         request to <code>ListHostedZones</code> and include the value of
+     *         the <code>NextMarker</code> element in the <code>Marker</code>
+     *         element to get the next page of results.
      */
 
     public String getNextMarker() {
@@ -359,18 +357,18 @@ public class ListHostedZonesResult implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates where to continue listing hosted zones. If
-     * <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make
-     * another request to <code>ListHostedZones</code> and include the value of
-     * the <code>NextMarker</code> element in the <code>Marker</code> element to
-     * get the next page of results.
+     * <code>IsTruncated</code> is <code>true</code>, make another request to
+     * <code>ListHostedZones</code> and include the value of the
+     * <code>NextMarker</code> element in the <code>Marker</code> element to get
+     * the next page of results.
      * </p>
      * 
      * @param nextMarker
      *        Indicates where to continue listing hosted zones. If
-     *        <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>,
-     *        make another request to <code>ListHostedZones</code> and include
-     *        the value of the <code>NextMarker</code> element in the
-     *        <code>Marker</code> element to get the next page of results.
+     *        <code>IsTruncated</code> is <code>true</code>, make another
+     *        request to <code>ListHostedZones</code> and include the value of
+     *        the <code>NextMarker</code> element in the <code>Marker</code>
+     *        element to get the next page of results.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -384,23 +382,20 @@ public class ListHostedZonesResult implements Serializable, Cloneable {
      * <p>
      * The maximum number of hosted zones to be included in the response body.
      * If the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of
-     * <a>ListHostedZonesResponse$IsTruncated</a> in the response is
-     * <code>true</code>. Call <code>ListHostedZones</code> again and specify
-     * the value of <a>ListHostedZonesResponse$NextMarker</a> in the
-     * <a>ListHostedZonesRequest$Marker</a> element to get the next page of
-     * results.
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
+     * response is <code>true</code>. Call <code>ListHostedZones</code> again
+     * and specify the value of <code>NextMarker</code> in the
+     * <code>Marker</code> parameter to get the next page of results.
      * </p>
      * 
      * @param maxItems
      *        The maximum number of hosted zones to be included in the response
      *        body. If the number of hosted zones associated with this AWS
      *        account exceeds <code>MaxItems</code>, the value of
-     *        <a>ListHostedZonesResponse$IsTruncated</a> in the response is
-     *        <code>true</code>. Call <code>ListHostedZones</code> again and
-     *        specify the value of <a>ListHostedZonesResponse$NextMarker</a> in
-     *        the <a>ListHostedZonesRequest$Marker</a> element to get the next
-     *        page of results.
+     *        <code>IsTruncated</code> in the response is <code>true</code>.
+     *        Call <code>ListHostedZones</code> again and specify the value of
+     *        <code>NextMarker</code> in the <code>Marker</code> parameter to
+     *        get the next page of results.
      */
 
     public void setMaxItems(String maxItems) {
@@ -411,22 +406,19 @@ public class ListHostedZonesResult implements Serializable, Cloneable {
      * <p>
      * The maximum number of hosted zones to be included in the response body.
      * If the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of
-     * <a>ListHostedZonesResponse$IsTruncated</a> in the response is
-     * <code>true</code>. Call <code>ListHostedZones</code> again and specify
-     * the value of <a>ListHostedZonesResponse$NextMarker</a> in the
-     * <a>ListHostedZonesRequest$Marker</a> element to get the next page of
-     * results.
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
+     * response is <code>true</code>. Call <code>ListHostedZones</code> again
+     * and specify the value of <code>NextMarker</code> in the
+     * <code>Marker</code> parameter to get the next page of results.
      * </p>
      * 
      * @return The maximum number of hosted zones to be included in the response
      *         body. If the number of hosted zones associated with this AWS
      *         account exceeds <code>MaxItems</code>, the value of
-     *         <a>ListHostedZonesResponse$IsTruncated</a> in the response is
-     *         <code>true</code>. Call <code>ListHostedZones</code> again and
-     *         specify the value of <a>ListHostedZonesResponse$NextMarker</a> in
-     *         the <a>ListHostedZonesRequest$Marker</a> element to get the next
-     *         page of results.
+     *         <code>IsTruncated</code> in the response is <code>true</code>.
+     *         Call <code>ListHostedZones</code> again and specify the value of
+     *         <code>NextMarker</code> in the <code>Marker</code> parameter to
+     *         get the next page of results.
      */
 
     public String getMaxItems() {
@@ -437,23 +429,20 @@ public class ListHostedZonesResult implements Serializable, Cloneable {
      * <p>
      * The maximum number of hosted zones to be included in the response body.
      * If the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of
-     * <a>ListHostedZonesResponse$IsTruncated</a> in the response is
-     * <code>true</code>. Call <code>ListHostedZones</code> again and specify
-     * the value of <a>ListHostedZonesResponse$NextMarker</a> in the
-     * <a>ListHostedZonesRequest$Marker</a> element to get the next page of
-     * results.
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
+     * response is <code>true</code>. Call <code>ListHostedZones</code> again
+     * and specify the value of <code>NextMarker</code> in the
+     * <code>Marker</code> parameter to get the next page of results.
      * </p>
      * 
      * @param maxItems
      *        The maximum number of hosted zones to be included in the response
      *        body. If the number of hosted zones associated with this AWS
      *        account exceeds <code>MaxItems</code>, the value of
-     *        <a>ListHostedZonesResponse$IsTruncated</a> in the response is
-     *        <code>true</code>. Call <code>ListHostedZones</code> again and
-     *        specify the value of <a>ListHostedZonesResponse$NextMarker</a> in
-     *        the <a>ListHostedZonesRequest$Marker</a> element to get the next
-     *        page of results.
+     *        <code>IsTruncated</code> in the response is <code>true</code>.
+     *        Call <code>ListHostedZones</code> again and specify the value of
+     *        <code>NextMarker</code> in the <code>Marker</code> parameter to
+     *        get the next page of results.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

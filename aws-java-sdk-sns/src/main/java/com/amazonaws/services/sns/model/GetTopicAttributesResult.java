@@ -31,22 +31,58 @@ public class GetTopicAttributesResult implements Serializable, Cloneable {
      * following:
      * </p>
      * <ul>
-     * <li> <code>TopicArn</code> -- the topic's ARN</li>
-     * <li> <code>Owner</code> -- the AWS account ID of the topic's owner</li>
-     * <li> <code>Policy</code> -- the JSON serialization of the topic's access
-     * control policy</li>
-     * <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li>
-     * <li> <code>SubscriptionsPending</code> -- the number of subscriptions
-     * pending confirmation on this topic</li>
-     * <li> <code>SubscriptionsConfirmed</code> -- the number of confirmed
-     * subscriptions on this topic</li>
-     * <li> <code>SubscriptionsDeleted</code> -- the number of deleted
-     * subscriptions on this topic</li>
-     * <li> <code>DeliveryPolicy</code> -- the JSON serialization of the topic's
-     * delivery policy</li>
-     * <li> <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the
-     * effective delivery policy that takes into account system defaults</li>
+     * <li>
+     * <p>
+     * <code>TopicArn</code> -- the topic's ARN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Owner</code> -- the AWS account ID of the topic's owner
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DisplayName</code> -- the human-readable name used in the "From"
+     * field for notifications to email and email-json endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
+     * confirmation on this topic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions
+     * on this topic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the
+     * effective delivery policy that takes into account system defaults
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
@@ -57,46 +93,116 @@ public class GetTopicAttributesResult implements Serializable, Cloneable {
      * following:
      * </p>
      * <ul>
-     * <li> <code>TopicArn</code> -- the topic's ARN</li>
-     * <li> <code>Owner</code> -- the AWS account ID of the topic's owner</li>
-     * <li> <code>Policy</code> -- the JSON serialization of the topic's access
-     * control policy</li>
-     * <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li>
-     * <li> <code>SubscriptionsPending</code> -- the number of subscriptions
-     * pending confirmation on this topic</li>
-     * <li> <code>SubscriptionsConfirmed</code> -- the number of confirmed
-     * subscriptions on this topic</li>
-     * <li> <code>SubscriptionsDeleted</code> -- the number of deleted
-     * subscriptions on this topic</li>
-     * <li> <code>DeliveryPolicy</code> -- the JSON serialization of the topic's
-     * delivery policy</li>
-     * <li> <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the
-     * effective delivery policy that takes into account system defaults</li>
+     * <li>
+     * <p>
+     * <code>TopicArn</code> -- the topic's ARN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Owner</code> -- the AWS account ID of the topic's owner
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DisplayName</code> -- the human-readable name used in the "From"
+     * field for notifications to email and email-json endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
+     * confirmation on this topic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions
+     * on this topic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the
+     * effective delivery policy that takes into account system defaults
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A map of the topic's attributes. Attributes in this map include
      *         the following:</p>
      *         <ul>
-     *         <li> <code>TopicArn</code> -- the topic's ARN</li>
-     *         <li> <code>Owner</code> -- the AWS account ID of the topic's owner
+     *         <li>
+     *         <p>
+     *         <code>TopicArn</code> -- the topic's ARN
+     *         </p>
      *         </li>
-     *         <li> <code>Policy</code> -- the JSON serialization of the topic's
-     *         access control policy</li>
-     *         <li> <code>DisplayName</code> -- the human-readable name used in
-     *         the "From" field for notifications to email and email-json
-     *         endpoints</li>
-     *         <li> <code>SubscriptionsPending</code> -- the number of
-     *         subscriptions pending confirmation on this topic</li>
-     *         <li> <code>SubscriptionsConfirmed</code> -- the number of
-     *         confirmed subscriptions on this topic</li>
-     *         <li> <code>SubscriptionsDeleted</code> -- the number of deleted
-     *         subscriptions on this topic</li>
-     *         <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     *         topic's delivery policy</li>
-     *         <li> <code>EffectiveDeliveryPolicy</code> -- the JSON
-     *         serialization of the effective delivery policy that takes into
-     *         account system defaults</li>
+     *         <li>
+     *         <p>
+     *         <code>Owner</code> -- the AWS account ID of the topic's owner
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Policy</code> -- the JSON serialization of the topic's
+     *         access control policy
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DisplayName</code> -- the human-readable name used in the
+     *         "From" field for notifications to email and email-json endpoints
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SubscriptionsPending</code> -- the number of subscriptions
+     *         pending confirmation on this topic
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SubscriptionsConfirmed</code> -- the number of confirmed
+     *         subscriptions on this topic
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SubscriptionsDeleted</code> -- the number of deleted
+     *         subscriptions on this topic
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DeliveryPolicy</code> -- the JSON serialization of the
+     *         topic's delivery policy
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of
+     *         the effective delivery policy that takes into account system
+     *         defaults
+     *         </p>
+     *         </li>
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -112,46 +218,117 @@ public class GetTopicAttributesResult implements Serializable, Cloneable {
      * following:
      * </p>
      * <ul>
-     * <li> <code>TopicArn</code> -- the topic's ARN</li>
-     * <li> <code>Owner</code> -- the AWS account ID of the topic's owner</li>
-     * <li> <code>Policy</code> -- the JSON serialization of the topic's access
-     * control policy</li>
-     * <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li>
-     * <li> <code>SubscriptionsPending</code> -- the number of subscriptions
-     * pending confirmation on this topic</li>
-     * <li> <code>SubscriptionsConfirmed</code> -- the number of confirmed
-     * subscriptions on this topic</li>
-     * <li> <code>SubscriptionsDeleted</code> -- the number of deleted
-     * subscriptions on this topic</li>
-     * <li> <code>DeliveryPolicy</code> -- the JSON serialization of the topic's
-     * delivery policy</li>
-     * <li> <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the
-     * effective delivery policy that takes into account system defaults</li>
+     * <li>
+     * <p>
+     * <code>TopicArn</code> -- the topic's ARN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Owner</code> -- the AWS account ID of the topic's owner
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DisplayName</code> -- the human-readable name used in the "From"
+     * field for notifications to email and email-json endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
+     * confirmation on this topic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions
+     * on this topic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the
+     * effective delivery policy that takes into account system defaults
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attributes
      *        A map of the topic's attributes. Attributes in this map include
      *        the following:</p>
      *        <ul>
-     *        <li> <code>TopicArn</code> -- the topic's ARN</li>
-     *        <li> <code>Owner</code> -- the AWS account ID of the topic's owner</li>
-     *        <li> <code>Policy</code> -- the JSON serialization of the topic's
-     *        access control policy</li>
-     *        <li> <code>DisplayName</code> -- the human-readable name used in
-     *        the "From" field for notifications to email and email-json
-     *        endpoints</li>
-     *        <li> <code>SubscriptionsPending</code> -- the number of
-     *        subscriptions pending confirmation on this topic</li>
-     *        <li> <code>SubscriptionsConfirmed</code> -- the number of confirmed
-     *        subscriptions on this topic</li>
-     *        <li> <code>SubscriptionsDeleted</code> -- the number of deleted
-     *        subscriptions on this topic</li>
-     *        <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     *        topic's delivery policy</li>
-     *        <li> <code>EffectiveDeliveryPolicy</code> -- the JSON serialization
-     *        of the effective delivery policy that takes into account system
-     *        defaults</li>
+     *        <li>
+     *        <p>
+     *        <code>TopicArn</code> -- the topic's ARN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Owner</code> -- the AWS account ID of the topic's owner
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Policy</code> -- the JSON serialization of the topic's
+     *        access control policy
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DisplayName</code> -- the human-readable name used in the
+     *        "From" field for notifications to email and email-json endpoints
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SubscriptionsPending</code> -- the number of subscriptions
+     *        pending confirmation on this topic
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SubscriptionsConfirmed</code> -- the number of confirmed
+     *        subscriptions on this topic
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SubscriptionsDeleted</code> -- the number of deleted
+     *        subscriptions on this topic
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DeliveryPolicy</code> -- the JSON serialization of the
+     *        topic's delivery policy
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of
+     *        the effective delivery policy that takes into account system
+     *        defaults
+     *        </p>
+     *        </li>
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -166,46 +343,117 @@ public class GetTopicAttributesResult implements Serializable, Cloneable {
      * following:
      * </p>
      * <ul>
-     * <li> <code>TopicArn</code> -- the topic's ARN</li>
-     * <li> <code>Owner</code> -- the AWS account ID of the topic's owner</li>
-     * <li> <code>Policy</code> -- the JSON serialization of the topic's access
-     * control policy</li>
-     * <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li>
-     * <li> <code>SubscriptionsPending</code> -- the number of subscriptions
-     * pending confirmation on this topic</li>
-     * <li> <code>SubscriptionsConfirmed</code> -- the number of confirmed
-     * subscriptions on this topic</li>
-     * <li> <code>SubscriptionsDeleted</code> -- the number of deleted
-     * subscriptions on this topic</li>
-     * <li> <code>DeliveryPolicy</code> -- the JSON serialization of the topic's
-     * delivery policy</li>
-     * <li> <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the
-     * effective delivery policy that takes into account system defaults</li>
+     * <li>
+     * <p>
+     * <code>TopicArn</code> -- the topic's ARN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Owner</code> -- the AWS account ID of the topic's owner
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DisplayName</code> -- the human-readable name used in the "From"
+     * field for notifications to email and email-json endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
+     * confirmation on this topic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions
+     * on this topic
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the
+     * effective delivery policy that takes into account system defaults
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attributes
      *        A map of the topic's attributes. Attributes in this map include
      *        the following:</p>
      *        <ul>
-     *        <li> <code>TopicArn</code> -- the topic's ARN</li>
-     *        <li> <code>Owner</code> -- the AWS account ID of the topic's owner</li>
-     *        <li> <code>Policy</code> -- the JSON serialization of the topic's
-     *        access control policy</li>
-     *        <li> <code>DisplayName</code> -- the human-readable name used in
-     *        the "From" field for notifications to email and email-json
-     *        endpoints</li>
-     *        <li> <code>SubscriptionsPending</code> -- the number of
-     *        subscriptions pending confirmation on this topic</li>
-     *        <li> <code>SubscriptionsConfirmed</code> -- the number of confirmed
-     *        subscriptions on this topic</li>
-     *        <li> <code>SubscriptionsDeleted</code> -- the number of deleted
-     *        subscriptions on this topic</li>
-     *        <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     *        topic's delivery policy</li>
-     *        <li> <code>EffectiveDeliveryPolicy</code> -- the JSON serialization
-     *        of the effective delivery policy that takes into account system
-     *        defaults</li>
+     *        <li>
+     *        <p>
+     *        <code>TopicArn</code> -- the topic's ARN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Owner</code> -- the AWS account ID of the topic's owner
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Policy</code> -- the JSON serialization of the topic's
+     *        access control policy
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DisplayName</code> -- the human-readable name used in the
+     *        "From" field for notifications to email and email-json endpoints
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SubscriptionsPending</code> -- the number of subscriptions
+     *        pending confirmation on this topic
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SubscriptionsConfirmed</code> -- the number of confirmed
+     *        subscriptions on this topic
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SubscriptionsDeleted</code> -- the number of deleted
+     *        subscriptions on this topic
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DeliveryPolicy</code> -- the JSON serialization of the
+     *        topic's delivery policy
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of
+     *        the effective delivery policy that takes into account system
+     *        defaults
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

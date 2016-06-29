@@ -68,6 +68,8 @@ import com.amazonaws.util.CountingInputStream;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.FakeIOException;
 import com.amazonaws.util.ImmutableMapParameter;
+import com.amazonaws.util.MetadataCache;
+import com.amazonaws.util.NullResponseMetadataCache;
 import com.amazonaws.util.ResponseMetadataCache;
 import com.amazonaws.util.TimingInfo;
 import com.amazonaws.util.UnreliableFilterInputStream;
@@ -185,7 +187,7 @@ public class AmazonHttpClient {
     /**
      * Cache of metadata for recently executed requests for diagnostic purposes
      */
-    private final ResponseMetadataCache responseMetadataCache;
+    private final MetadataCache responseMetadataCache;
     /**
      * Timer to enforce HTTP request timeouts.
      */
@@ -271,8 +273,8 @@ public class AmazonHttpClient {
         this.config = clientConfig;
         this.httpClientSettings = httpClientSettings;
         this.requestMetricCollector = requestMetricCollector;
-        this.responseMetadataCache = new ResponseMetadataCache(clientConfig
-                .getResponseMetadataCacheSize());
+        this.responseMetadataCache = clientConfig.getCacheResponseMetadata() ? new ResponseMetadataCache(clientConfig
+                .getResponseMetadataCacheSize()) : new NullResponseMetadataCache();
         this.httpRequestTimer = new HttpRequestTimer();
         this.clientExecutionTimer = new ClientExecutionTimer();
 

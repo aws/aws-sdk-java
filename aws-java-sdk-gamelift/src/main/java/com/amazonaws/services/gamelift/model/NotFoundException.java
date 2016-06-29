@@ -20,8 +20,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * A service resource associated with the request could not be found. Such
- * requests should not be retried by clients.
+ * A service resource associated with the request could not be found. Clients
+ * should not retry such requests
  * </p>
  */
 public class NotFoundException extends AmazonServiceException {

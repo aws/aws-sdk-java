@@ -19,7 +19,9 @@ package com.amazonaws.services.sns.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Response for Subscribe action.
+ * </p>
  */
 public class SubscribeResult implements Serializable, Cloneable {
 

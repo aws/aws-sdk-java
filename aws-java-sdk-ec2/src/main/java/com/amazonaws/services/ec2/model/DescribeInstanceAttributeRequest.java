@@ -40,6 +40,10 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      * <p>
      * The instance attribute.
      * </p>
+     * <p>
+     * Note: The <code>enaSupport</code> attribute is not supported at this
+     * time.
+     * </p>
      */
     private String attribute;
 
@@ -59,7 +63,10 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The ID of the instance.
      * @param attribute
-     *        The instance attribute.
+     *        The instance attribute.</p>
+     *        <p>
+     *        Note: The <code>enaSupport</code> attribute is not supported at
+     *        this time.
      */
     public DescribeInstanceAttributeRequest(String instanceId, String attribute) {
         setInstanceId(instanceId);
@@ -74,7 +81,10 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The ID of the instance.
      * @param attribute
-     *        The instance attribute.
+     *        The instance attribute.</p>
+     *        <p>
+     *        Note: The <code>enaSupport</code> attribute is not supported at
+     *        this time.
      */
     public DescribeInstanceAttributeRequest(String instanceId,
             InstanceAttributeName attribute) {
@@ -127,9 +137,16 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      * <p>
      * The instance attribute.
      * </p>
+     * <p>
+     * Note: The <code>enaSupport</code> attribute is not supported at this
+     * time.
+     * </p>
      * 
      * @param attribute
-     *        The instance attribute.
+     *        The instance attribute.</p>
+     *        <p>
+     *        Note: The <code>enaSupport</code> attribute is not supported at
+     *        this time.
      * @see InstanceAttributeName
      */
 
@@ -141,8 +158,15 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      * <p>
      * The instance attribute.
      * </p>
+     * <p>
+     * Note: The <code>enaSupport</code> attribute is not supported at this
+     * time.
+     * </p>
      * 
-     * @return The instance attribute.
+     * @return The instance attribute.</p>
+     *         <p>
+     *         Note: The <code>enaSupport</code> attribute is not supported at
+     *         this time.
      * @see InstanceAttributeName
      */
 
@@ -154,9 +178,16 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      * <p>
      * The instance attribute.
      * </p>
+     * <p>
+     * Note: The <code>enaSupport</code> attribute is not supported at this
+     * time.
+     * </p>
      * 
      * @param attribute
-     *        The instance attribute.
+     *        The instance attribute.</p>
+     *        <p>
+     *        Note: The <code>enaSupport</code> attribute is not supported at
+     *        this time.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstanceAttributeName
@@ -171,9 +202,16 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      * <p>
      * The instance attribute.
      * </p>
+     * <p>
+     * Note: The <code>enaSupport</code> attribute is not supported at this
+     * time.
+     * </p>
      * 
      * @param attribute
-     *        The instance attribute.
+     *        The instance attribute.</p>
+     *        <p>
+     *        Note: The <code>enaSupport</code> attribute is not supported at
+     *        this time.
      * @see InstanceAttributeName
      */
 
@@ -185,9 +223,16 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      * <p>
      * The instance attribute.
      * </p>
+     * <p>
+     * Note: The <code>enaSupport</code> attribute is not supported at this
+     * time.
+     * </p>
      * 
      * @param attribute
-     *        The instance attribute.
+     *        The instance attribute.</p>
+     *        <p>
+     *        Note: The <code>enaSupport</code> attribute is not supported at
+     *        this time.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstanceAttributeName

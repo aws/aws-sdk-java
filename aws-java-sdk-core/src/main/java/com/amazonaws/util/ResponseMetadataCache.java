@@ -18,15 +18,16 @@ import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 
 import com.amazonaws.ResponseMetadata;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
  * Cache of response metadata for recently executed requests for diagnostic
  * purposes. This cache has a max size and as entries are added, the oldest
  * entry is aged out once the max size has been reached.
  */
-public class ResponseMetadataCache {
+@SdkInternalApi
+public class ResponseMetadataCache implements MetadataCache {
     private final InternalCache internalCache;
-
 
     /**
      * Creates a new cache that will contain, at most the specified number of
@@ -39,30 +40,13 @@ public class ResponseMetadataCache {
         internalCache = new InternalCache(maxEntries);
     }
 
-    /**
-     * Adds a new entry to this cache, possibly evicting the oldest entry if the
-     * cache is at its size limit.
-     *
-     * @param obj
-     *            The key by which to store the metadata.
-     * @param metadata
-     *            The metadata for this entry.
-     */
+    @Override
     public synchronized void add(Object obj, ResponseMetadata metadata) {
         if (obj == null) return;
         internalCache.put(System.identityHashCode(obj), metadata);
     }
 
-    /**
-     * Returns the response metadata associated with the specified object, or
-     * null if no metadata is associated with that object.
-     *
-     * @param obj
-     *            The key by which the desired metadata is stored.
-     *
-     * @return The response metadata associated with the given object key,
-     *         otherwise null if no metadata is associated with that object.
-     */
+    @Override
     public synchronized ResponseMetadata get(Object obj) {
         // System.identityHashCode isn't guaranteed to be unique
         // on all platforms, but should be reasonable enough to use
@@ -71,17 +55,16 @@ public class ResponseMetadataCache {
         return internalCache.get(System.identityHashCode(obj));
     }
 
-
     /**
      * Simple implementation of LinkedHashMap that overrides the
      * <code>removeEldestEntry</code> method to turn LinkedHashMap into a
-     * LRU(ish) cache that automatically evicts old entries.
+     * FIFO cache that automatically evicts old entries.
      */
     private static final class InternalCache extends LinkedHashMap<Integer, ResponseMetadata> {
         private static final long serialVersionUID = 1L;
         private int maxSize;
 
-        public InternalCache(int maxSize) {
+        InternalCache(int maxSize) {
             super(maxSize);
             this.maxSize = maxSize;
         }

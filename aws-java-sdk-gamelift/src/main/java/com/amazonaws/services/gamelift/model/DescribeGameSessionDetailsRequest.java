@@ -51,15 +51,15 @@ public class DescribeGameSessionDetailsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Game session status to filter results on. Possible game session states
-     * include ACTIVE, TERMINATED, ACTIVATING and TERMINATING (the last two are
-     * transitory).
+     * include ACTIVE, <code>TERMINATED</code>, <code>ACTIVATING</code> and
+     * <code>TERMINATING</code> (the last two are transitory).
      * </p>
      */
     private String statusFilter;
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.
      * </p>
      */
     private Integer limit;
@@ -217,14 +217,15 @@ public class DescribeGameSessionDetailsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Game session status to filter results on. Possible game session states
-     * include ACTIVE, TERMINATED, ACTIVATING and TERMINATING (the last two are
-     * transitory).
+     * include ACTIVE, <code>TERMINATED</code>, <code>ACTIVATING</code> and
+     * <code>TERMINATING</code> (the last two are transitory).
      * </p>
      * 
      * @param statusFilter
      *        Game session status to filter results on. Possible game session
-     *        states include ACTIVE, TERMINATED, ACTIVATING and TERMINATING (the
-     *        last two are transitory).
+     *        states include ACTIVE, <code>TERMINATED</code>,
+     *        <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two
+     *        are transitory).
      */
 
     public void setStatusFilter(String statusFilter) {
@@ -234,13 +235,14 @@ public class DescribeGameSessionDetailsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Game session status to filter results on. Possible game session states
-     * include ACTIVE, TERMINATED, ACTIVATING and TERMINATING (the last two are
-     * transitory).
+     * include ACTIVE, <code>TERMINATED</code>, <code>ACTIVATING</code> and
+     * <code>TERMINATING</code> (the last two are transitory).
      * </p>
      * 
      * @return Game session status to filter results on. Possible game session
-     *         states include ACTIVE, TERMINATED, ACTIVATING and TERMINATING
-     *         (the last two are transitory).
+     *         states include ACTIVE, <code>TERMINATED</code>,
+     *         <code>ACTIVATING</code> and <code>TERMINATING</code> (the last
+     *         two are transitory).
      */
 
     public String getStatusFilter() {
@@ -250,14 +252,15 @@ public class DescribeGameSessionDetailsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Game session status to filter results on. Possible game session states
-     * include ACTIVE, TERMINATED, ACTIVATING and TERMINATING (the last two are
-     * transitory).
+     * include ACTIVE, <code>TERMINATED</code>, <code>ACTIVATING</code> and
+     * <code>TERMINATING</code> (the last two are transitory).
      * </p>
      * 
      * @param statusFilter
      *        Game session status to filter results on. Possible game session
-     *        states include ACTIVE, TERMINATED, ACTIVATING and TERMINATING (the
-     *        last two are transitory).
+     *        states include ACTIVE, <code>TERMINATED</code>,
+     *        <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two
+     *        are transitory).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -270,13 +273,14 @@ public class DescribeGameSessionDetailsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. You can use this parameter
-     *        with <i>NextToken</i> to get results as a set of sequential pages.
+     *        Maximum number of results to return. Use this parameter with
+     *        <code>NextToken</code> to get results as a set of sequential
+     *        pages.
      */
 
     public void setLimit(Integer limit) {
@@ -285,12 +289,12 @@ public class DescribeGameSessionDetailsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.
      * </p>
      * 
-     * @return Maximum number of results to return. You can use this parameter
-     *         with <i>NextToken</i> to get results as a set of sequential
+     * @return Maximum number of results to return. Use this parameter with
+     *         <code>NextToken</code> to get results as a set of sequential
      *         pages.
      */
 
@@ -300,13 +304,14 @@ public class DescribeGameSessionDetailsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. You can use this parameter
-     *        with <i>NextToken</i> to get results as a set of sequential pages.
+     *        Maximum number of results to return. Use this parameter with
+     *        <code>NextToken</code> to get results as a set of sequential
+     *        pages.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

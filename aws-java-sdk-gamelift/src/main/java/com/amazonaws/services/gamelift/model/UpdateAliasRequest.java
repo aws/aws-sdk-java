@@ -36,14 +36,14 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
     private String aliasId;
     /**
      * <p>
-     * Descriptive label associated with this alias. Alias names do not need to
-     * be unique.
+     * Descriptive label associated with an alias. Alias names do not need to be
+     * unique.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Human-readable description of the alias.
+     * Human-readable description of an alias.
      * </p>
      */
     private String description;
@@ -103,12 +103,12 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this alias. Alias names do not need to
-     * be unique.
+     * Descriptive label associated with an alias. Alias names do not need to be
+     * unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this alias. Alias names do not
+     *        Descriptive label associated with an alias. Alias names do not
      *        need to be unique.
      */
 
@@ -118,11 +118,11 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this alias. Alias names do not need to
-     * be unique.
+     * Descriptive label associated with an alias. Alias names do not need to be
+     * unique.
      * </p>
      * 
-     * @return Descriptive label associated with this alias. Alias names do not
+     * @return Descriptive label associated with an alias. Alias names do not
      *         need to be unique.
      */
 
@@ -132,12 +132,12 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this alias. Alias names do not need to
-     * be unique.
+     * Descriptive label associated with an alias. Alias names do not need to be
+     * unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this alias. Alias names do not
+     *        Descriptive label associated with an alias. Alias names do not
      *        need to be unique.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -150,11 +150,11 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Human-readable description of the alias.
+     * Human-readable description of an alias.
      * </p>
      * 
      * @param description
-     *        Human-readable description of the alias.
+     *        Human-readable description of an alias.
      */
 
     public void setDescription(String description) {
@@ -163,10 +163,10 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Human-readable description of the alias.
+     * Human-readable description of an alias.
      * </p>
      * 
-     * @return Human-readable description of the alias.
+     * @return Human-readable description of an alias.
      */
 
     public String getDescription() {
@@ -175,11 +175,11 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Human-readable description of the alias.
+     * Human-readable description of an alias.
      * </p>
      * 
      * @param description
-     *        Human-readable description of the alias.
+     *        Human-readable description of an alias.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

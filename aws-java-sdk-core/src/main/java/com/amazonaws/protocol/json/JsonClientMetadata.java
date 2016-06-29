@@ -33,6 +33,8 @@ public class JsonClientMetadata {
 
     private String protocolVersion;
 
+    private String contentTypeOverride;
+
     private boolean supportsCbor;
 
     public JsonClientMetadata addErrorMetadata(JsonErrorShapeMetadata errorShapeMetadata) {
@@ -55,6 +57,15 @@ public class JsonClientMetadata {
 
     public JsonClientMetadata withProtocolVersion(String protocolVersion) {
         this.protocolVersion = protocolVersion;
+        return this;
+    }
+
+    public String getContentTypeOverride() {
+        return contentTypeOverride;
+    }
+
+    public JsonClientMetadata withContentTypeOverride(String contentType) {
+        this.contentTypeOverride = contentType;
         return this;
     }
 

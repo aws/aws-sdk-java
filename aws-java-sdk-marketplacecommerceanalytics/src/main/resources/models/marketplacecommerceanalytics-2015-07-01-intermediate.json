@@ -1,7 +1,6 @@
 {
   "metadata" : {
     "apiVersion" : "2015-07-01",
-    "exceptionUnmarshallerImpl" : null,
     "protocol" : "json",
     "checksumFormat" : null,
     "documentation" : "Provides AWS Marketplace business intelligence data on-demand.",
@@ -16,17 +15,17 @@
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Marketplace Commerce Analytics",
     "hasApiWithStreamInput" : false,
-    "jsonContentVersion" : "application/x-amz-json-1.1",
+    "contentType" : null,
     "jsonVersion" : "1.1",
     "endpointPrefix" : "marketplacecommerceanalytics",
     "signingName" : "marketplacecommerceanalytics",
-    "jsonProtocol" : true,
     "serviceName" : "AWS Marketplace Commerce Analytics",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "xmlProtocol" : false
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "xmlProtocol" : false,
+    "jsonProtocol" : true
   },
   "operations" : {
     "GenerateDataSet" : {
@@ -1266,5 +1265,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "exceptionUnmarshallerImpl" : null,
   "clientConfigFactory" : "ClientConfigurationFactory"
 }

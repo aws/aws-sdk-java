@@ -183,6 +183,12 @@ public class ModifyInstanceAttributeRequestMarshaller
                             .getSriovNetSupport()));
         }
 
+        if (modifyInstanceAttributeRequest.getEnaSupport() != null) {
+            request.addParameter("EnaSupport.Value",
+                    StringUtils.fromBoolean(modifyInstanceAttributeRequest
+                            .getEnaSupport()));
+        }
+
         return request;
     }
 

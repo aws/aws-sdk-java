@@ -21,8 +21,8 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * The requested operation would cause a conflict with the current state of a
- * resource associated with the request and/or the fleet. Please resolve the
- * conflict before retrying.
+ * resource associated with the request and/or the fleet. Resolve the conflict
+ * before retrying.
  * </p>
  */
 public class InvalidFleetStatusException extends AmazonServiceException {

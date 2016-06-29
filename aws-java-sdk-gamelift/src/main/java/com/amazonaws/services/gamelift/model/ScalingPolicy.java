@@ -34,8 +34,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
     private String fleetId;
     /**
      * <p>
-     * Descriptive label associated with this scaling policy. Policy names do
-     * not need to be unique.
+     * Descriptive label associated with a scaling policy. Policy names do not
+     * need to be unique.
      * </p>
      */
     private String name;
@@ -44,16 +44,16 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Current status of the scaling policy. The scaling policy is only in force
      * when in an Active state.
      * <ul>
-     * <li>ACTIVE: The scaling policy is currently in force.</li>
-     * <li>UPDATEREQUESTED: A request to update the scaling policy has been
-     * received.</li>
-     * <li>UPDATING: A change is being made to the scaling policy.</li>
-     * <li>DELETEREQUESTED: A request to delete the scaling policy has been
-     * received.</li>
-     * <li>DELETING: The scaling policy is being deleted.</li>
-     * <li>DELETED: The scaling policy has been deleted.</li>
-     * <li>ERROR: An error occurred in creating the policy. It should be removed
-     * and recreated.</li>
+     * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * been received.</li>
+     * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
+     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * been received.</li>
+     * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
+     * removed and recreated.</li>
      * </ul>
      * </p>
      */
@@ -69,14 +69,14 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
      * <ul>
-     * <li>ChangeInCapacity: add (or subtract) the scaling adjustment value from
-     * the current instance count. Positive values scale up while negative
-     * values scale down.</li>
-     * <li>ExactCapacity: set the instance count to the scaling adjustment
-     * value.</li>
-     * <li>PercentChangeInCapacity: increase or reduce the current instance
-     * count by the scaling adjustment, read as a percentage. Positive values
-     * scale up while negative values scale down.</li>
+     * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
+     * value from the current instance count. Positive values scale up while
+     * negative values scale down.</li>
+     * <li><b>ExactCapacity</b> – set the instance count to the scaling
+     * adjustment value.</li>
+     * <li><b>PercentChangeInCapacity</b> – increase or reduce the current
+     * instance count by the scaling adjustment, read as a percentage. Positive
+     * values scale up while negative values scale down.</li>
      * </ul>
      * </p>
      */
@@ -106,22 +106,24 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Name of the GameLift-defined metric that is used to trigger an
      * adjustment.
      * <ul>
-     * <li>ActivatingGameSessions: number of game sessions in the process of
-     * being created (game session status = ACTIVATING).</li>
-     * <li>ActiveGameSessions: number of game sessions currently running (game
-     * session status = ACTIVE).</li>
-     * <li>CurrentPlayerSessions: number of active or reserved player sessions
-     * (player session status = ACTIVE or RESERVED).</li>
-     * <li>AvailablePlayerSessions: number of player session slots currently
-     * available in active game sessions across the fleet, calculated by
-     * subtracting a game session's current player session count from its
+     * <li><b>ActivatingGameSessions</b> – number of game sessions in the
+     * process of being created (game session status = <code>ACTIVATING</code>).
+     * </li>
+     * <li><b>ActiveGameSessions</b> – number of game sessions currently running
+     * (game session status = <code>ACTIVE</code>).</li>
+     * <li><b>CurrentPlayerSessions</b> – number of active or reserved player
+     * sessions (player session status = <code>ACTIVE</code> or
+     * <code>RESERVED</code>).</li>
+     * <li><b>AvailablePlayerSessions</b> – number of player session slots
+     * currently available in active game sessions across the fleet, calculated
+     * by subtracting a game session's current player session count from its
      * maximum player session count. This number does include game sessions that
      * are not currently accepting players (game session
-     * PlayerSessionCreationPolicy = DENY_ALL).</li>
-     * <li>ActiveInstances: number of instances currently running a game
+     * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).</li>
+     * <li><b>ActiveInstances</b> – number of instances currently running a game
      * session.</li>
-     * <li>IdleInstances: number of instances not currently running a game
-     * session.</li>
+     * <li><b>IdleInstances</b> – number of instances not currently running a
+     * game session.</li>
      * </ul>
      * </p>
      */
@@ -171,13 +173,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with this scaling policy. Policy names do
-     * not need to be unique.
+     * Descriptive label associated with a scaling policy. Policy names do not
+     * need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this scaling policy. Policy
-     *        names do not need to be unique.
+     *        Descriptive label associated with a scaling policy. Policy names
+     *        do not need to be unique.
      */
 
     public void setName(String name) {
@@ -186,12 +188,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with this scaling policy. Policy names do
-     * not need to be unique.
+     * Descriptive label associated with a scaling policy. Policy names do not
+     * need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with this scaling policy. Policy
-     *         names do not need to be unique.
+     * @return Descriptive label associated with a scaling policy. Policy names
+     *         do not need to be unique.
      */
 
     public String getName() {
@@ -200,13 +202,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with this scaling policy. Policy names do
-     * not need to be unique.
+     * Descriptive label associated with a scaling policy. Policy names do not
+     * need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this scaling policy. Policy
-     *        names do not need to be unique.
+     *        Descriptive label associated with a scaling policy. Policy names
+     *        do not need to be unique.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -221,16 +223,16 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Current status of the scaling policy. The scaling policy is only in force
      * when in an Active state.
      * <ul>
-     * <li>ACTIVE: The scaling policy is currently in force.</li>
-     * <li>UPDATEREQUESTED: A request to update the scaling policy has been
-     * received.</li>
-     * <li>UPDATING: A change is being made to the scaling policy.</li>
-     * <li>DELETEREQUESTED: A request to delete the scaling policy has been
-     * received.</li>
-     * <li>DELETING: The scaling policy is being deleted.</li>
-     * <li>DELETED: The scaling policy has been deleted.</li>
-     * <li>ERROR: An error occurred in creating the policy. It should be removed
-     * and recreated.</li>
+     * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * been received.</li>
+     * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
+     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * been received.</li>
+     * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
+     * removed and recreated.</li>
      * </ul>
      * </p>
      * 
@@ -238,16 +240,17 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        Current status of the scaling policy. The scaling policy is only
      *        in force when in an Active state.
      *        <ul>
-     *        <li>ACTIVE: The scaling policy is currently in force.</li>
-     *        <li>UPDATEREQUESTED: A request to update the scaling policy has
-     *        been received.</li>
-     *        <li>UPDATING: A change is being made to the scaling policy.</li>
-     *        <li>DELETEREQUESTED: A request to delete the scaling policy has
-     *        been received.</li>
-     *        <li>DELETING: The scaling policy is being deleted.</li>
-     *        <li>DELETED: The scaling policy has been deleted.</li>
-     *        <li>ERROR: An error occurred in creating the policy. It should be
-     *        removed and recreated.</li>
+     *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *        policy has been received.</li>
+     *        <li><b>UPDATING</b> – A change is being made to the scaling
+     *        policy.</li>
+     *        <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *        policy has been received.</li>
+     *        <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     *        <li><b>ERROR</b> – An error occurred in creating the policy. It
+     *        should be removed and recreated.</li>
      *        </ul>
      * @see ScalingStatusType
      */
@@ -261,32 +264,33 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Current status of the scaling policy. The scaling policy is only in force
      * when in an Active state.
      * <ul>
-     * <li>ACTIVE: The scaling policy is currently in force.</li>
-     * <li>UPDATEREQUESTED: A request to update the scaling policy has been
-     * received.</li>
-     * <li>UPDATING: A change is being made to the scaling policy.</li>
-     * <li>DELETEREQUESTED: A request to delete the scaling policy has been
-     * received.</li>
-     * <li>DELETING: The scaling policy is being deleted.</li>
-     * <li>DELETED: The scaling policy has been deleted.</li>
-     * <li>ERROR: An error occurred in creating the policy. It should be removed
-     * and recreated.</li>
+     * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * been received.</li>
+     * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
+     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * been received.</li>
+     * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
+     * removed and recreated.</li>
      * </ul>
      * </p>
      * 
      * @return Current status of the scaling policy. The scaling policy is only
      *         in force when in an Active state.
      *         <ul>
-     *         <li>ACTIVE: The scaling policy is currently in force.</li>
-     *         <li>UPDATEREQUESTED: A request to update the scaling policy has
-     *         been received.</li>
-     *         <li>UPDATING: A change is being made to the scaling policy.</li>
-     *         <li>DELETEREQUESTED: A request to delete the scaling policy has
-     *         been received.</li>
-     *         <li>DELETING: The scaling policy is being deleted.</li>
-     *         <li>DELETED: The scaling policy has been deleted.</li>
-     *         <li>ERROR: An error occurred in creating the policy. It should be
-     *         removed and recreated.</li>
+     *         <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     *         <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *         policy has been received.</li>
+     *         <li><b>UPDATING</b> – A change is being made to the scaling
+     *         policy.</li>
+     *         <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *         policy has been received.</li>
+     *         <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     *         <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     *         <li><b>ERROR</b> – An error occurred in creating the policy. It
+     *         should be removed and recreated.</li>
      *         </ul>
      * @see ScalingStatusType
      */
@@ -300,16 +304,16 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Current status of the scaling policy. The scaling policy is only in force
      * when in an Active state.
      * <ul>
-     * <li>ACTIVE: The scaling policy is currently in force.</li>
-     * <li>UPDATEREQUESTED: A request to update the scaling policy has been
-     * received.</li>
-     * <li>UPDATING: A change is being made to the scaling policy.</li>
-     * <li>DELETEREQUESTED: A request to delete the scaling policy has been
-     * received.</li>
-     * <li>DELETING: The scaling policy is being deleted.</li>
-     * <li>DELETED: The scaling policy has been deleted.</li>
-     * <li>ERROR: An error occurred in creating the policy. It should be removed
-     * and recreated.</li>
+     * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * been received.</li>
+     * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
+     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * been received.</li>
+     * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
+     * removed and recreated.</li>
      * </ul>
      * </p>
      * 
@@ -317,16 +321,17 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        Current status of the scaling policy. The scaling policy is only
      *        in force when in an Active state.
      *        <ul>
-     *        <li>ACTIVE: The scaling policy is currently in force.</li>
-     *        <li>UPDATEREQUESTED: A request to update the scaling policy has
-     *        been received.</li>
-     *        <li>UPDATING: A change is being made to the scaling policy.</li>
-     *        <li>DELETEREQUESTED: A request to delete the scaling policy has
-     *        been received.</li>
-     *        <li>DELETING: The scaling policy is being deleted.</li>
-     *        <li>DELETED: The scaling policy has been deleted.</li>
-     *        <li>ERROR: An error occurred in creating the policy. It should be
-     *        removed and recreated.</li>
+     *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *        policy has been received.</li>
+     *        <li><b>UPDATING</b> – A change is being made to the scaling
+     *        policy.</li>
+     *        <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *        policy has been received.</li>
+     *        <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     *        <li><b>ERROR</b> – An error occurred in creating the policy. It
+     *        should be removed and recreated.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -343,16 +348,16 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Current status of the scaling policy. The scaling policy is only in force
      * when in an Active state.
      * <ul>
-     * <li>ACTIVE: The scaling policy is currently in force.</li>
-     * <li>UPDATEREQUESTED: A request to update the scaling policy has been
-     * received.</li>
-     * <li>UPDATING: A change is being made to the scaling policy.</li>
-     * <li>DELETEREQUESTED: A request to delete the scaling policy has been
-     * received.</li>
-     * <li>DELETING: The scaling policy is being deleted.</li>
-     * <li>DELETED: The scaling policy has been deleted.</li>
-     * <li>ERROR: An error occurred in creating the policy. It should be removed
-     * and recreated.</li>
+     * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * been received.</li>
+     * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
+     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * been received.</li>
+     * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
+     * removed and recreated.</li>
      * </ul>
      * </p>
      * 
@@ -360,16 +365,17 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        Current status of the scaling policy. The scaling policy is only
      *        in force when in an Active state.
      *        <ul>
-     *        <li>ACTIVE: The scaling policy is currently in force.</li>
-     *        <li>UPDATEREQUESTED: A request to update the scaling policy has
-     *        been received.</li>
-     *        <li>UPDATING: A change is being made to the scaling policy.</li>
-     *        <li>DELETEREQUESTED: A request to delete the scaling policy has
-     *        been received.</li>
-     *        <li>DELETING: The scaling policy is being deleted.</li>
-     *        <li>DELETED: The scaling policy has been deleted.</li>
-     *        <li>ERROR: An error occurred in creating the policy. It should be
-     *        removed and recreated.</li>
+     *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *        policy has been received.</li>
+     *        <li><b>UPDATING</b> – A change is being made to the scaling
+     *        policy.</li>
+     *        <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *        policy has been received.</li>
+     *        <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     *        <li><b>ERROR</b> – An error occurred in creating the policy. It
+     *        should be removed and recreated.</li>
      *        </ul>
      * @see ScalingStatusType
      */
@@ -383,16 +389,16 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Current status of the scaling policy. The scaling policy is only in force
      * when in an Active state.
      * <ul>
-     * <li>ACTIVE: The scaling policy is currently in force.</li>
-     * <li>UPDATEREQUESTED: A request to update the scaling policy has been
-     * received.</li>
-     * <li>UPDATING: A change is being made to the scaling policy.</li>
-     * <li>DELETEREQUESTED: A request to delete the scaling policy has been
-     * received.</li>
-     * <li>DELETING: The scaling policy is being deleted.</li>
-     * <li>DELETED: The scaling policy has been deleted.</li>
-     * <li>ERROR: An error occurred in creating the policy. It should be removed
-     * and recreated.</li>
+     * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * been received.</li>
+     * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
+     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * been received.</li>
+     * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
+     * removed and recreated.</li>
      * </ul>
      * </p>
      * 
@@ -400,16 +406,17 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        Current status of the scaling policy. The scaling policy is only
      *        in force when in an Active state.
      *        <ul>
-     *        <li>ACTIVE: The scaling policy is currently in force.</li>
-     *        <li>UPDATEREQUESTED: A request to update the scaling policy has
-     *        been received.</li>
-     *        <li>UPDATING: A change is being made to the scaling policy.</li>
-     *        <li>DELETEREQUESTED: A request to delete the scaling policy has
-     *        been received.</li>
-     *        <li>DELETING: The scaling policy is being deleted.</li>
-     *        <li>DELETED: The scaling policy has been deleted.</li>
-     *        <li>ERROR: An error occurred in creating the policy. It should be
-     *        removed and recreated.</li>
+     *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *        policy has been received.</li>
+     *        <li><b>UPDATING</b> – A change is being made to the scaling
+     *        policy.</li>
+     *        <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *        policy has been received.</li>
+     *        <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     *        <li><b>ERROR</b> – An error occurred in creating the policy. It
+     *        should be removed and recreated.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -470,14 +477,14 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
      * <ul>
-     * <li>ChangeInCapacity: add (or subtract) the scaling adjustment value from
-     * the current instance count. Positive values scale up while negative
-     * values scale down.</li>
-     * <li>ExactCapacity: set the instance count to the scaling adjustment
-     * value.</li>
-     * <li>PercentChangeInCapacity: increase or reduce the current instance
-     * count by the scaling adjustment, read as a percentage. Positive values
-     * scale up while negative values scale down.</li>
+     * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
+     * value from the current instance count. Positive values scale up while
+     * negative values scale down.</li>
+     * <li><b>ExactCapacity</b> – set the instance count to the scaling
+     * adjustment value.</li>
+     * <li><b>PercentChangeInCapacity</b> – increase or reduce the current
+     * instance count by the scaling adjustment, read as a percentage. Positive
+     * values scale up while negative values scale down.</li>
      * </ul>
      * </p>
      * 
@@ -485,14 +492,15 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        Type of adjustment to make to a fleet's instance count (see
      *        <a>FleetCapacity</a>):
      *        <ul>
-     *        <li>ChangeInCapacity: add (or subtract) the scaling adjustment
-     *        value from the current instance count. Positive values scale up
-     *        while negative values scale down.</li>
-     *        <li>ExactCapacity: set the instance count to the scaling
+     *        <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
+     *        adjustment value from the current instance count. Positive values
+     *        scale up while negative values scale down.</li>
+     *        <li><b>ExactCapacity</b> – set the instance count to the scaling
      *        adjustment value.</li>
-     *        <li>PercentChangeInCapacity: increase or reduce the current
-     *        instance count by the scaling adjustment, read as a percentage.
-     *        Positive values scale up while negative values scale down.</li>
+     *        <li><b>PercentChangeInCapacity</b> – increase or reduce the
+     *        current instance count by the scaling adjustment, read as a
+     *        percentage. Positive values scale up while negative values scale
+     *        down.</li>
      *        </ul>
      * @see ScalingAdjustmentType
      */
@@ -506,28 +514,29 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
      * <ul>
-     * <li>ChangeInCapacity: add (or subtract) the scaling adjustment value from
-     * the current instance count. Positive values scale up while negative
-     * values scale down.</li>
-     * <li>ExactCapacity: set the instance count to the scaling adjustment
-     * value.</li>
-     * <li>PercentChangeInCapacity: increase or reduce the current instance
-     * count by the scaling adjustment, read as a percentage. Positive values
-     * scale up while negative values scale down.</li>
+     * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
+     * value from the current instance count. Positive values scale up while
+     * negative values scale down.</li>
+     * <li><b>ExactCapacity</b> – set the instance count to the scaling
+     * adjustment value.</li>
+     * <li><b>PercentChangeInCapacity</b> – increase or reduce the current
+     * instance count by the scaling adjustment, read as a percentage. Positive
+     * values scale up while negative values scale down.</li>
      * </ul>
      * </p>
      * 
      * @return Type of adjustment to make to a fleet's instance count (see
      *         <a>FleetCapacity</a>):
      *         <ul>
-     *         <li>ChangeInCapacity: add (or subtract) the scaling adjustment
-     *         value from the current instance count. Positive values scale up
-     *         while negative values scale down.</li>
-     *         <li>ExactCapacity: set the instance count to the scaling
+     *         <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
+     *         adjustment value from the current instance count. Positive values
+     *         scale up while negative values scale down.</li>
+     *         <li><b>ExactCapacity</b> – set the instance count to the scaling
      *         adjustment value.</li>
-     *         <li>PercentChangeInCapacity: increase or reduce the current
-     *         instance count by the scaling adjustment, read as a percentage.
-     *         Positive values scale up while negative values scale down.</li>
+     *         <li><b>PercentChangeInCapacity</b> – increase or reduce the
+     *         current instance count by the scaling adjustment, read as a
+     *         percentage. Positive values scale up while negative values scale
+     *         down.</li>
      *         </ul>
      * @see ScalingAdjustmentType
      */
@@ -541,14 +550,14 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
      * <ul>
-     * <li>ChangeInCapacity: add (or subtract) the scaling adjustment value from
-     * the current instance count. Positive values scale up while negative
-     * values scale down.</li>
-     * <li>ExactCapacity: set the instance count to the scaling adjustment
-     * value.</li>
-     * <li>PercentChangeInCapacity: increase or reduce the current instance
-     * count by the scaling adjustment, read as a percentage. Positive values
-     * scale up while negative values scale down.</li>
+     * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
+     * value from the current instance count. Positive values scale up while
+     * negative values scale down.</li>
+     * <li><b>ExactCapacity</b> – set the instance count to the scaling
+     * adjustment value.</li>
+     * <li><b>PercentChangeInCapacity</b> – increase or reduce the current
+     * instance count by the scaling adjustment, read as a percentage. Positive
+     * values scale up while negative values scale down.</li>
      * </ul>
      * </p>
      * 
@@ -556,14 +565,15 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        Type of adjustment to make to a fleet's instance count (see
      *        <a>FleetCapacity</a>):
      *        <ul>
-     *        <li>ChangeInCapacity: add (or subtract) the scaling adjustment
-     *        value from the current instance count. Positive values scale up
-     *        while negative values scale down.</li>
-     *        <li>ExactCapacity: set the instance count to the scaling
+     *        <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
+     *        adjustment value from the current instance count. Positive values
+     *        scale up while negative values scale down.</li>
+     *        <li><b>ExactCapacity</b> – set the instance count to the scaling
      *        adjustment value.</li>
-     *        <li>PercentChangeInCapacity: increase or reduce the current
-     *        instance count by the scaling adjustment, read as a percentage.
-     *        Positive values scale up while negative values scale down.</li>
+     *        <li><b>PercentChangeInCapacity</b> – increase or reduce the
+     *        current instance count by the scaling adjustment, read as a
+     *        percentage. Positive values scale up while negative values scale
+     *        down.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -580,14 +590,14 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
      * <ul>
-     * <li>ChangeInCapacity: add (or subtract) the scaling adjustment value from
-     * the current instance count. Positive values scale up while negative
-     * values scale down.</li>
-     * <li>ExactCapacity: set the instance count to the scaling adjustment
-     * value.</li>
-     * <li>PercentChangeInCapacity: increase or reduce the current instance
-     * count by the scaling adjustment, read as a percentage. Positive values
-     * scale up while negative values scale down.</li>
+     * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
+     * value from the current instance count. Positive values scale up while
+     * negative values scale down.</li>
+     * <li><b>ExactCapacity</b> – set the instance count to the scaling
+     * adjustment value.</li>
+     * <li><b>PercentChangeInCapacity</b> – increase or reduce the current
+     * instance count by the scaling adjustment, read as a percentage. Positive
+     * values scale up while negative values scale down.</li>
      * </ul>
      * </p>
      * 
@@ -595,14 +605,15 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        Type of adjustment to make to a fleet's instance count (see
      *        <a>FleetCapacity</a>):
      *        <ul>
-     *        <li>ChangeInCapacity: add (or subtract) the scaling adjustment
-     *        value from the current instance count. Positive values scale up
-     *        while negative values scale down.</li>
-     *        <li>ExactCapacity: set the instance count to the scaling
+     *        <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
+     *        adjustment value from the current instance count. Positive values
+     *        scale up while negative values scale down.</li>
+     *        <li><b>ExactCapacity</b> – set the instance count to the scaling
      *        adjustment value.</li>
-     *        <li>PercentChangeInCapacity: increase or reduce the current
-     *        instance count by the scaling adjustment, read as a percentage.
-     *        Positive values scale up while negative values scale down.</li>
+     *        <li><b>PercentChangeInCapacity</b> – increase or reduce the
+     *        current instance count by the scaling adjustment, read as a
+     *        percentage. Positive values scale up while negative values scale
+     *        down.</li>
      *        </ul>
      * @see ScalingAdjustmentType
      */
@@ -617,14 +628,14 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
      * <ul>
-     * <li>ChangeInCapacity: add (or subtract) the scaling adjustment value from
-     * the current instance count. Positive values scale up while negative
-     * values scale down.</li>
-     * <li>ExactCapacity: set the instance count to the scaling adjustment
-     * value.</li>
-     * <li>PercentChangeInCapacity: increase or reduce the current instance
-     * count by the scaling adjustment, read as a percentage. Positive values
-     * scale up while negative values scale down.</li>
+     * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
+     * value from the current instance count. Positive values scale up while
+     * negative values scale down.</li>
+     * <li><b>ExactCapacity</b> – set the instance count to the scaling
+     * adjustment value.</li>
+     * <li><b>PercentChangeInCapacity</b> – increase or reduce the current
+     * instance count by the scaling adjustment, read as a percentage. Positive
+     * values scale up while negative values scale down.</li>
      * </ul>
      * </p>
      * 
@@ -632,14 +643,15 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        Type of adjustment to make to a fleet's instance count (see
      *        <a>FleetCapacity</a>):
      *        <ul>
-     *        <li>ChangeInCapacity: add (or subtract) the scaling adjustment
-     *        value from the current instance count. Positive values scale up
-     *        while negative values scale down.</li>
-     *        <li>ExactCapacity: set the instance count to the scaling
+     *        <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
+     *        adjustment value from the current instance count. Positive values
+     *        scale up while negative values scale down.</li>
+     *        <li><b>ExactCapacity</b> – set the instance count to the scaling
      *        adjustment value.</li>
-     *        <li>PercentChangeInCapacity: increase or reduce the current
-     *        instance count by the scaling adjustment, read as a percentage.
-     *        Positive values scale up while negative values scale down.</li>
+     *        <li><b>PercentChangeInCapacity</b> – increase or reduce the
+     *        current instance count by the scaling adjustment, read as a
+     *        percentage. Positive values scale up while negative values scale
+     *        down.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -831,22 +843,24 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Name of the GameLift-defined metric that is used to trigger an
      * adjustment.
      * <ul>
-     * <li>ActivatingGameSessions: number of game sessions in the process of
-     * being created (game session status = ACTIVATING).</li>
-     * <li>ActiveGameSessions: number of game sessions currently running (game
-     * session status = ACTIVE).</li>
-     * <li>CurrentPlayerSessions: number of active or reserved player sessions
-     * (player session status = ACTIVE or RESERVED).</li>
-     * <li>AvailablePlayerSessions: number of player session slots currently
-     * available in active game sessions across the fleet, calculated by
-     * subtracting a game session's current player session count from its
+     * <li><b>ActivatingGameSessions</b> – number of game sessions in the
+     * process of being created (game session status = <code>ACTIVATING</code>).
+     * </li>
+     * <li><b>ActiveGameSessions</b> – number of game sessions currently running
+     * (game session status = <code>ACTIVE</code>).</li>
+     * <li><b>CurrentPlayerSessions</b> – number of active or reserved player
+     * sessions (player session status = <code>ACTIVE</code> or
+     * <code>RESERVED</code>).</li>
+     * <li><b>AvailablePlayerSessions</b> – number of player session slots
+     * currently available in active game sessions across the fleet, calculated
+     * by subtracting a game session's current player session count from its
      * maximum player session count. This number does include game sessions that
      * are not currently accepting players (game session
-     * PlayerSessionCreationPolicy = DENY_ALL).</li>
-     * <li>ActiveInstances: number of instances currently running a game
+     * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).</li>
+     * <li><b>ActiveInstances</b> – number of instances currently running a game
      * session.</li>
-     * <li>IdleInstances: number of instances not currently running a game
-     * session.</li>
+     * <li><b>IdleInstances</b> – number of instances not currently running a
+     * game session.</li>
      * </ul>
      * </p>
      * 
@@ -854,22 +868,25 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        Name of the GameLift-defined metric that is used to trigger an
      *        adjustment.
      *        <ul>
-     *        <li>ActivatingGameSessions: number of game sessions in the process
-     *        of being created (game session status = ACTIVATING).</li>
-     *        <li>ActiveGameSessions: number of game sessions currently running
-     *        (game session status = ACTIVE).</li>
-     *        <li>CurrentPlayerSessions: number of active or reserved player
-     *        sessions (player session status = ACTIVE or RESERVED).</li>
-     *        <li>AvailablePlayerSessions: number of player session slots
-     *        currently available in active game sessions across the fleet,
-     *        calculated by subtracting a game session's current player session
-     *        count from its maximum player session count. This number does
-     *        include game sessions that are not currently accepting players
-     *        (game session PlayerSessionCreationPolicy = DENY_ALL).</li>
-     *        <li>ActiveInstances: number of instances currently running a game
-     *        session.</li>
-     *        <li>IdleInstances: number of instances not currently running a
-     *        game session.</li>
+     *        <li><b>ActivatingGameSessions</b> – number of game sessions in the
+     *        process of being created (game session status =
+     *        <code>ACTIVATING</code>).</li>
+     *        <li><b>ActiveGameSessions</b> – number of game sessions currently
+     *        running (game session status = <code>ACTIVE</code>).</li>
+     *        <li><b>CurrentPlayerSessions</b> – number of active or reserved
+     *        player sessions (player session status = <code>ACTIVE</code> or
+     *        <code>RESERVED</code>).</li>
+     *        <li><b>AvailablePlayerSessions</b> – number of player session
+     *        slots currently available in active game sessions across the
+     *        fleet, calculated by subtracting a game session's current player
+     *        session count from its maximum player session count. This number
+     *        does include game sessions that are not currently accepting
+     *        players (game session <code>PlayerSessionCreationPolicy</code> =
+     *        <code>DENY_ALL</code>).</li>
+     *        <li><b>ActiveInstances</b> – number of instances currently running
+     *        a game session.</li>
+     *        <li><b>IdleInstances</b> – number of instances not currently
+     *        running a game session.</li>
      *        </ul>
      * @see MetricName
      */
@@ -883,44 +900,49 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Name of the GameLift-defined metric that is used to trigger an
      * adjustment.
      * <ul>
-     * <li>ActivatingGameSessions: number of game sessions in the process of
-     * being created (game session status = ACTIVATING).</li>
-     * <li>ActiveGameSessions: number of game sessions currently running (game
-     * session status = ACTIVE).</li>
-     * <li>CurrentPlayerSessions: number of active or reserved player sessions
-     * (player session status = ACTIVE or RESERVED).</li>
-     * <li>AvailablePlayerSessions: number of player session slots currently
-     * available in active game sessions across the fleet, calculated by
-     * subtracting a game session's current player session count from its
+     * <li><b>ActivatingGameSessions</b> – number of game sessions in the
+     * process of being created (game session status = <code>ACTIVATING</code>).
+     * </li>
+     * <li><b>ActiveGameSessions</b> – number of game sessions currently running
+     * (game session status = <code>ACTIVE</code>).</li>
+     * <li><b>CurrentPlayerSessions</b> – number of active or reserved player
+     * sessions (player session status = <code>ACTIVE</code> or
+     * <code>RESERVED</code>).</li>
+     * <li><b>AvailablePlayerSessions</b> – number of player session slots
+     * currently available in active game sessions across the fleet, calculated
+     * by subtracting a game session's current player session count from its
      * maximum player session count. This number does include game sessions that
      * are not currently accepting players (game session
-     * PlayerSessionCreationPolicy = DENY_ALL).</li>
-     * <li>ActiveInstances: number of instances currently running a game
+     * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).</li>
+     * <li><b>ActiveInstances</b> – number of instances currently running a game
      * session.</li>
-     * <li>IdleInstances: number of instances not currently running a game
-     * session.</li>
+     * <li><b>IdleInstances</b> – number of instances not currently running a
+     * game session.</li>
      * </ul>
      * </p>
      * 
      * @return Name of the GameLift-defined metric that is used to trigger an
      *         adjustment.
      *         <ul>
-     *         <li>ActivatingGameSessions: number of game sessions in the
-     *         process of being created (game session status = ACTIVATING).</li>
-     *         <li>ActiveGameSessions: number of game sessions currently running
-     *         (game session status = ACTIVE).</li>
-     *         <li>CurrentPlayerSessions: number of active or reserved player
-     *         sessions (player session status = ACTIVE or RESERVED).</li>
-     *         <li>AvailablePlayerSessions: number of player session slots
-     *         currently available in active game sessions across the fleet,
-     *         calculated by subtracting a game session's current player session
-     *         count from its maximum player session count. This number does
-     *         include game sessions that are not currently accepting players
-     *         (game session PlayerSessionCreationPolicy = DENY_ALL).</li>
-     *         <li>ActiveInstances: number of instances currently running a game
-     *         session.</li>
-     *         <li>IdleInstances: number of instances not currently running a
-     *         game session.</li>
+     *         <li><b>ActivatingGameSessions</b> – number of game sessions in
+     *         the process of being created (game session status =
+     *         <code>ACTIVATING</code>).</li>
+     *         <li><b>ActiveGameSessions</b> – number of game sessions currently
+     *         running (game session status = <code>ACTIVE</code>).</li>
+     *         <li><b>CurrentPlayerSessions</b> – number of active or reserved
+     *         player sessions (player session status = <code>ACTIVE</code> or
+     *         <code>RESERVED</code>).</li>
+     *         <li><b>AvailablePlayerSessions</b> – number of player session
+     *         slots currently available in active game sessions across the
+     *         fleet, calculated by subtracting a game session's current player
+     *         session count from its maximum player session count. This number
+     *         does include game sessions that are not currently accepting
+     *         players (game session <code>PlayerSessionCreationPolicy</code> =
+     *         <code>DENY_ALL</code>).</li>
+     *         <li><b>ActiveInstances</b> – number of instances currently
+     *         running a game session.</li>
+     *         <li><b>IdleInstances</b> – number of instances not currently
+     *         running a game session.</li>
      *         </ul>
      * @see MetricName
      */
@@ -934,22 +956,24 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Name of the GameLift-defined metric that is used to trigger an
      * adjustment.
      * <ul>
-     * <li>ActivatingGameSessions: number of game sessions in the process of
-     * being created (game session status = ACTIVATING).</li>
-     * <li>ActiveGameSessions: number of game sessions currently running (game
-     * session status = ACTIVE).</li>
-     * <li>CurrentPlayerSessions: number of active or reserved player sessions
-     * (player session status = ACTIVE or RESERVED).</li>
-     * <li>AvailablePlayerSessions: number of player session slots currently
-     * available in active game sessions across the fleet, calculated by
-     * subtracting a game session's current player session count from its
+     * <li><b>ActivatingGameSessions</b> – number of game sessions in the
+     * process of being created (game session status = <code>ACTIVATING</code>).
+     * </li>
+     * <li><b>ActiveGameSessions</b> – number of game sessions currently running
+     * (game session status = <code>ACTIVE</code>).</li>
+     * <li><b>CurrentPlayerSessions</b> – number of active or reserved player
+     * sessions (player session status = <code>ACTIVE</code> or
+     * <code>RESERVED</code>).</li>
+     * <li><b>AvailablePlayerSessions</b> – number of player session slots
+     * currently available in active game sessions across the fleet, calculated
+     * by subtracting a game session's current player session count from its
      * maximum player session count. This number does include game sessions that
      * are not currently accepting players (game session
-     * PlayerSessionCreationPolicy = DENY_ALL).</li>
-     * <li>ActiveInstances: number of instances currently running a game
+     * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).</li>
+     * <li><b>ActiveInstances</b> – number of instances currently running a game
      * session.</li>
-     * <li>IdleInstances: number of instances not currently running a game
-     * session.</li>
+     * <li><b>IdleInstances</b> – number of instances not currently running a
+     * game session.</li>
      * </ul>
      * </p>
      * 
@@ -957,22 +981,25 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        Name of the GameLift-defined metric that is used to trigger an
      *        adjustment.
      *        <ul>
-     *        <li>ActivatingGameSessions: number of game sessions in the process
-     *        of being created (game session status = ACTIVATING).</li>
-     *        <li>ActiveGameSessions: number of game sessions currently running
-     *        (game session status = ACTIVE).</li>
-     *        <li>CurrentPlayerSessions: number of active or reserved player
-     *        sessions (player session status = ACTIVE or RESERVED).</li>
-     *        <li>AvailablePlayerSessions: number of player session slots
-     *        currently available in active game sessions across the fleet,
-     *        calculated by subtracting a game session's current player session
-     *        count from its maximum player session count. This number does
-     *        include game sessions that are not currently accepting players
-     *        (game session PlayerSessionCreationPolicy = DENY_ALL).</li>
-     *        <li>ActiveInstances: number of instances currently running a game
-     *        session.</li>
-     *        <li>IdleInstances: number of instances not currently running a
-     *        game session.</li>
+     *        <li><b>ActivatingGameSessions</b> – number of game sessions in the
+     *        process of being created (game session status =
+     *        <code>ACTIVATING</code>).</li>
+     *        <li><b>ActiveGameSessions</b> – number of game sessions currently
+     *        running (game session status = <code>ACTIVE</code>).</li>
+     *        <li><b>CurrentPlayerSessions</b> – number of active or reserved
+     *        player sessions (player session status = <code>ACTIVE</code> or
+     *        <code>RESERVED</code>).</li>
+     *        <li><b>AvailablePlayerSessions</b> – number of player session
+     *        slots currently available in active game sessions across the
+     *        fleet, calculated by subtracting a game session's current player
+     *        session count from its maximum player session count. This number
+     *        does include game sessions that are not currently accepting
+     *        players (game session <code>PlayerSessionCreationPolicy</code> =
+     *        <code>DENY_ALL</code>).</li>
+     *        <li><b>ActiveInstances</b> – number of instances currently running
+     *        a game session.</li>
+     *        <li><b>IdleInstances</b> – number of instances not currently
+     *        running a game session.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -989,22 +1016,24 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Name of the GameLift-defined metric that is used to trigger an
      * adjustment.
      * <ul>
-     * <li>ActivatingGameSessions: number of game sessions in the process of
-     * being created (game session status = ACTIVATING).</li>
-     * <li>ActiveGameSessions: number of game sessions currently running (game
-     * session status = ACTIVE).</li>
-     * <li>CurrentPlayerSessions: number of active or reserved player sessions
-     * (player session status = ACTIVE or RESERVED).</li>
-     * <li>AvailablePlayerSessions: number of player session slots currently
-     * available in active game sessions across the fleet, calculated by
-     * subtracting a game session's current player session count from its
+     * <li><b>ActivatingGameSessions</b> – number of game sessions in the
+     * process of being created (game session status = <code>ACTIVATING</code>).
+     * </li>
+     * <li><b>ActiveGameSessions</b> – number of game sessions currently running
+     * (game session status = <code>ACTIVE</code>).</li>
+     * <li><b>CurrentPlayerSessions</b> – number of active or reserved player
+     * sessions (player session status = <code>ACTIVE</code> or
+     * <code>RESERVED</code>).</li>
+     * <li><b>AvailablePlayerSessions</b> – number of player session slots
+     * currently available in active game sessions across the fleet, calculated
+     * by subtracting a game session's current player session count from its
      * maximum player session count. This number does include game sessions that
      * are not currently accepting players (game session
-     * PlayerSessionCreationPolicy = DENY_ALL).</li>
-     * <li>ActiveInstances: number of instances currently running a game
+     * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).</li>
+     * <li><b>ActiveInstances</b> – number of instances currently running a game
      * session.</li>
-     * <li>IdleInstances: number of instances not currently running a game
-     * session.</li>
+     * <li><b>IdleInstances</b> – number of instances not currently running a
+     * game session.</li>
      * </ul>
      * </p>
      * 
@@ -1012,22 +1041,25 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        Name of the GameLift-defined metric that is used to trigger an
      *        adjustment.
      *        <ul>
-     *        <li>ActivatingGameSessions: number of game sessions in the process
-     *        of being created (game session status = ACTIVATING).</li>
-     *        <li>ActiveGameSessions: number of game sessions currently running
-     *        (game session status = ACTIVE).</li>
-     *        <li>CurrentPlayerSessions: number of active or reserved player
-     *        sessions (player session status = ACTIVE or RESERVED).</li>
-     *        <li>AvailablePlayerSessions: number of player session slots
-     *        currently available in active game sessions across the fleet,
-     *        calculated by subtracting a game session's current player session
-     *        count from its maximum player session count. This number does
-     *        include game sessions that are not currently accepting players
-     *        (game session PlayerSessionCreationPolicy = DENY_ALL).</li>
-     *        <li>ActiveInstances: number of instances currently running a game
-     *        session.</li>
-     *        <li>IdleInstances: number of instances not currently running a
-     *        game session.</li>
+     *        <li><b>ActivatingGameSessions</b> – number of game sessions in the
+     *        process of being created (game session status =
+     *        <code>ACTIVATING</code>).</li>
+     *        <li><b>ActiveGameSessions</b> – number of game sessions currently
+     *        running (game session status = <code>ACTIVE</code>).</li>
+     *        <li><b>CurrentPlayerSessions</b> – number of active or reserved
+     *        player sessions (player session status = <code>ACTIVE</code> or
+     *        <code>RESERVED</code>).</li>
+     *        <li><b>AvailablePlayerSessions</b> – number of player session
+     *        slots currently available in active game sessions across the
+     *        fleet, calculated by subtracting a game session's current player
+     *        session count from its maximum player session count. This number
+     *        does include game sessions that are not currently accepting
+     *        players (game session <code>PlayerSessionCreationPolicy</code> =
+     *        <code>DENY_ALL</code>).</li>
+     *        <li><b>ActiveInstances</b> – number of instances currently running
+     *        a game session.</li>
+     *        <li><b>IdleInstances</b> – number of instances not currently
+     *        running a game session.</li>
      *        </ul>
      * @see MetricName
      */
@@ -1041,22 +1073,24 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * Name of the GameLift-defined metric that is used to trigger an
      * adjustment.
      * <ul>
-     * <li>ActivatingGameSessions: number of game sessions in the process of
-     * being created (game session status = ACTIVATING).</li>
-     * <li>ActiveGameSessions: number of game sessions currently running (game
-     * session status = ACTIVE).</li>
-     * <li>CurrentPlayerSessions: number of active or reserved player sessions
-     * (player session status = ACTIVE or RESERVED).</li>
-     * <li>AvailablePlayerSessions: number of player session slots currently
-     * available in active game sessions across the fleet, calculated by
-     * subtracting a game session's current player session count from its
+     * <li><b>ActivatingGameSessions</b> – number of game sessions in the
+     * process of being created (game session status = <code>ACTIVATING</code>).
+     * </li>
+     * <li><b>ActiveGameSessions</b> – number of game sessions currently running
+     * (game session status = <code>ACTIVE</code>).</li>
+     * <li><b>CurrentPlayerSessions</b> – number of active or reserved player
+     * sessions (player session status = <code>ACTIVE</code> or
+     * <code>RESERVED</code>).</li>
+     * <li><b>AvailablePlayerSessions</b> – number of player session slots
+     * currently available in active game sessions across the fleet, calculated
+     * by subtracting a game session's current player session count from its
      * maximum player session count. This number does include game sessions that
      * are not currently accepting players (game session
-     * PlayerSessionCreationPolicy = DENY_ALL).</li>
-     * <li>ActiveInstances: number of instances currently running a game
+     * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).</li>
+     * <li><b>ActiveInstances</b> – number of instances currently running a game
      * session.</li>
-     * <li>IdleInstances: number of instances not currently running a game
-     * session.</li>
+     * <li><b>IdleInstances</b> – number of instances not currently running a
+     * game session.</li>
      * </ul>
      * </p>
      * 
@@ -1064,22 +1098,25 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        Name of the GameLift-defined metric that is used to trigger an
      *        adjustment.
      *        <ul>
-     *        <li>ActivatingGameSessions: number of game sessions in the process
-     *        of being created (game session status = ACTIVATING).</li>
-     *        <li>ActiveGameSessions: number of game sessions currently running
-     *        (game session status = ACTIVE).</li>
-     *        <li>CurrentPlayerSessions: number of active or reserved player
-     *        sessions (player session status = ACTIVE or RESERVED).</li>
-     *        <li>AvailablePlayerSessions: number of player session slots
-     *        currently available in active game sessions across the fleet,
-     *        calculated by subtracting a game session's current player session
-     *        count from its maximum player session count. This number does
-     *        include game sessions that are not currently accepting players
-     *        (game session PlayerSessionCreationPolicy = DENY_ALL).</li>
-     *        <li>ActiveInstances: number of instances currently running a game
-     *        session.</li>
-     *        <li>IdleInstances: number of instances not currently running a
-     *        game session.</li>
+     *        <li><b>ActivatingGameSessions</b> – number of game sessions in the
+     *        process of being created (game session status =
+     *        <code>ACTIVATING</code>).</li>
+     *        <li><b>ActiveGameSessions</b> – number of game sessions currently
+     *        running (game session status = <code>ACTIVE</code>).</li>
+     *        <li><b>CurrentPlayerSessions</b> – number of active or reserved
+     *        player sessions (player session status = <code>ACTIVE</code> or
+     *        <code>RESERVED</code>).</li>
+     *        <li><b>AvailablePlayerSessions</b> – number of player session
+     *        slots currently available in active game sessions across the
+     *        fleet, calculated by subtracting a game session's current player
+     *        session count from its maximum player session count. This number
+     *        does include game sessions that are not currently accepting
+     *        players (game session <code>PlayerSessionCreationPolicy</code> =
+     *        <code>DENY_ALL</code>).</li>
+     *        <li><b>ActiveInstances</b> – number of instances currently running
+     *        a game session.</li>
+     *        <li><b>IdleInstances</b> – number of instances not currently
+     *        running a game session.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

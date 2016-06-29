@@ -106,6 +106,54 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
+     * Accepts a phone number and indicates whether the phone holder has opted
+     * out of receiving SMS messages from your account. You cannot send SMS
+     * messages to a number that is opted out.
+     * </p>
+     * <p>
+     * To resume sending messages, you can opt in the number by using the
+     * <code>OptInPhoneNumber</code> action.
+     * </p>
+     * 
+     * @param checkIfPhoneNumberIsOptedOutRequest
+     *        The input for the <code>CheckIfPhoneNumberIsOptedOut</code>
+     *        action.
+     * @return A Java Future containing the result of the
+     *         CheckIfPhoneNumberIsOptedOut operation returned by the service.
+     * @sample AmazonSNSAsync.CheckIfPhoneNumberIsOptedOut
+     */
+    java.util.concurrent.Future<CheckIfPhoneNumberIsOptedOutResult> checkIfPhoneNumberIsOptedOutAsync(
+            CheckIfPhoneNumberIsOptedOutRequest checkIfPhoneNumberIsOptedOutRequest);
+
+    /**
+     * <p>
+     * Accepts a phone number and indicates whether the phone holder has opted
+     * out of receiving SMS messages from your account. You cannot send SMS
+     * messages to a number that is opted out.
+     * </p>
+     * <p>
+     * To resume sending messages, you can opt in the number by using the
+     * <code>OptInPhoneNumber</code> action.
+     * </p>
+     * 
+     * @param checkIfPhoneNumberIsOptedOutRequest
+     *        The input for the <code>CheckIfPhoneNumberIsOptedOut</code>
+     *        action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         CheckIfPhoneNumberIsOptedOut operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.CheckIfPhoneNumberIsOptedOut
+     */
+    java.util.concurrent.Future<CheckIfPhoneNumberIsOptedOutResult> checkIfPhoneNumberIsOptedOutAsync(
+            CheckIfPhoneNumberIsOptedOutRequest checkIfPhoneNumberIsOptedOutRequest,
+            com.amazonaws.handlers.AsyncHandler<CheckIfPhoneNumberIsOptedOutRequest, CheckIfPhoneNumberIsOptedOutResult> asyncHandler);
+
+    /**
+     * <p>
      * Verifies an endpoint owner's intent to receive messages by validating the
      * token sent to the endpoint by an earlier <code>Subscribe</code> action.
      * If the token is valid, the action creates a new subscription and returns
@@ -198,13 +246,34 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * PlatformPrincipal is "SSL certificate". For GCM, PlatformPrincipal is not
      * applicable. For ADM, PlatformPrincipal is "client id". The
      * PlatformCredential is also received from the notification service. For
-     * APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM,
+     * WNS, PlatformPrincipal is "Package Security Identifier". For MPNS,
+     * PlatformPrincipal is "TLS certificate". For Baidu, PlatformPrincipal is
+     * "API key".
+     * </p>
+     * <p>
+     * For APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM,
      * PlatformCredential is "API key". For ADM, PlatformCredential is
-     * "client secret". The PlatformApplicationArn that is returned when using
+     * "client secret". For WNS, PlatformCredential is "secret key". For MPNS,
+     * PlatformCredential is "private key". For Baidu, PlatformCredential is
+     * "secret key". The PlatformApplicationArn that is returned when using
      * <code>CreatePlatformApplication</code> is then used as an attribute for
      * the <code>CreatePlatformEndpoint</code> action. For more information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications</a>.
+     * Using Amazon SNS Mobile Push Notifications</a>. For more information
+     * about obtaining the PlatformPrincipal and PlatformCredential for each of
+     * the supported push notification services, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html"
+     * >Getting Started with Apple Push Notification Service</a>, <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html"
+     * >Getting Started with Amazon Device Messaging</a>, <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html"
+     * >Getting Started with Baidu Cloud Push</a>, <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html"
+     * >Getting Started with Google Cloud Messaging for Android</a>, <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html"
+     * >Getting Started with MPNS</a>, or <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html"
+     * >Getting Started with WNS</a>.
      * </p>
      * 
      * @param createPlatformApplicationRequest
@@ -227,13 +296,34 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * PlatformPrincipal is "SSL certificate". For GCM, PlatformPrincipal is not
      * applicable. For ADM, PlatformPrincipal is "client id". The
      * PlatformCredential is also received from the notification service. For
-     * APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM,
+     * WNS, PlatformPrincipal is "Package Security Identifier". For MPNS,
+     * PlatformPrincipal is "TLS certificate". For Baidu, PlatformPrincipal is
+     * "API key".
+     * </p>
+     * <p>
+     * For APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM,
      * PlatformCredential is "API key". For ADM, PlatformCredential is
-     * "client secret". The PlatformApplicationArn that is returned when using
+     * "client secret". For WNS, PlatformCredential is "secret key". For MPNS,
+     * PlatformCredential is "private key". For Baidu, PlatformCredential is
+     * "secret key". The PlatformApplicationArn that is returned when using
      * <code>CreatePlatformApplication</code> is then used as an attribute for
      * the <code>CreatePlatformEndpoint</code> action. For more information, see
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">
-     * Using Amazon SNS Mobile Push Notifications</a>.
+     * Using Amazon SNS Mobile Push Notifications</a>. For more information
+     * about obtaining the PlatformPrincipal and PlatformCredential for each of
+     * the supported push notification services, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html"
+     * >Getting Started with Apple Push Notification Service</a>, <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html"
+     * >Getting Started with Amazon Device Messaging</a>, <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html"
+     * >Getting Started with Baidu Cloud Push</a>, <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html"
+     * >Getting Started with Google Cloud Messaging for Android</a>, <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html"
+     * >Getting Started with MPNS</a>, or <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html"
+     * >Getting Started with WNS</a>.
      * </p>
      * 
      * @param createPlatformApplicationRequest
@@ -328,7 +418,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Creates a topic to which notifications can be published. Users can create
-     * at most 3000 topics. For more information, see <a
+     * at most 100,000 topics. For more information, see <a
      * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This
      * action is idempotent, so if the requester already owns a topic with the
      * specified name, that topic's ARN is returned without creating a new
@@ -347,7 +437,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Creates a topic to which notifications can be published. Users can create
-     * at most 3000 topics. For more information, see <a
+     * at most 100,000 topics. For more information, see <a
      * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This
      * action is idempotent, so if the requester already owns a topic with the
      * specified name, that topic's ARN is returned without creating a new
@@ -389,10 +479,14 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Deletes the endpoint from Amazon SNS. This action is idempotent. For more
-     * information, see <a
+     * Deletes the endpoint for a device and mobile app from Amazon SNS. This
+     * action is idempotent. For more information, see <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
+     * </p>
+     * <p>
+     * When you delete an endpoint that is also subscribed to a topic, then you
+     * must also unsubscribe the endpoint from the topic.
      * </p>
      * 
      * @param deleteEndpointRequest
@@ -406,10 +500,14 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Deletes the endpoint from Amazon SNS. This action is idempotent. For more
-     * information, see <a
+     * Deletes the endpoint for a device and mobile app from Amazon SNS. This
+     * action is idempotent. For more information, see <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
+     * </p>
+     * <p>
+     * When you delete an endpoint that is also subscribed to a topic, then you
+     * must also unsubscribe the endpoint from the topic.
      * </p>
      * 
      * @param deleteEndpointRequest
@@ -612,6 +710,46 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
+     * Returns the settings for sending SMS messages from your account.
+     * </p>
+     * <p>
+     * These settings are set with the <code>SetSMSAttributes</code> action.
+     * </p>
+     * 
+     * @param getSMSAttributesRequest
+     *        The input for the <code>GetSMSAttributes</code> request.
+     * @return A Java Future containing the result of the GetSMSAttributes
+     *         operation returned by the service.
+     * @sample AmazonSNSAsync.GetSMSAttributes
+     */
+    java.util.concurrent.Future<GetSMSAttributesResult> getSMSAttributesAsync(
+            GetSMSAttributesRequest getSMSAttributesRequest);
+
+    /**
+     * <p>
+     * Returns the settings for sending SMS messages from your account.
+     * </p>
+     * <p>
+     * These settings are set with the <code>SetSMSAttributes</code> action.
+     * </p>
+     * 
+     * @param getSMSAttributesRequest
+     *        The input for the <code>GetSMSAttributes</code> request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSMSAttributes
+     *         operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.GetSMSAttributes
+     */
+    java.util.concurrent.Future<GetSMSAttributesResult> getSMSAttributesAsync(
+            GetSMSAttributesRequest getSMSAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSMSAttributesRequest, GetSMSAttributesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns all of the properties of a subscription.
      * </p>
      * 
@@ -774,6 +912,60 @@ public interface AmazonSNSAsync extends AmazonSNS {
     java.util.concurrent.Future<ListEndpointsByPlatformApplicationResult> listEndpointsByPlatformApplicationAsync(
             ListEndpointsByPlatformApplicationRequest listEndpointsByPlatformApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of phone numbers that are opted out, meaning you cannot
+     * send SMS messages to them.
+     * </p>
+     * <p>
+     * The results for <code>ListPhoneNumbersOptedOut</code> are paginated, and
+     * each page returns up to 100 phone numbers. If additional phone numbers
+     * are available after the first page of results, then a
+     * <code>NextToken</code> string will be returned. To receive the next page,
+     * you call <code>ListPhoneNumbersOptedOut</code> again using the
+     * <code>NextToken</code> string received from the previous call. When there
+     * are no more records to return, <code>NextToken</code> will be null.
+     * </p>
+     * 
+     * @param listPhoneNumbersOptedOutRequest
+     *        The input for the <code>ListPhoneNumbersOptedOut</code> action.
+     * @return A Java Future containing the result of the
+     *         ListPhoneNumbersOptedOut operation returned by the service.
+     * @sample AmazonSNSAsync.ListPhoneNumbersOptedOut
+     */
+    java.util.concurrent.Future<ListPhoneNumbersOptedOutResult> listPhoneNumbersOptedOutAsync(
+            ListPhoneNumbersOptedOutRequest listPhoneNumbersOptedOutRequest);
+
+    /**
+     * <p>
+     * Returns a list of phone numbers that are opted out, meaning you cannot
+     * send SMS messages to them.
+     * </p>
+     * <p>
+     * The results for <code>ListPhoneNumbersOptedOut</code> are paginated, and
+     * each page returns up to 100 phone numbers. If additional phone numbers
+     * are available after the first page of results, then a
+     * <code>NextToken</code> string will be returned. To receive the next page,
+     * you call <code>ListPhoneNumbersOptedOut</code> again using the
+     * <code>NextToken</code> string received from the previous call. When there
+     * are no more records to return, <code>NextToken</code> will be null.
+     * </p>
+     * 
+     * @param listPhoneNumbersOptedOutRequest
+     *        The input for the <code>ListPhoneNumbersOptedOut</code> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ListPhoneNumbersOptedOut operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.ListPhoneNumbersOptedOut
+     */
+    java.util.concurrent.Future<ListPhoneNumbersOptedOutResult> listPhoneNumbersOptedOutAsync(
+            ListPhoneNumbersOptedOutRequest listPhoneNumbersOptedOutRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPhoneNumbersOptedOutRequest, ListPhoneNumbersOptedOutResult> asyncHandler);
 
     /**
      * <p>
@@ -1084,18 +1276,67 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
+     * Use this request to opt in a phone number that is opted out, which
+     * enables you to resume sending SMS messages to the number.
+     * </p>
+     * <p>
+     * You can opt in a phone number only once every 30 days.
+     * </p>
+     * 
+     * @param optInPhoneNumberRequest
+     *        Input for the OptInPhoneNumber action.
+     * @return A Java Future containing the result of the OptInPhoneNumber
+     *         operation returned by the service.
+     * @sample AmazonSNSAsync.OptInPhoneNumber
+     */
+    java.util.concurrent.Future<OptInPhoneNumberResult> optInPhoneNumberAsync(
+            OptInPhoneNumberRequest optInPhoneNumberRequest);
+
+    /**
+     * <p>
+     * Use this request to opt in a phone number that is opted out, which
+     * enables you to resume sending SMS messages to the number.
+     * </p>
+     * <p>
+     * You can opt in a phone number only once every 30 days.
+     * </p>
+     * 
+     * @param optInPhoneNumberRequest
+     *        Input for the OptInPhoneNumber action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the OptInPhoneNumber
+     *         operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.OptInPhoneNumber
+     */
+    java.util.concurrent.Future<OptInPhoneNumberResult> optInPhoneNumberAsync(
+            OptInPhoneNumberRequest optInPhoneNumberRequest,
+            com.amazonaws.handlers.AsyncHandler<OptInPhoneNumberRequest, OptInPhoneNumberResult> asyncHandler);
+
+    /**
+     * <p>
      * Sends a message to all of a topic's subscribed endpoints. When a
      * <code>messageId</code> is returned, the message has been saved and Amazon
      * SNS will attempt to deliver it to the topic's subscribers shortly. The
      * format of the outgoing message to each subscribed endpoint depends on the
-     * notification protocol selected.
+     * notification protocol.
      * </p>
      * <p>
      * To use the <code>Publish</code> action for sending a message to a mobile
      * endpoint, such as an app on a Kindle device or mobile phone, you must
-     * specify the EndpointArn. The EndpointArn is returned when making a call
-     * with the <code>CreatePlatformEndpoint</code> action. The second example
-     * below shows a request and response for publishing to a mobile endpoint.
+     * specify the EndpointArn for the TargetArn parameter. The EndpointArn is
+     * returned when making a call with the <code>CreatePlatformEndpoint</code>
+     * action. The second example below shows a request and response for
+     * publishing to a mobile endpoint.
+     * </p>
+     * <p>
+     * For more information about formatting messages, see <a href=
+     * "http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html"
+     * >Send Custom Platform-Specific Payloads in Messages to Mobile
+     * Devices</a>.
      * </p>
      * 
      * @param publishRequest
@@ -1113,14 +1354,21 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * <code>messageId</code> is returned, the message has been saved and Amazon
      * SNS will attempt to deliver it to the topic's subscribers shortly. The
      * format of the outgoing message to each subscribed endpoint depends on the
-     * notification protocol selected.
+     * notification protocol.
      * </p>
      * <p>
      * To use the <code>Publish</code> action for sending a message to a mobile
      * endpoint, such as an app on a Kindle device or mobile phone, you must
-     * specify the EndpointArn. The EndpointArn is returned when making a call
-     * with the <code>CreatePlatformEndpoint</code> action. The second example
-     * below shows a request and response for publishing to a mobile endpoint.
+     * specify the EndpointArn for the TargetArn parameter. The EndpointArn is
+     * returned when making a call with the <code>CreatePlatformEndpoint</code>
+     * action. The second example below shows a request and response for
+     * publishing to a mobile endpoint.
+     * </p>
+     * <p>
+     * For more information about formatting messages, see <a href=
+     * "http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html"
+     * >Send Custom Platform-Specific Payloads in Messages to Mobile
+     * Devices</a>.
      * </p>
      * 
      * @param publishRequest
@@ -1279,7 +1527,10 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * push notification services, such as APNS and GCM. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-     * Amazon SNS Mobile Push Notifications</a>.
+     * Amazon SNS Mobile Push Notifications</a>. For information on configuring
+     * attributes for message delivery status, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using
+     * Amazon SNS Application Attributes for Message Delivery Status</a>.
      * </p>
      * 
      * @param setPlatformApplicationAttributesRequest
@@ -1298,7 +1549,10 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * push notification services, such as APNS and GCM. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-     * Amazon SNS Mobile Push Notifications</a>.
+     * Amazon SNS Mobile Push Notifications</a>. For information on configuring
+     * attributes for message delivery status, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using
+     * Amazon SNS Application Attributes for Message Delivery Status</a>.
      * </p>
      * 
      * @param setPlatformApplicationAttributesRequest
@@ -1316,6 +1570,58 @@ public interface AmazonSNSAsync extends AmazonSNS {
     java.util.concurrent.Future<SetPlatformApplicationAttributesResult> setPlatformApplicationAttributesAsync(
             SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<SetPlatformApplicationAttributesRequest, SetPlatformApplicationAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Use this request to set the default settings for sending SMS messages and
+     * receiving daily SMS usage reports.
+     * </p>
+     * <p>
+     * You can override some of these settings for a single message when you use
+     * the <code>Publish</code> action with the
+     * <code>MessageAttributes.entry.N</code> parameter. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html"
+     * >Sending an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.
+     * </p>
+     * 
+     * @param setSMSAttributesRequest
+     *        The input for the SetSMSAttributes action.
+     * @return A Java Future containing the result of the SetSMSAttributes
+     *         operation returned by the service.
+     * @sample AmazonSNSAsync.SetSMSAttributes
+     */
+    java.util.concurrent.Future<SetSMSAttributesResult> setSMSAttributesAsync(
+            SetSMSAttributesRequest setSMSAttributesRequest);
+
+    /**
+     * <p>
+     * Use this request to set the default settings for sending SMS messages and
+     * receiving daily SMS usage reports.
+     * </p>
+     * <p>
+     * You can override some of these settings for a single message when you use
+     * the <code>Publish</code> action with the
+     * <code>MessageAttributes.entry.N</code> parameter. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html"
+     * >Sending an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.
+     * </p>
+     * 
+     * @param setSMSAttributesRequest
+     *        The input for the SetSMSAttributes action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetSMSAttributes
+     *         operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.SetSMSAttributes
+     */
+    java.util.concurrent.Future<SetSMSAttributesResult> setSMSAttributesAsync(
+            SetSMSAttributesRequest setSMSAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<SetSMSAttributesRequest, SetSMSAttributesResult> asyncHandler);
 
     /**
      * <p>

@@ -64,5 +64,9 @@ public interface StructuredJsonGenerator {
 
     byte[] getBytes();
 
+    /**
+     * New clients use {@link SdkJsonProtocolFactory#getContentType()}.
+     */
+    @Deprecated
     String getContentType();
 }

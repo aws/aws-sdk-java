@@ -80,6 +80,21 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements
     }
 
     @Override
+    public java.util.concurrent.Future<CheckIfPhoneNumberIsOptedOutResult> checkIfPhoneNumberIsOptedOutAsync(
+            CheckIfPhoneNumberIsOptedOutRequest request) {
+
+        return checkIfPhoneNumberIsOptedOutAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckIfPhoneNumberIsOptedOutResult> checkIfPhoneNumberIsOptedOutAsync(
+            CheckIfPhoneNumberIsOptedOutRequest request,
+            com.amazonaws.handlers.AsyncHandler<CheckIfPhoneNumberIsOptedOutRequest, CheckIfPhoneNumberIsOptedOutResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(
             ConfirmSubscriptionRequest request) {
 
@@ -331,6 +346,21 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetSMSAttributesResult> getSMSAttributesAsync(
+            GetSMSAttributesRequest request) {
+
+        return getSMSAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSMSAttributesResult> getSMSAttributesAsync(
+            GetSMSAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSMSAttributesRequest, GetSMSAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(
             GetSubscriptionAttributesRequest request) {
 
@@ -431,6 +461,21 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements
     public java.util.concurrent.Future<ListEndpointsByPlatformApplicationResult> listEndpointsByPlatformApplicationAsync(
             ListEndpointsByPlatformApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPhoneNumbersOptedOutResult> listPhoneNumbersOptedOutAsync(
+            ListPhoneNumbersOptedOutRequest request) {
+
+        return listPhoneNumbersOptedOutAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPhoneNumbersOptedOutResult> listPhoneNumbersOptedOutAsync(
+            ListPhoneNumbersOptedOutRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPhoneNumbersOptedOutRequest, ListPhoneNumbersOptedOutResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -688,6 +733,21 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements
     }
 
     @Override
+    public java.util.concurrent.Future<OptInPhoneNumberResult> optInPhoneNumberAsync(
+            OptInPhoneNumberRequest request) {
+
+        return optInPhoneNumberAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<OptInPhoneNumberResult> optInPhoneNumberAsync(
+            OptInPhoneNumberRequest request,
+            com.amazonaws.handlers.AsyncHandler<OptInPhoneNumberRequest, OptInPhoneNumberResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PublishResult> publishAsync(
             PublishRequest request) {
 
@@ -829,6 +889,21 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements
     public java.util.concurrent.Future<SetPlatformApplicationAttributesResult> setPlatformApplicationAttributesAsync(
             SetPlatformApplicationAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<SetPlatformApplicationAttributesRequest, SetPlatformApplicationAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetSMSAttributesResult> setSMSAttributesAsync(
+            SetSMSAttributesRequest request) {
+
+        return setSMSAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetSMSAttributesResult> setSMSAttributesAsync(
+            SetSMSAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetSMSAttributesRequest, SetSMSAttributesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

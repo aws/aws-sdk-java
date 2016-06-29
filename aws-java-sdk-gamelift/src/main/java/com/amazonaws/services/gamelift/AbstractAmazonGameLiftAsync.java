@@ -345,6 +345,21 @@ public class AbstractAmazonGameLiftAsync extends AbstractAmazonGameLift
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeRuntimeConfigurationResult> describeRuntimeConfigurationAsync(
+            DescribeRuntimeConfigurationRequest request) {
+
+        return describeRuntimeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRuntimeConfigurationResult> describeRuntimeConfigurationAsync(
+            DescribeRuntimeConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRuntimeConfigurationRequest, DescribeRuntimeConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeScalingPoliciesResult> describeScalingPoliciesAsync(
             DescribeScalingPoliciesRequest request) {
 
@@ -550,6 +565,21 @@ public class AbstractAmazonGameLiftAsync extends AbstractAmazonGameLift
     public java.util.concurrent.Future<UpdateGameSessionResult> updateGameSessionAsync(
             UpdateGameSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateGameSessionRequest, UpdateGameSessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRuntimeConfigurationResult> updateRuntimeConfigurationAsync(
+            UpdateRuntimeConfigurationRequest request) {
+
+        return updateRuntimeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRuntimeConfigurationResult> updateRuntimeConfigurationAsync(
+            UpdateRuntimeConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRuntimeConfigurationRequest, UpdateRuntimeConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

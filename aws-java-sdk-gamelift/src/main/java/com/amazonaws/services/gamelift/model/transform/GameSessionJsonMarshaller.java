@@ -98,6 +98,10 @@ public class GameSessionJsonMarshaller {
                 jsonGenerator.writeFieldName("IpAddress").writeValue(
                         gameSession.getIpAddress());
             }
+            if (gameSession.getPort() != null) {
+                jsonGenerator.writeFieldName("Port").writeValue(
+                        gameSession.getPort());
+            }
             if (gameSession.getPlayerSessionCreationPolicy() != null) {
                 jsonGenerator.writeFieldName("PlayerSessionCreationPolicy")
                         .writeValue(

@@ -40,7 +40,7 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
      * <p>
      * Constraint: Specifying <code>ContinentCode</code> with either
      * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <code>InvalidInput</code> error.
      * </p>
      */
     private String continentCode;
@@ -63,7 +63,7 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
      * </p>
      */
     private String subdivisionCode;
@@ -80,7 +80,7 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
      * <p>
      * Constraint: Specifying <code>ContinentCode</code> with either
      * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <code>InvalidInput</code> error.
      * </p>
      * 
      * @param continentCode
@@ -94,7 +94,7 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Constraint: Specifying <code>ContinentCode</code> with either
      *        <code>CountryCode</code> or <code>SubdivisionCode</code> returns
-     *        an <a>InvalidInput</a> error.
+     *        an <code>InvalidInput</code> error.
      */
 
     public void setContinentCode(String continentCode) {
@@ -113,7 +113,7 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
      * <p>
      * Constraint: Specifying <code>ContinentCode</code> with either
      * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <code>InvalidInput</code> error.
      * </p>
      * 
      * @return The code for a continent geo location. Note: only continent
@@ -126,7 +126,7 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Constraint: Specifying <code>ContinentCode</code> with either
      *         <code>CountryCode</code> or <code>SubdivisionCode</code> returns
-     *         an <a>InvalidInput</a> error.
+     *         an <code>InvalidInput</code> error.
      */
 
     public String getContinentCode() {
@@ -145,7 +145,7 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
      * <p>
      * Constraint: Specifying <code>ContinentCode</code> with either
      * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <code>InvalidInput</code> error.
      * </p>
      * 
      * @param continentCode
@@ -159,7 +159,7 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Constraint: Specifying <code>ContinentCode</code> with either
      *        <code>CountryCode</code> or <code>SubdivisionCode</code> returns
-     *        an <a>InvalidInput</a> error.
+     *        an <code>InvalidInput</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -253,7 +253,7 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @param subdivisionCode
@@ -262,7 +262,8 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
      *        code.</p>
      *        <p>
      *        Constraint: Specifying <code>SubdivisionCode</code> without
-     *        <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     *        <code>CountryCode</code> returns an <code>InvalidInput</code>
+     *        error.
      */
 
     public void setSubdivisionCode(String subdivisionCode) {
@@ -276,7 +277,7 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @return The code for a country's subdivision (e.g., a province of
@@ -284,7 +285,8 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
      *         country code.</p>
      *         <p>
      *         Constraint: Specifying <code>SubdivisionCode</code> without
-     *         <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     *         <code>CountryCode</code> returns an <code>InvalidInput</code>
+     *         error.
      */
 
     public String getSubdivisionCode() {
@@ -298,7 +300,7 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @param subdivisionCode
@@ -307,7 +309,8 @@ public class GetGeoLocationRequest extends AmazonWebServiceRequest implements
      *        code.</p>
      *        <p>
      *        Constraint: Specifying <code>SubdivisionCode</code> without
-     *        <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     *        <code>CountryCode</code> returns an <code>InvalidInput</code>
+     *        error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

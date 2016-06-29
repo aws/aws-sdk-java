@@ -20,8 +20,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * One or more parameters specified as part of the request are invalid. Please
- * correct the invalid parameters before retrying.
+ * One or more parameters specified as part of the request are invalid. Correct
+ * the invalid parameters before retrying.
  * </p>
  */
 public class InvalidRequestException extends AmazonServiceException {

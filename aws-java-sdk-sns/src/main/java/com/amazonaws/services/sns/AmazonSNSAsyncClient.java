@@ -345,6 +345,42 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CheckIfPhoneNumberIsOptedOutResult> checkIfPhoneNumberIsOptedOutAsync(
+            CheckIfPhoneNumberIsOptedOutRequest request) {
+
+        return checkIfPhoneNumberIsOptedOutAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckIfPhoneNumberIsOptedOutResult> checkIfPhoneNumberIsOptedOutAsync(
+            final CheckIfPhoneNumberIsOptedOutRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CheckIfPhoneNumberIsOptedOutRequest, CheckIfPhoneNumberIsOptedOutResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CheckIfPhoneNumberIsOptedOutResult>() {
+                    @Override
+                    public CheckIfPhoneNumberIsOptedOutResult call()
+                            throws Exception {
+                        CheckIfPhoneNumberIsOptedOutResult result;
+
+                        try {
+                            result = checkIfPhoneNumberIsOptedOut(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(
             ConfirmSubscriptionRequest request) {
 
@@ -779,6 +815,41 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetSMSAttributesResult> getSMSAttributesAsync(
+            GetSMSAttributesRequest request) {
+
+        return getSMSAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSMSAttributesResult> getSMSAttributesAsync(
+            final GetSMSAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSMSAttributesRequest, GetSMSAttributesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetSMSAttributesResult>() {
+                    @Override
+                    public GetSMSAttributesResult call() throws Exception {
+                        GetSMSAttributesResult result;
+
+                        try {
+                            result = getSMSAttributes(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(
             GetSubscriptionAttributesRequest request) {
 
@@ -930,6 +1001,42 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
 
                         try {
                             result = listEndpointsByPlatformApplication(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPhoneNumbersOptedOutResult> listPhoneNumbersOptedOutAsync(
+            ListPhoneNumbersOptedOutRequest request) {
+
+        return listPhoneNumbersOptedOutAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPhoneNumbersOptedOutResult> listPhoneNumbersOptedOutAsync(
+            final ListPhoneNumbersOptedOutRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPhoneNumbersOptedOutRequest, ListPhoneNumbersOptedOutResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListPhoneNumbersOptedOutResult>() {
+                    @Override
+                    public ListPhoneNumbersOptedOutResult call()
+                            throws Exception {
+                        ListPhoneNumbersOptedOutResult result;
+
+                        try {
+                            result = listPhoneNumbersOptedOut(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1280,6 +1387,41 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<OptInPhoneNumberResult> optInPhoneNumberAsync(
+            OptInPhoneNumberRequest request) {
+
+        return optInPhoneNumberAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<OptInPhoneNumberResult> optInPhoneNumberAsync(
+            final OptInPhoneNumberRequest request,
+            final com.amazonaws.handlers.AsyncHandler<OptInPhoneNumberRequest, OptInPhoneNumberResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<OptInPhoneNumberResult>() {
+                    @Override
+                    public OptInPhoneNumberResult call() throws Exception {
+                        OptInPhoneNumberResult result;
+
+                        try {
+                            result = optInPhoneNumber(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<PublishResult> publishAsync(
             PublishRequest request) {
 
@@ -1491,6 +1633,41 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
 
                         try {
                             result = setPlatformApplicationAttributes(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetSMSAttributesResult> setSMSAttributesAsync(
+            SetSMSAttributesRequest request) {
+
+        return setSMSAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetSMSAttributesResult> setSMSAttributesAsync(
+            final SetSMSAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetSMSAttributesRequest, SetSMSAttributesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<SetSMSAttributesResult>() {
+                    @Override
+                    public SetSMSAttributesResult call() throws Exception {
+                        SetSMSAttributesResult result;
+
+                        try {
+                            result = setSMSAttributes(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

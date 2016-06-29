@@ -33,8 +33,8 @@ public class Build implements Serializable, Cloneable {
     private String buildId;
     /**
      * <p>
-     * Descriptive label associated with this build. Build names do not need to
-     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Descriptive label associated with a build. Build names do not need to be
+     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      */
     private String name;
@@ -48,16 +48,16 @@ public class Build implements Serializable, Cloneable {
     private String version;
     /**
      * <p>
-     * Current status of the build. Possible build states include:
+     * Current status of the build. Possible build states include the following:
      * <ul>
-     * <li>INITIALIZED: A new build has been defined, but no files have been
-     * uploaded. You cannot create fleets for builds that are in this state.
-     * When a build is successfully created, the build state is set to this
-     * value.</li>
-     * <li>READY: The game build has been successfully uploaded. You can now
-     * create new fleets for this build.</li>
-     * <li>FAILED: The game build upload failed. You cannot create new fleets
-     * for this build.</li>
+     * <li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * been uploaded. You cannot create fleets for builds that are in this
+     * state. When a build is successfully created, the build state is set to
+     * this value.</li>
+     * <li><b>READY</b> – The game build has been successfully uploaded. You can
+     * now create new fleets for this build.</li>
+     * <li><b>FAILED</b> – The game build upload failed. You cannot create new
+     * fleets for this build.</li>
      * </ul>
      * </p>
      */
@@ -65,7 +65,7 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * File size of the uploaded game build, expressed in bytes. When the build
-     * state is INITIALIZED, this value is 0.
+     * state is <code>INITIALIZED</code>, this value is 0.
      * </p>
      */
     private Long sizeOnDisk;
@@ -120,13 +120,13 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with this build. Build names do not need to
-     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Descriptive label associated with a build. Build names do not need to be
+     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this build. Build names do not
-     *        need to be unique. It can be set using <a>CreateBuild</a> or
+     *        Descriptive label associated with a build. Build names do not need
+     *        to be unique. It can be set using <a>CreateBuild</a> or
      *        <a>UpdateBuild</a>.
      */
 
@@ -136,11 +136,11 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with this build. Build names do not need to
-     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Descriptive label associated with a build. Build names do not need to be
+     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
-     * @return Descriptive label associated with this build. Build names do not
+     * @return Descriptive label associated with a build. Build names do not
      *         need to be unique. It can be set using <a>CreateBuild</a> or
      *         <a>UpdateBuild</a>.
      */
@@ -151,13 +151,13 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with this build. Build names do not need to
-     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Descriptive label associated with a build. Build names do not need to be
+     * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this build. Build names do not
-     *        need to be unique. It can be set using <a>CreateBuild</a> or
+     *        Descriptive label associated with a build. Build names do not need
+     *        to be unique. It can be set using <a>CreateBuild</a> or
      *        <a>UpdateBuild</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -223,30 +223,31 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the build. Possible build states include:
+     * Current status of the build. Possible build states include the following:
      * <ul>
-     * <li>INITIALIZED: A new build has been defined, but no files have been
-     * uploaded. You cannot create fleets for builds that are in this state.
-     * When a build is successfully created, the build state is set to this
-     * value.</li>
-     * <li>READY: The game build has been successfully uploaded. You can now
-     * create new fleets for this build.</li>
-     * <li>FAILED: The game build upload failed. You cannot create new fleets
-     * for this build.</li>
+     * <li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * been uploaded. You cannot create fleets for builds that are in this
+     * state. When a build is successfully created, the build state is set to
+     * this value.</li>
+     * <li><b>READY</b> – The game build has been successfully uploaded. You can
+     * now create new fleets for this build.</li>
+     * <li><b>FAILED</b> – The game build upload failed. You cannot create new
+     * fleets for this build.</li>
      * </ul>
      * </p>
      * 
      * @param status
-     *        Current status of the build. Possible build states include:
+     *        Current status of the build. Possible build states include the
+     *        following:
      *        <ul>
-     *        <li>INITIALIZED: A new build has been defined, but no files have
-     *        been uploaded. You cannot create fleets for builds that are in
-     *        this state. When a build is successfully created, the build state
-     *        is set to this value.</li>
-     *        <li>READY: The game build has been successfully uploaded. You can
-     *        now create new fleets for this build.</li>
-     *        <li>FAILED: The game build upload failed. You cannot create new
-     *        fleets for this build.</li>
+     *        <li><b>INITIALIZED</b> – A new build has been defined, but no
+     *        files have been uploaded. You cannot create fleets for builds that
+     *        are in this state. When a build is successfully created, the build
+     *        state is set to this value.</li>
+     *        <li><b>READY</b> – The game build has been successfully uploaded.
+     *        You can now create new fleets for this build.</li>
+     *        <li><b>FAILED</b> – The game build upload failed. You cannot
+     *        create new fleets for this build.</li>
      *        </ul>
      * @see BuildStatus
      */
@@ -257,29 +258,30 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the build. Possible build states include:
+     * Current status of the build. Possible build states include the following:
      * <ul>
-     * <li>INITIALIZED: A new build has been defined, but no files have been
-     * uploaded. You cannot create fleets for builds that are in this state.
-     * When a build is successfully created, the build state is set to this
-     * value.</li>
-     * <li>READY: The game build has been successfully uploaded. You can now
-     * create new fleets for this build.</li>
-     * <li>FAILED: The game build upload failed. You cannot create new fleets
-     * for this build.</li>
+     * <li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * been uploaded. You cannot create fleets for builds that are in this
+     * state. When a build is successfully created, the build state is set to
+     * this value.</li>
+     * <li><b>READY</b> – The game build has been successfully uploaded. You can
+     * now create new fleets for this build.</li>
+     * <li><b>FAILED</b> – The game build upload failed. You cannot create new
+     * fleets for this build.</li>
      * </ul>
      * </p>
      * 
-     * @return Current status of the build. Possible build states include:
+     * @return Current status of the build. Possible build states include the
+     *         following:
      *         <ul>
-     *         <li>INITIALIZED: A new build has been defined, but no files have
-     *         been uploaded. You cannot create fleets for builds that are in
-     *         this state. When a build is successfully created, the build state
-     *         is set to this value.</li>
-     *         <li>READY: The game build has been successfully uploaded. You can
-     *         now create new fleets for this build.</li>
-     *         <li>FAILED: The game build upload failed. You cannot create new
-     *         fleets for this build.</li>
+     *         <li><b>INITIALIZED</b> – A new build has been defined, but no
+     *         files have been uploaded. You cannot create fleets for builds
+     *         that are in this state. When a build is successfully created, the
+     *         build state is set to this value.</li>
+     *         <li><b>READY</b> – The game build has been successfully uploaded.
+     *         You can now create new fleets for this build.</li>
+     *         <li><b>FAILED</b> – The game build upload failed. You cannot
+     *         create new fleets for this build.</li>
      *         </ul>
      * @see BuildStatus
      */
@@ -290,30 +292,31 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the build. Possible build states include:
+     * Current status of the build. Possible build states include the following:
      * <ul>
-     * <li>INITIALIZED: A new build has been defined, but no files have been
-     * uploaded. You cannot create fleets for builds that are in this state.
-     * When a build is successfully created, the build state is set to this
-     * value.</li>
-     * <li>READY: The game build has been successfully uploaded. You can now
-     * create new fleets for this build.</li>
-     * <li>FAILED: The game build upload failed. You cannot create new fleets
-     * for this build.</li>
+     * <li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * been uploaded. You cannot create fleets for builds that are in this
+     * state. When a build is successfully created, the build state is set to
+     * this value.</li>
+     * <li><b>READY</b> – The game build has been successfully uploaded. You can
+     * now create new fleets for this build.</li>
+     * <li><b>FAILED</b> – The game build upload failed. You cannot create new
+     * fleets for this build.</li>
      * </ul>
      * </p>
      * 
      * @param status
-     *        Current status of the build. Possible build states include:
+     *        Current status of the build. Possible build states include the
+     *        following:
      *        <ul>
-     *        <li>INITIALIZED: A new build has been defined, but no files have
-     *        been uploaded. You cannot create fleets for builds that are in
-     *        this state. When a build is successfully created, the build state
-     *        is set to this value.</li>
-     *        <li>READY: The game build has been successfully uploaded. You can
-     *        now create new fleets for this build.</li>
-     *        <li>FAILED: The game build upload failed. You cannot create new
-     *        fleets for this build.</li>
+     *        <li><b>INITIALIZED</b> – A new build has been defined, but no
+     *        files have been uploaded. You cannot create fleets for builds that
+     *        are in this state. When a build is successfully created, the build
+     *        state is set to this value.</li>
+     *        <li><b>READY</b> – The game build has been successfully uploaded.
+     *        You can now create new fleets for this build.</li>
+     *        <li><b>FAILED</b> – The game build upload failed. You cannot
+     *        create new fleets for this build.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -327,30 +330,31 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the build. Possible build states include:
+     * Current status of the build. Possible build states include the following:
      * <ul>
-     * <li>INITIALIZED: A new build has been defined, but no files have been
-     * uploaded. You cannot create fleets for builds that are in this state.
-     * When a build is successfully created, the build state is set to this
-     * value.</li>
-     * <li>READY: The game build has been successfully uploaded. You can now
-     * create new fleets for this build.</li>
-     * <li>FAILED: The game build upload failed. You cannot create new fleets
-     * for this build.</li>
+     * <li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * been uploaded. You cannot create fleets for builds that are in this
+     * state. When a build is successfully created, the build state is set to
+     * this value.</li>
+     * <li><b>READY</b> – The game build has been successfully uploaded. You can
+     * now create new fleets for this build.</li>
+     * <li><b>FAILED</b> – The game build upload failed. You cannot create new
+     * fleets for this build.</li>
      * </ul>
      * </p>
      * 
      * @param status
-     *        Current status of the build. Possible build states include:
+     *        Current status of the build. Possible build states include the
+     *        following:
      *        <ul>
-     *        <li>INITIALIZED: A new build has been defined, but no files have
-     *        been uploaded. You cannot create fleets for builds that are in
-     *        this state. When a build is successfully created, the build state
-     *        is set to this value.</li>
-     *        <li>READY: The game build has been successfully uploaded. You can
-     *        now create new fleets for this build.</li>
-     *        <li>FAILED: The game build upload failed. You cannot create new
-     *        fleets for this build.</li>
+     *        <li><b>INITIALIZED</b> – A new build has been defined, but no
+     *        files have been uploaded. You cannot create fleets for builds that
+     *        are in this state. When a build is successfully created, the build
+     *        state is set to this value.</li>
+     *        <li><b>READY</b> – The game build has been successfully uploaded.
+     *        You can now create new fleets for this build.</li>
+     *        <li><b>FAILED</b> – The game build upload failed. You cannot
+     *        create new fleets for this build.</li>
      *        </ul>
      * @see BuildStatus
      */
@@ -361,30 +365,31 @@ public class Build implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the build. Possible build states include:
+     * Current status of the build. Possible build states include the following:
      * <ul>
-     * <li>INITIALIZED: A new build has been defined, but no files have been
-     * uploaded. You cannot create fleets for builds that are in this state.
-     * When a build is successfully created, the build state is set to this
-     * value.</li>
-     * <li>READY: The game build has been successfully uploaded. You can now
-     * create new fleets for this build.</li>
-     * <li>FAILED: The game build upload failed. You cannot create new fleets
-     * for this build.</li>
+     * <li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * been uploaded. You cannot create fleets for builds that are in this
+     * state. When a build is successfully created, the build state is set to
+     * this value.</li>
+     * <li><b>READY</b> – The game build has been successfully uploaded. You can
+     * now create new fleets for this build.</li>
+     * <li><b>FAILED</b> – The game build upload failed. You cannot create new
+     * fleets for this build.</li>
      * </ul>
      * </p>
      * 
      * @param status
-     *        Current status of the build. Possible build states include:
+     *        Current status of the build. Possible build states include the
+     *        following:
      *        <ul>
-     *        <li>INITIALIZED: A new build has been defined, but no files have
-     *        been uploaded. You cannot create fleets for builds that are in
-     *        this state. When a build is successfully created, the build state
-     *        is set to this value.</li>
-     *        <li>READY: The game build has been successfully uploaded. You can
-     *        now create new fleets for this build.</li>
-     *        <li>FAILED: The game build upload failed. You cannot create new
-     *        fleets for this build.</li>
+     *        <li><b>INITIALIZED</b> – A new build has been defined, but no
+     *        files have been uploaded. You cannot create fleets for builds that
+     *        are in this state. When a build is successfully created, the build
+     *        state is set to this value.</li>
+     *        <li><b>READY</b> – The game build has been successfully uploaded.
+     *        You can now create new fleets for this build.</li>
+     *        <li><b>FAILED</b> – The game build upload failed. You cannot
+     *        create new fleets for this build.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -399,12 +404,12 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * File size of the uploaded game build, expressed in bytes. When the build
-     * state is INITIALIZED, this value is 0.
+     * state is <code>INITIALIZED</code>, this value is 0.
      * </p>
      * 
      * @param sizeOnDisk
      *        File size of the uploaded game build, expressed in bytes. When the
-     *        build state is INITIALIZED, this value is 0.
+     *        build state is <code>INITIALIZED</code>, this value is 0.
      */
 
     public void setSizeOnDisk(Long sizeOnDisk) {
@@ -414,11 +419,11 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * File size of the uploaded game build, expressed in bytes. When the build
-     * state is INITIALIZED, this value is 0.
+     * state is <code>INITIALIZED</code>, this value is 0.
      * </p>
      * 
      * @return File size of the uploaded game build, expressed in bytes. When
-     *         the build state is INITIALIZED, this value is 0.
+     *         the build state is <code>INITIALIZED</code>, this value is 0.
      */
 
     public Long getSizeOnDisk() {
@@ -428,12 +433,12 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * File size of the uploaded game build, expressed in bytes. When the build
-     * state is INITIALIZED, this value is 0.
+     * state is <code>INITIALIZED</code>, this value is 0.
      * </p>
      * 
      * @param sizeOnDisk
      *        File size of the uploaded game build, expressed in bytes. When the
-     *        build state is INITIALIZED, this value is 0.
+     *        build state is <code>INITIALIZED</code>, this value is 0.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

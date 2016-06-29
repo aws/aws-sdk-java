@@ -131,6 +131,12 @@ public class InstanceAttributeStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("enaSupport/value", targetDepth)) {
+                    instanceAttribute.setEnaSupport(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context
                         .testExpression("sourceDestCheck/value", targetDepth)) {
                     instanceAttribute

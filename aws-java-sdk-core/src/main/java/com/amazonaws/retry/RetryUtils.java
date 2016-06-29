@@ -34,7 +34,6 @@ public class RetryUtils {
         THROTTLING_ERROR_CODES.add("ProvisionedThroughputExceededException");
         THROTTLING_ERROR_CODES.add("SlowDown");
         THROTTLING_ERROR_CODES.add("TooManyRequestsException");
-        THROTTLING_ERROR_CODES.add("LimitExceededException");
         THROTTLING_ERROR_CODES.add("RequestLimitExceeded");
         THROTTLING_ERROR_CODES.add("BandwidthLimitExceeded");
         THROTTLING_ERROR_CODES.add("RequestThrottled");

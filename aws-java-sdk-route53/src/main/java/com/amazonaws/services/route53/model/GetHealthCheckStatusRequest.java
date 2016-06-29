@@ -65,7 +65,7 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      * geolocation alias, or failover alias resource record set, and you specify
      * health check IDs for all of the resource record sets that are referenced
      * by the alias resource record sets. For more information about this
-     * configuration, see <a>EvaluateTargetHealth</a>.
+     * configuration, see <code>EvaluateTargetHealth</code>.
      * </p>
      * <p>
      * Amazon Route 53 doesn't check the health of the endpoint specified in the
@@ -143,7 +143,7 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      * geolocation alias, or failover alias resource record set, and you specify
      * health check IDs for all of the resource record sets that are referenced
      * by the alias resource record sets. For more information about this
-     * configuration, see <a>EvaluateTargetHealth</a>.
+     * configuration, see <code>EvaluateTargetHealth</code>.
      * </p>
      * <p>
      * Amazon Route 53 doesn't check the health of the endpoint specified in the
@@ -219,7 +219,7 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      *        and you specify health check IDs for all of the resource record
      *        sets that are referenced by the alias resource record sets. For
      *        more information about this configuration, see
-     *        <a>EvaluateTargetHealth</a>.
+     *        <code>EvaluateTargetHealth</code>.
      *        </p>
      *        <p>
      *        Amazon Route 53 doesn't check the health of the endpoint specified
@@ -301,7 +301,7 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      * geolocation alias, or failover alias resource record set, and you specify
      * health check IDs for all of the resource record sets that are referenced
      * by the alias resource record sets. For more information about this
-     * configuration, see <a>EvaluateTargetHealth</a>.
+     * configuration, see <code>EvaluateTargetHealth</code>.
      * </p>
      * <p>
      * Amazon Route 53 doesn't check the health of the endpoint specified in the
@@ -376,7 +376,7 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      *         and you specify health check IDs for all of the resource record
      *         sets that are referenced by the alias resource record sets. For
      *         more information about this configuration, see
-     *         <a>EvaluateTargetHealth</a>.
+     *         <code>EvaluateTargetHealth</code>.
      *         </p>
      *         <p>
      *         Amazon Route 53 doesn't check the health of the endpoint
@@ -458,7 +458,7 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      * geolocation alias, or failover alias resource record set, and you specify
      * health check IDs for all of the resource record sets that are referenced
      * by the alias resource record sets. For more information about this
-     * configuration, see <a>EvaluateTargetHealth</a>.
+     * configuration, see <code>EvaluateTargetHealth</code>.
      * </p>
      * <p>
      * Amazon Route 53 doesn't check the health of the endpoint specified in the
@@ -534,7 +534,7 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      *        and you specify health check IDs for all of the resource record
      *        sets that are referenced by the alias resource record sets. For
      *        more information about this configuration, see
-     *        <a>EvaluateTargetHealth</a>.
+     *        <code>EvaluateTargetHealth</code>.
      *        </p>
      *        <p>
      *        Amazon Route 53 doesn't check the health of the endpoint specified

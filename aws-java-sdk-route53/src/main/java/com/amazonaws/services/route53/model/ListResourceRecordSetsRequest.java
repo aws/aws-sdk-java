@@ -63,7 +63,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraint: Specifying <code>type</code> without specifying
-     * <code>name</code> returns an <a>InvalidInput</a> error.
+     * <code>name</code> returns an <code>InvalidInput</code> error.
      * </p>
      */
     private String startRecordType;
@@ -71,9 +71,8 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      * <p>
      * <i>Weighted resource record sets only:</i> If results were truncated for
      * a given DNS name and type, specify the value of
-     * <code>ListResourceRecordSetsResponse$NextRecordIdentifier</code> from the
-     * previous response to get the next resource record set that has the
-     * current DNS name and type.
+     * <code>NextRecordIdentifier</code> from the previous response to get the
+     * next resource record set that has the current DNS name and type.
      * </p>
      */
     private String startRecordIdentifier;
@@ -222,7 +221,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraint: Specifying <code>type</code> without specifying
-     * <code>name</code> returns an <a>InvalidInput</a> error.
+     * <code>name</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @param startRecordType
@@ -248,7 +247,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Constraint: Specifying <code>type</code> without specifying
-     *        <code>name</code> returns an <a>InvalidInput</a> error.
+     *        <code>name</code> returns an <code>InvalidInput</code> error.
      * @see RRType
      */
 
@@ -278,7 +277,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraint: Specifying <code>type</code> without specifying
-     * <code>name</code> returns an <a>InvalidInput</a> error.
+     * <code>name</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @return The DNS type at which to begin the listing of resource record
@@ -303,7 +302,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      *         </p>
      *         <p>
      *         Constraint: Specifying <code>type</code> without specifying
-     *         <code>name</code> returns an <a>InvalidInput</a> error.
+     *         <code>name</code> returns an <code>InvalidInput</code> error.
      * @see RRType
      */
 
@@ -333,7 +332,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraint: Specifying <code>type</code> without specifying
-     * <code>name</code> returns an <a>InvalidInput</a> error.
+     * <code>name</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @param startRecordType
@@ -359,7 +358,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Constraint: Specifying <code>type</code> without specifying
-     *        <code>name</code> returns an <a>InvalidInput</a> error.
+     *        <code>name</code> returns an <code>InvalidInput</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RRType
@@ -393,7 +392,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraint: Specifying <code>type</code> without specifying
-     * <code>name</code> returns an <a>InvalidInput</a> error.
+     * <code>name</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @param startRecordType
@@ -419,7 +418,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Constraint: Specifying <code>type</code> without specifying
-     *        <code>name</code> returns an <a>InvalidInput</a> error.
+     *        <code>name</code> returns an <code>InvalidInput</code> error.
      * @see RRType
      */
 
@@ -449,7 +448,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Constraint: Specifying <code>type</code> without specifying
-     * <code>name</code> returns an <a>InvalidInput</a> error.
+     * <code>name</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @param startRecordType
@@ -475,7 +474,7 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        Constraint: Specifying <code>type</code> without specifying
-     *        <code>name</code> returns an <a>InvalidInput</a> error.
+     *        <code>name</code> returns an <code>InvalidInput</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RRType
@@ -491,15 +490,14 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      * <p>
      * <i>Weighted resource record sets only:</i> If results were truncated for
      * a given DNS name and type, specify the value of
-     * <code>ListResourceRecordSetsResponse$NextRecordIdentifier</code> from the
-     * previous response to get the next resource record set that has the
-     * current DNS name and type.
+     * <code>NextRecordIdentifier</code> from the previous response to get the
+     * next resource record set that has the current DNS name and type.
      * </p>
      * 
      * @param startRecordIdentifier
      *        Weighted resource record sets only:</i> If results were truncated
      *        for a given DNS name and type, specify the value of
-     *        <code>ListResourceRecordSetsResponse$NextRecordIdentifier
+     *        <code>NextRecordIdentifier
      */
 
     public void setStartRecordIdentifier(String startRecordIdentifier) {
@@ -510,14 +508,13 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      * <p>
      * <i>Weighted resource record sets only:</i> If results were truncated for
      * a given DNS name and type, specify the value of
-     * <code>ListResourceRecordSetsResponse$NextRecordIdentifier</code> from the
-     * previous response to get the next resource record set that has the
-     * current DNS name and type.
+     * <code>NextRecordIdentifier</code> from the previous response to get the
+     * next resource record set that has the current DNS name and type.
      * </p>
      * 
      * @return Weighted resource record sets only:</i> If results were truncated
      *         for a given DNS name and type, specify the value of
-     *         <code>ListResourceRecordSetsResponse$NextRecordIdentifier
+     *         <code>NextRecordIdentifier
      */
 
     public String getStartRecordIdentifier() {
@@ -528,15 +525,14 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest
      * <p>
      * <i>Weighted resource record sets only:</i> If results were truncated for
      * a given DNS name and type, specify the value of
-     * <code>ListResourceRecordSetsResponse$NextRecordIdentifier</code> from the
-     * previous response to get the next resource record set that has the
-     * current DNS name and type.
+     * <code>NextRecordIdentifier</code> from the previous response to get the
+     * next resource record set that has the current DNS name and type.
      * </p>
      * 
      * @param startRecordIdentifier
      *        Weighted resource record sets only:</i> If results were truncated
      *        for a given DNS name and type, specify the value of
-     *        <code>ListResourceRecordSetsResponse$NextRecordIdentifier
+     *        <code>NextRecordIdentifier
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

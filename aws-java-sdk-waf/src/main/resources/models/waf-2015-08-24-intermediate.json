@@ -1,7 +1,6 @@
 {
   "metadata" : {
     "apiVersion" : "2015-08-24",
-    "exceptionUnmarshallerImpl" : null,
     "protocol" : "json",
     "checksumFormat" : null,
     "documentation" : "<p>This is the <i>AWS WAF API Reference</i>. This guide is for developers who need detailed information about the AWS WAF API actions, data types, and errors. For detailed information about AWS WAF features and an overview of how to use the AWS WAF API, see the <a href=\"http://docs.aws.amazon.com/waf/latest/developerguide/\">AWS WAF Developer Guide</a>.</p>",
@@ -16,17 +15,17 @@
     "serviceAbbreviation" : "WAF",
     "serviceFullName" : "AWS WAF",
     "hasApiWithStreamInput" : false,
-    "jsonContentVersion" : "application/x-amz-json-1.1",
+    "contentType" : null,
     "jsonVersion" : "1.1",
     "endpointPrefix" : "waf",
     "signingName" : "waf",
-    "xmlProtocol" : false,
-    "jsonProtocol" : true,
     "serviceName" : "WAF",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true,
+    "xmlProtocol" : false
   },
   "operations" : {
     "CreateByteMatchSet" : {
@@ -33291,5 +33290,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "exceptionUnmarshallerImpl" : null
 }

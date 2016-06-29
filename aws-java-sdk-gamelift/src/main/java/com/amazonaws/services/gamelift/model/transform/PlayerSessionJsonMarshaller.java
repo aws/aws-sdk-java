@@ -79,6 +79,10 @@ public class PlayerSessionJsonMarshaller {
                 jsonGenerator.writeFieldName("IpAddress").writeValue(
                         playerSession.getIpAddress());
             }
+            if (playerSession.getPort() != null) {
+                jsonGenerator.writeFieldName("Port").writeValue(
+                        playerSession.getPort());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

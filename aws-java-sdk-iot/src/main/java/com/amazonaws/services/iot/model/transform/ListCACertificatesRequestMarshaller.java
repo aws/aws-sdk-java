@@ -49,8 +49,6 @@ public class ListCACertificatesRequestMarshaller
         implements
         Marshaller<Request<ListCACertificatesRequest>, ListCACertificatesRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
-
     private final SdkJsonProtocolFactory protocolFactory;
 
     public ListCACertificatesRequestMarshaller(
@@ -92,7 +90,7 @@ public class ListCACertificatesRequestMarshaller
 
         request.setContent(new ByteArrayInputStream(new byte[0]));
         if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+            request.addHeader("Content-Type", protocolFactory.getContentType());
         }
 
         return request;

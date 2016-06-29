@@ -30,11 +30,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * managed Amazon Web Services (AWS) service for developers who need a scalable,
  * server-based solution for multiplayer games. Amazon GameLift provides setup
  * and deployment of game servers, and handles infrastructure scaling and
- * session management. For more information about the GameLift service,
- * including a feature overview, getting started guide, and tutorial, see the
- * accompanying <a
- * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
- * GameLift Developer Guide</a>.
+ * session management.
  * </p>
  * <p>
  * This reference describes the low-level service API for GameLift. You can call
@@ -42,15 +38,32 @@ import com.amazonaws.annotation.ThreadSafe;
  * SDK</a> for your preferred language. The AWS SDK includes a set of high-level
  * GameLift actions multiplayer game sessions. Alternatively, you can use the <a
  * href="https://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool,
- * which includes commands for GameLift. For administrative actions, you can use
- * the Amazon GameLift console.
+ * which includes commands for GameLift. For administrative actions, you can
+ * also use the Amazon GameLift console.
  * </p>
  * <p>
- * <b>Managing Game and Player Sessions Through GameLift</b>
+ * <b>More Resources</b>
+ * </p>
+ * <ul>
+ * <li><a
+ * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
+ * GameLift Developer Guide</a>: Learn more about GameLift features and how to
+ * use them</li>
+ * <li><a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and
+ * GameLift Tutorials</a>: Get started fast with walkthroughs and sample
+ * projects</li>
+ * <li><a href="https://aws.amazon.com/blogs/gamedev/">GameDev Blog</a>: Stay up
+ * to date with new features and techniques</li>
+ * <li><a href=
+ * "https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html"
+ * >GameDev Forums</a>: Connect with the GameDev community</li>
+ * </ul>
+ * <p>
+ * <b>Manage Games and Players Through GameLift</b>
  * </p>
  * <p>
  * Call these actions from your game clients and/or services to create and
- * manage multiplayer game sessions.
+ * manage multiplayer game sessions and player sessions.
  * </p>
  * <ul>
  * <li><b>Game sessions</b>
@@ -75,16 +88,17 @@ import com.amazonaws.annotation.ThreadSafe;
  * </li>
  * </ul>
  * <p>
- * <b>Setting Up Game Servers</b>
+ * <b>Set Up and Manage Game Servers</b>
  * </p>
  * <p>
  * Use these administrative actions to configure GameLift to host your game
- * servers. When configuring GameLift, you'll need to (1) configure a build for
- * your game and provide build files, and (2) set up one or more fleets to host
- * game sessions.
+ * servers. When setting up GameLift, you'll need to (1) configure a build for
+ * your game and upload build files, and (2) set up one or more fleets to host
+ * game sessions. Once you've created and activated a fleet, you can assign
+ * aliases to it, scale capacity, track performance and utilization, etc.
  * </p>
  * <ul>
- * <li><b>Build actions:</b>
+ * <li><b>Manage your builds:</b>
  * <ul>
  * <li><a>ListBuilds</a></li>
  * <li><a>CreateBuild</a></li>
@@ -94,11 +108,11 @@ import com.amazonaws.annotation.ThreadSafe;
  * <li><a>RequestUploadCredentials</a></li>
  * </ul>
  * </li>
- * <li><b>Fleet actions:</b>
+ * <li><b>Manage your fleets:</b>
  * <ul>
  * <li><a>ListFleets</a></li>
  * <li><a>CreateFleet</a></li>
- * <li>Describe fleet actions:
+ * <li>Describe fleets:
  * <ul>
  * <li><a>DescribeFleetAttributes</a></li>
  * <li><a>DescribeFleetCapacity</a></li>
@@ -106,19 +120,21 @@ import com.amazonaws.annotation.ThreadSafe;
  * <li><a>DescribeFleetUtilization</a></li>
  * <li><a>DescribeEC2InstanceLimits</a></li>
  * <li><a>DescribeFleetEvents</a></li>
+ * <li><a>DescribeRuntimeConfiguration</a></li>
  * </ul>
  * </li>
- * <li>Update fleet actions:
+ * <li>Update fleets:
  * <ul>
  * <li><a>UpdateFleetAttributes</a></li>
  * <li><a>UpdateFleetCapacity</a></li>
  * <li><a>UpdateFleetPortSettings</a></li>
+ * <li><a>UpdateRuntimeConfiguration</a></li>
  * </ul>
  * </li>
  * <li><a>DeleteFleet</a></li>
  * </ul>
  * </li>
- * <li><b>Alias actions:</b>
+ * <li><b>Manage fleet aliases:</b>
  * <ul>
  * <li><a>ListAliases</a></li>
  * <li><a>CreateAlias</a></li>
@@ -128,7 +144,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * <li><a>ResolveAlias</a></li>
  * </ul>
  * </li>
- * <li><b>Scaling policy actions:</b>
+ * <li><b>Manage autoscaling:</b>
  * <ul>
  * <li><a>PutScalingPolicy</a></li>
  * <li><a>DescribeScalingPolicies</a></li>
@@ -136,6 +152,11 @@ import com.amazonaws.annotation.ThreadSafe;
  * </ul>
  * </li>
  * </ul>
+ * <p>
+ * To view changes to the API, see the GameLift <a href=
+ * "http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html"
+ * >Document History</a> page.
+ * </p>
  */
 @ThreadSafe
 public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements
@@ -1108,6 +1129,42 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeRuntimeConfigurationResult> describeRuntimeConfigurationAsync(
+            DescribeRuntimeConfigurationRequest request) {
+
+        return describeRuntimeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRuntimeConfigurationResult> describeRuntimeConfigurationAsync(
+            final DescribeRuntimeConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRuntimeConfigurationRequest, DescribeRuntimeConfigurationResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeRuntimeConfigurationResult>() {
+                    @Override
+                    public DescribeRuntimeConfigurationResult call()
+                            throws Exception {
+                        DescribeRuntimeConfigurationResult result;
+
+                        try {
+                            result = describeRuntimeConfiguration(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeScalingPoliciesResult> describeScalingPoliciesAsync(
             DescribeScalingPoliciesRequest request) {
 
@@ -1585,6 +1642,42 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements
 
                         try {
                             result = updateGameSession(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRuntimeConfigurationResult> updateRuntimeConfigurationAsync(
+            UpdateRuntimeConfigurationRequest request) {
+
+        return updateRuntimeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRuntimeConfigurationResult> updateRuntimeConfigurationAsync(
+            final UpdateRuntimeConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRuntimeConfigurationRequest, UpdateRuntimeConfigurationResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateRuntimeConfigurationResult>() {
+                    @Override
+                    public UpdateRuntimeConfigurationResult call()
+                            throws Exception {
+                        UpdateRuntimeConfigurationResult result;
+
+                        try {
+                            result = updateRuntimeConfiguration(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

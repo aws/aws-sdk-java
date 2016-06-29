@@ -32,12 +32,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <code>HostedZoneId</code> parameters to control the hosted zone that the list
  * begins with.
  * </p>
- * <p>
- * For more information about listing hosted zones, see <a href=
- * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ListInfoOnHostedZone.html"
- * >Listing the Hosted Zones for an AWS Account</a> in the <i>Amazon Route 53
- * Developer Guide</i>.
- * </p>
  */
 public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

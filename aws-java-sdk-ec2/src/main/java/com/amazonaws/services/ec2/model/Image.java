@@ -105,10 +105,17 @@ public class Image implements Serializable, Cloneable {
     private String platform;
     /**
      * <p>
-     * Specifies whether enhanced networking is enabled.
+     * Specifies whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
      * </p>
      */
     private String sriovNetSupport;
+    /**
+     * <p>
+     * Specifies whether enhanced networking with ENA is enabled.
+     * </p>
+     */
+    private Boolean enaSupport;
     /**
      * <p>
      * The reason for the state change.
@@ -908,11 +915,13 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether enhanced networking is enabled.
+     * Specifies whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
      * </p>
      * 
      * @param sriovNetSupport
-     *        Specifies whether enhanced networking is enabled.
+     *        Specifies whether enhanced networking with the Intel 82599 Virtual
+     *        Function interface is enabled.
      */
 
     public void setSriovNetSupport(String sriovNetSupport) {
@@ -921,10 +930,12 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether enhanced networking is enabled.
+     * Specifies whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
      * </p>
      * 
-     * @return Specifies whether enhanced networking is enabled.
+     * @return Specifies whether enhanced networking with the Intel 82599
+     *         Virtual Function interface is enabled.
      */
 
     public String getSriovNetSupport() {
@@ -933,11 +944,13 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether enhanced networking is enabled.
+     * Specifies whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
      * </p>
      * 
      * @param sriovNetSupport
-     *        Specifies whether enhanced networking is enabled.
+     *        Specifies whether enhanced networking with the Intel 82599 Virtual
+     *        Function interface is enabled.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -945,6 +958,59 @@ public class Image implements Serializable, Cloneable {
     public Image withSriovNetSupport(String sriovNetSupport) {
         setSriovNetSupport(sriovNetSupport);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether enhanced networking with ENA is enabled.
+     * </p>
+     * 
+     * @param enaSupport
+     *        Specifies whether enhanced networking with ENA is enabled.
+     */
+
+    public void setEnaSupport(Boolean enaSupport) {
+        this.enaSupport = enaSupport;
+    }
+
+    /**
+     * <p>
+     * Specifies whether enhanced networking with ENA is enabled.
+     * </p>
+     * 
+     * @return Specifies whether enhanced networking with ENA is enabled.
+     */
+
+    public Boolean getEnaSupport() {
+        return this.enaSupport;
+    }
+
+    /**
+     * <p>
+     * Specifies whether enhanced networking with ENA is enabled.
+     * </p>
+     * 
+     * @param enaSupport
+     *        Specifies whether enhanced networking with ENA is enabled.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Image withEnaSupport(Boolean enaSupport) {
+        setEnaSupport(enaSupport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether enhanced networking with ENA is enabled.
+     * </p>
+     * 
+     * @return Specifies whether enhanced networking with ENA is enabled.
+     */
+
+    public Boolean isEnaSupport() {
+        return this.enaSupport;
     }
 
     /**
@@ -1597,6 +1663,8 @@ public class Image implements Serializable, Cloneable {
             sb.append("Platform: " + getPlatform() + ",");
         if (getSriovNetSupport() != null)
             sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
+        if (getEnaSupport() != null)
+            sb.append("EnaSupport: " + getEnaSupport() + ",");
         if (getStateReason() != null)
             sb.append("StateReason: " + getStateReason() + ",");
         if (getImageOwnerAlias() != null)
@@ -1696,6 +1764,11 @@ public class Image implements Serializable, Cloneable {
             return false;
         if (other.getSriovNetSupport() != null
                 && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
+            return false;
+        if (other.getEnaSupport() == null ^ this.getEnaSupport() == null)
+            return false;
+        if (other.getEnaSupport() != null
+                && other.getEnaSupport().equals(this.getEnaSupport()) == false)
             return false;
         if (other.getStateReason() == null ^ this.getStateReason() == null)
             return false;
@@ -1798,6 +1871,8 @@ public class Image implements Serializable, Cloneable {
                 * hashCode
                 + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getStateReason() == null) ? 0 : getStateReason().hashCode());

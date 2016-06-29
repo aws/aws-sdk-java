@@ -55,8 +55,6 @@ public class SdkStructuredPlainJsonFactory {
      */
     private static final JsonFactory JSON_FACTORY = new JsonFactory();
 
-    private static final String CONTENT_TYPE_JSON_PREFIX = "application/x-amz-json-";
-
     @SdkTestInternalApi
     public static final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> JSON_SCALAR_UNMARSHALLERS = new ImmutableMapParameter.Builder<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>>()
             .put(String.class, StringJsonUnmarshaller.getInstance())
@@ -74,7 +72,7 @@ public class SdkStructuredPlainJsonFactory {
             .put(Short.class, ShortJsonUnmarshaller.getInstance()).build();
 
     public static final SdkStructuredJsonFactory SDK_JSON_FACTORY = new SdkStructuredJsonFactoryImpl(
-            CONTENT_TYPE_JSON_PREFIX, JSON_FACTORY, JSON_SCALAR_UNMARSHALLERS) {
+            JSON_FACTORY, JSON_SCALAR_UNMARSHALLERS) {
         @Override
         protected StructuredJsonGenerator createWriter(JsonFactory jsonFactory,
                                                        String contentType) {

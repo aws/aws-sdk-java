@@ -20,62 +20,62 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This object provides description of a mount target.
+ * Provides a description of a mount target.
  * </p>
  */
 public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID that owns the resource.
+     * AWS account ID that owns the resource.
      * </p>
      */
     private String ownerId;
     /**
      * <p>
-     * The system-assigned mount target ID.
+     * System-assigned mount target ID.
      * </p>
      */
     private String mountTargetId;
     /**
      * <p>
-     * The ID of the file system for which the mount target is intended.
+     * ID of the file system for which the mount target is intended.
      * </p>
      */
     private String fileSystemId;
     /**
      * <p>
-     * The ID of the subnet that the mount target is in.
+     * ID of the mount target's subnet.
      * </p>
      */
     private String subnetId;
     /**
      * <p>
-     * The lifecycle state the mount target is in.
+     * Lifecycle state of the mount target.
      * </p>
      */
     private String lifeCycleState;
     /**
      * <p>
-     * The address at which the file system may be mounted via the mount target.
+     * Address at which the file system may be mounted via the mount target.
      * </p>
      */
     private String ipAddress;
     /**
      * <p>
-     * The ID of the network interface that Amazon EFS created when it created
-     * the mount target.
+     * ID of the network interface that Amazon EFS created when it created the
+     * mount target.
      * </p>
      */
     private String networkInterfaceId;
 
     /**
      * <p>
-     * The AWS account ID that owns the resource.
+     * AWS account ID that owns the resource.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account ID that owns the resource.
+     *        AWS account ID that owns the resource.
      */
 
     public void setOwnerId(String ownerId) {
@@ -84,10 +84,10 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID that owns the resource.
+     * AWS account ID that owns the resource.
      * </p>
      * 
-     * @return The AWS account ID that owns the resource.
+     * @return AWS account ID that owns the resource.
      */
 
     public String getOwnerId() {
@@ -96,11 +96,11 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID that owns the resource.
+     * AWS account ID that owns the resource.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account ID that owns the resource.
+     *        AWS account ID that owns the resource.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -112,11 +112,11 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The system-assigned mount target ID.
+     * System-assigned mount target ID.
      * </p>
      * 
      * @param mountTargetId
-     *        The system-assigned mount target ID.
+     *        System-assigned mount target ID.
      */
 
     public void setMountTargetId(String mountTargetId) {
@@ -125,10 +125,10 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The system-assigned mount target ID.
+     * System-assigned mount target ID.
      * </p>
      * 
-     * @return The system-assigned mount target ID.
+     * @return System-assigned mount target ID.
      */
 
     public String getMountTargetId() {
@@ -137,11 +137,11 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The system-assigned mount target ID.
+     * System-assigned mount target ID.
      * </p>
      * 
      * @param mountTargetId
-     *        The system-assigned mount target ID.
+     *        System-assigned mount target ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -153,11 +153,11 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the file system for which the mount target is intended.
+     * ID of the file system for which the mount target is intended.
      * </p>
      * 
      * @param fileSystemId
-     *        The ID of the file system for which the mount target is intended.
+     *        ID of the file system for which the mount target is intended.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -166,10 +166,10 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the file system for which the mount target is intended.
+     * ID of the file system for which the mount target is intended.
      * </p>
      * 
-     * @return The ID of the file system for which the mount target is intended.
+     * @return ID of the file system for which the mount target is intended.
      */
 
     public String getFileSystemId() {
@@ -178,11 +178,11 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the file system for which the mount target is intended.
+     * ID of the file system for which the mount target is intended.
      * </p>
      * 
      * @param fileSystemId
-     *        The ID of the file system for which the mount target is intended.
+     *        ID of the file system for which the mount target is intended.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -194,11 +194,11 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the subnet that the mount target is in.
+     * ID of the mount target's subnet.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet that the mount target is in.
+     *        ID of the mount target's subnet.
      */
 
     public void setSubnetId(String subnetId) {
@@ -207,10 +207,10 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the subnet that the mount target is in.
+     * ID of the mount target's subnet.
      * </p>
      * 
-     * @return The ID of the subnet that the mount target is in.
+     * @return ID of the mount target's subnet.
      */
 
     public String getSubnetId() {
@@ -219,11 +219,11 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the subnet that the mount target is in.
+     * ID of the mount target's subnet.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet that the mount target is in.
+     *        ID of the mount target's subnet.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -235,11 +235,11 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The lifecycle state the mount target is in.
+     * Lifecycle state of the mount target.
      * </p>
      * 
      * @param lifeCycleState
-     *        The lifecycle state the mount target is in.
+     *        Lifecycle state of the mount target.
      * @see LifeCycleState
      */
 
@@ -249,10 +249,10 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The lifecycle state the mount target is in.
+     * Lifecycle state of the mount target.
      * </p>
      * 
-     * @return The lifecycle state the mount target is in.
+     * @return Lifecycle state of the mount target.
      * @see LifeCycleState
      */
 
@@ -262,11 +262,11 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The lifecycle state the mount target is in.
+     * Lifecycle state of the mount target.
      * </p>
      * 
      * @param lifeCycleState
-     *        The lifecycle state the mount target is in.
+     *        Lifecycle state of the mount target.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see LifeCycleState
@@ -279,11 +279,11 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The lifecycle state the mount target is in.
+     * Lifecycle state of the mount target.
      * </p>
      * 
      * @param lifeCycleState
-     *        The lifecycle state the mount target is in.
+     *        Lifecycle state of the mount target.
      * @see LifeCycleState
      */
 
@@ -293,11 +293,11 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The lifecycle state the mount target is in.
+     * Lifecycle state of the mount target.
      * </p>
      * 
      * @param lifeCycleState
-     *        The lifecycle state the mount target is in.
+     *        Lifecycle state of the mount target.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see LifeCycleState
@@ -311,11 +311,11 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The address at which the file system may be mounted via the mount target.
+     * Address at which the file system may be mounted via the mount target.
      * </p>
      * 
      * @param ipAddress
-     *        The address at which the file system may be mounted via the mount
+     *        Address at which the file system may be mounted via the mount
      *        target.
      */
 
@@ -325,10 +325,10 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The address at which the file system may be mounted via the mount target.
+     * Address at which the file system may be mounted via the mount target.
      * </p>
      * 
-     * @return The address at which the file system may be mounted via the mount
+     * @return Address at which the file system may be mounted via the mount
      *         target.
      */
 
@@ -338,11 +338,11 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The address at which the file system may be mounted via the mount target.
+     * Address at which the file system may be mounted via the mount target.
      * </p>
      * 
      * @param ipAddress
-     *        The address at which the file system may be mounted via the mount
+     *        Address at which the file system may be mounted via the mount
      *        target.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -355,12 +355,12 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the network interface that Amazon EFS created when it created
-     * the mount target.
+     * ID of the network interface that Amazon EFS created when it created the
+     * mount target.
      * </p>
      * 
      * @param networkInterfaceId
-     *        The ID of the network interface that Amazon EFS created when it
+     *        ID of the network interface that Amazon EFS created when it
      *        created the mount target.
      */
 
@@ -370,11 +370,11 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the network interface that Amazon EFS created when it created
-     * the mount target.
+     * ID of the network interface that Amazon EFS created when it created the
+     * mount target.
      * </p>
      * 
-     * @return The ID of the network interface that Amazon EFS created when it
+     * @return ID of the network interface that Amazon EFS created when it
      *         created the mount target.
      */
 
@@ -384,12 +384,12 @@ public class CreateMountTargetResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the network interface that Amazon EFS created when it created
-     * the mount target.
+     * ID of the network interface that Amazon EFS created when it created the
+     * mount target.
      * </p>
      * 
      * @param networkInterfaceId
-     *        The ID of the network interface that Amazon EFS created when it
+     *        ID of the network interface that Amazon EFS created when it
      *        created the mount target.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

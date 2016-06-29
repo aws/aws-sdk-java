@@ -304,6 +304,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * following:
      * </p>
      * <ul>
+     * <li>If you're creating a non-alias resource record set, <code>TTL</code>
+     * is required.</li>
      * <li>If you're creating an alias resource record set, omit
      * <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for
      * the alias target.</li>
@@ -2777,6 +2779,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * following:
      * </p>
      * <ul>
+     * <li>If you're creating a non-alias resource record set, <code>TTL</code>
+     * is required.</li>
      * <li>If you're creating an alias resource record set, omit
      * <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for
      * the alias target.</li>
@@ -2800,6 +2804,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        The cache time to live for the current resource record set. Note
      *        the following:</p>
      *        <ul>
+     *        <li>If you're creating a non-alias resource record set,
+     *        <code>TTL</code> is required.</li>
      *        <li>If you're creating an alias resource record set, omit
      *        <code>TTL</code>. Amazon Route 53 uses the value of
      *        <code>TTL</code> for the alias target.</li>
@@ -2829,6 +2835,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * following:
      * </p>
      * <ul>
+     * <li>If you're creating a non-alias resource record set, <code>TTL</code>
+     * is required.</li>
      * <li>If you're creating an alias resource record set, omit
      * <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for
      * the alias target.</li>
@@ -2851,6 +2859,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return The cache time to live for the current resource record set. Note
      *         the following:</p>
      *         <ul>
+     *         <li>If you're creating a non-alias resource record set,
+     *         <code>TTL</code> is required.</li>
      *         <li>If you're creating an alias resource record set, omit
      *         <code>TTL</code>. Amazon Route 53 uses the value of
      *         <code>TTL</code> for the alias target.</li>
@@ -2881,6 +2891,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * following:
      * </p>
      * <ul>
+     * <li>If you're creating a non-alias resource record set, <code>TTL</code>
+     * is required.</li>
      * <li>If you're creating an alias resource record set, omit
      * <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for
      * the alias target.</li>
@@ -2904,6 +2916,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        The cache time to live for the current resource record set. Note
      *        the following:</p>
      *        <ul>
+     *        <li>If you're creating a non-alias resource record set,
+     *        <code>TTL</code> is required.</li>
      *        <li>If you're creating an alias resource record set, omit
      *        <code>TTL</code>. Amazon Route 53 uses the value of
      *        <code>TTL</code> for the alias target.</li>

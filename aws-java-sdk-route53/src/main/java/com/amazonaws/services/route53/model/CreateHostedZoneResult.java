@@ -36,7 +36,8 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      * <p>
      * A complex type that contains information about the request to create a
      * hosted zone. This includes an ID that you use when you call the
-     * <a>GetChange</a> action to get the current status of the change request.
+     * <code>GetChange</code> action to get the current status of the change
+     * request.
      * </p>
      */
     private ChangeInfo changeInfo;
@@ -106,14 +107,15 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      * <p>
      * A complex type that contains information about the request to create a
      * hosted zone. This includes an ID that you use when you call the
-     * <a>GetChange</a> action to get the current status of the change request.
+     * <code>GetChange</code> action to get the current status of the change
+     * request.
      * </p>
      * 
      * @param changeInfo
      *        A complex type that contains information about the request to
      *        create a hosted zone. This includes an ID that you use when you
-     *        call the <a>GetChange</a> action to get the current status of the
-     *        change request.
+     *        call the <code>GetChange</code> action to get the current status
+     *        of the change request.
      */
 
     public void setChangeInfo(ChangeInfo changeInfo) {
@@ -124,13 +126,14 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      * <p>
      * A complex type that contains information about the request to create a
      * hosted zone. This includes an ID that you use when you call the
-     * <a>GetChange</a> action to get the current status of the change request.
+     * <code>GetChange</code> action to get the current status of the change
+     * request.
      * </p>
      * 
      * @return A complex type that contains information about the request to
      *         create a hosted zone. This includes an ID that you use when you
-     *         call the <a>GetChange</a> action to get the current status of the
-     *         change request.
+     *         call the <code>GetChange</code> action to get the current status
+     *         of the change request.
      */
 
     public ChangeInfo getChangeInfo() {
@@ -141,14 +144,15 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      * <p>
      * A complex type that contains information about the request to create a
      * hosted zone. This includes an ID that you use when you call the
-     * <a>GetChange</a> action to get the current status of the change request.
+     * <code>GetChange</code> action to get the current status of the change
+     * request.
      * </p>
      * 
      * @param changeInfo
      *        A complex type that contains information about the request to
      *        create a hosted zone. This includes an ID that you use when you
-     *        call the <a>GetChange</a> action to get the current status of the
-     *        change request.
+     *        call the <code>GetChange</code> action to get the current status
+     *        of the change request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

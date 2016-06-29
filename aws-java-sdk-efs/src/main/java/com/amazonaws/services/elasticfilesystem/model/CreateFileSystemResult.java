@@ -20,16 +20,16 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This object provides description of a file system.
+ * Description of the file system.
  * </p>
  */
 public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account that created the file system. If the file system was
-     * created by an IAM user, the parent account to which the user belongs is
-     * the owner.
+     * AWS account that created the file system. If the file system was created
+     * by an IAM user, the parent account to which the user belongs is the
+     * owner.
      * </p>
      */
     private String ownerId;
@@ -41,44 +41,43 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
     private String creationToken;
     /**
      * <p>
-     * The file system ID assigned by Amazon EFS.
+     * ID of the file system, assigned by Amazon EFS.
      * </p>
      */
     private String fileSystemId;
     /**
      * <p>
-     * The time at which the file system was created, in seconds, since
-     * 1970-01-01T00:00:00Z.
+     * Time that the file system was created, in seconds (since
+     * 1970-01-01T00:00:00Z).
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * A predefined string value that indicates the lifecycle phase of the file
-     * system.
+     * Lifecycle phase of the file system.
      * </p>
      */
     private String lifeCycleState;
     /**
      * <p>
-     * You can add tags to a file system (see <a>CreateTags</a>) including a
-     * "Name" tag. If the file system has a "Name" tag, Amazon EFS returns the
-     * value in this field.
+     * You can add tags to a file system, including a <code>Name</code> tag. For
+     * more information, see <a>CreateTags</a>. If the file system has a
+     * <code>Name</code> tag, Amazon EFS returns the value in this field.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The current number of mount targets (see <a>CreateMountTarget</a>) the
-     * file system has.
+     * Current number of mount targets that the file system has. For more
+     * information, see <a>CreateMountTarget</a>.
      * </p>
      */
     private Integer numberOfMountTargets;
     /**
      * <p>
-     * This object provides the latest known metered size of data stored in the
-     * file system, in bytes, in its <code>Value</code> field, and the time at
-     * which that size was determined in its <code>Timestamp</code> field. The
+     * Latest known metered size (in bytes) of data stored in the file system,
+     * in bytes, in its <code>Value</code> field, and the time at which that
+     * size was determined in its <code>Timestamp</code> field. The
      * <code>Timestamp</code> value is the integer number of seconds since
      * 1970-01-01T00:00:00Z. Note that the value does not represent the size of
      * a consistent snapshot of the file system, but it is eventually consistent
@@ -89,17 +88,23 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
      * </p>
      */
     private FileSystemSize sizeInBytes;
+    /**
+     * <p>
+     * The <code>PerformanceMode</code> of the file system.
+     * </p>
+     */
+    private String performanceMode;
 
     /**
      * <p>
-     * The AWS account that created the file system. If the file system was
-     * created by an IAM user, the parent account to which the user belongs is
-     * the owner.
+     * AWS account that created the file system. If the file system was created
+     * by an IAM user, the parent account to which the user belongs is the
+     * owner.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account that created the file system. If the file system
-     *        was created by an IAM user, the parent account to which the user
+     *        AWS account that created the file system. If the file system was
+     *        created by an IAM user, the parent account to which the user
      *        belongs is the owner.
      */
 
@@ -109,13 +114,13 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account that created the file system. If the file system was
-     * created by an IAM user, the parent account to which the user belongs is
-     * the owner.
+     * AWS account that created the file system. If the file system was created
+     * by an IAM user, the parent account to which the user belongs is the
+     * owner.
      * </p>
      * 
-     * @return The AWS account that created the file system. If the file system
-     *         was created by an IAM user, the parent account to which the user
+     * @return AWS account that created the file system. If the file system was
+     *         created by an IAM user, the parent account to which the user
      *         belongs is the owner.
      */
 
@@ -125,14 +130,14 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account that created the file system. If the file system was
-     * created by an IAM user, the parent account to which the user belongs is
-     * the owner.
+     * AWS account that created the file system. If the file system was created
+     * by an IAM user, the parent account to which the user belongs is the
+     * owner.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account that created the file system. If the file system
-     *        was created by an IAM user, the parent account to which the user
+     *        AWS account that created the file system. If the file system was
+     *        created by an IAM user, the parent account to which the user
      *        belongs is the owner.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -186,11 +191,11 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The file system ID assigned by Amazon EFS.
+     * ID of the file system, assigned by Amazon EFS.
      * </p>
      * 
      * @param fileSystemId
-     *        The file system ID assigned by Amazon EFS.
+     *        ID of the file system, assigned by Amazon EFS.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -199,10 +204,10 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The file system ID assigned by Amazon EFS.
+     * ID of the file system, assigned by Amazon EFS.
      * </p>
      * 
-     * @return The file system ID assigned by Amazon EFS.
+     * @return ID of the file system, assigned by Amazon EFS.
      */
 
     public String getFileSystemId() {
@@ -211,11 +216,11 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The file system ID assigned by Amazon EFS.
+     * ID of the file system, assigned by Amazon EFS.
      * </p>
      * 
      * @param fileSystemId
-     *        The file system ID assigned by Amazon EFS.
+     *        ID of the file system, assigned by Amazon EFS.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -227,13 +232,13 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the file system was created, in seconds, since
-     * 1970-01-01T00:00:00Z.
+     * Time that the file system was created, in seconds (since
+     * 1970-01-01T00:00:00Z).
      * </p>
      * 
      * @param creationTime
-     *        The time at which the file system was created, in seconds, since
-     *        1970-01-01T00:00:00Z.
+     *        Time that the file system was created, in seconds (since
+     *        1970-01-01T00:00:00Z).
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -242,12 +247,12 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the file system was created, in seconds, since
-     * 1970-01-01T00:00:00Z.
+     * Time that the file system was created, in seconds (since
+     * 1970-01-01T00:00:00Z).
      * </p>
      * 
-     * @return The time at which the file system was created, in seconds, since
-     *         1970-01-01T00:00:00Z.
+     * @return Time that the file system was created, in seconds (since
+     *         1970-01-01T00:00:00Z).
      */
 
     public java.util.Date getCreationTime() {
@@ -256,13 +261,13 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the file system was created, in seconds, since
-     * 1970-01-01T00:00:00Z.
+     * Time that the file system was created, in seconds (since
+     * 1970-01-01T00:00:00Z).
      * </p>
      * 
      * @param creationTime
-     *        The time at which the file system was created, in seconds, since
-     *        1970-01-01T00:00:00Z.
+     *        Time that the file system was created, in seconds (since
+     *        1970-01-01T00:00:00Z).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -274,13 +279,11 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A predefined string value that indicates the lifecycle phase of the file
-     * system.
+     * Lifecycle phase of the file system.
      * </p>
      * 
      * @param lifeCycleState
-     *        A predefined string value that indicates the lifecycle phase of
-     *        the file system.
+     *        Lifecycle phase of the file system.
      * @see LifeCycleState
      */
 
@@ -290,12 +293,10 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A predefined string value that indicates the lifecycle phase of the file
-     * system.
+     * Lifecycle phase of the file system.
      * </p>
      * 
-     * @return A predefined string value that indicates the lifecycle phase of
-     *         the file system.
+     * @return Lifecycle phase of the file system.
      * @see LifeCycleState
      */
 
@@ -305,13 +306,11 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A predefined string value that indicates the lifecycle phase of the file
-     * system.
+     * Lifecycle phase of the file system.
      * </p>
      * 
      * @param lifeCycleState
-     *        A predefined string value that indicates the lifecycle phase of
-     *        the file system.
+     *        Lifecycle phase of the file system.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see LifeCycleState
@@ -324,13 +323,11 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A predefined string value that indicates the lifecycle phase of the file
-     * system.
+     * Lifecycle phase of the file system.
      * </p>
      * 
      * @param lifeCycleState
-     *        A predefined string value that indicates the lifecycle phase of
-     *        the file system.
+     *        Lifecycle phase of the file system.
      * @see LifeCycleState
      */
 
@@ -340,13 +337,11 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A predefined string value that indicates the lifecycle phase of the file
-     * system.
+     * Lifecycle phase of the file system.
      * </p>
      * 
      * @param lifeCycleState
-     *        A predefined string value that indicates the lifecycle phase of
-     *        the file system.
+     *        Lifecycle phase of the file system.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see LifeCycleState
@@ -360,15 +355,16 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * You can add tags to a file system (see <a>CreateTags</a>) including a
-     * "Name" tag. If the file system has a "Name" tag, Amazon EFS returns the
-     * value in this field.
+     * You can add tags to a file system, including a <code>Name</code> tag. For
+     * more information, see <a>CreateTags</a>. If the file system has a
+     * <code>Name</code> tag, Amazon EFS returns the value in this field.
      * </p>
      * 
      * @param name
-     *        You can add tags to a file system (see <a>CreateTags</a>)
-     *        including a "Name" tag. If the file system has a "Name" tag,
-     *        Amazon EFS returns the value in this field.
+     *        You can add tags to a file system, including a <code>Name</code>
+     *        tag. For more information, see <a>CreateTags</a>. If the file
+     *        system has a <code>Name</code> tag, Amazon EFS returns the value
+     *        in this field.
      */
 
     public void setName(String name) {
@@ -377,14 +373,15 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * You can add tags to a file system (see <a>CreateTags</a>) including a
-     * "Name" tag. If the file system has a "Name" tag, Amazon EFS returns the
-     * value in this field.
+     * You can add tags to a file system, including a <code>Name</code> tag. For
+     * more information, see <a>CreateTags</a>. If the file system has a
+     * <code>Name</code> tag, Amazon EFS returns the value in this field.
      * </p>
      * 
-     * @return You can add tags to a file system (see <a>CreateTags</a>)
-     *         including a "Name" tag. If the file system has a "Name" tag,
-     *         Amazon EFS returns the value in this field.
+     * @return You can add tags to a file system, including a <code>Name</code>
+     *         tag. For more information, see <a>CreateTags</a>. If the file
+     *         system has a <code>Name</code> tag, Amazon EFS returns the value
+     *         in this field.
      */
 
     public String getName() {
@@ -393,15 +390,16 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * You can add tags to a file system (see <a>CreateTags</a>) including a
-     * "Name" tag. If the file system has a "Name" tag, Amazon EFS returns the
-     * value in this field.
+     * You can add tags to a file system, including a <code>Name</code> tag. For
+     * more information, see <a>CreateTags</a>. If the file system has a
+     * <code>Name</code> tag, Amazon EFS returns the value in this field.
      * </p>
      * 
      * @param name
-     *        You can add tags to a file system (see <a>CreateTags</a>)
-     *        including a "Name" tag. If the file system has a "Name" tag,
-     *        Amazon EFS returns the value in this field.
+     *        You can add tags to a file system, including a <code>Name</code>
+     *        tag. For more information, see <a>CreateTags</a>. If the file
+     *        system has a <code>Name</code> tag, Amazon EFS returns the value
+     *        in this field.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -413,13 +411,13 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current number of mount targets (see <a>CreateMountTarget</a>) the
-     * file system has.
+     * Current number of mount targets that the file system has. For more
+     * information, see <a>CreateMountTarget</a>.
      * </p>
      * 
      * @param numberOfMountTargets
-     *        The current number of mount targets (see <a>CreateMountTarget</a>)
-     *        the file system has.
+     *        Current number of mount targets that the file system has. For more
+     *        information, see <a>CreateMountTarget</a>.
      */
 
     public void setNumberOfMountTargets(Integer numberOfMountTargets) {
@@ -428,12 +426,12 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current number of mount targets (see <a>CreateMountTarget</a>) the
-     * file system has.
+     * Current number of mount targets that the file system has. For more
+     * information, see <a>CreateMountTarget</a>.
      * </p>
      * 
-     * @return The current number of mount targets (see
-     *         <a>CreateMountTarget</a>) the file system has.
+     * @return Current number of mount targets that the file system has. For
+     *         more information, see <a>CreateMountTarget</a>.
      */
 
     public Integer getNumberOfMountTargets() {
@@ -442,13 +440,13 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current number of mount targets (see <a>CreateMountTarget</a>) the
-     * file system has.
+     * Current number of mount targets that the file system has. For more
+     * information, see <a>CreateMountTarget</a>.
      * </p>
      * 
      * @param numberOfMountTargets
-     *        The current number of mount targets (see <a>CreateMountTarget</a>)
-     *        the file system has.
+     *        Current number of mount targets that the file system has. For more
+     *        information, see <a>CreateMountTarget</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -461,9 +459,9 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This object provides the latest known metered size of data stored in the
-     * file system, in bytes, in its <code>Value</code> field, and the time at
-     * which that size was determined in its <code>Timestamp</code> field. The
+     * Latest known metered size (in bytes) of data stored in the file system,
+     * in bytes, in its <code>Value</code> field, and the time at which that
+     * size was determined in its <code>Timestamp</code> field. The
      * <code>Timestamp</code> value is the integer number of seconds since
      * 1970-01-01T00:00:00Z. Note that the value does not represent the size of
      * a consistent snapshot of the file system, but it is eventually consistent
@@ -474,17 +472,17 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param sizeInBytes
-     *        This object provides the latest known metered size of data stored
-     *        in the file system, in bytes, in its <code>Value</code> field, and
-     *        the time at which that size was determined in its
-     *        <code>Timestamp</code> field. The <code>Timestamp</code> value is
-     *        the integer number of seconds since 1970-01-01T00:00:00Z. Note
-     *        that the value does not represent the size of a consistent
-     *        snapshot of the file system, but it is eventually consistent when
-     *        there are no writes to the file system. That is, the value will
-     *        represent actual size only if the file system is not modified for
-     *        a period longer than a couple of hours. Otherwise, the value is
-     *        not the exact size the file system was at any instant in time.
+     *        Latest known metered size (in bytes) of data stored in the file
+     *        system, in bytes, in its <code>Value</code> field, and the time at
+     *        which that size was determined in its <code>Timestamp</code>
+     *        field. The <code>Timestamp</code> value is the integer number of
+     *        seconds since 1970-01-01T00:00:00Z. Note that the value does not
+     *        represent the size of a consistent snapshot of the file system,
+     *        but it is eventually consistent when there are no writes to the
+     *        file system. That is, the value will represent actual size only if
+     *        the file system is not modified for a period longer than a couple
+     *        of hours. Otherwise, the value is not the exact size the file
+     *        system was at any instant in time.
      */
 
     public void setSizeInBytes(FileSystemSize sizeInBytes) {
@@ -493,9 +491,9 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This object provides the latest known metered size of data stored in the
-     * file system, in bytes, in its <code>Value</code> field, and the time at
-     * which that size was determined in its <code>Timestamp</code> field. The
+     * Latest known metered size (in bytes) of data stored in the file system,
+     * in bytes, in its <code>Value</code> field, and the time at which that
+     * size was determined in its <code>Timestamp</code> field. The
      * <code>Timestamp</code> value is the integer number of seconds since
      * 1970-01-01T00:00:00Z. Note that the value does not represent the size of
      * a consistent snapshot of the file system, but it is eventually consistent
@@ -505,17 +503,17 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
      * exact size the file system was at any instant in time.
      * </p>
      * 
-     * @return This object provides the latest known metered size of data stored
-     *         in the file system, in bytes, in its <code>Value</code> field,
-     *         and the time at which that size was determined in its
-     *         <code>Timestamp</code> field. The <code>Timestamp</code> value is
-     *         the integer number of seconds since 1970-01-01T00:00:00Z. Note
-     *         that the value does not represent the size of a consistent
-     *         snapshot of the file system, but it is eventually consistent when
-     *         there are no writes to the file system. That is, the value will
-     *         represent actual size only if the file system is not modified for
-     *         a period longer than a couple of hours. Otherwise, the value is
-     *         not the exact size the file system was at any instant in time.
+     * @return Latest known metered size (in bytes) of data stored in the file
+     *         system, in bytes, in its <code>Value</code> field, and the time
+     *         at which that size was determined in its <code>Timestamp</code>
+     *         field. The <code>Timestamp</code> value is the integer number of
+     *         seconds since 1970-01-01T00:00:00Z. Note that the value does not
+     *         represent the size of a consistent snapshot of the file system,
+     *         but it is eventually consistent when there are no writes to the
+     *         file system. That is, the value will represent actual size only
+     *         if the file system is not modified for a period longer than a
+     *         couple of hours. Otherwise, the value is not the exact size the
+     *         file system was at any instant in time.
      */
 
     public FileSystemSize getSizeInBytes() {
@@ -524,9 +522,9 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This object provides the latest known metered size of data stored in the
-     * file system, in bytes, in its <code>Value</code> field, and the time at
-     * which that size was determined in its <code>Timestamp</code> field. The
+     * Latest known metered size (in bytes) of data stored in the file system,
+     * in bytes, in its <code>Value</code> field, and the time at which that
+     * size was determined in its <code>Timestamp</code> field. The
      * <code>Timestamp</code> value is the integer number of seconds since
      * 1970-01-01T00:00:00Z. Note that the value does not represent the size of
      * a consistent snapshot of the file system, but it is eventually consistent
@@ -537,23 +535,99 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param sizeInBytes
-     *        This object provides the latest known metered size of data stored
-     *        in the file system, in bytes, in its <code>Value</code> field, and
-     *        the time at which that size was determined in its
-     *        <code>Timestamp</code> field. The <code>Timestamp</code> value is
-     *        the integer number of seconds since 1970-01-01T00:00:00Z. Note
-     *        that the value does not represent the size of a consistent
-     *        snapshot of the file system, but it is eventually consistent when
-     *        there are no writes to the file system. That is, the value will
-     *        represent actual size only if the file system is not modified for
-     *        a period longer than a couple of hours. Otherwise, the value is
-     *        not the exact size the file system was at any instant in time.
+     *        Latest known metered size (in bytes) of data stored in the file
+     *        system, in bytes, in its <code>Value</code> field, and the time at
+     *        which that size was determined in its <code>Timestamp</code>
+     *        field. The <code>Timestamp</code> value is the integer number of
+     *        seconds since 1970-01-01T00:00:00Z. Note that the value does not
+     *        represent the size of a consistent snapshot of the file system,
+     *        but it is eventually consistent when there are no writes to the
+     *        file system. That is, the value will represent actual size only if
+     *        the file system is not modified for a period longer than a couple
+     *        of hours. Otherwise, the value is not the exact size the file
+     *        system was at any instant in time.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
     public CreateFileSystemResult withSizeInBytes(FileSystemSize sizeInBytes) {
         setSizeInBytes(sizeInBytes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>PerformanceMode</code> of the file system.
+     * </p>
+     * 
+     * @param performanceMode
+     *        The <code>PerformanceMode</code> of the file system.
+     * @see PerformanceMode
+     */
+
+    public void setPerformanceMode(String performanceMode) {
+        this.performanceMode = performanceMode;
+    }
+
+    /**
+     * <p>
+     * The <code>PerformanceMode</code> of the file system.
+     * </p>
+     * 
+     * @return The <code>PerformanceMode</code> of the file system.
+     * @see PerformanceMode
+     */
+
+    public String getPerformanceMode() {
+        return this.performanceMode;
+    }
+
+    /**
+     * <p>
+     * The <code>PerformanceMode</code> of the file system.
+     * </p>
+     * 
+     * @param performanceMode
+     *        The <code>PerformanceMode</code> of the file system.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see PerformanceMode
+     */
+
+    public CreateFileSystemResult withPerformanceMode(String performanceMode) {
+        setPerformanceMode(performanceMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>PerformanceMode</code> of the file system.
+     * </p>
+     * 
+     * @param performanceMode
+     *        The <code>PerformanceMode</code> of the file system.
+     * @see PerformanceMode
+     */
+
+    public void setPerformanceMode(PerformanceMode performanceMode) {
+        this.performanceMode = performanceMode.toString();
+    }
+
+    /**
+     * <p>
+     * The <code>PerformanceMode</code> of the file system.
+     * </p>
+     * 
+     * @param performanceMode
+     *        The <code>PerformanceMode</code> of the file system.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see PerformanceMode
+     */
+
+    public CreateFileSystemResult withPerformanceMode(
+            PerformanceMode performanceMode) {
+        setPerformanceMode(performanceMode);
         return this;
     }
 
@@ -585,7 +659,9 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
             sb.append("NumberOfMountTargets: " + getNumberOfMountTargets()
                     + ",");
         if (getSizeInBytes() != null)
-            sb.append("SizeInBytes: " + getSizeInBytes());
+            sb.append("SizeInBytes: " + getSizeInBytes() + ",");
+        if (getPerformanceMode() != null)
+            sb.append("PerformanceMode: " + getPerformanceMode());
         sb.append("}");
         return sb.toString();
     }
@@ -643,6 +719,12 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
         if (other.getSizeInBytes() != null
                 && other.getSizeInBytes().equals(this.getSizeInBytes()) == false)
             return false;
+        if (other.getPerformanceMode() == null
+                ^ this.getPerformanceMode() == null)
+            return false;
+        if (other.getPerformanceMode() != null
+                && other.getPerformanceMode().equals(this.getPerformanceMode()) == false)
+            return false;
         return true;
     }
 
@@ -678,6 +760,10 @@ public class CreateFileSystemResult implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getSizeInBytes() == null) ? 0 : getSizeInBytes().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPerformanceMode() == null) ? 0 : getPerformanceMode()
+                        .hashCode());
         return hashCode;
     }
 

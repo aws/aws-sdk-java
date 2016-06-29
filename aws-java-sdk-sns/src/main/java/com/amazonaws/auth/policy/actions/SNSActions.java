@@ -29,6 +29,8 @@ public enum SNSActions implements Action {
 
     /** Action for the AddPermission operation. */
     AddPermission("sns:AddPermission"),
+    /** Action for the CheckIfPhoneNumberIsOptedOut operation. */
+    CheckIfPhoneNumberIsOptedOut("sns:CheckIfPhoneNumberIsOptedOut"),
     /** Action for the ConfirmSubscription operation. */
     ConfirmSubscription("sns:ConfirmSubscription"),
     /** Action for the CreatePlatformApplication operation. */
@@ -47,12 +49,16 @@ public enum SNSActions implements Action {
     GetEndpointAttributes("sns:GetEndpointAttributes"),
     /** Action for the GetPlatformApplicationAttributes operation. */
     GetPlatformApplicationAttributes("sns:GetPlatformApplicationAttributes"),
+    /** Action for the GetSMSAttributes operation. */
+    GetSMSAttributes("sns:GetSMSAttributes"),
     /** Action for the GetSubscriptionAttributes operation. */
     GetSubscriptionAttributes("sns:GetSubscriptionAttributes"),
     /** Action for the GetTopicAttributes operation. */
     GetTopicAttributes("sns:GetTopicAttributes"),
     /** Action for the ListEndpointsByPlatformApplication operation. */
     ListEndpointsByPlatformApplication("sns:ListEndpointsByPlatformApplication"),
+    /** Action for the ListPhoneNumbersOptedOut operation. */
+    ListPhoneNumbersOptedOut("sns:ListPhoneNumbersOptedOut"),
     /** Action for the ListPlatformApplications operation. */
     ListPlatformApplications("sns:ListPlatformApplications"),
     /** Action for the ListSubscriptions operation. */
@@ -61,6 +67,8 @@ public enum SNSActions implements Action {
     ListSubscriptionsByTopic("sns:ListSubscriptionsByTopic"),
     /** Action for the ListTopics operation. */
     ListTopics("sns:ListTopics"),
+    /** Action for the OptInPhoneNumber operation. */
+    OptInPhoneNumber("sns:OptInPhoneNumber"),
     /** Action for the Publish operation. */
     Publish("sns:Publish"),
     /** Action for the RemovePermission operation. */
@@ -69,6 +77,8 @@ public enum SNSActions implements Action {
     SetEndpointAttributes("sns:SetEndpointAttributes"),
     /** Action for the SetPlatformApplicationAttributes operation. */
     SetPlatformApplicationAttributes("sns:SetPlatformApplicationAttributes"),
+    /** Action for the SetSMSAttributes operation. */
+    SetSMSAttributes("sns:SetSMSAttributes"),
     /** Action for the SetSubscriptionAttributes operation. */
     SetSubscriptionAttributes("sns:SetSubscriptionAttributes"),
     /** Action for the SetTopicAttributes operation. */

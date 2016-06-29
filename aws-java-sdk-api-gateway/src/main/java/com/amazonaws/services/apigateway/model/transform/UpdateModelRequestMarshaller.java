@@ -48,8 +48,6 @@ import com.amazonaws.protocol.json.*;
 public class UpdateModelRequestMarshaller implements
         Marshaller<Request<UpdateModelRequest>, UpdateModelRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
-
     private final SdkJsonProtocolFactory protocolFactory;
 
     public UpdateModelRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
@@ -110,7 +108,8 @@ public class UpdateModelRequestMarshaller implements
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+                request.addHeader("Content-Type",
+                        protocolFactory.getContentType());
             }
         } catch (Throwable t) {
             throw new AmazonClientException(

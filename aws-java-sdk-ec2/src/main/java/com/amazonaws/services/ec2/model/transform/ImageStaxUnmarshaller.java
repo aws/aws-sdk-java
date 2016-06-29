@@ -128,6 +128,12 @@ public class ImageStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("enaSupport", targetDepth)) {
+                    image.setEnaSupport(BooleanStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("stateReason", targetDepth)) {
                     image.setStateReason(StateReasonStaxUnmarshaller
                             .getInstance().unmarshall(context));

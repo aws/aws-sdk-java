@@ -111,6 +111,11 @@ public class GameSessionJsonUnmarshaller implements
                     gameSession.setIpAddress(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("Port", targetDepth)) {
+                    context.nextToken();
+                    gameSession.setPort(context.getUnmarshaller(Integer.class)
+                            .unmarshall(context));
+                }
                 if (context.testExpression("PlayerSessionCreationPolicy",
                         targetDepth)) {
                     context.nextToken();

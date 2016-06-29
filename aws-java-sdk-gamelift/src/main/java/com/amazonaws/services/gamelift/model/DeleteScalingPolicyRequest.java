@@ -29,8 +29,8 @@ public class DeleteScalingPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Descriptive label associated with this scaling policy. Policy names do
-     * not need to be unique.
+     * Descriptive label associated with a scaling policy. Policy names do not
+     * need to be unique.
      * </p>
      */
     private String name;
@@ -43,13 +43,13 @@ public class DeleteScalingPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Descriptive label associated with this scaling policy. Policy names do
-     * not need to be unique.
+     * Descriptive label associated with a scaling policy. Policy names do not
+     * need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this scaling policy. Policy
-     *        names do not need to be unique.
+     *        Descriptive label associated with a scaling policy. Policy names
+     *        do not need to be unique.
      */
 
     public void setName(String name) {
@@ -58,12 +58,12 @@ public class DeleteScalingPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Descriptive label associated with this scaling policy. Policy names do
-     * not need to be unique.
+     * Descriptive label associated with a scaling policy. Policy names do not
+     * need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with this scaling policy. Policy
-     *         names do not need to be unique.
+     * @return Descriptive label associated with a scaling policy. Policy names
+     *         do not need to be unique.
      */
 
     public String getName() {
@@ -72,13 +72,13 @@ public class DeleteScalingPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Descriptive label associated with this scaling policy. Policy names do
-     * not need to be unique.
+     * Descriptive label associated with a scaling policy. Policy names do not
+     * need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this scaling policy. Policy
-     *        names do not need to be unique.
+     *        Descriptive label associated with a scaling policy. Policy names
+     *        do not need to be unique.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

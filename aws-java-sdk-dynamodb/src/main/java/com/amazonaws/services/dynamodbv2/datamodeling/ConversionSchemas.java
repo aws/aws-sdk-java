@@ -14,25 +14,6 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
-import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.nio.ByteBuffer;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.BinaryAttributeMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.BinarySetAttributeMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.ArgumentMarshaller.BooleanAttributeMarshaller;
@@ -53,7 +34,6 @@ import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.ByteBufferToBi
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CalendarSetToStringSetMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CalendarToStringMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CollectionToListMarshaller;
-import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CustomMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.DateSetToStringSetMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.DateToStringMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.MapToMapMarshaller;
@@ -80,7 +60,6 @@ import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.ByteSetUnmar
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.ByteUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.CalendarSetUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.CalendarUnmarshaller;
-import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.CustomUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.DateSetUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.DateUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.DoubleSetUnmarshaller;
@@ -105,6 +84,25 @@ import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.UUIDSetUnmar
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.UUIDUnmarshaller;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
+
 /**
  * Pre-defined strategies for mapping between Java types and DynamoDB types.
  */
@@ -124,8 +122,7 @@ public final class ConversionSchemas {
      * does not understand the new List and Map types and want to ensure that
      * you don't accidentally start writing values using these types.
      */
-    public static final ConversionSchema V1 =
-            v1Builder("V1ConversionSchema").build();
+    public static final ConversionSchema V1 = v1Builder("V1ConversionSchema").build();
 
     /**
      * A V2 conversion schema which retains backwards compatibility with the
@@ -133,8 +130,8 @@ public final class ConversionSchemas {
      * to marshall recursive structures using the new List and Map types. This
      * is currently the default conversion schema.
      */
-    public static final ConversionSchema V2_COMPATIBLE =
-            v2CompatibleBuilder("V2CompatibleConversionSchema").build();
+    public static final ConversionSchema V2_COMPATIBLE = v2CompatibleBuilder(
+            "V2CompatibleConversionSchema").build();
 
     /**
      * The native V2 conversion schema. This schema breaks compatibility with
@@ -144,8 +141,7 @@ public final class ConversionSchemas {
      * versions of the mapper from reading items you write that contain
      * booleans.
      */
-    public static final ConversionSchema V2 =
-            v2Builder("V2ConversionSchema").build();
+    public static final ConversionSchema V2 = v2Builder("V2ConversionSchema").build();
 
     static final ConversionSchema DEFAULT = V2_COMPATIBLE;
 
@@ -153,88 +149,77 @@ public final class ConversionSchemas {
      * A ConversionSchema builder that defaults to building {@link #V1}.
      */
     public static Builder v1Builder(String name) {
-      return new Builder(name,
-              V1MarshallerSet.marshallers(), 
-              V1MarshallerSet.setMarshallers(), 
-              StandardUnmarshallerSet.unmarshallers(),
-              StandardUnmarshallerSet.setUnmarshallers());
+        return new Builder(name, V1MarshallerSet.marshallers(), V1MarshallerSet.setMarshallers(),
+                           StandardUnmarshallerSet.unmarshallers(),
+                           StandardUnmarshallerSet.setUnmarshallers());
     }
-    
+
     /**
-     * A ConversionSchema builder that defaults to building
-     * {@link #V2_COMPATIBLE}.
+     * A ConversionSchema builder that defaults to building {@link #V2_COMPATIBLE}.
      */
     public static Builder v2CompatibleBuilder(String name) {
-      return new Builder(name,
-              V2CompatibleMarshallerSet.marshallers(), 
-              V2CompatibleMarshallerSet.setMarshallers(), 
-              StandardUnmarshallerSet.unmarshallers(),
-              StandardUnmarshallerSet.setUnmarshallers());
+        return new Builder(name, V2CompatibleMarshallerSet.marshallers(),
+                           V2CompatibleMarshallerSet.setMarshallers(),
+                           StandardUnmarshallerSet.unmarshallers(),
+                           StandardUnmarshallerSet.setUnmarshallers());
     }
-    
+
     /**
      * A ConversionSchema builder that defaults to building {@link #V2}.
      */
     public static Builder v2Builder(String name) {
-      return new Builder(name,
-              V2MarshallerSet.marshallers(), 
-              V2MarshallerSet.setMarshallers(), 
-              StandardUnmarshallerSet.unmarshallers(),
-              StandardUnmarshallerSet.setUnmarshallers());
+        return new Builder(name, V2MarshallerSet.marshallers(), V2MarshallerSet.setMarshallers(),
+                           StandardUnmarshallerSet.unmarshallers(),
+                           StandardUnmarshallerSet.setUnmarshallers());
     }
-    
+
     public static class Builder {
-      
-      private final String name;
-      private final List<Pair<ArgumentMarshaller>> marshallers;
-      private final List<Pair<ArgumentMarshaller>> setMarshallers;
-      private final List<Pair<ArgumentUnmarshaller>> unmarshallers;
-      private final List<Pair<ArgumentUnmarshaller>> setUnmarshallers;
-      
-      Builder(String name,
-              List<Pair<ArgumentMarshaller>> marshallers,
-              List<Pair<ArgumentMarshaller>> setMarshallers,
-              List<Pair<ArgumentUnmarshaller>> unmarshallers,
-              List<Pair<ArgumentUnmarshaller>> setUnmarshallers) {
-        this.name = name;
-        this.marshallers = marshallers;
-        this.setMarshallers = setMarshallers;
-        this.unmarshallers = unmarshallers;
-        this.setUnmarshallers = setUnmarshallers;
-      }
-      
-      /**
-       * Adds marshaling of a type to the schema.
-       * Types are in LIFO order, so the last type added will be the first
-       * matched.
-       */
-      public Builder addFirstType(Class<?> clazz,
-              ArgumentMarshaller marshaller,
-              ArgumentUnmarshaller unmarshaller) {
-        this.marshallers.add(0, Pair.of(clazz, marshaller));
-        this.unmarshallers.add(0, Pair.of(clazz, unmarshaller));
-        return this;
-      }
-      
-      /**
-       * Adds marshaling of a Set of a type to the schema.
-       * Types are in LIFO order, so the last type added will be the first
-       * matched.
-       */
-      public Builder addFirstSetType(Class<?> clazz,
-              ArgumentMarshaller marshaller,
-              ArgumentUnmarshaller unmarshaller) {
-        this.setMarshallers.add(0, Pair.of(clazz, marshaller));
-        this.setUnmarshallers.add(0, Pair.of(clazz, unmarshaller));
-        return this;
-      }
-      
-      public ConversionSchema build() {
-        return new StandardConversionSchema(
-                name,
-                new AbstractMarshallerSet(marshallers, setMarshallers),
-                new StandardUnmarshallerSet(unmarshallers, setUnmarshallers)) ;
-      }
+
+        private final String name;
+        private final List<Pair<ArgumentMarshaller>> marshallers;
+        private final List<Pair<ArgumentMarshaller>> setMarshallers;
+        private final List<Pair<ArgumentUnmarshaller>> unmarshallers;
+        private final List<Pair<ArgumentUnmarshaller>> setUnmarshallers;
+
+        Builder(String name, List<Pair<ArgumentMarshaller>> marshallers,
+                List<Pair<ArgumentMarshaller>> setMarshallers,
+                List<Pair<ArgumentUnmarshaller>> unmarshallers,
+                List<Pair<ArgumentUnmarshaller>> setUnmarshallers) {
+            this.name = name;
+            this.marshallers = marshallers;
+            this.setMarshallers = setMarshallers;
+            this.unmarshallers = unmarshallers;
+            this.setUnmarshallers = setUnmarshallers;
+        }
+
+        /**
+         * Adds marshaling of a type to the schema. Types are in LIFO order, so the last type added
+         * will be the first matched.
+         */
+        public Builder addFirstType(Class<?> clazz, ArgumentMarshaller marshaller,
+                                    ArgumentUnmarshaller unmarshaller) {
+            this.marshallers.add(0, Pair.of(clazz, marshaller));
+            this.unmarshallers.add(0, Pair.of(clazz, unmarshaller));
+            return this;
+        }
+
+        /**
+         * Adds marshaling of a Set of a type to the schema. Types are in LIFO order, so the last
+         * type added will be the first matched.
+         */
+        public Builder addFirstSetType(Class<?> clazz, ArgumentMarshaller marshaller,
+                                       ArgumentUnmarshaller unmarshaller) {
+            this.setMarshallers.add(0, Pair.of(clazz, marshaller));
+            this.setUnmarshallers.add(0, Pair.of(clazz, unmarshaller));
+            return this;
+        }
+
+        public ConversionSchema build() {
+            return new StandardConversionSchema(name, new AbstractMarshallerSet(marshallers,
+                                                                                setMarshallers),
+                                                new StandardUnmarshallerSet(unmarshallers,
+                                                                            setUnmarshallers));
+        }
     }
 
     static class StandardConversionSchema implements ConversionSchema {
@@ -787,8 +772,7 @@ public final class ConversionSchemas {
 
             // If all else fails, fall back to this default marshaler to
             // retain backwards-compatible behavior.
-            list.add(Pair.of(Object.class,
-                    ObjectSetToStringSetMarshaller.instance()));
+            list.add(Pair.of(Object.class, ObjectSetToStringSetMarshaller.instance()));
 
             return list;
         }

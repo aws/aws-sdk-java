@@ -21,8 +21,8 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * The service encountered an unrecoverable internal failure while processing
- * the request. Such requests can be retried by clients, either immediately or
- * after a back-off period.
+ * the request. Clients can retry such requests, either immediately or after a
+ * back-off period.
  * </p>
  */
 public class InternalServiceException extends AmazonServiceException {

@@ -50,8 +50,6 @@ class SdkStructuredCborFactory {
 
     private static final JsonFactory CBOR_FACTORY = new CBORFactory();
 
-    private static final String CONTENT_TYPE_CBOR_PREFIX = "application/x-amz-cbor-";
-
     /**
      * cbor unmarshallers for scalar types.
      */
@@ -70,7 +68,7 @@ class SdkStructuredCborFactory {
             .put(Short.class, ShortCborUnmarshaller.getInstance()).build();
 
     public static final SdkStructuredJsonFactory SDK_CBOR_FACTORY = new SdkStructuredJsonFactoryImpl(
-            CONTENT_TYPE_CBOR_PREFIX, CBOR_FACTORY, CBOR_SCALAR_UNMARSHALLERS) {
+            CBOR_FACTORY, CBOR_SCALAR_UNMARSHALLERS) {
         @Override
         protected StructuredJsonGenerator createWriter(JsonFactory jsonFactory,
                                                        String contentType) {

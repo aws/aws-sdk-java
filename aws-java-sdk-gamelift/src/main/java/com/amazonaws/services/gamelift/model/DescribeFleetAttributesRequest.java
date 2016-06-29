@@ -30,14 +30,14 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Unique identifiers for the fleet(s) that you want to retrieve attributes
-     * for. Leave this parameter empty to retrieve attributes for all fleets.
+     * for. To request attributes for all fleets, leave this parameter empty.
      * </p>
      */
     private java.util.List<String> fleetIds;
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. This
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. This
      * parameter is ignored when the request specifies one or a list of fleet
      * IDs.
      * </p>
@@ -57,12 +57,12 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Unique identifiers for the fleet(s) that you want to retrieve attributes
-     * for. Leave this parameter empty to retrieve attributes for all fleets.
+     * for. To request attributes for all fleets, leave this parameter empty.
      * </p>
      * 
      * @return Unique identifiers for the fleet(s) that you want to retrieve
-     *         attributes for. Leave this parameter empty to retrieve attributes
-     *         for all fleets.
+     *         attributes for. To request attributes for all fleets, leave this
+     *         parameter empty.
      */
 
     public java.util.List<String> getFleetIds() {
@@ -72,13 +72,13 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Unique identifiers for the fleet(s) that you want to retrieve attributes
-     * for. Leave this parameter empty to retrieve attributes for all fleets.
+     * for. To request attributes for all fleets, leave this parameter empty.
      * </p>
      * 
      * @param fleetIds
      *        Unique identifiers for the fleet(s) that you want to retrieve
-     *        attributes for. Leave this parameter empty to retrieve attributes
-     *        for all fleets.
+     *        attributes for. To request attributes for all fleets, leave this
+     *        parameter empty.
      */
 
     public void setFleetIds(java.util.Collection<String> fleetIds) {
@@ -93,7 +93,7 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Unique identifiers for the fleet(s) that you want to retrieve attributes
-     * for. Leave this parameter empty to retrieve attributes for all fleets.
+     * for. To request attributes for all fleets, leave this parameter empty.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -104,8 +104,8 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
      * 
      * @param fleetIds
      *        Unique identifiers for the fleet(s) that you want to retrieve
-     *        attributes for. Leave this parameter empty to retrieve attributes
-     *        for all fleets.
+     *        attributes for. To request attributes for all fleets, leave this
+     *        parameter empty.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -123,13 +123,13 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Unique identifiers for the fleet(s) that you want to retrieve attributes
-     * for. Leave this parameter empty to retrieve attributes for all fleets.
+     * for. To request attributes for all fleets, leave this parameter empty.
      * </p>
      * 
      * @param fleetIds
      *        Unique identifiers for the fleet(s) that you want to retrieve
-     *        attributes for. Leave this parameter empty to retrieve attributes
-     *        for all fleets.
+     *        attributes for. To request attributes for all fleets, leave this
+     *        parameter empty.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -142,17 +142,17 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. This
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. This
      * parameter is ignored when the request specifies one or a list of fleet
      * IDs.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. You can use this parameter
-     *        with <i>NextToken</i> to get results as a set of sequential pages.
-     *        This parameter is ignored when the request specifies one or a list
-     *        of fleet IDs.
+     *        Maximum number of results to return. Use this parameter with
+     *        <code>NextToken</code> to get results as a set of sequential
+     *        pages. This parameter is ignored when the request specifies one or
+     *        a list of fleet IDs.
      */
 
     public void setLimit(Integer limit) {
@@ -161,14 +161,14 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. This
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. This
      * parameter is ignored when the request specifies one or a list of fleet
      * IDs.
      * </p>
      * 
-     * @return Maximum number of results to return. You can use this parameter
-     *         with <i>NextToken</i> to get results as a set of sequential
+     * @return Maximum number of results to return. Use this parameter with
+     *         <code>NextToken</code> to get results as a set of sequential
      *         pages. This parameter is ignored when the request specifies one
      *         or a list of fleet IDs.
      */
@@ -179,17 +179,17 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. This
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. This
      * parameter is ignored when the request specifies one or a list of fleet
      * IDs.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. You can use this parameter
-     *        with <i>NextToken</i> to get results as a set of sequential pages.
-     *        This parameter is ignored when the request specifies one or a list
-     *        of fleet IDs.
+     *        Maximum number of results to return. Use this parameter with
+     *        <code>NextToken</code> to get results as a set of sequential
+     *        pages. This parameter is ignored when the request specifies one or
+     *        a list of fleet IDs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

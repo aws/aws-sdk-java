@@ -39,24 +39,24 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * Game session status to filter results on. A scaling policy is only in
      * force when in an Active state.
      * <ul>
-     * <li>ACTIVE: The scaling policy is currently in force.</li>
-     * <li>UPDATEREQUESTED: A request to update the scaling policy has been
-     * received.</li>
-     * <li>UPDATING: A change is being made to the scaling policy.</li>
-     * <li>DELETEREQUESTED: A request to delete the scaling policy has been
-     * received.</li>
-     * <li>DELETING: The scaling policy is being deleted.</li>
-     * <li>DELETED: The scaling policy has been deleted.</li>
-     * <li>ERROR: An error occurred in creating the policy. It should be removed
-     * and recreated.</li>
+     * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * been received.</li>
+     * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
+     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * been received.</li>
+     * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
+     * removed and recreated.</li>
      * </ul>
      * </p>
      */
     private String statusFilter;
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.
      * </p>
      */
     private Integer limit;
@@ -121,16 +121,16 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * Game session status to filter results on. A scaling policy is only in
      * force when in an Active state.
      * <ul>
-     * <li>ACTIVE: The scaling policy is currently in force.</li>
-     * <li>UPDATEREQUESTED: A request to update the scaling policy has been
-     * received.</li>
-     * <li>UPDATING: A change is being made to the scaling policy.</li>
-     * <li>DELETEREQUESTED: A request to delete the scaling policy has been
-     * received.</li>
-     * <li>DELETING: The scaling policy is being deleted.</li>
-     * <li>DELETED: The scaling policy has been deleted.</li>
-     * <li>ERROR: An error occurred in creating the policy. It should be removed
-     * and recreated.</li>
+     * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * been received.</li>
+     * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
+     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * been received.</li>
+     * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
+     * removed and recreated.</li>
      * </ul>
      * </p>
      * 
@@ -138,16 +138,17 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      *        Game session status to filter results on. A scaling policy is only
      *        in force when in an Active state.
      *        <ul>
-     *        <li>ACTIVE: The scaling policy is currently in force.</li>
-     *        <li>UPDATEREQUESTED: A request to update the scaling policy has
-     *        been received.</li>
-     *        <li>UPDATING: A change is being made to the scaling policy.</li>
-     *        <li>DELETEREQUESTED: A request to delete the scaling policy has
-     *        been received.</li>
-     *        <li>DELETING: The scaling policy is being deleted.</li>
-     *        <li>DELETED: The scaling policy has been deleted.</li>
-     *        <li>ERROR: An error occurred in creating the policy. It should be
-     *        removed and recreated.</li>
+     *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *        policy has been received.</li>
+     *        <li><b>UPDATING</b> – A change is being made to the scaling
+     *        policy.</li>
+     *        <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *        policy has been received.</li>
+     *        <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     *        <li><b>ERROR</b> – An error occurred in creating the policy. It
+     *        should be removed and recreated.</li>
      *        </ul>
      * @see ScalingStatusType
      */
@@ -161,32 +162,33 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * Game session status to filter results on. A scaling policy is only in
      * force when in an Active state.
      * <ul>
-     * <li>ACTIVE: The scaling policy is currently in force.</li>
-     * <li>UPDATEREQUESTED: A request to update the scaling policy has been
-     * received.</li>
-     * <li>UPDATING: A change is being made to the scaling policy.</li>
-     * <li>DELETEREQUESTED: A request to delete the scaling policy has been
-     * received.</li>
-     * <li>DELETING: The scaling policy is being deleted.</li>
-     * <li>DELETED: The scaling policy has been deleted.</li>
-     * <li>ERROR: An error occurred in creating the policy. It should be removed
-     * and recreated.</li>
+     * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * been received.</li>
+     * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
+     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * been received.</li>
+     * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
+     * removed and recreated.</li>
      * </ul>
      * </p>
      * 
      * @return Game session status to filter results on. A scaling policy is
      *         only in force when in an Active state.
      *         <ul>
-     *         <li>ACTIVE: The scaling policy is currently in force.</li>
-     *         <li>UPDATEREQUESTED: A request to update the scaling policy has
-     *         been received.</li>
-     *         <li>UPDATING: A change is being made to the scaling policy.</li>
-     *         <li>DELETEREQUESTED: A request to delete the scaling policy has
-     *         been received.</li>
-     *         <li>DELETING: The scaling policy is being deleted.</li>
-     *         <li>DELETED: The scaling policy has been deleted.</li>
-     *         <li>ERROR: An error occurred in creating the policy. It should be
-     *         removed and recreated.</li>
+     *         <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     *         <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *         policy has been received.</li>
+     *         <li><b>UPDATING</b> – A change is being made to the scaling
+     *         policy.</li>
+     *         <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *         policy has been received.</li>
+     *         <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     *         <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     *         <li><b>ERROR</b> – An error occurred in creating the policy. It
+     *         should be removed and recreated.</li>
      *         </ul>
      * @see ScalingStatusType
      */
@@ -200,16 +202,16 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * Game session status to filter results on. A scaling policy is only in
      * force when in an Active state.
      * <ul>
-     * <li>ACTIVE: The scaling policy is currently in force.</li>
-     * <li>UPDATEREQUESTED: A request to update the scaling policy has been
-     * received.</li>
-     * <li>UPDATING: A change is being made to the scaling policy.</li>
-     * <li>DELETEREQUESTED: A request to delete the scaling policy has been
-     * received.</li>
-     * <li>DELETING: The scaling policy is being deleted.</li>
-     * <li>DELETED: The scaling policy has been deleted.</li>
-     * <li>ERROR: An error occurred in creating the policy. It should be removed
-     * and recreated.</li>
+     * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * been received.</li>
+     * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
+     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * been received.</li>
+     * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
+     * removed and recreated.</li>
      * </ul>
      * </p>
      * 
@@ -217,16 +219,17 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      *        Game session status to filter results on. A scaling policy is only
      *        in force when in an Active state.
      *        <ul>
-     *        <li>ACTIVE: The scaling policy is currently in force.</li>
-     *        <li>UPDATEREQUESTED: A request to update the scaling policy has
-     *        been received.</li>
-     *        <li>UPDATING: A change is being made to the scaling policy.</li>
-     *        <li>DELETEREQUESTED: A request to delete the scaling policy has
-     *        been received.</li>
-     *        <li>DELETING: The scaling policy is being deleted.</li>
-     *        <li>DELETED: The scaling policy has been deleted.</li>
-     *        <li>ERROR: An error occurred in creating the policy. It should be
-     *        removed and recreated.</li>
+     *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *        policy has been received.</li>
+     *        <li><b>UPDATING</b> – A change is being made to the scaling
+     *        policy.</li>
+     *        <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *        policy has been received.</li>
+     *        <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     *        <li><b>ERROR</b> – An error occurred in creating the policy. It
+     *        should be removed and recreated.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -243,16 +246,16 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * Game session status to filter results on. A scaling policy is only in
      * force when in an Active state.
      * <ul>
-     * <li>ACTIVE: The scaling policy is currently in force.</li>
-     * <li>UPDATEREQUESTED: A request to update the scaling policy has been
-     * received.</li>
-     * <li>UPDATING: A change is being made to the scaling policy.</li>
-     * <li>DELETEREQUESTED: A request to delete the scaling policy has been
-     * received.</li>
-     * <li>DELETING: The scaling policy is being deleted.</li>
-     * <li>DELETED: The scaling policy has been deleted.</li>
-     * <li>ERROR: An error occurred in creating the policy. It should be removed
-     * and recreated.</li>
+     * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * been received.</li>
+     * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
+     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * been received.</li>
+     * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
+     * removed and recreated.</li>
      * </ul>
      * </p>
      * 
@@ -260,16 +263,17 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      *        Game session status to filter results on. A scaling policy is only
      *        in force when in an Active state.
      *        <ul>
-     *        <li>ACTIVE: The scaling policy is currently in force.</li>
-     *        <li>UPDATEREQUESTED: A request to update the scaling policy has
-     *        been received.</li>
-     *        <li>UPDATING: A change is being made to the scaling policy.</li>
-     *        <li>DELETEREQUESTED: A request to delete the scaling policy has
-     *        been received.</li>
-     *        <li>DELETING: The scaling policy is being deleted.</li>
-     *        <li>DELETED: The scaling policy has been deleted.</li>
-     *        <li>ERROR: An error occurred in creating the policy. It should be
-     *        removed and recreated.</li>
+     *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *        policy has been received.</li>
+     *        <li><b>UPDATING</b> – A change is being made to the scaling
+     *        policy.</li>
+     *        <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *        policy has been received.</li>
+     *        <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     *        <li><b>ERROR</b> – An error occurred in creating the policy. It
+     *        should be removed and recreated.</li>
      *        </ul>
      * @see ScalingStatusType
      */
@@ -283,16 +287,16 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * Game session status to filter results on. A scaling policy is only in
      * force when in an Active state.
      * <ul>
-     * <li>ACTIVE: The scaling policy is currently in force.</li>
-     * <li>UPDATEREQUESTED: A request to update the scaling policy has been
-     * received.</li>
-     * <li>UPDATING: A change is being made to the scaling policy.</li>
-     * <li>DELETEREQUESTED: A request to delete the scaling policy has been
-     * received.</li>
-     * <li>DELETING: The scaling policy is being deleted.</li>
-     * <li>DELETED: The scaling policy has been deleted.</li>
-     * <li>ERROR: An error occurred in creating the policy. It should be removed
-     * and recreated.</li>
+     * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
+     * been received.</li>
+     * <li><b>UPDATING</b> – A change is being made to the scaling policy.</li>
+     * <li><b>DELETEREQUESTED</b> – A request to delete the scaling policy has
+     * been received.</li>
+     * <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     * <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
+     * removed and recreated.</li>
      * </ul>
      * </p>
      * 
@@ -300,16 +304,17 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      *        Game session status to filter results on. A scaling policy is only
      *        in force when in an Active state.
      *        <ul>
-     *        <li>ACTIVE: The scaling policy is currently in force.</li>
-     *        <li>UPDATEREQUESTED: A request to update the scaling policy has
-     *        been received.</li>
-     *        <li>UPDATING: A change is being made to the scaling policy.</li>
-     *        <li>DELETEREQUESTED: A request to delete the scaling policy has
-     *        been received.</li>
-     *        <li>DELETING: The scaling policy is being deleted.</li>
-     *        <li>DELETED: The scaling policy has been deleted.</li>
-     *        <li>ERROR: An error occurred in creating the policy. It should be
-     *        removed and recreated.</li>
+     *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
+     *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
+     *        policy has been received.</li>
+     *        <li><b>UPDATING</b> – A change is being made to the scaling
+     *        policy.</li>
+     *        <li><b>DELETEREQUESTED</b> – A request to delete the scaling
+     *        policy has been received.</li>
+     *        <li><b>DELETING</b> – The scaling policy is being deleted.</li>
+     *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
+     *        <li><b>ERROR</b> – An error occurred in creating the policy. It
+     *        should be removed and recreated.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -324,13 +329,14 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. You can use this parameter
-     *        with <i>NextToken</i> to get results as a set of sequential pages.
+     *        Maximum number of results to return. Use this parameter with
+     *        <code>NextToken</code> to get results as a set of sequential
+     *        pages.
      */
 
     public void setLimit(Integer limit) {
@@ -339,12 +345,12 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.
      * </p>
      * 
-     * @return Maximum number of results to return. You can use this parameter
-     *         with <i>NextToken</i> to get results as a set of sequential
+     * @return Maximum number of results to return. Use this parameter with
+     *         <code>NextToken</code> to get results as a set of sequential
      *         pages.
      */
 
@@ -354,13 +360,14 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. You can use this parameter
-     *        with <i>NextToken</i> to get results as a set of sequential pages.
+     *        Maximum number of results to return. Use this parameter with
+     *        <code>NextToken</code> to get results as a set of sequential
+     *        pages.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

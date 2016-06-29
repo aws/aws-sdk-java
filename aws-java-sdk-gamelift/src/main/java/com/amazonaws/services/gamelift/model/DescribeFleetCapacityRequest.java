@@ -30,14 +30,15 @@ public class DescribeFleetCapacityRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Unique identifier for the fleet(s) you want to retrieve capacity
-     * information for.
+     * information for. To request capacity information for all fleets, leave
+     * this parameter empty.
      * </p>
      */
     private java.util.List<String> fleetIds;
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. This
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. This
      * parameter is ignored when the request specifies one or a list of fleet
      * IDs.
      * </p>
@@ -57,11 +58,13 @@ public class DescribeFleetCapacityRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Unique identifier for the fleet(s) you want to retrieve capacity
-     * information for.
+     * information for. To request capacity information for all fleets, leave
+     * this parameter empty.
      * </p>
      * 
      * @return Unique identifier for the fleet(s) you want to retrieve capacity
-     *         information for.
+     *         information for. To request capacity information for all fleets,
+     *         leave this parameter empty.
      */
 
     public java.util.List<String> getFleetIds() {
@@ -71,12 +74,14 @@ public class DescribeFleetCapacityRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Unique identifier for the fleet(s) you want to retrieve capacity
-     * information for.
+     * information for. To request capacity information for all fleets, leave
+     * this parameter empty.
      * </p>
      * 
      * @param fleetIds
      *        Unique identifier for the fleet(s) you want to retrieve capacity
-     *        information for.
+     *        information for. To request capacity information for all fleets,
+     *        leave this parameter empty.
      */
 
     public void setFleetIds(java.util.Collection<String> fleetIds) {
@@ -91,7 +96,8 @@ public class DescribeFleetCapacityRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Unique identifier for the fleet(s) you want to retrieve capacity
-     * information for.
+     * information for. To request capacity information for all fleets, leave
+     * this parameter empty.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -102,7 +108,8 @@ public class DescribeFleetCapacityRequest extends AmazonWebServiceRequest
      * 
      * @param fleetIds
      *        Unique identifier for the fleet(s) you want to retrieve capacity
-     *        information for.
+     *        information for. To request capacity information for all fleets,
+     *        leave this parameter empty.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -120,12 +127,14 @@ public class DescribeFleetCapacityRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Unique identifier for the fleet(s) you want to retrieve capacity
-     * information for.
+     * information for. To request capacity information for all fleets, leave
+     * this parameter empty.
      * </p>
      * 
      * @param fleetIds
      *        Unique identifier for the fleet(s) you want to retrieve capacity
-     *        information for.
+     *        information for. To request capacity information for all fleets,
+     *        leave this parameter empty.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -138,17 +147,17 @@ public class DescribeFleetCapacityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. This
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. This
      * parameter is ignored when the request specifies one or a list of fleet
      * IDs.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. You can use this parameter
-     *        with <i>NextToken</i> to get results as a set of sequential pages.
-     *        This parameter is ignored when the request specifies one or a list
-     *        of fleet IDs.
+     *        Maximum number of results to return. Use this parameter with
+     *        <code>NextToken</code> to get results as a set of sequential
+     *        pages. This parameter is ignored when the request specifies one or
+     *        a list of fleet IDs.
      */
 
     public void setLimit(Integer limit) {
@@ -157,14 +166,14 @@ public class DescribeFleetCapacityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. This
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. This
      * parameter is ignored when the request specifies one or a list of fleet
      * IDs.
      * </p>
      * 
-     * @return Maximum number of results to return. You can use this parameter
-     *         with <i>NextToken</i> to get results as a set of sequential
+     * @return Maximum number of results to return. Use this parameter with
+     *         <code>NextToken</code> to get results as a set of sequential
      *         pages. This parameter is ignored when the request specifies one
      *         or a list of fleet IDs.
      */
@@ -175,17 +184,17 @@ public class DescribeFleetCapacityRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. This
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. This
      * parameter is ignored when the request specifies one or a list of fleet
      * IDs.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. You can use this parameter
-     *        with <i>NextToken</i> to get results as a set of sequential pages.
-     *        This parameter is ignored when the request specifies one or a list
-     *        of fleet IDs.
+     *        Maximum number of results to return. Use this parameter with
+     *        <code>NextToken</code> to get results as a set of sequential
+     *        pages. This parameter is ignored when the request specifies one or
+     *        a list of fleet IDs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

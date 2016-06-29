@@ -21,8 +21,8 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * The requested operation would cause a conflict with the current state of a
- * service resource associated with the request. Please resolve the conflict
- * before retrying this request.
+ * service resource associated with the request. Resolve the conflict before
+ * retrying this request.
  * </p>
  */
 public class ConflictException extends AmazonServiceException {

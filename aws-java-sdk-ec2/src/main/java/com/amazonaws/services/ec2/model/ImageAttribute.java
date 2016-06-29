@@ -61,7 +61,12 @@ public class ImageAttribute implements Serializable, Cloneable {
      * </p>
      */
     private String description;
-
+    /**
+     * <p>
+     * Indicates whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
+     * </p>
+     */
     private String sriovNetSupport;
     /**
      * <p>
@@ -395,7 +400,14 @@ public class ImageAttribute implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
+     * </p>
+     * 
      * @param sriovNetSupport
+     *        Indicates whether enhanced networking with the Intel 82599 Virtual
+     *        Function interface is enabled.
      */
 
     public void setSriovNetSupport(String sriovNetSupport) {
@@ -403,7 +415,13 @@ public class ImageAttribute implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
+     * </p>
+     * 
+     * @return Indicates whether enhanced networking with the Intel 82599
+     *         Virtual Function interface is enabled.
      */
 
     public String getSriovNetSupport() {
@@ -411,7 +429,14 @@ public class ImageAttribute implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
+     * </p>
+     * 
      * @param sriovNetSupport
+     *        Indicates whether enhanced networking with the Intel 82599 Virtual
+     *        Function interface is enabled.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

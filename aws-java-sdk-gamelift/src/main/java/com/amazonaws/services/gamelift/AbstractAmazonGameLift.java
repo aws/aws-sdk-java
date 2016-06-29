@@ -157,6 +157,12 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public DescribeRuntimeConfigurationResult describeRuntimeConfiguration(
+            DescribeRuntimeConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeScalingPoliciesResult describeScalingPolicies(
             DescribeScalingPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -231,6 +237,12 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     @Override
     public UpdateGameSessionResult updateGameSession(
             UpdateGameSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRuntimeConfigurationResult updateRuntimeConfiguration(
+            UpdateRuntimeConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

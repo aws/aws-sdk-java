@@ -69,6 +69,8 @@ public enum GameliftActions implements Action {
     DescribeGameSessions("gamelift:DescribeGameSessions"),
     /** Action for the DescribePlayerSessions operation. */
     DescribePlayerSessions("gamelift:DescribePlayerSessions"),
+    /** Action for the DescribeRuntimeConfiguration operation. */
+    DescribeRuntimeConfiguration("gamelift:DescribeRuntimeConfiguration"),
     /** Action for the DescribeScalingPolicies operation. */
     DescribeScalingPolicies("gamelift:DescribeScalingPolicies"),
     /** Action for the GetGameSessionLogUrl operation. */
@@ -97,6 +99,8 @@ public enum GameliftActions implements Action {
     UpdateFleetPortSettings("gamelift:UpdateFleetPortSettings"),
     /** Action for the UpdateGameSession operation. */
     UpdateGameSession("gamelift:UpdateGameSession"),
+    /** Action for the UpdateRuntimeConfiguration operation. */
+    UpdateRuntimeConfiguration("gamelift:UpdateRuntimeConfiguration"),
 
     ;
 

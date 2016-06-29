@@ -1,7 +1,6 @@
 {
   "metadata" : {
     "apiVersion" : "2012-09-25",
-    "exceptionUnmarshallerImpl" : null,
     "protocol" : "rest-json",
     "checksumFormat" : null,
     "documentation" : "<fullname>AWS Elastic Transcoder Service</fullname> <p>The AWS Elastic Transcoder Service.</p>",
@@ -16,17 +15,17 @@
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Elastic Transcoder",
     "hasApiWithStreamInput" : false,
-    "jsonContentVersion" : "application/x-amz-json-1.1",
+    "contentType" : "",
     "jsonVersion" : "1.1",
     "endpointPrefix" : "elastictranscoder",
     "signingName" : "elastictranscoder",
-    "jsonProtocol" : true,
     "serviceName" : "Amazon Elastic Transcoder",
-    "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "jsonProtocol" : true,
+    "xmlProtocol" : false,
+    "cborProtocol" : false,
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller",
-    "xmlProtocol" : false
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "CancelJob" : {
@@ -34816,5 +34815,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "exceptionUnmarshallerImpl" : null,
   "clientConfigFactory" : "ClientConfigurationFactory"
 }

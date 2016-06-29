@@ -1,7 +1,6 @@
 {
   "metadata" : {
     "apiVersion" : "2015-02-02",
-    "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller",
     "protocol" : "query",
     "checksumFormat" : null,
     "documentation" : "<fullname>Amazon ElastiCache</fullname> <p>Amazon ElastiCache is a web service that makes it easier to set up, operate, and scale a distributed cache in the cloud.</p> <p>With ElastiCache, customers gain all of the benefits of a high-performance, in-memory cache with far less of the administrative burden of launching and managing a distributed cache. The service makes setup, scaling, and cluster failure handling much simpler than in a self-managed cache deployment.</p> <p>In addition, through integration with Amazon CloudWatch, customers get enhanced visibility into the key performance statistics associated with their cache and can receive alarms if a part of their cache runs hot.</p>",
@@ -16,17 +15,17 @@
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon ElastiCache",
     "hasApiWithStreamInput" : false,
-    "jsonContentVersion" : null,
+    "contentType" : null,
     "jsonVersion" : null,
     "endpointPrefix" : "elasticache",
     "signingName" : "elasticache",
-    "xmlProtocol" : true,
-    "jsonProtocol" : false,
+    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
     "serviceName" : "Amazon ElastiCache",
+    "jsonProtocol" : false,
+    "xmlProtocol" : true,
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
-    "unmarshallerClassSuffix" : "StaxUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "StandardErrorUnmarshaller"
+    "unmarshallerClassSuffix" : "StaxUnmarshaller"
   },
   "operations" : {
     "AddTagsToResource" : {
@@ -60,12 +59,12 @@
         "documentation" : "<p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddTagsToResourceResult",
       "asyncReturnType" : "AddTagsToResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsToResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult>",
-      "authenticated" : true,
       "methodName" : "addTagsToResource"
     },
     "AuthorizeCacheSecurityGroupIngress" : {
@@ -102,12 +101,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CacheSecurityGroup",
       "asyncReturnType" : "CacheSecurityGroup",
       "asyncFutureType" : "java.util.concurrent.Future<CacheSecurityGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheSecurityGroup>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AuthorizeCacheSecurityGroupIngressRequest, CacheSecurityGroup>",
-      "authenticated" : true,
       "methodName" : "authorizeCacheSecurityGroupIngress"
     },
     "CopySnapshot" : {
@@ -147,12 +146,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "Snapshot",
       "asyncReturnType" : "Snapshot",
       "asyncFutureType" : "java.util.concurrent.Future<Snapshot>",
       "asyncCallableType" : "java.util.concurrent.Callable<Snapshot>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CopySnapshotRequest, Snapshot>",
-      "authenticated" : true,
       "methodName" : "copySnapshot"
     },
     "CreateCacheCluster" : {
@@ -216,12 +215,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CacheCluster",
       "asyncReturnType" : "CacheCluster",
       "asyncFutureType" : "java.util.concurrent.Future<CacheCluster>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheCluster>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCacheClusterRequest, CacheCluster>",
-      "authenticated" : true,
       "methodName" : "createCacheCluster"
     },
     "CreateCacheParameterGroup" : {
@@ -258,12 +257,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CacheParameterGroup",
       "asyncReturnType" : "CacheParameterGroup",
       "asyncFutureType" : "java.util.concurrent.Future<CacheParameterGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheParameterGroup>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCacheParameterGroupRequest, CacheParameterGroup>",
-      "authenticated" : true,
       "methodName" : "createCacheParameterGroup"
     },
     "CreateCacheSecurityGroup" : {
@@ -297,12 +296,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CacheSecurityGroup",
       "asyncReturnType" : "CacheSecurityGroup",
       "asyncFutureType" : "java.util.concurrent.Future<CacheSecurityGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheSecurityGroup>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCacheSecurityGroupRequest, CacheSecurityGroup>",
-      "authenticated" : true,
       "methodName" : "createCacheSecurityGroup"
     },
     "CreateCacheSubnetGroup" : {
@@ -336,12 +335,12 @@
         "documentation" : "<p>An invalid subnet identifier was specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CacheSubnetGroup",
       "asyncReturnType" : "CacheSubnetGroup",
       "asyncFutureType" : "java.util.concurrent.Future<CacheSubnetGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheSubnetGroup>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCacheSubnetGroupRequest, CacheSubnetGroup>",
-      "authenticated" : true,
       "methodName" : "createCacheSubnetGroup"
     },
     "CreateReplicationGroup" : {
@@ -405,12 +404,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ReplicationGroup",
       "asyncReturnType" : "ReplicationGroup",
       "asyncFutureType" : "java.util.concurrent.Future<ReplicationGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReplicationGroup>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReplicationGroupRequest, ReplicationGroup>",
-      "authenticated" : true,
       "methodName" : "createReplicationGroup"
     },
     "CreateSnapshot" : {
@@ -453,12 +452,12 @@
         "documentation" : "<p>The value for a parameter is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "Snapshot",
       "asyncReturnType" : "Snapshot",
       "asyncFutureType" : "java.util.concurrent.Future<Snapshot>",
       "asyncCallableType" : "java.util.concurrent.Callable<Snapshot>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateSnapshotRequest, Snapshot>",
-      "authenticated" : true,
       "methodName" : "createSnapshot"
     },
     "DeleteCacheCluster" : {
@@ -501,12 +500,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CacheCluster",
       "asyncReturnType" : "CacheCluster",
       "asyncFutureType" : "java.util.concurrent.Future<CacheCluster>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheCluster>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCacheClusterRequest, CacheCluster>",
-      "authenticated" : true,
       "methodName" : "deleteCacheCluster"
     },
     "DeleteCacheParameterGroup" : {
@@ -540,12 +539,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteCacheParameterGroupResult",
       "asyncReturnType" : "DeleteCacheParameterGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteCacheParameterGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteCacheParameterGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCacheParameterGroupRequest, DeleteCacheParameterGroupResult>",
-      "authenticated" : true,
       "methodName" : "deleteCacheParameterGroup"
     },
     "DeleteCacheSecurityGroup" : {
@@ -579,12 +578,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteCacheSecurityGroupResult",
       "asyncReturnType" : "DeleteCacheSecurityGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteCacheSecurityGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteCacheSecurityGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCacheSecurityGroupRequest, DeleteCacheSecurityGroupResult>",
-      "authenticated" : true,
       "methodName" : "deleteCacheSecurityGroup"
     },
     "DeleteCacheSubnetGroup" : {
@@ -612,12 +611,12 @@
         "documentation" : "<p>The requested cache subnet group name does not refer to an existing cache subnet group.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteCacheSubnetGroupResult",
       "asyncReturnType" : "DeleteCacheSubnetGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteCacheSubnetGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteCacheSubnetGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCacheSubnetGroupRequest, DeleteCacheSubnetGroupResult>",
-      "authenticated" : true,
       "methodName" : "deleteCacheSubnetGroup"
     },
     "DeleteReplicationGroup" : {
@@ -660,12 +659,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ReplicationGroup",
       "asyncReturnType" : "ReplicationGroup",
       "asyncFutureType" : "java.util.concurrent.Future<ReplicationGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReplicationGroup>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReplicationGroupRequest, ReplicationGroup>",
-      "authenticated" : true,
       "methodName" : "deleteReplicationGroup"
     },
     "DeleteSnapshot" : {
@@ -699,12 +698,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "Snapshot",
       "asyncReturnType" : "Snapshot",
       "asyncFutureType" : "java.util.concurrent.Future<Snapshot>",
       "asyncCallableType" : "java.util.concurrent.Callable<Snapshot>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, Snapshot>",
-      "authenticated" : true,
       "methodName" : "deleteSnapshot"
     },
     "DescribeCacheClusters" : {
@@ -735,12 +734,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeCacheClustersResult",
       "asyncReturnType" : "DescribeCacheClustersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCacheClustersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCacheClustersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheClustersRequest, DescribeCacheClustersResult>",
-      "authenticated" : true,
       "methodName" : "describeCacheClusters"
     },
     "DescribeCacheEngineVersions" : {
@@ -762,12 +761,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeCacheEngineVersionsResult",
       "asyncReturnType" : "DescribeCacheEngineVersionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCacheEngineVersionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCacheEngineVersionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheEngineVersionsRequest, DescribeCacheEngineVersionsResult>",
-      "authenticated" : true,
       "methodName" : "describeCacheEngineVersions"
     },
     "DescribeCacheParameterGroups" : {
@@ -798,12 +797,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeCacheParameterGroupsResult",
       "asyncReturnType" : "DescribeCacheParameterGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCacheParameterGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCacheParameterGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheParameterGroupsRequest, DescribeCacheParameterGroupsResult>",
-      "authenticated" : true,
       "methodName" : "describeCacheParameterGroups"
     },
     "DescribeCacheParameters" : {
@@ -834,12 +833,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeCacheParametersResult",
       "asyncReturnType" : "DescribeCacheParametersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCacheParametersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCacheParametersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheParametersRequest, DescribeCacheParametersResult>",
-      "authenticated" : true,
       "methodName" : "describeCacheParameters"
     },
     "DescribeCacheSecurityGroups" : {
@@ -870,12 +869,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeCacheSecurityGroupsResult",
       "asyncReturnType" : "DescribeCacheSecurityGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCacheSecurityGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCacheSecurityGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheSecurityGroupsRequest, DescribeCacheSecurityGroupsResult>",
-      "authenticated" : true,
       "methodName" : "describeCacheSecurityGroups"
     },
     "DescribeCacheSubnetGroups" : {
@@ -900,12 +899,12 @@
         "documentation" : "<p>The requested cache subnet group name does not refer to an existing cache subnet group.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeCacheSubnetGroupsResult",
       "asyncReturnType" : "DescribeCacheSubnetGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCacheSubnetGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCacheSubnetGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheSubnetGroupsRequest, DescribeCacheSubnetGroupsResult>",
-      "authenticated" : true,
       "methodName" : "describeCacheSubnetGroups"
     },
     "DescribeEngineDefaultParameters" : {
@@ -933,12 +932,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "EngineDefaults",
       "asyncReturnType" : "EngineDefaults",
       "asyncFutureType" : "java.util.concurrent.Future<EngineDefaults>",
       "asyncCallableType" : "java.util.concurrent.Callable<EngineDefaults>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEngineDefaultParametersRequest, EngineDefaults>",
-      "authenticated" : true,
       "methodName" : "describeEngineDefaultParameters"
     },
     "DescribeEvents" : {
@@ -966,12 +965,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeEventsResult",
       "asyncReturnType" : "DescribeEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEventsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult>",
-      "authenticated" : true,
       "methodName" : "describeEvents"
     },
     "DescribeReplicationGroups" : {
@@ -1002,12 +1001,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeReplicationGroupsResult",
       "asyncReturnType" : "DescribeReplicationGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeReplicationGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeReplicationGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReplicationGroupsRequest, DescribeReplicationGroupsResult>",
-      "authenticated" : true,
       "methodName" : "describeReplicationGroups"
     },
     "DescribeReservedCacheNodes" : {
@@ -1038,12 +1037,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeReservedCacheNodesResult",
       "asyncReturnType" : "DescribeReservedCacheNodesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeReservedCacheNodesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeReservedCacheNodesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReservedCacheNodesRequest, DescribeReservedCacheNodesResult>",
-      "authenticated" : true,
       "methodName" : "describeReservedCacheNodes"
     },
     "DescribeReservedCacheNodesOfferings" : {
@@ -1074,12 +1073,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeReservedCacheNodesOfferingsResult",
       "asyncReturnType" : "DescribeReservedCacheNodesOfferingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeReservedCacheNodesOfferingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeReservedCacheNodesOfferingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReservedCacheNodesOfferingsRequest, DescribeReservedCacheNodesOfferingsResult>",
-      "authenticated" : true,
       "methodName" : "describeReservedCacheNodesOfferings"
     },
     "DescribeSnapshots" : {
@@ -1113,12 +1112,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeSnapshotsResult",
       "asyncReturnType" : "DescribeSnapshotsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeSnapshotsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeSnapshotsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSnapshotsRequest, DescribeSnapshotsResult>",
-      "authenticated" : true,
       "methodName" : "describeSnapshots"
     },
     "ListAllowedNodeTypeModifications" : {
@@ -1152,12 +1151,12 @@
         "documentation" : "<p>The value for a parameter is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListAllowedNodeTypeModificationsResult",
       "asyncReturnType" : "ListAllowedNodeTypeModificationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAllowedNodeTypeModificationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAllowedNodeTypeModificationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAllowedNodeTypeModificationsRequest, ListAllowedNodeTypeModificationsResult>",
-      "authenticated" : true,
       "methodName" : "listAllowedNodeTypeModifications"
     },
     "ListTagsForResource" : {
@@ -1188,12 +1187,12 @@
         "documentation" : "<p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTagsForResourceResult",
       "asyncReturnType" : "ListTagsForResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>",
-      "authenticated" : true,
       "methodName" : "listTagsForResource"
     },
     "ModifyCacheCluster" : {
@@ -1248,12 +1247,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CacheCluster",
       "asyncReturnType" : "CacheCluster",
       "asyncFutureType" : "java.util.concurrent.Future<CacheCluster>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheCluster>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyCacheClusterRequest, CacheCluster>",
-      "authenticated" : true,
       "methodName" : "modifyCacheCluster"
     },
     "ModifyCacheParameterGroup" : {
@@ -1287,12 +1286,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ModifyCacheParameterGroupResult",
       "asyncReturnType" : "ModifyCacheParameterGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyCacheParameterGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyCacheParameterGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyCacheParameterGroupRequest, ModifyCacheParameterGroupResult>",
-      "authenticated" : true,
       "methodName" : "modifyCacheParameterGroup"
     },
     "ModifyCacheSubnetGroup" : {
@@ -1326,12 +1325,12 @@
         "documentation" : "<p>An invalid subnet identifier was specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CacheSubnetGroup",
       "asyncReturnType" : "CacheSubnetGroup",
       "asyncFutureType" : "java.util.concurrent.Future<CacheSubnetGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheSubnetGroup>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyCacheSubnetGroupRequest, CacheSubnetGroup>",
-      "authenticated" : true,
       "methodName" : "modifyCacheSubnetGroup"
     },
     "ModifyReplicationGroup" : {
@@ -1392,12 +1391,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ReplicationGroup",
       "asyncReturnType" : "ReplicationGroup",
       "asyncFutureType" : "java.util.concurrent.Future<ReplicationGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReplicationGroup>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyReplicationGroupRequest, ReplicationGroup>",
-      "authenticated" : true,
       "methodName" : "modifyReplicationGroup"
     },
     "PurchaseReservedCacheNodesOffering" : {
@@ -1434,12 +1433,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ReservedCacheNode",
       "asyncReturnType" : "ReservedCacheNode",
       "asyncFutureType" : "java.util.concurrent.Future<ReservedCacheNode>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReservedCacheNode>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PurchaseReservedCacheNodesOfferingRequest, ReservedCacheNode>",
-      "authenticated" : true,
       "methodName" : "purchaseReservedCacheNodesOffering"
     },
     "RebootCacheCluster" : {
@@ -1467,12 +1466,12 @@
         "documentation" : "<p>The requested cache cluster ID does not refer to an existing cache cluster.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CacheCluster",
       "asyncReturnType" : "CacheCluster",
       "asyncFutureType" : "java.util.concurrent.Future<CacheCluster>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheCluster>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebootCacheClusterRequest, CacheCluster>",
-      "authenticated" : true,
       "methodName" : "rebootCacheCluster"
     },
     "RemoveTagsFromResource" : {
@@ -1506,12 +1505,12 @@
         "documentation" : "<p>The requested tag was not found on this resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RemoveTagsFromResourceResult",
       "asyncReturnType" : "RemoveTagsFromResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult>",
-      "authenticated" : true,
       "methodName" : "removeTagsFromResource"
     },
     "ResetCacheParameterGroup" : {
@@ -1545,12 +1544,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ResetCacheParameterGroupResult",
       "asyncReturnType" : "ResetCacheParameterGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResetCacheParameterGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ResetCacheParameterGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResetCacheParameterGroupRequest, ResetCacheParameterGroupResult>",
-      "authenticated" : true,
       "methodName" : "resetCacheParameterGroup"
     },
     "RevokeCacheSecurityGroupIngress" : {
@@ -1587,12 +1586,12 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CacheSecurityGroup",
       "asyncReturnType" : "CacheSecurityGroup",
       "asyncFutureType" : "java.util.concurrent.Future<CacheSecurityGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheSecurityGroup>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RevokeCacheSecurityGroupIngressRequest, CacheSecurityGroup>",
-      "authenticated" : true,
       "methodName" : "revokeCacheSecurityGroupIngress"
     }
   },
@@ -1865,11 +1864,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "EC2SecurityGroup",
           "templateType" : "java.util.List<EC2SecurityGroup>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2SecurityGroup>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2SecurityGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2059,11 +2058,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "EC2SecurityGroup",
             "templateType" : "java.util.List<EC2SecurityGroup>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2SecurityGroup>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2SecurityGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3605,11 +3604,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CacheNodeTypeSpecificValue",
           "templateType" : "java.util.List<CacheNodeTypeSpecificValue>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificValue>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificValue>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4116,11 +4115,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CacheNodeTypeSpecificValue",
             "templateType" : "java.util.List<CacheNodeTypeSpecificValue>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificValue>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificValue>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4406,11 +4405,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Parameter",
           "templateType" : "java.util.List<Parameter>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Parameter>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Parameter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4524,11 +4523,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CacheNodeTypeSpecificParameter",
           "templateType" : "java.util.List<CacheNodeTypeSpecificParameter>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificParameter>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificParameter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4665,11 +4664,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Parameter",
             "templateType" : "java.util.List<Parameter>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Parameter>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Parameter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4784,11 +4783,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CacheNodeTypeSpecificParameter",
             "templateType" : "java.util.List<CacheNodeTypeSpecificParameter>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificParameter>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificParameter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5021,11 +5020,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CacheSecurityGroup",
           "templateType" : "java.util.List<CacheSecurityGroup>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheSecurityGroup>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheSecurityGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5162,11 +5161,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CacheSecurityGroup",
             "templateType" : "java.util.List<CacheSecurityGroup>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheSecurityGroup>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheSecurityGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5690,11 +5689,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5835,11 +5834,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6954,11 +6953,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CacheEngineVersion",
           "templateType" : "java.util.List<CacheEngineVersion>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheEngineVersion>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheEngineVersion>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7095,11 +7094,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CacheEngineVersion",
             "templateType" : "java.util.List<CacheEngineVersion>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheEngineVersion>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheEngineVersion>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7399,11 +7398,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Snapshot",
           "templateType" : "java.util.List<Snapshot>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Snapshot>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Snapshot>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7540,11 +7539,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Snapshot",
             "templateType" : "java.util.List<Snapshot>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Snapshot>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Snapshot>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8006,11 +8005,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Parameter",
           "templateType" : "java.util.List<Parameter>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Parameter>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Parameter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8124,11 +8123,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CacheNodeTypeSpecificParameter",
           "templateType" : "java.util.List<CacheNodeTypeSpecificParameter>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificParameter>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificParameter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8265,11 +8264,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Parameter",
             "templateType" : "java.util.List<Parameter>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Parameter>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Parameter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8384,11 +8383,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CacheNodeTypeSpecificParameter",
             "templateType" : "java.util.List<CacheNodeTypeSpecificParameter>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificParameter>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNodeTypeSpecificParameter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8654,11 +8653,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8795,11 +8794,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9641,11 +9640,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "RecurringCharge",
           "templateType" : "java.util.List<RecurringCharge>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RecurringCharge>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RecurringCharge>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9941,11 +9940,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "RecurringCharge",
             "templateType" : "java.util.List<RecurringCharge>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RecurringCharge>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RecurringCharge>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11630,11 +11629,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "ReservedCacheNodesOffering",
           "templateType" : "java.util.List<ReservedCacheNodesOffering>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReservedCacheNodesOffering>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReservedCacheNodesOffering>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11771,11 +11770,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "ReservedCacheNodesOffering",
             "templateType" : "java.util.List<ReservedCacheNodesOffering>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReservedCacheNodesOffering>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReservedCacheNodesOffering>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12427,11 +12426,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "ReplicationGroup",
           "templateType" : "java.util.List<ReplicationGroup>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplicationGroup>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplicationGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12568,11 +12567,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "ReplicationGroup",
             "templateType" : "java.util.List<ReplicationGroup>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplicationGroup>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplicationGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12837,11 +12836,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CacheParameterGroup",
           "templateType" : "java.util.List<CacheParameterGroup>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheParameterGroup>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheParameterGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12978,11 +12977,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CacheParameterGroup",
             "templateType" : "java.util.List<CacheParameterGroup>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheParameterGroup>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheParameterGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14397,11 +14396,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "NodeSnapshot",
           "templateType" : "java.util.List<NodeSnapshot>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NodeSnapshot>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NodeSnapshot>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15439,11 +15438,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "NodeSnapshot",
             "templateType" : "java.util.List<NodeSnapshot>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NodeSnapshot>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NodeSnapshot>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16062,11 +16061,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16232,11 +16231,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16350,11 +16349,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16468,11 +16467,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17663,11 +17662,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17782,11 +17781,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17901,11 +17900,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18020,11 +18019,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18872,11 +18871,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19013,11 +19012,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19301,11 +19300,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "NodeGroupMember",
           "templateType" : "java.util.List<NodeGroupMember>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NodeGroupMember>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NodeGroupMember>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19601,11 +19600,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "NodeGroupMember",
             "templateType" : "java.util.List<NodeGroupMember>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NodeGroupMember>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NodeGroupMember>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20412,11 +20411,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20790,11 +20789,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20908,11 +20907,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21026,11 +21025,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21144,11 +21143,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21653,11 +21652,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21825,11 +21824,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22474,11 +22473,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22699,11 +22698,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22818,11 +22817,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -23266,11 +23265,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23464,11 +23463,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -23765,11 +23764,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Event",
           "templateType" : "java.util.List<Event>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23906,11 +23905,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Event",
             "templateType" : "java.util.List<Event>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24457,11 +24456,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24602,11 +24601,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26001,11 +26000,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "ReservedCacheNode",
           "templateType" : "java.util.List<ReservedCacheNode>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReservedCacheNode>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReservedCacheNode>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26142,11 +26141,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "ReservedCacheNode",
             "templateType" : "java.util.List<ReservedCacheNode>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReservedCacheNode>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReservedCacheNode>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27091,11 +27090,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "ParameterNameValue",
           "templateType" : "java.util.List<ParameterNameValue>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterNameValue>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterNameValue>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27289,11 +27288,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "ParameterNameValue",
             "templateType" : "java.util.List<ParameterNameValue>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterNameValue>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterNameValue>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29983,11 +29982,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -30228,11 +30227,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31592,11 +31591,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CacheSubnetGroup",
           "templateType" : "java.util.List<CacheSubnetGroup>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheSubnetGroup>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheSubnetGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31733,11 +31732,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CacheSubnetGroup",
             "templateType" : "java.util.List<CacheSubnetGroup>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheSubnetGroup>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheSubnetGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32594,11 +32593,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CacheSecurityGroupMembership",
           "templateType" : "java.util.List<CacheSecurityGroupMembership>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheSecurityGroupMembership>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheSecurityGroupMembership>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32816,11 +32815,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CacheNode",
           "templateType" : "java.util.List<CacheNode>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNode>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNode>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32986,11 +32985,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "SecurityGroupMembership",
           "templateType" : "java.util.List<SecurityGroupMembership>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SecurityGroupMembership>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<SecurityGroupMembership>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -33548,11 +33547,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CacheSecurityGroupMembership",
             "templateType" : "java.util.List<CacheSecurityGroupMembership>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheSecurityGroupMembership>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheSecurityGroupMembership>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -33932,11 +33931,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "SecurityGroupMembership",
             "templateType" : "java.util.List<SecurityGroupMembership>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SecurityGroupMembership>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<SecurityGroupMembership>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34422,11 +34421,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CacheNode",
             "templateType" : "java.util.List<CacheNode>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNode>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheNode>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -35627,11 +35626,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -35825,11 +35824,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -36217,11 +36216,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -36335,11 +36334,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -37583,11 +37582,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -37702,11 +37701,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -40243,11 +40242,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -40441,11 +40440,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -40782,11 +40781,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Subnet",
           "templateType" : "java.util.List<Subnet>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subnet>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subnet>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -41029,11 +41028,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Subnet",
             "templateType" : "java.util.List<Subnet>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subnet>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Subnet>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -41422,11 +41421,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -41540,11 +41539,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "NodeGroup",
           "templateType" : "java.util.List<NodeGroup>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NodeGroup>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<NodeGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -42050,11 +42049,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "NodeGroup",
             "templateType" : "java.util.List<NodeGroup>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NodeGroup>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<NodeGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -42169,11 +42168,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -42354,11 +42353,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -42495,11 +42494,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -42679,11 +42678,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CacheCluster",
           "templateType" : "java.util.List<CacheCluster>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheCluster>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheCluster>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -42820,11 +42819,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CacheCluster",
             "templateType" : "java.util.List<CacheCluster>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheCluster>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheCluster>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -43464,11 +43463,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "ParameterNameValue",
           "templateType" : "java.util.List<ParameterNameValue>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterNameValue>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterNameValue>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -43715,11 +43714,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "ParameterNameValue",
             "templateType" : "java.util.List<ParameterNameValue>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterNameValue>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ParameterNameValue>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -45597,11 +45596,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -45844,11 +45843,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -48063,11 +48062,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "RecurringCharge",
           "templateType" : "java.util.List<RecurringCharge>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RecurringCharge>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RecurringCharge>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -48416,11 +48415,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "RecurringCharge",
             "templateType" : "java.util.List<RecurringCharge>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RecurringCharge>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RecurringCharge>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -49169,11 +49168,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -49310,11 +49309,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -49650,11 +49649,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -50080,11 +50079,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -50198,11 +50197,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -50316,11 +50315,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -50434,11 +50433,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -51102,11 +51101,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -51221,11 +51220,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -51870,11 +51869,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -52095,11 +52094,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -52214,11 +52213,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -53161,5 +53160,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller"
 }

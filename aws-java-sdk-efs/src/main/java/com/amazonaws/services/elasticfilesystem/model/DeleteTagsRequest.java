@@ -20,31 +20,31 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class DeleteTagsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
     /**
      * <p>
-     * String. The ID of the file system whose tags you want to delete.
+     * ID of the file system whose tags you want to delete (String).
      * </p>
      */
     private String fileSystemId;
     /**
      * <p>
-     * A list of tag keys to delete.
+     * List of tag keys to delete.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> tagKeys;
 
     /**
      * <p>
-     * String. The ID of the file system whose tags you want to delete.
+     * ID of the file system whose tags you want to delete (String).
      * </p>
      * 
      * @param fileSystemId
-     *        String. The ID of the file system whose tags you want to delete.
+     *        ID of the file system whose tags you want to delete (String).
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -53,10 +53,10 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * String. The ID of the file system whose tags you want to delete.
+     * ID of the file system whose tags you want to delete (String).
      * </p>
      * 
-     * @return String. The ID of the file system whose tags you want to delete.
+     * @return ID of the file system whose tags you want to delete (String).
      */
 
     public String getFileSystemId() {
@@ -65,11 +65,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * String. The ID of the file system whose tags you want to delete.
+     * ID of the file system whose tags you want to delete (String).
      * </p>
      * 
      * @param fileSystemId
-     *        String. The ID of the file system whose tags you want to delete.
+     *        ID of the file system whose tags you want to delete (String).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -81,10 +81,10 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of tag keys to delete.
+     * List of tag keys to delete.
      * </p>
      * 
-     * @return A list of tag keys to delete.
+     * @return List of tag keys to delete.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -96,11 +96,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of tag keys to delete.
+     * List of tag keys to delete.
      * </p>
      * 
      * @param tagKeys
-     *        A list of tag keys to delete.
+     *        List of tag keys to delete.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -115,7 +115,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of tag keys to delete.
+     * List of tag keys to delete.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -125,7 +125,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param tagKeys
-     *        A list of tag keys to delete.
+     *        List of tag keys to delete.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -143,11 +143,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of tag keys to delete.
+     * List of tag keys to delete.
      * </p>
      * 
      * @param tagKeys
-     *        A list of tag keys to delete.
+     *        List of tag keys to delete.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

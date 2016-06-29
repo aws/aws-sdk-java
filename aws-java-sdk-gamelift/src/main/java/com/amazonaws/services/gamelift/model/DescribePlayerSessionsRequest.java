@@ -48,25 +48,26 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Player session status to filter results on. Possible player session
-     * states include:
+     * states include the following:
      * <ul>
-     * <li>RESERVED: The player session request has been received, but the
-     * player has not yet connected to the game server and/or been validated.</li>
-     * <li>ACTIVE: The player has been validated by the game server and is
-     * currently connected.</li>
-     * <li>COMPLETED: The player connection has been dropped.</li>
-     * <li>TIMEDOUT: A player session request was received, but the player did
-     * not connect and/or was not validated within the time-out limit (60
-     * seconds).</li>
+     * <li><b>RESERVED</b> – The player session request has been received, but
+     * the player has not yet connected to the server process and/or been
+     * validated.</li>
+     * <li><b>ACTIVE</b> – The player has been validated by the server process
+     * and is currently connected.</li>
+     * <li><b>COMPLETED</b> – The player connection has been dropped.</li>
+     * <li><b>TIMEDOUT</b> – A player session request was received, but the
+     * player did not connect and/or was not validated within the time-out limit
+     * (60 seconds).</li>
      * </ul>
      * </p>
      */
     private String playerSessionStatusFilter;
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. If a player
-     * session ID is specified, this parameter is ignored.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. If a
+     * player session ID is specified, this parameter is ignored.
      * </p>
      */
     private Integer limit;
@@ -207,31 +208,32 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Player session status to filter results on. Possible player session
-     * states include:
+     * states include the following:
      * <ul>
-     * <li>RESERVED: The player session request has been received, but the
-     * player has not yet connected to the game server and/or been validated.</li>
-     * <li>ACTIVE: The player has been validated by the game server and is
-     * currently connected.</li>
-     * <li>COMPLETED: The player connection has been dropped.</li>
-     * <li>TIMEDOUT: A player session request was received, but the player did
-     * not connect and/or was not validated within the time-out limit (60
-     * seconds).</li>
+     * <li><b>RESERVED</b> – The player session request has been received, but
+     * the player has not yet connected to the server process and/or been
+     * validated.</li>
+     * <li><b>ACTIVE</b> – The player has been validated by the server process
+     * and is currently connected.</li>
+     * <li><b>COMPLETED</b> – The player connection has been dropped.</li>
+     * <li><b>TIMEDOUT</b> – A player session request was received, but the
+     * player did not connect and/or was not validated within the time-out limit
+     * (60 seconds).</li>
      * </ul>
      * </p>
      * 
      * @param playerSessionStatusFilter
      *        Player session status to filter results on. Possible player
-     *        session states include:
+     *        session states include the following:
      *        <ul>
-     *        <li>RESERVED: The player session request has been received, but
-     *        the player has not yet connected to the game server and/or been
-     *        validated.</li>
-     *        <li>ACTIVE: The player has been validated by the game server and
-     *        is currently connected.</li>
-     *        <li>COMPLETED: The player connection has been dropped.</li>
-     *        <li>TIMEDOUT: A player session request was received, but the
-     *        player did not connect and/or was not validated within the
+     *        <li><b>RESERVED</b> – The player session request has been
+     *        received, but the player has not yet connected to the server
+     *        process and/or been validated.</li>
+     *        <li><b>ACTIVE</b> – The player has been validated by the server
+     *        process and is currently connected.</li>
+     *        <li><b>COMPLETED</b> – The player connection has been dropped.</li>
+     *        <li><b>TIMEDOUT</b> – A player session request was received, but
+     *        the player did not connect and/or was not validated within the
      *        time-out limit (60 seconds).</li>
      *        </ul>
      */
@@ -243,30 +245,31 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Player session status to filter results on. Possible player session
-     * states include:
+     * states include the following:
      * <ul>
-     * <li>RESERVED: The player session request has been received, but the
-     * player has not yet connected to the game server and/or been validated.</li>
-     * <li>ACTIVE: The player has been validated by the game server and is
-     * currently connected.</li>
-     * <li>COMPLETED: The player connection has been dropped.</li>
-     * <li>TIMEDOUT: A player session request was received, but the player did
-     * not connect and/or was not validated within the time-out limit (60
-     * seconds).</li>
+     * <li><b>RESERVED</b> – The player session request has been received, but
+     * the player has not yet connected to the server process and/or been
+     * validated.</li>
+     * <li><b>ACTIVE</b> – The player has been validated by the server process
+     * and is currently connected.</li>
+     * <li><b>COMPLETED</b> – The player connection has been dropped.</li>
+     * <li><b>TIMEDOUT</b> – A player session request was received, but the
+     * player did not connect and/or was not validated within the time-out limit
+     * (60 seconds).</li>
      * </ul>
      * </p>
      * 
      * @return Player session status to filter results on. Possible player
-     *         session states include:
+     *         session states include the following:
      *         <ul>
-     *         <li>RESERVED: The player session request has been received, but
-     *         the player has not yet connected to the game server and/or been
-     *         validated.</li>
-     *         <li>ACTIVE: The player has been validated by the game server and
-     *         is currently connected.</li>
-     *         <li>COMPLETED: The player connection has been dropped.</li>
-     *         <li>TIMEDOUT: A player session request was received, but the
-     *         player did not connect and/or was not validated within the
+     *         <li><b>RESERVED</b> – The player session request has been
+     *         received, but the player has not yet connected to the server
+     *         process and/or been validated.</li>
+     *         <li><b>ACTIVE</b> – The player has been validated by the server
+     *         process and is currently connected.</li>
+     *         <li><b>COMPLETED</b> – The player connection has been dropped.</li>
+     *         <li><b>TIMEDOUT</b> – A player session request was received, but
+     *         the player did not connect and/or was not validated within the
      *         time-out limit (60 seconds).</li>
      *         </ul>
      */
@@ -278,31 +281,32 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Player session status to filter results on. Possible player session
-     * states include:
+     * states include the following:
      * <ul>
-     * <li>RESERVED: The player session request has been received, but the
-     * player has not yet connected to the game server and/or been validated.</li>
-     * <li>ACTIVE: The player has been validated by the game server and is
-     * currently connected.</li>
-     * <li>COMPLETED: The player connection has been dropped.</li>
-     * <li>TIMEDOUT: A player session request was received, but the player did
-     * not connect and/or was not validated within the time-out limit (60
-     * seconds).</li>
+     * <li><b>RESERVED</b> – The player session request has been received, but
+     * the player has not yet connected to the server process and/or been
+     * validated.</li>
+     * <li><b>ACTIVE</b> – The player has been validated by the server process
+     * and is currently connected.</li>
+     * <li><b>COMPLETED</b> – The player connection has been dropped.</li>
+     * <li><b>TIMEDOUT</b> – A player session request was received, but the
+     * player did not connect and/or was not validated within the time-out limit
+     * (60 seconds).</li>
      * </ul>
      * </p>
      * 
      * @param playerSessionStatusFilter
      *        Player session status to filter results on. Possible player
-     *        session states include:
+     *        session states include the following:
      *        <ul>
-     *        <li>RESERVED: The player session request has been received, but
-     *        the player has not yet connected to the game server and/or been
-     *        validated.</li>
-     *        <li>ACTIVE: The player has been validated by the game server and
-     *        is currently connected.</li>
-     *        <li>COMPLETED: The player connection has been dropped.</li>
-     *        <li>TIMEDOUT: A player session request was received, but the
-     *        player did not connect and/or was not validated within the
+     *        <li><b>RESERVED</b> – The player session request has been
+     *        received, but the player has not yet connected to the server
+     *        process and/or been validated.</li>
+     *        <li><b>ACTIVE</b> – The player has been validated by the server
+     *        process and is currently connected.</li>
+     *        <li><b>COMPLETED</b> – The player connection has been dropped.</li>
+     *        <li><b>TIMEDOUT</b> – A player session request was received, but
+     *        the player did not connect and/or was not validated within the
      *        time-out limit (60 seconds).</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
@@ -317,15 +321,16 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. If a player
-     * session ID is specified, this parameter is ignored.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. If a
+     * player session ID is specified, this parameter is ignored.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. You can use this parameter
-     *        with <i>NextToken</i> to get results as a set of sequential pages.
-     *        If a player session ID is specified, this parameter is ignored.
+     *        Maximum number of results to return. Use this parameter with
+     *        <code>NextToken</code> to get results as a set of sequential
+     *        pages. If a player session ID is specified, this parameter is
+     *        ignored.
      */
 
     public void setLimit(Integer limit) {
@@ -334,13 +339,13 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. If a player
-     * session ID is specified, this parameter is ignored.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. If a
+     * player session ID is specified, this parameter is ignored.
      * </p>
      * 
-     * @return Maximum number of results to return. You can use this parameter
-     *         with <i>NextToken</i> to get results as a set of sequential
+     * @return Maximum number of results to return. Use this parameter with
+     *         <code>NextToken</code> to get results as a set of sequential
      *         pages. If a player session ID is specified, this parameter is
      *         ignored.
      */
@@ -351,15 +356,16 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. If a player
-     * session ID is specified, this parameter is ignored.
+     * Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. If a
+     * player session ID is specified, this parameter is ignored.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. You can use this parameter
-     *        with <i>NextToken</i> to get results as a set of sequential pages.
-     *        If a player session ID is specified, this parameter is ignored.
+     *        Maximum number of results to return. Use this parameter with
+     *        <code>NextToken</code> to get results as a set of sequential
+     *        pages. If a player session ID is specified, this parameter is
+     *        ignored.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

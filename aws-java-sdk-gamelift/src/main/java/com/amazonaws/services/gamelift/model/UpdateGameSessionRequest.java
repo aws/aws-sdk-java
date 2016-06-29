@@ -43,7 +43,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
     private Integer maximumPlayerSessionCount;
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
+     * Descriptive label associated with a game session. Session names do not
      * need to be unique.
      * </p>
      */
@@ -58,10 +58,11 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * <p>
      * Game session protection policy to apply to this game session only.
      * <ul>
-     * <li>NoProtection: The game session can be terminated during a scale-down
+     * <li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
-     * be terminated during a scale-down event.</li>
      * </ul>
      * </p>
      */
@@ -164,13 +165,13 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
+     * Descriptive label associated with a game session. Session names do not
      * need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this game session. Session names
-     *        do not need to be unique.
+     *        Descriptive label associated with a game session. Session names do
+     *        not need to be unique.
      */
 
     public void setName(String name) {
@@ -179,12 +180,12 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
+     * Descriptive label associated with a game session. Session names do not
      * need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with this game session. Session
-     *         names do not need to be unique.
+     * @return Descriptive label associated with a game session. Session names
+     *         do not need to be unique.
      */
 
     public String getName() {
@@ -193,13 +194,13 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Descriptive label associated with this game session. Session names do not
+     * Descriptive label associated with a game session. Session names do not
      * need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with this game session. Session names
-     *        do not need to be unique.
+     *        Descriptive label associated with a game session. Session names do
+     *        not need to be unique.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -298,20 +299,22 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * <p>
      * Game session protection policy to apply to this game session only.
      * <ul>
-     * <li>NoProtection: The game session can be terminated during a scale-down
+     * <li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
-     * be terminated during a scale-down event.</li>
      * </ul>
      * </p>
      * 
      * @param protectionPolicy
      *        Game session protection policy to apply to this game session only.
      *        <ul>
-     *        <li>NoProtection: The game session can be terminated during a
+     *        <li><b>NoProtection</b> – The game session can be terminated
+     *        during a scale-down event.</li>
+     *        <li><b>FullProtection</b> – If the game session is in an
+     *        <code>ACTIVE</code> status, it cannot be terminated during a
      *        scale-down event.</li>
-     *        <li>FullProtection: If the game session is in an ACTIVE status, it
-     *        cannot be terminated during a scale-down event.</li>
      *        </ul>
      * @see ProtectionPolicy
      */
@@ -324,20 +327,22 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * <p>
      * Game session protection policy to apply to this game session only.
      * <ul>
-     * <li>NoProtection: The game session can be terminated during a scale-down
+     * <li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
-     * be terminated during a scale-down event.</li>
      * </ul>
      * </p>
      * 
      * @return Game session protection policy to apply to this game session
      *         only.
      *         <ul>
-     *         <li>NoProtection: The game session can be terminated during a
+     *         <li><b>NoProtection</b> – The game session can be terminated
+     *         during a scale-down event.</li>
+     *         <li><b>FullProtection</b> – If the game session is in an
+     *         <code>ACTIVE</code> status, it cannot be terminated during a
      *         scale-down event.</li>
-     *         <li>FullProtection: If the game session is in an ACTIVE status,
-     *         it cannot be terminated during a scale-down event.</li>
      *         </ul>
      * @see ProtectionPolicy
      */
@@ -350,20 +355,22 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * <p>
      * Game session protection policy to apply to this game session only.
      * <ul>
-     * <li>NoProtection: The game session can be terminated during a scale-down
+     * <li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
-     * be terminated during a scale-down event.</li>
      * </ul>
      * </p>
      * 
      * @param protectionPolicy
      *        Game session protection policy to apply to this game session only.
      *        <ul>
-     *        <li>NoProtection: The game session can be terminated during a
+     *        <li><b>NoProtection</b> – The game session can be terminated
+     *        during a scale-down event.</li>
+     *        <li><b>FullProtection</b> – If the game session is in an
+     *        <code>ACTIVE</code> status, it cannot be terminated during a
      *        scale-down event.</li>
-     *        <li>FullProtection: If the game session is in an ACTIVE status, it
-     *        cannot be terminated during a scale-down event.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -379,20 +386,22 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * <p>
      * Game session protection policy to apply to this game session only.
      * <ul>
-     * <li>NoProtection: The game session can be terminated during a scale-down
+     * <li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
-     * be terminated during a scale-down event.</li>
      * </ul>
      * </p>
      * 
      * @param protectionPolicy
      *        Game session protection policy to apply to this game session only.
      *        <ul>
-     *        <li>NoProtection: The game session can be terminated during a
+     *        <li><b>NoProtection</b> – The game session can be terminated
+     *        during a scale-down event.</li>
+     *        <li><b>FullProtection</b> – If the game session is in an
+     *        <code>ACTIVE</code> status, it cannot be terminated during a
      *        scale-down event.</li>
-     *        <li>FullProtection: If the game session is in an ACTIVE status, it
-     *        cannot be terminated during a scale-down event.</li>
      *        </ul>
      * @see ProtectionPolicy
      */
@@ -405,20 +414,22 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * <p>
      * Game session protection policy to apply to this game session only.
      * <ul>
-     * <li>NoProtection: The game session can be terminated during a scale-down
+     * <li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li>
+     * <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
-     * be terminated during a scale-down event.</li>
      * </ul>
      * </p>
      * 
      * @param protectionPolicy
      *        Game session protection policy to apply to this game session only.
      *        <ul>
-     *        <li>NoProtection: The game session can be terminated during a
+     *        <li><b>NoProtection</b> – The game session can be terminated
+     *        during a scale-down event.</li>
+     *        <li><b>FullProtection</b> – If the game session is in an
+     *        <code>ACTIVE</code> status, it cannot be terminated during a
      *        scale-down event.</li>
-     *        <li>FullProtection: If the game session is in an ACTIVE status, it
-     *        cannot be terminated during a scale-down event.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

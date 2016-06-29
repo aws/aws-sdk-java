@@ -20,35 +20,35 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class CreateTagsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
     /**
      * <p>
-     * String. The ID of the file system whose tags you want to modify. This
-     * operation modifies only the tags and not the file system.
+     * ID of the file system whose tags you want to modify (String). This
+     * operation modifies the tags only, not the file system.
      * </p>
      */
     private String fileSystemId;
     /**
      * <p>
-     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object
-     * is a key-value pair.
+     * Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is
+     * a key-value pair.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
-     * String. The ID of the file system whose tags you want to modify. This
-     * operation modifies only the tags and not the file system.
+     * ID of the file system whose tags you want to modify (String). This
+     * operation modifies the tags only, not the file system.
      * </p>
      * 
      * @param fileSystemId
-     *        String. The ID of the file system whose tags you want to modify.
-     *        This operation modifies only the tags and not the file system.
+     *        ID of the file system whose tags you want to modify (String). This
+     *        operation modifies the tags only, not the file system.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -57,12 +57,12 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * String. The ID of the file system whose tags you want to modify. This
-     * operation modifies only the tags and not the file system.
+     * ID of the file system whose tags you want to modify (String). This
+     * operation modifies the tags only, not the file system.
      * </p>
      * 
-     * @return String. The ID of the file system whose tags you want to modify.
-     *         This operation modifies only the tags and not the file system.
+     * @return ID of the file system whose tags you want to modify (String).
+     *         This operation modifies the tags only, not the file system.
      */
 
     public String getFileSystemId() {
@@ -71,13 +71,13 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * String. The ID of the file system whose tags you want to modify. This
-     * operation modifies only the tags and not the file system.
+     * ID of the file system whose tags you want to modify (String). This
+     * operation modifies the tags only, not the file system.
      * </p>
      * 
      * @param fileSystemId
-     *        String. The ID of the file system whose tags you want to modify.
-     *        This operation modifies only the tags and not the file system.
+     *        ID of the file system whose tags you want to modify (String). This
+     *        operation modifies the tags only, not the file system.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -89,12 +89,12 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object
-     * is a key-value pair.
+     * Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is
+     * a key-value pair.
      * </p>
      * 
-     * @return An array of <code>Tag</code> objects to add. Each
-     *         <code>Tag</code> object is a key-value pair.
+     * @return Array of <code>Tag</code> objects to add. Each <code>Tag</code>
+     *         object is a key-value pair.
      */
 
     public java.util.List<Tag> getTags() {
@@ -106,12 +106,12 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object
-     * is a key-value pair.
+     * Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is
+     * a key-value pair.
      * </p>
      * 
      * @param tags
-     *        An array of <code>Tag</code> objects to add. Each <code>Tag</code>
+     *        Array of <code>Tag</code> objects to add. Each <code>Tag</code>
      *        object is a key-value pair.
      */
 
@@ -126,8 +126,8 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object
-     * is a key-value pair.
+     * Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is
+     * a key-value pair.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -137,7 +137,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param tags
-     *        An array of <code>Tag</code> objects to add. Each <code>Tag</code>
+     *        Array of <code>Tag</code> objects to add. Each <code>Tag</code>
      *        object is a key-value pair.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -155,12 +155,12 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object
-     * is a key-value pair.
+     * Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is
+     * a key-value pair.
      * </p>
      * 
      * @param tags
-     *        An array of <code>Tag</code> objects to add. Each <code>Tag</code>
+     *        Array of <code>Tag</code> objects to add. Each <code>Tag</code>
      *        object is a key-value pair.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

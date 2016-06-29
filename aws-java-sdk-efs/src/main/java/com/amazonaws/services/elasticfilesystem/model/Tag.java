@@ -20,16 +20,16 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A tag is a pair of key and value. The allowed characters in keys and values
- * are letters, whitespace, and numbers, representable in UTF-8, and the
- * characters '+', '-', '=', '.', '_', ':', and '/'.
+ * A tag is a key-value pair. Allowed characters: letters, whitespace, and
+ * numbers, representable in UTF-8, and the following characters:
+ * <code> + - = . _ : /</code>
  * </p>
  */
 public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Tag key, a string. The key must not start with "aws:".
+     * Tag key (String). The key can't start with <code>aws:</code>.
      * </p>
      */
     private String key;
@@ -42,11 +42,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Tag key, a string. The key must not start with "aws:".
+     * Tag key (String). The key can't start with <code>aws:</code>.
      * </p>
      * 
      * @param key
-     *        Tag key, a string. The key must not start with "aws:".
+     *        Tag key (String). The key can't start with <code>aws:</code>.
      */
 
     public void setKey(String key) {
@@ -55,10 +55,10 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Tag key, a string. The key must not start with "aws:".
+     * Tag key (String). The key can't start with <code>aws:</code>.
      * </p>
      * 
-     * @return Tag key, a string. The key must not start with "aws:".
+     * @return Tag key (String). The key can't start with <code>aws:</code>.
      */
 
     public String getKey() {
@@ -67,11 +67,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Tag key, a string. The key must not start with "aws:".
+     * Tag key (String). The key can't start with <code>aws:</code>.
      * </p>
      * 
      * @param key
-     *        Tag key, a string. The key must not start with "aws:".
+     *        Tag key (String). The key can't start with <code>aws:</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

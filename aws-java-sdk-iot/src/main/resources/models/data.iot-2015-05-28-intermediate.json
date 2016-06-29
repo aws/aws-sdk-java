@@ -1,7 +1,6 @@
 {
   "metadata" : {
     "apiVersion" : "2015-05-28",
-    "exceptionUnmarshallerImpl" : null,
     "protocol" : "rest-json",
     "checksumFormat" : null,
     "documentation" : "<fullname>AWS IoT</fullname> <p>AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.</p>",
@@ -16,17 +15,17 @@
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS IoT Data Plane",
     "hasApiWithStreamInput" : false,
-    "jsonContentVersion" : "application/x-amz-json-1.1",
+    "contentType" : "",
     "jsonVersion" : "1.1",
     "endpointPrefix" : "data.iot",
     "signingName" : "iotdata",
-    "xmlProtocol" : false,
-    "jsonProtocol" : true,
     "serviceName" : "AWS IoT Data Plane",
-    "cborProtocol" : false,
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
+    "jsonProtocol" : true,
+    "xmlProtocol" : false,
+    "cborProtocol" : false,
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "DeleteThingShadow" : {
@@ -1933,5 +1932,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "exceptionUnmarshallerImpl" : null
 }

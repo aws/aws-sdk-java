@@ -20,44 +20,44 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the file system for which to create the mount target.
+     * ID of the file system for which to create the mount target.
      * </p>
      */
     private String fileSystemId;
     /**
      * <p>
-     * The ID of the subnet to add the mount target in.
+     * ID of the subnet to add the mount target in.
      * </p>
      */
     private String subnetId;
     /**
      * <p>
-     * A valid IPv4 address within the address range of the specified subnet.
+     * Valid IPv4 address within the address range of the specified subnet.
      * </p>
      */
     private String ipAddress;
     /**
      * <p>
-     * Up to 5 VPC security group IDs, of the form "sg-xxxxxxxx". These must be
-     * for the same VPC as subnet specified.
+     * Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.
+     * These must be for the same VPC as subnet specified.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
 
     /**
      * <p>
-     * The ID of the file system for which to create the mount target.
+     * ID of the file system for which to create the mount target.
      * </p>
      * 
      * @param fileSystemId
-     *        The ID of the file system for which to create the mount target.
+     *        ID of the file system for which to create the mount target.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -66,10 +66,10 @@ public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the file system for which to create the mount target.
+     * ID of the file system for which to create the mount target.
      * </p>
      * 
-     * @return The ID of the file system for which to create the mount target.
+     * @return ID of the file system for which to create the mount target.
      */
 
     public String getFileSystemId() {
@@ -78,11 +78,11 @@ public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the file system for which to create the mount target.
+     * ID of the file system for which to create the mount target.
      * </p>
      * 
      * @param fileSystemId
-     *        The ID of the file system for which to create the mount target.
+     *        ID of the file system for which to create the mount target.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -94,11 +94,11 @@ public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the subnet to add the mount target in.
+     * ID of the subnet to add the mount target in.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet to add the mount target in.
+     *        ID of the subnet to add the mount target in.
      */
 
     public void setSubnetId(String subnetId) {
@@ -107,10 +107,10 @@ public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the subnet to add the mount target in.
+     * ID of the subnet to add the mount target in.
      * </p>
      * 
-     * @return The ID of the subnet to add the mount target in.
+     * @return ID of the subnet to add the mount target in.
      */
 
     public String getSubnetId() {
@@ -119,11 +119,11 @@ public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the subnet to add the mount target in.
+     * ID of the subnet to add the mount target in.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet to add the mount target in.
+     *        ID of the subnet to add the mount target in.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -135,11 +135,11 @@ public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A valid IPv4 address within the address range of the specified subnet.
+     * Valid IPv4 address within the address range of the specified subnet.
      * </p>
      * 
      * @param ipAddress
-     *        A valid IPv4 address within the address range of the specified
+     *        Valid IPv4 address within the address range of the specified
      *        subnet.
      */
 
@@ -149,10 +149,10 @@ public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A valid IPv4 address within the address range of the specified subnet.
+     * Valid IPv4 address within the address range of the specified subnet.
      * </p>
      * 
-     * @return A valid IPv4 address within the address range of the specified
+     * @return Valid IPv4 address within the address range of the specified
      *         subnet.
      */
 
@@ -162,11 +162,11 @@ public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A valid IPv4 address within the address range of the specified subnet.
+     * Valid IPv4 address within the address range of the specified subnet.
      * </p>
      * 
      * @param ipAddress
-     *        A valid IPv4 address within the address range of the specified
+     *        Valid IPv4 address within the address range of the specified
      *        subnet.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -179,12 +179,13 @@ public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Up to 5 VPC security group IDs, of the form "sg-xxxxxxxx". These must be
-     * for the same VPC as subnet specified.
+     * Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.
+     * These must be for the same VPC as subnet specified.
      * </p>
      * 
-     * @return Up to 5 VPC security group IDs, of the form "sg-xxxxxxxx". These
-     *         must be for the same VPC as subnet specified.
+     * @return Up to five VPC security group IDs, of the form
+     *         <code>sg-xxxxxxxx</code>. These must be for the same VPC as
+     *         subnet specified.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -196,13 +197,14 @@ public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Up to 5 VPC security group IDs, of the form "sg-xxxxxxxx". These must be
-     * for the same VPC as subnet specified.
+     * Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.
+     * These must be for the same VPC as subnet specified.
      * </p>
      * 
      * @param securityGroups
-     *        Up to 5 VPC security group IDs, of the form "sg-xxxxxxxx". These
-     *        must be for the same VPC as subnet specified.
+     *        Up to five VPC security group IDs, of the form
+     *        <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet
+     *        specified.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -217,8 +219,8 @@ public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Up to 5 VPC security group IDs, of the form "sg-xxxxxxxx". These must be
-     * for the same VPC as subnet specified.
+     * Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.
+     * These must be for the same VPC as subnet specified.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -228,8 +230,9 @@ public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param securityGroups
-     *        Up to 5 VPC security group IDs, of the form "sg-xxxxxxxx". These
-     *        must be for the same VPC as subnet specified.
+     *        Up to five VPC security group IDs, of the form
+     *        <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet
+     *        specified.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -247,13 +250,14 @@ public class CreateMountTargetRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Up to 5 VPC security group IDs, of the form "sg-xxxxxxxx". These must be
-     * for the same VPC as subnet specified.
+     * Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.
+     * These must be for the same VPC as subnet specified.
      * </p>
      * 
      * @param securityGroups
-     *        Up to 5 VPC security group IDs, of the form "sg-xxxxxxxx". These
-     *        must be for the same VPC as subnet specified.
+     *        Up to five VPC security group IDs, of the form
+     *        <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet
+     *        specified.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -280,7 +280,8 @@ public class CodeEmitter implements AutoCloseable {
 
             Map<String, Object> dataModel = ImmutableMapParameter.of(
                     "shape", shapeModel,
-                    "metadata", metadata);
+                    "metadata", metadata,
+                    "exceptionUnmarshallerImpl", model.getExceptionUnmarshallerImpl());
 
             switch (shapeType) {
             case Response:
@@ -329,9 +330,6 @@ public class CodeEmitter implements AutoCloseable {
         Protocol templateProtocol = protocol;
         if (Protocol.CBOR.equals(protocol)) {
             templateProtocol = Protocol.JSON;
-        }
-        if (Protocol.REST_CBOR.equals(protocol)) {
-            templateProtocol = Protocol.REST_JSON;
         }
         CodeGenTemplatesConfig protocolDefaultConfig = CodeGenTemplatesConfig.load(templateProtocol);
 

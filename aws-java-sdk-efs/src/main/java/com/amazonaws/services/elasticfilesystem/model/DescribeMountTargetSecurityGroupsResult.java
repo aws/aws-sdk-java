@@ -26,17 +26,17 @@ public class DescribeMountTargetSecurityGroupsResult implements Serializable,
 
     /**
      * <p>
-     * An array of security groups.
+     * Array of security groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
 
     /**
      * <p>
-     * An array of security groups.
+     * Array of security groups.
      * </p>
      * 
-     * @return An array of security groups.
+     * @return Array of security groups.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -48,11 +48,11 @@ public class DescribeMountTargetSecurityGroupsResult implements Serializable,
 
     /**
      * <p>
-     * An array of security groups.
+     * Array of security groups.
      * </p>
      * 
      * @param securityGroups
-     *        An array of security groups.
+     *        Array of security groups.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -67,7 +67,7 @@ public class DescribeMountTargetSecurityGroupsResult implements Serializable,
 
     /**
      * <p>
-     * An array of security groups.
+     * Array of security groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -77,7 +77,7 @@ public class DescribeMountTargetSecurityGroupsResult implements Serializable,
      * </p>
      * 
      * @param securityGroups
-     *        An array of security groups.
+     *        Array of security groups.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -96,11 +96,11 @@ public class DescribeMountTargetSecurityGroupsResult implements Serializable,
 
     /**
      * <p>
-     * An array of security groups.
+     * Array of security groups.
      * </p>
      * 
      * @param securityGroups
-     *        An array of security groups.
+     *        Array of security groups.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

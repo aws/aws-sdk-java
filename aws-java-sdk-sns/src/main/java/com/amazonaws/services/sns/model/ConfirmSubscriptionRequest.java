@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Input for ConfirmSubscription action.
+ * </p>
  */
 public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

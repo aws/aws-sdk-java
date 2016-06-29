@@ -21,8 +21,8 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * The requested operation would cause a conflict with the current state of a
- * resource associated with the request and/or the game instance. Such requests
- * should not be retried by clients without resolving the conflict.
+ * resource associated with the request and/or the game instance. Clients should
+ * not retry such requests without resolving the conflict.
  * </p>
  */
 public class InvalidGameSessionStatusException extends AmazonServiceException {

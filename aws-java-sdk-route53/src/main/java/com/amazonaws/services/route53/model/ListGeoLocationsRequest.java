@@ -40,7 +40,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      * <p>
      * Constraint: Specifying <code>ContinentCode</code> with either
      * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <code>InvalidInput</code> error.
      * </p>
      */
     private String startContinentCode;
@@ -62,7 +62,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
      * </p>
      */
     private String startSubdivisionCode;
@@ -86,7 +86,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      * <p>
      * Constraint: Specifying <code>ContinentCode</code> with either
      * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <code>InvalidInput</code> error.
      * </p>
      * 
      * @param startContinentCode
@@ -101,7 +101,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Constraint: Specifying <code>ContinentCode</code> with either
      *        <code>CountryCode</code> or <code>SubdivisionCode</code> returns
-     *        an <a>InvalidInput</a> error.
+     *        an <code>InvalidInput</code> error.
      */
 
     public void setStartContinentCode(String startContinentCode) {
@@ -121,7 +121,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      * <p>
      * Constraint: Specifying <code>ContinentCode</code> with either
      * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <code>InvalidInput</code> error.
      * </p>
      * 
      * @return The first continent code in the lexicographic ordering of geo
@@ -136,7 +136,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Constraint: Specifying <code>ContinentCode</code> with either
      *         <code>CountryCode</code> or <code>SubdivisionCode</code> returns
-     *         an <a>InvalidInput</a> error.
+     *         an <code>InvalidInput</code> error.
      */
 
     public String getStartContinentCode() {
@@ -156,7 +156,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      * <p>
      * Constraint: Specifying <code>ContinentCode</code> with either
      * <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.
+     * <code>InvalidInput</code> error.
      * </p>
      * 
      * @param startContinentCode
@@ -171,7 +171,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Constraint: Specifying <code>ContinentCode</code> with either
      *        <code>CountryCode</code> or <code>SubdivisionCode</code> returns
-     *        an <a>InvalidInput</a> error.
+     *        an <code>InvalidInput</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -263,7 +263,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @param startSubdivisionCode
@@ -272,7 +272,8 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      *        to list.</p>
      *        <p>
      *        Constraint: Specifying <code>SubdivisionCode</code> without
-     *        <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     *        <code>CountryCode</code> returns an <code>InvalidInput</code>
+     *        error.
      */
 
     public void setStartSubdivisionCode(String startSubdivisionCode) {
@@ -286,7 +287,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @return The first subdivision code in the lexicographic ordering of geo
@@ -294,7 +295,8 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      *         to list.</p>
      *         <p>
      *         Constraint: Specifying <code>SubdivisionCode</code> without
-     *         <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     *         <code>CountryCode</code> returns an <code>InvalidInput</code>
+     *         error.
      */
 
     public String getStartSubdivisionCode() {
@@ -308,7 +310,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.
      * </p>
      * 
      * @param startSubdivisionCode
@@ -317,7 +319,8 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      *        to list.</p>
      *        <p>
      *        Constraint: Specifying <code>SubdivisionCode</code> without
-     *        <code>CountryCode</code> returns an <a>InvalidInput</a> error.
+     *        <code>CountryCode</code> returns an <code>InvalidInput</code>
+     *        error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

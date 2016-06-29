@@ -265,10 +265,17 @@ public class Instance implements Serializable, Cloneable {
     private Boolean ebsOptimized;
     /**
      * <p>
-     * Specifies whether enhanced networking is enabled.
+     * Specifies whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
      * </p>
      */
     private String sriovNetSupport;
+    /**
+     * <p>
+     * Specifies whether enhanced networking with ENA is enabled.
+     * </p>
+     */
+    private Boolean enaSupport;
 
     /**
      * <p>
@@ -2384,11 +2391,13 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether enhanced networking is enabled.
+     * Specifies whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
      * </p>
      * 
      * @param sriovNetSupport
-     *        Specifies whether enhanced networking is enabled.
+     *        Specifies whether enhanced networking with the Intel 82599 Virtual
+     *        Function interface is enabled.
      */
 
     public void setSriovNetSupport(String sriovNetSupport) {
@@ -2397,10 +2406,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether enhanced networking is enabled.
+     * Specifies whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
      * </p>
      * 
-     * @return Specifies whether enhanced networking is enabled.
+     * @return Specifies whether enhanced networking with the Intel 82599
+     *         Virtual Function interface is enabled.
      */
 
     public String getSriovNetSupport() {
@@ -2409,11 +2420,13 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether enhanced networking is enabled.
+     * Specifies whether enhanced networking with the Intel 82599 Virtual
+     * Function interface is enabled.
      * </p>
      * 
      * @param sriovNetSupport
-     *        Specifies whether enhanced networking is enabled.
+     *        Specifies whether enhanced networking with the Intel 82599 Virtual
+     *        Function interface is enabled.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -2421,6 +2434,59 @@ public class Instance implements Serializable, Cloneable {
     public Instance withSriovNetSupport(String sriovNetSupport) {
         setSriovNetSupport(sriovNetSupport);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether enhanced networking with ENA is enabled.
+     * </p>
+     * 
+     * @param enaSupport
+     *        Specifies whether enhanced networking with ENA is enabled.
+     */
+
+    public void setEnaSupport(Boolean enaSupport) {
+        this.enaSupport = enaSupport;
+    }
+
+    /**
+     * <p>
+     * Specifies whether enhanced networking with ENA is enabled.
+     * </p>
+     * 
+     * @return Specifies whether enhanced networking with ENA is enabled.
+     */
+
+    public Boolean getEnaSupport() {
+        return this.enaSupport;
+    }
+
+    /**
+     * <p>
+     * Specifies whether enhanced networking with ENA is enabled.
+     * </p>
+     * 
+     * @param enaSupport
+     *        Specifies whether enhanced networking with ENA is enabled.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Instance withEnaSupport(Boolean enaSupport) {
+        setEnaSupport(enaSupport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether enhanced networking with ENA is enabled.
+     * </p>
+     * 
+     * @return Specifies whether enhanced networking with ENA is enabled.
+     */
+
+    public Boolean isEnaSupport() {
+        return this.enaSupport;
     }
 
     /**
@@ -2510,7 +2576,9 @@ public class Instance implements Serializable, Cloneable {
         if (getEbsOptimized() != null)
             sb.append("EbsOptimized: " + getEbsOptimized() + ",");
         if (getSriovNetSupport() != null)
-            sb.append("SriovNetSupport: " + getSriovNetSupport());
+            sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
+        if (getEnaSupport() != null)
+            sb.append("EnaSupport: " + getEnaSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -2734,6 +2802,11 @@ public class Instance implements Serializable, Cloneable {
         if (other.getSriovNetSupport() != null
                 && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
             return false;
+        if (other.getEnaSupport() == null ^ this.getEnaSupport() == null)
+            return false;
+        if (other.getEnaSupport() != null
+                && other.getEnaSupport().equals(this.getEnaSupport()) == false)
+            return false;
         return true;
     }
 
@@ -2860,6 +2933,8 @@ public class Instance implements Serializable, Cloneable {
                 * hashCode
                 + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
         return hashCode;
     }
 

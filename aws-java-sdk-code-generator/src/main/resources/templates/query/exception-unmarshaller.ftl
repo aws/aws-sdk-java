@@ -6,11 +6,11 @@ import org.w3c.dom.Node;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.util.XpathUtils;
-import com.amazonaws.transform.${metadata.exceptionUnmarshallerImpl};
+import com.amazonaws.transform.${exceptionUnmarshallerImpl};
 
 import ${metadata.packageName}.model.${shape.shapeName};
 
-public class ${shape.shapeName}Unmarshaller extends ${metadata.exceptionUnmarshallerImpl} {
+public class ${shape.shapeName}Unmarshaller extends ${exceptionUnmarshallerImpl} {
 
     public ${shape.shapeName}Unmarshaller() {
         super(${shape.shapeName}.class);

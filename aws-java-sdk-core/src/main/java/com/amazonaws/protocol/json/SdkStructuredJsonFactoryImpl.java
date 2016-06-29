@@ -33,21 +33,18 @@ import java.util.Map;
  */
 public abstract class SdkStructuredJsonFactoryImpl implements SdkStructuredJsonFactory {
 
-    private final String contentTypePrefix;
     private final JsonFactory jsonFactory;
     private final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> unmarshallers;
 
-    public SdkStructuredJsonFactoryImpl(String contentTypePrefix, JsonFactory jsonFactory,
+    public SdkStructuredJsonFactoryImpl(JsonFactory jsonFactory,
                                         Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> unmarshallers) {
-        this.contentTypePrefix = contentTypePrefix;
         this.jsonFactory = jsonFactory;
         this.unmarshallers = unmarshallers;
     }
 
     @Override
-    public StructuredJsonGenerator createWriter(final String protocolVersion) {
-
-        return createWriter(jsonFactory, contentTypePrefix + protocolVersion);
+    public StructuredJsonGenerator createWriter(String contentType) {
+        return createWriter(jsonFactory, contentType);
     }
 
     protected abstract StructuredJsonGenerator createWriter(JsonFactory jsonFactory,
@@ -73,4 +70,5 @@ public abstract class SdkStructuredJsonFactoryImpl implements SdkStructuredJsonF
     private JsonErrorCodeParser getErrorCodeParser(String customErrorCodeFieldName) {
         return new JsonErrorCodeParser(customErrorCodeFieldName);
     }
+
 }

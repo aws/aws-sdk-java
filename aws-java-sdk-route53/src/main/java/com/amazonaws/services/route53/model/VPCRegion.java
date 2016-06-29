@@ -28,6 +28,7 @@ public enum VPCRegion {
     EuCentral1("eu-central-1"),
     ApSoutheast1("ap-southeast-1"),
     ApSoutheast2("ap-southeast-2"),
+    ApSouth1("ap-south-1"),
     ApNortheast1("ap-northeast-1"),
     ApNortheast2("ap-northeast-2"),
     SaEast1("sa-east-1"),

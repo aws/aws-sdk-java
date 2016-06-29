@@ -58,6 +58,14 @@ public class FleetUtilizationJsonUnmarshaller implements
                     fleetUtilization.setFleetId(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("ActiveServerProcessCount",
+                        targetDepth)) {
+                    context.nextToken();
+                    fleetUtilization
+                            .setActiveServerProcessCount(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
+                }
                 if (context.testExpression("ActiveGameSessionCount",
                         targetDepth)) {
                     context.nextToken();
