@@ -19,13 +19,13 @@
     "jsonVersion" : null,
     "endpointPrefix" : "sdb",
     "signingName" : "sdb",
-    "serviceName" : "Amazon SimpleDB",
-    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
     "jsonProtocol" : false,
     "xmlProtocol" : true,
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
-    "unmarshallerClassSuffix" : "StaxUnmarshaller"
+    "unmarshallerClassSuffix" : "StaxUnmarshaller",
+    "serviceName" : "Amazon SimpleDB",
+    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "BatchDeleteAttributes" : {
@@ -37,8 +37,8 @@
         "variableType" : "BatchDeleteAttributesRequest",
         "variableDeclarationType" : "BatchDeleteAttributesRequest",
         "documentation" : "",
-        "simpleType" : "BatchDeleteAttributesRequest",
-        "variableSetterType" : "BatchDeleteAttributesRequest"
+        "variableSetterType" : "BatchDeleteAttributesRequest",
+        "simpleType" : "BatchDeleteAttributesRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -48,12 +48,12 @@
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
       "methodName" : "batchDeleteAttributes",
+      "authenticated" : true,
       "syncReturnType" : "BatchDeleteAttributesResult",
       "asyncReturnType" : "BatchDeleteAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchDeleteAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchDeleteAttributesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchDeleteAttributesRequest, BatchDeleteAttributesResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchDeleteAttributesRequest, BatchDeleteAttributesResult>"
     },
     "BatchPutAttributes" : {
       "documentation" : "<p> The <code>BatchPutAttributes</code> operation creates or replaces attributes within one or more items. By using this operation, the client can perform multiple <a>PutAttribute</a> operation with a single call. This helps yield savings in round trips and latencies, enabling Amazon SimpleDB to optimize requests and generally produce better throughput. </p> <p> The client may specify the item name with the <code>Item.X.ItemName</code> parameter. The client may specify new attributes using a combination of the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> parameters. The client may specify the first attribute for the first item using the parameters <code>Item.0.Attribute.0.Name</code> and <code>Item.0.Attribute.0.Value</code>, and for the second attribute for the first item by the parameters <code>Item.0.Attribute.1.Name</code> and <code>Item.0.Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified within an item by their name/value combination. For example, a single item can have the attributes <code>{ \"first_name\", \"first_value\" }</code> and <code>{ \"first_name\", \"second_value\" }</code>. However, it cannot have two attribute instances where both the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code> are the same. </p> <p> Optionally, the requester can supply the <code>Replace</code> parameter for each individual value. Setting this value to <code>true</code> will cause the new attribute values to replace the existing attribute values. For example, if an item <code>I</code> has the attributes <code>{ 'a', '1' }, { 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requester does a BatchPutAttributes of <code>{'I', 'b', '4' }</code> with the Replace parameter set to true, the final attributes of the item will be <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, replacing the previous values of the 'b' attribute with the new value. </p> <important> This operation is vulnerable to exceeding the maximum URL size when making a REST request using the HTTP GET method. This operation does not support conditions using <code>Expected.X.Name</code>, <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>. </important> <p> You can execute multiple <code>BatchPutAttributes</code> operations and other operations in parallel. However, large numbers of concurrent <code>BatchPutAttributes</code> calls can result in Service Unavailable (503) responses. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 attribute name-value pairs per item</li> <li>1 MB request size</li> <li>1 billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> <li>25 item limit per <code>BatchPutAttributes</code> operation</li> </ul> </p>",
@@ -64,8 +64,8 @@
         "variableType" : "BatchPutAttributesRequest",
         "variableDeclarationType" : "BatchPutAttributesRequest",
         "documentation" : "",
-        "simpleType" : "BatchPutAttributesRequest",
-        "variableSetterType" : "BatchPutAttributesRequest"
+        "variableSetterType" : "BatchPutAttributesRequest",
+        "simpleType" : "BatchPutAttributesRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -102,12 +102,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "batchPutAttributes",
+      "authenticated" : true,
       "syncReturnType" : "BatchPutAttributesResult",
       "asyncReturnType" : "BatchPutAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchPutAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchPutAttributesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchPutAttributesRequest, BatchPutAttributesResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchPutAttributesRequest, BatchPutAttributesResult>"
     },
     "CreateDomain" : {
       "documentation" : "<p> The <code>CreateDomain</code> operation creates a new domain. The domain name should be unique among the domains associated with the Access Key ID provided in the request. The <code>CreateDomain</code> operation may take 10 or more seconds to complete. </p> <p> The client can create up to 100 domains per account. </p> <p> If the client requires additional domains, go to <a href=\"http://aws.amazon.com/contact-us/simpledb-limit-request/\"> http://aws.amazon.com/contact-us/simpledb-limit-request/</a>. </p>",
@@ -118,8 +118,8 @@
         "variableType" : "CreateDomainRequest",
         "variableDeclarationType" : "CreateDomainRequest",
         "documentation" : "",
-        "simpleType" : "CreateDomainRequest",
-        "variableSetterType" : "CreateDomainRequest"
+        "variableSetterType" : "CreateDomainRequest",
+        "simpleType" : "CreateDomainRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -138,12 +138,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "createDomain",
+      "authenticated" : true,
       "syncReturnType" : "CreateDomainResult",
       "asyncReturnType" : "CreateDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDomainResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDomainResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDomainRequest, CreateDomainResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDomainRequest, CreateDomainResult>"
     },
     "DeleteAttributes" : {
       "documentation" : "<p> Deletes one or more attributes associated with an item. If all attributes of the item are deleted, the item is deleted. </p> <p> <code>DeleteAttributes</code> is an idempotent operation; running it multiple times on the same item or attribute does not result in an error response. </p> <p> Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency update model, performing a <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <code>DeleteAttributes</code> or <a>PutAttributes</a> operation (write) might not return updated item data. </p>",
@@ -154,8 +154,8 @@
         "variableType" : "DeleteAttributesRequest",
         "variableDeclarationType" : "DeleteAttributesRequest",
         "documentation" : "",
-        "simpleType" : "DeleteAttributesRequest",
-        "variableSetterType" : "DeleteAttributesRequest"
+        "variableSetterType" : "DeleteAttributesRequest",
+        "simpleType" : "DeleteAttributesRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -177,12 +177,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteAttributes",
+      "authenticated" : true,
       "syncReturnType" : "DeleteAttributesResult",
       "asyncReturnType" : "DeleteAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteAttributesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAttributesRequest, DeleteAttributesResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAttributesRequest, DeleteAttributesResult>"
     },
     "DeleteDomain" : {
       "documentation" : "<p> The <code>DeleteDomain</code> operation deletes a domain. Any items (and their attributes) in the domain are deleted as well. The <code>DeleteDomain</code> operation might take 10 or more seconds to complete. </p>",
@@ -193,8 +193,8 @@
         "variableType" : "DeleteDomainRequest",
         "variableDeclarationType" : "DeleteDomainRequest",
         "documentation" : "",
-        "simpleType" : "DeleteDomainRequest",
-        "variableSetterType" : "DeleteDomainRequest"
+        "variableSetterType" : "DeleteDomainRequest",
+        "simpleType" : "DeleteDomainRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -207,12 +207,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "deleteDomain",
+      "authenticated" : true,
       "syncReturnType" : "DeleteDomainResult",
       "asyncReturnType" : "DeleteDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDomainResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDomainResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDomainRequest, DeleteDomainResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDomainRequest, DeleteDomainResult>"
     },
     "DomainMetadata" : {
       "documentation" : "<p> Returns information about the domain, including when the domain was created, the number of items and attributes in the domain, and the size of the attribute names and values. </p>",
@@ -223,8 +223,8 @@
         "variableType" : "DomainMetadataRequest",
         "variableDeclarationType" : "DomainMetadataRequest",
         "documentation" : "",
-        "simpleType" : "DomainMetadataRequest",
-        "variableSetterType" : "DomainMetadataRequest"
+        "variableSetterType" : "DomainMetadataRequest",
+        "simpleType" : "DomainMetadataRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -240,12 +240,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "domainMetadata",
+      "authenticated" : true,
       "syncReturnType" : "DomainMetadataResult",
       "asyncReturnType" : "DomainMetadataResult",
       "asyncFutureType" : "java.util.concurrent.Future<DomainMetadataResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DomainMetadataResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DomainMetadataRequest, DomainMetadataResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DomainMetadataRequest, DomainMetadataResult>"
     },
     "GetAttributes" : {
       "documentation" : "<p> Returns all of the attributes associated with the specified item. Optionally, the attributes returned can be limited to one or more attributes by specifying an attribute name parameter. </p> <p> If the item does not exist on the replica that was accessed for this operation, an empty set is returned. The system does not return an error as it cannot guarantee the item does not exist on other replicas. </p>",
@@ -256,8 +256,8 @@
         "variableType" : "GetAttributesRequest",
         "variableDeclarationType" : "GetAttributesRequest",
         "documentation" : "",
-        "simpleType" : "GetAttributesRequest",
-        "variableSetterType" : "GetAttributesRequest"
+        "variableSetterType" : "GetAttributesRequest",
+        "simpleType" : "GetAttributesRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -276,12 +276,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "getAttributes",
+      "authenticated" : true,
       "syncReturnType" : "GetAttributesResult",
       "asyncReturnType" : "GetAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetAttributesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetAttributesRequest, GetAttributesResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetAttributesRequest, GetAttributesResult>"
     },
     "ListDomains" : {
       "documentation" : "<p> The <code>ListDomains</code> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by <a href=\"#MaxNumberOfDomains\">MaxNumberOfDomains</a>. A <a href=\"#NextToken\">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code> domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code> provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain names with each successive operation call. </p>",
@@ -292,8 +292,8 @@
         "variableType" : "ListDomainsRequest",
         "variableDeclarationType" : "ListDomainsRequest",
         "documentation" : "",
-        "simpleType" : "ListDomainsRequest",
-        "variableSetterType" : "ListDomainsRequest"
+        "variableSetterType" : "ListDomainsRequest",
+        "simpleType" : "ListDomainsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -309,12 +309,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "listDomains",
+      "authenticated" : true,
       "syncReturnType" : "ListDomainsResult",
       "asyncReturnType" : "ListDomainsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDomainsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDomainsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult>"
     },
     "PutAttributes" : {
       "documentation" : "<p> The PutAttributes operation creates or replaces attributes in an item. The client may specify new attributes using a combination of the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> parameters. The client specifies the first attribute by the parameters <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code>, the second attribute by the parameters <code>Attribute.1.Name</code> and <code>Attribute.1.Value</code>, and so on. </p> <p> Attributes are uniquely identified in an item by their name/value combination. For example, a single item can have the attributes <code>{ \"first_name\", \"first_value\" }</code> and <code>{ \"first_name\", second_value\" }</code>. However, it cannot have two attribute instances where both the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code> are the same. </p> <p> Optionally, the requestor can supply the <code>Replace</code> parameter for each individual attribute. Setting this value to <code>true</code> causes the new attribute value to replace the existing attribute value(s). For example, if an item has the attributes <code>{ 'a', '1' }</code>, <code>{ 'b', '2'}</code> and <code>{ 'b', '3' }</code> and the requestor calls <code>PutAttributes</code> using the attributes <code>{ 'b', '4' }</code> with the <code>Replace</code> parameter set to true, the final attributes of the item are changed to <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>, which replaces the previous values of the 'b' attribute with the new value. </p> <p> You cannot specify an empty string as an attribute name. </p> <p> Because Amazon SimpleDB makes multiple copies of client data and uses an eventual consistency update model, an immediate <a>GetAttributes</a> or <a>Select</a> operation (read) immediately after a <a>PutAttributes</a> or <a>DeleteAttributes</a> operation (write) might not return the updated data. </p> <p> The following limitations are enforced for this operation: <ul> <li>256 total attribute name-value pairs per item</li> <li>One billion attributes per domain</li> <li>10 GB of total user data storage per domain</li> </ul> </p>",
@@ -325,8 +325,8 @@
         "variableType" : "PutAttributesRequest",
         "variableDeclarationType" : "PutAttributesRequest",
         "documentation" : "",
-        "simpleType" : "PutAttributesRequest",
-        "variableSetterType" : "PutAttributesRequest"
+        "variableSetterType" : "PutAttributesRequest",
+        "simpleType" : "PutAttributesRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -357,12 +357,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "putAttributes",
+      "authenticated" : true,
       "syncReturnType" : "PutAttributesResult",
       "asyncReturnType" : "PutAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutAttributesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutAttributesRequest, PutAttributesResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutAttributesRequest, PutAttributesResult>"
     },
     "Select" : {
       "documentation" : "<p> The <code>Select</code> operation returns a set of attributes for <code>ItemNames</code> that match the select expression. <code>Select</code> is similar to the standard SQL SELECT statement. </p> <p> The total size of the response cannot exceed 1 MB in total size. Amazon SimpleDB automatically adjusts the number of items returned per page to enforce this limit. For example, if the client asks to retrieve 2500 items, but each individual item is 10 kB in size, the system returns 100 items and an appropriate <code>NextToken</code> so the client can access the next page of results. </p> <p> For information on how to construct select expressions, see Using Select to Create Amazon SimpleDB Queries in the Developer Guide. </p>",
@@ -373,8 +373,8 @@
         "variableType" : "SelectRequest",
         "variableDeclarationType" : "SelectRequest",
         "documentation" : "",
-        "simpleType" : "SelectRequest",
-        "variableSetterType" : "SelectRequest"
+        "variableSetterType" : "SelectRequest",
+        "simpleType" : "SelectRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -411,12 +411,12 @@
       } ],
       "hasBlobMemberAsPayload" : false,
       "methodName" : "select",
+      "authenticated" : true,
       "syncReturnType" : "SelectResult",
       "asyncReturnType" : "SelectResult",
       "asyncFutureType" : "java.util.concurrent.Future<SelectResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SelectResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SelectRequest, SelectResult>",
-      "authenticated" : true
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SelectRequest, SelectResult>"
     }
   },
   "shapes" : {
@@ -441,16 +441,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -490,8 +490,8 @@
         "variableType" : "DuplicateItemNameException",
         "variableDeclarationType" : "DuplicateItemNameException",
         "documentation" : null,
-        "simpleType" : "DuplicateItemNameException",
-        "variableSetterType" : "DuplicateItemNameException"
+        "variableSetterType" : "DuplicateItemNameException",
+        "simpleType" : "DuplicateItemNameException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -513,16 +513,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -579,16 +579,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -631,16 +631,16 @@
           "variableType" : "java.util.List<Attribute>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "documentation" : "",
-          "simpleType" : "List<Attribute>",
-          "variableSetterType" : "java.util.Collection<Attribute>"
+          "variableSetterType" : "java.util.Collection<Attribute>",
+          "simpleType" : "List<Attribute>"
         },
         "setterModel" : {
           "variableName" : "attributes",
           "variableType" : "java.util.List<Attribute>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "documentation" : "",
-          "simpleType" : "List<Attribute>",
-          "variableSetterType" : "java.util.Collection<Attribute>"
+          "variableSetterType" : "java.util.Collection<Attribute>",
+          "simpleType" : "List<Attribute>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Attribute>",
@@ -676,16 +676,16 @@
               "variableType" : "Attribute",
               "variableDeclarationType" : "Attribute",
               "documentation" : "",
-              "simpleType" : "Attribute",
-              "variableSetterType" : "Attribute"
+              "variableSetterType" : "Attribute",
+              "simpleType" : "Attribute"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Attribute",
               "variableDeclarationType" : "Attribute",
               "documentation" : "",
-              "simpleType" : "Attribute",
-              "variableSetterType" : "Attribute"
+              "variableSetterType" : "Attribute",
+              "simpleType" : "Attribute"
             },
             "getterModel" : {
               "returnType" : "Attribute",
@@ -724,9 +724,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
-          "simpleType" : "Attribute",
           "templateType" : "java.util.List<Attribute>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
+          "simpleType" : "Attribute"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -746,8 +746,8 @@
         "variableType" : "DeletableItem",
         "variableDeclarationType" : "DeletableItem",
         "documentation" : null,
-        "simpleType" : "DeletableItem",
-        "variableSetterType" : "DeletableItem"
+        "variableSetterType" : "DeletableItem",
+        "simpleType" : "DeletableItem"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -772,16 +772,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -825,16 +825,16 @@
             "variableType" : "java.util.List<Attribute>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "documentation" : "",
-            "simpleType" : "List<Attribute>",
-            "variableSetterType" : "java.util.Collection<Attribute>"
+            "variableSetterType" : "java.util.Collection<Attribute>",
+            "simpleType" : "List<Attribute>"
           },
           "setterModel" : {
             "variableName" : "attributes",
             "variableType" : "java.util.List<Attribute>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "documentation" : "",
-            "simpleType" : "List<Attribute>",
-            "variableSetterType" : "java.util.Collection<Attribute>"
+            "variableSetterType" : "java.util.Collection<Attribute>",
+            "simpleType" : "List<Attribute>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Attribute>",
@@ -870,16 +870,16 @@
                 "variableType" : "Attribute",
                 "variableDeclarationType" : "Attribute",
                 "documentation" : "",
-                "simpleType" : "Attribute",
-                "variableSetterType" : "Attribute"
+                "variableSetterType" : "Attribute",
+                "simpleType" : "Attribute"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Attribute",
                 "variableDeclarationType" : "Attribute",
                 "documentation" : "",
-                "simpleType" : "Attribute",
-                "variableSetterType" : "Attribute"
+                "variableSetterType" : "Attribute",
+                "simpleType" : "Attribute"
               },
               "getterModel" : {
                 "returnType" : "Attribute",
@@ -918,9 +918,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
-            "simpleType" : "Attribute",
             "templateType" : "java.util.List<Attribute>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
+            "simpleType" : "Attribute"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -957,16 +957,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "maxNumberOfDomains",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -1009,16 +1009,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "A string informing Amazon SimpleDB where to start the next list of domain names.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1058,8 +1058,8 @@
         "variableType" : "ListDomainsRequest",
         "variableDeclarationType" : "ListDomainsRequest",
         "documentation" : null,
-        "simpleType" : "ListDomainsRequest",
-        "variableSetterType" : "ListDomainsRequest"
+        "variableSetterType" : "ListDomainsRequest",
+        "simpleType" : "ListDomainsRequest"
       },
       "marshaller" : {
         "action" : "ListDomains",
@@ -1088,16 +1088,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "maxNumberOfDomains",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -1141,16 +1141,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "A string informing Amazon SimpleDB where to start the next list of domain names.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1207,16 +1207,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -1256,8 +1256,8 @@
         "variableType" : "InvalidNextTokenException",
         "variableDeclarationType" : "InvalidNextTokenException",
         "documentation" : null,
-        "simpleType" : "InvalidNextTokenException",
-        "variableSetterType" : "InvalidNextTokenException"
+        "variableSetterType" : "InvalidNextTokenException",
+        "simpleType" : "InvalidNextTokenException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1279,16 +1279,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -1345,16 +1345,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -1394,8 +1394,8 @@
         "variableType" : "NumberDomainAttributesExceededException",
         "variableDeclarationType" : "NumberDomainAttributesExceededException",
         "documentation" : null,
-        "simpleType" : "NumberDomainAttributesExceededException",
-        "variableSetterType" : "NumberDomainAttributesExceededException"
+        "variableSetterType" : "NumberDomainAttributesExceededException",
+        "simpleType" : "NumberDomainAttributesExceededException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1417,16 +1417,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -1483,16 +1483,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the replaceable attribute.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1535,16 +1535,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The value of the replaceable attribute.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "value",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1587,16 +1587,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "replace",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -1636,8 +1636,8 @@
         "variableType" : "ReplaceableAttribute",
         "variableDeclarationType" : "ReplaceableAttribute",
         "documentation" : null,
-        "simpleType" : "ReplaceableAttribute",
-        "variableSetterType" : "ReplaceableAttribute"
+        "variableSetterType" : "ReplaceableAttribute",
+        "simpleType" : "ReplaceableAttribute"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1662,16 +1662,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "replace",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -1715,16 +1715,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the replaceable attribute.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1768,16 +1768,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The value of the replaceable attribute.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "value",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1834,16 +1834,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -1883,8 +1883,8 @@
         "variableType" : "InvalidNumberValueTestsException",
         "variableDeclarationType" : "InvalidNumberValueTestsException",
         "documentation" : null,
-        "simpleType" : "InvalidNumberValueTestsException",
-        "variableSetterType" : "InvalidNumberValueTestsException"
+        "variableSetterType" : "InvalidNumberValueTestsException",
+        "simpleType" : "InvalidNumberValueTestsException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1906,16 +1906,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -1972,16 +1972,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -2021,8 +2021,8 @@
         "variableType" : "RequestTimeoutException",
         "variableDeclarationType" : "RequestTimeoutException",
         "documentation" : null,
-        "simpleType" : "RequestTimeoutException",
-        "variableSetterType" : "RequestTimeoutException"
+        "variableSetterType" : "RequestTimeoutException",
+        "simpleType" : "RequestTimeoutException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -2044,16 +2044,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -2110,16 +2110,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -2159,8 +2159,8 @@
         "variableType" : "NoSuchDomainException",
         "variableDeclarationType" : "NoSuchDomainException",
         "documentation" : null,
-        "simpleType" : "NoSuchDomainException",
-        "variableSetterType" : "NoSuchDomainException"
+        "variableSetterType" : "NoSuchDomainException",
+        "simpleType" : "NoSuchDomainException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -2182,16 +2182,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -2248,16 +2248,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -2297,8 +2297,8 @@
         "variableType" : "TooManyRequestedAttributesException",
         "variableDeclarationType" : "TooManyRequestedAttributesException",
         "documentation" : null,
-        "simpleType" : "TooManyRequestedAttributesException",
-        "variableSetterType" : "TooManyRequestedAttributesException"
+        "variableSetterType" : "TooManyRequestedAttributesException",
+        "simpleType" : "TooManyRequestedAttributesException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -2320,16 +2320,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -2386,16 +2386,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the item.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2438,16 +2438,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p></p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "alternateNameEncoding",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2490,16 +2490,16 @@
           "variableType" : "java.util.List<Attribute>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "documentation" : "A list of attributes.",
-          "simpleType" : "List<Attribute>",
-          "variableSetterType" : "java.util.Collection<Attribute>"
+          "variableSetterType" : "java.util.Collection<Attribute>",
+          "simpleType" : "List<Attribute>"
         },
         "setterModel" : {
           "variableName" : "attributes",
           "variableType" : "java.util.List<Attribute>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "documentation" : "",
-          "simpleType" : "List<Attribute>",
-          "variableSetterType" : "java.util.Collection<Attribute>"
+          "variableSetterType" : "java.util.Collection<Attribute>",
+          "simpleType" : "List<Attribute>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Attribute>",
@@ -2535,16 +2535,16 @@
               "variableType" : "Attribute",
               "variableDeclarationType" : "Attribute",
               "documentation" : "",
-              "simpleType" : "Attribute",
-              "variableSetterType" : "Attribute"
+              "variableSetterType" : "Attribute",
+              "simpleType" : "Attribute"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Attribute",
               "variableDeclarationType" : "Attribute",
               "documentation" : "",
-              "simpleType" : "Attribute",
-              "variableSetterType" : "Attribute"
+              "variableSetterType" : "Attribute",
+              "simpleType" : "Attribute"
             },
             "getterModel" : {
               "returnType" : "Attribute",
@@ -2583,9 +2583,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
-          "simpleType" : "Attribute",
           "templateType" : "java.util.List<Attribute>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
+          "simpleType" : "Attribute"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2605,8 +2605,8 @@
         "variableType" : "Item",
         "variableDeclarationType" : "Item",
         "documentation" : null,
-        "simpleType" : "Item",
-        "variableSetterType" : "Item"
+        "variableSetterType" : "Item",
+        "simpleType" : "Item"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2631,16 +2631,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the item.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2684,16 +2684,16 @@
             "variableType" : "java.util.List<Attribute>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "documentation" : "A list of attributes.",
-            "simpleType" : "List<Attribute>",
-            "variableSetterType" : "java.util.Collection<Attribute>"
+            "variableSetterType" : "java.util.Collection<Attribute>",
+            "simpleType" : "List<Attribute>"
           },
           "setterModel" : {
             "variableName" : "attributes",
             "variableType" : "java.util.List<Attribute>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "documentation" : "",
-            "simpleType" : "List<Attribute>",
-            "variableSetterType" : "java.util.Collection<Attribute>"
+            "variableSetterType" : "java.util.Collection<Attribute>",
+            "simpleType" : "List<Attribute>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Attribute>",
@@ -2729,16 +2729,16 @@
                 "variableType" : "Attribute",
                 "variableDeclarationType" : "Attribute",
                 "documentation" : "",
-                "simpleType" : "Attribute",
-                "variableSetterType" : "Attribute"
+                "variableSetterType" : "Attribute",
+                "simpleType" : "Attribute"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Attribute",
                 "variableDeclarationType" : "Attribute",
                 "documentation" : "",
-                "simpleType" : "Attribute",
-                "variableSetterType" : "Attribute"
+                "variableSetterType" : "Attribute",
+                "simpleType" : "Attribute"
               },
               "getterModel" : {
                 "returnType" : "Attribute",
@@ -2777,9 +2777,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
-            "simpleType" : "Attribute",
             "templateType" : "java.util.List<Attribute>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
+            "simpleType" : "Attribute"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2803,16 +2803,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p></p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "alternateNameEncoding",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2869,16 +2869,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -2918,8 +2918,8 @@
         "variableType" : "MissingParameterException",
         "variableDeclarationType" : "MissingParameterException",
         "documentation" : null,
-        "simpleType" : "MissingParameterException",
-        "variableSetterType" : "MissingParameterException"
+        "variableSetterType" : "MissingParameterException",
+        "simpleType" : "MissingParameterException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -2941,16 +2941,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -3004,8 +3004,8 @@
         "variableType" : "PutAttributesResult",
         "variableDeclarationType" : "PutAttributesResult",
         "documentation" : null,
-        "simpleType" : "PutAttributesResult",
-        "variableSetterType" : "PutAttributesResult"
+        "variableSetterType" : "PutAttributesResult",
+        "simpleType" : "PutAttributesResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -3042,16 +3042,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the attribute.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3094,16 +3094,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p></p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "alternateNameEncoding",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3146,16 +3146,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The value of the attribute.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "value",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3198,16 +3198,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p></p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "alternateValueEncoding",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3247,8 +3247,8 @@
         "variableType" : "Attribute",
         "variableDeclarationType" : "Attribute",
         "documentation" : null,
-        "simpleType" : "Attribute",
-        "variableSetterType" : "Attribute"
+        "variableSetterType" : "Attribute",
+        "simpleType" : "Attribute"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -3273,16 +3273,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the attribute.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3326,16 +3326,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The value of the attribute.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "value",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3379,16 +3379,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p></p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "alternateNameEncoding",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3432,16 +3432,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p></p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "alternateValueEncoding",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3498,16 +3498,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the domain in which the attributes are being stored.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "domainName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3550,16 +3550,16 @@
           "variableType" : "java.util.List<ReplaceableItem>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableItem>",
           "documentation" : "A list of items on which to perform the operation.",
-          "simpleType" : "List<ReplaceableItem>",
-          "variableSetterType" : "java.util.Collection<ReplaceableItem>"
+          "variableSetterType" : "java.util.Collection<ReplaceableItem>",
+          "simpleType" : "List<ReplaceableItem>"
         },
         "setterModel" : {
           "variableName" : "items",
           "variableType" : "java.util.List<ReplaceableItem>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableItem>",
           "documentation" : "",
-          "simpleType" : "List<ReplaceableItem>",
-          "variableSetterType" : "java.util.Collection<ReplaceableItem>"
+          "variableSetterType" : "java.util.Collection<ReplaceableItem>",
+          "simpleType" : "List<ReplaceableItem>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<ReplaceableItem>",
@@ -3595,16 +3595,16 @@
               "variableType" : "ReplaceableItem",
               "variableDeclarationType" : "ReplaceableItem",
               "documentation" : "",
-              "simpleType" : "ReplaceableItem",
-              "variableSetterType" : "ReplaceableItem"
+              "variableSetterType" : "ReplaceableItem",
+              "simpleType" : "ReplaceableItem"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "ReplaceableItem",
               "variableDeclarationType" : "ReplaceableItem",
               "documentation" : "",
-              "simpleType" : "ReplaceableItem",
-              "variableSetterType" : "ReplaceableItem"
+              "variableSetterType" : "ReplaceableItem",
+              "simpleType" : "ReplaceableItem"
             },
             "getterModel" : {
               "returnType" : "ReplaceableItem",
@@ -3643,9 +3643,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
-          "simpleType" : "ReplaceableItem",
           "templateType" : "java.util.List<ReplaceableItem>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplaceableItem>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplaceableItem>",
+          "simpleType" : "ReplaceableItem"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3665,8 +3665,8 @@
         "variableType" : "BatchPutAttributesRequest",
         "variableDeclarationType" : "BatchPutAttributesRequest",
         "documentation" : null,
-        "simpleType" : "BatchPutAttributesRequest",
-        "variableSetterType" : "BatchPutAttributesRequest"
+        "variableSetterType" : "BatchPutAttributesRequest",
+        "simpleType" : "BatchPutAttributesRequest"
       },
       "marshaller" : {
         "action" : "BatchPutAttributes",
@@ -3695,16 +3695,16 @@
             "variableType" : "java.util.List<ReplaceableItem>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableItem>",
             "documentation" : "A list of items on which to perform the operation.",
-            "simpleType" : "List<ReplaceableItem>",
-            "variableSetterType" : "java.util.Collection<ReplaceableItem>"
+            "variableSetterType" : "java.util.Collection<ReplaceableItem>",
+            "simpleType" : "List<ReplaceableItem>"
           },
           "setterModel" : {
             "variableName" : "items",
             "variableType" : "java.util.List<ReplaceableItem>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableItem>",
             "documentation" : "",
-            "simpleType" : "List<ReplaceableItem>",
-            "variableSetterType" : "java.util.Collection<ReplaceableItem>"
+            "variableSetterType" : "java.util.Collection<ReplaceableItem>",
+            "simpleType" : "List<ReplaceableItem>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<ReplaceableItem>",
@@ -3740,16 +3740,16 @@
                 "variableType" : "ReplaceableItem",
                 "variableDeclarationType" : "ReplaceableItem",
                 "documentation" : "",
-                "simpleType" : "ReplaceableItem",
-                "variableSetterType" : "ReplaceableItem"
+                "variableSetterType" : "ReplaceableItem",
+                "simpleType" : "ReplaceableItem"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "ReplaceableItem",
                 "variableDeclarationType" : "ReplaceableItem",
                 "documentation" : "",
-                "simpleType" : "ReplaceableItem",
-                "variableSetterType" : "ReplaceableItem"
+                "variableSetterType" : "ReplaceableItem",
+                "simpleType" : "ReplaceableItem"
               },
               "getterModel" : {
                 "returnType" : "ReplaceableItem",
@@ -3788,9 +3788,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
-            "simpleType" : "ReplaceableItem",
             "templateType" : "java.util.List<ReplaceableItem>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplaceableItem>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplaceableItem>",
+            "simpleType" : "ReplaceableItem"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3814,16 +3814,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the domain in which the attributes are being stored.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "domainName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3880,16 +3880,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -3929,8 +3929,8 @@
         "variableType" : "InvalidNumberPredicatesException",
         "variableDeclarationType" : "InvalidNumberPredicatesException",
         "documentation" : null,
-        "simpleType" : "InvalidNumberPredicatesException",
-        "variableSetterType" : "InvalidNumberPredicatesException"
+        "variableSetterType" : "InvalidNumberPredicatesException",
+        "simpleType" : "InvalidNumberPredicatesException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -3952,16 +3952,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -4018,16 +4018,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "documentation" : "A list of domain names that match the expression.",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
+          "variableSetterType" : "java.util.Collection<String>",
+          "simpleType" : "List<String>"
         },
         "setterModel" : {
           "variableName" : "domainNames",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "documentation" : "",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
+          "variableSetterType" : "java.util.Collection<String>",
+          "simpleType" : "List<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -4063,16 +4063,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "simpleType" : "String",
-              "variableSetterType" : "String"
+              "variableSetterType" : "String",
+              "simpleType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "simpleType" : "String",
-              "variableSetterType" : "String"
+              "variableSetterType" : "String",
+              "simpleType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -4111,9 +4111,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4136,16 +4136,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4185,8 +4185,8 @@
         "variableType" : "ListDomainsResult",
         "variableDeclarationType" : "ListDomainsResult",
         "documentation" : null,
-        "simpleType" : "ListDomainsResult",
-        "variableSetterType" : "ListDomainsResult"
+        "variableSetterType" : "ListDomainsResult",
+        "simpleType" : "ListDomainsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -4211,16 +4211,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4264,16 +4264,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "documentation" : "A list of domain names that match the expression.",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
+            "variableSetterType" : "java.util.Collection<String>",
+            "simpleType" : "List<String>"
           },
           "setterModel" : {
             "variableName" : "domainNames",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "documentation" : "",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
+            "variableSetterType" : "java.util.Collection<String>",
+            "simpleType" : "List<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -4309,16 +4309,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "simpleType" : "String",
-                "variableSetterType" : "String"
+                "variableSetterType" : "String",
+                "simpleType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "simpleType" : "String",
-                "variableSetterType" : "String"
+                "variableSetterType" : "String",
+                "simpleType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -4357,9 +4357,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4396,16 +4396,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the domain in which the attributes are being deleted.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "domainName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4448,16 +4448,16 @@
           "variableType" : "java.util.List<DeletableItem>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<DeletableItem>",
           "documentation" : "A list of items on which to perform the operation.",
-          "simpleType" : "List<DeletableItem>",
-          "variableSetterType" : "java.util.Collection<DeletableItem>"
+          "variableSetterType" : "java.util.Collection<DeletableItem>",
+          "simpleType" : "List<DeletableItem>"
         },
         "setterModel" : {
           "variableName" : "items",
           "variableType" : "java.util.List<DeletableItem>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<DeletableItem>",
           "documentation" : "",
-          "simpleType" : "List<DeletableItem>",
-          "variableSetterType" : "java.util.Collection<DeletableItem>"
+          "variableSetterType" : "java.util.Collection<DeletableItem>",
+          "simpleType" : "List<DeletableItem>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<DeletableItem>",
@@ -4493,16 +4493,16 @@
               "variableType" : "DeletableItem",
               "variableDeclarationType" : "DeletableItem",
               "documentation" : "",
-              "simpleType" : "DeletableItem",
-              "variableSetterType" : "DeletableItem"
+              "variableSetterType" : "DeletableItem",
+              "simpleType" : "DeletableItem"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "DeletableItem",
               "variableDeclarationType" : "DeletableItem",
               "documentation" : "",
-              "simpleType" : "DeletableItem",
-              "variableSetterType" : "DeletableItem"
+              "variableSetterType" : "DeletableItem",
+              "simpleType" : "DeletableItem"
             },
             "getterModel" : {
               "returnType" : "DeletableItem",
@@ -4541,9 +4541,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
-          "simpleType" : "DeletableItem",
           "templateType" : "java.util.List<DeletableItem>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeletableItem>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeletableItem>",
+          "simpleType" : "DeletableItem"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4563,8 +4563,8 @@
         "variableType" : "BatchDeleteAttributesRequest",
         "variableDeclarationType" : "BatchDeleteAttributesRequest",
         "documentation" : null,
-        "simpleType" : "BatchDeleteAttributesRequest",
-        "variableSetterType" : "BatchDeleteAttributesRequest"
+        "variableSetterType" : "BatchDeleteAttributesRequest",
+        "simpleType" : "BatchDeleteAttributesRequest"
       },
       "marshaller" : {
         "action" : "BatchDeleteAttributes",
@@ -4593,16 +4593,16 @@
             "variableType" : "java.util.List<DeletableItem>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<DeletableItem>",
             "documentation" : "A list of items on which to perform the operation.",
-            "simpleType" : "List<DeletableItem>",
-            "variableSetterType" : "java.util.Collection<DeletableItem>"
+            "variableSetterType" : "java.util.Collection<DeletableItem>",
+            "simpleType" : "List<DeletableItem>"
           },
           "setterModel" : {
             "variableName" : "items",
             "variableType" : "java.util.List<DeletableItem>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<DeletableItem>",
             "documentation" : "",
-            "simpleType" : "List<DeletableItem>",
-            "variableSetterType" : "java.util.Collection<DeletableItem>"
+            "variableSetterType" : "java.util.Collection<DeletableItem>",
+            "simpleType" : "List<DeletableItem>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<DeletableItem>",
@@ -4638,16 +4638,16 @@
                 "variableType" : "DeletableItem",
                 "variableDeclarationType" : "DeletableItem",
                 "documentation" : "",
-                "simpleType" : "DeletableItem",
-                "variableSetterType" : "DeletableItem"
+                "variableSetterType" : "DeletableItem",
+                "simpleType" : "DeletableItem"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "DeletableItem",
                 "variableDeclarationType" : "DeletableItem",
                 "documentation" : "",
-                "simpleType" : "DeletableItem",
-                "variableSetterType" : "DeletableItem"
+                "variableSetterType" : "DeletableItem",
+                "simpleType" : "DeletableItem"
               },
               "getterModel" : {
                 "returnType" : "DeletableItem",
@@ -4686,9 +4686,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
-            "simpleType" : "DeletableItem",
             "templateType" : "java.util.List<DeletableItem>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeletableItem>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeletableItem>",
+            "simpleType" : "DeletableItem"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4712,16 +4712,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the domain in which the attributes are being deleted.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "domainName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4778,16 +4778,16 @@
           "variableType" : "java.util.List<Item>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Item>",
           "documentation" : "A list of items that match the select expression.",
-          "simpleType" : "List<Item>",
-          "variableSetterType" : "java.util.Collection<Item>"
+          "variableSetterType" : "java.util.Collection<Item>",
+          "simpleType" : "List<Item>"
         },
         "setterModel" : {
           "variableName" : "items",
           "variableType" : "java.util.List<Item>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Item>",
           "documentation" : "",
-          "simpleType" : "List<Item>",
-          "variableSetterType" : "java.util.Collection<Item>"
+          "variableSetterType" : "java.util.Collection<Item>",
+          "simpleType" : "List<Item>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Item>",
@@ -4823,16 +4823,16 @@
               "variableType" : "Item",
               "variableDeclarationType" : "Item",
               "documentation" : "",
-              "simpleType" : "Item",
-              "variableSetterType" : "Item"
+              "variableSetterType" : "Item",
+              "simpleType" : "Item"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Item",
               "variableDeclarationType" : "Item",
               "documentation" : "",
-              "simpleType" : "Item",
-              "variableSetterType" : "Item"
+              "variableSetterType" : "Item",
+              "simpleType" : "Item"
             },
             "getterModel" : {
               "returnType" : "Item",
@@ -4871,9 +4871,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
-          "simpleType" : "Item",
           "templateType" : "java.util.List<Item>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Item>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Item>",
+          "simpleType" : "Item"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4896,16 +4896,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4945,8 +4945,8 @@
         "variableType" : "SelectResult",
         "variableDeclarationType" : "SelectResult",
         "documentation" : null,
-        "simpleType" : "SelectResult",
-        "variableSetterType" : "SelectResult"
+        "variableSetterType" : "SelectResult",
+        "simpleType" : "SelectResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -4971,16 +4971,16 @@
             "variableType" : "java.util.List<Item>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Item>",
             "documentation" : "A list of items that match the select expression.",
-            "simpleType" : "List<Item>",
-            "variableSetterType" : "java.util.Collection<Item>"
+            "variableSetterType" : "java.util.Collection<Item>",
+            "simpleType" : "List<Item>"
           },
           "setterModel" : {
             "variableName" : "items",
             "variableType" : "java.util.List<Item>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Item>",
             "documentation" : "",
-            "simpleType" : "List<Item>",
-            "variableSetterType" : "java.util.Collection<Item>"
+            "variableSetterType" : "java.util.Collection<Item>",
+            "simpleType" : "List<Item>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Item>",
@@ -5016,16 +5016,16 @@
                 "variableType" : "Item",
                 "variableDeclarationType" : "Item",
                 "documentation" : "",
-                "simpleType" : "Item",
-                "variableSetterType" : "Item"
+                "variableSetterType" : "Item",
+                "simpleType" : "Item"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Item",
                 "variableDeclarationType" : "Item",
                 "documentation" : "",
-                "simpleType" : "Item",
-                "variableSetterType" : "Item"
+                "variableSetterType" : "Item",
+                "simpleType" : "Item"
               },
               "getterModel" : {
                 "returnType" : "Item",
@@ -5064,9 +5064,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
-            "simpleType" : "Item",
             "templateType" : "java.util.List<Item>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Item>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Item>",
+            "simpleType" : "Item"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5090,16 +5090,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5153,8 +5153,8 @@
         "variableType" : "BatchPutAttributesResult",
         "variableDeclarationType" : "BatchPutAttributesResult",
         "documentation" : null,
-        "simpleType" : "BatchPutAttributesResult",
-        "variableSetterType" : "BatchPutAttributesResult"
+        "variableSetterType" : "BatchPutAttributesResult",
+        "simpleType" : "BatchPutAttributesResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -5191,16 +5191,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -5240,8 +5240,8 @@
         "variableType" : "NumberSubmittedAttributesExceededException",
         "variableDeclarationType" : "NumberSubmittedAttributesExceededException",
         "documentation" : null,
-        "simpleType" : "NumberSubmittedAttributesExceededException",
-        "variableSetterType" : "NumberSubmittedAttributesExceededException"
+        "variableSetterType" : "NumberSubmittedAttributesExceededException",
+        "simpleType" : "NumberSubmittedAttributesExceededException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -5263,16 +5263,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -5329,16 +5329,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "domainName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5378,8 +5378,8 @@
         "variableType" : "CreateDomainRequest",
         "variableDeclarationType" : "CreateDomainRequest",
         "documentation" : null,
-        "simpleType" : "CreateDomainRequest",
-        "variableSetterType" : "CreateDomainRequest"
+        "variableSetterType" : "CreateDomainRequest",
+        "simpleType" : "CreateDomainRequest"
       },
       "marshaller" : {
         "action" : "CreateDomain",
@@ -5408,16 +5408,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "domainName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5474,16 +5474,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the domain in which to perform the operation.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "domainName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5526,16 +5526,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the item.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "itemName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5578,16 +5578,16 @@
           "variableType" : "java.util.List<ReplaceableAttribute>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
           "documentation" : "The list of attributes.",
-          "simpleType" : "List<ReplaceableAttribute>",
-          "variableSetterType" : "java.util.Collection<ReplaceableAttribute>"
+          "variableSetterType" : "java.util.Collection<ReplaceableAttribute>",
+          "simpleType" : "List<ReplaceableAttribute>"
         },
         "setterModel" : {
           "variableName" : "attributes",
           "variableType" : "java.util.List<ReplaceableAttribute>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
           "documentation" : "",
-          "simpleType" : "List<ReplaceableAttribute>",
-          "variableSetterType" : "java.util.Collection<ReplaceableAttribute>"
+          "variableSetterType" : "java.util.Collection<ReplaceableAttribute>",
+          "simpleType" : "List<ReplaceableAttribute>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<ReplaceableAttribute>",
@@ -5623,16 +5623,16 @@
               "variableType" : "ReplaceableAttribute",
               "variableDeclarationType" : "ReplaceableAttribute",
               "documentation" : "",
-              "simpleType" : "ReplaceableAttribute",
-              "variableSetterType" : "ReplaceableAttribute"
+              "variableSetterType" : "ReplaceableAttribute",
+              "simpleType" : "ReplaceableAttribute"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "ReplaceableAttribute",
               "variableDeclarationType" : "ReplaceableAttribute",
               "documentation" : "",
-              "simpleType" : "ReplaceableAttribute",
-              "variableSetterType" : "ReplaceableAttribute"
+              "variableSetterType" : "ReplaceableAttribute",
+              "simpleType" : "ReplaceableAttribute"
             },
             "getterModel" : {
               "returnType" : "ReplaceableAttribute",
@@ -5671,9 +5671,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
-          "simpleType" : "ReplaceableAttribute",
           "templateType" : "java.util.List<ReplaceableAttribute>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
+          "simpleType" : "ReplaceableAttribute"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5696,16 +5696,16 @@
           "variableType" : "UpdateCondition",
           "variableDeclarationType" : "UpdateCondition",
           "documentation" : "The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.",
-          "simpleType" : "UpdateCondition",
-          "variableSetterType" : "UpdateCondition"
+          "variableSetterType" : "UpdateCondition",
+          "simpleType" : "UpdateCondition"
         },
         "setterModel" : {
           "variableName" : "expected",
           "variableType" : "UpdateCondition",
           "variableDeclarationType" : "UpdateCondition",
           "documentation" : "",
-          "simpleType" : "UpdateCondition",
-          "variableSetterType" : "UpdateCondition"
+          "variableSetterType" : "UpdateCondition",
+          "simpleType" : "UpdateCondition"
         },
         "getterModel" : {
           "returnType" : "UpdateCondition",
@@ -5745,8 +5745,8 @@
         "variableType" : "PutAttributesRequest",
         "variableDeclarationType" : "PutAttributesRequest",
         "documentation" : null,
-        "simpleType" : "PutAttributesRequest",
-        "variableSetterType" : "PutAttributesRequest"
+        "variableSetterType" : "PutAttributesRequest",
+        "simpleType" : "PutAttributesRequest"
       },
       "marshaller" : {
         "action" : "PutAttributes",
@@ -5775,16 +5775,16 @@
             "variableType" : "java.util.List<ReplaceableAttribute>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
             "documentation" : "The list of attributes.",
-            "simpleType" : "List<ReplaceableAttribute>",
-            "variableSetterType" : "java.util.Collection<ReplaceableAttribute>"
+            "variableSetterType" : "java.util.Collection<ReplaceableAttribute>",
+            "simpleType" : "List<ReplaceableAttribute>"
           },
           "setterModel" : {
             "variableName" : "attributes",
             "variableType" : "java.util.List<ReplaceableAttribute>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
             "documentation" : "",
-            "simpleType" : "List<ReplaceableAttribute>",
-            "variableSetterType" : "java.util.Collection<ReplaceableAttribute>"
+            "variableSetterType" : "java.util.Collection<ReplaceableAttribute>",
+            "simpleType" : "List<ReplaceableAttribute>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<ReplaceableAttribute>",
@@ -5820,16 +5820,16 @@
                 "variableType" : "ReplaceableAttribute",
                 "variableDeclarationType" : "ReplaceableAttribute",
                 "documentation" : "",
-                "simpleType" : "ReplaceableAttribute",
-                "variableSetterType" : "ReplaceableAttribute"
+                "variableSetterType" : "ReplaceableAttribute",
+                "simpleType" : "ReplaceableAttribute"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "ReplaceableAttribute",
                 "variableDeclarationType" : "ReplaceableAttribute",
                 "documentation" : "",
-                "simpleType" : "ReplaceableAttribute",
-                "variableSetterType" : "ReplaceableAttribute"
+                "variableSetterType" : "ReplaceableAttribute",
+                "simpleType" : "ReplaceableAttribute"
               },
               "getterModel" : {
                 "returnType" : "ReplaceableAttribute",
@@ -5868,9 +5868,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
-            "simpleType" : "ReplaceableAttribute",
             "templateType" : "java.util.List<ReplaceableAttribute>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
+            "simpleType" : "ReplaceableAttribute"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5894,16 +5894,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the item.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "itemName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5947,16 +5947,16 @@
             "variableType" : "UpdateCondition",
             "variableDeclarationType" : "UpdateCondition",
             "documentation" : "The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.",
-            "simpleType" : "UpdateCondition",
-            "variableSetterType" : "UpdateCondition"
+            "variableSetterType" : "UpdateCondition",
+            "simpleType" : "UpdateCondition"
           },
           "setterModel" : {
             "variableName" : "expected",
             "variableType" : "UpdateCondition",
             "variableDeclarationType" : "UpdateCondition",
             "documentation" : "",
-            "simpleType" : "UpdateCondition",
-            "variableSetterType" : "UpdateCondition"
+            "variableSetterType" : "UpdateCondition",
+            "simpleType" : "UpdateCondition"
           },
           "getterModel" : {
             "returnType" : "UpdateCondition",
@@ -6000,16 +6000,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the domain in which to perform the operation.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "domainName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6066,16 +6066,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -6115,8 +6115,8 @@
         "variableType" : "NumberDomainsExceededException",
         "variableDeclarationType" : "NumberDomainsExceededException",
         "documentation" : null,
-        "simpleType" : "NumberDomainsExceededException",
-        "variableSetterType" : "NumberDomainsExceededException"
+        "variableSetterType" : "NumberDomainsExceededException",
+        "simpleType" : "NumberDomainsExceededException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -6138,16 +6138,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -6204,16 +6204,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -6253,8 +6253,8 @@
         "variableType" : "AttributeDoesNotExistException",
         "variableDeclarationType" : "AttributeDoesNotExistException",
         "documentation" : null,
-        "simpleType" : "AttributeDoesNotExistException",
-        "variableSetterType" : "AttributeDoesNotExistException"
+        "variableSetterType" : "AttributeDoesNotExistException",
+        "simpleType" : "AttributeDoesNotExistException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -6276,16 +6276,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -6342,16 +6342,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "The number of all items in the domain.",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "itemCount",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -6394,16 +6394,16 @@
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
           "documentation" : "The total size of all item names in the domain, in bytes.",
-          "simpleType" : "Long",
-          "variableSetterType" : "Long"
+          "variableSetterType" : "Long",
+          "simpleType" : "Long"
         },
         "setterModel" : {
           "variableName" : "itemNamesSizeBytes",
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
           "documentation" : "",
-          "simpleType" : "Long",
-          "variableSetterType" : "Long"
+          "variableSetterType" : "Long",
+          "simpleType" : "Long"
         },
         "getterModel" : {
           "returnType" : "Long",
@@ -6446,16 +6446,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "The number of unique attribute names in the domain.",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "attributeNameCount",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -6498,16 +6498,16 @@
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
           "documentation" : "The total size of all unique attribute names in the domain, in bytes.",
-          "simpleType" : "Long",
-          "variableSetterType" : "Long"
+          "variableSetterType" : "Long",
+          "simpleType" : "Long"
         },
         "setterModel" : {
           "variableName" : "attributeNamesSizeBytes",
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
           "documentation" : "",
-          "simpleType" : "Long",
-          "variableSetterType" : "Long"
+          "variableSetterType" : "Long",
+          "simpleType" : "Long"
         },
         "getterModel" : {
           "returnType" : "Long",
@@ -6550,16 +6550,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "The number of all attribute name/value pairs in the domain.",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "attributeValueCount",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -6602,16 +6602,16 @@
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
           "documentation" : "The total size of all attribute values in the domain, in bytes.",
-          "simpleType" : "Long",
-          "variableSetterType" : "Long"
+          "variableSetterType" : "Long",
+          "simpleType" : "Long"
         },
         "setterModel" : {
           "variableName" : "attributeValuesSizeBytes",
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
           "documentation" : "",
-          "simpleType" : "Long",
-          "variableSetterType" : "Long"
+          "variableSetterType" : "Long",
+          "simpleType" : "Long"
         },
         "getterModel" : {
           "returnType" : "Long",
@@ -6654,16 +6654,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "The data and time when metadata was calculated, in Epoch (UNIX) seconds.",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "timestamp",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -6703,8 +6703,8 @@
         "variableType" : "DomainMetadataResult",
         "variableDeclarationType" : "DomainMetadataResult",
         "documentation" : null,
-        "simpleType" : "DomainMetadataResult",
-        "variableSetterType" : "DomainMetadataResult"
+        "variableSetterType" : "DomainMetadataResult",
+        "simpleType" : "DomainMetadataResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6729,16 +6729,16 @@
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
             "documentation" : "The total size of all item names in the domain, in bytes.",
-            "simpleType" : "Long",
-            "variableSetterType" : "Long"
+            "variableSetterType" : "Long",
+            "simpleType" : "Long"
           },
           "setterModel" : {
             "variableName" : "itemNamesSizeBytes",
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
             "documentation" : "",
-            "simpleType" : "Long",
-            "variableSetterType" : "Long"
+            "variableSetterType" : "Long",
+            "simpleType" : "Long"
           },
           "getterModel" : {
             "returnType" : "Long",
@@ -6782,16 +6782,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "The number of unique attribute names in the domain.",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "attributeNameCount",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -6835,16 +6835,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "The number of all items in the domain.",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "itemCount",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -6888,16 +6888,16 @@
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
             "documentation" : "The total size of all attribute values in the domain, in bytes.",
-            "simpleType" : "Long",
-            "variableSetterType" : "Long"
+            "variableSetterType" : "Long",
+            "simpleType" : "Long"
           },
           "setterModel" : {
             "variableName" : "attributeValuesSizeBytes",
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
             "documentation" : "",
-            "simpleType" : "Long",
-            "variableSetterType" : "Long"
+            "variableSetterType" : "Long",
+            "simpleType" : "Long"
           },
           "getterModel" : {
             "returnType" : "Long",
@@ -6941,16 +6941,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "The number of all attribute name/value pairs in the domain.",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "attributeValueCount",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -6994,16 +6994,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "The data and time when metadata was calculated, in Epoch (UNIX) seconds.",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "timestamp",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -7047,16 +7047,16 @@
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
             "documentation" : "The total size of all unique attribute names in the domain, in bytes.",
-            "simpleType" : "Long",
-            "variableSetterType" : "Long"
+            "variableSetterType" : "Long",
+            "simpleType" : "Long"
           },
           "setterModel" : {
             "variableName" : "attributeNamesSizeBytes",
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
             "documentation" : "",
-            "simpleType" : "Long",
-            "variableSetterType" : "Long"
+            "variableSetterType" : "Long",
+            "simpleType" : "Long"
           },
           "getterModel" : {
             "returnType" : "Long",
@@ -7113,16 +7113,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -7162,8 +7162,8 @@
         "variableType" : "NumberItemAttributesExceededException",
         "variableDeclarationType" : "NumberItemAttributesExceededException",
         "documentation" : null,
-        "simpleType" : "NumberItemAttributesExceededException",
-        "variableSetterType" : "NumberItemAttributesExceededException"
+        "variableSetterType" : "NumberItemAttributesExceededException",
+        "simpleType" : "NumberItemAttributesExceededException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -7185,16 +7185,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -7251,16 +7251,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the attribute involved in the condition.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7303,16 +7303,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "value",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7355,16 +7355,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "<p>A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.</p>",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "exists",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -7404,8 +7404,8 @@
         "variableType" : "UpdateCondition",
         "variableDeclarationType" : "UpdateCondition",
         "documentation" : null,
-        "simpleType" : "UpdateCondition",
-        "variableSetterType" : "UpdateCondition"
+        "variableSetterType" : "UpdateCondition",
+        "simpleType" : "UpdateCondition"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7430,16 +7430,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the attribute involved in the condition.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7483,16 +7483,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "value",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7536,16 +7536,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "<p>A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.</p>",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "exists",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -7602,16 +7602,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -7651,8 +7651,8 @@
         "variableType" : "NumberDomainBytesExceededException",
         "variableDeclarationType" : "NumberDomainBytesExceededException",
         "documentation" : null,
-        "simpleType" : "NumberDomainBytesExceededException",
-        "variableSetterType" : "NumberDomainBytesExceededException"
+        "variableSetterType" : "NumberDomainBytesExceededException",
+        "simpleType" : "NumberDomainBytesExceededException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -7674,16 +7674,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -7740,16 +7740,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the domain to delete.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "domainName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7789,8 +7789,8 @@
         "variableType" : "DeleteDomainRequest",
         "variableDeclarationType" : "DeleteDomainRequest",
         "documentation" : null,
-        "simpleType" : "DeleteDomainRequest",
-        "variableSetterType" : "DeleteDomainRequest"
+        "variableSetterType" : "DeleteDomainRequest",
+        "simpleType" : "DeleteDomainRequest"
       },
       "marshaller" : {
         "action" : "DeleteDomain",
@@ -7819,16 +7819,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the domain to delete.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "domainName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7885,16 +7885,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -7934,8 +7934,8 @@
         "variableType" : "InvalidParameterValueException",
         "variableDeclarationType" : "InvalidParameterValueException",
         "documentation" : null,
-        "simpleType" : "InvalidParameterValueException",
-        "variableSetterType" : "InvalidParameterValueException"
+        "variableSetterType" : "InvalidParameterValueException",
+        "simpleType" : "InvalidParameterValueException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -7957,16 +7957,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -8020,8 +8020,8 @@
         "variableType" : "CreateDomainResult",
         "variableDeclarationType" : "CreateDomainResult",
         "documentation" : null,
-        "simpleType" : "CreateDomainResult",
-        "variableSetterType" : "CreateDomainResult"
+        "variableSetterType" : "CreateDomainResult",
+        "simpleType" : "CreateDomainResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -8058,16 +8058,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -8107,8 +8107,8 @@
         "variableType" : "NumberSubmittedItemsExceededException",
         "variableDeclarationType" : "NumberSubmittedItemsExceededException",
         "documentation" : null,
-        "simpleType" : "NumberSubmittedItemsExceededException",
-        "variableSetterType" : "NumberSubmittedItemsExceededException"
+        "variableSetterType" : "NumberSubmittedItemsExceededException",
+        "simpleType" : "NumberSubmittedItemsExceededException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -8130,16 +8130,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -8196,16 +8196,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the domain for which to display the metadata of.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "domainName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8245,8 +8245,8 @@
         "variableType" : "DomainMetadataRequest",
         "variableDeclarationType" : "DomainMetadataRequest",
         "documentation" : null,
-        "simpleType" : "DomainMetadataRequest",
-        "variableSetterType" : "DomainMetadataRequest"
+        "variableSetterType" : "DomainMetadataRequest",
+        "simpleType" : "DomainMetadataRequest"
       },
       "marshaller" : {
         "action" : "DomainMetadata",
@@ -8275,16 +8275,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the domain for which to display the metadata of.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "domainName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8338,8 +8338,8 @@
         "variableType" : "DeleteDomainResult",
         "variableDeclarationType" : "DeleteDomainResult",
         "documentation" : null,
-        "simpleType" : "DeleteDomainResult",
-        "variableSetterType" : "DeleteDomainResult"
+        "variableSetterType" : "DeleteDomainResult",
+        "simpleType" : "DeleteDomainResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -8373,8 +8373,8 @@
         "variableType" : "DeleteAttributesResult",
         "variableDeclarationType" : "DeleteAttributesResult",
         "documentation" : null,
-        "simpleType" : "DeleteAttributesResult",
-        "variableSetterType" : "DeleteAttributesResult"
+        "variableSetterType" : "DeleteAttributesResult",
+        "simpleType" : "DeleteAttributesResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -8411,16 +8411,16 @@
           "variableType" : "java.util.List<Attribute>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "documentation" : "The list of attributes returned by the operation.",
-          "simpleType" : "List<Attribute>",
-          "variableSetterType" : "java.util.Collection<Attribute>"
+          "variableSetterType" : "java.util.Collection<Attribute>",
+          "simpleType" : "List<Attribute>"
         },
         "setterModel" : {
           "variableName" : "attributes",
           "variableType" : "java.util.List<Attribute>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "documentation" : "",
-          "simpleType" : "List<Attribute>",
-          "variableSetterType" : "java.util.Collection<Attribute>"
+          "variableSetterType" : "java.util.Collection<Attribute>",
+          "simpleType" : "List<Attribute>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Attribute>",
@@ -8456,16 +8456,16 @@
               "variableType" : "Attribute",
               "variableDeclarationType" : "Attribute",
               "documentation" : "",
-              "simpleType" : "Attribute",
-              "variableSetterType" : "Attribute"
+              "variableSetterType" : "Attribute",
+              "simpleType" : "Attribute"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Attribute",
               "variableDeclarationType" : "Attribute",
               "documentation" : "",
-              "simpleType" : "Attribute",
-              "variableSetterType" : "Attribute"
+              "variableSetterType" : "Attribute",
+              "simpleType" : "Attribute"
             },
             "getterModel" : {
               "returnType" : "Attribute",
@@ -8504,9 +8504,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
-          "simpleType" : "Attribute",
           "templateType" : "java.util.List<Attribute>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
+          "simpleType" : "Attribute"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8526,8 +8526,8 @@
         "variableType" : "GetAttributesResult",
         "variableDeclarationType" : "GetAttributesResult",
         "documentation" : null,
-        "simpleType" : "GetAttributesResult",
-        "variableSetterType" : "GetAttributesResult"
+        "variableSetterType" : "GetAttributesResult",
+        "simpleType" : "GetAttributesResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -8552,16 +8552,16 @@
             "variableType" : "java.util.List<Attribute>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "documentation" : "The list of attributes returned by the operation.",
-            "simpleType" : "List<Attribute>",
-            "variableSetterType" : "java.util.Collection<Attribute>"
+            "variableSetterType" : "java.util.Collection<Attribute>",
+            "simpleType" : "List<Attribute>"
           },
           "setterModel" : {
             "variableName" : "attributes",
             "variableType" : "java.util.List<Attribute>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "documentation" : "",
-            "simpleType" : "List<Attribute>",
-            "variableSetterType" : "java.util.Collection<Attribute>"
+            "variableSetterType" : "java.util.Collection<Attribute>",
+            "simpleType" : "List<Attribute>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Attribute>",
@@ -8597,16 +8597,16 @@
                 "variableType" : "Attribute",
                 "variableDeclarationType" : "Attribute",
                 "documentation" : "",
-                "simpleType" : "Attribute",
-                "variableSetterType" : "Attribute"
+                "variableSetterType" : "Attribute",
+                "simpleType" : "Attribute"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Attribute",
                 "variableDeclarationType" : "Attribute",
                 "documentation" : "",
-                "simpleType" : "Attribute",
-                "variableSetterType" : "Attribute"
+                "variableSetterType" : "Attribute",
+                "simpleType" : "Attribute"
               },
               "getterModel" : {
                 "returnType" : "Attribute",
@@ -8645,9 +8645,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
-            "simpleType" : "Attribute",
             "templateType" : "java.util.List<Attribute>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
+            "simpleType" : "Attribute"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8684,16 +8684,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the domain in which to perform the operation.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "domainName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8736,16 +8736,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "itemName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8788,16 +8788,16 @@
           "variableType" : "java.util.List<Attribute>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "documentation" : "A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.",
-          "simpleType" : "List<Attribute>",
-          "variableSetterType" : "java.util.Collection<Attribute>"
+          "variableSetterType" : "java.util.Collection<Attribute>",
+          "simpleType" : "List<Attribute>"
         },
         "setterModel" : {
           "variableName" : "attributes",
           "variableType" : "java.util.List<Attribute>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
           "documentation" : "",
-          "simpleType" : "List<Attribute>",
-          "variableSetterType" : "java.util.Collection<Attribute>"
+          "variableSetterType" : "java.util.Collection<Attribute>",
+          "simpleType" : "List<Attribute>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Attribute>",
@@ -8833,16 +8833,16 @@
               "variableType" : "Attribute",
               "variableDeclarationType" : "Attribute",
               "documentation" : "",
-              "simpleType" : "Attribute",
-              "variableSetterType" : "Attribute"
+              "variableSetterType" : "Attribute",
+              "simpleType" : "Attribute"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Attribute",
               "variableDeclarationType" : "Attribute",
               "documentation" : "",
-              "simpleType" : "Attribute",
-              "variableSetterType" : "Attribute"
+              "variableSetterType" : "Attribute",
+              "simpleType" : "Attribute"
             },
             "getterModel" : {
               "returnType" : "Attribute",
@@ -8881,9 +8881,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
-          "simpleType" : "Attribute",
           "templateType" : "java.util.List<Attribute>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
+          "simpleType" : "Attribute"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8906,16 +8906,16 @@
           "variableType" : "UpdateCondition",
           "variableDeclarationType" : "UpdateCondition",
           "documentation" : "The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.",
-          "simpleType" : "UpdateCondition",
-          "variableSetterType" : "UpdateCondition"
+          "variableSetterType" : "UpdateCondition",
+          "simpleType" : "UpdateCondition"
         },
         "setterModel" : {
           "variableName" : "expected",
           "variableType" : "UpdateCondition",
           "variableDeclarationType" : "UpdateCondition",
           "documentation" : "",
-          "simpleType" : "UpdateCondition",
-          "variableSetterType" : "UpdateCondition"
+          "variableSetterType" : "UpdateCondition",
+          "simpleType" : "UpdateCondition"
         },
         "getterModel" : {
           "returnType" : "UpdateCondition",
@@ -8955,8 +8955,8 @@
         "variableType" : "DeleteAttributesRequest",
         "variableDeclarationType" : "DeleteAttributesRequest",
         "documentation" : null,
-        "simpleType" : "DeleteAttributesRequest",
-        "variableSetterType" : "DeleteAttributesRequest"
+        "variableSetterType" : "DeleteAttributesRequest",
+        "simpleType" : "DeleteAttributesRequest"
       },
       "marshaller" : {
         "action" : "DeleteAttributes",
@@ -8985,16 +8985,16 @@
             "variableType" : "java.util.List<Attribute>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "documentation" : "A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.",
-            "simpleType" : "List<Attribute>",
-            "variableSetterType" : "java.util.Collection<Attribute>"
+            "variableSetterType" : "java.util.Collection<Attribute>",
+            "simpleType" : "List<Attribute>"
           },
           "setterModel" : {
             "variableName" : "attributes",
             "variableType" : "java.util.List<Attribute>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
             "documentation" : "",
-            "simpleType" : "List<Attribute>",
-            "variableSetterType" : "java.util.Collection<Attribute>"
+            "variableSetterType" : "java.util.Collection<Attribute>",
+            "simpleType" : "List<Attribute>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Attribute>",
@@ -9030,16 +9030,16 @@
                 "variableType" : "Attribute",
                 "variableDeclarationType" : "Attribute",
                 "documentation" : "",
-                "simpleType" : "Attribute",
-                "variableSetterType" : "Attribute"
+                "variableSetterType" : "Attribute",
+                "simpleType" : "Attribute"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Attribute",
                 "variableDeclarationType" : "Attribute",
                 "documentation" : "",
-                "simpleType" : "Attribute",
-                "variableSetterType" : "Attribute"
+                "variableSetterType" : "Attribute",
+                "simpleType" : "Attribute"
               },
               "getterModel" : {
                 "returnType" : "Attribute",
@@ -9078,9 +9078,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
-            "simpleType" : "Attribute",
             "templateType" : "java.util.List<Attribute>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Attribute>",
+            "simpleType" : "Attribute"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9104,16 +9104,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "itemName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9157,16 +9157,16 @@
             "variableType" : "UpdateCondition",
             "variableDeclarationType" : "UpdateCondition",
             "documentation" : "The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.",
-            "simpleType" : "UpdateCondition",
-            "variableSetterType" : "UpdateCondition"
+            "variableSetterType" : "UpdateCondition",
+            "simpleType" : "UpdateCondition"
           },
           "setterModel" : {
             "variableName" : "expected",
             "variableType" : "UpdateCondition",
             "variableDeclarationType" : "UpdateCondition",
             "documentation" : "",
-            "simpleType" : "UpdateCondition",
-            "variableSetterType" : "UpdateCondition"
+            "variableSetterType" : "UpdateCondition",
+            "simpleType" : "UpdateCondition"
           },
           "getterModel" : {
             "returnType" : "UpdateCondition",
@@ -9210,16 +9210,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the domain in which to perform the operation.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "domainName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9273,8 +9273,8 @@
         "variableType" : "BatchDeleteAttributesResult",
         "variableDeclarationType" : "BatchDeleteAttributesResult",
         "documentation" : null,
-        "simpleType" : "BatchDeleteAttributesResult",
-        "variableSetterType" : "BatchDeleteAttributesResult"
+        "variableSetterType" : "BatchDeleteAttributesResult",
+        "simpleType" : "BatchDeleteAttributesResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -9311,16 +9311,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The expression used to query the domain.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "selectExpression",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9363,16 +9363,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextToken",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9415,16 +9415,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "consistentRead",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -9464,8 +9464,8 @@
         "variableType" : "SelectRequest",
         "variableDeclarationType" : "SelectRequest",
         "documentation" : null,
-        "simpleType" : "SelectRequest",
-        "variableSetterType" : "SelectRequest"
+        "variableSetterType" : "SelectRequest",
+        "simpleType" : "SelectRequest"
       },
       "marshaller" : {
         "action" : "Select",
@@ -9494,16 +9494,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextToken",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9547,16 +9547,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "consistentRead",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -9600,16 +9600,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The expression used to query the domain.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "selectExpression",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9666,16 +9666,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the replaceable item.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -9718,16 +9718,16 @@
           "variableType" : "java.util.List<ReplaceableAttribute>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
           "documentation" : "The list of attributes for a replaceable item.",
-          "simpleType" : "List<ReplaceableAttribute>",
-          "variableSetterType" : "java.util.Collection<ReplaceableAttribute>"
+          "variableSetterType" : "java.util.Collection<ReplaceableAttribute>",
+          "simpleType" : "List<ReplaceableAttribute>"
         },
         "setterModel" : {
           "variableName" : "attributes",
           "variableType" : "java.util.List<ReplaceableAttribute>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
           "documentation" : "",
-          "simpleType" : "List<ReplaceableAttribute>",
-          "variableSetterType" : "java.util.Collection<ReplaceableAttribute>"
+          "variableSetterType" : "java.util.Collection<ReplaceableAttribute>",
+          "simpleType" : "List<ReplaceableAttribute>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<ReplaceableAttribute>",
@@ -9763,16 +9763,16 @@
               "variableType" : "ReplaceableAttribute",
               "variableDeclarationType" : "ReplaceableAttribute",
               "documentation" : "",
-              "simpleType" : "ReplaceableAttribute",
-              "variableSetterType" : "ReplaceableAttribute"
+              "variableSetterType" : "ReplaceableAttribute",
+              "simpleType" : "ReplaceableAttribute"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "ReplaceableAttribute",
               "variableDeclarationType" : "ReplaceableAttribute",
               "documentation" : "",
-              "simpleType" : "ReplaceableAttribute",
-              "variableSetterType" : "ReplaceableAttribute"
+              "variableSetterType" : "ReplaceableAttribute",
+              "simpleType" : "ReplaceableAttribute"
             },
             "getterModel" : {
               "returnType" : "ReplaceableAttribute",
@@ -9811,9 +9811,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
-          "simpleType" : "ReplaceableAttribute",
           "templateType" : "java.util.List<ReplaceableAttribute>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
+          "simpleType" : "ReplaceableAttribute"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9833,8 +9833,8 @@
         "variableType" : "ReplaceableItem",
         "variableDeclarationType" : "ReplaceableItem",
         "documentation" : null,
-        "simpleType" : "ReplaceableItem",
-        "variableSetterType" : "ReplaceableItem"
+        "variableSetterType" : "ReplaceableItem",
+        "simpleType" : "ReplaceableItem"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -9859,16 +9859,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the replaceable item.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9912,16 +9912,16 @@
             "variableType" : "java.util.List<ReplaceableAttribute>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
             "documentation" : "The list of attributes for a replaceable item.",
-            "simpleType" : "List<ReplaceableAttribute>",
-            "variableSetterType" : "java.util.Collection<ReplaceableAttribute>"
+            "variableSetterType" : "java.util.Collection<ReplaceableAttribute>",
+            "simpleType" : "List<ReplaceableAttribute>"
           },
           "setterModel" : {
             "variableName" : "attributes",
             "variableType" : "java.util.List<ReplaceableAttribute>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
             "documentation" : "",
-            "simpleType" : "List<ReplaceableAttribute>",
-            "variableSetterType" : "java.util.Collection<ReplaceableAttribute>"
+            "variableSetterType" : "java.util.Collection<ReplaceableAttribute>",
+            "simpleType" : "List<ReplaceableAttribute>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<ReplaceableAttribute>",
@@ -9957,16 +9957,16 @@
                 "variableType" : "ReplaceableAttribute",
                 "variableDeclarationType" : "ReplaceableAttribute",
                 "documentation" : "",
-                "simpleType" : "ReplaceableAttribute",
-                "variableSetterType" : "ReplaceableAttribute"
+                "variableSetterType" : "ReplaceableAttribute",
+                "simpleType" : "ReplaceableAttribute"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "ReplaceableAttribute",
                 "variableDeclarationType" : "ReplaceableAttribute",
                 "documentation" : "",
-                "simpleType" : "ReplaceableAttribute",
-                "variableSetterType" : "ReplaceableAttribute"
+                "variableSetterType" : "ReplaceableAttribute",
+                "simpleType" : "ReplaceableAttribute"
               },
               "getterModel" : {
                 "returnType" : "ReplaceableAttribute",
@@ -10005,9 +10005,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
-            "simpleType" : "ReplaceableAttribute",
             "templateType" : "java.util.List<ReplaceableAttribute>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>",
+            "simpleType" : "ReplaceableAttribute"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10044,16 +10044,16 @@
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "setterModel" : {
           "variableName" : "boxUsage",
           "variableType" : "Float",
           "variableDeclarationType" : "Float",
           "documentation" : "",
-          "simpleType" : "Float",
-          "variableSetterType" : "Float"
+          "variableSetterType" : "Float",
+          "simpleType" : "Float"
         },
         "getterModel" : {
           "returnType" : "Float",
@@ -10093,8 +10093,8 @@
         "variableType" : "InvalidQueryExpressionException",
         "variableDeclarationType" : "InvalidQueryExpressionException",
         "documentation" : null,
-        "simpleType" : "InvalidQueryExpressionException",
-        "variableSetterType" : "InvalidQueryExpressionException"
+        "variableSetterType" : "InvalidQueryExpressionException",
+        "simpleType" : "InvalidQueryExpressionException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -10116,16 +10116,16 @@
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "setterModel" : {
             "variableName" : "boxUsage",
             "variableType" : "Float",
             "variableDeclarationType" : "Float",
             "documentation" : "",
-            "simpleType" : "Float",
-            "variableSetterType" : "Float"
+            "variableSetterType" : "Float",
+            "simpleType" : "Float"
           },
           "getterModel" : {
             "returnType" : "Float",
@@ -10182,16 +10182,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the domain in which to perform the operation.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "domainName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10234,16 +10234,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "The name of the item.",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "itemName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -10286,16 +10286,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "documentation" : "The names of the attributes.",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
+          "variableSetterType" : "java.util.Collection<String>",
+          "simpleType" : "List<String>"
         },
         "setterModel" : {
           "variableName" : "attributeNames",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
           "documentation" : "",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
+          "variableSetterType" : "java.util.Collection<String>",
+          "simpleType" : "List<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -10331,16 +10331,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "simpleType" : "String",
-              "variableSetterType" : "String"
+              "variableSetterType" : "String",
+              "simpleType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "simpleType" : "String",
-              "variableSetterType" : "String"
+              "variableSetterType" : "String",
+              "simpleType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -10379,9 +10379,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simpleType" : "String"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10404,16 +10404,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "consistentRead",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -10453,8 +10453,8 @@
         "variableType" : "GetAttributesRequest",
         "variableDeclarationType" : "GetAttributesRequest",
         "documentation" : null,
-        "simpleType" : "GetAttributesRequest",
-        "variableSetterType" : "GetAttributesRequest"
+        "variableSetterType" : "GetAttributesRequest",
+        "simpleType" : "GetAttributesRequest"
       },
       "marshaller" : {
         "action" : "GetAttributes",
@@ -10483,16 +10483,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "consistentRead",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -10536,16 +10536,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "documentation" : "The names of the attributes.",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
+            "variableSetterType" : "java.util.Collection<String>",
+            "simpleType" : "List<String>"
           },
           "setterModel" : {
             "variableName" : "attributeNames",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
             "documentation" : "",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
+            "variableSetterType" : "java.util.Collection<String>",
+            "simpleType" : "List<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -10581,16 +10581,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "simpleType" : "String",
-                "variableSetterType" : "String"
+                "variableSetterType" : "String",
+                "simpleType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "simpleType" : "String",
-                "variableSetterType" : "String"
+                "variableSetterType" : "String",
+                "simpleType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -10629,9 +10629,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simpleType" : "String"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10655,16 +10655,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the item.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "itemName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10708,16 +10708,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "The name of the domain in which to perform the operation.",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "domainName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -10871,6 +10871,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : "LegacyErrorUnmarshaller"
+  "exceptionUnmarshallerImpl" : "LegacyErrorUnmarshaller",
+  "clientConfigFactory" : "ClientConfigurationFactory"
 }

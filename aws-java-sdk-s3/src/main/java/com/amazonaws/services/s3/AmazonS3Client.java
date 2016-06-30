@@ -3260,6 +3260,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                      v4Signer.setServiceName(getServiceNameIntern());
                      v4Signer.setRegionName(region);
                      return v4Signer;
+                } else if (request.getOriginalRequest() instanceof GeneratePresignedUrlRequest) {
+                    return createSigV2Signer(request, bucketName, key);
                 }
             }
 

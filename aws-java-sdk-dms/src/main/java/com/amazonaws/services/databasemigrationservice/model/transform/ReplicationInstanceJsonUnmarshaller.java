@@ -85,6 +85,13 @@ public class ReplicationInstanceJsonUnmarshaller implements
                             .getUnmarshaller(java.util.Date.class).unmarshall(
                                     context));
                 }
+                if (context.testExpression("VpcSecurityGroups", targetDepth)) {
+                    context.nextToken();
+                    replicationInstance
+                            .setVpcSecurityGroups(new ListUnmarshaller<VpcSecurityGroupMembership>(
+                                    VpcSecurityGroupMembershipJsonUnmarshaller
+                                            .getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
                     context.nextToken();
                     replicationInstance.setAvailabilityZone(context

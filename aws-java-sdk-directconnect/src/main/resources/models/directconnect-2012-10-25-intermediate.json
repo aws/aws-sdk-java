@@ -19,12 +19,12 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "directconnect",
     "signingName" : "directconnect",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
     "serviceName" : "AWS Direct Connect",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true
   },
   "operations" : {

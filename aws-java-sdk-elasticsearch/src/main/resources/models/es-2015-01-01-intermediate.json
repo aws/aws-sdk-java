@@ -19,13 +19,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "es",
     "signingName" : "es",
-    "jsonProtocol" : true,
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "serviceName" : "Amazon Elasticsearch Service",
     "xmlProtocol" : false,
+    "jsonProtocol" : true,
     "cborProtocol" : false,
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "serviceName" : "Amazon Elasticsearch Service",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext"
   },
   "operations" : {
     "AddTags" : {
@@ -11306,6 +11306,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "exceptionUnmarshallerImpl" : null,
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "exceptionUnmarshallerImpl" : null
 }

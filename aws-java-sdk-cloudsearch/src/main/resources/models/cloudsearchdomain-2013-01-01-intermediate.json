@@ -20,10 +20,10 @@
     "endpointPrefix" : "cloudsearchdomain",
     "signingName" : "cloudsearch",
     "protocolDefaultExceptionUmarshallerImpl" : null,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "jsonProtocol" : true,
     "xmlProtocol" : false,
     "cborProtocol" : false,
+    "jsonProtocol" : true,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "serviceName" : "Amazon CloudSearch Domain"
   },
@@ -686,9 +686,9 @@
               "sendEmptyQueryString" : false,
               "templateType" : "java.util.List<String>",
               "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-              "simpleType" : "String",
               "simple" : true,
-              "map" : false
+              "map" : false,
+              "simpleType" : "String"
             },
             "mapModel" : null,
             "enumType" : null,
@@ -1252,9 +1252,9 @@
                 "sendEmptyQueryString" : false,
                 "templateType" : "java.util.List<String>",
                 "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-                "simpleType" : "String",
                 "simple" : true,
-                "map" : false
+                "map" : false,
+                "simpleType" : "String"
               },
               "mapModel" : null,
               "enumType" : null,
@@ -1901,9 +1901,9 @@
           "sendEmptyQueryString" : false,
           "templateType" : "java.util.List<DocumentServiceWarning>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentServiceWarning>",
-          "simpleType" : "DocumentServiceWarning",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "DocumentServiceWarning"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2148,9 +2148,9 @@
             "sendEmptyQueryString" : false,
             "templateType" : "java.util.List<DocumentServiceWarning>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentServiceWarning>",
-            "simpleType" : "DocumentServiceWarning",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "DocumentServiceWarning"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4987,9 +4987,9 @@
           "sendEmptyQueryString" : false,
           "templateType" : "java.util.List<Hit>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Hit>",
-          "simpleType" : "Hit",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "Hit"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5128,9 +5128,9 @@
             "sendEmptyQueryString" : false,
             "templateType" : "java.util.List<Hit>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Hit>",
-            "simpleType" : "Hit",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "Hit"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6895,9 +6895,9 @@
           "sendEmptyQueryString" : false,
           "templateType" : "java.util.List<SuggestionMatch>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<SuggestionMatch>",
-          "simpleType" : "SuggestionMatch",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "SuggestionMatch"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7036,9 +7036,9 @@
             "sendEmptyQueryString" : false,
             "templateType" : "java.util.List<SuggestionMatch>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<SuggestionMatch>",
-            "simpleType" : "SuggestionMatch",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "SuggestionMatch"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8191,9 +8191,9 @@
           "sendEmptyQueryString" : false,
           "templateType" : "java.util.List<Bucket>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Bucket>",
-          "simpleType" : "Bucket",
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "Bucket"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8332,9 +8332,9 @@
             "sendEmptyQueryString" : false,
             "templateType" : "java.util.List<Bucket>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Bucket>",
-            "simpleType" : "Bucket",
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "Bucket"
           },
           "mapModel" : null,
           "enumType" : null,

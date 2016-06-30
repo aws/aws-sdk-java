@@ -24,8 +24,8 @@
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true,
-    "xmlProtocol" : false
+    "xmlProtocol" : false,
+    "jsonProtocol" : true
   },
   "operations" : {
     "CreateByteMatchSet" : {

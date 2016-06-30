@@ -73,6 +73,22 @@ public class ReplicationInstanceJsonMarshaller {
                 jsonGenerator.writeFieldName("InstanceCreateTime").writeValue(
                         replicationInstance.getInstanceCreateTime());
             }
+
+            java.util.List<VpcSecurityGroupMembership> vpcSecurityGroupsList = replicationInstance
+                    .getVpcSecurityGroups();
+            if (vpcSecurityGroupsList != null) {
+                jsonGenerator.writeFieldName("VpcSecurityGroups");
+                jsonGenerator.writeStartArray();
+                for (VpcSecurityGroupMembership vpcSecurityGroupsListValue : vpcSecurityGroupsList) {
+                    if (vpcSecurityGroupsListValue != null) {
+
+                        VpcSecurityGroupMembershipJsonMarshaller.getInstance()
+                                .marshall(vpcSecurityGroupsListValue,
+                                        jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
             if (replicationInstance.getAvailabilityZone() != null) {
                 jsonGenerator.writeFieldName("AvailabilityZone").writeValue(
                         replicationInstance.getAvailabilityZone());

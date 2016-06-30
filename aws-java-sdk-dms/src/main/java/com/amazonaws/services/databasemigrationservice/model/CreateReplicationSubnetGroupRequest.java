@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class CreateReplicationSubnetGroupRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -73,7 +73,7 @@ public class CreateReplicationSubnetGroupRequest extends
      * 
      * @param replicationSubnetGroupIdentifier
      *        The name for the replication subnet group. This value is stored as
-     *        a lowercase string. </p>
+     *        a lowercase string.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
      *        characters, periods, spaces, underscores, or hyphens. Must not be
@@ -102,7 +102,7 @@ public class CreateReplicationSubnetGroupRequest extends
      * </p>
      * 
      * @return The name for the replication subnet group. This value is stored
-     *         as a lowercase string. </p>
+     *         as a lowercase string.</p>
      *         <p>
      *         Constraints: Must contain no more than 255 alphanumeric
      *         characters, periods, spaces, underscores, or hyphens. Must not be
@@ -131,7 +131,7 @@ public class CreateReplicationSubnetGroupRequest extends
      * 
      * @param replicationSubnetGroupIdentifier
      *        The name for the replication subnet group. This value is stored as
-     *        a lowercase string. </p>
+     *        a lowercase string.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric
      *        characters, periods, spaces, underscores, or hyphens. Must not be

@@ -19,7 +19,7 @@ package com.amazonaws.services.databasemigrationservice.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p/>
  */
 public class ReplicationPendingModifiedValues implements Serializable,
         Cloneable {
@@ -58,7 +58,7 @@ public class ReplicationPendingModifiedValues implements Serializable,
      * </p>
      * 
      * @param replicationInstanceClass
-     *        The compute and memory capacity of the replication instance. </p>
+     *        The compute and memory capacity of the replication instance.</p>
      *        <p>
      *        Valid Values:
      *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
@@ -77,7 +77,7 @@ public class ReplicationPendingModifiedValues implements Serializable,
      * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
      * </p>
      * 
-     * @return The compute and memory capacity of the replication instance. </p>
+     * @return The compute and memory capacity of the replication instance.</p>
      *         <p>
      *         Valid Values:
      *         <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
@@ -97,7 +97,7 @@ public class ReplicationPendingModifiedValues implements Serializable,
      * </p>
      * 
      * @param replicationInstanceClass
-     *        The compute and memory capacity of the replication instance. </p>
+     *        The compute and memory capacity of the replication instance.</p>
      *        <p>
      *        Valid Values:
      *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>

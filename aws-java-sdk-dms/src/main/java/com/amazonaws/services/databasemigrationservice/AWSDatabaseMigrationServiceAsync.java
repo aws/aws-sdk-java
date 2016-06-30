@@ -27,10 +27,10 @@ import com.amazonaws.services.databasemigrationservice.model.*;
  * <p>
  * AWS Database Migration Service (AWS DMS) can migrate your data to and from
  * the most widely used commercial and open-source databases such as Oracle,
- * PostgreSQL, Microsoft SQL Server, MariaDB, Amazon Aurora, and MySQL. The
- * service supports homogeneous migrations such as Oracle to Oracle, as well as
- * heterogeneous migrations between different database platforms, such as Oracle
- * to MySQL or SQL Server to PostgreSQL.
+ * PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora,
+ * and MySQL. The service supports homogeneous migrations such as Oracle to
+ * Oracle, as well as heterogeneous migrations between different database
+ * platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.
  * </p>
  */
 public interface AWSDatabaseMigrationServiceAsync extends
@@ -43,8 +43,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * with cost allocation reporting to track cost associated with DMS
      * resources, or used in a Condition statement in an IAM policy for DMS.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param addTagsToResourceRequest
      * @return A Java Future containing the result of the AddTagsToResource
@@ -61,8 +59,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * with cost allocation reporting to track cost associated with DMS
      * resources, or used in a Condition statement in an IAM policy for DMS.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param addTagsToResourceRequest
      * @param asyncHandler
@@ -82,8 +78,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Creates an endpoint using the provided settings.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param createEndpointRequest
      * @return A Java Future containing the result of the CreateEndpoint
@@ -97,8 +91,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Creates an endpoint using the provided settings.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param createEndpointRequest
      * @param asyncHandler
@@ -118,8 +110,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Creates the replication instance using the specified parameters.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param createReplicationInstanceRequest
      * @return A Java Future containing the result of the
@@ -133,8 +123,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Creates the replication instance using the specified parameters.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param createReplicationInstanceRequest
      * @param asyncHandler
@@ -155,8 +143,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * Creates a replication subnet group given a list of the subnet IDs in a
      * VPC.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param createReplicationSubnetGroupRequest
      * @return A Java Future containing the result of the
@@ -171,8 +157,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * Creates a replication subnet group given a list of the subnet IDs in a
      * VPC.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param createReplicationSubnetGroupRequest
      * @param asyncHandler
@@ -193,8 +177,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Creates a replication task using the specified parameters.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param createReplicationTaskRequest
      * @return A Java Future containing the result of the CreateReplicationTask
@@ -208,8 +190,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Creates a replication task using the specified parameters.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param createReplicationTaskRequest
      * @param asyncHandler
@@ -229,8 +209,12 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Deletes the specified endpoint.
      * </p>
-     * <note>All tasks associated with the endpoint must be deleted before you
-     * can delete the endpoint.</note>
+     * <note>
+     * <p>
+     * All tasks associated with the endpoint must be deleted before you can
+     * delete the endpoint.
+     * </p>
+     * </note>
      * <p/>
      * 
      * @param deleteEndpointRequest
@@ -245,8 +229,12 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Deletes the specified endpoint.
      * </p>
-     * <note>All tasks associated with the endpoint must be deleted before you
-     * can delete the endpoint.</note>
+     * <note>
+     * <p>
+     * All tasks associated with the endpoint must be deleted before you can
+     * delete the endpoint.
+     * </p>
+     * </note>
      * <p/>
      * 
      * @param deleteEndpointRequest
@@ -267,8 +255,12 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Deletes the specified replication instance.
      * </p>
-     * <note>You must delete any migration tasks that are associated with the
-     * replication instance before you can delete it.</note>
+     * <note>
+     * <p>
+     * You must delete any migration tasks that are associated with the
+     * replication instance before you can delete it.
+     * </p>
+     * </note>
      * <p/>
      * 
      * @param deleteReplicationInstanceRequest
@@ -283,8 +275,12 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Deletes the specified replication instance.
      * </p>
-     * <note>You must delete any migration tasks that are associated with the
-     * replication instance before you can delete it.</note>
+     * <note>
+     * <p>
+     * You must delete any migration tasks that are associated with the
+     * replication instance before you can delete it.
+     * </p>
+     * </note>
      * <p/>
      * 
      * @param deleteReplicationInstanceRequest
@@ -305,8 +301,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Deletes a subnet group.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param deleteReplicationSubnetGroupRequest
      * @return A Java Future containing the result of the
@@ -320,8 +314,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Deletes a subnet group.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param deleteReplicationSubnetGroupRequest
      * @param asyncHandler
@@ -342,8 +334,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Deletes the specified replication task.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param deleteReplicationTaskRequest
      * @return A Java Future containing the result of the DeleteReplicationTask
@@ -357,8 +347,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Deletes the specified replication task.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param deleteReplicationTaskRequest
      * @param asyncHandler
@@ -385,8 +373,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * This command does not take any parameters.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeAccountAttributesRequest
      * @return A Java Future containing the result of the
@@ -407,8 +393,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * This command does not take any parameters.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeAccountAttributesRequest
      * @param asyncHandler
@@ -430,8 +414,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * replication instance and an endpoint. Connections are created when you
      * test an endpoint.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeConnectionsRequest
      * @return A Java Future containing the result of the DescribeConnections
@@ -447,8 +429,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * replication instance and an endpoint. Connections are created when you
      * test an endpoint.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeConnectionsRequest
      * @param asyncHandler
@@ -468,8 +448,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Returns information about the type of endpoints available.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeEndpointTypesRequest
      * @return A Java Future containing the result of the DescribeEndpointTypes
@@ -483,8 +461,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Returns information about the type of endpoints available.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeEndpointTypesRequest
      * @param asyncHandler
@@ -505,8 +481,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * Returns information about the endpoints for your account in the current
      * region.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeEndpointsRequest
      * @return A Java Future containing the result of the DescribeEndpoints
@@ -521,8 +495,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * Returns information about the endpoints for your account in the current
      * region.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeEndpointsRequest
      * @param asyncHandler
@@ -543,8 +515,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * Returns information about the replication instance types that can be
      * created in the specified region.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeOrderableReplicationInstancesRequest
      * @return A Java Future containing the result of the
@@ -561,8 +531,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * Returns information about the replication instance types that can be
      * created in the specified region.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeOrderableReplicationInstancesRequest
      * @param asyncHandler
@@ -584,8 +552,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Returns the status of the RefreshSchemas operation.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeRefreshSchemasStatusRequest
      * @return A Java Future containing the result of the
@@ -599,8 +565,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Returns the status of the RefreshSchemas operation.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeRefreshSchemasStatusRequest
      * @param asyncHandler
@@ -622,8 +586,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * Returns information about replication instances for your account in the
      * current region.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeReplicationInstancesRequest
      * @return A Java Future containing the result of the
@@ -638,8 +600,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * Returns information about replication instances for your account in the
      * current region.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeReplicationInstancesRequest
      * @param asyncHandler
@@ -660,8 +620,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Returns information about the replication subnet groups.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeReplicationSubnetGroupsRequest
      * @return A Java Future containing the result of the
@@ -676,8 +634,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Returns information about the replication subnet groups.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeReplicationSubnetGroupsRequest
      * @param asyncHandler
@@ -700,8 +656,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * Returns information about replication tasks for your account in the
      * current region.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeReplicationTasksRequest
      * @return A Java Future containing the result of the
@@ -716,8 +670,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * Returns information about replication tasks for your account in the
      * current region.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeReplicationTasksRequest
      * @param asyncHandler
@@ -737,7 +689,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Returns information about the schema for the specified endpoint.
      * </p>
-     * <note/>
      * <p/>
      * 
      * @param describeSchemasRequest
@@ -752,7 +703,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Returns information about the schema for the specified endpoint.
      * </p>
-     * <note/>
      * <p/>
      * 
      * @param describeSchemasRequest
@@ -774,8 +724,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * Returns table statistics on the database migration task, including table
      * name, rows inserted, rows updated, and rows deleted.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeTableStatisticsRequest
      * @return A Java Future containing the result of the
@@ -790,8 +738,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * Returns table statistics on the database migration task, including table
      * name, rows inserted, rows updated, and rows deleted.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeTableStatisticsRequest
      * @param asyncHandler
@@ -811,8 +757,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Lists all tags for an AWS DMS resource.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param listTagsForResourceRequest
      * @return A Java Future containing the result of the ListTagsForResource
@@ -826,8 +770,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Lists all tags for an AWS DMS resource.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param listTagsForResourceRequest
      * @param asyncHandler
@@ -847,8 +789,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Modifies the specified endpoint.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param modifyEndpointRequest
      * @return A Java Future containing the result of the ModifyEndpoint
@@ -862,8 +802,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Modifies the specified endpoint.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param modifyEndpointRequest
      * @param asyncHandler
@@ -885,8 +823,9 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * one or more parameters by specifying these parameters and the new values
      * in the request.
      * </p>
-     * <note>Some settings are applied during the maintenance window.</note>
-     * <p/>
+     * <p>
+     * Some settings are applied during the maintenance window.
+     * </p>
      * <p/>
      * 
      * @param modifyReplicationInstanceRequest
@@ -903,8 +842,9 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * one or more parameters by specifying these parameters and the new values
      * in the request.
      * </p>
-     * <note>Some settings are applied during the maintenance window.</note>
-     * <p/>
+     * <p>
+     * Some settings are applied during the maintenance window.
+     * </p>
      * <p/>
      * 
      * @param modifyReplicationInstanceRequest
@@ -925,8 +865,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Modifies the settings for the specified replication subnet group.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param modifyReplicationSubnetGroupRequest
      * @return A Java Future containing the result of the
@@ -940,8 +878,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Modifies the settings for the specified replication subnet group.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param modifyReplicationSubnetGroupRequest
      * @param asyncHandler
@@ -964,8 +900,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * operation and can take several minutes. You can check the status of this
      * operation by calling the DescribeRefreshSchemasStatus operation.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param refreshSchemasRequest
      * @return A Java Future containing the result of the RefreshSchemas
@@ -981,8 +915,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * operation and can take several minutes. You can check the status of this
      * operation by calling the DescribeRefreshSchemasStatus operation.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param refreshSchemasRequest
      * @param asyncHandler
@@ -1002,8 +934,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Removes metadata tags from a DMS resource.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param removeTagsFromResourceRequest
      * @return A Java Future containing the result of the RemoveTagsFromResource
@@ -1017,8 +947,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Removes metadata tags from a DMS resource.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param removeTagsFromResourceRequest
      * @param asyncHandler
@@ -1038,8 +966,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Starts the replication task.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param startReplicationTaskRequest
      * @return A Java Future containing the result of the StartReplicationTask
@@ -1053,8 +979,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Starts the replication task.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param startReplicationTaskRequest
      * @param asyncHandler
@@ -1074,7 +998,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Stops the replication task.
      * </p>
-     * <note/>
      * <p/>
      * 
      * @param stopReplicationTaskRequest
@@ -1089,7 +1012,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Stops the replication task.
      * </p>
-     * <note/>
      * <p/>
      * 
      * @param stopReplicationTaskRequest
@@ -1110,8 +1032,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Tests the connection between the replication instance and the endpoint.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param testConnectionRequest
      * @return A Java Future containing the result of the TestConnection
@@ -1125,8 +1045,6 @@ public interface AWSDatabaseMigrationServiceAsync extends
      * <p>
      * Tests the connection between the replication instance and the endpoint.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param testConnectionRequest
      * @param asyncHandler

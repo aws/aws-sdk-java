@@ -88,6 +88,19 @@ public class CreateReplicationInstanceRequestMarshaller
                                 createReplicationInstanceRequest
                                         .getReplicationInstanceClass());
             }
+
+            java.util.List<String> vpcSecurityGroupIdsList = createReplicationInstanceRequest
+                    .getVpcSecurityGroupIds();
+            if (vpcSecurityGroupIdsList != null) {
+                jsonGenerator.writeFieldName("VpcSecurityGroupIds");
+                jsonGenerator.writeStartArray();
+                for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
+                    if (vpcSecurityGroupIdsListValue != null) {
+                        jsonGenerator.writeValue(vpcSecurityGroupIdsListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
             if (createReplicationInstanceRequest.getAvailabilityZone() != null) {
                 jsonGenerator.writeFieldName("AvailabilityZone").writeValue(
                         createReplicationInstanceRequest.getAvailabilityZone());

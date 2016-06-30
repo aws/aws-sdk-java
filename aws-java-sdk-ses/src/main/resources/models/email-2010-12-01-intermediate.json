@@ -19,13 +19,13 @@
     "jsonVersion" : null,
     "endpointPrefix" : "email",
     "signingName" : "ses",
+    "jsonProtocol" : false,
+    "xmlProtocol" : true,
     "serviceName" : "Amazon SES",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
-    "xmlProtocol" : true,
-    "jsonProtocol" : false
+    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "CloneReceiptRuleSet" : {

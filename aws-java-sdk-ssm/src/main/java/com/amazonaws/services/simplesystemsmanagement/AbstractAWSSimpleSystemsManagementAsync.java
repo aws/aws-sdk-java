@@ -31,6 +31,21 @@ public class AbstractAWSSimpleSystemsManagementAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
+            AddTagsToResourceRequest request) {
+
+        return addTagsToResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
+            AddTagsToResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelCommandResult> cancelCommandAsync(
             CancelCommandRequest request) {
 
@@ -41,6 +56,21 @@ public class AbstractAWSSimpleSystemsManagementAsync extends
     public java.util.concurrent.Future<CancelCommandResult> cancelCommandAsync(
             CancelCommandRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelCommandRequest, CancelCommandResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateActivationResult> createActivationAsync(
+            CreateActivationRequest request) {
+
+        return createActivationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateActivationResult> createActivationAsync(
+            CreateActivationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateActivationRequest, CreateActivationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -91,6 +121,21 @@ public class AbstractAWSSimpleSystemsManagementAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteActivationResult> deleteActivationAsync(
+            DeleteActivationRequest request) {
+
+        return deleteActivationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteActivationResult> deleteActivationAsync(
+            DeleteActivationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteActivationRequest, DeleteActivationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAssociationResult> deleteAssociationAsync(
             DeleteAssociationRequest request) {
 
@@ -116,6 +161,36 @@ public class AbstractAWSSimpleSystemsManagementAsync extends
     public java.util.concurrent.Future<DeleteDocumentResult> deleteDocumentAsync(
             DeleteDocumentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDocumentRequest, DeleteDocumentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterManagedInstanceResult> deregisterManagedInstanceAsync(
+            DeregisterManagedInstanceRequest request) {
+
+        return deregisterManagedInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterManagedInstanceResult> deregisterManagedInstanceAsync(
+            DeregisterManagedInstanceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeregisterManagedInstanceRequest, DeregisterManagedInstanceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeActivationsResult> describeActivationsAsync(
+            DescribeActivationsRequest request) {
+
+        return describeActivationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeActivationsResult> describeActivationsAsync(
+            DescribeActivationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeActivationsRequest, DescribeActivationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -280,6 +355,21 @@ public class AbstractAWSSimpleSystemsManagementAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyDocumentPermissionResult> modifyDocumentPermissionAsync(
             ModifyDocumentPermissionRequest request) {
 
@@ -290,6 +380,21 @@ public class AbstractAWSSimpleSystemsManagementAsync extends
     public java.util.concurrent.Future<ModifyDocumentPermissionResult> modifyDocumentPermissionAsync(
             ModifyDocumentPermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyDocumentPermissionRequest, ModifyDocumentPermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
+            RemoveTagsFromResourceRequest request) {
+
+        return removeTagsFromResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
+            RemoveTagsFromResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -320,6 +425,21 @@ public class AbstractAWSSimpleSystemsManagementAsync extends
     public java.util.concurrent.Future<UpdateAssociationStatusResult> updateAssociationStatusAsync(
             UpdateAssociationStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAssociationStatusRequest, UpdateAssociationStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateManagedInstanceRoleResult> updateManagedInstanceRoleAsync(
+            UpdateManagedInstanceRoleRequest request) {
+
+        return updateManagedInstanceRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateManagedInstanceRoleResult> updateManagedInstanceRoleAsync(
+            UpdateManagedInstanceRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateManagedInstanceRoleRequest, UpdateManagedInstanceRoleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

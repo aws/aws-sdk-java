@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -55,6 +55,14 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
      * </p>
      */
     private String replicationInstanceClass;
+    /**
+     * <p>
+     * Specifies the VPC security group to be used with the replication
+     * instance. The VPC security group must work with the VPC containing the
+     * replication instance.
+     * </p>
+     */
+    private java.util.List<String> vpcSecurityGroupIds;
     /**
      * <p>
      * The weekly time range (in UTC) during which system maintenance can occur,
@@ -279,7 +287,7 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param replicationInstanceClass
-     *        The compute and memory capacity of the replication instance. </p>
+     *        The compute and memory capacity of the replication instance.</p>
      *        <p>
      *        Valid Values:
      *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
@@ -298,7 +306,7 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
      * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
      * </p>
      * 
-     * @return The compute and memory capacity of the replication instance. </p>
+     * @return The compute and memory capacity of the replication instance.</p>
      *         <p>
      *         Valid Values:
      *         <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
@@ -318,7 +326,7 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param replicationInstanceClass
-     *        The compute and memory capacity of the replication instance. </p>
+     *        The compute and memory capacity of the replication instance.</p>
      *        <p>
      *        Valid Values:
      *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
@@ -329,6 +337,100 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
     public ModifyReplicationInstanceRequest withReplicationInstanceClass(
             String replicationInstanceClass) {
         setReplicationInstanceClass(replicationInstanceClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC security group to be used with the replication
+     * instance. The VPC security group must work with the VPC containing the
+     * replication instance.
+     * </p>
+     * 
+     * @return Specifies the VPC security group to be used with the replication
+     *         instance. The VPC security group must work with the VPC
+     *         containing the replication instance.
+     */
+
+    public java.util.List<String> getVpcSecurityGroupIds() {
+        return vpcSecurityGroupIds;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC security group to be used with the replication
+     * instance. The VPC security group must work with the VPC containing the
+     * replication instance.
+     * </p>
+     * 
+     * @param vpcSecurityGroupIds
+     *        Specifies the VPC security group to be used with the replication
+     *        instance. The VPC security group must work with the VPC containing
+     *        the replication instance.
+     */
+
+    public void setVpcSecurityGroupIds(
+            java.util.Collection<String> vpcSecurityGroupIds) {
+        if (vpcSecurityGroupIds == null) {
+            this.vpcSecurityGroupIds = null;
+            return;
+        }
+
+        this.vpcSecurityGroupIds = new java.util.ArrayList<String>(
+                vpcSecurityGroupIds);
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC security group to be used with the replication
+     * instance. The VPC security group must work with the VPC containing the
+     * replication instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpcSecurityGroupIds(java.util.Collection)} or
+     * {@link #withVpcSecurityGroupIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param vpcSecurityGroupIds
+     *        Specifies the VPC security group to be used with the replication
+     *        instance. The VPC security group must work with the VPC containing
+     *        the replication instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyReplicationInstanceRequest withVpcSecurityGroupIds(
+            String... vpcSecurityGroupIds) {
+        if (this.vpcSecurityGroupIds == null) {
+            setVpcSecurityGroupIds(new java.util.ArrayList<String>(
+                    vpcSecurityGroupIds.length));
+        }
+        for (String ele : vpcSecurityGroupIds) {
+            this.vpcSecurityGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC security group to be used with the replication
+     * instance. The VPC security group must work with the VPC containing the
+     * replication instance.
+     * </p>
+     * 
+     * @param vpcSecurityGroupIds
+     *        Specifies the VPC security group to be used with the replication
+     *        instance. The VPC security group must work with the VPC containing
+     *        the replication instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyReplicationInstanceRequest withVpcSecurityGroupIds(
+            java.util.Collection<String> vpcSecurityGroupIds) {
+        setVpcSecurityGroupIds(vpcSecurityGroupIds);
         return this;
     }
 
@@ -361,7 +463,7 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
      *        and the change is asynchronously applied as soon as possible. If
      *        moving this window to the current time, there must be at least 30
      *        minutes between the current time and end of the window to ensure
-     *        pending changes are applied. </p>
+     *        pending changes are applied.</p>
      *        <p>
      *        Default: Uses existing setting
      *        </p>
@@ -407,7 +509,7 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
      *         situation, and the change is asynchronously applied as soon as
      *         possible. If moving this window to the current time, there must
      *         be at least 30 minutes between the current time and end of the
-     *         window to ensure pending changes are applied. </p>
+     *         window to ensure pending changes are applied.</p>
      *         <p>
      *         Default: Uses existing setting
      *         </p>
@@ -454,7 +556,7 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
      *        and the change is asynchronously applied as soon as possible. If
      *        moving this window to the current time, there must be at least 30
      *        minutes between the current time and end of the window to ensure
-     *        pending changes are applied. </p>
+     *        pending changes are applied.</p>
      *        <p>
      *        Default: Uses existing setting
      *        </p>
@@ -533,7 +635,7 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
      * @param allowMajorVersionUpgrade
      *        Indicates that major version upgrades are allowed. Changing this
      *        parameter does not result in an outage and the change is
-     *        asynchronously applied as soon as possible. </p>
+     *        asynchronously applied as soon as possible.</p>
      *        <p>
      *        Constraints: This parameter must be set to true when specifying a
      *        value for the <code>EngineVersion</code> parameter that is a
@@ -559,7 +661,7 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return Indicates that major version upgrades are allowed. Changing this
      *         parameter does not result in an outage and the change is
-     *         asynchronously applied as soon as possible. </p>
+     *         asynchronously applied as soon as possible.</p>
      *         <p>
      *         Constraints: This parameter must be set to true when specifying a
      *         value for the <code>EngineVersion</code> parameter that is a
@@ -586,7 +688,7 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
      * @param allowMajorVersionUpgrade
      *        Indicates that major version upgrades are allowed. Changing this
      *        parameter does not result in an outage and the change is
-     *        asynchronously applied as soon as possible. </p>
+     *        asynchronously applied as soon as possible.</p>
      *        <p>
      *        Constraints: This parameter must be set to true when specifying a
      *        value for the <code>EngineVersion</code> parameter that is a
@@ -616,7 +718,7 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return Indicates that major version upgrades are allowed. Changing this
      *         parameter does not result in an outage and the change is
-     *         asynchronously applied as soon as possible. </p>
+     *         asynchronously applied as soon as possible.</p>
      *         <p>
      *         Constraints: This parameter must be set to true when specifying a
      *         value for the <code>EngineVersion</code> parameter that is a
@@ -805,6 +907,8 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
         if (getReplicationInstanceClass() != null)
             sb.append("ReplicationInstanceClass: "
                     + getReplicationInstanceClass() + ",");
+        if (getVpcSecurityGroupIds() != null)
+            sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");
         if (getPreferredMaintenanceWindow() != null)
             sb.append("PreferredMaintenanceWindow: "
                     + getPreferredMaintenanceWindow() + ",");
@@ -860,6 +964,13 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
         if (other.getReplicationInstanceClass() != null
                 && other.getReplicationInstanceClass().equals(
                         this.getReplicationInstanceClass()) == false)
+            return false;
+        if (other.getVpcSecurityGroupIds() == null
+                ^ this.getVpcSecurityGroupIds() == null)
+            return false;
+        if (other.getVpcSecurityGroupIds() != null
+                && other.getVpcSecurityGroupIds().equals(
+                        this.getVpcSecurityGroupIds()) == false)
             return false;
         if (other.getPreferredMaintenanceWindow() == null
                 ^ this.getPreferredMaintenanceWindow() == null)
@@ -918,6 +1029,10 @@ public class ModifyReplicationInstanceRequest extends AmazonWebServiceRequest
                 * hashCode
                 + ((getReplicationInstanceClass() == null) ? 0
                         : getReplicationInstanceClass().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getVpcSecurityGroupIds() == null) ? 0
+                        : getVpcSecurityGroupIds().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getPreferredMaintenanceWindow() == null) ? 0

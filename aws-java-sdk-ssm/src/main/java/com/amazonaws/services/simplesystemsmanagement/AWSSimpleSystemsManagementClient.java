@@ -45,26 +45,42 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * <p>
  * <p>
  * This is the Amazon Simple Systems Manager (SSM) API Reference. SSM enables
- * you to remotely manage the configuration of your Amazon EC2 instance using
- * scripts or commands with either an on-demand solution called <i>SSM Run
- * Command</i> or a lightweight instance configuration solution called <i>SSM
- * Config</i>.
+ * you to remotely manage the configuration of your on-premises servers and
+ * virtual machines (VMs) and your Amazon EC2 instances using scripts, commands,
+ * or the Amazon EC2 console. SSM includes an on-demand solution called
+ * <i>Amazon EC2 Run Command</i> and a lightweight instance configuration
+ * solution called <i>SSM Config</i>.
  * </p>
  * <p>
- * This references is intended to be used with the SSM User Guide for <a href=
+ * This references is intended to be used with the EC2 Run Command User Guide
+ * for <a href=
  * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html"
  * >Linux</a> or <a href=
  * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/execute-remote-commands.html"
  * >Windows</a>.
  * </p>
+ * <note>
+ * <p>
+ * You must register your on-premises servers and VMs through an activation
+ * process before you can configure them using Run Command. Registered servers
+ * and VMs are called <i>managed instances</i>. For more information, see <a
+ * href
+ * ="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html"
+ * >Setting Up Run Command On Managed Instances (On-Premises Servers and VMs) on
+ * Linux</a> or <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html"
+ * >Setting Up Run Command On Managed Instances (On-Premises Servers and VMs) on
+ * Windows</a>.
+ * </p>
+ * </note>
  * <p>
  * <b>Run Command</b>
  * </p>
  * <p>
  * Run Command provides an on-demand experience for executing commands. You can
- * use pre-defined Amazon SSM documents to perform the actions listed later in
- * this section, or you can create your own documents. With these documents, you
- * can remotely configure your instances by sending commands using the
+ * use pre-defined SSM documents to perform the actions listed later in this
+ * section, or you can create your own documents. With these documents, you can
+ * remotely configure your instances by sending commands using the
  * <b>Commands</b> page in the <a
  * href="http://console.aws.amazon.com/ec2/">Amazon EC2 console</a>, <a href=
  * "http://docs.aws.amazon.com/powershell/latest/reference/items/Amazon_Simple_Systems_Management_cmdlets.html"
@@ -109,7 +125,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * >Managing Windows Instance Configuration</a>.
  * </p>
  * <p>
- * SSM Config and SSM Run Command include the following pre-defined documents.
+ * SSM Config and Run Command include the following pre-defined documents.
  * </p>
  * <p>
  * <b>Linux</b>
@@ -200,15 +216,15 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * Linux and the EC2Config service runs in the Local System account on Windows.
  * If a user has permission to execute any of the pre-defined SSM documents (any
  * document that begins with AWS-*) then that user also has administrator access
- * to the instance. Delegate access to SSM and Run Command judiciously. This
- * becomes extremely important if you create your own SSM documents. Amazon Web
- * Services does not provide guidance about how to create secure SSM documents.
- * You create SSM documents and delegate access to Run Command at your own risk.
- * As a security best practice, we recommend that you assign access to "AWS-*"
- * documents, especially the AWS-RunShellScript document on Linux and the
- * AWS-RunPowerShellScript document on Windows, to trusted administrators only.
- * You can create SSM documents for specific tasks and delegate access to
- * non-administrators.
+ * to the instance. Delegate access to Run Command and SSM Config judiciously.
+ * This becomes extremely important if you create your own SSM documents. Amazon
+ * Web Services does not provide guidance about how to create secure SSM
+ * documents. You create SSM documents and delegate access to Run Command at
+ * your own risk. As a security best practice, we recommend that you assign
+ * access to "AWS-*" documents, especially the AWS-RunShellScript document on
+ * Linux and the AWS-RunPowerShellScript document on Windows, to trusted
+ * administrators only. You can create SSM documents for specific tasks and
+ * delegate access to non-administrators.
  * </p>
  * </important>
  * <p>
@@ -266,11 +282,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                                             com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidNextToken")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidNextTokenException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("AssociatedInstances")
                                     .withModeledClass(
                                             com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException.class))
@@ -286,19 +297,14 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                                             com.amazonaws.services.simplesystemsmanagement.model.DuplicateInstanceIdException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidFilterKey")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterKeyException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidParameters")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("AssociationAlreadyExists")
                                     .withModeledClass(
                                             com.amazonaws.services.simplesystemsmanagement.model.AssociationAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidActivation")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidCommandId")
@@ -316,29 +322,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                                             com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentContentException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("AssociationDoesNotExist")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.AssociationDoesNotExistException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("TooManyUpdates")
                                     .withModeledClass(
                                             com.amazonaws.services.simplesystemsmanagement.model.TooManyUpdatesException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InternalServerError")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InternalServerErrorException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("DocumentPermissionLimit")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.DocumentPermissionLimitException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("MaxDocumentSizeExceeded")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("UnsupportedPlatformType")
@@ -346,9 +332,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                                             com.amazonaws.services.simplesystemsmanagement.model.UnsupportedPlatformTypeException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidInstanceId")
+                                    .withErrorCode("MaxDocumentSizeExceeded")
                                     .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException.class))
+                                            com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("DocumentAlreadyExists")
@@ -361,6 +347,66 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                                             com.amazonaws.services.simplesystemsmanagement.model.InvalidPermissionTypeException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidResourceType")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceTypeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("StatusUnchanged")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidOutputFolder")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidResourceId")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidNextToken")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidFilterKey")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterKeyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidParameters")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AssociationDoesNotExist")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.AssociationDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalServerError")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InternalServerErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidFilter")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DocumentPermissionLimit")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.DocumentPermissionLimitException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidInstanceId")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidDocumentOperation")
                                     .withModeledClass(
                                             com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentOperationException.class))
@@ -371,14 +417,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                                             com.amazonaws.services.simplesystemsmanagement.model.DocumentLimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("StatusUnchanged")
+                                    .withErrorCode("InvalidActivationId")
                                     .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidOutputFolder")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException.class)));
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationIdException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon SSM. A
@@ -549,6 +590,81 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * Adds or overwrites one or more tags for the specified resource. Tags are
+     * metadata that you assign to your managed instances. Tags enable you to
+     * categorize your managed instances in different ways, for example, by
+     * purpose, owner, or environment. Each tag consists of a key and an
+     * optional value, both of which you define. For example, you could define a
+     * set of tags for your account's managed instances that helps you track
+     * each instance's owner and stack level. For example: Key=Owner and
+     * Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production,
+     * Pre-Production, or Test. Each resource can have a maximum of 10 tags.
+     * </p>
+     * <p>
+     * We recommend that you devise a set of tag keys that meets your needs for
+     * each resource type. Using a consistent set of tag keys makes it easier
+     * for you to manage your resources. You can search and filter the resources
+     * based on the tags you add. Tags don't have any semantic meaning to Amazon
+     * EC2 and are interpreted strictly as a string of characters.
+     * </p>
+     * <p>
+     * For more information about tags, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"
+     * >Tagging Your Amazon EC2 Resources</a> in the Amazon EC2 User Guide.
+     * </p>
+     * 
+     * @param addTagsToResourceRequest
+     * @return Result of the AddTagsToResource operation returned by the
+     *         service.
+     * @throws InvalidResourceTypeException
+     *         The resource type is not valid. If you are attempting to tag an
+     *         instance, the instance must be a registered, managed instance.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct
+     *         ID and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.AddTagsToResource
+     */
+    @Override
+    public AddTagsToResourceResult addTagsToResource(
+            AddTagsToResourceRequest addTagsToResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddTagsToResourceRequest> request = null;
+        Response<AddTagsToResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddTagsToResourceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(addTagsToResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AddTagsToResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddTagsToResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Attempts to cancel the command specified by the Command ID. There is no
      * guarantee that the command will be terminated and the underlying process
      * stopped.
@@ -593,6 +709,61 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new CancelCommandResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Registers your on-premises server or virtual machine with Amazon EC2 so
+     * that you can manage these resources using Run Command. An on-premises
+     * server or virtual machine that has been registered with EC2 is called a
+     * managed instance. For more information about activations, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html"
+     * >Setting Up Managed Instances (Linux)</a> or <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html"
+     * >Setting Up Managed Instances (Windows)</a> in the Amazon EC2 User Guide.
+     * </p>
+     * 
+     * @param createActivationRequest
+     * @return Result of the CreateActivation operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.CreateActivation
+     */
+    @Override
+    public CreateActivationResult createActivation(
+            CreateActivationRequest createActivationRequest) {
+        ExecutionContext executionContext = createExecutionContext(createActivationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateActivationRequest> request = null;
+        Response<CreateActivationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateActivationRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createActivationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateActivationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateActivationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -819,6 +990,63 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * Deletes an activation. You are not required to delete an activation. If
+     * you delete an activation, you can no longer use it to register additional
+     * managed instances. Deleting an activation does not de-register managed
+     * instances. You must manually de-register managed instances.
+     * </p>
+     * 
+     * @param deleteActivationRequest
+     * @return Result of the DeleteActivation operation returned by the service.
+     * @throws InvalidActivationIdException
+     *         The activation ID is not valid. Verify the you entered the
+     *         correct ActivationId or ActivationCode and try again.
+     * @throws InvalidActivationException
+     *         The activation is not valid. The activation might have been
+     *         deleted, or the ActivationId and the ActivationCode do not match.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DeleteActivation
+     */
+    @Override
+    public DeleteActivationResult deleteActivation(
+            DeleteActivationRequest deleteActivationRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteActivationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteActivationRequest> request = null;
+        Response<DeleteActivationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteActivationRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deleteActivationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteActivationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteActivationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disassociates the specified SSM document from the specified instance.
      * </p>
      * <p>
@@ -935,6 +1163,119 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new DeleteDocumentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the server or virtual machine from the list of registered
+     * servers. You can reregister the instance again at any time. If you don’t
+     * plan to use Run Command on the server, we suggest uninstalling the SSM
+     * agent first.
+     * </p>
+     * 
+     * @param deregisterManagedInstanceRequest
+     * @return Result of the DeregisterManagedInstance operation returned by the
+     *         service.
+     * @throws InvalidInstanceIdException
+     *         The instance is not in valid state. Valid states are: Running,
+     *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
+     *         Terminated.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DeregisterManagedInstance
+     */
+    @Override
+    public DeregisterManagedInstanceResult deregisterManagedInstance(
+            DeregisterManagedInstanceRequest deregisterManagedInstanceRequest) {
+        ExecutionContext executionContext = createExecutionContext(deregisterManagedInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterManagedInstanceRequest> request = null;
+        Response<DeregisterManagedInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterManagedInstanceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterManagedInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterManagedInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeregisterManagedInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Details about the activation, including: the date and time the activation
+     * was created, the expiration date, the IAM role assigned to the instances
+     * in the activation, and the number of instances activated by this
+     * registration.
+     * </p>
+     * 
+     * @param describeActivationsRequest
+     * @return Result of the DescribeActivations operation returned by the
+     *         service.
+     * @throws InvalidFilterException
+     *         The filter name is not valid. Verify the you entered the correct
+     *         name and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeActivations
+     */
+    @Override
+    public DescribeActivationsResult describeActivations(
+            DescribeActivationsRequest describeActivationsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeActivationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeActivationsRequest> request = null;
+        Response<DescribeActivationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeActivationsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeActivationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeActivationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeActivationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1449,6 +1790,61 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * Returns a list of the tags assigned to the specified resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the
+     *         service.
+     * @throws InvalidResourceTypeException
+     *         The resource type is not valid. If you are attempting to tag an
+     *         instance, the instance must be a registered, managed instance.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct
+     *         ID and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.ListTagsForResource
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(
+            ListTagsForResourceRequest listTagsForResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Share a document publicly or privately. If you share a document
      * privately, you must specify the AWS user account IDs for those people who
      * can use the document. If you share a document publicly, you must specify
@@ -1501,6 +1897,61 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                             new JsonOperationMetadata().withPayloadJson(true)
                                     .withHasStreamingSuccessResponse(false),
                             new ModifyDocumentPermissionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes all tags from the specified resource.
+     * </p>
+     * 
+     * @param removeTagsFromResourceRequest
+     * @return Result of the RemoveTagsFromResource operation returned by the
+     *         service.
+     * @throws InvalidResourceTypeException
+     *         The resource type is not valid. If you are attempting to tag an
+     *         instance, the instance must be a registered, managed instance.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct
+     *         ID and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.RemoveTagsFromResource
+     */
+    @Override
+    public RemoveTagsFromResourceResult removeTagsFromResource(
+            RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveTagsFromResourceRequest> request = null;
+        Response<RemoveTagsFromResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveTagsFromResourceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(removeTagsFromResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsFromResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RemoveTagsFromResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1630,6 +2081,60 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new UpdateAssociationStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Assigns or changes an Amazon Identity and Access Management (IAM) role to
+     * the managed instance.
+     * </p>
+     * 
+     * @param updateManagedInstanceRoleRequest
+     * @return Result of the UpdateManagedInstanceRole operation returned by the
+     *         service.
+     * @throws InvalidInstanceIdException
+     *         The instance is not in valid state. Valid states are: Running,
+     *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
+     *         Terminated.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.UpdateManagedInstanceRole
+     */
+    @Override
+    public UpdateManagedInstanceRoleResult updateManagedInstanceRole(
+            UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateManagedInstanceRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateManagedInstanceRoleRequest> request = null;
+        Response<UpdateManagedInstanceRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateManagedInstanceRoleRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateManagedInstanceRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateManagedInstanceRoleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateManagedInstanceRoleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

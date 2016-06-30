@@ -20,15 +20,15 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
     /**
-     * <p>>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * removed from.
+     * <p>
+     * &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to
+     * be removed from.
      * </p>
      */
     private String resourceArn;
@@ -40,14 +40,14 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
     private java.util.List<String> tagKeys;
 
     /**
-     * <p>>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * removed from.
+     * <p>
+     * &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to
+     * be removed from.
      * </p>
      * 
      * @param resourceArn
-     *        >The Amazon Resource Name (ARN) of the AWS DMS resource the tag is
-     *        to be removed from.
+     *        &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag
+     *        is to be removed from.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -55,13 +55,13 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * <p>>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * removed from.
+     * <p>
+     * &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to
+     * be removed from.
      * </p>
      * 
-     * @return >The Amazon Resource Name (ARN) of the AWS DMS resource the tag
-     *         is to be removed from.
+     * @return &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the
+     *         tag is to be removed from.
      */
 
     public String getResourceArn() {
@@ -69,14 +69,14 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * <p>>
-     * The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
-     * removed from.
+     * <p>
+     * &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to
+     * be removed from.
      * </p>
      * 
      * @param resourceArn
-     *        >The Amazon Resource Name (ARN) of the AWS DMS resource the tag is
-     *        to be removed from.
+     *        &gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag
+     *        is to be removed from.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

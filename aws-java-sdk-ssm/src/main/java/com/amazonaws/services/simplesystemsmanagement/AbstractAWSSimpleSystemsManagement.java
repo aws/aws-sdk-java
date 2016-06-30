@@ -40,7 +40,19 @@ public class AbstractAWSSimpleSystemsManagement implements
     }
 
     @Override
+    public AddTagsToResourceResult addTagsToResource(
+            AddTagsToResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelCommandResult cancelCommand(CancelCommandRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateActivationResult createActivation(
+            CreateActivationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -62,6 +74,12 @@ public class AbstractAWSSimpleSystemsManagement implements
     }
 
     @Override
+    public DeleteActivationResult deleteActivation(
+            DeleteActivationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteAssociationResult deleteAssociation(
             DeleteAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -69,6 +87,18 @@ public class AbstractAWSSimpleSystemsManagement implements
 
     @Override
     public DeleteDocumentResult deleteDocument(DeleteDocumentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeregisterManagedInstanceResult deregisterManagedInstance(
+            DeregisterManagedInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeActivationsResult describeActivations(
+            DescribeActivationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,8 +159,20 @@ public class AbstractAWSSimpleSystemsManagement implements
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(
+            ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyDocumentPermissionResult modifyDocumentPermission(
             ModifyDocumentPermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveTagsFromResourceResult removeTagsFromResource(
+            RemoveTagsFromResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -142,6 +184,12 @@ public class AbstractAWSSimpleSystemsManagement implements
     @Override
     public UpdateAssociationStatusResult updateAssociationStatus(
             UpdateAssociationStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateManagedInstanceRoleResult updateManagedInstanceRole(
+            UpdateManagedInstanceRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -19,13 +19,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "data.iot",
     "signingName" : "iotdata",
-    "serviceName" : "AWS IoT Data Plane",
     "protocolDefaultExceptionUmarshallerImpl" : null,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "serviceName" : "AWS IoT Data Plane",
     "jsonProtocol" : true,
     "xmlProtocol" : false,
     "cborProtocol" : false,
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext"
   },
   "operations" : {
     "DeleteThingShadow" : {

@@ -95,6 +95,42 @@ public class InstanceInformationJsonUnmarshaller implements
                     instanceInformation.setPlatformVersion(context
                             .getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ActivationId", targetDepth)) {
+                    context.nextToken();
+                    instanceInformation.setActivationId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IamRole", targetDepth)) {
+                    context.nextToken();
+                    instanceInformation.setIamRole(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("RegistrationDate", targetDepth)) {
+                    context.nextToken();
+                    instanceInformation.setRegistrationDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
+                }
+                if (context.testExpression("ResourceType", targetDepth)) {
+                    context.nextToken();
+                    instanceInformation.setResourceType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    instanceInformation.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("IPAddress", targetDepth)) {
+                    context.nextToken();
+                    instanceInformation.setIPAddress(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("ComputerName", targetDepth)) {
+                    context.nextToken();
+                    instanceInformation.setComputerName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

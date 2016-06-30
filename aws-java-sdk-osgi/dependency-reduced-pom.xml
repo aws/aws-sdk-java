@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.12</version>
+    <version>1.11.13</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -105,6 +105,7 @@
                 <configuration>
                   <minmemory>128m</minmemory>
                   <maxmemory>2g</maxmemory>
+                  <additionalparam>-Xdoclint:none</additionalparam>
                   <includeDependencySources>true</includeDependencySources>
                   <show>public</show>
                   <defaultexcludes>yes</defaultexcludes>
@@ -114,10 +115,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.12</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.13</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.12</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.13</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -513,6 +514,7 @@
                 <configuration>
                   <minmemory>128m</minmemory>
                   <maxmemory>2g</maxmemory>
+                  <additionalparam>-Xdoclint:none</additionalparam>
                   <includeDependencySources>true</includeDependencySources>
                   <show>public</show>
                   <defaultexcludes>yes</defaultexcludes>
@@ -522,10 +524,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.12</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.13</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.12</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.13</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -917,6 +919,7 @@
             <configuration>
               <minmemory>128m</minmemory>
               <maxmemory>2g</maxmemory>
+              <additionalparam>-Xdoclint:none</additionalparam>
               <includeDependencySources>true</includeDependencySources>
               <show>public</show>
               <defaultexcludes>yes</defaultexcludes>
@@ -926,10 +929,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.12</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.13</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.12</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.13</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1328,17 +1331,17 @@
             <version>2.7</version>
             <executions>
               <execution>
-                <id>default-resources</id>
-                <phase>process-resources</phase>
-                <goals>
-                  <goal>resources</goal>
-                </goals>
-              </execution>
-              <execution>
                 <id>default-testResources</id>
                 <phase>process-test-resources</phase>
                 <goals>
                   <goal>testResources</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>default-resources</id>
+                <phase>process-resources</phase>
+                <goals>
+                  <goal>resources</goal>
                 </goals>
               </execution>
               <execution>
@@ -1527,7 +1530,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.12-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.13-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

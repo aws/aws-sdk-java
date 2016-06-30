@@ -19,7 +19,7 @@ package com.amazonaws.services.databasemigrationservice.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p/>
  */
 public class RefreshSchemasResult implements Serializable, Cloneable {
 

@@ -48,10 +48,10 @@ import com.amazonaws.services.databasemigrationservice.model.transform.*;
  * <p>
  * AWS Database Migration Service (AWS DMS) can migrate your data to and from
  * the most widely used commercial and open-source databases such as Oracle,
- * PostgreSQL, Microsoft SQL Server, MariaDB, Amazon Aurora, and MySQL. The
- * service supports homogeneous migrations such as Oracle to Oracle, as well as
- * heterogeneous migrations between different database platforms, such as Oracle
- * to MySQL or SQL Server to PostgreSQL.
+ * PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora,
+ * and MySQL. The service supports homogeneous migrations such as Oracle to
+ * Oracle, as well as heterogeneous migrations between different database
+ * platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.
  * </p>
  */
 @ThreadSafe
@@ -319,8 +319,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * with cost allocation reporting to track cost associated with DMS
      * resources, or used in a Condition statement in an IAM policy for DMS.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param addTagsToResourceRequest
      * @return Result of the AddTagsToResource operation returned by the
@@ -370,8 +368,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Creates an endpoint using the provided settings.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param createEndpointRequest
      * @return Result of the CreateEndpoint operation returned by the service.
@@ -381,6 +377,11 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      *         The resource you are attempting to create already exists.
      * @throws ResourceQuotaExceededException
      *         The quota for this resource quota has been exceeded.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
      * @sample AWSDatabaseMigrationService.CreateEndpoint
      */
     @Override
@@ -424,8 +425,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Creates the replication instance using the specified parameters.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param createReplicationInstanceRequest
      * @return Result of the CreateReplicationInstance operation returned by the
@@ -497,8 +496,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * Creates a replication subnet group given a list of the subnet IDs in a
      * VPC.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param createReplicationSubnetGroupRequest
      * @return Result of the CreateReplicationSubnetGroup operation returned by
@@ -560,8 +557,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Creates a replication task using the specified parameters.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param createReplicationTaskRequest
      * @return Result of the CreateReplicationTask operation returned by the
@@ -620,8 +615,12 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Deletes the specified endpoint.
      * </p>
-     * <note>All tasks associated with the endpoint must be deleted before you
-     * can delete the endpoint.</note>
+     * <note>
+     * <p>
+     * All tasks associated with the endpoint must be deleted before you can
+     * delete the endpoint.
+     * </p>
+     * </note>
      * <p/>
      * 
      * @param deleteEndpointRequest
@@ -674,8 +673,12 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Deletes the specified replication instance.
      * </p>
-     * <note>You must delete any migration tasks that are associated with the
-     * replication instance before you can delete it.</note>
+     * <note>
+     * <p>
+     * You must delete any migration tasks that are associated with the
+     * replication instance before you can delete it.
+     * </p>
+     * </note>
      * <p/>
      * 
      * @param deleteReplicationInstanceRequest
@@ -729,8 +732,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Deletes a subnet group.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param deleteReplicationSubnetGroupRequest
      * @return Result of the DeleteReplicationSubnetGroup operation returned by
@@ -784,8 +785,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Deletes the specified replication task.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param deleteReplicationTaskRequest
      * @return Result of the DeleteReplicationTask operation returned by the
@@ -845,8 +844,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * This command does not take any parameters.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeAccountAttributesRequest
      * @return Result of the DescribeAccountAttributes operation returned by the
@@ -896,8 +893,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * replication instance and an endpoint. Connections are created when you
      * test an endpoint.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeConnectionsRequest
      * @return Result of the DescribeConnections operation returned by the
@@ -947,8 +942,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Returns information about the type of endpoints available.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeEndpointTypesRequest
      * @return Result of the DescribeEndpointTypes operation returned by the
@@ -997,8 +990,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * Returns information about the endpoints for your account in the current
      * region.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeEndpointsRequest
      * @return Result of the DescribeEndpoints operation returned by the
@@ -1049,8 +1040,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * Returns information about the replication instance types that can be
      * created in the specified region.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeOrderableReplicationInstancesRequest
      * @return Result of the DescribeOrderableReplicationInstances operation
@@ -1099,8 +1088,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Returns the status of the RefreshSchemas operation.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeRefreshSchemasStatusRequest
      * @return Result of the DescribeRefreshSchemasStatus operation returned by
@@ -1155,8 +1142,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * Returns information about replication instances for your account in the
      * current region.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeReplicationInstancesRequest
      * @return Result of the DescribeReplicationInstances operation returned by
@@ -1207,8 +1192,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Returns information about the replication subnet groups.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeReplicationSubnetGroupsRequest
      * @return Result of the DescribeReplicationSubnetGroups operation returned
@@ -1260,8 +1243,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * Returns information about replication tasks for your account in the
      * current region.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeReplicationTasksRequest
      * @return Result of the DescribeReplicationTasks operation returned by the
@@ -1311,7 +1292,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Returns information about the schema for the specified endpoint.
      * </p>
-     * <note/>
      * <p/>
      * 
      * @param describeSchemasRequest
@@ -1365,8 +1345,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * Returns table statistics on the database migration task, including table
      * name, rows inserted, rows updated, and rows deleted.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param describeTableStatisticsRequest
      * @return Result of the DescribeTableStatistics operation returned by the
@@ -1419,8 +1397,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Lists all tags for an AWS DMS resource.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the
@@ -1470,8 +1446,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Modifies the specified endpoint.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param modifyEndpointRequest
      * @return Result of the ModifyEndpoint operation returned by the service.
@@ -1529,8 +1503,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * one or more parameters by specifying these parameters and the new values
      * in the request.
      * </p>
-     * <note>Some settings are applied during the maintenance window.</note>
-     * <p/>
+     * <p>
+     * Some settings are applied during the maintenance window.
+     * </p>
      * <p/>
      * 
      * @param modifyReplicationInstanceRequest
@@ -1593,8 +1568,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Modifies the settings for the specified replication subnet group.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param modifyReplicationSubnetGroupRequest
      * @return Result of the ModifyReplicationSubnetGroup operation returned by
@@ -1656,8 +1629,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * operation and can take several minutes. You can check the status of this
      * operation by calling the DescribeRefreshSchemasStatus operation.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param refreshSchemasRequest
      * @return Result of the RefreshSchemas operation returned by the service.
@@ -1713,8 +1684,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Removes metadata tags from a DMS resource.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param removeTagsFromResourceRequest
      * @return Result of the RemoveTagsFromResource operation returned by the
@@ -1764,8 +1733,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Starts the replication task.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param startReplicationTaskRequest
      * @return Result of the StartReplicationTask operation returned by the
@@ -1818,7 +1785,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Stops the replication task.
      * </p>
-     * <note/>
      * <p/>
      * 
      * @param stopReplicationTaskRequest
@@ -1872,8 +1838,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * <p>
      * Tests the connection between the replication instance and the endpoint.
      * </p>
-     * <note/>
-     * <p/>
      * 
      * @param testConnectionRequest
      * @return Result of the TestConnection operation returned by the service.

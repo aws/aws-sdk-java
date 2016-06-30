@@ -27,7 +27,8 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Required. The instance IDs where the command should execute.
+     * Required. The instance IDs where the command should execute. You can
+     * specify a maximum of 50 IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -99,10 +100,12 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Required. The instance IDs where the command should execute.
+     * Required. The instance IDs where the command should execute. You can
+     * specify a maximum of 50 IDs.
      * </p>
      * 
-     * @return Required. The instance IDs where the command should execute.
+     * @return Required. The instance IDs where the command should execute. You
+     *         can specify a maximum of 50 IDs.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -114,11 +117,13 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Required. The instance IDs where the command should execute.
+     * Required. The instance IDs where the command should execute. You can
+     * specify a maximum of 50 IDs.
      * </p>
      * 
      * @param instanceIds
-     *        Required. The instance IDs where the command should execute.
+     *        Required. The instance IDs where the command should execute. You
+     *        can specify a maximum of 50 IDs.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -133,7 +138,8 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Required. The instance IDs where the command should execute.
+     * Required. The instance IDs where the command should execute. You can
+     * specify a maximum of 50 IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -143,7 +149,8 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param instanceIds
-     *        Required. The instance IDs where the command should execute.
+     *        Required. The instance IDs where the command should execute. You
+     *        can specify a maximum of 50 IDs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -161,11 +168,13 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Required. The instance IDs where the command should execute.
+     * Required. The instance IDs where the command should execute. You can
+     * specify a maximum of 50 IDs.
      * </p>
      * 
      * @param instanceIds
-     *        Required. The instance IDs where the command should execute.
+     *        Required. The instance IDs where the command should execute. You
+     *        can specify a maximum of 50 IDs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

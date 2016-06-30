@@ -135,7 +135,7 @@ public class PredefinedMetricTransformer {
         }
         int requestCount = counter.intValue();
         if (requestCount < 1) {
-            LogFactory.getLog(getClass()).warn(
+            LogFactory.getLog(getClass()).debug(
                 "request count must be at least one");
             return Collections.emptyList();
         }
@@ -283,7 +283,7 @@ public class PredefinedMetricTransformer {
         }
         int count = counter.intValue();
         if (count < 1) {
-            LogFactory.getLog(getClass()).warn("Count must be at least one");
+            LogFactory.getLog(getClass()).debug("Count must be at least one");
             return Collections.emptyList();
         }
         final List<MetricDatum> result = new ArrayList<MetricDatum>();

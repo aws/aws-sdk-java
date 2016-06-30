@@ -79,6 +79,34 @@ public class InstanceInformationJsonMarshaller {
                 jsonGenerator.writeFieldName("PlatformVersion").writeValue(
                         instanceInformation.getPlatformVersion());
             }
+            if (instanceInformation.getActivationId() != null) {
+                jsonGenerator.writeFieldName("ActivationId").writeValue(
+                        instanceInformation.getActivationId());
+            }
+            if (instanceInformation.getIamRole() != null) {
+                jsonGenerator.writeFieldName("IamRole").writeValue(
+                        instanceInformation.getIamRole());
+            }
+            if (instanceInformation.getRegistrationDate() != null) {
+                jsonGenerator.writeFieldName("RegistrationDate").writeValue(
+                        instanceInformation.getRegistrationDate());
+            }
+            if (instanceInformation.getResourceType() != null) {
+                jsonGenerator.writeFieldName("ResourceType").writeValue(
+                        instanceInformation.getResourceType());
+            }
+            if (instanceInformation.getName() != null) {
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        instanceInformation.getName());
+            }
+            if (instanceInformation.getIPAddress() != null) {
+                jsonGenerator.writeFieldName("IPAddress").writeValue(
+                        instanceInformation.getIPAddress());
+            }
+            if (instanceInformation.getComputerName() != null) {
+                jsonGenerator.writeFieldName("ComputerName").writeValue(
+                        instanceInformation.getComputerName());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

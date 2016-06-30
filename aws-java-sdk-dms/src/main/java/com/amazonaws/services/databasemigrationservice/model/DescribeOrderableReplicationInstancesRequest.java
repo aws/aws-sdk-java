@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class DescribeOrderableReplicationInstancesRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

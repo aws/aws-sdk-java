@@ -24,7 +24,10 @@ public enum InstanceInformationFilterKey {
     InstanceIds("InstanceIds"),
     AgentVersion("AgentVersion"),
     PingStatus("PingStatus"),
-    PlatformTypes("PlatformTypes");
+    PlatformTypes("PlatformTypes"),
+    ActivationIds("ActivationIds"),
+    IamRole("IamRole"),
+    ResourceType("ResourceType");
 
     private String value;
 

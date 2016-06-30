@@ -34,9 +34,21 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>myrepinstance</code>
@@ -61,6 +73,14 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * </p>
      */
     private String replicationInstanceClass;
+    /**
+     * <p>
+     * Specifies the VPC security group to be used with the replication
+     * instance. The VPC security group must work with the VPC containing the
+     * replication instance.
+     * </p>
+     */
+    private java.util.List<String> vpcSecurityGroupIds;
     /**
      * <p>
      * The EC2 Availability Zone that the replication instance will be created
@@ -152,9 +172,21 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>myrepinstance</code>
@@ -167,9 +199,21 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>myrepinstance</code>
@@ -189,9 +233,21 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>myrepinstance</code>
@@ -203,10 +259,21 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         </p>
      *         </li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>myrepinstance</code>
@@ -225,9 +292,21 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>myrepinstance</code>
@@ -240,9 +319,21 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>myrepinstance</code>
@@ -316,7 +407,7 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * 
      * @param replicationInstanceClass
      *        The compute and memory capacity of the replication instance as
-     *        specified by the replication instance class. </p>
+     *        specified by the replication instance class.</p>
      *        <p>
      *        Valid Values:
      *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
@@ -337,7 +428,7 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return The compute and memory capacity of the replication instance as
-     *         specified by the replication instance class. </p>
+     *         specified by the replication instance class.</p>
      *         <p>
      *         Valid Values:
      *         <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
@@ -359,7 +450,7 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * 
      * @param replicationInstanceClass
      *        The compute and memory capacity of the replication instance as
-     *        specified by the replication instance class. </p>
+     *        specified by the replication instance class.</p>
      *        <p>
      *        Valid Values:
      *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
@@ -370,6 +461,100 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
     public CreateReplicationInstanceRequest withReplicationInstanceClass(
             String replicationInstanceClass) {
         setReplicationInstanceClass(replicationInstanceClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC security group to be used with the replication
+     * instance. The VPC security group must work with the VPC containing the
+     * replication instance.
+     * </p>
+     * 
+     * @return Specifies the VPC security group to be used with the replication
+     *         instance. The VPC security group must work with the VPC
+     *         containing the replication instance.
+     */
+
+    public java.util.List<String> getVpcSecurityGroupIds() {
+        return vpcSecurityGroupIds;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC security group to be used with the replication
+     * instance. The VPC security group must work with the VPC containing the
+     * replication instance.
+     * </p>
+     * 
+     * @param vpcSecurityGroupIds
+     *        Specifies the VPC security group to be used with the replication
+     *        instance. The VPC security group must work with the VPC containing
+     *        the replication instance.
+     */
+
+    public void setVpcSecurityGroupIds(
+            java.util.Collection<String> vpcSecurityGroupIds) {
+        if (vpcSecurityGroupIds == null) {
+            this.vpcSecurityGroupIds = null;
+            return;
+        }
+
+        this.vpcSecurityGroupIds = new java.util.ArrayList<String>(
+                vpcSecurityGroupIds);
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC security group to be used with the replication
+     * instance. The VPC security group must work with the VPC containing the
+     * replication instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpcSecurityGroupIds(java.util.Collection)} or
+     * {@link #withVpcSecurityGroupIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param vpcSecurityGroupIds
+     *        Specifies the VPC security group to be used with the replication
+     *        instance. The VPC security group must work with the VPC containing
+     *        the replication instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateReplicationInstanceRequest withVpcSecurityGroupIds(
+            String... vpcSecurityGroupIds) {
+        if (this.vpcSecurityGroupIds == null) {
+            setVpcSecurityGroupIds(new java.util.ArrayList<String>(
+                    vpcSecurityGroupIds.length));
+        }
+        for (String ele : vpcSecurityGroupIds) {
+            this.vpcSecurityGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC security group to be used with the replication
+     * instance. The VPC security group must work with the VPC containing the
+     * replication instance.
+     * </p>
+     * 
+     * @param vpcSecurityGroupIds
+     *        Specifies the VPC security group to be used with the replication
+     *        instance. The VPC security group must work with the VPC containing
+     *        the replication instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateReplicationInstanceRequest withVpcSecurityGroupIds(
+            java.util.Collection<String> vpcSecurityGroupIds) {
+        setVpcSecurityGroupIds(vpcSecurityGroupIds);
         return this;
     }
 
@@ -388,7 +573,7 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * 
      * @param availabilityZone
      *        The EC2 Availability Zone that the replication instance will be
-     *        created in. </p>
+     *        created in.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone in the
      *        endpoint's region.
@@ -415,7 +600,7 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return The EC2 Availability Zone that the replication instance will be
-     *         created in. </p>
+     *         created in.</p>
      *         <p>
      *         Default: A random, system-chosen Availability Zone in the
      *         endpoint's region.
@@ -443,7 +628,7 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * 
      * @param availabilityZone
      *        The EC2 Availability Zone that the replication instance will be
-     *        created in. </p>
+     *        created in.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone in the
      *        endpoint's region.
@@ -524,7 +709,7 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * 
      * @param preferredMaintenanceWindow
      *        The weekly time range during which system maintenance can occur,
-     *        in Universal Coordinated Time (UTC). </p>
+     *        in Universal Coordinated Time (UTC).</p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
@@ -563,7 +748,7 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return The weekly time range during which system maintenance can occur,
-     *         in Universal Coordinated Time (UTC). </p>
+     *         in Universal Coordinated Time (UTC).</p>
      *         <p>
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
@@ -603,7 +788,7 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * 
      * @param preferredMaintenanceWindow
      *        The weekly time range during which system maintenance can occur,
-     *        in Universal Coordinated Time (UTC). </p>
+     *        in Universal Coordinated Time (UTC).</p>
      *        <p>
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
@@ -679,7 +864,7 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * 
      * @param autoMinorVersionUpgrade
      *        Indicates that minor engine upgrades will be applied automatically
-     *        to the replication instance during the maintenance window. </p>
+     *        to the replication instance during the maintenance window.</p>
      *        <p>
      *        Default: <code>true</code>
      */
@@ -699,7 +884,7 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return Indicates that minor engine upgrades will be applied
      *         automatically to the replication instance during the maintenance
-     *         window. </p>
+     *         window.</p>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -719,7 +904,7 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * 
      * @param autoMinorVersionUpgrade
      *        Indicates that minor engine upgrades will be applied automatically
-     *        to the replication instance during the maintenance window. </p>
+     *        to the replication instance during the maintenance window.</p>
      *        <p>
      *        Default: <code>true</code>
      * @return Returns a reference to this object so that method calls can be
@@ -743,7 +928,7 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return Indicates that minor engine upgrades will be applied
      *         automatically to the replication instance during the maintenance
-     *         window. </p>
+     *         window.</p>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -994,6 +1179,8 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
         if (getReplicationInstanceClass() != null)
             sb.append("ReplicationInstanceClass: "
                     + getReplicationInstanceClass() + ",");
+        if (getVpcSecurityGroupIds() != null)
+            sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
         if (getReplicationSubnetGroupIdentifier() != null)
@@ -1047,6 +1234,13 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
         if (other.getReplicationInstanceClass() != null
                 && other.getReplicationInstanceClass().equals(
                         this.getReplicationInstanceClass()) == false)
+            return false;
+        if (other.getVpcSecurityGroupIds() == null
+                ^ this.getVpcSecurityGroupIds() == null)
+            return false;
+        if (other.getVpcSecurityGroupIds() != null
+                && other.getVpcSecurityGroupIds().equals(
+                        this.getVpcSecurityGroupIds()) == false)
             return false;
         if (other.getAvailabilityZone() == null
                 ^ this.getAvailabilityZone() == null)
@@ -1118,6 +1312,10 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
                 * hashCode
                 + ((getReplicationInstanceClass() == null) ? 0
                         : getReplicationInstanceClass().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getVpcSecurityGroupIds() == null) ? 0
+                        : getVpcSecurityGroupIds().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()

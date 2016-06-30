@@ -19,7 +19,7 @@ package com.amazonaws.services.databasemigrationservice.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p/>
  */
 public class ReplicationInstance implements Serializable, Cloneable {
 
@@ -32,9 +32,21 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>myrepinstance</code>
@@ -70,6 +82,12 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date instanceCreateTime;
+    /**
+     * <p>
+     * The VPC security group for the instance.
+     * </p>
+     */
+    private java.util.List<VpcSecurityGroupMembership> vpcSecurityGroups;
     /**
      * <p>
      * The Availability Zone for the instance.
@@ -154,9 +172,21 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>myrepinstance</code>
@@ -169,9 +199,21 @@ public class ReplicationInstance implements Serializable, Cloneable {
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>myrepinstance</code>
@@ -191,9 +233,21 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>myrepinstance</code>
@@ -205,10 +259,21 @@ public class ReplicationInstance implements Serializable, Cloneable {
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         <li>
+     *         <p>
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         </p>
      *         </li>
-     *         <li>First character must be a letter.</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Example: <code>myrepinstance</code>
@@ -227,9 +292,21 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * Constraints:
      * </p>
      * <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     * <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     * <li>
+     * <p>
+     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Example: <code>myrepinstance</code>
@@ -242,9 +319,21 @@ public class ReplicationInstance implements Serializable, Cloneable {
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li>
-     *        <li>First character must be a letter.</li>
-     *        <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+     *        <li>
+     *        <p>
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>myrepinstance</code>
@@ -268,7 +357,7 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param replicationInstanceClass
-     *        The compute and memory capacity of the replication instance. </p>
+     *        The compute and memory capacity of the replication instance.</p>
      *        <p>
      *        Valid Values:
      *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
@@ -287,7 +376,7 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
      * </p>
      * 
-     * @return The compute and memory capacity of the replication instance. </p>
+     * @return The compute and memory capacity of the replication instance.</p>
      *         <p>
      *         Valid Values:
      *         <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
@@ -307,7 +396,7 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param replicationInstanceClass
-     *        The compute and memory capacity of the replication instance. </p>
+     *        The compute and memory capacity of the replication instance.</p>
      *        <p>
      *        Valid Values:
      *        <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
@@ -449,6 +538,84 @@ public class ReplicationInstance implements Serializable, Cloneable {
     public ReplicationInstance withInstanceCreateTime(
             java.util.Date instanceCreateTime) {
         setInstanceCreateTime(instanceCreateTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The VPC security group for the instance.
+     * </p>
+     * 
+     * @return The VPC security group for the instance.
+     */
+
+    public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroups() {
+        return vpcSecurityGroups;
+    }
+
+    /**
+     * <p>
+     * The VPC security group for the instance.
+     * </p>
+     * 
+     * @param vpcSecurityGroups
+     *        The VPC security group for the instance.
+     */
+
+    public void setVpcSecurityGroups(
+            java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroups) {
+        if (vpcSecurityGroups == null) {
+            this.vpcSecurityGroups = null;
+            return;
+        }
+
+        this.vpcSecurityGroups = new java.util.ArrayList<VpcSecurityGroupMembership>(
+                vpcSecurityGroups);
+    }
+
+    /**
+     * <p>
+     * The VPC security group for the instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setVpcSecurityGroups(java.util.Collection)} or
+     * {@link #withVpcSecurityGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param vpcSecurityGroups
+     *        The VPC security group for the instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ReplicationInstance withVpcSecurityGroups(
+            VpcSecurityGroupMembership... vpcSecurityGroups) {
+        if (this.vpcSecurityGroups == null) {
+            setVpcSecurityGroups(new java.util.ArrayList<VpcSecurityGroupMembership>(
+                    vpcSecurityGroups.length));
+        }
+        for (VpcSecurityGroupMembership ele : vpcSecurityGroups) {
+            this.vpcSecurityGroups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The VPC security group for the instance.
+     * </p>
+     * 
+     * @param vpcSecurityGroups
+     *        The VPC security group for the instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ReplicationInstance withVpcSecurityGroups(
+            java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroups) {
+        setVpcSecurityGroups(vpcSecurityGroups);
         return this;
     }
 
@@ -1024,6 +1191,8 @@ public class ReplicationInstance implements Serializable, Cloneable {
             sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
         if (getInstanceCreateTime() != null)
             sb.append("InstanceCreateTime: " + getInstanceCreateTime() + ",");
+        if (getVpcSecurityGroups() != null)
+            sb.append("VpcSecurityGroups: " + getVpcSecurityGroups() + ",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
         if (getReplicationSubnetGroup() != null)
@@ -1101,6 +1270,13 @@ public class ReplicationInstance implements Serializable, Cloneable {
         if (other.getInstanceCreateTime() != null
                 && other.getInstanceCreateTime().equals(
                         this.getInstanceCreateTime()) == false)
+            return false;
+        if (other.getVpcSecurityGroups() == null
+                ^ this.getVpcSecurityGroups() == null)
+            return false;
+        if (other.getVpcSecurityGroups() != null
+                && other.getVpcSecurityGroups().equals(
+                        this.getVpcSecurityGroups()) == false)
             return false;
         if (other.getAvailabilityZone() == null
                 ^ this.getAvailabilityZone() == null)
@@ -1203,6 +1379,10 @@ public class ReplicationInstance implements Serializable, Cloneable {
                 * hashCode
                 + ((getInstanceCreateTime() == null) ? 0
                         : getInstanceCreateTime().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getVpcSecurityGroups() == null) ? 0
+                        : getVpcSecurityGroups().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone()

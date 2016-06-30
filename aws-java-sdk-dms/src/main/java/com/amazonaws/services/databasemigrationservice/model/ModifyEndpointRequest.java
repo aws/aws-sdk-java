@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class ModifyEndpointRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -49,7 +49,7 @@ public class ModifyEndpointRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES.
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.
      * </p>
      */
     private String engineName;
@@ -270,12 +270,12 @@ public class ModifyEndpointRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES.
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.
      * </p>
      * 
      * @param engineName
      *        The type of engine for the endpoint. Valid values include MYSQL,
-     *        ORACLE, POSTGRES.
+     *        ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.
      */
 
     public void setEngineName(String engineName) {
@@ -285,11 +285,11 @@ public class ModifyEndpointRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES.
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.
      * </p>
      * 
      * @return The type of engine for the endpoint. Valid values include MYSQL,
-     *         ORACLE, POSTGRES.
+     *         ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.
      */
 
     public String getEngineName() {
@@ -299,12 +299,12 @@ public class ModifyEndpointRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES.
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.
      * </p>
      * 
      * @param engineName
      *        The type of engine for the endpoint. Valid values include MYSQL,
-     *        ORACLE, POSTGRES.
+     *        ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

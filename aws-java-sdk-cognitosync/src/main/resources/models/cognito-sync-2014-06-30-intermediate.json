@@ -19,13 +19,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "cognito-sync",
     "signingName" : "cognito-sync",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "serviceName" : "Amazon Cognito Sync",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "cborProtocol" : false,
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "jsonProtocol" : true,
     "xmlProtocol" : false,
-    "serviceName" : "Amazon Cognito Sync"
+    "cborProtocol" : false,
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "BulkPublish" : {
@@ -16406,6 +16406,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "exceptionUnmarshallerImpl" : null,
+  "clientConfigFactory" : "ClientConfigurationFactory"
 }
