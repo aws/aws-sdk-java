@@ -25,6 +25,6 @@ The basic steps for running this sample are:
 
 3.  Save the file.
 
-4.  Run the `AWSJavaMailSample.java` file, located in the same directory as the properties file. The sample prints information to the standard output.
+4.  Run the `AmazonSESSample.java` file, located in the same directory as the properties file. The sample prints information to the standard output.
 
 **NOTE:** The sample also includes an Ant build.xml file to run the sample.
