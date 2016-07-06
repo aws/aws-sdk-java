@@ -7,6 +7,6 @@
      do in the model definition). 
      -->
     <#if shapeType == "Exception">
-        @com.fasterxml.jackson.annotation.JsonProperty("${memberModel.c2jName}")
+        @com.fasterxml.jackson.annotation.JsonProperty("${memberModel.http.unmarshallLocationName}")
     </#if>
 </#macro>

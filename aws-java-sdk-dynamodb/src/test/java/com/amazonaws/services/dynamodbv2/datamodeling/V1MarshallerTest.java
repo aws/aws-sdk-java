@@ -16,6 +16,7 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 
 import static org.junit.Assert.assertEquals;
 
+import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
@@ -33,11 +34,13 @@ import org.junit.Test;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.pojos.SubClass;
+import com.amazonaws.services.dynamodbv2.pojos.TestClass;
+import com.amazonaws.services.dynamodbv2.pojos.UnannotatedSubClass;
 
 public class V1MarshallerTest {
 
-    private static final ItemConverter CONVERTER = ConversionSchemas.V1
-            .getConverter(new ConversionSchema.Dependencies());
+    private static final ItemConverter CONVERTER = schema().getConverter(dependencies());
 
     @Test
     public void testBoolean() {
@@ -282,7 +285,7 @@ public class V1MarshallerTest {
     @Test
     public void testUnannotatedObject() throws Exception {
         try {
-            CONVERTER.convert(UnannotatedSubClass.class.getMethod("getChild"),
+            convert(UnannotatedSubClass.class, UnannotatedSubClass.class.getMethod("getChild"),
                     new UnannotatedSubClass());
 
             Assert.fail("Expected DynamoDBMappingException");
@@ -302,10 +305,9 @@ public class V1MarshallerTest {
                 convert("getS3Link", link).getS());
     }
 
-    private static AttributeValue convert(String method, Object value) {
+    private AttributeValue convert(String method, Object value) {
         try {
-
-            return CONVERTER.convert(TestClass.class.getMethod(method), value);
+            return convert(TestClass.class, TestClass.class.getMethod(method), value);
 
         } catch (RuntimeException e) {
             throw e;
@@ -313,4 +315,17 @@ public class V1MarshallerTest {
             throw new RuntimeException(e);
         }
     }
+
+    protected <T> AttributeValue convert(Class<T> clazz, Method method, Object value) {
+        return CONVERTER.convert(method, value);
+    }
+
+    protected static final ConversionSchema.Dependencies dependencies() {
+        return new ConversionSchema.Dependencies();
+    }
+
+    protected static final ConversionSchema schema() {
+        return ConversionSchemas.V1;
+    }
+
 }

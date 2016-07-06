@@ -19,13 +19,13 @@
     "jsonVersion" : null,
     "endpointPrefix" : "elasticache",
     "signingName" : "elasticache",
-    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
-    "serviceName" : "Amazon ElastiCache",
     "jsonProtocol" : false,
     "xmlProtocol" : true,
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
-    "unmarshallerClassSuffix" : "StaxUnmarshaller"
+    "unmarshallerClassSuffix" : "StaxUnmarshaller",
+    "serviceName" : "Amazon ElastiCache",
+    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "AddTagsToResource" : {
@@ -59,13 +59,13 @@
         "documentation" : "<p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "addTagsToResource",
       "authenticated" : true,
       "syncReturnType" : "AddTagsToResourceResult",
       "asyncReturnType" : "AddTagsToResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsToResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToResourceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult>",
-      "methodName" : "addTagsToResource"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult>"
     },
     "AuthorizeCacheSecurityGroupIngress" : {
       "documentation" : "<p>The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress to a cache security group. Applications using ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.</p> <note> <p>You cannot authorize ingress from an Amazon EC2 security group in one region to an ElastiCache cluster in another region.</p> </note>",
@@ -101,13 +101,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "authorizeCacheSecurityGroupIngress",
       "authenticated" : true,
       "syncReturnType" : "CacheSecurityGroup",
       "asyncReturnType" : "CacheSecurityGroup",
       "asyncFutureType" : "java.util.concurrent.Future<CacheSecurityGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheSecurityGroup>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AuthorizeCacheSecurityGroupIngressRequest, CacheSecurityGroup>",
-      "methodName" : "authorizeCacheSecurityGroupIngress"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AuthorizeCacheSecurityGroupIngressRequest, CacheSecurityGroup>"
     },
     "CopySnapshot" : {
       "documentation" : "<p>The <i>CopySnapshot</i> action makes a copy of an existing snapshot.</p> <important> <p>Users or groups that have permissions to use the <i>CopySnapshot</i> API can create their own Amazon S3 buckets and copy snapshots to it. To control access to your snapshots, use an IAM policy to control who has the ability to use the <i>CopySnapshot</i> API. For more information about using IAM to control the use of ElastiCache APIs, see <a href=\"http://docs.aws.amazon.com/ElastiCache/latest/Snapshots.Exporting.html\">Exporting Snapshots</a> and <a href=\"http://docs.aws.amazon.com/ElastiCache/latest/IAM.html\">Authentication &amp; Access Control</a>.</p> </important> <p class=\"title\"> <b>Erorr Message:</b> </p> <ul> <li> <p> <b>Error Message:</b> The authenticated user does not have sufficient permissions to perform the desired activity.</p> <p> <b>Solution:</b> Contact your system administrator to get the needed permissions.</p> </li> </ul>",
@@ -146,13 +146,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "copySnapshot",
       "authenticated" : true,
       "syncReturnType" : "Snapshot",
       "asyncReturnType" : "Snapshot",
       "asyncFutureType" : "java.util.concurrent.Future<Snapshot>",
       "asyncCallableType" : "java.util.concurrent.Callable<Snapshot>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CopySnapshotRequest, Snapshot>",
-      "methodName" : "copySnapshot"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CopySnapshotRequest, Snapshot>"
     },
     "CreateCacheCluster" : {
       "documentation" : "<p>The <i>CreateCacheCluster</i> action creates a cache cluster. All nodes in the cache cluster run the same protocol-compliant cache engine software, either Memcached or Redis.</p>",
@@ -215,13 +215,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createCacheCluster",
       "authenticated" : true,
       "syncReturnType" : "CacheCluster",
       "asyncReturnType" : "CacheCluster",
       "asyncFutureType" : "java.util.concurrent.Future<CacheCluster>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheCluster>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCacheClusterRequest, CacheCluster>",
-      "methodName" : "createCacheCluster"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCacheClusterRequest, CacheCluster>"
     },
     "CreateCacheParameterGroup" : {
       "documentation" : "<p>The <i>CreateCacheParameterGroup</i> action creates a new cache parameter group. A cache parameter group is a collection of parameters that you apply to all of the nodes in a cache cluster.</p>",
@@ -257,13 +257,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createCacheParameterGroup",
       "authenticated" : true,
       "syncReturnType" : "CacheParameterGroup",
       "asyncReturnType" : "CacheParameterGroup",
       "asyncFutureType" : "java.util.concurrent.Future<CacheParameterGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheParameterGroup>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCacheParameterGroupRequest, CacheParameterGroup>",
-      "methodName" : "createCacheParameterGroup"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCacheParameterGroupRequest, CacheParameterGroup>"
     },
     "CreateCacheSecurityGroup" : {
       "documentation" : "<p>The <i>CreateCacheSecurityGroup</i> action creates a new cache security group. Use a cache security group to control access to one or more cache clusters.</p> <p>Cache security groups are only used when you are creating a cache cluster outside of an Amazon Virtual Private Cloud (VPC). If you are creating a cache cluster inside of a VPC, use a cache subnet group instead. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html\">CreateCacheSubnetGroup</a>.</p>",
@@ -296,13 +296,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createCacheSecurityGroup",
       "authenticated" : true,
       "syncReturnType" : "CacheSecurityGroup",
       "asyncReturnType" : "CacheSecurityGroup",
       "asyncFutureType" : "java.util.concurrent.Future<CacheSecurityGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheSecurityGroup>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCacheSecurityGroupRequest, CacheSecurityGroup>",
-      "methodName" : "createCacheSecurityGroup"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCacheSecurityGroupRequest, CacheSecurityGroup>"
     },
     "CreateCacheSubnetGroup" : {
       "documentation" : "<p>The <i>CreateCacheSubnetGroup</i> action creates a new cache subnet group.</p> <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (VPC).</p>",
@@ -335,13 +335,13 @@
         "documentation" : "<p>An invalid subnet identifier was specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createCacheSubnetGroup",
       "authenticated" : true,
       "syncReturnType" : "CacheSubnetGroup",
       "asyncReturnType" : "CacheSubnetGroup",
       "asyncFutureType" : "java.util.concurrent.Future<CacheSubnetGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheSubnetGroup>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCacheSubnetGroupRequest, CacheSubnetGroup>",
-      "methodName" : "createCacheSubnetGroup"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCacheSubnetGroupRequest, CacheSubnetGroup>"
     },
     "CreateReplicationGroup" : {
       "documentation" : "<p>The <i>CreateReplicationGroup</i> action creates a replication group. A replication group is a collection of cache clusters, where one of the cache clusters is a read/write primary and the others are read-only replicas. Writes to the primary are automatically propagated to the replicas.</p> <p>When you create a replication group, you must specify an existing cache cluster that is in the primary role. When the replication group has been successfully created, you can add one or more read replica replicas to it, up to a total of five read replicas.</p> <note> <p>This action is valid only for Redis.</p> </note>",
@@ -404,13 +404,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createReplicationGroup",
       "authenticated" : true,
       "syncReturnType" : "ReplicationGroup",
       "asyncReturnType" : "ReplicationGroup",
       "asyncFutureType" : "java.util.concurrent.Future<ReplicationGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReplicationGroup>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReplicationGroupRequest, ReplicationGroup>",
-      "methodName" : "createReplicationGroup"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReplicationGroupRequest, ReplicationGroup>"
     },
     "CreateSnapshot" : {
       "documentation" : "<p>The <i>CreateSnapshot</i> action creates a copy of an entire cache cluster at a specific moment in time.</p>",
@@ -452,13 +452,13 @@
         "documentation" : "<p>The value for a parameter is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createSnapshot",
       "authenticated" : true,
       "syncReturnType" : "Snapshot",
       "asyncReturnType" : "Snapshot",
       "asyncFutureType" : "java.util.concurrent.Future<Snapshot>",
       "asyncCallableType" : "java.util.concurrent.Callable<Snapshot>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateSnapshotRequest, Snapshot>",
-      "methodName" : "createSnapshot"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateSnapshotRequest, Snapshot>"
     },
     "DeleteCacheCluster" : {
       "documentation" : "<p>The <i>DeleteCacheCluster</i> action deletes a previously provisioned cache cluster. <i>DeleteCacheCluster</i> deletes all associated cache nodes, node endpoints and the cache cluster itself. When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the cache cluster; you cannot cancel or revert this action.</p> <p>This API cannot be used to delete a cache cluster that is the last read replica of a replication group that has Multi-AZ mode enabled.</p>",
@@ -500,13 +500,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteCacheCluster",
       "authenticated" : true,
       "syncReturnType" : "CacheCluster",
       "asyncReturnType" : "CacheCluster",
       "asyncFutureType" : "java.util.concurrent.Future<CacheCluster>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheCluster>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCacheClusterRequest, CacheCluster>",
-      "methodName" : "deleteCacheCluster"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCacheClusterRequest, CacheCluster>"
     },
     "DeleteCacheParameterGroup" : {
       "documentation" : "<p>The <i>DeleteCacheParameterGroup</i> action deletes the specified cache parameter group. You cannot delete a cache parameter group if it is associated with any cache clusters.</p>",
@@ -539,13 +539,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteCacheParameterGroup",
       "authenticated" : true,
       "syncReturnType" : "DeleteCacheParameterGroupResult",
       "asyncReturnType" : "DeleteCacheParameterGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteCacheParameterGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteCacheParameterGroupResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCacheParameterGroupRequest, DeleteCacheParameterGroupResult>",
-      "methodName" : "deleteCacheParameterGroup"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCacheParameterGroupRequest, DeleteCacheParameterGroupResult>"
     },
     "DeleteCacheSecurityGroup" : {
       "documentation" : "<p>The <i>DeleteCacheSecurityGroup</i> action deletes a cache security group.</p> <note> <p>You cannot delete a cache security group if it is associated with any cache clusters.</p> </note>",
@@ -578,13 +578,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteCacheSecurityGroup",
       "authenticated" : true,
       "syncReturnType" : "DeleteCacheSecurityGroupResult",
       "asyncReturnType" : "DeleteCacheSecurityGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteCacheSecurityGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteCacheSecurityGroupResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCacheSecurityGroupRequest, DeleteCacheSecurityGroupResult>",
-      "methodName" : "deleteCacheSecurityGroup"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCacheSecurityGroupRequest, DeleteCacheSecurityGroupResult>"
     },
     "DeleteCacheSubnetGroup" : {
       "documentation" : "<p>The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.</p> <note> <p>You cannot delete a cache subnet group if it is associated with any cache clusters.</p> </note>",
@@ -611,13 +611,13 @@
         "documentation" : "<p>The requested cache subnet group name does not refer to an existing cache subnet group.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteCacheSubnetGroup",
       "authenticated" : true,
       "syncReturnType" : "DeleteCacheSubnetGroupResult",
       "asyncReturnType" : "DeleteCacheSubnetGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteCacheSubnetGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteCacheSubnetGroupResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCacheSubnetGroupRequest, DeleteCacheSubnetGroupResult>",
-      "methodName" : "deleteCacheSubnetGroup"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCacheSubnetGroupRequest, DeleteCacheSubnetGroupResult>"
     },
     "DeleteReplicationGroup" : {
       "documentation" : "<p>The <i>DeleteReplicationGroup</i> action deletes an existing replication group. By default, this action deletes the entire replication group, including the primary cluster and all of the read replicas. You can optionally delete only the read replicas, while retaining the primary cluster.</p> <p>When you receive a successful response from this action, Amazon ElastiCache immediately begins deleting the selected resources; you cannot cancel or revert this action.</p>",
@@ -659,13 +659,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteReplicationGroup",
       "authenticated" : true,
       "syncReturnType" : "ReplicationGroup",
       "asyncReturnType" : "ReplicationGroup",
       "asyncFutureType" : "java.util.concurrent.Future<ReplicationGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReplicationGroup>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReplicationGroupRequest, ReplicationGroup>",
-      "methodName" : "deleteReplicationGroup"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReplicationGroupRequest, ReplicationGroup>"
     },
     "DeleteSnapshot" : {
       "documentation" : "<p>The <i>DeleteSnapshot</i> action deletes an existing snapshot. When you receive a successful response from this action, ElastiCache immediately begins deleting the snapshot; you cannot cancel or revert this action.</p>",
@@ -698,13 +698,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteSnapshot",
       "authenticated" : true,
       "syncReturnType" : "Snapshot",
       "asyncReturnType" : "Snapshot",
       "asyncFutureType" : "java.util.concurrent.Future<Snapshot>",
       "asyncCallableType" : "java.util.concurrent.Callable<Snapshot>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, Snapshot>",
-      "methodName" : "deleteSnapshot"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, Snapshot>"
     },
     "DescribeCacheClusters" : {
       "documentation" : "<p>The <i>DescribeCacheClusters</i> action returns information about all provisioned cache clusters if no cache cluster identifier is specified, or about a specific cache cluster if a cache cluster identifier is supplied.</p> <p>By default, abbreviated information about the cache clusters(s) will be returned. You can use the optional <i>ShowDetails</i> flag to retrieve detailed information about the cache nodes associated with the cache clusters. These details include the DNS address and port for the cache node endpoint.</p> <p>If the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully provisioned.</p> <p>If the cluster is in the DELETING state, only cluster level information will be displayed.</p> <p>If cache nodes are currently being added to the cache cluster, node endpoint information and creation time for the additional nodes will not be displayed until they are completely provisioned. When the cache cluster state is <i>available</i>, the cluster is ready for use.</p> <p>If cache nodes are currently being removed from the cache cluster, no endpoint information for the removed nodes is displayed.</p>",
@@ -734,13 +734,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeCacheClusters",
       "authenticated" : true,
       "syncReturnType" : "DescribeCacheClustersResult",
       "asyncReturnType" : "DescribeCacheClustersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCacheClustersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCacheClustersResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheClustersRequest, DescribeCacheClustersResult>",
-      "methodName" : "describeCacheClusters"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheClustersRequest, DescribeCacheClustersResult>"
     },
     "DescribeCacheEngineVersions" : {
       "documentation" : "<p>The <i>DescribeCacheEngineVersions</i> action returns a list of the available cache engines and their versions.</p>",
@@ -761,13 +761,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeCacheEngineVersions",
       "authenticated" : true,
       "syncReturnType" : "DescribeCacheEngineVersionsResult",
       "asyncReturnType" : "DescribeCacheEngineVersionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCacheEngineVersionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCacheEngineVersionsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheEngineVersionsRequest, DescribeCacheEngineVersionsResult>",
-      "methodName" : "describeCacheEngineVersions"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheEngineVersionsRequest, DescribeCacheEngineVersionsResult>"
     },
     "DescribeCacheParameterGroups" : {
       "documentation" : "<p>The <i>DescribeCacheParameterGroups</i> action returns a list of cache parameter group descriptions. If a cache parameter group name is specified, the list will contain only the descriptions for that group.</p>",
@@ -797,13 +797,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeCacheParameterGroups",
       "authenticated" : true,
       "syncReturnType" : "DescribeCacheParameterGroupsResult",
       "asyncReturnType" : "DescribeCacheParameterGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCacheParameterGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCacheParameterGroupsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheParameterGroupsRequest, DescribeCacheParameterGroupsResult>",
-      "methodName" : "describeCacheParameterGroups"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheParameterGroupsRequest, DescribeCacheParameterGroupsResult>"
     },
     "DescribeCacheParameters" : {
       "documentation" : "<p>The <i>DescribeCacheParameters</i> action returns the detailed parameter list for a particular cache parameter group.</p>",
@@ -833,13 +833,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeCacheParameters",
       "authenticated" : true,
       "syncReturnType" : "DescribeCacheParametersResult",
       "asyncReturnType" : "DescribeCacheParametersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCacheParametersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCacheParametersResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheParametersRequest, DescribeCacheParametersResult>",
-      "methodName" : "describeCacheParameters"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheParametersRequest, DescribeCacheParametersResult>"
     },
     "DescribeCacheSecurityGroups" : {
       "documentation" : "<p>The <i>DescribeCacheSecurityGroups</i> action returns a list of cache security group descriptions. If a cache security group name is specified, the list will contain only the description of that group.</p>",
@@ -869,13 +869,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeCacheSecurityGroups",
       "authenticated" : true,
       "syncReturnType" : "DescribeCacheSecurityGroupsResult",
       "asyncReturnType" : "DescribeCacheSecurityGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCacheSecurityGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCacheSecurityGroupsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheSecurityGroupsRequest, DescribeCacheSecurityGroupsResult>",
-      "methodName" : "describeCacheSecurityGroups"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheSecurityGroupsRequest, DescribeCacheSecurityGroupsResult>"
     },
     "DescribeCacheSubnetGroups" : {
       "documentation" : "<p>The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet group descriptions. If a subnet group name is specified, the list will contain only the description of that group.</p>",
@@ -899,13 +899,13 @@
         "documentation" : "<p>The requested cache subnet group name does not refer to an existing cache subnet group.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeCacheSubnetGroups",
       "authenticated" : true,
       "syncReturnType" : "DescribeCacheSubnetGroupsResult",
       "asyncReturnType" : "DescribeCacheSubnetGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCacheSubnetGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCacheSubnetGroupsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheSubnetGroupsRequest, DescribeCacheSubnetGroupsResult>",
-      "methodName" : "describeCacheSubnetGroups"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCacheSubnetGroupsRequest, DescribeCacheSubnetGroupsResult>"
     },
     "DescribeEngineDefaultParameters" : {
       "documentation" : "<p>The <i>DescribeEngineDefaultParameters</i> action returns the default engine and system parameter information for the specified cache engine.</p>",
@@ -932,13 +932,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeEngineDefaultParameters",
       "authenticated" : true,
       "syncReturnType" : "EngineDefaults",
       "asyncReturnType" : "EngineDefaults",
       "asyncFutureType" : "java.util.concurrent.Future<EngineDefaults>",
       "asyncCallableType" : "java.util.concurrent.Callable<EngineDefaults>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEngineDefaultParametersRequest, EngineDefaults>",
-      "methodName" : "describeEngineDefaultParameters"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEngineDefaultParametersRequest, EngineDefaults>"
     },
     "DescribeEvents" : {
       "documentation" : "<p>The <i>DescribeEvents</i> action returns events related to cache clusters, cache security groups, and cache parameter groups. You can obtain events specific to a particular cache cluster, cache security group, or cache parameter group by providing the name as a parameter.</p> <p>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>",
@@ -965,13 +965,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeEvents",
       "authenticated" : true,
       "syncReturnType" : "DescribeEventsResult",
       "asyncReturnType" : "DescribeEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEventsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult>",
-      "methodName" : "describeEvents"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult>"
     },
     "DescribeReplicationGroups" : {
       "documentation" : "<p>The <i>DescribeReplicationGroups</i> action returns information about a particular replication group. If no identifier is specified, <i>DescribeReplicationGroups</i> returns information about all replication groups.</p>",
@@ -1001,13 +1001,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeReplicationGroups",
       "authenticated" : true,
       "syncReturnType" : "DescribeReplicationGroupsResult",
       "asyncReturnType" : "DescribeReplicationGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeReplicationGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeReplicationGroupsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReplicationGroupsRequest, DescribeReplicationGroupsResult>",
-      "methodName" : "describeReplicationGroups"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReplicationGroupsRequest, DescribeReplicationGroupsResult>"
     },
     "DescribeReservedCacheNodes" : {
       "documentation" : "<p>The <i>DescribeReservedCacheNodes</i> action returns information about reserved cache nodes for this account, or about a specified reserved cache node.</p>",
@@ -1037,13 +1037,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeReservedCacheNodes",
       "authenticated" : true,
       "syncReturnType" : "DescribeReservedCacheNodesResult",
       "asyncReturnType" : "DescribeReservedCacheNodesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeReservedCacheNodesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeReservedCacheNodesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReservedCacheNodesRequest, DescribeReservedCacheNodesResult>",
-      "methodName" : "describeReservedCacheNodes"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReservedCacheNodesRequest, DescribeReservedCacheNodesResult>"
     },
     "DescribeReservedCacheNodesOfferings" : {
       "documentation" : "<p>The <i>DescribeReservedCacheNodesOfferings</i> action lists available reserved cache node offerings.</p>",
@@ -1073,13 +1073,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeReservedCacheNodesOfferings",
       "authenticated" : true,
       "syncReturnType" : "DescribeReservedCacheNodesOfferingsResult",
       "asyncReturnType" : "DescribeReservedCacheNodesOfferingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeReservedCacheNodesOfferingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeReservedCacheNodesOfferingsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReservedCacheNodesOfferingsRequest, DescribeReservedCacheNodesOfferingsResult>",
-      "methodName" : "describeReservedCacheNodesOfferings"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReservedCacheNodesOfferingsRequest, DescribeReservedCacheNodesOfferingsResult>"
     },
     "DescribeSnapshots" : {
       "documentation" : "<p>The <i>DescribeSnapshots</i> action returns information about cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cache cluster.</p>",
@@ -1112,13 +1112,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeSnapshots",
       "authenticated" : true,
       "syncReturnType" : "DescribeSnapshotsResult",
       "asyncReturnType" : "DescribeSnapshotsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeSnapshotsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeSnapshotsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSnapshotsRequest, DescribeSnapshotsResult>",
-      "methodName" : "describeSnapshots"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSnapshotsRequest, DescribeSnapshotsResult>"
     },
     "ListAllowedNodeTypeModifications" : {
       "documentation" : "<p>The <code>ListAllowedNodeTypeModifications</code> action lists all available node types that you can scale your Redis cluster's or replication group's current node type up to.</p> <p>When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code> APIs to scale up your cluster or replication group, the value of the <i>CacheNodeType</i> parameter must be one of the node types returned by this action.</p>",
@@ -1151,13 +1151,13 @@
         "documentation" : "<p>The value for a parameter is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listAllowedNodeTypeModifications",
       "authenticated" : true,
       "syncReturnType" : "ListAllowedNodeTypeModificationsResult",
       "asyncReturnType" : "ListAllowedNodeTypeModificationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAllowedNodeTypeModificationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAllowedNodeTypeModificationsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAllowedNodeTypeModificationsRequest, ListAllowedNodeTypeModificationsResult>",
-      "methodName" : "listAllowedNodeTypeModifications"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAllowedNodeTypeModificationsRequest, ListAllowedNodeTypeModificationsResult>"
     },
     "ListTagsForResource" : {
       "documentation" : "<p>The <i>ListTagsForResource</i> action lists all cost allocation tags currently on the named resource. A <i>cost allocation tag</i> is a key-value pair where the key is case-sensitive and the value is optional. Cost allocation tags can be used to categorize and track your AWS costs.</p> <p>You can have a maximum of 10 cost allocation tags on an ElastiCache resource. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html\">Using Cost Allocation Tags in Amazon ElastiCache</a>.</p>",
@@ -1187,13 +1187,13 @@
         "documentation" : "<p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listTagsForResource",
       "authenticated" : true,
       "syncReturnType" : "ListTagsForResourceResult",
       "asyncReturnType" : "ListTagsForResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>",
-      "methodName" : "listTagsForResource"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>"
     },
     "ModifyCacheCluster" : {
       "documentation" : "<p>The <i>ModifyCacheCluster</i> action modifies the settings for a cache cluster. You can use this action to change one or more cluster configuration parameters by specifying the parameters and the new values.</p>",
@@ -1247,13 +1247,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "modifyCacheCluster",
       "authenticated" : true,
       "syncReturnType" : "CacheCluster",
       "asyncReturnType" : "CacheCluster",
       "asyncFutureType" : "java.util.concurrent.Future<CacheCluster>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheCluster>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyCacheClusterRequest, CacheCluster>",
-      "methodName" : "modifyCacheCluster"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyCacheClusterRequest, CacheCluster>"
     },
     "ModifyCacheParameterGroup" : {
       "documentation" : "<p>The <i>ModifyCacheParameterGroup</i> action modifies the parameters of a cache parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.</p>",
@@ -1286,13 +1286,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "modifyCacheParameterGroup",
       "authenticated" : true,
       "syncReturnType" : "ModifyCacheParameterGroupResult",
       "asyncReturnType" : "ModifyCacheParameterGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyCacheParameterGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyCacheParameterGroupResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyCacheParameterGroupRequest, ModifyCacheParameterGroupResult>",
-      "methodName" : "modifyCacheParameterGroup"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyCacheParameterGroupRequest, ModifyCacheParameterGroupResult>"
     },
     "ModifyCacheSubnetGroup" : {
       "documentation" : "<p>The <i>ModifyCacheSubnetGroup</i> action modifies an existing cache subnet group.</p>",
@@ -1325,13 +1325,13 @@
         "documentation" : "<p>An invalid subnet identifier was specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "modifyCacheSubnetGroup",
       "authenticated" : true,
       "syncReturnType" : "CacheSubnetGroup",
       "asyncReturnType" : "CacheSubnetGroup",
       "asyncFutureType" : "java.util.concurrent.Future<CacheSubnetGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheSubnetGroup>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyCacheSubnetGroupRequest, CacheSubnetGroup>",
-      "methodName" : "modifyCacheSubnetGroup"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyCacheSubnetGroupRequest, CacheSubnetGroup>"
     },
     "ModifyReplicationGroup" : {
       "documentation" : "<p>The <i>ModifyReplicationGroup</i> action modifies the settings for a replication group.</p>",
@@ -1391,13 +1391,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "modifyReplicationGroup",
       "authenticated" : true,
       "syncReturnType" : "ReplicationGroup",
       "asyncReturnType" : "ReplicationGroup",
       "asyncFutureType" : "java.util.concurrent.Future<ReplicationGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReplicationGroup>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyReplicationGroupRequest, ReplicationGroup>",
-      "methodName" : "modifyReplicationGroup"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyReplicationGroupRequest, ReplicationGroup>"
     },
     "PurchaseReservedCacheNodesOffering" : {
       "documentation" : "<p>The <i>PurchaseReservedCacheNodesOffering</i> action allows you to purchase a reserved cache node offering.</p>",
@@ -1433,13 +1433,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "purchaseReservedCacheNodesOffering",
       "authenticated" : true,
       "syncReturnType" : "ReservedCacheNode",
       "asyncReturnType" : "ReservedCacheNode",
       "asyncFutureType" : "java.util.concurrent.Future<ReservedCacheNode>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReservedCacheNode>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PurchaseReservedCacheNodesOfferingRequest, ReservedCacheNode>",
-      "methodName" : "purchaseReservedCacheNodesOffering"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PurchaseReservedCacheNodesOfferingRequest, ReservedCacheNode>"
     },
     "RebootCacheCluster" : {
       "documentation" : "<p>The <i>RebootCacheCluster</i> action reboots some, or all, of the cache nodes within a provisioned cache cluster. This API will apply any modified cache parameter groups to the cache cluster. The reboot action takes place as soon as possible, and results in a momentary outage to the cache cluster. During the reboot, the cache cluster status is set to REBOOTING.</p> <p>The reboot causes the contents of the cache (for each cache node being rebooted) to be lost.</p> <p>When the reboot is complete, a cache cluster event is created.</p>",
@@ -1466,13 +1466,13 @@
         "documentation" : "<p>The requested cache cluster ID does not refer to an existing cache cluster.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "rebootCacheCluster",
       "authenticated" : true,
       "syncReturnType" : "CacheCluster",
       "asyncReturnType" : "CacheCluster",
       "asyncFutureType" : "java.util.concurrent.Future<CacheCluster>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheCluster>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebootCacheClusterRequest, CacheCluster>",
-      "methodName" : "rebootCacheCluster"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebootCacheClusterRequest, CacheCluster>"
     },
     "RemoveTagsFromResource" : {
       "documentation" : "<p>The <i>RemoveTagsFromResource</i> action removes the tags identified by the <code>TagKeys</code> list from the named resource.</p>",
@@ -1505,13 +1505,13 @@
         "documentation" : "<p>The requested tag was not found on this resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "removeTagsFromResource",
       "authenticated" : true,
       "syncReturnType" : "RemoveTagsFromResourceResult",
       "asyncReturnType" : "RemoveTagsFromResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromResourceResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult>",
-      "methodName" : "removeTagsFromResource"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult>"
     },
     "ResetCacheParameterGroup" : {
       "documentation" : "<p>The <i>ResetCacheParameterGroup</i> action modifies the parameters of a cache parameter group to the engine or system default value. You can reset specific parameters by submitting a list of parameter names. To reset the entire cache parameter group, specify the <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i> parameters.</p>",
@@ -1544,13 +1544,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "resetCacheParameterGroup",
       "authenticated" : true,
       "syncReturnType" : "ResetCacheParameterGroupResult",
       "asyncReturnType" : "ResetCacheParameterGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResetCacheParameterGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ResetCacheParameterGroupResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResetCacheParameterGroupRequest, ResetCacheParameterGroupResult>",
-      "methodName" : "resetCacheParameterGroup"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResetCacheParameterGroupRequest, ResetCacheParameterGroupResult>"
     },
     "RevokeCacheSecurityGroupIngress" : {
       "documentation" : "<p>The <i>RevokeCacheSecurityGroupIngress</i> action revokes ingress from a cache security group. Use this action to disallow access from an Amazon EC2 security group that had been previously authorized.</p>",
@@ -1586,13 +1586,13 @@
         "documentation" : "<p>Two or more incompatible parameters were specified.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "revokeCacheSecurityGroupIngress",
       "authenticated" : true,
       "syncReturnType" : "CacheSecurityGroup",
       "asyncReturnType" : "CacheSecurityGroup",
       "asyncFutureType" : "java.util.concurrent.Future<CacheSecurityGroup>",
       "asyncCallableType" : "java.util.concurrent.Callable<CacheSecurityGroup>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RevokeCacheSecurityGroupIngressRequest, CacheSecurityGroup>",
-      "methodName" : "revokeCacheSecurityGroupIngress"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RevokeCacheSecurityGroupIngressRequest, CacheSecurityGroup>"
     }
   },
   "shapes" : {
@@ -53160,6 +53160,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller"
+  "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller",
+  "clientConfigFactory" : "ClientConfigurationFactory"
 }

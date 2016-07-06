@@ -32,14 +32,12 @@ public class RequestTimeoutException extends AmazonServiceException {
      * Client
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     private String type;
     /**
      * <p>
      * 408 Request Timeout
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("code")
     private String code;
 
     /**
@@ -62,6 +60,7 @@ public class RequestTimeoutException extends AmazonServiceException {
      *        Client
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public void setType(String type) {
         this.type = type;
     }
@@ -74,6 +73,7 @@ public class RequestTimeoutException extends AmazonServiceException {
      * @return Client
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -103,6 +103,7 @@ public class RequestTimeoutException extends AmazonServiceException {
      *        408 Request Timeout
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public void setCode(String code) {
         this.code = code;
     }
@@ -115,6 +116,7 @@ public class RequestTimeoutException extends AmazonServiceException {
      * @return 408 Request Timeout
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }

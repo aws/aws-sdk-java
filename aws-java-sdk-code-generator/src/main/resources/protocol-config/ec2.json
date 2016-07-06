@@ -137,8 +137,8 @@
       "location" : "/macros/common/VariableDeclarationMacro.ftl",
       "importAsNamespace" : "VariableDeclarationMacro"
     }, {
-      "location" : "/macros/common/AdditionalAnnotationsForField.ftl",
-      "importAsNamespace" : "AdditionalAnnotationsForField"
+      "location" : "/macros/common/AdditionalAnnotationsForAccessors.ftl",
+      "importAsNamespace" : "AdditionalAnnotationsForAccessors"
     }, {
       "location" : "/macros/common/OverrideMethodsMacro.ftl",
       "importAsNamespace" : "OverrideMethodsMacro"

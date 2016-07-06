@@ -46,6 +46,21 @@ public class ActionExecution implements Serializable, Cloneable {
     private java.util.Date lastStatusChange;
     /**
      * <p>
+     * The system-generated token used to identify a unique approval request.
+     * The token for each open approval request can be obtained using the
+     * GetPipelineState command and is used to validate that the approval
+     * request corresponding to this token is still valid.
+     * </p>
+     */
+    private String token;
+    /**
+     * <p>
+     * The ARN of the user who last changed the pipeline.
+     * </p>
+     */
+    private String lastUpdatedBy;
+    /**
+     * <p>
      * The external ID of the run of the action.
      * </p>
      */
@@ -239,6 +254,106 @@ public class ActionExecution implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The system-generated token used to identify a unique approval request.
+     * The token for each open approval request can be obtained using the
+     * GetPipelineState command and is used to validate that the approval
+     * request corresponding to this token is still valid.
+     * </p>
+     * 
+     * @param token
+     *        The system-generated token used to identify a unique approval
+     *        request. The token for each open approval request can be obtained
+     *        using the GetPipelineState command and is used to validate that
+     *        the approval request corresponding to this token is still valid.
+     */
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    /**
+     * <p>
+     * The system-generated token used to identify a unique approval request.
+     * The token for each open approval request can be obtained using the
+     * GetPipelineState command and is used to validate that the approval
+     * request corresponding to this token is still valid.
+     * </p>
+     * 
+     * @return The system-generated token used to identify a unique approval
+     *         request. The token for each open approval request can be obtained
+     *         using the GetPipelineState command and is used to validate that
+     *         the approval request corresponding to this token is still valid.
+     */
+
+    public String getToken() {
+        return this.token;
+    }
+
+    /**
+     * <p>
+     * The system-generated token used to identify a unique approval request.
+     * The token for each open approval request can be obtained using the
+     * GetPipelineState command and is used to validate that the approval
+     * request corresponding to this token is still valid.
+     * </p>
+     * 
+     * @param token
+     *        The system-generated token used to identify a unique approval
+     *        request. The token for each open approval request can be obtained
+     *        using the GetPipelineState command and is used to validate that
+     *        the approval request corresponding to this token is still valid.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ActionExecution withToken(String token) {
+        setToken(token);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the user who last changed the pipeline.
+     * </p>
+     * 
+     * @param lastUpdatedBy
+     *        The ARN of the user who last changed the pipeline.
+     */
+
+    public void setLastUpdatedBy(String lastUpdatedBy) {
+        this.lastUpdatedBy = lastUpdatedBy;
+    }
+
+    /**
+     * <p>
+     * The ARN of the user who last changed the pipeline.
+     * </p>
+     * 
+     * @return The ARN of the user who last changed the pipeline.
+     */
+
+    public String getLastUpdatedBy() {
+        return this.lastUpdatedBy;
+    }
+
+    /**
+     * <p>
+     * The ARN of the user who last changed the pipeline.
+     * </p>
+     * 
+     * @param lastUpdatedBy
+     *        The ARN of the user who last changed the pipeline.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ActionExecution withLastUpdatedBy(String lastUpdatedBy) {
+        setLastUpdatedBy(lastUpdatedBy);
+        return this;
+    }
+
+    /**
+     * <p>
      * The external ID of the run of the action.
      * </p>
      * 
@@ -425,6 +540,10 @@ public class ActionExecution implements Serializable, Cloneable {
             sb.append("Summary: " + getSummary() + ",");
         if (getLastStatusChange() != null)
             sb.append("LastStatusChange: " + getLastStatusChange() + ",");
+        if (getToken() != null)
+            sb.append("Token: " + getToken() + ",");
+        if (getLastUpdatedBy() != null)
+            sb.append("LastUpdatedBy: " + getLastUpdatedBy() + ",");
         if (getExternalExecutionId() != null)
             sb.append("ExternalExecutionId: " + getExternalExecutionId() + ",");
         if (getExternalExecutionUrl() != null)
@@ -464,6 +583,16 @@ public class ActionExecution implements Serializable, Cloneable {
         if (other.getLastStatusChange() != null
                 && other.getLastStatusChange().equals(
                         this.getLastStatusChange()) == false)
+            return false;
+        if (other.getToken() == null ^ this.getToken() == null)
+            return false;
+        if (other.getToken() != null
+                && other.getToken().equals(this.getToken()) == false)
+            return false;
+        if (other.getLastUpdatedBy() == null ^ this.getLastUpdatedBy() == null)
+            return false;
+        if (other.getLastUpdatedBy() != null
+                && other.getLastUpdatedBy().equals(this.getLastUpdatedBy()) == false)
             return false;
         if (other.getExternalExecutionId() == null
                 ^ this.getExternalExecutionId() == null)
@@ -505,6 +634,12 @@ public class ActionExecution implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getLastStatusChange() == null) ? 0 : getLastStatusChange()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getToken() == null) ? 0 : getToken().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLastUpdatedBy() == null) ? 0 : getLastUpdatedBy()
                         .hashCode());
         hashCode = prime
                 * hashCode

@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a retry stage execution operation.
+ * Represents the output of a retry stage execution action.
  * </p>
  */
 public class RetryStageExecutionResult implements Serializable, Cloneable {

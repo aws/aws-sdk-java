@@ -74,9 +74,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("NoSuchEntityException")
+                                    .withErrorCode(
+                                            "AssessmentRunInProgressException")
                                     .withModeledClass(
-                                            com.amazonaws.services.inspector.model.NoSuchEntityException.class))
+                                            com.amazonaws.services.inspector.model.AssessmentRunInProgressException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("LimitExceededException")
@@ -84,19 +85,19 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.inspector.model.LimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("AccessDeniedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.inspector.model.AccessDeniedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidInputException")
                                     .withModeledClass(
                                             com.amazonaws.services.inspector.model.InvalidInputException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InternalException")
+                                    .withErrorCode("NoSuchEntityException")
                                     .withModeledClass(
-                                            com.amazonaws.services.inspector.model.InternalException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("AccessDeniedException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.inspector.model.AccessDeniedException.class))
+                                            com.amazonaws.services.inspector.model.NoSuchEntityException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -106,15 +107,14 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "AssessmentRunInProgressException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.inspector.model.AssessmentRunInProgressException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
                                             "InvalidCrossAccountRoleException")
                                     .withModeledClass(
-                                            com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException.class)));
+                                            com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.inspector.model.InternalException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Inspector. A

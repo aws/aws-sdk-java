@@ -625,6 +625,51 @@
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutActionRevisionRequest, PutActionRevisionResult>",
       "methodName" : "putActionRevision"
     },
+    "PutApprovalResult" : {
+      "documentation" : "<p>Provides the response to a manual approval request to AWS CodePipeline. Valid responses include Approved and Rejected.</p>",
+      "operationName" : "PutApprovalResult",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "putApprovalResultRequest",
+        "variableType" : "PutApprovalResultRequest",
+        "variableDeclarationType" : "PutApprovalResultRequest",
+        "documentation" : "<p>Represents the input of a put approval result action.</p>",
+        "simpleType" : "PutApprovalResultRequest",
+        "variableSetterType" : "PutApprovalResultRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "PutApprovalResultResult",
+        "documentation" : "<p>Represents the output of a put approval result action.</p>"
+      },
+      "exceptions" : [ {
+        "exceptionName" : "InvalidApprovalTokenException",
+        "documentation" : "<p>The approval request already received a response or has expired.</p>"
+      }, {
+        "exceptionName" : "ApprovalAlreadyCompletedException",
+        "documentation" : "<p>The approval action has already been approved or rejected.</p>"
+      }, {
+        "exceptionName" : "PipelineNotFoundException",
+        "documentation" : "<p>The specified pipeline was specified in an invalid format or cannot be found.</p>"
+      }, {
+        "exceptionName" : "StageNotFoundException",
+        "documentation" : "<p>The specified stage was specified in an invalid format or cannot be found.</p>"
+      }, {
+        "exceptionName" : "ActionNotFoundException",
+        "documentation" : "<p>The specified action cannot be found.</p>"
+      }, {
+        "exceptionName" : "ValidationException",
+        "documentation" : "<p>The validation was specified in an invalid format.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
+      "syncReturnType" : "PutApprovalResultResult",
+      "asyncReturnType" : "PutApprovalResultResult",
+      "asyncFutureType" : "java.util.concurrent.Future<PutApprovalResultResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<PutApprovalResultResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutApprovalResultRequest, PutApprovalResultResult>",
+      "methodName" : "putApprovalResult"
+    },
     "PutJobFailureResult" : {
       "documentation" : "<p>Represents the failure of a job as returned to the pipeline by a job worker. Only used for custom actions.</p>",
       "operationName" : "PutJobFailureResult",
@@ -783,14 +828,14 @@
         "variableName" : "retryStageExecutionRequest",
         "variableType" : "RetryStageExecutionRequest",
         "variableDeclarationType" : "RetryStageExecutionRequest",
-        "documentation" : "<p>Represents the input of a retry stage execution operation.</p>",
+        "documentation" : "<p>Represents the input of a retry stage execution action.</p>",
         "simpleType" : "RetryStageExecutionRequest",
         "variableSetterType" : "RetryStageExecutionRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
         "returnType" : "RetryStageExecutionResult",
-        "documentation" : "<p>Represents the output of a retry stage execution operation.</p>"
+        "documentation" : "<p>Represents the output of a retry stage execution action.</p>"
       },
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
@@ -803,10 +848,10 @@
         "documentation" : "<p>The specified stage was specified in an invalid format or cannot be found.</p>"
       }, {
         "exceptionName" : "StageNotRetryableException",
-        "documentation" : "<p>The specified stage can't be retried because the pipeline structure or stage state changed after the stage failed to complete, the stage contains no failed actions, one or more actions are still in progress, or another retry attempt is already in progress. </p>"
+        "documentation" : "<p>The specified stage can't be retried because the pipeline structure or stage state changed after the stage was not completed; the stage contains no failed actions; one or more actions are still in progress; or another retry attempt is already in progress. </p>"
       }, {
         "exceptionName" : "NotLatestPipelineExecutionException",
-        "documentation" : "<p>The stage has failed in a later pipeline run and the pipelineExecutionId associated with the request is out of date.</p>"
+        "documentation" : "<p>The stage has failed in a later run of the pipeline and the pipelineExecutionId associated with the request is out of date.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "authenticated" : true,
@@ -1171,7 +1216,7 @@
     },
     "RetryStageExecutionResult" : {
       "c2jName" : "RetryStageExecutionOutput",
-      "documentation" : "<p>Represents the output of a retry stage execution operation.</p>",
+      "documentation" : "<p>Represents the output of a retry stage execution action.</p>",
       "shapeName" : "RetryStageExecutionResult",
       "deprecated" : false,
       "required" : null,
@@ -2130,6 +2175,110 @@
         "fluentSetterDocumentation" : "/**<p>The last status change of the action.</p>\n@param lastStatusChange The last status change of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The last status change of the action.</p>\n@param lastStatusChange The last status change of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
+        "documentation" : "<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.</p>",
+        "name" : "Token",
+        "c2jName" : "token",
+        "c2jShape" : "ActionExecutionToken",
+        "variable" : {
+          "variableName" : "token",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "token",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "token",
+          "marshallLocationName" : "token",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.</p>\n@param token The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.*/",
+        "getterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.</p>\n@return The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.*/",
+        "fluentSetterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.</p>\n@param token The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.</p>\n@param token The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The ARN of the user who last changed the pipeline.</p>",
+        "name" : "LastUpdatedBy",
+        "c2jName" : "lastUpdatedBy",
+        "c2jShape" : "LastUpdatedBy",
+        "variable" : {
+          "variableName" : "lastUpdatedBy",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The ARN of the user who last changed the pipeline.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "lastUpdatedBy",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "lastUpdatedBy",
+          "marshallLocationName" : "lastUpdatedBy",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The ARN of the user who last changed the pipeline.</p>\n@param lastUpdatedBy The ARN of the user who last changed the pipeline.*/",
+        "getterDocumentation" : "/**<p>The ARN of the user who last changed the pipeline.</p>\n@return The ARN of the user who last changed the pipeline.*/",
+        "fluentSetterDocumentation" : "/**<p>The ARN of the user who last changed the pipeline.</p>\n@param lastUpdatedBy The ARN of the user who last changed the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The ARN of the user who last changed the pipeline.</p>\n@param lastUpdatedBy The ARN of the user who last changed the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
         "documentation" : "<p>The external ID of the run of the action.</p>",
         "name" : "ExternalExecutionId",
         "c2jName" : "externalExecutionId",
@@ -2360,6 +2509,59 @@
         "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : {
+        "LastUpdatedBy" : {
+          "documentation" : "<p>The ARN of the user who last changed the pipeline.</p>",
+          "name" : "LastUpdatedBy",
+          "c2jName" : "lastUpdatedBy",
+          "c2jShape" : "LastUpdatedBy",
+          "variable" : {
+            "variableName" : "lastUpdatedBy",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The ARN of the user who last changed the pipeline.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "lastUpdatedBy",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "lastUpdatedBy",
+            "marshallLocationName" : "lastUpdatedBy",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The ARN of the user who last changed the pipeline.</p>\n@param lastUpdatedBy The ARN of the user who last changed the pipeline.*/",
+          "getterDocumentation" : "/**<p>The ARN of the user who last changed the pipeline.</p>\n@return The ARN of the user who last changed the pipeline.*/",
+          "fluentSetterDocumentation" : "/**<p>The ARN of the user who last changed the pipeline.</p>\n@param lastUpdatedBy The ARN of the user who last changed the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The ARN of the user who last changed the pipeline.</p>\n@param lastUpdatedBy The ARN of the user who last changed the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
         "Status" : {
           "documentation" : "<p>The status of the action, or for a completed action, the last status of the action.</p>",
           "name" : "Status",
@@ -2571,6 +2773,59 @@
           "getterDocumentation" : "/**<p>The external ID of the run of the action.</p>\n@return The external ID of the run of the action.*/",
           "fluentSetterDocumentation" : "/**<p>The external ID of the run of the action.</p>\n@param externalExecutionId The external ID of the run of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The external ID of the run of the action.</p>\n@param externalExecutionId The external ID of the run of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Token" : {
+          "documentation" : "<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.</p>",
+          "name" : "Token",
+          "c2jName" : "token",
+          "c2jShape" : "ActionExecutionToken",
+          "variable" : {
+            "variableName" : "token",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "token",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "token",
+            "marshallLocationName" : "token",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.</p>\n@param token The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.*/",
+          "getterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.</p>\n@return The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.*/",
+          "fluentSetterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.</p>\n@param token The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.</p>\n@param token The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the GetPipelineState command and is used to validate that the approval request corresponding to this token is still valid.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "LastStatusChange" : {
           "documentation" : "<p>The last status change of the action.</p>",
@@ -3749,6 +4004,38 @@
           "varargSetterDocumentation" : "/**<p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value will be returned.</p>\n@param queryParam A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value will be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "ApprovalAlreadyCompletedException" : {
+      "c2jName" : "ApprovalAlreadyCompletedException",
+      "documentation" : "<p>The approval action has already been approved or rejected.</p>",
+      "shapeName" : "ApprovalAlreadyCompletedException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "approvalAlreadyCompletedException",
+        "variableType" : "ApprovalAlreadyCompletedException",
+        "variableDeclarationType" : "ApprovalAlreadyCompletedException",
+        "documentation" : null,
+        "simpleType" : "ApprovalAlreadyCompletedException",
+        "variableSetterType" : "ApprovalAlreadyCompletedException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "ApprovalAlreadyCompletedException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "ListPipelinesRequest" : {
       "c2jName" : "ListPipelinesInput",
@@ -11845,7 +12132,7 @@
     },
     "NotLatestPipelineExecutionException" : {
       "c2jName" : "NotLatestPipelineExecutionException",
-      "documentation" : "<p>The stage has failed in a later pipeline run and the pipelineExecutionId associated with the request is out of date.</p>",
+      "documentation" : "<p>The stage has failed in a later run of the pipeline and the pipelineExecutionId associated with the request is out of date.</p>",
       "shapeName" : "NotLatestPipelineExecutionException",
       "deprecated" : false,
       "required" : null,
@@ -18378,7 +18665,7 @@
     },
     "RetryStageExecutionRequest" : {
       "c2jName" : "RetryStageExecutionInput",
-      "documentation" : "<p>Represents the input of a retry stage execution operation.</p>",
+      "documentation" : "<p>Represents the input of a retry stage execution action.</p>",
       "shapeName" : "RetryStageExecutionRequest",
       "deprecated" : false,
       "required" : [ "pipelineName", "stageName", "pipelineExecutionId", "retryMode" ],
@@ -19711,6 +19998,38 @@
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "InvalidJobStateException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "InvalidApprovalTokenException" : {
+      "c2jName" : "InvalidApprovalTokenException",
+      "documentation" : "<p>The approval request already received a response or has expired.</p>",
+      "shapeName" : "InvalidApprovalTokenException",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "invalidApprovalTokenException",
+        "variableType" : "InvalidApprovalTokenException",
+        "variableDeclarationType" : "InvalidApprovalTokenException",
+        "documentation" : null,
+        "simpleType" : "InvalidApprovalTokenException",
+        "variableSetterType" : "InvalidApprovalTokenException"
+      },
+      "marshaller" : null,
+      "unmarshaller" : null,
+      "errorCode" : "InvalidApprovalTokenException",
       "customization" : {
         "artificialResultWrapper" : null,
         "skipGeneratingModelClass" : false,
@@ -21559,7 +21878,7 @@
     },
     "StageNotRetryableException" : {
       "c2jName" : "StageNotRetryableException",
-      "documentation" : "<p>The specified stage can't be retried because the pipeline structure or stage state changed after the stage failed to complete, the stage contains no failed actions, one or more actions are still in progress, or another retry attempt is already in progress. </p>",
+      "documentation" : "<p>The specified stage can't be retried because the pipeline structure or stage state changed after the stage was not completed; the stage contains no failed actions; one or more actions are still in progress; or another retry attempt is already in progress. </p>",
       "shapeName" : "StageNotRetryableException",
       "deprecated" : false,
       "required" : null,
@@ -22078,6 +22397,571 @@
           "getterDocumentation" : "/**<p>The ID of the current workflow state of the pipeline.</p>\n@return The ID of the current workflow state of the pipeline.*/",
           "fluentSetterDocumentation" : "/**<p>The ID of the current workflow state of the pipeline.</p>\n@param pipelineExecutionId The ID of the current workflow state of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The ID of the current workflow state of the pipeline.</p>\n@param pipelineExecutionId The ID of the current workflow state of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
+    "PutApprovalResultRequest" : {
+      "c2jName" : "PutApprovalResultInput",
+      "documentation" : "<p>Represents the input of a put approval result action.</p>",
+      "shapeName" : "PutApprovalResultRequest",
+      "deprecated" : false,
+      "required" : [ "pipelineName", "stageName", "actionName", "result" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>The name of the pipeline that contains the action. </p>",
+        "name" : "PipelineName",
+        "c2jName" : "pipelineName",
+        "c2jShape" : "PipelineName",
+        "variable" : {
+          "variableName" : "pipelineName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The name of the pipeline that contains the action. </p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "pipelineName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "pipelineName",
+          "marshallLocationName" : "pipelineName",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The name of the pipeline that contains the action. </p>\n@param pipelineName The name of the pipeline that contains the action.*/",
+        "getterDocumentation" : "/**<p>The name of the pipeline that contains the action. </p>\n@return The name of the pipeline that contains the action.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the pipeline that contains the action. </p>\n@param pipelineName The name of the pipeline that contains the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the pipeline that contains the action. </p>\n@param pipelineName The name of the pipeline that contains the action.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The name of the stage that contains the action.</p>",
+        "name" : "StageName",
+        "c2jName" : "stageName",
+        "c2jShape" : "StageName",
+        "variable" : {
+          "variableName" : "stageName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The name of the stage that contains the action.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "stageName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "stageName",
+          "marshallLocationName" : "stageName",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The name of the stage that contains the action.</p>\n@param stageName The name of the stage that contains the action.*/",
+        "getterDocumentation" : "/**<p>The name of the stage that contains the action.</p>\n@return The name of the stage that contains the action.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the stage that contains the action.</p>\n@param stageName The name of the stage that contains the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the stage that contains the action.</p>\n@param stageName The name of the stage that contains the action.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The name of the action for which approval is requested.</p>",
+        "name" : "ActionName",
+        "c2jName" : "actionName",
+        "c2jShape" : "ActionName",
+        "variable" : {
+          "variableName" : "actionName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The name of the action for which approval is requested.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "actionName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "actionName",
+          "marshallLocationName" : "actionName",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The name of the action for which approval is requested.</p>\n@param actionName The name of the action for which approval is requested.*/",
+        "getterDocumentation" : "/**<p>The name of the action for which approval is requested.</p>\n@return The name of the action for which approval is requested.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the action for which approval is requested.</p>\n@param actionName The name of the action for which approval is requested.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the action for which approval is requested.</p>\n@param actionName The name of the action for which approval is requested.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>Represents information about the result of the approval request.</p>",
+        "name" : "Result",
+        "c2jName" : "result",
+        "c2jShape" : "ApprovalResult",
+        "variable" : {
+          "variableName" : "result",
+          "variableType" : "ApprovalResult",
+          "variableDeclarationType" : "ApprovalResult",
+          "documentation" : "<p>Represents information about the result of the approval request.</p>",
+          "simpleType" : "ApprovalResult",
+          "variableSetterType" : "ApprovalResult"
+        },
+        "setterModel" : {
+          "variableName" : "result",
+          "variableType" : "ApprovalResult",
+          "variableDeclarationType" : "ApprovalResult",
+          "documentation" : "",
+          "simpleType" : "ApprovalResult",
+          "variableSetterType" : "ApprovalResult"
+        },
+        "getterModel" : {
+          "returnType" : "ApprovalResult",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "result",
+          "marshallLocationName" : "result",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : false,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>Represents information about the result of the approval request.</p>\n@param result Represents information about the result of the approval request.*/",
+        "getterDocumentation" : "/**<p>Represents information about the result of the approval request.</p>\n@return Represents information about the result of the approval request.*/",
+        "fluentSetterDocumentation" : "/**<p>Represents information about the result of the approval request.</p>\n@param result Represents information about the result of the approval request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Represents information about the result of the approval request.</p>\n@param result Represents information about the result of the approval request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.</p>",
+        "name" : "Token",
+        "c2jName" : "token",
+        "c2jShape" : "ApprovalToken",
+        "variable" : {
+          "variableName" : "token",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "token",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "token",
+          "marshallLocationName" : "token",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.</p>\n@param token The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.*/",
+        "getterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.</p>\n@return The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.*/",
+        "fluentSetterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.</p>\n@param token The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.</p>\n@param token The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "putApprovalResultRequest",
+        "variableType" : "PutApprovalResultRequest",
+        "variableDeclarationType" : "PutApprovalResultRequest",
+        "documentation" : null,
+        "simpleType" : "PutApprovalResultRequest",
+        "variableSetterType" : "PutApprovalResultRequest"
+      },
+      "marshaller" : {
+        "action" : "PutApprovalResult",
+        "verb" : "POST",
+        "target" : "CodePipeline_20150709.PutApprovalResult",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Result" : {
+          "documentation" : "<p>Represents information about the result of the approval request.</p>",
+          "name" : "Result",
+          "c2jName" : "result",
+          "c2jShape" : "ApprovalResult",
+          "variable" : {
+            "variableName" : "result",
+            "variableType" : "ApprovalResult",
+            "variableDeclarationType" : "ApprovalResult",
+            "documentation" : "<p>Represents information about the result of the approval request.</p>",
+            "simpleType" : "ApprovalResult",
+            "variableSetterType" : "ApprovalResult"
+          },
+          "setterModel" : {
+            "variableName" : "result",
+            "variableType" : "ApprovalResult",
+            "variableDeclarationType" : "ApprovalResult",
+            "documentation" : "",
+            "simpleType" : "ApprovalResult",
+            "variableSetterType" : "ApprovalResult"
+          },
+          "getterModel" : {
+            "returnType" : "ApprovalResult",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "result",
+            "marshallLocationName" : "result",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : false,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>Represents information about the result of the approval request.</p>\n@param result Represents information about the result of the approval request.*/",
+          "getterDocumentation" : "/**<p>Represents information about the result of the approval request.</p>\n@return Represents information about the result of the approval request.*/",
+          "fluentSetterDocumentation" : "/**<p>Represents information about the result of the approval request.</p>\n@param result Represents information about the result of the approval request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Represents information about the result of the approval request.</p>\n@param result Represents information about the result of the approval request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "StageName" : {
+          "documentation" : "<p>The name of the stage that contains the action.</p>",
+          "name" : "StageName",
+          "c2jName" : "stageName",
+          "c2jShape" : "StageName",
+          "variable" : {
+            "variableName" : "stageName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The name of the stage that contains the action.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "stageName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "stageName",
+            "marshallLocationName" : "stageName",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The name of the stage that contains the action.</p>\n@param stageName The name of the stage that contains the action.*/",
+          "getterDocumentation" : "/**<p>The name of the stage that contains the action.</p>\n@return The name of the stage that contains the action.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the stage that contains the action.</p>\n@param stageName The name of the stage that contains the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the stage that contains the action.</p>\n@param stageName The name of the stage that contains the action.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "ActionName" : {
+          "documentation" : "<p>The name of the action for which approval is requested.</p>",
+          "name" : "ActionName",
+          "c2jName" : "actionName",
+          "c2jShape" : "ActionName",
+          "variable" : {
+            "variableName" : "actionName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The name of the action for which approval is requested.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "actionName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "actionName",
+            "marshallLocationName" : "actionName",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The name of the action for which approval is requested.</p>\n@param actionName The name of the action for which approval is requested.*/",
+          "getterDocumentation" : "/**<p>The name of the action for which approval is requested.</p>\n@return The name of the action for which approval is requested.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the action for which approval is requested.</p>\n@param actionName The name of the action for which approval is requested.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the action for which approval is requested.</p>\n@param actionName The name of the action for which approval is requested.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "PipelineName" : {
+          "documentation" : "<p>The name of the pipeline that contains the action. </p>",
+          "name" : "PipelineName",
+          "c2jName" : "pipelineName",
+          "c2jShape" : "PipelineName",
+          "variable" : {
+            "variableName" : "pipelineName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The name of the pipeline that contains the action. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "pipelineName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "pipelineName",
+            "marshallLocationName" : "pipelineName",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The name of the pipeline that contains the action. </p>\n@param pipelineName The name of the pipeline that contains the action.*/",
+          "getterDocumentation" : "/**<p>The name of the pipeline that contains the action. </p>\n@return The name of the pipeline that contains the action.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the pipeline that contains the action. </p>\n@param pipelineName The name of the pipeline that contains the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the pipeline that contains the action. </p>\n@param pipelineName The name of the pipeline that contains the action.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "Token" : {
+          "documentation" : "<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.</p>",
+          "name" : "Token",
+          "c2jName" : "token",
+          "c2jShape" : "ApprovalToken",
+          "variable" : {
+            "variableName" : "token",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "token",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "token",
+            "marshallLocationName" : "token",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.</p>\n@param token The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.*/",
+          "getterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.</p>\n@return The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.*/",
+          "fluentSetterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.</p>\n@param token The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.</p>\n@param token The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <a>GetPipelineState</a> action and is used to validate that the approval request corresponding to this token is still valid.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -25589,6 +26473,252 @@
       },
       "membersAsMap" : { }
     },
+    "ApprovalResult" : {
+      "c2jName" : "ApprovalResult",
+      "documentation" : "<p>Represents information about the result of an approval request.</p>",
+      "shapeName" : "ApprovalResult",
+      "deprecated" : false,
+      "required" : [ "summary", "status" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>The summary of the current status of the approval request.</p>",
+        "name" : "Summary",
+        "c2jName" : "summary",
+        "c2jShape" : "ApprovalSummary",
+        "variable" : {
+          "variableName" : "summary",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The summary of the current status of the approval request.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "summary",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "summary",
+          "marshallLocationName" : "summary",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The summary of the current status of the approval request.</p>\n@param summary The summary of the current status of the approval request.*/",
+        "getterDocumentation" : "/**<p>The summary of the current status of the approval request.</p>\n@return The summary of the current status of the approval request.*/",
+        "fluentSetterDocumentation" : "/**<p>The summary of the current status of the approval request.</p>\n@param summary The summary of the current status of the approval request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The summary of the current status of the approval request.</p>\n@param summary The summary of the current status of the approval request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The response submitted by a reviewer assigned to an approval action request.</p>",
+        "name" : "Status",
+        "c2jName" : "status",
+        "c2jShape" : "ApprovalStatus",
+        "variable" : {
+          "variableName" : "status",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The response submitted by a reviewer assigned to an approval action request.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "status",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "status",
+          "marshallLocationName" : "status",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "ApprovalStatus",
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The response submitted by a reviewer assigned to an approval action request.</p>\n@param status The response submitted by a reviewer assigned to an approval action request.\n@see ApprovalStatus*/",
+        "getterDocumentation" : "/**<p>The response submitted by a reviewer assigned to an approval action request.</p>\n@return The response submitted by a reviewer assigned to an approval action request.\n@see ApprovalStatus*/",
+        "fluentSetterDocumentation" : "/**<p>The response submitted by a reviewer assigned to an approval action request.</p>\n@param status The response submitted by a reviewer assigned to an approval action request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ApprovalStatus*/",
+        "varargSetterDocumentation" : "/**<p>The response submitted by a reviewer assigned to an approval action request.</p>\n@param status The response submitted by a reviewer assigned to an approval action request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ApprovalStatus*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "approvalResult",
+        "variableType" : "ApprovalResult",
+        "variableDeclarationType" : "ApprovalResult",
+        "documentation" : null,
+        "simpleType" : "ApprovalResult",
+        "variableSetterType" : "ApprovalResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "Status" : {
+          "documentation" : "<p>The response submitted by a reviewer assigned to an approval action request.</p>",
+          "name" : "Status",
+          "c2jName" : "status",
+          "c2jShape" : "ApprovalStatus",
+          "variable" : {
+            "variableName" : "status",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The response submitted by a reviewer assigned to an approval action request.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "status",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "status",
+            "marshallLocationName" : "status",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "ApprovalStatus",
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The response submitted by a reviewer assigned to an approval action request.</p>\n@param status The response submitted by a reviewer assigned to an approval action request.\n@see ApprovalStatus*/",
+          "getterDocumentation" : "/**<p>The response submitted by a reviewer assigned to an approval action request.</p>\n@return The response submitted by a reviewer assigned to an approval action request.\n@see ApprovalStatus*/",
+          "fluentSetterDocumentation" : "/**<p>The response submitted by a reviewer assigned to an approval action request.</p>\n@param status The response submitted by a reviewer assigned to an approval action request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ApprovalStatus*/",
+          "varargSetterDocumentation" : "/**<p>The response submitted by a reviewer assigned to an approval action request.</p>\n@param status The response submitted by a reviewer assigned to an approval action request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ApprovalStatus*/"
+        },
+        "Summary" : {
+          "documentation" : "<p>The summary of the current status of the approval request.</p>",
+          "name" : "Summary",
+          "c2jName" : "summary",
+          "c2jShape" : "ApprovalSummary",
+          "variable" : {
+            "variableName" : "summary",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The summary of the current status of the approval request.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "summary",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "summary",
+            "marshallLocationName" : "summary",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The summary of the current status of the approval request.</p>\n@param summary The summary of the current status of the approval request.*/",
+          "getterDocumentation" : "/**<p>The summary of the current status of the approval request.</p>\n@return The summary of the current status of the approval request.*/",
+          "fluentSetterDocumentation" : "/**<p>The summary of the current status of the approval request.</p>\n@param summary The summary of the current status of the approval request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The summary of the current status of the approval request.</p>\n@param summary The summary of the current status of the approval request.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "CreateCustomActionTypeRequest" : {
       "c2jName" : "CreateCustomActionTypeInput",
       "documentation" : "<p>Represents the input of a create custom action operation.</p>",
@@ -27483,6 +28613,147 @@
         }
       }
     },
+    "PutApprovalResultResult" : {
+      "c2jName" : "PutApprovalResultOutput",
+      "documentation" : "<p>Represents the output of a put approval result action.</p>",
+      "shapeName" : "PutApprovalResultResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>The timestamp showing when the approval or rejection was submitted.</p>",
+        "name" : "ApprovedAt",
+        "c2jName" : "approvedAt",
+        "c2jShape" : "Timestamp",
+        "variable" : {
+          "variableName" : "approvedAt",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "<p>The timestamp showing when the approval or rejection was submitted.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "setterModel" : {
+          "variableName" : "approvedAt",
+          "variableType" : "java.util.Date",
+          "variableDeclarationType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "approvedAt",
+          "marshallLocationName" : "approvedAt",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The timestamp showing when the approval or rejection was submitted.</p>\n@param approvedAt The timestamp showing when the approval or rejection was submitted.*/",
+        "getterDocumentation" : "/**<p>The timestamp showing when the approval or rejection was submitted.</p>\n@return The timestamp showing when the approval or rejection was submitted.*/",
+        "fluentSetterDocumentation" : "/**<p>The timestamp showing when the approval or rejection was submitted.</p>\n@param approvedAt The timestamp showing when the approval or rejection was submitted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The timestamp showing when the approval or rejection was submitted.</p>\n@param approvedAt The timestamp showing when the approval or rejection was submitted.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "putApprovalResultResult",
+        "variableType" : "PutApprovalResultResult",
+        "variableDeclarationType" : "PutApprovalResultResult",
+        "documentation" : null,
+        "simpleType" : "PutApprovalResultResult",
+        "variableSetterType" : "PutApprovalResultResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "ApprovedAt" : {
+          "documentation" : "<p>The timestamp showing when the approval or rejection was submitted.</p>",
+          "name" : "ApprovedAt",
+          "c2jName" : "approvedAt",
+          "c2jShape" : "Timestamp",
+          "variable" : {
+            "variableName" : "approvedAt",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "<p>The timestamp showing when the approval or rejection was submitted.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "setterModel" : {
+            "variableName" : "approvedAt",
+            "variableType" : "java.util.Date",
+            "variableDeclarationType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "approvedAt",
+            "marshallLocationName" : "approvedAt",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The timestamp showing when the approval or rejection was submitted.</p>\n@param approvedAt The timestamp showing when the approval or rejection was submitted.*/",
+          "getterDocumentation" : "/**<p>The timestamp showing when the approval or rejection was submitted.</p>\n@return The timestamp showing when the approval or rejection was submitted.*/",
+          "fluentSetterDocumentation" : "/**<p>The timestamp showing when the approval or rejection was submitted.</p>\n@param approvedAt The timestamp showing when the approval or rejection was submitted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The timestamp showing when the approval or rejection was submitted.</p>\n@param approvedAt The timestamp showing when the approval or rejection was submitted.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
+    },
     "ListActionTypesResult" : {
       "c2jName" : "ListActionTypesOutput",
       "documentation" : "<p>Represents the output of a list action types action.</p>",
@@ -28989,6 +30260,47 @@
         "documentation" : null,
         "simpleType" : "StageExecutionStatus",
         "variableSetterType" : "StageExecutionStatus"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "ApprovalStatus" : {
+      "c2jName" : "ApprovalStatus",
+      "documentation" : "",
+      "shapeName" : "ApprovalStatus",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : [ {
+        "name" : "Approved",
+        "value" : "Approved"
+      }, {
+        "name" : "Rejected",
+        "value" : "Rejected"
+      } ],
+      "variable" : {
+        "variableName" : "approvalStatus",
+        "variableType" : "ApprovalStatus",
+        "variableDeclarationType" : "ApprovalStatus",
+        "documentation" : null,
+        "simpleType" : "ApprovalStatus",
+        "variableSetterType" : "ApprovalStatus"
       },
       "marshaller" : null,
       "unmarshaller" : {

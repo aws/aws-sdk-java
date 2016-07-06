@@ -31,14 +31,12 @@ public class LimitExceededException extends AmazonServiceException {
      * Client
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     private String type;
     /**
      * <p>
      * 400 Bad Request
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("code")
     private String code;
 
     /**
@@ -60,6 +58,7 @@ public class LimitExceededException extends AmazonServiceException {
      *        Client
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public void setType(String type) {
         this.type = type;
     }
@@ -72,6 +71,7 @@ public class LimitExceededException extends AmazonServiceException {
      * @return Client
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -101,6 +101,7 @@ public class LimitExceededException extends AmazonServiceException {
      *        400 Bad Request
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public void setCode(String code) {
         this.code = code;
     }
@@ -113,6 +114,7 @@ public class LimitExceededException extends AmazonServiceException {
      * @return 400 Bad Request
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }

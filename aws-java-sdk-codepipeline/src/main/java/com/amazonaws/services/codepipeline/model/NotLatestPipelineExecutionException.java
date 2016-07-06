@@ -20,8 +20,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The stage has failed in a later pipeline run and the pipelineExecutionId
- * associated with the request is out of date.
+ * The stage has failed in a later run of the pipeline and the
+ * pipelineExecutionId associated with the request is out of date.
  * </p>
  */
 public class NotLatestPipelineExecutionException extends AmazonServiceException {

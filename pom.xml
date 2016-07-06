@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.14-SNAPSHOT</version>
+  <version>1.11.14</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -216,6 +216,15 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <id>disable-java8-doclint</id>
+        <activation>
+          <jdk>[1.8,)</jdk>
+        </activation>
+        <properties>
+          <additionalparam>-Xdoclint:none</additionalparam>
+        </properties>
     </profile>
   </profiles>
 </project>

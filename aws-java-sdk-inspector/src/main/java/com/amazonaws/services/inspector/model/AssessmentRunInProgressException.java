@@ -32,7 +32,6 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
      * The ARNs of the assessment runs that are currently in progress.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("assessmentRunArns")
     private java.util.List<String> assessmentRunArns;
     /**
      * <p>
@@ -40,14 +39,12 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
      * is truncated.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("assessmentRunArnsTruncated")
     private Boolean assessmentRunArnsTruncated;
     /**
      * <p>
      * You can immediately retry your request.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     private Boolean canRetry;
 
     /**
@@ -69,6 +66,7 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
      * @return The ARNs of the assessment runs that are currently in progress.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("assessmentRunArns")
     public java.util.List<String> getAssessmentRunArns() {
         return assessmentRunArns;
     }
@@ -82,6 +80,7 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
      *        The ARNs of the assessment runs that are currently in progress.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("assessmentRunArns")
     public void setAssessmentRunArns(
             java.util.Collection<String> assessmentRunArns) {
         if (assessmentRunArns == null) {
@@ -150,6 +149,7 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
      *        assessment runs is truncated.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("assessmentRunArnsTruncated")
     public void setAssessmentRunArnsTruncated(Boolean assessmentRunArnsTruncated) {
         this.assessmentRunArnsTruncated = assessmentRunArnsTruncated;
     }
@@ -164,6 +164,7 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
      *         assessment runs is truncated.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("assessmentRunArnsTruncated")
     public Boolean getAssessmentRunArnsTruncated() {
         return this.assessmentRunArnsTruncated;
     }
@@ -210,6 +211,7 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
      *        You can immediately retry your request.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     public void setCanRetry(Boolean canRetry) {
         this.canRetry = canRetry;
     }
@@ -222,6 +224,7 @@ public class AssessmentRunInProgressException extends AmazonServiceException {
      * @return You can immediately retry your request.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     public Boolean getCanRetry() {
         return this.canRetry;
     }

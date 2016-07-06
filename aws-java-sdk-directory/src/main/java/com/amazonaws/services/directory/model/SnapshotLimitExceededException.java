@@ -28,7 +28,6 @@ import com.amazonaws.AmazonServiceException;
 public class SnapshotLimitExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
     private String requestId;
 
     /**
@@ -46,6 +45,7 @@ public class SnapshotLimitExceededException extends AmazonServiceException {
      * @param requestId
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -54,6 +54,7 @@ public class SnapshotLimitExceededException extends AmazonServiceException {
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
     public String getRequestId() {
         return this.requestId;
     }

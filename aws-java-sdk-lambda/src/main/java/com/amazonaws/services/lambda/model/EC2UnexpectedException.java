@@ -27,10 +27,8 @@ import com.amazonaws.AmazonServiceException;
 public class EC2UnexpectedException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("Type")
     private String type;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("EC2ErrorCode")
     private String eC2ErrorCode;
 
     /**
@@ -47,6 +45,7 @@ public class EC2UnexpectedException extends AmazonServiceException {
      * @param type
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("Type")
     public void setType(String type) {
         this.type = type;
     }
@@ -55,6 +54,7 @@ public class EC2UnexpectedException extends AmazonServiceException {
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("Type")
     public String getType() {
         return this.type;
     }
@@ -74,6 +74,7 @@ public class EC2UnexpectedException extends AmazonServiceException {
      * @param eC2ErrorCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("EC2ErrorCode")
     public void setEC2ErrorCode(String eC2ErrorCode) {
         this.eC2ErrorCode = eC2ErrorCode;
     }
@@ -82,6 +83,7 @@ public class EC2UnexpectedException extends AmazonServiceException {
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("EC2ErrorCode")
     public String getEC2ErrorCode() {
         return this.eC2ErrorCode;
     }

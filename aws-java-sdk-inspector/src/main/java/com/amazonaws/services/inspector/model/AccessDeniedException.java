@@ -28,18 +28,16 @@ public class AccessDeniedException extends AmazonServiceException {
 
     /**
      * <p>
-     * Code that indicates the type of error that is generated.
-     * </p>
-     */
-    @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
-    private String errorCode;
-    /**
-     * <p>
      * You can immediately retry your request.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     private Boolean canRetry;
+    /**
+     * <p>
+     * Code that indicates the type of error that is generated.
+     * </p>
+     */
+    private String inspectorErrorCode;
 
     /**
      * Constructs a new AccessDeniedException with the specified error message.
@@ -53,81 +51,6 @@ public class AccessDeniedException extends AmazonServiceException {
 
     /**
      * <p>
-     * Code that indicates the type of error that is generated.
-     * </p>
-     * 
-     * @param errorCode
-     *        Code that indicates the type of error that is generated.
-     * @see AccessDeniedErrorCode
-     */
-
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-    }
-
-    /**
-     * <p>
-     * Code that indicates the type of error that is generated.
-     * </p>
-     * 
-     * @return Code that indicates the type of error that is generated.
-     * @see AccessDeniedErrorCode
-     */
-
-    public String getErrorCode() {
-        return this.errorCode;
-    }
-
-    /**
-     * <p>
-     * Code that indicates the type of error that is generated.
-     * </p>
-     * 
-     * @param errorCode
-     *        Code that indicates the type of error that is generated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     * @see AccessDeniedErrorCode
-     */
-
-    public AccessDeniedException withErrorCode(String errorCode) {
-        setErrorCode(errorCode);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Code that indicates the type of error that is generated.
-     * </p>
-     * 
-     * @param errorCode
-     *        Code that indicates the type of error that is generated.
-     * @see AccessDeniedErrorCode
-     */
-
-    public void setErrorCode(AccessDeniedErrorCode errorCode) {
-        this.errorCode = errorCode.toString();
-    }
-
-    /**
-     * <p>
-     * Code that indicates the type of error that is generated.
-     * </p>
-     * 
-     * @param errorCode
-     *        Code that indicates the type of error that is generated.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     * @see AccessDeniedErrorCode
-     */
-
-    public AccessDeniedException withErrorCode(AccessDeniedErrorCode errorCode) {
-        setErrorCode(errorCode);
-        return this;
-    }
-
-    /**
-     * <p>
      * You can immediately retry your request.
      * </p>
      * 
@@ -135,6 +58,7 @@ public class AccessDeniedException extends AmazonServiceException {
      *        You can immediately retry your request.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     public void setCanRetry(Boolean canRetry) {
         this.canRetry = canRetry;
     }
@@ -147,6 +71,7 @@ public class AccessDeniedException extends AmazonServiceException {
      * @return You can immediately retry your request.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     public Boolean getCanRetry() {
         return this.canRetry;
     }
@@ -177,6 +102,85 @@ public class AccessDeniedException extends AmazonServiceException {
 
     public Boolean isCanRetry() {
         return this.canRetry;
+    }
+
+    /**
+     * <p>
+     * Code that indicates the type of error that is generated.
+     * </p>
+     * 
+     * @param inspectorErrorCode
+     *        Code that indicates the type of error that is generated.
+     * @see AccessDeniedErrorCode
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
+    public void setInspectorErrorCode(String inspectorErrorCode) {
+        this.inspectorErrorCode = inspectorErrorCode;
+    }
+
+    /**
+     * <p>
+     * Code that indicates the type of error that is generated.
+     * </p>
+     * 
+     * @return Code that indicates the type of error that is generated.
+     * @see AccessDeniedErrorCode
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
+    public String getInspectorErrorCode() {
+        return this.inspectorErrorCode;
+    }
+
+    /**
+     * <p>
+     * Code that indicates the type of error that is generated.
+     * </p>
+     * 
+     * @param inspectorErrorCode
+     *        Code that indicates the type of error that is generated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see AccessDeniedErrorCode
+     */
+
+    public AccessDeniedException withInspectorErrorCode(
+            String inspectorErrorCode) {
+        setInspectorErrorCode(inspectorErrorCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Code that indicates the type of error that is generated.
+     * </p>
+     * 
+     * @param inspectorErrorCode
+     *        Code that indicates the type of error that is generated.
+     * @see AccessDeniedErrorCode
+     */
+
+    public void setInspectorErrorCode(AccessDeniedErrorCode inspectorErrorCode) {
+        this.inspectorErrorCode = inspectorErrorCode.toString();
+    }
+
+    /**
+     * <p>
+     * Code that indicates the type of error that is generated.
+     * </p>
+     * 
+     * @param inspectorErrorCode
+     *        Code that indicates the type of error that is generated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see AccessDeniedErrorCode
+     */
+
+    public AccessDeniedException withInspectorErrorCode(
+            AccessDeniedErrorCode inspectorErrorCode) {
+        setInspectorErrorCode(inspectorErrorCode);
+        return this;
     }
 
 }

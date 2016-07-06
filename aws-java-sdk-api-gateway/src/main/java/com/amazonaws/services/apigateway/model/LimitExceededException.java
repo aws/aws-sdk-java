@@ -24,7 +24,6 @@ import com.amazonaws.AmazonServiceException;
 public class LimitExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("retryAfterSeconds")
     private String retryAfterSeconds;
 
     /**
@@ -41,6 +40,7 @@ public class LimitExceededException extends AmazonServiceException {
      * @param retryAfterSeconds
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("Retry-After")
     public void setRetryAfterSeconds(String retryAfterSeconds) {
         this.retryAfterSeconds = retryAfterSeconds;
     }
@@ -49,6 +49,7 @@ public class LimitExceededException extends AmazonServiceException {
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("Retry-After")
     public String getRetryAfterSeconds() {
         return this.retryAfterSeconds;
     }

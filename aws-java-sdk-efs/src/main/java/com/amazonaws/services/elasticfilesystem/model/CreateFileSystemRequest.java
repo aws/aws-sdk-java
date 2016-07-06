@@ -37,8 +37,9 @@ public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
      * The <code>PerformanceMode</code> of the file system. We recommend
      * <code>generalPurpose</code> performance mode for most file systems. File
      * systems using the <code>maxIO</code> performance mode can scale to higher
-     * levels of aggregate throughput than general purpose mode file systems,
-     * with a tradeoff of slightly higher latencies for most file operations.
+     * levels of aggregate throughput and operations per second with a tradeoff
+     * of slightly higher latencies for most file operations. This can't be
+     * changed after the file system has been created.
      * </p>
      */
     private String performanceMode;
@@ -95,17 +96,19 @@ public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
      * The <code>PerformanceMode</code> of the file system. We recommend
      * <code>generalPurpose</code> performance mode for most file systems. File
      * systems using the <code>maxIO</code> performance mode can scale to higher
-     * levels of aggregate throughput than general purpose mode file systems,
-     * with a tradeoff of slightly higher latencies for most file operations.
+     * levels of aggregate throughput and operations per second with a tradeoff
+     * of slightly higher latencies for most file operations. This can't be
+     * changed after the file system has been created.
      * </p>
      * 
      * @param performanceMode
      *        The <code>PerformanceMode</code> of the file system. We recommend
      *        <code>generalPurpose</code> performance mode for most file
      *        systems. File systems using the <code>maxIO</code> performance
-     *        mode can scale to higher levels of aggregate throughput than
-     *        general purpose mode file systems, with a tradeoff of slightly
-     *        higher latencies for most file operations.
+     *        mode can scale to higher levels of aggregate throughput and
+     *        operations per second with a tradeoff of slightly higher latencies
+     *        for most file operations. This can't be changed after the file
+     *        system has been created.
      * @see PerformanceMode
      */
 
@@ -118,16 +121,18 @@ public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
      * The <code>PerformanceMode</code> of the file system. We recommend
      * <code>generalPurpose</code> performance mode for most file systems. File
      * systems using the <code>maxIO</code> performance mode can scale to higher
-     * levels of aggregate throughput than general purpose mode file systems,
-     * with a tradeoff of slightly higher latencies for most file operations.
+     * levels of aggregate throughput and operations per second with a tradeoff
+     * of slightly higher latencies for most file operations. This can't be
+     * changed after the file system has been created.
      * </p>
      * 
      * @return The <code>PerformanceMode</code> of the file system. We recommend
      *         <code>generalPurpose</code> performance mode for most file
      *         systems. File systems using the <code>maxIO</code> performance
-     *         mode can scale to higher levels of aggregate throughput than
-     *         general purpose mode file systems, with a tradeoff of slightly
-     *         higher latencies for most file operations.
+     *         mode can scale to higher levels of aggregate throughput and
+     *         operations per second with a tradeoff of slightly higher
+     *         latencies for most file operations. This can't be changed after
+     *         the file system has been created.
      * @see PerformanceMode
      */
 
@@ -140,17 +145,19 @@ public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
      * The <code>PerformanceMode</code> of the file system. We recommend
      * <code>generalPurpose</code> performance mode for most file systems. File
      * systems using the <code>maxIO</code> performance mode can scale to higher
-     * levels of aggregate throughput than general purpose mode file systems,
-     * with a tradeoff of slightly higher latencies for most file operations.
+     * levels of aggregate throughput and operations per second with a tradeoff
+     * of slightly higher latencies for most file operations. This can't be
+     * changed after the file system has been created.
      * </p>
      * 
      * @param performanceMode
      *        The <code>PerformanceMode</code> of the file system. We recommend
      *        <code>generalPurpose</code> performance mode for most file
      *        systems. File systems using the <code>maxIO</code> performance
-     *        mode can scale to higher levels of aggregate throughput than
-     *        general purpose mode file systems, with a tradeoff of slightly
-     *        higher latencies for most file operations.
+     *        mode can scale to higher levels of aggregate throughput and
+     *        operations per second with a tradeoff of slightly higher latencies
+     *        for most file operations. This can't be changed after the file
+     *        system has been created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see PerformanceMode
@@ -166,17 +173,19 @@ public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
      * The <code>PerformanceMode</code> of the file system. We recommend
      * <code>generalPurpose</code> performance mode for most file systems. File
      * systems using the <code>maxIO</code> performance mode can scale to higher
-     * levels of aggregate throughput than general purpose mode file systems,
-     * with a tradeoff of slightly higher latencies for most file operations.
+     * levels of aggregate throughput and operations per second with a tradeoff
+     * of slightly higher latencies for most file operations. This can't be
+     * changed after the file system has been created.
      * </p>
      * 
      * @param performanceMode
      *        The <code>PerformanceMode</code> of the file system. We recommend
      *        <code>generalPurpose</code> performance mode for most file
      *        systems. File systems using the <code>maxIO</code> performance
-     *        mode can scale to higher levels of aggregate throughput than
-     *        general purpose mode file systems, with a tradeoff of slightly
-     *        higher latencies for most file operations.
+     *        mode can scale to higher levels of aggregate throughput and
+     *        operations per second with a tradeoff of slightly higher latencies
+     *        for most file operations. This can't be changed after the file
+     *        system has been created.
      * @see PerformanceMode
      */
 
@@ -189,17 +198,19 @@ public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
      * The <code>PerformanceMode</code> of the file system. We recommend
      * <code>generalPurpose</code> performance mode for most file systems. File
      * systems using the <code>maxIO</code> performance mode can scale to higher
-     * levels of aggregate throughput than general purpose mode file systems,
-     * with a tradeoff of slightly higher latencies for most file operations.
+     * levels of aggregate throughput and operations per second with a tradeoff
+     * of slightly higher latencies for most file operations. This can't be
+     * changed after the file system has been created.
      * </p>
      * 
      * @param performanceMode
      *        The <code>PerformanceMode</code> of the file system. We recommend
      *        <code>generalPurpose</code> performance mode for most file
      *        systems. File systems using the <code>maxIO</code> performance
-     *        mode can scale to higher levels of aggregate throughput than
-     *        general purpose mode file systems, with a tradeoff of slightly
-     *        higher latencies for most file operations.
+     *        mode can scale to higher levels of aggregate throughput and
+     *        operations per second with a tradeoff of slightly higher latencies
+     *        for most file operations. This can't be changed after the file
+     *        system has been created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see PerformanceMode

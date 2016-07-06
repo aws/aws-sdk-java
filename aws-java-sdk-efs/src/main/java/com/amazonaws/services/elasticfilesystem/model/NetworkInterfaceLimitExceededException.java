@@ -32,7 +32,6 @@ public class NetworkInterfaceLimitExceededException extends
         AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     private String errorCode;
 
     /**
@@ -50,6 +49,7 @@ public class NetworkInterfaceLimitExceededException extends
      * @param errorCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -58,6 +58,7 @@ public class NetworkInterfaceLimitExceededException extends
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     public String getErrorCode() {
         return this.errorCode;
     }

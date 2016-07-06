@@ -381,9 +381,10 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * parameter that you choose for your file system. We recommend
      * <code>generalPurpose</code> performance mode for most file systems. File
      * systems using the <code>maxIO</code> performance mode can scale to higher
-     * levels of aggregate throughput than general purpose mode file systems,
-     * with a tradeoff of slightly higher latencies for most file operations.
-     * For more information, see <a href=
+     * levels of aggregate throughput and operations per second with a tradeoff
+     * of slightly higher latencies for most file operations. The performance
+     * mode can't be changed after the file system has been created. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html"
      * >Amazon EFS: Performance Modes</a>.
      * </p>

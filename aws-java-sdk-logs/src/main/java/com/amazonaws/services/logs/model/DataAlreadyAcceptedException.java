@@ -24,7 +24,6 @@ import com.amazonaws.AmazonServiceException;
 public class DataAlreadyAcceptedException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("expectedSequenceToken")
     private String expectedSequenceToken;
 
     /**
@@ -42,6 +41,7 @@ public class DataAlreadyAcceptedException extends AmazonServiceException {
      * @param expectedSequenceToken
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("expectedSequenceToken")
     public void setExpectedSequenceToken(String expectedSequenceToken) {
         this.expectedSequenceToken = expectedSequenceToken;
     }
@@ -50,6 +50,7 @@ public class DataAlreadyAcceptedException extends AmazonServiceException {
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("expectedSequenceToken")
     public String getExpectedSequenceToken() {
         return this.expectedSequenceToken;
     }

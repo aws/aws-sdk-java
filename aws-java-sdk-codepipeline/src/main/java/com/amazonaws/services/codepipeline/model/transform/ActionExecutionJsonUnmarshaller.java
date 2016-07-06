@@ -69,6 +69,16 @@ public class ActionExecutionJsonUnmarshaller implements
                             .getUnmarshaller(java.util.Date.class).unmarshall(
                                     context));
                 }
+                if (context.testExpression("token", targetDepth)) {
+                    context.nextToken();
+                    actionExecution.setToken(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("lastUpdatedBy", targetDepth)) {
+                    context.nextToken();
+                    actionExecution.setLastUpdatedBy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("externalExecutionId", targetDepth)) {
                     context.nextToken();
                     actionExecution.setExternalExecutionId(context

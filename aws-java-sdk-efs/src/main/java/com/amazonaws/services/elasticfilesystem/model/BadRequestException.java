@@ -27,7 +27,6 @@ import com.amazonaws.AmazonServiceException;
 public class BadRequestException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     private String errorCode;
 
     /**
@@ -44,6 +43,7 @@ public class BadRequestException extends AmazonServiceException {
      * @param errorCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -52,6 +52,7 @@ public class BadRequestException extends AmazonServiceException {
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     public String getErrorCode() {
         return this.errorCode;
     }

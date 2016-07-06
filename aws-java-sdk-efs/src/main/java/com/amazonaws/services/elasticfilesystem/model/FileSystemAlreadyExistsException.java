@@ -27,10 +27,8 @@ import com.amazonaws.AmazonServiceException;
 public class FileSystemAlreadyExistsException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     private String errorCode;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("FileSystemId")
     private String fileSystemId;
 
     /**
@@ -48,6 +46,7 @@ public class FileSystemAlreadyExistsException extends AmazonServiceException {
      * @param errorCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -56,6 +55,7 @@ public class FileSystemAlreadyExistsException extends AmazonServiceException {
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -75,6 +75,7 @@ public class FileSystemAlreadyExistsException extends AmazonServiceException {
      * @param fileSystemId
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("FileSystemId")
     public void setFileSystemId(String fileSystemId) {
         this.fileSystemId = fileSystemId;
     }
@@ -83,6 +84,7 @@ public class FileSystemAlreadyExistsException extends AmazonServiceException {
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("FileSystemId")
     public String getFileSystemId() {
         return this.fileSystemId;
     }

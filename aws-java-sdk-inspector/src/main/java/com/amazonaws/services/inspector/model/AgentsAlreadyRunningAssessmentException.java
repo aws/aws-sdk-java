@@ -29,17 +29,14 @@ public class AgentsAlreadyRunningAssessmentException extends
     private static final long serialVersionUID = 1L;
 
     /** <p/> */
-    @com.fasterxml.jackson.annotation.JsonProperty("agents")
     private java.util.List<AgentAlreadyRunningAssessment> agents;
     /** <p/> */
-    @com.fasterxml.jackson.annotation.JsonProperty("agentsTruncated")
     private Boolean agentsTruncated;
     /**
      * <p>
      * You can immediately retry your request.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     private Boolean canRetry;
 
     /**
@@ -59,6 +56,7 @@ public class AgentsAlreadyRunningAssessmentException extends
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("agents")
     public java.util.List<AgentAlreadyRunningAssessment> getAgents() {
         return agents;
     }
@@ -69,6 +67,7 @@ public class AgentsAlreadyRunningAssessmentException extends
      * @param agents
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("agents")
     public void setAgents(
             java.util.Collection<AgentAlreadyRunningAssessment> agents) {
         if (agents == null) {
@@ -126,6 +125,7 @@ public class AgentsAlreadyRunningAssessmentException extends
      * @param agentsTruncated
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("agentsTruncated")
     public void setAgentsTruncated(Boolean agentsTruncated) {
         this.agentsTruncated = agentsTruncated;
     }
@@ -136,6 +136,7 @@ public class AgentsAlreadyRunningAssessmentException extends
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("agentsTruncated")
     public Boolean getAgentsTruncated() {
         return this.agentsTruncated;
     }
@@ -173,6 +174,7 @@ public class AgentsAlreadyRunningAssessmentException extends
      *        You can immediately retry your request.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     public void setCanRetry(Boolean canRetry) {
         this.canRetry = canRetry;
     }
@@ -185,6 +187,7 @@ public class AgentsAlreadyRunningAssessmentException extends
      * @return You can immediately retry your request.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     public Boolean getCanRetry() {
         return this.canRetry;
     }

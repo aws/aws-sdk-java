@@ -73,16 +73,22 @@ public class Region {
     /**
      * Returns the endpoint for the service given.
      *
-     * @see ServiceAbbreviations
+     * @param endpointPrefix
+     *         The service endpoint prefix which can be retrieved from the
+     *         constant ENDPOINT_PREFIX of the specific service client interface,
+     *         e.g. AmazonEC2.ENDPOINT_PREFIX.
      */
-    public String getServiceEndpoint(String serviceName) {
-        return regionImpl.getServiceEndpoint(serviceName);
+    public String getServiceEndpoint(String endpointPrefix) {
+        return regionImpl.getServiceEndpoint(endpointPrefix);
     }
 
     /**
      * Returns whether the given service is supported in this region.
      *
-     * @see ServiceAbbreviations
+     * @param serviceName
+     *         The service endpoint prefix which can be retrieved from the
+     *         constant ENDPOINT_PREFIX of the specific service client interface,
+     *         e.g. AmazonEC2.ENDPOINT_PREFIX.
      */
     public boolean isServiceSupported(String serviceName) {
         return regionImpl.isServiceSupported(serviceName);
@@ -91,7 +97,10 @@ public class Region {
     /**
      * Returns whether the given service support the https protocol in this region.
      *
-     * @see ServiceAbbreviations
+     * @param serviceName
+     *         The service endpoint prefix which can be retrieved from the
+     *         constant ENDPOINT_PREFIX of the specific service client interface,
+     *         e.g. AmazonEC2.ENDPOINT_PREFIX.
      */
     public boolean hasHttpsEndpoint(String serviceName) {
         return regionImpl.hasHttpsEndpoint(serviceName);
@@ -100,7 +109,10 @@ public class Region {
     /**
      * Returns whether the given service support the http protocol in this region.
      *
-     * @see ServiceAbbreviations
+     * @param serviceName
+     *         The service endpoint prefix which can be retrieved from the
+     *         constant ENDPOINT_PREFIX of the specific service client interface,
+     *         e.g. AmazonEC2.ENDPOINT_PREFIX.
      */
     public boolean hasHttpEndpoint(String serviceName) {
         return regionImpl.hasHttpEndpoint(serviceName);
@@ -123,7 +135,6 @@ public class Region {
      *                     credentials provider
      * @param config       The configuration to use, or null for the default
      *                     configuration
-     * @see ServiceAbbreviations
      */
     public <T extends AmazonWebServiceClient> T createClient(Class<T> serviceClass,
                                                              AWSCredentialsProvider credentials,

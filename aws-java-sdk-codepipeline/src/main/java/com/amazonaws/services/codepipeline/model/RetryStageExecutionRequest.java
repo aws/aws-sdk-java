@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a retry stage execution operation.
+ * Represents the input of a retry stage execution action.
  * </p>
  */
 public class RetryStageExecutionRequest extends AmazonWebServiceRequest

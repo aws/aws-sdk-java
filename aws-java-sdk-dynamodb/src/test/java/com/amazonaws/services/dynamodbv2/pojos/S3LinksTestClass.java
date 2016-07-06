@@ -12,10 +12,11 @@
  * License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.amazonaws.services.dynamodbv2.datamodeling;
+package com.amazonaws.services.dynamodbv2.pojos;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+import com.amazonaws.services.dynamodbv2.datamodeling.S3Link;
 
 /**
  * Test domain class with a single string key, and two S3Links

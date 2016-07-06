@@ -59,6 +59,14 @@ public class ActionExecutionJsonMarshaller {
                 jsonGenerator.writeFieldName("lastStatusChange").writeValue(
                         actionExecution.getLastStatusChange());
             }
+            if (actionExecution.getToken() != null) {
+                jsonGenerator.writeFieldName("token").writeValue(
+                        actionExecution.getToken());
+            }
+            if (actionExecution.getLastUpdatedBy() != null) {
+                jsonGenerator.writeFieldName("lastUpdatedBy").writeValue(
+                        actionExecution.getLastUpdatedBy());
+            }
             if (actionExecution.getExternalExecutionId() != null) {
                 jsonGenerator.writeFieldName("externalExecutionId").writeValue(
                         actionExecution.getExternalExecutionId());

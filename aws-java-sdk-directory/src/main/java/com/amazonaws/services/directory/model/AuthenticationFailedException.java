@@ -31,7 +31,6 @@ public class AuthenticationFailedException extends AmazonServiceException {
      * The identifier of the request that caused the exception.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
     private String requestId;
 
     /**
@@ -54,6 +53,7 @@ public class AuthenticationFailedException extends AmazonServiceException {
      *        The identifier of the request that caused the exception.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -66,6 +66,7 @@ public class AuthenticationFailedException extends AmazonServiceException {
      * @return The identifier of the request that caused the exception.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
     public String getRequestId() {
         return this.requestId;
     }

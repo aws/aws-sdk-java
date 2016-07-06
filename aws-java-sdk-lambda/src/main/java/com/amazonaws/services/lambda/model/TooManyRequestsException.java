@@ -29,10 +29,8 @@ public class TooManyRequestsException extends AmazonServiceException {
      * The number of seconds the caller should wait before retrying.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("retryAfterSeconds")
     private String retryAfterSeconds;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("Type")
     private String type;
 
     /**
@@ -55,6 +53,7 @@ public class TooManyRequestsException extends AmazonServiceException {
      *        The number of seconds the caller should wait before retrying.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("Retry-After")
     public void setRetryAfterSeconds(String retryAfterSeconds) {
         this.retryAfterSeconds = retryAfterSeconds;
     }
@@ -67,6 +66,7 @@ public class TooManyRequestsException extends AmazonServiceException {
      * @return The number of seconds the caller should wait before retrying.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("Retry-After")
     public String getRetryAfterSeconds() {
         return this.retryAfterSeconds;
     }
@@ -92,6 +92,7 @@ public class TooManyRequestsException extends AmazonServiceException {
      * @param type
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("Type")
     public void setType(String type) {
         this.type = type;
     }
@@ -100,6 +101,7 @@ public class TooManyRequestsException extends AmazonServiceException {
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("Type")
     public String getType() {
         return this.type;
     }

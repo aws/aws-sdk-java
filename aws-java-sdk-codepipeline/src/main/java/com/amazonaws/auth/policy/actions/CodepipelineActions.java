@@ -61,6 +61,8 @@ public enum CodepipelineActions implements Action {
     PollForThirdPartyJobs("codepipeline:PollForThirdPartyJobs"),
     /** Action for the PutActionRevision operation. */
     PutActionRevision("codepipeline:PutActionRevision"),
+    /** Action for the PutApprovalResult operation. */
+    PutApprovalResult("codepipeline:PutApprovalResult"),
     /** Action for the PutJobFailureResult operation. */
     PutJobFailureResult("codepipeline:PutJobFailureResult"),
     /** Action for the PutJobSuccessResult operation. */

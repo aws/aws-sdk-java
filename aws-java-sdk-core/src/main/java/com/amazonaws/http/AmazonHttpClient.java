@@ -73,6 +73,7 @@ import com.amazonaws.util.NullResponseMetadataCache;
 import com.amazonaws.util.ResponseMetadataCache;
 import com.amazonaws.util.TimingInfo;
 import com.amazonaws.util.UnreliableFilterInputStream;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.Header;
@@ -99,20 +100,16 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
 import java.util.UUID;
 
 import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
-import static com.amazonaws.event.SDKProgressPublisher
-        .publishRequestContentLength;
-import static com.amazonaws.event.SDKProgressPublisher
-        .publishResponseContentLength;
-import static com.amazonaws.util.AWSRequestMetrics.Field
-        .HttpClientPoolAvailableCount;
-import static com.amazonaws.util.AWSRequestMetrics.Field
-        .HttpClientPoolLeasedCount;
-import static com.amazonaws.util.AWSRequestMetrics.Field
-        .HttpClientPoolPendingCount;
+import static com.amazonaws.event.SDKProgressPublisher.publishRequestContentLength;
+import static com.amazonaws.event.SDKProgressPublisher.publishResponseContentLength;
+import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolAvailableCount;
+import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolLeasedCount;
+import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolPendingCount;
 import static com.amazonaws.util.IOUtils.closeQuietly;
 
 @ThreadSafe
@@ -208,6 +205,13 @@ public class AmazonHttpClient {
      * @see AwsSdkMetrics
      */
     private final RequestMetricCollector requestMetricCollector;
+
+    /**
+     * Used to generate UUID's for client transaction id. This gives a higher probability of id
+     * clashes but is more performant then using {@link UUID#randomUUID()} which uses SecureRandom
+     * internally.
+     **/
+    private final Random random = new Random();
 
     /**
      * The time difference in seconds between this client and AWS.
@@ -1060,7 +1064,8 @@ public class AmazonHttpClient {
      * Create a client side identifier that will be sent with the initial request and each retry.
      */
     private void setSdkTransactionId(Request<?> request) {
-        request.addHeader(HEADER_SDK_TRANSACTION_ID, UUID.randomUUID().toString());
+        request.addHeader(HEADER_SDK_TRANSACTION_ID,
+                          new UUID(random.nextLong(), random.nextLong()).toString());
     }
 
     /**

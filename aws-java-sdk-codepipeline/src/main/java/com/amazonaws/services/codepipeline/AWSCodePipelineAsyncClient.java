@@ -1046,6 +1046,41 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<PutApprovalResultResult> putApprovalResultAsync(
+            PutApprovalResultRequest request) {
+
+        return putApprovalResultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutApprovalResultResult> putApprovalResultAsync(
+            final PutApprovalResultRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutApprovalResultRequest, PutApprovalResultResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<PutApprovalResultResult>() {
+                    @Override
+                    public PutApprovalResultResult call() throws Exception {
+                        PutApprovalResultResult result;
+
+                        try {
+                            result = putApprovalResult(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutJobFailureResultResult> putJobFailureResultAsync(
             PutJobFailureResultRequest request) {
 

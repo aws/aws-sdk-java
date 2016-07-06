@@ -33,7 +33,6 @@ public class DocumentServiceException extends AmazonServiceException {
      * <code>success</code>.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     private String status;
 
     /**
@@ -58,6 +57,7 @@ public class DocumentServiceException extends AmazonServiceException {
      *        or <code>success</code>.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public void setStatus(String status) {
         this.status = status;
     }
@@ -72,6 +72,7 @@ public class DocumentServiceException extends AmazonServiceException {
      *         <code>error</code> or <code>success</code>.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }

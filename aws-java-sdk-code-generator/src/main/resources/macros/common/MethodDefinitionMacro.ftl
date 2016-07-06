@@ -24,6 +24,7 @@
 
     ${getterDoc}
     ${deprecated}
+    <@AdditionalAnnotationsForAccessors.content shape.type member/>
     public ${getter.returnType} ${getterFunctionName}() {
         <#if customConfig.useAutoConstructList>
         if(${variableName} == null) {
@@ -35,6 +36,7 @@
 
     ${setterDoc}
     ${deprecated}
+    <@AdditionalAnnotationsForAccessors.content shape.type member/>
     public void ${setterFunctionName}(${setter.variableSetterType} ${setter.variableName}){
         if (${setter.variableName} == null) {
             this.${variableName} = null;
@@ -91,6 +93,7 @@
 
     ${getterDoc}
     ${deprecated}
+    <@AdditionalAnnotationsForAccessors.content shape.type member/>
     public ${getter.returnType} ${getterFunctionName}(){
         <#if customConfig.useAutoConstructMap>
         if(${variableName} == null) {
@@ -102,6 +105,7 @@
 
     ${setterDoc}
     ${deprecated}
+    <@AdditionalAnnotationsForAccessors.content shape.type member/>
     public void ${setterFunctionName}(${setter.variableType} ${setter.variableName}){
         <#if customConfig.useAutoConstructMap>
             this.${variableName} = ${setter.variableName} == null
@@ -145,12 +149,14 @@
 
     ${setterDoc}
     ${deprecated}
+    <@AdditionalAnnotationsForAccessors.content shape.type member/>
     public void ${setterFunctionName}(${setter.variableType} ${setter.variableName}) {
         this.${variableName} = ${setter.variableName};
     }
 
     ${getterDoc}
     ${deprecated}
+    <@AdditionalAnnotationsForAccessors.content shape.type member/>
     public ${getter.returnType} ${getterFunctionName}() {
         return this.${variableName};
     }

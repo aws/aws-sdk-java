@@ -31,7 +31,6 @@ public class ResourceNotFoundException extends AmazonServiceException {
      * The resource could not be found.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("ResourceId")
     private String resourceId;
 
     /**
@@ -54,6 +53,7 @@ public class ResourceNotFoundException extends AmazonServiceException {
      *        The resource could not be found.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ResourceId")
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -66,6 +66,7 @@ public class ResourceNotFoundException extends AmazonServiceException {
      * @return The resource could not be found.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ResourceId")
     public String getResourceId() {
         return this.resourceId;
     }

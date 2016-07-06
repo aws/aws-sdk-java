@@ -276,6 +276,12 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.codepipeline.model.LimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ApprovalAlreadyCompletedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.ApprovalAlreadyCompletedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("PipelineNameInUseException")
                                     .withModeledClass(
                                             com.amazonaws.services.codepipeline.model.PipelineNameInUseException.class))
@@ -350,6 +356,12 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
                                     .withErrorCode("InvalidJobException")
                                     .withModeledClass(
                                             com.amazonaws.services.codepipeline.model.InvalidJobException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidApprovalTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.InvalidApprovalTokenException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidJobStateException")
@@ -1502,6 +1514,69 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Provides the response to a manual approval request to AWS CodePipeline.
+     * Valid responses include Approved and Rejected.
+     * </p>
+     * 
+     * @param putApprovalResultRequest
+     *        Represents the input of a put approval result action.
+     * @return Result of the PutApprovalResult operation returned by the
+     *         service.
+     * @throws InvalidApprovalTokenException
+     *         The approval request already received a response or has expired.
+     * @throws ApprovalAlreadyCompletedException
+     *         The approval action has already been approved or rejected.
+     * @throws PipelineNotFoundException
+     *         The specified pipeline was specified in an invalid format or
+     *         cannot be found.
+     * @throws StageNotFoundException
+     *         The specified stage was specified in an invalid format or cannot
+     *         be found.
+     * @throws ActionNotFoundException
+     *         The specified action cannot be found.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @sample AWSCodePipeline.PutApprovalResult
+     */
+    @Override
+    public PutApprovalResultResult putApprovalResult(
+            PutApprovalResultRequest putApprovalResultRequest) {
+        ExecutionContext executionContext = createExecutionContext(putApprovalResultRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutApprovalResultRequest> request = null;
+        Response<PutApprovalResultResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutApprovalResultRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(putApprovalResultRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutApprovalResultResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutApprovalResultResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Represents the failure of a job as returned to the pipeline by a job
      * worker. Only used for custom actions.
      * </p>
@@ -1738,7 +1813,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param retryStageExecutionRequest
-     *        Represents the input of a retry stage execution operation.
+     *        Represents the input of a retry stage execution action.
      * @return Result of the RetryStageExecution operation returned by the
      *         service.
      * @throws ValidationException
@@ -1751,12 +1826,12 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *         be found.
      * @throws StageNotRetryableException
      *         The specified stage can't be retried because the pipeline
-     *         structure or stage state changed after the stage failed to
-     *         complete, the stage contains no failed actions, one or more
-     *         actions are still in progress, or another retry attempt is
+     *         structure or stage state changed after the stage was not
+     *         completed; the stage contains no failed actions; one or more
+     *         actions are still in progress; or another retry attempt is
      *         already in progress.
      * @throws NotLatestPipelineExecutionException
-     *         The stage has failed in a later pipeline run and the
+     *         The stage has failed in a later run of the pipeline and the
      *         pipelineExecutionId associated with the request is out of date.
      * @sample AWSCodePipeline.RetryStageExecution
      */

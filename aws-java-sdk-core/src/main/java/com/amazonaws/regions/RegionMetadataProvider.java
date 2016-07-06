@@ -42,9 +42,11 @@ public interface RegionMetadataProvider {
     /**
      * Returns a list of the regions that support the service given.
      *
-     * @param serviceName the service abbreviation to search for
+     * @param serviceName
+     *         The service endpoint prefix which can be retrieved from the
+     *         constant ENDPOINT_PREFIX of the specific service client interface,
+     *         e.g. AmazonEC2.ENDPOINT_PREFIX.
      * @return the list of regions with support for the given service
-     * @see ServiceAbbreviations
      */
     List<Region> getRegionsForService(final String serviceName);
 

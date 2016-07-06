@@ -19,11 +19,11 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "ecs",
     "signingName" : "ecs",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
+    "xmlProtocol" : false,
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "serviceName" : "Amazon ECS",
     "cborProtocol" : false,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
@@ -41225,6 +41225,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "exceptionUnmarshallerImpl" : null,
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "exceptionUnmarshallerImpl" : null
 }

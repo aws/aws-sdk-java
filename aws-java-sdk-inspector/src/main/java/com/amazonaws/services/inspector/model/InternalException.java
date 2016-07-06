@@ -31,7 +31,6 @@ public class InternalException extends AmazonServiceException {
      * You can immediately retry your request.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     private Boolean canRetry;
 
     /**
@@ -53,6 +52,7 @@ public class InternalException extends AmazonServiceException {
      *        You can immediately retry your request.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     public void setCanRetry(Boolean canRetry) {
         this.canRetry = canRetry;
     }
@@ -65,6 +65,7 @@ public class InternalException extends AmazonServiceException {
      * @return You can immediately retry your request.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
     public Boolean getCanRetry() {
         return this.canRetry;
     }

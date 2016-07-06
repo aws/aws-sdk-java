@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Scalar;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -65,89 +67,64 @@ public @interface DynamoDBVersionAttribute {
 
         @Override
         public final T generate(final T currentValue) {
-            return currentValue == null ? sequence.initial() : sequence.next(currentValue);
+            return sequence.next(currentValue);
         }
 
-        private static class Sequence<T> {
-            public T initial() {
-                throw new DynamoDBMappingException("unsupported type for version");
-            }
-            public T next(final T currentValue) {
-                throw new DynamoDBMappingException("unsupported type for version");
-            }
+        static interface Sequence<T> {
+            public T next(final T o);
         }
 
         private static enum Sequences {
-            BIGINTEGER(StandardTypeConverters.STRING_TO_BIGINTEGER, new Sequence<BigInteger>() {
-                @Override
-                public final BigInteger initial() {
-                    return BigInteger.ONE;
-                }
-                @Override
-                public final BigInteger next(final BigInteger currentValue) {
-                    return currentValue.add(BigInteger.ONE);
+            BIG_INTEGER(Scalar.BIG_INTEGER, new Sequence<BigInteger>() {
+                public final BigInteger next(final BigInteger o) {
+                    return o == null ? BigInteger.ONE : o.add(BigInteger.ONE);
                 }
             }),
 
-            BYTE(StandardTypeConverters.STRING_TO_BYTE, new Sequence<Byte>() {
-                @Override
-                public final Byte initial() {
-                    return Byte.valueOf((byte)1);
-                }
-                @Override
-                public final Byte next(final Byte currentValue) {
-                    return (byte)((currentValue + 1) % Byte.MAX_VALUE);
+            BYTE(Scalar.BYTE, new Sequence<Byte>() {
+                public final Byte next(final Byte o) {
+                    return o == null ? Byte.valueOf((byte)1) : (byte)((o + 1) % Byte.MAX_VALUE);
                 }
             }),
 
-            INTEGER(StandardTypeConverters.STRING_TO_INTEGER, new Sequence<Integer>() {
-                @Override
-                public final Integer initial() {
-                    return Integer.valueOf(1);
-                }
-                @Override
-                public final Integer next(final Integer currentValue) {
-                    return currentValue + 1;
+            INTEGER(Scalar.INTEGER, new Sequence<Integer>() {
+                public final Integer next(final Integer o) {
+                    return o == null ? Integer.valueOf(1) : o + 1;
                 }
             }),
 
-            LONG(StandardTypeConverters.STRING_TO_LONG, new Sequence<Long>() {
-                @Override
-                public final Long initial() {
-                    return Long.valueOf(1L);
-                }
-                @Override
-                public final Long next(final Long currentValue) {
-                    return currentValue + 1L;
+            LONG(Scalar.LONG, new Sequence<Long>() {
+                public final Long next(final Long o) {
+                    return o == null ? Long.valueOf(1L) : o + 1L;
                 }
             }),
 
-            SHORT(StandardTypeConverters.STRING_TO_SHORT, new Sequence<Short>() {
-                @Override
-                public final Short initial() {
-                    return Short.valueOf((short)1);
-                }
-                @Override
-                public final Short next(final Short currentValue) {
-                    return (short)(currentValue + 1);
+            SHORT(Scalar.SHORT, new Sequence<Short>() {
+                public final Short next(final Short o) {
+                    return o == null ? Short.valueOf((short)1) : (short)(o + 1);
                 }
             });
 
-            private final StandardTypeConverters standard;
             private final Sequence<?> sequence;
+            private final Scalar scalar;
 
-            private Sequences(final StandardTypeConverters standard, final Sequence<?> sequence) {
-                this.standard = standard;
+            private Sequences(final Scalar scalar, final Sequence<?> sequence) {
                 this.sequence = sequence;
+                this.scalar = scalar;
             }
 
             private static final <T> Sequence<T> of(final Class<T> targetType) {
+                final Scalar target = Scalar.of(targetType, true);
                 for (final Sequences s : Sequences.values()) {
-                    if (s.standard.isAssignableFrom(String.class, targetType, true)) {
+                    if (s.scalar == target) {
                         return (Sequence<T>)s.sequence;
                     }
                 }
-                return new Sequence<T>(); //<- for backwards compatibility
+                return new Sequence<T>() { //<- for backwards compatibility
+                    public T next(final T o) {
+                        throw new DynamoDBMappingException("unsupported version " + targetType);
+                    }
+                };
             }
         }
     }

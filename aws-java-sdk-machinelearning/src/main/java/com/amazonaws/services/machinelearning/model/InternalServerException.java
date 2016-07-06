@@ -26,7 +26,6 @@ import com.amazonaws.AmazonServiceException;
 public class InternalServerException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("code")
     private Integer code;
 
     /**
@@ -44,6 +43,7 @@ public class InternalServerException extends AmazonServiceException {
      * @param code
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public void setCode(Integer code) {
         this.code = code;
     }
@@ -52,6 +52,7 @@ public class InternalServerException extends AmazonServiceException {
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public Integer getCode() {
         return this.code;
     }

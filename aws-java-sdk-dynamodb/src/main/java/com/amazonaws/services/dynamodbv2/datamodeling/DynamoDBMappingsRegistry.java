@@ -22,7 +22,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 import com.amazonaws.annotation.SdkInternalApi;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.SaveBehavior;
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties.Bean;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.BooleanToBooleanMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CustomMarshaller;
@@ -160,24 +159,6 @@ final class DynamoDBMappingsRegistry {
         final Mapping getRangeKey() {
             return byKeyTypes.get(KeyType.RANGE);
         }
-
-        /**
-         * Determnes if any of the primary keys require auto-generation.
-         * @param object The object to evaluate.
-         * @param saveBehaviour The save behaviour.
-         * @return True if any keys should be auto-generated.
-         */
-        final boolean anyKeyGeneratable(final Object object, final SaveBehavior saveBehavior) {
-            if (byKeyTypes.isEmpty()) {
-                throw new DynamoDBMappingException("no key(s) present on " + objectType);
-            }
-            for (final Mapping primaryKey : byKeyTypes.values()) {
-                if (primaryKey.canGenerate(object, saveBehavior)) {
-                    return true;
-                }
-            }
-            return false;
-        }
     }
 
     /**
@@ -242,7 +223,7 @@ final class DynamoDBMappingsRegistry {
          * @return True if it maps, false otherwise.
          */
         final boolean isVersion() {
-            return bean.annotations().versioned();
+            return bean.annotations().version() != null;
         }
 
         /**
@@ -272,33 +253,9 @@ final class DynamoDBMappingsRegistry {
          */
         final ArgumentUnmarshaller getCustomUnmarshaller() {
             if (bean.annotations().marshalling() != null) {
-                return new CustomUnmarshaller(bean.reflect().valueType(), bean.annotations().marshalling().marshallerClass());
+                return new CustomUnmarshaller(bean.targetType(), bean.annotations().marshalling().marshallerClass());
             }
             return null;
-        }
-
-        /**
-         * Determines if the mapping value can be auto-generated.
-         * @param object The object instance.
-         * @param saveBehaviour The save behaviour.
-         * @return True if can be auto-generated, false otherwise.
-         */
-        final boolean canGenerate(final Object object, final SaveBehavior saveBehavior) {
-            if (bean.getGenerateStrategy() == null) {
-                return false;
-            } else if (DynamoDBAutoGenerateStrategy.ALWAYS == bean.getGenerateStrategy()) {
-                return true;
-            } else if (bean.get(object) != null) {
-                return false;
-            } else if (bean.annotations().keyType() != null || bean.annotations().indexed()) {
-                return true;
-            } else if (saveBehavior == SaveBehavior.CLOBBER || saveBehavior == SaveBehavior.UPDATE) {
-                return true;
-            } else if (instance().mappingsOf(object.getClass()).anyKeyGeneratable(object, saveBehavior)) {
-                return true;
-            } else {
-                return false;
-            }
         }
     }
 

@@ -20,12 +20,12 @@
     "endpointPrefix" : "autoscaling",
     "signingName" : "application-autoscaling",
     "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true,
     "serviceName" : "Application Auto Scaling",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "jsonProtocol" : true
   },
   "operations" : {
     "DeleteScalingPolicy" : {

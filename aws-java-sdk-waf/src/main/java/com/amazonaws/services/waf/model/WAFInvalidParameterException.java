@@ -45,13 +45,10 @@ import com.amazonaws.AmazonServiceException;
 public class WAFInvalidParameterException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("field")
     private String field;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("parameter")
     private String parameter;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private String reason;
 
     /**
@@ -70,6 +67,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      * @see ParameterExceptionField
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("field")
     public void setField(String field) {
         this.field = field;
     }
@@ -79,6 +77,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      * @see ParameterExceptionField
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("field")
     public String getField() {
         return this.field;
     }
@@ -120,6 +119,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      * @param parameter
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("parameter")
     public void setParameter(String parameter) {
         this.parameter = parameter;
     }
@@ -128,6 +128,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("parameter")
     public String getParameter() {
         return this.parameter;
     }
@@ -148,6 +149,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      * @see ParameterExceptionReason
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("reason")
     public void setReason(String reason) {
         this.reason = reason;
     }
@@ -157,6 +159,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      * @see ParameterExceptionReason
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("reason")
     public String getReason() {
         return this.reason;
     }

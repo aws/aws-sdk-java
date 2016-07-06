@@ -160,8 +160,8 @@
       "location" : "/macros/common/VariableDeclarationMacro.ftl",
       "importAsNamespace" : "VariableDeclarationMacro"
     }, {
-      "location" : "/macros/model/json/AdditionalAnnotationsForField.ftl",
-      "importAsNamespace" : "AdditionalAnnotationsForField"
+      "location" : "/macros/model/json/AdditionalAnnotationsForAccessors.ftl",
+      "importAsNamespace" : "AdditionalAnnotationsForAccessors"
     }, {
       "location" : "/macros/common/OverrideMethodsMacro.ftl",
       "importAsNamespace" : "OverrideMethodsMacro"

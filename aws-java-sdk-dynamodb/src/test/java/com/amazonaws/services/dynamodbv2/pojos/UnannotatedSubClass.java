@@ -12,7 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.services.dynamodbv2.datamodeling;
+package com.amazonaws.services.dynamodbv2.pojos;
 
 public class UnannotatedSubClass {
     public UnannotatedSubClass getChild() { return null; }

@@ -27,7 +27,6 @@ import com.amazonaws.AmazonServiceException;
 public class SubnetNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     private String errorCode;
 
     /**
@@ -45,6 +44,7 @@ public class SubnetNotFoundException extends AmazonServiceException {
      * @param errorCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -53,6 +53,7 @@ public class SubnetNotFoundException extends AmazonServiceException {
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     public String getErrorCode() {
         return this.errorCode;
     }

@@ -29,7 +29,6 @@ public class IdempotentParameterMismatchException extends
         AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("code")
     private Integer code;
 
     /**
@@ -47,6 +46,7 @@ public class IdempotentParameterMismatchException extends
      * @param code
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public void setCode(Integer code) {
         this.code = code;
     }
@@ -55,6 +55,7 @@ public class IdempotentParameterMismatchException extends
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public Integer getCode() {
         return this.code;
     }

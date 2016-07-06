@@ -24,7 +24,6 @@ import com.amazonaws.AmazonServiceException;
 public class EC2AccessDeniedException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("Type")
     private String type;
 
     /**
@@ -42,6 +41,7 @@ public class EC2AccessDeniedException extends AmazonServiceException {
      * @param type
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("Type")
     public void setType(String type) {
         this.type = type;
     }
@@ -50,6 +50,7 @@ public class EC2AccessDeniedException extends AmazonServiceException {
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("Type")
     public String getType() {
         return this.type;
     }

@@ -285,6 +285,21 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline
     }
 
     @Override
+    public java.util.concurrent.Future<PutApprovalResultResult> putApprovalResultAsync(
+            PutApprovalResultRequest request) {
+
+        return putApprovalResultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutApprovalResultResult> putApprovalResultAsync(
+            PutApprovalResultRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutApprovalResultRequest, PutApprovalResultResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutJobFailureResultResult> putJobFailureResultAsync(
             PutJobFailureResultRequest request) {
 

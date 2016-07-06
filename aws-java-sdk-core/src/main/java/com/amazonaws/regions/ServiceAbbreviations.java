@@ -20,7 +20,8 @@ package com.amazonaws.regions;
  * {@link Region#getServiceEndpoint(String)} and related methods.
  *
  * @deprecated use the constant ENDPOINT_PREFIX from the specific service client
- *             interface instead for retrieving the specific service abbreviation.
+ *             interface instead for retrieving the specific service abbreviation,
+ *             e.g. AmazonEC2.ENDPOINT_PREFIX.
  */
 
 @Deprecated

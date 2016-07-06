@@ -21,9 +21,9 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * The specified stage can't be retried because the pipeline structure or stage
- * state changed after the stage failed to complete, the stage contains no
- * failed actions, one or more actions are still in progress, or another retry
- * attempt is already in progress.
+ * state changed after the stage was not completed; the stage contains no failed
+ * actions; one or more actions are still in progress; or another retry attempt
+ * is already in progress.
  * </p>
  */
 public class StageNotRetryableException extends AmazonServiceException {

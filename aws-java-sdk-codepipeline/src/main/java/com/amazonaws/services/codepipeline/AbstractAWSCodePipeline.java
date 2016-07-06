@@ -133,6 +133,12 @@ public class AbstractAWSCodePipeline implements AWSCodePipeline {
     }
 
     @Override
+    public PutApprovalResultResult putApprovalResult(
+            PutApprovalResultRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutJobFailureResultResult putJobFailureResult(
             PutJobFailureResultRequest request) {
         throw new java.lang.UnsupportedOperationException();

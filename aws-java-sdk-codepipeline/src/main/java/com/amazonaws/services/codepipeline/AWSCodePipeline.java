@@ -683,6 +683,35 @@ public interface AWSCodePipeline {
 
     /**
      * <p>
+     * Provides the response to a manual approval request to AWS CodePipeline.
+     * Valid responses include Approved and Rejected.
+     * </p>
+     * 
+     * @param putApprovalResultRequest
+     *        Represents the input of a put approval result action.
+     * @return Result of the PutApprovalResult operation returned by the
+     *         service.
+     * @throws InvalidApprovalTokenException
+     *         The approval request already received a response or has expired.
+     * @throws ApprovalAlreadyCompletedException
+     *         The approval action has already been approved or rejected.
+     * @throws PipelineNotFoundException
+     *         The specified pipeline was specified in an invalid format or
+     *         cannot be found.
+     * @throws StageNotFoundException
+     *         The specified stage was specified in an invalid format or cannot
+     *         be found.
+     * @throws ActionNotFoundException
+     *         The specified action cannot be found.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @sample AWSCodePipeline.PutApprovalResult
+     */
+    PutApprovalResultResult putApprovalResult(
+            PutApprovalResultRequest putApprovalResultRequest);
+
+    /**
+     * <p>
      * Represents the failure of a job as returned to the pipeline by a job
      * worker. Only used for custom actions.
      * </p>
@@ -781,7 +810,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param retryStageExecutionRequest
-     *        Represents the input of a retry stage execution operation.
+     *        Represents the input of a retry stage execution action.
      * @return Result of the RetryStageExecution operation returned by the
      *         service.
      * @throws ValidationException
@@ -794,12 +823,12 @@ public interface AWSCodePipeline {
      *         be found.
      * @throws StageNotRetryableException
      *         The specified stage can't be retried because the pipeline
-     *         structure or stage state changed after the stage failed to
-     *         complete, the stage contains no failed actions, one or more
-     *         actions are still in progress, or another retry attempt is
+     *         structure or stage state changed after the stage was not
+     *         completed; the stage contains no failed actions; one or more
+     *         actions are still in progress; or another retry attempt is
      *         already in progress.
      * @throws NotLatestPipelineExecutionException
-     *         The stage has failed in a later pipeline run and the
+     *         The stage has failed in a later run of the pipeline and the
      *         pipelineExecutionId associated with the request is out of date.
      * @sample AWSCodePipeline.RetryStageExecution
      */

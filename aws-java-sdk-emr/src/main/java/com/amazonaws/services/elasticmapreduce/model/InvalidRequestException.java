@@ -31,7 +31,6 @@ public class InvalidRequestException extends AmazonServiceException {
      * The error code associated with the exception.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     private String errorCode;
 
     /**
@@ -54,6 +53,7 @@ public class InvalidRequestException extends AmazonServiceException {
      *        The error code associated with the exception.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -66,6 +66,7 @@ public class InvalidRequestException extends AmazonServiceException {
      * @return The error code associated with the exception.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
     public String getErrorCode() {
         return this.errorCode;
     }

@@ -910,6 +910,42 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
+     * Provides the response to a manual approval request to AWS CodePipeline.
+     * Valid responses include Approved and Rejected.
+     * </p>
+     * 
+     * @param putApprovalResultRequest
+     *        Represents the input of a put approval result action.
+     * @return A Java Future containing the result of the PutApprovalResult
+     *         operation returned by the service.
+     * @sample AWSCodePipelineAsync.PutApprovalResult
+     */
+    java.util.concurrent.Future<PutApprovalResultResult> putApprovalResultAsync(
+            PutApprovalResultRequest putApprovalResultRequest);
+
+    /**
+     * <p>
+     * Provides the response to a manual approval request to AWS CodePipeline.
+     * Valid responses include Approved and Rejected.
+     * </p>
+     * 
+     * @param putApprovalResultRequest
+     *        Represents the input of a put approval result action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutApprovalResult
+     *         operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.PutApprovalResult
+     */
+    java.util.concurrent.Future<PutApprovalResultResult> putApprovalResultAsync(
+            PutApprovalResultRequest putApprovalResultRequest,
+            com.amazonaws.handlers.AsyncHandler<PutApprovalResultRequest, PutApprovalResultResult> asyncHandler);
+
+    /**
+     * <p>
      * Represents the failure of a job as returned to the pipeline by a job
      * worker. Only used for custom actions.
      * </p>
@@ -1061,7 +1097,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param retryStageExecutionRequest
-     *        Represents the input of a retry stage execution operation.
+     *        Represents the input of a retry stage execution action.
      * @return A Java Future containing the result of the RetryStageExecution
      *         operation returned by the service.
      * @sample AWSCodePipelineAsync.RetryStageExecution
@@ -1076,7 +1112,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * 
      * @param retryStageExecutionRequest
-     *        Represents the input of a retry stage execution operation.
+     *        Represents the input of a retry stage execution action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

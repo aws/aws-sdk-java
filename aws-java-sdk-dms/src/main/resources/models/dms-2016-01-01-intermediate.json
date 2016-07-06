@@ -19,13 +19,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "dms",
     "signingName" : "dms",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "xmlProtocol" : false,
     "cborProtocol" : false,
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "serviceName" : "AWS Database Migration Service"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "serviceName" : "AWS Database Migration Service",
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "AddTagsToResource" : {
@@ -33286,6 +33286,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "exceptionUnmarshallerImpl" : null,
+  "clientConfigFactory" : "ClientConfigurationFactory"
 }

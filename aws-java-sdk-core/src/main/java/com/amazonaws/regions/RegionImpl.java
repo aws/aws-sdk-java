@@ -49,28 +49,40 @@ public interface RegionImpl {
     /**
      * Returns whether the given service is supported in this region.
      *
-     * @see ServiceAbbreviations
+     * @param serviceName
+     *         The service endpoint prefix which can be retrieved from the
+     *         constant ENDPOINT_PREFIX of the specific service client interface,
+     *         e.g. AmazonEC2.ENDPOINT_PREFIX.
      */
     boolean isServiceSupported(String serviceName);
 
     /**
      * Returns the endpoint for the service given.
      *
-     * @see ServiceAbbreviations
+     * @param serviceName
+     *         The service endpoint prefix which can be retrieved from the
+     *         constant ENDPOINT_PREFIX of the specific service client interface,
+     *         e.g. AmazonEC2.ENDPOINT_PREFIX.
      */
     String getServiceEndpoint(String serviceName);
 
     /**
      * Returns whether the given service support the https protocol in this region.
      *
-     * @see ServiceAbbreviations
+     * @param serviceName
+     *         The service endpoint prefix which can be retrieved from the
+     *         constant ENDPOINT_PREFIX of the specific service client interface,
+     *         e.g. AmazonEC2.ENDPOINT_PREFIX.
      */
     boolean hasHttpEndpoint(String serviceName);
 
     /**
      * Returns whether the given service support the http protocol in this region.
      *
-     * @see ServiceAbbreviations
+     * @param serviceName
+     *         The service endpoint prefix which can be retrieved from the
+     *         constant ENDPOINT_PREFIX of the specific service client interface,
+     *         e.g. AmazonEC2.ENDPOINT_PREFIX.
      */
     boolean hasHttpsEndpoint(String serviceName);
 

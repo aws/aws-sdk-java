@@ -32,21 +32,18 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * The registry ID associated with the exception.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("registryId")
     private String registryId;
     /**
      * <p>
      * The repository name associated with the exception.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("repositoryName")
     private String repositoryName;
     /**
      * <p>
      * The upload ID associated with the exception.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("uploadId")
     private String uploadId;
     /**
      * <p>
@@ -54,7 +51,6 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * associated with the exception.
      * </p>
      */
-    @com.fasterxml.jackson.annotation.JsonProperty("lastValidByteReceived")
     private Long lastValidByteReceived;
 
     /**
@@ -77,6 +73,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      *        The registry ID associated with the exception.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("registryId")
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -89,6 +86,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * @return The registry ID associated with the exception.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("registryId")
     public String getRegistryId() {
         return this.registryId;
     }
@@ -118,6 +116,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      *        The repository name associated with the exception.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("repositoryName")
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -130,6 +129,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * @return The repository name associated with the exception.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("repositoryName")
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -159,6 +159,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      *        The upload ID associated with the exception.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("uploadId")
     public void setUploadId(String uploadId) {
         this.uploadId = uploadId;
     }
@@ -171,6 +172,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * @return The upload ID associated with the exception.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("uploadId")
     public String getUploadId() {
         return this.uploadId;
     }
@@ -202,6 +204,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      *        associated with the exception.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lastValidByteReceived")
     public void setLastValidByteReceived(Long lastValidByteReceived) {
         this.lastValidByteReceived = lastValidByteReceived;
     }
@@ -216,6 +219,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      *         associated with the exception.
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lastValidByteReceived")
     public Long getLastValidByteReceived() {
         return this.lastValidByteReceived;
     }

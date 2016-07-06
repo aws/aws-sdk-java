@@ -28,7 +28,6 @@ public class SubnetIPAddressLimitReachedException extends
         AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("Type")
     private String type;
 
     /**
@@ -46,6 +45,7 @@ public class SubnetIPAddressLimitReachedException extends
      * @param type
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("Type")
     public void setType(String type) {
         this.type = type;
     }
@@ -54,6 +54,7 @@ public class SubnetIPAddressLimitReachedException extends
      * @return
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("Type")
     public String getType() {
         return this.type;
     }

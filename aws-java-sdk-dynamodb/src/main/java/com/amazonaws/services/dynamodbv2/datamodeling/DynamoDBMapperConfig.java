@@ -561,12 +561,11 @@ public class DynamoDBMapperConfig {
                 }
             }
 
-            final StandardAnnotationMaps.AnnotationMap annotations = StandardAnnotationMaps.of(clazz);
-            if (annotations.table() == null) {
+            final String tableName = StandardAnnotationMaps.of(clazz).tableName();
+            if (tableName == null) {
                 throw new DynamoDBMappingException("@DynamoDBTable not present on " + clazz);
             }
 
-            final String tableName = annotations.table().tableName();
             final String prefix = override == null
                 ? null : override.getTableNamePrefix();
             return prefix == null ? tableName : prefix + tableName;
