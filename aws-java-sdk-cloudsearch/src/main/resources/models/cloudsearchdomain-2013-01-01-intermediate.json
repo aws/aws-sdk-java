@@ -20,10 +20,10 @@
     "endpointPrefix" : "cloudsearchdomain",
     "signingName" : "cloudsearch",
     "protocolDefaultExceptionUmarshallerImpl" : null,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "jsonProtocol" : true,
     "xmlProtocol" : false,
     "cborProtocol" : false,
+    "jsonProtocol" : true,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "serviceName" : "Amazon CloudSearch Domain"
   },

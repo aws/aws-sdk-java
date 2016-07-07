@@ -19,15 +19,23 @@ package com.amazonaws.services.directory.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Result of a CreateMicrosoftAD request.
+ * </p>
  */
 public class CreateMicrosoftADResult implements Serializable, Cloneable {
 
-    /** The identifier of the directory that was created. */
+    /**
+     * <p>
+     * The identifier of the directory that was created.
+     * </p>
+     */
     private String directoryId;
 
     /**
+     * <p>
      * The identifier of the directory that was created.
+     * </p>
      * 
      * @param directoryId
      *        The identifier of the directory that was created.
@@ -38,7 +46,9 @@ public class CreateMicrosoftADResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The identifier of the directory that was created.
+     * </p>
      * 
      * @return The identifier of the directory that was created.
      */
@@ -48,7 +58,9 @@ public class CreateMicrosoftADResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The identifier of the directory that was created.
+     * </p>
      * 
      * @param directoryId
      *        The identifier of the directory that was created.

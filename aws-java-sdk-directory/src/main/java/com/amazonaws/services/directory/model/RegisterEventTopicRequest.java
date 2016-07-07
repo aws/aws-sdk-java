@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Registers a new event topic.
+ * </p>
  */
 public class RegisterEventTopicRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

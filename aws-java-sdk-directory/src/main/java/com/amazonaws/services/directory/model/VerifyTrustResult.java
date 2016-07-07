@@ -19,15 +19,23 @@ package com.amazonaws.services.directory.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Result of a VerifyTrust request.
+ * </p>
  */
 public class VerifyTrustResult implements Serializable, Cloneable {
 
-    /** The unique Trust ID of the trust relationship that was verified. */
+    /**
+     * <p>
+     * The unique Trust ID of the trust relationship that was verified.
+     * </p>
+     */
     private String trustId;
 
     /**
+     * <p>
      * The unique Trust ID of the trust relationship that was verified.
+     * </p>
      * 
      * @param trustId
      *        The unique Trust ID of the trust relationship that was verified.
@@ -38,7 +46,9 @@ public class VerifyTrustResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The unique Trust ID of the trust relationship that was verified.
+     * </p>
      * 
      * @return The unique Trust ID of the trust relationship that was verified.
      */
@@ -48,7 +58,9 @@ public class VerifyTrustResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The unique Trust ID of the trust relationship that was verified.
+     * </p>
      * 
      * @param trustId
      *        The unique Trust ID of the trust relationship that was verified.

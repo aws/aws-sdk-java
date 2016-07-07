@@ -19,33 +19,67 @@ package com.amazonaws.services.directory.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Describes a trust relationship between an Microsoft AD in the AWS cloud and
  * an external domain.
+ * </p>
  */
 public class Trust implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The Directory ID of the AWS directory involved in the trust relationship.
+     * </p>
      */
     private String directoryId;
-    /** The unique ID of the trust relationship. */
+    /**
+     * <p>
+     * The unique ID of the trust relationship.
+     * </p>
+     */
     private String trustId;
     /**
+     * <p>
      * The Fully Qualified Domain Name (FQDN) of the external domain involved in
      * the trust relationship.
+     * </p>
      */
     private String remoteDomainName;
-    /** The trust relationship type. */
+    /**
+     * <p>
+     * The trust relationship type.
+     * </p>
+     */
     private String trustType;
-    /** The trust relationship direction. */
+    /**
+     * <p>
+     * The trust relationship direction.
+     * </p>
+     */
     private String trustDirection;
-    /** The trust relationship state. */
+    /**
+     * <p>
+     * The trust relationship state.
+     * </p>
+     */
     private String trustState;
-    /** The date and time that the trust relationship was created. */
+    /**
+     * <p>
+     * The date and time that the trust relationship was created.
+     * </p>
+     */
     private java.util.Date createdDateTime;
-    /** The date and time that the trust relationship was last updated. */
+    /**
+     * <p>
+     * The date and time that the trust relationship was last updated.
+     * </p>
+     */
     private java.util.Date lastUpdatedDateTime;
-    /** The date and time that the TrustState was last updated. */
+    /**
+     * <p>
+     * The date and time that the TrustState was last updated.
+     * </p>
+     */
     private java.util.Date stateLastUpdatedDateTime;
     /**
      * <p>
@@ -55,7 +89,9 @@ public class Trust implements Serializable, Cloneable {
     private String trustStateReason;
 
     /**
+     * <p>
      * The Directory ID of the AWS directory involved in the trust relationship.
+     * </p>
      * 
      * @param directoryId
      *        The Directory ID of the AWS directory involved in the trust
@@ -67,7 +103,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The Directory ID of the AWS directory involved in the trust relationship.
+     * </p>
      * 
      * @return The Directory ID of the AWS directory involved in the trust
      *         relationship.
@@ -78,7 +116,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The Directory ID of the AWS directory involved in the trust relationship.
+     * </p>
      * 
      * @param directoryId
      *        The Directory ID of the AWS directory involved in the trust
@@ -93,7 +133,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The unique ID of the trust relationship.
+     * </p>
      * 
      * @param trustId
      *        The unique ID of the trust relationship.
@@ -104,7 +146,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The unique ID of the trust relationship.
+     * </p>
      * 
      * @return The unique ID of the trust relationship.
      */
@@ -114,7 +158,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The unique ID of the trust relationship.
+     * </p>
      * 
      * @param trustId
      *        The unique ID of the trust relationship.
@@ -128,8 +174,10 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The Fully Qualified Domain Name (FQDN) of the external domain involved in
      * the trust relationship.
+     * </p>
      * 
      * @param remoteDomainName
      *        The Fully Qualified Domain Name (FQDN) of the external domain
@@ -141,8 +189,10 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The Fully Qualified Domain Name (FQDN) of the external domain involved in
      * the trust relationship.
+     * </p>
      * 
      * @return The Fully Qualified Domain Name (FQDN) of the external domain
      *         involved in the trust relationship.
@@ -153,8 +203,10 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The Fully Qualified Domain Name (FQDN) of the external domain involved in
      * the trust relationship.
+     * </p>
      * 
      * @param remoteDomainName
      *        The Fully Qualified Domain Name (FQDN) of the external domain
@@ -169,7 +221,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship type.
+     * </p>
      * 
      * @param trustType
      *        The trust relationship type.
@@ -181,7 +235,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship type.
+     * </p>
      * 
      * @return The trust relationship type.
      * @see TrustType
@@ -192,7 +248,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship type.
+     * </p>
      * 
      * @param trustType
      *        The trust relationship type.
@@ -207,7 +265,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship type.
+     * </p>
      * 
      * @param trustType
      *        The trust relationship type.
@@ -219,7 +279,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship type.
+     * </p>
      * 
      * @param trustType
      *        The trust relationship type.
@@ -234,7 +296,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship direction.
+     * </p>
      * 
      * @param trustDirection
      *        The trust relationship direction.
@@ -246,7 +310,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship direction.
+     * </p>
      * 
      * @return The trust relationship direction.
      * @see TrustDirection
@@ -257,7 +323,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship direction.
+     * </p>
      * 
      * @param trustDirection
      *        The trust relationship direction.
@@ -272,7 +340,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship direction.
+     * </p>
      * 
      * @param trustDirection
      *        The trust relationship direction.
@@ -284,7 +354,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship direction.
+     * </p>
      * 
      * @param trustDirection
      *        The trust relationship direction.
@@ -299,7 +371,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship state.
+     * </p>
      * 
      * @param trustState
      *        The trust relationship state.
@@ -311,7 +385,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship state.
+     * </p>
      * 
      * @return The trust relationship state.
      * @see TrustState
@@ -322,7 +398,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship state.
+     * </p>
      * 
      * @param trustState
      *        The trust relationship state.
@@ -337,7 +415,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship state.
+     * </p>
      * 
      * @param trustState
      *        The trust relationship state.
@@ -349,7 +429,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The trust relationship state.
+     * </p>
      * 
      * @param trustState
      *        The trust relationship state.
@@ -364,7 +446,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the trust relationship was created.
+     * </p>
      * 
      * @param createdDateTime
      *        The date and time that the trust relationship was created.
@@ -375,7 +459,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the trust relationship was created.
+     * </p>
      * 
      * @return The date and time that the trust relationship was created.
      */
@@ -385,7 +471,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the trust relationship was created.
+     * </p>
      * 
      * @param createdDateTime
      *        The date and time that the trust relationship was created.
@@ -399,7 +487,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the trust relationship was last updated.
+     * </p>
      * 
      * @param lastUpdatedDateTime
      *        The date and time that the trust relationship was last updated.
@@ -410,7 +500,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the trust relationship was last updated.
+     * </p>
      * 
      * @return The date and time that the trust relationship was last updated.
      */
@@ -420,7 +512,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the trust relationship was last updated.
+     * </p>
      * 
      * @param lastUpdatedDateTime
      *        The date and time that the trust relationship was last updated.
@@ -434,7 +528,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the TrustState was last updated.
+     * </p>
      * 
      * @param stateLastUpdatedDateTime
      *        The date and time that the TrustState was last updated.
@@ -446,7 +542,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the TrustState was last updated.
+     * </p>
      * 
      * @return The date and time that the TrustState was last updated.
      */
@@ -456,7 +554,9 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The date and time that the TrustState was last updated.
+     * </p>
      * 
      * @param stateLastUpdatedDateTime
      *        The date and time that the TrustState was last updated.

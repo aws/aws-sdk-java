@@ -21,9 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * <p>
  * The input for the <a>StopConfigurationRecorder</a> action.
- * </p>
  * </p>
  */
 public class StopConfigurationRecorderRequest extends AmazonWebServiceRequest

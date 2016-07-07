@@ -101,6 +101,32 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Adds or overwrites one or more tags for the specified Amazon Directory
+     * Services directory. Each directory can have a maximum of 10 tags. Each
+     * tag consists of a key and optional value. Tag keys must be unique per
+     * resource.
+     * </p>
+     * 
+     * @param addTagsToResourceRequest
+     * @return Result of the AddTagsToResource operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws TagLimitExceededException
+     *         The maximum allowed number of tags was exceeded.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.AddTagsToResource
+     */
+    AddTagsToResourceResult addTagsToResource(
+            AddTagsToResourceRequest addTagsToResourceRequest);
+
+    /**
+     * <p>
      * Creates an AD Connector to connect to an on-premises directory.
      * </p>
      * 
@@ -126,8 +152,7 @@ public interface AWSDirectoryService {
      * <p>
      * Creates an alias for a directory and assigns the alias to the directory.
      * The alias is used to construct the access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
-     * .
+     * <code>http://&lt;alias&gt;.awsapps.com</code>.
      * </p>
      * <important>
      * <p>
@@ -241,7 +266,9 @@ public interface AWSDirectoryService {
             CreateDirectoryRequest createDirectoryRequest);
 
     /**
+     * <p>
      * Creates a Microsoft AD in the AWS cloud.
+     * </p>
      * 
      * @param createMicrosoftADRequest
      *        Creates a Microsoft AD in the AWS cloud.
@@ -345,6 +372,7 @@ public interface AWSDirectoryService {
      * </p>
      * 
      * @param deleteConditionalForwarderRequest
+     *        Deletes a conditional forwarder.
      * @return Result of the DeleteConditionalForwarder operation returned by
      *         the service.
      * @throws EntityDoesNotExistException
@@ -405,8 +433,10 @@ public interface AWSDirectoryService {
             DeleteSnapshotRequest deleteSnapshotRequest);
 
     /**
+     * <p>
      * Deletes an existing trust relationship between your Microsoft AD in the
      * AWS cloud and an external domain.
+     * </p>
      * 
      * @param deleteTrustRequest
      *        Deletes the local side of an existing trust relationship between
@@ -460,6 +490,7 @@ public interface AWSDirectoryService {
      * </p>
      * 
      * @param describeConditionalForwardersRequest
+     *        Describes a conditional forwarder.
      * @return Result of the DescribeConditionalForwarders operation returned by
      *         the service.
      * @throws EntityDoesNotExistException
@@ -537,6 +568,7 @@ public interface AWSDirectoryService {
      * </p>
      * 
      * @param describeEventTopicsRequest
+     *        Describes event topics.
      * @return Result of the DescribeEventTopics operation returned by the
      *         service.
      * @throws EntityDoesNotExistException
@@ -765,6 +797,29 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Lists all tags on an Amazon Directory Services directory.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidNextTokenException
+     *         The <i>NextToken</i> value is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ListTagsForResource
+     */
+    ListTagsForResourceResult listTagsForResource(
+            ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Associates a directory with an SNS topic. This establishes the directory
      * as a publisher to the specified SNS topic. You can then receive email or
      * text (SMS) messages when the status of your directory changes. You get
@@ -774,6 +829,7 @@ public interface AWSDirectoryService {
      * </p>
      * 
      * @param registerEventTopicRequest
+     *        Registers a new event topic.
      * @return Result of the RegisterEventTopic operation returned by the
      *         service.
      * @throws EntityDoesNotExistException
@@ -788,6 +844,27 @@ public interface AWSDirectoryService {
      */
     RegisterEventTopicResult registerEventTopic(
             RegisterEventTopicRequest registerEventTopicRequest);
+
+    /**
+     * <p>
+     * Removes tags from an Amazon Directory Services directory.
+     * </p>
+     * 
+     * @param removeTagsFromResourceRequest
+     * @return Result of the RemoveTagsFromResource operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RemoveTagsFromResource
+     */
+    RemoveTagsFromResourceResult removeTagsFromResource(
+            RemoveTagsFromResourceRequest removeTagsFromResourceRequest);
 
     /**
      * <p>
@@ -830,6 +907,7 @@ public interface AWSDirectoryService {
      * </p>
      * 
      * @param updateConditionalForwarderRequest
+     *        Updates a conditional forwarder.
      * @return Result of the UpdateConditionalForwarder operation returned by
      *         the service.
      * @throws EntityDoesNotExistException

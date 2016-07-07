@@ -39,6 +39,12 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public AddTagsToResourceResult addTagsToResource(
+            AddTagsToResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ConnectDirectoryResult connectDirectory(
             ConnectDirectoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -185,8 +191,20 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(
+            ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RegisterEventTopicResult registerEventTopic(
             RegisterEventTopicRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveTagsFromResourceResult removeTagsFromResource(
+            RemoveTagsFromResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

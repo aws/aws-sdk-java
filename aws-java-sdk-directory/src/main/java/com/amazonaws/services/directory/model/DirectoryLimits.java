@@ -43,11 +43,23 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * </p>
      */
     private Boolean cloudOnlyDirectoriesLimitReached;
-    /** The maximum number of Microsoft AD directories allowed in the region. */
+    /**
+     * <p>
+     * The maximum number of Microsoft AD directories allowed in the region.
+     * </p>
+     */
     private Integer cloudOnlyMicrosoftADLimit;
-    /** The current number of Microsoft AD directories in the region. */
+    /**
+     * <p>
+     * The current number of Microsoft AD directories in the region.
+     * </p>
+     */
     private Integer cloudOnlyMicrosoftADCurrentCount;
-    /** Indicates if the Microsoft AD directory limit has been reached. */
+    /**
+     * <p>
+     * Indicates if the Microsoft AD directory limit has been reached.
+     * </p>
+     */
     private Boolean cloudOnlyMicrosoftADLimitReached;
     /**
      * <p>
@@ -209,7 +221,9 @@ public class DirectoryLimits implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The maximum number of Microsoft AD directories allowed in the region.
+     * </p>
      * 
      * @param cloudOnlyMicrosoftADLimit
      *        The maximum number of Microsoft AD directories allowed in the
@@ -221,7 +235,9 @@ public class DirectoryLimits implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The maximum number of Microsoft AD directories allowed in the region.
+     * </p>
      * 
      * @return The maximum number of Microsoft AD directories allowed in the
      *         region.
@@ -232,7 +248,9 @@ public class DirectoryLimits implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The maximum number of Microsoft AD directories allowed in the region.
+     * </p>
      * 
      * @param cloudOnlyMicrosoftADLimit
      *        The maximum number of Microsoft AD directories allowed in the
@@ -248,7 +266,9 @@ public class DirectoryLimits implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The current number of Microsoft AD directories in the region.
+     * </p>
      * 
      * @param cloudOnlyMicrosoftADCurrentCount
      *        The current number of Microsoft AD directories in the region.
@@ -260,7 +280,9 @@ public class DirectoryLimits implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The current number of Microsoft AD directories in the region.
+     * </p>
      * 
      * @return The current number of Microsoft AD directories in the region.
      */
@@ -270,7 +292,9 @@ public class DirectoryLimits implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The current number of Microsoft AD directories in the region.
+     * </p>
      * 
      * @param cloudOnlyMicrosoftADCurrentCount
      *        The current number of Microsoft AD directories in the region.
@@ -285,7 +309,9 @@ public class DirectoryLimits implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Indicates if the Microsoft AD directory limit has been reached.
+     * </p>
      * 
      * @param cloudOnlyMicrosoftADLimitReached
      *        Indicates if the Microsoft AD directory limit has been reached.
@@ -297,7 +323,9 @@ public class DirectoryLimits implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Indicates if the Microsoft AD directory limit has been reached.
+     * </p>
      * 
      * @return Indicates if the Microsoft AD directory limit has been reached.
      */
@@ -307,7 +335,9 @@ public class DirectoryLimits implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Indicates if the Microsoft AD directory limit has been reached.
+     * </p>
      * 
      * @param cloudOnlyMicrosoftADLimitReached
      *        Indicates if the Microsoft AD directory limit has been reached.
@@ -322,7 +352,9 @@ public class DirectoryLimits implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Indicates if the Microsoft AD directory limit has been reached.
+     * </p>
      * 
      * @return Indicates if the Microsoft AD directory limit has been reached.
      */

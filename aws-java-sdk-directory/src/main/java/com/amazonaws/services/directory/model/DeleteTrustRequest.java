@@ -20,19 +20,31 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Deletes the local side of an existing trust relationship between the
  * Microsoft AD in the AWS cloud and the external domain.
+ * </p>
  */
 public class DeleteTrustRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
-    /** The Trust ID of the trust relationship to be deleted. */
+    /**
+     * <p>
+     * The Trust ID of the trust relationship to be deleted.
+     * </p>
+     */
     private String trustId;
-
+    /**
+     * <p>
+     * Delete a conditional forwarder as part of a DeleteTrustRequest.
+     * </p>
+     */
     private Boolean deleteAssociatedConditionalForwarder;
 
     /**
+     * <p>
      * The Trust ID of the trust relationship to be deleted.
+     * </p>
      * 
      * @param trustId
      *        The Trust ID of the trust relationship to be deleted.
@@ -43,7 +55,9 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The Trust ID of the trust relationship to be deleted.
+     * </p>
      * 
      * @return The Trust ID of the trust relationship to be deleted.
      */
@@ -53,7 +67,9 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The Trust ID of the trust relationship to be deleted.
+     * </p>
      * 
      * @param trustId
      *        The Trust ID of the trust relationship to be deleted.
@@ -67,7 +83,12 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Delete a conditional forwarder as part of a DeleteTrustRequest.
+     * </p>
+     * 
      * @param deleteAssociatedConditionalForwarder
+     *        Delete a conditional forwarder as part of a DeleteTrustRequest.
      */
 
     public void setDeleteAssociatedConditionalForwarder(
@@ -76,7 +97,11 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * Delete a conditional forwarder as part of a DeleteTrustRequest.
+     * </p>
+     * 
+     * @return Delete a conditional forwarder as part of a DeleteTrustRequest.
      */
 
     public Boolean getDeleteAssociatedConditionalForwarder() {
@@ -84,7 +109,12 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Delete a conditional forwarder as part of a DeleteTrustRequest.
+     * </p>
+     * 
      * @param deleteAssociatedConditionalForwarder
+     *        Delete a conditional forwarder as part of a DeleteTrustRequest.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -96,7 +126,11 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * Delete a conditional forwarder as part of a DeleteTrustRequest.
+     * </p>
+     * 
+     * @return Delete a conditional forwarder as part of a DeleteTrustRequest.
      */
 
     public Boolean isDeleteAssociatedConditionalForwarder() {

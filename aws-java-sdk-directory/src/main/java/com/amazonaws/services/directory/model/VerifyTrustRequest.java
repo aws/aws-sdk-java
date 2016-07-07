@@ -20,17 +20,25 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Initiates the verification of an existing trust relationship between a
  * Microsoft AD in the AWS cloud and an external domain.
+ * </p>
  */
 public class VerifyTrustRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
-    /** The unique Trust ID of the trust relationship to verify. */
+    /**
+     * <p>
+     * The unique Trust ID of the trust relationship to verify.
+     * </p>
+     */
     private String trustId;
 
     /**
+     * <p>
      * The unique Trust ID of the trust relationship to verify.
+     * </p>
      * 
      * @param trustId
      *        The unique Trust ID of the trust relationship to verify.
@@ -41,7 +49,9 @@ public class VerifyTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The unique Trust ID of the trust relationship to verify.
+     * </p>
      * 
      * @return The unique Trust ID of the trust relationship to verify.
      */
@@ -51,7 +61,9 @@ public class VerifyTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The unique Trust ID of the trust relationship to verify.
+     * </p>
      * 
      * @param trustId
      *        The unique Trust ID of the trust relationship to verify.

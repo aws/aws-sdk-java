@@ -20,24 +20,35 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A logical container used for storing the configuration changes of an AWS
- * resource.
+ * The channel through which AWS Config delivers notifications and updated
+ * configuration states.
  * </p>
  */
 public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name &quot;default&quot; when creating the delivery channel.
-     * You cannot change the assigned name.
+     * The name of the delivery channel. By default, AWS Config assigns the name
+     * &quot;default&quot; when creating the delivery channel. To change the
+     * delivery channel name, you must use the DeleteDeliveryChannel action to
+     * delete your current delivery channel, and then you must use the
+     * PutDeliveryChannel command to create a delivery channel that has the
+     * desired name.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The name of the Amazon S3 bucket used to store configuration history for
-     * the delivery channel.
+     * The name of the Amazon S3 bucket to which AWS Config delivers
+     * configuration snapshots and configuration history files.
+     * </p>
+     * <p>
+     * If you specify a bucket that belongs to another AWS account, that bucket
+     * must have policies that grant access permissions to AWS Config. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html"
+     * >Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer
+     * Guide.
      * </p>
      */
     private String s3BucketName;
@@ -49,8 +60,16 @@ public class DeliveryChannel implements Serializable, Cloneable {
     private String s3KeyPrefix;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
-     * notifications to.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS
+     * Config sends notifications about configuration changes.
+     * </p>
+     * <p>
+     * If you choose a topic from another account, the topic must have policies
+     * that grant access permissions to AWS Config. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html"
+     * >Permissions for the Amazon SNS Topic</a> in the AWS Config Developer
+     * Guide.
      * </p>
      */
     private String snsTopicARN;
@@ -59,15 +78,21 @@ public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name &quot;default&quot; when creating the delivery channel.
-     * You cannot change the assigned name.
+     * The name of the delivery channel. By default, AWS Config assigns the name
+     * &quot;default&quot; when creating the delivery channel. To change the
+     * delivery channel name, you must use the DeleteDeliveryChannel action to
+     * delete your current delivery channel, and then you must use the
+     * PutDeliveryChannel command to create a delivery channel that has the
+     * desired name.
      * </p>
      * 
      * @param name
-     *        The name of the delivery channel. By default, AWS Config
-     *        automatically assigns the name &quot;default&quot; when creating
-     *        the delivery channel. You cannot change the assigned name.
+     *        The name of the delivery channel. By default, AWS Config assigns
+     *        the name &quot;default&quot; when creating the delivery channel.
+     *        To change the delivery channel name, you must use the
+     *        DeleteDeliveryChannel action to delete your current delivery
+     *        channel, and then you must use the PutDeliveryChannel command to
+     *        create a delivery channel that has the desired name.
      */
 
     public void setName(String name) {
@@ -76,14 +101,20 @@ public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name &quot;default&quot; when creating the delivery channel.
-     * You cannot change the assigned name.
+     * The name of the delivery channel. By default, AWS Config assigns the name
+     * &quot;default&quot; when creating the delivery channel. To change the
+     * delivery channel name, you must use the DeleteDeliveryChannel action to
+     * delete your current delivery channel, and then you must use the
+     * PutDeliveryChannel command to create a delivery channel that has the
+     * desired name.
      * </p>
      * 
-     * @return The name of the delivery channel. By default, AWS Config
-     *         automatically assigns the name &quot;default&quot; when creating
-     *         the delivery channel. You cannot change the assigned name.
+     * @return The name of the delivery channel. By default, AWS Config assigns
+     *         the name &quot;default&quot; when creating the delivery channel.
+     *         To change the delivery channel name, you must use the
+     *         DeleteDeliveryChannel action to delete your current delivery
+     *         channel, and then you must use the PutDeliveryChannel command to
+     *         create a delivery channel that has the desired name.
      */
 
     public String getName() {
@@ -92,15 +123,21 @@ public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name &quot;default&quot; when creating the delivery channel.
-     * You cannot change the assigned name.
+     * The name of the delivery channel. By default, AWS Config assigns the name
+     * &quot;default&quot; when creating the delivery channel. To change the
+     * delivery channel name, you must use the DeleteDeliveryChannel action to
+     * delete your current delivery channel, and then you must use the
+     * PutDeliveryChannel command to create a delivery channel that has the
+     * desired name.
      * </p>
      * 
      * @param name
-     *        The name of the delivery channel. By default, AWS Config
-     *        automatically assigns the name &quot;default&quot; when creating
-     *        the delivery channel. You cannot change the assigned name.
+     *        The name of the delivery channel. By default, AWS Config assigns
+     *        the name &quot;default&quot; when creating the delivery channel.
+     *        To change the delivery channel name, you must use the
+     *        DeleteDeliveryChannel action to delete your current delivery
+     *        channel, and then you must use the PutDeliveryChannel command to
+     *        create a delivery channel that has the desired name.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -112,13 +149,28 @@ public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket used to store configuration history for
-     * the delivery channel.
+     * The name of the Amazon S3 bucket to which AWS Config delivers
+     * configuration snapshots and configuration history files.
+     * </p>
+     * <p>
+     * If you specify a bucket that belongs to another AWS account, that bucket
+     * must have policies that grant access permissions to AWS Config. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html"
+     * >Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer
+     * Guide.
      * </p>
      * 
      * @param s3BucketName
-     *        The name of the Amazon S3 bucket used to store configuration
-     *        history for the delivery channel.
+     *        The name of the Amazon S3 bucket to which AWS Config delivers
+     *        configuration snapshots and configuration history files.</p>
+     *        <p>
+     *        If you specify a bucket that belongs to another AWS account, that
+     *        bucket must have policies that grant access permissions to AWS
+     *        Config. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html"
+     *        >Permissions for the Amazon S3 Bucket</a> in the AWS Config
+     *        Developer Guide.
      */
 
     public void setS3BucketName(String s3BucketName) {
@@ -127,12 +179,27 @@ public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket used to store configuration history for
-     * the delivery channel.
+     * The name of the Amazon S3 bucket to which AWS Config delivers
+     * configuration snapshots and configuration history files.
+     * </p>
+     * <p>
+     * If you specify a bucket that belongs to another AWS account, that bucket
+     * must have policies that grant access permissions to AWS Config. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html"
+     * >Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer
+     * Guide.
      * </p>
      * 
-     * @return The name of the Amazon S3 bucket used to store configuration
-     *         history for the delivery channel.
+     * @return The name of the Amazon S3 bucket to which AWS Config delivers
+     *         configuration snapshots and configuration history files.</p>
+     *         <p>
+     *         If you specify a bucket that belongs to another AWS account, that
+     *         bucket must have policies that grant access permissions to AWS
+     *         Config. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html"
+     *         >Permissions for the Amazon S3 Bucket</a> in the AWS Config
+     *         Developer Guide.
      */
 
     public String getS3BucketName() {
@@ -141,13 +208,28 @@ public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket used to store configuration history for
-     * the delivery channel.
+     * The name of the Amazon S3 bucket to which AWS Config delivers
+     * configuration snapshots and configuration history files.
+     * </p>
+     * <p>
+     * If you specify a bucket that belongs to another AWS account, that bucket
+     * must have policies that grant access permissions to AWS Config. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html"
+     * >Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer
+     * Guide.
      * </p>
      * 
      * @param s3BucketName
-     *        The name of the Amazon S3 bucket used to store configuration
-     *        history for the delivery channel.
+     *        The name of the Amazon S3 bucket to which AWS Config delivers
+     *        configuration snapshots and configuration history files.</p>
+     *        <p>
+     *        If you specify a bucket that belongs to another AWS account, that
+     *        bucket must have policies that grant access permissions to AWS
+     *        Config. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html"
+     *        >Permissions for the Amazon S3 Bucket</a> in the AWS Config
+     *        Developer Guide.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -200,13 +282,28 @@ public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
-     * notifications to.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS
+     * Config sends notifications about configuration changes.
+     * </p>
+     * <p>
+     * If you choose a topic from another account, the topic must have policies
+     * that grant access permissions to AWS Config. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html"
+     * >Permissions for the Amazon SNS Topic</a> in the AWS Config Developer
+     * Guide.
      * </p>
      * 
      * @param snsTopicARN
-     *        The Amazon Resource Name (ARN) of the SNS topic that AWS Config
-     *        delivers notifications to.
+     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     *        AWS Config sends notifications about configuration changes.</p>
+     *        <p>
+     *        If you choose a topic from another account, the topic must have
+     *        policies that grant access permissions to AWS Config. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html"
+     *        >Permissions for the Amazon SNS Topic</a> in the AWS Config
+     *        Developer Guide.
      */
 
     public void setSnsTopicARN(String snsTopicARN) {
@@ -215,12 +312,27 @@ public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
-     * notifications to.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS
+     * Config sends notifications about configuration changes.
+     * </p>
+     * <p>
+     * If you choose a topic from another account, the topic must have policies
+     * that grant access permissions to AWS Config. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html"
+     * >Permissions for the Amazon SNS Topic</a> in the AWS Config Developer
+     * Guide.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the SNS topic that AWS Config
-     *         delivers notifications to.
+     * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     *         AWS Config sends notifications about configuration changes.</p>
+     *         <p>
+     *         If you choose a topic from another account, the topic must have
+     *         policies that grant access permissions to AWS Config. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html"
+     *         >Permissions for the Amazon SNS Topic</a> in the AWS Config
+     *         Developer Guide.
      */
 
     public String getSnsTopicARN() {
@@ -229,13 +341,28 @@ public class DeliveryChannel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
-     * notifications to.
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS
+     * Config sends notifications about configuration changes.
+     * </p>
+     * <p>
+     * If you choose a topic from another account, the topic must have policies
+     * that grant access permissions to AWS Config. For more information, see <a
+     * href=
+     * "http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html"
+     * >Permissions for the Amazon SNS Topic</a> in the AWS Config Developer
+     * Guide.
      * </p>
      * 
      * @param snsTopicARN
-     *        The Amazon Resource Name (ARN) of the SNS topic that AWS Config
-     *        delivers notifications to.
+     *        The Amazon Resource Name (ARN) of the Amazon SNS topic to which
+     *        AWS Config sends notifications about configuration changes.</p>
+     *        <p>
+     *        If you choose a topic from another account, the topic must have
+     *        policies that grant access permissions to AWS Config. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html"
+     *        >Permissions for the Amazon SNS Topic</a> in the AWS Config
+     *        Developer Guide.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

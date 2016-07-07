@@ -45,6 +45,12 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public DeleteConfigurationRecorderResult deleteConfigurationRecorder(
+            DeleteConfigurationRecorderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDeliveryChannelResult deleteDeliveryChannel(
             DeleteDeliveryChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();

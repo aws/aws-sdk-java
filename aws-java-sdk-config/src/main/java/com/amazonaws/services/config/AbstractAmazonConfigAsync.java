@@ -44,6 +44,21 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteConfigurationRecorderResult> deleteConfigurationRecorderAsync(
+            DeleteConfigurationRecorderRequest request) {
+
+        return deleteConfigurationRecorderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfigurationRecorderResult> deleteConfigurationRecorderAsync(
+            DeleteConfigurationRecorderRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteConfigurationRecorderRequest, DeleteConfigurationRecorderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDeliveryChannelResult> deleteDeliveryChannelAsync(
             DeleteDeliveryChannelRequest request) {
 

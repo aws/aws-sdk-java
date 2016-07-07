@@ -21,9 +21,9 @@
     "signingName" : "codecommit",
     "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
+    "xmlProtocol" : false,
     "serviceName" : "CodeCommit",
     "cborProtocol" : false,
-    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
@@ -71,12 +71,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BatchGetRepositoriesResult",
       "asyncReturnType" : "BatchGetRepositoriesResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetRepositoriesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetRepositoriesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetRepositoriesRequest, BatchGetRepositoriesResult>",
+      "authenticated" : true,
       "methodName" : "batchGetRepositories"
     },
     "CreateBranch" : {
@@ -140,12 +140,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateBranchResult",
       "asyncReturnType" : "CreateBranchResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateBranchResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateBranchResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, CreateBranchResult>",
+      "authenticated" : true,
       "methodName" : "createBranch"
     },
     "CreateRepository" : {
@@ -197,12 +197,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateRepositoryResult",
       "asyncReturnType" : "CreateRepositoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateRepositoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateRepositoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateRepositoryRequest, CreateRepositoryResult>",
+      "authenticated" : true,
       "methodName" : "createRepository"
     },
     "DeleteRepository" : {
@@ -245,12 +245,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteRepositoryResult",
       "asyncReturnType" : "DeleteRepositoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteRepositoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteRepositoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResult>",
+      "authenticated" : true,
       "methodName" : "deleteRepository"
     },
     "GetBranch" : {
@@ -305,12 +305,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetBranchResult",
       "asyncReturnType" : "GetBranchResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetBranchResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetBranchResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetBranchRequest, GetBranchResult>",
+      "authenticated" : true,
       "methodName" : "getBranch"
     },
     "GetCommit" : {
@@ -365,12 +365,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetCommitResult",
       "asyncReturnType" : "GetCommitResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCommitResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCommitResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCommitRequest, GetCommitResult>",
+      "authenticated" : true,
       "methodName" : "getCommit"
     },
     "GetRepository" : {
@@ -416,12 +416,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetRepositoryResult",
       "asyncReturnType" : "GetRepositoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRepositoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRepositoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRepositoryRequest, GetRepositoryResult>",
+      "authenticated" : true,
       "methodName" : "getRepository"
     },
     "GetRepositoryTriggers" : {
@@ -467,12 +467,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetRepositoryTriggersResult",
       "asyncReturnType" : "GetRepositoryTriggersResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRepositoryTriggersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRepositoryTriggersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRepositoryTriggersRequest, GetRepositoryTriggersResult>",
+      "authenticated" : true,
       "methodName" : "getRepositoryTriggers"
     },
     "ListBranches" : {
@@ -521,12 +521,12 @@
         "documentation" : "<p>The specified continuation token is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListBranchesResult",
       "asyncReturnType" : "ListBranchesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListBranchesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListBranchesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListBranchesRequest, ListBranchesResult>",
+      "authenticated" : true,
       "methodName" : "listBranches"
     },
     "ListRepositories" : {
@@ -557,12 +557,12 @@
         "documentation" : "<p>The specified continuation token is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListRepositoriesResult",
       "asyncReturnType" : "ListRepositoriesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRepositoriesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRepositoriesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRepositoriesRequest, ListRepositoriesResult>",
+      "authenticated" : true,
       "methodName" : "listRepositories"
     },
     "PutRepositoryTriggers" : {
@@ -647,12 +647,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutRepositoryTriggersResult",
       "asyncReturnType" : "PutRepositoryTriggersResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRepositoryTriggersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRepositoryTriggersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRepositoryTriggersRequest, PutRepositoryTriggersResult>",
+      "authenticated" : true,
       "methodName" : "putRepositoryTriggers"
     },
     "TestRepositoryTriggers" : {
@@ -737,12 +737,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "TestRepositoryTriggersResult",
       "asyncReturnType" : "TestRepositoryTriggersResult",
       "asyncFutureType" : "java.util.concurrent.Future<TestRepositoryTriggersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TestRepositoryTriggersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestRepositoryTriggersRequest, TestRepositoryTriggersResult>",
+      "authenticated" : true,
       "methodName" : "testRepositoryTriggers"
     },
     "UpdateDefaultBranch" : {
@@ -797,12 +797,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateDefaultBranchResult",
       "asyncReturnType" : "UpdateDefaultBranchResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDefaultBranchResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateDefaultBranchResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, UpdateDefaultBranchResult>",
+      "authenticated" : true,
       "methodName" : "updateDefaultBranch"
     },
     "UpdateRepositoryDescription" : {
@@ -851,12 +851,12 @@
         "documentation" : "<p>The encryption key is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateRepositoryDescriptionResult",
       "asyncReturnType" : "UpdateRepositoryDescriptionResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateRepositoryDescriptionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateRepositoryDescriptionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, UpdateRepositoryDescriptionResult>",
+      "authenticated" : true,
       "methodName" : "updateRepositoryDescription"
     },
     "UpdateRepositoryName" : {
@@ -890,12 +890,12 @@
         "documentation" : "<p>At least one specified repository name is not valid.</p> <note><p>This exception only occurs when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p></note>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateRepositoryNameResult",
       "asyncReturnType" : "UpdateRepositoryNameResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateRepositoryNameResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateRepositoryNameResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, UpdateRepositoryNameResult>",
+      "authenticated" : true,
       "methodName" : "updateRepositoryName"
     }
   },

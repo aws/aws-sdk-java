@@ -30,6 +30,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
+            AddTagsToResourceRequest request) {
+
+        return addTagsToResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
+            AddTagsToResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ConnectDirectoryResult> connectDirectoryAsync(
             ConnectDirectoryRequest request) {
 
@@ -465,6 +480,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RegisterEventTopicResult> registerEventTopicAsync(
             RegisterEventTopicRequest request) {
 
@@ -475,6 +505,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     public java.util.concurrent.Future<RegisterEventTopicResult> registerEventTopicAsync(
             RegisterEventTopicRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterEventTopicRequest, RegisterEventTopicResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
+            RemoveTagsFromResourceRequest request) {
+
+        return removeTagsFromResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
+            RemoveTagsFromResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -36,30 +36,51 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
     /**
+     * <p>
      * The Directory ID of the Microsoft AD in the AWS cloud for which to
      * establish the trust relationship.
+     * </p>
      */
     private String directoryId;
     /**
+     * <p>
      * The Fully Qualified Domain Name (FQDN) of the external domain for which
      * to create the trust relationship.
+     * </p>
      */
     private String remoteDomainName;
     /**
+     * <p>
      * The trust password. The must be the same password that was used when
      * creating the trust relationship on the external domain.
+     * </p>
      */
     private String trustPassword;
-    /** The direction of the trust relationship. */
+    /**
+     * <p>
+     * The direction of the trust relationship.
+     * </p>
+     */
     private String trustDirection;
-    /** The trust relationship type. */
+    /**
+     * <p>
+     * The trust relationship type.
+     * </p>
+     */
     private String trustType;
-
+    /**
+     * <p>
+     * The IP addresses of the remote DNS server associated with
+     * RemoteDomainName.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> conditionalForwarderIpAddrs;
 
     /**
+     * <p>
      * The Directory ID of the Microsoft AD in the AWS cloud for which to
      * establish the trust relationship.
+     * </p>
      * 
      * @param directoryId
      *        The Directory ID of the Microsoft AD in the AWS cloud for which to
@@ -71,8 +92,10 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The Directory ID of the Microsoft AD in the AWS cloud for which to
      * establish the trust relationship.
+     * </p>
      * 
      * @return The Directory ID of the Microsoft AD in the AWS cloud for which
      *         to establish the trust relationship.
@@ -83,8 +106,10 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The Directory ID of the Microsoft AD in the AWS cloud for which to
      * establish the trust relationship.
+     * </p>
      * 
      * @param directoryId
      *        The Directory ID of the Microsoft AD in the AWS cloud for which to
@@ -99,8 +124,10 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The Fully Qualified Domain Name (FQDN) of the external domain for which
      * to create the trust relationship.
+     * </p>
      * 
      * @param remoteDomainName
      *        The Fully Qualified Domain Name (FQDN) of the external domain for
@@ -112,8 +139,10 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The Fully Qualified Domain Name (FQDN) of the external domain for which
      * to create the trust relationship.
+     * </p>
      * 
      * @return The Fully Qualified Domain Name (FQDN) of the external domain for
      *         which to create the trust relationship.
@@ -124,8 +153,10 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The Fully Qualified Domain Name (FQDN) of the external domain for which
      * to create the trust relationship.
+     * </p>
      * 
      * @param remoteDomainName
      *        The Fully Qualified Domain Name (FQDN) of the external domain for
@@ -140,8 +171,10 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The trust password. The must be the same password that was used when
      * creating the trust relationship on the external domain.
+     * </p>
      * 
      * @param trustPassword
      *        The trust password. The must be the same password that was used
@@ -153,8 +186,10 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The trust password. The must be the same password that was used when
      * creating the trust relationship on the external domain.
+     * </p>
      * 
      * @return The trust password. The must be the same password that was used
      *         when creating the trust relationship on the external domain.
@@ -165,8 +200,10 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The trust password. The must be the same password that was used when
      * creating the trust relationship on the external domain.
+     * </p>
      * 
      * @param trustPassword
      *        The trust password. The must be the same password that was used
@@ -181,7 +218,9 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The direction of the trust relationship.
+     * </p>
      * 
      * @param trustDirection
      *        The direction of the trust relationship.
@@ -193,7 +232,9 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The direction of the trust relationship.
+     * </p>
      * 
      * @return The direction of the trust relationship.
      * @see TrustDirection
@@ -204,7 +245,9 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The direction of the trust relationship.
+     * </p>
      * 
      * @param trustDirection
      *        The direction of the trust relationship.
@@ -219,7 +262,9 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The direction of the trust relationship.
+     * </p>
      * 
      * @param trustDirection
      *        The direction of the trust relationship.
@@ -231,7 +276,9 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The direction of the trust relationship.
+     * </p>
      * 
      * @param trustDirection
      *        The direction of the trust relationship.
@@ -246,7 +293,9 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The trust relationship type.
+     * </p>
      * 
      * @param trustType
      *        The trust relationship type.
@@ -258,7 +307,9 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The trust relationship type.
+     * </p>
      * 
      * @return The trust relationship type.
      * @see TrustType
@@ -269,7 +320,9 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The trust relationship type.
+     * </p>
      * 
      * @param trustType
      *        The trust relationship type.
@@ -284,7 +337,9 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The trust relationship type.
+     * </p>
      * 
      * @param trustType
      *        The trust relationship type.
@@ -296,7 +351,9 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The trust relationship type.
+     * </p>
      * 
      * @param trustType
      *        The trust relationship type.
@@ -311,7 +368,13 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * The IP addresses of the remote DNS server associated with
+     * RemoteDomainName.
+     * </p>
+     * 
+     * @return The IP addresses of the remote DNS server associated with
+     *         RemoteDomainName.
      */
 
     public java.util.List<String> getConditionalForwarderIpAddrs() {
@@ -322,7 +385,14 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The IP addresses of the remote DNS server associated with
+     * RemoteDomainName.
+     * </p>
+     * 
      * @param conditionalForwarderIpAddrs
+     *        The IP addresses of the remote DNS server associated with
+     *        RemoteDomainName.
      */
 
     public void setConditionalForwarderIpAddrs(
@@ -338,6 +408,10 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
+     * The IP addresses of the remote DNS server associated with
+     * RemoteDomainName.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setConditionalForwarderIpAddrs(java.util.Collection)}
      * or {@link #withConditionalForwarderIpAddrs(java.util.Collection)} if you
@@ -345,6 +419,8 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param conditionalForwarderIpAddrs
+     *        The IP addresses of the remote DNS server associated with
+     *        RemoteDomainName.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -362,7 +438,14 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The IP addresses of the remote DNS server associated with
+     * RemoteDomainName.
+     * </p>
+     * 
      * @param conditionalForwarderIpAddrs
+     *        The IP addresses of the remote DNS server associated with
+     *        RemoteDomainName.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

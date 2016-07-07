@@ -21,9 +21,9 @@
     "signingName" : "config",
     "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "serviceName" : "Config Service",
     "cborProtocol" : false,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
@@ -53,16 +53,46 @@
         "documentation" : "<p>The rule is currently being deleted. Wait for a while and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteConfigRuleResult",
       "asyncReturnType" : "DeleteConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteConfigRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteConfigRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConfigRuleRequest, DeleteConfigRuleResult>",
+      "authenticated" : true,
       "methodName" : "deleteConfigRule"
     },
+    "DeleteConfigurationRecorder" : {
+      "documentation" : "<p>Deletes the configuration recorder.</p> <p>After the configuration recorder is deleted, AWS Config will not record resource configuration changes until you create a new configuration recorder.</p> <p>This action does not delete the configuration information that was previously recorded. You will be able to access the previously recorded information by using the <code>GetResourceConfigHistory</code> action, but you will not be able to access this information in the AWS Config console until you create a new configuration recorder.</p>",
+      "operationName" : "DeleteConfigurationRecorder",
+      "deprecated" : false,
+      "input" : {
+        "variableName" : "deleteConfigurationRecorderRequest",
+        "variableType" : "DeleteConfigurationRecorderRequest",
+        "variableDeclarationType" : "DeleteConfigurationRecorderRequest",
+        "documentation" : "<p>The request object for the <code>DeleteConfigurationRecorder</code> action.</p>",
+        "simpleType" : "DeleteConfigurationRecorderRequest",
+        "variableSetterType" : "DeleteConfigurationRecorderRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "returnType" : {
+        "returnType" : "DeleteConfigurationRecorderResult",
+        "documentation" : null
+      },
+      "exceptions" : [ {
+        "exceptionName" : "NoSuchConfigurationRecorderException",
+        "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "syncReturnType" : "DeleteConfigurationRecorderResult",
+      "asyncReturnType" : "DeleteConfigurationRecorderResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteConfigurationRecorderResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteConfigurationRecorderResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConfigurationRecorderRequest, DeleteConfigurationRecorderResult>",
+      "authenticated" : true,
+      "methodName" : "deleteConfigurationRecorder"
+    },
     "DeleteDeliveryChannel" : {
-      "documentation" : "<p>Deletes the specified delivery channel.</p> <p>The delivery channel cannot be deleted if it is the only delivery channel and the configuration recorder is still running. To delete the delivery channel, stop the running configuration recorder using the <a>StopConfigurationRecorder</a> action.</p>",
+      "documentation" : "<p>Deletes the delivery channel.</p> <p>Before you can delete the delivery channel, you must stop the configuration recorder by using the <a>StopConfigurationRecorder</a> action.</p>",
       "operationName" : "DeleteDeliveryChannel",
       "deprecated" : false,
       "input" : {
@@ -86,12 +116,12 @@
         "documentation" : "<p>You cannot delete the delivery channel you specified because the configuration recorder is running.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteDeliveryChannelResult",
       "asyncReturnType" : "DeleteDeliveryChannelResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDeliveryChannelResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDeliveryChannelResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDeliveryChannelRequest, DeleteDeliveryChannelResult>",
+      "authenticated" : true,
       "methodName" : "deleteDeliveryChannel"
     },
     "DeliverConfigSnapshot" : {
@@ -122,16 +152,16 @@
         "documentation" : "<p>There is no configuration recorder running.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeliverConfigSnapshotResult",
       "asyncReturnType" : "DeliverConfigSnapshotResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeliverConfigSnapshotResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeliverConfigSnapshotResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeliverConfigSnapshotRequest, DeliverConfigSnapshotResult>",
+      "authenticated" : true,
       "methodName" : "deliverConfigSnapshot"
     },
     "DescribeComplianceByConfigRule" : {
-      "documentation" : "<p>Indicates whether the specified AWS Config rules are compliant. If a rule is noncompliant, this action returns the number of AWS resources that do not comply with the rule.</p> <p>A rule is compliant if all of the evaluated resources comply with it, and it is noncompliant if any of these resources do not comply. </p> <p>If AWS Config has no current evaluation results for the rule, it returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following conditions: <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</li></ul></p>",
+      "documentation" : "<p>Indicates whether the specified AWS Config rules are compliant. If a rule is noncompliant, this action returns the number of AWS resources that do not comply with the rule.</p> <p>A rule is compliant if all of the evaluated resources comply with it, and it is noncompliant if any of these resources do not comply. </p> <p>If AWS Config has no current evaluation results for the rule, it returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following conditions:</p> <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</li> </ul>",
       "operationName" : "DescribeComplianceByConfigRule",
       "deprecated" : false,
       "input" : {
@@ -155,16 +185,16 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeComplianceByConfigRuleResult",
       "asyncReturnType" : "DescribeComplianceByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeComplianceByConfigRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeComplianceByConfigRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeComplianceByConfigRuleRequest, DescribeComplianceByConfigRuleResult>",
+      "authenticated" : true,
       "methodName" : "describeComplianceByConfigRule"
     },
     "DescribeComplianceByResource" : {
-      "documentation" : "<p>Indicates whether the specified AWS resources are compliant. If a resource is noncompliant, this action returns the number of AWS Config rules that the resource does not comply with. </p> <p>A resource is compliant if it complies with all the AWS Config rules that evaluate it. It is noncompliant if it does not comply with one or more of these rules.</p> <p>If AWS Config has no current evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following conditions about the rules that evaluate the resource: <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</li></ul></p>",
+      "documentation" : "<p>Indicates whether the specified AWS resources are compliant. If a resource is noncompliant, this action returns the number of AWS Config rules that the resource does not comply with. </p> <p>A resource is compliant if it complies with all the AWS Config rules that evaluate it. It is noncompliant if it does not comply with one or more of these rules.</p> <p>If AWS Config has no current evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following conditions about the rules that evaluate the resource:</p> <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.</li> </ul>",
       "operationName" : "DescribeComplianceByResource",
       "deprecated" : false,
       "input" : {
@@ -188,12 +218,12 @@
         "documentation" : "<p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeComplianceByResourceResult",
       "asyncReturnType" : "DescribeComplianceByResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeComplianceByResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeComplianceByResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeComplianceByResourceRequest, DescribeComplianceByResourceResult>",
+      "authenticated" : true,
       "methodName" : "describeComplianceByResource"
     },
     "DescribeConfigRuleEvaluationStatus" : {
@@ -218,12 +248,12 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeConfigRuleEvaluationStatusResult",
       "asyncReturnType" : "DescribeConfigRuleEvaluationStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigRuleEvaluationStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigRuleEvaluationStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigRuleEvaluationStatusRequest, DescribeConfigRuleEvaluationStatusResult>",
+      "authenticated" : true,
       "methodName" : "describeConfigRuleEvaluationStatus"
     },
     "DescribeConfigRules" : {
@@ -248,16 +278,16 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeConfigRulesResult",
       "asyncReturnType" : "DescribeConfigRulesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigRulesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigRulesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigRulesRequest, DescribeConfigRulesResult>",
+      "authenticated" : true,
       "methodName" : "describeConfigRules"
     },
     "DescribeConfigurationRecorderStatus" : {
-      "documentation" : "<p>Returns the current status of the specified configuration recorder. If a configuration recorder is not specified, this action returns the status of all configuration recorder associated with the account.</p> <note>Currently, you can specify only one configuration recorder per account.</note>",
+      "documentation" : "<p>Returns the current status of the specified configuration recorder. If a configuration recorder is not specified, this action returns the status of all configuration recorder associated with the account.</p> <note> <p>Currently, you can specify only one configuration recorder per account.</p> </note>",
       "operationName" : "DescribeConfigurationRecorderStatus",
       "deprecated" : false,
       "input" : {
@@ -278,12 +308,12 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeConfigurationRecorderStatusResult",
       "asyncReturnType" : "DescribeConfigurationRecorderStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationRecorderStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigurationRecorderStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationRecorderStatusRequest, DescribeConfigurationRecorderStatusResult>",
+      "authenticated" : true,
       "methodName" : "describeConfigurationRecorderStatus"
     },
     "DescribeConfigurationRecorders" : {
@@ -308,16 +338,16 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeConfigurationRecordersResult",
       "asyncReturnType" : "DescribeConfigurationRecordersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationRecordersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigurationRecordersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationRecordersRequest, DescribeConfigurationRecordersResult>",
+      "authenticated" : true,
       "methodName" : "describeConfigurationRecorders"
     },
     "DescribeDeliveryChannelStatus" : {
-      "documentation" : "<p>Returns the current status of the specified delivery channel. If a delivery channel is not specified, this action returns the current status of all delivery channels associated with the account. </p> <note>Currently, you can specify only one delivery channel per account.</note>",
+      "documentation" : "<p>Returns the current status of the specified delivery channel. If a delivery channel is not specified, this action returns the current status of all delivery channels associated with the account. </p> <note> <p>Currently, you can specify only one delivery channel per account.</p> </note>",
       "operationName" : "DescribeDeliveryChannelStatus",
       "deprecated" : false,
       "input" : {
@@ -338,12 +368,12 @@
         "documentation" : "<p>You have specified a delivery channel that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeDeliveryChannelStatusResult",
       "asyncReturnType" : "DescribeDeliveryChannelStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDeliveryChannelStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDeliveryChannelStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDeliveryChannelStatusRequest, DescribeDeliveryChannelStatusResult>",
+      "authenticated" : true,
       "methodName" : "describeDeliveryChannelStatus"
     },
     "DescribeDeliveryChannels" : {
@@ -368,12 +398,12 @@
         "documentation" : "<p>You have specified a delivery channel that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeDeliveryChannelsResult",
       "asyncReturnType" : "DescribeDeliveryChannelsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDeliveryChannelsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDeliveryChannelsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDeliveryChannelsRequest, DescribeDeliveryChannelsResult>",
+      "authenticated" : true,
       "methodName" : "describeDeliveryChannels"
     },
     "GetComplianceDetailsByConfigRule" : {
@@ -404,12 +434,12 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetComplianceDetailsByConfigRuleResult",
       "asyncReturnType" : "GetComplianceDetailsByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceDetailsByConfigRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetComplianceDetailsByConfigRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetComplianceDetailsByConfigRuleRequest, GetComplianceDetailsByConfigRuleResult>",
+      "authenticated" : true,
       "methodName" : "getComplianceDetailsByConfigRule"
     },
     "GetComplianceDetailsByResource" : {
@@ -434,12 +464,12 @@
         "documentation" : "<p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetComplianceDetailsByResourceResult",
       "asyncReturnType" : "GetComplianceDetailsByResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceDetailsByResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetComplianceDetailsByResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetComplianceDetailsByResourceRequest, GetComplianceDetailsByResourceResult>",
+      "authenticated" : true,
       "methodName" : "getComplianceDetailsByResource"
     },
     "GetComplianceSummaryByConfigRule" : {
@@ -461,12 +491,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetComplianceSummaryByConfigRuleResult",
       "asyncReturnType" : "GetComplianceSummaryByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceSummaryByConfigRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetComplianceSummaryByConfigRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryByConfigRuleRequest, GetComplianceSummaryByConfigRuleResult>",
+      "authenticated" : true,
       "methodName" : "getComplianceSummaryByConfigRule"
     },
     "GetComplianceSummaryByResourceType" : {
@@ -491,12 +521,12 @@
         "documentation" : "<p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetComplianceSummaryByResourceTypeResult",
       "asyncReturnType" : "GetComplianceSummaryByResourceTypeResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceSummaryByResourceTypeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetComplianceSummaryByResourceTypeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryByResourceTypeRequest, GetComplianceSummaryByResourceTypeResult>",
+      "authenticated" : true,
       "methodName" : "getComplianceSummaryByResourceType"
     },
     "GetResourceConfigHistory" : {
@@ -536,16 +566,16 @@
         "documentation" : "<p>You have specified a resource that is either unknown or has not been discovered.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetResourceConfigHistoryResult",
       "asyncReturnType" : "GetResourceConfigHistoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetResourceConfigHistoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetResourceConfigHistoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetResourceConfigHistoryRequest, GetResourceConfigHistoryResult>",
+      "authenticated" : true,
       "methodName" : "getResourceConfigHistory"
     },
     "ListDiscoveredResources" : {
-      "documentation" : "<p>Accepts a resource type and returns a list of resource identifiers for the resources of that type. A resource identifier includes the resource type, ID, and (if available) the custom resource name. The results consist of resources that AWS Config has discovered, including those that AWS Config is not currently recording. You can narrow the results to include only resources that have specific resource IDs or a resource name.</p> <note>You can specify either resource IDs or a resource name but not both in the same request.</note> <p>The response is paginated, and by default AWS Config lists 100 resource identifiers on each page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string, and to get the next page of results, run the request again and enter this string for the <code>nextToken</code> parameter.</p>",
+      "documentation" : "<p>Accepts a resource type and returns a list of resource identifiers for the resources of that type. A resource identifier includes the resource type, ID, and (if available) the custom resource name. The results consist of resources that AWS Config has discovered, including those that AWS Config is not currently recording. You can narrow the results to include only resources that have specific resource IDs or a resource name.</p> <note> <p>You can specify either resource IDs or a resource name but not both in the same request.</p> </note> <p>The response is paginated, and by default AWS Config lists 100 resource identifiers on each page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string, and to get the next page of results, run the request again and enter this string for the <code>nextToken</code> parameter.</p>",
       "operationName" : "ListDiscoveredResources",
       "deprecated" : false,
       "input" : {
@@ -575,12 +605,12 @@
         "documentation" : "<p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListDiscoveredResourcesResult",
       "asyncReturnType" : "ListDiscoveredResourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDiscoveredResourcesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDiscoveredResourcesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDiscoveredResourcesRequest, ListDiscoveredResourcesResult>",
+      "authenticated" : true,
       "methodName" : "listDiscoveredResources"
     },
     "PutConfigRule" : {
@@ -612,14 +642,17 @@
       }, {
         "exceptionName" : "InsufficientPermissionsException",
         "documentation" : "<p>Indicates one of the following errors:</p> <ul> <li>The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the config:Put* action.</li> <li>The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</li> </ul>"
+      }, {
+        "exceptionName" : "NoAvailableConfigurationRecorderException",
+        "documentation" : "<p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutConfigRuleResult",
       "asyncReturnType" : "PutConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutConfigRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutConfigRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutConfigRuleRequest, PutConfigRuleResult>",
+      "authenticated" : true,
       "methodName" : "putConfigRule"
     },
     "PutConfigurationRecorder" : {
@@ -653,16 +686,16 @@
         "documentation" : "<p>AWS Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values could also be incorrectly formatted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutConfigurationRecorderResult",
       "asyncReturnType" : "PutConfigurationRecorderResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutConfigurationRecorderResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutConfigurationRecorderResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutConfigurationRecorderRequest, PutConfigurationRecorderResult>",
+      "authenticated" : true,
       "methodName" : "putConfigurationRecorder"
     },
     "PutDeliveryChannel" : {
-      "documentation" : "<p>Creates a new delivery channel object to deliver the configuration information to an Amazon S3 bucket, and to an Amazon SNS topic. </p> <p>You can use this action to change the Amazon S3 bucket or an Amazon SNS topic of the existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call this action and specify the changed values for the S3 bucket and the SNS topic. If you specify a different value for either the S3 bucket or the SNS topic, this action will keep the existing value for the parameter that is not changed. </p> <note> <p>Currently, you can specify only one delivery channel per account.</p> </note>",
+      "documentation" : "<p>Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS topic.</p> <p>Before you can create a delivery channel, you must create a configuration recorder.</p> <p>You can use this action to change the Amazon S3 bucket or an Amazon SNS topic of the existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call this action and specify the changed values for the S3 bucket and the SNS topic. If you specify a different value for either the S3 bucket or the SNS topic, this action will keep the existing value for the parameter that is not changed.</p> <note> <p>You can have only one delivery channel per AWS account.</p> </note>",
       "operationName" : "PutDeliveryChannel",
       "deprecated" : false,
       "input" : {
@@ -701,12 +734,12 @@
         "documentation" : "<p>Your Amazon S3 bucket policy does not permit AWS Config to write to it.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutDeliveryChannelResult",
       "asyncReturnType" : "PutDeliveryChannelResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutDeliveryChannelResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutDeliveryChannelResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutDeliveryChannelRequest, PutDeliveryChannelResult>",
+      "authenticated" : true,
       "methodName" : "putDeliveryChannel"
     },
     "PutEvaluations" : {
@@ -737,12 +770,12 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutEvaluationsResult",
       "asyncReturnType" : "PutEvaluationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutEvaluationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutEvaluationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutEvaluationsRequest, PutEvaluationsResult>",
+      "authenticated" : true,
       "methodName" : "putEvaluations"
     },
     "StartConfigurationRecorder" : {
@@ -770,12 +803,12 @@
         "documentation" : "<p>There is no delivery channel available to record configurations.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "StartConfigurationRecorderResult",
       "asyncReturnType" : "StartConfigurationRecorderResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartConfigurationRecorderResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartConfigurationRecorderResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartConfigurationRecorderRequest, StartConfigurationRecorderResult>",
+      "authenticated" : true,
       "methodName" : "startConfigurationRecorder"
     },
     "StopConfigurationRecorder" : {
@@ -786,7 +819,7 @@
         "variableName" : "stopConfigurationRecorderRequest",
         "variableType" : "StopConfigurationRecorderRequest",
         "variableDeclarationType" : "StopConfigurationRecorderRequest",
-        "documentation" : "<p> <p>The input for the <a>StopConfigurationRecorder</a> action.</p> </p>",
+        "documentation" : "<p>The input for the <a>StopConfigurationRecorder</a> action.</p>",
         "simpleType" : "StopConfigurationRecorderRequest",
         "variableSetterType" : "StopConfigurationRecorderRequest"
       },
@@ -800,12 +833,12 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "StopConfigurationRecorderResult",
       "asyncReturnType" : "StopConfigurationRecorderResult",
       "asyncFutureType" : "java.util.concurrent.Future<StopConfigurationRecorderResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StopConfigurationRecorderResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopConfigurationRecorderRequest, StopConfigurationRecorderResult>",
+      "authenticated" : true,
       "methodName" : "stopConfigurationRecorder"
     }
   },
@@ -15625,7 +15658,7 @@
       "hasStreamingMember" : false,
       "wrapper" : false,
       "members" : [ {
-        "documentation" : "<p>The frequency with which a AWS Config recurringly delivers configuration snapshots.</p>",
+        "documentation" : "<p>The frequency with which AWS Config recurringly delivers configuration snapshots.</p>",
         "name" : "DeliveryFrequency",
         "c2jName" : "deliveryFrequency",
         "c2jShape" : "MaximumExecutionFrequency",
@@ -15633,7 +15666,7 @@
           "variableName" : "deliveryFrequency",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The frequency with which a AWS Config recurringly delivers configuration snapshots.</p>",
+          "documentation" : "<p>The frequency with which AWS Config recurringly delivers configuration snapshots.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -15672,10 +15705,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The frequency with which a AWS Config recurringly delivers configuration snapshots.</p>\n@param deliveryFrequency The frequency with which a AWS Config recurringly delivers configuration snapshots.\n@see MaximumExecutionFrequency*/",
-        "getterDocumentation" : "/**<p>The frequency with which a AWS Config recurringly delivers configuration snapshots.</p>\n@return The frequency with which a AWS Config recurringly delivers configuration snapshots.\n@see MaximumExecutionFrequency*/",
-        "fluentSetterDocumentation" : "/**<p>The frequency with which a AWS Config recurringly delivers configuration snapshots.</p>\n@param deliveryFrequency The frequency with which a AWS Config recurringly delivers configuration snapshots.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MaximumExecutionFrequency*/",
-        "varargSetterDocumentation" : "/**<p>The frequency with which a AWS Config recurringly delivers configuration snapshots.</p>\n@param deliveryFrequency The frequency with which a AWS Config recurringly delivers configuration snapshots.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MaximumExecutionFrequency*/"
+        "setterDocumentation" : "/**<p>The frequency with which AWS Config recurringly delivers configuration snapshots.</p>\n@param deliveryFrequency The frequency with which AWS Config recurringly delivers configuration snapshots.\n@see MaximumExecutionFrequency*/",
+        "getterDocumentation" : "/**<p>The frequency with which AWS Config recurringly delivers configuration snapshots.</p>\n@return The frequency with which AWS Config recurringly delivers configuration snapshots.\n@see MaximumExecutionFrequency*/",
+        "fluentSetterDocumentation" : "/**<p>The frequency with which AWS Config recurringly delivers configuration snapshots.</p>\n@param deliveryFrequency The frequency with which AWS Config recurringly delivers configuration snapshots.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MaximumExecutionFrequency*/",
+        "varargSetterDocumentation" : "/**<p>The frequency with which AWS Config recurringly delivers configuration snapshots.</p>\n@param deliveryFrequency The frequency with which AWS Config recurringly delivers configuration snapshots.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MaximumExecutionFrequency*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -15700,7 +15733,7 @@
       },
       "membersAsMap" : {
         "DeliveryFrequency" : {
-          "documentation" : "<p>The frequency with which a AWS Config recurringly delivers configuration snapshots.</p>",
+          "documentation" : "<p>The frequency with which AWS Config recurringly delivers configuration snapshots.</p>",
           "name" : "DeliveryFrequency",
           "c2jName" : "deliveryFrequency",
           "c2jShape" : "MaximumExecutionFrequency",
@@ -15708,7 +15741,7 @@
             "variableName" : "deliveryFrequency",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The frequency with which a AWS Config recurringly delivers configuration snapshots.</p>",
+            "documentation" : "<p>The frequency with which AWS Config recurringly delivers configuration snapshots.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -15747,10 +15780,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The frequency with which a AWS Config recurringly delivers configuration snapshots.</p>\n@param deliveryFrequency The frequency with which a AWS Config recurringly delivers configuration snapshots.\n@see MaximumExecutionFrequency*/",
-          "getterDocumentation" : "/**<p>The frequency with which a AWS Config recurringly delivers configuration snapshots.</p>\n@return The frequency with which a AWS Config recurringly delivers configuration snapshots.\n@see MaximumExecutionFrequency*/",
-          "fluentSetterDocumentation" : "/**<p>The frequency with which a AWS Config recurringly delivers configuration snapshots.</p>\n@param deliveryFrequency The frequency with which a AWS Config recurringly delivers configuration snapshots.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MaximumExecutionFrequency*/",
-          "varargSetterDocumentation" : "/**<p>The frequency with which a AWS Config recurringly delivers configuration snapshots.</p>\n@param deliveryFrequency The frequency with which a AWS Config recurringly delivers configuration snapshots.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MaximumExecutionFrequency*/"
+          "setterDocumentation" : "/**<p>The frequency with which AWS Config recurringly delivers configuration snapshots.</p>\n@param deliveryFrequency The frequency with which AWS Config recurringly delivers configuration snapshots.\n@see MaximumExecutionFrequency*/",
+          "getterDocumentation" : "/**<p>The frequency with which AWS Config recurringly delivers configuration snapshots.</p>\n@return The frequency with which AWS Config recurringly delivers configuration snapshots.\n@see MaximumExecutionFrequency*/",
+          "fluentSetterDocumentation" : "/**<p>The frequency with which AWS Config recurringly delivers configuration snapshots.</p>\n@param deliveryFrequency The frequency with which AWS Config recurringly delivers configuration snapshots.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MaximumExecutionFrequency*/",
+          "varargSetterDocumentation" : "/**<p>The frequency with which AWS Config recurringly delivers configuration snapshots.</p>\n@param deliveryFrequency The frequency with which AWS Config recurringly delivers configuration snapshots.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MaximumExecutionFrequency*/"
         }
       }
     },
@@ -20741,7 +20774,7 @@
     },
     "DeliveryChannel" : {
       "c2jName" : "DeliveryChannel",
-      "documentation" : "<p>A logical container used for storing the configuration changes of an AWS resource.</p>",
+      "documentation" : "<p>The channel through which AWS Config delivers notifications and updated configuration states.</p>",
       "shapeName" : "DeliveryChannel",
       "deprecated" : false,
       "required" : null,
@@ -20751,7 +20784,7 @@
       "hasStreamingMember" : false,
       "wrapper" : false,
       "members" : [ {
-        "documentation" : "<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>",
+        "documentation" : "<p>The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>",
         "name" : "Name",
         "c2jName" : "name",
         "c2jShape" : "ChannelName",
@@ -20759,7 +20792,7 @@
           "variableName" : "name",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>",
+          "documentation" : "<p>The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -20798,12 +20831,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.*/",
-        "getterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@return The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.*/",
-        "fluentSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>\n@param name The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.*/",
+        "getterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>\n@return The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>\n@param name The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>\n@param name The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The name of the Amazon S3 bucket used to store configuration history for the delivery channel.</p>",
+        "documentation" : "<p>The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>",
         "name" : "S3BucketName",
         "c2jName" : "s3BucketName",
         "c2jShape" : "String",
@@ -20811,7 +20844,7 @@
           "variableName" : "s3BucketName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The name of the Amazon S3 bucket used to store configuration history for the delivery channel.</p>",
+          "documentation" : "<p>The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -20850,10 +20883,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The name of the Amazon S3 bucket used to store configuration history for the delivery channel.</p>\n@param s3BucketName The name of the Amazon S3 bucket used to store configuration history for the delivery channel.*/",
-        "getterDocumentation" : "/**<p>The name of the Amazon S3 bucket used to store configuration history for the delivery channel.</p>\n@return The name of the Amazon S3 bucket used to store configuration history for the delivery channel.*/",
-        "fluentSetterDocumentation" : "/**<p>The name of the Amazon S3 bucket used to store configuration history for the delivery channel.</p>\n@param s3BucketName The name of the Amazon S3 bucket used to store configuration history for the delivery channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The name of the Amazon S3 bucket used to store configuration history for the delivery channel.</p>\n@param s3BucketName The name of the Amazon S3 bucket used to store configuration history for the delivery channel.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>\n@param s3BucketName The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.*/",
+        "getterDocumentation" : "/**<p>The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>\n@return The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>\n@param s3BucketName The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>\n@param s3BucketName The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>The prefix for the specified Amazon S3 bucket.</p>",
         "name" : "S3KeyPrefix",
@@ -20907,7 +20940,7 @@
         "fluentSetterDocumentation" : "/**<p>The prefix for the specified Amazon S3 bucket.</p>\n@param s3KeyPrefix The prefix for the specified Amazon S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The prefix for the specified Amazon S3 bucket.</p>\n@param s3KeyPrefix The prefix for the specified Amazon S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
-        "documentation" : "<p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.</p>",
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>",
         "name" : "SnsTopicARN",
         "c2jName" : "snsTopicARN",
         "c2jShape" : "String",
@@ -20915,7 +20948,7 @@
           "variableName" : "snsTopicARN",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -20954,10 +20987,10 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.</p>\n@param snsTopicARN The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.*/",
-        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.</p>\n@return The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.*/",
-        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.</p>\n@param snsTopicARN The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.</p>\n@param snsTopicARN The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>\n@param snsTopicARN The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.*/",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>\n@return The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.*/",
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>\n@param snsTopicARN The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>\n@param snsTopicARN The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "ConfigSnapshotDeliveryProperties",
@@ -21034,7 +21067,7 @@
       },
       "membersAsMap" : {
         "Name" : {
-          "documentation" : "<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>",
+          "documentation" : "<p>The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>",
           "name" : "Name",
           "c2jName" : "name",
           "c2jShape" : "ChannelName",
@@ -21042,7 +21075,7 @@
             "variableName" : "name",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>",
+            "documentation" : "<p>The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -21081,10 +21114,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.*/",
-          "getterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@return The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.*/",
-          "fluentSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name. </p>\n@param name The name of the delivery channel. By default, AWS Config automatically assigns the name &quot;default&quot; when creating the delivery channel. You cannot change the assigned name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>\n@param name The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.*/",
+          "getterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>\n@return The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>\n@param name The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>\n@param name The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot; when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "S3KeyPrefix" : {
           "documentation" : "<p>The prefix for the specified Amazon S3 bucket.</p>",
@@ -21140,7 +21173,7 @@
           "varargSetterDocumentation" : "/**<p>The prefix for the specified Amazon S3 bucket.</p>\n@param s3KeyPrefix The prefix for the specified Amazon S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "S3BucketName" : {
-          "documentation" : "<p>The name of the Amazon S3 bucket used to store configuration history for the delivery channel.</p>",
+          "documentation" : "<p>The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>",
           "name" : "S3BucketName",
           "c2jName" : "s3BucketName",
           "c2jShape" : "String",
@@ -21148,7 +21181,7 @@
             "variableName" : "s3BucketName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The name of the Amazon S3 bucket used to store configuration history for the delivery channel.</p>",
+            "documentation" : "<p>The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -21187,10 +21220,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The name of the Amazon S3 bucket used to store configuration history for the delivery channel.</p>\n@param s3BucketName The name of the Amazon S3 bucket used to store configuration history for the delivery channel.*/",
-          "getterDocumentation" : "/**<p>The name of the Amazon S3 bucket used to store configuration history for the delivery channel.</p>\n@return The name of the Amazon S3 bucket used to store configuration history for the delivery channel.*/",
-          "fluentSetterDocumentation" : "/**<p>The name of the Amazon S3 bucket used to store configuration history for the delivery channel.</p>\n@param s3BucketName The name of the Amazon S3 bucket used to store configuration history for the delivery channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The name of the Amazon S3 bucket used to store configuration history for the delivery channel.</p>\n@param s3BucketName The name of the Amazon S3 bucket used to store configuration history for the delivery channel.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>\n@param s3BucketName The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.*/",
+          "getterDocumentation" : "/**<p>The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>\n@return The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>\n@param s3BucketName The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>\n@param s3BucketName The name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files.</p> <p>If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html\">Permissions for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ConfigSnapshotDeliveryProperties" : {
           "documentation" : "",
@@ -21246,7 +21279,7 @@
           "varargSetterDocumentation" : "/**\n@param configSnapshotDeliveryProperties \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "SnsTopicARN" : {
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>",
           "name" : "SnsTopicARN",
           "c2jName" : "snsTopicARN",
           "c2jShape" : "String",
@@ -21254,7 +21287,7 @@
             "variableName" : "snsTopicARN",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.</p>",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -21293,10 +21326,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.</p>\n@param snsTopicARN The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.*/",
-          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.</p>\n@return The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.*/",
-          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.</p>\n@param snsTopicARN The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.</p>\n@param snsTopicARN The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers notifications to.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>\n@param snsTopicARN The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.*/",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>\n@return The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.*/",
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>\n@param snsTopicARN The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>\n@param snsTopicARN The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config sends notifications about configuration changes.</p> <p>If you choose a topic from another account, the topic must have policies that grant access permissions to AWS Config. For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html\">Permissions for the Amazon SNS Topic</a> in the AWS Config Developer Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -21717,7 +21750,7 @@
     },
     "StopConfigurationRecorderRequest" : {
       "c2jName" : "StopConfigurationRecorderRequest",
-      "documentation" : "<p> <p>The input for the <a>StopConfigurationRecorder</a> action.</p> </p>",
+      "documentation" : "<p>The input for the <a>StopConfigurationRecorder</a> action.</p>",
       "shapeName" : "StopConfigurationRecorderRequest",
       "deprecated" : false,
       "required" : [ "ConfigurationRecorderName" ],
@@ -22269,6 +22302,151 @@
         "skipGeneratingUnmarshaller" : false
       },
       "membersAsMap" : { }
+    },
+    "DeleteConfigurationRecorderRequest" : {
+      "c2jName" : "DeleteConfigurationRecorderRequest",
+      "documentation" : "<p>The request object for the <code>DeleteConfigurationRecorder</code> action.</p>",
+      "shapeName" : "DeleteConfigurationRecorderRequest",
+      "deprecated" : false,
+      "required" : [ "ConfigurationRecorderName" ],
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : [ {
+        "documentation" : "<p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>",
+        "name" : "ConfigurationRecorderName",
+        "c2jName" : "ConfigurationRecorderName",
+        "c2jShape" : "RecorderName",
+        "variable" : {
+          "variableName" : "configurationRecorderName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "configurationRecorderName",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "ConfigurationRecorderName",
+          "marshallLocationName" : "ConfigurationRecorderName",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : null,
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>\n@param configurationRecorderName The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.*/",
+        "getterDocumentation" : "/**<p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>\n@return The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>\n@param configurationRecorderName The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>\n@param configurationRecorderName The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      } ],
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteConfigurationRecorderRequest",
+        "variableType" : "DeleteConfigurationRecorderRequest",
+        "variableDeclarationType" : "DeleteConfigurationRecorderRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteConfigurationRecorderRequest",
+        "variableSetterType" : "DeleteConfigurationRecorderRequest"
+      },
+      "marshaller" : {
+        "action" : "DeleteConfigurationRecorder",
+        "verb" : "POST",
+        "target" : "StarlingDoveService.DeleteConfigurationRecorder",
+        "requestUri" : "/",
+        "locationName" : null,
+        "xmlNameSpaceUri" : null
+      },
+      "unmarshaller" : null,
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : {
+        "ConfigurationRecorderName" : {
+          "documentation" : "<p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>",
+          "name" : "ConfigurationRecorderName",
+          "c2jName" : "ConfigurationRecorderName",
+          "c2jShape" : "RecorderName",
+          "variable" : {
+            "variableName" : "configurationRecorderName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "configurationRecorderName",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "ConfigurationRecorderName",
+            "marshallLocationName" : "ConfigurationRecorderName",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : null,
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>\n@param configurationRecorderName The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.*/",
+          "getterDocumentation" : "/**<p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>\n@return The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>\n@param configurationRecorderName The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>\n@param configurationRecorderName The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        }
+      }
     },
     "Source" : {
       "c2jName" : "Source",
@@ -23506,6 +23684,41 @@
       "marshaller" : null,
       "unmarshaller" : null,
       "errorCode" : "NoAvailableConfigurationRecorderException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
+    "DeleteConfigurationRecorderResult" : {
+      "c2jName" : "DeleteConfigurationRecorderResult",
+      "documentation" : null,
+      "shapeName" : "DeleteConfigurationRecorderResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "deleteConfigurationRecorderResult",
+        "variableType" : "DeleteConfigurationRecorderResult",
+        "variableDeclarationType" : "DeleteConfigurationRecorderResult",
+        "documentation" : null,
+        "simpleType" : "DeleteConfigurationRecorderResult",
+        "variableSetterType" : "DeleteConfigurationRecorderResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
       "customization" : {
         "artificialResultWrapper" : null,
         "skipGeneratingModelClass" : false,
@@ -25756,7 +25969,7 @@
     },
     "RecordingGroup" : {
       "c2jName" : "RecordingGroup",
-      "documentation" : "<p>Specifies the types of AWS resource for which AWS Config records configuration changes.</p> <p>In the recording group, you specify whether all supported types or specific types of resources are recorded.</p> <p>By default, AWS Config records configuration changes for all supported types of regional resources that AWS Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes.</p> <p>You can also have AWS Config record configuration changes for supported types of global resources (for example, IAM resources). Global resources are not tied to an individual region and can be used in all regions.</p> <important>The configuration details for any global resource are the same in all regions. If you customize AWS Config in multiple regions to record global resources, it will create multiple configuration items each time a global resource changes: one configuration item for each region. These configuration items will contain identical data. To prevent duplicate configuration items, you should consider customizing AWS Config in only one region to record global resources, unless you want the configuration items to be available in multiple regions.</important> <p>If you don't want AWS Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter.</p> <p>For a list of supported resource types, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources\">Supported resource types</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/select-resources.html\">Selecting Which Resources AWS Config Records</a>.</p>",
+      "documentation" : "<p>Specifies the types of AWS resource for which AWS Config records configuration changes.</p> <p>In the recording group, you specify whether all supported types or specific types of resources are recorded.</p> <p>By default, AWS Config records configuration changes for all supported types of regional resources that AWS Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes.</p> <p>You can also have AWS Config record configuration changes for supported types of global resources (for example, IAM resources). Global resources are not tied to an individual region and can be used in all regions.</p> <important> <p>The configuration details for any global resource are the same in all regions. If you customize AWS Config in multiple regions to record global resources, it will create multiple configuration items each time a global resource changes: one configuration item for each region. These configuration items will contain identical data. To prevent duplicate configuration items, you should consider customizing AWS Config in only one region to record global resources, unless you want the configuration items to be available in multiple regions.</p> </important> <p>If you don't want AWS Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter.</p> <p>For a list of supported resource types, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources\">Supported resource types</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/config/latest/developerguide/select-resources.html\">Selecting Which Resources AWS Config Records</a>.</p>",
       "shapeName" : "RecordingGroup",
       "deprecated" : false,
       "required" : null,

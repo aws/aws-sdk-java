@@ -118,7 +118,7 @@ public class EnableSsoRequest extends AmazonWebServiceRequest implements
      * @param userName
      *        The username of an alternate account to use to enable single-sign
      *        on. This is only used for AD Connector directories. This account
-     *        must have privileges to add a service principal name. </p>
+     *        must have privileges to add a service principal name.</p>
      *        <p>
      *        If the AD Connector service account does not have privileges to
      *        add a service principal name, you can specify an alternate account
@@ -148,7 +148,7 @@ public class EnableSsoRequest extends AmazonWebServiceRequest implements
      * 
      * @return The username of an alternate account to use to enable single-sign
      *         on. This is only used for AD Connector directories. This account
-     *         must have privileges to add a service principal name. </p>
+     *         must have privileges to add a service principal name.</p>
      *         <p>
      *         If the AD Connector service account does not have privileges to
      *         add a service principal name, you can specify an alternate
@@ -179,7 +179,7 @@ public class EnableSsoRequest extends AmazonWebServiceRequest implements
      * @param userName
      *        The username of an alternate account to use to enable single-sign
      *        on. This is only used for AD Connector directories. This account
-     *        must have privileges to add a service principal name. </p>
+     *        must have privileges to add a service principal name.</p>
      *        <p>
      *        If the AD Connector service account does not have privileges to
      *        add a service principal name, you can specify an alternate account

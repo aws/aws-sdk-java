@@ -19,13 +19,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "data.iot",
     "signingName" : "iotdata",
+    "serviceName" : "AWS IoT Data Plane",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "jsonProtocol" : true,
     "xmlProtocol" : false,
     "cborProtocol" : false,
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "serviceName" : "AWS IoT Data Plane",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "DeleteThingShadow" : {
@@ -37,8 +37,8 @@
         "variableType" : "DeleteThingShadowRequest",
         "variableDeclarationType" : "DeleteThingShadowRequest",
         "documentation" : "<p>The input for the DeleteThingShadow operation.</p>",
-        "variableSetterType" : "DeleteThingShadowRequest",
-        "simpleType" : "DeleteThingShadowRequest"
+        "simpleType" : "DeleteThingShadowRequest",
+        "variableSetterType" : "DeleteThingShadowRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -88,8 +88,8 @@
         "variableType" : "GetThingShadowRequest",
         "variableDeclarationType" : "GetThingShadowRequest",
         "documentation" : "<p>The input for the GetThingShadow operation.</p>",
-        "variableSetterType" : "GetThingShadowRequest",
-        "simpleType" : "GetThingShadowRequest"
+        "simpleType" : "GetThingShadowRequest",
+        "variableSetterType" : "GetThingShadowRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -139,8 +139,8 @@
         "variableType" : "PublishRequest",
         "variableDeclarationType" : "PublishRequest",
         "documentation" : "<p>The input for the Publish operation.</p>",
-        "variableSetterType" : "PublishRequest",
-        "simpleType" : "PublishRequest"
+        "simpleType" : "PublishRequest",
+        "variableSetterType" : "PublishRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -178,8 +178,8 @@
         "variableType" : "UpdateThingShadowRequest",
         "variableDeclarationType" : "UpdateThingShadowRequest",
         "documentation" : "<p>The input for the UpdateThingShadow operation.</p>",
-        "variableSetterType" : "UpdateThingShadowRequest",
-        "simpleType" : "UpdateThingShadowRequest"
+        "simpleType" : "UpdateThingShadowRequest",
+        "variableSetterType" : "UpdateThingShadowRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -246,16 +246,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the MQTT topic.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "topic",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -298,16 +298,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The Quality of Service (QoS) level.</p>",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "qos",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "variableSetterType" : "Integer",
-          "simpleType" : "Integer"
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -350,16 +350,16 @@
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "<p>The state information, in JSON format.</p>",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "setterModel" : {
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
@@ -399,8 +399,8 @@
         "variableType" : "PublishRequest",
         "variableDeclarationType" : "PublishRequest",
         "documentation" : null,
-        "variableSetterType" : "PublishRequest",
-        "simpleType" : "PublishRequest"
+        "simpleType" : "PublishRequest",
+        "variableSetterType" : "PublishRequest"
       },
       "marshaller" : {
         "action" : "Publish",
@@ -429,16 +429,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The Quality of Service (QoS) level.</p>",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "qos",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "variableSetterType" : "Integer",
-            "simpleType" : "Integer"
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -482,16 +482,16 @@
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "<p>The state information, in JSON format.</p>",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "setterModel" : {
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "getterModel" : {
             "returnType" : "java.nio.ByteBuffer",
@@ -535,16 +535,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the MQTT topic.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "topic",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -598,8 +598,8 @@
         "variableType" : "UnauthorizedException",
         "variableDeclarationType" : "UnauthorizedException",
         "documentation" : null,
-        "variableSetterType" : "UnauthorizedException",
-        "simpleType" : "UnauthorizedException"
+        "simpleType" : "UnauthorizedException",
+        "variableSetterType" : "UnauthorizedException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -630,8 +630,8 @@
         "variableType" : "MethodNotAllowedException",
         "variableDeclarationType" : "MethodNotAllowedException",
         "documentation" : null,
-        "variableSetterType" : "MethodNotAllowedException",
-        "simpleType" : "MethodNotAllowedException"
+        "simpleType" : "MethodNotAllowedException",
+        "variableSetterType" : "MethodNotAllowedException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -662,8 +662,8 @@
         "variableType" : "ConflictException",
         "variableDeclarationType" : "ConflictException",
         "documentation" : null,
-        "variableSetterType" : "ConflictException",
-        "simpleType" : "ConflictException"
+        "simpleType" : "ConflictException",
+        "variableSetterType" : "ConflictException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -694,8 +694,8 @@
         "variableType" : "RequestEntityTooLargeException",
         "variableDeclarationType" : "RequestEntityTooLargeException",
         "documentation" : null,
-        "variableSetterType" : "RequestEntityTooLargeException",
-        "simpleType" : "RequestEntityTooLargeException"
+        "simpleType" : "RequestEntityTooLargeException",
+        "variableSetterType" : "RequestEntityTooLargeException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -729,16 +729,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the thing.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "thingName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -778,8 +778,8 @@
         "variableType" : "GetThingShadowRequest",
         "variableDeclarationType" : "GetThingShadowRequest",
         "documentation" : null,
-        "variableSetterType" : "GetThingShadowRequest",
-        "simpleType" : "GetThingShadowRequest"
+        "simpleType" : "GetThingShadowRequest",
+        "variableSetterType" : "GetThingShadowRequest"
       },
       "marshaller" : {
         "action" : "GetThingShadow",
@@ -808,16 +808,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the thing.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "thingName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -874,16 +874,16 @@
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "<p>The state information, in JSON format.</p>",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "setterModel" : {
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
@@ -923,8 +923,8 @@
         "variableType" : "GetThingShadowResult",
         "variableDeclarationType" : "GetThingShadowResult",
         "documentation" : null,
-        "variableSetterType" : "GetThingShadowResult",
-        "simpleType" : "GetThingShadowResult"
+        "simpleType" : "GetThingShadowResult",
+        "variableSetterType" : "GetThingShadowResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -949,16 +949,16 @@
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "<p>The state information, in JSON format.</p>",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "setterModel" : {
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "getterModel" : {
             "returnType" : "java.nio.ByteBuffer",
@@ -1012,8 +1012,8 @@
         "variableType" : "UnsupportedDocumentEncodingException",
         "variableDeclarationType" : "UnsupportedDocumentEncodingException",
         "documentation" : null,
-        "variableSetterType" : "UnsupportedDocumentEncodingException",
-        "simpleType" : "UnsupportedDocumentEncodingException"
+        "simpleType" : "UnsupportedDocumentEncodingException",
+        "variableSetterType" : "UnsupportedDocumentEncodingException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1044,8 +1044,8 @@
         "variableType" : "ThrottlingException",
         "variableDeclarationType" : "ThrottlingException",
         "documentation" : null,
-        "variableSetterType" : "ThrottlingException",
-        "simpleType" : "ThrottlingException"
+        "simpleType" : "ThrottlingException",
+        "variableSetterType" : "ThrottlingException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1076,8 +1076,8 @@
         "variableType" : "ServiceUnavailableException",
         "variableDeclarationType" : "ServiceUnavailableException",
         "documentation" : null,
-        "variableSetterType" : "ServiceUnavailableException",
-        "simpleType" : "ServiceUnavailableException"
+        "simpleType" : "ServiceUnavailableException",
+        "variableSetterType" : "ServiceUnavailableException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1108,8 +1108,8 @@
         "variableType" : "ResourceNotFoundException",
         "variableDeclarationType" : "ResourceNotFoundException",
         "documentation" : null,
-        "variableSetterType" : "ResourceNotFoundException",
-        "simpleType" : "ResourceNotFoundException"
+        "simpleType" : "ResourceNotFoundException",
+        "variableSetterType" : "ResourceNotFoundException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1140,8 +1140,8 @@
         "variableType" : "InternalFailureException",
         "variableDeclarationType" : "InternalFailureException",
         "documentation" : null,
-        "variableSetterType" : "InternalFailureException",
-        "simpleType" : "InternalFailureException"
+        "simpleType" : "InternalFailureException",
+        "variableSetterType" : "InternalFailureException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1172,8 +1172,8 @@
         "variableType" : "InvalidRequestException",
         "variableDeclarationType" : "InvalidRequestException",
         "documentation" : null,
-        "variableSetterType" : "InvalidRequestException",
-        "simpleType" : "InvalidRequestException"
+        "simpleType" : "InvalidRequestException",
+        "variableSetterType" : "InvalidRequestException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1207,16 +1207,16 @@
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "<p>The state information, in JSON format.</p>",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "setterModel" : {
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
@@ -1256,8 +1256,8 @@
         "variableType" : "DeleteThingShadowResult",
         "variableDeclarationType" : "DeleteThingShadowResult",
         "documentation" : null,
-        "variableSetterType" : "DeleteThingShadowResult",
-        "simpleType" : "DeleteThingShadowResult"
+        "simpleType" : "DeleteThingShadowResult",
+        "variableSetterType" : "DeleteThingShadowResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1282,16 +1282,16 @@
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "<p>The state information, in JSON format.</p>",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "setterModel" : {
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "getterModel" : {
             "returnType" : "java.nio.ByteBuffer",
@@ -1348,16 +1348,16 @@
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "<p>The state information, in JSON format.</p>",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "setterModel" : {
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
@@ -1397,8 +1397,8 @@
         "variableType" : "UpdateThingShadowResult",
         "variableDeclarationType" : "UpdateThingShadowResult",
         "documentation" : null,
-        "variableSetterType" : "UpdateThingShadowResult",
-        "simpleType" : "UpdateThingShadowResult"
+        "simpleType" : "UpdateThingShadowResult",
+        "variableSetterType" : "UpdateThingShadowResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1423,16 +1423,16 @@
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "<p>The state information, in JSON format.</p>",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "setterModel" : {
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "getterModel" : {
             "returnType" : "java.nio.ByteBuffer",
@@ -1489,16 +1489,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the thing.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "thingName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1541,16 +1541,16 @@
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "<p>The state information, in JSON format.</p>",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "setterModel" : {
           "variableName" : "payload",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "",
-          "variableSetterType" : "java.nio.ByteBuffer",
-          "simpleType" : "ByteBuffer"
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
@@ -1590,8 +1590,8 @@
         "variableType" : "UpdateThingShadowRequest",
         "variableDeclarationType" : "UpdateThingShadowRequest",
         "documentation" : null,
-        "variableSetterType" : "UpdateThingShadowRequest",
-        "simpleType" : "UpdateThingShadowRequest"
+        "simpleType" : "UpdateThingShadowRequest",
+        "variableSetterType" : "UpdateThingShadowRequest"
       },
       "marshaller" : {
         "action" : "UpdateThingShadow",
@@ -1620,16 +1620,16 @@
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "<p>The state information, in JSON format.</p>",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "setterModel" : {
             "variableName" : "payload",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "",
-            "variableSetterType" : "java.nio.ByteBuffer",
-            "simpleType" : "ByteBuffer"
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "getterModel" : {
             "returnType" : "java.nio.ByteBuffer",
@@ -1673,16 +1673,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the thing.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "thingName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1736,8 +1736,8 @@
         "variableType" : "PublishResult",
         "variableDeclarationType" : "PublishResult",
         "documentation" : null,
-        "variableSetterType" : "PublishResult",
-        "simpleType" : "PublishResult"
+        "simpleType" : "PublishResult",
+        "variableSetterType" : "PublishResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1774,16 +1774,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of the thing.</p>",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "setterModel" : {
           "variableName" : "thingName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "variableSetterType" : "String",
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -1823,8 +1823,8 @@
         "variableType" : "DeleteThingShadowRequest",
         "variableDeclarationType" : "DeleteThingShadowRequest",
         "documentation" : null,
-        "variableSetterType" : "DeleteThingShadowRequest",
-        "simpleType" : "DeleteThingShadowRequest"
+        "simpleType" : "DeleteThingShadowRequest",
+        "variableSetterType" : "DeleteThingShadowRequest"
       },
       "marshaller" : {
         "action" : "DeleteThingShadow",
@@ -1853,16 +1853,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of the thing.</p>",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "setterModel" : {
             "variableName" : "thingName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "variableSetterType" : "String",
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1932,6 +1932,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "exceptionUnmarshallerImpl" : null,
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "exceptionUnmarshallerImpl" : null
 }

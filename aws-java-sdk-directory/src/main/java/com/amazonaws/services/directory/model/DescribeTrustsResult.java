@@ -19,7 +19,9 @@ package com.amazonaws.services.directory.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The result of a DescribeTrust request.
+ * </p>
  */
 public class DescribeTrustsResult implements Serializable, Cloneable {
 

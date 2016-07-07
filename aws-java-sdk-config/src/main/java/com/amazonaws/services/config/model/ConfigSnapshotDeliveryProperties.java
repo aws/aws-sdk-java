@@ -29,7 +29,7 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
 
     /**
      * <p>
-     * The frequency with which a AWS Config recurringly delivers configuration
+     * The frequency with which AWS Config recurringly delivers configuration
      * snapshots.
      * </p>
      */
@@ -37,12 +37,12 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
 
     /**
      * <p>
-     * The frequency with which a AWS Config recurringly delivers configuration
+     * The frequency with which AWS Config recurringly delivers configuration
      * snapshots.
      * </p>
      * 
      * @param deliveryFrequency
-     *        The frequency with which a AWS Config recurringly delivers
+     *        The frequency with which AWS Config recurringly delivers
      *        configuration snapshots.
      * @see MaximumExecutionFrequency
      */
@@ -53,11 +53,11 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
 
     /**
      * <p>
-     * The frequency with which a AWS Config recurringly delivers configuration
+     * The frequency with which AWS Config recurringly delivers configuration
      * snapshots.
      * </p>
      * 
-     * @return The frequency with which a AWS Config recurringly delivers
+     * @return The frequency with which AWS Config recurringly delivers
      *         configuration snapshots.
      * @see MaximumExecutionFrequency
      */
@@ -68,12 +68,12 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
 
     /**
      * <p>
-     * The frequency with which a AWS Config recurringly delivers configuration
+     * The frequency with which AWS Config recurringly delivers configuration
      * snapshots.
      * </p>
      * 
      * @param deliveryFrequency
-     *        The frequency with which a AWS Config recurringly delivers
+     *        The frequency with which AWS Config recurringly delivers
      *        configuration snapshots.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -88,12 +88,12 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
 
     /**
      * <p>
-     * The frequency with which a AWS Config recurringly delivers configuration
+     * The frequency with which AWS Config recurringly delivers configuration
      * snapshots.
      * </p>
      * 
      * @param deliveryFrequency
-     *        The frequency with which a AWS Config recurringly delivers
+     *        The frequency with which AWS Config recurringly delivers
      *        configuration snapshots.
      * @see MaximumExecutionFrequency
      */
@@ -104,12 +104,12 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
 
     /**
      * <p>
-     * The frequency with which a AWS Config recurringly delivers configuration
+     * The frequency with which AWS Config recurringly delivers configuration
      * snapshots.
      * </p>
      * 
      * @param deliveryFrequency
-     *        The frequency with which a AWS Config recurringly delivers
+     *        The frequency with which AWS Config recurringly delivers
      *        configuration snapshots.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

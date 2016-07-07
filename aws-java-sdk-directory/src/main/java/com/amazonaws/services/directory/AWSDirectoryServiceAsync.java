@@ -34,6 +34,44 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Adds or overwrites one or more tags for the specified Amazon Directory
+     * Services directory. Each directory can have a maximum of 10 tags. Each
+     * tag consists of a key and optional value. Tag keys must be unique per
+     * resource.
+     * </p>
+     * 
+     * @param addTagsToResourceRequest
+     * @return A Java Future containing the result of the AddTagsToResource
+     *         operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.AddTagsToResource
+     */
+    java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
+            AddTagsToResourceRequest addTagsToResourceRequest);
+
+    /**
+     * <p>
+     * Adds or overwrites one or more tags for the specified Amazon Directory
+     * Services directory. Each directory can have a maximum of 10 tags. Each
+     * tag consists of a key and optional value. Tag keys must be unique per
+     * resource.
+     * </p>
+     * 
+     * @param addTagsToResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddTagsToResource
+     *         operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.AddTagsToResource
+     */
+    java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
+            AddTagsToResourceRequest addTagsToResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an AD Connector to connect to an on-premises directory.
      * </p>
      * 
@@ -70,8 +108,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * <p>
      * Creates an alias for a directory and assigns the alias to the directory.
      * The alias is used to construct the access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
-     * .
+     * <code>http://&lt;alias&gt;.awsapps.com</code>.
      * </p>
      * <important>
      * <p>
@@ -93,8 +130,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * <p>
      * Creates an alias for a directory and assigns the alias to the directory.
      * The alias is used to construct the access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
-     * .
+     * <code>http://&lt;alias&gt;.awsapps.com</code>.
      * </p>
      * <important>
      * <p>
@@ -235,7 +271,9 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
             com.amazonaws.handlers.AsyncHandler<CreateDirectoryRequest, CreateDirectoryResult> asyncHandler);
 
     /**
+     * <p>
      * Creates a Microsoft AD in the AWS cloud.
+     * </p>
      * 
      * @param createMicrosoftADRequest
      *        Creates a Microsoft AD in the AWS cloud.
@@ -247,7 +285,9 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
             CreateMicrosoftADRequest createMicrosoftADRequest);
 
     /**
+     * <p>
      * Creates a Microsoft AD in the AWS cloud.
+     * </p>
      * 
      * @param createMicrosoftADRequest
      *        Creates a Microsoft AD in the AWS cloud.
@@ -389,6 +429,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * </p>
      * 
      * @param deleteConditionalForwarderRequest
+     *        Deletes a conditional forwarder.
      * @return A Java Future containing the result of the
      *         DeleteConditionalForwarder operation returned by the service.
      * @sample AWSDirectoryServiceAsync.DeleteConditionalForwarder
@@ -403,6 +444,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * </p>
      * 
      * @param deleteConditionalForwarderRequest
+     *        Deletes a conditional forwarder.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -485,8 +527,10 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
             com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, DeleteSnapshotResult> asyncHandler);
 
     /**
+     * <p>
      * Deletes an existing trust relationship between your Microsoft AD in the
      * AWS cloud and an external domain.
+     * </p>
      * 
      * @param deleteTrustRequest
      *        Deletes the local side of an existing trust relationship between
@@ -499,8 +543,10 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
             DeleteTrustRequest deleteTrustRequest);
 
     /**
+     * <p>
      * Deletes an existing trust relationship between your Microsoft AD in the
      * AWS cloud and an external domain.
+     * </p>
      * 
      * @param deleteTrustRequest
      *        Deletes the local side of an existing trust relationship between
@@ -566,6 +612,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * </p>
      * 
      * @param describeConditionalForwardersRequest
+     *        Describes a conditional forwarder.
      * @return A Java Future containing the result of the
      *         DescribeConditionalForwarders operation returned by the service.
      * @sample AWSDirectoryServiceAsync.DescribeConditionalForwarders
@@ -583,6 +630,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * </p>
      * 
      * @param describeConditionalForwardersRequest
+     *        Describes a conditional forwarder.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -690,6 +738,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * </p>
      * 
      * @param describeEventTopicsRequest
+     *        Describes event topics.
      * @return A Java Future containing the result of the DescribeEventTopics
      *         operation returned by the service.
      * @sample AWSDirectoryServiceAsync.DescribeEventTopics
@@ -708,6 +757,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * </p>
      * 
      * @param describeEventTopicsRequest
+     *        Describes event topics.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1073,6 +1123,38 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Lists all tags on an Amazon Directory Services directory.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource
+     *         operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.ListTagsForResource
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists all tags on an Amazon Directory Services directory.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource
+     *         operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.ListTagsForResource
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates a directory with an SNS topic. This establishes the directory
      * as a publisher to the specified SNS topic. You can then receive email or
      * text (SMS) messages when the status of your directory changes. You get
@@ -1082,6 +1164,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * </p>
      * 
      * @param registerEventTopicRequest
+     *        Registers a new event topic.
      * @return A Java Future containing the result of the RegisterEventTopic
      *         operation returned by the service.
      * @sample AWSDirectoryServiceAsync.RegisterEventTopic
@@ -1100,6 +1183,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * </p>
      * 
      * @param registerEventTopicRequest
+     *        Registers a new event topic.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1112,6 +1196,38 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
     java.util.concurrent.Future<RegisterEventTopicResult> registerEventTopicAsync(
             RegisterEventTopicRequest registerEventTopicRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterEventTopicRequest, RegisterEventTopicResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes tags from an Amazon Directory Services directory.
+     * </p>
+     * 
+     * @param removeTagsFromResourceRequest
+     * @return A Java Future containing the result of the RemoveTagsFromResource
+     *         operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.RemoveTagsFromResource
+     */
+    java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
+            RemoveTagsFromResourceRequest removeTagsFromResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from an Amazon Directory Services directory.
+     * </p>
+     * 
+     * @param removeTagsFromResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveTagsFromResource
+     *         operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.RemoveTagsFromResource
+     */
+    java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
+            RemoveTagsFromResourceRequest removeTagsFromResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -1178,6 +1294,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * </p>
      * 
      * @param updateConditionalForwarderRequest
+     *        Updates a conditional forwarder.
      * @return A Java Future containing the result of the
      *         UpdateConditionalForwarder operation returned by the service.
      * @sample AWSDirectoryServiceAsync.UpdateConditionalForwarder
@@ -1192,6 +1309,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * </p>
      * 
      * @param updateConditionalForwarderRequest
+     *        Updates a conditional forwarder.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

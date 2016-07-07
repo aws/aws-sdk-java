@@ -2742,7 +2742,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             populateRequesterPaysHeader(request, completeMultipartUploadRequest.isRequesterPays());
 
             byte[] xml = RequestXmlFactory.convertToXmlByteArray(completeMultipartUploadRequest.getPartETags());
-            request.addHeader("Content-Type", "text/plain");
+            request.addHeader("Content-Type", "application/xml");
             request.addHeader("Content-Length", String.valueOf(xml.length));
 
             request.setContent(new ByteArrayInputStream(xml));
@@ -3225,7 +3225,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         populateRequesterPaysHeader(request, isRequesterPays);
 
         byte[] aclAsXml = new AclXmlFactory().convertToXmlByteArray(acl);
-        request.addHeader("Content-Type", "text/plain");
+        request.addHeader("Content-Type", "application/xml");
         request.addHeader("Content-Length", String.valueOf(aclAsXml.length));
         request.setContent(new ByteArrayInputStream(aclAsXml));
 

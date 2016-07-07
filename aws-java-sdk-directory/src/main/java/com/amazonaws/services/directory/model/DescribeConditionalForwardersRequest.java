@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Describes a conditional forwarder.
+ * </p>
  */
 public class DescribeConditionalForwardersRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

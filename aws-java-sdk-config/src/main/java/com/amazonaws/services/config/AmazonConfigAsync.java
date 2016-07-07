@@ -117,13 +117,72 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Deletes the specified delivery channel.
+     * Deletes the configuration recorder.
      * </p>
      * <p>
-     * The delivery channel cannot be deleted if it is the only delivery channel
-     * and the configuration recorder is still running. To delete the delivery
-     * channel, stop the running configuration recorder using the
-     * <a>StopConfigurationRecorder</a> action.
+     * After the configuration recorder is deleted, AWS Config will not record
+     * resource configuration changes until you create a new configuration
+     * recorder.
+     * </p>
+     * <p>
+     * This action does not delete the configuration information that was
+     * previously recorded. You will be able to access the previously recorded
+     * information by using the <code>GetResourceConfigHistory</code> action,
+     * but you will not be able to access this information in the AWS Config
+     * console until you create a new configuration recorder.
+     * </p>
+     * 
+     * @param deleteConfigurationRecorderRequest
+     *        The request object for the
+     *        <code>DeleteConfigurationRecorder</code> action.
+     * @return A Java Future containing the result of the
+     *         DeleteConfigurationRecorder operation returned by the service.
+     * @sample AmazonConfigAsync.DeleteConfigurationRecorder
+     */
+    java.util.concurrent.Future<DeleteConfigurationRecorderResult> deleteConfigurationRecorderAsync(
+            DeleteConfigurationRecorderRequest deleteConfigurationRecorderRequest);
+
+    /**
+     * <p>
+     * Deletes the configuration recorder.
+     * </p>
+     * <p>
+     * After the configuration recorder is deleted, AWS Config will not record
+     * resource configuration changes until you create a new configuration
+     * recorder.
+     * </p>
+     * <p>
+     * This action does not delete the configuration information that was
+     * previously recorded. You will be able to access the previously recorded
+     * information by using the <code>GetResourceConfigHistory</code> action,
+     * but you will not be able to access this information in the AWS Config
+     * console until you create a new configuration recorder.
+     * </p>
+     * 
+     * @param deleteConfigurationRecorderRequest
+     *        The request object for the
+     *        <code>DeleteConfigurationRecorder</code> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteConfigurationRecorder operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.DeleteConfigurationRecorder
+     */
+    java.util.concurrent.Future<DeleteConfigurationRecorderResult> deleteConfigurationRecorderAsync(
+            DeleteConfigurationRecorderRequest deleteConfigurationRecorderRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConfigurationRecorderRequest, DeleteConfigurationRecorderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the delivery channel.
+     * </p>
+     * <p>
+     * Before you can delete the delivery channel, you must stop the
+     * configuration recorder by using the <a>StopConfigurationRecorder</a>
+     * action.
      * </p>
      * 
      * @param deleteDeliveryChannelRequest
@@ -138,13 +197,12 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Deletes the specified delivery channel.
+     * Deletes the delivery channel.
      * </p>
      * <p>
-     * The delivery channel cannot be deleted if it is the only delivery channel
-     * and the configuration recorder is still running. To delete the delivery
-     * channel, stop the running configuration recorder using the
-     * <a>StopConfigurationRecorder</a> action.
+     * Before you can delete the delivery channel, you must stop the
+     * configuration recorder by using the <a>StopConfigurationRecorder</a>
+     * action.
      * </p>
      * 
      * @param deleteDeliveryChannelRequest
@@ -231,6 +289,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * If AWS Config has no current evaluation results for the rule, it returns
      * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the
      * following conditions:
+     * </p>
      * <ul>
      * <li>AWS Config has never invoked an evaluation for the rule. To check
      * whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code>
@@ -246,7 +305,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if
      * the resources were deleted or removed from the rule's scope.</li>
      * </ul>
-     * </p>
      * 
      * @param describeComplianceByConfigRuleRequest
      * @return A Java Future containing the result of the
@@ -270,6 +328,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * If AWS Config has no current evaluation results for the rule, it returns
      * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the
      * following conditions:
+     * </p>
      * <ul>
      * <li>AWS Config has never invoked an evaluation for the rule. To check
      * whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code>
@@ -285,7 +344,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if
      * the resources were deleted or removed from the rule's scope.</li>
      * </ul>
-     * </p>
      * 
      * @param describeComplianceByConfigRuleRequest
      * @param asyncHandler
@@ -334,6 +392,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * If AWS Config has no current evaluation results for the resource, it
      * returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of
      * the following conditions about the rules that evaluate the resource:
+     * </p>
      * <ul>
      * <li>AWS Config has never invoked an evaluation for the rule. To check
      * whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code>
@@ -349,7 +408,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if
      * the resources were deleted or removed from the rule's scope.</li>
      * </ul>
-     * </p>
      * 
      * @param describeComplianceByResourceRequest
      * @return A Java Future containing the result of the
@@ -374,6 +432,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * If AWS Config has no current evaluation results for the resource, it
      * returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of
      * the following conditions about the rules that evaluate the resource:
+     * </p>
      * <ul>
      * <li>AWS Config has never invoked an evaluation for the rule. To check
      * whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code>
@@ -389,7 +448,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if
      * the resources were deleted or removed from the rule's scope.</li>
      * </ul>
-     * </p>
      * 
      * @param describeComplianceByResourceRequest
      * @param asyncHandler
@@ -536,8 +594,11 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * configuration recorder is not specified, this action returns the status
      * of all configuration recorder associated with the account.
      * </p>
-     * <note>Currently, you can specify only one configuration recorder per
-     * account.</note>
+     * <note>
+     * <p>
+     * Currently, you can specify only one configuration recorder per account.
+     * </p>
+     * </note>
      * 
      * @param describeConfigurationRecorderStatusRequest
      *        The input for the <a>DescribeConfigurationRecorderStatus</a>
@@ -556,8 +617,11 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * configuration recorder is not specified, this action returns the status
      * of all configuration recorder associated with the account.
      * </p>
-     * <note>Currently, you can specify only one configuration recorder per
-     * account.</note>
+     * <note>
+     * <p>
+     * Currently, you can specify only one configuration recorder per account.
+     * </p>
+     * </note>
      * 
      * @param describeConfigurationRecorderStatusRequest
      *        The input for the <a>DescribeConfigurationRecorderStatus</a>
@@ -666,8 +730,11 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * delivery channel is not specified, this action returns the current status
      * of all delivery channels associated with the account.
      * </p>
-     * <note>Currently, you can specify only one delivery channel per
-     * account.</note>
+     * <note>
+     * <p>
+     * Currently, you can specify only one delivery channel per account.
+     * </p>
+     * </note>
      * 
      * @param describeDeliveryChannelStatusRequest
      *        The input for the <a>DeliveryChannelStatus</a> action.
@@ -684,8 +751,11 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * delivery channel is not specified, this action returns the current status
      * of all delivery channels associated with the account.
      * </p>
-     * <note>Currently, you can specify only one delivery channel per
-     * account.</note>
+     * <note>
+     * <p>
+     * Currently, you can specify only one delivery channel per account.
+     * </p>
+     * </note>
      * 
      * @param describeDeliveryChannelStatusRequest
      *        The input for the <a>DeliveryChannelStatus</a> action.
@@ -1054,8 +1124,12 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * include only resources that have specific resource IDs or a resource
      * name.
      * </p>
-     * <note>You can specify either resource IDs or a resource name but not both
-     * in the same request.</note>
+     * <note>
+     * <p>
+     * You can specify either resource IDs or a resource name but not both in
+     * the same request.
+     * </p>
+     * </note>
      * <p>
      * The response is paginated, and by default AWS Config lists 100 resource
      * identifiers on each page. You can customize this number with the
@@ -1083,8 +1157,12 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * include only resources that have specific resource IDs or a resource
      * name.
      * </p>
-     * <note>You can specify either resource IDs or a resource name but not both
-     * in the same request.</note>
+     * <note>
+     * <p>
+     * You can specify either resource IDs or a resource name but not both in
+     * the same request.
+     * </p>
+     * </note>
      * <p>
      * The response is paginated, and by default AWS Config lists 100 resource
      * identifiers on each page. You can customize this number with the
@@ -1304,8 +1382,12 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Creates a new delivery channel object to deliver the configuration
-     * information to an Amazon S3 bucket, and to an Amazon SNS topic.
+     * Creates a delivery channel object to deliver configuration information to
+     * an Amazon S3 bucket and Amazon SNS topic.
+     * </p>
+     * <p>
+     * Before you can create a delivery channel, you must create a configuration
+     * recorder.
      * </p>
      * <p>
      * You can use this action to change the Amazon S3 bucket or an Amazon SNS
@@ -1317,7 +1399,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one delivery channel per account.
+     * You can have only one delivery channel per AWS account.
      * </p>
      * </note>
      * 
@@ -1332,8 +1414,12 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Creates a new delivery channel object to deliver the configuration
-     * information to an Amazon S3 bucket, and to an Amazon SNS topic.
+     * Creates a delivery channel object to deliver configuration information to
+     * an Amazon S3 bucket and Amazon SNS topic.
+     * </p>
+     * <p>
+     * Before you can create a delivery channel, you must create a configuration
+     * recorder.
      * </p>
      * <p>
      * You can use this action to change the Amazon S3 bucket or an Amazon SNS
@@ -1345,7 +1431,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one delivery channel per account.
+     * You can have only one delivery channel per AWS account.
      * </p>
      * </note>
      * 
@@ -1451,9 +1537,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * 
      * @param stopConfigurationRecorderRequest
-     *        <p>
      *        The input for the <a>StopConfigurationRecorder</a> action.
-     *        </p>
      * @return A Java Future containing the result of the
      *         StopConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsync.StopConfigurationRecorder
@@ -1468,9 +1552,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * 
      * @param stopConfigurationRecorderRequest
-     *        <p>
      *        The input for the <a>StopConfigurationRecorder</a> action.
-     *        </p>
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

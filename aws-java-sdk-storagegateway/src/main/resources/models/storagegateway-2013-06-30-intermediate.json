@@ -19,13 +19,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "storagegateway",
     "signingName" : "storagegateway",
-    "jsonProtocol" : true,
     "xmlProtocol" : false,
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "serviceName" : "AWS Storage Gateway",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "jsonProtocol" : true
   },
   "operations" : {
     "ActivateGateway" : {

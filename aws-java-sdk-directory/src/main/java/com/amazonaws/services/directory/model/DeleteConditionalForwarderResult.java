@@ -19,7 +19,9 @@ package com.amazonaws.services.directory.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The result of a DeleteConditionalForwarder request.
+ * </p>
  */
 public class DeleteConditionalForwarderResult implements Serializable,
         Cloneable {

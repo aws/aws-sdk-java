@@ -19,15 +19,23 @@ package com.amazonaws.services.directory.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The result of a CreateTrust request.
+ * </p>
  */
 public class CreateTrustResult implements Serializable, Cloneable {
 
-    /** A unique identifier for the trust relationship that was created. */
+    /**
+     * <p>
+     * A unique identifier for the trust relationship that was created.
+     * </p>
+     */
     private String trustId;
 
     /**
+     * <p>
      * A unique identifier for the trust relationship that was created.
+     * </p>
      * 
      * @param trustId
      *        A unique identifier for the trust relationship that was created.
@@ -38,7 +46,9 @@ public class CreateTrustResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A unique identifier for the trust relationship that was created.
+     * </p>
      * 
      * @return A unique identifier for the trust relationship that was created.
      */
@@ -48,7 +58,9 @@ public class CreateTrustResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A unique identifier for the trust relationship that was created.
+     * </p>
      * 
      * @param trustId
      *        A unique identifier for the trust relationship that was created.

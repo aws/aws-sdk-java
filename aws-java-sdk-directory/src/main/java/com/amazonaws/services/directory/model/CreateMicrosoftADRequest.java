@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Creates a Microsoft AD in the AWS cloud.
+ * </p>
  */
 public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

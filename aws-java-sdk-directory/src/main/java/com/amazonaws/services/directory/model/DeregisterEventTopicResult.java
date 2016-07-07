@@ -19,7 +19,9 @@ package com.amazonaws.services.directory.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The result of a DeregisterEventTopic request.
+ * </p>
  */
 public class DeregisterEventTopicResult implements Serializable, Cloneable {
 

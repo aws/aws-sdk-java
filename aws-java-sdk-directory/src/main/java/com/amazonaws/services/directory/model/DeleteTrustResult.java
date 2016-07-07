@@ -19,15 +19,23 @@ package com.amazonaws.services.directory.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The result of a DeleteTrust request.
+ * </p>
  */
 public class DeleteTrustResult implements Serializable, Cloneable {
 
-    /** The Trust ID of the trust relationship that was deleted. */
+    /**
+     * <p>
+     * The Trust ID of the trust relationship that was deleted.
+     * </p>
+     */
     private String trustId;
 
     /**
+     * <p>
      * The Trust ID of the trust relationship that was deleted.
+     * </p>
      * 
      * @param trustId
      *        The Trust ID of the trust relationship that was deleted.
@@ -38,7 +46,9 @@ public class DeleteTrustResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The Trust ID of the trust relationship that was deleted.
+     * </p>
      * 
      * @return The Trust ID of the trust relationship that was deleted.
      */
@@ -48,7 +58,9 @@ public class DeleteTrustResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The Trust ID of the trust relationship that was deleted.
+     * </p>
      * 
      * @param trustId
      *        The Trust ID of the trust relationship that was deleted.

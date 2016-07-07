@@ -19,7 +19,9 @@ package com.amazonaws.services.directory.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The result of an UpdateConditionalForwarder request.
+ * </p>
  */
 public class UpdateConditionalForwarderResult implements Serializable,
         Cloneable {

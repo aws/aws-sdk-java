@@ -19,13 +19,13 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "inspector",
     "signingName" : "inspector",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "xmlProtocol" : false,
-    "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "serviceName" : "Amazon Inspector"
+    "cborProtocol" : false,
+    "serviceName" : "Amazon Inspector",
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "AddAttributesToFindings" : {
@@ -3929,12 +3929,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -4071,12 +4071,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -10213,12 +10213,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10355,12 +10355,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -14316,12 +14316,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -14458,12 +14458,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -19557,12 +19557,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -19699,12 +19699,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -20069,12 +20069,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -20211,12 +20211,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -25379,12 +25379,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -25521,12 +25521,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -32335,12 +32335,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -32477,12 +32477,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -33079,12 +33079,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,FailedItemDetails>",
-          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, FailedItemDetails>"
+          "entryType" : "Map.Entry<String, FailedItemDetails>",
+          "templateType" : "java.util.Map<String,FailedItemDetails>",
+          "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -33221,12 +33221,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,FailedItemDetails>",
-            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, FailedItemDetails>"
+            "entryType" : "Map.Entry<String, FailedItemDetails>",
+            "templateType" : "java.util.Map<String,FailedItemDetails>",
+            "templateImplType" : "java.util.HashMap<String,FailedItemDetails>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -40336,6 +40336,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "exceptionUnmarshallerImpl" : null,
+  "clientConfigFactory" : "ClientConfigurationFactory"
 }

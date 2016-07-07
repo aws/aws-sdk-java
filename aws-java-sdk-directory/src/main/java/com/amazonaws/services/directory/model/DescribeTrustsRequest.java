@@ -20,16 +20,20 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Describes the trust relationships for a particular Microsoft AD in the AWS
  * cloud. If no input parameters are are provided, such as directory ID or trust
  * ID, this request describes all the trust relationships.
+ * </p>
  */
 public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
     /**
+     * <p>
      * The Directory ID of the AWS directory that is a part of the requested
      * trust relationship.
+     * </p>
      */
     private String directoryId;
     /**
@@ -51,12 +55,18 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String nextToken;
-    /** The maximum number of objects to return. */
+    /**
+     * <p>
+     * The maximum number of objects to return.
+     * </p>
+     */
     private Integer limit;
 
     /**
+     * <p>
      * The Directory ID of the AWS directory that is a part of the requested
      * trust relationship.
+     * </p>
      * 
      * @param directoryId
      *        The Directory ID of the AWS directory that is a part of the
@@ -68,8 +78,10 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The Directory ID of the AWS directory that is a part of the requested
      * trust relationship.
+     * </p>
      * 
      * @return The Directory ID of the AWS directory that is a part of the
      *         requested trust relationship.
@@ -80,8 +92,10 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The Directory ID of the AWS directory that is a part of the requested
      * trust relationship.
+     * </p>
      * 
      * @param directoryId
      *        The Directory ID of the AWS directory that is a part of the
@@ -270,7 +284,9 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The maximum number of objects to return.
+     * </p>
      * 
      * @param limit
      *        The maximum number of objects to return.
@@ -281,7 +297,9 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The maximum number of objects to return.
+     * </p>
      * 
      * @return The maximum number of objects to return.
      */
@@ -291,7 +309,9 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * The maximum number of objects to return.
+     * </p>
      * 
      * @param limit
      *        The maximum number of objects to return.

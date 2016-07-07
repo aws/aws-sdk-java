@@ -20,12 +20,12 @@
     "endpointPrefix" : "ecs",
     "signingName" : "ecs",
     "jsonProtocol" : true,
-    "xmlProtocol" : false,
     "protocolDefaultExceptionUmarshallerImpl" : null,
     "serviceName" : "Amazon ECS",
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "xmlProtocol" : false
   },
   "operations" : {
     "CreateCluster" : {

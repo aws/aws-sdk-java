@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.15-SNAPSHOT</version>
+  <version>1.11.15</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -35,6 +35,7 @@
   <modules>
     <module>aws-java-sdk-support</module>
     <module>aws-java-sdk-simpledb</module>
+    <module>aws-java-sdk-servicecatalog</module>
     <module>aws-java-sdk-simpleworkflow</module>
     <module>aws-java-sdk-storagegateway</module>
     <module>aws-java-sdk-route53</module>

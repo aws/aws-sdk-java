@@ -19,7 +19,9 @@ package com.amazonaws.services.directory.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The result of a RegisterEventTopic request.
+ * </p>
  */
 public class RegisterEventTopicResult implements Serializable, Cloneable {
 

@@ -60,9 +60,8 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
-     * . If no alias has been created for the directory,
-     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
+     * <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has been
+     * created for the directory, <code>&lt;alias&gt;</code> is the directory
      * identifier, such as <code>d-XXXXXXXXXX</code>.
      * </p>
      */
@@ -404,17 +403,15 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
-     * . If no alias has been created for the directory,
-     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
+     * <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has been
+     * created for the directory, <code>&lt;alias&gt;</code> is the directory
      * identifier, such as <code>d-XXXXXXXXXX</code>.
      * </p>
      * 
      * @param accessUrl
      *        The access URL for the directory, such as
-     *        <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
-     *        . If no alias has been created for the directory,
-     *        <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the
+     *        <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has
+     *        been created for the directory, <code>&lt;alias&gt;</code> is the
      *        directory identifier, such as <code>d-XXXXXXXXXX</code>.
      */
 
@@ -425,16 +422,14 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
-     * . If no alias has been created for the directory,
-     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
+     * <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has been
+     * created for the directory, <code>&lt;alias&gt;</code> is the directory
      * identifier, such as <code>d-XXXXXXXXXX</code>.
      * </p>
      * 
      * @return The access URL for the directory, such as
-     *         <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
-     *         . If no alias has been created for the directory,
-     *         <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the
+     *         <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has
+     *         been created for the directory, <code>&lt;alias&gt;</code> is the
      *         directory identifier, such as <code>d-XXXXXXXXXX</code>.
      */
 
@@ -445,17 +440,15 @@ public class DirectoryDescription implements Serializable, Cloneable {
     /**
      * <p>
      * The access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
-     * . If no alias has been created for the directory,
-     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
+     * <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has been
+     * created for the directory, <code>&lt;alias&gt;</code> is the directory
      * identifier, such as <code>d-XXXXXXXXXX</code>.
      * </p>
      * 
      * @param accessUrl
      *        The access URL for the directory, such as
-     *        <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
-     *        . If no alias has been created for the directory,
-     *        <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the
+     *        <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has
+     *        been created for the directory, <code>&lt;alias&gt;</code> is the
      *        directory identifier, such as <code>d-XXXXXXXXXX</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

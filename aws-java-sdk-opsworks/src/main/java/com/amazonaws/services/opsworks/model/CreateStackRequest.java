@@ -145,6 +145,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>CentOS 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Red Hat Enterprise Linux 7</code>
      * </p>
      * </li>
@@ -1083,6 +1088,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>CentOS 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Red Hat Enterprise Linux 7</code>
      * </p>
      * </li>
@@ -1129,6 +1139,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        A supported Ubuntu operating system, such as
      *        <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
      *        <code>Ubuntu 12.04 LTS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CentOS 7</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1190,6 +1205,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>CentOS 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Red Hat Enterprise Linux 7</code>
      * </p>
      * </li>
@@ -1235,6 +1255,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         A supported Ubuntu operating system, such as
      *         <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
      *         <code>Ubuntu 12.04 LTS</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CentOS 7</code>
      *         </p>
      *         </li>
      *         <li>
@@ -1297,6 +1322,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>CentOS 7</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Red Hat Enterprise Linux 7</code>
      * </p>
      * </li>
@@ -1343,6 +1373,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        A supported Ubuntu operating system, such as
      *        <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
      *        <code>Ubuntu 12.04 LTS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CentOS 7</code>
      *        </p>
      *        </li>
      *        <li>

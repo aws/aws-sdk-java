@@ -27,7 +27,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * <fullname>AWS OpsWorks</fullname>
  * <p>
  * Welcome to the <i>AWS OpsWorks API Reference</i>. This guide provides
- * descriptions, syntax, and usage examples about AWS OpsWorks actions and data
+ * descriptions, syntax, and usage examples for AWS OpsWorks actions and data
  * types, including common parameters and error codes.
  * </p>
  * <p>
@@ -95,9 +95,13 @@ import com.amazonaws.annotation.ThreadSafe;
  * <b>Endpoints</b>
  * </p>
  * <p>
- * AWS OpsWorks supports only one endpoint, opsworks.us-east-1.amazonaws.com
- * (HTTPS), so you must connect to that endpoint. You can then use the API to
- * direct AWS OpsWorks to create stacks in any AWS Region.
+ * AWS OpsWorks supports two endpoints, opsworks.us-east-1.amazonaws.com and
+ * opsworks.ap-south-1.amazonaws.com (both HTTPS). You must connect to one of
+ * those two endpoints. You can then use the API to direct AWS OpsWorks to
+ * create stacks in any AWS region. Stacks created in all regions except
+ * ap-south-1 are connected to the us-east-1 regional endpoint; stacks created
+ * in ap-south-1 are associated with the ap-south-1 regional endpoint, and can
+ * only be accessed or managed within that endpoint.
  * </p>
  * <p>
  * <b>Chef Versions</b>

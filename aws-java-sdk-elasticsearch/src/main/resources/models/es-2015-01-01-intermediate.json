@@ -21,8 +21,8 @@
     "signingName" : "es",
     "protocolDefaultExceptionUmarshallerImpl" : null,
     "serviceName" : "Amazon Elasticsearch Service",
-    "xmlProtocol" : false,
     "jsonProtocol" : true,
+    "xmlProtocol" : false,
     "cborProtocol" : false,
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "unmarshallerContextClassName" : "JsonUnmarshallerContext"

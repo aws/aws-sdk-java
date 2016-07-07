@@ -326,6 +326,42 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteConfigurationRecorderResult> deleteConfigurationRecorderAsync(
+            DeleteConfigurationRecorderRequest request) {
+
+        return deleteConfigurationRecorderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfigurationRecorderResult> deleteConfigurationRecorderAsync(
+            final DeleteConfigurationRecorderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteConfigurationRecorderRequest, DeleteConfigurationRecorderResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteConfigurationRecorderResult>() {
+                    @Override
+                    public DeleteConfigurationRecorderResult call()
+                            throws Exception {
+                        DeleteConfigurationRecorderResult result;
+
+                        try {
+                            result = deleteConfigurationRecorder(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDeliveryChannelResult> deleteDeliveryChannelAsync(
             DeleteDeliveryChannelRequest request) {
 

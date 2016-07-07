@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Deletes a conditional forwarder.
+ * </p>
  */
 public class DeleteConditionalForwarderRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

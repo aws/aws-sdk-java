@@ -53,9 +53,21 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * privileges:
      * </p>
      * <ul>
-     * <li>Read users and groups</li>
-     * <li>Create computer objects</li>
-     * <li>Join computers to the domain</li>
+     * <li>
+     * <p>
+     * Read users and groups
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create computer objects
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Join computers to the domain
+     * </p>
+     * </li>
      * </ul>
      */
     private String customerUserName;
@@ -282,9 +294,21 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * privileges:
      * </p>
      * <ul>
-     * <li>Read users and groups</li>
-     * <li>Create computer objects</li>
-     * <li>Join computers to the domain</li>
+     * <li>
+     * <p>
+     * Read users and groups
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create computer objects
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Join computers to the domain
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param customerUserName
@@ -292,9 +316,21 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      *        used to connect to the directory. This account must have the
      *        following privileges:</p>
      *        <ul>
-     *        <li>Read users and groups</li>
-     *        <li>Create computer objects</li>
-     *        <li>Join computers to the domain</li>
+     *        <li>
+     *        <p>
+     *        Read users and groups
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Create computer objects
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Join computers to the domain
+     *        </p>
+     *        </li>
      */
 
     public void setCustomerUserName(String customerUserName) {
@@ -308,18 +344,42 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * privileges:
      * </p>
      * <ul>
-     * <li>Read users and groups</li>
-     * <li>Create computer objects</li>
-     * <li>Join computers to the domain</li>
+     * <li>
+     * <p>
+     * Read users and groups
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create computer objects
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Join computers to the domain
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The username of an account in the on-premises directory that is
      *         used to connect to the directory. This account must have the
      *         following privileges:</p>
      *         <ul>
-     *         <li>Read users and groups</li>
-     *         <li>Create computer objects</li>
-     *         <li>Join computers to the domain</li>
+     *         <li>
+     *         <p>
+     *         Read users and groups
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Create computer objects
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Join computers to the domain
+     *         </p>
+     *         </li>
      */
 
     public String getCustomerUserName() {
@@ -333,9 +393,21 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * privileges:
      * </p>
      * <ul>
-     * <li>Read users and groups</li>
-     * <li>Create computer objects</li>
-     * <li>Join computers to the domain</li>
+     * <li>
+     * <p>
+     * Read users and groups
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create computer objects
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Join computers to the domain
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param customerUserName
@@ -343,9 +415,21 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      *        used to connect to the directory. This account must have the
      *        following privileges:</p>
      *        <ul>
-     *        <li>Read users and groups</li>
-     *        <li>Create computer objects</li>
-     *        <li>Join computers to the domain</li>
+     *        <li>
+     *        <p>
+     *        Read users and groups
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Create computer objects
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Join computers to the domain
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

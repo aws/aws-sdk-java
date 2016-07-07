@@ -73,9 +73,26 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "EntityAlreadyExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.EntityAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "DirectoryUnavailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.DirectoryUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidNextTokenException")
                                     .withModeledClass(
                                             com.amazonaws.services.directory.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TagLimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.TagLimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ServiceException")
@@ -86,12 +103,6 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                                     .withErrorCode("InvalidParameterException")
                                     .withModeledClass(
                                             com.amazonaws.services.directory.model.InvalidParameterException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "EntityAlreadyExistsException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.directory.model.EntityAlreadyExistsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -132,13 +143,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                                     .withErrorCode(
                                             "AuthenticationFailedException")
                                     .withModeledClass(
-                                            com.amazonaws.services.directory.model.AuthenticationFailedException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "DirectoryUnavailableException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.directory.model.DirectoryUnavailableException.class)));
+                                            com.amazonaws.services.directory.model.AuthenticationFailedException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Directory Service. A
@@ -313,6 +318,66 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Adds or overwrites one or more tags for the specified Amazon Directory
+     * Services directory. Each directory can have a maximum of 10 tags. Each
+     * tag consists of a key and optional value. Tag keys must be unique per
+     * resource.
+     * </p>
+     * 
+     * @param addTagsToResourceRequest
+     * @return Result of the AddTagsToResource operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws TagLimitExceededException
+     *         The maximum allowed number of tags was exceeded.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.AddTagsToResource
+     */
+    @Override
+    public AddTagsToResourceResult addTagsToResource(
+            AddTagsToResourceRequest addTagsToResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddTagsToResourceRequest> request = null;
+        Response<AddTagsToResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddTagsToResourceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(addTagsToResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AddTagsToResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddTagsToResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an AD Connector to connect to an on-premises directory.
      * </p>
      * 
@@ -372,8 +437,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * <p>
      * Creates an alias for a directory and assigns the alias to the directory.
      * The alias is used to construct the access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>
-     * .
+     * <code>http://&lt;alias&gt;.awsapps.com</code>.
      * </p>
      * <important>
      * <p>
@@ -622,7 +686,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
      * Creates a Microsoft AD in the AWS cloud.
+     * </p>
      * 
      * @param createMicrosoftADRequest
      *        Creates a Microsoft AD in the AWS cloud.
@@ -827,6 +893,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteConditionalForwarderRequest
+     *        Deletes a conditional forwarder.
      * @return Result of the DeleteConditionalForwarder operation returned by
      *         the service.
      * @throws EntityDoesNotExistException
@@ -989,8 +1056,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
      * Deletes an existing trust relationship between your Microsoft AD in the
      * AWS cloud and an external domain.
+     * </p>
      * 
      * @param deleteTrustRequest
      *        Deletes the local side of an existing trust relationship between
@@ -1111,6 +1180,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeConditionalForwardersRequest
+     *        Describes a conditional forwarder.
      * @return Result of the DescribeConditionalForwarders operation returned by
      *         the service.
      * @throws EntityDoesNotExistException
@@ -1255,6 +1325,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeEventTopicsRequest
+     *        Describes event topics.
      * @return Result of the DescribeEventTopics operation returned by the
      *         service.
      * @throws EntityDoesNotExistException
@@ -1783,6 +1854,63 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Lists all tags on an Amazon Directory Services directory.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidNextTokenException
+     *         The <i>NextToken</i> value is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ListTagsForResource
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(
+            ListTagsForResourceRequest listTagsForResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Associates a directory with an SNS topic. This establishes the directory
      * as a publisher to the specified SNS topic. You can then receive email or
      * text (SMS) messages when the status of your directory changes. You get
@@ -1792,6 +1920,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param registerEventTopicRequest
+     *        Registers a new event topic.
      * @return Result of the RegisterEventTopic operation returned by the
      *         service.
      * @throws EntityDoesNotExistException
@@ -1831,6 +1960,61 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new RegisterEventTopicResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes tags from an Amazon Directory Services directory.
+     * </p>
+     * 
+     * @param removeTagsFromResourceRequest
+     * @return Result of the RemoveTagsFromResource operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RemoveTagsFromResource
+     */
+    @Override
+    public RemoveTagsFromResourceResult removeTagsFromResource(
+            RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveTagsFromResourceRequest> request = null;
+        Response<RemoveTagsFromResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveTagsFromResourceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(removeTagsFromResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsFromResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RemoveTagsFromResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1916,6 +2100,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param updateConditionalForwarderRequest
+     *        Updates a conditional forwarder.
      * @return Result of the UpdateConditionalForwarder operation returned by
      *         the service.
      * @throws EntityDoesNotExistException
