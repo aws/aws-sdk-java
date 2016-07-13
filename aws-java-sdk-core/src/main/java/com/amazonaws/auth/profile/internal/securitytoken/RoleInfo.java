@@ -14,12 +14,13 @@
  */
 package com.amazonaws.auth.profile.internal.securitytoken;
 
-import java.io.Serializable;
-
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.internal.StaticCredentialsProvider;
 
+@SdkProtectedApi
 public class RoleInfo implements Cloneable {
     /**
      * <p>

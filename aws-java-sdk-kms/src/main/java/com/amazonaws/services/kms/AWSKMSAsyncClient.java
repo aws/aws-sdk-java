@@ -16,6 +16,7 @@
 package com.amazonaws.services.kms;
 
 import com.amazonaws.services.kms.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -361,6 +362,18 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on KMS
+     * using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AWSKMSAsyncClient(AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

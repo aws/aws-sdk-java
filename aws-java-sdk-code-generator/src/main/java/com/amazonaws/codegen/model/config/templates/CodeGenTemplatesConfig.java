@@ -27,6 +27,8 @@ import com.amazonaws.codegen.model.intermediate.Protocol;
 
 public class CodeGenTemplatesConfig {
 
+    private TopLevelTemplate syncClientBuilder = new TopLevelTemplate("/templates/common/SyncClientBuilder.ftl", null);
+    private TopLevelTemplate asyncClientBuilder = new TopLevelTemplate("/templates/common/AsyncClientBuilder.ftl", null);
     private TopLevelTemplate syncClient;
     private TopLevelTemplate asyncClient;
     private TopLevelTemplate syncAbstractClass;
@@ -128,6 +130,22 @@ public class CodeGenTemplatesConfig {
 
 
         return merged;
+    }
+
+    public TopLevelTemplate getSyncClientBuilder() {
+        return syncClientBuilder;
+    }
+
+    public void setSyncClientBuilder(TopLevelTemplate syncClientBuilder) {
+        this.syncClientBuilder = syncClientBuilder;
+    }
+
+    public TopLevelTemplate getAsyncClientBuilder() {
+        return asyncClientBuilder;
+    }
+
+    public void setAsyncClientBuilder(TopLevelTemplate syncClientBuilder) {
+        this.asyncClientBuilder = syncClientBuilder;
     }
 
     public TopLevelTemplate getSyncClient() {

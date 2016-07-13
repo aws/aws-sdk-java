@@ -16,6 +16,7 @@
 package com.amazonaws.services.directory;
 
 import com.amazonaws.services.directory.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -248,6 +249,18 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on
+     * Directory Service using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AWSDirectoryServiceAsyncClient(AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

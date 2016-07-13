@@ -19,13 +19,15 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "acm",
     "signingName" : "acm",
+    "jsonProtocol" : true,
+    "syncClientBuilderClassName" : "AWSCertificateManagerClientBuilder",
+    "asyncClientBuilderClassName" : "AWSCertificateManagerAsyncClientBuilder",
     "serviceName" : "ACM",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "AddTagsToCertificate" : {

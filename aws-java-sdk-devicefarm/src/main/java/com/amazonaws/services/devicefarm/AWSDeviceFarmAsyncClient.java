@@ -16,6 +16,7 @@
 package com.amazonaws.services.devicefarm;
 
 import com.amazonaws.services.devicefarm.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -247,6 +248,18 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on AWS
+     * Device Farm using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AWSDeviceFarmAsyncClient(AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

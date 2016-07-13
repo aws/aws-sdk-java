@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
 import com.amazonaws.services.databasemigrationservice.model.transform.*;
@@ -58,7 +59,7 @@ import com.amazonaws.services.databasemigrationservice.model.transform.*;
 public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
         implements AWSDatabaseMigrationService {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory
             .getLog(AWSDatabaseMigrationService.class);
@@ -76,6 +77,28 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidCertificateFault")
+                                    .withModeledClass(
+                                            com.amazonaws.services.databasemigrationservice.model.InvalidCertificateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UpgradeDependencyFailureFault")
+                                    .withModeledClass(
+                                            com.amazonaws.services.databasemigrationservice.model.UpgradeDependencyFailureException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InsufficientResourceCapacityFault")
+                                    .withModeledClass(
+                                            com.amazonaws.services.databasemigrationservice.model.InsufficientResourceCapacityException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceQuotaExceededFault")
+                                    .withModeledClass(
+                                            com.amazonaws.services.databasemigrationservice.model.ResourceQuotaExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("AccessDeniedFault")
@@ -103,12 +126,6 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                                             com.amazonaws.services.databasemigrationservice.model.SubnetAlreadyInUseException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "UpgradeDependencyFailureFault")
-                                    .withModeledClass(
-                                            com.amazonaws.services.databasemigrationservice.model.UpgradeDependencyFailureException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("ResourceAlreadyExistsFault")
                                     .withModeledClass(
                                             com.amazonaws.services.databasemigrationservice.model.ResourceAlreadyExistsException.class))
@@ -119,20 +136,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                                             com.amazonaws.services.databasemigrationservice.model.InvalidSubnetException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "InsufficientResourceCapacityFault")
-                                    .withModeledClass(
-                                            com.amazonaws.services.databasemigrationservice.model.InsufficientResourceCapacityException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("StorageQuotaExceededFault")
                                     .withModeledClass(
                                             com.amazonaws.services.databasemigrationservice.model.StorageQuotaExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("ResourceQuotaExceededFault")
-                                    .withModeledClass(
-                                            com.amazonaws.services.databasemigrationservice.model.ResourceQuotaExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -296,6 +302,22 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS Database
+     * Migration Service using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSDatabaseMigrationServiceClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {
@@ -613,6 +635,58 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * Deletes the specified certificate.
+     * </p>
+     * 
+     * @param deleteCertificateRequest
+     * @return Result of the DeleteCertificate operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
+     * @sample AWSDatabaseMigrationService.DeleteCertificate
+     */
+    @Override
+    public DeleteCertificateResult deleteCertificate(
+            DeleteCertificateRequest deleteCertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCertificateRequest> request = null;
+        Response<DeleteCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified endpoint.
      * </p>
      * <note>
@@ -877,6 +951,55 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
                             new JsonOperationMetadata().withPayloadJson(true)
                                     .withHasStreamingSuccessResponse(false),
                             new DescribeAccountAttributesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides a description of the certificate.
+     * </p>
+     * 
+     * @param describeCertificatesRequest
+     * @return Result of the DescribeCertificates operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeCertificates
+     */
+    @Override
+    public DescribeCertificatesResult describeCertificates(
+            DescribeCertificatesRequest describeCertificatesRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeCertificatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCertificatesRequest> request = null;
+        Response<DescribeCertificatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCertificatesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeCertificatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCertificatesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeCertificatesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1395,6 +1518,57 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * Uploads the specified certificate.
+     * </p>
+     * 
+     * @param importCertificateRequest
+     * @return Result of the ImportCertificate operation returned by the
+     *         service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws InvalidCertificateException
+     *         The certificate was not valid.
+     * @sample AWSDatabaseMigrationService.ImportCertificate
+     */
+    @Override
+    public ImportCertificateResult importCertificate(
+            ImportCertificateRequest importCertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(importCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportCertificateRequest> request = null;
+        Response<ImportCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(importCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ImportCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all tags for an AWS DMS resource.
      * </p>
      * 
@@ -1572,6 +1746,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @param modifyReplicationSubnetGroupRequest
      * @return Result of the ModifyReplicationSubnetGroup operation returned by
      *         the service.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws ResourceQuotaExceededException

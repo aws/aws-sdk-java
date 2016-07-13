@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.services.codecommit.model.transform.*;
@@ -107,7 +108,7 @@ import com.amazonaws.services.codecommit.model.transform.*;
 public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         AWSCodeCommit {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSCodeCommit.class);
 
@@ -127,9 +128,20 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "MaximumBranchesExceededException")
+                                            "RepositoryLimitExceededException")
                                     .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.MaximumBranchesExceededException.class))
+                                            com.amazonaws.services.codecommit.model.RepositoryLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "EncryptionKeyDisabledException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.EncryptionKeyDisabledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("CommitIdRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.CommitIdRequiredException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -139,14 +151,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "InvalidRepositoryNameException")
+                                            "InvalidRepositoryDescriptionException")
                                     .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.InvalidRepositoryNameException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidSortByException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.InvalidSortByException.class))
+                                            com.amazonaws.services.codecommit.model.InvalidRepositoryDescriptionException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -156,39 +163,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "EncryptionKeyDisabledException")
+                                            "MaximumRepositoryTriggersExceededException")
                                     .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.EncryptionKeyDisabledException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "InvalidRepositoryDescriptionException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.InvalidRepositoryDescriptionException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "InvalidRepositoryTriggerNameException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerNameException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "InvalidRepositoryTriggerRegionException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerRegionException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "BranchNameRequiredException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.BranchNameRequiredException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "EncryptionKeyAccessDeniedException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.EncryptionKeyAccessDeniedException.class))
+                                            com.amazonaws.services.codecommit.model.MaximumRepositoryTriggersExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -197,109 +174,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerBranchNameException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "RepositoryNameExistsException")
+                                    .withErrorCode("InvalidSortByException")
                                     .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.RepositoryNameExistsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "RepositoryTriggerDestinationArnRequiredException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.RepositoryTriggerDestinationArnRequiredException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "RepositoryLimitExceededException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.RepositoryLimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidOrderException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.InvalidOrderException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidCommitIdException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.InvalidCommitIdException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "RepositoryNameRequiredException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.RepositoryNameRequiredException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "EncryptionKeyUnavailableException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.EncryptionKeyUnavailableException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "RepositoryTriggerNameRequiredException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.RepositoryTriggerNameRequiredException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "BranchDoesNotExistException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.BranchDoesNotExistException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "RepositoryTriggersListRequiredException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.RepositoryTriggersListRequiredException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "InvalidRepositoryTriggerEventsException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerEventsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "RepositoryDoesNotExistException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.RepositoryDoesNotExistException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("BranchNameExistsException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.BranchNameExistsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "RepositoryTriggerEventsListRequiredException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.RepositoryTriggerEventsListRequiredException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "InvalidContinuationTokenException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.InvalidContinuationTokenException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "EncryptionIntegrityChecksFailedException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.EncryptionIntegrityChecksFailedException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "MaximumRepositoryTriggersExceededException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.MaximumRepositoryTriggersExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "CommitIdDoesNotExistException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.CommitIdDoesNotExistException.class))
+                                            com.amazonaws.services.codecommit.model.InvalidSortByException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -309,9 +186,84 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
+                                            "EncryptionKeyAccessDeniedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.EncryptionKeyAccessDeniedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryNameRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryNameRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidRepositoryTriggerRegionException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerRegionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryTriggerDestinationArnRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryTriggerDestinationArnRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryNameExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryNameExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("BranchNameExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.BranchNameExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryTriggersListRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryTriggersListRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "BranchDoesNotExistException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.BranchDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "EncryptionIntegrityChecksFailedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.EncryptionIntegrityChecksFailedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryTriggerEventsListRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryTriggerEventsListRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidCommitIdException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidCommitIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidOrderException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidOrderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
                                             "CommitDoesNotExistException")
                                     .withModeledClass(
                                             com.amazonaws.services.codecommit.model.CommitDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryTriggerBranchNameListRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryTriggerBranchNameListRequiredException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -321,25 +273,74 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
+                                            "InvalidRepositoryTriggerEventsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerEventsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "BranchNameRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.BranchNameRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryTriggerNameRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryTriggerNameRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidRepositoryTriggerNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "CommitIdDoesNotExistException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.CommitIdDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "EncryptionKeyUnavailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.EncryptionKeyUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
                                             "MaximumRepositoryNamesExceededException")
                                     .withModeledClass(
                                             com.amazonaws.services.codecommit.model.MaximumRepositoryNamesExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("CommitIdRequiredException")
+                                    .withErrorCode(
+                                            "InvalidRepositoryNameException")
                                     .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.CommitIdRequiredException.class))
+                                            com.amazonaws.services.codecommit.model.InvalidRepositoryNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RepositoryDoesNotExistException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.RepositoryDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidContinuationTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.InvalidContinuationTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "MaximumBranchesExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codecommit.model.MaximumBranchesExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidBranchNameException")
                                     .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.InvalidBranchNameException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "RepositoryTriggerBranchNameListRequiredException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.codecommit.model.RepositoryTriggerBranchNameListRequiredException.class)));
+                                            com.amazonaws.services.codecommit.model.InvalidBranchNameException.class)));
 
     /**
      * Constructs a new client to invoke service methods on CodeCommit. A
@@ -488,6 +489,22 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on CodeCommit using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSCodeCommitClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

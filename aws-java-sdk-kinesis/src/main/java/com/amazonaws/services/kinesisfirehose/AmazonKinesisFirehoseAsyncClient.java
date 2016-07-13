@@ -16,6 +16,7 @@
 package com.amazonaws.services.kinesisfirehose;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -247,6 +248,19 @@ public class AmazonKinesisFirehoseAsyncClient extends
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on
+     * Firehose using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AmazonKinesisFirehoseAsyncClient(
+            AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

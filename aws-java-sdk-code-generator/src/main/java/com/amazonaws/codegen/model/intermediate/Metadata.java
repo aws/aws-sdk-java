@@ -212,6 +212,20 @@ public class Metadata {
         return this;
     }
 
+    /**
+     * @return The class name for the fluent sync client builder.
+     */
+    public String getSyncClientBuilderClassName() {
+        return syncClient + "Builder";
+    }
+
+    /**
+     * @return The class name for the fluent async client builder.
+     */
+    public String getAsyncClientBuilderClassName() {
+        return asyncClient + "Builder";
+    }
+
     public String getPackageName() {
         return packageName;
     }

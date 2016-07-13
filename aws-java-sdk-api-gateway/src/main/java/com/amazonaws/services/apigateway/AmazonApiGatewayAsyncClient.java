@@ -16,6 +16,7 @@
 package com.amazonaws.services.apigateway;
 
 import com.amazonaws.services.apigateway.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -250,6 +251,18 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * API Gateway using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AmazonApiGatewayAsyncClient(AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

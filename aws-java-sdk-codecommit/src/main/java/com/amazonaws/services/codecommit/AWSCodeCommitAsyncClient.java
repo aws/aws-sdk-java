@@ -16,6 +16,7 @@
 package com.amazonaws.services.codecommit;
 
 import com.amazonaws.services.codecommit.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -300,6 +301,18 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on
+     * CodeCommit using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AWSCodeCommitAsyncClient(AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

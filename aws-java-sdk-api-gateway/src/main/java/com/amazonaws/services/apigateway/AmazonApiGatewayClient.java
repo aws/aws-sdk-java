@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.services.apigateway.model.transform.*;
@@ -56,7 +57,7 @@ import com.amazonaws.services.apigateway.model.transform.*;
 public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         AmazonApiGateway {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonApiGateway.class);
 
@@ -76,6 +77,11 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                     .withContentTypeOverride("")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("NotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.apigateway.model.NotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("UnauthorizedException")
                                     .withModeledClass(
                                             com.amazonaws.services.apigateway.model.UnauthorizedException.class))
@@ -86,19 +92,15 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.apigateway.model.LimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("BadRequestException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.apigateway.model.BadRequestException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("ConflictException")
                                     .withModeledClass(
                                             com.amazonaws.services.apigateway.model.ConflictException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("NotFoundException")
+                                    .withErrorCode(
+                                            "ServiceUnavailableException")
                                     .withModeledClass(
-                                            com.amazonaws.services.apigateway.model.NotFoundException.class))
+                                            com.amazonaws.services.apigateway.model.ServiceUnavailableException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("TooManyRequestsException")
@@ -106,10 +108,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.apigateway.model.TooManyRequestsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "ServiceUnavailableException")
+                                    .withErrorCode("BadRequestException")
                                     .withModeledClass(
-                                            com.amazonaws.services.apigateway.model.ServiceUnavailableException.class)));
+                                            com.amazonaws.services.apigateway.model.BadRequestException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon API Gateway.
@@ -265,6 +266,22 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon API Gateway
+     * using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonApiGatewayClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

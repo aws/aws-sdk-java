@@ -16,6 +16,7 @@
 package com.amazonaws.services.simpledb;
 
 import com.amazonaws.services.simpledb.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -261,6 +262,18 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient implements
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * SimpleDB using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AmazonSimpleDBAsyncClient(AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

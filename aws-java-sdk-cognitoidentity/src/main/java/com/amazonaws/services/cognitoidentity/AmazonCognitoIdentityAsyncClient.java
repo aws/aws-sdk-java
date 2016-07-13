@@ -16,6 +16,7 @@
 package com.amazonaws.services.cognitoidentity;
 
 import com.amazonaws.services.cognitoidentity.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -286,6 +287,19 @@ public class AmazonCognitoIdentityAsyncClient extends
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * Cognito Identity using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AmazonCognitoIdentityAsyncClient(
+            AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

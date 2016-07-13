@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.services.gamelift.model.transform.*;
@@ -181,7 +182,7 @@ import com.amazonaws.services.gamelift.model.transform.*;
 public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         AmazonGameLift {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonGameLift.class);
 
@@ -200,6 +201,21 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidRequestException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.InvalidRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("GameSessionFullException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.GameSessionFullException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("NotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.NotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("UnauthorizedException")
                                     .withModeledClass(
                                             com.amazonaws.services.gamelift.model.UnauthorizedException.class))
@@ -211,24 +227,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "InvalidGameSessionStatusException")
+                                            "InvalidFleetStatusException")
                                     .withModeledClass(
-                                            com.amazonaws.services.gamelift.model.InvalidGameSessionStatusException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("ConflictException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.gamelift.model.ConflictException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("NotFoundException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.gamelift.model.NotFoundException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InternalServiceException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.gamelift.model.InternalServiceException.class))
+                                            com.amazonaws.services.gamelift.model.InvalidFleetStatusException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -237,26 +238,26 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.gamelift.model.FleetCapacityExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("ConflictException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.gamelift.model.ConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode(
                                             "TerminalRoutingStrategyException")
                                     .withModeledClass(
                                             com.amazonaws.services.gamelift.model.TerminalRoutingStrategyException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("GameSessionFullException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.gamelift.model.GameSessionFullException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "InvalidFleetStatusException")
+                                            "InvalidGameSessionStatusException")
                                     .withModeledClass(
-                                            com.amazonaws.services.gamelift.model.InvalidFleetStatusException.class))
+                                            com.amazonaws.services.gamelift.model.InvalidGameSessionStatusException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidRequestException")
+                                    .withErrorCode("InternalServiceException")
                                     .withModeledClass(
-                                            com.amazonaws.services.gamelift.model.InvalidRequestException.class)));
+                                            com.amazonaws.services.gamelift.model.InternalServiceException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon GameLift. A
@@ -410,6 +411,22 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon GameLift
+     * using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonGameLiftClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

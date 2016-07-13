@@ -16,6 +16,7 @@
 package com.amazonaws.services.datapipeline;
 
 import com.amazonaws.services.datapipeline.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -268,6 +269,18 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on AWS
+     * Data Pipeline using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public DataPipelineAsyncClient(AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

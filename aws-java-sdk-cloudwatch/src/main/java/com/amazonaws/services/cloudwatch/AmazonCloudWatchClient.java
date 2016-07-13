@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.cloudwatch.model.*;
 import com.amazonaws.services.cloudwatch.model.transform.*;
@@ -68,7 +69,7 @@ import com.amazonaws.services.cloudwatch.model.transform.*;
 public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
         AmazonCloudWatch {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonCloudWatch.class);
 
@@ -237,18 +238,34 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on CloudWatch using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonCloudWatchClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+    }
+
     private void init() {
-        exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidParameterCombinationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidFormatExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new MissingRequiredParameterExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InternalServiceExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidParameterValueExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidParameterCombinationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InternalServiceExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);

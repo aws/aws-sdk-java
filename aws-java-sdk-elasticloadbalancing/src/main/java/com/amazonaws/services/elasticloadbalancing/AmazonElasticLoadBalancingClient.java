@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.elasticloadbalancing.model.*;
 import com.amazonaws.services.elasticloadbalancing.model.transform.*;
@@ -72,7 +73,7 @@ import com.amazonaws.services.elasticloadbalancing.model.transform.*;
 public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
         implements AmazonElasticLoadBalancing {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory
             .getLog(AmazonElasticLoadBalancing.class);
@@ -249,36 +250,52 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Elastic Load
+     * Balancing using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonElasticLoadBalancingClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+    }
+
     private void init() {
         exceptionUnmarshallers
                 .add(new LoadBalancerAttributeNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidInstanceExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SubnetNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CertificateNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DuplicatePolicyNameExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyTagsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyPoliciesExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DuplicateLoadBalancerNameExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DuplicateListenerExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidSchemeExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new PolicyNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidSecurityGroupExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new PolicyTypeNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new LoadBalancerNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new TooManyLoadBalancersExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidConfigurationRequestExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ListenerNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidSecurityGroupExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DuplicateLoadBalancerNameExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new PolicyNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CertificateNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DuplicateTagKeysExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyTagsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ListenerNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyPoliciesExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DuplicatePolicyNameExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SubnetNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DuplicateListenerExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidSchemeExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new PolicyTypeNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidInstanceExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);

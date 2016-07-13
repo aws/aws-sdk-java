@@ -109,6 +109,16 @@ public class EndpointJsonUnmarshaller implements
                     endpoint.setEndpointArn(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("CertificateArn", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setCertificateArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("SslMode", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setSslMode(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

@@ -16,6 +16,7 @@
 package com.amazonaws.services.dynamodbv2;
 
 import com.amazonaws.services.dynamodbv2.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -280,6 +281,19 @@ public class AmazonDynamoDBStreamsAsyncClient extends
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * DynamoDB Streams using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AmazonDynamoDBStreamsAsyncClient(
+            AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

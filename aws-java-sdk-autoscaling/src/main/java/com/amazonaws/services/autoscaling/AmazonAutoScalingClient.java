@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.autoscaling.model.*;
 import com.amazonaws.services.autoscaling.model.transform.*;
@@ -55,7 +56,7 @@ import com.amazonaws.services.autoscaling.model.transform.*;
 public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
         AmazonAutoScaling {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonAutoScaling.class);
 
@@ -224,15 +225,31 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Auto Scaling using
+     * the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonAutoScalingClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+    }
+
     private void init() {
         exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new AlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ResourceContentionExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new ScalingActivityInProgressExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new AlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ResourceContentionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);

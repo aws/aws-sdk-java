@@ -16,6 +16,7 @@
 package com.amazonaws.services.simplesystemsmanagement;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -450,6 +451,19 @@ public class AWSSimpleSystemsManagementAsyncClient extends
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * SSM using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AWSSimpleSystemsManagementAsyncClient(
+            AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

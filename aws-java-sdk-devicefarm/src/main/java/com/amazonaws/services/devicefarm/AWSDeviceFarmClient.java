@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.services.devicefarm.model.transform.*;
@@ -53,7 +54,7 @@ import com.amazonaws.services.devicefarm.model.transform.*;
 public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         AWSDeviceFarm {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSDeviceFarm.class);
 
@@ -253,6 +254,22 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS Device Farm
+     * using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSDeviceFarmClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

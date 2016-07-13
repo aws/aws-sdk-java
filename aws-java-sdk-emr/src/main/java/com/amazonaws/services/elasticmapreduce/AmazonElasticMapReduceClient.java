@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.services.elasticmapreduce.model.transform.*;
@@ -55,7 +56,7 @@ import com.amazonaws.services.elasticmapreduce.model.transform.*;
 public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
         implements AmazonElasticMapReduce {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory
             .getLog(AmazonElasticMapReduce.class);
@@ -75,6 +76,11 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidRequestException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticmapreduce.model.InvalidRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("InternalServerException")
                                     .withModeledClass(
                                             com.amazonaws.services.elasticmapreduce.model.InternalServerException.class))
@@ -82,12 +88,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InternalServerError")
                                     .withModeledClass(
-                                            com.amazonaws.services.elasticmapreduce.model.InternalServerErrorException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidRequestException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.elasticmapreduce.model.InvalidRequestException.class)));
+                                            com.amazonaws.services.elasticmapreduce.model.InternalServerErrorException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon EMR. A
@@ -239,6 +240,22 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon EMR using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonElasticMapReduceClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

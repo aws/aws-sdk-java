@@ -16,6 +16,7 @@
 package com.amazonaws.services.elasticmapreduce;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -248,6 +249,19 @@ public class AmazonElasticMapReduceAsyncClient extends
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * EMR using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AmazonElasticMapReduceAsyncClient(
+            AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

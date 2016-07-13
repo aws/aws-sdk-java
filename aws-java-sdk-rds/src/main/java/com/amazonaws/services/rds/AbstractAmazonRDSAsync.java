@@ -89,6 +89,21 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements
     }
 
     @Override
+    public java.util.concurrent.Future<DBClusterParameterGroup> copyDBClusterParameterGroupAsync(
+            CopyDBClusterParameterGroupRequest request) {
+
+        return copyDBClusterParameterGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBClusterParameterGroup> copyDBClusterParameterGroupAsync(
+            CopyDBClusterParameterGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<CopyDBClusterParameterGroupRequest, DBClusterParameterGroup> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DBClusterSnapshot> copyDBClusterSnapshotAsync(
             CopyDBClusterSnapshotRequest request) {
 

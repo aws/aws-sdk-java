@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.services.route53domains.model.transform.*;
@@ -50,7 +51,7 @@ import com.amazonaws.services.route53domains.model.transform.*;
 public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         implements AmazonRoute53Domains {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory
             .getLog(AmazonRoute53Domains.class);
@@ -70,9 +71,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("OperationLimitExceeded")
+                                    .withErrorCode("DuplicateRequest")
                                     .withModeledClass(
-                                            com.amazonaws.services.route53domains.model.OperationLimitExceededException.class))
+                                            com.amazonaws.services.route53domains.model.DuplicateRequestException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidInput")
@@ -80,14 +81,14 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                                             com.amazonaws.services.route53domains.model.InvalidInputException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("DomainLimitExceeded")
-                                    .withModeledClass(
-                                            com.amazonaws.services.route53domains.model.DomainLimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("TLDRulesViolation")
                                     .withModeledClass(
                                             com.amazonaws.services.route53domains.model.TLDRulesViolationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DomainLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.route53domains.model.DomainLimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("UnsupportedTLD")
@@ -95,9 +96,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                                             com.amazonaws.services.route53domains.model.UnsupportedTLDException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("DuplicateRequest")
+                                    .withErrorCode("OperationLimitExceeded")
                                     .withModeledClass(
-                                            com.amazonaws.services.route53domains.model.DuplicateRequestException.class)));
+                                            com.amazonaws.services.route53domains.model.OperationLimitExceededException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Route 53
@@ -254,6 +255,22 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon Route 53
+     * Domains using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonRoute53DomainsClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

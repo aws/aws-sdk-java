@@ -56,6 +56,12 @@ public class FailoverDBClusterRequestMarshaller implements
                             .getDBClusterIdentifier()));
         }
 
+        if (failoverDBClusterRequest.getTargetDBInstanceIdentifier() != null) {
+            request.addParameter("TargetDBInstanceIdentifier", StringUtils
+                    .fromString(failoverDBClusterRequest
+                            .getTargetDBInstanceIdentifier()));
+        }
+
         return request;
     }
 

@@ -18,6 +18,7 @@ import com.amazonaws.AbortedException;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
@@ -158,6 +159,12 @@ public class TransferManager {
     private final boolean shutDownThreadPools;
 
     /**
+     * Flag indicating whether the transfer manager is mutable or not. Legacy managers built via the
+     * constructors are mutable. TransferManagers built with the fluent builders are immutable.
+     */
+    private final boolean isImmutable;
+
+    /**
      * Constructs a new <code>TransferManager</code> and Amazon S3 client using
      * the credentials from <code>DefaultAWSCredentialsProviderChain</code>
      * <p>
@@ -286,8 +293,17 @@ public class TransferManager {
         this.executorService = executorService;
         this.configuration = new TransferManagerConfiguration();
         this.shutDownThreadPools = shutDownThreadPools;
+        this.isImmutable = false;
     }
 
+    @SdkInternalApi
+    TransferManager(TransferManagerParams params) {
+        this.s3 = params.getS3Client();
+        this.executorService = params.getExecutorService();
+        this.configuration = params.getConfiguration();
+        this.shutDownThreadPools = params.getShutDownThreadPools();
+        this.isImmutable = true;
+    }
 
     /**
      * Sets the configuration which specifies how
@@ -299,6 +315,7 @@ public class TransferManager {
      *            processes requests.
      */
     public void setConfiguration(TransferManagerConfiguration configuration) {
+        checkMutability();
         this.configuration = configuration;
     }
 
@@ -1786,5 +1803,17 @@ public class TransferManager {
     @Override
     protected void finalize() throws Throwable {
         shutdownThreadPools();
+    }
+
+    /**
+     * If the client has been marked as immutable then throw an {@link
+     * UnsupportedOperationException}, otherwise do nothing. Should be called by each mutating
+     * method.
+     */
+    private void checkMutability() {
+        if (isImmutable) {
+            throw new UnsupportedOperationException(
+                    "TransferManager is immutable when created with the builder.");
+        }
     }
 }

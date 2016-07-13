@@ -280,6 +280,27 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Copies the specified DB cluster parameter group.
+     * </p>
+     * 
+     * @param copyDBClusterParameterGroupRequest
+     * @return Result of the CopyDBClusterParameterGroup operation returned by
+     *         the service.
+     * @throws DBParameterGroupNotFoundException
+     *         <i>DBParameterGroupName</i> does not refer to an existing DB
+     *         parameter group.
+     * @throws DBParameterGroupQuotaExceededException
+     *         Request would result in user exceeding the allowed number of DB
+     *         parameter groups.
+     * @throws DBParameterGroupAlreadyExistsException
+     *         A DB parameter group with the same name exists.
+     * @sample AmazonRDS.CopyDBClusterParameterGroup
+     */
+    DBClusterParameterGroup copyDBClusterParameterGroup(
+            CopyDBClusterParameterGroupRequest copyDBClusterParameterGroupRequest);
+
+    /**
+     * <p>
      * Creates a snapshot of a DB cluster. For more information on Amazon
      * Aurora, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"
@@ -1801,6 +1822,8 @@ public interface AmazonRDS {
      *         cluster.
      * @throws InvalidDBClusterStateException
      *         The DB cluster is not in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
      * @sample AmazonRDS.FailoverDBCluster
      */
     DBCluster failoverDBCluster(

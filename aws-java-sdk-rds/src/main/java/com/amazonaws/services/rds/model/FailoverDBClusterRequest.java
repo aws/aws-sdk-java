@@ -52,6 +52,16 @@ public class FailoverDBClusterRequest extends AmazonWebServiceRequest implements
      * </ul>
      */
     private String dBClusterIdentifier;
+    /**
+     * <p>
+     * The name of the instance to promote to the primary instance.
+     * </p>
+     * <p>
+     * You must specify the instance identifier for an Aurora Replica in the DB
+     * cluster. For example, <code>mydbcluster-replica1</code>.
+     * </p>
+     */
+    private String targetDBInstanceIdentifier;
 
     /**
      * <p>
@@ -219,6 +229,69 @@ public class FailoverDBClusterRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The name of the instance to promote to the primary instance.
+     * </p>
+     * <p>
+     * You must specify the instance identifier for an Aurora Replica in the DB
+     * cluster. For example, <code>mydbcluster-replica1</code>.
+     * </p>
+     * 
+     * @param targetDBInstanceIdentifier
+     *        The name of the instance to promote to the primary instance.</p>
+     *        <p>
+     *        You must specify the instance identifier for an Aurora Replica in
+     *        the DB cluster. For example, <code>mydbcluster-replica1</code>.
+     */
+
+    public void setTargetDBInstanceIdentifier(String targetDBInstanceIdentifier) {
+        this.targetDBInstanceIdentifier = targetDBInstanceIdentifier;
+    }
+
+    /**
+     * <p>
+     * The name of the instance to promote to the primary instance.
+     * </p>
+     * <p>
+     * You must specify the instance identifier for an Aurora Replica in the DB
+     * cluster. For example, <code>mydbcluster-replica1</code>.
+     * </p>
+     * 
+     * @return The name of the instance to promote to the primary instance.</p>
+     *         <p>
+     *         You must specify the instance identifier for an Aurora Replica in
+     *         the DB cluster. For example, <code>mydbcluster-replica1</code>.
+     */
+
+    public String getTargetDBInstanceIdentifier() {
+        return this.targetDBInstanceIdentifier;
+    }
+
+    /**
+     * <p>
+     * The name of the instance to promote to the primary instance.
+     * </p>
+     * <p>
+     * You must specify the instance identifier for an Aurora Replica in the DB
+     * cluster. For example, <code>mydbcluster-replica1</code>.
+     * </p>
+     * 
+     * @param targetDBInstanceIdentifier
+     *        The name of the instance to promote to the primary instance.</p>
+     *        <p>
+     *        You must specify the instance identifier for an Aurora Replica in
+     *        the DB cluster. For example, <code>mydbcluster-replica1</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public FailoverDBClusterRequest withTargetDBInstanceIdentifier(
+            String targetDBInstanceIdentifier) {
+        setTargetDBInstanceIdentifier(targetDBInstanceIdentifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -231,7 +304,10 @@ public class FailoverDBClusterRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterIdentifier() != null)
-            sb.append("DBClusterIdentifier: " + getDBClusterIdentifier());
+            sb.append("DBClusterIdentifier: " + getDBClusterIdentifier() + ",");
+        if (getTargetDBInstanceIdentifier() != null)
+            sb.append("TargetDBInstanceIdentifier: "
+                    + getTargetDBInstanceIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -253,6 +329,13 @@ public class FailoverDBClusterRequest extends AmazonWebServiceRequest implements
                 && other.getDBClusterIdentifier().equals(
                         this.getDBClusterIdentifier()) == false)
             return false;
+        if (other.getTargetDBInstanceIdentifier() == null
+                ^ this.getTargetDBInstanceIdentifier() == null)
+            return false;
+        if (other.getTargetDBInstanceIdentifier() != null
+                && other.getTargetDBInstanceIdentifier().equals(
+                        this.getTargetDBInstanceIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -265,6 +348,10 @@ public class FailoverDBClusterRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getDBClusterIdentifier() == null) ? 0
                         : getDBClusterIdentifier().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTargetDBInstanceIdentifier() == null) ? 0
+                        : getTargetDBInstanceIdentifier().hashCode());
         return hashCode;
     }
 

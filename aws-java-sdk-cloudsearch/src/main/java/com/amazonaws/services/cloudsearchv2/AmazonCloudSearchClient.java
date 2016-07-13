@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.cloudsearchv2.model.*;
 import com.amazonaws.services.cloudsearchv2.model.transform.*;
@@ -63,7 +64,7 @@ import com.amazonaws.services.cloudsearchv2.model.transform.*;
 public class AmazonCloudSearchClient extends AmazonWebServiceClient implements
         AmazonCloudSearch {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonCloudSearch.class);
 
@@ -237,13 +238,29 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Amazon CloudSearch
+     * using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonCloudSearchClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+    }
+
     private void init() {
-        exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new BaseExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InternalExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new DisabledOperationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BaseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InternalExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTypeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 

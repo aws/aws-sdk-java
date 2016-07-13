@@ -125,6 +125,14 @@ public class CreateEndpointRequestMarshaller implements
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (createEndpointRequest.getCertificateArn() != null) {
+                jsonGenerator.writeFieldName("CertificateArn").writeValue(
+                        createEndpointRequest.getCertificateArn());
+            }
+            if (createEndpointRequest.getSslMode() != null) {
+                jsonGenerator.writeFieldName("SslMode").writeValue(
+                        createEndpointRequest.getSslMode());
+            }
 
             jsonGenerator.writeEndObject();
 

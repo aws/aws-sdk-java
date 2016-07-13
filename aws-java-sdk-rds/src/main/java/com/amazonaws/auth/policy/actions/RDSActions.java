@@ -35,6 +35,8 @@ public enum RDSActions implements Action {
     ApplyPendingMaintenanceAction("rds:ApplyPendingMaintenanceAction"),
     /** Action for the AuthorizeDBSecurityGroupIngress operation. */
     AuthorizeDBSecurityGroupIngress("rds:AuthorizeDBSecurityGroupIngress"),
+    /** Action for the CopyDBClusterParameterGroup operation. */
+    CopyDBClusterParameterGroup("rds:CopyDBClusterParameterGroup"),
     /** Action for the CopyDBClusterSnapshot operation. */
     CopyDBClusterSnapshot("rds:CopyDBClusterSnapshot"),
     /** Action for the CopyDBParameterGroup operation. */

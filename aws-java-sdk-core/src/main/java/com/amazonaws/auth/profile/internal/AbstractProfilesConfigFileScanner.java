@@ -71,6 +71,14 @@ public abstract class AbstractProfilesConfigFileScanner {
                                               boolean isSupportedProperty,
                                               String line);
 
+    /**
+     * Hook to allow subclasses to determine which properties are supported and which aren't.
+     *
+     * @return True if property is supported by scanner implementation, false otherwise.
+     */
+    protected boolean isSupportedProperty(String propertyName) {
+        return true;
+    }
 
     /**
      * Scan through the given input, and perform the defined actions.
@@ -161,13 +169,4 @@ public abstract class AbstractProfilesConfigFileScanner {
         return new AbstractMap.SimpleImmutableEntry<String, String>(propertyKey, propertyValue);
     }
 
-    private static boolean isSupportedProperty(String propertyName) {
-        return Profile.AWS_ACCESS_KEY_ID.equals(propertyName)
-               || Profile.AWS_SECRET_ACCESS_KEY.equals(propertyName)
-               || Profile.AWS_SESSION_TOKEN.equals(propertyName)
-               || Profile.EXTERNAL_ID.equals(propertyName)
-               || Profile.ROLE_ARN.equals(propertyName)
-               || Profile.ROLE_SESSION_NAME.equals(propertyName)
-               || Profile.SOURCE_PROFILE.equals(propertyName);
-    }
 }

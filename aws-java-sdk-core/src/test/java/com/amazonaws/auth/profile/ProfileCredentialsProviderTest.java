@@ -14,54 +14,47 @@
  */
 package com.amazonaws.auth.profile;
 
-import java.io.File;
-import java.lang.reflect.Field;
-import java.net.URL;
-import java.util.Map;
-
+import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.profile.internal.AwsProfileNameLoader;
+import com.amazonaws.auth.profile.internal.Profile;
 import com.amazonaws.auth.profile.internal.securitytoken.ProfileCredentialsService;
 import com.amazonaws.auth.profile.internal.securitytoken.RoleInfo;
 import com.amazonaws.internal.StaticCredentialsProvider;
+
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.auth.profile.internal.Profile;
+import java.io.File;
+import java.lang.reflect.Field;
+import java.util.Map;
 
 public class ProfileCredentialsProviderTest {
 
     private static final String DEFAULT_PROFILE_NAME = "default";
 
-    private static String PROFILE_FILE =
-            "ProfilesContainingOtherConfigurations.tst";
-
-    private static String profileLocation = null;
+    private static File profileLocation = null;
 
     @BeforeClass
     public static void setUp() {
-        profileLocation = getLocationForTestFile(PROFILE_FILE);
+        profileLocation = ProfileResourceLoader.profilesContainingOtherConfiguration().asFile();
     }
 
-    private static String getLocationForTestFile(String name) {
-        URL url = ProfileCredentialsProviderTest.class
-                .getResource("/resources/profileconfig/" + name);
-        return url.getFile();
+    private ProfileCredentialsProvider newProvider() {
+        return new ProfileCredentialsProvider(profileLocation.getAbsolutePath(), null);
     }
 
     @Test
     public void testDefault() {
-        ProfileCredentialsProvider provider =
-                new ProfileCredentialsProvider(profileLocation, null);
+        ProfileCredentialsProvider provider = newProvider();
 
         AWSCredentials credentials = provider.getCredentials();
 
         // Yep, this is correct - they're backwards in
         // ProfilesContainingOtherConfigurations.tst
-        Assert.assertEquals("defaultSecretAccessKey",
-                            credentials.getAWSAccessKeyId());
+        Assert.assertEquals("defaultSecretAccessKey", credentials.getAWSAccessKeyId());
 
         Assert.assertEquals("defaultAccessKey", credentials.getAWSSecretKey());
     }
@@ -78,39 +71,32 @@ public class ProfileCredentialsProviderTest {
         Map<String, String> env = (Map<String, String>) m.get(immutableEnv);
 
         try {
-            env.put(ProfilesConfigFile.AWS_PROFILE_ENVIRONMENT_VARIABLE,
-                    "test");
+            env.put(AwsProfileNameLoader.AWS_PROFILE_ENVIRONMENT_VARIABLE, "test");
 
-            ProfileCredentialsProvider provider =
-                    new ProfileCredentialsProvider(profileLocation, null);
+            ProfileCredentialsProvider provider = newProvider();
 
             AWSCredentials credentials = provider.getCredentials();
             Assert.assertEquals("test", credentials.getAWSAccessKeyId());
             Assert.assertEquals("test key", credentials.getAWSSecretKey());
 
         } finally {
-            env.remove(ProfilesConfigFile.AWS_PROFILE_ENVIRONMENT_VARIABLE);
+            env.remove(AwsProfileNameLoader.AWS_PROFILE_ENVIRONMENT_VARIABLE);
         }
     }
 
     @Test
     public void testSystemProperty() {
         try {
-            System.setProperty(
-                    ProfilesConfigFile.AWS_PROFILE_SYSTEM_PROPERTY,
-                    "test");
+            System.setProperty(AwsProfileNameLoader.AWS_PROFILE_SYSTEM_PROPERTY, "test");
 
-            ProfileCredentialsProvider provider =
-                    new ProfileCredentialsProvider(profileLocation, null);
+            ProfileCredentialsProvider provider = newProvider();
 
             AWSCredentials credentials = provider.getCredentials();
             Assert.assertEquals("test", credentials.getAWSAccessKeyId());
             Assert.assertEquals("test key", credentials.getAWSSecretKey());
 
         } finally {
-            System.setProperty(
-                    ProfilesConfigFile.AWS_PROFILE_SYSTEM_PROPERTY,
-                    "");
+            System.setProperty(AwsProfileNameLoader.AWS_PROFILE_SYSTEM_PROPERTY, "");
         }
     }
 
@@ -127,26 +113,20 @@ public class ProfileCredentialsProviderTest {
 
         try {
             // If both are set, env var should take precedence.
-            env.put(ProfilesConfigFile.AWS_PROFILE_ENVIRONMENT_VARIABLE,
-                    "test");
+            env.put(AwsProfileNameLoader.AWS_PROFILE_ENVIRONMENT_VARIABLE, "test");
 
-            System.setProperty(
-                    ProfilesConfigFile.AWS_PROFILE_SYSTEM_PROPERTY,
-                    "bogus");
+            System.setProperty(AwsProfileNameLoader.AWS_PROFILE_SYSTEM_PROPERTY, "bogus");
 
-            ProfileCredentialsProvider provider =
-                    new ProfileCredentialsProvider(profileLocation, null);
+            ProfileCredentialsProvider provider = newProvider();
 
             AWSCredentials credentials = provider.getCredentials();
             Assert.assertEquals("test", credentials.getAWSAccessKeyId());
             Assert.assertEquals("test key", credentials.getAWSSecretKey());
 
         } finally {
-            System.setProperty(
-                    ProfilesConfigFile.AWS_PROFILE_SYSTEM_PROPERTY,
-                    "");
+            System.setProperty(AwsProfileNameLoader.AWS_PROFILE_SYSTEM_PROPERTY, "");
 
-            env.remove(ProfilesConfigFile.AWS_PROFILE_ENVIRONMENT_VARIABLE);
+            env.remove(AwsProfileNameLoader.AWS_PROFILE_ENVIRONMENT_VARIABLE);
         }
     }
 
@@ -163,16 +143,13 @@ public class ProfileCredentialsProviderTest {
         Map<String, String> env = (Map<String, String>) m.get(immutableEnv);
 
         try {
-            env.put(ProfilesConfigFile.AWS_PROFILE_ENVIRONMENT_VARIABLE,
-                    "test");
+            env.put(AwsProfileNameLoader.AWS_PROFILE_ENVIRONMENT_VARIABLE, "test");
 
-            System.setProperty(
-                    ProfilesConfigFile.AWS_PROFILE_SYSTEM_PROPERTY,
-                    "test");
+            System.setProperty(AwsProfileNameLoader.AWS_PROFILE_SYSTEM_PROPERTY, "test");
 
             // If an explicit override is provided, that beats anything else.
-            ProfileCredentialsProvider provider =
-                    new ProfileCredentialsProvider(profileLocation, "bogus");
+            ProfileCredentialsProvider provider = new ProfileCredentialsProvider(
+                    profileLocation.getAbsolutePath(), "bogus");
 
             try {
                 provider.getCredentials();
@@ -181,21 +158,23 @@ public class ProfileCredentialsProviderTest {
             }
 
         } finally {
-            System.setProperty(
-                    ProfilesConfigFile.AWS_PROFILE_SYSTEM_PROPERTY,
-                    "");
+            System.setProperty(AwsProfileNameLoader.AWS_PROFILE_SYSTEM_PROPERTY, "");
 
-            env.remove(ProfilesConfigFile.AWS_PROFILE_ENVIRONMENT_VARIABLE);
+            env.remove(AwsProfileNameLoader.AWS_PROFILE_ENVIRONMENT_VARIABLE);
         }
     }
 
+
     @Test
     public void testUpdate() throws Exception {
-        ProfilesConfigFile fixture = new ProfilesConfigFile(getLocationForTestFile("BasicProfile.tst"));
+        ProfilesConfigFile fixture = new ProfilesConfigFile(
+                ProfileResourceLoader.basicProfile().asFile());
         File modifiable = File.createTempFile("UpdatableProfile", ".tst");
-        ProfilesConfigFileWriter.dumpToFile(modifiable, true, fixture.getAllProfiles().values().toArray(new Profile[1]));
+        ProfilesConfigFileWriter.dumpToFile(modifiable, true, fixture.getAllProfiles().values()
+                .toArray(new Profile[1]));
 
-        ProfileCredentialsProvider test = new ProfileCredentialsProvider(modifiable.getPath(), null);
+        ProfileCredentialsProvider test = new ProfileCredentialsProvider(modifiable.getPath(),
+                                                                         null);
         AWSCredentials orig = test.getCredentials();
         Assert.assertEquals("defaultAccessKey", orig.getAWSAccessKeyId());
         Assert.assertEquals("defaultSecretAccessKey", orig.getAWSSecretKey());
@@ -203,9 +182,12 @@ public class ProfileCredentialsProviderTest {
         //distinguishably later from the original write.
         try {
             Thread.sleep(2000);
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
 
-        ProfilesConfigFileWriter.modifyOneProfile(modifiable, DEFAULT_PROFILE_NAME, new Profile(DEFAULT_PROFILE_NAME, new BasicAWSCredentials("newAccessKey", "newSecretKey")));
+        Profile newProfile = new Profile(DEFAULT_PROFILE_NAME,
+                                         new BasicAWSCredentials("newAccessKey", "newSecretKey"));
+        ProfilesConfigFileWriter.modifyOneProfile(modifiable, DEFAULT_PROFILE_NAME, newProfile);
         test.refresh();
         AWSCredentials updated = test.getCredentials();
         Assert.assertEquals("newAccessKey", updated.getAWSAccessKeyId());
@@ -214,67 +196,94 @@ public class ProfileCredentialsProviderTest {
 
     @Test
     public void testForcedRefresh() throws Exception {
-        ProfilesConfigFile profilesConfigFileBeforeRefresh = new ProfilesConfigFile(getLocationForTestFile("BasicProfile.tst"));
+        ProfilesConfigFile profilesConfigFileBeforeRefresh = new ProfilesConfigFile(
+                ProfileResourceLoader.basicProfile().asFile());
         File profilesFile = File.createTempFile("UpdatableProfile", ".tst");
-        ProfilesConfigFileWriter.dumpToFile(profilesFile, true, profilesConfigFileBeforeRefresh.getAllProfiles().values().toArray(new Profile[1]));
+        ProfilesConfigFileWriter.dumpToFile(profilesFile, true,
+                                            profilesConfigFileBeforeRefresh.getAllProfiles()
+                                                    .values().toArray(new Profile[1]));
 
-        ProfileCredentialsProvider profileCredentialsProvider = new ProfileCredentialsProvider(profilesFile.getPath(), null);
+        ProfileCredentialsProvider profileCredentialsProvider = new ProfileCredentialsProvider(
+                profilesFile.getPath(), null);
 
-        /*
-         * Sleep for 1 second so that the profiles file last modified time has a chance to update.
-         * If this wait is not here, com.amazonaws.auth.profile.ProfilesConfigFile.refresh() profileFile.lastModified() will not be updated, therefore the
-         * credentials will not refresh.
-         *
-         * This is also in testRefresh()
-         */
+            /*
+             * Sleep for 1 second so that the profiles file last modified time has a chance to update.
+             * If this wait is not here, com.amazonaws.auth.profile.ProfilesConfigFile.refresh() profileFile.lastModified() will not be updated, therefore the
+             * credentials will not refresh.
+             *
+             * This is also in testRefresh()
+             */
         Thread.sleep(1000);
-        ProfilesConfigFile profilesConfigFileAfterRefresh = new ProfilesConfigFile(getLocationForTestFile("BasicProfile2.tst"));
-        ProfilesConfigFileWriter.dumpToFile(profilesFile, true, profilesConfigFileAfterRefresh.getAllProfiles().values().toArray(new Profile[1]));
+        ProfilesConfigFile profilesConfigFileAfterRefresh = new ProfilesConfigFile(
+                ProfileResourceLoader.basicProfile2().asFile());
+        ProfilesConfigFileWriter.dumpToFile(profilesFile, true,
+                                            profilesConfigFileAfterRefresh.getAllProfiles().values()
+                                                    .toArray(new Profile[1]));
 
         profileCredentialsProvider.setRefreshForceIntervalNanos(1l);
 
         AWSCredentials credentialsAfterRefresh = profileCredentialsProvider.getCredentials();
 
-        Assert.assertEquals("credentialsAfterRefresh AWSAccessKeyId", "accessKey2", credentialsAfterRefresh.getAWSAccessKeyId());
-        Assert.assertEquals("credentialsAfterRefresh AWSSecretKey", "secretAccessKey2", credentialsAfterRefresh.getAWSSecretKey());
+        Assert.assertEquals("credentialsAfterRefresh AWSAccessKeyId", "accessKey2",
+                            credentialsAfterRefresh.getAWSAccessKeyId());
+        Assert.assertEquals("credentialsAfterRefresh AWSSecretKey", "secretAccessKey2",
+                            credentialsAfterRefresh.getAWSSecretKey());
     }
 
     @Test
     public void testRefresh() throws Exception {
-        ProfilesConfigFile profilesConfigFileBeforeRefresh = new ProfilesConfigFile(getLocationForTestFile("BasicProfile.tst"));
+        ProfilesConfigFile profilesConfigFileBeforeRefresh = new ProfilesConfigFile(
+                ProfileResourceLoader.basicProfile().asFile());
         File profilesFile = File.createTempFile("UpdatableProfile", ".tst");
-        ProfilesConfigFileWriter.dumpToFile(profilesFile, true, profilesConfigFileBeforeRefresh.getAllProfiles().values().toArray(new Profile[1]));
+        ProfilesConfigFileWriter.dumpToFile(profilesFile, true,
+                                            profilesConfigFileBeforeRefresh.getAllProfiles()
+                                                    .values().toArray(new Profile[1]));
 
-        ProfileCredentialsProvider profileCredentialsProvider = new ProfileCredentialsProvider(profilesFile.getPath(), null);
+        ProfileCredentialsProvider profileCredentialsProvider = new ProfileCredentialsProvider(
+                profilesFile.getPath(), null);
 
         Thread.sleep(1000); // see testForcedRefresh()
-        ProfilesConfigFile profilesConfigFileAfterRefresh = new ProfilesConfigFile(getLocationForTestFile("BasicProfile2.tst"));
-        ProfilesConfigFileWriter.dumpToFile(profilesFile, true, profilesConfigFileAfterRefresh.getAllProfiles().values().toArray(new Profile[1]));
+        ProfilesConfigFile profilesConfigFileAfterRefresh = new ProfilesConfigFile(
+                ProfileResourceLoader.basicProfile2().asFile());
+        ProfilesConfigFileWriter.dumpToFile(profilesFile, true,
+                                            profilesConfigFileAfterRefresh.getAllProfiles().values()
+                                                    .toArray(new Profile[1]));
 
         profileCredentialsProvider.setRefreshIntervalNanos(1l);
 
         AWSCredentials credentialsAfterRefresh = profileCredentialsProvider.getCredentials();
 
-        Assert.assertEquals("credentialsAfterRefresh AWSAccessKeyId", "accessKey2", credentialsAfterRefresh.getAWSAccessKeyId());
-        Assert.assertEquals("credentialsAfterRefresh AWSSecretKey", "secretAccessKey2", credentialsAfterRefresh.getAWSSecretKey());
+        Assert.assertEquals("credentialsAfterRefresh AWSAccessKeyId", "accessKey2",
+                            credentialsAfterRefresh.getAWSAccessKeyId());
+        Assert.assertEquals("credentialsAfterRefresh AWSSecretKey", "secretAccessKey2",
+                            credentialsAfterRefresh.getAWSSecretKey());
     }
 
     @Test
     public void testAssumeRole() throws Exception {
-        ProfilesConfigFile profilesFile = new ProfilesConfigFile(getLocationForTestFile("ProfileWithRole.tst"), new ProfileCredentialsService() {
+        ProfilesConfigFile profilesFile = new ProfilesConfigFile(
+                ProfileResourceLoader.profileWithRole().asFile(), new ProfileCredentialsService() {
             @Override
-            public AWSCredentialsProvider getAssumeRoleCredentialsProvider(RoleInfo targetRoleInfo) {
-                AWSCredentials credentials = targetRoleInfo.getLongLivedCredentialsProvider().getCredentials();
-                Assert.assertEquals("sourceProfile AWSAccessKeyId", "defaultAccessKey", credentials.getAWSAccessKeyId());
-                Assert.assertEquals("sourceProfile AWSSecretKey", "defaultSecretAccessKey", credentials.getAWSSecretKey());
-                Assert.assertEquals("role_arn", "arn:aws:iam::123456789012:role/testRole", targetRoleInfo.getRoleArn());
+            public AWSCredentialsProvider getAssumeRoleCredentialsProvider(
+                    RoleInfo targetRoleInfo) {
+                AWSCredentials credentials = targetRoleInfo.getLongLivedCredentialsProvider()
+                        .getCredentials();
+                Assert.assertEquals("sourceProfile AWSAccessKeyId", "defaultAccessKey",
+                                    credentials.getAWSAccessKeyId());
+                Assert.assertEquals("sourceProfile AWSSecretKey", "defaultSecretAccessKey",
+                                    credentials.getAWSSecretKey());
+                Assert.assertEquals("role_arn", "arn:aws:iam::123456789012:role/testRole",
+                                    targetRoleInfo.getRoleArn());
                 Assert.assertNull("external_id", targetRoleInfo.getExternalId());
-                Assert.assertTrue("role_session_name", targetRoleInfo.getRoleSessionName().startsWith("aws-sdk-java-"));
-                return new StaticCredentialsProvider(new BasicAWSCredentials("sessionAccessKey", "sessionSecretKey"));
+                Assert.assertTrue("role_session_name",
+                                  targetRoleInfo.getRoleSessionName().startsWith("aws-sdk-java-"));
+                return new StaticCredentialsProvider(
+                        new BasicAWSCredentials("sessionAccessKey", "sessionSecretKey"));
             }
         });
 
-        ProfileCredentialsProvider profileCredentialsProvider = new ProfileCredentialsProvider(profilesFile, "test");
+        ProfileCredentialsProvider profileCredentialsProvider = new ProfileCredentialsProvider(
+                profilesFile, "test");
         AWSCredentials credentials = profileCredentialsProvider.getCredentials();
 
         Assert.assertEquals("sessionAccessKey", credentials.getAWSAccessKeyId());
@@ -283,20 +292,30 @@ public class ProfileCredentialsProviderTest {
 
     @Test
     public void testAssumeRoleWithNameAndExternalId() throws Exception {
-        ProfilesConfigFile profilesFile = new ProfilesConfigFile(getLocationForTestFile("ProfileWithRole2.tst"), new ProfileCredentialsService() {
+        ProfilesConfigFile profilesFile = new ProfilesConfigFile(
+                ProfileResourceLoader.profileWithRole2().asFile(), new ProfileCredentialsService() {
             @Override
-            public AWSCredentialsProvider getAssumeRoleCredentialsProvider(RoleInfo targetRoleInfo) {
-                AWSCredentials credentials = targetRoleInfo.getLongLivedCredentialsProvider().getCredentials();
-                Assert.assertEquals("sourceProfile AWSAccessKeyId", "defaultAccessKey", credentials.getAWSAccessKeyId());
-                Assert.assertEquals("sourceProfile AWSSecretKey", "defaultSecretAccessKey", credentials.getAWSSecretKey());
-                Assert.assertEquals("role_arn", "arn:aws:iam::123456789012:role/testRole", targetRoleInfo.getRoleArn());
-                Assert.assertEquals("external_id", "testExternalId", targetRoleInfo.getExternalId());
-                Assert.assertEquals("role_session_name", "testSessionName", targetRoleInfo.getRoleSessionName());
-                return new StaticCredentialsProvider(new BasicAWSCredentials("sessionAccessKey", "sessionSecretKey"));
+            public AWSCredentialsProvider getAssumeRoleCredentialsProvider(
+                    RoleInfo targetRoleInfo) {
+                AWSCredentials credentials = targetRoleInfo.getLongLivedCredentialsProvider()
+                        .getCredentials();
+                Assert.assertEquals("sourceProfile AWSAccessKeyId", "defaultAccessKey",
+                                    credentials.getAWSAccessKeyId());
+                Assert.assertEquals("sourceProfile AWSSecretKey", "defaultSecretAccessKey",
+                                    credentials.getAWSSecretKey());
+                Assert.assertEquals("role_arn", "arn:aws:iam::123456789012:role/testRole",
+                                    targetRoleInfo.getRoleArn());
+                Assert.assertEquals("external_id", "testExternalId",
+                                    targetRoleInfo.getExternalId());
+                Assert.assertEquals("role_session_name", "testSessionName",
+                                    targetRoleInfo.getRoleSessionName());
+                return new StaticCredentialsProvider(
+                        new BasicAWSCredentials("sessionAccessKey", "sessionSecretKey"));
             }
         });
 
-        ProfileCredentialsProvider profileCredentialsProvider = new ProfileCredentialsProvider(profilesFile, "test");
+        ProfileCredentialsProvider profileCredentialsProvider = new ProfileCredentialsProvider(
+                profilesFile, "test");
         AWSCredentials credentials = profileCredentialsProvider.getCredentials();
 
         Assert.assertEquals("sessionAccessKey", credentials.getAWSAccessKeyId());
@@ -305,20 +324,30 @@ public class ProfileCredentialsProviderTest {
 
     @Test
     public void testAssumeRoleWithSourceAfterRole() throws Exception {
-        ProfilesConfigFile profilesFile = new ProfilesConfigFile(getLocationForTestFile("ProfileWithSourceAfterRole.tst"), new ProfileCredentialsService() {
-            @Override
-            public AWSCredentialsProvider getAssumeRoleCredentialsProvider(RoleInfo targetRoleInfo) {
-                AWSCredentials credentials = targetRoleInfo.getLongLivedCredentialsProvider().getCredentials();
-                Assert.assertEquals("sourceProfile AWSAccessKeyId", "defaultAccessKey", credentials.getAWSAccessKeyId());
-                Assert.assertEquals("sourceProfile AWSSecretKey", "defaultSecretAccessKey", credentials.getAWSSecretKey());
-                Assert.assertEquals("role_arn", "arn:aws:iam::123456789012:role/testRole", targetRoleInfo.getRoleArn());
-                Assert.assertNull("external_id", targetRoleInfo.getExternalId());
-                Assert.assertTrue("role_session_name", targetRoleInfo.getRoleSessionName().startsWith("aws-sdk-java-"));
-                return new StaticCredentialsProvider(new BasicAWSCredentials("sessionAccessKey", "sessionSecretKey"));
-            }
-        });
+        ProfilesConfigFile profilesFile = new ProfilesConfigFile(
+                ProfileResourceLoader.profileWithSourceAfterRole().asFile(),
+                new ProfileCredentialsService() {
+                    @Override
+                    public AWSCredentialsProvider getAssumeRoleCredentialsProvider(
+                            RoleInfo targetRoleInfo) {
+                        AWSCredentials credentials = targetRoleInfo
+                                .getLongLivedCredentialsProvider().getCredentials();
+                        Assert.assertEquals("sourceProfile AWSAccessKeyId", "defaultAccessKey",
+                                            credentials.getAWSAccessKeyId());
+                        Assert.assertEquals("sourceProfile AWSSecretKey", "defaultSecretAccessKey",
+                                            credentials.getAWSSecretKey());
+                        Assert.assertEquals("role_arn", "arn:aws:iam::123456789012:role/testRole",
+                                            targetRoleInfo.getRoleArn());
+                        Assert.assertNull("external_id", targetRoleInfo.getExternalId());
+                        Assert.assertTrue("role_session_name", targetRoleInfo.getRoleSessionName()
+                                .startsWith("aws-sdk-java-"));
+                        return new StaticCredentialsProvider(
+                                new BasicAWSCredentials("sessionAccessKey", "sessionSecretKey"));
+                    }
+                });
 
-        ProfileCredentialsProvider profileCredentialsProvider = new ProfileCredentialsProvider(profilesFile, "test");
+        ProfileCredentialsProvider profileCredentialsProvider = new ProfileCredentialsProvider(
+                profilesFile, "test");
         AWSCredentials credentials = profileCredentialsProvider.getCredentials();
 
         Assert.assertEquals("sessionAccessKey", credentials.getAWSAccessKeyId());

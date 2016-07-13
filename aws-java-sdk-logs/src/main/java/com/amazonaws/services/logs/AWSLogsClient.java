@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.services.logs.model.transform.*;
@@ -93,7 +94,7 @@ import com.amazonaws.services.logs.model.transform.*;
 @ThreadSafe
 public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSLogs.class);
 
@@ -112,15 +113,31 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "ResourceAlreadyExistsException")
+                                    .withErrorCode("InvalidParameterException")
                                     .withModeledClass(
-                                            com.amazonaws.services.logs.model.ResourceAlreadyExistsException.class))
+                                            com.amazonaws.services.logs.model.InvalidParameterException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("LimitExceededException")
+                                    .withErrorCode("InvalidOperationException")
                                     .withModeledClass(
-                                            com.amazonaws.services.logs.model.LimitExceededException.class))
+                                            com.amazonaws.services.logs.model.InvalidOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.logs.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "DataAlreadyAcceptedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.logs.model.DataAlreadyAcceptedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidSequenceTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.logs.model.InvalidSequenceTokenException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -130,19 +147,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "InvalidSequenceTokenException")
+                                            "ResourceAlreadyExistsException")
                                     .withModeledClass(
-                                            com.amazonaws.services.logs.model.InvalidSequenceTokenException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidOperationException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.logs.model.InvalidOperationException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidParameterException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.logs.model.InvalidParameterException.class))
+                                            com.amazonaws.services.logs.model.ResourceAlreadyExistsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("OperationAbortedException")
@@ -150,15 +157,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                                             com.amazonaws.services.logs.model.OperationAbortedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "DataAlreadyAcceptedException")
+                                    .withErrorCode("LimitExceededException")
                                     .withModeledClass(
-                                            com.amazonaws.services.logs.model.DataAlreadyAcceptedException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("ResourceNotFoundException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.logs.model.ResourceNotFoundException.class)));
+                                            com.amazonaws.services.logs.model.LimitExceededException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon CloudWatch
@@ -312,6 +313,22 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon CloudWatch
+     * Logs using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSLogsClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

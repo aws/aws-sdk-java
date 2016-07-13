@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.services.ecs.model.transform.*;
@@ -64,7 +65,7 @@ import com.amazonaws.services.ecs.model.transform.*;
 public class AmazonECSClient extends AmazonWebServiceClient implements
         AmazonECS {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonECS.class);
 
@@ -83,15 +84,9 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "ClusterContainsServicesException")
+                                    .withErrorCode("InvalidParameterException")
                                     .withModeledClass(
-                                            com.amazonaws.services.ecs.model.ClusterContainsServicesException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("ServerException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.ecs.model.ServerException.class))
+                                            com.amazonaws.services.ecs.model.InvalidParameterException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("NoUpdateAvailableException")
@@ -99,14 +94,21 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.ecs.model.NoUpdateAvailableException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("ClusterNotFoundException")
+                                    .withErrorCode(
+                                            "ClusterContainsServicesException")
                                     .withModeledClass(
-                                            com.amazonaws.services.ecs.model.ClusterNotFoundException.class))
+                                            com.amazonaws.services.ecs.model.ClusterContainsServicesException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("UpdateInProgressException")
+                                    .withErrorCode("MissingVersionException")
                                     .withModeledClass(
-                                            com.amazonaws.services.ecs.model.UpdateInProgressException.class))
+                                            com.amazonaws.services.ecs.model.MissingVersionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ClusterContainsContainerInstancesException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.ecs.model.ClusterContainsContainerInstancesException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ServiceNotFoundException")
@@ -119,25 +121,24 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.ecs.model.ServiceNotActiveException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("MissingVersionException")
+                                    .withErrorCode("ClusterNotFoundException")
                                     .withModeledClass(
-                                            com.amazonaws.services.ecs.model.MissingVersionException.class))
+                                            com.amazonaws.services.ecs.model.ClusterNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidParameterException")
+                                    .withErrorCode("ServerException")
                                     .withModeledClass(
-                                            com.amazonaws.services.ecs.model.InvalidParameterException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "ClusterContainsContainerInstancesException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.ecs.model.ClusterContainsContainerInstancesException.class))
+                                            com.amazonaws.services.ecs.model.ServerException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ClientException")
                                     .withModeledClass(
-                                            com.amazonaws.services.ecs.model.ClientException.class)));
+                                            com.amazonaws.services.ecs.model.ClientException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UpdateInProgressException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.ecs.model.UpdateInProgressException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon ECS. A
@@ -286,6 +287,22 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon ECS using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonECSClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {
@@ -1508,6 +1525,10 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * <code>containerInstance</code>, and <code>desiredStatus</code>
      * parameters.
      * </p>
+     * <p>
+     * Recently-stopped tasks might appear in the returned results. Currently,
+     * stopped tasks appear in the returned results for at least one hour.
+     * </p>
      * 
      * @param listTasksRequest
      * @return Result of the ListTasks operation returned by the service.
@@ -1641,6 +1662,16 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html"
      * >Amazon ECS Task Definitions</a> in the <i>Amazon EC2 Container Service
      * Developer Guide</i>.
+     * </p>
+     * <p>
+     * You may also specify an IAM role for your task with the
+     * <code>taskRoleArn</code> parameter. When you specify an IAM role for a
+     * task, its containers can then use the latest versions of the AWS CLI or
+     * SDKs to make API requests to the AWS services that are specified in the
+     * IAM policy associated with the role. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html"
+     * >IAM Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
+     * Guide</i>.
      * </p>
      * 
      * @param registerTaskDefinitionRequest

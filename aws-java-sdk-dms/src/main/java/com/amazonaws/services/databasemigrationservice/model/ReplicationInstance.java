@@ -114,6 +114,14 @@ public class ReplicationInstance implements Serializable, Cloneable {
     private ReplicationPendingModifiedValues pendingModifiedValues;
     /**
      * <p>
+     * Specifies if the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
+     * parameter is set to <code>true</code>.
+     * </p>
+     */
+    private Boolean multiAZ;
+    /**
+     * <p>
      * The engine version number of the replication instance.
      * </p>
      */
@@ -146,13 +154,27 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * The public IP address of the replication instance.
      * </p>
      */
+    @Deprecated
     private String replicationInstancePublicIpAddress;
     /**
      * <p>
      * The private IP address of the replication instance.
      * </p>
      */
+    @Deprecated
     private String replicationInstancePrivateIpAddress;
+    /**
+     * <p>
+     * The public IP address of the replication instance.
+     * </p>
+     */
+    private java.util.List<String> replicationInstancePublicIpAddresses;
+    /**
+     * <p>
+     * The private IP address of the replication instance.
+     * </p>
+     */
+    private java.util.List<String> replicationInstancePrivateIpAddresses;
     /**
      * <p>
      * Specifies the accessibility options for the replication instance. A value
@@ -790,6 +812,75 @@ public class ReplicationInstance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Specifies if the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
+     * parameter is set to <code>true</code>.
+     * </p>
+     * 
+     * @param multiAZ
+     *        Specifies if the replication instance is a Multi-AZ deployment.
+     *        You cannot set the <code>AvailabilityZone</code> parameter if the
+     *        Multi-AZ parameter is set to <code>true</code>.
+     */
+
+    public void setMultiAZ(Boolean multiAZ) {
+        this.multiAZ = multiAZ;
+    }
+
+    /**
+     * <p>
+     * Specifies if the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
+     * parameter is set to <code>true</code>.
+     * </p>
+     * 
+     * @return Specifies if the replication instance is a Multi-AZ deployment.
+     *         You cannot set the <code>AvailabilityZone</code> parameter if the
+     *         Multi-AZ parameter is set to <code>true</code>.
+     */
+
+    public Boolean getMultiAZ() {
+        return this.multiAZ;
+    }
+
+    /**
+     * <p>
+     * Specifies if the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
+     * parameter is set to <code>true</code>.
+     * </p>
+     * 
+     * @param multiAZ
+     *        Specifies if the replication instance is a Multi-AZ deployment.
+     *        You cannot set the <code>AvailabilityZone</code> parameter if the
+     *        Multi-AZ parameter is set to <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ReplicationInstance withMultiAZ(Boolean multiAZ) {
+        setMultiAZ(multiAZ);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies if the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
+     * parameter is set to <code>true</code>.
+     * </p>
+     * 
+     * @return Specifies if the replication instance is a Multi-AZ deployment.
+     *         You cannot set the <code>AvailabilityZone</code> parameter if the
+     *         Multi-AZ parameter is set to <code>true</code>.
+     */
+
+    public Boolean isMultiAZ() {
+        return this.multiAZ;
+    }
+
+    /**
+     * <p>
      * The engine version number of the replication instance.
      * </p>
      * 
@@ -1009,7 +1100,7 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * @param replicationInstancePublicIpAddress
      *        The public IP address of the replication instance.
      */
-
+    @Deprecated
     public void setReplicationInstancePublicIpAddress(
             String replicationInstancePublicIpAddress) {
         this.replicationInstancePublicIpAddress = replicationInstancePublicIpAddress;
@@ -1022,7 +1113,7 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * 
      * @return The public IP address of the replication instance.
      */
-
+    @Deprecated
     public String getReplicationInstancePublicIpAddress() {
         return this.replicationInstancePublicIpAddress;
     }
@@ -1037,7 +1128,7 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
-
+    @Deprecated
     public ReplicationInstance withReplicationInstancePublicIpAddress(
             String replicationInstancePublicIpAddress) {
         setReplicationInstancePublicIpAddress(replicationInstancePublicIpAddress);
@@ -1052,7 +1143,7 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * @param replicationInstancePrivateIpAddress
      *        The private IP address of the replication instance.
      */
-
+    @Deprecated
     public void setReplicationInstancePrivateIpAddress(
             String replicationInstancePrivateIpAddress) {
         this.replicationInstancePrivateIpAddress = replicationInstancePrivateIpAddress;
@@ -1065,7 +1156,7 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * 
      * @return The private IP address of the replication instance.
      */
-
+    @Deprecated
     public String getReplicationInstancePrivateIpAddress() {
         return this.replicationInstancePrivateIpAddress;
     }
@@ -1080,10 +1171,169 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
-
+    @Deprecated
     public ReplicationInstance withReplicationInstancePrivateIpAddress(
             String replicationInstancePrivateIpAddress) {
         setReplicationInstancePrivateIpAddress(replicationInstancePrivateIpAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The public IP address of the replication instance.
+     * </p>
+     * 
+     * @return The public IP address of the replication instance.
+     */
+
+    public java.util.List<String> getReplicationInstancePublicIpAddresses() {
+        return replicationInstancePublicIpAddresses;
+    }
+
+    /**
+     * <p>
+     * The public IP address of the replication instance.
+     * </p>
+     * 
+     * @param replicationInstancePublicIpAddresses
+     *        The public IP address of the replication instance.
+     */
+
+    public void setReplicationInstancePublicIpAddresses(
+            java.util.Collection<String> replicationInstancePublicIpAddresses) {
+        if (replicationInstancePublicIpAddresses == null) {
+            this.replicationInstancePublicIpAddresses = null;
+            return;
+        }
+
+        this.replicationInstancePublicIpAddresses = new java.util.ArrayList<String>(
+                replicationInstancePublicIpAddresses);
+    }
+
+    /**
+     * <p>
+     * The public IP address of the replication instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use
+     * {@link #setReplicationInstancePublicIpAddresses(java.util.Collection)} or
+     * {@link #withReplicationInstancePublicIpAddresses(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param replicationInstancePublicIpAddresses
+     *        The public IP address of the replication instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ReplicationInstance withReplicationInstancePublicIpAddresses(
+            String... replicationInstancePublicIpAddresses) {
+        if (this.replicationInstancePublicIpAddresses == null) {
+            setReplicationInstancePublicIpAddresses(new java.util.ArrayList<String>(
+                    replicationInstancePublicIpAddresses.length));
+        }
+        for (String ele : replicationInstancePublicIpAddresses) {
+            this.replicationInstancePublicIpAddresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The public IP address of the replication instance.
+     * </p>
+     * 
+     * @param replicationInstancePublicIpAddresses
+     *        The public IP address of the replication instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ReplicationInstance withReplicationInstancePublicIpAddresses(
+            java.util.Collection<String> replicationInstancePublicIpAddresses) {
+        setReplicationInstancePublicIpAddresses(replicationInstancePublicIpAddresses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The private IP address of the replication instance.
+     * </p>
+     * 
+     * @return The private IP address of the replication instance.
+     */
+
+    public java.util.List<String> getReplicationInstancePrivateIpAddresses() {
+        return replicationInstancePrivateIpAddresses;
+    }
+
+    /**
+     * <p>
+     * The private IP address of the replication instance.
+     * </p>
+     * 
+     * @param replicationInstancePrivateIpAddresses
+     *        The private IP address of the replication instance.
+     */
+
+    public void setReplicationInstancePrivateIpAddresses(
+            java.util.Collection<String> replicationInstancePrivateIpAddresses) {
+        if (replicationInstancePrivateIpAddresses == null) {
+            this.replicationInstancePrivateIpAddresses = null;
+            return;
+        }
+
+        this.replicationInstancePrivateIpAddresses = new java.util.ArrayList<String>(
+                replicationInstancePrivateIpAddresses);
+    }
+
+    /**
+     * <p>
+     * The private IP address of the replication instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use
+     * {@link #setReplicationInstancePrivateIpAddresses(java.util.Collection)}
+     * or
+     * {@link #withReplicationInstancePrivateIpAddresses(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param replicationInstancePrivateIpAddresses
+     *        The private IP address of the replication instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ReplicationInstance withReplicationInstancePrivateIpAddresses(
+            String... replicationInstancePrivateIpAddresses) {
+        if (this.replicationInstancePrivateIpAddresses == null) {
+            setReplicationInstancePrivateIpAddresses(new java.util.ArrayList<String>(
+                    replicationInstancePrivateIpAddresses.length));
+        }
+        for (String ele : replicationInstancePrivateIpAddresses) {
+            this.replicationInstancePrivateIpAddresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The private IP address of the replication instance.
+     * </p>
+     * 
+     * @param replicationInstancePrivateIpAddresses
+     *        The private IP address of the replication instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ReplicationInstance withReplicationInstancePrivateIpAddresses(
+            java.util.Collection<String> replicationInstancePrivateIpAddresses) {
+        setReplicationInstancePrivateIpAddresses(replicationInstancePrivateIpAddresses);
         return this;
     }
 
@@ -1204,6 +1454,8 @@ public class ReplicationInstance implements Serializable, Cloneable {
         if (getPendingModifiedValues() != null)
             sb.append("PendingModifiedValues: " + getPendingModifiedValues()
                     + ",");
+        if (getMultiAZ() != null)
+            sb.append("MultiAZ: " + getMultiAZ() + ",");
         if (getEngineVersion() != null)
             sb.append("EngineVersion: " + getEngineVersion() + ",");
         if (getAutoMinorVersionUpgrade() != null)
@@ -1220,6 +1472,12 @@ public class ReplicationInstance implements Serializable, Cloneable {
         if (getReplicationInstancePrivateIpAddress() != null)
             sb.append("ReplicationInstancePrivateIpAddress: "
                     + getReplicationInstancePrivateIpAddress() + ",");
+        if (getReplicationInstancePublicIpAddresses() != null)
+            sb.append("ReplicationInstancePublicIpAddresses: "
+                    + getReplicationInstancePublicIpAddresses() + ",");
+        if (getReplicationInstancePrivateIpAddresses() != null)
+            sb.append("ReplicationInstancePrivateIpAddresses: "
+                    + getReplicationInstancePrivateIpAddresses() + ",");
         if (getPubliclyAccessible() != null)
             sb.append("PubliclyAccessible: " + getPubliclyAccessible());
         sb.append("}");
@@ -1306,6 +1564,11 @@ public class ReplicationInstance implements Serializable, Cloneable {
                 && other.getPendingModifiedValues().equals(
                         this.getPendingModifiedValues()) == false)
             return false;
+        if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
+            return false;
+        if (other.getMultiAZ() != null
+                && other.getMultiAZ().equals(this.getMultiAZ()) == false)
+            return false;
         if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
             return false;
         if (other.getEngineVersion() != null
@@ -1343,6 +1606,20 @@ public class ReplicationInstance implements Serializable, Cloneable {
         if (other.getReplicationInstancePrivateIpAddress() != null
                 && other.getReplicationInstancePrivateIpAddress().equals(
                         this.getReplicationInstancePrivateIpAddress()) == false)
+            return false;
+        if (other.getReplicationInstancePublicIpAddresses() == null
+                ^ this.getReplicationInstancePublicIpAddresses() == null)
+            return false;
+        if (other.getReplicationInstancePublicIpAddresses() != null
+                && other.getReplicationInstancePublicIpAddresses().equals(
+                        this.getReplicationInstancePublicIpAddresses()) == false)
+            return false;
+        if (other.getReplicationInstancePrivateIpAddresses() == null
+                ^ this.getReplicationInstancePrivateIpAddresses() == null)
+            return false;
+        if (other.getReplicationInstancePrivateIpAddresses() != null
+                && other.getReplicationInstancePrivateIpAddresses().equals(
+                        this.getReplicationInstancePrivateIpAddresses()) == false)
             return false;
         if (other.getPubliclyAccessible() == null
                 ^ this.getPubliclyAccessible() == null)
@@ -1399,6 +1676,8 @@ public class ReplicationInstance implements Serializable, Cloneable {
                 * hashCode
                 + ((getPendingModifiedValues() == null) ? 0
                         : getPendingModifiedValues().hashCode());
+        hashCode = prime * hashCode
+                + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getEngineVersion() == null) ? 0 : getEngineVersion()
@@ -1421,6 +1700,14 @@ public class ReplicationInstance implements Serializable, Cloneable {
                 * hashCode
                 + ((getReplicationInstancePrivateIpAddress() == null) ? 0
                         : getReplicationInstancePrivateIpAddress().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getReplicationInstancePublicIpAddresses() == null) ? 0
+                        : getReplicationInstancePublicIpAddresses().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getReplicationInstancePrivateIpAddresses() == null) ? 0
+                        : getReplicationInstancePrivateIpAddresses().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getPubliclyAccessible() == null) ? 0

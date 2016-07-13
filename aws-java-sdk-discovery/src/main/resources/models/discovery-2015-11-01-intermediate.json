@@ -19,13 +19,15 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "discovery",
     "signingName" : "discovery",
+    "jsonProtocol" : true,
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "xmlProtocol" : false,
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "jsonProtocol" : true,
-    "serviceName" : "AWS Application Discovery Service",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "syncClientBuilderClassName" : "AWSApplicationDiscoveryClientBuilder",
+    "asyncClientBuilderClassName" : "AWSApplicationDiscoveryAsyncClientBuilder",
+    "serviceName" : "AWS Application Discovery Service"
   },
   "operations" : {
     "CreateTags" : {

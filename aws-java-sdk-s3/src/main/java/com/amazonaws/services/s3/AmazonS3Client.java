@@ -27,6 +27,7 @@ import com.amazonaws.Protocol;
 import com.amazonaws.Request;
 import com.amazonaws.ResetException;
 import com.amazonaws.Response;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -564,6 +565,22 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
     }
 
+    /**
+     * Constructs a new client to invoke service methods on S3 using the specified parameters. All
+     * service calls made using this new client object are blocking, and will not return until the
+     * service call completes.
+     *
+     * @param s3ClientParams Object providing S3 client parameters.
+     * @see AmazonS3ClientBuilder For a fluent way to construct a client.
+     */
+    @SdkInternalApi
+    AmazonS3Client(AmazonS3ClientParams s3ClientParams) {
+        super(s3ClientParams.getClientParams());
+        this.awsCredentialsProvider = s3ClientParams.getClientParams().getCredentialsProvider();
+        this.skipMd5CheckStrategy = SkipMd5CheckStrategy.INSTANCE;
+        setS3ClientOptions(s3ClientParams.getS3ClientOptions());
+    }
+
     private void init() {
 
         // calling this.setEndpoint(...) will also modify the signer accordingly
@@ -615,7 +632,17 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     @Override
     public synchronized void setS3ClientOptions(S3ClientOptions clientOptions) {
+        checkMutability();
         this.clientOptions = new S3ClientOptions(clientOptions);
+    }
+
+    /**
+     * S3 uses wildcard certificates so we have to disable strict hostname verification when using
+     * SSL.
+     */
+    @Override
+    protected boolean useStrictHostNameVerification() {
+        return false;
     }
 
     @Override
@@ -1355,17 +1382,16 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     @Override
     public String getObjectAsString(String bucketName, String key)
             throws AmazonServiceException, AmazonClientException {
-
         rejectNull(bucketName, "Bucket name must be provided");
         rejectNull(key, "Object key must be provided");
 
         S3Object object = getObject(bucketName, key);
-
-        InputStream is = object.getObjectContent();
         try {
-            return IOUtils.toString(is);
+            return IOUtils.toString(object.getObjectContent());
         } catch (IOException e) {
             throw new AmazonClientException("Error streaming content from S3 during download");
+        } finally {
+            IOUtils.closeQuietly(object, log);
         }
     }
 

@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.simpledb.model.*;
 import com.amazonaws.services.simpledb.model.transform.*;
@@ -67,7 +68,7 @@ import com.amazonaws.services.simpledb.model.transform.*;
 public class AmazonSimpleDBClient extends AmazonWebServiceClient implements
         AmazonSimpleDB {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonSimpleDB.class);
 
@@ -239,37 +240,53 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Amazon SimpleDB
+     * using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonSimpleDBClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+    }
+
     private void init() {
         exceptionUnmarshallers
-                .add(new DuplicateItemNameExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
+                .add(new NumberItemAttributesExceededExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new NumberDomainAttributesExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidNumberValueTestsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new RequestTimeoutExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchDomainExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TooManyRequestedAttributesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new MissingParameterExceptionUnmarshaller());
+                .add(new NumberSubmittedItemsExceededExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidNumberPredicatesExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new NumberSubmittedAttributesExceededExceptionUnmarshaller());
+                .add(new NumberDomainBytesExceededExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new AttributeDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new NumberDomainsExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new NumberItemAttributesExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new NumberDomainBytesExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchDomainExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new RequestTimeoutExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidParameterValueExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new NumberSubmittedItemsExceededExceptionUnmarshaller());
+                .add(new DuplicateItemNameExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TooManyRequestedAttributesExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new NumberSubmittedAttributesExceededExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidQueryExpressionExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new NumberDomainAttributesExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidNumberValueTestsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new MissingParameterExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LegacyErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);

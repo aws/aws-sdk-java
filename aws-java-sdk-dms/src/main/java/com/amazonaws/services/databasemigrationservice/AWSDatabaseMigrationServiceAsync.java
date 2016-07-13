@@ -207,6 +207,38 @@ public interface AWSDatabaseMigrationServiceAsync extends
 
     /**
      * <p>
+     * Deletes the specified certificate.
+     * </p>
+     * 
+     * @param deleteCertificateRequest
+     * @return A Java Future containing the result of the DeleteCertificate
+     *         operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DeleteCertificate
+     */
+    java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
+            DeleteCertificateRequest deleteCertificateRequest);
+
+    /**
+     * <p>
+     * Deletes the specified certificate.
+     * </p>
+     * 
+     * @param deleteCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCertificate
+     *         operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DeleteCertificate
+     */
+    java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
+            DeleteCertificateRequest deleteCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified endpoint.
      * </p>
      * <note>
@@ -407,6 +439,38 @@ public interface AWSDatabaseMigrationServiceAsync extends
     java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(
             DescribeAccountAttributesRequest describeAccountAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides a description of the certificate.
+     * </p>
+     * 
+     * @param describeCertificatesRequest
+     * @return A Java Future containing the result of the DescribeCertificates
+     *         operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeCertificates
+     */
+    java.util.concurrent.Future<DescribeCertificatesResult> describeCertificatesAsync(
+            DescribeCertificatesRequest describeCertificatesRequest);
+
+    /**
+     * <p>
+     * Provides a description of the certificate.
+     * </p>
+     * 
+     * @param describeCertificatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCertificates
+     *         operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeCertificates
+     */
+    java.util.concurrent.Future<DescribeCertificatesResult> describeCertificatesAsync(
+            DescribeCertificatesRequest describeCertificatesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCertificatesRequest, DescribeCertificatesResult> asyncHandler);
 
     /**
      * <p>
@@ -752,6 +816,38 @@ public interface AWSDatabaseMigrationServiceAsync extends
     java.util.concurrent.Future<DescribeTableStatisticsResult> describeTableStatisticsAsync(
             DescribeTableStatisticsRequest describeTableStatisticsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTableStatisticsRequest, DescribeTableStatisticsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Uploads the specified certificate.
+     * </p>
+     * 
+     * @param importCertificateRequest
+     * @return A Java Future containing the result of the ImportCertificate
+     *         operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.ImportCertificate
+     */
+    java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(
+            ImportCertificateRequest importCertificateRequest);
+
+    /**
+     * <p>
+     * Uploads the specified certificate.
+     * </p>
+     * 
+     * @param importCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportCertificate
+     *         operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.ImportCertificate
+     */
+    java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(
+            ImportCertificateRequest importCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportCertificateRequest, ImportCertificateResult> asyncHandler);
 
     /**
      * <p>

@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.services.cloudfront.model.transform.*;
@@ -49,7 +50,7 @@ import com.amazonaws.services.cloudfront.model.transform.*;
 public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
         AmazonCloudFront {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonCloudFront.class);
 
@@ -218,96 +219,112 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on CloudFront using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonCloudFrontClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+    }
+
     private void init() {
-        exceptionUnmarshallers
-                .add(new NoSuchInvalidationExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new StreamingDistributionAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new TooManyCloudFrontOriginAccessIdentitiesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidWebACLIdExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new BatchTooLargeExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DistributionAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TooManyInvalidationsInProgressExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new MissingBodyExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidForwardCookiesExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CloudFrontOriginAccessIdentityInUseExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CloudFrontOriginAccessIdentityAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TooManyOriginCustomHeadersExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidResponseCodeExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidViewerCertificateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyOriginsExceptionUnmarshaller());
-        exceptionUnmarshallers
                 .add(new TrustedSignerDoesNotExistExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TooManyTrustedSignersExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidRelativePathExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new AccessDeniedExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TooManyStreamingDistributionsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new PreconditionFailedExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidGeoRestrictionParameterExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidTTLOrderExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TooManyStreamingDistributionCNAMEsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InconsistentQuantitiesExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidRequiredProtocolExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TooManyHeadersInForwardedValuesExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new NoSuchCloudFrontOriginAccessIdentityExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DistributionNotDisabledExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchOriginExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidOriginAccessIdentityExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidHeadersForS3OriginExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidErrorCodeExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new NoSuchDistributionExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CNAMEAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new IllegalUpdateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidOriginExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidDefaultRootObjectExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TooManyCacheBehaviorsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TooManyCertificatesExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidProtocolSettingsExceptionUnmarshaller());
         exceptionUnmarshallers
+                .add(new TooManyOriginCustomHeadersExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new NoSuchInvalidationExceptionUnmarshaller());
+        exceptionUnmarshallers
                 .add(new InvalidLocationCodeExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new NoSuchStreamingDistributionExceptionUnmarshaller());
+                .add(new InvalidForwardCookiesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidWebACLIdExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new TooManyDistributionCNAMEsExceptionUnmarshaller());
+                .add(new TooManyCertificatesExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InvalidIfMatchVersionExceptionUnmarshaller());
+                .add(new InvalidOriginAccessIdentityExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CNAMEAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new IllegalUpdateExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new TooManyCookieNamesInWhiteListExceptionUnmarshaller());
         exceptionUnmarshallers
+                .add(new TooManyHeadersInForwardedValuesExceptionUnmarshaller());
+        exceptionUnmarshallers
                 .add(new InvalidMinimumProtocolVersionExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TooManyDistributionCNAMEsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new NoSuchDistributionExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TooManyInvalidationsInProgressExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidErrorCodeExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TooManyCacheBehaviorsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InconsistentQuantitiesExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CloudFrontOriginAccessIdentityInUseExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidViewerCertificateExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DistributionNotDisabledExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new MissingBodyExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidDefaultRootObjectExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new AccessDeniedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyOriginsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidTTLOrderExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidRequiredProtocolExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidArgumentExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchOriginExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TooManyTrustedSignersExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new NoSuchStreamingDistributionExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TooManyCloudFrontOriginAccessIdentitiesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BatchTooLargeExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidResponseCodeExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidRelativePathExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TooManyStreamingDistributionsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidHeadersForS3OriginExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TooManyDistributionsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new StreamingDistributionNotDisabledExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new TooManyDistributionsExceptionUnmarshaller());
+                .add(new PreconditionFailedExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DistributionAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TooManyStreamingDistributionCNAMEsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidIfMatchVersionExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CloudFrontOriginAccessIdentityAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidOriginExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new NoSuchCloudFrontOriginAccessIdentityExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidGeoRestrictionParameterExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);

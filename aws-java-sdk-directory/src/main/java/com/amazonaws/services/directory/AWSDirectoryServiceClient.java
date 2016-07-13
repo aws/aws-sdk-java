@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.services.directory.model.transform.*;
@@ -54,7 +55,7 @@ import com.amazonaws.services.directory.model.transform.*;
 public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         AWSDirectoryService {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSDirectoryService.class);
 
@@ -74,35 +75,19 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "EntityAlreadyExistsException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.directory.model.EntityAlreadyExistsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
                                             "DirectoryUnavailableException")
                                     .withModeledClass(
                                             com.amazonaws.services.directory.model.DirectoryUnavailableException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidNextTokenException")
+                                    .withErrorCode("InvalidParameterException")
                                     .withModeledClass(
-                                            com.amazonaws.services.directory.model.InvalidNextTokenException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("TagLimitExceededException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.directory.model.TagLimitExceededException.class))
+                                            com.amazonaws.services.directory.model.InvalidParameterException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ServiceException")
                                     .withModeledClass(
                                             com.amazonaws.services.directory.model.ServiceException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidParameterException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.directory.model.InvalidParameterException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -112,9 +97,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "UnsupportedOperationException")
+                                            "EntityAlreadyExistsException")
                                     .withModeledClass(
-                                            com.amazonaws.services.directory.model.UnsupportedOperationException.class))
+                                            com.amazonaws.services.directory.model.EntityAlreadyExistsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -124,9 +109,20 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "InsufficientPermissionsException")
+                                            "DirectoryLimitExceededException")
                                     .withModeledClass(
-                                            com.amazonaws.services.directory.model.InsufficientPermissionsException.class))
+                                            com.amazonaws.services.directory.model.DirectoryLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidNextTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UnsupportedOperationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.UnsupportedOperationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ClientException")
@@ -135,15 +131,20 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "DirectoryLimitExceededException")
+                                            "AuthenticationFailedException")
                                     .withModeledClass(
-                                            com.amazonaws.services.directory.model.DirectoryLimitExceededException.class))
+                                            com.amazonaws.services.directory.model.AuthenticationFailedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "AuthenticationFailedException")
+                                            "InsufficientPermissionsException")
                                     .withModeledClass(
-                                            com.amazonaws.services.directory.model.AuthenticationFailedException.class)));
+                                            com.amazonaws.services.directory.model.InsufficientPermissionsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TagLimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.TagLimitExceededException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Directory Service. A
@@ -300,6 +301,22 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Directory Service
+     * using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSDirectoryServiceClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

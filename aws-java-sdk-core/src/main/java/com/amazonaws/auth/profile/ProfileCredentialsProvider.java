@@ -16,20 +16,15 @@ package com.amazonaws.auth.profile;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.util.StringUtils;
+import com.amazonaws.auth.profile.internal.AwsProfileNameLoader;
 
 import java.util.concurrent.Semaphore;
 
 /**
- * Credentials provider based on AWS configuration profiles. This provider vends
- * AWSCredentials from the profile configuration file for the default profile,
- * or for a specific, named profile.
- * <p>
- * AWS credential profiles allow you to share multiple sets of AWS security
- * credentials between different tools like the AWS SDK for Java and the
- * AWS CLI.
- * <p>
- * See
+ * Credentials provider based on AWS configuration profiles. This provider vends AWSCredentials from
+ * the profile configuration file for the default profile, or for a specific, named profile. <p> AWS
+ * credential profiles allow you to share multiple sets of AWS security credentials between
+ * different tools like the AWS SDK for Java and the AWS CLI. <p> See
  * http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
  *
  * @see ProfilesConfigFile
@@ -44,12 +39,12 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
     /**
      * Default force reload interval
      */
-    private static final long DEFAULT_FORCE_RELOAD_INTERVAL_NANOS = 2 * DEFAULT_REFRESH_INTERVAL_NANOS;
+    private static final long DEFAULT_FORCE_RELOAD_INTERVAL_NANOS =
+            2 * DEFAULT_REFRESH_INTERVAL_NANOS;
 
     /**
-     * The credential profiles file from which this provider loads the security
-     * credentials.
-     * Lazily loaded by the double-check idiom.
+     * The credential profiles file from which this provider loads the security credentials. Lazily
+     * loaded by the double-check idiom.
      */
     private volatile ProfilesConfigFile profilesConfigFile;
 
@@ -58,12 +53,14 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
      */
     private volatile long lastRefreshed;
 
-    /** The name of the credential profile */
+    /**
+     * The name of the credential profile
+     */
     private final String profileName;
 
     /**
-     * Used to have only one thread block on refresh, for applications making
-     * at least one call every REFRESH_INTERVAL_NANOS.
+     * Used to have only one thread block on refresh, for applications making at least one call
+     * every REFRESH_INTERVAL_NANOS.
      */
     private final Semaphore refreshSemaphore = new Semaphore(1);
 
@@ -78,54 +75,45 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
     private long refreshForceIntervalNanos = DEFAULT_FORCE_RELOAD_INTERVAL_NANOS;
 
     /**
-     * Creates a new profile credentials provider that returns the AWS security
-     * credentials configured for the default profile.
-     * Loading the credential file is deferred until the getCredentials() method
-     * is called.
+     * Creates a new profile credentials provider that returns the AWS security credentials
+     * configured for the default profile. Loading the credential file is deferred until the
+     * getCredentials() method is called.
      */
     public ProfileCredentialsProvider() {
         this(null);
     }
 
     /**
-     * Creates a new profile credentials provider that returns the AWS security
-     * credentials configured for the named profile.
-     * Loading the credential file is deferred until the getCredentials() method
-     * is called.
+     * Creates a new profile credentials provider that returns the AWS security credentials
+     * configured for the named profile. Loading the credential file is deferred until the
+     * getCredentials() method is called.
      *
-     * @param profileName
-     *            The name of a local configuration profile.
+     * @param profileName The name of a local configuration profile.
      */
     public ProfileCredentialsProvider(String profileName) {
-        this((ProfilesConfigFile)null, profileName);
+        this((ProfilesConfigFile) null, profileName);
     }
 
     /**
-     * Creates a new profile credentials provider that returns the AWS security
-     * credentials for the specified profiles configuration file and profile
-     * name.
+     * Creates a new profile credentials provider that returns the AWS security credentials for the
+     * specified profiles configuration file and profile name.
      *
-     * @param profilesConfigFilePath
-     *            The file path where the profile configuration file is located.
-     * @param profileName
-     *            The name of a configuration profile in the specified
-     *            configuration file.
+     * @param profilesConfigFilePath The file path where the profile configuration file is located.
+     * @param profileName            The name of a configuration profile in the specified
+     *                               configuration file.
      */
     public ProfileCredentialsProvider(String profilesConfigFilePath, String profileName) {
         this(new ProfilesConfigFile(profilesConfigFilePath), profileName);
     }
 
     /**
-     * Creates a new profile credentials provider that returns the AWS security
-     * credentials for the specified profiles configuration file and profile
-     * name.
+     * Creates a new profile credentials provider that returns the AWS security credentials for the
+     * specified profiles configuration file and profile name.
      *
-     * @param profilesConfigFile
-     *            The profile configuration file containing the profiles used by
-     *            this credentials provider or null to defer load to first use.
-     * @param profileName
-     *            The name of a configuration profile in the specified
-     *            configuration file.
+     * @param profilesConfigFile The profile configuration file containing the profiles used by this
+     *                           credentials provider or null to defer load to first use.
+     * @param profileName        The name of a configuration profile in the specified configuration
+     *                           file.
      */
     public ProfileCredentialsProvider(ProfilesConfigFile profilesConfigFile, String profileName) {
         this.profilesConfigFile = profilesConfigFile;
@@ -133,19 +121,7 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
             this.lastRefreshed = System.nanoTime();
         }
         if (profileName == null) {
-            String profileEnvVarOverride = System.getenv(ProfilesConfigFile.AWS_PROFILE_ENVIRONMENT_VARIABLE);
-            profileEnvVarOverride = StringUtils.trim(profileEnvVarOverride);
-            if (!StringUtils.isNullOrEmpty(profileEnvVarOverride)) {
-                this.profileName = profileEnvVarOverride;
-            } else {
-                String profileSysPropOverride = System.getProperty(ProfilesConfigFile.AWS_PROFILE_SYSTEM_PROPERTY);
-                profileSysPropOverride = StringUtils.trim(profileSysPropOverride);
-                if (!StringUtils.isNullOrEmpty(profileSysPropOverride)) {
-                    this.profileName = profileSysPropOverride;
-                } else {
-                    this.profileName = ProfilesConfigFile.DEFAULT_PROFILE_NAME;
-                }
-            }
+            this.profileName = AwsProfileNameLoader.INSTANCE.loadProfileName();
         } else {
             this.profileName = profileName;
         }
@@ -195,7 +171,7 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
 
     /**
      * Gets the refresh interval in nanoseconds.
-     * 
+     *
      * @return nanoseconds
      */
     public long getRefreshIntervalNanos() {
@@ -204,7 +180,7 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
 
     /**
      * Sets the refresh interval in nanoseconds.
-     * 
+     *
      * @param refreshIntervalNanos nanoseconds
      */
     public void setRefreshIntervalNanos(long refreshIntervalNanos) {
@@ -213,7 +189,7 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
 
     /**
      * Gets the forced refresh interval in nanoseconds.
-     * 
+     *
      * @return nanoseconds
      */
     public long getRefreshForceIntervalNanos() {
@@ -222,8 +198,6 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
 
     /**
      * Sets the forced refresh interval in nanoseconds.
-     * 
-     * @param refreshForceIntervalNanos
      */
     public void setRefreshForceIntervalNanos(long refreshForceIntervalNanos) {
         this.refreshForceIntervalNanos = refreshForceIntervalNanos;

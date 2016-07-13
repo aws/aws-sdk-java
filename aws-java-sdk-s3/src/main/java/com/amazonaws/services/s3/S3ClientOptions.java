@@ -22,7 +22,7 @@ public class S3ClientOptions {
     /** The default setting for use of path-style access */
     public static final boolean DEFAULT_PATH_STYLE_ACCESS = false;
     /** The default setting for use of chunked encoding */
-    public static final boolean DEFAULT_CHUNKED_ENCODING_DISABLED = true;
+    public static final boolean DEFAULT_CHUNKED_ENCODING_DISABLED = false;
     /** The default setting for use of payload signing */
     public static final boolean DEFAULT_PAYLOAD_SIGNING_ENABLED = false;
     /** S3 accelerate is by default not enabled */

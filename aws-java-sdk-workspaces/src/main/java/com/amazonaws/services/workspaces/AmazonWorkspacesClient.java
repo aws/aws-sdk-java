@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.services.workspaces.model.transform.*;
@@ -54,7 +55,7 @@ import com.amazonaws.services.workspaces.model.transform.*;
 public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
         AmazonWorkspaces {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonWorkspaces.class);
 
@@ -73,10 +74,15 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "ResourceUnavailableException")
+                                    .withErrorCode("ResourceNotFoundException")
                                     .withModeledClass(
-                                            com.amazonaws.services.workspaces.model.ResourceUnavailableException.class))
+                                            com.amazonaws.services.workspaces.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidParameterValuesException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.workspaces.model.InvalidParameterValuesException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -86,14 +92,9 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "InvalidParameterValuesException")
+                                            "ResourceUnavailableException")
                                     .withModeledClass(
-                                            com.amazonaws.services.workspaces.model.InvalidParameterValuesException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("ResourceNotFoundException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.workspaces.model.ResourceNotFoundException.class)));
+                                            com.amazonaws.services.workspaces.model.ResourceUnavailableException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon WorkSpaces. A
@@ -249,6 +250,22 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon WorkSpaces
+     * using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonWorkspacesClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

@@ -16,6 +16,7 @@
 package com.amazonaws.services.cognitosync;
 
 import com.amazonaws.services.cognitosync.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -270,6 +271,18 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * Cognito Sync using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AmazonCognitoSyncAsyncClient(AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

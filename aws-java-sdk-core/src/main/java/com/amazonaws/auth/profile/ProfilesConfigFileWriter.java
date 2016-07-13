@@ -14,9 +14,17 @@
  */
 package com.amazonaws.auth.profile;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.auth.profile.internal.AbstractProfilesConfigFileScanner;
+import com.amazonaws.auth.profile.internal.Profile;
+import com.amazonaws.auth.profile.internal.ProfileKeyConstants;
+import com.amazonaws.util.StringUtils;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
@@ -29,14 +37,6 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.UUID;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.auth.profile.internal.AbstractProfilesConfigFileScanner;
-import com.amazonaws.auth.profile.internal.Profile;
-import com.amazonaws.util.StringUtils;
 
 /**
  * The class for creating and modifying the credential profiles file.
@@ -435,6 +435,22 @@ public class ProfilesConfigFileWriter {
                         "Unable to write to the target file to persist the profile credentials.",
                         ioe);
             }
+        }
+
+        /**
+         * ProfilesConfigFileWriter still deals with legacy {@link Profile} interface so it can only
+         * modify credential related properties. All other properties should be preserved when
+         * modifying profiles.
+         */
+        @Override
+        protected boolean isSupportedProperty(String propertyName) {
+            return ProfileKeyConstants.AWS_ACCESS_KEY_ID.equals(propertyName) ||
+                   ProfileKeyConstants.AWS_SECRET_ACCESS_KEY.equals(propertyName) ||
+                   ProfileKeyConstants.AWS_SESSION_TOKEN.equals(propertyName) ||
+                   ProfileKeyConstants.EXTERNAL_ID.equals(propertyName) ||
+                   ProfileKeyConstants.ROLE_ARN.equals(propertyName) ||
+                   ProfileKeyConstants.ROLE_SESSION_NAME.equals(propertyName) ||
+                   ProfileKeyConstants.SOURCE_PROFILE.equals(propertyName);
         }
 
         /* Private interface */

@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.importexport.model.*;
 import com.amazonaws.services.importexport.model.transform.*;
@@ -55,7 +56,7 @@ import com.amazonaws.services.importexport.model.transform.*;
 public class AmazonImportExportClient extends AmazonWebServiceClient implements
         AmazonImportExport {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonImportExport.class);
 
@@ -230,35 +231,51 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on AWS Import/Export
+     * using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonImportExportClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+    }
+
     private void init() {
+        exceptionUnmarshallers.add(new MissingCustomsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidVersionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new MultipleRegionsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CreateJobQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new UnableToUpdateJobIdExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidParameterExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchBucketExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BucketPermissionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidCustomsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new UnableToCancelJobIdExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CanceledJobIdExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ExpiredJobIdExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidJobIdExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidManifestFieldExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new MissingParameterExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new MissingManifestFieldExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new MalformedManifestExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidJobIdExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ExpiredJobIdExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidFileSystemExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new UnableToCancelJobIdExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new UnableToUpdateJobIdExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new MissingParameterExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidAccessKeyIdExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CreateJobQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidParameterExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidVersionExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new MissingCustomsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidAddressExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchBucketExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidCustomsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new CanceledJobIdExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new MultipleRegionsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidFileSystemExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);

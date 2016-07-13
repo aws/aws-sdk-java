@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.services.route53.model.transform.*;
@@ -49,7 +50,7 @@ import com.amazonaws.services.route53.model.transform.*;
 public class AmazonRoute53Client extends AmazonWebServiceClient implements
         AmazonRoute53 {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonRoute53.class);
 
@@ -216,80 +217,96 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Route 53 using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonRoute53Client(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+    }
+
     private void init() {
-        exceptionUnmarshallers.add(new ConflictingTypesExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DelegationSetNotAvailableExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new NoSuchHealthCheckExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new HostedZoneNotEmptyExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new HostedZoneAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new NoSuchDelegationSetExceptionUnmarshaller());
+                .add(new ConcurrentModificationExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidDomainNameExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new DelegationSetAlreadyReusableExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidInputExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new NoSuchTrafficPolicyExceptionUnmarshaller());
-        exceptionUnmarshallers
                 .add(new TooManyHealthChecksExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new DelegationSetInUseExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidVPCIdExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new LastVPCAssociationExceptionUnmarshaller());
+                .add(new IncompatibleVersionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new HealthCheckInUseExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidChangeBatchExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new ConcurrentModificationExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TooManyHostedZonesExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new HostedZoneNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DelegationSetAlreadyCreatedExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ConflictingDomainExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new LimitsExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TooManyTrafficPolicyInstancesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new HealthCheckInUseExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new HealthCheckVersionMismatchExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new NoSuchGeoLocationExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new NoSuchTrafficPolicyInstanceExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchHostedZoneExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new VPCAssociationNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new IncompatibleVersionExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new HealthCheckAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new PublicZoneVPCAssociationExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TrafficPolicyInstanceAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TrafficPolicyAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchChangeExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TrafficPolicyInUseExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DelegationSetNotReusableExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ThrottlingExceptionUnmarshaller());
+                .add(new HostedZoneAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidTrafficPolicyDocumentExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new PriorRequestNotCompleteExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidArgumentExceptionUnmarshaller());
+                .add(new NoSuchTrafficPolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ThrottlingExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new TooManyTrafficPoliciesExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TrafficPolicyAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DelegationSetAlreadyCreatedExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DelegationSetAlreadyReusableExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidVPCIdExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TrafficPolicyInUseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchHostedZoneExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TooManyHostedZonesExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new VPCAssociationNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new PublicZoneVPCAssociationExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new NoSuchGeoLocationExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TrafficPolicyInstanceAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchChangeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ConflictingTypesExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new LastVPCAssociationExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DelegationSetNotReusableExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new PriorRequestNotCompleteExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new HostedZoneNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidArgumentExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new HealthCheckVersionMismatchExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidInputExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ConflictingDomainExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new HealthCheckAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DelegationSetInUseExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new NoSuchDelegationSetExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new NoSuchHealthCheckExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TooManyTrafficPolicyInstancesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new LimitsExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DelegationSetNotAvailableExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new NoSuchTrafficPolicyInstanceExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);

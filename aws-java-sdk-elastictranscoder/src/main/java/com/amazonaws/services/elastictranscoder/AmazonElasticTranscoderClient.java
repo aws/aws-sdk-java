@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.services.elastictranscoder.model.transform.*;
@@ -53,7 +54,7 @@ import com.amazonaws.services.elastictranscoder.model.transform.*;
 public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
         implements AmazonElasticTranscoder {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory
             .getLog(AmazonElasticTranscoder.class);
@@ -74,25 +75,25 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                     .withContentTypeOverride("")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("AccessDeniedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elastictranscoder.model.AccessDeniedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("ResourceInUseException")
                                     .withModeledClass(
                                             com.amazonaws.services.elastictranscoder.model.ResourceInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elastictranscoder.model.ResourceNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
                                             "IncompatibleVersionException")
                                     .withModeledClass(
                                             com.amazonaws.services.elastictranscoder.model.IncompatibleVersionException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("LimitExceededException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.elastictranscoder.model.LimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("AccessDeniedException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.elastictranscoder.model.AccessDeniedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ValidationException")
@@ -105,9 +106,9 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
                                             com.amazonaws.services.elastictranscoder.model.InternalServiceException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("ResourceNotFoundException")
+                                    .withErrorCode("LimitExceededException")
                                     .withModeledClass(
-                                            com.amazonaws.services.elastictranscoder.model.ResourceNotFoundException.class)));
+                                            com.amazonaws.services.elastictranscoder.model.LimitExceededException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Elastic
@@ -264,6 +265,22 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon Elastic
+     * Transcoder using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonElasticTranscoderClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

@@ -16,6 +16,7 @@
 package com.amazonaws.services.rds;
 
 import com.amazonaws.services.rds.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -327,6 +328,18 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements
     }
 
     /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * RDS using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AmazonRDSAsyncClient(AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
+    }
+
+    /**
      * Returns the executor service used by this client to execute async
      * requests.
      *
@@ -463,6 +476,41 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements
 
                         try {
                             result = authorizeDBSecurityGroupIngress(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBClusterParameterGroup> copyDBClusterParameterGroupAsync(
+            CopyDBClusterParameterGroupRequest request) {
+
+        return copyDBClusterParameterGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBClusterParameterGroup> copyDBClusterParameterGroupAsync(
+            final CopyDBClusterParameterGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CopyDBClusterParameterGroupRequest, DBClusterParameterGroup> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DBClusterParameterGroup>() {
+                    @Override
+                    public DBClusterParameterGroup call() throws Exception {
+                        DBClusterParameterGroup result;
+
+                        try {
+                            result = copyDBClusterParameterGroup(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

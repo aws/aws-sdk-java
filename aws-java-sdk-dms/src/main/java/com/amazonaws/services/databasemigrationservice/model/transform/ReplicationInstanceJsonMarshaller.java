@@ -112,6 +112,10 @@ public class ReplicationInstanceJsonMarshaller {
                                 replicationInstance.getPendingModifiedValues(),
                                 jsonGenerator);
             }
+            if (replicationInstance.getMultiAZ() != null) {
+                jsonGenerator.writeFieldName("MultiAZ").writeValue(
+                        replicationInstance.getMultiAZ());
+            }
             if (replicationInstance.getEngineVersion() != null) {
                 jsonGenerator.writeFieldName("EngineVersion").writeValue(
                         replicationInstance.getEngineVersion());
@@ -143,6 +147,36 @@ public class ReplicationInstanceJsonMarshaller {
                         "ReplicationInstancePrivateIpAddress").writeValue(
                         replicationInstance
                                 .getReplicationInstancePrivateIpAddress());
+            }
+
+            java.util.List<String> replicationInstancePublicIpAddressesList = replicationInstance
+                    .getReplicationInstancePublicIpAddresses();
+            if (replicationInstancePublicIpAddressesList != null) {
+                jsonGenerator
+                        .writeFieldName("ReplicationInstancePublicIpAddresses");
+                jsonGenerator.writeStartArray();
+                for (String replicationInstancePublicIpAddressesListValue : replicationInstancePublicIpAddressesList) {
+                    if (replicationInstancePublicIpAddressesListValue != null) {
+                        jsonGenerator
+                                .writeValue(replicationInstancePublicIpAddressesListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
+            java.util.List<String> replicationInstancePrivateIpAddressesList = replicationInstance
+                    .getReplicationInstancePrivateIpAddresses();
+            if (replicationInstancePrivateIpAddressesList != null) {
+                jsonGenerator
+                        .writeFieldName("ReplicationInstancePrivateIpAddresses");
+                jsonGenerator.writeStartArray();
+                for (String replicationInstancePrivateIpAddressesListValue : replicationInstancePrivateIpAddressesList) {
+                    if (replicationInstancePrivateIpAddressesListValue != null) {
+                        jsonGenerator
+                                .writeValue(replicationInstancePrivateIpAddressesListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
             }
             if (replicationInstance.getPubliclyAccessible() != null) {
                 jsonGenerator.writeFieldName("PubliclyAccessible").writeValue(

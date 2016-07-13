@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.lambda.model.*;
 import com.amazonaws.services.lambda.model.transform.*;
@@ -60,7 +61,7 @@ import com.amazonaws.services.lambda.model.transform.*;
 public class AWSLambdaClient extends AmazonWebServiceClient implements
         AWSLambda {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSLambda.class);
 
@@ -80,25 +81,25 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
                     .withContentTypeOverride("")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("ResourceConflictException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.lambda.model.ResourceConflictException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "CodeStorageExceededException")
+                                            "InvalidParameterValueException")
                                     .withModeledClass(
-                                            com.amazonaws.services.lambda.model.CodeStorageExceededException.class))
+                                            com.amazonaws.services.lambda.model.InvalidParameterValueException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("ServiceException")
+                                    .withErrorCode("ResourceNotFoundException")
                                     .withModeledClass(
-                                            com.amazonaws.services.lambda.model.ServiceException.class))
+                                            com.amazonaws.services.lambda.model.ResourceNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("RequestTooLargeException")
+                                    .withErrorCode("EC2UnexpectedException")
                                     .withModeledClass(
-                                            com.amazonaws.services.lambda.model.RequestTooLargeException.class))
+                                            com.amazonaws.services.lambda.model.EC2UnexpectedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("EC2AccessDeniedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.EC2AccessDeniedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -108,30 +109,25 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "InvalidParameterValueException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.lambda.model.InvalidParameterValueException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("EC2AccessDeniedException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.lambda.model.EC2AccessDeniedException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
                                             "PolicyLengthExceededException")
                                     .withModeledClass(
                                             com.amazonaws.services.lambda.model.PolicyLengthExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidSubnetIDException")
+                                    .withErrorCode("ResourceConflictException")
                                     .withModeledClass(
-                                            com.amazonaws.services.lambda.model.InvalidSubnetIDException.class))
+                                            com.amazonaws.services.lambda.model.ResourceConflictException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("ENILimitReachedException")
+                                    .withErrorCode("ServiceException")
                                     .withModeledClass(
-                                            com.amazonaws.services.lambda.model.ENILimitReachedException.class))
+                                            com.amazonaws.services.lambda.model.ServiceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "CodeStorageExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.CodeStorageExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("EC2ThrottledException")
@@ -139,9 +135,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.lambda.model.EC2ThrottledException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("EC2UnexpectedException")
+                                    .withErrorCode("ENILimitReachedException")
                                     .withModeledClass(
-                                            com.amazonaws.services.lambda.model.EC2UnexpectedException.class))
+                                            com.amazonaws.services.lambda.model.ENILimitReachedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -150,10 +146,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.lambda.model.SubnetIPAddressLimitReachedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "UnsupportedMediaTypeException")
+                                    .withErrorCode("InvalidSubnetIDException")
                                     .withModeledClass(
-                                            com.amazonaws.services.lambda.model.UnsupportedMediaTypeException.class))
+                                            com.amazonaws.services.lambda.model.InvalidSubnetIDException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -162,14 +157,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.lambda.model.InvalidRequestContentException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("ResourceNotFoundException")
+                                    .withErrorCode("RequestTooLargeException")
                                     .withModeledClass(
-                                            com.amazonaws.services.lambda.model.ResourceNotFoundException.class))
+                                            com.amazonaws.services.lambda.model.RequestTooLargeException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("TooManyRequestsException")
                                     .withModeledClass(
-                                            com.amazonaws.services.lambda.model.TooManyRequestsException.class)));
+                                            com.amazonaws.services.lambda.model.TooManyRequestsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UnsupportedMediaTypeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.UnsupportedMediaTypeException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWS Lambda. A
@@ -318,6 +319,22 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS Lambda using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSLambdaClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

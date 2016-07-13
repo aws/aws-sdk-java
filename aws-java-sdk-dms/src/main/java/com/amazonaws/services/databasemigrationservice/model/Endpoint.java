@@ -96,6 +96,25 @@ public class Endpoint implements Serializable, Cloneable {
      * </p>
      */
     private String endpointArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) used for SSL connection to the endpoint.
+     * </p>
+     */
+    private String certificateArn;
+    /**
+     * <p>
+     * The SSL mode used to connect to the endpoint.
+     * </p>
+     * <p>
+     * SSL mode can be one of four values: none, require, verify-ca,
+     * verify-full.
+     * </p>
+     * <p>
+     * The default value is none.
+     * </p>
+     */
+    private String sslMode;
 
     /**
      * <p>
@@ -629,6 +648,190 @@ public class Endpoint implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) used for SSL connection to the endpoint.
+     * </p>
+     * 
+     * @param certificateArn
+     *        The Amazon Resource Name (ARN) used for SSL connection to the
+     *        endpoint.
+     */
+
+    public void setCertificateArn(String certificateArn) {
+        this.certificateArn = certificateArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) used for SSL connection to the endpoint.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) used for SSL connection to the
+     *         endpoint.
+     */
+
+    public String getCertificateArn() {
+        return this.certificateArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) used for SSL connection to the endpoint.
+     * </p>
+     * 
+     * @param certificateArn
+     *        The Amazon Resource Name (ARN) used for SSL connection to the
+     *        endpoint.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Endpoint withCertificateArn(String certificateArn) {
+        setCertificateArn(certificateArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The SSL mode used to connect to the endpoint.
+     * </p>
+     * <p>
+     * SSL mode can be one of four values: none, require, verify-ca,
+     * verify-full.
+     * </p>
+     * <p>
+     * The default value is none.
+     * </p>
+     * 
+     * @param sslMode
+     *        The SSL mode used to connect to the endpoint.</p>
+     *        <p>
+     *        SSL mode can be one of four values: none, require, verify-ca,
+     *        verify-full.
+     *        </p>
+     *        <p>
+     *        The default value is none.
+     * @see DmsSslModeValue
+     */
+
+    public void setSslMode(String sslMode) {
+        this.sslMode = sslMode;
+    }
+
+    /**
+     * <p>
+     * The SSL mode used to connect to the endpoint.
+     * </p>
+     * <p>
+     * SSL mode can be one of four values: none, require, verify-ca,
+     * verify-full.
+     * </p>
+     * <p>
+     * The default value is none.
+     * </p>
+     * 
+     * @return The SSL mode used to connect to the endpoint.</p>
+     *         <p>
+     *         SSL mode can be one of four values: none, require, verify-ca,
+     *         verify-full.
+     *         </p>
+     *         <p>
+     *         The default value is none.
+     * @see DmsSslModeValue
+     */
+
+    public String getSslMode() {
+        return this.sslMode;
+    }
+
+    /**
+     * <p>
+     * The SSL mode used to connect to the endpoint.
+     * </p>
+     * <p>
+     * SSL mode can be one of four values: none, require, verify-ca,
+     * verify-full.
+     * </p>
+     * <p>
+     * The default value is none.
+     * </p>
+     * 
+     * @param sslMode
+     *        The SSL mode used to connect to the endpoint.</p>
+     *        <p>
+     *        SSL mode can be one of four values: none, require, verify-ca,
+     *        verify-full.
+     *        </p>
+     *        <p>
+     *        The default value is none.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see DmsSslModeValue
+     */
+
+    public Endpoint withSslMode(String sslMode) {
+        setSslMode(sslMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The SSL mode used to connect to the endpoint.
+     * </p>
+     * <p>
+     * SSL mode can be one of four values: none, require, verify-ca,
+     * verify-full.
+     * </p>
+     * <p>
+     * The default value is none.
+     * </p>
+     * 
+     * @param sslMode
+     *        The SSL mode used to connect to the endpoint.</p>
+     *        <p>
+     *        SSL mode can be one of four values: none, require, verify-ca,
+     *        verify-full.
+     *        </p>
+     *        <p>
+     *        The default value is none.
+     * @see DmsSslModeValue
+     */
+
+    public void setSslMode(DmsSslModeValue sslMode) {
+        this.sslMode = sslMode.toString();
+    }
+
+    /**
+     * <p>
+     * The SSL mode used to connect to the endpoint.
+     * </p>
+     * <p>
+     * SSL mode can be one of four values: none, require, verify-ca,
+     * verify-full.
+     * </p>
+     * <p>
+     * The default value is none.
+     * </p>
+     * 
+     * @param sslMode
+     *        The SSL mode used to connect to the endpoint.</p>
+     *        <p>
+     *        SSL mode can be one of four values: none, require, verify-ca,
+     *        verify-full.
+     *        </p>
+     *        <p>
+     *        The default value is none.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see DmsSslModeValue
+     */
+
+    public Endpoint withSslMode(DmsSslModeValue sslMode) {
+        setSslMode(sslMode);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -662,7 +865,11 @@ public class Endpoint implements Serializable, Cloneable {
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: " + getKmsKeyId() + ",");
         if (getEndpointArn() != null)
-            sb.append("EndpointArn: " + getEndpointArn());
+            sb.append("EndpointArn: " + getEndpointArn() + ",");
+        if (getCertificateArn() != null)
+            sb.append("CertificateArn: " + getCertificateArn() + ",");
+        if (getSslMode() != null)
+            sb.append("SslMode: " + getSslMode());
         sb.append("}");
         return sb.toString();
     }
@@ -736,6 +943,17 @@ public class Endpoint implements Serializable, Cloneable {
         if (other.getEndpointArn() != null
                 && other.getEndpointArn().equals(this.getEndpointArn()) == false)
             return false;
+        if (other.getCertificateArn() == null
+                ^ this.getCertificateArn() == null)
+            return false;
+        if (other.getCertificateArn() != null
+                && other.getCertificateArn().equals(this.getCertificateArn()) == false)
+            return false;
+        if (other.getSslMode() == null ^ this.getSslMode() == null)
+            return false;
+        if (other.getSslMode() != null
+                && other.getSslMode().equals(this.getSslMode()) == false)
+            return false;
         return true;
     }
 
@@ -775,6 +993,12 @@ public class Endpoint implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getEndpointArn() == null) ? 0 : getEndpointArn().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCertificateArn() == null) ? 0 : getCertificateArn()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getSslMode() == null) ? 0 : getSslMode().hashCode());
         return hashCode;
     }
 

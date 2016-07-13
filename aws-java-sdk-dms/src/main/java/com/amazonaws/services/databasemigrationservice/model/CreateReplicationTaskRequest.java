@@ -79,7 +79,11 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
     private String migrationType;
     /**
      * <p>
-     * The path of the JSON file that contains the table mappings.
+     * The path of the JSON file that contains the table mappings. Preceed the
+     * path with "file://".
+     * </p>
+     * <p>
+     * For example, --table-mappings file://mappingfile.json
      * </p>
      */
     private String tableMappings;
@@ -477,11 +481,18 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The path of the JSON file that contains the table mappings.
+     * The path of the JSON file that contains the table mappings. Preceed the
+     * path with "file://".
+     * </p>
+     * <p>
+     * For example, --table-mappings file://mappingfile.json
      * </p>
      * 
      * @param tableMappings
      *        The path of the JSON file that contains the table mappings.
+     *        Preceed the path with "file://".</p>
+     *        <p>
+     *        For example, --table-mappings file://mappingfile.json
      */
 
     public void setTableMappings(String tableMappings) {
@@ -490,10 +501,17 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The path of the JSON file that contains the table mappings.
+     * The path of the JSON file that contains the table mappings. Preceed the
+     * path with "file://".
+     * </p>
+     * <p>
+     * For example, --table-mappings file://mappingfile.json
      * </p>
      * 
      * @return The path of the JSON file that contains the table mappings.
+     *         Preceed the path with "file://".</p>
+     *         <p>
+     *         For example, --table-mappings file://mappingfile.json
      */
 
     public String getTableMappings() {
@@ -502,11 +520,18 @@ public class CreateReplicationTaskRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The path of the JSON file that contains the table mappings.
+     * The path of the JSON file that contains the table mappings. Preceed the
+     * path with "file://".
+     * </p>
+     * <p>
+     * For example, --table-mappings file://mappingfile.json
      * </p>
      * 
      * @param tableMappings
      *        The path of the JSON file that contains the table mappings.
+     *        Preceed the path with "file://".</p>
+     *        <p>
+     *        For example, --table-mappings file://mappingfile.json
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

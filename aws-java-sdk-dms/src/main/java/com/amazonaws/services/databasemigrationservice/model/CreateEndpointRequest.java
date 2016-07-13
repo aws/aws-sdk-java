@@ -98,6 +98,25 @@ public class CreateEndpointRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) for the certificate.
+     * </p>
+     */
+    private String certificateArn;
+    /**
+     * <p>
+     * The SSL mode to use for the SSL connection.
+     * </p>
+     * <p>
+     * SSL mode can be one of four values: none, require, verify-ca,
+     * verify-full.
+     * </p>
+     * <p>
+     * The default value is none.
+     * </p>
+     */
+    private String sslMode;
 
     /**
      * <p>
@@ -665,6 +684,187 @@ public class CreateEndpointRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The Amazon Resource Number (ARN) for the certificate.
+     * </p>
+     * 
+     * @param certificateArn
+     *        The Amazon Resource Number (ARN) for the certificate.
+     */
+
+    public void setCertificateArn(String certificateArn) {
+        this.certificateArn = certificateArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) for the certificate.
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) for the certificate.
+     */
+
+    public String getCertificateArn() {
+        return this.certificateArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) for the certificate.
+     * </p>
+     * 
+     * @param certificateArn
+     *        The Amazon Resource Number (ARN) for the certificate.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateEndpointRequest withCertificateArn(String certificateArn) {
+        setCertificateArn(certificateArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The SSL mode to use for the SSL connection.
+     * </p>
+     * <p>
+     * SSL mode can be one of four values: none, require, verify-ca,
+     * verify-full.
+     * </p>
+     * <p>
+     * The default value is none.
+     * </p>
+     * 
+     * @param sslMode
+     *        The SSL mode to use for the SSL connection.</p>
+     *        <p>
+     *        SSL mode can be one of four values: none, require, verify-ca,
+     *        verify-full.
+     *        </p>
+     *        <p>
+     *        The default value is none.
+     * @see DmsSslModeValue
+     */
+
+    public void setSslMode(String sslMode) {
+        this.sslMode = sslMode;
+    }
+
+    /**
+     * <p>
+     * The SSL mode to use for the SSL connection.
+     * </p>
+     * <p>
+     * SSL mode can be one of four values: none, require, verify-ca,
+     * verify-full.
+     * </p>
+     * <p>
+     * The default value is none.
+     * </p>
+     * 
+     * @return The SSL mode to use for the SSL connection.</p>
+     *         <p>
+     *         SSL mode can be one of four values: none, require, verify-ca,
+     *         verify-full.
+     *         </p>
+     *         <p>
+     *         The default value is none.
+     * @see DmsSslModeValue
+     */
+
+    public String getSslMode() {
+        return this.sslMode;
+    }
+
+    /**
+     * <p>
+     * The SSL mode to use for the SSL connection.
+     * </p>
+     * <p>
+     * SSL mode can be one of four values: none, require, verify-ca,
+     * verify-full.
+     * </p>
+     * <p>
+     * The default value is none.
+     * </p>
+     * 
+     * @param sslMode
+     *        The SSL mode to use for the SSL connection.</p>
+     *        <p>
+     *        SSL mode can be one of four values: none, require, verify-ca,
+     *        verify-full.
+     *        </p>
+     *        <p>
+     *        The default value is none.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see DmsSslModeValue
+     */
+
+    public CreateEndpointRequest withSslMode(String sslMode) {
+        setSslMode(sslMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The SSL mode to use for the SSL connection.
+     * </p>
+     * <p>
+     * SSL mode can be one of four values: none, require, verify-ca,
+     * verify-full.
+     * </p>
+     * <p>
+     * The default value is none.
+     * </p>
+     * 
+     * @param sslMode
+     *        The SSL mode to use for the SSL connection.</p>
+     *        <p>
+     *        SSL mode can be one of four values: none, require, verify-ca,
+     *        verify-full.
+     *        </p>
+     *        <p>
+     *        The default value is none.
+     * @see DmsSslModeValue
+     */
+
+    public void setSslMode(DmsSslModeValue sslMode) {
+        this.sslMode = sslMode.toString();
+    }
+
+    /**
+     * <p>
+     * The SSL mode to use for the SSL connection.
+     * </p>
+     * <p>
+     * SSL mode can be one of four values: none, require, verify-ca,
+     * verify-full.
+     * </p>
+     * <p>
+     * The default value is none.
+     * </p>
+     * 
+     * @param sslMode
+     *        The SSL mode to use for the SSL connection.</p>
+     *        <p>
+     *        SSL mode can be one of four values: none, require, verify-ca,
+     *        verify-full.
+     *        </p>
+     *        <p>
+     *        The default value is none.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see DmsSslModeValue
+     */
+
+    public CreateEndpointRequest withSslMode(DmsSslModeValue sslMode) {
+        setSslMode(sslMode);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -698,7 +898,11 @@ public class CreateEndpointRequest extends AmazonWebServiceRequest implements
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: " + getKmsKeyId() + ",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: " + getTags() + ",");
+        if (getCertificateArn() != null)
+            sb.append("CertificateArn: " + getCertificateArn() + ",");
+        if (getSslMode() != null)
+            sb.append("SslMode: " + getSslMode());
         sb.append("}");
         return sb.toString();
     }
@@ -772,6 +976,17 @@ public class CreateEndpointRequest extends AmazonWebServiceRequest implements
         if (other.getTags() != null
                 && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getCertificateArn() == null
+                ^ this.getCertificateArn() == null)
+            return false;
+        if (other.getCertificateArn() != null
+                && other.getCertificateArn().equals(this.getCertificateArn()) == false)
+            return false;
+        if (other.getSslMode() == null ^ this.getSslMode() == null)
+            return false;
+        if (other.getSslMode() != null
+                && other.getSslMode().equals(this.getSslMode()) == false)
+            return false;
         return true;
     }
 
@@ -810,6 +1025,12 @@ public class CreateEndpointRequest extends AmazonWebServiceRequest implements
                 + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode
                 + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCertificateArn() == null) ? 0 : getCertificateArn()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getSslMode() == null) ? 0 : getSslMode().hashCode());
         return hashCode;
     }
 

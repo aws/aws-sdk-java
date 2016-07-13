@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.identitymanagement.model.*;
 import com.amazonaws.services.identitymanagement.model.transform.*;
@@ -131,7 +132,7 @@ import com.amazonaws.services.identitymanagement.model.transform.*;
 public class AmazonIdentityManagementClient extends AmazonWebServiceClient
         implements AmazonIdentityManagement {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory
             .getLog(AmazonIdentityManagement.class);
@@ -301,42 +302,58 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on IAM using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonIdentityManagementClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+    }
+
     private void init() {
         exceptionUnmarshallers
-                .add(new EntityAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new PasswordPolicyViolationExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DuplicateSSHPublicKeyExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new MalformedCertificateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidPublicKeyExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new PolicyEvaluationExceptionUnmarshaller());
+                .add(new MalformedPolicyDocumentExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DeleteConflictExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidCertificateExceptionUnmarshaller());
         exceptionUnmarshallers
+                .add(new PasswordPolicyViolationExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CredentialReportExpiredExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidUserTypeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchEntityExceptionUnmarshaller());
+        exceptionUnmarshallers
                 .add(new EntityTemporarilyUnmodifiableExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new MalformedPolicyDocumentExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ServiceFailureExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidAuthenticationCodeExceptionUnmarshaller());
+                .add(new DuplicateSSHPublicKeyExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new DuplicateCertificateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DeleteConflictExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KeyPairMismatchExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchEntityExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidInputExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new CredentialReportNotReadyExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidUserTypeExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new EntityAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ServiceFailureExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidPublicKeyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new PolicyEvaluationExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidAuthenticationCodeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidInputExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CredentialReportNotPresentExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new UnrecognizedPublicKeyEncodingExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new CredentialReportExpiredExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CredentialReportNotPresentExceptionUnmarshaller());
+                .add(new MalformedCertificateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);

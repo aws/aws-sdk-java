@@ -106,6 +106,21 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
+            DeleteCertificateRequest request) {
+
+        return deleteCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
+            DeleteCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(
             DeleteEndpointRequest request) {
 
@@ -176,6 +191,21 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends
     public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(
             DescribeAccountAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCertificatesResult> describeCertificatesAsync(
+            DescribeCertificatesRequest request) {
+
+        return describeCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCertificatesResult> describeCertificatesAsync(
+            DescribeCertificatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeCertificatesRequest, DescribeCertificatesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -326,6 +356,21 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends
     public java.util.concurrent.Future<DescribeTableStatisticsResult> describeTableStatisticsAsync(
             DescribeTableStatisticsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTableStatisticsRequest, DescribeTableStatisticsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(
+            ImportCertificateRequest request) {
+
+        return importCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(
+            ImportCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportCertificateRequest, ImportCertificateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

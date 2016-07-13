@@ -123,6 +123,14 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
     private String preferredMaintenanceWindow;
     /**
      * <p>
+     * Specifies if the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
+     * parameter is set to <code>true</code>.
+     * </p>
+     */
+    private Boolean multiAZ;
+    /**
+     * <p>
      * The engine version number of the replication instance.
      * </p>
      */
@@ -813,6 +821,75 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
+     * Specifies if the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
+     * parameter is set to <code>true</code>.
+     * </p>
+     * 
+     * @param multiAZ
+     *        Specifies if the replication instance is a Multi-AZ deployment.
+     *        You cannot set the <code>AvailabilityZone</code> parameter if the
+     *        Multi-AZ parameter is set to <code>true</code>.
+     */
+
+    public void setMultiAZ(Boolean multiAZ) {
+        this.multiAZ = multiAZ;
+    }
+
+    /**
+     * <p>
+     * Specifies if the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
+     * parameter is set to <code>true</code>.
+     * </p>
+     * 
+     * @return Specifies if the replication instance is a Multi-AZ deployment.
+     *         You cannot set the <code>AvailabilityZone</code> parameter if the
+     *         Multi-AZ parameter is set to <code>true</code>.
+     */
+
+    public Boolean getMultiAZ() {
+        return this.multiAZ;
+    }
+
+    /**
+     * <p>
+     * Specifies if the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
+     * parameter is set to <code>true</code>.
+     * </p>
+     * 
+     * @param multiAZ
+     *        Specifies if the replication instance is a Multi-AZ deployment.
+     *        You cannot set the <code>AvailabilityZone</code> parameter if the
+     *        Multi-AZ parameter is set to <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateReplicationInstanceRequest withMultiAZ(Boolean multiAZ) {
+        setMultiAZ(multiAZ);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies if the replication instance is a Multi-AZ deployment. You
+     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ
+     * parameter is set to <code>true</code>.
+     * </p>
+     * 
+     * @return Specifies if the replication instance is a Multi-AZ deployment.
+     *         You cannot set the <code>AvailabilityZone</code> parameter if the
+     *         Multi-AZ parameter is set to <code>true</code>.
+     */
+
+    public Boolean isMultiAZ() {
+        return this.multiAZ;
+    }
+
+    /**
+     * <p>
      * The engine version number of the replication instance.
      * </p>
      * 
@@ -1189,6 +1266,8 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
         if (getPreferredMaintenanceWindow() != null)
             sb.append("PreferredMaintenanceWindow: "
                     + getPreferredMaintenanceWindow() + ",");
+        if (getMultiAZ() != null)
+            sb.append("MultiAZ: " + getMultiAZ() + ",");
         if (getEngineVersion() != null)
             sb.append("EngineVersion: " + getEngineVersion() + ",");
         if (getAutoMinorVersionUpgrade() != null)
@@ -1263,6 +1342,11 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
                 && other.getPreferredMaintenanceWindow().equals(
                         this.getPreferredMaintenanceWindow()) == false)
             return false;
+        if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
+            return false;
+        if (other.getMultiAZ() != null
+                && other.getMultiAZ().equals(this.getMultiAZ()) == false)
+            return false;
         if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
             return false;
         if (other.getEngineVersion() != null
@@ -1328,6 +1412,8 @@ public class CreateReplicationInstanceRequest extends AmazonWebServiceRequest
                 * hashCode
                 + ((getPreferredMaintenanceWindow() == null) ? 0
                         : getPreferredMaintenanceWindow().hashCode());
+        hashCode = prime * hashCode
+                + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getEngineVersion() == null) ? 0 : getEngineVersion()

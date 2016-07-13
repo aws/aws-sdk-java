@@ -25,30 +25,30 @@ import com.amazonaws.auth.policy.Action;
 public enum CloudWatchActions implements Action {
 
     /** Represents any action executed on CloudWatch. */
-    AllCloudWatchActions("monitoring:*"),
+    AllCloudWatchActions("cloudwatch:*"),
 
     /** Action for the DeleteAlarms operation. */
-    DeleteAlarms("monitoring:DeleteAlarms"),
+    DeleteAlarms("cloudwatch:DeleteAlarms"),
     /** Action for the DescribeAlarmHistory operation. */
-    DescribeAlarmHistory("monitoring:DescribeAlarmHistory"),
+    DescribeAlarmHistory("cloudwatch:DescribeAlarmHistory"),
     /** Action for the DescribeAlarms operation. */
-    DescribeAlarms("monitoring:DescribeAlarms"),
+    DescribeAlarms("cloudwatch:DescribeAlarms"),
     /** Action for the DescribeAlarmsForMetric operation. */
-    DescribeAlarmsForMetric("monitoring:DescribeAlarmsForMetric"),
+    DescribeAlarmsForMetric("cloudwatch:DescribeAlarmsForMetric"),
     /** Action for the DisableAlarmActions operation. */
-    DisableAlarmActions("monitoring:DisableAlarmActions"),
+    DisableAlarmActions("cloudwatch:DisableAlarmActions"),
     /** Action for the EnableAlarmActions operation. */
-    EnableAlarmActions("monitoring:EnableAlarmActions"),
+    EnableAlarmActions("cloudwatch:EnableAlarmActions"),
     /** Action for the GetMetricStatistics operation. */
-    GetMetricStatistics("monitoring:GetMetricStatistics"),
+    GetMetricStatistics("cloudwatch:GetMetricStatistics"),
     /** Action for the ListMetrics operation. */
-    ListMetrics("monitoring:ListMetrics"),
+    ListMetrics("cloudwatch:ListMetrics"),
     /** Action for the PutMetricAlarm operation. */
-    PutMetricAlarm("monitoring:PutMetricAlarm"),
+    PutMetricAlarm("cloudwatch:PutMetricAlarm"),
     /** Action for the PutMetricData operation. */
-    PutMetricData("monitoring:PutMetricData"),
+    PutMetricData("cloudwatch:PutMetricData"),
     /** Action for the SetAlarmState operation. */
-    SetAlarmState("monitoring:SetAlarmState"),
+    SetAlarmState("cloudwatch:SetAlarmState"),
 
     ;
 

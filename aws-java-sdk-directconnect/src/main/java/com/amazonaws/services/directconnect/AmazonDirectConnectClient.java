@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.services.directconnect.model.transform.*;
@@ -62,7 +63,7 @@ import com.amazonaws.services.directconnect.model.transform.*;
 public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         AmazonDirectConnect {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonDirectConnect.class);
 
@@ -82,15 +83,15 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "DirectConnectClientException")
+                                            "DirectConnectServerException")
                                     .withModeledClass(
-                                            com.amazonaws.services.directconnect.model.DirectConnectClientException.class))
+                                            com.amazonaws.services.directconnect.model.DirectConnectServerException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "DirectConnectServerException")
+                                            "DirectConnectClientException")
                                     .withModeledClass(
-                                            com.amazonaws.services.directconnect.model.DirectConnectServerException.class)));
+                                            com.amazonaws.services.directconnect.model.DirectConnectClientException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWS Direct Connect.
@@ -247,6 +248,22 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS Direct Connect
+     * using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonDirectConnectClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

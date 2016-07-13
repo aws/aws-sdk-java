@@ -92,6 +92,7 @@ public class CodeEmitter implements AutoCloseable {
 
         emitClientInterfaces();
         emitClientClasses();
+        emitClientBuilders();
         emitModelClasses();
         emitMarshallerClasses();
         emitUnmarshallerClasses();
@@ -137,6 +138,23 @@ public class CodeEmitter implements AutoCloseable {
                 baseDirectory,
                 model.getMetadata().getAsyncClient(),
                 freemarker.getAsyncClientTemplate(),
+                model));
+    }
+
+    /**
+     * Submits a task to generate the fluent builders for Sync and Async clients
+     */
+    protected void emitClientBuilders() throws IOException {
+        submitTask(new ClassGeneratorTask(
+                baseDirectory,
+                model.getMetadata().getSyncClientBuilderClassName(),
+                freemarker.getSyncClientBuilderTemplate(),
+                model));
+
+        submitTask(new ClassGeneratorTask(
+                baseDirectory,
+                model.getMetadata().getAsyncClientBuilderClassName(),
+                freemarker.getAsyncClientBuilderTemplate(),
                 model));
     }
 

@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.services.support.model.transform.*;
@@ -109,7 +110,7 @@ import com.amazonaws.services.support.model.transform.*;
 public class AWSSupportClient extends AmazonWebServiceClient implements
         AWSSupport {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSSupport.class);
 
@@ -133,20 +134,14 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.support.model.AttachmentSetIdNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("CaseCreationLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.support.model.CaseCreationLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("AttachmentIdNotFound")
                                     .withModeledClass(
                                             com.amazonaws.services.support.model.AttachmentIdNotFoundException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InternalServerError")
-                                    .withModeledClass(
-                                            com.amazonaws.services.support.model.InternalServerErrorException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "DescribeAttachmentLimitExceeded")
-                                    .withModeledClass(
-                                            com.amazonaws.services.support.model.DescribeAttachmentLimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("AttachmentSetExpired")
@@ -164,9 +159,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.support.model.CaseIdNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("CaseCreationLimitExceeded")
+                                    .withErrorCode(
+                                            "DescribeAttachmentLimitExceeded")
                                     .withModeledClass(
-                                            com.amazonaws.services.support.model.CaseCreationLimitExceededException.class))
+                                            com.amazonaws.services.support.model.DescribeAttachmentLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalServerError")
+                                    .withModeledClass(
+                                            com.amazonaws.services.support.model.InternalServerErrorException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -321,6 +322,22 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS Support using
+     * the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSSupportClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

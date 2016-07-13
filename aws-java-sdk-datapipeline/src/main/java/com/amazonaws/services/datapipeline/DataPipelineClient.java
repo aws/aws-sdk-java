@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.services.datapipeline.model.transform.*;
@@ -74,7 +75,7 @@ import com.amazonaws.services.datapipeline.model.transform.*;
 public class DataPipelineClient extends AmazonWebServiceClient implements
         DataPipeline {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(DataPipeline.class);
 
@@ -93,9 +94,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("PipelineNotFoundException")
+                                    .withErrorCode("InvalidRequestException")
                                     .withModeledClass(
-                                            com.amazonaws.services.datapipeline.model.PipelineNotFoundException.class))
+                                            com.amazonaws.services.datapipeline.model.InvalidRequestException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("TaskNotFoundException")
@@ -103,19 +104,19 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.datapipeline.model.TaskNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InternalServiceError")
-                                    .withModeledClass(
-                                            com.amazonaws.services.datapipeline.model.InternalServiceErrorException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("PipelineDeletedException")
                                     .withModeledClass(
                                             com.amazonaws.services.datapipeline.model.PipelineDeletedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidRequestException")
+                                    .withErrorCode("PipelineNotFoundException")
                                     .withModeledClass(
-                                            com.amazonaws.services.datapipeline.model.InvalidRequestException.class)));
+                                            com.amazonaws.services.datapipeline.model.PipelineNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalServiceError")
+                                    .withModeledClass(
+                                            com.amazonaws.services.datapipeline.model.InternalServiceErrorException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWS Data Pipeline. A
@@ -269,6 +270,22 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS Data Pipeline
+     * using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public DataPipelineClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

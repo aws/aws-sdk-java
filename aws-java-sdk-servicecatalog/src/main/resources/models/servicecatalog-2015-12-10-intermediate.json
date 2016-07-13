@@ -21,6 +21,8 @@
     "signingName" : "servicecatalog",
     "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
+    "syncClientBuilderClassName" : "AWSServiceCatalogClientBuilder",
+    "asyncClientBuilderClassName" : "AWSServiceCatalogAsyncClientBuilder",
     "serviceName" : "AWS Service Catalog",
     "cborProtocol" : false,
     "xmlProtocol" : false,
@@ -53,12 +55,12 @@
         "documentation" : "<p>One or more parameters provided to the operation are invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeProductResult",
       "asyncReturnType" : "DescribeProductResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeProductResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeProductResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeProductRequest, DescribeProductResult>",
+      "authenticated" : true,
       "methodName" : "describeProduct"
     },
     "DescribeProductView" : {
@@ -86,12 +88,12 @@
         "documentation" : "<p>One or more parameters provided to the operation are invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeProductViewResult",
       "asyncReturnType" : "DescribeProductViewResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeProductViewResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeProductViewResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeProductViewRequest, DescribeProductViewResult>",
+      "authenticated" : true,
       "methodName" : "describeProductView"
     },
     "DescribeProvisioningParameters" : {
@@ -119,12 +121,12 @@
         "documentation" : "<p>The specified resource was not found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeProvisioningParametersResult",
       "asyncReturnType" : "DescribeProvisioningParametersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeProvisioningParametersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeProvisioningParametersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeProvisioningParametersRequest, DescribeProvisioningParametersResult>",
+      "authenticated" : true,
       "methodName" : "describeProvisioningParameters"
     },
     "DescribeRecord" : {
@@ -149,12 +151,12 @@
         "documentation" : "<p>The specified resource was not found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeRecordResult",
       "asyncReturnType" : "DescribeRecordResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeRecordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeRecordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeRecordRequest, DescribeRecordResult>",
+      "authenticated" : true,
       "methodName" : "describeRecord"
     },
     "ListLaunchPaths" : {
@@ -182,12 +184,12 @@
         "documentation" : "<p>The specified resource was not found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListLaunchPathsResult",
       "asyncReturnType" : "ListLaunchPathsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListLaunchPathsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListLaunchPathsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListLaunchPathsRequest, ListLaunchPathsResult>",
+      "authenticated" : true,
       "methodName" : "listLaunchPaths"
     },
     "ListRecordHistory" : {
@@ -212,12 +214,12 @@
         "documentation" : "<p>One or more parameters provided to the operation are invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListRecordHistoryResult",
       "asyncReturnType" : "ListRecordHistoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRecordHistoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRecordHistoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRecordHistoryRequest, ListRecordHistoryResult>",
+      "authenticated" : true,
       "methodName" : "listRecordHistory"
     },
     "ProvisionProduct" : {
@@ -248,12 +250,12 @@
         "documentation" : "<p>The specified resource is a duplicate.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ProvisionProductResult",
       "asyncReturnType" : "ProvisionProductResult",
       "asyncFutureType" : "java.util.concurrent.Future<ProvisionProductResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ProvisionProductResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ProvisionProductRequest, ProvisionProductResult>",
+      "authenticated" : true,
       "methodName" : "provisionProduct"
     },
     "ScanProvisionedProducts" : {
@@ -278,12 +280,12 @@
         "documentation" : "<p>One or more parameters provided to the operation are invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ScanProvisionedProductsResult",
       "asyncReturnType" : "ScanProvisionedProductsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ScanProvisionedProductsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ScanProvisionedProductsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ScanProvisionedProductsRequest, ScanProvisionedProductsResult>",
+      "authenticated" : true,
       "methodName" : "scanProvisionedProducts"
     },
     "SearchProducts" : {
@@ -308,12 +310,12 @@
         "documentation" : "<p>One or more parameters provided to the operation are invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "SearchProductsResult",
       "asyncReturnType" : "SearchProductsResult",
       "asyncFutureType" : "java.util.concurrent.Future<SearchProductsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SearchProductsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SearchProductsRequest, SearchProductsResult>",
+      "authenticated" : true,
       "methodName" : "searchProducts"
     },
     "TerminateProvisionedProduct" : {
@@ -338,12 +340,12 @@
         "documentation" : "<p>The specified resource was not found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "TerminateProvisionedProductResult",
       "asyncReturnType" : "TerminateProvisionedProductResult",
       "asyncFutureType" : "java.util.concurrent.Future<TerminateProvisionedProductResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TerminateProvisionedProductResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TerminateProvisionedProductRequest, TerminateProvisionedProductResult>",
+      "authenticated" : true,
       "methodName" : "terminateProvisionedProduct"
     },
     "UpdateProvisionedProduct" : {
@@ -371,12 +373,12 @@
         "documentation" : "<p>The specified resource was not found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateProvisionedProductResult",
       "asyncReturnType" : "UpdateProvisionedProductResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateProvisionedProductResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateProvisionedProductResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateProvisionedProductRequest, UpdateProvisionedProductResult>",
+      "authenticated" : true,
       "methodName" : "updateProvisionedProduct"
     }
   },
@@ -1001,9 +1003,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "ProvisioningParameter",
           "templateType" : "java.util.List<ProvisioningParameter>",
-          "templateImplType" : "java.util.ArrayList<ProvisioningParameter>",
-          "simpleType" : "ProvisioningParameter"
+          "templateImplType" : "java.util.ArrayList<ProvisioningParameter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1119,9 +1121,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "simpleType" : "Tag"
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1237,9 +1239,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1487,9 +1489,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "ProvisioningParameter",
             "templateType" : "java.util.List<ProvisioningParameter>",
-            "templateImplType" : "java.util.ArrayList<ProvisioningParameter>",
-            "simpleType" : "ProvisioningParameter"
+            "templateImplType" : "java.util.ArrayList<ProvisioningParameter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1606,9 +1608,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1884,9 +1886,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "simpleType" : "Tag"
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2122,9 +2124,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "ProvisioningArtifactParameter",
           "templateType" : "java.util.List<ProvisioningArtifactParameter>",
-          "templateImplType" : "java.util.ArrayList<ProvisioningArtifactParameter>",
-          "simpleType" : "ProvisioningArtifactParameter"
+          "templateImplType" : "java.util.ArrayList<ProvisioningArtifactParameter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2240,9 +2242,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "ConstraintSummary",
           "templateType" : "java.util.List<ConstraintSummary>",
-          "templateImplType" : "java.util.ArrayList<ConstraintSummary>",
-          "simpleType" : "ConstraintSummary"
+          "templateImplType" : "java.util.ArrayList<ConstraintSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2358,9 +2360,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "UsageInstruction",
           "templateType" : "java.util.List<UsageInstruction>",
-          "templateImplType" : "java.util.ArrayList<UsageInstruction>",
-          "simpleType" : "UsageInstruction"
+          "templateImplType" : "java.util.ArrayList<UsageInstruction>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2499,9 +2501,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "UsageInstruction",
             "templateType" : "java.util.List<UsageInstruction>",
-            "templateImplType" : "java.util.ArrayList<UsageInstruction>",
-            "simpleType" : "UsageInstruction"
+            "templateImplType" : "java.util.ArrayList<UsageInstruction>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2618,9 +2620,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "ProvisioningArtifactParameter",
             "templateType" : "java.util.List<ProvisioningArtifactParameter>",
-            "templateImplType" : "java.util.ArrayList<ProvisioningArtifactParameter>",
-            "simpleType" : "ProvisioningArtifactParameter"
+            "templateImplType" : "java.util.ArrayList<ProvisioningArtifactParameter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2737,9 +2739,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "ConstraintSummary",
             "templateType" : "java.util.List<ConstraintSummary>",
-            "templateImplType" : "java.util.ArrayList<ConstraintSummary>",
-            "simpleType" : "ConstraintSummary"
+            "templateImplType" : "java.util.ArrayList<ConstraintSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2965,9 +2967,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "ConstraintSummary",
           "templateType" : "java.util.List<ConstraintSummary>",
-          "templateImplType" : "java.util.ArrayList<ConstraintSummary>",
-          "simpleType" : "ConstraintSummary"
+          "templateImplType" : "java.util.ArrayList<ConstraintSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3083,9 +3085,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "java.util.ArrayList<Tag>",
-          "simpleType" : "Tag"
+          "templateImplType" : "java.util.ArrayList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3329,9 +3331,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "java.util.ArrayList<Tag>",
-            "simpleType" : "Tag"
+            "templateImplType" : "java.util.ArrayList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3448,9 +3450,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "ConstraintSummary",
             "templateType" : "java.util.List<ConstraintSummary>",
-            "templateImplType" : "java.util.ArrayList<ConstraintSummary>",
-            "simpleType" : "ConstraintSummary"
+            "templateImplType" : "java.util.ArrayList<ConstraintSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4036,9 +4038,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "RecordOutput",
           "templateType" : "java.util.List<RecordOutput>",
-          "templateImplType" : "java.util.ArrayList<RecordOutput>",
-          "simpleType" : "RecordOutput"
+          "templateImplType" : "java.util.ArrayList<RecordOutput>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4229,9 +4231,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "RecordOutput",
             "templateType" : "java.util.List<RecordOutput>",
-            "templateImplType" : "java.util.ArrayList<RecordOutput>",
-            "simpleType" : "RecordOutput"
+            "templateImplType" : "java.util.ArrayList<RecordOutput>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4660,9 +4662,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "ProvisioningArtifact",
           "templateType" : "java.util.List<ProvisioningArtifact>",
-          "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>",
-          "simpleType" : "ProvisioningArtifact"
+          "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4801,9 +4803,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "ProvisioningArtifact",
             "templateType" : "java.util.List<ProvisioningArtifact>",
-            "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>",
-            "simpleType" : "ProvisioningArtifact"
+            "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6213,9 +6215,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "ProvisionedProductDetail",
           "templateType" : "java.util.List<ProvisionedProductDetail>",
-          "templateImplType" : "java.util.ArrayList<ProvisionedProductDetail>",
-          "simpleType" : "ProvisionedProductDetail"
+          "templateImplType" : "java.util.ArrayList<ProvisionedProductDetail>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6406,9 +6408,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "ProvisionedProductDetail",
             "templateType" : "java.util.List<ProvisionedProductDetail>",
-            "templateImplType" : "java.util.ArrayList<ProvisionedProductDetail>",
-            "simpleType" : "ProvisionedProductDetail"
+            "templateImplType" : "java.util.ArrayList<ProvisionedProductDetail>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7051,9 +7053,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "ProductViewSummary",
           "templateType" : "java.util.List<ProductViewSummary>",
-          "templateImplType" : "java.util.ArrayList<ProductViewSummary>",
-          "simpleType" : "ProductViewSummary"
+          "templateImplType" : "java.util.ArrayList<ProductViewSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7218,9 +7220,9 @@
               "sendEmptyQueryString" : false,
               "simple" : false,
               "map" : false,
+              "simpleType" : "ProductViewAggregationValue",
               "templateType" : "java.util.List<ProductViewAggregationValue>",
-              "templateImplType" : "java.util.ArrayList<ProductViewAggregationValue>",
-              "simpleType" : "ProductViewAggregationValue"
+              "templateImplType" : "java.util.ArrayList<ProductViewAggregationValue>"
             },
             "mapModel" : null,
             "enumType" : null,
@@ -7531,9 +7533,9 @@
                 "sendEmptyQueryString" : false,
                 "simple" : false,
                 "map" : false,
+                "simpleType" : "ProductViewAggregationValue",
                 "templateType" : "java.util.List<ProductViewAggregationValue>",
-                "templateImplType" : "java.util.ArrayList<ProductViewAggregationValue>",
-                "simpleType" : "ProductViewAggregationValue"
+                "templateImplType" : "java.util.ArrayList<ProductViewAggregationValue>"
               },
               "mapModel" : null,
               "enumType" : null,
@@ -7668,9 +7670,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "ProductViewSummary",
             "templateType" : "java.util.List<ProductViewSummary>",
-            "templateImplType" : "java.util.ArrayList<ProductViewSummary>",
-            "simpleType" : "ProductViewSummary"
+            "templateImplType" : "java.util.ArrayList<ProductViewSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9324,9 +9326,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "RecordError",
           "templateType" : "java.util.List<RecordError>",
-          "templateImplType" : "java.util.ArrayList<RecordError>",
-          "simpleType" : "RecordError"
+          "templateImplType" : "java.util.ArrayList<RecordError>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9442,9 +9444,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "RecordTag",
           "templateType" : "java.util.List<RecordTag>",
-          "templateImplType" : "java.util.ArrayList<RecordTag>",
-          "simpleType" : "RecordTag"
+          "templateImplType" : "java.util.ArrayList<RecordTag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9901,9 +9903,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "RecordTag",
             "templateType" : "java.util.List<RecordTag>",
-            "templateImplType" : "java.util.ArrayList<RecordTag>",
-            "simpleType" : "RecordTag"
+            "templateImplType" : "java.util.ArrayList<RecordTag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10285,9 +10287,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "RecordError",
             "templateType" : "java.util.List<RecordError>",
-            "templateImplType" : "java.util.ArrayList<RecordError>",
-            "simpleType" : "RecordError"
+            "templateImplType" : "java.util.ArrayList<RecordError>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10461,9 +10463,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "RecordDetail",
           "templateType" : "java.util.List<RecordDetail>",
-          "templateImplType" : "java.util.ArrayList<RecordDetail>",
-          "simpleType" : "RecordDetail"
+          "templateImplType" : "java.util.ArrayList<RecordDetail>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10707,9 +10709,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "RecordDetail",
             "templateType" : "java.util.List<RecordDetail>",
-            "templateImplType" : "java.util.ArrayList<RecordDetail>",
-            "simpleType" : "RecordDetail"
+            "templateImplType" : "java.util.ArrayList<RecordDetail>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11183,9 +11185,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "UpdateProvisioningParameter",
           "templateType" : "java.util.List<UpdateProvisioningParameter>",
-          "templateImplType" : "java.util.ArrayList<UpdateProvisioningParameter>",
-          "simpleType" : "UpdateProvisioningParameter"
+          "templateImplType" : "java.util.ArrayList<UpdateProvisioningParameter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11433,9 +11435,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "UpdateProvisioningParameter",
             "templateType" : "java.util.List<UpdateProvisioningParameter>",
-            "templateImplType" : "java.util.ArrayList<UpdateProvisioningParameter>",
-            "simpleType" : "UpdateProvisioningParameter"
+            "templateImplType" : "java.util.ArrayList<UpdateProvisioningParameter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15446,9 +15448,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "LaunchPathSummary",
           "templateType" : "java.util.List<LaunchPathSummary>",
-          "templateImplType" : "java.util.ArrayList<LaunchPathSummary>",
-          "simpleType" : "LaunchPathSummary"
+          "templateImplType" : "java.util.ArrayList<LaunchPathSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15692,9 +15694,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "LaunchPathSummary",
             "templateType" : "java.util.List<LaunchPathSummary>",
-            "templateImplType" : "java.util.ArrayList<LaunchPathSummary>",
-            "simpleType" : "LaunchPathSummary"
+            "templateImplType" : "java.util.ArrayList<LaunchPathSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15949,9 +15951,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "ProvisioningArtifact",
           "templateType" : "java.util.List<ProvisioningArtifact>",
-          "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>",
-          "simpleType" : "ProvisioningArtifact"
+          "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16090,9 +16092,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "ProvisioningArtifact",
             "templateType" : "java.util.List<ProvisioningArtifact>",
-            "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>",
-            "simpleType" : "ProvisioningArtifact"
+            "templateImplType" : "java.util.ArrayList<ProvisioningArtifact>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16956,9 +16958,9 @@
               "sendEmptyQueryString" : false,
               "simple" : true,
               "map" : false,
+              "simpleType" : "String",
               "templateType" : "java.util.List<String>",
-              "templateImplType" : "java.util.ArrayList<String>",
-              "simpleType" : "String"
+              "templateImplType" : "java.util.ArrayList<String>"
             },
             "mapModel" : null,
             "enumType" : null,
@@ -17428,9 +17430,9 @@
                 "sendEmptyQueryString" : false,
                 "simple" : true,
                 "map" : false,
+                "simpleType" : "String",
                 "templateType" : "java.util.List<String>",
-                "templateImplType" : "java.util.ArrayList<String>",
-                "simpleType" : "String"
+                "templateImplType" : "java.util.ArrayList<String>"
               },
               "mapModel" : null,
               "enumType" : null,
@@ -19255,9 +19257,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19396,9 +19398,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,

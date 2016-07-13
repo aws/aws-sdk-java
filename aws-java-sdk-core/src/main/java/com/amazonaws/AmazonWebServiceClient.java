@@ -14,10 +14,12 @@
  */
 package com.amazonaws;
 
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.auth.RegionAwareSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SignerFactory;
+import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.AmazonHttpClient;
@@ -28,12 +30,13 @@ import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
-import com.amazonaws.util.*;
+import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.Classes;
 import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.util.StringUtils;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -50,9 +53,15 @@ import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
  * SDK Java clients (ex: setting the client endpoint).
  */
 public abstract class AmazonWebServiceClient {
+
+    /**
+     * @deprecated No longer used.
+     */
+    @Deprecated
+    public static final boolean LOGGING_AWS_REQUEST_METRIC = true;
+
     private static final String AMAZON = "Amazon";
     private static final String AWS = "AWS";
-    public static final boolean LOGGING_AWS_REQUEST_METRIC = true;
 
     private static final Log log =
         LogFactory.getLog(AmazonWebServiceClient.class);
@@ -67,6 +76,12 @@ public abstract class AmazonWebServiceClient {
             log.debug("Internal logging succesfully configured to commons logger: "
                     + success);
     }
+
+    /**
+     * Flag indicating whether a client is mutable or not. Legacy clients built via the constructors
+     * are mutable. Clients built with the fluent builders are immutable.
+     */
+    private volatile boolean isImmutable = false;
 
     /**
      * The service endpoint to which this client will send requests.
@@ -146,6 +161,13 @@ public abstract class AmazonWebServiceClient {
                 requestMetricCollector, disableStrictHostNameVerification);
     }
 
+    protected AmazonWebServiceClient(AwsSyncClientParams clientParams) {
+        this.clientConfiguration = clientParams.getClientConfiguration();
+        requestHandler2s = clientParams.getRequestHandlers();
+        client = new AmazonHttpClient(clientConfiguration, clientParams.getRequestMetricCollector(),
+                                      useStrictHostNameVerification());
+    }
+
     /**
      * Returns the signer.
      * <p>
@@ -180,8 +202,10 @@ public abstract class AmazonWebServiceClient {
      *            with.
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
+     *
      */
     public void setEndpoint(String endpoint) throws IllegalArgumentException {
+        checkMutability();
         URI uri = toURI(endpoint);
         Signer signer = computeSignerByURI(uri, signerRegionOverride, false);
         synchronized(this)  {
@@ -299,8 +323,10 @@ public abstract class AmazonWebServiceClient {
      * @see Region#getRegion(com.amazonaws.regions.Regions)
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider,
      *      ClientConfiguration)
+     *
      */
     public void setRegion(Region region) throws IllegalArgumentException {
+        checkMutability();
         if (region == null) {
             throw new IllegalArgumentException("No region provided");
         }
@@ -321,8 +347,10 @@ public abstract class AmazonWebServiceClient {
      * @param region region to set to; must not be null.
      *
      * @see #setRegion(Region)
+     *
      */
     public final void configureRegion(Regions region) {
+        checkMutability();
         if (region == null)
             throw new IllegalArgumentException("No region provided");
         this.setRegion(Region.getRegion(region));
@@ -351,6 +379,7 @@ public abstract class AmazonWebServiceClient {
      */
     @Deprecated
     public void addRequestHandler(RequestHandler requestHandler) {
+        checkMutability();
         requestHandler2s.add(RequestHandler2.adapt(requestHandler));
     }
 
@@ -363,6 +392,7 @@ public abstract class AmazonWebServiceClient {
      *            handlers.
      */
     public void addRequestHandler(RequestHandler2 requestHandler2) {
+        checkMutability();
         requestHandler2s.add(requestHandler2);
     }
 
@@ -375,10 +405,12 @@ public abstract class AmazonWebServiceClient {
      *            handlers.
      */
     public void removeRequestHandler(RequestHandler requestHandler) {
+        checkMutability();
         requestHandler2s.remove(RequestHandler2.adapt(requestHandler));
     }
 
     public void removeRequestHandler(RequestHandler2 requestHandler2) {
+        checkMutability();
         requestHandler2s.remove(requestHandler2);
     }
 
@@ -462,6 +494,7 @@ public abstract class AmazonWebServiceClient {
      *            The optional value for time offset (in seconds) for this client.
      */
     public void setTimeOffset(int timeOffset) {
+        checkMutability();
         this.timeOffset = timeOffset;
     }
 
@@ -477,6 +510,7 @@ public abstract class AmazonWebServiceClient {
      * @return the updated web service client
      */
     public AmazonWebServiceClient withTimeOffset(int timeOffset) {
+        checkMutability();
         setTimeOffset(timeOffset);
         return this;
     }
@@ -581,22 +615,24 @@ public abstract class AmazonWebServiceClient {
      *         request signing.
      */
     public String getEndpointPrefix() {
-
-        if (endpointPrefix != null) return endpointPrefix;
+        if (endpointPrefix != null) {
+            return endpointPrefix;
+        }
 
         String httpClientName = getHttpClientName();
-        String serviceNameInRegionMetadata = ServiceNameFactory
-                .getServiceNameInRegionMetadata(httpClientName);
+        String serviceNameInRegionMetadata = ServiceNameFactory.
+                getServiceNameInRegionMetadata(httpClientName);
 
-        synchronized(this) {
-            if (endpointPrefix != null) return endpointPrefix;
+        synchronized (this) {
+            if (endpointPrefix != null) {
+                return endpointPrefix;
+            }
             if (serviceNameInRegionMetadata != null) {
                 return endpointPrefix = serviceNameInRegionMetadata;
             } else {
                 return endpointPrefix = getServiceNameIntern();
             }
         }
-
     }
 
     /**
@@ -618,7 +654,7 @@ public abstract class AmazonWebServiceClient {
      */
     protected String getServiceNameIntern() {
         if (serviceName == null) {
-            synchronized(this) {
+            synchronized (this) {
                 if (serviceName == null) {
                     return serviceName = computeServiceName();
                 }
@@ -640,11 +676,10 @@ public abstract class AmazonWebServiceClient {
     }
 
     /**
-     * Returns the service name of this AWS http client by first looking it up
-     * from the SDK internal configuration, and if not found, derive it from the
-     * class name of the immediate subclass of {@link AmazonWebServiceClient}.
-     * No configuration is necessary if the simple class name of the http client
-     * follows the convention of <code>(Amazon|AWS).*(JavaClient|Client)</code>.
+     * Returns the service name of this AWS http client by first looking it up from the SDK internal
+     * configuration, and if not found, derive it from the class name of the immediate subclass of
+     * {@link AmazonWebServiceClient}. No configuration is necessary if the simple class name of the
+     * http client follows the convention of <code>(Amazon|AWS).*(JavaClient|Client)</code>.
      */
     private String computeServiceName() {
         final String httpClientName = getHttpClientName();
@@ -658,8 +693,7 @@ public abstract class AmazonWebServiceClient {
             j = httpClientName.indexOf("Client");
             if (j == -1) {
                 throw new IllegalStateException(
-                        "Unrecognized suffix for the AWS http client class name "
-                                + httpClientName);
+                        "Unrecognized suffix for the AWS http client class name " + httpClientName);
             }
         }
         int i = httpClientName.indexOf(AMAZON);
@@ -668,8 +702,7 @@ public abstract class AmazonWebServiceClient {
             i = httpClientName.indexOf(AWS);
             if (i == -1) {
                 throw new IllegalStateException(
-                        "Unrecognized prefix for the AWS http client class name "
-                                + httpClientName);
+                        "Unrecognized prefix for the AWS http client class name " + httpClientName);
             }
             len = AWS.length();
         } else {
@@ -684,8 +717,7 @@ public abstract class AmazonWebServiceClient {
     }
 
     private String getHttpClientName() {
-        Class<?> httpClientClass = Classes.childClassOf(
-                AmazonWebServiceClient.class, this);
+        Class<?> httpClientClass = Classes.childClassOf(AmazonWebServiceClient.class, this);
         return httpClientClass.getSimpleName();
     }
 
@@ -704,6 +736,7 @@ public abstract class AmazonWebServiceClient {
      * normally called except for AWS internal development purposes.
      */
     public final void setSignerRegionOverride(String signerRegionOverride) {
+        checkMutability();
         Signer signer = computeSignerByURI(endpoint, signerRegionOverride, true);
         synchronized(this)  {
             this.signer = signer;
@@ -751,5 +784,38 @@ public abstract class AmazonWebServiceClient {
         setEndpoint(endpoint);
         @SuppressWarnings("unchecked") T t= (T)this;
         return t;
+    }
+
+    /**
+     * Internal only API to lock a client's mutable methods. Only intended for use by the fluent
+     * builders.
+     */
+    @Deprecated
+    @SdkInternalApi
+    public final void makeImmutable() {
+        this.isImmutable = true;
+    }
+
+    /**
+     * If the client has been marked as immutable then throw an {@link
+     * UnsupportedOperationException}, otherwise do nothing. Should be called by each mutating
+     * method.
+     */
+    @SdkProtectedApi
+    protected final void checkMutability() {
+        if (isImmutable) {
+            throw new UnsupportedOperationException(
+                    "Client is immutable when created with the builder.");
+        }
+    }
+
+    /**
+     * Hook to allow S3 client to disable strict hostname verification since it uses wildcard
+     * certificates.
+     *
+     * @return True if strict hostname verification should be used, false otherwise.
+     */
+    protected boolean useStrictHostNameVerification() {
+        return true;
     }
 }

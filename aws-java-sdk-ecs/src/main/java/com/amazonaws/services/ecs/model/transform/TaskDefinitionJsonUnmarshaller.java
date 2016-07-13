@@ -70,6 +70,11 @@ public class TaskDefinitionJsonUnmarshaller implements
                     taskDefinition.setFamily(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("taskRoleArn", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setTaskRoleArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("revision", targetDepth)) {
                     context.nextToken();
                     taskDefinition.setRevision(context.getUnmarshaller(

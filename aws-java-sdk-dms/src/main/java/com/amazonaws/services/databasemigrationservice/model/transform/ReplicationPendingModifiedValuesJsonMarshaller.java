@@ -58,6 +58,10 @@ public class ReplicationPendingModifiedValuesJsonMarshaller {
                 jsonGenerator.writeFieldName("AllocatedStorage").writeValue(
                         replicationPendingModifiedValues.getAllocatedStorage());
             }
+            if (replicationPendingModifiedValues.getMultiAZ() != null) {
+                jsonGenerator.writeFieldName("MultiAZ").writeValue(
+                        replicationPendingModifiedValues.getMultiAZ());
+            }
             if (replicationPendingModifiedValues.getEngineVersion() != null) {
                 jsonGenerator.writeFieldName("EngineVersion").writeValue(
                         replicationPendingModifiedValues.getEngineVersion());

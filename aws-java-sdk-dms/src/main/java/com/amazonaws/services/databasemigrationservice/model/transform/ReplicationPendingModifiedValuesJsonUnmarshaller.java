@@ -67,6 +67,12 @@ public class ReplicationPendingModifiedValuesJsonUnmarshaller implements
                             .setAllocatedStorage(context.getUnmarshaller(
                                     Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("MultiAZ", targetDepth)) {
+                    context.nextToken();
+                    replicationPendingModifiedValues
+                            .setMultiAZ(context.getUnmarshaller(Boolean.class)
+                                    .unmarshall(context));
+                }
                 if (context.testExpression("EngineVersion", targetDepth)) {
                     context.nextToken();
                     replicationPendingModifiedValues.setEngineVersion(context

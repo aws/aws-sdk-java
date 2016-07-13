@@ -16,6 +16,7 @@
 package com.amazonaws.services.simpleworkflow;
 
 import com.amazonaws.services.simpleworkflow.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -261,6 +262,19 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon
+     * SWF using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AmazonSimpleWorkflowAsyncClient(
+            AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

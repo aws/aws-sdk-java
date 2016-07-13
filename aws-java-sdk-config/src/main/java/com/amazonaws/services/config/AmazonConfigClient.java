@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.services.config.model.transform.*;
@@ -83,7 +84,7 @@ import com.amazonaws.services.config.model.transform.*;
 public class AmazonConfigClient extends AmazonWebServiceClient implements
         AmazonConfig {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonConfig.class);
 
@@ -100,6 +101,24 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "NoRunningConfigurationRecorderException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.NoRunningConfigurationRecorderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ResourceNotDiscoveredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.ResourceNotDiscoveredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidParameterValueException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidParameterValueException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ResourceInUseException")
@@ -120,65 +139,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "InvalidParameterValueException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.config.model.InvalidParameterValueException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidLimitException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.config.model.InvalidLimitException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "InvalidConfigurationRecorderNameException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
                                             "MaxNumberOfConfigurationRecordersExceededException")
                                     .withModeledClass(
                                             com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "LastDeliveryChannelDeleteFailedException")
+                                            "InsufficientDeliveryPolicyException")
                                     .withModeledClass(
-                                            com.amazonaws.services.config.model.LastDeliveryChannelDeleteFailedException.class))
+                                            com.amazonaws.services.config.model.InsufficientDeliveryPolicyException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("ValidationException")
+                                    .withErrorCode("NoSuchBucketException")
                                     .withModeledClass(
-                                            com.amazonaws.services.config.model.ValidationException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidNextTokenException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.config.model.InvalidNextTokenException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "InvalidS3KeyPrefixException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.config.model.InvalidS3KeyPrefixException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "NoSuchConfigurationRecorderException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.config.model.NoSuchConfigurationRecorderException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidTimeRangeException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.config.model.InvalidTimeRangeException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "InvalidSNSTopicARNException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.config.model.InvalidSNSTopicARNException.class))
+                                            com.amazonaws.services.config.model.NoSuchBucketException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -188,21 +162,43 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
+                                            "NoSuchDeliveryChannelException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.NoSuchDeliveryChannelException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidNextTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
                                             "InvalidRecordingGroupException")
                                     .withModeledClass(
                                             com.amazonaws.services.config.model.InvalidRecordingGroupException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "NoSuchDeliveryChannelException")
+                                            "InvalidConfigurationRecorderNameException")
                                     .withModeledClass(
-                                            com.amazonaws.services.config.model.NoSuchDeliveryChannelException.class))
+                                            com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "MaxNumberOfConfigRulesExceededException")
+                                            "LastDeliveryChannelDeleteFailedException")
                                     .withModeledClass(
-                                            com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException.class))
+                                            com.amazonaws.services.config.model.LastDeliveryChannelDeleteFailedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidSNSTopicARNException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidSNSTopicARNException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidTimeRangeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.InvalidTimeRangeException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("NoSuchConfigRuleException")
@@ -210,10 +206,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.config.model.NoSuchConfigRuleException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "MaxNumberOfDeliveryChannelsExceededException")
+                                    .withErrorCode("InvalidLimitException")
                                     .withModeledClass(
-                                            com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException.class))
+                                            com.amazonaws.services.config.model.InvalidLimitException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidRoleException")
@@ -222,15 +217,20 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "InsufficientPermissionsException")
+                                            "MaxNumberOfDeliveryChannelsExceededException")
                                     .withModeledClass(
-                                            com.amazonaws.services.config.model.InsufficientPermissionsException.class))
+                                            com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "ResourceNotDiscoveredException")
+                                            "NoSuchConfigurationRecorderException")
                                     .withModeledClass(
-                                            com.amazonaws.services.config.model.ResourceNotDiscoveredException.class))
+                                            com.amazonaws.services.config.model.NoSuchConfigurationRecorderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ValidationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.ValidationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -240,20 +240,21 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "InsufficientDeliveryPolicyException")
+                                            "MaxNumberOfConfigRulesExceededException")
                                     .withModeledClass(
-                                            com.amazonaws.services.config.model.InsufficientDeliveryPolicyException.class))
+                                            com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "NoRunningConfigurationRecorderException")
+                                            "InsufficientPermissionsException")
                                     .withModeledClass(
-                                            com.amazonaws.services.config.model.NoRunningConfigurationRecorderException.class))
+                                            com.amazonaws.services.config.model.InsufficientPermissionsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("NoSuchBucketException")
+                                    .withErrorCode(
+                                            "InvalidS3KeyPrefixException")
                                     .withModeledClass(
-                                            com.amazonaws.services.config.model.NoSuchBucketException.class)));
+                                            com.amazonaws.services.config.model.InvalidS3KeyPrefixException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Config Service. A
@@ -406,6 +407,22 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Config Service using
+     * the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonConfigClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

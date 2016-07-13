@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.services.simpleworkflow.model.transform.*;
@@ -68,7 +69,7 @@ import com.amazonaws.services.simpleworkflow.model.transform.*;
 public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         implements AmazonSimpleWorkflow {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory
             .getLog(AmazonSimpleWorkflow.class);
@@ -88,9 +89,14 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("LimitExceededFault")
+                                    .withErrorCode("DomainAlreadyExistsFault")
                                     .withModeledClass(
-                                            com.amazonaws.services.simpleworkflow.model.LimitExceededException.class))
+                                            com.amazonaws.services.simpleworkflow.model.DomainAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TypeAlreadyExistsFault")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("OperationNotPermittedFault")
@@ -98,14 +104,14 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
                                             com.amazonaws.services.simpleworkflow.model.OperationNotPermittedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("UnknownResourceFault")
+                                    .withErrorCode("TypeDeprecatedFault")
                                     .withModeledClass(
-                                            com.amazonaws.services.simpleworkflow.model.UnknownResourceException.class))
+                                            com.amazonaws.services.simpleworkflow.model.TypeDeprecatedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("DomainAlreadyExistsFault")
+                                    .withErrorCode("LimitExceededFault")
                                     .withModeledClass(
-                                            com.amazonaws.services.simpleworkflow.model.DomainAlreadyExistsException.class))
+                                            com.amazonaws.services.simpleworkflow.model.LimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -114,9 +120,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
                                             com.amazonaws.services.simpleworkflow.model.WorkflowExecutionAlreadyStartedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("DefaultUndefinedFault")
+                                    .withErrorCode("UnknownResourceFault")
                                     .withModeledClass(
-                                            com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException.class))
+                                            com.amazonaws.services.simpleworkflow.model.UnknownResourceException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("DomainDeprecatedFault")
@@ -124,14 +130,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
                                             com.amazonaws.services.simpleworkflow.model.DomainDeprecatedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("TypeAlreadyExistsFault")
+                                    .withErrorCode("DefaultUndefinedFault")
                                     .withModeledClass(
-                                            com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("TypeDeprecatedFault")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simpleworkflow.model.TypeDeprecatedException.class)));
+                                            com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon SWF. A
@@ -283,6 +284,22 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon SWF using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonSimpleWorkflowClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

@@ -63,6 +63,12 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DBClusterParameterGroup copyDBClusterParameterGroup(
+            CopyDBClusterParameterGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBClusterSnapshot copyDBClusterSnapshot(
             CopyDBClusterSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();

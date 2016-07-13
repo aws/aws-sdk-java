@@ -117,6 +117,11 @@ public class ReplicationInstanceJsonUnmarshaller implements
                             .setPendingModifiedValues(ReplicationPendingModifiedValuesJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MultiAZ", targetDepth)) {
+                    context.nextToken();
+                    replicationInstance.setMultiAZ(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("EngineVersion", targetDepth)) {
                     context.nextToken();
                     replicationInstance.setEngineVersion(context
@@ -156,6 +161,22 @@ public class ReplicationInstanceJsonUnmarshaller implements
                             .setReplicationInstancePrivateIpAddress(context
                                     .getUnmarshaller(String.class).unmarshall(
                                             context));
+                }
+                if (context.testExpression(
+                        "ReplicationInstancePublicIpAddresses", targetDepth)) {
+                    context.nextToken();
+                    replicationInstance
+                            .setReplicationInstancePublicIpAddresses(new ListUnmarshaller<String>(
+                                    context.getUnmarshaller(String.class))
+                                    .unmarshall(context));
+                }
+                if (context.testExpression(
+                        "ReplicationInstancePrivateIpAddresses", targetDepth)) {
+                    context.nextToken();
+                    replicationInstance
+                            .setReplicationInstancePrivateIpAddresses(new ListUnmarshaller<String>(
+                                    context.getUnmarshaller(String.class))
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("PubliclyAccessible", targetDepth)) {
                     context.nextToken();

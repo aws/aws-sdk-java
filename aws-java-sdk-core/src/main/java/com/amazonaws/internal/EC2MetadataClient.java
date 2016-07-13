@@ -25,12 +25,15 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.util.EC2MetadataUtils;
 
 /**
  * Simple client for accessing the Amazon EC2 Instance Metadata Service.
+ *
+ * @deprecated Refer {@link EC2MetadataUtils}
  */
+@Deprecated
 public class EC2MetadataClient {
-
 
     /** Default endpoint for the Amazon EC2 Instance Metadata Service. */
     private static final String EC2_METADATA_SERVICE_URL = "http://169.254.169.254";
@@ -108,9 +111,9 @@ public class EC2MetadataClient {
      *             If any problems ocurred while reading the response.
      */
     private String readResponse(HttpURLConnection connection) throws IOException {
-    	if (connection.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND)
-    		throw new AmazonClientException("The requested metadata is not found at " + connection.getURL());
-    	
+        if (connection.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND)
+            throw new AmazonClientException("The requested metadata is not found at " + connection.getURL());
+
         InputStream inputStream = connection.getInputStream();
 
         try {

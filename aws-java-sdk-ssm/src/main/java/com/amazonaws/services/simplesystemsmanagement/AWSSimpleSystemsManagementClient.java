@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
@@ -256,7 +257,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
 public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         implements AWSSimpleSystemsManagement {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory
             .getLog(AWSSimpleSystemsManagement.class);
@@ -276,40 +277,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "InvalidInstanceInformationFilterValue")
+                                    .withErrorCode("InvalidPermissionType")
                                     .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("AssociatedInstances")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("AssociationLimitExceeded")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("DuplicateInstanceId")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.DuplicateInstanceIdException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("AssociationAlreadyExists")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.AssociationAlreadyExistsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidActivation")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidCommandId")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidCommandIdException.class))
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidPermissionTypeException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidDocument")
@@ -317,14 +287,110 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                                             com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidDocumentContent")
+                                    .withErrorCode("InvalidParameters")
                                     .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentContentException.class))
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidOutputFolder")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidDocumentOperation")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidFilter")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidResourceType")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceTypeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidCommandId")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidCommandIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DocumentPermissionLimit")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.DocumentPermissionLimitException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DocumentLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.DocumentLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidInstanceId")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidActivation")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidNextToken")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AssociationAlreadyExists")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.AssociationAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DuplicateInstanceId")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.DuplicateInstanceIdException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("TooManyUpdates")
                                     .withModeledClass(
                                             com.amazonaws.services.simplesystemsmanagement.model.TooManyUpdatesException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidActivationId")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DocumentAlreadyExists")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.DocumentAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidDocumentContent")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentContentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidInstanceInformationFilterValue")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AssociationLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("StatusUnchanged")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AssociationDoesNotExist")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.AssociationDoesNotExistException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("UnsupportedPlatformType")
@@ -337,29 +403,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                                             com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("DocumentAlreadyExists")
+                                    .withErrorCode("AssociatedInstances")
                                     .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.DocumentAlreadyExistsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidPermissionType")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidPermissionTypeException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidResourceType")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceTypeException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("StatusUnchanged")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidOutputFolder")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException.class))
+                                            com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidResourceId")
@@ -367,59 +413,14 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                                             com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceIdException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidNextToken")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidNextTokenException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidFilterKey")
                                     .withModeledClass(
                                             com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterKeyException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidParameters")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("AssociationDoesNotExist")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.AssociationDoesNotExistException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("InternalServerError")
                                     .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InternalServerErrorException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidFilter")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("DocumentPermissionLimit")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.DocumentPermissionLimitException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidInstanceId")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidDocumentOperation")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentOperationException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("DocumentLimitExceeded")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.DocumentLimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidActivationId")
-                                    .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationIdException.class)));
+                                            com.amazonaws.services.simplesystemsmanagement.model.InternalServerErrorException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon SSM. A
@@ -572,6 +573,22 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon SSM using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSSimpleSystemsManagementClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

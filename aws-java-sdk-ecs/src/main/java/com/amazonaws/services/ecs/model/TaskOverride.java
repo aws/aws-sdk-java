@@ -31,6 +31,14 @@ public class TaskOverride implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ContainerOverride> containerOverrides;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that containers in this
+     * task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.
+     * </p>
+     */
+    private String taskRoleArn;
 
     /**
      * <p>
@@ -114,6 +122,59 @@ public class TaskOverride implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that containers in this
+     * task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.
+     * </p>
+     * 
+     * @param taskRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role that containers in
+     *        this task can assume. All containers in this task are granted the
+     *        permissions that are specified in this role.
+     */
+
+    public void setTaskRoleArn(String taskRoleArn) {
+        this.taskRoleArn = taskRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that containers in this
+     * task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM role that containers in
+     *         this task can assume. All containers in this task are granted the
+     *         permissions that are specified in this role.
+     */
+
+    public String getTaskRoleArn() {
+        return this.taskRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that containers in this
+     * task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.
+     * </p>
+     * 
+     * @param taskRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role that containers in
+     *        this task can assume. All containers in this task are granted the
+     *        permissions that are specified in this role.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public TaskOverride withTaskRoleArn(String taskRoleArn) {
+        setTaskRoleArn(taskRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -126,7 +187,9 @@ public class TaskOverride implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContainerOverrides() != null)
-            sb.append("ContainerOverrides: " + getContainerOverrides());
+            sb.append("ContainerOverrides: " + getContainerOverrides() + ",");
+        if (getTaskRoleArn() != null)
+            sb.append("TaskRoleArn: " + getTaskRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -148,6 +211,11 @@ public class TaskOverride implements Serializable, Cloneable {
                 && other.getContainerOverrides().equals(
                         this.getContainerOverrides()) == false)
             return false;
+        if (other.getTaskRoleArn() == null ^ this.getTaskRoleArn() == null)
+            return false;
+        if (other.getTaskRoleArn() != null
+                && other.getTaskRoleArn().equals(this.getTaskRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -160,6 +228,9 @@ public class TaskOverride implements Serializable, Cloneable {
                 * hashCode
                 + ((getContainerOverrides() == null) ? 0
                         : getContainerOverrides().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTaskRoleArn() == null) ? 0 : getTaskRoleArn().hashCode());
         return hashCode;
     }
 

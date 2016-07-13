@@ -21,7 +21,8 @@ import java.io.Serializable;
 /**
  * <p>
  * Contains the result of a successful invocation of the
- * <a>CreateDBClusterParameterGroup</a> action.
+ * <a>CreateDBClusterParameterGroup</a> or <a>CopyDBClusterParameterGroup</a>
+ * action.
  * </p>
  * <p>
  * This data type is used as a request parameter in the

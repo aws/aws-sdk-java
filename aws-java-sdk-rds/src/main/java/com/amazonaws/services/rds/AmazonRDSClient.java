@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.rds.model.*;
 import com.amazonaws.services.rds.model.transform.*;
@@ -132,7 +133,7 @@ import com.amazonaws.services.rds.model.transform.*;
 public class AmazonRDSClient extends AmazonWebServiceClient implements
         AmazonRDS {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonRDS.class);
 
@@ -299,145 +300,161 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Amazon RDS using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonRDSClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+    }
+
     private void init() {
-        exceptionUnmarshallers
-                .add(new ReservedDBInstancesOfferingNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBUpgradeDependencyFailureExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new PointInTimeRestoreNotEnabledExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CertificateNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBClusterParameterGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBParameterGroupAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new AuthorizationAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new AuthorizationQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InsufficientStorageClusterCapacityExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InsufficientDBInstanceCapacityExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SubscriptionAlreadyExistExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InsufficientDBClusterCapacityExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new EventSubscriptionQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBParameterGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBSubnetGroupAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBSnapshotNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidDBSubnetGroupStateExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SNSNoAuthorizationExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBSubnetGroupNotAllowedExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InstanceQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new OptionGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InvalidDBClusterStateExceptionUnmarshaller());
+                .add(new OptionGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new SNSTopicArnNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SubscriptionNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBSubnetGroupNotFoundExceptionUnmarshaller());
+                .add(new DBSnapshotNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBSecurityGroupQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBParameterGroupQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SnapshotQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBSecurityGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidDBSubnetGroupExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidDBParameterGroupStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidRestoreExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new DBInstanceAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new ReservedDBInstanceNotFoundExceptionUnmarshaller());
+                .add(new DBSnapshotAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new StorageTypeNotSupportedExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBClusterQuotaExceededExceptionUnmarshaller());
+                .add(new DBParameterGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidDBInstanceStateExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new ProvisionedIopsNotAvailableInAZExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ReservedDBInstanceAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBSnapshotAlreadyExistsExceptionUnmarshaller());
+                .add(new DBLogFileNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidOptionGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new ReservedDBInstanceQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SourceNotFoundExceptionUnmarshaller());
+                .add(new InvalidDBSubnetGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new DBClusterSnapshotNotFoundExceptionUnmarshaller());
+                .add(new DBSecurityGroupNotSupportedExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InsufficientDBClusterCapacityExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidDBSubnetStateExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBSubnetGroupNotAllowedExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CertificateNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidDBSecurityGroupStateExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBSubnetQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidDBSnapshotStateExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBSecurityGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ReservedDBInstanceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBSubnetGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new StorageTypeNotSupportedExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InsufficientDBInstanceCapacityExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBUpgradeDependencyFailureExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new KMSKeyNotAccessibleExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new SubscriptionNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBClusterQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InsufficientStorageClusterCapacityExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new SubnetAlreadyInUseExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ProvisionedIopsNotAvailableInAZExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBClusterSnapshotAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ReservedDBInstanceAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidEventSubscriptionStateExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new AuthorizationNotFoundExceptionUnmarshaller());
+                .add(new PointInTimeRestoreNotEnabledExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBParameterGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBSubnetGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new SNSNoAuthorizationExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBClusterSnapshotNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBSubnetGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new AuthorizationQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InstanceQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBClusterParameterGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBSecurityGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new SnapshotQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new DBInstanceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new SharedSnapshotQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ReservedDBInstanceQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidDBClusterStateExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBClusterAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidVPCNetworkStateExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new SNSTopicArnNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidDBSubnetGroupExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new SubscriptionAlreadyExistExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBParameterGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DBClusterNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new OptionGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidDBClusterSnapshotStateExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new DBSecurityGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InvalidDBSubnetStateExceptionUnmarshaller());
+                .add(new ReservedDBInstancesOfferingNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new DBClusterSnapshotAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new OptionGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SharedSnapshotQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBClusterNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new KMSKeyNotAccessibleExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBSubnetGroupQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SubnetAlreadyInUseExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidDBSecurityGroupStateExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidDBSnapshotStateExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBSubnetQuotaExceededExceptionUnmarshaller());
+                .add(new InvalidDBParameterGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DomainNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidRestoreExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new DBSecurityGroupNotSupportedExceptionUnmarshaller());
+                .add(new EventSubscriptionQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InvalidVPCNetworkStateExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new OptionGroupQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBClusterAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new DBLogFileNotFoundExceptionUnmarshaller());
+                .add(new AuthorizationAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new StorageQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
@@ -670,6 +687,58 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<DBSecurityGroup> responseHandler = new StaxResponseHandler<DBSecurityGroup>(
                     new DBSecurityGroupStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Copies the specified DB cluster parameter group.
+     * </p>
+     * 
+     * @param copyDBClusterParameterGroupRequest
+     * @return Result of the CopyDBClusterParameterGroup operation returned by
+     *         the service.
+     * @throws DBParameterGroupNotFoundException
+     *         <i>DBParameterGroupName</i> does not refer to an existing DB
+     *         parameter group.
+     * @throws DBParameterGroupQuotaExceededException
+     *         Request would result in user exceeding the allowed number of DB
+     *         parameter groups.
+     * @throws DBParameterGroupAlreadyExistsException
+     *         A DB parameter group with the same name exists.
+     * @sample AmazonRDS.CopyDBClusterParameterGroup
+     */
+    @Override
+    public DBClusterParameterGroup copyDBClusterParameterGroup(
+            CopyDBClusterParameterGroupRequest copyDBClusterParameterGroupRequest) {
+        ExecutionContext executionContext = createExecutionContext(copyDBClusterParameterGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CopyDBClusterParameterGroupRequest> request = null;
+        Response<DBClusterParameterGroup> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CopyDBClusterParameterGroupRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(copyDBClusterParameterGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DBClusterParameterGroup> responseHandler = new StaxResponseHandler<DBClusterParameterGroup>(
+                    new DBClusterParameterGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3798,6 +3867,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      *         cluster.
      * @throws InvalidDBClusterStateException
      *         The DB cluster is not in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
      * @sample AmazonRDS.FailoverDBCluster
      */
     @Override

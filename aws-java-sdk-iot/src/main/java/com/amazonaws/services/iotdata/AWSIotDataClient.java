@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.iotdata.model.*;
 import com.amazonaws.services.iotdata.model.transform.*;
@@ -57,7 +58,7 @@ import com.amazonaws.services.iotdata.model.transform.*;
 public class AWSIotDataClient extends AmazonWebServiceClient implements
         AWSIotData {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSIotData.class);
 
@@ -77,9 +78,10 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
                     .withContentTypeOverride("")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("UnauthorizedException")
+                                    .withErrorCode(
+                                            "UnsupportedDocumentEncodingException")
                                     .withModeledClass(
-                                            com.amazonaws.services.iotdata.model.UnauthorizedException.class))
+                                            com.amazonaws.services.iotdata.model.UnsupportedDocumentEncodingException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("MethodNotAllowedException")
@@ -93,31 +95,9 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "RequestEntityTooLargeException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.iotdata.model.RequestEntityTooLargeException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "UnsupportedDocumentEncodingException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.iotdata.model.UnsupportedDocumentEncodingException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("ThrottlingException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.iotdata.model.ThrottlingException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
                                             "ServiceUnavailableException")
                                     .withModeledClass(
                                             com.amazonaws.services.iotdata.model.ServiceUnavailableException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("ResourceNotFoundException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.iotdata.model.ResourceNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InternalFailureException")
@@ -125,9 +105,30 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.iotdata.model.InternalFailureException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("UnauthorizedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iotdata.model.UnauthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "RequestEntityTooLargeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iotdata.model.RequestEntityTooLargeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidRequestException")
                                     .withModeledClass(
-                                            com.amazonaws.services.iotdata.model.InvalidRequestException.class)));
+                                            com.amazonaws.services.iotdata.model.InvalidRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ThrottlingException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iotdata.model.ThrottlingException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iotdata.model.ResourceNotFoundException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWS IoT Data Plane.
@@ -281,6 +282,22 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS IoT Data Plane
+     * using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSIotDataClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

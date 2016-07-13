@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.services.elasticsearch.model.transform.*;
@@ -61,7 +62,7 @@ import com.amazonaws.services.elasticsearch.model.transform.*;
 public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         AWSElasticsearch {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSElasticsearch.class);
 
@@ -81,22 +82,6 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                     .withContentTypeOverride("")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "ResourceAlreadyExistsException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.elasticsearch.model.ResourceAlreadyExistsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("LimitExceededException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.elasticsearch.model.LimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("DisabledOperationException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.elasticsearch.model.DisabledOperationException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("ValidationException")
                                     .withModeledClass(
                                             com.amazonaws.services.elasticsearch.model.ValidationException.class))
@@ -107,19 +92,35 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.elasticsearch.model.BaseException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("DisabledOperationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticsearch.model.DisabledOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("ResourceNotFoundException")
                                     .withModeledClass(
                                             com.amazonaws.services.elasticsearch.model.ResourceNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidTypeException")
+                                    .withErrorCode(
+                                            "ResourceAlreadyExistsException")
                                     .withModeledClass(
-                                            com.amazonaws.services.elasticsearch.model.InvalidTypeException.class))
+                                            com.amazonaws.services.elasticsearch.model.ResourceAlreadyExistsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InternalException")
                                     .withModeledClass(
-                                            com.amazonaws.services.elasticsearch.model.InternalException.class)));
+                                            com.amazonaws.services.elasticsearch.model.InternalException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticsearch.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidTypeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticsearch.model.InvalidTypeException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Elasticsearch
@@ -275,6 +276,22 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon Elasticsearch
+     * Service using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSElasticsearchClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

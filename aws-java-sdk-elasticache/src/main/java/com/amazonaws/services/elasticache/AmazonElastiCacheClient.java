@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.elasticache.model.*;
 import com.amazonaws.services.elasticache.model.transform.*;
@@ -64,7 +65,7 @@ import com.amazonaws.services.elasticache.model.transform.*;
 public class AmazonElastiCacheClient extends AmazonWebServiceClient implements
         AmazonElastiCache {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonElastiCache.class);
 
@@ -238,86 +239,102 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Amazon ElastiCache
+     * using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonElastiCacheClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+    }
+
     private void init() {
-        exceptionUnmarshallers
-                .add(new InvalidSnapshotStateExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CacheSubnetGroupInUseExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TagNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ReservedCacheNodesOfferingNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CacheSecurityGroupAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CacheSecurityGroupQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidCacheParameterGroupStateExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidParameterValueExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new AuthorizationAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CacheParameterGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new ReservedCacheNodeAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new CacheParameterGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new AuthorizationNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ReplicationGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidARNExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CacheSubnetGroupAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CacheSecurityGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SnapshotFeatureNotSupportedExceptionUnmarshaller());
-        exceptionUnmarshallers
                 .add(new CacheSubnetGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InsufficientCacheClusterCapacityExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ReservedCacheNodeNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CacheSubnetQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ClusterQuotaForCustomerExceededExceptionUnmarshaller());
+                .add(new CacheClusterNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SubnetInUseExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new CacheClusterAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new NodeQuotaForClusterExceededExceptionUnmarshaller());
+                .add(new InvalidParameterValueExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new NodeQuotaForCustomerExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CacheParameterGroupQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ReplicationGroupAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidCacheClusterStateExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new CacheSubnetGroupQuotaExceededExceptionUnmarshaller());
+                .add(new CacheSecurityGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new SnapshotAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new CacheClusterNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SnapshotNotFoundExceptionUnmarshaller());
+                .add(new InvalidReplicationGroupStateExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidCacheSecurityGroupStateExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CacheSecurityGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new SnapshotQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CacheParameterGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ReservedCacheNodesOfferingNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CacheParameterGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new NodeQuotaForCustomerExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CacheParameterGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TagNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ClusterQuotaForCustomerExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new NodeQuotaForClusterExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidCacheClusterStateExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidVPCNetworkStateExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new SnapshotQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SubnetInUseExceptionUnmarshaller());
+                .add(new CacheSubnetQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new TagQuotaPerResourceExceededExceptionUnmarshaller());
+                .add(new SnapshotFeatureNotSupportedExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InvalidReplicationGroupStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
+                .add(new InvalidSnapshotStateExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new ReservedCacheNodeQuotaExceededExceptionUnmarshaller());
+                .add(new CacheSubnetGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CacheSubnetGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ReplicationGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InsufficientCacheClusterCapacityExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidParameterCombinationExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InvalidCacheSecurityGroupStateExceptionUnmarshaller());
+                .add(new ReservedCacheNodeNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SnapshotNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CacheSubnetGroupInUseExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new CacheSecurityGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidCacheParameterGroupStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidARNExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TagQuotaPerResourceExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ReplicationGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new AuthorizationAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ReservedCacheNodeQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);

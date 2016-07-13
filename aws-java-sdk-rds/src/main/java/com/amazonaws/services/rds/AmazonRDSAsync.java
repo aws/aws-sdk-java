@@ -302,6 +302,38 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Copies the specified DB cluster parameter group.
+     * </p>
+     * 
+     * @param copyDBClusterParameterGroupRequest
+     * @return A Java Future containing the result of the
+     *         CopyDBClusterParameterGroup operation returned by the service.
+     * @sample AmazonRDSAsync.CopyDBClusterParameterGroup
+     */
+    java.util.concurrent.Future<DBClusterParameterGroup> copyDBClusterParameterGroupAsync(
+            CopyDBClusterParameterGroupRequest copyDBClusterParameterGroupRequest);
+
+    /**
+     * <p>
+     * Copies the specified DB cluster parameter group.
+     * </p>
+     * 
+     * @param copyDBClusterParameterGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         CopyDBClusterParameterGroup operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.CopyDBClusterParameterGroup
+     */
+    java.util.concurrent.Future<DBClusterParameterGroup> copyDBClusterParameterGroupAsync(
+            CopyDBClusterParameterGroupRequest copyDBClusterParameterGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CopyDBClusterParameterGroupRequest, DBClusterParameterGroup> asyncHandler);
+
+    /**
+     * <p>
      * Creates a snapshot of a DB cluster. For more information on Amazon
      * Aurora, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html"

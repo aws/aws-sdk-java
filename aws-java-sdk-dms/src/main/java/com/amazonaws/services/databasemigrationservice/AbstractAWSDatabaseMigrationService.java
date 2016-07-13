@@ -69,6 +69,12 @@ public class AbstractAWSDatabaseMigrationService implements
     }
 
     @Override
+    public DeleteCertificateResult deleteCertificate(
+            DeleteCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -94,6 +100,12 @@ public class AbstractAWSDatabaseMigrationService implements
     @Override
     public DescribeAccountAttributesResult describeAccountAttributes(
             DescribeAccountAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeCertificatesResult describeCertificates(
+            DescribeCertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -153,6 +165,12 @@ public class AbstractAWSDatabaseMigrationService implements
     @Override
     public DescribeTableStatisticsResult describeTableStatistics(
             DescribeTableStatisticsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportCertificateResult importCertificate(
+            ImportCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

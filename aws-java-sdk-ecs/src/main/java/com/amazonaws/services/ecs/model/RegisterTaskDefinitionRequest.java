@@ -37,6 +37,14 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
     private String family;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that containers in this
+     * task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.
+     * </p>
+     */
+    private String taskRoleArn;
+    /**
+     * <p>
      * A list of container definitions in JSON format that describe the
      * different containers that make up your task.
      * </p>
@@ -112,6 +120,59 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
 
     public RegisterTaskDefinitionRequest withFamily(String family) {
         setFamily(family);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that containers in this
+     * task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.
+     * </p>
+     * 
+     * @param taskRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role that containers in
+     *        this task can assume. All containers in this task are granted the
+     *        permissions that are specified in this role.
+     */
+
+    public void setTaskRoleArn(String taskRoleArn) {
+        this.taskRoleArn = taskRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that containers in this
+     * task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM role that containers in
+     *         this task can assume. All containers in this task are granted the
+     *         permissions that are specified in this role.
+     */
+
+    public String getTaskRoleArn() {
+        return this.taskRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that containers in this
+     * task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.
+     * </p>
+     * 
+     * @param taskRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role that containers in
+     *        this task can assume. All containers in this task are granted the
+     *        permissions that are specified in this role.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RegisterTaskDefinitionRequest withTaskRoleArn(String taskRoleArn) {
+        setTaskRoleArn(taskRoleArn);
         return this;
     }
 
@@ -305,6 +366,8 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
         sb.append("{");
         if (getFamily() != null)
             sb.append("Family: " + getFamily() + ",");
+        if (getTaskRoleArn() != null)
+            sb.append("TaskRoleArn: " + getTaskRoleArn() + ",");
         if (getContainerDefinitions() != null)
             sb.append("ContainerDefinitions: " + getContainerDefinitions()
                     + ",");
@@ -329,6 +392,11 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
         if (other.getFamily() != null
                 && other.getFamily().equals(this.getFamily()) == false)
             return false;
+        if (other.getTaskRoleArn() == null ^ this.getTaskRoleArn() == null)
+            return false;
+        if (other.getTaskRoleArn() != null
+                && other.getTaskRoleArn().equals(this.getTaskRoleArn()) == false)
+            return false;
         if (other.getContainerDefinitions() == null
                 ^ this.getContainerDefinitions() == null)
             return false;
@@ -351,6 +419,9 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
 
         hashCode = prime * hashCode
                 + ((getFamily() == null) ? 0 : getFamily().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTaskRoleArn() == null) ? 0 : getTaskRoleArn().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getContainerDefinitions() == null) ? 0

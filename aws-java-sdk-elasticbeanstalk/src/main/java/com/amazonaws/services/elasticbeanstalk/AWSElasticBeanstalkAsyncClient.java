@@ -16,6 +16,7 @@
 package com.amazonaws.services.elasticbeanstalk;
 
 import com.amazonaws.services.elasticbeanstalk.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -269,6 +270,18 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Elastic
+     * Beanstalk using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AWSElasticBeanstalkAsyncClient(AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

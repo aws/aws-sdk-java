@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.services.dynamodbv2.model.transform.*;
@@ -247,7 +248,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                                 .values()));
     }
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonDynamoDB.class);
 
@@ -266,26 +267,20 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("ResourceInUseException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.dynamodbv2.model.ResourceInUseException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode(
                                             "ItemCollectionSizeLimitExceededException")
                                     .withModeledClass(
                                             com.amazonaws.services.dynamodbv2.model.ItemCollectionSizeLimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("LimitExceededException")
+                                    .withErrorCode("ResourceInUseException")
                                     .withModeledClass(
-                                            com.amazonaws.services.dynamodbv2.model.LimitExceededException.class))
+                                            com.amazonaws.services.dynamodbv2.model.ResourceInUseException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "ConditionalCheckFailedException")
+                                    .withErrorCode("ResourceNotFoundException")
                                     .withModeledClass(
-                                            com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException.class))
+                                            com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -294,14 +289,20 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.dynamodbv2.model.ProvisionedThroughputExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ConditionalCheckFailedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("InternalServerError")
                                     .withModeledClass(
                                             com.amazonaws.services.dynamodbv2.model.InternalServerErrorException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("ResourceNotFoundException")
+                                    .withErrorCode("LimitExceededException")
                                     .withModeledClass(
-                                            com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException.class)));
+                                            com.amazonaws.services.dynamodbv2.model.LimitExceededException.class)));
 
     /**
      * Constructs a new client to invoke service methods on DynamoDB. A
@@ -450,6 +451,22 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on DynamoDB using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonDynamoDBClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

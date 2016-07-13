@@ -19,13 +19,15 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "autoscaling",
     "signingName" : "application-autoscaling",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true,
+    "syncClientBuilderClassName" : "AWSApplicationAutoScalingClientBuilder",
+    "asyncClientBuilderClassName" : "AWSApplicationAutoScalingAsyncClientBuilder",
     "serviceName" : "Application Auto Scaling",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "DeleteScalingPolicy" : {
@@ -1161,8 +1163,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "ScalingPolicy",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ScalingPolicy>",
           "templateImplType" : "java.util.ArrayList<ScalingPolicy>"
@@ -1354,8 +1356,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "ScalingPolicy",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ScalingPolicy>",
             "templateImplType" : "java.util.ArrayList<ScalingPolicy>"
@@ -1680,8 +1682,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "ScalableTarget",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ScalableTarget>",
           "templateImplType" : "java.util.ArrayList<ScalableTarget>"
@@ -1926,8 +1928,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "ScalableTarget",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ScalableTarget>",
             "templateImplType" : "java.util.ArrayList<ScalableTarget>"
@@ -3648,8 +3650,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -4053,8 +4055,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -4502,8 +4504,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
           "simpleType" : "String",
+          "simple" : true,
           "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
@@ -4803,8 +4805,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
             "simpleType" : "String",
+            "simple" : true,
             "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
@@ -6390,8 +6392,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "StepAdjustment",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<StepAdjustment>",
           "templateImplType" : "java.util.ArrayList<StepAdjustment>"
@@ -6740,8 +6742,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "StepAdjustment",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<StepAdjustment>",
             "templateImplType" : "java.util.ArrayList<StepAdjustment>"
@@ -7439,8 +7441,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "Alarm",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<Alarm>",
           "templateImplType" : "java.util.ArrayList<Alarm>"
@@ -7950,8 +7952,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "Alarm",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<Alarm>",
             "templateImplType" : "java.util.ArrayList<Alarm>"
@@ -8726,8 +8728,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
           "simpleType" : "ScalingActivity",
+          "simple" : false,
           "map" : false,
           "templateType" : "java.util.List<ScalingActivity>",
           "templateImplType" : "java.util.ArrayList<ScalingActivity>"
@@ -8972,8 +8974,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
             "simpleType" : "ScalingActivity",
+            "simple" : false,
             "map" : false,
             "templateType" : "java.util.List<ScalingActivity>",
             "templateImplType" : "java.util.ArrayList<ScalingActivity>"
@@ -10782,6 +10784,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "exceptionUnmarshallerImpl" : null,
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "exceptionUnmarshallerImpl" : null
 }

@@ -62,6 +62,10 @@ public class TaskOverrideJsonMarshaller {
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (taskOverride.getTaskRoleArn() != null) {
+                jsonGenerator.writeFieldName("taskRoleArn").writeValue(
+                        taskOverride.getTaskRoleArn());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

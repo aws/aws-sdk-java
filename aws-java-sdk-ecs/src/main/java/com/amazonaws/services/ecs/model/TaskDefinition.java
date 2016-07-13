@@ -50,6 +50,14 @@ public class TaskDefinition implements Serializable, Cloneable {
     private String family;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that containers in this
+     * task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.
+     * </p>
+     */
+    private String taskRoleArn;
+    /**
+     * <p>
      * The revision of the task in a particular family. The revision is a
      * version number of a task definition in a family. When you register a task
      * definition for the first time, the revision is <code>1</code>; each time
@@ -282,6 +290,59 @@ public class TaskDefinition implements Serializable, Cloneable {
 
     public TaskDefinition withFamily(String family) {
         setFamily(family);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that containers in this
+     * task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.
+     * </p>
+     * 
+     * @param taskRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role that containers in
+     *        this task can assume. All containers in this task are granted the
+     *        permissions that are specified in this role.
+     */
+
+    public void setTaskRoleArn(String taskRoleArn) {
+        this.taskRoleArn = taskRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that containers in this
+     * task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM role that containers in
+     *         this task can assume. All containers in this task are granted the
+     *         permissions that are specified in this role.
+     */
+
+    public String getTaskRoleArn() {
+        return this.taskRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that containers in this
+     * task can assume. All containers in this task are granted the permissions
+     * that are specified in this role.
+     * </p>
+     * 
+     * @param taskRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role that containers in
+     *        this task can assume. All containers in this task are granted the
+     *        permissions that are specified in this role.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public TaskDefinition withTaskRoleArn(String taskRoleArn) {
+        setTaskRoleArn(taskRoleArn);
         return this;
     }
 
@@ -644,6 +705,8 @@ public class TaskDefinition implements Serializable, Cloneable {
                     + ",");
         if (getFamily() != null)
             sb.append("Family: " + getFamily() + ",");
+        if (getTaskRoleArn() != null)
+            sb.append("TaskRoleArn: " + getTaskRoleArn() + ",");
         if (getRevision() != null)
             sb.append("Revision: " + getRevision() + ",");
         if (getVolumes() != null)
@@ -685,6 +748,11 @@ public class TaskDefinition implements Serializable, Cloneable {
         if (other.getFamily() != null
                 && other.getFamily().equals(this.getFamily()) == false)
             return false;
+        if (other.getTaskRoleArn() == null ^ this.getTaskRoleArn() == null)
+            return false;
+        if (other.getTaskRoleArn() != null
+                && other.getTaskRoleArn().equals(this.getTaskRoleArn()) == false)
+            return false;
         if (other.getRevision() == null ^ this.getRevision() == null)
             return false;
         if (other.getRevision() != null
@@ -725,6 +793,9 @@ public class TaskDefinition implements Serializable, Cloneable {
                         : getContainerDefinitions().hashCode());
         hashCode = prime * hashCode
                 + ((getFamily() == null) ? 0 : getFamily().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTaskRoleArn() == null) ? 0 : getTaskRoleArn().hashCode());
         hashCode = prime * hashCode
                 + ((getRevision() == null) ? 0 : getRevision().hashCode());
         hashCode = prime * hashCode

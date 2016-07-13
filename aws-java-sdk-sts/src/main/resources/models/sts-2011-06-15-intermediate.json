@@ -19,13 +19,15 @@
     "jsonVersion" : null,
     "endpointPrefix" : "sts",
     "signingName" : "sts",
+    "jsonProtocol" : false,
+    "syncClientBuilderClassName" : "AWSSecurityTokenServiceClientBuilder",
+    "asyncClientBuilderClassName" : "AWSSecurityTokenServiceAsyncClientBuilder",
     "serviceName" : "AWS STS",
     "cborProtocol" : false,
     "xmlProtocol" : true,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
-    "jsonProtocol" : false
+    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "AssumeRole" : {

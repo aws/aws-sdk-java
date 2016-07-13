@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.services.waf.model.transform.*;
@@ -55,7 +56,7 @@ import com.amazonaws.services.waf.model.transform.*;
 @ThreadSafe
 public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSWAF.class);
 
@@ -74,19 +75,14 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("WAFInternalErrorException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.waf.model.WAFInternalErrorException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("WAFReferencedItemException")
                                     .withModeledClass(
                                             com.amazonaws.services.waf.model.WAFReferencedItemException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("WAFInvalidAccountException")
+                                    .withErrorCode("WAFLimitsExceededException")
                                     .withModeledClass(
-                                            com.amazonaws.services.waf.model.WAFInvalidAccountException.class))
+                                            com.amazonaws.services.waf.model.WAFLimitsExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("WAFStaleDataException")
@@ -95,25 +91,19 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "WAFNonexistentContainerException")
+                                            "WAFNonexistentItemException")
                                     .withModeledClass(
-                                            com.amazonaws.services.waf.model.WAFNonexistentContainerException.class))
+                                            com.amazonaws.services.waf.model.WAFNonexistentItemException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("WAFLimitsExceededException")
+                                    .withErrorCode("WAFInternalErrorException")
                                     .withModeledClass(
-                                            com.amazonaws.services.waf.model.WAFLimitsExceededException.class))
+                                            com.amazonaws.services.waf.model.WAFInternalErrorException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "WAFInvalidParameterException")
+                                    .withErrorCode("WAFInvalidAccountException")
                                     .withModeledClass(
-                                            com.amazonaws.services.waf.model.WAFInvalidParameterException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("WAFNonEmptyEntityException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.waf.model.WAFNonEmptyEntityException.class))
+                                            com.amazonaws.services.waf.model.WAFInvalidAccountException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("WAFDisallowedNameException")
@@ -128,9 +118,20 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "WAFNonexistentItemException")
+                                            "WAFInvalidParameterException")
                                     .withModeledClass(
-                                            com.amazonaws.services.waf.model.WAFNonexistentItemException.class)));
+                                            com.amazonaws.services.waf.model.WAFInvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "WAFNonexistentContainerException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.waf.model.WAFNonexistentContainerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("WAFNonEmptyEntityException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.waf.model.WAFNonEmptyEntityException.class)));
 
     /**
      * Constructs a new client to invoke service methods on WAF. A credentials
@@ -277,6 +278,22 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on WAF using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSWAFClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

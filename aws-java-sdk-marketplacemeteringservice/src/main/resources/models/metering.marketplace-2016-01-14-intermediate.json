@@ -19,6 +19,8 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "metering.marketplace",
     "signingName" : "aws-marketplace",
+    "syncClientBuilderClassName" : "AWSMarketplaceMeteringClientBuilder",
+    "asyncClientBuilderClassName" : "AWSMarketplaceMeteringAsyncClientBuilder",
     "serviceName" : "AWSMarketplace Metering",
     "cborProtocol" : false,
     "xmlProtocol" : false,
@@ -37,8 +39,8 @@
         "variableType" : "MeterUsageRequest",
         "variableDeclarationType" : "MeterUsageRequest",
         "documentation" : "",
-        "simpleType" : "MeterUsageRequest",
-        "variableSetterType" : "MeterUsageRequest"
+        "variableSetterType" : "MeterUsageRequest",
+        "simpleType" : "MeterUsageRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -68,12 +70,12 @@
         "documentation" : "<p>The calls to the MeterUsage API are throttled.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "MeterUsageResult",
       "asyncReturnType" : "MeterUsageResult",
       "asyncFutureType" : "java.util.concurrent.Future<MeterUsageResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<MeterUsageResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<MeterUsageRequest, MeterUsageResult>",
-      "authenticated" : true,
       "methodName" : "meterUsage"
     }
   },
@@ -96,8 +98,8 @@
         "variableType" : "TimestampOutOfBoundsException",
         "variableDeclarationType" : "TimestampOutOfBoundsException",
         "documentation" : null,
-        "simpleType" : "TimestampOutOfBoundsException",
-        "variableSetterType" : "TimestampOutOfBoundsException"
+        "variableSetterType" : "TimestampOutOfBoundsException",
+        "simpleType" : "TimestampOutOfBoundsException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -128,8 +130,8 @@
         "variableType" : "InternalServiceErrorException",
         "variableDeclarationType" : "InternalServiceErrorException",
         "documentation" : null,
-        "simpleType" : "InternalServiceErrorException",
-        "variableSetterType" : "InternalServiceErrorException"
+        "variableSetterType" : "InternalServiceErrorException",
+        "simpleType" : "InternalServiceErrorException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -160,8 +162,8 @@
         "variableType" : "InvalidUsageDimensionException",
         "variableDeclarationType" : "InvalidUsageDimensionException",
         "documentation" : null,
-        "simpleType" : "InvalidUsageDimensionException",
-        "variableSetterType" : "InvalidUsageDimensionException"
+        "variableSetterType" : "InvalidUsageDimensionException",
+        "simpleType" : "InvalidUsageDimensionException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -192,8 +194,8 @@
         "variableType" : "ThrottlingException",
         "variableDeclarationType" : "ThrottlingException",
         "documentation" : null,
-        "simpleType" : "ThrottlingException",
-        "variableSetterType" : "ThrottlingException"
+        "variableSetterType" : "ThrottlingException",
+        "simpleType" : "ThrottlingException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -227,16 +229,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "productCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -262,13 +264,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
         "getterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@return Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
         "fluentSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>",
         "name" : "Timestamp",
@@ -279,16 +281,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>",
-          "simpleType" : "Date",
-          "variableSetterType" : "java.util.Date"
+          "variableSetterType" : "java.util.Date",
+          "simpleType" : "Date"
         },
         "setterModel" : {
           "variableName" : "timestamp",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "simpleType" : "Date",
-          "variableSetterType" : "java.util.Date"
+          "variableSetterType" : "java.util.Date",
+          "simpleType" : "Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -314,13 +316,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.*/",
         "getterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>\n@return Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.*/",
         "fluentSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>",
         "name" : "UsageDimension",
@@ -331,16 +333,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "usageDimension",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -366,13 +368,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>\n@param usageDimension It will be one of the 'fcp dimension name' provided during the publishing of the product.*/",
         "getterDocumentation" : "/**<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>\n@return It will be one of the 'fcp dimension name' provided during the publishing of the product.*/",
         "fluentSetterDocumentation" : "/**<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>\n@param usageDimension It will be one of the 'fcp dimension name' provided during the publishing of the product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>\n@param usageDimension It will be one of the 'fcp dimension name' provided during the publishing of the product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>\n@param usageDimension It will be one of the 'fcp dimension name' provided during the publishing of the product.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>Consumption value for the hour.</p>",
         "name" : "UsageQuantity",
@@ -383,16 +385,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>Consumption value for the hour.</p>",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "usageQuantity",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -418,13 +420,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.*/",
         "getterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@return Consumption value for the hour.*/",
         "fluentSetterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>",
         "name" : "DryRun",
@@ -435,16 +437,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "dryRun",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -470,13 +472,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.*/",
         "getterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>\n@return Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.*/",
         "fluentSetterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -484,8 +486,8 @@
         "variableType" : "MeterUsageRequest",
         "variableDeclarationType" : "MeterUsageRequest",
         "documentation" : null,
-        "simpleType" : "MeterUsageRequest",
-        "variableSetterType" : "MeterUsageRequest"
+        "variableSetterType" : "MeterUsageRequest",
+        "simpleType" : "MeterUsageRequest"
       },
       "marshaller" : {
         "action" : "MeterUsage",
@@ -514,16 +516,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "productCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -549,13 +551,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
           "getterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@return Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
           "fluentSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "DryRun" : {
           "documentation" : "<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>",
@@ -567,16 +569,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "dryRun",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -602,13 +604,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.*/",
           "getterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>\n@return Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.*/",
           "fluentSetterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "UsageQuantity" : {
           "documentation" : "<p>Consumption value for the hour.</p>",
@@ -620,16 +622,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>Consumption value for the hour.</p>",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "usageQuantity",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -655,13 +657,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.*/",
           "getterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@return Consumption value for the hour.*/",
           "fluentSetterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Timestamp" : {
           "documentation" : "<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>",
@@ -673,16 +675,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>",
-            "simpleType" : "Date",
-            "variableSetterType" : "java.util.Date"
+            "variableSetterType" : "java.util.Date",
+            "simpleType" : "Date"
           },
           "setterModel" : {
             "variableName" : "timestamp",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "simpleType" : "Date",
-            "variableSetterType" : "java.util.Date"
+            "variableSetterType" : "java.util.Date",
+            "simpleType" : "Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -708,13 +710,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.*/",
           "getterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>\n@return Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.*/",
           "fluentSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "UsageDimension" : {
           "documentation" : "<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>",
@@ -726,16 +728,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "usageDimension",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -761,13 +763,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>\n@param usageDimension It will be one of the 'fcp dimension name' provided during the publishing of the product.*/",
           "getterDocumentation" : "/**<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>\n@return It will be one of the 'fcp dimension name' provided during the publishing of the product.*/",
           "fluentSetterDocumentation" : "/**<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>\n@param usageDimension It will be one of the 'fcp dimension name' provided during the publishing of the product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>\n@param usageDimension It will be one of the 'fcp dimension name' provided during the publishing of the product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>\n@param usageDimension It will be one of the 'fcp dimension name' provided during the publishing of the product.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -792,16 +794,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "meteringRecordId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -827,13 +829,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
+        "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param meteringRecordId */",
         "getterDocumentation" : "/**\n@return */",
         "fluentSetterDocumentation" : "/**\n@param meteringRecordId \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**\n@param meteringRecordId \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "simple" : true
+        "varargSetterDocumentation" : "/**\n@param meteringRecordId \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -841,8 +843,8 @@
         "variableType" : "MeterUsageResult",
         "variableDeclarationType" : "MeterUsageResult",
         "documentation" : null,
-        "simpleType" : "MeterUsageResult",
-        "variableSetterType" : "MeterUsageResult"
+        "variableSetterType" : "MeterUsageResult",
+        "simpleType" : "MeterUsageResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -867,16 +869,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "meteringRecordId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -902,13 +904,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
+          "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param meteringRecordId */",
           "getterDocumentation" : "/**\n@return */",
           "fluentSetterDocumentation" : "/**\n@param meteringRecordId \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**\n@param meteringRecordId \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "simple" : true
+          "varargSetterDocumentation" : "/**\n@param meteringRecordId \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -930,8 +932,8 @@
         "variableType" : "DuplicateRequestException",
         "variableDeclarationType" : "DuplicateRequestException",
         "documentation" : null,
-        "simpleType" : "DuplicateRequestException",
-        "variableSetterType" : "DuplicateRequestException"
+        "variableSetterType" : "DuplicateRequestException",
+        "simpleType" : "DuplicateRequestException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -962,8 +964,8 @@
         "variableType" : "InvalidEndpointRegionException",
         "variableDeclarationType" : "InvalidEndpointRegionException",
         "documentation" : null,
-        "simpleType" : "InvalidEndpointRegionException",
-        "variableSetterType" : "InvalidEndpointRegionException"
+        "variableSetterType" : "InvalidEndpointRegionException",
+        "simpleType" : "InvalidEndpointRegionException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -994,8 +996,8 @@
         "variableType" : "InvalidProductCodeException",
         "variableDeclarationType" : "InvalidProductCodeException",
         "documentation" : null,
-        "simpleType" : "InvalidProductCodeException",
-        "variableSetterType" : "InvalidProductCodeException"
+        "variableSetterType" : "InvalidProductCodeException",
+        "simpleType" : "InvalidProductCodeException"
       },
       "marshaller" : null,
       "unmarshaller" : null,

@@ -26,19 +26,21 @@ import com.amazonaws.auth.profile.ProfileCredentialsProvider;
  *   </li>
  *   <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
  *   <li>Credential profiles file at the default location (~/.aws/credentials) shared by all AWS SDKs and the AWS CLI</li>
+ *   <li>Credentials delivered through the Amazon EC2 container service if AWS_CONTAINER_CREDENTIALS_RELATIVE_URI" environment variable is set
+ *   and security manager has permission to access the variable,</li>
  *   <li>Instance profile credentials delivered through the Amazon EC2 metadata service</li>
  * </ul>
  *
  * @see EnvironmentVariableCredentialsProvider
  * @see SystemPropertiesCredentialsProvider
  * @see ProfileCredentialsProvider
- * @see InstanceProfileCredentialsProvider
+ * @see EC2ContainerCredentialsProviderWrapper
  */
 public class DefaultAWSCredentialsProviderChain extends AWSCredentialsProviderChain {
     public DefaultAWSCredentialsProviderChain() {
         super(new EnvironmentVariableCredentialsProvider(),
               new SystemPropertiesCredentialsProvider(),
               new ProfileCredentialsProvider(),
-              new InstanceProfileCredentialsProvider());
+              new EC2ContainerCredentialsProviderWrapper());
     }
 }

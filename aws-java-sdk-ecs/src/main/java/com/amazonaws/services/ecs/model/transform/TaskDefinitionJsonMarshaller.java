@@ -72,6 +72,10 @@ public class TaskDefinitionJsonMarshaller {
                 jsonGenerator.writeFieldName("family").writeValue(
                         taskDefinition.getFamily());
             }
+            if (taskDefinition.getTaskRoleArn() != null) {
+                jsonGenerator.writeFieldName("taskRoleArn").writeValue(
+                        taskDefinition.getTaskRoleArn());
+            }
             if (taskDefinition.getRevision() != null) {
                 jsonGenerator.writeFieldName("revision").writeValue(
                         taskDefinition.getRevision());

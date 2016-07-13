@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.redshift.model.*;
 import com.amazonaws.services.redshift.model.transform.*;
@@ -81,7 +82,7 @@ import com.amazonaws.services.redshift.model.transform.*;
 public class AmazonRedshiftClient extends AmazonWebServiceClient implements
         AmazonRedshift {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonRedshift.class);
 
@@ -253,161 +254,177 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Amazon Redshift
+     * using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonRedshiftClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+    }
+
     private void init() {
-        exceptionUnmarshallers
-                .add(new InvalidClusterStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ClusterSecurityGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new NumberOfNodesQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ClusterSnapshotQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ClusterSubnetQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidHsmClientCertificateStateExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new AuthorizationAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ClusterSnapshotNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidClusterSnapshotStateExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new AuthorizationQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SubscriptionEventIdNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ReservedNodeOfferingNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SubscriptionAlreadyExistExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new EventSubscriptionQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SNSNoAuthorizationExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ReservedNodeAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ReservedNodeNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SnapshotCopyGrantNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TagLimitExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InsufficientClusterCapacityExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new UnsupportedOptionExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidHsmConfigurationStateExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InvalidS3KeyPrefixExceptionUnmarshaller());
+                .add(new SubscriptionEventIdNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new SubscriptionNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SNSTopicArnNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new UnsupportedOperationExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SnapshotCopyAlreadyEnabledExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new HsmConfigurationAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new BucketNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ClusterSubnetGroupQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ClusterParameterGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidSnapshotCopyGrantStateExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidS3BucketNameExceptionUnmarshaller());
+                .add(new InvalidSubscriptionStateExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new SubscriptionSeverityNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidElasticIpExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ResizeNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new IncompatibleOrderableOptionsExceptionUnmarshaller());
+                .add(new CopyToRegionDisabledExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidRestoreExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new SnapshotCopyDisabledExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ClusterSubnetGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DependentServiceRequestThrottlingExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BucketNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidTableRestoreArgumentExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new SnapshotCopyGrantAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new SnapshotCopyGrantQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new UnknownSnapshotCopyRegionExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new HsmClientCertificateNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ClusterSnapshotAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SourceNotFoundExceptionUnmarshaller());
+                .add(new TableRestoreNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ClusterNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new ClusterQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new HsmConfigurationQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InvalidClusterSubnetStateExceptionUnmarshaller());
+                .add(new UnsupportedOperationExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InvalidClusterSubnetGroupStateExceptionUnmarshaller());
+                .add(new SnapshotCopyGrantNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new CopyToRegionDisabledExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ClusterNotFoundExceptionUnmarshaller());
+                .add(new HsmClientCertificateNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new AuthorizationNotFoundExceptionUnmarshaller());
+                .add(new SnapshotCopyAlreadyEnabledExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new ClusterSecurityGroupQuotaExceededExceptionUnmarshaller());
+                .add(new HsmConfigurationAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InsufficientS3BucketPolicyExceptionUnmarshaller());
+                .add(new SubscriptionNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new NumberOfNodesPerClusterLimitExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SnapshotCopyGrantAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ClusterParameterGroupQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SnapshotCopyDisabledExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ClusterAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new HsmClientCertificateQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidTableRestoreArgumentExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidClusterParameterGroupStateExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidClusterSecurityGroupStateExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new HsmClientCertificateAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ClusterSecurityGroupAlreadyExistsExceptionUnmarshaller());
+                .add(new InvalidClusterStateExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new SubnetAlreadyInUseExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InProgressTableRestoreQuotaExceededExceptionUnmarshaller());
+                .add(new ClusterSubnetQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new TableRestoreNotFoundExceptionUnmarshaller());
+                .add(new InvalidClusterParameterGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new ClusterSubnetGroupAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new AccessToSnapshotDeniedExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidRestoreExceptionUnmarshaller());
+                .add(new ClusterSubnetGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new SnapshotCopyAlreadyDisabledExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new UnauthorizedOperationExceptionUnmarshaller());
+                .add(new ClusterSecurityGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new DependentServiceRequestThrottlingExceptionUnmarshaller());
+                .add(new ClusterSnapshotQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InvalidVPCNetworkStateExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ReservedNodeQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new SnapshotCopyGrantQuotaExceededExceptionUnmarshaller());
+                .add(new ClusterAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new HsmConfigurationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InvalidSubscriptionStateExceptionUnmarshaller());
+                .add(new SNSNoAuthorizationExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new NumberOfNodesPerClusterLimitExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new NumberOfNodesQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ClusterSnapshotAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ClusterSecurityGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new AuthorizationQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ReservedNodeOfferingNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InProgressTableRestoreQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new AccessToSnapshotDeniedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidElasticIpExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidSnapshotCopyGrantStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResizeNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidHsmClientCertificateStateExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidClusterSubnetGroupStateExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ClusterSnapshotNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTagExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new HsmClientCertificateAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new HsmClientCertificateQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidClusterSecurityGroupStateExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidVPCNetworkStateExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new SNSTopicArnNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ReservedNodeQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ClusterParameterGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new UnauthorizedOperationExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidClusterSubnetStateExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new SubscriptionAlreadyExistExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ReservedNodeAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ReservedNodeNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new IncompatibleOrderableOptionsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidS3BucketNameExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new UnsupportedOptionExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InsufficientClusterCapacityExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ClusterSubnetGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TagLimitExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SourceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ClusterParameterGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ClusterSecurityGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new EventSubscriptionQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new AuthorizationAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidClusterSnapshotStateExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new ClusterParameterGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new ClusterSubnetGroupNotFoundExceptionUnmarshaller());
+                .add(new InsufficientS3BucketPolicyExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new InvalidS3KeyPrefixExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);

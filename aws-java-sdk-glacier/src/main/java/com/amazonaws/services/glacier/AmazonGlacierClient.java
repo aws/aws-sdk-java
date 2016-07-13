@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.glacier.model.*;
 import com.amazonaws.services.glacier.model.transform.*;
@@ -98,7 +99,7 @@ import com.amazonaws.services.glacier.model.transform.*;
 public class AmazonGlacierClient extends AmazonWebServiceClient implements
         AmazonGlacier {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonGlacier.class);
 
@@ -118,31 +119,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements
                     .withContentTypeOverride("")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("LimitExceededException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.glacier.model.LimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "ServiceUnavailableException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.glacier.model.ServiceUnavailableException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "InvalidParameterValueException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.glacier.model.InvalidParameterValueException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("RequestTimeoutException")
                                     .withModeledClass(
                                             com.amazonaws.services.glacier.model.RequestTimeoutException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("PolicyEnforcedException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.glacier.model.PolicyEnforcedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -151,9 +130,31 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.glacier.model.MissingParameterValueException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidParameterValueException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.glacier.model.InvalidParameterValueException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("ResourceNotFoundException")
                                     .withModeledClass(
-                                            com.amazonaws.services.glacier.model.ResourceNotFoundException.class)));
+                                            com.amazonaws.services.glacier.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ServiceUnavailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.glacier.model.ServiceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.glacier.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("PolicyEnforcedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.glacier.model.PolicyEnforcedException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Glacier. A
@@ -306,6 +307,22 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon Glacier using
+     * the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonGlacierClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

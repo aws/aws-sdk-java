@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.services.dynamodbv2.model.transform.*;
@@ -87,7 +88,7 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
 public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
         implements AmazonDynamoDBStreams {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory
             .getLog(AmazonDynamoDBStreams.class);
@@ -107,14 +108,9 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InternalServerError")
+                                    .withErrorCode("TrimmedDataAccessException")
                                     .withModeledClass(
-                                            com.amazonaws.services.dynamodbv2.model.InternalServerErrorException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("LimitExceededException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.dynamodbv2.model.LimitExceededException.class))
+                                            com.amazonaws.services.dynamodbv2.model.TrimmedDataAccessException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ResourceNotFoundException")
@@ -122,14 +118,19 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
                                             com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("TrimmedDataAccessException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.dynamodbv2.model.TrimmedDataAccessException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("ExpiredIteratorException")
                                     .withModeledClass(
-                                            com.amazonaws.services.dynamodbv2.model.ExpiredIteratorException.class)));
+                                            com.amazonaws.services.dynamodbv2.model.ExpiredIteratorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalServerError")
+                                    .withModeledClass(
+                                            com.amazonaws.services.dynamodbv2.model.InternalServerErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.dynamodbv2.model.LimitExceededException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon DynamoDB
@@ -286,6 +287,22 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon DynamoDB
+     * Streams using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonDynamoDBStreamsClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

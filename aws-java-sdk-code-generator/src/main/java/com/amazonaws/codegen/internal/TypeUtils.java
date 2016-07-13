@@ -125,15 +125,13 @@ public class TypeUtils {
         if (Structure.getName().equals(shapeType)) {
             return namingStrategy.getJavaClassName(shapeName);
         } else if (List.getName().equals(shapeType)) {
-            final String listContainerType = dataTypeMappings
-                    .get(customConfig != null && customConfig.isUseAutoConstructList() ?
-                                 LIST_AUTO_CONSTRUCT_IMPL : LIST_INTERFACE);
+            String listType = customConfig != null && customConfig.isUseAutoConstructList() ? LIST_AUTO_CONSTRUCT_IMPL : LIST_INTERFACE;
+            final String listContainerType = dataTypeMappings.get(listType);
             return listContainerType + "<" +
                    getJavaDataType(shapes, shape.getListMember().getShape()) + ">";
         } else if (Map.getName().equals(shapeType)) {
-            final String mapContainerType = dataTypeMappings
-                    .get(customConfig != null && customConfig.isUseAutoConstructMap() ?
-                                 MAP_AUTO_CONSTRUCT_IMPL : MAP_INTERFACE);
+            String mapType = customConfig != null && customConfig.isUseAutoConstructMap() ? MAP_AUTO_CONSTRUCT_IMPL : MAP_INTERFACE;
+            final String mapContainerType = dataTypeMappings.get(mapType);
             return mapContainerType + "<" +
                    getJavaDataType(shapes, shape.getMapKeyType().getShape()) + "," +
                    getJavaDataType(shapes, shape.getMapValueType().getShape()) + ">";

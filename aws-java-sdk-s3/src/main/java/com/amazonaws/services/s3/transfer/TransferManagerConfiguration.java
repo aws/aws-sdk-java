@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.transfer;
 
+import com.amazonaws.annotation.SdkTestInternalApi;
+
 import static com.amazonaws.services.s3.internal.Constants.*;
 
 /**
@@ -28,16 +30,20 @@ import static com.amazonaws.services.s3.internal.Constants.*;
 public class TransferManagerConfiguration {
 
     /** Default minimum part size for upload parts. */
-    private static final int DEFAULT_MINIMUM_UPLOAD_PART_SIZE = 5 * MB;
+    @SdkTestInternalApi
+    static final int DEFAULT_MINIMUM_UPLOAD_PART_SIZE = 5 * MB;
 
     /** Default size threshold for when to use multipart uploads.  */
-    private static final long DEFAULT_MULTIPART_UPLOAD_THRESHOLD = 16 * MB;
+    @SdkTestInternalApi
+    static final long DEFAULT_MULTIPART_UPLOAD_THRESHOLD = 16 * MB;
 
     /** Default size threshold for Amazon S3 object after which multi-part copy is initiated. */
-    private static final long DEFAULT_MULTIPART_COPY_THRESHOLD = 5 * GB;
+    @SdkTestInternalApi
+    static final long DEFAULT_MULTIPART_COPY_THRESHOLD = 5 * GB;
 
     /** Default minimum size of each part for multi-part copy. */
-    private static final long DEFAULT_MINIMUM_COPY_PART_SIZE = 100 * MB;
+    @SdkTestInternalApi
+    static final long DEFAULT_MINIMUM_COPY_PART_SIZE = 100 * MB;
 
     /**
      * The minimum part size for upload parts. Decreasing the minimum part size

@@ -14,12 +14,14 @@
  */
 package com.amazonaws.auth.profile.internal.securitytoken;
 
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.AWSCredentialsProvider;
 
 /**
  * Loads <code>com.amazonaws.services.securitytoken.internal.STSProfileCredentialsService</code>
  * from the STS SDK module, if the module is on the current classpath.
  */
+@SdkInternalApi
 public class STSProfileCredentialsServiceLoader implements ProfileCredentialsService {
     private static final STSProfileCredentialsServiceLoader INSTANCE = new STSProfileCredentialsServiceLoader();
 

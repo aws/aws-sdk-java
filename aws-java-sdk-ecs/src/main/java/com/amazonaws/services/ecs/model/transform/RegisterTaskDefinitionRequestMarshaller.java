@@ -75,6 +75,10 @@ public class RegisterTaskDefinitionRequestMarshaller
                 jsonGenerator.writeFieldName("family").writeValue(
                         registerTaskDefinitionRequest.getFamily());
             }
+            if (registerTaskDefinitionRequest.getTaskRoleArn() != null) {
+                jsonGenerator.writeFieldName("taskRoleArn").writeValue(
+                        registerTaskDefinitionRequest.getTaskRoleArn());
+            }
 
             com.amazonaws.internal.SdkInternalList<ContainerDefinition> containerDefinitionsList = (com.amazonaws.internal.SdkInternalList<ContainerDefinition>) registerTaskDefinitionRequest
                     .getContainerDefinitions();

@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.kms.model.*;
 import com.amazonaws.services.kms.model.transform.*;
@@ -171,7 +172,7 @@ import com.amazonaws.services.kms.model.transform.*;
 @ThreadSafe
 public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSKMS.class);
 
@@ -190,9 +191,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("DependencyTimeoutException")
+                                    .withErrorCode("InvalidCiphertextException")
                                     .withModeledClass(
-                                            com.amazonaws.services.kms.model.DependencyTimeoutException.class))
+                                            com.amazonaws.services.kms.model.InvalidCiphertextException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidGrantIdException")
@@ -200,14 +201,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                                             com.amazonaws.services.kms.model.InvalidGrantIdException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("LimitExceededException")
+                                    .withErrorCode("InvalidGrantTokenException")
                                     .withModeledClass(
-                                            com.amazonaws.services.kms.model.LimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidAliasNameException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kms.model.InvalidAliasNameException.class))
+                                            com.amazonaws.services.kms.model.InvalidGrantTokenException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -222,14 +218,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                                             com.amazonaws.services.kms.model.UnsupportedOperationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidGrantTokenException")
+                                    .withErrorCode("AlreadyExistsException")
                                     .withModeledClass(
-                                            com.amazonaws.services.kms.model.InvalidGrantTokenException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidMarkerException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kms.model.InvalidMarkerException.class))
+                                            com.amazonaws.services.kms.model.AlreadyExistsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidArnException")
@@ -237,29 +228,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                                             com.amazonaws.services.kms.model.InvalidArnException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("DisabledException")
+                                    .withErrorCode("KMSInvalidStateException")
                                     .withModeledClass(
-                                            com.amazonaws.services.kms.model.DisabledException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidCiphertextException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kms.model.InvalidCiphertextException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("AlreadyExistsException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kms.model.AlreadyExistsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("KMSInternalException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kms.model.KMSInternalException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("NotFoundException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kms.model.NotFoundException.class))
+                                            com.amazonaws.services.kms.model.KMSInvalidStateException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidKeyUsageException")
@@ -267,14 +238,44 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                                             com.amazonaws.services.kms.model.InvalidKeyUsageException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("DisabledException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.DisabledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("NotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.NotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidMarkerException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidMarkerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidAliasNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidAliasNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DependencyTimeoutException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.DependencyTimeoutException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("KeyUnavailableException")
                                     .withModeledClass(
                                             com.amazonaws.services.kms.model.KeyUnavailableException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("KMSInvalidStateException")
+                                    .withErrorCode("KMSInternalException")
                                     .withModeledClass(
-                                            com.amazonaws.services.kms.model.KMSInvalidStateException.class)));
+                                            com.amazonaws.services.kms.model.KMSInternalException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.LimitExceededException.class)));
 
     /**
      * Constructs a new client to invoke service methods on KMS. A credentials
@@ -421,6 +422,22 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on KMS using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSKMSClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

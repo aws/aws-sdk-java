@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.sqs.model.*;
 import com.amazonaws.services.sqs.model.transform.*;
@@ -128,7 +129,7 @@ import com.amazonaws.services.sqs.model.transform.*;
 public class AmazonSQSClient extends AmazonWebServiceClient implements
         AmazonSQS {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonSQS.class);
 
@@ -295,36 +296,52 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Amazon SQS using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonSQSClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+    }
+
     private void init() {
-        exceptionUnmarshallers
-                .add(new MessageNotInflightExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new BatchEntryIdsNotDistinctExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new PurgeQueueInProgressExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new ReceiptHandleIsInvalidExceptionUnmarshaller());
+                .add(new InvalidAttributeNameExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new UnsupportedOperationExceptionUnmarshaller());
+                .add(new BatchEntryIdsNotDistinctExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new TooManyEntriesInBatchRequestExceptionUnmarshaller());
         exceptionUnmarshallers
+                .add(new BatchRequestTooLongExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new UnsupportedOperationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidIdFormatExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new OverLimitExceptionUnmarshaller());
+        exceptionUnmarshallers
                 .add(new QueueDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new QueueNameExistsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new MessageNotInflightExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ReceiptHandleIsInvalidExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidMessageContentsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new QueueDeletedRecentlyExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new BatchRequestTooLongExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new InvalidAttributeNameExceptionUnmarshaller());
+                .add(new EmptyBatchRequestExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidBatchEntryIdExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new OverLimitExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new EmptyBatchRequestExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidIdFormatExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);

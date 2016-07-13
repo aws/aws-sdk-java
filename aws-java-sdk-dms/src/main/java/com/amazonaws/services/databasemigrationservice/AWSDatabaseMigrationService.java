@@ -231,6 +231,24 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Deletes the specified certificate.
+     * </p>
+     * 
+     * @param deleteCertificateRequest
+     * @return Result of the DeleteCertificate operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for
+     *         database migration.
+     * @sample AWSDatabaseMigrationService.DeleteCertificate
+     */
+    DeleteCertificateResult deleteCertificate(
+            DeleteCertificateRequest deleteCertificateRequest);
+
+    /**
+     * <p>
      * Deletes the specified endpoint.
      * </p>
      * <note>
@@ -333,6 +351,21 @@ public interface AWSDatabaseMigrationService {
      */
     DescribeAccountAttributesResult describeAccountAttributes(
             DescribeAccountAttributesRequest describeAccountAttributesRequest);
+
+    /**
+     * <p>
+     * Provides a description of the certificate.
+     * </p>
+     * 
+     * @param describeCertificatesRequest
+     * @return Result of the DescribeCertificates operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeCertificates
+     */
+    DescribeCertificatesResult describeCertificates(
+            DescribeCertificatesRequest describeCertificatesRequest);
 
     /**
      * <p>
@@ -498,6 +531,23 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Uploads the specified certificate.
+     * </p>
+     * 
+     * @param importCertificateRequest
+     * @return Result of the ImportCertificate operation returned by the
+     *         service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws InvalidCertificateException
+     *         The certificate was not valid.
+     * @sample AWSDatabaseMigrationService.ImportCertificate
+     */
+    ImportCertificateResult importCertificate(
+            ImportCertificateRequest importCertificateRequest);
+
+    /**
+     * <p>
      * Lists all tags for an AWS DMS resource.
      * </p>
      * 
@@ -573,6 +623,8 @@ public interface AWSDatabaseMigrationService {
      * @param modifyReplicationSubnetGroupRequest
      * @return Result of the ModifyReplicationSubnetGroup operation returned by
      *         the service.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws ResourceQuotaExceededException

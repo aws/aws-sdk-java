@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.services.kinesis.model.transform.*;
@@ -53,7 +54,7 @@ import com.amazonaws.services.kinesis.model.transform.*;
 public class AmazonKinesisClient extends AmazonWebServiceClient implements
         AmazonKinesis {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonKinesis.class);
 
@@ -72,20 +73,14 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(true)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidArgumentException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kinesis.model.InvalidArgumentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("ResourceInUseException")
                                     .withModeledClass(
                                             com.amazonaws.services.kinesis.model.ResourceInUseException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("LimitExceededException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kinesis.model.LimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "ProvisionedThroughputExceededException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kinesis.model.ProvisionedThroughputExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ResourceNotFoundException")
@@ -98,9 +93,15 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.kinesis.model.ExpiredIteratorException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidArgumentException")
+                                    .withErrorCode(
+                                            "ProvisionedThroughputExceededException")
                                     .withModeledClass(
-                                            com.amazonaws.services.kinesis.model.InvalidArgumentException.class)));
+                                            com.amazonaws.services.kinesis.model.ProvisionedThroughputExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kinesis.model.LimitExceededException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Kinesis. A
@@ -249,6 +250,22 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Kinesis using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonKinesisClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

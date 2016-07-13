@@ -14,11 +14,6 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_CONTENT_SHA256;
-
-import java.io.IOException;
-import java.io.InputStream;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ReadLimitInfo;
 import com.amazonaws.Request;
@@ -32,6 +27,11 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.request.S3HandlerContextKeys;
 import com.amazonaws.util.BinaryUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_CONTENT_SHA256;
 
 /**
  * AWS4 signer implementation for AWS S3
@@ -83,43 +83,40 @@ public class AWSS3V4Signer extends AWS4Signer {
         // notified to pick up the header value returned by this method.
         request.addHeader(X_AMZ_CONTENT_SHA256, "required");
 
-
-        if (useChunkEncoding(request)) {
-            final String contentLength = request.getHeaders().get(Headers.CONTENT_LENGTH);
-            final long originalContentLength;
-            if (contentLength != null) {
-                originalContentLength = Long.parseLong(contentLength);
-            } else {
-                /**
-                 * "Content-Length" header could be missing if the caller is
-                 * uploading a stream without setting Content-Length in
-                 * ObjectMetadata. Before using sigv4, we rely on HttpClient to
-                 * add this header by using BufferedHttpEntity when creating the
-                 * HttpRequest object. But now, we need this information
-                 * immediately for the signing process, so we have to cache the
-                 * stream here.
-                 */
-                try {
-                    originalContentLength = getContentLength(request);
-                } catch (IOException e) {
-                    throw new AmazonClientException(
-                            "Cannot get the content-length of the request content.",
-                            e);
-                }
-            }
-            request.addHeader("x-amz-decoded-content-length",
-                    Long.toString(originalContentLength));
-            // Make sure "Content-Length" header is not empty so that HttpClient
-            // won't cache the stream again to recover Content-Length
-            request.addHeader(
-                    Headers.CONTENT_LENGTH,
-                    Long.toString(AwsChunkedEncodingInputStream
-                            .calculateStreamContentLength(originalContentLength)));
-            return CONTENT_SHA_256;
-        }
-
         if (isPayloadSigningEnabled(request)) {
-            return super.calculateContentHash(request);
+            if (useChunkEncoding(request)) {
+                final String contentLength = request.getHeaders().get(Headers.CONTENT_LENGTH);
+                final long originalContentLength;
+                if (contentLength != null) {
+                    originalContentLength = Long.parseLong(contentLength);
+                } else {
+                    /**
+                     * "Content-Length" header could be missing if the caller is
+                     * uploading a stream without setting Content-Length in
+                     * ObjectMetadata. Before using sigv4, we rely on HttpClient to
+                     * add this header by using BufferedHttpEntity when creating the
+                     * HttpRequest object. But now, we need this information
+                     * immediately for the signing process, so we have to cache the
+                     * stream here.
+                     */
+                    try {
+                        originalContentLength = getContentLength(request);
+                    } catch (IOException e) {
+                        throw new AmazonClientException(
+                                "Cannot get the content-length of the request content.", e);
+                    }
+                }
+                request.addHeader("x-amz-decoded-content-length",
+                                  Long.toString(originalContentLength));
+                // Make sure "Content-Length" header is not empty so that HttpClient
+                // won't cache the stream again to recover Content-Length
+                request.addHeader(Headers.CONTENT_LENGTH, Long.toString(
+                        AwsChunkedEncodingInputStream
+                                .calculateStreamContentLength(originalContentLength)));
+                return CONTENT_SHA_256;
+            } else {
+                return super.calculateContentHash(request);
+            }
         }
 
         return UNSIGNED_PAYLOAD;
@@ -129,9 +126,9 @@ public class AWSS3V4Signer extends AWS4Signer {
      * Determine whether to use aws-chunked for signing
      */
     private boolean useChunkEncoding(SignableRequest<?> request) {
-        // If chunked encoding is explicitly disabled through client options
-        // return right here.
-        if (isChunkedEncodingDisabled(request)) {
+        // If chunked encoding is explicitly disabled through client options return right here.
+        // Chunked encoding only makes sense to do when the payload is signed
+        if (!isPayloadSigningEnabled(request) || isChunkedEncodingDisabled(request)) {
             return false;
         }
         if (request.getOriginalRequestObject() instanceof PutObjectRequest

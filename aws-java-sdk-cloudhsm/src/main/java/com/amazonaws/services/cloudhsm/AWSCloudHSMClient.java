@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.services.cloudhsm.model.transform.*;
@@ -49,7 +50,7 @@ import com.amazonaws.services.cloudhsm.model.transform.*;
 public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         AWSCloudHSM {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSCloudHSM.class);
 
@@ -68,9 +69,9 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("CloudHsmServiceException")
+                                    .withErrorCode("InvalidRequestException")
                                     .withModeledClass(
-                                            com.amazonaws.services.cloudhsm.model.CloudHsmServiceException.class))
+                                            com.amazonaws.services.cloudhsm.model.InvalidRequestException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("CloudHsmInternalException")
@@ -78,9 +79,9 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.cloudhsm.model.CloudHsmInternalException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidRequestException")
+                                    .withErrorCode("CloudHsmServiceException")
                                     .withModeledClass(
-                                            com.amazonaws.services.cloudhsm.model.InvalidRequestException.class)));
+                                            com.amazonaws.services.cloudhsm.model.CloudHsmServiceException.class)));
 
     /**
      * Constructs a new client to invoke service methods on CloudHSM. A
@@ -229,6 +230,22 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on CloudHSM using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSCloudHSMClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

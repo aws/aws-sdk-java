@@ -141,7 +141,7 @@ public class ProfilesConfigFileWriterTest {
      */
     @Test
     public void testModifyAndInsertProfile_WithComments() throws IOException, URISyntaxException {
-        File credWithComments = CredentialProfilesTest.loadFile("ProfilesWithComments.tst");
+        File credWithComments = ProfileResourceLoader.profilesWithComments().asFile();
         File tmpFile = copyToTempFile(credWithComments);
 
         String originalContent = FileUtils.readFileToString(tmpFile);

@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.services.iot.model.transform.*;
@@ -62,7 +63,7 @@ import com.amazonaws.services.iot.model.transform.*;
 @ThreadSafe
 public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSIot.class);
 
@@ -82,35 +83,19 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                     .withContentTypeOverride("")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("UnauthorizedException")
+                                    .withErrorCode("InternalFailureException")
                                     .withModeledClass(
-                                            com.amazonaws.services.iot.model.UnauthorizedException.class))
+                                            com.amazonaws.services.iot.model.InternalFailureException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("SqlParseException")
+                                    .withErrorCode("DeleteConflictException")
                                     .withModeledClass(
-                                            com.amazonaws.services.iot.model.SqlParseException.class))
+                                            com.amazonaws.services.iot.model.DeleteConflictException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "ResourceAlreadyExistsException")
+                                    .withErrorCode("InvalidRequestException")
                                     .withModeledClass(
-                                            com.amazonaws.services.iot.model.ResourceAlreadyExistsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("LimitExceededException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.iot.model.LimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InternalException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.iot.model.InternalException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("MalformedPolicyException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.iot.model.MalformedPolicyException.class))
+                                            com.amazonaws.services.iot.model.InvalidRequestException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -119,9 +104,30 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                                             com.amazonaws.services.iot.model.CertificateConflictException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("ResourceNotFoundException")
+                                    .withErrorCode(
+                                            "RegistrationCodeValidationException")
                                     .withModeledClass(
-                                            com.amazonaws.services.iot.model.ResourceNotFoundException.class))
+                                            com.amazonaws.services.iot.model.RegistrationCodeValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ThrottlingException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.ThrottlingException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UnauthorizedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.UnauthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("CertificateStateException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.CertificateStateException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -130,9 +136,19 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                                             com.amazonaws.services.iot.model.TransferAlreadyCompletedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("CertificateStateException")
+                                    .withErrorCode("ResourceNotFoundException")
                                     .withModeledClass(
-                                            com.amazonaws.services.iot.model.CertificateStateException.class))
+                                            com.amazonaws.services.iot.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("SqlParseException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.SqlParseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("MalformedPolicyException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.MalformedPolicyException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -148,9 +164,14 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "RegistrationCodeValidationException")
+                                            "ResourceAlreadyExistsException")
                                     .withModeledClass(
-                                            com.amazonaws.services.iot.model.RegistrationCodeValidationException.class))
+                                            com.amazonaws.services.iot.model.ResourceAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.iot.model.InternalException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -159,29 +180,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                                             com.amazonaws.services.iot.model.VersionsLimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("DeleteConflictException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.iot.model.DeleteConflictException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InternalFailureException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.iot.model.InternalFailureException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("TransferConflictException")
                                     .withModeledClass(
-                                            com.amazonaws.services.iot.model.TransferConflictException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("ThrottlingException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.iot.model.ThrottlingException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidRequestException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.iot.model.InvalidRequestException.class)));
+                                            com.amazonaws.services.iot.model.TransferConflictException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWS IoT. A
@@ -330,6 +331,22 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS IoT using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSIotClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

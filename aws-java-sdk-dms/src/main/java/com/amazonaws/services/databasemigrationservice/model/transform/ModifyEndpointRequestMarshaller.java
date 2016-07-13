@@ -111,6 +111,14 @@ public class ModifyEndpointRequestMarshaller implements
                                 modifyEndpointRequest
                                         .getExtraConnectionAttributes());
             }
+            if (modifyEndpointRequest.getCertificateArn() != null) {
+                jsonGenerator.writeFieldName("CertificateArn").writeValue(
+                        modifyEndpointRequest.getCertificateArn());
+            }
+            if (modifyEndpointRequest.getSslMode() != null) {
+                jsonGenerator.writeFieldName("SslMode").writeValue(
+                        modifyEndpointRequest.getSslMode());
+            }
 
             jsonGenerator.writeEndObject();
 

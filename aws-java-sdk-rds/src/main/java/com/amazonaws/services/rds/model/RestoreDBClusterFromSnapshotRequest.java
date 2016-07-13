@@ -158,7 +158,7 @@ public class RestoreDBClusterFromSnapshotRequest extends
     /**
      * <p>
      * The KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster snapshot.
+     * a DB cluster snapshot.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
@@ -182,15 +182,10 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * <li>
      * <p>
      * If the DB cluster snapshot is not encrypted, then the restored DB cluster
-     * is not encrypted.
+     * is encrypted using the specified encryption key.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * If <code>SnapshotIdentifier</code> refers to a DB cluster snapshot that
-     * is not encrypted, and you specify a value for the <code>KmsKeyId</code>
-     * parameter, then the restore request is rejected.
-     * </p>
      */
     private String kmsKeyId;
 
@@ -1152,7 +1147,7 @@ public class RestoreDBClusterFromSnapshotRequest extends
     /**
      * <p>
      * The KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster snapshot.
+     * a DB cluster snapshot.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
@@ -1176,19 +1171,14 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * <li>
      * <p>
      * If the DB cluster snapshot is not encrypted, then the restored DB cluster
-     * is not encrypted.
+     * is encrypted using the specified encryption key.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * If <code>SnapshotIdentifier</code> refers to a DB cluster snapshot that
-     * is not encrypted, and you specify a value for the <code>KmsKeyId</code>
-     * parameter, then the restore request is rejected.
-     * </p>
      * 
      * @param kmsKeyId
      *        The KMS key identifier to use when restoring an encrypted DB
-     *        cluster from an encrypted DB cluster snapshot.</p>
+     *        cluster from a DB cluster snapshot.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the
      *        KMS encryption key. If you are restoring a DB cluster with the
@@ -1211,15 +1201,9 @@ public class RestoreDBClusterFromSnapshotRequest extends
      *        <li>
      *        <p>
      *        If the DB cluster snapshot is not encrypted, then the restored DB
-     *        cluster is not encrypted.
+     *        cluster is encrypted using the specified encryption key.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        If <code>SnapshotIdentifier</code> refers to a DB cluster snapshot
-     *        that is not encrypted, and you specify a value for the
-     *        <code>KmsKeyId</code> parameter, then the restore request is
-     *        rejected.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1229,7 +1213,7 @@ public class RestoreDBClusterFromSnapshotRequest extends
     /**
      * <p>
      * The KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster snapshot.
+     * a DB cluster snapshot.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
@@ -1253,18 +1237,13 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * <li>
      * <p>
      * If the DB cluster snapshot is not encrypted, then the restored DB cluster
-     * is not encrypted.
+     * is encrypted using the specified encryption key.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * If <code>SnapshotIdentifier</code> refers to a DB cluster snapshot that
-     * is not encrypted, and you specify a value for the <code>KmsKeyId</code>
-     * parameter, then the restore request is rejected.
-     * </p>
      * 
      * @return The KMS key identifier to use when restoring an encrypted DB
-     *         cluster from an encrypted DB cluster snapshot.</p>
+     *         cluster from a DB cluster snapshot.</p>
      *         <p>
      *         The KMS key identifier is the Amazon Resource Name (ARN) for the
      *         KMS encryption key. If you are restoring a DB cluster with the
@@ -1287,15 +1266,9 @@ public class RestoreDBClusterFromSnapshotRequest extends
      *         <li>
      *         <p>
      *         If the DB cluster snapshot is not encrypted, then the restored DB
-     *         cluster is not encrypted.
+     *         cluster is encrypted using the specified encryption key.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         If <code>SnapshotIdentifier</code> refers to a DB cluster
-     *         snapshot that is not encrypted, and you specify a value for the
-     *         <code>KmsKeyId</code> parameter, then the restore request is
-     *         rejected.
      */
 
     public String getKmsKeyId() {
@@ -1305,7 +1278,7 @@ public class RestoreDBClusterFromSnapshotRequest extends
     /**
      * <p>
      * The KMS key identifier to use when restoring an encrypted DB cluster from
-     * an encrypted DB cluster snapshot.
+     * a DB cluster snapshot.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
@@ -1329,19 +1302,14 @@ public class RestoreDBClusterFromSnapshotRequest extends
      * <li>
      * <p>
      * If the DB cluster snapshot is not encrypted, then the restored DB cluster
-     * is not encrypted.
+     * is encrypted using the specified encryption key.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * If <code>SnapshotIdentifier</code> refers to a DB cluster snapshot that
-     * is not encrypted, and you specify a value for the <code>KmsKeyId</code>
-     * parameter, then the restore request is rejected.
-     * </p>
      * 
      * @param kmsKeyId
      *        The KMS key identifier to use when restoring an encrypted DB
-     *        cluster from an encrypted DB cluster snapshot.</p>
+     *        cluster from a DB cluster snapshot.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the
      *        KMS encryption key. If you are restoring a DB cluster with the
@@ -1364,15 +1332,9 @@ public class RestoreDBClusterFromSnapshotRequest extends
      *        <li>
      *        <p>
      *        If the DB cluster snapshot is not encrypted, then the restored DB
-     *        cluster is not encrypted.
+     *        cluster is encrypted using the specified encryption key.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        If <code>SnapshotIdentifier</code> refers to a DB cluster snapshot
-     *        that is not encrypted, and you specify a value for the
-     *        <code>KmsKeyId</code> parameter, then the restore request is
-     *        rejected.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

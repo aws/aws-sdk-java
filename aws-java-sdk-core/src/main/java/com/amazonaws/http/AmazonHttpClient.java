@@ -71,6 +71,7 @@ import com.amazonaws.util.ImmutableMapParameter;
 import com.amazonaws.util.MetadataCache;
 import com.amazonaws.util.NullResponseMetadataCache;
 import com.amazonaws.util.ResponseMetadataCache;
+import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.TimingInfo;
 import com.amazonaws.util.UnreliableFilterInputStream;
 
@@ -686,7 +687,7 @@ public class AmazonHttpClient {
                 String path = execOneParams.redirectedURI.getPath();
 
                 request.setEndpoint(URI.create(beforeAuthority + authority));
-                request.setResourcePath(path);
+                request.setResourcePath(SdkHttpUtils.urlEncode(path, true));
             }
             if (execOneParams.authRetryParam != null) {
                 request.setEndpoint(execOneParams.authRetryParam.getEndpointForRetry());

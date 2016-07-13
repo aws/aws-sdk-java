@@ -16,6 +16,7 @@
 package com.amazonaws.services.marketplacecommerceanalytics;
 
 import com.amazonaws.services.marketplacecommerceanalytics.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -246,6 +247,19 @@ public class AWSMarketplaceCommerceAnalyticsAsyncClient extends
 
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on AWS
+     * Marketplace Commerce Analytics using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AWSMarketplaceCommerceAnalyticsAsyncClient(
+            AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
     }
 
     /**

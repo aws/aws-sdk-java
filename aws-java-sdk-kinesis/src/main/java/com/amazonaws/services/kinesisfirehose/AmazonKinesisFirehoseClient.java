@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.services.kinesisfirehose.model.transform.*;
@@ -54,7 +55,7 @@ import com.amazonaws.services.kinesisfirehose.model.transform.*;
 public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
         implements AmazonKinesisFirehose {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory
             .getLog(AmazonKinesisFirehose.class);
@@ -80,20 +81,20 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
                                             com.amazonaws.services.kinesisfirehose.model.ConcurrentModificationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("ResourceInUseException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kinesisfirehose.model.ResourceInUseException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("LimitExceededException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kinesisfirehose.model.LimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode(
                                             "ServiceUnavailableException")
                                     .withModeledClass(
                                             com.amazonaws.services.kinesisfirehose.model.ServiceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidArgumentException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kinesisfirehose.model.InvalidArgumentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceInUseException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kinesisfirehose.model.ResourceInUseException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ResourceNotFoundException")
@@ -101,9 +102,9 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
                                             com.amazonaws.services.kinesisfirehose.model.ResourceNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidArgumentException")
+                                    .withErrorCode("LimitExceededException")
                                     .withModeledClass(
-                                            com.amazonaws.services.kinesisfirehose.model.InvalidArgumentException.class)));
+                                            com.amazonaws.services.kinesisfirehose.model.LimitExceededException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Firehose. A
@@ -255,6 +256,22 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Firehose using the
+     * specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AmazonKinesisFirehoseClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

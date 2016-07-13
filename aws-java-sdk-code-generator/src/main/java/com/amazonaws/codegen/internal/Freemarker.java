@@ -100,6 +100,14 @@ public class Freemarker {
         return getTemplate(templateConfig.getAsyncInterface());
     }
 
+    public Template getSyncClientBuilderTemplate() throws IOException {
+        return getTemplate(templateConfig.getSyncClientBuilder());
+    }
+
+    public Template getAsyncClientBuilderTemplate() throws IOException {
+        return getTemplate(templateConfig.getAsyncClientBuilder());
+    }
+
     public Template getRequestClassTemplate() throws IOException {
         return getTemplate(templateConfig.getRequestClass());
     }

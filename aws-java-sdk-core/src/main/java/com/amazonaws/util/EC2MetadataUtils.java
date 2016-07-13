@@ -14,6 +14,9 @@
  */
 package com.amazonaws.util;
 
+import static com.amazonaws.SDKGlobalConfiguration.EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY;
+
+import java.net.URI;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -26,7 +29,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.internal.EC2MetadataClient;
+import com.amazonaws.internal.EC2CredentialsUtils;
 import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -58,10 +61,15 @@ public class EC2MetadataUtils {
     private static final String EC2_USERDATA_ROOT = "/latest/user-data/";
     private static final String EC2_DYNAMICDATA_ROOT = "/latest/dynamic/";
 
+    /** Default endpoint for the Amazon EC2 Instance Metadata Service. */
+    private static final String EC2_METADATA_SERVICE_URL = "http://169.254.169.254";
+
+    /** Default resource path for credentials in the Amazon EC2 Instance Metadata Service. */
+    public static final String SECURITY_CREDENTIALS_RESOURCE = "/latest/meta-data/iam/security-credentials/";
+
     private static final int DEFAULT_QUERY_RETRIES = 3;
     private static final int MINIMUM_RETRY_WAIT_TIME_MILLISECONDS = 250;
     private static Map<String, String> cache = new ConcurrentHashMap<String, String>();
-    private static EC2MetadataClient ec2MetadataClient = new EC2MetadataClient();
 
     private static final ObjectMapper mapper = new ObjectMapper();
     static {
@@ -367,7 +375,8 @@ public class EC2MetadataUtils {
 
         List<String> items;
         try {
-            String response = ec2MetadataClient.readResource(path);
+            String hostAddress = getHostAddressForEC2MetadataService();
+            String response = EC2CredentialsUtils.readResource(new URI(hostAddress + path));
             if (slurp)
                 items = Collections.singletonList(response);
             else
@@ -401,6 +410,14 @@ public class EC2MetadataUtils {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    /**
+     * Returns the host address of the Amazon EC2 Instance Metadata Service.
+     */
+    public static String getHostAddressForEC2MetadataService() {
+        String host = System.getProperty(EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY);
+        return host != null ? host : EC2_METADATA_SERVICE_URL;
     }
 
     /**

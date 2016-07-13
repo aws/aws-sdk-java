@@ -16,6 +16,7 @@
 package com.amazonaws.services.databasemigrationservice;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -255,6 +256,19 @@ public class AWSDatabaseMigrationServiceAsyncClient extends
     }
 
     /**
+     * Constructs a new asynchronous client to invoke service methods on AWS
+     * Database Migration Service using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    public AWSDatabaseMigrationServiceAsyncClient(
+            AwsAsyncClientParams asyncClientParams) {
+        super(asyncClientParams);
+        this.executorService = asyncClientParams.getExecutor();
+    }
+
+    /**
      * Returns the executor service used by this client to execute async
      * requests.
      *
@@ -443,6 +457,41 @@ public class AWSDatabaseMigrationServiceAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
+            DeleteCertificateRequest request) {
+
+        return deleteCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
+            final DeleteCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteCertificateResult>() {
+                    @Override
+                    public DeleteCertificateResult call() throws Exception {
+                        DeleteCertificateResult result;
+
+                        try {
+                            result = deleteCertificate(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(
             DeleteEndpointRequest request) {
 
@@ -605,6 +654,41 @@ public class AWSDatabaseMigrationServiceAsyncClient extends
 
                         try {
                             result = describeAccountAttributes(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCertificatesResult> describeCertificatesAsync(
+            DescribeCertificatesRequest request) {
+
+        return describeCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCertificatesResult> describeCertificatesAsync(
+            final DescribeCertificatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeCertificatesRequest, DescribeCertificatesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeCertificatesResult>() {
+                    @Override
+                    public DescribeCertificatesResult call() throws Exception {
+                        DescribeCertificatesResult result;
+
+                        try {
+                            result = describeCertificates(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -961,6 +1045,41 @@ public class AWSDatabaseMigrationServiceAsyncClient extends
 
                         try {
                             result = describeTableStatistics(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(
+            ImportCertificateRequest request) {
+
+        return importCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(
+            final ImportCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportCertificateRequest, ImportCertificateResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ImportCertificateResult>() {
+                    @Override
+                    public ImportCertificateResult call() throws Exception {
+                        ImportCertificateResult result;
+
+                        try {
+                            result = importCertificate(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

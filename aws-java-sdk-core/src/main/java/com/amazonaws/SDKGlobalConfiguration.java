@@ -189,6 +189,17 @@ public class SDKGlobalConfiguration {
     public static final String AWS_SESSION_TOKEN_ENV_VAR = "AWS_SESSION_TOKEN";
 
     /**
+     * Environment variable containing region used to configure clients.
+     */
+    public static final String AWS_REGION_ENV_VAR = "AWS_REGION";
+
+    /**
+     * Environment variable to set an alternate path to the shared config file (default path is
+     * ~/.aws/config).
+     */
+    public static final String AWS_CONFIG_FILE_ENV_VAR = "AWS_CONFIG_FILE_ENV_VAR";
+
+    /**
      * Environment variable to disable CBOR protocol. This forces the request
      * to be sent over the wire as a AWS JSON.
      */

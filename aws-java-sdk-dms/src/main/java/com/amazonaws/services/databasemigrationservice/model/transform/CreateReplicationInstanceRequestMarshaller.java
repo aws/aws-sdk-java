@@ -120,6 +120,10 @@ public class CreateReplicationInstanceRequestMarshaller
                                 createReplicationInstanceRequest
                                         .getPreferredMaintenanceWindow());
             }
+            if (createReplicationInstanceRequest.getMultiAZ() != null) {
+                jsonGenerator.writeFieldName("MultiAZ").writeValue(
+                        createReplicationInstanceRequest.getMultiAZ());
+            }
             if (createReplicationInstanceRequest.getEngineVersion() != null) {
                 jsonGenerator.writeFieldName("EngineVersion").writeValue(
                         createReplicationInstanceRequest.getEngineVersion());

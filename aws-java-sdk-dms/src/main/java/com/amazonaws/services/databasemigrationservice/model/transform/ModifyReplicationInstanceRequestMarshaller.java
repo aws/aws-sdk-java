@@ -111,6 +111,10 @@ public class ModifyReplicationInstanceRequestMarshaller
                                 modifyReplicationInstanceRequest
                                         .getPreferredMaintenanceWindow());
             }
+            if (modifyReplicationInstanceRequest.getMultiAZ() != null) {
+                jsonGenerator.writeFieldName("MultiAZ").writeValue(
+                        modifyReplicationInstanceRequest.getMultiAZ());
+            }
             if (modifyReplicationInstanceRequest.getEngineVersion() != null) {
                 jsonGenerator.writeFieldName("EngineVersion").writeValue(
                         modifyReplicationInstanceRequest.getEngineVersion());

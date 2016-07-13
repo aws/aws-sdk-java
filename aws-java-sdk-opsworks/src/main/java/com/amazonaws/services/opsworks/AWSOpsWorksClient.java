@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.services.opsworks.model.transform.*;
@@ -145,7 +146,7 @@ import com.amazonaws.services.opsworks.model.transform.*;
 public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         AWSOpsWorks {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSOpsWorks.class);
 
@@ -164,14 +165,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("ValidationException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.opsworks.model.ValidationException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("ResourceNotFoundException")
                                     .withModeledClass(
-                                            com.amazonaws.services.opsworks.model.ResourceNotFoundException.class)));
+                                            com.amazonaws.services.opsworks.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ValidationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.opsworks.model.ValidationException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWS OpsWorks. A
@@ -320,6 +321,22 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS OpsWorks using
+     * the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSOpsWorksClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

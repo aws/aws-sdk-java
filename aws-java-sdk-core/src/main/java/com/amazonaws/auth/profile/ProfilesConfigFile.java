@@ -14,28 +14,32 @@
  */
 package com.amazonaws.auth.profile;
 
-import java.io.File;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.profile.internal.AllProfiles;
+import com.amazonaws.auth.profile.internal.AwsProfileNameLoader;
+import com.amazonaws.auth.profile.internal.BasicProfile;
+import com.amazonaws.auth.profile.internal.BasicProfileConfigLoader;
 import com.amazonaws.auth.profile.internal.Profile;
-import com.amazonaws.auth.profile.internal.ProfilesConfigFileLoader;
+import com.amazonaws.auth.profile.internal.ProfileAssumeRoleCredentialsProvider;
+import com.amazonaws.auth.profile.internal.ProfileStaticCredentialsProvider;
 import com.amazonaws.auth.profile.internal.securitytoken.ProfileCredentialsService;
 import com.amazonaws.auth.profile.internal.securitytoken.STSProfileCredentialsServiceLoader;
+import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.profile.path.AwsProfileFileLocationProvider;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Loads the local AWS credential profiles from the standard location
- * (~/.aws/credentials), which can be easily overridden through the
- * <code>AWS_CREDENTIAL_PROFILES_FILE</code> environment variable or by specifying an
- * alternate credentials file location through this class' constructor.
- * <p>
- * The AWS credentials file format allows you to specify multiple profiles, each with
- * their own set of AWS security credentials:
+ * Loads the local AWS credential profiles from the standard location (~/.aws/credentials), which
+ * can be easily overridden through the <code>AWS_CREDENTIAL_PROFILES_FILE</code> environment
+ * variable or by specifying an alternate credentials file location through this class' constructor.
+ * <p> The AWS credentials file format allows you to specify multiple profiles, each with their own
+ * set of AWS security credentials:
  * <pre>
  * [default]
  * aws_access_key_id=testAccessKey
@@ -48,67 +52,67 @@ import com.amazonaws.auth.profile.internal.securitytoken.STSProfileCredentialsSe
  * aws_session_token=testSessionToken
  * </pre>
  *
- * <p>
- * These credential profiles allow you to share multiple sets of AWS security
- * credentails between different tools such as the AWS SDK for Java and the
- * AWS CLI.
+ * <p> These credential profiles allow you to share multiple sets of AWS security credentails
+ * between different tools such as the AWS SDK for Java and the AWS CLI.
  *
- * <p>
- * For more information on setting up AWS credential profiles, see:
+ * <p> For more information on setting up AWS credential profiles, see:
  * http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
  *
  * @see ProfileCredentialsProvider
  */
 public class ProfilesConfigFile {
 
-    private static final Log LOG = LogFactory.getLog(ProfilesConfigFile.class);
-
-    /** Environment variable name for overriding the default AWS profile */
-    public static final String AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
-
-    /** System property name for overriding the default AWS profile */
-    public static final String AWS_PROFILE_SYSTEM_PROPERTY = "aws.profile";
-
-    /** Environment variable specifying an alternate location for the AWS credential profiles file */
+    /**
+     * Environment variable name for overriding the default AWS profile
+     */
     @Deprecated
-    private static final String LEGACY_CONFIG_FILE_ENVIRONMENT_VARIABLE = "AWS_CONFIG_FILE";
-    private static final String CREDENTIAL_PROFILES_FILE_ENVIRONMENT_VARIABLE = "AWS_CREDENTIAL_PROFILES_FILE";
+    public static final String AWS_PROFILE_ENVIRONMENT_VARIABLE = AwsProfileNameLoader.AWS_PROFILE_ENVIRONMENT_VARIABLE;
 
-    /** File name of the default location where the credential profiles are saved */
+    /**
+     * System property name for overriding the default AWS profile
+     */
     @Deprecated
-    private static final String LEGACY_CONFIG_PROFILES_FILENAME = "config";
-    private static final String DEFAULT_CREDENTIAL_PROFILES_FILENAME = "credentials";
+    public static final String AWS_PROFILE_SYSTEM_PROPERTY = AwsProfileNameLoader.AWS_PROFILE_SYSTEM_PROPERTY;
 
-    /** Name of the default profile as specified in the configuration file. */
-    public static final String DEFAULT_PROFILE_NAME = "default";
+    /**
+     * Name of the default profile as specified in the configuration file.
+     */
+    @Deprecated
+    public static final String DEFAULT_PROFILE_NAME = AwsProfileNameLoader.DEFAULT_PROFILE_NAME;
 
     private final File profileFile;
     private final ProfileCredentialsService profileCredentialsService;
-    private volatile Map<String, Profile> profilesByName;
+    /**
+     * Cache credential providers as credentials from profiles are requested. Doesn't really make a
+     * difference for basic credentials but for assume role it's more efficient as each assume role
+     * provider has it's own async refresh logic.
+     */
+    private final ConcurrentHashMap<String, AWSCredentialsProvider> credentialProviderCache = new ConcurrentHashMap<String, AWSCredentialsProvider>();
+    private volatile AllProfiles allProfiles;
     private volatile long profileFileLastModified;
 
     /**
-     * Loads the AWS credential profiles file from the default location
-     * (~/.aws/credentials) or from an alternate location if
-     * <code>AWS_CREDENTIAL_PROFILES_FILE</code> is set.
+     * Loads the AWS credential profiles file from the default location (~/.aws/credentials) or from
+     * an alternate location if <code>AWS_CREDENTIAL_PROFILES_FILE</code> is set.
      */
     public ProfilesConfigFile() throws AmazonClientException {
         this(getCredentialProfilesFile());
     }
 
     /**
-     * Loads the AWS credential profiles from the file. The path of the file is
-     * specified as a parameter to the constructor.
+     * Loads the AWS credential profiles from the file. The path of the file is specified as a
+     * parameter to the constructor.
      */
     public ProfilesConfigFile(String filePath) {
         this(new File(validateFilePath(filePath)));
     }
 
     /**
-     * Loads the AWS credential profiles from the file. The path of the file is
-     * specified as a parameter to the constructor.
+     * Loads the AWS credential profiles from the file. The path of the file is specified as a
+     * parameter to the constructor.
      */
-    public ProfilesConfigFile(String filePath, ProfileCredentialsService credentialsService) throws AmazonClientException {
+    public ProfilesConfigFile(String filePath, ProfileCredentialsService credentialsService) throws
+                                                                                             AmazonClientException {
         this(new File(validateFilePath(filePath)), credentialsService);
     }
 
@@ -121,34 +125,41 @@ public class ProfilesConfigFile {
     }
 
     /**
-     * Loads the AWS credential profiles from the file. The reference to the
-     * file is specified as a parameter to the constructor.
+     * Loads the AWS credential profiles from the file. The reference to the file is specified as a
+     * parameter to the constructor.
      */
     public ProfilesConfigFile(File file) throws AmazonClientException {
         this(file, STSProfileCredentialsServiceLoader.getInstance());
     }
 
     /**
-     * Loads the AWS credential profiles from the file. The reference to the
-     * file is specified as a parameter to the constructor.
+     * Loads the AWS credential profiles from the file. The reference to the file is specified as a
+     * parameter to the constructor.
      */
-    public ProfilesConfigFile(File file, ProfileCredentialsService credentialsService) throws AmazonClientException {
+    public ProfilesConfigFile(File file, ProfileCredentialsService credentialsService) throws
+                                                                                       AmazonClientException {
         profileFile = file;
         profileCredentialsService = credentialsService;
         profileFileLastModified = file.lastModified();
-        profilesByName = loadProfiles(profileFile, profileCredentialsService);
+        allProfiles = loadProfiles(profileFile);
     }
 
     /**
      * Returns the AWS credentials for the specified profile.
      */
-    public AWSCredentials getCredentials(String profile) {
-        Profile p = profilesByName.get(profile);
-        if (p == null) {
-            throw new IllegalArgumentException(
-                    "No AWS profile named '" + profile + "'");
+    public AWSCredentials getCredentials(String profileName) {
+        final AWSCredentialsProvider provider = credentialProviderCache.get(profileName);
+        if (provider != null) {
+            return provider.getCredentials();
+        } else {
+            BasicProfile profile = allProfiles.getProfile(profileName);
+            if (profile == null) {
+                throw new IllegalArgumentException("No AWS profile named '" + profileName + "'");
+            }
+            final AWSCredentialsProvider newProvider = fromProfile(profile);
+            credentialProviderCache.put(profileName, newProvider);
+            return newProvider.getCredentials();
         }
-        return p.getCredentials();
     }
 
     /**
@@ -157,61 +168,43 @@ public class ProfilesConfigFile {
     public void refresh() {
         if (profileFile.lastModified() > profileFileLastModified) {
             profileFileLastModified = profileFile.lastModified();
-            profilesByName = loadProfiles(profileFile, profileCredentialsService);
+            allProfiles = loadProfiles(profileFile);
         }
+        credentialProviderCache.clear();
     }
 
-    /**
-     * Returns all the profiles declared in this config file.
-     */
+    public Map<String, BasicProfile> getAllBasicProfiles() {
+        return allProfiles.getProfiles();
+    }
+
+    @Deprecated
     public Map<String, Profile> getAllProfiles() {
-        return new LinkedHashMap<String, Profile>(profilesByName);
+        Map<String, Profile> legacyProfiles = new HashMap<String, Profile>();
+        for (Map.Entry<String, BasicProfile> entry : getAllBasicProfiles().entrySet()) {
+            final String profileName = entry.getKey();
+            legacyProfiles.put(profileName,
+                               new Profile(profileName, entry.getValue().getProperties(),
+                                           new StaticCredentialsProvider(
+                                                   getCredentials(profileName))));
+        }
+        return legacyProfiles;
     }
 
     private static File getCredentialProfilesFile() {
-        String credentialProfilesFileOverride = System.getenv(CREDENTIAL_PROFILES_FILE_ENVIRONMENT_VARIABLE);
-        if (credentialProfilesFileOverride == null) {
-            String legacyConfigFileOverride = System.getenv(LEGACY_CONFIG_FILE_ENVIRONMENT_VARIABLE);
-            if (legacyConfigFileOverride != null) {
-                LOG.warn(String.format(
-                        "Found the legacy environment variable [%s=%s]. " +
-                        "Please use the latest environment variable to specify your credentials file override: [%s=%s]",
-                        LEGACY_CONFIG_FILE_ENVIRONMENT_VARIABLE,
-                        legacyConfigFileOverride,
-                        CREDENTIAL_PROFILES_FILE_ENVIRONMENT_VARIABLE,
-                        legacyConfigFileOverride));
-            }
-        }
-
-        if (credentialProfilesFileOverride != null) {
-            LOG.debug("Loading AWS credential profiles from overridden file: " + credentialProfilesFileOverride);
-            return new File(credentialProfilesFileOverride);
-        }
-
-        String userHome = System.getProperty("user.home");
-        if (userHome == null) {
-            throw new AmazonClientException("Unable to load AWS profiles: "
-                                            + "'user.home' System property is not set.");
-        }
-
-        File awsDirectory = new File(userHome, ".aws");
-        File credentialProfiles   = new File(awsDirectory, DEFAULT_CREDENTIAL_PROFILES_FILENAME);
-        File legacyConfigProfiles = new File(awsDirectory, LEGACY_CONFIG_PROFILES_FILENAME);
-        boolean foundCredentialProfiles   = credentialProfiles.exists()   && credentialProfiles.isFile();
-        boolean foundlegacyConfigProfiles = legacyConfigProfiles.exists() && legacyConfigProfiles.isFile();
-        if (!foundCredentialProfiles && foundlegacyConfigProfiles) {
-            LOG.warn("Found the legacy config profiles file at ["
-                     + legacyConfigProfiles.getAbsolutePath()
-                     + "]. Please move it to the latest default location ["
-                     + credentialProfiles + "].");
-            return legacyConfigProfiles;
-        }
-
-        return credentialProfiles;
+        return AwsProfileFileLocationProvider.DEFAULT_CREDENTIALS_LOCATION_PROVIDER.getLocation();
     }
 
-    private static Map<String, Profile> loadProfiles(File file, ProfileCredentialsService profileCredentialsService) {
-        return new LinkedHashMap<String, Profile>(ProfilesConfigFileLoader.loadProfiles(file, profileCredentialsService));
+    private static AllProfiles loadProfiles(File file) {
+        return BasicProfileConfigLoader.INSTANCE.loadProfiles(file);
+    }
+
+    private AWSCredentialsProvider fromProfile(BasicProfile profile) {
+        if (profile.isRoleBasedProfile()) {
+            return new ProfileAssumeRoleCredentialsProvider(profileCredentialsService, allProfiles,
+                                                            profile);
+        } else {
+            return new ProfileStaticCredentialsProvider(profile);
+        }
     }
 
 }

@@ -27,23 +27,23 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A space-separated list of cluster names or full cluster Amazon Resource
-     * Name (ARN) entries. If you do not specify a cluster, the default cluster
-     * is assumed.
+     * A space-separated list of up to 100 cluster names or full cluster Amazon
+     * Resource Name (ARN) entries. If you do not specify a cluster, the default
+     * cluster is assumed.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> clusters;
 
     /**
      * <p>
-     * A space-separated list of cluster names or full cluster Amazon Resource
-     * Name (ARN) entries. If you do not specify a cluster, the default cluster
-     * is assumed.
+     * A space-separated list of up to 100 cluster names or full cluster Amazon
+     * Resource Name (ARN) entries. If you do not specify a cluster, the default
+     * cluster is assumed.
      * </p>
      * 
-     * @return A space-separated list of cluster names or full cluster Amazon
-     *         Resource Name (ARN) entries. If you do not specify a cluster, the
-     *         default cluster is assumed.
+     * @return A space-separated list of up to 100 cluster names or full cluster
+     *         Amazon Resource Name (ARN) entries. If you do not specify a
+     *         cluster, the default cluster is assumed.
      */
 
     public java.util.List<String> getClusters() {
@@ -55,15 +55,15 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A space-separated list of cluster names or full cluster Amazon Resource
-     * Name (ARN) entries. If you do not specify a cluster, the default cluster
-     * is assumed.
+     * A space-separated list of up to 100 cluster names or full cluster Amazon
+     * Resource Name (ARN) entries. If you do not specify a cluster, the default
+     * cluster is assumed.
      * </p>
      * 
      * @param clusters
-     *        A space-separated list of cluster names or full cluster Amazon
-     *        Resource Name (ARN) entries. If you do not specify a cluster, the
-     *        default cluster is assumed.
+     *        A space-separated list of up to 100 cluster names or full cluster
+     *        Amazon Resource Name (ARN) entries. If you do not specify a
+     *        cluster, the default cluster is assumed.
      */
 
     public void setClusters(java.util.Collection<String> clusters) {
@@ -78,9 +78,9 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A space-separated list of cluster names or full cluster Amazon Resource
-     * Name (ARN) entries. If you do not specify a cluster, the default cluster
-     * is assumed.
+     * A space-separated list of up to 100 cluster names or full cluster Amazon
+     * Resource Name (ARN) entries. If you do not specify a cluster, the default
+     * cluster is assumed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -90,9 +90,9 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param clusters
-     *        A space-separated list of cluster names or full cluster Amazon
-     *        Resource Name (ARN) entries. If you do not specify a cluster, the
-     *        default cluster is assumed.
+     *        A space-separated list of up to 100 cluster names or full cluster
+     *        Amazon Resource Name (ARN) entries. If you do not specify a
+     *        cluster, the default cluster is assumed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -110,15 +110,15 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A space-separated list of cluster names or full cluster Amazon Resource
-     * Name (ARN) entries. If you do not specify a cluster, the default cluster
-     * is assumed.
+     * A space-separated list of up to 100 cluster names or full cluster Amazon
+     * Resource Name (ARN) entries. If you do not specify a cluster, the default
+     * cluster is assumed.
      * </p>
      * 
      * @param clusters
-     *        A space-separated list of cluster names or full cluster Amazon
-     *        Resource Name (ARN) entries. If you do not specify a cluster, the
-     *        default cluster is assumed.
+     *        A space-separated list of up to 100 cluster names or full cluster
+     *        Amazon Resource Name (ARN) entries. If you do not specify a
+     *        cluster, the default cluster is assumed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

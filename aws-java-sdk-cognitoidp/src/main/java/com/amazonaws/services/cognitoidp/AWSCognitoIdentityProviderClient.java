@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.cognitoidp.model.*;
 import com.amazonaws.services.cognitoidp.model.transform.*;
@@ -58,7 +59,7 @@ import com.amazonaws.services.cognitoidp.model.transform.*;
 public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         implements AWSCognitoIdentityProvider {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory
             .getLog(AWSCognitoIdentityProvider.class);
@@ -78,14 +79,53 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("UsernameExistsException")
+                                    .withErrorCode(
+                                            "ConcurrentModificationException")
                                     .withModeledClass(
-                                            com.amazonaws.services.cognitoidp.model.UsernameExistsException.class))
+                                            com.amazonaws.services.cognitoidp.model.ConcurrentModificationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidLambdaResponseException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.InvalidLambdaResponseException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("UnexpectedLambdaException")
                                     .withModeledClass(
                                             com.amazonaws.services.cognitoidp.model.UnexpectedLambdaException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidParameterException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UserLambdaValidationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.UserLambdaValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "TooManyFailedAttemptsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.TooManyFailedAttemptsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UsernameExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.UsernameExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ExpiredCodeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.ExpiredCodeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalErrorException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.InternalErrorException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("LimitExceededException")
@@ -98,47 +138,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                                             com.amazonaws.services.cognitoidp.model.InvalidPasswordException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "ConcurrentModificationException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.cognitoidp.model.ConcurrentModificationException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("CodeMismatchException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.cognitoidp.model.CodeMismatchException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("ResourceNotFoundException")
                                     .withModeledClass(
                                             com.amazonaws.services.cognitoidp.model.ResourceNotFoundException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("TooManyRequestsException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.cognitoidp.model.TooManyRequestsException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("NotAuthorizedException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.cognitoidp.model.NotAuthorizedException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "InvalidLambdaResponseException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.cognitoidp.model.InvalidLambdaResponseException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidParameterException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.cognitoidp.model.InvalidParameterException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "TooManyFailedAttemptsException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.cognitoidp.model.TooManyFailedAttemptsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("AliasExistsException")
@@ -146,20 +148,19 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                                             com.amazonaws.services.cognitoidp.model.AliasExistsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("ExpiredCodeException")
+                                    .withErrorCode("NotAuthorizedException")
                                     .withModeledClass(
-                                            com.amazonaws.services.cognitoidp.model.ExpiredCodeException.class))
+                                            com.amazonaws.services.cognitoidp.model.NotAuthorizedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode(
-                                            "UserLambdaValidationException")
+                                    .withErrorCode("TooManyRequestsException")
                                     .withModeledClass(
-                                            com.amazonaws.services.cognitoidp.model.UserLambdaValidationException.class))
+                                            com.amazonaws.services.cognitoidp.model.TooManyRequestsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InternalErrorException")
+                                    .withErrorCode("CodeMismatchException")
                                     .withModeledClass(
-                                            com.amazonaws.services.cognitoidp.model.InternalErrorException.class)));
+                                            com.amazonaws.services.cognitoidp.model.CodeMismatchException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Cognito
@@ -317,6 +318,22 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon Cognito
+     * Identity Provider using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSCognitoIdentityProviderClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
     }
 
     private void init() {

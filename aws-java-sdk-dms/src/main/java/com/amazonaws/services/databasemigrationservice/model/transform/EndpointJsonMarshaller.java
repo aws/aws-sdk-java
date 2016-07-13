@@ -91,6 +91,14 @@ public class EndpointJsonMarshaller {
                 jsonGenerator.writeFieldName("EndpointArn").writeValue(
                         endpoint.getEndpointArn());
             }
+            if (endpoint.getCertificateArn() != null) {
+                jsonGenerator.writeFieldName("CertificateArn").writeValue(
+                        endpoint.getCertificateArn());
+            }
+            if (endpoint.getSslMode() != null) {
+                jsonGenerator.writeFieldName("SslMode").writeValue(
+                        endpoint.getSslMode());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

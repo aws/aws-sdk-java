@@ -35,6 +35,7 @@ import com.amazonaws.util.*;
 import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
 
 import com.amazonaws.services.elasticbeanstalk.model.*;
 import com.amazonaws.services.elasticbeanstalk.model.transform.*;
@@ -75,7 +76,7 @@ import com.amazonaws.services.elasticbeanstalk.model.transform.*;
 public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         AWSElasticBeanstalk {
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private final AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSElasticBeanstalk.class);
 
@@ -250,31 +251,47 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         init();
     }
 
+    /**
+     * Constructs a new client to invoke service methods on Elastic Beanstalk
+     * using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    public AWSElasticBeanstalkClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+    }
+
     private void init() {
         exceptionUnmarshallers
-                .add(new OperationInProgressExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TooManyEnvironmentsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new ElasticBeanstalkServiceExceptionUnmarshaller());
+                .add(new S3LocationNotInServiceRegionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidRequestExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new ManagedActionInvalidStateExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new S3LocationNotInServiceRegionExceptionUnmarshaller());
+                .add(new InsufficientPrivilegesExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new TooManyApplicationsExceptionUnmarshaller());
-        exceptionUnmarshallers
-                .add(new TooManyConfigurationTemplatesExceptionUnmarshaller());
+                .add(new TooManyApplicationVersionsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new S3SubscriptionRequiredExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new SourceBundleDeletionExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new InsufficientPrivilegesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidRequestExceptionUnmarshaller());
+                .add(new TooManyConfigurationTemplatesExceptionUnmarshaller());
         exceptionUnmarshallers
-                .add(new TooManyApplicationVersionsExceptionUnmarshaller());
+                .add(new TooManyApplicationsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new OperationInProgressExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new TooManyEnvironmentsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyBucketsExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new ElasticBeanstalkServiceExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
