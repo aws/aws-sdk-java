@@ -302,7 +302,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonGlacierAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonGlacierAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

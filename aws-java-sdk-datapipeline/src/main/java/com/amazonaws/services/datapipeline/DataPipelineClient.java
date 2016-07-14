@@ -283,9 +283,10 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public DataPipelineClient(AwsSyncClientParams clientParams) {
+    DataPipelineClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

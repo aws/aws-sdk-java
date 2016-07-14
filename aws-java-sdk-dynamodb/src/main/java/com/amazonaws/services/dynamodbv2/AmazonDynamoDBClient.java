@@ -464,9 +464,10 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonDynamoDBClient(AwsSyncClientParams clientParams) {
+    AmazonDynamoDBClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

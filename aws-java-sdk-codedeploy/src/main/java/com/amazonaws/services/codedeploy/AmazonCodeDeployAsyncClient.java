@@ -333,7 +333,7 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonCodeDeployAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonCodeDeployAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

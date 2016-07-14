@@ -269,9 +269,10 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonKinesisFirehoseClient(AwsSyncClientParams clientParams) {
+    AmazonKinesisFirehoseClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

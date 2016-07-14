@@ -285,7 +285,7 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonRedshiftAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonRedshiftAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

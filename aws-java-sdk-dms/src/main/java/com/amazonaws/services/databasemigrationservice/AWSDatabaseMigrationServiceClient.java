@@ -315,9 +315,10 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSDatabaseMigrationServiceClient(AwsSyncClientParams clientParams) {
+    AWSDatabaseMigrationServiceClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

@@ -215,9 +215,10 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
      *
      * @param clientParams Object providing client parameters.
      */
-    public ${metadata.syncClient}(AwsSyncClientParams clientParams) {
+    ${metadata.syncClient}(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
 <@ClientInitMethodMacro.content .data_model />

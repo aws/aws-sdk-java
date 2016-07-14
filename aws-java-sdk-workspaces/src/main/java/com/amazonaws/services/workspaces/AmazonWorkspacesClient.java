@@ -263,9 +263,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonWorkspacesClient(AwsSyncClientParams clientParams) {
+    AmazonWorkspacesClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

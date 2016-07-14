@@ -271,7 +271,7 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonSimpleDBAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonSimpleDBAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

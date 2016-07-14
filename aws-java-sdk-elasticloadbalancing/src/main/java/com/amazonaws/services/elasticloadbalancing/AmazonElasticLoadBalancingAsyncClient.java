@@ -276,8 +276,7 @@ public class AmazonElasticLoadBalancingAsyncClient extends
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonElasticLoadBalancingAsyncClient(
-            AwsAsyncClientParams asyncClientParams) {
+    AmazonElasticLoadBalancingAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

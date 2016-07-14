@@ -348,7 +348,7 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSOpsWorksAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSOpsWorksAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

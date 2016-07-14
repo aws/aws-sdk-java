@@ -331,9 +331,10 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSCognitoIdentityProviderClient(AwsSyncClientParams clientParams) {
+    AWSCognitoIdentityProviderClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

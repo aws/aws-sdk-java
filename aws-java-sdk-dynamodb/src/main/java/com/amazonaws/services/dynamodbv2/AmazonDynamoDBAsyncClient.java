@@ -443,7 +443,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonDynamoDBAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonDynamoDBAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

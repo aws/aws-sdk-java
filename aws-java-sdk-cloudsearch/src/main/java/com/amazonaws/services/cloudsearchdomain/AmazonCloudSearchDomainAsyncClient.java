@@ -269,8 +269,7 @@ public class AmazonCloudSearchDomainAsyncClient extends
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonCloudSearchDomainAsyncClient(
-            AwsAsyncClientParams asyncClientParams) {
+    AmazonCloudSearchDomainAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

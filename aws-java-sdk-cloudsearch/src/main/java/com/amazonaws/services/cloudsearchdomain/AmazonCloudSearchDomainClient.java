@@ -265,9 +265,10 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonCloudSearchDomainClient(AwsSyncClientParams clientParams) {
+    AmazonCloudSearchDomainClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

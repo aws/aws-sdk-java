@@ -218,7 +218,7 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
      *
      * @param asyncClientParams Object providing client parameters.
      */
-    public ${metadata.asyncClient}(AwsAsyncClientParams asyncClientParams) {
+    ${metadata.asyncClient}(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

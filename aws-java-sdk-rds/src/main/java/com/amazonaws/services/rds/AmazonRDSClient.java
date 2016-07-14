@@ -311,9 +311,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonRDSClient(AwsSyncClientParams clientParams) {
+    AmazonRDSClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

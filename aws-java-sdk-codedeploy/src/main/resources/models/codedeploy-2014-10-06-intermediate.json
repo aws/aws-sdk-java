@@ -19,6 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "codedeploy",
     "signingName" : "codedeploy",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonCodeDeployClientBuilder",
     "asyncClientBuilderClassName" : "AmazonCodeDeployAsyncClientBuilder",
@@ -26,8 +27,7 @@
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "AddTagsToOnPremisesInstances" : {
@@ -36616,6 +36616,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "exceptionUnmarshallerImpl" : null,
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "exceptionUnmarshallerImpl" : null
 }

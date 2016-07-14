@@ -252,8 +252,7 @@ public class AmazonElasticFileSystemAsyncClient extends
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonElasticFileSystemAsyncClient(
-            AwsAsyncClientParams asyncClientParams) {
+    AmazonElasticFileSystemAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

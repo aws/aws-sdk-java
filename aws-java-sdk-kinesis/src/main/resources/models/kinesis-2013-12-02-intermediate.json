@@ -19,6 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "kinesis",
     "signingName" : "kinesis",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonKinesisClientBuilder",
     "asyncClientBuilderClassName" : "AmazonKinesisAsyncClientBuilder",
@@ -26,8 +27,7 @@
     "cborProtocol" : true,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "AddTagsToStream" : {
@@ -8230,12 +8230,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "keySimple" : true,
-          "valueSimple" : true,
-          "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "valueSimple" : true,
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -8429,12 +8429,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "keySimple" : true,
-            "valueSimple" : true,
-            "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "valueSimple" : true,
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,

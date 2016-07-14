@@ -288,9 +288,10 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSCertificateManagerClient(AwsSyncClientParams clientParams) {
+    AWSCertificateManagerClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

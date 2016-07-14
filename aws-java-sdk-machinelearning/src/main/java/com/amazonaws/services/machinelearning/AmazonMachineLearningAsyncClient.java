@@ -253,8 +253,7 @@ public class AmazonMachineLearningAsyncClient extends
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonMachineLearningAsyncClient(
-            AwsAsyncClientParams asyncClientParams) {
+    AmazonMachineLearningAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

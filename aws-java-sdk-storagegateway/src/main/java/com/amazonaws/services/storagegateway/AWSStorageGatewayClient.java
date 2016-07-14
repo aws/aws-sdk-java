@@ -338,9 +338,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSStorageGatewayClient(AwsSyncClientParams clientParams) {
+    AWSStorageGatewayClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

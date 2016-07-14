@@ -263,9 +263,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonKinesisClient(AwsSyncClientParams clientParams) {
+    AmazonKinesisClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

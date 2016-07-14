@@ -262,9 +262,10 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSElasticBeanstalkClient(AwsSyncClientParams clientParams) {
+    AWSElasticBeanstalkClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

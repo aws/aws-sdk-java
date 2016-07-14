@@ -250,7 +250,7 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonCloudFrontAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonCloudFrontAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

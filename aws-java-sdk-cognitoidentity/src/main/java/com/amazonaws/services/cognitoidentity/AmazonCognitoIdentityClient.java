@@ -339,9 +339,10 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonCognitoIdentityClient(AwsSyncClientParams clientParams) {
+    AmazonCognitoIdentityClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

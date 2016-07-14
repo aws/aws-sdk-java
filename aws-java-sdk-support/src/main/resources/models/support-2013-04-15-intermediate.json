@@ -19,7 +19,6 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "support",
     "signingName" : "support",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSSupportClientBuilder",
     "asyncClientBuilderClassName" : "AWSSupportAsyncClientBuilder",
@@ -27,7 +26,8 @@
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "AddAttachmentsToSet" : {

@@ -279,7 +279,7 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSElasticBeanstalkAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSElasticBeanstalkAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

@@ -278,7 +278,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public DataPipelineAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    DataPipelineAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

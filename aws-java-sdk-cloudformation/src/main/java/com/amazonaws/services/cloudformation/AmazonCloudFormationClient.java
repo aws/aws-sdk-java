@@ -261,9 +261,10 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonCloudFormationClient(AwsSyncClientParams clientParams) {
+    AmazonCloudFormationClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

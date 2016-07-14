@@ -334,7 +334,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonRDSAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonRDSAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

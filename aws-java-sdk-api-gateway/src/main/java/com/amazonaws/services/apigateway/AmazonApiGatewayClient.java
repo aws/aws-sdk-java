@@ -279,9 +279,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonApiGatewayClient(AwsSyncClientParams clientParams) {
+    AmazonApiGatewayClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

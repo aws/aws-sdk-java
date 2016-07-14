@@ -268,7 +268,7 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonElastiCacheAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonElastiCacheAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

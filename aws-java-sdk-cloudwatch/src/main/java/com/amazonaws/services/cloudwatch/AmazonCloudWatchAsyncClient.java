@@ -271,7 +271,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonCloudWatchAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonCloudWatchAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

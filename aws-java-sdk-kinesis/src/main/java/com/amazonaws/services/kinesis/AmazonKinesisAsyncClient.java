@@ -256,7 +256,7 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonKinesisAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonKinesisAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

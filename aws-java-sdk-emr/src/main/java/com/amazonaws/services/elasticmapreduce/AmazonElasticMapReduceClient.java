@@ -253,9 +253,10 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonElasticMapReduceClient(AwsSyncClientParams clientParams) {
+    AmazonElasticMapReduceClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

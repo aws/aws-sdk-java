@@ -321,8 +321,7 @@ public class AWSSecurityTokenServiceAsyncClient extends
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSSecurityTokenServiceAsyncClient(
-            AwsAsyncClientParams asyncClientParams) {
+    AWSSecurityTokenServiceAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

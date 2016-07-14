@@ -262,7 +262,7 @@ public class AWSDatabaseMigrationServiceAsyncClient extends
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSDatabaseMigrationServiceAsyncClient(
+    AWSDatabaseMigrationServiceAsyncClient(
             AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();

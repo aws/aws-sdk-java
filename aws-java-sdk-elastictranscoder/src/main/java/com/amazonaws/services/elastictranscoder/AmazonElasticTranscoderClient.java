@@ -278,9 +278,10 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonElasticTranscoderClient(AwsSyncClientParams clientParams) {
+    AmazonElasticTranscoderClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

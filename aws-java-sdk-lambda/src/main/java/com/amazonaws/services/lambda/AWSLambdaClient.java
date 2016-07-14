@@ -332,9 +332,10 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSLambdaClient(AwsSyncClientParams clientParams) {
+    AWSLambdaClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

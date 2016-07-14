@@ -249,9 +249,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonCloudSearchClient(AwsSyncClientParams clientParams) {
+    AmazonCloudSearchClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

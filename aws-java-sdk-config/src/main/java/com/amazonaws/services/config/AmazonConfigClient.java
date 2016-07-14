@@ -420,9 +420,10 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonConfigClient(AwsSyncClientParams clientParams) {
+    AmazonConfigClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

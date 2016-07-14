@@ -261,7 +261,7 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSIotDataAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSIotDataAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

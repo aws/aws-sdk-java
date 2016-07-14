@@ -267,9 +267,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSDeviceFarmClient(AwsSyncClientParams clientParams) {
+    AWSDeviceFarmClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

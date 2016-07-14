@@ -258,7 +258,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonAutoScalingAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonAutoScalingAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

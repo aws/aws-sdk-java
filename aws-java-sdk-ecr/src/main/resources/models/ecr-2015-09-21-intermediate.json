@@ -19,6 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "ecr",
     "signingName" : "ecr",
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonECRClientBuilder",
     "asyncClientBuilderClassName" : "AmazonECRAsyncClientBuilder",
     "serviceName" : "Amazon ECR",
@@ -26,8 +27,7 @@
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "BatchCheckLayerAvailability" : {

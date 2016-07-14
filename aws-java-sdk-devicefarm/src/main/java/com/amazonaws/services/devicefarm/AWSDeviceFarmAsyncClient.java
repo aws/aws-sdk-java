@@ -257,7 +257,7 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSDeviceFarmAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSDeviceFarmAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

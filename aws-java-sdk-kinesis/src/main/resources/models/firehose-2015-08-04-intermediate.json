@@ -19,7 +19,6 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "firehose",
     "signingName" : "firehose",
-    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonKinesisFirehoseClientBuilder",
     "asyncClientBuilderClassName" : "AmazonKinesisFirehoseAsyncClientBuilder",
     "serviceName" : "Firehose",
@@ -27,7 +26,8 @@
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true
   },
   "operations" : {
     "CreateDeliveryStream" : {

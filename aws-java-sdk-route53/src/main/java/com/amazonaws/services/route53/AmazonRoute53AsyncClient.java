@@ -250,7 +250,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonRoute53AsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonRoute53AsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

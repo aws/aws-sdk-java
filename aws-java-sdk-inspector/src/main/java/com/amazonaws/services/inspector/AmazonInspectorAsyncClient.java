@@ -259,7 +259,7 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonInspectorAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonInspectorAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

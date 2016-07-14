@@ -445,7 +445,7 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSCodePipelineAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSCodePipelineAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

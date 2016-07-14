@@ -296,8 +296,7 @@ public class AmazonCognitoIdentityAsyncClient extends
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonCognitoIdentityAsyncClient(
-            AwsAsyncClientParams asyncClientParams) {
+    AmazonCognitoIdentityAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

@@ -19,6 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "codecommit",
     "signingName" : "codecommit",
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSCodeCommitClientBuilder",
     "asyncClientBuilderClassName" : "AWSCodeCommitAsyncClientBuilder",
     "serviceName" : "CodeCommit",
@@ -26,8 +27,7 @@
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "BatchGetRepositories" : {
@@ -1136,8 +1136,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "RepositoryTrigger",
-          "templateType" : "java.util.List<RepositoryTrigger>",
-          "templateImplType" : "java.util.ArrayList<RepositoryTrigger>"
+          "templateImplType" : "java.util.ArrayList<RepositoryTrigger>",
+          "templateType" : "java.util.List<RepositoryTrigger>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1334,8 +1334,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "RepositoryTrigger",
-            "templateType" : "java.util.List<RepositoryTrigger>",
-            "templateImplType" : "java.util.ArrayList<RepositoryTrigger>"
+            "templateImplType" : "java.util.ArrayList<RepositoryTrigger>",
+            "templateType" : "java.util.List<RepositoryTrigger>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2578,8 +2578,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "RepositoryTrigger",
-          "templateType" : "java.util.List<RepositoryTrigger>",
-          "templateImplType" : "java.util.ArrayList<RepositoryTrigger>"
+          "templateImplType" : "java.util.ArrayList<RepositoryTrigger>",
+          "templateType" : "java.util.List<RepositoryTrigger>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2719,8 +2719,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "RepositoryTrigger",
-            "templateType" : "java.util.List<RepositoryTrigger>",
-            "templateImplType" : "java.util.ArrayList<RepositoryTrigger>"
+            "templateImplType" : "java.util.ArrayList<RepositoryTrigger>",
+            "templateType" : "java.util.List<RepositoryTrigger>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3567,8 +3567,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3685,8 +3685,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "RepositoryTriggerExecutionFailure",
-          "templateType" : "java.util.List<RepositoryTriggerExecutionFailure>",
-          "templateImplType" : "java.util.ArrayList<RepositoryTriggerExecutionFailure>"
+          "templateImplType" : "java.util.ArrayList<RepositoryTriggerExecutionFailure>",
+          "templateType" : "java.util.List<RepositoryTriggerExecutionFailure>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3826,8 +3826,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "RepositoryTriggerExecutionFailure",
-            "templateType" : "java.util.List<RepositoryTriggerExecutionFailure>",
-            "templateImplType" : "java.util.ArrayList<RepositoryTriggerExecutionFailure>"
+            "templateImplType" : "java.util.ArrayList<RepositoryTriggerExecutionFailure>",
+            "templateType" : "java.util.List<RepositoryTriggerExecutionFailure>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3945,8 +3945,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4129,8 +4129,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "RepositoryTrigger",
-          "templateType" : "java.util.List<RepositoryTrigger>",
-          "templateImplType" : "java.util.ArrayList<RepositoryTrigger>"
+          "templateImplType" : "java.util.ArrayList<RepositoryTrigger>",
+          "templateType" : "java.util.List<RepositoryTrigger>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4327,8 +4327,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "RepositoryTrigger",
-            "templateType" : "java.util.List<RepositoryTrigger>",
-            "templateImplType" : "java.util.ArrayList<RepositoryTrigger>"
+            "templateImplType" : "java.util.ArrayList<RepositoryTrigger>",
+            "templateType" : "java.util.List<RepositoryTrigger>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5530,8 +5530,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5648,8 +5648,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : "RepositoryTriggerEventEnum",
@@ -5789,8 +5789,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : "RepositoryTriggerEventEnum",
@@ -5908,8 +5908,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7479,8 +7479,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "RepositoryNameIdPair",
-          "templateType" : "java.util.List<RepositoryNameIdPair>",
-          "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>"
+          "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>",
+          "templateType" : "java.util.List<RepositoryNameIdPair>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7672,8 +7672,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "RepositoryNameIdPair",
-            "templateType" : "java.util.List<RepositoryNameIdPair>",
-            "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>"
+            "templateImplType" : "java.util.ArrayList<RepositoryNameIdPair>",
+            "templateType" : "java.util.List<RepositoryNameIdPair>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8126,8 +8126,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8372,8 +8372,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8750,8 +8750,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "RepositoryMetadata",
-          "templateType" : "java.util.List<RepositoryMetadata>",
-          "templateImplType" : "java.util.ArrayList<RepositoryMetadata>"
+          "templateImplType" : "java.util.ArrayList<RepositoryMetadata>",
+          "templateType" : "java.util.List<RepositoryMetadata>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8868,8 +8868,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9009,8 +9009,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "RepositoryMetadata",
-            "templateType" : "java.util.List<RepositoryMetadata>",
-            "templateImplType" : "java.util.ArrayList<RepositoryMetadata>"
+            "templateImplType" : "java.util.ArrayList<RepositoryMetadata>",
+            "templateType" : "java.util.List<RepositoryMetadata>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9128,8 +9128,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10356,8 +10356,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10501,8 +10501,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10877,8 +10877,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11385,8 +11385,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,

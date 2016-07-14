@@ -251,9 +251,10 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonSimpleDBClient(AwsSyncClientParams clientParams) {
+    AmazonSimpleDBClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

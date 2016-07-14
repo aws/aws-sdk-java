@@ -243,9 +243,10 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSCloudHSMClient(AwsSyncClientParams clientParams) {
+    AWSCloudHSMClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

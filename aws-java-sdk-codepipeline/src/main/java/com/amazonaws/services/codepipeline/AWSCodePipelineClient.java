@@ -540,9 +540,10 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSCodePipelineClient(AwsSyncClientParams clientParams) {
+    AWSCodePipelineClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

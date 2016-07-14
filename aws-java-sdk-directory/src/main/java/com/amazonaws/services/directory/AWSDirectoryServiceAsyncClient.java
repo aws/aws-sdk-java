@@ -258,7 +258,7 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSDirectoryServiceAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSDirectoryServiceAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

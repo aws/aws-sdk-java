@@ -460,8 +460,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSSimpleSystemsManagementAsyncClient(
-            AwsAsyncClientParams asyncClientParams) {
+    AWSSimpleSystemsManagementAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

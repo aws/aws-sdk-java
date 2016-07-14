@@ -230,9 +230,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonCloudFrontClient(AwsSyncClientParams clientParams) {
+    AmazonCloudFrontClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

@@ -280,9 +280,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonMachineLearningClient(AwsSyncClientParams clientParams) {
+    AmazonMachineLearningClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

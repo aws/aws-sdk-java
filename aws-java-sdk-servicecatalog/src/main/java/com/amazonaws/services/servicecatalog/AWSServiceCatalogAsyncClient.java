@@ -285,7 +285,7 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSServiceCatalogAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSServiceCatalogAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

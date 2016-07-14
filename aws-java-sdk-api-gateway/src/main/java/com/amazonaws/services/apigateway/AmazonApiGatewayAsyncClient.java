@@ -260,7 +260,7 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonApiGatewayAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonApiGatewayAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

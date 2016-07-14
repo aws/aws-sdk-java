@@ -24,10 +24,10 @@
     "xmlProtocol" : false,
     "cborProtocol" : false,
     "jsonProtocol" : true,
-    "protocolDefaultExceptionUmarshallerImpl" : null,
     "syncClientBuilderClassName" : "AWSElasticsearchClientBuilder",
     "asyncClientBuilderClassName" : "AWSElasticsearchAsyncClientBuilder",
-    "serviceName" : "Amazon Elasticsearch Service"
+    "serviceName" : "Amazon Elasticsearch Service",
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "AddTags" : {

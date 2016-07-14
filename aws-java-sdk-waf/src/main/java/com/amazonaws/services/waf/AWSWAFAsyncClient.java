@@ -255,7 +255,7 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSWAFAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSWAFAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

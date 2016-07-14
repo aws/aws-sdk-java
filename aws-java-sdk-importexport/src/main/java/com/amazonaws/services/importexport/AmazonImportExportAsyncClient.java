@@ -259,7 +259,7 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonImportExportAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonImportExportAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

@@ -307,9 +307,10 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonSQSClient(AwsSyncClientParams clientParams) {
+    AmazonSQSClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

@@ -270,7 +270,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonSNSAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonSNSAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

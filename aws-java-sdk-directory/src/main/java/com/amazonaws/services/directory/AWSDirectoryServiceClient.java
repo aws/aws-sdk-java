@@ -314,9 +314,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSDirectoryServiceClient(AwsSyncClientParams clientParams) {
+    AWSDirectoryServiceClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

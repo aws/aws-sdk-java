@@ -242,9 +242,10 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonImportExportClient(AwsSyncClientParams clientParams) {
+    AmazonImportExportClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

@@ -271,8 +271,7 @@ public class AmazonSimpleWorkflowAsyncClient extends AmazonSimpleWorkflowClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonSimpleWorkflowAsyncClient(
-            AwsAsyncClientParams asyncClientParams) {
+    AmazonSimpleWorkflowAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

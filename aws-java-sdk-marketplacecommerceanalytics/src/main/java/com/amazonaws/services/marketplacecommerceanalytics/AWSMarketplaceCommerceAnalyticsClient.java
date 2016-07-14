@@ -245,10 +245,10 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSMarketplaceCommerceAnalyticsClient(
-            AwsSyncClientParams clientParams) {
+    AWSMarketplaceCommerceAnalyticsClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

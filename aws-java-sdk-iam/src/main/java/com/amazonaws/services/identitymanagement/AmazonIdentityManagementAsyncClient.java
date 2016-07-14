@@ -334,8 +334,7 @@ public class AmazonIdentityManagementAsyncClient extends
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonIdentityManagementAsyncClient(
-            AwsAsyncClientParams asyncClientParams) {
+    AmazonIdentityManagementAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

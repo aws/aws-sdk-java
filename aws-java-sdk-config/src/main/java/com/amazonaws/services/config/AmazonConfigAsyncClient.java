@@ -287,7 +287,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonConfigAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonConfigAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

@@ -295,9 +295,10 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSIotDataClient(AwsSyncClientParams clientParams) {
+    AWSIotDataClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

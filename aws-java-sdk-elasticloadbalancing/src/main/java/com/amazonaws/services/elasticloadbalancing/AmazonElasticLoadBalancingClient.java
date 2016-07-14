@@ -261,9 +261,10 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonElasticLoadBalancingClient(AwsSyncClientParams clientParams) {
+    AmazonElasticLoadBalancingClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

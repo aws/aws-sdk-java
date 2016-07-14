@@ -328,9 +328,10 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSApplicationAutoScalingClient(AwsSyncClientParams clientParams) {
+    AWSApplicationAutoScalingClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

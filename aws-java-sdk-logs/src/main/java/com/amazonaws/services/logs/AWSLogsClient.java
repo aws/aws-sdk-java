@@ -326,9 +326,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSLogsClient(AwsSyncClientParams clientParams) {
+    AWSLogsClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

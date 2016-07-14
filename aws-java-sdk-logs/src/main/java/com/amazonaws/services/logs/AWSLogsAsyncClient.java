@@ -293,7 +293,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSLogsAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSLogsAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

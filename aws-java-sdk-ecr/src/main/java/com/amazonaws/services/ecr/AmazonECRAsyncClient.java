@@ -259,7 +259,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonECRAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonECRAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

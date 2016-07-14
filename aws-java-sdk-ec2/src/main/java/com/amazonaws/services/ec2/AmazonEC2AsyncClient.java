@@ -257,7 +257,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonEC2AsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonEC2AsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

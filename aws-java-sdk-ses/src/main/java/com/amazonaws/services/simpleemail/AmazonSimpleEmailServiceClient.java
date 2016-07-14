@@ -246,9 +246,10 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonSimpleEmailServiceClient(AwsSyncClientParams clientParams) {
+    AmazonSimpleEmailServiceClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

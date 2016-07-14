@@ -296,9 +296,10 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSMarketplaceMeteringClient(AwsSyncClientParams clientParams) {
+    AWSMarketplaceMeteringClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

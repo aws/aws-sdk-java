@@ -371,7 +371,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSKMSAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSKMSAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

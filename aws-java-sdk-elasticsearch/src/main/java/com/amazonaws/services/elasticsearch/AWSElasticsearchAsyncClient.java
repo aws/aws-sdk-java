@@ -264,7 +264,7 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSElasticsearchAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSElasticsearchAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

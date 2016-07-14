@@ -266,7 +266,7 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonECSAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonECSAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

@@ -322,9 +322,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonECRClient(AwsSyncClientParams clientParams) {
+    AmazonECRClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

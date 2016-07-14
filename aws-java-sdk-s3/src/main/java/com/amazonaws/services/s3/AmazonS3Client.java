@@ -583,6 +583,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         this.awsCredentialsProvider = s3ClientParams.getClientParams().getCredentialsProvider();
         this.skipMd5CheckStrategy = SkipMd5CheckStrategy.INSTANCE;
         setS3ClientOptions(s3ClientParams.getS3ClientOptions());
+        init();
     }
 
     private void init() {

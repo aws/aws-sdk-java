@@ -262,8 +262,7 @@ public class AWSCognitoIdentityProviderAsyncClient extends
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSCognitoIdentityProviderAsyncClient(
-            AwsAsyncClientParams asyncClientParams) {
+    AWSCognitoIdentityProviderAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

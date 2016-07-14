@@ -345,7 +345,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSStorageGatewayAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSStorageGatewayAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

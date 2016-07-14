@@ -385,7 +385,7 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonGameLiftAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonGameLiftAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

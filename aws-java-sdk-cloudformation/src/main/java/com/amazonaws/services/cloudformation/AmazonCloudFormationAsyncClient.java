@@ -277,8 +277,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonCloudFormationAsyncClient(
-            AwsAsyncClientParams asyncClientParams) {
+    AmazonCloudFormationAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

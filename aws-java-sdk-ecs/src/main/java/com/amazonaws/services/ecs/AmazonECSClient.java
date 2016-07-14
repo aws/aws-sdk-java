@@ -300,9 +300,10 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonECSClient(AwsSyncClientParams clientParams) {
+    AmazonECSClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

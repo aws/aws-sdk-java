@@ -262,7 +262,7 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSLambdaAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSLambdaAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

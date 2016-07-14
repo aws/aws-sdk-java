@@ -24,10 +24,10 @@
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
     "syncClientBuilderClassName" : "AmazonElastiCacheClientBuilder",
     "asyncClientBuilderClassName" : "AmazonElastiCacheAsyncClientBuilder",
-    "serviceName" : "Amazon ElastiCache",
-    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller"
+    "serviceName" : "Amazon ElastiCache"
   },
   "operations" : {
     "AddTagsToResource" : {

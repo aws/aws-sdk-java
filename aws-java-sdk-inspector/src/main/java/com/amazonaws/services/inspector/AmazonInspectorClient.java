@@ -282,9 +282,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonInspectorClient(AwsSyncClientParams clientParams) {
+    AmazonInspectorClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

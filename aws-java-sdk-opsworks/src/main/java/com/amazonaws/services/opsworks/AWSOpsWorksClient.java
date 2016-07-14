@@ -334,9 +334,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSOpsWorksClient(AwsSyncClientParams clientParams) {
+    AWSOpsWorksClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

@@ -313,9 +313,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonIdentityManagementClient(AwsSyncClientParams clientParams) {
+    AmazonIdentityManagementClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

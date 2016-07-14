@@ -280,7 +280,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonCognitoSyncAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonCognitoSyncAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

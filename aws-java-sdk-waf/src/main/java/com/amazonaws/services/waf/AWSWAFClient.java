@@ -291,9 +291,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSWAFClient(AwsSyncClientParams clientParams) {
+    AWSWAFClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

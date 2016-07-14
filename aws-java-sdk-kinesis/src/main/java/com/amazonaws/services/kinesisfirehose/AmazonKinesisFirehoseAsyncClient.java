@@ -257,8 +257,7 @@ public class AmazonKinesisFirehoseAsyncClient extends
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonKinesisFirehoseAsyncClient(
-            AwsAsyncClientParams asyncClientParams) {
+    AmazonKinesisFirehoseAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

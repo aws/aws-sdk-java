@@ -266,7 +266,7 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonDirectConnectAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonDirectConnectAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

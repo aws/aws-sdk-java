@@ -297,9 +297,10 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonSimpleWorkflowClient(AwsSyncClientParams clientParams) {
+    AmazonSimpleWorkflowClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

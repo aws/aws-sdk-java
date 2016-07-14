@@ -657,8 +657,7 @@ public class AWSApplicationDiscoveryAsyncClient extends
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSApplicationDiscoveryAsyncClient(
-            AwsAsyncClientParams asyncClientParams) {
+    AWSApplicationDiscoveryAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

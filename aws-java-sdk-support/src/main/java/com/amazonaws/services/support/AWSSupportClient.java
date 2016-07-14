@@ -335,9 +335,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSSupportClient(AwsSyncClientParams clientParams) {
+    AWSSupportClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

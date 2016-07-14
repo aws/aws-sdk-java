@@ -675,9 +675,10 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSApplicationDiscoveryClient(AwsSyncClientParams clientParams) {
+    AWSApplicationDiscoveryClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

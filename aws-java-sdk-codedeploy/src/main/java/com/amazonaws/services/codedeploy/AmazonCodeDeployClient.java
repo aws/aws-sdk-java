@@ -662,9 +662,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonCodeDeployClient(AwsSyncClientParams clientParams) {
+    AmazonCodeDeployClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

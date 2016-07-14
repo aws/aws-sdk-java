@@ -424,9 +424,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonGameLiftClient(AwsSyncClientParams clientParams) {
+    AmazonGameLiftClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

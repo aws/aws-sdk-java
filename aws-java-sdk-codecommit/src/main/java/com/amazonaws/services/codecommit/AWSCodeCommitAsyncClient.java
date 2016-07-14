@@ -310,7 +310,7 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSCodeCommitAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSCodeCommitAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

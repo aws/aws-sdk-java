@@ -324,9 +324,10 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonElasticFileSystemClient(AwsSyncClientParams clientParams) {
+    AmazonElasticFileSystemClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

@@ -252,7 +252,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSCloudHSMAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSCloudHSMAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

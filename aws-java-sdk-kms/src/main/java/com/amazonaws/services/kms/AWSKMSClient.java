@@ -435,9 +435,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSKMSClient(AwsSyncClientParams clientParams) {
+    AWSKMSClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

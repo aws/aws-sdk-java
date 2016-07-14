@@ -438,9 +438,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSCloudTrailClient(AwsSyncClientParams clientParams) {
+    AWSCloudTrailClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

@@ -268,9 +268,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonRoute53DomainsClient(AwsSyncClientParams clientParams) {
+    AmazonRoute53DomainsClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

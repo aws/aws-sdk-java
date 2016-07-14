@@ -19,15 +19,15 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "servicecatalog",
     "signingName" : "servicecatalog",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSServiceCatalogClientBuilder",
     "asyncClientBuilderClassName" : "AWSServiceCatalogAsyncClientBuilder",
     "serviceName" : "AWS Service Catalog",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true
   },
   "operations" : {
     "DescribeProduct" : {

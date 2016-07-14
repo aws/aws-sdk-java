@@ -282,9 +282,10 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AWSServiceCatalogClient(AwsSyncClientParams clientParams) {
+    AWSServiceCatalogClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

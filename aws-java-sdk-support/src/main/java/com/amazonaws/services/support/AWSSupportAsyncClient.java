@@ -312,7 +312,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AWSSupportAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AWSSupportAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }

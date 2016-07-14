@@ -300,9 +300,10 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient
      * @param clientParams
      *        Object providing client parameters.
      */
-    public AmazonDynamoDBStreamsClient(AwsSyncClientParams clientParams) {
+    AmazonDynamoDBStreamsClient(AwsSyncClientParams clientParams) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
     }
 
     private void init() {

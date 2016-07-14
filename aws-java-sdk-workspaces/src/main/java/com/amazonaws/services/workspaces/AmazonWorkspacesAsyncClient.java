@@ -258,7 +258,7 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient
      * @param asyncClientParams
      *        Object providing client parameters.
      */
-    public AmazonWorkspacesAsyncClient(AwsAsyncClientParams asyncClientParams) {
+    AmazonWorkspacesAsyncClient(AwsAsyncClientParams asyncClientParams) {
         super(asyncClientParams);
         this.executorService = asyncClientParams.getExecutor();
     }
