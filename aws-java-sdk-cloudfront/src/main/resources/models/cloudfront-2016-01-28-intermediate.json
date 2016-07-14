@@ -19,15 +19,15 @@
     "jsonVersion" : null,
     "endpointPrefix" : "cloudfront",
     "signingName" : "cloudfront",
-    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
-    "syncClientBuilderClassName" : "AmazonCloudFrontClientBuilder",
-    "asyncClientBuilderClassName" : "AmazonCloudFrontAsyncClientBuilder",
-    "serviceName" : "CloudFront",
     "jsonProtocol" : false,
     "xmlProtocol" : true,
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
-    "unmarshallerClassSuffix" : "StaxUnmarshaller"
+    "unmarshallerClassSuffix" : "StaxUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "syncClientBuilderClassName" : "AmazonCloudFrontClientBuilder",
+    "asyncClientBuilderClassName" : "AmazonCloudFrontAsyncClientBuilder",
+    "serviceName" : "CloudFront"
   },
   "operations" : {
     "CreateCloudFrontOriginAccessIdentity" : {
@@ -64,13 +64,13 @@
         "documentation" : "The value of Quantity and the size of Items do not match."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createCloudFrontOriginAccessIdentity",
       "authenticated" : true,
       "syncReturnType" : "CreateCloudFrontOriginAccessIdentityResult",
       "asyncReturnType" : "CreateCloudFrontOriginAccessIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateCloudFrontOriginAccessIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateCloudFrontOriginAccessIdentityResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCloudFrontOriginAccessIdentityRequest, CreateCloudFrontOriginAccessIdentityResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCloudFrontOriginAccessIdentityRequest, CreateCloudFrontOriginAccessIdentityResult>",
+      "methodName" : "createCloudFrontOriginAccessIdentity"
     },
     "CreateDistribution" : {
       "documentation" : "Create a new distribution.",
@@ -190,13 +190,13 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createDistribution",
       "authenticated" : true,
       "syncReturnType" : "CreateDistributionResult",
       "asyncReturnType" : "CreateDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDistributionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDistributionRequest, CreateDistributionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDistributionRequest, CreateDistributionResult>",
+      "methodName" : "createDistribution"
     },
     "CreateInvalidation" : {
       "documentation" : "Create a new invalidation.",
@@ -238,13 +238,13 @@
         "documentation" : "The value of Quantity and the size of Items do not match."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createInvalidation",
       "authenticated" : true,
       "syncReturnType" : "CreateInvalidationResult",
       "asyncReturnType" : "CreateInvalidationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateInvalidationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateInvalidationResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateInvalidationRequest, CreateInvalidationResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateInvalidationRequest, CreateInvalidationResult>",
+      "methodName" : "createInvalidation"
     },
     "CreateStreamingDistribution" : {
       "documentation" : "Create a new streaming distribution.",
@@ -301,13 +301,13 @@
         "documentation" : "The value of Quantity and the size of Items do not match."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createStreamingDistribution",
       "authenticated" : true,
       "syncReturnType" : "CreateStreamingDistributionResult",
       "asyncReturnType" : "CreateStreamingDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateStreamingDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateStreamingDistributionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionRequest, CreateStreamingDistributionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionRequest, CreateStreamingDistributionResult>",
+      "methodName" : "createStreamingDistribution"
     },
     "DeleteCloudFrontOriginAccessIdentity" : {
       "documentation" : "Delete an origin access identity.",
@@ -343,13 +343,13 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteCloudFrontOriginAccessIdentity",
       "authenticated" : true,
       "syncReturnType" : "DeleteCloudFrontOriginAccessIdentityResult",
       "asyncReturnType" : "DeleteCloudFrontOriginAccessIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteCloudFrontOriginAccessIdentityResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCloudFrontOriginAccessIdentityRequest, DeleteCloudFrontOriginAccessIdentityResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCloudFrontOriginAccessIdentityRequest, DeleteCloudFrontOriginAccessIdentityResult>",
+      "methodName" : "deleteCloudFrontOriginAccessIdentity"
     },
     "DeleteDistribution" : {
       "documentation" : "Delete a distribution.",
@@ -385,13 +385,13 @@
         "documentation" : "The precondition given in one or more of the request-header fields evaluated to false."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteDistribution",
       "authenticated" : true,
       "syncReturnType" : "DeleteDistributionResult",
       "asyncReturnType" : "DeleteDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDistributionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, DeleteDistributionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, DeleteDistributionResult>",
+      "methodName" : "deleteDistribution"
     },
     "DeleteStreamingDistribution" : {
       "documentation" : "Delete a streaming distribution.",
@@ -427,13 +427,13 @@
         "documentation" : "The precondition given in one or more of the request-header fields evaluated to false."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteStreamingDistribution",
       "authenticated" : true,
       "syncReturnType" : "DeleteStreamingDistributionResult",
       "asyncReturnType" : "DeleteStreamingDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteStreamingDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteStreamingDistributionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, DeleteStreamingDistributionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, DeleteStreamingDistributionResult>",
+      "methodName" : "deleteStreamingDistribution"
     },
     "GetCloudFrontOriginAccessIdentity" : {
       "documentation" : "Get the information about an origin access identity.",
@@ -460,13 +460,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getCloudFrontOriginAccessIdentity",
       "authenticated" : true,
       "syncReturnType" : "GetCloudFrontOriginAccessIdentityResult",
       "asyncReturnType" : "GetCloudFrontOriginAccessIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCloudFrontOriginAccessIdentityResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCloudFrontOriginAccessIdentityRequest, GetCloudFrontOriginAccessIdentityResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCloudFrontOriginAccessIdentityRequest, GetCloudFrontOriginAccessIdentityResult>",
+      "methodName" : "getCloudFrontOriginAccessIdentity"
     },
     "GetCloudFrontOriginAccessIdentityConfig" : {
       "documentation" : "Get the configuration information about an origin access identity.",
@@ -493,13 +493,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getCloudFrontOriginAccessIdentityConfig",
       "authenticated" : true,
       "syncReturnType" : "GetCloudFrontOriginAccessIdentityConfigResult",
       "asyncReturnType" : "GetCloudFrontOriginAccessIdentityConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCloudFrontOriginAccessIdentityConfigResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCloudFrontOriginAccessIdentityConfigRequest, GetCloudFrontOriginAccessIdentityConfigResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCloudFrontOriginAccessIdentityConfigRequest, GetCloudFrontOriginAccessIdentityConfigResult>",
+      "methodName" : "getCloudFrontOriginAccessIdentityConfig"
     },
     "GetDistribution" : {
       "documentation" : "Get the information about a distribution.",
@@ -526,13 +526,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getDistribution",
       "authenticated" : true,
       "syncReturnType" : "GetDistributionResult",
       "asyncReturnType" : "GetDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDistributionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDistributionRequest, GetDistributionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDistributionRequest, GetDistributionResult>",
+      "methodName" : "getDistribution"
     },
     "GetDistributionConfig" : {
       "documentation" : "Get the configuration information about a distribution.",
@@ -559,13 +559,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getDistributionConfig",
       "authenticated" : true,
       "syncReturnType" : "GetDistributionConfigResult",
       "asyncReturnType" : "GetDistributionConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDistributionConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDistributionConfigResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDistributionConfigRequest, GetDistributionConfigResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDistributionConfigRequest, GetDistributionConfigResult>",
+      "methodName" : "getDistributionConfig"
     },
     "GetInvalidation" : {
       "documentation" : "Get the information about an invalidation.",
@@ -595,13 +595,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getInvalidation",
       "authenticated" : true,
       "syncReturnType" : "GetInvalidationResult",
       "asyncReturnType" : "GetInvalidationResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetInvalidationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetInvalidationResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetInvalidationRequest, GetInvalidationResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetInvalidationRequest, GetInvalidationResult>",
+      "methodName" : "getInvalidation"
     },
     "GetStreamingDistribution" : {
       "documentation" : "Get the information about a streaming distribution.",
@@ -628,13 +628,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getStreamingDistribution",
       "authenticated" : true,
       "syncReturnType" : "GetStreamingDistributionResult",
       "asyncReturnType" : "GetStreamingDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetStreamingDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetStreamingDistributionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetStreamingDistributionRequest, GetStreamingDistributionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetStreamingDistributionRequest, GetStreamingDistributionResult>",
+      "methodName" : "getStreamingDistribution"
     },
     "GetStreamingDistributionConfig" : {
       "documentation" : "Get the configuration information about a streaming distribution.",
@@ -661,13 +661,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getStreamingDistributionConfig",
       "authenticated" : true,
       "syncReturnType" : "GetStreamingDistributionConfigResult",
       "asyncReturnType" : "GetStreamingDistributionConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetStreamingDistributionConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetStreamingDistributionConfigResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetStreamingDistributionConfigRequest, GetStreamingDistributionConfigResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetStreamingDistributionConfigRequest, GetStreamingDistributionConfigResult>",
+      "methodName" : "getStreamingDistributionConfig"
     },
     "ListCloudFrontOriginAccessIdentities" : {
       "documentation" : "List origin access identities.",
@@ -691,13 +691,13 @@
         "documentation" : "The argument is invalid."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listCloudFrontOriginAccessIdentities",
       "authenticated" : true,
       "syncReturnType" : "ListCloudFrontOriginAccessIdentitiesResult",
       "asyncReturnType" : "ListCloudFrontOriginAccessIdentitiesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCloudFrontOriginAccessIdentitiesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListCloudFrontOriginAccessIdentitiesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListCloudFrontOriginAccessIdentitiesRequest, ListCloudFrontOriginAccessIdentitiesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListCloudFrontOriginAccessIdentitiesRequest, ListCloudFrontOriginAccessIdentitiesResult>",
+      "methodName" : "listCloudFrontOriginAccessIdentities"
     },
     "ListDistributions" : {
       "documentation" : "List distributions.",
@@ -721,13 +721,13 @@
         "documentation" : "The argument is invalid."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listDistributions",
       "authenticated" : true,
       "syncReturnType" : "ListDistributionsResult",
       "asyncReturnType" : "ListDistributionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDistributionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDistributionsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDistributionsRequest, ListDistributionsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDistributionsRequest, ListDistributionsResult>",
+      "methodName" : "listDistributions"
     },
     "ListDistributionsByWebACLId" : {
       "documentation" : "List the distributions that are associated with a specified AWS WAF web ACL.",
@@ -754,13 +754,13 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listDistributionsByWebACLId",
       "authenticated" : true,
       "syncReturnType" : "ListDistributionsByWebACLIdResult",
       "asyncReturnType" : "ListDistributionsByWebACLIdResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDistributionsByWebACLIdResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDistributionsByWebACLIdResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDistributionsByWebACLIdRequest, ListDistributionsByWebACLIdResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDistributionsByWebACLIdRequest, ListDistributionsByWebACLIdResult>",
+      "methodName" : "listDistributionsByWebACLId"
     },
     "ListInvalidations" : {
       "documentation" : "List invalidation batches.",
@@ -790,13 +790,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listInvalidations",
       "authenticated" : true,
       "syncReturnType" : "ListInvalidationsResult",
       "asyncReturnType" : "ListInvalidationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListInvalidationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListInvalidationsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListInvalidationsRequest, ListInvalidationsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListInvalidationsRequest, ListInvalidationsResult>",
+      "methodName" : "listInvalidations"
     },
     "ListStreamingDistributions" : {
       "documentation" : "List streaming distributions.",
@@ -820,13 +820,13 @@
         "documentation" : "The argument is invalid."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listStreamingDistributions",
       "authenticated" : true,
       "syncReturnType" : "ListStreamingDistributionsResult",
       "asyncReturnType" : "ListStreamingDistributionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListStreamingDistributionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListStreamingDistributionsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStreamingDistributionsRequest, ListStreamingDistributionsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStreamingDistributionsRequest, ListStreamingDistributionsResult>",
+      "methodName" : "listStreamingDistributions"
     },
     "UpdateCloudFrontOriginAccessIdentity" : {
       "documentation" : "Update an origin access identity.",
@@ -871,13 +871,13 @@
         "documentation" : "The value of Quantity and the size of Items do not match."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updateCloudFrontOriginAccessIdentity",
       "authenticated" : true,
       "syncReturnType" : "UpdateCloudFrontOriginAccessIdentityResult",
       "asyncReturnType" : "UpdateCloudFrontOriginAccessIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateCloudFrontOriginAccessIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateCloudFrontOriginAccessIdentityResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateCloudFrontOriginAccessIdentityRequest, UpdateCloudFrontOriginAccessIdentityResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateCloudFrontOriginAccessIdentityRequest, UpdateCloudFrontOriginAccessIdentityResult>",
+      "methodName" : "updateCloudFrontOriginAccessIdentity"
     },
     "UpdateDistribution" : {
       "documentation" : "Update a distribution.",
@@ -997,13 +997,13 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updateDistribution",
       "authenticated" : true,
       "syncReturnType" : "UpdateDistributionResult",
       "asyncReturnType" : "UpdateDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateDistributionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDistributionRequest, UpdateDistributionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDistributionRequest, UpdateDistributionResult>",
+      "methodName" : "updateDistribution"
     },
     "UpdateStreamingDistribution" : {
       "documentation" : "Update a streaming distribution.",
@@ -1063,13 +1063,13 @@
         "documentation" : "The value of Quantity and the size of Items do not match."
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updateStreamingDistribution",
       "authenticated" : true,
       "syncReturnType" : "UpdateStreamingDistributionResult",
       "asyncReturnType" : "UpdateStreamingDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateStreamingDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateStreamingDistributionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateStreamingDistributionRequest, UpdateStreamingDistributionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateStreamingDistributionRequest, UpdateStreamingDistributionResult>",
+      "methodName" : "updateStreamingDistribution"
     }
   },
   "shapes" : {
@@ -37640,6 +37640,6 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller"
+  "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller",
+  "clientConfigFactory" : "ClientConfigurationFactory"
 }

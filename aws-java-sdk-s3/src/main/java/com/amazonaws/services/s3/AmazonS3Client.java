@@ -358,6 +358,25 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             completeMultipartUploadRetryCondition = new CompleteMultipartUploadRetryCondition();
 
     /**
+     * AWS credentials provider chain for Amazon S3 that looks for credentials in
+     * the {@link DefaultAWSCredentialsProviderChain}. If the {@link DefaultAWSCredentialsProviderChain}
+     * returns null, S3 falls back to anonymous access.
+     */
+    private static class S3CredentialsProviderChain extends DefaultAWSCredentialsProviderChain {
+
+        @Override
+        public AWSCredentials getCredentials() {
+            try {
+                return super.getCredentials();
+            } catch (AmazonClientException ace) {
+            }
+
+            log.debug("No credentials available; falling back to anonymous access");
+            return null;
+        }
+    }
+
+    /**
      * Constructs a new client to invoke service methods on Amazon S3. A
      * credentials provider chain will be used that searches for credentials in
      * this order:
@@ -398,22 +417,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * @sample AmazonS3.CreateClient
      */
     public AmazonS3Client() {
-        this(new AWSCredentialsProviderChain(
-                new EnvironmentVariableCredentialsProvider(),
-                new SystemPropertiesCredentialsProvider(),
-                new ProfileCredentialsProvider(),
-                new InstanceProfileCredentialsProvider()) {
-
-            @Override
-            public AWSCredentials getCredentials() {
-                try {
-                    return super.getCredentials();
-                } catch (AmazonClientException ace) {}
-
-                log.debug("No credentials available; falling back to anonymous access");
-                return null;
-            }
-        });
+        this(new S3CredentialsProviderChain());
     }
 
     /**
