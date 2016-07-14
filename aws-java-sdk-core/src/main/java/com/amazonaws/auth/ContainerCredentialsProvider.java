@@ -72,7 +72,7 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
             String path = System.getenv(ECS_CONTAINER_CREDENTIALS_PATH);
             if (path == null) {
                 throw new AmazonClientException(
-                        "The environment varaible " + ECS_CONTAINER_CREDENTIALS_PATH + " is empty");
+                        "The environment variable " + ECS_CONTAINER_CREDENTIALS_PATH + " is empty");
             }
 
             return new URI(ECS_CREDENTIALS_ENDPOINT + path);
