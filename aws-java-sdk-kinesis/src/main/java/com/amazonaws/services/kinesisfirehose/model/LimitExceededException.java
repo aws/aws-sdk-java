@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.kinesisfirehose.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You have already reached the limit for a requested resource.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException
+        extends
+        com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException {
     private static final long serialVersionUID = 1L;
 
     /**

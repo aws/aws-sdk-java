@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.inspector.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Amazon Inspector cannot assume the cross-account role that it needs to list
  * your EC2 instances during the assessment run.
  * </p>
  */
-public class InvalidCrossAccountRoleException extends AmazonServiceException {
+public class InvalidCrossAccountRoleException extends
+        com.amazonaws.services.inspector.model.AmazonInspectorException {
     private static final long serialVersionUID = 1L;
 
     /**

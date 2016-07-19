@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.cloudwatch.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Data was not syntactically valid JSON.
  * </p>
  */
-public class InvalidFormatException extends AmazonServiceException {
+public class InvalidFormatException extends
+        com.amazonaws.services.cloudwatch.model.AmazonCloudWatchException {
     private static final long serialVersionUID = 1L;
 
     /**

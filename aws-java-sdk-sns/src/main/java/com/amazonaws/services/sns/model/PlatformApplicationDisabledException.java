@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.sns.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Exception error indicating platform application disabled.
  * </p>
  */
 public class PlatformApplicationDisabledException extends
-        AmazonServiceException {
+        com.amazonaws.services.sns.model.AmazonSNSException {
     private static final long serialVersionUID = 1L;
 
     /**

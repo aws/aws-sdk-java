@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.cloudtrail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception is thrown when the policy on the S3 bucket is not sufficient.
  * </p>
  */
-public class InsufficientS3BucketPolicyException extends AmazonServiceException {
+public class InsufficientS3BucketPolicyException extends
+        com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 
     /**

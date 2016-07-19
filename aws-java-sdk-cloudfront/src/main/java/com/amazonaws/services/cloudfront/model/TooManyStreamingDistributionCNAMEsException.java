@@ -16,13 +16,11 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * 
  */
 public class TooManyStreamingDistributionCNAMEsException extends
-        AmazonServiceException {
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

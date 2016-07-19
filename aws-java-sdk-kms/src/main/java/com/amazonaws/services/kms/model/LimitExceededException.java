@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.kms.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because a limit was exceeded. For more information,
@@ -26,7 +24,8 @@ import com.amazonaws.AmazonServiceException;
  * >Limits</a> in the <i>AWS Key Management Service Developer Guide</i>.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException extends
+        com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 
     /**

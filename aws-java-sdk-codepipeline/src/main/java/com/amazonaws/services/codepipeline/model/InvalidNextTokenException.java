@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.codepipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The next token was specified in an invalid format. Make sure that the next
  * token you provided is the token returned by a previous call.
  * </p>
  */
-public class InvalidNextTokenException extends AmazonServiceException {
+public class InvalidNextTokenException extends
+        com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

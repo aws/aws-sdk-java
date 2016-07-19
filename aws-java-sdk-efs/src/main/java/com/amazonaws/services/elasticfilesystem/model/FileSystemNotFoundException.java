@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the specified <code>FileSystemId</code> does not exist in the
  * requester's AWS account.
  * </p>
  */
-public class FileSystemNotFoundException extends AmazonServiceException {
+public class FileSystemNotFoundException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

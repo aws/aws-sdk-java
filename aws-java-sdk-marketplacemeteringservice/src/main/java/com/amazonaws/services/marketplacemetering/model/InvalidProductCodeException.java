@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.marketplacemetering.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The product code passed does not match the product code used for publishing
  * the product.
  * </p>
  */
-public class InvalidProductCodeException extends AmazonServiceException {
+public class InvalidProductCodeException
+        extends
+        com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException {
     private static final long serialVersionUID = 1L;
 
     /**

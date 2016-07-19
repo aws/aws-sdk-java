@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.dynamodbv2.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation conflicts with the resource's availability. For example, you
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * in the <code>CREATING</code> state.
  * </p>
  */
-public class ResourceInUseException extends AmazonServiceException {
+public class ResourceInUseException extends
+        com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException {
     private static final long serialVersionUID = 1L;
 
     /**

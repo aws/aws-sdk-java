@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.simpleworkflow.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned when the specified activity or workflow type was already deprecated.
  * </p>
  */
-public class TypeDeprecatedException extends AmazonServiceException {
+public class TypeDeprecatedException
+        extends
+        com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException {
     private static final long serialVersionUID = 1L;
 
     /**

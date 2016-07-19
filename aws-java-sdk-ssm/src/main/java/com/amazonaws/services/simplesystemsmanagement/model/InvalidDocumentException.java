@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified document does not exist.
  * </p>
  */
-public class InvalidDocumentException extends AmazonServiceException {
+public class InvalidDocumentException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested subnet is not valid, or not all of the subnets are in the same
  * VPC.
  * </p>
  */
-public class InvalidSubnetException extends AmazonServiceException {
+public class InvalidSubnetException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

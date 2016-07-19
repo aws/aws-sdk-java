@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * More applications were attempted to be created than are allowed.
  * </p>
  */
-public class ApplicationLimitExceededException extends AmazonServiceException {
+public class ApplicationLimitExceededException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

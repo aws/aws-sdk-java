@@ -16,13 +16,12 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * The caller reference you attempted to create the distribution with is
  * associated with another distribution.
  */
-public class DistributionAlreadyExistsException extends AmazonServiceException {
+public class DistributionAlreadyExistsException extends
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

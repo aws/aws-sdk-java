@@ -28,6 +28,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
@@ -36,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iotdata.model.*;
 import com.amazonaws.services.iotdata.model.transform.*;
@@ -128,7 +130,9 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ResourceNotFoundException")
                                     .withModeledClass(
-                                            com.amazonaws.services.iotdata.model.ResourceNotFoundException.class)));
+                                            com.amazonaws.services.iotdata.model.ResourceNotFoundException.class))
+                    .withBaseServiceExceptionClass(
+                            com.amazonaws.services.iotdata.model.AWSIotDataException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS IoT Data Plane.

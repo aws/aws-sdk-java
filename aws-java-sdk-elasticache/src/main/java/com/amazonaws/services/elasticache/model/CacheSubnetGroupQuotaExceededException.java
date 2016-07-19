@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request cannot be processed because it would exceed the allowed number of
@@ -25,7 +23,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class CacheSubnetGroupQuotaExceededException extends
-        AmazonServiceException {
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

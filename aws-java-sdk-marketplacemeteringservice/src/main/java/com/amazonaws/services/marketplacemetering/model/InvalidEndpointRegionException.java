@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.marketplacemetering.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The endpoint being called is in a region different from your EC2 instance.
@@ -25,7 +23,9 @@ import com.amazonaws.AmazonServiceException;
  * instance must match.
  * </p>
  */
-public class InvalidEndpointRegionException extends AmazonServiceException {
+public class InvalidEndpointRegionException
+        extends
+        com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException {
     private static final long serialVersionUID = 1L;
 
     /**

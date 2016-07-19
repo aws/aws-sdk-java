@@ -84,6 +84,8 @@ public class InstanceMetadataRegionProviderTest {
 
         @Before
         public void setup() {
+            System.setProperty(SDKGlobalConfiguration.EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY,
+                               "http://localhost:54123");
             regionProvider = new InstanceMetadataRegionProvider();
         }
 

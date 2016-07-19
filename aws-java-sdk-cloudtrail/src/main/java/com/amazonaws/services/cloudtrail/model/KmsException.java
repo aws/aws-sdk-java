@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.cloudtrail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception is thrown when there is an issue with the specified KMS key
  * and the trail can’t be updated.
  * </p>
  */
-public class KmsException extends AmazonServiceException {
+public class KmsException extends
+        com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 
     /**

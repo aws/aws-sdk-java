@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.cloudwatch.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The quota for alarms for this customer has already been reached.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException extends
+        com.amazonaws.services.cloudwatch.model.AmazonCloudWatchException {
     private static final long serialVersionUID = 1L;
 
     /**

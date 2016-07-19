@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested snapshot name does not refer to an existing snapshot.
  * </p>
  */
-public class SnapshotNotFoundException extends AmazonServiceException {
+public class SnapshotNotFoundException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

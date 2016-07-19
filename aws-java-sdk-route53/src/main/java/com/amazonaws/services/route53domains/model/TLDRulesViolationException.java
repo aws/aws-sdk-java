@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.route53domains.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The top-level domain does not support this operation.
  * </p>
  */
-public class TLDRulesViolationException extends AmazonServiceException {
+public class TLDRulesViolationException
+        extends
+        com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException {
     private static final long serialVersionUID = 1L;
 
     /**

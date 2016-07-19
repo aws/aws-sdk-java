@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elasticloadbalancing.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A tag key was specified more than once.
  * </p>
  */
-public class DuplicateTagKeysException extends AmazonServiceException {
+public class DuplicateTagKeysException
+        extends
+        com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 
     /**

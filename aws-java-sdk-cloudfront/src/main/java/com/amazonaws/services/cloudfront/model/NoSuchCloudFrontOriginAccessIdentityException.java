@@ -16,13 +16,11 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * The specified origin access identity does not exist.
  */
 public class NoSuchCloudFrontOriginAccessIdentityException extends
-        AmazonServiceException {
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

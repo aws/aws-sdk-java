@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.machinelearning.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The exception is thrown when a predict request is made to an unmounted
  * <code>MLModel</code>.
  * </p>
  */
-public class PredictorNotMountedException extends AmazonServiceException {
+public class PredictorNotMountedException
+        extends
+        com.amazonaws.services.machinelearning.model.AmazonMachineLearningException {
     private static final long serialVersionUID = 1L;
 
     /**

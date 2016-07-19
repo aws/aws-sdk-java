@@ -135,6 +135,26 @@ public class Device implements Serializable, Cloneable {
      * </p>
      */
     private String radio;
+    /**
+     * <p>
+     * Specifies whether remote access has been enabled for the specified
+     * device.
+     * </p>
+     */
+    private Boolean remoteAccessEnabled;
+    /**
+     * <p>
+     * The type of fleet to which this device belongs. Possible values for fleet
+     * type are PRIVATE and PUBLIC.
+     * </p>
+     */
+    private String fleetType;
+    /**
+     * <p>
+     * The name of the fleet to which this device belongs.
+     * </p>
+     */
+    private String fleetName;
 
     /**
      * <p>
@@ -1055,6 +1075,155 @@ public class Device implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies whether remote access has been enabled for the specified
+     * device.
+     * </p>
+     * 
+     * @param remoteAccessEnabled
+     *        Specifies whether remote access has been enabled for the specified
+     *        device.
+     */
+
+    public void setRemoteAccessEnabled(Boolean remoteAccessEnabled) {
+        this.remoteAccessEnabled = remoteAccessEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether remote access has been enabled for the specified
+     * device.
+     * </p>
+     * 
+     * @return Specifies whether remote access has been enabled for the
+     *         specified device.
+     */
+
+    public Boolean getRemoteAccessEnabled() {
+        return this.remoteAccessEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether remote access has been enabled for the specified
+     * device.
+     * </p>
+     * 
+     * @param remoteAccessEnabled
+     *        Specifies whether remote access has been enabled for the specified
+     *        device.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Device withRemoteAccessEnabled(Boolean remoteAccessEnabled) {
+        setRemoteAccessEnabled(remoteAccessEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether remote access has been enabled for the specified
+     * device.
+     * </p>
+     * 
+     * @return Specifies whether remote access has been enabled for the
+     *         specified device.
+     */
+
+    public Boolean isRemoteAccessEnabled() {
+        return this.remoteAccessEnabled;
+    }
+
+    /**
+     * <p>
+     * The type of fleet to which this device belongs. Possible values for fleet
+     * type are PRIVATE and PUBLIC.
+     * </p>
+     * 
+     * @param fleetType
+     *        The type of fleet to which this device belongs. Possible values
+     *        for fleet type are PRIVATE and PUBLIC.
+     */
+
+    public void setFleetType(String fleetType) {
+        this.fleetType = fleetType;
+    }
+
+    /**
+     * <p>
+     * The type of fleet to which this device belongs. Possible values for fleet
+     * type are PRIVATE and PUBLIC.
+     * </p>
+     * 
+     * @return The type of fleet to which this device belongs. Possible values
+     *         for fleet type are PRIVATE and PUBLIC.
+     */
+
+    public String getFleetType() {
+        return this.fleetType;
+    }
+
+    /**
+     * <p>
+     * The type of fleet to which this device belongs. Possible values for fleet
+     * type are PRIVATE and PUBLIC.
+     * </p>
+     * 
+     * @param fleetType
+     *        The type of fleet to which this device belongs. Possible values
+     *        for fleet type are PRIVATE and PUBLIC.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Device withFleetType(String fleetType) {
+        setFleetType(fleetType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the fleet to which this device belongs.
+     * </p>
+     * 
+     * @param fleetName
+     *        The name of the fleet to which this device belongs.
+     */
+
+    public void setFleetName(String fleetName) {
+        this.fleetName = fleetName;
+    }
+
+    /**
+     * <p>
+     * The name of the fleet to which this device belongs.
+     * </p>
+     * 
+     * @return The name of the fleet to which this device belongs.
+     */
+
+    public String getFleetName() {
+        return this.fleetName;
+    }
+
+    /**
+     * <p>
+     * The name of the fleet to which this device belongs.
+     * </p>
+     * 
+     * @param fleetName
+     *        The name of the fleet to which this device belongs.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Device withFleetName(String fleetName) {
+        setFleetName(fleetName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1093,7 +1262,13 @@ public class Device implements Serializable, Cloneable {
         if (getCarrier() != null)
             sb.append("Carrier: " + getCarrier() + ",");
         if (getRadio() != null)
-            sb.append("Radio: " + getRadio());
+            sb.append("Radio: " + getRadio() + ",");
+        if (getRemoteAccessEnabled() != null)
+            sb.append("RemoteAccessEnabled: " + getRemoteAccessEnabled() + ",");
+        if (getFleetType() != null)
+            sb.append("FleetType: " + getFleetType() + ",");
+        if (getFleetName() != null)
+            sb.append("FleetName: " + getFleetName());
         sb.append("}");
         return sb.toString();
     }
@@ -1178,6 +1353,23 @@ public class Device implements Serializable, Cloneable {
         if (other.getRadio() != null
                 && other.getRadio().equals(this.getRadio()) == false)
             return false;
+        if (other.getRemoteAccessEnabled() == null
+                ^ this.getRemoteAccessEnabled() == null)
+            return false;
+        if (other.getRemoteAccessEnabled() != null
+                && other.getRemoteAccessEnabled().equals(
+                        this.getRemoteAccessEnabled()) == false)
+            return false;
+        if (other.getFleetType() == null ^ this.getFleetType() == null)
+            return false;
+        if (other.getFleetType() != null
+                && other.getFleetType().equals(this.getFleetType()) == false)
+            return false;
+        if (other.getFleetName() == null ^ this.getFleetName() == null)
+            return false;
+        if (other.getFleetName() != null
+                && other.getFleetName().equals(this.getFleetName()) == false)
+            return false;
         return true;
     }
 
@@ -1216,6 +1408,14 @@ public class Device implements Serializable, Cloneable {
                 + ((getCarrier() == null) ? 0 : getCarrier().hashCode());
         hashCode = prime * hashCode
                 + ((getRadio() == null) ? 0 : getRadio().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRemoteAccessEnabled() == null) ? 0
+                        : getRemoteAccessEnabled().hashCode());
+        hashCode = prime * hashCode
+                + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
+        hashCode = prime * hashCode
+                + ((getFleetName() == null) ? 0 : getFleetName().hashCode());
         return hashCode;
     }
 

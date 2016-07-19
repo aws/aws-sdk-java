@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.simpleworkflow.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned when the named resource cannot be found with in the scope of this
@@ -25,7 +23,9 @@ import com.amazonaws.AmazonServiceException;
  * never created or is no longer available for this operation.
  * </p>
  */
-public class UnknownResourceException extends AmazonServiceException {
+public class UnknownResourceException
+        extends
+        com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException {
     private static final long serialVersionUID = 1L;
 
     /**

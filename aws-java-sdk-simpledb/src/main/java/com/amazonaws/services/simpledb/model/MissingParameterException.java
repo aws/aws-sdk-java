@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.simpledb.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request must contain the specified missing parameter.
  * </p>
  */
-public class MissingParameterException extends AmazonServiceException {
+public class MissingParameterException extends
+        com.amazonaws.services.simpledb.model.AmazonSimpleDBException {
     private static final long serialVersionUID = 1L;
 
     private Float boxUsage;

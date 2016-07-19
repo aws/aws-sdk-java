@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.devicefarm.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * There was a problem with the service account.
  * </p>
  */
-public class ServiceAccountException extends AmazonServiceException {
+public class ServiceAccountException extends
+        com.amazonaws.services.devicefarm.model.AWSDeviceFarmException {
     private static final long serialVersionUID = 1L;
 
     /**

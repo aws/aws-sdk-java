@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * Each account can create only a certain number of jobs per day. If you need to
  * create more than this, please contact awsimportexport@amazon.com to explain
  * your particular use case.
  */
-public class CreateJobQuotaExceededException extends AmazonServiceException {
+public class CreateJobQuotaExceededException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the provided password did not meet the
  * requirements imposed by the account password policy.
  * </p>
  */
-public class PasswordPolicyViolationException extends AmazonServiceException {
+public class PasswordPolicyViolationException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

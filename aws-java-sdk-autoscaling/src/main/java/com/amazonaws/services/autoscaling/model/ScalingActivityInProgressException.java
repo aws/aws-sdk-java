@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.autoscaling.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The Auto Scaling group can't be deleted because there are scaling activities
  * in progress.
  * </p>
  */
-public class ScalingActivityInProgressException extends AmazonServiceException {
+public class ScalingActivityInProgressException extends
+        com.amazonaws.services.autoscaling.model.AmazonAutoScalingException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the SSH public key is already associated
  * with the specified IAM user.
  * </p>
  */
-public class DuplicateSSHPublicKeyException extends AmazonServiceException {
+public class DuplicateSSHPublicKeyException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

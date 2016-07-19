@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticbeanstalk.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Unable to delete the Amazon S3 source bundle associated with the application
  * version. The application version was deleted successfully.
  * </p>
  */
-public class SourceBundleDeletionException extends AmazonServiceException {
+public class SourceBundleDeletionException
+        extends
+        com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An Amazon Redshift event notification subscription with the specified name
  * does not exist.
  * </p>
  */
-public class SubscriptionNotFoundException extends AmazonServiceException {
+public class SubscriptionNotFoundException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

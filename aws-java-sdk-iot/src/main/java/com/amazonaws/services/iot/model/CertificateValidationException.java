@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.iot.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The certificate is invalid.
  * </p>
  */
-public class CertificateValidationException extends AmazonServiceException {
+public class CertificateValidationException extends
+        com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 
     /**

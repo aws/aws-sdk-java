@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The role ID was not specified.
  * </p>
  */
-public class RoleRequiredException extends AmazonServiceException {
+public class RoleRequiredException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

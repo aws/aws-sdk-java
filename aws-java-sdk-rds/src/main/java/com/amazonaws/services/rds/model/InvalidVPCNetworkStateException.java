@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * DB subnet group does not cover all Availability Zones after it is created
  * because users' change.
  * </p>
  */
-public class InvalidVPCNetworkStateException extends AmazonServiceException {
+public class InvalidVPCNetworkStateException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

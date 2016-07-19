@@ -16,16 +16,15 @@
 
 package com.amazonaws.services.certificatemanager.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * One or more values in the <a>DomainValidationOption</a> structure is
  * incorrect.
  * </p>
  */
-public class InvalidDomainValidationOptionsException extends
-        AmazonServiceException {
+public class InvalidDomainValidationOptionsException
+        extends
+        com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException {
     private static final long serialVersionUID = 1L;
 
     /**

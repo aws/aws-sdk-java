@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.iot.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The rate exceeds the limit.
  * </p>
  */
-public class ThrottlingException extends AmazonServiceException {
+public class ThrottlingException extends
+        com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 
     /**

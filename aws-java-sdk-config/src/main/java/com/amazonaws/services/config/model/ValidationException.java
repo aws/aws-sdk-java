@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested action is not valid.
  * </p>
  */
-public class ValidationException extends AmazonServiceException {
+public class ValidationException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

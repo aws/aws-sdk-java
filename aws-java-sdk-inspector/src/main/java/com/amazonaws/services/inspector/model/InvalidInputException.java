@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.inspector.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because an invalid or out-of-range value was
  * supplied for an input parameter.
  * </p>
  */
-public class InvalidInputException extends AmazonServiceException {
+public class InvalidInputException extends
+        com.amazonaws.services.inspector.model.AmazonInspectorException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -20,14 +20,14 @@
     "endpointPrefix" : "streams.dynamodb",
     "signingName" : "dynamodb",
     "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonDynamoDBStreamsClientBuilder",
     "asyncClientBuilderClassName" : "AmazonDynamoDBStreamsAsyncClientBuilder",
     "serviceName" : "Amazon DynamoDB Streams",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "jsonProtocol" : true
   },
   "operations" : {
     "DescribeStream" : {
@@ -444,11 +444,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -562,11 +562,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -680,11 +680,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "ByteBuffer",
           "templateType" : "java.util.List<java.nio.ByteBuffer>",
-          "templateImplType" : "java.util.ArrayList<java.nio.ByteBuffer>"
+          "templateImplType" : "java.util.ArrayList<java.nio.ByteBuffer>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -799,12 +799,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, AttributeValue>"
+          "entryType" : "Map.Entry<String, AttributeValue>",
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -917,11 +917,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "AttributeValue",
           "templateType" : "java.util.List<AttributeValue>",
-          "templateImplType" : "java.util.ArrayList<AttributeValue>"
+          "templateImplType" : "java.util.ArrayList<AttributeValue>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1162,11 +1162,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1281,11 +1281,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "ByteBuffer",
             "templateType" : "java.util.List<java.nio.ByteBuffer>",
-            "templateImplType" : "java.util.ArrayList<java.nio.ByteBuffer>"
+            "templateImplType" : "java.util.ArrayList<java.nio.ByteBuffer>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1559,11 +1559,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1731,11 +1731,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "AttributeValue",
             "templateType" : "java.util.List<AttributeValue>",
-            "templateImplType" : "java.util.ArrayList<AttributeValue>"
+            "templateImplType" : "java.util.ArrayList<AttributeValue>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1851,12 +1851,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, AttributeValue>"
+            "entryType" : "Map.Entry<String, AttributeValue>",
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -2083,11 +2083,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Record",
           "templateType" : "java.util.List<Record>",
-          "templateImplType" : "java.util.ArrayList<Record>"
+          "templateImplType" : "java.util.ArrayList<Record>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2329,11 +2329,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Record",
             "templateType" : "java.util.List<Record>",
-            "templateImplType" : "java.util.ArrayList<Record>"
+            "templateImplType" : "java.util.ArrayList<Record>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3588,11 +3588,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Stream",
           "templateType" : "java.util.List<Stream>",
-          "templateImplType" : "java.util.ArrayList<Stream>"
+          "templateImplType" : "java.util.ArrayList<Stream>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3834,11 +3834,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Stream",
             "templateType" : "java.util.List<Stream>",
-            "templateImplType" : "java.util.ArrayList<Stream>"
+            "templateImplType" : "java.util.ArrayList<Stream>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5455,12 +5455,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, AttributeValue>"
+          "entryType" : "Map.Entry<String, AttributeValue>",
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -5574,12 +5574,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, AttributeValue>"
+          "entryType" : "Map.Entry<String, AttributeValue>",
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -5693,12 +5693,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, AttributeValue>"
+          "entryType" : "Map.Entry<String, AttributeValue>",
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -5991,12 +5991,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, AttributeValue>"
+            "entryType" : "Map.Entry<String, AttributeValue>",
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -6164,12 +6164,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, AttributeValue>"
+            "entryType" : "Map.Entry<String, AttributeValue>",
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -6443,12 +6443,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, AttributeValue>"
+            "entryType" : "Map.Entry<String, AttributeValue>",
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -7625,11 +7625,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "KeySchemaElement",
           "templateType" : "java.util.List<KeySchemaElement>",
-          "templateImplType" : "java.util.ArrayList<KeySchemaElement>"
+          "templateImplType" : "java.util.ArrayList<KeySchemaElement>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7743,11 +7743,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Shard",
           "templateType" : "java.util.List<Shard>",
-          "templateImplType" : "java.util.ArrayList<Shard>"
+          "templateImplType" : "java.util.ArrayList<Shard>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8254,11 +8254,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "KeySchemaElement",
             "templateType" : "java.util.List<KeySchemaElement>",
-            "templateImplType" : "java.util.ArrayList<KeySchemaElement>"
+            "templateImplType" : "java.util.ArrayList<KeySchemaElement>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8426,11 +8426,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Shard",
             "templateType" : "java.util.List<Shard>",
-            "templateImplType" : "java.util.ArrayList<Shard>"
+            "templateImplType" : "java.util.ArrayList<Shard>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9117,6 +9117,8 @@
       }
     },
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : "AmazonDynamoDBException",
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
@@ -9124,5 +9126,8 @@
     "operationExamples" : { }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "exceptionUnmarshallerImpl" : null,
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException",
+  "sdkModeledExceptionBaseClassName" : "AmazonDynamoDBException"
 }

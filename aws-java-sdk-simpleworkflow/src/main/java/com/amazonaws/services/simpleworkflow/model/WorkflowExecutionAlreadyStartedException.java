@@ -16,16 +16,15 @@
 
 package com.amazonaws.services.simpleworkflow.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned by <a>StartWorkflowExecution</a> when an open execution with the
  * same workflowId is already running in the specified domain.
  * </p>
  */
-public class WorkflowExecutionAlreadyStartedException extends
-        AmazonServiceException {
+public class WorkflowExecutionAlreadyStartedException
+        extends
+        com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException {
     private static final long serialVersionUID = 1L;
 
     /**

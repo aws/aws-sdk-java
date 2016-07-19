@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.kinesis.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The resource is not available for this operation. For successful operation,
  * the resource needs to be in the <code>ACTIVE</code> state.
  * </p>
  */
-public class ResourceInUseException extends AmazonServiceException {
+public class ResourceInUseException extends
+        com.amazonaws.services.kinesis.model.AmazonKinesisException {
     private static final long serialVersionUID = 1L;
 
     /**

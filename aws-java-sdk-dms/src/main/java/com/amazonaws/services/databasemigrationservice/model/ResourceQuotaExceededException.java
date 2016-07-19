@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.databasemigrationservice.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The quota for this resource quota has been exceeded.
  * </p>
  */
-public class ResourceQuotaExceededException extends AmazonServiceException {
+public class ResourceQuotaExceededException
+        extends
+        com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

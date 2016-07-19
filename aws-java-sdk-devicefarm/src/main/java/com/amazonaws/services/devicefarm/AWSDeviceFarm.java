@@ -141,6 +141,28 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
+     * Specifies and starts a remote access session.
+     * </p>
+     * 
+     * @param createRemoteAccessSessionRequest
+     *        Creates and submits a request to start a remote access session.
+     * @return Result of the CreateRemoteAccessSession operation returned by the
+     *         service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.CreateRemoteAccessSession
+     */
+    CreateRemoteAccessSessionResult createRemoteAccessSession(
+            CreateRemoteAccessSessionRequest createRemoteAccessSessionRequest);
+
+    /**
+     * <p>
      * Uploads an app or test scripts.
      * </p>
      * 
@@ -203,6 +225,29 @@ public interface AWSDeviceFarm {
      * @sample AWSDeviceFarm.DeleteProject
      */
     DeleteProjectResult deleteProject(DeleteProjectRequest deleteProjectRequest);
+
+    /**
+     * <p>
+     * Deletes a completed remote access session and its results.
+     * </p>
+     * 
+     * @param deleteRemoteAccessSessionRequest
+     *        Represents the request to delete the specified remote access
+     *        session.
+     * @return Result of the DeleteRemoteAccessSession operation returned by the
+     *         service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.DeleteRemoteAccessSession
+     */
+    DeleteRemoteAccessSessionResult deleteRemoteAccessSession(
+            DeleteRemoteAccessSessionRequest deleteRemoteAccessSessionRequest);
 
     /**
      * <p>
@@ -408,6 +453,29 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
+     * Returns a link to a currently running remote access session.
+     * </p>
+     * 
+     * @param getRemoteAccessSessionRequest
+     *        Represents the request to get information about the specified
+     *        remote access session.
+     * @return Result of the GetRemoteAccessSession operation returned by the
+     *         service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetRemoteAccessSession
+     */
+    GetRemoteAccessSessionResult getRemoteAccessSession(
+            GetRemoteAccessSessionRequest getRemoteAccessSessionRequest);
+
+    /**
+     * <p>
      * Gets information about a run.
      * </p>
      * 
@@ -485,6 +553,32 @@ public interface AWSDeviceFarm {
      * @sample AWSDeviceFarm.GetUpload
      */
     GetUploadResult getUpload(GetUploadRequest getUploadRequest);
+
+    /**
+     * <p>
+     * Installs an application to the device in a remote access session. For
+     * Android applications, the file must be in .apk format. For iOS
+     * applications, the file must be in .ipa format.
+     * </p>
+     * 
+     * @param installToRemoteAccessSessionRequest
+     *        Represents the request to install an Android application (in .apk
+     *        format) or an iOS application (in .ipa format) as part of a remote
+     *        access session.
+     * @return Result of the InstallToRemoteAccessSession operation returned by
+     *         the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.InstallToRemoteAccessSession
+     */
+    InstallToRemoteAccessSessionResult installToRemoteAccessSession(
+            InstallToRemoteAccessSessionRequest installToRemoteAccessSessionRequest);
 
     /**
      * <p>
@@ -648,6 +742,29 @@ public interface AWSDeviceFarm {
      * @sample AWSDeviceFarm.ListProjects
      */
     ListProjectsResult listProjects(ListProjectsRequest listProjectsRequest);
+
+    /**
+     * <p>
+     * Returns a list of all currently running remote access sessions.
+     * </p>
+     * 
+     * @param listRemoteAccessSessionsRequest
+     *        Represents the request to return information about the remote
+     *        access session.
+     * @return Result of the ListRemoteAccessSessions operation returned by the
+     *         service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListRemoteAccessSessions
+     */
+    ListRemoteAccessSessionsResult listRemoteAccessSessions(
+            ListRemoteAccessSessionsRequest listRemoteAccessSessionsRequest);
 
     /**
      * <p>
@@ -851,6 +968,28 @@ public interface AWSDeviceFarm {
      * @sample AWSDeviceFarm.ScheduleRun
      */
     ScheduleRunResult scheduleRun(ScheduleRunRequest scheduleRunRequest);
+
+    /**
+     * <p>
+     * Ends a specified remote access session.
+     * </p>
+     * 
+     * @param stopRemoteAccessSessionRequest
+     *        Represents the request to stop the remote access session.
+     * @return Result of the StopRemoteAccessSession operation returned by the
+     *         service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.StopRemoteAccessSession
+     */
+    StopRemoteAccessSessionResult stopRemoteAccessSession(
+            StopRemoteAccessSessionRequest stopRemoteAccessSessionRequest);
 
     /**
      * <p>

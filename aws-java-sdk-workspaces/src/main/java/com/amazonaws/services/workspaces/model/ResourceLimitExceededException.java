@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.workspaces.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Your resource limits have been exceeded.
  * </p>
  */
-public class ResourceLimitExceededException extends AmazonServiceException {
+public class ResourceLimitExceededException extends
+        com.amazonaws.services.workspaces.model.AmazonWorkspacesException {
     private static final long serialVersionUID = 1L;
 
     /**

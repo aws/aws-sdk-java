@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.cloudwatchevents.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The rule does not exist.
  * </p>
  */
-public class ResourceNotFoundException extends AmazonServiceException {
+public class ResourceNotFoundException
+        extends
+        com.amazonaws.services.cloudwatchevents.model.AmazonCloudWatchEventsException {
     private static final long serialVersionUID = 1L;
 
     /**

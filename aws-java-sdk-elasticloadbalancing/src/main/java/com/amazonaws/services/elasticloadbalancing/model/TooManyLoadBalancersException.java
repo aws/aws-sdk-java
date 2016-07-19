@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elasticloadbalancing.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The quota for the number of load balancers has been reached.
  * </p>
  */
-public class TooManyLoadBalancersException extends AmazonServiceException {
+public class TooManyLoadBalancersException
+        extends
+        com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 
     /**

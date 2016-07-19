@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.ecs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * There is no update available for this Amazon ECS container agent. This could
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * that there is no update path to the current version.
  * </p>
  */
-public class NoUpdateAvailableException extends AmazonServiceException {
+public class NoUpdateAvailableException extends
+        com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The supplied category does not exist.
  * </p>
  */
 public class SubscriptionCategoryNotFoundException extends
-        AmazonServiceException {
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.glacier.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if a parameter of the request is incorrectly specified.
  * </p>
  */
-public class InvalidParameterValueException extends AmazonServiceException {
+public class InvalidParameterValueException extends
+        com.amazonaws.services.glacier.model.AmazonGlacierException {
     private static final long serialVersionUID = 1L;
 
     /**

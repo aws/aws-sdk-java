@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.datapipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified pipeline has been deleted.
  * </p>
  */
-public class PipelineDeletedException extends AmazonServiceException {
+public class PipelineDeletedException extends
+        com.amazonaws.services.datapipeline.model.DataPipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

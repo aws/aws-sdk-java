@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codepipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified stage was specified in an invalid format or cannot be found.
  * </p>
  */
-public class StageNotFoundException extends AmazonServiceException {
+public class StageNotFoundException extends
+        com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

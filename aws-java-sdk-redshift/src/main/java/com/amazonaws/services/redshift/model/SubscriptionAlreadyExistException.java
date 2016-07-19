@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * There is already an existing event notification subscription with the
  * specified name.
  * </p>
  */
-public class SubscriptionAlreadyExistException extends AmazonServiceException {
+public class SubscriptionAlreadyExistException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

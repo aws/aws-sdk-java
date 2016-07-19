@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.lambda.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The Subnet ID provided in the Lambda function VPC configuration is invalid.
  * </p>
  */
-public class InvalidSubnetIDException extends AmazonServiceException {
+public class InvalidSubnetIDException extends
+        com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
     private String type;

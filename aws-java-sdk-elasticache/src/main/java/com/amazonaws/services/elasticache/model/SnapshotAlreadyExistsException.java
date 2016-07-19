@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You already have a snapshot with the given name.
  * </p>
  */
-public class SnapshotAlreadyExistsException extends AmazonServiceException {
+public class SnapshotAlreadyExistsException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

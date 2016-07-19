@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.simpledb.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified query expression syntax is not valid.
  * </p>
  */
-public class InvalidQueryExpressionException extends AmazonServiceException {
+public class InvalidQueryExpressionException extends
+        com.amazonaws.services.simpledb.model.AmazonSimpleDBException {
     private static final long serialVersionUID = 1L;
 
     private Float boxUsage;

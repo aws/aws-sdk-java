@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.cognitoidp.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception is thrown when Amazon Cognito encounters an internal error.
  * </p>
  */
-public class InternalErrorException extends AmazonServiceException {
+public class InternalErrorException
+        extends
+        com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 
     /**

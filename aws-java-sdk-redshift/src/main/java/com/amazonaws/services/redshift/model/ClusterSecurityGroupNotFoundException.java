@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The cluster security group name does not refer to an existing cluster
@@ -25,7 +23,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class ClusterSecurityGroupNotFoundException extends
-        AmazonServiceException {
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

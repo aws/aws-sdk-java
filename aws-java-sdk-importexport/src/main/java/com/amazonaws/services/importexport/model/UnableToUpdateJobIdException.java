@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * AWS Import/Export cannot update the job
  */
-public class UnableToUpdateJobIdException extends AmazonServiceException {
+public class UnableToUpdateJobIdException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

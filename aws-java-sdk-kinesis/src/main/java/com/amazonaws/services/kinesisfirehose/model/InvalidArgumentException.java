@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.kinesisfirehose.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified input parameter has an value that is not valid.
  * </p>
  */
-public class InvalidArgumentException extends AmazonServiceException {
+public class InvalidArgumentException
+        extends
+        com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException {
     private static final long serialVersionUID = 1L;
 
     /**

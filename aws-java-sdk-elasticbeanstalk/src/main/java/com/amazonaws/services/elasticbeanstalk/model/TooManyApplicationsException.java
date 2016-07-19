@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elasticbeanstalk.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified account has reached its limit of applications.
  * </p>
  */
-public class TooManyApplicationsException extends AmazonServiceException {
+public class TooManyApplicationsException
+        extends
+        com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException {
     private static final long serialVersionUID = 1L;
 
     /**

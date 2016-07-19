@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The revision ID was not specified.
  * </p>
  */
-public class RevisionRequiredException extends AmazonServiceException {
+public class RevisionRequiredException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

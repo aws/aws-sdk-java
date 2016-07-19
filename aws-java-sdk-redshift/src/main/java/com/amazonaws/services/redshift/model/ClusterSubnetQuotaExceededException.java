@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request would result in user exceeding the allowed number of subnets in a
@@ -28,7 +26,8 @@ import com.amazonaws.AmazonServiceException;
  * Guide</i>.
  * </p>
  */
-public class ClusterSubnetQuotaExceededException extends AmazonServiceException {
+public class ClusterSubnetQuotaExceededException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

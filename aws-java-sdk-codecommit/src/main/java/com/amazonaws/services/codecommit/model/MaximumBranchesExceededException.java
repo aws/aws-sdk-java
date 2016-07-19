@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The number of branches for the trigger was exceeded.
  * </p>
  */
-public class MaximumBranchesExceededException extends AmazonServiceException {
+public class MaximumBranchesExceededException extends
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

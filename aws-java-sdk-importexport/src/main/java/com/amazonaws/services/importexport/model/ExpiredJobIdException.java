@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * Indicates that the specified job has expired out of the system.
  */
-public class ExpiredJobIdException extends AmazonServiceException {
+public class ExpiredJobIdException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

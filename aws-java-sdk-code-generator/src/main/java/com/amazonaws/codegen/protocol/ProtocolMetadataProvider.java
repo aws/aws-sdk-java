@@ -57,4 +57,11 @@ public interface ProtocolMetadataProvider {
      * Currently only used by XML protocols.
      */
     String getExceptionUnmarshallerImpl();
+
+    /**
+     * @return The fully qualified class name of the exception class that all service exceptions
+     * will be inherited from. Not to be confused with the service specific base exception which
+     * would extend from this base exception.
+     */
+    String getBaseExceptionFqcn();
 }

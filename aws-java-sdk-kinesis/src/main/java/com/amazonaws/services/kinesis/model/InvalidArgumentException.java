@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.kinesis.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A specified parameter exceeds its restrictions, is not supported, or can't be
  * used. For more information, see the returned message.
  * </p>
  */
-public class InvalidArgumentException extends AmazonServiceException {
+public class InvalidArgumentException extends
+        com.amazonaws.services.kinesis.model.AmazonKinesisException {
     private static final long serialVersionUID = 1L;
 
     /**

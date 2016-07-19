@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.19-SNAPSHOT</version>
+    <version>1.11.19</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-code-generator</artifactId>
@@ -22,7 +22,7 @@
         <artifactId>aws-java-sdk-core</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
-        <version>1.11.19-SNAPSHOT</version>
+        <version>1.11.19</version>
     </dependency>
     <dependency>
         <artifactId>org.eclipse.jdt.core</artifactId>
@@ -40,7 +40,7 @@
         <artifactId>freemarker</artifactId>
         <groupId>org.freemarker</groupId>
         <optional>false</optional>
-        <version>2.3.21</version>
+        <version>2.3.24-incubating</version>
     </dependency>
 </dependencies>
 

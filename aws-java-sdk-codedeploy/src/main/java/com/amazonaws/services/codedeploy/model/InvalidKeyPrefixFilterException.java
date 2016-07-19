@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified key prefix filter was specified in an invalid format.
  * </p>
  */
-public class InvalidKeyPrefixFilterException extends AmazonServiceException {
+public class InvalidKeyPrefixFilterException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

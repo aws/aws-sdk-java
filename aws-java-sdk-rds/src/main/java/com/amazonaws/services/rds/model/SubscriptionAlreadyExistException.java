@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The supplied subscription name already exists.
  * </p>
  */
-public class SubscriptionAlreadyExistException extends AmazonServiceException {
+public class SubscriptionAlreadyExistException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

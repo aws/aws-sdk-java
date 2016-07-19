@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.sqs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The length of all the messages put together is more than the limit.
  * </p>
  */
-public class BatchRequestTooLongException extends AmazonServiceException {
+public class BatchRequestTooLongException extends
+        com.amazonaws.services.sqs.model.AmazonSQSException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You have specified a delivery channel that does not exist.
  * </p>
  */
-public class NoSuchDeliveryChannelException extends AmazonServiceException {
+public class NoSuchDeliveryChannelException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.elasticsearch.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An exception for trying to create or access sub-resource that is either
  * invalid or not supported. Gives http status code of 409.
  * </p>
  */
-public class InvalidTypeException extends AmazonServiceException {
+public class InvalidTypeException extends
+        com.amazonaws.services.elasticsearch.model.AWSElasticsearchException {
     private static final long serialVersionUID = 1L;
 
     /**

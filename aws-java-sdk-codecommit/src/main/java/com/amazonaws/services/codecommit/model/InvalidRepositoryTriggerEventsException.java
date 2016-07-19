@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * One or more events specified for the trigger is not valid. Check to make sure
@@ -25,7 +23,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class InvalidRepositoryTriggerEventsException extends
-        AmazonServiceException {
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

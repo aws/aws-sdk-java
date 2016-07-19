@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elasticbeanstalk.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Cannot modify the managed action in its current state.
  * </p>
  */
-public class ManagedActionInvalidStateException extends AmazonServiceException {
+public class ManagedActionInvalidStateException
+        extends
+        com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException {
     private static final long serialVersionUID = 1L;
 
     /**

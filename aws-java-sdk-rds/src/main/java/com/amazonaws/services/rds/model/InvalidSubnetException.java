@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested subnet is invalid, or multiple subnets were requested that are
  * not all in a common VPC.
  * </p>
  */
-public class InvalidSubnetException extends AmazonServiceException {
+public class InvalidSubnetException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

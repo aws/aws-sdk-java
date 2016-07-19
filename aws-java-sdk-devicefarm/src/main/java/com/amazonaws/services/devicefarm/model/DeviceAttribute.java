@@ -24,7 +24,8 @@ public enum DeviceAttribute {
     ARN("ARN"),
     PLATFORM("PLATFORM"),
     FORM_FACTOR("FORM_FACTOR"),
-    MANUFACTURER("MANUFACTURER");
+    MANUFACTURER("MANUFACTURER"),
+    REMOTE_ACCESS_ENABLED("REMOTE_ACCESS_ENABLED");
 
     private String value;
 

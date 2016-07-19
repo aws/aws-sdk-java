@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The DB upgrade failed because a resource the DB depends on could not be
  * modified.
  * </p>
  */
-public class DBUpgradeDependencyFailureException extends AmazonServiceException {
+public class DBUpgradeDependencyFailureException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

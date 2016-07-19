@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates one of the following errors:
@@ -29,7 +27,8 @@ import com.amazonaws.AmazonServiceException;
  * check the function's permissions.</li>
  * </ul>
  */
-public class InsufficientPermissionsException extends AmazonServiceException {
+public class InsufficientPermissionsException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

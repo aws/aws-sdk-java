@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified replication group does not exist.
  * </p>
  */
-public class ReplicationGroupNotFoundException extends AmazonServiceException {
+public class ReplicationGroupNotFoundException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

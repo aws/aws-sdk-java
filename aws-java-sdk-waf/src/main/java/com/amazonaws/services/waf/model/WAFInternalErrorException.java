@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.waf.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation failed because of a system problem, even though the request was
  * valid. Retry your request.
  * </p>
  */
-public class WAFInternalErrorException extends AmazonServiceException {
+public class WAFInternalErrorException extends
+        com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     /**

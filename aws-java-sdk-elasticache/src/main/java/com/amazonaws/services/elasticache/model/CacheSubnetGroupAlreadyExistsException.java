@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested cache subnet group name is already in use by an existing cache
@@ -25,7 +23,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class CacheSubnetGroupAlreadyExistsException extends
-        AmazonServiceException {
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

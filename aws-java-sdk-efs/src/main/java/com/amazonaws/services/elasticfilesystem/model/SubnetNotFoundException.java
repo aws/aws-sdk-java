@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if there is no subnet with ID <code>SubnetId</code> provided in the
  * request.
  * </p>
  */
-public class SubnetNotFoundException extends AmazonServiceException {
+public class SubnetNotFoundException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

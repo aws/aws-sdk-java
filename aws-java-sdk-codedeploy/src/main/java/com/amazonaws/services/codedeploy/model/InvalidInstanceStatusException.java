@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified instance status does not exist.
  * </p>
  */
-public class InvalidInstanceStatusException extends AmazonServiceException {
+public class InvalidInstanceStatusException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

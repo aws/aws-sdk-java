@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The current state of the cache security group does not allow deletion.
  * </p>
  */
 public class InvalidCacheSecurityGroupStateException extends
-        AmazonServiceException {
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

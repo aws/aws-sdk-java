@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.iot.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Unable to verify the CA certificate used to sign the device certificate you
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * than one CA certificate that has the same subject field and public key.
  * </p>
  */
-public class CertificateConflictException extends AmazonServiceException {
+public class CertificateConflictException extends
+        com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified key is not valid.
  * </p>
  */
-public class InvalidFilterKeyException extends AmazonServiceException {
+public class InvalidFilterKeyException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

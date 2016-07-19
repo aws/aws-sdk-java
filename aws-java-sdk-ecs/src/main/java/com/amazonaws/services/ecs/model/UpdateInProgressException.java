@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.ecs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * There is already a current Amazon ECS container agent update in progress on
@@ -27,7 +25,8 @@ import com.amazonaws.AmazonServiceException;
  * However, when the agent reconnects, it resumes where it stopped previously.
  * </p>
  */
-public class UpdateInProgressException extends AmazonServiceException {
+public class UpdateInProgressException extends
+        com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 
     /**

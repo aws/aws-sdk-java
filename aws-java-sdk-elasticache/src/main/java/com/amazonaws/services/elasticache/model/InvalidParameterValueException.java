@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The value for a parameter is invalid.
  * </p>
  */
-public class InvalidParameterValueException extends AmazonServiceException {
+public class InvalidParameterValueException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

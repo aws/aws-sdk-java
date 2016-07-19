@@ -16,12 +16,12 @@
 
 package com.amazonaws.services.machinelearning.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * 
  */
-public class InvalidTagException extends AmazonServiceException {
+public class InvalidTagException
+        extends
+        com.amazonaws.services.machinelearning.model.AmazonMachineLearningException {
     private static final long serialVersionUID = 1L;
 
     /**

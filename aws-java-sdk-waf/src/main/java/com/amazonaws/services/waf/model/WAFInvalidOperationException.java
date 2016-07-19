@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.waf.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation failed because there was nothing to do. For example:
@@ -39,7 +37,8 @@ import com.amazonaws.AmazonServiceException;
  * in the specified <code>WebACL</code>.</li>
  * </ul>
  */
-public class WAFInvalidOperationException extends AmazonServiceException {
+public class WAFInvalidOperationException extends
+        com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     /**

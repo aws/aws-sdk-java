@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.cloudsearchv2.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because it attempted an operation which is not
  * enabled.
  * </p>
  */
-public class DisabledOperationException extends AmazonServiceException {
+public class DisabledOperationException extends
+        com.amazonaws.services.cloudsearchv2.model.AmazonCloudSearchException {
     private static final long serialVersionUID = 1L;
 
     /**

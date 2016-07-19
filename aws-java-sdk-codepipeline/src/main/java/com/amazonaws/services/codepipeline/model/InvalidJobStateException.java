@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codepipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified job state was specified in an invalid format.
  * </p>
  */
-public class InvalidJobStateException extends AmazonServiceException {
+public class InvalidJobStateException extends
+        com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

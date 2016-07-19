@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.machinelearning.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An error on the client occurred. Typically, the cause is an invalid input
  * value.
  * </p>
  */
-public class InvalidInputException extends AmazonServiceException {
+public class InvalidInputException
+        extends
+        com.amazonaws.services.machinelearning.model.AmazonMachineLearningException {
     private static final long serialVersionUID = 1L;
 
     private Integer code;

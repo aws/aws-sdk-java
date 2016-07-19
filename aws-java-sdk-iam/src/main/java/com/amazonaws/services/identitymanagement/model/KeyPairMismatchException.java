@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the public key certificate and the private
  * key do not match.
  * </p>
  */
-public class KeyPairMismatchException extends AmazonServiceException {
+public class KeyPairMismatchException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

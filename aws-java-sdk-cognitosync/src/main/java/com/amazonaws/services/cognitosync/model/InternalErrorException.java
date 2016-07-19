@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.cognitosync.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * Indicates an internal service error.
  */
-public class InternalErrorException extends AmazonServiceException {
+public class InternalErrorException extends
+        com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException {
     private static final long serialVersionUID = 1L;
 
     /**

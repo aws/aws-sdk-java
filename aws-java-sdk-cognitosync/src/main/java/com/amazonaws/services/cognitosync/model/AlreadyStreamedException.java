@@ -16,13 +16,12 @@
 
 package com.amazonaws.services.cognitosync.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * An exception thrown when a bulk publish operation is requested less than 24
  * hours after a previous bulk publish operation completed successfully.
  */
-public class AlreadyStreamedException extends AmazonServiceException {
+public class AlreadyStreamedException extends
+        com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException {
     private static final long serialVersionUID = 1L;
 
     /**

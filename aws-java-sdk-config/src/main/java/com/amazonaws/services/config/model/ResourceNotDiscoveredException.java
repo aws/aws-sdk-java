@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You have specified a resource that is either unknown or has not been
  * discovered.
  * </p>
  */
-public class ResourceNotDiscoveredException extends AmazonServiceException {
+public class ResourceNotDiscoveredException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

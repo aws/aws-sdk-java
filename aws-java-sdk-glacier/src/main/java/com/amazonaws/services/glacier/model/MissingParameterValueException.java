@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.glacier.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if a required header or parameter is missing from the request.
  * </p>
  */
-public class MissingParameterValueException extends AmazonServiceException {
+public class MissingParameterValueException extends
+        com.amazonaws.services.glacier.model.AmazonGlacierException {
     private static final long serialVersionUID = 1L;
 
     /**

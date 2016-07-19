@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A DB parameter group with the same name exists.
  * </p>
  */
 public class DBParameterGroupAlreadyExistsException extends
-        AmazonServiceException {
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested cache subnet group is currently in use.
  * </p>
  */
-public class CacheSubnetGroupInUseException extends AmazonServiceException {
+public class CacheSubnetGroupInUseException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

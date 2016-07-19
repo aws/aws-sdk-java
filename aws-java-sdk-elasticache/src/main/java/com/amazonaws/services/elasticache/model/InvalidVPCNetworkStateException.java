@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The VPC network is in an invalid state.
  * </p>
  */
-public class InvalidVPCNetworkStateException extends AmazonServiceException {
+public class InvalidVPCNetworkStateException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

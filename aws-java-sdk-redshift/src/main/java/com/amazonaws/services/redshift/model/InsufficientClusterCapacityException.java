@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The number of nodes specified exceeds the allotted capacity of the cluster.
  * </p>
  */
 public class InsufficientClusterCapacityException extends
-        AmazonServiceException {
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

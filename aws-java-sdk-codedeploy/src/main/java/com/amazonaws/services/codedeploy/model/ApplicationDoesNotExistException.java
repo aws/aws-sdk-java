@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The application does not exist with the applicable IAM user or AWS account.
  * </p>
  */
-public class ApplicationDoesNotExistException extends AmazonServiceException {
+public class ApplicationDoesNotExistException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

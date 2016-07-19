@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * You cannot create anymore origins for the distribution.
  */
-public class TooManyOriginsException extends AmazonServiceException {
+public class TooManyOriginsException extends
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

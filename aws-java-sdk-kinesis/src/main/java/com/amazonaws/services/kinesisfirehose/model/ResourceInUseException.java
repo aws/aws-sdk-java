@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.kinesisfirehose.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The resource is already in use and not available for this operation.
  * </p>
  */
-public class ResourceInUseException extends AmazonServiceException {
+public class ResourceInUseException
+        extends
+        com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException {
     private static final long serialVersionUID = 1L;
 
     /**

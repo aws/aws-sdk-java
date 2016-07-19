@@ -50,6 +50,12 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public CreateRemoteAccessSessionResult createRemoteAccessSession(
+            CreateRemoteAccessSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateUploadResult createUpload(CreateUploadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -62,6 +68,12 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public DeleteProjectResult deleteProject(DeleteProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRemoteAccessSessionResult deleteRemoteAccessSession(
+            DeleteRemoteAccessSessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -114,6 +126,12 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public GetRemoteAccessSessionResult getRemoteAccessSession(
+            GetRemoteAccessSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetRunResult getRun(GetRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -130,6 +148,12 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public GetUploadResult getUpload(GetUploadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public InstallToRemoteAccessSessionResult installToRemoteAccessSession(
+            InstallToRemoteAccessSessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -166,6 +190,12 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public ListProjectsResult listProjects(ListProjectsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRemoteAccessSessionsResult listRemoteAccessSessions(
+            ListRemoteAccessSessionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -213,6 +243,12 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public ScheduleRunResult scheduleRun(ScheduleRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopRemoteAccessSessionResult stopRemoteAccessSession(
+            StopRemoteAccessSessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

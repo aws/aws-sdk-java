@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * 
  */
-public class BatchTooLargeException extends AmazonServiceException {
+public class BatchTooLargeException extends
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

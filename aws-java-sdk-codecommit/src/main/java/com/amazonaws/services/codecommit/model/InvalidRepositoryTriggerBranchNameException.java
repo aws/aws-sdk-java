@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * One or more branch names specified for the trigger is not valid.
  * </p>
  */
 public class InvalidRepositoryTriggerBranchNameException extends
-        AmazonServiceException {
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

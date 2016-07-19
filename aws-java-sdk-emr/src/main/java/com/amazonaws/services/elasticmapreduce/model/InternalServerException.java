@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elasticmapreduce.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception occurs when there is an internal failure in the EMR service.
  * </p>
  */
-public class InternalServerException extends AmazonServiceException {
+public class InternalServerException
+        extends
+        com.amazonaws.services.elasticmapreduce.model.AmazonElasticMapReduceException {
     private static final long serialVersionUID = 1L;
 
     /**

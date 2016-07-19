@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.securitytoken.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request could not be fulfilled because the non-AWS identity provider
@@ -28,7 +26,9 @@ import com.amazonaws.AmazonServiceException;
  * not responding.
  * </p>
  */
-public class IDPCommunicationErrorException extends AmazonServiceException {
+public class IDPCommunicationErrorException
+        extends
+        com.amazonaws.services.securitytoken.model.AWSSecurityTokenServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

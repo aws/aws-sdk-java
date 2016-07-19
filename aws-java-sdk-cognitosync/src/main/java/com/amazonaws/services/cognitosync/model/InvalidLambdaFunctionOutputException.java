@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.cognitosync.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The AWS Lambda function returned invalid output or an exception.
  * </p>
  */
 public class InvalidLambdaFunctionOutputException extends
-        AmazonServiceException {
+        com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException {
     private static final long serialVersionUID = 1L;
 
     /**

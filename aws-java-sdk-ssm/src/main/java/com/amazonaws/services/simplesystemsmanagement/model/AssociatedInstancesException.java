@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You must disassociate an SSM document from all instances before you can
  * delete it.
  * </p>
  */
-public class AssociatedInstancesException extends AmazonServiceException {
+public class AssociatedInstancesException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

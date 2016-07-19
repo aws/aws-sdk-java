@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * The client tool version is invalid.
  */
-public class InvalidVersionException extends AmazonServiceException {
+public class InvalidVersionException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

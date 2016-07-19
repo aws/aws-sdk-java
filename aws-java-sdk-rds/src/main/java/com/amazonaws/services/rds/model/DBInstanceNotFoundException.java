@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
  * </p>
  */
-public class DBInstanceNotFoundException extends AmazonServiceException {
+public class DBInstanceNotFoundException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

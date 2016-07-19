@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The resource could not be found.
  * </p>
  */
-public class ResourceNotFoundException extends AmazonServiceException {
+public class ResourceNotFoundException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

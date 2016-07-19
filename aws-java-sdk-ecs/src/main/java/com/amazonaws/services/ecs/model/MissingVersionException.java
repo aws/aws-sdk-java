@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.ecs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Amazon ECS is unable to determine the current version of the Amazon ECS
@@ -27,7 +25,8 @@ import com.amazonaws.AmazonServiceException;
  * use our version information.
  * </p>
  */
-public class MissingVersionException extends AmazonServiceException {
+public class MissingVersionException extends
+        com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 
     /**

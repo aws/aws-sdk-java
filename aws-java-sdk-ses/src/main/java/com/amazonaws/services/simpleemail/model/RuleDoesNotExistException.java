@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.simpleemail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that the provided receipt rule does not exist.
  * </p>
  */
-public class RuleDoesNotExistException extends AmazonServiceException {
+public class RuleDoesNotExistException
+        extends
+        com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
     private String name;

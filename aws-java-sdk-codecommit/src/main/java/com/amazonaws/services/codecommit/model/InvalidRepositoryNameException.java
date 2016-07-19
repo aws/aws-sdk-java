@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * At least one specified repository name is not valid.
@@ -30,7 +28,8 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  * </note>
  */
-public class InvalidRepositoryNameException extends AmazonServiceException {
+public class InvalidRepositoryNameException extends
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

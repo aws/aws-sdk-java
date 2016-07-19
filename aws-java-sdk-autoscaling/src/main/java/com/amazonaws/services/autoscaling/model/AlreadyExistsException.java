@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.autoscaling.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You already have an Auto Scaling group or launch configuration with this
  * name.
  * </p>
  */
-public class AlreadyExistsException extends AmazonServiceException {
+public class AlreadyExistsException extends
+        com.amazonaws.services.autoscaling.model.AmazonAutoScalingException {
     private static final long serialVersionUID = 1L;
 
     /**

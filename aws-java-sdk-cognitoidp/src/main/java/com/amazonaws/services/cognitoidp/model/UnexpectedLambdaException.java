@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.cognitoidp.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception gets thrown when the Amazon Cognito service encounters an
  * unexpected exception with the AWS Lambda service.
  * </p>
  */
-public class UnexpectedLambdaException extends AmazonServiceException {
+public class UnexpectedLambdaException
+        extends
+        com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 
     /**

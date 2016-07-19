@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The number of allowed deployments was exceeded.
  * </p>
  */
-public class DeploymentLimitExceededException extends AmazonServiceException {
+public class DeploymentLimitExceededException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

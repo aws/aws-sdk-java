@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A resize operation for the specified cluster is not found.
  * </p>
  */
-public class ResizeNotFoundException extends AmazonServiceException {
+public class ResizeNotFoundException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You already have a reservation with the given identifier.
  * </p>
  */
 public class ReservedCacheNodeAlreadyExistsException extends
-        AmazonServiceException {
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

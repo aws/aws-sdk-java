@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Request would exceed the user's compute node quota. For information about
@@ -27,7 +25,8 @@ import com.amazonaws.AmazonServiceException;
  * Guide</i>.
  * </p>
  */
-public class ReservedNodeQuotaExceededException extends AmazonServiceException {
+public class ReservedNodeQuotaExceededException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

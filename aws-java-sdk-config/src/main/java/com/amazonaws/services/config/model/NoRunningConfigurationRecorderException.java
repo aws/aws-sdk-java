@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * There is no configuration recorder running.
  * </p>
  */
 public class NoRunningConfigurationRecorderException extends
-        AmazonServiceException {
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

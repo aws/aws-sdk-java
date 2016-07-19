@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The deployment configuration name was not specified.
  * </p>
  */
 public class DeploymentConfigNameRequiredException extends
-        AmazonServiceException {
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

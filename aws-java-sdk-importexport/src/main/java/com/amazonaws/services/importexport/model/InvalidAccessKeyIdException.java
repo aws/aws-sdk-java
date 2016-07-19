@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * The AWS Access Key ID specified in the request did not match the manifest's
  * accessKeyId value. The manifest and the request authentication must use the
  * same AWS Access Key ID.
  */
-public class InvalidAccessKeyIdException extends AmazonServiceException {
+public class InvalidAccessKeyIdException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

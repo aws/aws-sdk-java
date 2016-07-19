@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.marketplacemetering.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The timestamp value passed in the meterUsage() is out of allowed range.
  * </p>
  */
-public class TimestampOutOfBoundsException extends AmazonServiceException {
+public class TimestampOutOfBoundsException
+        extends
+        com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.databasemigrationservice.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * AWS DMS cannot access the KMS key.
  * </p>
  */
-public class KMSKeyNotAccessibleException extends AmazonServiceException {
+public class KMSKeyNotAccessibleException
+        extends
+        com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

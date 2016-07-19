@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A cache parameter group with the requested name already exists.
  * </p>
  */
 public class CacheParameterGroupAlreadyExistsException extends
-        AmazonServiceException {
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

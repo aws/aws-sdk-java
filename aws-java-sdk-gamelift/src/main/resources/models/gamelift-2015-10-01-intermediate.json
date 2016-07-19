@@ -19,15 +19,15 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "gamelift",
     "signingName" : "gamelift",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonGameLiftClientBuilder",
     "asyncClientBuilderClassName" : "AmazonGameLiftAsyncClientBuilder",
     "serviceName" : "Amazon GameLift",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true
   },
   "operations" : {
     "CreateAlias" : {
@@ -1700,11 +1700,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2002,11 +2002,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3763,11 +3763,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4065,11 +4065,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5854,11 +5854,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6052,11 +6052,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6571,11 +6571,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6873,11 +6873,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8116,11 +8116,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8362,11 +8362,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8494,11 +8494,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Alias",
           "templateType" : "java.util.List<Alias>",
-          "templateImplType" : "java.util.ArrayList<Alias>"
+          "templateImplType" : "java.util.ArrayList<Alias>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8740,11 +8740,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Alias",
             "templateType" : "java.util.List<Alias>",
-            "templateImplType" : "java.util.ArrayList<Alias>"
+            "templateImplType" : "java.util.ArrayList<Alias>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8872,11 +8872,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "PlayerSession",
           "templateType" : "java.util.List<PlayerSession>",
-          "templateImplType" : "java.util.ArrayList<PlayerSession>"
+          "templateImplType" : "java.util.ArrayList<PlayerSession>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9013,11 +9013,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "PlayerSession",
             "templateType" : "java.util.List<PlayerSession>",
-            "templateImplType" : "java.util.ArrayList<PlayerSession>"
+            "templateImplType" : "java.util.ArrayList<PlayerSession>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11166,11 +11166,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "IpPermission",
           "templateType" : "java.util.List<IpPermission>",
-          "templateImplType" : "java.util.ArrayList<IpPermission>"
+          "templateImplType" : "java.util.ArrayList<IpPermission>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11284,11 +11284,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "IpPermission",
           "templateType" : "java.util.List<IpPermission>",
-          "templateImplType" : "java.util.ArrayList<IpPermission>"
+          "templateImplType" : "java.util.ArrayList<IpPermission>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11429,11 +11429,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "IpPermission",
             "templateType" : "java.util.List<IpPermission>",
-            "templateImplType" : "java.util.ArrayList<IpPermission>"
+            "templateImplType" : "java.util.ArrayList<IpPermission>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11601,11 +11601,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "IpPermission",
             "templateType" : "java.util.List<IpPermission>",
-            "templateImplType" : "java.util.ArrayList<IpPermission>"
+            "templateImplType" : "java.util.ArrayList<IpPermission>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11856,11 +11856,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "FleetCapacity",
           "templateType" : "java.util.List<FleetCapacity>",
-          "templateImplType" : "java.util.ArrayList<FleetCapacity>"
+          "templateImplType" : "java.util.ArrayList<FleetCapacity>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12049,11 +12049,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "FleetCapacity",
             "templateType" : "java.util.List<FleetCapacity>",
-            "templateImplType" : "java.util.ArrayList<FleetCapacity>"
+            "templateImplType" : "java.util.ArrayList<FleetCapacity>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15463,11 +15463,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "IpPermission",
           "templateType" : "java.util.List<IpPermission>",
-          "templateImplType" : "java.util.ArrayList<IpPermission>"
+          "templateImplType" : "java.util.ArrayList<IpPermission>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15604,11 +15604,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "IpPermission",
             "templateType" : "java.util.List<IpPermission>",
-            "templateImplType" : "java.util.ArrayList<IpPermission>"
+            "templateImplType" : "java.util.ArrayList<IpPermission>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16744,11 +16744,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "ScalingPolicy",
           "templateType" : "java.util.List<ScalingPolicy>",
-          "templateImplType" : "java.util.ArrayList<ScalingPolicy>"
+          "templateImplType" : "java.util.ArrayList<ScalingPolicy>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16937,11 +16937,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "ScalingPolicy",
             "templateType" : "java.util.List<ScalingPolicy>",
-            "templateImplType" : "java.util.ArrayList<ScalingPolicy>"
+            "templateImplType" : "java.util.ArrayList<ScalingPolicy>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17969,11 +17969,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Build",
           "templateType" : "java.util.List<Build>",
-          "templateImplType" : "java.util.ArrayList<Build>"
+          "templateImplType" : "java.util.ArrayList<Build>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18162,11 +18162,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Build",
             "templateType" : "java.util.List<Build>",
-            "templateImplType" : "java.util.ArrayList<Build>"
+            "templateImplType" : "java.util.ArrayList<Build>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19614,11 +19614,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "GameSession",
           "templateType" : "java.util.List<GameSession>",
-          "templateImplType" : "java.util.ArrayList<GameSession>"
+          "templateImplType" : "java.util.ArrayList<GameSession>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19807,11 +19807,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "GameSession",
             "templateType" : "java.util.List<GameSession>",
-            "templateImplType" : "java.util.ArrayList<GameSession>"
+            "templateImplType" : "java.util.ArrayList<GameSession>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20247,11 +20247,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "GameProperty",
           "templateType" : "java.util.List<GameProperty>",
-          "templateImplType" : "java.util.ArrayList<GameProperty>"
+          "templateImplType" : "java.util.ArrayList<GameProperty>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20392,11 +20392,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "GameProperty",
             "templateType" : "java.util.List<GameProperty>",
-            "templateImplType" : "java.util.ArrayList<GameProperty>"
+            "templateImplType" : "java.util.ArrayList<GameProperty>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20736,11 +20736,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "FleetUtilization",
           "templateType" : "java.util.List<FleetUtilization>",
-          "templateImplType" : "java.util.ArrayList<FleetUtilization>"
+          "templateImplType" : "java.util.ArrayList<FleetUtilization>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20929,11 +20929,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "FleetUtilization",
             "templateType" : "java.util.List<FleetUtilization>",
-            "templateImplType" : "java.util.ArrayList<FleetUtilization>"
+            "templateImplType" : "java.util.ArrayList<FleetUtilization>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21405,11 +21405,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "EC2InstanceLimit",
           "templateType" : "java.util.List<EC2InstanceLimit>",
-          "templateImplType" : "java.util.ArrayList<EC2InstanceLimit>"
+          "templateImplType" : "java.util.ArrayList<EC2InstanceLimit>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21546,11 +21546,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "EC2InstanceLimit",
             "templateType" : "java.util.List<EC2InstanceLimit>",
-            "templateImplType" : "java.util.ArrayList<EC2InstanceLimit>"
+            "templateImplType" : "java.util.ArrayList<EC2InstanceLimit>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22065,11 +22065,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "PlayerSession",
           "templateType" : "java.util.List<PlayerSession>",
-          "templateImplType" : "java.util.ArrayList<PlayerSession>"
+          "templateImplType" : "java.util.ArrayList<PlayerSession>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22311,11 +22311,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "PlayerSession",
             "templateType" : "java.util.List<PlayerSession>",
-            "templateImplType" : "java.util.ArrayList<PlayerSession>"
+            "templateImplType" : "java.util.ArrayList<PlayerSession>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22584,11 +22584,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Event",
           "templateType" : "java.util.List<Event>",
-          "templateImplType" : "java.util.ArrayList<Event>"
+          "templateImplType" : "java.util.ArrayList<Event>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22830,11 +22830,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Event",
             "templateType" : "java.util.List<Event>",
-            "templateImplType" : "java.util.ArrayList<Event>"
+            "templateImplType" : "java.util.ArrayList<Event>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -23212,11 +23212,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "GameSessionDetail",
           "templateType" : "java.util.List<GameSessionDetail>",
-          "templateImplType" : "java.util.ArrayList<GameSessionDetail>"
+          "templateImplType" : "java.util.ArrayList<GameSessionDetail>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23458,11 +23458,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "GameSessionDetail",
             "templateType" : "java.util.List<GameSessionDetail>",
-            "templateImplType" : "java.util.ArrayList<GameSessionDetail>"
+            "templateImplType" : "java.util.ArrayList<GameSessionDetail>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24401,11 +24401,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "FleetAttributes",
           "templateType" : "java.util.List<FleetAttributes>",
-          "templateImplType" : "java.util.ArrayList<FleetAttributes>"
+          "templateImplType" : "java.util.ArrayList<FleetAttributes>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24647,11 +24647,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "FleetAttributes",
             "templateType" : "java.util.List<FleetAttributes>",
-            "templateImplType" : "java.util.ArrayList<FleetAttributes>"
+            "templateImplType" : "java.util.ArrayList<FleetAttributes>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27672,11 +27672,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27842,11 +27842,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "IpPermission",
           "templateType" : "java.util.List<IpPermission>",
-          "templateImplType" : "java.util.ArrayList<IpPermission>"
+          "templateImplType" : "java.util.ArrayList<IpPermission>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28250,11 +28250,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "IpPermission",
             "templateType" : "java.util.List<IpPermission>",
-            "templateImplType" : "java.util.ArrayList<IpPermission>"
+            "templateImplType" : "java.util.ArrayList<IpPermission>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28634,11 +28634,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32264,11 +32264,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>"
+          "templateImplType" : "java.util.ArrayList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32987,11 +32987,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>"
+            "templateImplType" : "java.util.ArrayList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -33781,11 +33781,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "GameProperty",
           "templateType" : "java.util.List<GameProperty>",
-          "templateImplType" : "java.util.ArrayList<GameProperty>"
+          "templateImplType" : "java.util.ArrayList<GameProperty>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -34131,11 +34131,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "GameProperty",
             "templateType" : "java.util.List<GameProperty>",
-            "templateImplType" : "java.util.ArrayList<GameProperty>"
+            "templateImplType" : "java.util.ArrayList<GameProperty>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -35510,11 +35510,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "ServerProcess",
           "templateType" : "java.util.List<ServerProcess>",
-          "templateImplType" : "java.util.ArrayList<ServerProcess>"
+          "templateImplType" : "java.util.ArrayList<ServerProcess>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -35651,11 +35651,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "ServerProcess",
             "templateType" : "java.util.List<ServerProcess>",
-            "templateImplType" : "java.util.ArrayList<ServerProcess>"
+            "templateImplType" : "java.util.ArrayList<ServerProcess>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -37032,6 +37032,8 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
@@ -37039,5 +37041,8 @@
     "operationExamples" : { }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "exceptionUnmarshallerImpl" : null,
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.gamelift.model.AmazonGameLiftException",
+  "sdkModeledExceptionBaseClassName" : "AmazonGameLiftException"
 }

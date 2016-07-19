@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elastictranscoder.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * One or more required parameter values were not provided in the request.
  * </p>
  */
-public class ValidationException extends AmazonServiceException {
+public class ValidationException
+        extends
+        com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException {
     private static final long serialVersionUID = 1L;
 
     /**

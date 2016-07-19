@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.cognitoidp.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception is thrown when a user tries to confirm the account with an
@@ -26,7 +24,9 @@ import com.amazonaws.AmazonServiceException;
  * or phone already exists.
  * </p>
  */
-public class AliasExistsException extends AmazonServiceException {
+public class AliasExistsException
+        extends
+        com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified on-premises instance name was specified in an invalid format.
  * </p>
  */
-public class InvalidInstanceNameException extends AmazonServiceException {
+public class InvalidInstanceNameException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested reserved cache node was not found.
  * </p>
  */
-public class ReservedCacheNodeNotFoundException extends AmazonServiceException {
+public class ReservedCacheNodeNotFoundException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

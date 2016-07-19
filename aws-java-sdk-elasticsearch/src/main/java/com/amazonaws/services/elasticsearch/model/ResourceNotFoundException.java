@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.elasticsearch.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An exception for accessing or deleting a resource that does not exist. Gives
  * http status code of 400.
  * </p>
  */
-public class ResourceNotFoundException extends AmazonServiceException {
+public class ResourceNotFoundException extends
+        com.amazonaws.services.elasticsearch.model.AWSElasticsearchException {
     private static final long serialVersionUID = 1L;
 
     /**

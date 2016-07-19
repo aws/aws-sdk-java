@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This error contains a list of one or more error messages. Each error message
  * indicates one error in the change batch.
  * </p>
  */
-public class InvalidChangeBatchException extends AmazonServiceException {
+public class InvalidChangeBatchException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

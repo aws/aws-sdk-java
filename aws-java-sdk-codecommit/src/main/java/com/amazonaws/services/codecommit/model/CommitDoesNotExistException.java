@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified commit does not exist or no commit was specified, and the
  * specified repository has no default branch.
  * </p>
  */
-public class CommitDoesNotExistException extends AmazonServiceException {
+public class CommitDoesNotExistException extends
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

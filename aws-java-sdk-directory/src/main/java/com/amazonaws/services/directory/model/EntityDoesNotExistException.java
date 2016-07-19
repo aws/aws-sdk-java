@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.directory.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified entity could not be found.
  * </p>
  */
-public class EntityDoesNotExistException extends AmazonServiceException {
+public class EntityDoesNotExistException extends
+        com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 
     private String requestId;

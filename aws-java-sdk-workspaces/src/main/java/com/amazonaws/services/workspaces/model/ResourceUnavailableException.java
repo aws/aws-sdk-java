@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.workspaces.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified resource is not available.
  * </p>
  */
-public class ResourceUnavailableException extends AmazonServiceException {
+public class ResourceUnavailableException extends
+        com.amazonaws.services.workspaces.model.AmazonWorkspacesException {
     private static final long serialVersionUID = 1L;
 
     /**

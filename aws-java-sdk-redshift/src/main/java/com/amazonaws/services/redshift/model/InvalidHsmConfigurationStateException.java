@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified HSM configuration is not in the <code>available</code> state,
@@ -25,7 +23,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class InvalidHsmConfigurationStateException extends
-        AmazonServiceException {
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The permission type is not supported. <i>Share</i> is the only supported
  * permission type.
  * </p>
  */
-public class InvalidPermissionTypeException extends AmazonServiceException {
+public class InvalidPermissionTypeException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

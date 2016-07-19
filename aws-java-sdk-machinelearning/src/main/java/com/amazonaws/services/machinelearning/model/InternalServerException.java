@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.machinelearning.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An error on the server occurred when trying to process a request.
  * </p>
  */
-public class InternalServerException extends AmazonServiceException {
+public class InternalServerException
+        extends
+        com.amazonaws.services.machinelearning.model.AmazonMachineLearningException {
     private static final long serialVersionUID = 1L;
 
     private Integer code;

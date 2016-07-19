@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because it referenced an entity that does not exist.
  * The error message describes the entity.
  * </p>
  */
-public class NoSuchEntityException extends AmazonServiceException {
+public class NoSuchEntityException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

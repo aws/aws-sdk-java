@@ -19,14 +19,14 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "cognito-sync",
     "signingName" : "cognito-sync",
+    "syncClientBuilderClassName" : "AmazonCognitoSyncClientBuilder",
+    "asyncClientBuilderClassName" : "AmazonCognitoSyncAsyncClientBuilder",
+    "serviceName" : "Amazon Cognito Sync",
     "jsonProtocol" : true,
     "xmlProtocol" : false,
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "syncClientBuilderClassName" : "AmazonCognitoSyncClientBuilder",
-    "asyncClientBuilderClassName" : "AmazonCognitoSyncAsyncClientBuilder",
-    "serviceName" : "Amazon Cognito Sync",
     "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
@@ -16402,12 +16402,17 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseClassName" : "AmazonCognitoSyncException",
   "exceptionUnmarshallerImpl" : null,
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException"
 }

@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified options are incompatible.
  * </p>
  */
 public class IncompatibleOrderableOptionsException extends
-        AmazonServiceException {
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

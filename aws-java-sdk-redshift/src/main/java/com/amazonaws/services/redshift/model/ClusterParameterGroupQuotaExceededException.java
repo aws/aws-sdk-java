@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request would result in the user exceeding the allowed number of cluster
@@ -28,7 +26,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class ClusterParameterGroupQuotaExceededException extends
-        AmazonServiceException {
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

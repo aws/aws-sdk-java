@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified association does not exist.
  * </p>
  */
-public class AssociationDoesNotExistException extends AmazonServiceException {
+public class AssociationDoesNotExistException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

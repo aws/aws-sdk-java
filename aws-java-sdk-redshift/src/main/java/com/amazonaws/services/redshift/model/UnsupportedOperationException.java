@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested operation isn't supported.
  * </p>
  */
-public class UnsupportedOperationException extends AmazonServiceException {
+public class UnsupportedOperationException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

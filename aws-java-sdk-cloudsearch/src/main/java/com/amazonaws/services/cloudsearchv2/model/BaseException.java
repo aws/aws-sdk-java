@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.cloudsearchv2.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An error occurred while processing the request.
  * </p>
  */
-public class BaseException extends AmazonServiceException {
+public class BaseException extends
+        com.amazonaws.services.cloudsearchv2.model.AmazonCloudSearchException {
     private static final long serialVersionUID = 1L;
 
     private String code;

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * No encryption key was found.
  * </p>
  */
-public class EncryptionKeyNotFoundException extends AmazonServiceException {
+public class EncryptionKeyNotFoundException extends
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

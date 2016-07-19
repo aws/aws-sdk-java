@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.cloudformation.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The template contains resources with capabilities that were not specified in
  * the Capabilities parameter.
  * </p>
  */
-public class InsufficientCapabilitiesException extends AmazonServiceException {
+public class InsufficientCapabilitiesException
+        extends
+        com.amazonaws.services.cloudformation.model.AmazonCloudFormationException {
     private static final long serialVersionUID = 1L;
 
     /**

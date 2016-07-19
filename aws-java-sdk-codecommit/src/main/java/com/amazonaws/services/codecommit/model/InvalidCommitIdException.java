@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified commit ID is not valid.
  * </p>
  */
-public class InvalidCommitIdException extends AmazonServiceException {
+public class InvalidCommitIdException extends
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

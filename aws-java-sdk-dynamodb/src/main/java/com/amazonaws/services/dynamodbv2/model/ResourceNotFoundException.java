@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.dynamodbv2.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation tried to access a nonexistent table or index. The resource
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * <code>ACTIVE</code>.
  * </p>
  */
-public class ResourceNotFoundException extends AmazonServiceException {
+public class ResourceNotFoundException extends
+        com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException {
     private static final long serialVersionUID = 1L;
 
     /**

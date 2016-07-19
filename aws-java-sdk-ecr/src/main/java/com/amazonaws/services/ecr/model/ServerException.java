@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * These errors are usually caused by a server-side issue.
  * </p>
  */
-public class ServerException extends AmazonServiceException {
+public class ServerException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

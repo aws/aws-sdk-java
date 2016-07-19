@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * The If-Match version is missing or not valid for the distribution.
  */
-public class InvalidIfMatchVersionException extends AmazonServiceException {
+public class InvalidIfMatchVersionException extends
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

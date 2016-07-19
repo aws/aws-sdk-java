@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified Amazon SNS topic does not exist.
  * </p>
  */
-public class InvalidSNSTopicARNException extends AmazonServiceException {
+public class InvalidSNSTopicARNException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

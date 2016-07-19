@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.simpledb.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified domain does not exist.
  * </p>
  */
-public class NoSuchDomainException extends AmazonServiceException {
+public class NoSuchDomainException extends
+        com.amazonaws.services.simpledb.model.AmazonSimpleDBException {
     private static final long serialVersionUID = 1L;
 
     private Float boxUsage;

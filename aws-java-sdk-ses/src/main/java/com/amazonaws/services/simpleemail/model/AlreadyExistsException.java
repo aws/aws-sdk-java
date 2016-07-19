@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.simpleemail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that a resource could not be created due to a naming conflict.
  * </p>
  */
-public class AlreadyExistsException extends AmazonServiceException {
+public class AlreadyExistsException
+        extends
+        com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
     private String name;

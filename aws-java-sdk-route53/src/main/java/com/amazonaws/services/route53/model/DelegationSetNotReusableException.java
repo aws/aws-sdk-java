@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified delegation set has not been marked as reusable.
  * </p>
  */
-public class DelegationSetNotReusableException extends AmazonServiceException {
+public class DelegationSetNotReusableException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

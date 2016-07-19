@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that the DBSubnetGroup should not be specified while creating read
  * replicas that lie in the same region as the source instance.
  * </p>
  */
-public class DBSubnetGroupNotAllowedException extends AmazonServiceException {
+public class DBSubnetGroupNotAllowedException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.kms.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The system timed out while trying to fulfill the request. The request can be
  * retried.
  * </p>
  */
-public class DependencyTimeoutException extends AmazonServiceException {
+public class DependencyTimeoutException extends
+        com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 
     /**

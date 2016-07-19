@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster
  * snapshot.
  * </p>
  */
-public class DBClusterSnapshotNotFoundException extends AmazonServiceException {
+public class DBClusterSnapshotNotFoundException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -96,6 +96,17 @@ public class CommandInvocationJsonUnmarshaller implements
                                     CommandPluginJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }
+                if (context.testExpression("ServiceRole", targetDepth)) {
+                    context.nextToken();
+                    commandInvocation.setServiceRole(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("NotificationConfig", targetDepth)) {
+                    context.nextToken();
+                    commandInvocation
+                            .setNotificationConfig(NotificationConfigJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

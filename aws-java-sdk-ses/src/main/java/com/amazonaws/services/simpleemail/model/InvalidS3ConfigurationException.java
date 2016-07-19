@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.simpleemail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is
@@ -28,7 +26,9 @@ import com.amazonaws.AmazonServiceException;
  * >Amazon SES Developer Guide</a>.
  * </p>
  */
-public class InvalidS3ConfigurationException extends AmazonServiceException {
+public class InvalidS3ConfigurationException
+        extends
+        com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
     private String bucket;

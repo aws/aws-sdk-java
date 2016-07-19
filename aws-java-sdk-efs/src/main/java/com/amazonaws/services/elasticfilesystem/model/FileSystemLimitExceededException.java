@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the AWS account has already created maximum number of file
  * systems allowed per account.
  * </p>
  */
-public class FileSystemLimitExceededException extends AmazonServiceException {
+public class FileSystemLimitExceededException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

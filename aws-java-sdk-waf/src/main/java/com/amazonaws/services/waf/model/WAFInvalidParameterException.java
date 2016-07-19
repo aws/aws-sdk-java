@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.waf.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation failed because AWS WAF didn't recognize a parameter in the
@@ -42,7 +40,8 @@ import com.amazonaws.AmazonServiceException;
  * of <code>HEADER</code> but no value for <code>Data</code>.</li>
  * </ul>
  */
-public class WAFInvalidParameterException extends AmazonServiceException {
+public class WAFInvalidParameterException extends
+        com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     private String field;

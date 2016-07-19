@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.cloudwatchevents.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The event pattern is invalid.
  * </p>
  */
-public class InvalidEventPatternException extends AmazonServiceException {
+public class InvalidEventPatternException
+        extends
+        com.amazonaws.services.cloudwatchevents.model.AmazonCloudWatchEventsException {
     private static final long serialVersionUID = 1L;
 
     /**

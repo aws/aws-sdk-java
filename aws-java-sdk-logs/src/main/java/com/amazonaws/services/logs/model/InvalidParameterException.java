@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.logs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if a parameter of the request is incorrectly specified.
  * </p>
  */
-public class InvalidParameterException extends AmazonServiceException {
+public class InvalidParameterException extends
+        com.amazonaws.services.logs.model.AWSLogsException {
     private static final long serialVersionUID = 1L;
 
     /**

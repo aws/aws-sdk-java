@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.cloudsearchv2.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because it specified an invalid type definition.
  * </p>
  */
-public class InvalidTypeException extends AmazonServiceException {
+public class InvalidTypeException extends
+        com.amazonaws.services.cloudsearchv2.model.AmazonCloudSearchException {
     private static final long serialVersionUID = 1L;
 
     /**

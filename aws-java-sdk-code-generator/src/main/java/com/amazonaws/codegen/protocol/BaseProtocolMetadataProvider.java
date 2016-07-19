@@ -14,6 +14,8 @@
  */
 package com.amazonaws.codegen.protocol;
 
+import com.amazonaws.AmazonServiceException;
+
 /**
  * Base class for all {@link ProtocolMetadataProvider}. Provides convenient default implementations
  * of certain methods to reduce duplication.
@@ -53,4 +55,8 @@ public abstract class BaseProtocolMetadataProvider implements ProtocolMetadataPr
         return null;
     }
 
+    @Override
+    public String getBaseExceptionFqcn() {
+        return AmazonServiceException.class.getName();
+    }
 }

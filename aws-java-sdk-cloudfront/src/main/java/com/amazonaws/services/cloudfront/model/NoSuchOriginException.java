@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * No origin exists with the specified Origin Id.
  */
-public class NoSuchOriginException extends AmazonServiceException {
+public class NoSuchOriginException extends
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

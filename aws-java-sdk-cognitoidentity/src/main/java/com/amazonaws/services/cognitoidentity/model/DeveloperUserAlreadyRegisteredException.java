@@ -16,16 +16,15 @@
 
 package com.amazonaws.services.cognitoidentity.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The provided developer user identifier is already registered with Cognito
  * under a different identity ID.
  * </p>
  */
-public class DeveloperUserAlreadyRegisteredException extends
-        AmazonServiceException {
+public class DeveloperUserAlreadyRegisteredException
+        extends
+        com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException {
     private static final long serialVersionUID = 1L;
 
     /**

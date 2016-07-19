@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.cloudtrail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception is thrown when the provided CloudWatch log group is not valid.
  * </p>
  */
 public class InvalidCloudWatchLogsLogGroupArnException extends
-        AmazonServiceException {
+        com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 
     /**

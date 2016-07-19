@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.cloudsearchdomain.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Information about any problems encountered while processing an upload
  * request.
  * </p>
  */
-public class DocumentServiceException extends AmazonServiceException {
+public class DocumentServiceException
+        extends
+        com.amazonaws.services.cloudsearchdomain.model.AmazonCloudSearchDomainException {
     private static final long serialVersionUID = 1L;
 
     /**

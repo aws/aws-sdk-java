@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.dynamodbv2.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A condition specified in the operation could not be evaluated.
  * </p>
  */
-public class ConditionalCheckFailedException extends AmazonServiceException {
+public class ConditionalCheckFailedException extends
+        com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException {
     private static final long serialVersionUID = 1L;
 
     /**

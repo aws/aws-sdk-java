@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.simpledb.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Too many predicates exist in the query expression.
  * </p>
  */
-public class InvalidNumberPredicatesException extends AmazonServiceException {
+public class InvalidNumberPredicatesException extends
+        com.amazonaws.services.simpledb.model.AmazonSimpleDBException {
     private static final long serialVersionUID = 1L;
 
     private Float boxUsage;

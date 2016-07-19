@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codepipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified action cannot be found.
  * </p>
  */
-public class ActionNotFoundException extends AmazonServiceException {
+public class ActionNotFoundException extends
+        com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

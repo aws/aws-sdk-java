@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.cloudtrail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception is thrown if the limit specified is invalid.
  * </p>
  */
-public class InvalidMaxResultsException extends AmazonServiceException {
+public class InvalidMaxResultsException extends
+        com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 
     /**

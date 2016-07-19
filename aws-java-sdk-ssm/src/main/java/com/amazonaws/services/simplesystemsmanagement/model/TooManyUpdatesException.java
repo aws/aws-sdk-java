@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * There are concurrent updates for a resource that supports one update at a
  * time.
  * </p>
  */
-public class TooManyUpdatesException extends AmazonServiceException {
+public class TooManyUpdatesException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

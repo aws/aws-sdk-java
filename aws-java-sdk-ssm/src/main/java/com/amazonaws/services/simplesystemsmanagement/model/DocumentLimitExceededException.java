@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You can have at most 100 active SSM documents.
  * </p>
  */
-public class DocumentLimitExceededException extends AmazonServiceException {
+public class DocumentLimitExceededException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

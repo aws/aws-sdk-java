@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The region for the trigger target does not match the region for the
@@ -26,7 +24,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class InvalidRepositoryTriggerRegionException extends
-        AmazonServiceException {
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

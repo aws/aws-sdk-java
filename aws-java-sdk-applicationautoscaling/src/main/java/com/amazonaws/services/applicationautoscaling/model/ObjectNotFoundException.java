@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.applicationautoscaling.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified object could not be found. For any <code>Put</code> or
@@ -29,7 +27,9 @@ import com.amazonaws.AmazonServiceException;
  * deregistered cannot be found.
  * </p>
  */
-public class ObjectNotFoundException extends AmazonServiceException {
+public class ObjectNotFoundException
+        extends
+        com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException {
     private static final long serialVersionUID = 1L;
 
     /**

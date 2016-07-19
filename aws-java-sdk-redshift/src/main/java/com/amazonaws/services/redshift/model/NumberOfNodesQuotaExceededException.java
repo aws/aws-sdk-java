@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation would exceed the number of nodes allotted to the account. For
@@ -27,7 +25,8 @@ import com.amazonaws.AmazonServiceException;
  * Guide</i>.
  * </p>
  */
-public class NumberOfNodesQuotaExceededException extends AmazonServiceException {
+public class NumberOfNodesQuotaExceededException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

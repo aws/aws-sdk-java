@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.cognitoidp.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception gets thrown when the user has made too many requests for a
  * given operation.
  * </p>
  */
-public class TooManyRequestsException extends AmazonServiceException {
+public class TooManyRequestsException
+        extends
+        com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 
     /**

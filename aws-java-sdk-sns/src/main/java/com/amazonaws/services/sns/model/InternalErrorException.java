@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.sns.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates an internal service error.
  * </p>
  */
-public class InternalErrorException extends AmazonServiceException {
+public class InternalErrorException extends
+        com.amazonaws.services.sns.model.AmazonSNSException {
     private static final long serialVersionUID = 1L;
 
     /**

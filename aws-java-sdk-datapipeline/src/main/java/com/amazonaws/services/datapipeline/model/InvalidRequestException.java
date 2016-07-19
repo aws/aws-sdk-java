@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.datapipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was not valid. Verify that your request was properly formatted,
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * haven't exceeded any of the service limits for your account.
  * </p>
  */
-public class InvalidRequestException extends AmazonServiceException {
+public class InvalidRequestException extends
+        com.amazonaws.services.datapipeline.model.DataPipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

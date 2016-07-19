@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.inspector.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Internal server error.
  * </p>
  */
-public class InternalException extends AmazonServiceException {
+public class InternalException extends
+        com.amazonaws.services.inspector.model.AmazonInspectorException {
     private static final long serialVersionUID = 1L;
 
     /**

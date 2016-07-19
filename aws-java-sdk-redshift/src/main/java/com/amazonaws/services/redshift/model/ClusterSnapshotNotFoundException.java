@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The snapshot identifier does not refer to an existing cluster snapshot.
  * </p>
  */
-public class ClusterSnapshotNotFoundException extends AmazonServiceException {
+public class ClusterSnapshotNotFoundException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

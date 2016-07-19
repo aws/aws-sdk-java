@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.ecs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified cluster could not be found. You can view your available
  * clusters with <a>ListClusters</a>. Amazon ECS clusters are region-specific.
  * </p>
  */
-public class ClusterNotFoundException extends AmazonServiceException {
+public class ClusterNotFoundException extends
+        com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 
     /**

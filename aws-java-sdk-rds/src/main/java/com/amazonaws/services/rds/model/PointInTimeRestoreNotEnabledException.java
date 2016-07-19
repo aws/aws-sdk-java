@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * <i>SourceDBInstanceIdentifier</i> refers to a DB instance with
@@ -25,7 +23,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class PointInTimeRestoreNotEnabledException extends
-        AmazonServiceException {
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

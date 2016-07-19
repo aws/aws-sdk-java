@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.sqs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Error code 400. Unsupported operation.
  * </p>
  */
-public class UnsupportedOperationException extends AmazonServiceException {
+public class UnsupportedOperationException extends
+        com.amazonaws.services.sqs.model.AmazonSQSException {
     private static final long serialVersionUID = 1L;
 
     /**

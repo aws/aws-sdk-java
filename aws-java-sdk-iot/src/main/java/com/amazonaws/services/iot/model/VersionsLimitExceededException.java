@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.iot.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The number of policy versions exceeds the limit.
  * </p>
  */
-public class VersionsLimitExceededException extends AmazonServiceException {
+public class VersionsLimitExceededException extends
+        com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 
     /**

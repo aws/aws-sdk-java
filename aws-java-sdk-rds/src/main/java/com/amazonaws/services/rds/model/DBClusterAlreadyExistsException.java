@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * User already has a DB cluster with the given identifier.
  * </p>
  */
-public class DBClusterAlreadyExistsException extends AmazonServiceException {
+public class DBClusterAlreadyExistsException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

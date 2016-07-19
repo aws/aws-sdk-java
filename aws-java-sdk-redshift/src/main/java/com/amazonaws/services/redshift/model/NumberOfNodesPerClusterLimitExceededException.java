@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation would exceed the number of nodes allowed for a cluster.
  * </p>
  */
 public class NumberOfNodesPerClusterLimitExceededException extends
-        AmazonServiceException {
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

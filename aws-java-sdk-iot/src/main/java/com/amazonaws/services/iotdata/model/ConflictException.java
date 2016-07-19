@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.iotdata.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified version does not match the version of the document.
  * </p>
  */
-public class ConflictException extends AmazonServiceException {
+public class ConflictException extends
+        com.amazonaws.services.iotdata.model.AWSIotDataException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.lambda.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Lambda function access policy is limited to 20 KB.
  * </p>
  */
-public class PolicyLengthExceededException extends AmazonServiceException {
+public class PolicyLengthExceededException extends
+        com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
     private String type;

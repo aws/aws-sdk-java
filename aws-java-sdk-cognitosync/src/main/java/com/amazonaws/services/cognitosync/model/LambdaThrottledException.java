@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.cognitosync.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * AWS Lambda throttled your account, please contact AWS Support
  * </p>
  */
-public class LambdaThrottledException extends AmazonServiceException {
+public class LambdaThrottledException extends
+        com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException {
     private static final long serialVersionUID = 1L;
 
     /**

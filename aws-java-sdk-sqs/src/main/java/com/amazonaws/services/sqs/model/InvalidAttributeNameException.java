@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.sqs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The attribute referred to does not exist.
  * </p>
  */
-public class InvalidAttributeNameException extends AmazonServiceException {
+public class InvalidAttributeNameException extends
+        com.amazonaws.services.sqs.model.AmazonSQSException {
     private static final long serialVersionUID = 1L;
 
     /**

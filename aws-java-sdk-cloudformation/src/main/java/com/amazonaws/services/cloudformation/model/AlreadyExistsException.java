@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.cloudformation.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Resource with the name requested already exists.
  * </p>
  */
-public class AlreadyExistsException extends AmazonServiceException {
+public class AlreadyExistsException
+        extends
+        com.amazonaws.services.cloudformation.model.AmazonCloudFormationException {
     private static final long serialVersionUID = 1L;
 
     /**

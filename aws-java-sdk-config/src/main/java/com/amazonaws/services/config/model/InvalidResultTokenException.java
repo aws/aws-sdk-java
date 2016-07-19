@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The result token is invalid.
  * </p>
  */
-public class InvalidResultTokenException extends AmazonServiceException {
+public class InvalidResultTokenException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

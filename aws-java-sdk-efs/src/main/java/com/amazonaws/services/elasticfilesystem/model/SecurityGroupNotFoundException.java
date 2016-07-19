@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if one of the specified security groups does not exist in the
  * subnet's VPC.
  * </p>
  */
-public class SecurityGroupNotFoundException extends AmazonServiceException {
+public class SecurityGroupNotFoundException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

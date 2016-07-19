@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the certificate is invalid.
  * </p>
  */
-public class InvalidCertificateException extends AmazonServiceException {
+public class InvalidCertificateException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

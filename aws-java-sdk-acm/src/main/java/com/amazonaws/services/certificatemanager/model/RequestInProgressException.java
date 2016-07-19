@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.certificatemanager.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The certificate request is in process and the certificate in your account has
  * not yet been issued.
  * </p>
  */
-public class RequestInProgressException extends AmazonServiceException {
+public class RequestInProgressException
+        extends
+        com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException {
     private static final long serialVersionUID = 1L;
 
     /**

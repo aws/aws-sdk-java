@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.storagegateway.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An exception occurred because an invalid gateway request was issued to the
  * service. For more information, see the error and message fields.
  * </p>
  */
-public class InvalidGatewayRequestException extends AmazonServiceException {
+public class InvalidGatewayRequestException extends
+        com.amazonaws.services.storagegateway.model.AWSStorageGatewayException {
     private static final long serialVersionUID = 1L;
 
     /**

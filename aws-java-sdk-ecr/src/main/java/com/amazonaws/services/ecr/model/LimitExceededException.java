@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation did not succeed because it would have exceeded a service limit
@@ -27,7 +25,8 @@ import com.amazonaws.AmazonServiceException;
  * User Guide.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

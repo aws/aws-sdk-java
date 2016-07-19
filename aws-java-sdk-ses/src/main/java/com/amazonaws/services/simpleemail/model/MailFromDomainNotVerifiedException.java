@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.simpleemail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that the message could not be sent because Amazon SES could not
@@ -28,7 +26,9 @@ import com.amazonaws.AmazonServiceException;
  * >Amazon SES Developer Guide</a>.
  * </p>
  */
-public class MailFromDomainNotVerifiedException extends AmazonServiceException {
+public class MailFromDomainNotVerifiedException
+        extends
+        com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

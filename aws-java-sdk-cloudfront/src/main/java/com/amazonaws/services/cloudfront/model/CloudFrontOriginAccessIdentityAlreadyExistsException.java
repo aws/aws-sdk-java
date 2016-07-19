@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * If the CallerReference is a value you already sent in a previous request to
  * create an identity but the content of the
@@ -25,7 +23,7 @@ import com.amazonaws.AmazonServiceException;
  * CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists error.
  */
 public class CloudFrontOriginAccessIdentityAlreadyExistsException extends
-        AmazonServiceException {
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

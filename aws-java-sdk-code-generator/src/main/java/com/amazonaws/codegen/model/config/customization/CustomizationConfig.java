@@ -156,6 +156,24 @@ public class CustomizationConfig {
     private boolean useModeledOutputShapeNames;
 
     /**
+     * Service specific base class for all modeled exceptions. By default this is syncInterface +
+     * Exception (i.e. AmazonSQSException). Currently only DynamoDB Streams utilizes this
+     * customization since it shares exception types with the DynamoDB client.
+     *
+     * <p>This customization should only provide the simple class name. The typical model package
+     * will be used when fully qualifying references to this exception</p>
+     *
+     * <p><b>Note:</b> that if a custom base class is provided the generator will not generate one.
+     * We assume it already exists.</p>
+     */
+    private String sdkModeledExceptionBaseClassName;
+
+    /**
+     * Uses the specified SignerProvider implementation for this client.
+     */
+    private String customSignerProvider;
+
+    /**
      * List of 'convenience' overloads to generate for model classes. Convenience overloads expose a
      * different type that is adapted to the real type
      */
@@ -375,6 +393,20 @@ public class CustomizationConfig {
 
     public void setUseModeledOutputShapeNames(boolean useModeledOutputShapeNames) {
         this.useModeledOutputShapeNames = useModeledOutputShapeNames;
+    }
+
+    public String getSdkModeledExceptionBaseClassName() {
+        return sdkModeledExceptionBaseClassName;
+    }
+
+    public void setSdkModeledExceptionBaseClassName(String sdkModeledExceptionBaseClassName) {
+        this.sdkModeledExceptionBaseClassName = sdkModeledExceptionBaseClassName;
+    }
+
+    public String getCustomSignerProvider() { return customSignerProvider; }
+
+    public void setCustomSignerProvider(String customSignerProvider) {
+        this.customSignerProvider = customSignerProvider;
     }
 
 }

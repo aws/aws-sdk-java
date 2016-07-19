@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.codepipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The number of pipelines associated with the AWS account has exceeded the
  * limit allowed for the account.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException extends
+        com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

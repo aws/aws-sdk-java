@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.support.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An internal server error occurred.
  * </p>
  */
-public class InternalServerErrorException extends AmazonServiceException {
+public class InternalServerErrorException extends
+        com.amazonaws.services.support.model.AWSSupportException {
     private static final long serialVersionUID = 1L;
 
     /**

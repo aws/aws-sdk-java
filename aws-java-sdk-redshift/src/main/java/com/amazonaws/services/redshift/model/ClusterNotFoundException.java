@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The <code>ClusterIdentifier</code> parameter does not refer to an existing
  * cluster.
  * </p>
  */
-public class ClusterNotFoundException extends AmazonServiceException {
+public class ClusterNotFoundException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

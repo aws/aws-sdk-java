@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The state of the DB snapshot does not allow deletion.
  * </p>
  */
-public class InvalidDBSnapshotStateException extends AmazonServiceException {
+public class InvalidDBSnapshotStateException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

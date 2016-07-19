@@ -16,12 +16,12 @@
 
 package com.amazonaws.services.machinelearning.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * 
  */
-public class TagLimitExceededException extends AmazonServiceException {
+public class TagLimitExceededException
+        extends
+        com.amazonaws.services.machinelearning.model.AmazonMachineLearningException {
     private static final long serialVersionUID = 1L;
 
     /**

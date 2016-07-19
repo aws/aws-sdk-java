@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.devicefarm.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A limit was exceeded.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException extends
+        com.amazonaws.services.devicefarm.model.AWSDeviceFarmException {
     private static final long serialVersionUID = 1L;
 
     /**

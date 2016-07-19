@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.cognitoidp.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception is thrown if the provided code does not match what the server
  * was expecting.
  * </p>
  */
-public class CodeMismatchException extends AmazonServiceException {
+public class CodeMismatchException
+        extends
+        com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.glacier.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the specified resource, such as a vault, upload ID, or job ID,
  * does not exist.
  * </p>
  */
-public class ResourceNotFoundException extends AmazonServiceException {
+public class ResourceNotFoundException extends
+        com.amazonaws.services.glacier.model.AmazonGlacierException {
     private static final long serialVersionUID = 1L;
 
     /**

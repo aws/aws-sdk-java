@@ -101,6 +101,40 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Specifies and starts a remote access session.
+     * </p>
+     * 
+     * @param createRemoteAccessSessionRequest
+     *        Creates and submits a request to start a remote access session.
+     * @return A Java Future containing the result of the
+     *         CreateRemoteAccessSession operation returned by the service.
+     * @sample AWSDeviceFarmAsync.CreateRemoteAccessSession
+     */
+    java.util.concurrent.Future<CreateRemoteAccessSessionResult> createRemoteAccessSessionAsync(
+            CreateRemoteAccessSessionRequest createRemoteAccessSessionRequest);
+
+    /**
+     * <p>
+     * Specifies and starts a remote access session.
+     * </p>
+     * 
+     * @param createRemoteAccessSessionRequest
+     *        Creates and submits a request to start a remote access session.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         CreateRemoteAccessSession operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.CreateRemoteAccessSession
+     */
+    java.util.concurrent.Future<CreateRemoteAccessSessionResult> createRemoteAccessSessionAsync(
+            CreateRemoteAccessSessionRequest createRemoteAccessSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRemoteAccessSessionRequest, CreateRemoteAccessSessionResult> asyncHandler);
+
+    /**
+     * <p>
      * Uploads an app or test scripts.
      * </p>
      * 
@@ -208,6 +242,42 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
     java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(
             DeleteProjectRequest deleteProjectRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a completed remote access session and its results.
+     * </p>
+     * 
+     * @param deleteRemoteAccessSessionRequest
+     *        Represents the request to delete the specified remote access
+     *        session.
+     * @return A Java Future containing the result of the
+     *         DeleteRemoteAccessSession operation returned by the service.
+     * @sample AWSDeviceFarmAsync.DeleteRemoteAccessSession
+     */
+    java.util.concurrent.Future<DeleteRemoteAccessSessionResult> deleteRemoteAccessSessionAsync(
+            DeleteRemoteAccessSessionRequest deleteRemoteAccessSessionRequest);
+
+    /**
+     * <p>
+     * Deletes a completed remote access session and its results.
+     * </p>
+     * 
+     * @param deleteRemoteAccessSessionRequest
+     *        Represents the request to delete the specified remote access
+     *        session.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteRemoteAccessSession operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.DeleteRemoteAccessSession
+     */
+    java.util.concurrent.Future<DeleteRemoteAccessSessionResult> deleteRemoteAccessSessionAsync(
+            DeleteRemoteAccessSessionRequest deleteRemoteAccessSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRemoteAccessSessionRequest, DeleteRemoteAccessSessionResult> asyncHandler);
 
     /**
      * <p>
@@ -543,6 +613,42 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Returns a link to a currently running remote access session.
+     * </p>
+     * 
+     * @param getRemoteAccessSessionRequest
+     *        Represents the request to get information about the specified
+     *        remote access session.
+     * @return A Java Future containing the result of the GetRemoteAccessSession
+     *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.GetRemoteAccessSession
+     */
+    java.util.concurrent.Future<GetRemoteAccessSessionResult> getRemoteAccessSessionAsync(
+            GetRemoteAccessSessionRequest getRemoteAccessSessionRequest);
+
+    /**
+     * <p>
+     * Returns a link to a currently running remote access session.
+     * </p>
+     * 
+     * @param getRemoteAccessSessionRequest
+     *        Represents the request to get information about the specified
+     *        remote access session.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRemoteAccessSession
+     *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetRemoteAccessSession
+     */
+    java.util.concurrent.Future<GetRemoteAccessSessionResult> getRemoteAccessSessionAsync(
+            GetRemoteAccessSessionRequest getRemoteAccessSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRemoteAccessSessionRequest, GetRemoteAccessSessionResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a run.
      * </p>
      * 
@@ -676,6 +782,48 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
     java.util.concurrent.Future<GetUploadResult> getUploadAsync(
             GetUploadRequest getUploadRequest,
             com.amazonaws.handlers.AsyncHandler<GetUploadRequest, GetUploadResult> asyncHandler);
+
+    /**
+     * <p>
+     * Installs an application to the device in a remote access session. For
+     * Android applications, the file must be in .apk format. For iOS
+     * applications, the file must be in .ipa format.
+     * </p>
+     * 
+     * @param installToRemoteAccessSessionRequest
+     *        Represents the request to install an Android application (in .apk
+     *        format) or an iOS application (in .ipa format) as part of a remote
+     *        access session.
+     * @return A Java Future containing the result of the
+     *         InstallToRemoteAccessSession operation returned by the service.
+     * @sample AWSDeviceFarmAsync.InstallToRemoteAccessSession
+     */
+    java.util.concurrent.Future<InstallToRemoteAccessSessionResult> installToRemoteAccessSessionAsync(
+            InstallToRemoteAccessSessionRequest installToRemoteAccessSessionRequest);
+
+    /**
+     * <p>
+     * Installs an application to the device in a remote access session. For
+     * Android applications, the file must be in .apk format. For iOS
+     * applications, the file must be in .ipa format.
+     * </p>
+     * 
+     * @param installToRemoteAccessSessionRequest
+     *        Represents the request to install an Android application (in .apk
+     *        format) or an iOS application (in .ipa format) as part of a remote
+     *        access session.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         InstallToRemoteAccessSession operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.InstallToRemoteAccessSession
+     */
+    java.util.concurrent.Future<InstallToRemoteAccessSessionResult> installToRemoteAccessSessionAsync(
+            InstallToRemoteAccessSessionRequest installToRemoteAccessSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<InstallToRemoteAccessSessionRequest, InstallToRemoteAccessSessionResult> asyncHandler);
 
     /**
      * <p>
@@ -942,6 +1090,42 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
     java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(
             ListProjectsRequest listProjectsRequest,
             com.amazonaws.handlers.AsyncHandler<ListProjectsRequest, ListProjectsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of all currently running remote access sessions.
+     * </p>
+     * 
+     * @param listRemoteAccessSessionsRequest
+     *        Represents the request to return information about the remote
+     *        access session.
+     * @return A Java Future containing the result of the
+     *         ListRemoteAccessSessions operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListRemoteAccessSessions
+     */
+    java.util.concurrent.Future<ListRemoteAccessSessionsResult> listRemoteAccessSessionsAsync(
+            ListRemoteAccessSessionsRequest listRemoteAccessSessionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of all currently running remote access sessions.
+     * </p>
+     * 
+     * @param listRemoteAccessSessionsRequest
+     *        Represents the request to return information about the remote
+     *        access session.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ListRemoteAccessSessions operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListRemoteAccessSessions
+     */
+    java.util.concurrent.Future<ListRemoteAccessSessionsResult> listRemoteAccessSessionsAsync(
+            ListRemoteAccessSessionsRequest listRemoteAccessSessionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRemoteAccessSessionsRequest, ListRemoteAccessSessionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1272,6 +1456,40 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
     java.util.concurrent.Future<ScheduleRunResult> scheduleRunAsync(
             ScheduleRunRequest scheduleRunRequest,
             com.amazonaws.handlers.AsyncHandler<ScheduleRunRequest, ScheduleRunResult> asyncHandler);
+
+    /**
+     * <p>
+     * Ends a specified remote access session.
+     * </p>
+     * 
+     * @param stopRemoteAccessSessionRequest
+     *        Represents the request to stop the remote access session.
+     * @return A Java Future containing the result of the
+     *         StopRemoteAccessSession operation returned by the service.
+     * @sample AWSDeviceFarmAsync.StopRemoteAccessSession
+     */
+    java.util.concurrent.Future<StopRemoteAccessSessionResult> stopRemoteAccessSessionAsync(
+            StopRemoteAccessSessionRequest stopRemoteAccessSessionRequest);
+
+    /**
+     * <p>
+     * Ends a specified remote access session.
+     * </p>
+     * 
+     * @param stopRemoteAccessSessionRequest
+     *        Represents the request to stop the remote access session.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         StopRemoteAccessSession operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.StopRemoteAccessSession
+     */
+    java.util.concurrent.Future<StopRemoteAccessSessionResult> stopRemoteAccessSessionAsync(
+            StopRemoteAccessSessionRequest stopRemoteAccessSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<StopRemoteAccessSessionRequest, StopRemoteAccessSessionResult> asyncHandler);
 
     /**
      * <p>

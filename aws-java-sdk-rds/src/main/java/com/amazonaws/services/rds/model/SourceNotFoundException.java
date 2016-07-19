@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested source could not be found.
  * </p>
  */
-public class SourceNotFoundException extends AmazonServiceException {
+public class SourceNotFoundException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

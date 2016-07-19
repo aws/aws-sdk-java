@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.sqs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The <code>Id</code> of a batch entry in a batch request does not abide by the
  * specification.
  * </p>
  */
-public class InvalidBatchEntryIdException extends AmazonServiceException {
+public class InvalidBatchEntryIdException extends
+        com.amazonaws.services.sqs.model.AmazonSQSException {
     private static final long serialVersionUID = 1L;
 
     /**

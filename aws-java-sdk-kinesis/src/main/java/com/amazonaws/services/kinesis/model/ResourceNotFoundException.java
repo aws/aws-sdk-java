@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.kinesis.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested resource could not be found. The stream might not be specified
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * operation requires it.
  * </p>
  */
-public class ResourceNotFoundException extends AmazonServiceException {
+public class ResourceNotFoundException extends
+        com.amazonaws.services.kinesis.model.AmazonKinesisException {
     private static final long serialVersionUID = 1L;
 
     /**

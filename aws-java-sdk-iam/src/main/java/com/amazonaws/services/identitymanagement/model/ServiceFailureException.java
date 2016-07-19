@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request processing has failed because of an unknown error, exception or
  * failure.
  * </p>
  */
-public class ServiceFailureException extends AmazonServiceException {
+public class ServiceFailureException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

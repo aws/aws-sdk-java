@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified reserved compute node not found.
  * </p>
  */
-public class ReservedNodeNotFoundException extends AmazonServiceException {
+public class ReservedNodeNotFoundException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

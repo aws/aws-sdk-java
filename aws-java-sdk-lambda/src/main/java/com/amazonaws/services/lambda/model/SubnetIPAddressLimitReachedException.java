@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.lambda.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * AWS Lambda was not able to set up VPC access for the Lambda function because
@@ -25,7 +23,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class SubnetIPAddressLimitReachedException extends
-        AmazonServiceException {
+        com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
     private String type;

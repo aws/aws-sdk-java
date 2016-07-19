@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
  * </p>
  */
-public class DBSnapshotNotFoundException extends AmazonServiceException {
+public class DBSnapshotNotFoundException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

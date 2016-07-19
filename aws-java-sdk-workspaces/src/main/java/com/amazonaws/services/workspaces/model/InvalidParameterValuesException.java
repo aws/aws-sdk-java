@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.workspaces.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * One or more parameter values are not valid.
  * </p>
  */
-public class InvalidParameterValuesException extends AmazonServiceException {
+public class InvalidParameterValuesException extends
+        com.amazonaws.services.workspaces.model.AmazonWorkspacesException {
     private static final long serialVersionUID = 1L;
 
     /**

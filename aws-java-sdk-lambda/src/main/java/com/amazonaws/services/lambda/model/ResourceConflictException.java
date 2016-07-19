@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.lambda.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The resource already exists.
  * </p>
  */
-public class ResourceConflictException extends AmazonServiceException {
+public class ResourceConflictException extends
+        com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
     private String type;

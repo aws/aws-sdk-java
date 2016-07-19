@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codepipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified pipeline name is already in use.
  * </p>
  */
-public class PipelineNameInUseException extends AmazonServiceException {
+public class PipelineNameInUseException extends
+        com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.route53domains.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Amazon Route 53 does not support this top-level domain.
  * </p>
  */
-public class UnsupportedTLDException extends AmazonServiceException {
+public class UnsupportedTLDException
+        extends
+        com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException {
     private static final long serialVersionUID = 1L;
 
     /**

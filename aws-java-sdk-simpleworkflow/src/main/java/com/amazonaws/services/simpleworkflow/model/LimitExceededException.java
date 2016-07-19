@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.simpleworkflow.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned by any operation if a system imposed limitation has been reached. To
@@ -25,7 +23,9 @@ import com.amazonaws.AmazonServiceException;
  * the limit by contacting AWS.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException
+        extends
+        com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException {
     private static final long serialVersionUID = 1L;
 
     /**

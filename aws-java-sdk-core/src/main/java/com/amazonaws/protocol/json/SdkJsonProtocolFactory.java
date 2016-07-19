@@ -88,7 +88,8 @@ public class SdkJsonProtocolFactory {
                                                              errorMetadata.getErrorCode()));
 
         }
-        errorUnmarshallers.add(JsonErrorUnmarshaller.DEFAULT_UNMARSHALLER);
+        errorUnmarshallers
+                .add(new JsonErrorUnmarshaller(metadata.getBaseServiceExceptionClass(), null));
     }
 
     /**

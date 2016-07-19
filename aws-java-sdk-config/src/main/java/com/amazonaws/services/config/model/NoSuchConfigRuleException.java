@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * One or more AWS Config rules in the request are invalid. Verify that the rule
  * names are correct and try again.
  * </p>
  */
-public class NoSuchConfigRuleException extends AmazonServiceException {
+public class NoSuchConfigRuleException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

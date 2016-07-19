@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The custom data provided for the trigger is not valid.
  * </p>
  */
 public class InvalidRepositoryTriggerCustomDataException extends
-        AmazonServiceException {
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.simpleemail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that the provided Amazon SNS topic is invalid, or that Amazon SES
@@ -27,7 +25,9 @@ import com.amazonaws.AmazonServiceException;
  * >Amazon SES Developer Guide</a>.
  * </p>
  */
-public class InvalidSnsTopicException extends AmazonServiceException {
+public class InvalidSnsTopicException
+        extends
+        com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
     private String topic;

@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.directory.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The maximum number of manual snapshots for the directory has been reached.
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * limits for a directory.
  * </p>
  */
-public class SnapshotLimitExceededException extends AmazonServiceException {
+public class SnapshotLimitExceededException extends
+        com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 
     private String requestId;

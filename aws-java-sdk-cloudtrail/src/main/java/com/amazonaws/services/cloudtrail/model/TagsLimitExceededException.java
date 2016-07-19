@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.cloudtrail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The number of tags per trail has exceeded the permitted amount. Currently,
  * the limit is 10.
  * </p>
  */
-public class TagsLimitExceededException extends AmazonServiceException {
+public class TagsLimitExceededException extends
+        com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 
     /**

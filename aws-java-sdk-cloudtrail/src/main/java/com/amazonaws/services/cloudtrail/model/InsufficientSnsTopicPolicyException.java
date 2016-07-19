@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.cloudtrail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception is thrown when the policy on the SNS topic is not sufficient.
  * </p>
  */
-public class InsufficientSnsTopicPolicyException extends AmazonServiceException {
+public class InsufficientSnsTopicPolicyException extends
+        com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 
     /**

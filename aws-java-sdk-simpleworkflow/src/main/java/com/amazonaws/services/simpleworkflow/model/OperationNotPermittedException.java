@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.simpleworkflow.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned when the caller does not have sufficient permissions to invoke the
  * action.
  * </p>
  */
-public class OperationNotPermittedException extends AmazonServiceException {
+public class OperationNotPermittedException
+        extends
+        com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -54,6 +54,7 @@ import com.amazonaws.internal.CRC32MismatchException;
 import com.amazonaws.internal.ReleasableInputStream;
 import com.amazonaws.internal.ResettableInputStream;
 import com.amazonaws.internal.SdkBufferedInputStream;
+import com.amazonaws.internal.auth.SignerProviderContext;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.retry.RetryPolicy;
@@ -1600,10 +1601,10 @@ public class AmazonHttpClient {
                 execContext.setSigner(signer);
             } else if (redirectedURI != null && !redirectedURI.equals(signerURI)) {
                 signerURI = redirectedURI;
-                signer = execContext.getSignerByURI(signerURI);
+                signer = execContext.getSigner(SignerProviderContext.builder().withUri(signerURI).withIsRedirect(true).build());
             } else if (signer == null) {
                 signerURI = request.getEndpoint();
-                signer = execContext.getSignerByURI(signerURI);
+                signer = execContext.getSigner(SignerProviderContext.builder().withUri(signerURI).build());
             }
             return signer;
         }

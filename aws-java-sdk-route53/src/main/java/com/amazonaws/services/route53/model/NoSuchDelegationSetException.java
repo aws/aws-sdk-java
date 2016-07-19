@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified delegation set does not exist.
  * </p>
  */
-public class NoSuchDelegationSetException extends AmazonServiceException {
+public class NoSuchDelegationSetException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

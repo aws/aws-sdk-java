@@ -15,15 +15,15 @@
 
 package com.amazonaws.codegen.model.config.templates;
 
-import static com.amazonaws.codegen.internal.Constants.PROTOCOL_CONFIG_LOCATION;
+import com.amazonaws.codegen.internal.ClassLoaderHelper;
+import com.amazonaws.codegen.internal.Jackson;
+import com.amazonaws.codegen.model.intermediate.Protocol;
 
 import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.amazonaws.codegen.internal.ClassLoaderHelper;
-import com.amazonaws.codegen.internal.Jackson;
-import com.amazonaws.codegen.model.intermediate.Protocol;
+import static com.amazonaws.codegen.internal.Constants.PROTOCOL_CONFIG_LOCATION;
 
 public class CodeGenTemplatesConfig {
 
@@ -46,6 +46,8 @@ public class CodeGenTemplatesConfig {
     private TopLevelTemplate policyActionClass;
     private TopLevelTemplate packageInfo;
     private List<ChildTemplate> commonChildTemplates;
+    private TopLevelTemplate baseExceptionClass = new TopLevelTemplate(
+            "/templates/common/base-exception-class.ftl", null);
 
     public static CodeGenTemplatesConfig load(Protocol protocol) {
 
@@ -284,5 +286,13 @@ public class CodeGenTemplatesConfig {
 
     public void setPackageInfo(TopLevelTemplate packageInfo) {
         this.packageInfo = packageInfo;
+    }
+
+    public TopLevelTemplate getBaseExceptionClass() {
+        return baseExceptionClass;
+    }
+
+    public TopLevelTemplate setBaseExceptionClass(TopLevelTemplate baseExceptionClass) {
+        return baseExceptionClass;
     }
 }

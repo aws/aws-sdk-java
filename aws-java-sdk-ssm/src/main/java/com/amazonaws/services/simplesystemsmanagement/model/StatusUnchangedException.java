@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The updated status is the same as the current status.
  * </p>
  */
-public class StatusUnchangedException extends AmazonServiceException {
+public class StatusUnchangedException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

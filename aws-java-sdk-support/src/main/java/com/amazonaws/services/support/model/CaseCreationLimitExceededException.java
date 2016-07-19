@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.support.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The case creation limit for the account has been exceeded.
  * </p>
  */
-public class CaseCreationLimitExceededException extends AmazonServiceException {
+public class CaseCreationLimitExceededException extends
+        com.amazonaws.services.support.model.AWSSupportException {
     private static final long serialVersionUID = 1L;
 
     /**

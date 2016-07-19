@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You cannot specify an instance ID in more than one association.
  * </p>
  */
-public class DuplicateInstanceIdException extends AmazonServiceException {
+public class DuplicateInstanceIdException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

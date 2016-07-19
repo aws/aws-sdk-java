@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.gamelift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested operation would cause the resource to exceed the allowed
  * service limit. Resolve the issue before retrying.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException extends
+        com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 
     /**

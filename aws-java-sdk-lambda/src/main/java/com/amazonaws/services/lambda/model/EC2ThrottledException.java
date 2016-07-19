@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.lambda.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * AWS Lambda was throttled by Amazon EC2 during Lambda function initiatization
  * using the execution role provided for the Lambda function.
  * </p>
  */
-public class EC2ThrottledException extends AmazonServiceException {
+public class EC2ThrottledException extends
+        com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
     private String type;

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Your account is not authorized to perform the requested operation.
  * </p>
  */
-public class UnauthorizedOperationException extends AmazonServiceException {
+public class UnauthorizedOperationException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

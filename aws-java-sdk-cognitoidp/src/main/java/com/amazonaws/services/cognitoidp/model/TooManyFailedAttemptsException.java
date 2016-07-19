@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.cognitoidp.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception gets thrown when the user has made too many failed attempts
  * for a given action (e.g., sign in).
  * </p>
  */
-public class TooManyFailedAttemptsException extends AmazonServiceException {
+public class TooManyFailedAttemptsException
+        extends
+        com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 
     /**

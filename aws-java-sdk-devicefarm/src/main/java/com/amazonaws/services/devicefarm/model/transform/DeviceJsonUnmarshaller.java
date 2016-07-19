@@ -122,6 +122,21 @@ public class DeviceJsonUnmarshaller implements
                     device.setRadio(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
+                if (context.testExpression("remoteAccessEnabled", targetDepth)) {
+                    context.nextToken();
+                    device.setRemoteAccessEnabled(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("fleetType", targetDepth)) {
+                    context.nextToken();
+                    device.setFleetType(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
+                }
+                if (context.testExpression("fleetName", targetDepth)) {
+                    context.nextToken();
+                    device.setFleetName(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

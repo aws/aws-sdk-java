@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
  * </p>
  */
-public class DBParameterGroupNotFoundException extends AmazonServiceException {
+public class DBParameterGroupNotFoundException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

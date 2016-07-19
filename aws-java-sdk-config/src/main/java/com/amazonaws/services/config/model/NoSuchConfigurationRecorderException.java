@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You have specified a configuration recorder that does not exist.
  * </p>
  */
 public class NoSuchConfigurationRecorderException extends
-        AmazonServiceException {
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

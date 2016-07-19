@@ -91,6 +91,16 @@ public class CommandInvocationJsonMarshaller {
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (commandInvocation.getServiceRole() != null) {
+                jsonGenerator.writeFieldName("ServiceRole").writeValue(
+                        commandInvocation.getServiceRole());
+            }
+            if (commandInvocation.getNotificationConfig() != null) {
+                jsonGenerator.writeFieldName("NotificationConfig");
+                NotificationConfigJsonMarshaller.getInstance().marshall(
+                        commandInvocation.getNotificationConfig(),
+                        jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

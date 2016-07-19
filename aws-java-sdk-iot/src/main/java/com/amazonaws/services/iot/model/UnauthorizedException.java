@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.iot.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You are not authorized to perform this operation.
  * </p>
  */
-public class UnauthorizedException extends AmazonServiceException {
+public class UnauthorizedException extends
+        com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 
     /**

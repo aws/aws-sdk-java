@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.cloudtrail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Occurs if the timestamp values are invalid. Either the start time occurs
  * after the end time or the time range is outside the range of possible values.
  * </p>
  */
-public class InvalidTimeRangeException extends AmazonServiceException {
+public class InvalidTimeRangeException extends
+        com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 
     /**

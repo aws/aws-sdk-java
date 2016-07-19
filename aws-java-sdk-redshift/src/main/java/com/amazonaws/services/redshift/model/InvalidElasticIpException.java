@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The Elastic IP (EIP) is invalid or cannot be found.
  * </p>
  */
-public class InvalidElasticIpException extends AmazonServiceException {
+public class InvalidElasticIpException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

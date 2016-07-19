@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The image layer already exists in the associated repository.
  * </p>
  */
-public class LayerAlreadyExistsException extends AmazonServiceException {
+public class LayerAlreadyExistsException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

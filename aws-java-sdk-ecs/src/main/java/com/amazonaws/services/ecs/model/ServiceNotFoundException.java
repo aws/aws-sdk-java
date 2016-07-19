@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.ecs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified service could not be found. You can view your available
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * and region-specific.
  * </p>
  */
-public class ServiceNotFoundException extends AmazonServiceException {
+public class ServiceNotFoundException extends
+        com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.certificatemanager.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request contains too many tags. Try the request again with fewer tags.
  * </p>
  */
-public class TooManyTagsException extends AmazonServiceException {
+public class TooManyTagsException
+        extends
+        com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException {
     private static final long serialVersionUID = 1L;
 
     /**

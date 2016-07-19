@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The limit for lifecycle hooks was exceeded.
  * </p>
  */
-public class LifecycleHookLimitExceededException extends AmazonServiceException {
+public class LifecycleHookLimitExceededException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

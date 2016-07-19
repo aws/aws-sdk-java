@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.ecs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You cannot delete a cluster that contains services. You must first update the
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * For more information, see <a>UpdateService</a> and <a>DeleteService</a>.
  * </p>
  */
-public class ClusterContainsServicesException extends AmazonServiceException {
+public class ClusterContainsServicesException extends
+        com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.autoscaling.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The <code>NextToken</code> value is not valid.
  * </p>
  */
-public class InvalidNextTokenException extends AmazonServiceException {
+public class InvalidNextTokenException extends
+        com.amazonaws.services.autoscaling.model.AmazonAutoScalingException {
     private static final long serialVersionUID = 1L;
 
     /**

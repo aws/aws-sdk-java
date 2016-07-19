@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The instance is not in valid state. Valid states are: Running, Pending,
  * Stopped, Stopping. Invalid states are: Shutting-down and Terminated.
  * </p>
  */
-public class InvalidInstanceIdException extends AmazonServiceException {
+public class InvalidInstanceIdException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

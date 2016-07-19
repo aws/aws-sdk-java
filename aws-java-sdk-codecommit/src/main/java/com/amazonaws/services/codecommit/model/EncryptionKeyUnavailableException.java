@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The encryption key is not available.
  * </p>
  */
-public class EncryptionKeyUnavailableException extends AmazonServiceException {
+public class EncryptionKeyUnavailableException extends
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

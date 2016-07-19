@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.apigateway.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * 
  */
-public class ServiceUnavailableException extends AmazonServiceException {
+public class ServiceUnavailableException extends
+        com.amazonaws.services.apigateway.model.AmazonApiGatewayException {
     private static final long serialVersionUID = 1L;
 
     private String retryAfterSeconds;

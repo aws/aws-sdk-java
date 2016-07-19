@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.kms.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because it attempted to create a resource that
  * already exists.
  * </p>
  */
-public class AlreadyExistsException extends AmazonServiceException {
+public class AlreadyExistsException extends
+        com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 
     /**

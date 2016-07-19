@@ -105,6 +105,16 @@ public class CommandJsonUnmarshaller implements
                     command.setOutputS3KeyPrefix(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("ServiceRole", targetDepth)) {
+                    context.nextToken();
+                    command.setServiceRole(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NotificationConfig", targetDepth)) {
+                    context.nextToken();
+                    command.setNotificationConfig(NotificationConfigJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

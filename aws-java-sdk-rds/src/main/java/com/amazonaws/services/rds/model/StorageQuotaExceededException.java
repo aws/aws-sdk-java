@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Request would result in user exceeding the allowed amount of storage
  * available across all DB instances.
  * </p>
  */
-public class StorageQuotaExceededException extends AmazonServiceException {
+public class StorageQuotaExceededException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

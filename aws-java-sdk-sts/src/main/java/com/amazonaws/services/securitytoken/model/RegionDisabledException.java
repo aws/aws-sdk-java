@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.securitytoken.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * STS is not activated in the requested region for the account that is being
@@ -28,7 +26,9 @@ import com.amazonaws.AmazonServiceException;
  * Guide</i>.
  * </p>
  */
-public class RegionDisabledException extends AmazonServiceException {
+public class RegionDisabledException
+        extends
+        com.amazonaws.services.securitytoken.model.AWSSecurityTokenServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

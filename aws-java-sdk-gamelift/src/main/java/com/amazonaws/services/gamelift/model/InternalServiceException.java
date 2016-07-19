@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.gamelift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The service encountered an unrecoverable internal failure while processing
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * back-off period.
  * </p>
  */
-public class InternalServiceException extends AmazonServiceException {
+public class InternalServiceException extends
+        com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 
     /**

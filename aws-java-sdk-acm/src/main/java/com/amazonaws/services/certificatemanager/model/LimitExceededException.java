@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.certificatemanager.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An ACM limit has been exceeded. For example, you may have input more domains
@@ -28,7 +26,9 @@ import com.amazonaws.AmazonServiceException;
  * >Limits</a> topic.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException
+        extends
+        com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException {
     private static final long serialVersionUID = 1L;
 
     /**

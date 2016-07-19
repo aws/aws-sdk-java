@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified CIDRIP or EC2 security group is already authorized for the
  * specified DB security group.
  * </p>
  */
-public class AuthorizationAlreadyExistsException extends AmazonServiceException {
+public class AuthorizationAlreadyExistsException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

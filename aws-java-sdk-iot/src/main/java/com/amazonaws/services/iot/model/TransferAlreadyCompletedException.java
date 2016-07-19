@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.iot.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You can't revert the certificate transfer because the transfer is already
  * complete.
  * </p>
  */
-public class TransferAlreadyCompletedException extends AmazonServiceException {
+public class TransferAlreadyCompletedException extends
+        com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 
     /**

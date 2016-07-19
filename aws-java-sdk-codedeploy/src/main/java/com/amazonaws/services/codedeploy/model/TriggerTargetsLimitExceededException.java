@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The maximum allowed number of triggers was exceeded.
  * </p>
  */
 public class TriggerTargetsLimitExceededException extends
-        AmazonServiceException {
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

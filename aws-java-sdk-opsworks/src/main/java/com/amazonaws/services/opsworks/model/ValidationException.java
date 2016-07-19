@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.opsworks.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that a request was not valid.
  * </p>
  */
-public class ValidationException extends AmazonServiceException {
+public class ValidationException extends
+        com.amazonaws.services.opsworks.model.AWSOpsWorksException {
     private static final long serialVersionUID = 1L;
 
     /**

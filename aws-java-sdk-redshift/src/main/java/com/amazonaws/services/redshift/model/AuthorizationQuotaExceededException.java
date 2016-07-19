@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The authorization quota for the cluster security group has been reached.
  * </p>
  */
-public class AuthorizationQuotaExceededException extends AmazonServiceException {
+public class AuthorizationQuotaExceededException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

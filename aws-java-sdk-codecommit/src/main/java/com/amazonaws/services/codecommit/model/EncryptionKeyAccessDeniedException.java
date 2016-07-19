@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An encryption key could not be accessed.
  * </p>
  */
-public class EncryptionKeyAccessDeniedException extends AmazonServiceException {
+public class EncryptionKeyAccessDeniedException extends
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

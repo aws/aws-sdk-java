@@ -92,6 +92,19 @@ public class Command implements Serializable, Cloneable {
      * </p>
      */
     private String outputS3KeyPrefix;
+    /**
+     * <p>
+     * The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes.
+     * </p>
+     */
+    private String serviceRole;
+    /**
+     * <p>
+     * Configurations for sending notifications about command status changes.
+     * </p>
+     */
+    private NotificationConfig notificationConfig;
 
     /**
      * <p>
@@ -640,6 +653,97 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes.
+     * </p>
+     * 
+     * @param serviceRole
+     *        The IAM service role that SSM uses to act on your behalf when
+     *        sending notifications about command status changes.
+     */
+
+    public void setServiceRole(String serviceRole) {
+        this.serviceRole = serviceRole;
+    }
+
+    /**
+     * <p>
+     * The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes.
+     * </p>
+     * 
+     * @return The IAM service role that SSM uses to act on your behalf when
+     *         sending notifications about command status changes.
+     */
+
+    public String getServiceRole() {
+        return this.serviceRole;
+    }
+
+    /**
+     * <p>
+     * The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes.
+     * </p>
+     * 
+     * @param serviceRole
+     *        The IAM service role that SSM uses to act on your behalf when
+     *        sending notifications about command status changes.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Command withServiceRole(String serviceRole) {
+        setServiceRole(serviceRole);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configurations for sending notifications about command status changes.
+     * </p>
+     * 
+     * @param notificationConfig
+     *        Configurations for sending notifications about command status
+     *        changes.
+     */
+
+    public void setNotificationConfig(NotificationConfig notificationConfig) {
+        this.notificationConfig = notificationConfig;
+    }
+
+    /**
+     * <p>
+     * Configurations for sending notifications about command status changes.
+     * </p>
+     * 
+     * @return Configurations for sending notifications about command status
+     *         changes.
+     */
+
+    public NotificationConfig getNotificationConfig() {
+        return this.notificationConfig;
+    }
+
+    /**
+     * <p>
+     * Configurations for sending notifications about command status changes.
+     * </p>
+     * 
+     * @param notificationConfig
+     *        Configurations for sending notifications about command status
+     *        changes.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Command withNotificationConfig(NotificationConfig notificationConfig) {
+        setNotificationConfig(notificationConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -670,7 +774,11 @@ public class Command implements Serializable, Cloneable {
         if (getOutputS3BucketName() != null)
             sb.append("OutputS3BucketName: " + getOutputS3BucketName() + ",");
         if (getOutputS3KeyPrefix() != null)
-            sb.append("OutputS3KeyPrefix: " + getOutputS3KeyPrefix());
+            sb.append("OutputS3KeyPrefix: " + getOutputS3KeyPrefix() + ",");
+        if (getServiceRole() != null)
+            sb.append("ServiceRole: " + getServiceRole() + ",");
+        if (getNotificationConfig() != null)
+            sb.append("NotificationConfig: " + getNotificationConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -741,6 +849,18 @@ public class Command implements Serializable, Cloneable {
                 && other.getOutputS3KeyPrefix().equals(
                         this.getOutputS3KeyPrefix()) == false)
             return false;
+        if (other.getServiceRole() == null ^ this.getServiceRole() == null)
+            return false;
+        if (other.getServiceRole() != null
+                && other.getServiceRole().equals(this.getServiceRole()) == false)
+            return false;
+        if (other.getNotificationConfig() == null
+                ^ this.getNotificationConfig() == null)
+            return false;
+        if (other.getNotificationConfig() != null
+                && other.getNotificationConfig().equals(
+                        this.getNotificationConfig()) == false)
+            return false;
         return true;
     }
 
@@ -780,6 +900,13 @@ public class Command implements Serializable, Cloneable {
                 * hashCode
                 + ((getOutputS3KeyPrefix() == null) ? 0
                         : getOutputS3KeyPrefix().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNotificationConfig() == null) ? 0
+                        : getNotificationConfig().hashCode());
         return hashCode;
     }
 

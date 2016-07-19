@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You've created the maximum number of traffic policies that can be created for
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * href="http://aws.amazon.com/route53-request/">Contact Us</a> page.
  * </p>
  */
-public class TooManyTrafficPoliciesException extends AmazonServiceException {
+public class TooManyTrafficPoliciesException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

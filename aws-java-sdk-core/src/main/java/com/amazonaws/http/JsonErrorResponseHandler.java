@@ -14,24 +14,24 @@
  */
 package com.amazonaws.http;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
-import com.amazonaws.annotation.SdkInternalApi;
-import com.amazonaws.transform.JsonErrorUnmarshaller;
-import com.fasterxml.jackson.core.JsonFactory;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.internal.http.JsonErrorCodeParser;
 import com.amazonaws.internal.http.JsonErrorMessageParser;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
 import com.amazonaws.util.IOUtils;
+import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 @SdkInternalApi
 public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServiceException> {
@@ -97,12 +97,10 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
      * @return AmazonServiceException
      */
     private AmazonServiceException createException(String errorCode, JsonContent jsonContent) {
-        if (!jsonContent.isJsonValid()) {
-            return new AmazonServiceException("Unable to parse HTTP response content");
-        }
         AmazonServiceException ase = unmarshallException(errorCode, jsonContent);
         if (ase == null) {
-            ase = new AmazonServiceException("Unable to unmarshall exception response with the unmarshallers provided");
+            ase = new AmazonServiceException(
+                    "Unable to unmarshall exception response with the unmarshallers provided");
         }
         return ase;
     }
@@ -147,8 +145,7 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
          * Static factory method to create a JsonContent object from the contents of the
          * HttpResponse provided
          */
-        public static JsonContent createJsonContent(HttpResponse
-                                                            httpResponse,
+        public static JsonContent createJsonContent(HttpResponse httpResponse,
                                                     JsonFactory jsonFactory) {
             byte[] rawJsonContent = null;
             try {
@@ -158,10 +155,8 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
             } catch (Exception e) {
                 LOG.info("Unable to read HTTP response content", e);
             }
-            return new JsonContent(rawJsonContent, new ObjectMapper
-                    (jsonFactory).configure(JsonParser.Feature
-                    .ALLOW_COMMENTS, true));
-
+            return new JsonContent(rawJsonContent, new ObjectMapper(jsonFactory)
+                    .configure(JsonParser.Feature.ALLOW_COMMENTS, true));
         }
 
         private JsonContent(byte[] rawJsonContent, ObjectMapper mapper) {
@@ -179,12 +174,8 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
                 return mapper.readTree(rawJsonContent);
             } catch (Exception e) {
                 LOG.info("Unable to parse HTTP response content", e);
-                return null;
+                return mapper.createObjectNode();
             }
-        }
-
-        public boolean isJsonValid() {
-            return jsonNode != null;
         }
     }
 }

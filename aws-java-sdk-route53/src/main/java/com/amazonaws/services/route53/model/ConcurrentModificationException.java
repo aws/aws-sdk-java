@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Another user submitted a request to update the object at the same time that
  * you did. Retry the request.
  * </p>
  */
-public class ConcurrentModificationException extends AmazonServiceException {
+public class ConcurrentModificationException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

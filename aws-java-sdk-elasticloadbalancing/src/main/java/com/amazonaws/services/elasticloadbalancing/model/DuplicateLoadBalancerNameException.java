@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elasticloadbalancing.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified load balancer name already exists for this account.
  * </p>
  */
-public class DuplicateLoadBalancerNameException extends AmazonServiceException {
+public class DuplicateLoadBalancerNameException
+        extends
+        com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 
     /**

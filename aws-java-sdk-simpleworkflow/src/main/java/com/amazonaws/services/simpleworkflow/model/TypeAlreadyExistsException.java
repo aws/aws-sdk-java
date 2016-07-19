@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.simpleworkflow.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the type already exists in the specified domain. You will get
@@ -26,7 +24,9 @@ import com.amazonaws.AmazonServiceException;
  * type.
  * </p>
  */
-public class TypeAlreadyExistsException extends AmazonServiceException {
+public class TypeAlreadyExistsException
+        extends
+        com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException {
     private static final long serialVersionUID = 1L;
 
     /**

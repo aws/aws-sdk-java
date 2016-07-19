@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The application name was specified in an invalid format.
  * </p>
  */
-public class InvalidApplicationNameException extends AmazonServiceException {
+public class InvalidApplicationNameException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

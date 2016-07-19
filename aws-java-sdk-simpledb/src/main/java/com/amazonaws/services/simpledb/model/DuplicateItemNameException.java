@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.simpledb.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The item name was specified more than once.
  * </p>
  */
-public class DuplicateItemNameException extends AmazonServiceException {
+public class DuplicateItemNameException extends
+        com.amazonaws.services.simpledb.model.AmazonSimpleDBException {
     private static final long serialVersionUID = 1L;
 
     private Float boxUsage;

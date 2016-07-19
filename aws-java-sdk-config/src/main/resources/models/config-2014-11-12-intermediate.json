@@ -19,15 +19,15 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "config",
     "signingName" : "config",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonConfigClientBuilder",
     "asyncClientBuilderClassName" : "AmazonConfigAsyncClientBuilder",
     "serviceName" : "Config Service",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "DeleteConfigRule" : {
@@ -55,12 +55,12 @@
         "documentation" : "<p>The rule is currently being deleted. Wait for a while and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteConfigRuleResult",
       "asyncReturnType" : "DeleteConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteConfigRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteConfigRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConfigRuleRequest, DeleteConfigRuleResult>",
+      "authenticated" : true,
       "methodName" : "deleteConfigRule"
     },
     "DeleteConfigurationRecorder" : {
@@ -85,12 +85,12 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteConfigurationRecorderResult",
       "asyncReturnType" : "DeleteConfigurationRecorderResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteConfigurationRecorderResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteConfigurationRecorderResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteConfigurationRecorderRequest, DeleteConfigurationRecorderResult>",
+      "authenticated" : true,
       "methodName" : "deleteConfigurationRecorder"
     },
     "DeleteDeliveryChannel" : {
@@ -118,12 +118,12 @@
         "documentation" : "<p>You cannot delete the delivery channel you specified because the configuration recorder is running.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteDeliveryChannelResult",
       "asyncReturnType" : "DeleteDeliveryChannelResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDeliveryChannelResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDeliveryChannelResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDeliveryChannelRequest, DeleteDeliveryChannelResult>",
+      "authenticated" : true,
       "methodName" : "deleteDeliveryChannel"
     },
     "DeliverConfigSnapshot" : {
@@ -154,12 +154,12 @@
         "documentation" : "<p>There is no configuration recorder running.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeliverConfigSnapshotResult",
       "asyncReturnType" : "DeliverConfigSnapshotResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeliverConfigSnapshotResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeliverConfigSnapshotResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeliverConfigSnapshotRequest, DeliverConfigSnapshotResult>",
+      "authenticated" : true,
       "methodName" : "deliverConfigSnapshot"
     },
     "DescribeComplianceByConfigRule" : {
@@ -187,12 +187,12 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeComplianceByConfigRuleResult",
       "asyncReturnType" : "DescribeComplianceByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeComplianceByConfigRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeComplianceByConfigRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeComplianceByConfigRuleRequest, DescribeComplianceByConfigRuleResult>",
+      "authenticated" : true,
       "methodName" : "describeComplianceByConfigRule"
     },
     "DescribeComplianceByResource" : {
@@ -220,12 +220,12 @@
         "documentation" : "<p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeComplianceByResourceResult",
       "asyncReturnType" : "DescribeComplianceByResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeComplianceByResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeComplianceByResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeComplianceByResourceRequest, DescribeComplianceByResourceResult>",
+      "authenticated" : true,
       "methodName" : "describeComplianceByResource"
     },
     "DescribeConfigRuleEvaluationStatus" : {
@@ -250,12 +250,12 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeConfigRuleEvaluationStatusResult",
       "asyncReturnType" : "DescribeConfigRuleEvaluationStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigRuleEvaluationStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigRuleEvaluationStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigRuleEvaluationStatusRequest, DescribeConfigRuleEvaluationStatusResult>",
+      "authenticated" : true,
       "methodName" : "describeConfigRuleEvaluationStatus"
     },
     "DescribeConfigRules" : {
@@ -280,12 +280,12 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeConfigRulesResult",
       "asyncReturnType" : "DescribeConfigRulesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigRulesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigRulesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigRulesRequest, DescribeConfigRulesResult>",
+      "authenticated" : true,
       "methodName" : "describeConfigRules"
     },
     "DescribeConfigurationRecorderStatus" : {
@@ -310,12 +310,12 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeConfigurationRecorderStatusResult",
       "asyncReturnType" : "DescribeConfigurationRecorderStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationRecorderStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigurationRecorderStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationRecorderStatusRequest, DescribeConfigurationRecorderStatusResult>",
+      "authenticated" : true,
       "methodName" : "describeConfigurationRecorderStatus"
     },
     "DescribeConfigurationRecorders" : {
@@ -340,12 +340,12 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeConfigurationRecordersResult",
       "asyncReturnType" : "DescribeConfigurationRecordersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConfigurationRecordersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConfigurationRecordersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConfigurationRecordersRequest, DescribeConfigurationRecordersResult>",
+      "authenticated" : true,
       "methodName" : "describeConfigurationRecorders"
     },
     "DescribeDeliveryChannelStatus" : {
@@ -370,12 +370,12 @@
         "documentation" : "<p>You have specified a delivery channel that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeDeliveryChannelStatusResult",
       "asyncReturnType" : "DescribeDeliveryChannelStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDeliveryChannelStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDeliveryChannelStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDeliveryChannelStatusRequest, DescribeDeliveryChannelStatusResult>",
+      "authenticated" : true,
       "methodName" : "describeDeliveryChannelStatus"
     },
     "DescribeDeliveryChannels" : {
@@ -400,12 +400,12 @@
         "documentation" : "<p>You have specified a delivery channel that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeDeliveryChannelsResult",
       "asyncReturnType" : "DescribeDeliveryChannelsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDeliveryChannelsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDeliveryChannelsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDeliveryChannelsRequest, DescribeDeliveryChannelsResult>",
+      "authenticated" : true,
       "methodName" : "describeDeliveryChannels"
     },
     "GetComplianceDetailsByConfigRule" : {
@@ -436,12 +436,12 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetComplianceDetailsByConfigRuleResult",
       "asyncReturnType" : "GetComplianceDetailsByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceDetailsByConfigRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetComplianceDetailsByConfigRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetComplianceDetailsByConfigRuleRequest, GetComplianceDetailsByConfigRuleResult>",
+      "authenticated" : true,
       "methodName" : "getComplianceDetailsByConfigRule"
     },
     "GetComplianceDetailsByResource" : {
@@ -466,12 +466,12 @@
         "documentation" : "<p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetComplianceDetailsByResourceResult",
       "asyncReturnType" : "GetComplianceDetailsByResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceDetailsByResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetComplianceDetailsByResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetComplianceDetailsByResourceRequest, GetComplianceDetailsByResourceResult>",
+      "authenticated" : true,
       "methodName" : "getComplianceDetailsByResource"
     },
     "GetComplianceSummaryByConfigRule" : {
@@ -493,12 +493,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetComplianceSummaryByConfigRuleResult",
       "asyncReturnType" : "GetComplianceSummaryByConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceSummaryByConfigRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetComplianceSummaryByConfigRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryByConfigRuleRequest, GetComplianceSummaryByConfigRuleResult>",
+      "authenticated" : true,
       "methodName" : "getComplianceSummaryByConfigRule"
     },
     "GetComplianceSummaryByResourceType" : {
@@ -523,12 +523,12 @@
         "documentation" : "<p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetComplianceSummaryByResourceTypeResult",
       "asyncReturnType" : "GetComplianceSummaryByResourceTypeResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetComplianceSummaryByResourceTypeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetComplianceSummaryByResourceTypeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryByResourceTypeRequest, GetComplianceSummaryByResourceTypeResult>",
+      "authenticated" : true,
       "methodName" : "getComplianceSummaryByResourceType"
     },
     "GetResourceConfigHistory" : {
@@ -568,12 +568,12 @@
         "documentation" : "<p>You have specified a resource that is either unknown or has not been discovered.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetResourceConfigHistoryResult",
       "asyncReturnType" : "GetResourceConfigHistoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetResourceConfigHistoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetResourceConfigHistoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetResourceConfigHistoryRequest, GetResourceConfigHistoryResult>",
+      "authenticated" : true,
       "methodName" : "getResourceConfigHistory"
     },
     "ListDiscoveredResources" : {
@@ -607,12 +607,12 @@
         "documentation" : "<p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListDiscoveredResourcesResult",
       "asyncReturnType" : "ListDiscoveredResourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDiscoveredResourcesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDiscoveredResourcesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDiscoveredResourcesRequest, ListDiscoveredResourcesResult>",
+      "authenticated" : true,
       "methodName" : "listDiscoveredResources"
     },
     "PutConfigRule" : {
@@ -649,12 +649,12 @@
         "documentation" : "<p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutConfigRuleResult",
       "asyncReturnType" : "PutConfigRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutConfigRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutConfigRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutConfigRuleRequest, PutConfigRuleResult>",
+      "authenticated" : true,
       "methodName" : "putConfigRule"
     },
     "PutConfigurationRecorder" : {
@@ -688,12 +688,12 @@
         "documentation" : "<p>AWS Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values could also be incorrectly formatted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutConfigurationRecorderResult",
       "asyncReturnType" : "PutConfigurationRecorderResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutConfigurationRecorderResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutConfigurationRecorderResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutConfigurationRecorderRequest, PutConfigurationRecorderResult>",
+      "authenticated" : true,
       "methodName" : "putConfigurationRecorder"
     },
     "PutDeliveryChannel" : {
@@ -736,12 +736,12 @@
         "documentation" : "<p>Your Amazon S3 bucket policy does not permit AWS Config to write to it.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutDeliveryChannelResult",
       "asyncReturnType" : "PutDeliveryChannelResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutDeliveryChannelResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutDeliveryChannelResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutDeliveryChannelRequest, PutDeliveryChannelResult>",
+      "authenticated" : true,
       "methodName" : "putDeliveryChannel"
     },
     "PutEvaluations" : {
@@ -772,12 +772,12 @@
         "documentation" : "<p>One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try again.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "PutEvaluationsResult",
       "asyncReturnType" : "PutEvaluationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutEvaluationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutEvaluationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutEvaluationsRequest, PutEvaluationsResult>",
+      "authenticated" : true,
       "methodName" : "putEvaluations"
     },
     "StartConfigurationRecorder" : {
@@ -805,12 +805,12 @@
         "documentation" : "<p>There is no delivery channel available to record configurations.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "StartConfigurationRecorderResult",
       "asyncReturnType" : "StartConfigurationRecorderResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartConfigurationRecorderResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartConfigurationRecorderResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartConfigurationRecorderRequest, StartConfigurationRecorderResult>",
+      "authenticated" : true,
       "methodName" : "startConfigurationRecorder"
     },
     "StopConfigurationRecorder" : {
@@ -835,12 +835,12 @@
         "documentation" : "<p>You have specified a configuration recorder that does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "StopConfigurationRecorderResult",
       "asyncReturnType" : "StopConfigurationRecorderResult",
       "asyncFutureType" : "java.util.concurrent.Future<StopConfigurationRecorderResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StopConfigurationRecorderResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopConfigurationRecorderRequest, StopConfigurationRecorderResult>",
+      "authenticated" : true,
       "methodName" : "stopConfigurationRecorder"
     }
   },
@@ -24469,12 +24469,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, String>",
-          "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "entryType" : "Map.Entry<String, String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -25879,12 +25879,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, String>",
-            "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "entryType" : "Map.Entry<String, String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -29380,6 +29380,8 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
@@ -29387,5 +29389,8 @@
     "operationExamples" : { }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "exceptionUnmarshallerImpl" : null,
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.config.model.AmazonConfigException",
+  "sdkModeledExceptionBaseClassName" : "AmazonConfigException"
 }

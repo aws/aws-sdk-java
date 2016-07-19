@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codepipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified stage declaration was specified in an invalid format.
  * </p>
  */
-public class InvalidStageDeclarationException extends AmazonServiceException {
+public class InvalidStageDeclarationException extends
+        com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

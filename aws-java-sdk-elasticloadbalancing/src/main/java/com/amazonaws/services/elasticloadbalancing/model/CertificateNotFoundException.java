@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticloadbalancing.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified SSL ID does not refer to a valid SSL certificate in AWS
  * Identity and Access Management (IAM).
  * </p>
  */
-public class CertificateNotFoundException extends AmazonServiceException {
+public class CertificateNotFoundException
+        extends
+        com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 
     /**

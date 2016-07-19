@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified commit ID does not exist.
  * </p>
  */
-public class CommitIdDoesNotExistException extends AmazonServiceException {
+public class CommitIdDoesNotExistException extends
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

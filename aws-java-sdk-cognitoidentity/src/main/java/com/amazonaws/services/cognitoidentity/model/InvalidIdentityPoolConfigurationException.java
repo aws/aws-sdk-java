@@ -16,16 +16,15 @@
 
 package com.amazonaws.services.cognitoidentity.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Thrown if the identity pool has no role associated for the given auth type
  * (auth/unauth) or if the AssumeRole fails.
  * </p>
  */
-public class InvalidIdentityPoolConfigurationException extends
-        AmazonServiceException {
+public class InvalidIdentityPoolConfigurationException
+        extends
+        com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException {
     private static final long serialVersionUID = 1L;
 
     /**

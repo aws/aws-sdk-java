@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.cognitosync.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * 
  */
-public class InvalidConfigurationException extends AmazonServiceException {
+public class InvalidConfigurationException extends
+        com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException {
     private static final long serialVersionUID = 1L;
 
     /**

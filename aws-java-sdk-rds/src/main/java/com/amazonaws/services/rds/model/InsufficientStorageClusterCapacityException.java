@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * There is insufficient storage available for the current action. You may be
@@ -26,7 +24,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class InsufficientStorageClusterCapacityException extends
-        AmazonServiceException {
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

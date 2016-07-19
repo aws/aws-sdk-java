@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The activation ID is not valid. Verify the you entered the correct
  * ActivationId or ActivationCode and try again.
  * </p>
  */
-public class InvalidActivationIdException extends AmazonServiceException {
+public class InvalidActivationIdException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

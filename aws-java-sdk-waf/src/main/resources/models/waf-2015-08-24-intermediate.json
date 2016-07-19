@@ -19,6 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "waf",
     "signingName" : "waf",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSWAFClientBuilder",
     "asyncClientBuilderClassName" : "AWSWAFAsyncClientBuilder",
@@ -26,8 +27,7 @@
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "CreateByteMatchSet" : {
@@ -33286,6 +33286,8 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
@@ -33293,5 +33295,8 @@
     "operationExamples" : { }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "exceptionUnmarshallerImpl" : null,
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.waf.model.AWSWAFException",
+  "sdkModeledExceptionBaseClassName" : "AWSWAFException"
 }

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.waf.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation failed because you tried to create, update, or delete an object
  * by using an invalid account identifier.
  * </p>
  */
-public class WAFInvalidAccountException extends AmazonServiceException {
+public class WAFInvalidAccountException extends
+        com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     /**

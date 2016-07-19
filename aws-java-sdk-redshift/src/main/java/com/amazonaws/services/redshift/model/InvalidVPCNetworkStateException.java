@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The cluster subnet group does not cover all Availability Zones.
  * </p>
  */
-public class InvalidVPCNetworkStateException extends AmazonServiceException {
+public class InvalidVPCNetworkStateException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

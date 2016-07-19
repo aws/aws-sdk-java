@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.lambda.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The AWS Lambda service encountered an internal error.
  * </p>
  */
-public class ServiceException extends AmazonServiceException {
+public class ServiceException extends
+        com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
     private String type;

@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.securitytoken.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the policy document was malformed. The error
  * message describes the specific error.
  * </p>
  */
-public class MalformedPolicyDocumentException extends AmazonServiceException {
+public class MalformedPolicyDocumentException
+        extends
+        com.amazonaws.services.securitytoken.model.AWSSecurityTokenServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

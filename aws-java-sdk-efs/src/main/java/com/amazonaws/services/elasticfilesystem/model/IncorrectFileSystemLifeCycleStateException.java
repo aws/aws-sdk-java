@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the file system's life cycle state is not "created".
  * </p>
  */
-public class IncorrectFileSystemLifeCycleStateException extends
-        AmazonServiceException {
+public class IncorrectFileSystemLifeCycleStateException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

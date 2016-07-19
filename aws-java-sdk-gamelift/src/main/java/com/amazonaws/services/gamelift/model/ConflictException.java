@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.gamelift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested operation would cause a conflict with the current state of a
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * retrying this request.
  * </p>
  */
-public class ConflictException extends AmazonServiceException {
+public class ConflictException extends
+        com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 
     /**

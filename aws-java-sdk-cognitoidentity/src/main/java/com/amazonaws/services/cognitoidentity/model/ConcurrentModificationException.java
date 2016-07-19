@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.cognitoidentity.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Thrown if there are parallel requests to modify a resource.
  * </p>
  */
-public class ConcurrentModificationException extends AmazonServiceException {
+public class ConcurrentModificationException
+        extends
+        com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException {
     private static final long serialVersionUID = 1L;
 
     /**

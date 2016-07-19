@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The hosted zone you are trying to create for your VPC_ID does not belong to
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * <code>VPCId</code> does not belong to you.
  * </p>
  */
-public class InvalidVPCIdException extends AmazonServiceException {
+public class InvalidVPCIdException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

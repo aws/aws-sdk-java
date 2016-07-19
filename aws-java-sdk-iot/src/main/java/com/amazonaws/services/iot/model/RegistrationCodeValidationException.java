@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.iot.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The registration code is invalid.
  * </p>
  */
-public class RegistrationCodeValidationException extends AmazonServiceException {
+public class RegistrationCodeValidationException extends
+        com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 
     /**

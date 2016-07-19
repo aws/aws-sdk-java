@@ -16,13 +16,13 @@
 
 package com.amazonaws.services.cognitoidentity.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * Thrown when a user tries to use a login which is already linked to another
  * account.
  */
-public class ResourceConflictException extends AmazonServiceException {
+public class ResourceConflictException
+        extends
+        com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException {
     private static final long serialVersionUID = 1L;
 
     /**

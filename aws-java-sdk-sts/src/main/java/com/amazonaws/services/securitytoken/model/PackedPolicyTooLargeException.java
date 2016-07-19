@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.securitytoken.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the policy document was too large. The error
@@ -25,7 +23,9 @@ import com.amazonaws.AmazonServiceException;
  * percentage of what the API allows.
  * </p>
  */
-public class PackedPolicyTooLargeException extends AmazonServiceException {
+public class PackedPolicyTooLargeException
+        extends
+        com.amazonaws.services.securitytoken.model.AWSSecurityTokenServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

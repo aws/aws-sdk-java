@@ -20,14 +20,14 @@
     "endpointPrefix" : "logs",
     "signingName" : "logs",
     "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSLogsClientBuilder",
     "asyncClientBuilderClassName" : "AWSLogsAsyncClientBuilder",
     "serviceName" : "Amazon CloudWatch Logs",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "jsonProtocol" : true
   },
   "operations" : {
     "CancelExportTask" : {
@@ -23830,12 +23830,17 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "sdkModeledExceptionBaseClassName" : "AWSLogsException",
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "exceptionUnmarshallerImpl" : null,
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.logs.model.AWSLogsException"
 }

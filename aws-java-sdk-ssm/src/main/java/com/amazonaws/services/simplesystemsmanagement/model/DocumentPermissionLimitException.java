@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The document cannot be shared with more AWS user accounts. You can share a
@@ -25,7 +23,9 @@ import com.amazonaws.AmazonServiceException;
  * documents. If you need to increase this limit, contact AWS Support.
  * </p>
  */
-public class DocumentPermissionLimitException extends AmazonServiceException {
+public class DocumentPermissionLimitException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

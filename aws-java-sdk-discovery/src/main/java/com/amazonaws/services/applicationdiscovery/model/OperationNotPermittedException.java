@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.applicationdiscovery.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This operation is not permitted.
  * </p>
  */
-public class OperationNotPermittedException extends AmazonServiceException {
+public class OperationNotPermittedException
+        extends
+        com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException {
     private static final long serialVersionUID = 1L;
 
     /**

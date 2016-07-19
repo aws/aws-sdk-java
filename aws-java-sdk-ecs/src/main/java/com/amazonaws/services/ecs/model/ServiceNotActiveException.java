@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.ecs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified service is not active. You cannot update a service that is not
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * <a>CreateService</a>.
  * </p>
  */
-public class ServiceNotActiveException extends AmazonServiceException {
+public class ServiceNotActiveException extends
+        com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 
     /**

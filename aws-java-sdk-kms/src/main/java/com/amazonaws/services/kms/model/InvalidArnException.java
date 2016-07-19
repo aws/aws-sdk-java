@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.kms.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because a specified ARN was not valid.
  * </p>
  */
-public class InvalidArnException extends AmazonServiceException {
+public class InvalidArnException extends
+        com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 
     /**

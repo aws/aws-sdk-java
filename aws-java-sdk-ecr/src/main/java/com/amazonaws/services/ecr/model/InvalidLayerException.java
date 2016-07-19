@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The layer digest calculation performed by Amazon ECR upon receipt of the
  * image layer does not match the digest specified.
  * </p>
  */
-public class InvalidLayerException extends AmazonServiceException {
+public class InvalidLayerException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.logs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the specified resource already exists.
  * </p>
  */
-public class ResourceAlreadyExistsException extends AmazonServiceException {
+public class ResourceAlreadyExistsException extends
+        com.amazonaws.services.logs.model.AWSLogsException {
     private static final long serialVersionUID = 1L;
 
     /**

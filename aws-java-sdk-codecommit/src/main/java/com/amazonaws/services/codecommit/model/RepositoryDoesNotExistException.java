@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified repository does not exist.
  * </p>
  */
-public class RepositoryDoesNotExistException extends AmazonServiceException {
+public class RepositoryDoesNotExistException extends
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

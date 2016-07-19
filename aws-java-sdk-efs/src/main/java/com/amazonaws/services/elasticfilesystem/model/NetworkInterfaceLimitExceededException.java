@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The calling account has reached the ENI limit for the specific AWS region.
@@ -28,8 +26,9 @@ import com.amazonaws.AmazonServiceException;
  * the Network interfaces per VPC entry in the table).
  * </p>
  */
-public class NetworkInterfaceLimitExceededException extends
-        AmazonServiceException {
+public class NetworkInterfaceLimitExceededException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

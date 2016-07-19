@@ -25,11 +25,13 @@ import org.w3c.dom.Node;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
+import com.amazonaws.annotation.SdkProtectedApi;
 
 /**
  * Unmarshalls an AWS error response into an AmazonServiceException, or
  * optionally, a subclass of AmazonServiceException if this class is extended.
  */
+@SdkProtectedApi
 public class LegacyErrorUnmarshaller implements Unmarshaller<AmazonServiceException, Node> {
     /**
      * The type of AmazonServiceException that will be instantiated. Subclasses
@@ -55,7 +57,7 @@ public class LegacyErrorUnmarshaller implements Unmarshaller<AmazonServiceExcept
      *            The class of AmazonServiceException to create and populate
      *            when unmarshalling the AWS error response.
      */
-    protected LegacyErrorUnmarshaller(Class<? extends AmazonServiceException> exceptionClass) {
+    public LegacyErrorUnmarshaller(Class<? extends AmazonServiceException> exceptionClass) {
         this.exceptionClass = exceptionClass;
     }
 

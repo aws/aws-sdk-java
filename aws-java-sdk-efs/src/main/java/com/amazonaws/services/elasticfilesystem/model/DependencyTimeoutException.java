@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The service timed out trying to fulfill the request, and the client should
  * try the call again.
  * </p>
  */
-public class DependencyTimeoutException extends AmazonServiceException {
+public class DependencyTimeoutException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

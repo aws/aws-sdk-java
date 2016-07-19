@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticbeanstalk.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified account does not have sufficient privileges for one of more AWS
  * services.
  * </p>
  */
-public class InsufficientPrivilegesException extends AmazonServiceException {
+public class InsufficientPrivilegesException
+        extends
+        com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException {
     private static final long serialVersionUID = 1L;
 
     /**

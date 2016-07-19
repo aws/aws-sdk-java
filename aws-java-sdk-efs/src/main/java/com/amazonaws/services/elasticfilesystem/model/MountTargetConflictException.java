@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the mount target would violate one of the specified restrictions
  * based on the file system's existing mount targets.
  * </p>
  */
-public class MountTargetConflictException extends AmazonServiceException {
+public class MountTargetConflictException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

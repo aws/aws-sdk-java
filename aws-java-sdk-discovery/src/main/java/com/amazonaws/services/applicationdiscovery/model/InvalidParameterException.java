@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.applicationdiscovery.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * One or more parameters are not valid. Verify the parameters and try again.
  * </p>
  */
-public class InvalidParameterException extends AmazonServiceException {
+public class InvalidParameterException
+        extends
+        com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException {
     private static final long serialVersionUID = 1L;
 
     /**

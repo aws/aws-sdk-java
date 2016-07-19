@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the most recent credential report has
@@ -28,7 +26,9 @@ import com.amazonaws.AmazonServiceException;
  * >Getting Credential Reports</a> in the <i>IAM User Guide</i>.
  * </p>
  */
-public class CredentialReportExpiredException extends AmazonServiceException {
+public class CredentialReportExpiredException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

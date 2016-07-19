@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * The value of Quantity and the size of Items do not match.
  */
-public class InconsistentQuantitiesException extends AmazonServiceException {
+public class InconsistentQuantitiesException extends
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

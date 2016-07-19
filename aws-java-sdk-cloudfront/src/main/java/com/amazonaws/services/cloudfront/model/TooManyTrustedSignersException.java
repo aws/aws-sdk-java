@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * Your request contains more trusted signers than are allowed per distribution.
  */
-public class TooManyTrustedSignersException extends AmazonServiceException {
+public class TooManyTrustedSignersException extends
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

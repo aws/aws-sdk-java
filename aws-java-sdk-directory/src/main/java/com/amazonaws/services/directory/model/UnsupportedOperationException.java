@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.directory.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation is not supported.
  * </p>
  */
-public class UnsupportedOperationException extends AmazonServiceException {
+public class UnsupportedOperationException extends
+        com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 
     private String requestId;

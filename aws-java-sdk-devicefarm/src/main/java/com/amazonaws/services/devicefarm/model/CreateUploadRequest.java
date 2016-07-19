@@ -35,7 +35,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
     private String projectArn;
     /**
      * <p>
-     * The upload's file name.
+     * The upload's file name. The name should not contain the '/' character.
      * </p>
      */
     private String name;
@@ -188,11 +188,12 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The upload's file name.
+     * The upload's file name. The name should not contain the '/' character.
      * </p>
      * 
      * @param name
-     *        The upload's file name.
+     *        The upload's file name. The name should not contain the '/'
+     *        character.
      */
 
     public void setName(String name) {
@@ -201,10 +202,11 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The upload's file name.
+     * The upload's file name. The name should not contain the '/' character.
      * </p>
      * 
-     * @return The upload's file name.
+     * @return The upload's file name. The name should not contain the '/'
+     *         character.
      */
 
     public String getName() {
@@ -213,11 +215,12 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The upload's file name.
+     * The upload's file name. The name should not contain the '/' character.
      * </p>
      * 
      * @param name
-     *        The upload's file name.
+     *        The upload's file name. The name should not contain the '/'
+     *        character.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

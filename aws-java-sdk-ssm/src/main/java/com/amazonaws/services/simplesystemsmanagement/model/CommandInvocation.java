@@ -75,6 +75,20 @@ public class CommandInvocation implements Serializable, Cloneable {
     private String traceOutput;
 
     private com.amazonaws.internal.SdkInternalList<CommandPlugin> commandPlugins;
+    /**
+     * <p>
+     * The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes on a per instance basis.
+     * </p>
+     */
+    private String serviceRole;
+    /**
+     * <p>
+     * Configurations for sending notifications about command status changes on
+     * a per instance basis.
+     * </p>
+     */
+    private NotificationConfig notificationConfig;
 
     /**
      * <p>
@@ -467,6 +481,104 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes on a per instance basis.
+     * </p>
+     * 
+     * @param serviceRole
+     *        The IAM service role that SSM uses to act on your behalf when
+     *        sending notifications about command status changes on a per
+     *        instance basis.
+     */
+
+    public void setServiceRole(String serviceRole) {
+        this.serviceRole = serviceRole;
+    }
+
+    /**
+     * <p>
+     * The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes on a per instance basis.
+     * </p>
+     * 
+     * @return The IAM service role that SSM uses to act on your behalf when
+     *         sending notifications about command status changes on a per
+     *         instance basis.
+     */
+
+    public String getServiceRole() {
+        return this.serviceRole;
+    }
+
+    /**
+     * <p>
+     * The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes on a per instance basis.
+     * </p>
+     * 
+     * @param serviceRole
+     *        The IAM service role that SSM uses to act on your behalf when
+     *        sending notifications about command status changes on a per
+     *        instance basis.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CommandInvocation withServiceRole(String serviceRole) {
+        setServiceRole(serviceRole);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configurations for sending notifications about command status changes on
+     * a per instance basis.
+     * </p>
+     * 
+     * @param notificationConfig
+     *        Configurations for sending notifications about command status
+     *        changes on a per instance basis.
+     */
+
+    public void setNotificationConfig(NotificationConfig notificationConfig) {
+        this.notificationConfig = notificationConfig;
+    }
+
+    /**
+     * <p>
+     * Configurations for sending notifications about command status changes on
+     * a per instance basis.
+     * </p>
+     * 
+     * @return Configurations for sending notifications about command status
+     *         changes on a per instance basis.
+     */
+
+    public NotificationConfig getNotificationConfig() {
+        return this.notificationConfig;
+    }
+
+    /**
+     * <p>
+     * Configurations for sending notifications about command status changes on
+     * a per instance basis.
+     * </p>
+     * 
+     * @param notificationConfig
+     *        Configurations for sending notifications about command status
+     *        changes on a per instance basis.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CommandInvocation withNotificationConfig(
+            NotificationConfig notificationConfig) {
+        setNotificationConfig(notificationConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -493,7 +605,11 @@ public class CommandInvocation implements Serializable, Cloneable {
         if (getTraceOutput() != null)
             sb.append("TraceOutput: " + getTraceOutput() + ",");
         if (getCommandPlugins() != null)
-            sb.append("CommandPlugins: " + getCommandPlugins());
+            sb.append("CommandPlugins: " + getCommandPlugins() + ",");
+        if (getServiceRole() != null)
+            sb.append("ServiceRole: " + getServiceRole() + ",");
+        if (getNotificationConfig() != null)
+            sb.append("NotificationConfig: " + getNotificationConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -551,6 +667,18 @@ public class CommandInvocation implements Serializable, Cloneable {
         if (other.getCommandPlugins() != null
                 && other.getCommandPlugins().equals(this.getCommandPlugins()) == false)
             return false;
+        if (other.getServiceRole() == null ^ this.getServiceRole() == null)
+            return false;
+        if (other.getServiceRole() != null
+                && other.getServiceRole().equals(this.getServiceRole()) == false)
+            return false;
+        if (other.getNotificationConfig() == null
+                ^ this.getNotificationConfig() == null)
+            return false;
+        if (other.getNotificationConfig() != null
+                && other.getNotificationConfig().equals(
+                        this.getNotificationConfig()) == false)
+            return false;
         return true;
     }
 
@@ -582,6 +710,13 @@ public class CommandInvocation implements Serializable, Cloneable {
                 * hashCode
                 + ((getCommandPlugins() == null) ? 0 : getCommandPlugins()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNotificationConfig() == null) ? 0
+                        : getNotificationConfig().hashCode());
         return hashCode;
     }
 

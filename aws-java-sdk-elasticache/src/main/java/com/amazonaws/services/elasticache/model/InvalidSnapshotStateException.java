@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The current state of the snapshot does not allow the requested action to
  * occur.
  * </p>
  */
-public class InvalidSnapshotStateException extends AmazonServiceException {
+public class InvalidSnapshotStateException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

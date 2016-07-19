@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.dynamodbv2.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An item collection is too large. This exception is only returned for tables
@@ -25,7 +23,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class ItemCollectionSizeLimitExceededException extends
-        AmazonServiceException {
+        com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException {
     private static final long serialVersionUID = 1L;
 
     /**

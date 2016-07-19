@@ -16,13 +16,12 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * You cannot specify SSLv3 as the minimum protocol version if you only want to
  * support only clients that Support Server Name Indication (SNI).
  */
-public class InvalidProtocolSettingsException extends AmazonServiceException {
+public class InvalidProtocolSettingsException extends
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * User attempted to create a new DB cluster and the user has already reached
  * the maximum allowed DB cluster quota.
  * </p>
  */
-public class DBClusterQuotaExceededException extends AmazonServiceException {
+public class DBClusterQuotaExceededException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

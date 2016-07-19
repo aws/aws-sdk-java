@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Cross-region snapshot copy was temporarily disabled. Try your request again.
  * </p>
  */
-public class CopyToRegionDisabledException extends AmazonServiceException {
+public class CopyToRegionDisabledException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

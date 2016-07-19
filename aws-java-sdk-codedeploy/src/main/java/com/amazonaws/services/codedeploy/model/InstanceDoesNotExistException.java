@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified instance does not exist in the deployment group.
  * </p>
  */
-public class InstanceDoesNotExistException extends AmazonServiceException {
+public class InstanceDoesNotExistException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

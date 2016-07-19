@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.cloudformation.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Quota for the resource has already been reached.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException
+        extends
+        com.amazonaws.services.cloudformation.model.AmazonCloudFormationException {
     private static final long serialVersionUID = 1L;
 
     /**

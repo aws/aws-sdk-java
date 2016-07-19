@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elasticbeanstalk.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified account has reached its limit of environments.
  * </p>
  */
-public class TooManyEnvironmentsException extends AmazonServiceException {
+public class TooManyEnvironmentsException
+        extends
+        com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException {
     private static final long serialVersionUID = 1L;
 
     /**

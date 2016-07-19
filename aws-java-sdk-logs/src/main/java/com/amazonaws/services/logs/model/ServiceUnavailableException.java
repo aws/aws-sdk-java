@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.logs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the service cannot complete the request.
  * </p>
  */
-public class ServiceUnavailableException extends AmazonServiceException {
+public class ServiceUnavailableException extends
+        com.amazonaws.services.logs.model.AWSLogsException {
     private static final long serialVersionUID = 1L;
 
     /**

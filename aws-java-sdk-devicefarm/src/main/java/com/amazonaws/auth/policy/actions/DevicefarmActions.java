@@ -31,12 +31,16 @@ public enum DevicefarmActions implements Action {
     CreateDevicePool("devicefarm:CreateDevicePool"),
     /** Action for the CreateProject operation. */
     CreateProject("devicefarm:CreateProject"),
+    /** Action for the CreateRemoteAccessSession operation. */
+    CreateRemoteAccessSession("devicefarm:CreateRemoteAccessSession"),
     /** Action for the CreateUpload operation. */
     CreateUpload("devicefarm:CreateUpload"),
     /** Action for the DeleteDevicePool operation. */
     DeleteDevicePool("devicefarm:DeleteDevicePool"),
     /** Action for the DeleteProject operation. */
     DeleteProject("devicefarm:DeleteProject"),
+    /** Action for the DeleteRemoteAccessSession operation. */
+    DeleteRemoteAccessSession("devicefarm:DeleteRemoteAccessSession"),
     /** Action for the DeleteRun operation. */
     DeleteRun("devicefarm:DeleteRun"),
     /** Action for the DeleteUpload operation. */
@@ -55,6 +59,8 @@ public enum DevicefarmActions implements Action {
     GetOfferingStatus("devicefarm:GetOfferingStatus"),
     /** Action for the GetProject operation. */
     GetProject("devicefarm:GetProject"),
+    /** Action for the GetRemoteAccessSession operation. */
+    GetRemoteAccessSession("devicefarm:GetRemoteAccessSession"),
     /** Action for the GetRun operation. */
     GetRun("devicefarm:GetRun"),
     /** Action for the GetSuite operation. */
@@ -63,6 +69,8 @@ public enum DevicefarmActions implements Action {
     GetTest("devicefarm:GetTest"),
     /** Action for the GetUpload operation. */
     GetUpload("devicefarm:GetUpload"),
+    /** Action for the InstallToRemoteAccessSession operation. */
+    InstallToRemoteAccessSession("devicefarm:InstallToRemoteAccessSession"),
     /** Action for the ListArtifacts operation. */
     ListArtifacts("devicefarm:ListArtifacts"),
     /** Action for the ListDevicePools operation. */
@@ -77,6 +85,8 @@ public enum DevicefarmActions implements Action {
     ListOfferings("devicefarm:ListOfferings"),
     /** Action for the ListProjects operation. */
     ListProjects("devicefarm:ListProjects"),
+    /** Action for the ListRemoteAccessSessions operation. */
+    ListRemoteAccessSessions("devicefarm:ListRemoteAccessSessions"),
     /** Action for the ListRuns operation. */
     ListRuns("devicefarm:ListRuns"),
     /** Action for the ListSamples operation. */
@@ -95,6 +105,8 @@ public enum DevicefarmActions implements Action {
     RenewOffering("devicefarm:RenewOffering"),
     /** Action for the ScheduleRun operation. */
     ScheduleRun("devicefarm:ScheduleRun"),
+    /** Action for the StopRemoteAccessSession operation. */
+    StopRemoteAccessSession("devicefarm:StopRemoteAccessSession"),
     /** Action for the StopRun operation. */
     StopRun("devicefarm:StopRun"),
     /** Action for the UpdateDevicePool operation. */

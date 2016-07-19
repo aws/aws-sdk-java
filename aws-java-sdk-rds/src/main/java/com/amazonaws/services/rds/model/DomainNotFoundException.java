@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * <i>Domain</i> does not refer to an existing Active Directory Domain.
  * </p>
  */
-public class DomainNotFoundException extends AmazonServiceException {
+public class DomainNotFoundException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

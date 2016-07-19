@@ -118,6 +118,15 @@ public class CommandJsonMarshaller {
                 jsonGenerator.writeFieldName("OutputS3KeyPrefix").writeValue(
                         command.getOutputS3KeyPrefix());
             }
+            if (command.getServiceRole() != null) {
+                jsonGenerator.writeFieldName("ServiceRole").writeValue(
+                        command.getServiceRole());
+            }
+            if (command.getNotificationConfig() != null) {
+                jsonGenerator.writeFieldName("NotificationConfig");
+                NotificationConfigJsonMarshaller.getInstance().marshall(
+                        command.getNotificationConfig(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

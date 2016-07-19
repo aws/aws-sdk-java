@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.cloudsearchv2.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because a resource limit has already been met.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException extends
+        com.amazonaws.services.cloudsearchv2.model.AmazonCloudSearchException {
     private static final long serialVersionUID = 1L;
 
     /**

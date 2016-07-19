@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * The address specified in the manifest is invalid.
  */
-public class InvalidAddressException extends AmazonServiceException {
+public class InvalidAddressException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.applicationdiscovery.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The AWS user account does not have permission to perform the action. Check
  * the IAM policy associated with this account.
  * </p>
  */
-public class AuthorizationErrorException extends AmazonServiceException {
+public class AuthorizationErrorException
+        extends
+        com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException {
     private static final long serialVersionUID = 1L;
 
     /**

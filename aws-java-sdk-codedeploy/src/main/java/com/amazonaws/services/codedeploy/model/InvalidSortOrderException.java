@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The sort order was specified in an invalid format.
  * </p>
  */
-public class InvalidSortOrderException extends AmazonServiceException {
+public class InvalidSortOrderException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

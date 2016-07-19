@@ -18,6 +18,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
@@ -29,6 +30,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 <#if customizationConfig.serviceClientHoldInputStream>
 import com.amazonaws.util.ServiceClientHolderInputStream;
 </#if>
+import ${serviceBaseExceptionFqcn};
 
 
 import ${metadata.packageName}.model.*;
@@ -260,6 +262,13 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
         return client.getResponseMetadataForRequest(request);
     </#if>
     }
+
+    <#if customizationConfig.customSignerProvider?has_content>
+    @Override
+    protected final SignerProvider createSignerProvider(Signer signer) {
+        return new ${customizationConfig.customSignerProvider}(this, signer);
+    }
+    </#if>
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the

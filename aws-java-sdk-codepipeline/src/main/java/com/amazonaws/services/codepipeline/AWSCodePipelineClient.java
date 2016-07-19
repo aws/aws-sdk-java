@@ -28,6 +28,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
@@ -36,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.services.codepipeline.model.transform.*;
@@ -378,7 +380,9 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
                                     .withErrorCode(
                                             "NotLatestPipelineExecutionException")
                                     .withModeledClass(
-                                            com.amazonaws.services.codepipeline.model.NotLatestPipelineExecutionException.class)));
+                                            com.amazonaws.services.codepipeline.model.NotLatestPipelineExecutionException.class))
+                    .withBaseServiceExceptionClass(
+                            com.amazonaws.services.codepipeline.model.AWSCodePipelineException.class));
 
     /**
      * Constructs a new client to invoke service methods on CodePipeline. A

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.sns.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that the requested resource does not exist.
  * </p>
  */
-public class NotFoundException extends AmazonServiceException {
+public class NotFoundException extends
+        com.amazonaws.services.sns.model.AmazonSNSException {
     private static final long serialVersionUID = 1L;
 
     /**

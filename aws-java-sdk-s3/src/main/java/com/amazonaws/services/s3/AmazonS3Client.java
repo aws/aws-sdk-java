@@ -54,6 +54,7 @@ import com.amazonaws.internal.ReleasableInputStream;
 import com.amazonaws.internal.ResettableInputStream;
 import com.amazonaws.internal.ServiceEndpointBuilder;
 import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.internal.auth.SignerProvider;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.RegionUtils;
@@ -74,7 +75,6 @@ import com.amazonaws.services.s3.internal.MultiFileOutputStream;
 import com.amazonaws.services.s3.internal.ObjectExpirationHeaderHandler;
 import com.amazonaws.services.s3.internal.ResponseHeaderHandlerChain;
 import com.amazonaws.services.s3.internal.S3ErrorResponseHandler;
-import com.amazonaws.services.s3.internal.S3ExecutionContext;
 import com.amazonaws.services.s3.internal.S3MetadataResponseHandler;
 import com.amazonaws.services.s3.internal.S3ObjectResponseHandler;
 import com.amazonaws.services.s3.internal.S3QueryStringSigner;
@@ -89,6 +89,7 @@ import com.amazonaws.services.s3.internal.ServerSideEncryptionHeaderHandler;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.internal.SkipMd5CheckStrategy;
 import com.amazonaws.services.s3.internal.XmlWriter;
+import com.amazonaws.services.s3.internal.auth.S3SignerProvider;
 import com.amazonaws.services.s3.metrics.S3ServiceMetric;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.AccessControlList;
@@ -3933,9 +3934,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     @Override
-    protected final ExecutionContext createExecutionContext(AmazonWebServiceRequest req) {
-        boolean isMetricsEnabled = isRequestMetricsEnabled(req) || isProfilingEnabled();
-        return new S3ExecutionContext(requestHandler2s, isMetricsEnabled, this);
+    protected final SignerProvider createSignerProvider(Signer signer) {
+        return new S3SignerProvider(this, signer);
     }
 
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
@@ -3944,7 +3944,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         checkHttps(originalRequest);
-        ExecutionContext executionContext = createExecutionContext(originalRequest);
+        S3SignerProvider signerProvider = new S3SignerProvider(this, getSigner());
+        ExecutionContext executionContext = createExecutionContext(originalRequest, signerProvider);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         // Binds the request metrics to the current request.
         request.setAWSRequestMetrics(awsRequestMetrics);
@@ -3981,7 +3982,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
 
             Signer signer = createSigner(request, bucket, key);
-            executionContext.setSigner(signer);
+            signerProvider.setSigner(signer);
 
             // Retry V4 auth errors if signer is explicitly overridden and
             // signer is not a SigV4 signer.

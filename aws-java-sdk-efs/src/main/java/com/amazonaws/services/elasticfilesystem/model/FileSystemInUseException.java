@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if a file system has mount targets.
  * </p>
  */
-public class FileSystemInUseException extends AmazonServiceException {
+public class FileSystemInUseException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * Your manifest is not well-formed.
  */
-public class MalformedManifestException extends AmazonServiceException {
+public class MalformedManifestException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

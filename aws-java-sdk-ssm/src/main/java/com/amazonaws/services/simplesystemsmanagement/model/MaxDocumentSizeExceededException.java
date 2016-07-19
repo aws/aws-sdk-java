@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The size limit of an SSM document is 64 KB.
  * </p>
  */
-public class MaxDocumentSizeExceededException extends AmazonServiceException {
+public class MaxDocumentSizeExceededException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

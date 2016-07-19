@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the file system you are trying to create already exists, with the
  * creation token you provided.
  * </p>
  */
-public class FileSystemAlreadyExistsException extends AmazonServiceException {
+public class FileSystemAlreadyExistsException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

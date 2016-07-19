@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The column name to sort by is either not present or was specified in an
  * invalid format.
  * </p>
  */
-public class InvalidSortByException extends AmazonServiceException {
+public class InvalidSortByException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.datapipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified pipeline was not found. Verify that you used the correct user
  * and account identifiers.
  * </p>
  */
-public class PipelineNotFoundException extends AmazonServiceException {
+public class PipelineNotFoundException extends
+        com.amazonaws.services.datapipeline.model.DataPipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

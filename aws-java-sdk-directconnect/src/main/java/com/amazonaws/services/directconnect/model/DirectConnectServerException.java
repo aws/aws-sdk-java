@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.directconnect.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A server-side error occurred during the API call. The error message will
  * contain additional details about the cause.
  * </p>
  */
-public class DirectConnectServerException extends AmazonServiceException {
+public class DirectConnectServerException extends
+        com.amazonaws.services.directconnect.model.AmazonDirectConnectException {
     private static final long serialVersionUID = 1L;
 
     /**

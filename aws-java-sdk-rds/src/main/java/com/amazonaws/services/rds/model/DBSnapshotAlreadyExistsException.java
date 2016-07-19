@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
  * </p>
  */
-public class DBSnapshotAlreadyExistsException extends AmazonServiceException {
+public class DBSnapshotAlreadyExistsException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

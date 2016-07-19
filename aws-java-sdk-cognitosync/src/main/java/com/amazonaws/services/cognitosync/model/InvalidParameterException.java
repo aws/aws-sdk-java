@@ -16,13 +16,12 @@
 
 package com.amazonaws.services.cognitosync.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * Thrown when a request parameter does not comply with the associated
  * constraints.
  */
-public class InvalidParameterException extends AmazonServiceException {
+public class InvalidParameterException extends
+        com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException {
     private static final long serialVersionUID = 1L;
 
     /**

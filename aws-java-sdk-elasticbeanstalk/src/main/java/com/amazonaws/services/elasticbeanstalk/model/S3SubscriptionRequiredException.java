@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elasticbeanstalk.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified account does not have a subscription to Amazon S3.
  * </p>
  */
-public class S3SubscriptionRequiredException extends AmazonServiceException {
+public class S3SubscriptionRequiredException
+        extends
+        com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException {
     private static final long serialVersionUID = 1L;
 
     /**

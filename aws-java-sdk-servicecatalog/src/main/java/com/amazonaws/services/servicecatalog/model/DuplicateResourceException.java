@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.servicecatalog.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified resource is a duplicate.
  * </p>
  */
-public class DuplicateResourceException extends AmazonServiceException {
+public class DuplicateResourceException extends
+        com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException {
     private static final long serialVersionUID = 1L;
 
     /**

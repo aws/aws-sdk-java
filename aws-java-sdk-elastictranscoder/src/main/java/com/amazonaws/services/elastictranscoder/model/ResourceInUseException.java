@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elastictranscoder.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The resource you are attempting to change is in use. For example, you are
  * attempting to delete a pipeline that is currently in use.
  * </p>
  */
-public class ResourceInUseException extends AmazonServiceException {
+public class ResourceInUseException
+        extends
+        com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException {
     private static final long serialVersionUID = 1L;
 
     /**

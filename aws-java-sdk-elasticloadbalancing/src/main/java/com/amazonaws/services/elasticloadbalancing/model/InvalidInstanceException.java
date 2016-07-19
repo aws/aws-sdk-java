@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elasticloadbalancing.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified endpoint is not valid.
  * </p>
  */
-public class InvalidInstanceException extends AmazonServiceException {
+public class InvalidInstanceException
+        extends
+        com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 
     /**

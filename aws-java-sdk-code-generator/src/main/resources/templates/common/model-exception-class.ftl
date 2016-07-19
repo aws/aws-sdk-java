@@ -1,12 +1,11 @@
 <@LicenseCommentBlockMacro.content />
 
 package ${metadata.packageName}.model;
-import com.amazonaws.AmazonServiceException;
 
 /**
  * <#if shape.documentation?has_content>${shape.documentation}</#if>
  */
-public class ${shape.shapeName} extends AmazonServiceException {
+public class ${shape.shapeName} extends ${baseExceptionFqcn} {
     private static final long serialVersionUID = 1L;
 
     <@VariableDeclarationMacro.content shape/>

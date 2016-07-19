@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.certificatemanager.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Processing has reached an invalid state. For example, this exception can
@@ -26,7 +24,9 @@ import com.amazonaws.AmazonServiceException;
  * message returned by ACM to determine which state is not valid.
  * </p>
  */
-public class InvalidStateException extends AmazonServiceException {
+public class InvalidStateException
+        extends
+        com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException {
     private static final long serialVersionUID = 1L;
 
     /**

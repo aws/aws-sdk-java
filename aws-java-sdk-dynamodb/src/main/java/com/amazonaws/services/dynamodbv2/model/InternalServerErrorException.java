@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.dynamodbv2.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An error occurred on the server side.
  * </p>
  */
-public class InternalServerErrorException extends AmazonServiceException {
+public class InternalServerErrorException extends
+        com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException {
     private static final long serialVersionUID = 1L;
 
     /**

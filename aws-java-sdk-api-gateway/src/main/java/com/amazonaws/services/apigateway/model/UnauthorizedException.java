@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.apigateway.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * 
  */
-public class UnauthorizedException extends AmazonServiceException {
+public class UnauthorizedException extends
+        com.amazonaws.services.apigateway.model.AmazonApiGatewayException {
     private static final long serialVersionUID = 1L;
 
     /**

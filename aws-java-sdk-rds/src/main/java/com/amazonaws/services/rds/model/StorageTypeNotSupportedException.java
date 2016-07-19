@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * <i>StorageType</i> specified cannot be associated with the DB Instance.
  * </p>
  */
-public class StorageTypeNotSupportedException extends AmazonServiceException {
+public class StorageTypeNotSupportedException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the mount target is not in the correct state for the operation.
  * </p>
  */
-public class IncorrectMountTargetStateException extends AmazonServiceException {
+public class IncorrectMountTargetStateException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

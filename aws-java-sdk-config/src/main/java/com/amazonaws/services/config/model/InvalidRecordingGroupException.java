@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * AWS Config throws an exception if the recording group does not contain a
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * formatted.
  * </p>
  */
-public class InvalidRecordingGroupException extends AmazonServiceException {
+public class InvalidRecordingGroupException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

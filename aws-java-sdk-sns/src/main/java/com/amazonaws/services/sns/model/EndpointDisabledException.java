@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.sns.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Exception error indicating endpoint disabled.
  * </p>
  */
-public class EndpointDisabledException extends AmazonServiceException {
+public class EndpointDisabledException extends
+        com.amazonaws.services.sns.model.AmazonSNSException {
     private static final long serialVersionUID = 1L;
 
     /**

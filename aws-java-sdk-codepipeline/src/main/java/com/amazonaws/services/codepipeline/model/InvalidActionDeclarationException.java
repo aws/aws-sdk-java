@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codepipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified action declaration was specified in an invalid format.
  * </p>
  */
-public class InvalidActionDeclarationException extends AmazonServiceException {
+public class InvalidActionDeclarationException extends
+        com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

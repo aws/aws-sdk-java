@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified HostedZone cannot be found.
  * </p>
  */
-public class HostedZoneNotFoundException extends AmazonServiceException {
+public class HostedZoneNotFoundException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

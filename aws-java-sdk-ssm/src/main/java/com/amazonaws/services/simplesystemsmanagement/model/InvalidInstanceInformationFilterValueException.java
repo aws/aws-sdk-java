@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified filter value is not valid.
  * </p>
  */
-public class InvalidInstanceInformationFilterValueException extends
-        AmazonServiceException {
+public class InvalidInstanceInformationFilterValueException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

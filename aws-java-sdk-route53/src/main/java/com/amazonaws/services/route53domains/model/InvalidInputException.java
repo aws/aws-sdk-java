@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.route53domains.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested item is not acceptable. For example, for an OperationId it may
@@ -25,7 +23,9 @@ import com.amazonaws.AmazonServiceException;
  * it may not be a valid domain name or belong to the requester account.
  * </p>
  */
-public class InvalidInputException extends AmazonServiceException {
+public class InvalidInputException
+        extends
+        com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException {
     private static final long serialVersionUID = 1L;
 
     /**

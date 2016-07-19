@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.cloudwatchevents.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception occurs due to unexpected causes.
  * </p>
  */
-public class InternalException extends AmazonServiceException {
+public class InternalException
+        extends
+        com.amazonaws.services.cloudwatchevents.model.AmazonCloudWatchEventsException {
     private static final long serialVersionUID = 1L;
 
     /**

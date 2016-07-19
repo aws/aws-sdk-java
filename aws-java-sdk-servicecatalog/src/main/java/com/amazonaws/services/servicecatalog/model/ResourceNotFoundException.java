@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.servicecatalog.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified resource was not found.
  * </p>
  */
-public class ResourceNotFoundException extends AmazonServiceException {
+public class ResourceNotFoundException extends
+        com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException {
     private static final long serialVersionUID = 1L;
 
     /**

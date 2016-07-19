@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The named revision does not exist with the applicable IAM user or AWS
  * account.
  * </p>
  */
-public class RevisionDoesNotExistException extends AmazonServiceException {
+public class RevisionDoesNotExistException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

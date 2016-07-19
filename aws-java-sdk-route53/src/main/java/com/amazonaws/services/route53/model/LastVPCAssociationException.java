@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The VPC you are trying to disassociate from the hosted zone is the last the
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * doesn't support disassociate the last VPC from the hosted zone.
  * </p>
  */
-public class LastVPCAssociationException extends AmazonServiceException {
+public class LastVPCAssociationException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

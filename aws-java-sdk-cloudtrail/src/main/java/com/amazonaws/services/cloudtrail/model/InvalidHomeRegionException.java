@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.cloudtrail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception is thrown when an operation is called on a trail from a region
  * other than the region in which the trail was created.
  * </p>
  */
-public class InvalidHomeRegionException extends AmazonServiceException {
+public class InvalidHomeRegionException extends
+        com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 
     /**

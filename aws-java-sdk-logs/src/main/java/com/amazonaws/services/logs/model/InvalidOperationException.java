@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.logs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the operation is not valid on the specified resource
  * </p>
  */
-public class InvalidOperationException extends AmazonServiceException {
+public class InvalidOperationException extends
+        com.amazonaws.services.logs.model.AWSLogsException {
     private static final long serialVersionUID = 1L;
 
     /**

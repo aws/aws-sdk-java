@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.databasemigrationservice.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified subnet is already in use.
  * </p>
  */
-public class SubnetAlreadyInUseException extends AmazonServiceException {
+public class SubnetAlreadyInUseException
+        extends
+        com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

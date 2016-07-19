@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.cloudtrail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception is deprecated.
  * </p>
  */
-public class KmsKeyDisabledException extends AmazonServiceException {
+public class KmsKeyDisabledException extends
+        com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 
     /**

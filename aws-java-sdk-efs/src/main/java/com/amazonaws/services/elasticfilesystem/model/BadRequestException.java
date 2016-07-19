@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the request is malformed or contains an error such as an invalid
  * parameter value or a missing required parameter.
  * </p>
  */
-public class BadRequestException extends AmazonServiceException {
+public class BadRequestException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

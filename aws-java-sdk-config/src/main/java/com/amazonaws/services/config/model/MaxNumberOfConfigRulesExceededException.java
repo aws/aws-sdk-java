@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Failed to add the AWS Config rule because the account already contains the
@@ -26,7 +24,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class MaxNumberOfConfigRulesExceededException extends
-        AmazonServiceException {
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

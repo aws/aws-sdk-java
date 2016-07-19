@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.route53domains.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request is already in progress for the domain.
  * </p>
  */
-public class DuplicateRequestException extends AmazonServiceException {
+public class DuplicateRequestException
+        extends
+        com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException {
     private static final long serialVersionUID = 1L;
 
     /**

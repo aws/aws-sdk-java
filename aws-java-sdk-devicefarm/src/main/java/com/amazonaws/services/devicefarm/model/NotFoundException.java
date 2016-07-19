@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.devicefarm.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified entity was not found.
  * </p>
  */
-public class NotFoundException extends AmazonServiceException {
+public class NotFoundException extends
+        com.amazonaws.services.devicefarm.model.AWSDeviceFarmException {
     private static final long serialVersionUID = 1L;
 
     /**

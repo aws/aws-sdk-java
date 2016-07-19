@@ -28,6 +28,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
@@ -36,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.services.simpleworkflow.model.transform.*;
@@ -132,7 +134,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("DefaultUndefinedFault")
                                     .withModeledClass(
-                                            com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException.class)));
+                                            com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException.class))
+                    .withBaseServiceExceptionClass(
+                            com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon SWF. A

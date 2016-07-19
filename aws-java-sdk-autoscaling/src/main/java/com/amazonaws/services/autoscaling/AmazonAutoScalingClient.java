@@ -28,6 +28,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
@@ -36,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.autoscaling.model.*;
 import com.amazonaws.services.autoscaling.model.transform.*;
@@ -251,7 +253,9 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers.add(new AlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new ResourceContentionExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
+        exceptionUnmarshallers
+                .add(new StandardErrorUnmarshaller(
+                        com.amazonaws.services.autoscaling.model.AmazonAutoScalingException.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(ENDPOINT_PREFIX);

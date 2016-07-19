@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.lambda.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * 
  */
-public class EC2AccessDeniedException extends AmazonServiceException {
+public class EC2AccessDeniedException extends
+        com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
     private String type;

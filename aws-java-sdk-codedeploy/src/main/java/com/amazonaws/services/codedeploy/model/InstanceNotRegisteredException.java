@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified on-premises instance is not registered.
  * </p>
  */
-public class InstanceNotRegisteredException extends AmazonServiceException {
+public class InstanceNotRegisteredException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

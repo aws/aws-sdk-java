@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.simpleemail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that a resource could not be created due to service limits. For a
@@ -26,7 +24,9 @@ import com.amazonaws.AmazonServiceException;
  * >Amazon SES Developer Guide</a>.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException
+        extends
+        com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

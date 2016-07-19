@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.cloudtrail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception is thrown when an operation is called with an invalid trail
@@ -27,7 +25,8 @@ import com.amazonaws.AmazonServiceException;
  * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
  * </p>
  */
-public class CloudTrailARNInvalidException extends AmazonServiceException {
+public class CloudTrailARNInvalidException extends
+        com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 
     /**

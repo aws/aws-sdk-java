@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.glacier.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if a retrieval job would exceed the current data policy's retrieval
  * rate limit. For more information about data retrieval policies,
  * </p>
  */
-public class PolicyEnforcedException extends AmazonServiceException {
+public class PolicyEnforcedException extends
+        com.amazonaws.services.glacier.model.AmazonGlacierException {
     private static final long serialVersionUID = 1L;
 
     /**

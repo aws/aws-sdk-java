@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the request specified an <code>IpAddress</code> that is already
  * in use in the subnet.
  * </p>
  */
-public class IpAddressInUseException extends AmazonServiceException {
+public class IpAddressInUseException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

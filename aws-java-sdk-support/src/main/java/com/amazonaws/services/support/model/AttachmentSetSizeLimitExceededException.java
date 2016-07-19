@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.support.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A limit for the size of an attachment set has been exceeded. The limits are 3
@@ -25,7 +23,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class AttachmentSetSizeLimitExceededException extends
-        AmazonServiceException {
+        com.amazonaws.services.support.model.AWSSupportException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified repository and registry combination does not have an associated
  * repository policy.
  * </p>
  */
-public class RepositoryPolicyNotFoundException extends AmazonServiceException {
+public class RepositoryPolicyNotFoundException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

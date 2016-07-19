@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A request option was specified that is not supported.
  * </p>
  */
-public class UnsupportedOptionException extends AmazonServiceException {
+public class UnsupportedOptionException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.servicecatalog.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * One or more parameters provided to the operation are invalid.
  * </p>
  */
-public class InvalidParametersException extends AmazonServiceException {
+public class InvalidParametersException extends
+        com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException {
     private static final long serialVersionUID = 1L;
 
     /**

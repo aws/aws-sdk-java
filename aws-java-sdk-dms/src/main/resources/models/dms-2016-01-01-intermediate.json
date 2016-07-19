@@ -19,15 +19,15 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "dms",
     "signingName" : "dms",
-    "syncClientBuilderClassName" : "AWSDatabaseMigrationServiceClientBuilder",
-    "asyncClientBuilderClassName" : "AWSDatabaseMigrationServiceAsyncClientBuilder",
-    "serviceName" : "AWS Database Migration Service",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "xmlProtocol" : false,
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "syncClientBuilderClassName" : "AWSDatabaseMigrationServiceClientBuilder",
+    "asyncClientBuilderClassName" : "AWSDatabaseMigrationServiceAsyncClientBuilder",
+    "serviceName" : "AWS Database Migration Service"
   },
   "operations" : {
     "AddTagsToResource" : {
@@ -37507,12 +37507,17 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "exceptionUnmarshallerImpl" : null,
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException",
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "sdkModeledExceptionBaseClassName" : "AWSDatabaseMigrationServiceException",
+  "exceptionUnmarshallerImpl" : null
 }

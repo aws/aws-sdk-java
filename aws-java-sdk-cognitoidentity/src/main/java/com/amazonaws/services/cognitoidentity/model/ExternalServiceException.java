@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.cognitoidentity.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An exception thrown when a dependent service such as Facebook or Twitter is
  * not responding
  * </p>
  */
-public class ExternalServiceException extends AmazonServiceException {
+public class ExternalServiceException
+        extends
+        com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException {
     private static final long serialVersionUID = 1L;
 
     /**

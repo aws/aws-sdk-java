@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.ecs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * These errors are usually caused by a client action, such as using an action
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * action or resource, or specifying an identifier that is not valid.
  * </p>
  */
-public class ClientException extends AmazonServiceException {
+public class ClientException extends
+        com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 
     /**

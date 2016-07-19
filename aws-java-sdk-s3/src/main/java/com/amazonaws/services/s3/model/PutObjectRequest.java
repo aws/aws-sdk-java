@@ -13,10 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
-import java.io.Serializable;
 
 import java.io.File;
 import java.io.InputStream;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -166,8 +166,8 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
      */
     @Override
     public PutObjectRequest clone() {
-        return this.copyPutObjectBaseTo(new PutObjectRequest(
-            getBucketName(), getKey(), getFile()));
+        PutObjectRequest request = (PutObjectRequest) super.clone();
+        return this.copyPutObjectBaseTo(request);
     }
 
     @Override

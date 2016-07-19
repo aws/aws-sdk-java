@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The option group is not in the <i>available</i> state.
  * </p>
  */
-public class InvalidOptionGroupStateException extends AmazonServiceException {
+public class InvalidOptionGroupStateException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

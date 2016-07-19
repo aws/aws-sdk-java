@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.cloudhsm.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that an exception occurred in the AWS CloudHSM service.
  * </p>
  */
-public class CloudHsmServiceException extends AmazonServiceException {
+public class CloudHsmServiceException extends
+        com.amazonaws.services.cloudhsm.model.AWSCloudHSMException {
     private static final long serialVersionUID = 1L;
 
     /**

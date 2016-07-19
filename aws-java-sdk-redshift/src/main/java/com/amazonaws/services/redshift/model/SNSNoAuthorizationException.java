@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You do not have permission to publish to the specified Amazon SNS topic.
  * </p>
  */
-public class SNSNoAuthorizationException extends AmazonServiceException {
+public class SNSNoAuthorizationException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

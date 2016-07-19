@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * At least one deployment ID must be specified.
  * </p>
  */
-public class DeploymentIdRequiredException extends AmazonServiceException {
+public class DeploymentIdRequiredException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

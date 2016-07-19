@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because it attempted to delete a resource that has
  * attached subordinate entities. The error message describes these entities.
  * </p>
  */
-public class DeleteConflictException extends AmazonServiceException {
+public class DeleteConflictException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

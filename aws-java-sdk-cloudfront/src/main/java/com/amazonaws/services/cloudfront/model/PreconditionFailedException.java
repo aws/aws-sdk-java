@@ -16,13 +16,12 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * The precondition given in one or more of the request-header fields evaluated
  * to false.
  */
-public class PreconditionFailedException extends AmazonServiceException {
+public class PreconditionFailedException extends
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The deployment configuration is still in use.
  * </p>
  */
-public class DeploymentConfigInUseException extends AmazonServiceException {
+public class DeploymentConfigInUseException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

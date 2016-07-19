@@ -28,6 +28,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
@@ -36,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.services.devicefarm.model.transform.*;
@@ -100,7 +102,9 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("IdempotencyException")
                                     .withModeledClass(
-                                            com.amazonaws.services.devicefarm.model.IdempotencyException.class)));
+                                            com.amazonaws.services.devicefarm.model.IdempotencyException.class))
+                    .withBaseServiceExceptionClass(
+                            com.amazonaws.services.devicefarm.model.AWSDeviceFarmException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Device Farm. A
@@ -398,6 +402,62 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Specifies and starts a remote access session.
+     * </p>
+     * 
+     * @param createRemoteAccessSessionRequest
+     *        Creates and submits a request to start a remote access session.
+     * @return Result of the CreateRemoteAccessSession operation returned by the
+     *         service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.CreateRemoteAccessSession
+     */
+    @Override
+    public CreateRemoteAccessSessionResult createRemoteAccessSession(
+            CreateRemoteAccessSessionRequest createRemoteAccessSessionRequest) {
+        ExecutionContext executionContext = createExecutionContext(createRemoteAccessSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRemoteAccessSessionRequest> request = null;
+        Response<CreateRemoteAccessSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRemoteAccessSessionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createRemoteAccessSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRemoteAccessSessionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new CreateRemoteAccessSessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Uploads an app or test scripts.
      * </p>
      * 
@@ -553,6 +613,63 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new DeleteProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a completed remote access session and its results.
+     * </p>
+     * 
+     * @param deleteRemoteAccessSessionRequest
+     *        Represents the request to delete the specified remote access
+     *        session.
+     * @return Result of the DeleteRemoteAccessSession operation returned by the
+     *         service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.DeleteRemoteAccessSession
+     */
+    @Override
+    public DeleteRemoteAccessSessionResult deleteRemoteAccessSession(
+            DeleteRemoteAccessSessionRequest deleteRemoteAccessSessionRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteRemoteAccessSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRemoteAccessSessionRequest> request = null;
+        Response<DeleteRemoteAccessSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRemoteAccessSessionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteRemoteAccessSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRemoteAccessSessionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeleteRemoteAccessSessionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1069,6 +1186,63 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Returns a link to a currently running remote access session.
+     * </p>
+     * 
+     * @param getRemoteAccessSessionRequest
+     *        Represents the request to get information about the specified
+     *        remote access session.
+     * @return Result of the GetRemoteAccessSession operation returned by the
+     *         service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetRemoteAccessSession
+     */
+    @Override
+    public GetRemoteAccessSessionResult getRemoteAccessSession(
+            GetRemoteAccessSessionRequest getRemoteAccessSessionRequest) {
+        ExecutionContext executionContext = createExecutionContext(getRemoteAccessSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRemoteAccessSessionRequest> request = null;
+        Response<GetRemoteAccessSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRemoteAccessSessionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getRemoteAccessSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRemoteAccessSessionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetRemoteAccessSessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about a run.
      * </p>
      * 
@@ -1269,6 +1443,67 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new GetUploadResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Installs an application to the device in a remote access session. For
+     * Android applications, the file must be in .apk format. For iOS
+     * applications, the file must be in .ipa format.
+     * </p>
+     * 
+     * @param installToRemoteAccessSessionRequest
+     *        Represents the request to install an Android application (in .apk
+     *        format) or an iOS application (in .ipa format) as part of a remote
+     *        access session.
+     * @return Result of the InstallToRemoteAccessSession operation returned by
+     *         the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.InstallToRemoteAccessSession
+     */
+    @Override
+    public InstallToRemoteAccessSessionResult installToRemoteAccessSession(
+            InstallToRemoteAccessSessionRequest installToRemoteAccessSessionRequest) {
+        ExecutionContext executionContext = createExecutionContext(installToRemoteAccessSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<InstallToRemoteAccessSessionRequest> request = null;
+        Response<InstallToRemoteAccessSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new InstallToRemoteAccessSessionRequestMarshaller(
+                        protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(installToRemoteAccessSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<InstallToRemoteAccessSessionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new InstallToRemoteAccessSessionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1668,6 +1903,63 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new ListProjectsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of all currently running remote access sessions.
+     * </p>
+     * 
+     * @param listRemoteAccessSessionsRequest
+     *        Represents the request to return information about the remote
+     *        access session.
+     * @return Result of the ListRemoteAccessSessions operation returned by the
+     *         service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListRemoteAccessSessions
+     */
+    @Override
+    public ListRemoteAccessSessionsResult listRemoteAccessSessions(
+            ListRemoteAccessSessionsRequest listRemoteAccessSessionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listRemoteAccessSessionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRemoteAccessSessionsRequest> request = null;
+        Response<ListRemoteAccessSessionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRemoteAccessSessionsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listRemoteAccessSessionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRemoteAccessSessionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new ListRemoteAccessSessionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2171,6 +2463,62 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new ScheduleRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Ends a specified remote access session.
+     * </p>
+     * 
+     * @param stopRemoteAccessSessionRequest
+     *        Represents the request to stop the remote access session.
+     * @return Result of the StopRemoteAccessSession operation returned by the
+     *         service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.StopRemoteAccessSession
+     */
+    @Override
+    public StopRemoteAccessSessionResult stopRemoteAccessSession(
+            StopRemoteAccessSessionRequest stopRemoteAccessSessionRequest) {
+        ExecutionContext executionContext = createExecutionContext(stopRemoteAccessSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopRemoteAccessSessionRequest> request = null;
+        Response<StopRemoteAccessSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopRemoteAccessSessionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(stopRemoteAccessSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopRemoteAccessSessionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StopRemoteAccessSessionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

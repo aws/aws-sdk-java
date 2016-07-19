@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.directory.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An exception has occurred in AWS Directory Service.
  * </p>
  */
-public class ServiceException extends AmazonServiceException {
+public class ServiceException extends
+        com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 
     private String requestId;

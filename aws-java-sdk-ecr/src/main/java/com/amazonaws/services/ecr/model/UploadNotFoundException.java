@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The upload could not be found, or the specified upload id is not valid for
  * this repository.
  * </p>
  */
-public class UploadNotFoundException extends AmazonServiceException {
+public class UploadNotFoundException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

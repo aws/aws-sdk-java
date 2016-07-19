@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.sns.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that a request parameter does not comply with the associated
  * constraints.
  * </p>
  */
-public class InvalidParameterValueException extends AmazonServiceException {
+public class InvalidParameterValueException extends
+        com.amazonaws.services.sns.model.AmazonSNSException {
     private static final long serialVersionUID = 1L;
 
     /**

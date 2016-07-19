@@ -19,7 +19,6 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "marketplacecommerceanalytics",
     "signingName" : "marketplacecommerceanalytics",
-    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSMarketplaceCommerceAnalyticsClientBuilder",
     "asyncClientBuilderClassName" : "AWSMarketplaceCommerceAnalyticsAsyncClientBuilder",
     "serviceName" : "AWS Marketplace Commerce Analytics",
@@ -27,7 +26,8 @@
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true
   },
   "operations" : {
     "GenerateDataSet" : {
@@ -1261,12 +1261,17 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "sdkModeledExceptionBaseClassName" : "AWSMarketplaceCommerceAnalyticsException",
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "exceptionUnmarshallerImpl" : null,
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.marketplacecommerceanalytics.model.AWSMarketplaceCommerceAnalyticsException"
 }

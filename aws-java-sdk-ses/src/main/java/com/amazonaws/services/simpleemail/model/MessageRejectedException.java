@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.simpleemail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that the action failed, and the message could not be sent. Check
  * the error stack for more information about what caused the error.
  * </p>
  */
-public class MessageRejectedException extends AmazonServiceException {
+public class MessageRejectedException
+        extends
+        com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

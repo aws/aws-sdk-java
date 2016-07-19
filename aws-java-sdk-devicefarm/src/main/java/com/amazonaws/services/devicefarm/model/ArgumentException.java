@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.devicefarm.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An invalid argument was specified.
  * </p>
  */
-public class ArgumentException extends AmazonServiceException {
+public class ArgumentException extends
+        com.amazonaws.services.devicefarm.model.AWSDeviceFarmException {
     private static final long serialVersionUID = 1L;
 
     /**

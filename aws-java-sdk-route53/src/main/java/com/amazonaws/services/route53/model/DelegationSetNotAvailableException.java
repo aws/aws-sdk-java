@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Amazon Route 53 allows some duplicate domain names, but there is a maximum
@@ -28,7 +26,8 @@ import com.amazonaws.AmazonServiceException;
  * page.
  * </p>
  */
-public class DelegationSetNotAvailableException extends AmazonServiceException {
+public class DelegationSetNotAvailableException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

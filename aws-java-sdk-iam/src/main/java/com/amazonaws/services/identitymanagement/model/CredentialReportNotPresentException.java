@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the credential report does not exist. To
  * generate a credential report, use <a>GenerateCredentialReport</a>.
  * </p>
  */
-public class CredentialReportNotPresentException extends AmazonServiceException {
+public class CredentialReportNotPresentException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.cloudtrail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Cannot set a CloudWatch Logs delivery for this region.
  * </p>
  */
 public class CloudWatchLogsDeliveryUnavailableException extends
-        AmazonServiceException {
+        com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 
     /**

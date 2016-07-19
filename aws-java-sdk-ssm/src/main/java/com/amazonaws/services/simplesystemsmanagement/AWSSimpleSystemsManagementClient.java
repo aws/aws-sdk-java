@@ -28,6 +28,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
@@ -36,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
@@ -45,11 +47,12 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * blocking, and will not return until the service call completes.
  * <p>
  * <p>
- * This is the Amazon Simple Systems Manager (SSM) API Reference. SSM enables
- * you to remotely manage the configuration of your on-premises servers and
- * virtual machines (VMs) and your Amazon EC2 instances using scripts, commands,
- * or the Amazon EC2 console. SSM includes an on-demand solution called
- * <i>Amazon EC2 Run Command</i> and a lightweight instance configuration
+ * This is the Amazon EC2 Simple Systems Manager (SSM) API Reference. SSM
+ * enables you to remotely manage the configuration of your Amazon EC2
+ * instances, virtual machines (VMs), or servers in your on-premises environment
+ * or in an environment provided by other cloud providers using scripts,
+ * commands, or the Amazon EC2 console. SSM includes an on-demand solution
+ * called <i>Amazon EC2 Run Command</i> and a lightweight instance configuration
  * solution called <i>SSM Config</i>.
  * </p>
  * <p>
@@ -312,6 +315,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                                             com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceTypeException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidNotificationConfig")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidNotificationConfigException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidCommandId")
                                     .withModeledClass(
                                             com.amazonaws.services.simplesystemsmanagement.model.InvalidCommandIdException.class))
@@ -403,6 +411,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                                             com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidRole")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidRoleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("AssociatedInstances")
                                     .withModeledClass(
                                             com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException.class))
@@ -420,7 +433,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InternalServerError")
                                     .withModeledClass(
-                                            com.amazonaws.services.simplesystemsmanagement.model.InternalServerErrorException.class)));
+                                            com.amazonaws.services.simplesystemsmanagement.model.InternalServerErrorException.class))
+                    .withBaseServiceExceptionClass(
+                            com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon SSM. A
@@ -2009,6 +2024,17 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         Windows instance to a Linux instance.
      * @throws MaxDocumentSizeExceededException
      *         The size limit of an SSM document is 64 KB.
+     * @throws InvalidRoleException
+     *         The role name can't contain invalid characters. Also verify that
+     *         you specified an IAM role for notifications that includes the
+     *         required trust policy. For information about configuring the IAM
+     *         role for SSM notifications, see <a href=
+     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html"
+     *         >Configuring SNS Notifications SSM</a> in the <i>Amazon Elastic
+     *         Compute Cloud User Guide </i>.
+     * @throws InvalidNotificationConfigException
+     *         One or more configuration items is not valid. Verify that a valid
+     *         Amazon Resource Name (ARN) was provided for an Amazon SNS topic.
      * @sample AWSSimpleSystemsManagement.SendCommand
      */
     @Override

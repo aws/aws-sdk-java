@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.sns.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that the user has been denied access to the requested resource.
  * </p>
  */
-public class AuthorizationErrorException extends AmazonServiceException {
+public class AuthorizationErrorException extends
+        com.amazonaws.services.sns.model.AmazonSNSException {
     private static final long serialVersionUID = 1L;
 
     /**

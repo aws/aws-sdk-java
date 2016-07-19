@@ -16,12 +16,12 @@
 
 package com.amazonaws.services.elastictranscoder.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * 
  */
-public class IncompatibleVersionException extends AmazonServiceException {
+public class IncompatibleVersionException
+        extends
+        com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException {
     private static final long serialVersionUID = 1L;
 
     /**

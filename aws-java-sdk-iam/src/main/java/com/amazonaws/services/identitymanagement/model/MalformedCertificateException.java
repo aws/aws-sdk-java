@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the certificate was malformed or expired.
  * The error message describes the specific error.
  * </p>
  */
-public class MalformedCertificateException extends AmazonServiceException {
+public class MalformedCertificateException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

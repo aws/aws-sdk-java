@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticloadbalancing.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified value for the schema is not valid. You can only specify a
  * scheme for load balancers in a VPC.
  * </p>
  */
-public class InvalidSchemeException extends AmazonServiceException {
+public class InvalidSchemeException
+        extends
+        com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.devicefarm.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Exception gets thrown when a user is not eligible to perform the specified
  * transaction.
  * </p>
  */
-public class NotEligibleException extends AmazonServiceException {
+public class NotEligibleException extends
+        com.amazonaws.services.devicefarm.model.AWSDeviceFarmException {
     private static final long serialVersionUID = 1L;
 
     /**

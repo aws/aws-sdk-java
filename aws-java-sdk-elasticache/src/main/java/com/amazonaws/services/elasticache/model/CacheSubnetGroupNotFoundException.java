@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested cache subnet group name does not refer to an existing cache
  * subnet group.
  * </p>
  */
-public class CacheSubnetGroupNotFoundException extends AmazonServiceException {
+public class CacheSubnetGroupNotFoundException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

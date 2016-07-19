@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.sqs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A queue already exists with this name. Amazon SQS returns this error only if
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * existing queue.
  * </p>
  */
-public class QueueNameExistsException extends AmazonServiceException {
+public class QueueNameExistsException extends
+        com.amazonaws.services.sqs.model.AmazonSQSException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * <i>LogFileName</i> does not refer to an existing DB log file.
  * </p>
  */
-public class DBLogFileNotFoundException extends AmazonServiceException {
+public class DBLogFileNotFoundException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -19,15 +19,15 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "discovery",
     "signingName" : "discovery",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "syncClientBuilderClassName" : "AWSApplicationDiscoveryClientBuilder",
-    "asyncClientBuilderClassName" : "AWSApplicationDiscoveryAsyncClientBuilder",
-    "serviceName" : "AWS Application Discovery Service",
+    "jsonProtocol" : true,
     "xmlProtocol" : false,
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "jsonProtocol" : true,
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "syncClientBuilderClassName" : "AWSApplicationDiscoveryClientBuilder",
+    "asyncClientBuilderClassName" : "AWSApplicationDiscoveryAsyncClientBuilder",
+    "serviceName" : "AWS Application Discovery Service"
   },
   "operations" : {
     "CreateTags" : {
@@ -4189,9 +4189,9 @@
                 "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                 "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
               },
+              "keySimple" : true,
               "templateType" : "java.util.Map<String,String>",
               "templateImplType" : "java.util.HashMap<String,String>",
-              "keySimple" : true,
               "valueSimple" : true,
               "valueList" : false,
               "entryType" : "Map.Entry<String, String>"
@@ -4502,9 +4502,9 @@
                   "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                   "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
                 },
+                "keySimple" : true,
                 "templateType" : "java.util.Map<String,String>",
                 "templateImplType" : "java.util.HashMap<String,String>",
-                "keySimple" : true,
                 "valueSimple" : true,
                 "valueList" : false,
                 "entryType" : "Map.Entry<String, String>"
@@ -7269,9 +7269,9 @@
                 "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                 "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
               },
+              "keySimple" : true,
               "templateType" : "java.util.Map<String,String>",
               "templateImplType" : "java.util.HashMap<String,String>",
-              "keySimple" : true,
               "valueSimple" : true,
               "valueList" : false,
               "entryType" : "Map.Entry<String, String>"
@@ -7477,9 +7477,9 @@
                   "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
                   "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
                 },
+                "keySimple" : true,
                 "templateType" : "java.util.Map<String,String>",
                 "templateImplType" : "java.util.HashMap<String,String>",
-                "keySimple" : true,
                 "valueSimple" : true,
                 "valueList" : false,
                 "entryType" : "Map.Entry<String, String>"
@@ -11182,12 +11182,17 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "sdkModeledExceptionBaseClassName" : "AWSApplicationDiscoveryException",
+  "exceptionUnmarshallerImpl" : null,
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException"
 }

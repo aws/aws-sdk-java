@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The owner of the specified snapshot has not authorized your account to access
  * the snapshot.
  * </p>
  */
-public class AccessToSnapshotDeniedException extends AmazonServiceException {
+public class AccessToSnapshotDeniedException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

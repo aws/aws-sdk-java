@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.datapipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An internal service error occurred.
  * </p>
  */
-public class InternalServiceErrorException extends AmazonServiceException {
+public class InternalServiceErrorException extends
+        com.amazonaws.services.datapipeline.model.DataPipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

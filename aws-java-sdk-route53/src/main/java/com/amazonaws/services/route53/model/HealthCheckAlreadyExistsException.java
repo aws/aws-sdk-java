@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The health check you are trying to create already exists. Amazon Route 53
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * specified <code>CallerReference</code>.
  * </p>
  */
-public class HealthCheckAlreadyExistsException extends AmazonServiceException {
+public class HealthCheckAlreadyExistsException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

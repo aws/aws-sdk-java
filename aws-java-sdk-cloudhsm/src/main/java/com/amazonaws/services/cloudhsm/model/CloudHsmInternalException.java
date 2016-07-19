@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.cloudhsm.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that an internal error occurred.
  * </p>
  */
-public class CloudHsmInternalException extends AmazonServiceException {
+public class CloudHsmInternalException extends
+        com.amazonaws.services.cloudhsm.model.AWSCloudHSMException {
     private static final long serialVersionUID = 1L;
 
     /**

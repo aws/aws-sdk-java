@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.databasemigrationservice.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An upgrade dependency is preventing the database migration.
  * </p>
  */
-public class UpgradeDependencyFailureException extends AmazonServiceException {
+public class UpgradeDependencyFailureException
+        extends
+        com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.marketplacemetering.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The calls to the MeterUsage API are throttled.
  * </p>
  */
-public class ThrottlingException extends AmazonServiceException {
+public class ThrottlingException
+        extends
+        com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException {
     private static final long serialVersionUID = 1L;
 
     /**

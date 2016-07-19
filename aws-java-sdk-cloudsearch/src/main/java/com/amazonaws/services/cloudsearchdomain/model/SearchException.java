@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.cloudsearchdomain.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Information about any problems encountered while processing a search request.
  * </p>
  */
-public class SearchException extends AmazonServiceException {
+public class SearchException
+        extends
+        com.amazonaws.services.cloudsearchdomain.model.AmazonCloudSearchDomainException {
     private static final long serialVersionUID = 1L;
 
     /**

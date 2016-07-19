@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.gamelift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The game instance is currently full and cannot allow the requested player(s)
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * request.
  * </p>
  */
-public class GameSessionFullException extends AmazonServiceException {
+public class GameSessionFullException extends
+        com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.cloudtrail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception is thrown when the key or value specified for the tag does not
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * .
  * </p>
  */
-public class InvalidTagParameterException extends AmazonServiceException {
+public class InvalidTagParameterException extends
+        com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 
     /**

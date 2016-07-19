@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.cloudwatchevents.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception occurs if there is concurrent modification on rule or target.
  * </p>
  */
-public class ConcurrentModificationException extends AmazonServiceException {
+public class ConcurrentModificationException
+        extends
+        com.amazonaws.services.cloudwatchevents.model.AmazonCloudWatchEventsException {
     private static final long serialVersionUID = 1L;
 
     /**

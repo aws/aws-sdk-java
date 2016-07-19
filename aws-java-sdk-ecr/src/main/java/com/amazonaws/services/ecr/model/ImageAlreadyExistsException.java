@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified image has already been pushed, and there are no changes to the
  * manifest or image tag since the last push.
  * </p>
  */
-public class ImageAlreadyExistsException extends AmazonServiceException {
+public class ImageAlreadyExistsException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

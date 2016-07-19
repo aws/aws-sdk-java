@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified reserved DB Instance not found.
  * </p>
  */
-public class ReservedDBInstanceNotFoundException extends AmazonServiceException {
+public class ReservedDBInstanceNotFoundException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

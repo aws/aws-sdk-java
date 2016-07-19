@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Specified CIDRIP or EC2 security group is not authorized for the specified DB
@@ -28,7 +26,8 @@ import com.amazonaws.AmazonServiceException;
  * behalf.
  * </p>
  */
-public class AuthorizationNotFoundException extends AmazonServiceException {
+public class AuthorizationNotFoundException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

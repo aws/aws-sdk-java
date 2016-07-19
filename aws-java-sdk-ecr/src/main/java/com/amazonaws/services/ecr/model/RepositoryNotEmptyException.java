@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified repository contains images. To delete a repository that
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * parameter.
  * </p>
  */
-public class RepositoryNotEmptyException extends AmazonServiceException {
+public class RepositoryNotEmptyException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

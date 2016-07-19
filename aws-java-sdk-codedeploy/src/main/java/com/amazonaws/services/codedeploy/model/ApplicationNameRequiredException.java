@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The minimum number of required application names was not specified.
  * </p>
  */
-public class ApplicationNameRequiredException extends AmazonServiceException {
+public class ApplicationNameRequiredException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.cloudformation.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified change set cannot be used to update the stack. For example, the
@@ -25,7 +23,9 @@ import com.amazonaws.AmazonServiceException;
  * status might be <code>UPDATE_IN_PROGRESS</code>.
  * </p>
  */
-public class InvalidChangeSetStatusException extends AmazonServiceException {
+public class InvalidChangeSetStatusException
+        extends
+        com.amazonaws.services.cloudformation.model.AmazonCloudFormationException {
     private static final long serialVersionUID = 1L;
 
     /**

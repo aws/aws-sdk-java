@@ -16,13 +16,12 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * Your manifest file contained buckets from multiple regions. A job is
  * restricted to buckets from one region. Please correct and resubmit.
  */
-public class MultipleRegionsException extends AmazonServiceException {
+public class MultipleRegionsException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

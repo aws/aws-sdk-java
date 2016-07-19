@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.lambda.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * One of the parameters in the request is invalid. For example, if you provided
@@ -26,7 +24,8 @@ import com.amazonaws.AmazonServiceException;
  * to assume you will get this exception.
  * </p>
  */
-public class InvalidParameterValueException extends AmazonServiceException {
+public class InvalidParameterValueException extends
+        com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
     private String type;

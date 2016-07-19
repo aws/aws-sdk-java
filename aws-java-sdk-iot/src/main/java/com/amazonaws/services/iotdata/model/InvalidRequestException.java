@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.iotdata.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request is not valid.
  * </p>
  */
-public class InvalidRequestException extends AmazonServiceException {
+public class InvalidRequestException extends
+        com.amazonaws.services.iotdata.model.AWSIotDataException {
     private static final long serialVersionUID = 1L;
 
     /**

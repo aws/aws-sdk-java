@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.kms.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the state of the specified resource is not
@@ -31,7 +29,8 @@ import com.amazonaws.AmazonServiceException;
  * Management Service Developer Guide</i>.
  * </p>
  */
-public class KMSInvalidStateException extends AmazonServiceException {
+public class KMSInvalidStateException extends
+        com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 
     /**

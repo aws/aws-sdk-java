@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.kms.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the specified KeySpec parameter is not
  * valid. The currently supported value is ENCRYPT/DECRYPT.
  * </p>
  */
-public class InvalidKeyUsageException extends AmazonServiceException {
+public class InvalidKeyUsageException extends
+        com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,12 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * Your request contains more cookie names in the whitelist than are allowed per
  * cache behavior.
  */
 public class TooManyCookieNamesInWhiteListException extends
-        AmazonServiceException {
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticbeanstalk.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * One or more input parameters is not valid. Please correct the input
  * parameters and try the operation again.
  * </p>
  */
-public class InvalidRequestException extends AmazonServiceException {
+public class InvalidRequestException
+        extends
+        com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException {
     private static final long serialVersionUID = 1L;
 
     /**

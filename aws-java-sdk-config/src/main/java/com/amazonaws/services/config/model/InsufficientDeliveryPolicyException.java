@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Your Amazon S3 bucket policy does not permit AWS Config to write to it.
  * </p>
  */
-public class InsufficientDeliveryPolicyException extends AmazonServiceException {
+public class InsufficientDeliveryPolicyException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

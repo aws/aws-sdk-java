@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The maximum number of allowed on-premises instances in a single call was
  * exceeded.
  * </p>
  */
-public class InstanceLimitExceededException extends AmazonServiceException {
+public class InstanceLimitExceededException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

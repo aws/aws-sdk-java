@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.iotdata.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An unexpected error has occurred.
  * </p>
  */
-public class InternalFailureException extends AmazonServiceException {
+public class InternalFailureException extends
+        com.amazonaws.services.iotdata.model.AWSIotDataException {
     private static final long serialVersionUID = 1L;
 
     /**

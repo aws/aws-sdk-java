@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.applicationautoscaling.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Concurrent updates caused an exception, for example, if you request an update
  * to an Application Auto Scaling resource that already has a pending update.
  * </p>
  */
-public class ConcurrentUpdateException extends AmazonServiceException {
+public class ConcurrentUpdateException
+        extends
+        com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException {
     private static final long serialVersionUID = 1L;
 
     /**

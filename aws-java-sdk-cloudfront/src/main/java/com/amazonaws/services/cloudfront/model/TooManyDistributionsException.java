@@ -16,13 +16,12 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * Processing your request would cause you to exceed the maximum number of
  * distributions allowed.
  */
-public class TooManyDistributionsException extends AmazonServiceException {
+public class TooManyDistributionsException extends
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

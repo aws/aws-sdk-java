@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.dynamodbv2.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The number of concurrent table requests (cumulative number of tables in the
@@ -33,7 +31,8 @@ import com.amazonaws.AmazonServiceException;
  * The total limit of tables in the <code>ACTIVE</code> state is 250.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException extends
+        com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.support.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested <code>CaseId</code> could not be located.
  * </p>
  */
-public class CaseIdNotFoundException extends AmazonServiceException {
+public class CaseIdNotFoundException extends
+        com.amazonaws.services.support.model.AWSSupportException {
     private static final long serialVersionUID = 1L;
 
     /**

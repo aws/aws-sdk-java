@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codepipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Reserved for future use.
  * </p>
  */
-public class InvalidBlockerDeclarationException extends AmazonServiceException {
+public class InvalidBlockerDeclarationException extends
+        com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

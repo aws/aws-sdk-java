@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because Amazon Route 53 was still processing a prior
  * request.
  * </p>
  */
-public class PriorRequestNotCompleteException extends AmazonServiceException {
+public class PriorRequestNotCompleteException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

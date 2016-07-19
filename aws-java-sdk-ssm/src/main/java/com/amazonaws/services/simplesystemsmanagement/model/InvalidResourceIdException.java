@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The resource ID is not valid. Verify that you entered the correct ID and try
  * again.
  * </p>
  */
-public class InvalidResourceIdException extends AmazonServiceException {
+public class InvalidResourceIdException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

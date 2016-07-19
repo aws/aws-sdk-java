@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * One or more required customs parameters was missing from the manifest.
  */
-public class MissingCustomsException extends AmazonServiceException {
+public class MissingCustomsException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

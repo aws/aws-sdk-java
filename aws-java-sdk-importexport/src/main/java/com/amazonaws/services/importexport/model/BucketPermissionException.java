@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * The account specified does not have the appropriate bucket permissions.
  */
-public class BucketPermissionException extends AmazonServiceException {
+public class BucketPermissionException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

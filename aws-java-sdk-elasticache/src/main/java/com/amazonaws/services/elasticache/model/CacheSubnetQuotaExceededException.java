@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request cannot be processed because it would exceed the allowed number of
  * subnets in a cache subnet group.
  * </p>
  */
-public class CacheSubnetQuotaExceededException extends AmazonServiceException {
+public class CacheSubnetQuotaExceededException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

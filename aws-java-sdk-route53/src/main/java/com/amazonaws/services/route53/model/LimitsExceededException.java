@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The limits specified for a resource have been exceeded.
  * </p>
  */
-public class LimitsExceededException extends AmazonServiceException {
+public class LimitsExceededException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

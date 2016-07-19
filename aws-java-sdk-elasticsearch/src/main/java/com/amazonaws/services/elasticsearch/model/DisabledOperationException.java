@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.elasticsearch.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An error occured because the client wanted to access a not supported
  * operation. Gives http status code of 409.
  * </p>
  */
-public class DisabledOperationException extends AmazonServiceException {
+public class DisabledOperationException extends
+        com.amazonaws.services.elasticsearch.model.AWSElasticsearchException {
     private static final long serialVersionUID = 1L;
 
     /**

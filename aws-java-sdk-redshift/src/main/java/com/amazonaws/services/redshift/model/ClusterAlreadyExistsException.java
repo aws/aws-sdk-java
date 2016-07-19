@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The account already has a cluster with the given identifier.
  * </p>
  */
-public class ClusterAlreadyExistsException extends AmazonServiceException {
+public class ClusterAlreadyExistsException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

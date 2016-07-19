@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.elasticloadbalancing.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified load balancer attribute does not exist.
  * </p>
  */
-public class LoadBalancerAttributeNotFoundException extends
-        AmazonServiceException {
+public class LoadBalancerAttributeNotFoundException
+        extends
+        com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 
     /**

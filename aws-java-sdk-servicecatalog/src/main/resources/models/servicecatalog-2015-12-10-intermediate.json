@@ -55,12 +55,12 @@
         "documentation" : "<p>One or more parameters provided to the operation are invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeProductResult",
       "asyncReturnType" : "DescribeProductResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeProductResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeProductResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeProductRequest, DescribeProductResult>",
-      "authenticated" : true,
       "methodName" : "describeProduct"
     },
     "DescribeProductView" : {
@@ -88,12 +88,12 @@
         "documentation" : "<p>One or more parameters provided to the operation are invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeProductViewResult",
       "asyncReturnType" : "DescribeProductViewResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeProductViewResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeProductViewResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeProductViewRequest, DescribeProductViewResult>",
-      "authenticated" : true,
       "methodName" : "describeProductView"
     },
     "DescribeProvisioningParameters" : {
@@ -121,12 +121,12 @@
         "documentation" : "<p>The specified resource was not found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeProvisioningParametersResult",
       "asyncReturnType" : "DescribeProvisioningParametersResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeProvisioningParametersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeProvisioningParametersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeProvisioningParametersRequest, DescribeProvisioningParametersResult>",
-      "authenticated" : true,
       "methodName" : "describeProvisioningParameters"
     },
     "DescribeRecord" : {
@@ -151,12 +151,12 @@
         "documentation" : "<p>The specified resource was not found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeRecordResult",
       "asyncReturnType" : "DescribeRecordResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeRecordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeRecordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeRecordRequest, DescribeRecordResult>",
-      "authenticated" : true,
       "methodName" : "describeRecord"
     },
     "ListLaunchPaths" : {
@@ -184,12 +184,12 @@
         "documentation" : "<p>The specified resource was not found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListLaunchPathsResult",
       "asyncReturnType" : "ListLaunchPathsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListLaunchPathsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListLaunchPathsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListLaunchPathsRequest, ListLaunchPathsResult>",
-      "authenticated" : true,
       "methodName" : "listLaunchPaths"
     },
     "ListRecordHistory" : {
@@ -214,12 +214,12 @@
         "documentation" : "<p>One or more parameters provided to the operation are invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListRecordHistoryResult",
       "asyncReturnType" : "ListRecordHistoryResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListRecordHistoryResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListRecordHistoryResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListRecordHistoryRequest, ListRecordHistoryResult>",
-      "authenticated" : true,
       "methodName" : "listRecordHistory"
     },
     "ProvisionProduct" : {
@@ -250,12 +250,12 @@
         "documentation" : "<p>The specified resource is a duplicate.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ProvisionProductResult",
       "asyncReturnType" : "ProvisionProductResult",
       "asyncFutureType" : "java.util.concurrent.Future<ProvisionProductResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ProvisionProductResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ProvisionProductRequest, ProvisionProductResult>",
-      "authenticated" : true,
       "methodName" : "provisionProduct"
     },
     "ScanProvisionedProducts" : {
@@ -280,12 +280,12 @@
         "documentation" : "<p>One or more parameters provided to the operation are invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ScanProvisionedProductsResult",
       "asyncReturnType" : "ScanProvisionedProductsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ScanProvisionedProductsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ScanProvisionedProductsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ScanProvisionedProductsRequest, ScanProvisionedProductsResult>",
-      "authenticated" : true,
       "methodName" : "scanProvisionedProducts"
     },
     "SearchProducts" : {
@@ -310,12 +310,12 @@
         "documentation" : "<p>One or more parameters provided to the operation are invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SearchProductsResult",
       "asyncReturnType" : "SearchProductsResult",
       "asyncFutureType" : "java.util.concurrent.Future<SearchProductsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SearchProductsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SearchProductsRequest, SearchProductsResult>",
-      "authenticated" : true,
       "methodName" : "searchProducts"
     },
     "TerminateProvisionedProduct" : {
@@ -340,12 +340,12 @@
         "documentation" : "<p>The specified resource was not found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "TerminateProvisionedProductResult",
       "asyncReturnType" : "TerminateProvisionedProductResult",
       "asyncFutureType" : "java.util.concurrent.Future<TerminateProvisionedProductResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TerminateProvisionedProductResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TerminateProvisionedProductRequest, TerminateProvisionedProductResult>",
-      "authenticated" : true,
       "methodName" : "terminateProvisionedProduct"
     },
     "UpdateProvisionedProduct" : {
@@ -373,12 +373,12 @@
         "documentation" : "<p>The specified resource was not found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateProvisionedProductResult",
       "asyncReturnType" : "UpdateProvisionedProductResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateProvisionedProductResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateProvisionedProductResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateProvisionedProductRequest, UpdateProvisionedProductResult>",
-      "authenticated" : true,
       "methodName" : "updateProvisionedProduct"
     }
   },
@@ -20287,12 +20287,17 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "sdkModeledExceptionBaseClassName" : "AWSServiceCatalogException",
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "exceptionUnmarshallerImpl" : null,
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException"
 }

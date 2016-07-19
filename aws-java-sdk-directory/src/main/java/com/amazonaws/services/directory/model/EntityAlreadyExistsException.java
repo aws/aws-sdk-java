@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.directory.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified entity already exists.
  * </p>
  */
-public class EntityAlreadyExistsException extends AmazonServiceException {
+public class EntityAlreadyExistsException extends
+        com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 
     private String requestId;

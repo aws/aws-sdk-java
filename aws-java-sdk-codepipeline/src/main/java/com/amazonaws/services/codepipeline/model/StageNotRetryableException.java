@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.codepipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified stage can't be retried because the pipeline structure or stage
@@ -26,7 +24,8 @@ import com.amazonaws.AmazonServiceException;
  * is already in progress.
  * </p>
  */
-public class StageNotRetryableException extends AmazonServiceException {
+public class StageNotRetryableException extends
+        com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

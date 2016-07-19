@@ -16,13 +16,12 @@
 
 package com.amazonaws.services.marketplacecommerceanalytics.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * This exception is thrown when an internal service error occurs.
  */
-public class MarketplaceCommerceAnalyticsException extends
-        AmazonServiceException {
+public class MarketplaceCommerceAnalyticsException
+        extends
+        com.amazonaws.services.marketplacecommerceanalytics.model.AWSMarketplaceCommerceAnalyticsException {
     private static final long serialVersionUID = 1L;
 
     /**

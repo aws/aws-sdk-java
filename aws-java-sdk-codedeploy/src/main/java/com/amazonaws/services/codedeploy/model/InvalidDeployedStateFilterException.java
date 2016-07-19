@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The deployed state filter was specified in an invalid format.
  * </p>
  */
-public class InvalidDeployedStateFilterException extends AmazonServiceException {
+public class InvalidDeployedStateFilterException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

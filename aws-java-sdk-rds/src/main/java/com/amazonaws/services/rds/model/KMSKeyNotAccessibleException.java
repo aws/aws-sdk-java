@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Error accessing KMS key.
  * </p>
  */
-public class KMSKeyNotAccessibleException extends AmazonServiceException {
+public class KMSKeyNotAccessibleException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

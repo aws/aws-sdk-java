@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified region is incorrect or does not exist.
  * </p>
  */
-public class UnknownSnapshotCopyRegionException extends AmazonServiceException {
+public class UnknownSnapshotCopyRegionException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

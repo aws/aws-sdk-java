@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.storagegateway.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An internal server error has occurred during the request. For more
  * information, see the error and message fields.
  * </p>
  */
-public class InternalServerErrorException extends AmazonServiceException {
+public class InternalServerErrorException extends
+        com.amazonaws.services.storagegateway.model.AWSStorageGatewayException {
     private static final long serialVersionUID = 1L;
 
     /**

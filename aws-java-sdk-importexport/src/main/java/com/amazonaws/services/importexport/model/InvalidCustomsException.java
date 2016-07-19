@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * One or more customs parameters was invalid. Please correct and resubmit.
  */
-public class InvalidCustomsException extends AmazonServiceException {
+public class InvalidCustomsException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

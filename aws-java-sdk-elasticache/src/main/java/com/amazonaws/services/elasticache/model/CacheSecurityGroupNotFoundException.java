@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested cache security group name does not refer to an existing cache
  * security group.
  * </p>
  */
-public class CacheSecurityGroupNotFoundException extends AmazonServiceException {
+public class CacheSecurityGroupNotFoundException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

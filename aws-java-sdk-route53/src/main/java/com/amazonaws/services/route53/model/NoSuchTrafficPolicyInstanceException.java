@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * No traffic policy instance exists with the specified ID.
  * </p>
  */
 public class NoSuchTrafficPolicyInstanceException extends
-        AmazonServiceException {
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

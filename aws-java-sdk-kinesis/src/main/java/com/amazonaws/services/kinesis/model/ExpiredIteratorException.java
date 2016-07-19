@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.kinesis.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The provided iterator exceeds the maximum age allowed.
  * </p>
  */
-public class ExpiredIteratorException extends AmazonServiceException {
+public class ExpiredIteratorException extends
+        com.amazonaws.services.kinesis.model.AmazonKinesisException {
     private static final long serialVersionUID = 1L;
 
     /**

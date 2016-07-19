@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.directory.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An authentication error occurred.
  * </p>
  */
-public class AuthenticationFailedException extends AmazonServiceException {
+public class AuthenticationFailedException extends
+        com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

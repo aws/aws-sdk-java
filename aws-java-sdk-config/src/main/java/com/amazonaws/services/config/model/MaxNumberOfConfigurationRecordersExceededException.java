@@ -16,15 +16,13 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You have reached the limit on the number of recorders you can create.
  * </p>
  */
 public class MaxNumberOfConfigurationRecordersExceededException extends
-        AmazonServiceException {
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.waf.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation exceeds a resource limit, for example, the maximum number of
@@ -27,7 +25,8 @@ import com.amazonaws.AmazonServiceException;
  * >Limits</a> in the <i>AWS WAF Developer Guide</i>.
  * </p>
  */
-public class WAFLimitsExceededException extends AmazonServiceException {
+public class WAFLimitsExceededException extends
+        com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     /**

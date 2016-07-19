@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.cloudwatch.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The next token specified is invalid.
  * </p>
  */
-public class InvalidNextTokenException extends AmazonServiceException {
+public class InvalidNextTokenException extends
+        com.amazonaws.services.cloudwatch.model.AmazonCloudWatchException {
     private static final long serialVersionUID = 1L;
 
     /**

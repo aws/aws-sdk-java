@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.kms.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the specified <code>GrantId</code> is not
  * valid.
  * </p>
  */
-public class InvalidGrantIdException extends AmazonServiceException {
+public class InvalidGrantIdException extends
+        com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 
     /**

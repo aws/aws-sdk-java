@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.lambda.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * AWS Lambda was not able to create an Elastic Network Interface (ENI) in the
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * for network interfaces has been reached.
  * </p>
  */
-public class ENILimitReachedException extends AmazonServiceException {
+public class ENILimitReachedException extends
+        com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
     private String type;

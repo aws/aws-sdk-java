@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * <i>CertificateIdentifier</i> does not refer to an existing certificate.
  * </p>
  */
-public class CertificateNotFoundException extends AmazonServiceException {
+public class CertificateNotFoundException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

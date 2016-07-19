@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.inspector.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You started an assessment run, but one of the instances is already
@@ -25,7 +23,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class AgentsAlreadyRunningAssessmentException extends
-        AmazonServiceException {
+        com.amazonaws.services.inspector.model.AmazonInspectorException {
     private static final long serialVersionUID = 1L;
 
     /** <p/> */

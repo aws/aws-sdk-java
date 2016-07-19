@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.directory.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified directory is unavailable or could not be found.
  * </p>
  */
-public class DirectoryUnavailableException extends AmazonServiceException {
+public class DirectoryUnavailableException extends
+        com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 
     private String requestId;

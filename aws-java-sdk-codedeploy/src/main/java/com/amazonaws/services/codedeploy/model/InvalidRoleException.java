@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The service role ARN was specified in an invalid format. Or, if an Auto
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * appropriate permissions to Auto Scaling.
  * </p>
  */
-public class InvalidRoleException extends AmazonServiceException {
+public class InvalidRoleException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

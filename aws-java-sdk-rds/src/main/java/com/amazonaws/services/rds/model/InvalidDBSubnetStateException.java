@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The DB subnet is not in the <i>available</i> state.
  * </p>
  */
-public class InvalidDBSubnetStateException extends AmazonServiceException {
+public class InvalidDBSubnetStateException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

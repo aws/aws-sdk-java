@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This error indicates that you've reached the maximum number of hosted zones
@@ -26,7 +24,8 @@ import com.amazonaws.AmazonServiceException;
  * Us</a> page.
  * </p>
  */
-public class TooManyHostedZonesException extends AmazonServiceException {
+public class TooManyHostedZonesException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

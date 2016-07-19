@@ -15,9 +15,6 @@
 
 package com.amazonaws.codegen.internal;
 
-import java.io.IOException;
-import java.util.List;
-
 import com.amazonaws.codegen.model.config.templates.ChildTemplate;
 import com.amazonaws.codegen.model.config.templates.CodeGenTemplatesConfig;
 import com.amazonaws.codegen.model.config.templates.TopLevelTemplate;
@@ -27,6 +24,9 @@ import com.amazonaws.codegen.model.intermediate.ShapeType;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateExceptionHandler;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * Util class that sets up the freemarker configuration and loads the templates.
@@ -40,7 +40,7 @@ public class Freemarker {
     }
 
     private Configuration newFreeMarkerConfig() {
-        Configuration freeMarkerConfig = new Configuration(Configuration.VERSION_2_3_21);
+        Configuration freeMarkerConfig = new Configuration(Configuration.VERSION_2_3_24);
         freeMarkerConfig.setDefaultEncoding("UTF-8");
         freeMarkerConfig.setClassForTemplateLoading(this.getClass(), "/");
         freeMarkerConfig
@@ -165,5 +165,9 @@ public class Freemarker {
 
     public Template getPackageInfoTemplate() throws IOException {
         return getTemplate(templateConfig.getPackageInfo());
+    }
+
+    public Template getBaseExceptionClassTemplate() throws IOException {
+        return getTemplate(templateConfig.getBaseExceptionClass());
     }
 }

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * <i>DBSubnetGroupName</i> is already used by an existing DB subnet group.
  * </p>
  */
-public class DBSubnetGroupAlreadyExistsException extends AmazonServiceException {
+public class DBSubnetGroupAlreadyExistsException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

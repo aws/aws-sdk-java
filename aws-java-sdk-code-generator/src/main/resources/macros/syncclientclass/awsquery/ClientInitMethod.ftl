@@ -5,7 +5,8 @@
         exceptionUnmarshallers.add(new ${shapeModel.shapeName}Unmarshaller());
     </#if>
 </#list>
-        exceptionUnmarshallers.add(new ${serviceModelRoot.exceptionUnmarshallerImpl}());
+        exceptionUnmarshallers.add(
+            new ${serviceModelRoot.exceptionUnmarshallerImpl}(${serviceModelRoot.sdkModeledExceptionBaseFqcn}.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(ENDPOINT_PREFIX);

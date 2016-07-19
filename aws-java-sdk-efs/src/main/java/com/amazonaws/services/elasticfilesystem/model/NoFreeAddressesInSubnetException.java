@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if <code>IpAddress</code> was not specified in the request and there
  * are no free IP addresses in the subnet.
  * </p>
  */
-public class NoFreeAddressesInSubnetException extends AmazonServiceException {
+public class NoFreeAddressesInSubnetException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

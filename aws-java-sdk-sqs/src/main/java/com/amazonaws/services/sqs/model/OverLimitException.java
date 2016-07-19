@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.sqs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The action that you requested would violate a limit. For example,
@@ -26,7 +24,8 @@ import com.amazonaws.AmazonServiceException;
  * maximum number of permissions for the queue has already been reached.
  * </p>
  */
-public class OverLimitException extends AmazonServiceException {
+public class OverLimitException extends
+        com.amazonaws.services.sqs.model.AmazonSQSException {
     private static final long serialVersionUID = 1L;
 
     /**

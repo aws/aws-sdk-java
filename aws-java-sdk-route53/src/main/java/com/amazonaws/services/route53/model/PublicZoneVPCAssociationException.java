@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The hosted zone you are trying to associate VPC with doesn't have any VPC
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * public hosted zone.
  * </p>
  */
-public class PublicZoneVPCAssociationException extends AmazonServiceException {
+public class PublicZoneVPCAssociationException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

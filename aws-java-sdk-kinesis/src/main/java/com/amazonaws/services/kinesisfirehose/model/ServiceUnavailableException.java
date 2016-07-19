@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.kinesisfirehose.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The service is unavailable, back off and retry the operation. If you continue
@@ -28,7 +26,9 @@ import com.amazonaws.AmazonServiceException;
  * Kinesis Firehose Limits</a>.
  * </p>
  */
-public class ServiceUnavailableException extends AmazonServiceException {
+public class ServiceUnavailableException
+        extends
+        com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException {
     private static final long serialVersionUID = 1L;
 
     /**

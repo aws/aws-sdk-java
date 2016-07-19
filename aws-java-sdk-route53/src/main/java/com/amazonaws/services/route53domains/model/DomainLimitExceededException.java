@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.route53domains.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The number of domains has exceeded the allowed threshold for the account.
  * </p>
  */
-public class DomainLimitExceededException extends AmazonServiceException {
+public class DomainLimitExceededException
+        extends
+        com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * File system specified in export manifest is invalid.
  */
-public class InvalidFileSystemException extends AmazonServiceException {
+public class InvalidFileSystemException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

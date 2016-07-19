@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You already have a cache cluster with the given identifier.
  * </p>
  */
-public class CacheClusterAlreadyExistsException extends AmazonServiceException {
+public class CacheClusterAlreadyExistsException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

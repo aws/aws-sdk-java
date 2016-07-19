@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the public key is malformed or otherwise
  * invalid.
  * </p>
  */
-public class InvalidPublicKeyException extends AmazonServiceException {
+public class InvalidPublicKeyException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

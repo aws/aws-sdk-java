@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The Auto Scaling group was specified in an invalid format or does not exist.
  * </p>
  */
-public class InvalidAutoScalingGroupException extends AmazonServiceException {
+public class InvalidAutoScalingGroupException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

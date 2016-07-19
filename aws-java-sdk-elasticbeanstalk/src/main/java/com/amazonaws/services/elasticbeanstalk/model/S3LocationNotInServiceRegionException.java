@@ -16,16 +16,15 @@
 
 package com.amazonaws.services.elasticbeanstalk.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified S3 bucket does not belong to the S3 region in which the service
  * is running.
  * </p>
  */
-public class S3LocationNotInServiceRegionException extends
-        AmazonServiceException {
+public class S3LocationNotInServiceRegionException
+        extends
+        com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException {
     private static final long serialVersionUID = 1L;
 
     /**

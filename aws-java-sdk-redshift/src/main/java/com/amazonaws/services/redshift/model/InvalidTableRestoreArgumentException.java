@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The value specified for the <code>sourceDatabaseName</code>,
@@ -26,7 +24,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class InvalidTableRestoreArgumentException extends
-        AmazonServiceException {
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

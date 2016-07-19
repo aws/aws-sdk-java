@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The deployment is already complete.
  * </p>
  */
-public class DeploymentAlreadyCompletedException extends AmazonServiceException {
+public class DeploymentAlreadyCompletedException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

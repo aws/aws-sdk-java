@@ -28,6 +28,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
@@ -36,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.simpledb.model.*;
 import com.amazonaws.services.simpledb.model.transform.*;
@@ -288,7 +290,9 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements
                 .add(new InvalidNumberValueTestsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MissingParameterExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new LegacyErrorUnmarshaller());
+        exceptionUnmarshallers
+                .add(new LegacyErrorUnmarshaller(
+                        com.amazonaws.services.simpledb.model.AmazonSimpleDBException.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(ENDPOINT_PREFIX);

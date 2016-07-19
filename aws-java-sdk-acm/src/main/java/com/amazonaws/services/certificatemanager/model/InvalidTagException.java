@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.certificatemanager.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * One or both of the values that make up the key-value pair is not valid. For
  * example, you cannot specify a tag value that begins with <code>aws:</code>.
  * </p>
  */
-public class InvalidTagException extends AmazonServiceException {
+public class InvalidTagException
+        extends
+        com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException {
     private static final long serialVersionUID = 1L;
 
     /**

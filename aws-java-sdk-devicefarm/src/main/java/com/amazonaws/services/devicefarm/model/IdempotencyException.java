@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.devicefarm.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An entity with the same name already exists.
  * </p>
  */
-public class IdempotencyException extends AmazonServiceException {
+public class IdempotencyException extends
+        com.amazonaws.services.devicefarm.model.AWSDeviceFarmException {
     private static final long serialVersionUID = 1L;
 
     /**

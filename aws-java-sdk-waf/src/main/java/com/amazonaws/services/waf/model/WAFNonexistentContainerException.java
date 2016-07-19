@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.waf.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation failed because you tried to add an object to or delete an
@@ -35,7 +33,8 @@ import com.amazonaws.AmazonServiceException;
  * exist.</li>
  * </ul>
  */
-public class WAFNonexistentContainerException extends AmazonServiceException {
+public class WAFNonexistentContainerException extends
+        com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified CIDR IP range or EC2 security group is not authorized for the
  * specified cluster security group.
  * </p>
  */
-public class AuthorizationNotFoundException extends AmazonServiceException {
+public class AuthorizationNotFoundException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

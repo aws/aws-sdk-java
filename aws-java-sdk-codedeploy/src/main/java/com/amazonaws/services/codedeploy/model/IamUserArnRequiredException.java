@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An IAM user ARN was not specified.
  * </p>
  */
-public class IamUserArnRequiredException extends AmazonServiceException {
+public class IamUserArnRequiredException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified Amazon EC2 security group is already authorized for the
  * specified cache security group.
  * </p>
  */
-public class AuthorizationAlreadyExistsException extends AmazonServiceException {
+public class AuthorizationAlreadyExistsException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

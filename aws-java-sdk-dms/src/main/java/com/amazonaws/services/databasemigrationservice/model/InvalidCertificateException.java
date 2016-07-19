@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.databasemigrationservice.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The certificate was not valid.
  * </p>
  */
-public class InvalidCertificateException extends AmazonServiceException {
+public class InvalidCertificateException
+        extends
+        com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

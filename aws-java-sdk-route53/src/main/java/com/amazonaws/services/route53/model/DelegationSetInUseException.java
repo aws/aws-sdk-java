@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified delegation contains associated hosted zones which must be
  * deleted before the reusable delegation set can be deleted.
  * </p>
  */
-public class DelegationSetInUseException extends AmazonServiceException {
+public class DelegationSetInUseException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

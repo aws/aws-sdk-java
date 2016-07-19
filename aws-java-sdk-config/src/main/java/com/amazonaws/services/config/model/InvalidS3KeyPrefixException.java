@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified Amazon S3 key prefix is not valid.
  * </p>
  */
-public class InvalidS3KeyPrefixException extends AmazonServiceException {
+public class InvalidS3KeyPrefixException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

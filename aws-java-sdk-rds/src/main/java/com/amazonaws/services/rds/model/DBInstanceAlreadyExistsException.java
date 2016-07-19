@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * User already has a DB instance with the given identifier.
  * </p>
  */
-public class DBInstanceAlreadyExistsException extends AmazonServiceException {
+public class DBInstanceAlreadyExistsException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

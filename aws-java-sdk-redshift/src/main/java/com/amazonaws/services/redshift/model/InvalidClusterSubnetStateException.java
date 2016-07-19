@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The state of the subnet is invalid.
  * </p>
  */
-public class InvalidClusterSubnetStateException extends AmazonServiceException {
+public class InvalidClusterSubnetStateException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

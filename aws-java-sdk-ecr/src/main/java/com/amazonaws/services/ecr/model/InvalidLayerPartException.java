@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The layer part size is not valid, or the first byte specified is not
  * consecutive to the last byte of a previous layer part upload.
  * </p>
  */
-public class InvalidLayerPartException extends AmazonServiceException {
+public class InvalidLayerPartException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

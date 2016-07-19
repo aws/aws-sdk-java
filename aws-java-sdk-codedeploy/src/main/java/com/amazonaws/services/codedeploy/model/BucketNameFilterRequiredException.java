@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A bucket name is required, but was not provided.
  * </p>
  */
-public class BucketNameFilterRequiredException extends AmazonServiceException {
+public class BucketNameFilterRequiredException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

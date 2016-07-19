@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.ecs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You cannot delete a cluster that has registered container instances. You must
@@ -26,7 +24,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class ClusterContainsContainerInstancesException extends
-        AmazonServiceException {
+        com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 
     /**

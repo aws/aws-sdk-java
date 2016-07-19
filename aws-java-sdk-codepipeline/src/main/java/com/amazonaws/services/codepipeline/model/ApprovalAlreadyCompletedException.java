@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codepipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The approval action has already been approved or rejected.
  * </p>
  */
-public class ApprovalAlreadyCompletedException extends AmazonServiceException {
+public class ApprovalAlreadyCompletedException extends
+        com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -28,6 +28,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
@@ -36,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.services.opsworks.model.transform.*;
@@ -172,7 +174,9 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ValidationException")
                                     .withModeledClass(
-                                            com.amazonaws.services.opsworks.model.ValidationException.class)));
+                                            com.amazonaws.services.opsworks.model.ValidationException.class))
+                    .withBaseServiceExceptionClass(
+                            com.amazonaws.services.opsworks.model.AWSOpsWorksException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS OpsWorks. A

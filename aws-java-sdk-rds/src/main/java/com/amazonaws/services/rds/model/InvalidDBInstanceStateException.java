@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified DB instance is not in the <i>available</i> state.
  * </p>
  */
-public class InvalidDBInstanceStateException extends AmazonServiceException {
+public class InvalidDBInstanceStateException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

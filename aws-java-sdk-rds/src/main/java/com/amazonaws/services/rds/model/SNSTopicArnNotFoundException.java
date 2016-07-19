@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The SNS topic ARN does not exist.
  * </p>
  */
-public class SNSTopicArnNotFoundException extends AmazonServiceException {
+public class SNSTopicArnNotFoundException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

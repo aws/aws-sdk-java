@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You have provided a null or empty role ARN.
  * </p>
  */
-public class InvalidRoleException extends AmazonServiceException {
+public class InvalidRoleException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

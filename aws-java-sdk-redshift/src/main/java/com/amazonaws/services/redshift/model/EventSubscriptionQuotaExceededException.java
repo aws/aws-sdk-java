@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request would exceed the allowed number of event subscriptions for this
@@ -28,7 +26,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class EventSubscriptionQuotaExceededException extends
-        AmazonServiceException {
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

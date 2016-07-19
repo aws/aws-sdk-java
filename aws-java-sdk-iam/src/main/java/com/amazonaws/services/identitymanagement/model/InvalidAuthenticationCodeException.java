@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the authentication code was not recognized.
  * The error message describes the specific error.
  * </p>
  */
-public class InvalidAuthenticationCodeException extends AmazonServiceException {
+public class InvalidAuthenticationCodeException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

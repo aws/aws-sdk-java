@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An invalid subnet identifier was specified.
  * </p>
  */
-public class InvalidSubnetException extends AmazonServiceException {
+public class InvalidSubnetException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

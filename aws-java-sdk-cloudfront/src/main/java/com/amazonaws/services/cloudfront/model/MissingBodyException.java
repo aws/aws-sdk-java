@@ -16,13 +16,12 @@
 
 package com.amazonaws.services.cloudfront.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * This operation requires a body. Ensure that the body is present and the
  * Content-Type header is set.
  */
-public class MissingBodyException extends AmazonServiceException {
+public class MissingBodyException extends
+        com.amazonaws.services.cloudfront.model.AmazonCloudFrontException {
     private static final long serialVersionUID = 1L;
 
     /**

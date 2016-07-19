@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because it attempted to create a resource that
  * already exists.
  * </p>
  */
-public class EntityAlreadyExistsException extends AmazonServiceException {
+public class EntityAlreadyExistsException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * The JOBID was missing, not found, or not associated with the AWS account.
  */
-public class InvalidJobIdException extends AmazonServiceException {
+public class InvalidJobIdException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

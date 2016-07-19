@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.iotdata.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified combination of HTTP verb and URI is not supported.
  * </p>
  */
-public class MethodNotAllowedException extends AmazonServiceException {
+public class MethodNotAllowedException extends
+        com.amazonaws.services.iotdata.model.AWSIotDataException {
     private static final long serialVersionUID = 1L;
 
     /**

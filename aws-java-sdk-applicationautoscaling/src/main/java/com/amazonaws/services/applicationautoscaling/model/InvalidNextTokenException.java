@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.applicationautoscaling.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The next token supplied was invalid.
  * </p>
  */
-public class InvalidNextTokenException extends AmazonServiceException {
+public class InvalidNextTokenException
+        extends
+        com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException {
     private static final long serialVersionUID = 1L;
 
     /**

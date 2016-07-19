@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elasticmapreduce.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception occurs when there is something wrong with user input.
  * </p>
  */
-public class InvalidRequestException extends AmazonServiceException {
+public class InvalidRequestException
+        extends
+        com.amazonaws.services.elasticmapreduce.model.AmazonElasticMapReduceException {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -31,7 +31,7 @@ public class InvalidRequestException extends AmazonServiceException {
      * The error code associated with the exception.
      * </p>
      */
-    private String errorCode;
+    private String emrErrorCode;
 
     /**
      * Constructs a new InvalidRequestException with the specified error
@@ -49,13 +49,13 @@ public class InvalidRequestException extends AmazonServiceException {
      * The error code associated with the exception.
      * </p>
      * 
-     * @param errorCode
+     * @param emrErrorCode
      *        The error code associated with the exception.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
+    public void setEmrErrorCode(String emrErrorCode) {
+        this.emrErrorCode = emrErrorCode;
     }
 
     /**
@@ -67,8 +67,8 @@ public class InvalidRequestException extends AmazonServiceException {
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ErrorCode")
-    public String getErrorCode() {
-        return this.errorCode;
+    public String getEmrErrorCode() {
+        return this.emrErrorCode;
     }
 
     /**
@@ -76,14 +76,14 @@ public class InvalidRequestException extends AmazonServiceException {
      * The error code associated with the exception.
      * </p>
      * 
-     * @param errorCode
+     * @param emrErrorCode
      *        The error code associated with the exception.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
-    public InvalidRequestException withErrorCode(String errorCode) {
-        setErrorCode(errorCode);
+    public InvalidRequestException withEmrErrorCode(String emrErrorCode) {
+        setEmrErrorCode(emrErrorCode);
         return this;
     }
 

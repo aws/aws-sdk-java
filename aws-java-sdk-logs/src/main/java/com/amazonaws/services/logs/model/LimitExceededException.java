@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.logs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if you have reached the maximum number of resources that can be
  * created.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException extends
+        com.amazonaws.services.logs.model.AWSLogsException {
     private static final long serialVersionUID = 1L;
 
     /**

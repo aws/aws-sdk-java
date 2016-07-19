@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codepipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified pipeline was specified in an invalid format or cannot be found.
  * </p>
  */
-public class PipelineNotFoundException extends AmazonServiceException {
+public class PipelineNotFoundException extends
+        com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

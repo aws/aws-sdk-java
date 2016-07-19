@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified layer upload does not contain any layer parts.
  * </p>
  */
-public class EmptyUploadException extends AmazonServiceException {
+public class EmptyUploadException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

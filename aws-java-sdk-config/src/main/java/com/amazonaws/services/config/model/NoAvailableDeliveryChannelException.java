@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * There is no delivery channel available to record configurations.
  * </p>
  */
-public class NoAvailableDeliveryChannelException extends AmazonServiceException {
+public class NoAvailableDeliveryChannelException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

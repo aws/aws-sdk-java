@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * User already has a reservation with the given identifier.
  * </p>
  */
-public class ReservedNodeAlreadyExistsException extends AmazonServiceException {
+public class ReservedNodeAlreadyExistsException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

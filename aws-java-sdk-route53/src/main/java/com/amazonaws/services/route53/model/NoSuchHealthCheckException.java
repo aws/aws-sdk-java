@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The health check you are trying to get or delete does not exist.
  * </p>
  */
-public class NoSuchHealthCheckException extends AmazonServiceException {
+public class NoSuchHealthCheckException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

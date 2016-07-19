@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The cluster subnet group name does not refer to an existing cluster subnet
  * group.
  * </p>
  */
-public class ClusterSubnetGroupNotFoundException extends AmazonServiceException {
+public class ClusterSubnetGroupNotFoundException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

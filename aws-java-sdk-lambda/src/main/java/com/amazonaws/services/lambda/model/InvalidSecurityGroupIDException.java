@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.lambda.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The Security Group ID provided in the Lambda function VPC configuration is
  * invalid.
  * </p>
  */
-public class InvalidSecurityGroupIDException extends AmazonServiceException {
+public class InvalidSecurityGroupIDException extends
+        com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
     private String type;

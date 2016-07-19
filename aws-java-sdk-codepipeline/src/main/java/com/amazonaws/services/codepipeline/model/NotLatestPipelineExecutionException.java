@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.codepipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The stage has failed in a later run of the pipeline and the
  * pipelineExecutionId associated with the request is out of date.
  * </p>
  */
-public class NotLatestPipelineExecutionException extends AmazonServiceException {
+public class NotLatestPipelineExecutionException extends
+        com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

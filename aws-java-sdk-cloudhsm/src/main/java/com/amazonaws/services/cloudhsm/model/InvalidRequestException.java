@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.cloudhsm.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that one or more of the request parameters are not valid.
  * </p>
  */
-public class InvalidRequestException extends AmazonServiceException {
+public class InvalidRequestException extends
+        com.amazonaws.services.cloudhsm.model.AWSCloudHSMException {
     private static final long serialVersionUID = 1L;
 
     /**

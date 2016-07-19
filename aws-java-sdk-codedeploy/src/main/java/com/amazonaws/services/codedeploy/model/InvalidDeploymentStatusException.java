@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified deployment status doesn't exist or cannot be determined.
  * </p>
  */
-public class InvalidDeploymentStatusException extends AmazonServiceException {
+public class InvalidDeploymentStatusException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

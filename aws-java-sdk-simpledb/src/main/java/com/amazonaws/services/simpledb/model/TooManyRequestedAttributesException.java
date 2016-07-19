@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.simpledb.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Too many attributes requested.
  * </p>
  */
-public class TooManyRequestedAttributesException extends AmazonServiceException {
+public class TooManyRequestedAttributesException extends
+        com.amazonaws.services.simpledb.model.AmazonSimpleDBException {
     private static final long serialVersionUID = 1L;
 
     private Float boxUsage;

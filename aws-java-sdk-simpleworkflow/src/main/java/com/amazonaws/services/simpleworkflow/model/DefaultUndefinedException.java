@@ -16,12 +16,12 @@
 
 package com.amazonaws.services.simpleworkflow.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * 
  */
-public class DefaultUndefinedException extends AmazonServiceException {
+public class DefaultUndefinedException
+        extends
+        com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException {
     private static final long serialVersionUID = 1L;
 
     /**

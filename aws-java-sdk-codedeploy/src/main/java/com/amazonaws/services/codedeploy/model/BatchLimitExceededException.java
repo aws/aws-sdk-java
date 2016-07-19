@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The maximum number of names or IDs allowed for this request (100) was
  * exceeded.
  * </p>
  */
-public class BatchLimitExceededException extends AmazonServiceException {
+public class BatchLimitExceededException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

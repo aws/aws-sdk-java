@@ -19,15 +19,15 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "autoscaling",
     "signingName" : "application-autoscaling",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSApplicationAutoScalingClientBuilder",
     "asyncClientBuilderClassName" : "AWSApplicationAutoScalingAsyncClientBuilder",
     "serviceName" : "Application Auto Scaling",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "DeleteScalingPolicy" : {
@@ -1163,11 +1163,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ScalingPolicy",
-          "templateType" : "java.util.List<ScalingPolicy>",
-          "templateImplType" : "java.util.ArrayList<ScalingPolicy>",
           "simple" : false,
-          "map" : false
+          "simpleType" : "ScalingPolicy",
+          "map" : false,
+          "templateType" : "java.util.List<ScalingPolicy>",
+          "templateImplType" : "java.util.ArrayList<ScalingPolicy>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1356,11 +1356,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ScalingPolicy",
-            "templateType" : "java.util.List<ScalingPolicy>",
-            "templateImplType" : "java.util.ArrayList<ScalingPolicy>",
             "simple" : false,
-            "map" : false
+            "simpleType" : "ScalingPolicy",
+            "map" : false,
+            "templateType" : "java.util.List<ScalingPolicy>",
+            "templateImplType" : "java.util.ArrayList<ScalingPolicy>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1682,11 +1682,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ScalableTarget",
-          "templateType" : "java.util.List<ScalableTarget>",
-          "templateImplType" : "java.util.ArrayList<ScalableTarget>",
           "simple" : false,
-          "map" : false
+          "simpleType" : "ScalableTarget",
+          "map" : false,
+          "templateType" : "java.util.List<ScalableTarget>",
+          "templateImplType" : "java.util.ArrayList<ScalableTarget>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1928,11 +1928,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ScalableTarget",
-            "templateType" : "java.util.List<ScalableTarget>",
-            "templateImplType" : "java.util.ArrayList<ScalableTarget>",
             "simple" : false,
-            "map" : false
+            "simpleType" : "ScalableTarget",
+            "map" : false,
+            "templateType" : "java.util.List<ScalableTarget>",
+            "templateImplType" : "java.util.ArrayList<ScalableTarget>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3650,11 +3650,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
           "simple" : true,
-          "map" : false
+          "simpleType" : "String",
+          "map" : false,
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4055,11 +4055,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
             "simple" : true,
-            "map" : false
+            "simpleType" : "String",
+            "map" : false,
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4504,11 +4504,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
           "simple" : true,
-          "map" : false
+          "simpleType" : "String",
+          "map" : false,
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4805,11 +4805,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
             "simple" : true,
-            "map" : false
+            "simpleType" : "String",
+            "map" : false,
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6392,11 +6392,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "StepAdjustment",
-          "templateType" : "java.util.List<StepAdjustment>",
-          "templateImplType" : "java.util.ArrayList<StepAdjustment>",
           "simple" : false,
-          "map" : false
+          "simpleType" : "StepAdjustment",
+          "map" : false,
+          "templateType" : "java.util.List<StepAdjustment>",
+          "templateImplType" : "java.util.ArrayList<StepAdjustment>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6742,11 +6742,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "StepAdjustment",
-            "templateType" : "java.util.List<StepAdjustment>",
-            "templateImplType" : "java.util.ArrayList<StepAdjustment>",
             "simple" : false,
-            "map" : false
+            "simpleType" : "StepAdjustment",
+            "map" : false,
+            "templateType" : "java.util.List<StepAdjustment>",
+            "templateImplType" : "java.util.ArrayList<StepAdjustment>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7441,11 +7441,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Alarm",
-          "templateType" : "java.util.List<Alarm>",
-          "templateImplType" : "java.util.ArrayList<Alarm>",
           "simple" : false,
-          "map" : false
+          "simpleType" : "Alarm",
+          "map" : false,
+          "templateType" : "java.util.List<Alarm>",
+          "templateImplType" : "java.util.ArrayList<Alarm>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7952,11 +7952,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Alarm",
-            "templateType" : "java.util.List<Alarm>",
-            "templateImplType" : "java.util.ArrayList<Alarm>",
             "simple" : false,
-            "map" : false
+            "simpleType" : "Alarm",
+            "map" : false,
+            "templateType" : "java.util.List<Alarm>",
+            "templateImplType" : "java.util.ArrayList<Alarm>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8728,11 +8728,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ScalingActivity",
-          "templateType" : "java.util.List<ScalingActivity>",
-          "templateImplType" : "java.util.ArrayList<ScalingActivity>",
           "simple" : false,
-          "map" : false
+          "simpleType" : "ScalingActivity",
+          "map" : false,
+          "templateType" : "java.util.List<ScalingActivity>",
+          "templateImplType" : "java.util.ArrayList<ScalingActivity>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8974,11 +8974,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ScalingActivity",
-            "templateType" : "java.util.List<ScalingActivity>",
-            "templateImplType" : "java.util.ArrayList<ScalingActivity>",
             "simple" : false,
-            "map" : false
+            "simpleType" : "ScalingActivity",
+            "map" : false,
+            "templateType" : "java.util.List<ScalingActivity>",
+            "templateImplType" : "java.util.ArrayList<ScalingActivity>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10778,12 +10778,17 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException",
+  "sdkModeledExceptionBaseClassName" : "AWSApplicationAutoScalingException"
 }

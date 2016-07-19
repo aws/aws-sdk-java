@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.certificatemanager.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested Amazon Resource Name (ARN) does not refer to an existing
  * resource.
  * </p>
  */
-public class InvalidArnException extends AmazonServiceException {
+public class InvalidArnException
+        extends
+        com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException {
     private static final long serialVersionUID = 1L;
 
     /**

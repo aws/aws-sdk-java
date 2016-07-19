@@ -15,19 +15,6 @@
 
 package com.amazonaws.codegen.emitters;
 
-import static com.amazonaws.codegen.internal.Constants.AUTH_POLICY_ENUM_CLASS_DIR;
-import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_MODEL_SUFFIX;
-import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_TRANSFORM_SUFFIX;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-
 import com.amazonaws.codegen.internal.Freemarker;
 import com.amazonaws.codegen.internal.ImmutableMapParameter;
 import com.amazonaws.codegen.internal.Utils;
@@ -43,6 +30,19 @@ import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
 import freemarker.template.Template;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+import static com.amazonaws.codegen.internal.Constants.AUTH_POLICY_ENUM_CLASS_DIR;
+import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_MODEL_SUFFIX;
+import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_TRANSFORM_SUFFIX;
 
 /**
  * Consumes the intermediate model and submits tasks for generating the code. Waits until all tasks
@@ -94,6 +94,11 @@ public class CodeEmitter implements AutoCloseable {
         emitClientClasses();
         emitClientBuilders();
         emitModelClasses();
+        // If a custom base class is provided we assume it already exists and does not need
+        // to be generated
+        if (model.getCustomizationConfig().getSdkModeledExceptionBaseClassName() == null) {
+            emitExceptionBaseClass();
+        }
         emitMarshallerClasses();
         emitUnmarshallerClasses();
         emitPolicyActionEnumClass();
@@ -101,6 +106,7 @@ public class CodeEmitter implements AutoCloseable {
 
         waitForCompletion();
     }
+
 
     @Override
     public void close() {
@@ -207,6 +213,7 @@ public class CodeEmitter implements AutoCloseable {
             Map<String, Object> dataModel = ImmutableMapParameter.of(
                     "shape", shapeModel,
                     "metadata", metadata,
+                    "baseExceptionFqcn", model.getSdkModeledExceptionBaseFqcn(),
                     "customConfig", model.getCustomizationConfig());
 
             // Submit task for generating the
@@ -216,6 +223,18 @@ public class CodeEmitter implements AutoCloseable {
                     dataModel));
 
         }
+    }
+
+    private void emitExceptionBaseClass() throws IOException {
+        final String baseClassName = model.getSdkModeledExceptionBaseClassName();
+        submitTask(new ClassGeneratorTask(modelClassDir,
+                                          baseClassName,
+                                          freemarker.getBaseExceptionClassTemplate(),
+                                          ImmutableMapParameter
+                                                  .of("className", baseClassName,
+                                                      "metadata", model.getMetadata(),
+                                                      "baseExceptionFqcn",
+                                                      model.getServiceBaseExceptionFqcn())));
     }
 
     /**

@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.apigateway.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * 
  */
-public class NotFoundException extends AmazonServiceException {
+public class NotFoundException extends
+        com.amazonaws.services.apigateway.model.AmazonApiGatewayException {
     private static final long serialVersionUID = 1L;
 
     /**

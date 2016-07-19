@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You attempted one of the following actions:
@@ -41,7 +39,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class SnapshotFeatureNotSupportedException extends
-        AmazonServiceException {
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.dynamodbv2.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Your request rate is too high. The AWS SDKs for DynamoDB automatically retry
@@ -30,7 +28,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class ProvisionedThroughputExceededException extends
-        AmazonServiceException {
+        com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException {
     private static final long serialVersionUID = 1L;
 
     /**

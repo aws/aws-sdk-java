@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.sns.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that the rate at which requests have been submitted for this action
  * exceeds the limit for your account.
  * </p>
  */
-public class ThrottledException extends AmazonServiceException {
+public class ThrottledException extends
+        com.amazonaws.services.sns.model.AmazonSNSException {
     private static final long serialVersionUID = 1L;
 
     /**

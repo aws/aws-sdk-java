@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * At least one of the specified arguments is invalid.
  * </p>
  */
-public class InvalidArgumentException extends AmazonServiceException {
+public class InvalidArgumentException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

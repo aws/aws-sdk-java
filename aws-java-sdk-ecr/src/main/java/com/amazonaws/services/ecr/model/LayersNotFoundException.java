@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified layers could not be found, or the specified layer is not valid
  * for this repository.
  * </p>
  */
-public class LayersNotFoundException extends AmazonServiceException {
+public class LayersNotFoundException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

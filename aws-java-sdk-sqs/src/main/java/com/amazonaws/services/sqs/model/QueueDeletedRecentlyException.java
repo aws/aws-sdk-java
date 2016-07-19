@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.sqs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You must wait 60 seconds after deleting a queue before you can create another
  * with the same name.
  * </p>
  */
-public class QueueDeletedRecentlyException extends AmazonServiceException {
+public class QueueDeletedRecentlyException extends
+        com.amazonaws.services.sqs.model.AmazonSQSException {
     private static final long serialVersionUID = 1L;
 
     /**

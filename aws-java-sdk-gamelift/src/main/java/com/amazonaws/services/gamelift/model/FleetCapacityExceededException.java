@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.gamelift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified fleet has no available instances to fulfill a request to create
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * capacity has been increased.
  * </p>
  */
-public class FleetCapacityExceededException extends AmazonServiceException {
+public class FleetCapacityExceededException extends
+        com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 
     /**

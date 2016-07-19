@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.inspector.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because it attempted to create resources beyond the
  * current AWS account limits. The error code describes the limit exceeded.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException extends
+        com.amazonaws.services.inspector.model.AmazonInspectorException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The cluster does not have read bucket or put object permissions on the S3
  * bucket specified when enabling logging.
  * </p>
  */
-public class InsufficientS3BucketPolicyException extends AmazonServiceException {
+public class InsufficientS3BucketPolicyException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

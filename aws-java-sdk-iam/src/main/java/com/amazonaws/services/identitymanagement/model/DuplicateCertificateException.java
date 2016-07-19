@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the same certificate is associated with an
  * IAM user in the account.
  * </p>
  */
-public class DuplicateCertificateException extends AmazonServiceException {
+public class DuplicateCertificateException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

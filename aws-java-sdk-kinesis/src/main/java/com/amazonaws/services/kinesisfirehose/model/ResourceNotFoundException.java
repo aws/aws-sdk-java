@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.kinesisfirehose.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified resource could not be found.
  * </p>
  */
-public class ResourceNotFoundException extends AmazonServiceException {
+public class ResourceNotFoundException
+        extends
+        com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException {
     private static final long serialVersionUID = 1L;
 
     /**

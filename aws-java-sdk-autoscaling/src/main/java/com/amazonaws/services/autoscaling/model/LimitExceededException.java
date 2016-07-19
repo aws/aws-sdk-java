@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.autoscaling.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You have already reached a limit for your Auto Scaling resources (for
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * information, see <a>DescribeAccountLimits</a>.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException extends
+        com.amazonaws.services.autoscaling.model.AmazonAutoScalingException {
     private static final long serialVersionUID = 1L;
 
     /**

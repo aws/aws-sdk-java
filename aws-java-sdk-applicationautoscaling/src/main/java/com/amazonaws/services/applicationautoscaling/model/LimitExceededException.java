@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.applicationautoscaling.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Your account exceeded a limit. This exception is thrown when a per-account
@@ -26,7 +24,9 @@ import com.amazonaws.AmazonServiceException;
  * scalable target, and 20 step adjustments per step scaling policy.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException
+        extends
+        com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException {
     private static final long serialVersionUID = 1L;
 
     /**

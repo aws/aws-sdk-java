@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The quota for HSM configurations has been reached. For information about
@@ -28,7 +26,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class HsmConfigurationQuotaExceededException extends
-        AmazonServiceException {
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

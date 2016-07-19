@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.gamelift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The client failed authentication. Clients should not retry such requests
  * </p>
  */
-public class UnauthorizedException extends AmazonServiceException {
+public class UnauthorizedException extends
+        com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 
     /**

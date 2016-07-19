@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.autoscaling.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The Auto Scaling group or launch configuration can't be deleted because it is
  * in use.
  * </p>
  */
-public class ResourceInUseException extends AmazonServiceException {
+public class ResourceInUseException extends
+        com.amazonaws.services.autoscaling.model.AmazonAutoScalingException {
     private static final long serialVersionUID = 1L;
 
     /**

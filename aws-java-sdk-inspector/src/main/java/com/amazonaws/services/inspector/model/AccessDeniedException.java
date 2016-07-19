@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.inspector.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You do not have required permissions to access the requested resource.
  * </p>
  */
-public class AccessDeniedException extends AmazonServiceException {
+public class AccessDeniedException extends
+        com.amazonaws.services.inspector.model.AmazonInspectorException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The cluster already has cross-region snapshot copy enabled.
  * </p>
  */
-public class SnapshotCopyAlreadyEnabledException extends AmazonServiceException {
+public class SnapshotCopyAlreadyEnabledException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

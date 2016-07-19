@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The resource type is not valid. If you are attempting to tag an instance, the
  * instance must be a registered, managed instance.
  * </p>
  */
-public class InvalidResourceTypeException extends AmazonServiceException {
+public class InvalidResourceTypeException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

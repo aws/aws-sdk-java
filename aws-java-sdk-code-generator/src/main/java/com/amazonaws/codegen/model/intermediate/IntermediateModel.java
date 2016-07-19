@@ -38,12 +38,11 @@ public class IntermediateModel {
 
     private final ServiceExamples examples;
 
-    public IntermediateModel(
-            @JsonProperty("metadata") Metadata metadata,
-            @JsonProperty("operations") Map<String, OperationModel> operations,
-            @JsonProperty("shapes") Map<String, ShapeModel> shapes,
-            @JsonProperty("customizationConfig") CustomizationConfig customizationConfig,
-            @JsonProperty("serviceExamples") ServiceExamples examples) {
+    public IntermediateModel(@JsonProperty("metadata") Metadata metadata,
+                             @JsonProperty("operations") Map<String, OperationModel> operations,
+                             @JsonProperty("shapes") Map<String, ShapeModel> shapes,
+                             @JsonProperty("customizationConfig") CustomizationConfig customizationConfig,
+                             @JsonProperty("serviceExamples") ServiceExamples examples) {
         this.metadata = metadata;
         this.operations = operations;
         this.shapes = shapes;
@@ -70,13 +69,14 @@ public class IntermediateModel {
     public CustomizationConfig getCustomizationConfig() {
         return customizationConfig;
     }
-    
+
     public ServiceExamples getExamples() {
-    	return examples;
+        return examples;
     }
 
     /**
-     * ClientConfigurationFactory to use when producing default client configuration for the client.
+     * ClientConfigurationFactory to use when producing default client configuration for the
+     * client.
      */
     public String getClientConfigFactory() {
         if (customizationConfig.getCustomClientConfigFactory() == null) {
@@ -94,6 +94,24 @@ public class IntermediateModel {
             return customizationConfig.getCustomExceptionUnmarshallerImpl();
         } else {
             return metadata.getProtocolDefaultExceptionUmarshallerImpl();
+        }
+    }
+
+    public String getServiceBaseExceptionFqcn() {
+        // TODO Move this into Metadata
+        return metadata.getProtocol().getProvider().getBaseExceptionFqcn();
+    }
+
+    public String getSdkModeledExceptionBaseFqcn() {
+        return String.format("%s.model.%s", metadata.getPackageName(),
+                             getSdkModeledExceptionBaseClassName());
+    }
+
+    public String getSdkModeledExceptionBaseClassName() {
+        if (customizationConfig.getSdkModeledExceptionBaseClassName() != null) {
+            return customizationConfig.getSdkModeledExceptionBaseClassName();
+        } else {
+            return String.format("%sException", metadata.getSyncInterface());
         }
     }
 

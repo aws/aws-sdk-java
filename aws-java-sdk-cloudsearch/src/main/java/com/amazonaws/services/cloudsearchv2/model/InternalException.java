@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.cloudsearchv2.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An internal error occurred while processing the request. If this problem
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * target="_blank">Service Health Dashboard</a>.
  * </p>
  */
-public class InternalException extends AmazonServiceException {
+public class InternalException extends
+        com.amazonaws.services.cloudsearchv2.model.AmazonCloudSearchException {
     private static final long serialVersionUID = 1L;
 
     /**

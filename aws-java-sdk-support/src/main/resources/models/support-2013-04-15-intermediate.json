@@ -19,6 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "support",
     "signingName" : "support",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSSupportClientBuilder",
     "asyncClientBuilderClassName" : "AWSSupportAsyncClientBuilder",
@@ -26,8 +27,7 @@
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "AddAttachmentsToSet" : {
@@ -17838,6 +17838,8 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
@@ -17845,5 +17847,8 @@
     "operationExamples" : { }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "exceptionUnmarshallerImpl" : null,
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.support.model.AWSSupportException",
+  "sdkModeledExceptionBaseClassName" : "AWSSupportException"
 }

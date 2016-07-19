@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.gamelift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A service resource associated with the request could not be found. Clients
  * should not retry such requests
  * </p>
  */
-public class NotFoundException extends AmazonServiceException {
+public class NotFoundException extends
+        com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 
     /**

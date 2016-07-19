@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Request would result in user exceeding the allowed number of subnets in a DB
  * subnet groups.
  * </p>
  */
-public class DBSubnetQuotaExceededException extends AmazonServiceException {
+public class DBSubnetQuotaExceededException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

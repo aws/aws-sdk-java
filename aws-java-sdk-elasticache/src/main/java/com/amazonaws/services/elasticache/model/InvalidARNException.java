@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested Amazon Resource Name (ARN) does not refer to an existing
  * resource.
  * </p>
  */
-public class InvalidARNException extends AmazonServiceException {
+public class InvalidARNException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

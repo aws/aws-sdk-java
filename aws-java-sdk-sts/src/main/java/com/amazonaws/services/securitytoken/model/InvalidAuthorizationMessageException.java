@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.securitytoken.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The error returned if the message passed to
@@ -25,8 +23,9 @@ import com.amazonaws.AmazonServiceException;
  * token contains invalid characters, such as linebreaks.
  * </p>
  */
-public class InvalidAuthorizationMessageException extends
-        AmazonServiceException {
+public class InvalidAuthorizationMessageException
+        extends
+        com.amazonaws.services.securitytoken.model.AWSSecurityTokenServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

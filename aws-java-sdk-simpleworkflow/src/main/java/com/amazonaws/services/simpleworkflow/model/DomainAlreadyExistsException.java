@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.simpleworkflow.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the specified domain already exists. You will get this fault even
  * if the existing domain is in deprecated status.
  * </p>
  */
-public class DomainAlreadyExistsException extends AmazonServiceException {
+public class DomainAlreadyExistsException
+        extends
+        com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException {
     private static final long serialVersionUID = 1L;
 
     /**

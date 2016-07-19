@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticloadbalancing.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A listener already exists for the specified <code>LoadBalancerName</code> and
  * <code>LoadBalancerPort</code>, but with a different <code>InstancePort</code>, <code>Protocol</code>, or <code>SSLCertificateId</code>.
  * </p>
  */
-public class DuplicateListenerException extends AmazonServiceException {
+public class DuplicateListenerException
+        extends
+        com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 
     /**

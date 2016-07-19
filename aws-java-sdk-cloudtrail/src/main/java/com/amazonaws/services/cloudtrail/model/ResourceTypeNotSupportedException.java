@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.cloudtrail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception is thrown when the specified resource type is not supported by
  * CloudTrail.
  * </p>
  */
-public class ResourceTypeNotSupportedException extends AmazonServiceException {
+public class ResourceTypeNotSupportedException extends
+        com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 
     /**

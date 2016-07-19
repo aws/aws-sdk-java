@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.marketplacemetering.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The usage dimension does not match one of the UsageDimensions associated with
  * products.
  * </p>
  */
-public class InvalidUsageDimensionException extends AmazonServiceException {
+public class InvalidUsageDimensionException
+        extends
+        com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException {
     private static final long serialVersionUID = 1L;
 
     /**

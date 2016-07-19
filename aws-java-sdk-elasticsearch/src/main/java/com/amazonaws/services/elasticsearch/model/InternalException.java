@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.elasticsearch.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request processing has failed because of an unknown error, exception or
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * 500.
  * </p>
  */
-public class InternalException extends AmazonServiceException {
+public class InternalException extends
+        com.amazonaws.services.elasticsearch.model.AWSElasticsearchException {
     private static final long serialVersionUID = 1L;
 
     /**

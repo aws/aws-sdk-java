@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.waf.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation failed because you tried to delete an object that is still in
@@ -30,7 +28,8 @@ import com.amazonaws.AmazonServiceException;
  * </ul>
  * </p>
  */
-public class WAFReferencedItemException extends AmazonServiceException {
+public class WAFReferencedItemException extends
+        com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     /**

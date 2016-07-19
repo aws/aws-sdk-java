@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.simpleemail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that the delete operation could not be completed.
  * </p>
  */
-public class CannotDeleteException extends AmazonServiceException {
+public class CannotDeleteException
+        extends
+        com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
     private String name;

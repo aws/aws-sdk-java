@@ -16,16 +16,15 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the public key encoding format is
  * unsupported or unrecognized.
  * </p>
  */
-public class UnrecognizedPublicKeyEncodingException extends
-        AmazonServiceException {
+public class UnrecognizedPublicKeyEncodingException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -19,7 +19,6 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "metering.marketplace",
     "signingName" : "aws-marketplace",
-    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSMarketplaceMeteringClientBuilder",
     "asyncClientBuilderClassName" : "AWSMarketplaceMeteringAsyncClientBuilder",
     "serviceName" : "AWSMarketplace Metering",
@@ -27,7 +26,8 @@
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true
   },
   "operations" : {
     "MeterUsage" : {
@@ -1038,12 +1038,17 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "sdkModeledExceptionBaseClassName" : "AWSMarketplaceMeteringException",
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "exceptionUnmarshallerImpl" : null,
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException"
 }

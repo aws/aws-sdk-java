@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified repository could not be found. Check the spelling of the
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * correct registry.
  * </p>
  */
-public class RepositoryNotFoundException extends AmazonServiceException {
+public class RepositoryNotFoundException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

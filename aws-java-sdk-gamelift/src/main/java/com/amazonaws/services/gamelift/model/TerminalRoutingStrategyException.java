@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.gamelift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The service is unable to resolve the routing for a particular alias because
@@ -27,7 +25,8 @@ import com.amazonaws.AmazonServiceException;
  * routing strategy for the specified alias is modified.
  * </p>
  */
-public class TerminalRoutingStrategyException extends AmazonServiceException {
+public class TerminalRoutingStrategyException extends
+        com.amazonaws.services.gamelift.model.AmazonGameLiftException {
     private static final long serialVersionUID = 1L;
 
     /**

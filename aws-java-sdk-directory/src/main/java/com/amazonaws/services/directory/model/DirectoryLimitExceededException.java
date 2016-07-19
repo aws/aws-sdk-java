@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.directory.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The maximum number of directories in the region has been reached. You can use
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * the region.
  * </p>
  */
-public class DirectoryLimitExceededException extends AmazonServiceException {
+public class DirectoryLimitExceededException extends
+        com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 
     private String requestId;

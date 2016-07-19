@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.cognitoidp.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception gets thrown when a user is not authorized.
  * </p>
  */
-public class NotAuthorizedException extends AmazonServiceException {
+public class NotAuthorizedException
+        extends
+        com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException {
     private static final long serialVersionUID = 1L;
 
     /**

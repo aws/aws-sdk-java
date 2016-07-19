@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.kms.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because a grant token provided as part of the
  * request is invalid.
  * </p>
  */
-public class InvalidGrantTokenException extends AmazonServiceException {
+public class InvalidGrantTokenException extends
+        com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 
     /**

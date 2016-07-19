@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.glacier.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the request results in a vault or account limit being exceeded.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException extends
+        com.amazonaws.services.glacier.model.AmazonGlacierException {
     private static final long serialVersionUID = 1L;
 
     /**

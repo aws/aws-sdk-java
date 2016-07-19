@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Some value specified in the request is invalid or the XML document is
  * malformed.
  * </p>
  */
-public class InvalidInputException extends AmazonServiceException {
+public class InvalidInputException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

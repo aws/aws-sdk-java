@@ -24,11 +24,12 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * Interface for accessing Amazon SSM.
  * <p>
  * <p>
- * This is the Amazon Simple Systems Manager (SSM) API Reference. SSM enables
- * you to remotely manage the configuration of your on-premises servers and
- * virtual machines (VMs) and your Amazon EC2 instances using scripts, commands,
- * or the Amazon EC2 console. SSM includes an on-demand solution called
- * <i>Amazon EC2 Run Command</i> and a lightweight instance configuration
+ * This is the Amazon EC2 Simple Systems Manager (SSM) API Reference. SSM
+ * enables you to remotely manage the configuration of your Amazon EC2
+ * instances, virtual machines (VMs), or servers in your on-premises environment
+ * or in an environment provided by other cloud providers using scripts,
+ * commands, or the Amazon EC2 console. SSM includes an on-demand solution
+ * called <i>Amazon EC2 Run Command</i> and a lightweight instance configuration
  * solution called <i>SSM Config</i>.
  * </p>
  * <p>
@@ -925,6 +926,17 @@ public interface AWSSimpleSystemsManagement {
      *         Windows instance to a Linux instance.
      * @throws MaxDocumentSizeExceededException
      *         The size limit of an SSM document is 64 KB.
+     * @throws InvalidRoleException
+     *         The role name can't contain invalid characters. Also verify that
+     *         you specified an IAM role for notifications that includes the
+     *         required trust policy. For information about configuring the IAM
+     *         role for SSM notifications, see <a href=
+     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html"
+     *         >Configuring SNS Notifications SSM</a> in the <i>Amazon Elastic
+     *         Compute Cloud User Guide </i>.
+     * @throws InvalidNotificationConfigException
+     *         One or more configuration items is not valid. Verify that a valid
+     *         Amazon Resource Name (ARN) was provided for an Amazon SNS topic.
      * @sample AWSSimpleSystemsManagement.SendCommand
      */
     SendCommandResult sendCommand(SendCommandRequest sendCommandRequest);

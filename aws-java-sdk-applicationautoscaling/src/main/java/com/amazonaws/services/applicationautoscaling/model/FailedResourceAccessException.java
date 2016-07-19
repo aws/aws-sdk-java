@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.applicationautoscaling.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Failed access to resources caused an exception. This exception currently only
@@ -29,7 +27,9 @@ import com.amazonaws.AmazonServiceException;
  * >DescribeAlarms</a> API operation on behalf of your account.
  * </p>
  */
-public class FailedResourceAccessException extends AmazonServiceException {
+public class FailedResourceAccessException
+        extends
+        com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException {
     private static final long serialVersionUID = 1L;
 
     /**

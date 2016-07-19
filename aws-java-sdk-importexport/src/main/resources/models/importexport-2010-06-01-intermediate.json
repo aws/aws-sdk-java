@@ -19,7 +19,6 @@
     "jsonVersion" : null,
     "endpointPrefix" : "importexport",
     "signingName" : "importexport",
-    "jsonProtocol" : false,
     "syncClientBuilderClassName" : "AmazonImportExportClientBuilder",
     "asyncClientBuilderClassName" : "AmazonImportExportAsyncClientBuilder",
     "serviceName" : "AWS Import/Export",
@@ -27,6 +26,7 @@
     "xmlProtocol" : true,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
+    "jsonProtocol" : false,
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller"
   },
   "operations" : {
@@ -447,13 +447,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param jobId */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "APIVersion",
@@ -499,13 +499,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -578,13 +578,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "JobId" : {
           "documentation" : "",
@@ -631,13 +631,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param jobId */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -761,13 +761,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param jobId */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "Manifest",
@@ -813,13 +813,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param manifest */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "JobType",
@@ -865,13 +865,13 @@
         "enumType" : "JobType",
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "getterDocumentation" : "/**\n@return \n@see JobType*/",
-        "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
+        "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
+        "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
       }, {
         "documentation" : "",
         "name" : "ValidateOnly",
@@ -917,13 +917,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param validateOnly */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "APIVersion",
@@ -969,13 +969,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -1048,13 +1048,13 @@
           "enumType" : "JobType",
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "getterDocumentation" : "/**\n@return \n@see JobType*/",
-          "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
+          "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
+          "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
         },
         "APIVersion" : {
           "documentation" : "",
@@ -1101,13 +1101,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ValidateOnly" : {
           "documentation" : "",
@@ -1154,13 +1154,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param validateOnly */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Manifest" : {
           "documentation" : "",
@@ -1207,13 +1207,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param manifest */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "JobId" : {
           "documentation" : "",
@@ -1260,13 +1260,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param jobId */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -1371,34 +1371,34 @@
             "enumType" : null,
             "xmlNameSpaceUri" : null,
             "idempotencyToken" : false,
-            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "simple" : false,
             "list" : false,
             "map" : false,
             "setterDocumentation" : "/**\n@param member */",
             "getterDocumentation" : "/**\n@return */",
-            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Job",
           "templateType" : "java.util.List<Job>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
         },
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobs(java.util.Collection)} or {@link #withJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param jobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : false,
         "list" : true,
         "map" : false,
         "setterDocumentation" : "/**\n@param jobs */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param jobs \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param jobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobs(java.util.Collection)} or {@link #withJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param jobs \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "IsTruncated",
@@ -1444,13 +1444,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param isTruncated \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param isTruncated */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param isTruncated \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param isTruncated \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param isTruncated \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -1564,34 +1564,34 @@
               "enumType" : null,
               "xmlNameSpaceUri" : null,
               "idempotencyToken" : false,
-              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "simple" : false,
               "list" : false,
               "map" : false,
               "setterDocumentation" : "/**\n@param member */",
               "getterDocumentation" : "/**\n@return */",
-              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Job",
             "templateType" : "java.util.List<Job>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
           },
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobs(java.util.Collection)} or {@link #withJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param jobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : false,
           "list" : true,
           "map" : false,
           "setterDocumentation" : "/**\n@param jobs */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param jobs \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param jobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobs(java.util.Collection)} or {@link #withJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param jobs \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "IsTruncated" : {
           "documentation" : "",
@@ -1638,13 +1638,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param isTruncated \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param isTruncated */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param isTruncated \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param isTruncated \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param isTruncated \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -1800,13 +1800,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param jobId */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "JobType",
@@ -1852,13 +1852,13 @@
         "enumType" : "JobType",
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "getterDocumentation" : "/**\n@return \n@see JobType*/",
-        "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
+        "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
+        "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
       }, {
         "documentation" : "",
         "name" : "LocationCode",
@@ -1904,13 +1904,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param locationCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param locationCode */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param locationCode \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param locationCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param locationCode \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "LocationMessage",
@@ -1956,13 +1956,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param locationMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param locationMessage */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param locationMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param locationMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param locationMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "ProgressCode",
@@ -2008,13 +2008,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param progressCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param progressCode */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param progressCode \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param progressCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param progressCode \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "ProgressMessage",
@@ -2060,13 +2060,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param progressMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param progressMessage */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param progressMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param progressMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param progressMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "Carrier",
@@ -2112,13 +2112,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param carrier \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param carrier */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param carrier \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param carrier \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param carrier \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "TrackingNumber",
@@ -2164,13 +2164,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param trackingNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param trackingNumber */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param trackingNumber \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param trackingNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param trackingNumber \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "LogBucket",
@@ -2216,13 +2216,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param logBucket \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param logBucket */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param logBucket \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param logBucket \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param logBucket \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "LogKey",
@@ -2268,13 +2268,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param logKey \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param logKey */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param logKey \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param logKey \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param logKey \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "ErrorCount",
@@ -2320,13 +2320,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param errorCount \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param errorCount */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param errorCount \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param errorCount \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param errorCount \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "Signature",
@@ -2372,13 +2372,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param signature */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "SignatureFileContents",
@@ -2424,13 +2424,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param signatureFileContents */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "CurrentManifest",
@@ -2476,13 +2476,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param currentManifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param currentManifest */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param currentManifest \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param currentManifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param currentManifest \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "CreationDate",
@@ -2528,13 +2528,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param creationDate */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "ArtifactList",
@@ -2625,34 +2625,34 @@
             "enumType" : null,
             "xmlNameSpaceUri" : null,
             "idempotencyToken" : false,
-            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "simple" : false,
             "list" : false,
             "map" : false,
             "setterDocumentation" : "/**\n@param member */",
             "getterDocumentation" : "/**\n@return */",
-            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Artifact",
           "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
         },
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : false,
         "list" : true,
         "map" : false,
         "setterDocumentation" : "/**\n@param artifactList */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -2721,13 +2721,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param creationDate */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ProgressMessage" : {
           "documentation" : "",
@@ -2774,13 +2774,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param progressMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param progressMessage */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param progressMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param progressMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param progressMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "SignatureFileContents" : {
           "documentation" : "",
@@ -2827,13 +2827,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param signatureFileContents */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "TrackingNumber" : {
           "documentation" : "",
@@ -2880,13 +2880,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param trackingNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param trackingNumber */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param trackingNumber \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param trackingNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param trackingNumber \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "CurrentManifest" : {
           "documentation" : "",
@@ -2933,13 +2933,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param currentManifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param currentManifest */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param currentManifest \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param currentManifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param currentManifest \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ArtifactList" : {
           "documentation" : "",
@@ -3031,34 +3031,34 @@
               "enumType" : null,
               "xmlNameSpaceUri" : null,
               "idempotencyToken" : false,
-              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "simple" : false,
               "list" : false,
               "map" : false,
               "setterDocumentation" : "/**\n@param member */",
               "getterDocumentation" : "/**\n@return */",
-              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Artifact",
             "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
           },
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : false,
           "list" : true,
           "map" : false,
           "setterDocumentation" : "/**\n@param artifactList */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "LogKey" : {
           "documentation" : "",
@@ -3105,13 +3105,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param logKey \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param logKey */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param logKey \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param logKey \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param logKey \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "LocationCode" : {
           "documentation" : "",
@@ -3158,13 +3158,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param locationCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param locationCode */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param locationCode \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param locationCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param locationCode \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "LocationMessage" : {
           "documentation" : "",
@@ -3211,13 +3211,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param locationMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param locationMessage */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param locationMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param locationMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param locationMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ErrorCount" : {
           "documentation" : "",
@@ -3264,13 +3264,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param errorCount \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param errorCount */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param errorCount \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param errorCount \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param errorCount \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "JobType" : {
           "documentation" : "",
@@ -3317,13 +3317,13 @@
           "enumType" : "JobType",
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "getterDocumentation" : "/**\n@return \n@see JobType*/",
-          "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
+          "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
+          "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
         },
         "ProgressCode" : {
           "documentation" : "",
@@ -3370,13 +3370,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param progressCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param progressCode */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param progressCode \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param progressCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param progressCode \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Signature" : {
           "documentation" : "",
@@ -3423,13 +3423,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param signature */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "LogBucket" : {
           "documentation" : "",
@@ -3476,13 +3476,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param logBucket \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param logBucket */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param logBucket \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param logBucket \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param logBucket \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Carrier" : {
           "documentation" : "",
@@ -3529,13 +3529,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param carrier \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param carrier */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param carrier \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param carrier \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param carrier \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "JobId" : {
           "documentation" : "",
@@ -3582,13 +3582,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param jobId */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -3648,13 +3648,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param shippingLabelURL \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param shippingLabelURL */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param shippingLabelURL \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param shippingLabelURL \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param shippingLabelURL \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "Warning",
@@ -3700,13 +3700,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param warning \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param warning */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param warning \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param warning \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param warning \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -3775,13 +3775,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param warning \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param warning */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param warning \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param warning \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param warning \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ShippingLabelURL" : {
           "documentation" : "",
@@ -3828,13 +3828,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param shippingLabelURL \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param shippingLabelURL */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param shippingLabelURL \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param shippingLabelURL \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param shippingLabelURL \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -3939,34 +3939,34 @@
             "enumType" : null,
             "xmlNameSpaceUri" : null,
             "idempotencyToken" : false,
-            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "simple" : true,
             "list" : false,
             "map" : false,
             "setterDocumentation" : "/**\n@param member */",
             "getterDocumentation" : "/**\n@return */",
-            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobIds(java.util.Collection)} or {@link #withJobIds(java.util.Collection)} if you want to override the existing values.</p>\n@param jobIds \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : false,
         "list" : true,
         "map" : false,
         "setterDocumentation" : "/**\n@param jobIds */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param jobIds \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param jobIds \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobIds(java.util.Collection)} or {@link #withJobIds(java.util.Collection)} if you want to override the existing values.</p>\n@param jobIds \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "Name",
@@ -4012,13 +4012,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param name */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "Company",
@@ -4064,13 +4064,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param company \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param company */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param company \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param company \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param company \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "PhoneNumber",
@@ -4116,13 +4116,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param phoneNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param phoneNumber */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param phoneNumber \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param phoneNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param phoneNumber \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "Country",
@@ -4168,13 +4168,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param country \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param country */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param country \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param country \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param country \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "StateOrProvince",
@@ -4220,13 +4220,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param stateOrProvince \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param stateOrProvince */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param stateOrProvince \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param stateOrProvince \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param stateOrProvince \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "City",
@@ -4272,13 +4272,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param city \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param city */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param city \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param city \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param city \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "PostalCode",
@@ -4324,13 +4324,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param postalCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param postalCode */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param postalCode \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param postalCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param postalCode \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "Street1",
@@ -4376,13 +4376,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param street1 \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param street1 */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param street1 \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param street1 \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param street1 \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "Street2",
@@ -4428,13 +4428,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param street2 \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param street2 */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param street2 \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param street2 \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param street2 \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "Street3",
@@ -4480,13 +4480,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param street3 \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param street3 */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param street3 \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param street3 \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param street3 \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "APIVersion",
@@ -4532,13 +4532,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -4611,13 +4611,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param company \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param company */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param company \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param company \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param company \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Street2" : {
           "documentation" : "",
@@ -4664,13 +4664,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param street2 \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param street2 */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param street2 \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param street2 \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param street2 \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Street1" : {
           "documentation" : "",
@@ -4717,13 +4717,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param street1 \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param street1 */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param street1 \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param street1 \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param street1 \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "APIVersion" : {
           "documentation" : "",
@@ -4770,13 +4770,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "StateOrProvince" : {
           "documentation" : "",
@@ -4823,13 +4823,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param stateOrProvince \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param stateOrProvince */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param stateOrProvince \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param stateOrProvince \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param stateOrProvince \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "PhoneNumber" : {
           "documentation" : "",
@@ -4876,13 +4876,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param phoneNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param phoneNumber */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param phoneNumber \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param phoneNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param phoneNumber \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Country" : {
           "documentation" : "",
@@ -4929,13 +4929,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param country \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param country */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param country \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param country \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param country \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "PostalCode" : {
           "documentation" : "",
@@ -4982,13 +4982,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param postalCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param postalCode */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param postalCode \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param postalCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param postalCode \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "JobIds" : {
           "documentation" : "",
@@ -5080,34 +5080,34 @@
               "enumType" : null,
               "xmlNameSpaceUri" : null,
               "idempotencyToken" : false,
-              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "simple" : true,
               "list" : false,
               "map" : false,
               "setterDocumentation" : "/**\n@param member */",
               "getterDocumentation" : "/**\n@return */",
-              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobIds(java.util.Collection)} or {@link #withJobIds(java.util.Collection)} if you want to override the existing values.</p>\n@param jobIds \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : false,
           "list" : true,
           "map" : false,
           "setterDocumentation" : "/**\n@param jobIds */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param jobIds \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param jobIds \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobIds(java.util.Collection)} or {@link #withJobIds(java.util.Collection)} if you want to override the existing values.</p>\n@param jobIds \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "City" : {
           "documentation" : "",
@@ -5154,13 +5154,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param city \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param city */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param city \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param city \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param city \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Street3" : {
           "documentation" : "",
@@ -5207,13 +5207,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param street3 \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param street3 */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param street3 \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param street3 \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param street3 \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Name" : {
           "documentation" : "",
@@ -5260,13 +5260,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param name */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -5358,13 +5358,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param jobId */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "CreationDate",
@@ -5410,13 +5410,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param creationDate */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "IsCanceled",
@@ -5462,13 +5462,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param isCanceled \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param isCanceled */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param isCanceled \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param isCanceled \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param isCanceled \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "JobType",
@@ -5514,13 +5514,13 @@
         "enumType" : "JobType",
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "getterDocumentation" : "/**\n@return \n@see JobType*/",
-        "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
+        "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
+        "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -5589,13 +5589,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param creationDate */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "IsCanceled" : {
           "documentation" : "",
@@ -5642,13 +5642,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param isCanceled \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param isCanceled */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param isCanceled \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param isCanceled \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param isCanceled \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "JobType" : {
           "documentation" : "",
@@ -5695,13 +5695,13 @@
           "enumType" : "JobType",
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "getterDocumentation" : "/**\n@return \n@see JobType*/",
-          "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
+          "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
+          "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
         },
         "JobId" : {
           "documentation" : "",
@@ -5748,13 +5748,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param jobId */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -5974,13 +5974,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param success */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "WarningMessage",
@@ -6026,13 +6026,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param warningMessage */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "ArtifactList",
@@ -6123,34 +6123,34 @@
             "enumType" : null,
             "xmlNameSpaceUri" : null,
             "idempotencyToken" : false,
-            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "simple" : false,
             "list" : false,
             "map" : false,
             "setterDocumentation" : "/**\n@param member */",
             "getterDocumentation" : "/**\n@return */",
-            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Artifact",
           "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
         },
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : false,
         "list" : true,
         "map" : false,
         "setterDocumentation" : "/**\n@param artifactList */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -6219,13 +6219,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param warningMessage */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ArtifactList" : {
           "documentation" : "",
@@ -6317,34 +6317,34 @@
               "enumType" : null,
               "xmlNameSpaceUri" : null,
               "idempotencyToken" : false,
-              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "simple" : false,
               "list" : false,
               "map" : false,
               "setterDocumentation" : "/**\n@param member */",
               "getterDocumentation" : "/**\n@return */",
-              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Artifact",
             "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
           },
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : false,
           "list" : true,
           "map" : false,
           "setterDocumentation" : "/**\n@param artifactList */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Success" : {
           "documentation" : "",
@@ -6391,13 +6391,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param success */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -6457,13 +6457,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param success */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -6532,13 +6532,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param success */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -6598,13 +6598,13 @@
         "enumType" : "JobType",
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "getterDocumentation" : "/**\n@return \n@see JobType*/",
-        "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
+        "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
+        "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
       }, {
         "documentation" : "",
         "name" : "Manifest",
@@ -6650,13 +6650,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param manifest */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "ManifestAddendum",
@@ -6702,13 +6702,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param manifestAddendum \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param manifestAddendum */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param manifestAddendum \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param manifestAddendum \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param manifestAddendum \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "ValidateOnly",
@@ -6754,13 +6754,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param validateOnly */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "APIVersion",
@@ -6806,13 +6806,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -6885,13 +6885,13 @@
           "enumType" : "JobType",
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "getterDocumentation" : "/**\n@return \n@see JobType*/",
-          "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
+          "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
+          "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
         },
         "ManifestAddendum" : {
           "documentation" : "",
@@ -6938,13 +6938,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param manifestAddendum \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param manifestAddendum */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param manifestAddendum \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param manifestAddendum \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param manifestAddendum \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "APIVersion" : {
           "documentation" : "",
@@ -6991,13 +6991,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ValidateOnly" : {
           "documentation" : "",
@@ -7044,13 +7044,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param validateOnly */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Manifest" : {
           "documentation" : "",
@@ -7097,13 +7097,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param manifest */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -7163,13 +7163,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param description */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "URL",
@@ -7215,13 +7215,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param uRL \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param uRL */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param uRL \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param uRL \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param uRL \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -7290,13 +7290,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param description */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "URL" : {
           "documentation" : "",
@@ -7343,13 +7343,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param uRL \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param uRL */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param uRL \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param uRL \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param uRL \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -7473,13 +7473,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param maxJobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param maxJobs */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param maxJobs \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param maxJobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param maxJobs \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "Marker",
@@ -7525,13 +7525,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param marker \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param marker */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param marker \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param marker \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param marker \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "APIVersion",
@@ -7577,13 +7577,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -7656,13 +7656,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Marker" : {
           "documentation" : "",
@@ -7709,13 +7709,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param marker \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param marker */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param marker \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param marker \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param marker \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "MaxJobs" : {
           "documentation" : "",
@@ -7762,13 +7762,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param maxJobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param maxJobs */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param maxJobs \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param maxJobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param maxJobs \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -7828,13 +7828,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param jobId */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "JobType",
@@ -7880,13 +7880,13 @@
         "enumType" : "JobType",
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "getterDocumentation" : "/**\n@return \n@see JobType*/",
-        "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
+        "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
+        "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
       }, {
         "documentation" : "",
         "name" : "Signature",
@@ -7932,13 +7932,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param signature */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "SignatureFileContents",
@@ -7984,13 +7984,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param signatureFileContents */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "WarningMessage",
@@ -8036,13 +8036,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param warningMessage */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "ArtifactList",
@@ -8133,34 +8133,34 @@
             "enumType" : null,
             "xmlNameSpaceUri" : null,
             "idempotencyToken" : false,
-            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "simple" : false,
             "list" : false,
             "map" : false,
             "setterDocumentation" : "/**\n@param member */",
             "getterDocumentation" : "/**\n@return */",
-            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Artifact",
           "templateType" : "java.util.List<Artifact>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
         },
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : false,
         "list" : true,
         "map" : false,
         "setterDocumentation" : "/**\n@param artifactList */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -8229,13 +8229,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param warningMessage */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "JobType" : {
           "documentation" : "",
@@ -8282,13 +8282,13 @@
           "enumType" : "JobType",
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "getterDocumentation" : "/**\n@return \n@see JobType*/",
-          "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
+          "fluentSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
+          "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/"
         },
         "SignatureFileContents" : {
           "documentation" : "",
@@ -8335,13 +8335,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param signatureFileContents */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "ArtifactList" : {
           "documentation" : "",
@@ -8433,34 +8433,34 @@
               "enumType" : null,
               "xmlNameSpaceUri" : null,
               "idempotencyToken" : false,
-              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "simple" : false,
               "list" : false,
               "map" : false,
               "setterDocumentation" : "/**\n@param member */",
               "getterDocumentation" : "/**\n@return */",
-              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Artifact",
             "templateType" : "java.util.List<Artifact>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artifact>"
           },
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : false,
           "list" : true,
           "map" : false,
           "setterDocumentation" : "/**\n@param artifactList */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "Signature" : {
           "documentation" : "",
@@ -8507,13 +8507,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param signature */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "JobId" : {
           "documentation" : "",
@@ -8560,13 +8560,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param jobId */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -8667,13 +8667,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param jobId */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
       }, {
         "documentation" : "",
         "name" : "APIVersion",
@@ -8719,13 +8719,13 @@
         "enumType" : null,
         "xmlNameSpaceUri" : null,
         "idempotencyToken" : false,
-        "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "simple" : true,
         "list" : false,
         "map" : false,
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "getterDocumentation" : "/**\n@return */",
-        "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -8798,13 +8798,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/"
         },
         "JobId" : {
           "documentation" : "",
@@ -8851,13 +8851,13 @@
           "enumType" : null,
           "xmlNameSpaceUri" : null,
           "idempotencyToken" : false,
-          "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "simple" : true,
           "list" : false,
           "map" : false,
           "setterDocumentation" : "/**\n@param jobId */",
           "getterDocumentation" : "/**\n@return */",
-          "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "fluentSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -9085,12 +9085,17 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "sdkModeledExceptionBaseClassName" : "AmazonImportExportException",
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller"
+  "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller",
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.importexport.model.AmazonImportExportException"
 }

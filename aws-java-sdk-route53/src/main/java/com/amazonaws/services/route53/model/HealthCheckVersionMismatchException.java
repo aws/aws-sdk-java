@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * 
  */
-public class HealthCheckVersionMismatchException extends AmazonServiceException {
+public class HealthCheckVersionMismatchException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

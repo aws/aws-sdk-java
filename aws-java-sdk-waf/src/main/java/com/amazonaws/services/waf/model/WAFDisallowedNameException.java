@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.waf.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The name specified is invalid.
  * </p>
  */
-public class WAFDisallowedNameException extends AmazonServiceException {
+public class WAFDisallowedNameException extends
+        com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     /**

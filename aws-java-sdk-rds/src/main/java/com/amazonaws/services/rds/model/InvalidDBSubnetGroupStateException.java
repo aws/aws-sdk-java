@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The DB subnet group cannot be deleted because it is in use.
  * </p>
  */
-public class InvalidDBSubnetGroupStateException extends AmazonServiceException {
+public class InvalidDBSubnetGroupStateException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

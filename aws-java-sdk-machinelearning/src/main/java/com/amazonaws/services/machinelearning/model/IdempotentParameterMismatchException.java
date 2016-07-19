@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.machinelearning.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A second request to use or change an object was not allowed. This can result
@@ -25,8 +23,9 @@ import com.amazonaws.AmazonServiceException;
  * original request.
  * </p>
  */
-public class IdempotentParameterMismatchException extends
-        AmazonServiceException {
+public class IdempotentParameterMismatchException
+        extends
+        com.amazonaws.services.machinelearning.model.AmazonMachineLearningException {
     private static final long serialVersionUID = 1L;
 
     private Integer code;

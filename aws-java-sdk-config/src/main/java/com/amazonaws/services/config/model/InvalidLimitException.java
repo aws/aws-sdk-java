@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified limit is outside the allowable range.
  * </p>
  */
-public class InvalidLimitException extends AmazonServiceException {
+public class InvalidLimitException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

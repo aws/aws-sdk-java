@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.autoscaling.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You already have a pending update to an Auto Scaling resource (for example, a
  * group, instance, or load balancer).
  * </p>
  */
-public class ResourceContentionException extends AmazonServiceException {
+public class ResourceContentionException extends
+        com.amazonaws.services.autoscaling.model.AmazonAutoScalingException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Layer parts must be at least 5 MiB in size.
  * </p>
  */
-public class LayerPartTooSmallException extends AmazonServiceException {
+public class LayerPartTooSmallException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The resource you are trying to access is unsupported on this Amazon Route 53
  * endpoint. Please consider using a newer endpoint or a tool that does so.
  * </p>
  */
-public class IncompatibleVersionException extends AmazonServiceException {
+public class IncompatibleVersionException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

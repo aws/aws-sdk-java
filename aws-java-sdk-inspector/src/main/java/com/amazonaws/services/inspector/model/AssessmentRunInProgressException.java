@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.inspector.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You cannot perform a specified action if an assessment run is currently in
  * progress.
  * </p>
  */
-public class AssessmentRunInProgressException extends AmazonServiceException {
+public class AssessmentRunInProgressException extends
+        com.amazonaws.services.inspector.model.AmazonInspectorException {
     private static final long serialVersionUID = 1L;
 
     /**

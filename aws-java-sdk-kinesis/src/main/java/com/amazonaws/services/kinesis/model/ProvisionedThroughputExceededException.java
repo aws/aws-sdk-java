@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.kinesis.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request rate for the stream is too high, or the requested data is too
@@ -31,7 +29,7 @@ import com.amazonaws.AmazonServiceException;
  * </p>
  */
 public class ProvisionedThroughputExceededException extends
-        AmazonServiceException {
+        com.amazonaws.services.kinesis.model.AmazonKinesisException {
     private static final long serialVersionUID = 1L;
 
     /**

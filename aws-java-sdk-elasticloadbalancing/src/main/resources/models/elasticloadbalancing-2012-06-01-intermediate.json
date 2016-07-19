@@ -19,7 +19,6 @@
     "jsonVersion" : null,
     "endpointPrefix" : "elasticloadbalancing",
     "signingName" : "elasticloadbalancing",
-    "jsonProtocol" : false,
     "syncClientBuilderClassName" : "AmazonElasticLoadBalancingClientBuilder",
     "asyncClientBuilderClassName" : "AmazonElasticLoadBalancingAsyncClientBuilder",
     "serviceName" : "Elastic Load Balancing",
@@ -27,7 +26,8 @@
     "xmlProtocol" : true,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller"
+    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "jsonProtocol" : false
   },
   "operations" : {
     "AddTags" : {
@@ -28753,6 +28753,8 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
@@ -28760,5 +28762,8 @@
     "operationExamples" : { }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller"
+  "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller",
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException",
+  "sdkModeledExceptionBaseClassName" : "AmazonElasticLoadBalancingException"
 }

@@ -23,6 +23,7 @@ import org.w3c.dom.Node;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
+import com.amazonaws.annotation.SdkProtectedApi;
 
 /**
  * Error unmarshaller that knows how to interpret a standard AWS error message
@@ -31,6 +32,7 @@ import com.amazonaws.AmazonServiceException.ErrorType;
  *
  * @see LegacyErrorUnmarshaller
  */
+@SdkProtectedApi
 public class StandardErrorUnmarshaller extends AbstractErrorUnmarshaller<Node> {
 
     /**
@@ -48,7 +50,7 @@ public class StandardErrorUnmarshaller extends AbstractErrorUnmarshaller<Node> {
      *            The class of AmazonServiceException to create and populate
      *            when unmarshalling the error message.
      */
-    protected StandardErrorUnmarshaller(Class<? extends AmazonServiceException> exceptionClass) {
+    public StandardErrorUnmarshaller(Class<? extends AmazonServiceException> exceptionClass) {
         super(exceptionClass);
     }
 

@@ -16,46 +16,48 @@ package com.amazonaws.http;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.util.IOUtils;
+import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.XpathUtils;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
+import javax.xml.parsers.ParserConfigurationException;
+
 /**
- * Implementation of HttpResponseHandler that handles only error responses from
- * Amazon Web Services. A list of unmarshallers is passed into the constructor,
- * and while handling a response, each unmarshaller is tried, in order, until
- * one is found that can successfully unmarshall the error response.  If no
- * unmarshaller is found that can unmarshall the error response, a generic
- * AmazonServiceException is created and populated with the AWS error response
- * information (error message, AWS error code, AWS request ID, etc).
+ * Implementation of HttpResponseHandler that handles only error responses from Amazon Web Services.
+ * A list of unmarshallers is passed into the constructor, and while handling a response, each
+ * unmarshaller is tried, in order, until one is found that can successfully unmarshall the error
+ * response.  If no unmarshaller is found that can unmarshall the error response, a generic
+ * AmazonServiceException is created and populated with the AWS error response information (error
+ * message, AWS error code, AWS request ID, etc).
  */
-public class DefaultErrorResponseHandler
-        implements HttpResponseHandler<AmazonServiceException> {
+@SdkProtectedApi
+public class DefaultErrorResponseHandler implements HttpResponseHandler<AmazonServiceException> {
     private static final Log log = LogFactory.getLog(DefaultErrorResponseHandler.class);
 
     /**
-     * The list of error response unmarshallers to try to apply to error
-     * responses.
+     * The list of error response unmarshallers to try to apply to error responses.
      */
     private List<Unmarshaller<AmazonServiceException, Node>> unmarshallerList;
 
     /**
-     * Constructs a new DefaultErrorResponseHandler that will handle error
-     * responses from Amazon services using the specified list of unmarshallers.
-     * Each unmarshaller will be tried, in order, until one is found that can
-     * unmarshall the error response.
+     * Constructs a new DefaultErrorResponseHandler that will handle error responses from Amazon
+     * services using the specified list of unmarshallers. Each unmarshaller will be tried, in
+     * order, until one is found that can unmarshall the error response.
      *
-     * @param unmarshallerList
-     *            The list of unmarshallers to try using when handling an error
-     *            response.
+     * @param unmarshallerList The list of unmarshallers to try using when handling an error
+     *                         response.
      */
     public DefaultErrorResponseHandler(
             List<Unmarshaller<AmazonServiceException, Node>> unmarshallerList) {
@@ -65,33 +67,19 @@ public class DefaultErrorResponseHandler
     @Override
     public AmazonServiceException handle(HttpResponse errorResponse) throws Exception {
         AmazonServiceException ase = createAse(errorResponse);
-        if (ase != null) {
-            ase.setHttpHeaders(errorResponse.getHeaders());
-            return ase;
+        if (ase == null) {
+            throw new AmazonClientException("Unable to unmarshall error response from service");
         }
-        throw new AmazonClientException("Unable to unmarshall error response from service");
+        ase.setHttpHeaders(errorResponse.getHeaders());
+        if (StringUtils.isNullOrEmpty(ase.getErrorCode())) {
+            ase.setErrorCode(errorResponse.getStatusCode() + " " + errorResponse.getStatusText());
+        }
+        return ase;
     }
 
     private AmazonServiceException createAse(HttpResponse errorResponse) throws Exception {
-        // Try to read the error response
-        String content = "";
-        try {
-            content = IOUtils.toString(errorResponse.getContent());
-        } catch(IOException ex) {
-            if (log.isDebugEnabled())
-                log.debug("Failed in reading the error response", ex);
-            return newAmazonServiceException(
-                    "Unable to unmarshall error response", errorResponse, ex);
-        }
         // Try to parse the error response as XML
-        Document document;
-        try {
-            document = XpathUtils.documentFrom(content);
-        } catch (Exception e) {
-            return newAmazonServiceException(String.format(
-                    "Unable to unmarshall error response (%s)", content),
-                    errorResponse, e);
-        }
+        final Document document = parseContentAsXml(errorResponse.getContent());
 
         /*
          * We need to select which exception unmarshaller is the correct one to
@@ -110,23 +98,21 @@ public class DefaultErrorResponseHandler
         return null;
     }
 
-    /**
-     * Used to create an {@link newAmazonServiceException} when we failed to
-     * read the error response or parsed the error response as XML.
-     */
-    private AmazonServiceException newAmazonServiceException(String errmsg,
-            HttpResponse httpResponse, Exception readFailure) {
-        AmazonServiceException exception = new AmazonServiceException(errmsg, readFailure);
-            final int statusCode = httpResponse.getStatusCode();
-            exception.setErrorCode(statusCode + " " + httpResponse.getStatusText());
-            exception.setErrorType(AmazonServiceException.ErrorType.Unknown);
-            exception.setStatusCode(statusCode);
-            return exception;
+    private Document parseContentAsXml(InputStream content) throws ParserConfigurationException,
+                                                                   SAXException, IOException {
+        try {
+            return XpathUtils.documentFrom(IOUtils.toString(content));
+        } catch (Exception e) {
+            log.info("Unable to parse HTTP response content.", e);
+            // Generate an empty document to make the unmarshallers happy. Ultimately the default
+            // unmarshaller will be called to unmarshall into the service base exception.
+            return XpathUtils.documentFrom("<empty/>");
+        }
     }
+
     /**
-     * Since this response handler completely consumes all the data from the
-     * underlying HTTP connection during the handle method, we don't need to
-     * keep the HTTP connection open.
+     * Since this response handler completely consumes all the data from the underlying HTTP
+     * connection during the handle method, we don't need to keep the HTTP connection open.
      *
      * @see com.amazonaws.http.HttpResponseHandler#needsConnectionLeftOpen()
      */

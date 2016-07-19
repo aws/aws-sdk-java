@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified time range was specified in an invalid format.
  * </p>
  */
-public class InvalidTimeRangeException extends AmazonServiceException {
+public class InvalidTimeRangeException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

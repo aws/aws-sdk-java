@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified delivery channel name is not valid.
  * </p>
  */
-public class InvalidDeliveryChannelNameException extends AmazonServiceException {
+public class InvalidDeliveryChannelNameException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

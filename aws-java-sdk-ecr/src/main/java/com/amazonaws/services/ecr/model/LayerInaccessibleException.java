@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified layer is not available because it is not associated with an
  * image. Unassociated image layers may be cleaned up at any time.
  * </p>
  */
-public class LayerInaccessibleException extends AmazonServiceException {
+public class LayerInaccessibleException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

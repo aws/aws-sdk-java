@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified snapshot copy grant can't be found. Make sure that the name is
  * typed correctly and that the grant exists in the destination region.
  * </p>
  */
-public class SnapshotCopyGrantNotFoundException extends AmazonServiceException {
+public class SnapshotCopyGrantNotFoundException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

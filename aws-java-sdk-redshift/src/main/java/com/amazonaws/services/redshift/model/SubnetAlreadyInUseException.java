@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A specified subnet is already in use by another cluster.
  * </p>
  */
-public class SubnetAlreadyInUseException extends AmazonServiceException {
+public class SubnetAlreadyInUseException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

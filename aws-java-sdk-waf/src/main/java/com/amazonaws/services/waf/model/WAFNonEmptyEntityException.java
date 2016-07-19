@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.waf.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation failed because you tried to delete an object that isn't empty.
@@ -34,7 +32,8 @@ import com.amazonaws.AmazonServiceException;
  * addresses.</li>
  * </ul>
  */
-public class WAFNonEmptyEntityException extends AmazonServiceException {
+public class WAFNonEmptyEntityException extends
+        com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     /**

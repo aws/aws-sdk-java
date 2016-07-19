@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if the size of <code>SecurityGroups</code> specified in the request
  * is greater than five.
  * </p>
  */
-public class SecurityGroupLimitExceededException extends AmazonServiceException {
+public class SecurityGroupLimitExceededException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

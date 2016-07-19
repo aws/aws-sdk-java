@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.ecr.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified repository already exists in the specified registry.
  * </p>
  */
-public class RepositoryAlreadyExistsException extends AmazonServiceException {
+public class RepositoryAlreadyExistsException extends
+        com.amazonaws.services.ecr.model.AmazonECRException {
     private static final long serialVersionUID = 1L;
 
     /**

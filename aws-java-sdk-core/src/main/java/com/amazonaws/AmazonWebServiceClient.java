@@ -25,6 +25,9 @@ import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.internal.DefaultServiceEndpointBuilder;
+import com.amazonaws.internal.auth.DefaultSignerProvider;
+import com.amazonaws.internal.auth.SignerProviderContext;
+import com.amazonaws.internal.auth.SignerProvider;
 import com.amazonaws.log.CommonsLogFactory;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
@@ -110,8 +113,7 @@ public abstract class AmazonWebServiceClient {
     /** Optional offset (in seconds) to use when signing requests */
     protected int timeOffset;
 
-    /** AWS signer for authenticating requests. */
-    private volatile Signer signer;
+    private volatile SignerProvider signerProvider;
 
     /**
      * The cached service abbreviation for this service, used for identifying
@@ -174,7 +176,8 @@ public abstract class AmazonWebServiceClient {
      * Note, however, the signer configured for S3 is incomplete at this stage
      * as the information on the S3 bucket and key is not yet known.
      */
-    protected Signer getSigner() { return signer; }
+    @Deprecated
+    protected Signer getSigner() { return signerProvider.getSigner(SignerProviderContext.builder().build()); }
 
     /**
      * Overrides the default endpoint for this client. Callers can use this
@@ -210,7 +213,7 @@ public abstract class AmazonWebServiceClient {
         Signer signer = computeSignerByURI(uri, signerRegionOverride, false);
         synchronized(this)  {
             this.endpoint = uri;
-            this.signer = signer;
+            this.signerProvider = createSignerProvider(signer);
         }
     }
 
@@ -337,7 +340,7 @@ public abstract class AmazonWebServiceClient {
         Signer signer = computeSignerByServiceRegion(serviceNameForSigner, region.getName(), signerRegionOverride, false);
         synchronized (this) {
             this.endpoint = uri;
-            this.signer = signer;
+            this.signerProvider = createSignerProvider(signer);
         }
     }
 
@@ -433,29 +436,25 @@ public abstract class AmazonWebServiceClient {
     }
 
     protected ExecutionContext createExecutionContext(AmazonWebServiceRequest req) {
+        return createExecutionContext(req, signerProvider);
+    }
+
+    protected ExecutionContext createExecutionContext(AmazonWebServiceRequest req,
+                                                      SignerProvider signerProvider) {
         boolean isMetricsEnabled = isRequestMetricsEnabled(req) || isProfilingEnabled();
-        return new ExecutionContext(requestHandler2s, isMetricsEnabled, this);
+        return ExecutionContext.builder()
+                .withRequestHandler2s(requestHandler2s)
+                .withUseRequestMetrics(isMetricsEnabled)
+                .withAwsClient(this)
+                .withSignerProvider(signerProvider).build();
     }
 
     protected final ExecutionContext createExecutionContext(Request<?> req) {
         return createExecutionContext(req.getOriginalRequest());
     }
 
-    /**
-     * @deprecated by {@link #createExecutionContext(AmazonWebServiceRequest)}.
-     *
-     *             This method exists only for backward compatiblity reason, so
-     *             that clients compiled against the older version of this class
-     *             won't get {@link NoSuchMethodError} at runtime. However,
-     *             calling this methods would effectively ignore and disable the
-     *             request metric collector, if any, specified at the request
-     *             level. Request metric collector specified at the service
-     *             client or AWS SDK level will still be honored.
-     */
-    @Deprecated
-    protected final ExecutionContext createExecutionContext() {
-        boolean isMetricsEnabled = isRMCEnabledAtClientOrSdkLevel() || isProfilingEnabled();
-        return new ExecutionContext(requestHandler2s, isMetricsEnabled, this);
+    protected SignerProvider createSignerProvider(Signer signer) {
+        return new DefaultSignerProvider(this, signer);
     }
 
     /* Check the profiling system property and return true if set */
@@ -739,8 +738,8 @@ public abstract class AmazonWebServiceClient {
         checkMutability();
         Signer signer = computeSignerByURI(endpoint, signerRegionOverride, true);
         synchronized(this)  {
-            this.signer = signer;
             this.signerRegionOverride = signerRegionOverride;
+            this.signerProvider = createSignerProvider(signer);
         }
     }
 

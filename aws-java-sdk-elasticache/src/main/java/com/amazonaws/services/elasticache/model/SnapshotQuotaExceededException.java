@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request cannot be processed because it would exceed the maximum number of
  * snapshots.
  * </p>
  */
-public class SnapshotQuotaExceededException extends AmazonServiceException {
+public class SnapshotQuotaExceededException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * There are resource records associated with this health check. Before you can
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * sets.
  * </p>
  */
-public class HealthCheckInUseException extends AmazonServiceException {
+public class HealthCheckInUseException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

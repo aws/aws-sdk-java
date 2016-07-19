@@ -58,12 +58,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AddTagsToResourceResult",
       "asyncReturnType" : "AddTagsToResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsToResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult>",
+      "authenticated" : true,
       "methodName" : "addTagsToResource"
     },
     "CreateHapg" : {
@@ -94,12 +94,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateHapgResult",
       "asyncReturnType" : "CreateHapgResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateHapgResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateHapgResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateHapgRequest, CreateHapgResult>",
+      "authenticated" : true,
       "methodName" : "createHapg"
     },
     "CreateHsm" : {
@@ -130,12 +130,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateHsmResult",
       "asyncReturnType" : "CreateHsmResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateHsmResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateHsmResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateHsmRequest, CreateHsmResult>",
+      "authenticated" : true,
       "methodName" : "createHsm"
     },
     "CreateLunaClient" : {
@@ -166,12 +166,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateLunaClientResult",
       "asyncReturnType" : "CreateLunaClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateLunaClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateLunaClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLunaClientRequest, CreateLunaClientResult>",
+      "authenticated" : true,
       "methodName" : "createLunaClient"
     },
     "DeleteHapg" : {
@@ -202,12 +202,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteHapgResult",
       "asyncReturnType" : "DeleteHapgResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteHapgResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteHapgResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteHapgRequest, DeleteHapgResult>",
+      "authenticated" : true,
       "methodName" : "deleteHapg"
     },
     "DeleteHsm" : {
@@ -238,12 +238,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteHsmResult",
       "asyncReturnType" : "DeleteHsmResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteHsmResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteHsmResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteHsmRequest, DeleteHsmResult>",
+      "authenticated" : true,
       "methodName" : "deleteHsm"
     },
     "DeleteLunaClient" : {
@@ -274,12 +274,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteLunaClientResult",
       "asyncReturnType" : "DeleteLunaClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteLunaClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteLunaClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLunaClientRequest, DeleteLunaClientResult>",
+      "authenticated" : true,
       "methodName" : "deleteLunaClient"
     },
     "DescribeHapg" : {
@@ -310,12 +310,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeHapgResult",
       "asyncReturnType" : "DescribeHapgResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeHapgResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeHapgResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeHapgRequest, DescribeHapgResult>",
+      "authenticated" : true,
       "methodName" : "describeHapg"
     },
     "DescribeHsm" : {
@@ -346,12 +346,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeHsmResult",
       "asyncReturnType" : "DescribeHsmResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeHsmResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeHsmResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeHsmRequest, DescribeHsmResult>",
+      "authenticated" : true,
       "methodName" : "describeHsm"
     },
     "DescribeLunaClient" : {
@@ -382,12 +382,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeLunaClientResult",
       "asyncReturnType" : "DescribeLunaClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeLunaClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLunaClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLunaClientRequest, DescribeLunaClientResult>",
+      "authenticated" : true,
       "methodName" : "describeLunaClient"
     },
     "GetConfig" : {
@@ -418,12 +418,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetConfigResult",
       "asyncReturnType" : "GetConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetConfigResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetConfigRequest, GetConfigResult>",
+      "authenticated" : true,
       "methodName" : "getConfig"
     },
     "ListAvailableZones" : {
@@ -454,12 +454,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListAvailableZonesResult",
       "asyncReturnType" : "ListAvailableZonesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAvailableZonesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAvailableZonesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAvailableZonesRequest, ListAvailableZonesResult>",
+      "authenticated" : true,
       "methodName" : "listAvailableZones"
     },
     "ListHapgs" : {
@@ -490,12 +490,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListHapgsResult",
       "asyncReturnType" : "ListHapgsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListHapgsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListHapgsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListHapgsRequest, ListHapgsResult>",
+      "authenticated" : true,
       "methodName" : "listHapgs"
     },
     "ListHsms" : {
@@ -526,12 +526,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListHsmsResult",
       "asyncReturnType" : "ListHsmsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListHsmsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListHsmsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListHsmsRequest, ListHsmsResult>",
+      "authenticated" : true,
       "methodName" : "listHsms"
     },
     "ListLunaClients" : {
@@ -562,12 +562,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListLunaClientsResult",
       "asyncReturnType" : "ListLunaClientsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListLunaClientsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListLunaClientsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListLunaClientsRequest, ListLunaClientsResult>",
+      "authenticated" : true,
       "methodName" : "listLunaClients"
     },
     "ListTagsForResource" : {
@@ -598,12 +598,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTagsForResourceResult",
       "asyncReturnType" : "ListTagsForResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>",
+      "authenticated" : true,
       "methodName" : "listTagsForResource"
     },
     "ModifyHapg" : {
@@ -634,12 +634,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ModifyHapgResult",
       "asyncReturnType" : "ModifyHapgResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyHapgResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyHapgResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyHapgRequest, ModifyHapgResult>",
+      "authenticated" : true,
       "methodName" : "modifyHapg"
     },
     "ModifyHsm" : {
@@ -670,12 +670,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ModifyHsmResult",
       "asyncReturnType" : "ModifyHsmResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyHsmResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyHsmResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyHsmRequest, ModifyHsmResult>",
+      "authenticated" : true,
       "methodName" : "modifyHsm"
     },
     "ModifyLunaClient" : {
@@ -700,12 +700,12 @@
         "documentation" : "<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ModifyLunaClientResult",
       "asyncReturnType" : "ModifyLunaClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyLunaClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyLunaClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyLunaClientRequest, ModifyLunaClientResult>",
+      "authenticated" : true,
       "methodName" : "modifyLunaClient"
     },
     "RemoveTagsFromResource" : {
@@ -736,12 +736,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RemoveTagsFromResourceResult",
       "asyncReturnType" : "RemoveTagsFromResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult>",
+      "authenticated" : true,
       "methodName" : "removeTagsFromResource"
     }
   },
@@ -1809,11 +1809,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2007,11 +2007,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2442,11 +2442,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2583,11 +2583,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3755,11 +3755,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4479,11 +4479,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5088,11 +5088,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5229,11 +5229,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5568,11 +5568,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5766,11 +5766,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6751,11 +6751,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : false,
-          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "simple" : false,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6949,11 +6949,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : false,
-            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "simple" : false,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7399,11 +7399,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7645,11 +7645,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8026,11 +8026,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8171,11 +8171,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8409,11 +8409,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8602,11 +8602,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9917,11 +9917,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10110,11 +10110,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10399,11 +10399,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10517,11 +10517,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10635,11 +10635,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10857,11 +10857,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simple" : true,
-          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11050,11 +11050,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11222,11 +11222,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11394,11 +11394,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11672,11 +11672,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simple" : true,
-            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14998,6 +14998,8 @@
       }
     },
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
@@ -15005,5 +15007,8 @@
     "operationExamples" : { }
   },
   "exceptionUnmarshallerImpl" : null,
-  "clientConfigFactory" : "ClientConfigurationFactory"
+  "clientConfigFactory" : "ClientConfigurationFactory",
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cloudhsm.model.AWSCloudHSMException",
+  "sdkModeledExceptionBaseClassName" : "AWSCloudHSMException"
 }

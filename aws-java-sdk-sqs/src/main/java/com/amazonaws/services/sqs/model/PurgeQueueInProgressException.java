@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.sqs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that the specified queue previously received a
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * take to delete the messages in the queue.
  * </p>
  */
-public class PurgeQueueInProgressException extends AmazonServiceException {
+public class PurgeQueueInProgressException extends
+        com.amazonaws.services.sqs.model.AmazonSQSException {
     private static final long serialVersionUID = 1L;
 
     /**

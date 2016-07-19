@@ -28,6 +28,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
@@ -36,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.services.route53.model.transform.*;
@@ -308,7 +310,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
                 .add(new DelegationSetNotAvailableExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new NoSuchTrafficPolicyInstanceExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
+        exceptionUnmarshallers
+                .add(new StandardErrorUnmarshaller(
+                        com.amazonaws.services.route53.model.AmazonRoute53Exception.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(ENDPOINT_PREFIX);

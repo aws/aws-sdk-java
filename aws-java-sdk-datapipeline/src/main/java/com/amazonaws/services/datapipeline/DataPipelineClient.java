@@ -28,6 +28,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
@@ -36,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.services.datapipeline.model.transform.*;
@@ -116,7 +118,9 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InternalServiceError")
                                     .withModeledClass(
-                                            com.amazonaws.services.datapipeline.model.InternalServiceErrorException.class)));
+                                            com.amazonaws.services.datapipeline.model.InternalServiceErrorException.class))
+                    .withBaseServiceExceptionClass(
+                            com.amazonaws.services.datapipeline.model.DataPipelineException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Data Pipeline. A

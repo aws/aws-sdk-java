@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.kms.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the specified key was marked as disabled.
  * </p>
  */
-public class DisabledException extends AmazonServiceException {
+public class DisabledException extends
+        com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 
     /**

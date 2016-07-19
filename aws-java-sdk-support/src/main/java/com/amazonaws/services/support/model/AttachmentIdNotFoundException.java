@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.support.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An attachment with the specified ID could not be found.
  * </p>
  */
-public class AttachmentIdNotFoundException extends AmazonServiceException {
+public class AttachmentIdNotFoundException extends
+        com.amazonaws.services.support.model.AWSSupportException {
     private static final long serialVersionUID = 1L;
 
     /**

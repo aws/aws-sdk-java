@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request exceeds the limit of 10 tags for the resource.
  * </p>
  */
-public class TagLimitExceededException extends AmazonServiceException {
+public class TagLimitExceededException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

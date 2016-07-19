@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.logs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if multiple requests to update the same resource were in conflict.
  * </p>
  */
-public class OperationAbortedException extends AmazonServiceException {
+public class OperationAbortedException extends
+        com.amazonaws.services.logs.model.AWSLogsException {
     private static final long serialVersionUID = 1L;
 
     /**

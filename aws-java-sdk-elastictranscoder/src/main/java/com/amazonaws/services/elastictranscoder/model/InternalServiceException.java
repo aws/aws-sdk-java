@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.elastictranscoder.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Elastic Transcoder encountered an unexpected exception while trying to
  * fulfill the request.
  * </p>
  */
-public class InternalServiceException extends AmazonServiceException {
+public class InternalServiceException
+        extends
+        com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException {
     private static final long serialVersionUID = 1L;
 
     /**

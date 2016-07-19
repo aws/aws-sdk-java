@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You attempted to delete a document while it is still shared. You must stop
  * sharing the document before you can delete it.
  * </p>
  */
-public class InvalidDocumentOperationException extends AmazonServiceException {
+public class InvalidDocumentOperationException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

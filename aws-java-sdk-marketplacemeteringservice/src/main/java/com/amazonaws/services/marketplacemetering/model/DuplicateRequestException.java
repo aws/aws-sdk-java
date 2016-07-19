@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.marketplacemetering.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A metering record has already been emitted by the same EC2 instance for the
  * given {usageDimension, timestamp} with a different usageQuantity.
  * </p>
  */
-public class DuplicateRequestException extends AmazonServiceException {
+public class DuplicateRequestException
+        extends
+        com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException {
     private static final long serialVersionUID = 1L;
 
     /**

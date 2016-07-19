@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The hosted zone contains resource record sets in addition to the default NS
@@ -25,7 +23,8 @@ import com.amazonaws.AmazonServiceException;
  * delete the additional resource record sets.
  * </p>
  */
-public class HostedZoneNotEmptyException extends AmazonServiceException {
+public class HostedZoneNotEmptyException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.applicationdiscovery.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The server experienced an internal error. Try again.
  * </p>
  */
-public class ServerInternalErrorException extends AmazonServiceException {
+public class ServerInternalErrorException
+        extends
+        com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException {
     private static final long serialVersionUID = 1L;
 
     /**

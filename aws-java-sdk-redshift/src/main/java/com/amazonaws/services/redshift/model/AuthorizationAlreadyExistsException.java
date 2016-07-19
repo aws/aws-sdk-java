@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified CIDR block or EC2 security group is already authorized for the
  * specified cluster security group.
  * </p>
  */
-public class AuthorizationAlreadyExistsException extends AmazonServiceException {
+public class AuthorizationAlreadyExistsException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The encryption key is disabled.
  * </p>
  */
-public class EncryptionKeyDisabledException extends AmazonServiceException {
+public class EncryptionKeyDisabledException extends
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

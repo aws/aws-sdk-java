@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.simpleemail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that the provided AWS Lambda function is invalid, or that Amazon
@@ -27,7 +25,9 @@ import com.amazonaws.AmazonServiceException;
  * >Amazon SES Developer Guide</a>.
  * </p>
  */
-public class InvalidLambdaFunctionException extends AmazonServiceException {
+public class InvalidLambdaFunctionException
+        extends
+        com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
     private String functionArn;

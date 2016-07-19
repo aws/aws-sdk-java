@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codepipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The approval request already received a response or has expired.
  * </p>
  */
-public class InvalidApprovalTokenException extends AmazonServiceException {
+public class InvalidApprovalTokenException extends
+        com.amazonaws.services.codepipeline.model.AWSCodePipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

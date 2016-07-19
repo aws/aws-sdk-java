@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.route53.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A traffic policy that has the same value for <code>Name</code> already
  * exists.
  * </p>
  */
-public class TrafficPolicyAlreadyExistsException extends AmazonServiceException {
+public class TrafficPolicyAlreadyExistsException extends
+        com.amazonaws.services.route53.model.AmazonRoute53Exception {
     private static final long serialVersionUID = 1L;
 
     /**

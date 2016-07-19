@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.opsworks.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that a resource was not found.
  * </p>
  */
-public class ResourceNotFoundException extends AmazonServiceException {
+public class ResourceNotFoundException extends
+        com.amazonaws.services.opsworks.model.AWSOpsWorksException {
     private static final long serialVersionUID = 1L;
 
     /**

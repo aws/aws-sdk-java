@@ -58,12 +58,12 @@
         "documentation" : "<p>The resource is already in use and not available for this operation.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateDeliveryStreamResult",
       "asyncReturnType" : "CreateDeliveryStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDeliveryStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDeliveryStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDeliveryStreamRequest, CreateDeliveryStreamResult>",
-      "authenticated" : true,
       "methodName" : "createDeliveryStream"
     },
     "DeleteDeliveryStream" : {
@@ -91,12 +91,12 @@
         "documentation" : "<p>The specified resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteDeliveryStreamResult",
       "asyncReturnType" : "DeleteDeliveryStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDeliveryStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDeliveryStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDeliveryStreamRequest, DeleteDeliveryStreamResult>",
-      "authenticated" : true,
       "methodName" : "deleteDeliveryStream"
     },
     "DescribeDeliveryStream" : {
@@ -121,12 +121,12 @@
         "documentation" : "<p>The specified resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeDeliveryStreamResult",
       "asyncReturnType" : "DescribeDeliveryStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDeliveryStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDeliveryStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDeliveryStreamRequest, DescribeDeliveryStreamResult>",
-      "authenticated" : true,
       "methodName" : "describeDeliveryStream"
     },
     "ListDeliveryStreams" : {
@@ -148,12 +148,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListDeliveryStreamsResult",
       "asyncReturnType" : "ListDeliveryStreamsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDeliveryStreamsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDeliveryStreamsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDeliveryStreamsRequest, ListDeliveryStreamsResult>",
-      "authenticated" : true,
       "methodName" : "listDeliveryStreams"
     },
     "PutRecord" : {
@@ -184,12 +184,12 @@
         "documentation" : "<p>The service is unavailable, back off and retry the operation. If you continue to see the exception, throughput limits for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutRecordResult",
       "asyncReturnType" : "PutRecordResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRecordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRecordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRecordRequest, PutRecordResult>",
-      "authenticated" : true,
       "methodName" : "putRecord"
     },
     "PutRecordBatch" : {
@@ -220,12 +220,12 @@
         "documentation" : "<p>The service is unavailable, back off and retry the operation. If you continue to see the exception, throughput limits for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutRecordBatchResult",
       "asyncReturnType" : "PutRecordBatchResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRecordBatchResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRecordBatchResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRecordBatchRequest, PutRecordBatchResult>",
-      "authenticated" : true,
       "methodName" : "putRecordBatch"
     },
     "UpdateDestination" : {
@@ -259,12 +259,12 @@
         "documentation" : "<p>Another modification has already happened. Fetch <b>VersionId</b> again and use it to update the destination.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateDestinationResult",
       "asyncReturnType" : "UpdateDestinationResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDestinationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateDestinationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDestinationRequest, UpdateDestinationResult>",
-      "authenticated" : true,
       "methodName" : "updateDestination"
     }
   },
@@ -16278,12 +16278,17 @@
     "shapeSubstitutions" : null,
     "shapeModifiers" : null,
     "customErrorCodeFieldName" : null,
+    "sdkModeledExceptionBaseClassName" : null,
+    "customSignerProvider" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "sdkModeledExceptionBaseClassName" : "AmazonKinesisFirehoseException",
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "exceptionUnmarshallerImpl" : null,
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException"
 }

@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * AWS Import/Export cannot cancel the job
  */
-public class UnableToCancelJobIdException extends AmazonServiceException {
+public class UnableToCancelJobIdException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

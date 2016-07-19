@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elasticfilesystem.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Returned if an error occurred on the server side.
  * </p>
  */
-public class InternalServerErrorException extends AmazonServiceException {
+public class InternalServerErrorException
+        extends
+        com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {
     private static final long serialVersionUID = 1L;
 
     private String errorCode;

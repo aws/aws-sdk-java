@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The filter name is not valid. Verify the you entered the correct name and try
  * again.
  * </p>
  */
-public class InvalidFilterException extends AmazonServiceException {
+public class InvalidFilterException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

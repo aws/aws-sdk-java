@@ -97,6 +97,18 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String outputS3KeyPrefix;
+    /**
+     * <p>
+     * The IAM role that SSM uses to send notifications.
+     * </p>
+     */
+    private String serviceRoleArn;
+    /**
+     * <p>
+     * Configurations for sending notifications.
+     * </p>
+     */
+    private NotificationConfig notificationConfig;
 
     /**
      * <p>
@@ -679,6 +691,89 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The IAM role that SSM uses to send notifications.
+     * </p>
+     * 
+     * @param serviceRoleArn
+     *        The IAM role that SSM uses to send notifications.
+     */
+
+    public void setServiceRoleArn(String serviceRoleArn) {
+        this.serviceRoleArn = serviceRoleArn;
+    }
+
+    /**
+     * <p>
+     * The IAM role that SSM uses to send notifications.
+     * </p>
+     * 
+     * @return The IAM role that SSM uses to send notifications.
+     */
+
+    public String getServiceRoleArn() {
+        return this.serviceRoleArn;
+    }
+
+    /**
+     * <p>
+     * The IAM role that SSM uses to send notifications.
+     * </p>
+     * 
+     * @param serviceRoleArn
+     *        The IAM role that SSM uses to send notifications.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public SendCommandRequest withServiceRoleArn(String serviceRoleArn) {
+        setServiceRoleArn(serviceRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configurations for sending notifications.
+     * </p>
+     * 
+     * @param notificationConfig
+     *        Configurations for sending notifications.
+     */
+
+    public void setNotificationConfig(NotificationConfig notificationConfig) {
+        this.notificationConfig = notificationConfig;
+    }
+
+    /**
+     * <p>
+     * Configurations for sending notifications.
+     * </p>
+     * 
+     * @return Configurations for sending notifications.
+     */
+
+    public NotificationConfig getNotificationConfig() {
+        return this.notificationConfig;
+    }
+
+    /**
+     * <p>
+     * Configurations for sending notifications.
+     * </p>
+     * 
+     * @param notificationConfig
+     *        Configurations for sending notifications.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public SendCommandRequest withNotificationConfig(
+            NotificationConfig notificationConfig) {
+        setNotificationConfig(notificationConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -707,7 +802,11 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
         if (getOutputS3BucketName() != null)
             sb.append("OutputS3BucketName: " + getOutputS3BucketName() + ",");
         if (getOutputS3KeyPrefix() != null)
-            sb.append("OutputS3KeyPrefix: " + getOutputS3KeyPrefix());
+            sb.append("OutputS3KeyPrefix: " + getOutputS3KeyPrefix() + ",");
+        if (getServiceRoleArn() != null)
+            sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
+        if (getNotificationConfig() != null)
+            sb.append("NotificationConfig: " + getNotificationConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -774,6 +873,19 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
                 && other.getOutputS3KeyPrefix().equals(
                         this.getOutputS3KeyPrefix()) == false)
             return false;
+        if (other.getServiceRoleArn() == null
+                ^ this.getServiceRoleArn() == null)
+            return false;
+        if (other.getServiceRoleArn() != null
+                && other.getServiceRoleArn().equals(this.getServiceRoleArn()) == false)
+            return false;
+        if (other.getNotificationConfig() == null
+                ^ this.getNotificationConfig() == null)
+            return false;
+        if (other.getNotificationConfig() != null
+                && other.getNotificationConfig().equals(
+                        this.getNotificationConfig()) == false)
+            return false;
         return true;
     }
 
@@ -813,6 +925,14 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getOutputS3KeyPrefix() == null) ? 0
                         : getOutputS3KeyPrefix().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNotificationConfig() == null) ? 0
+                        : getNotificationConfig().hashCode());
         return hashCode;
     }
 

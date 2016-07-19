@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.applicationautoscaling.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The service encountered an internal error.
  * </p>
  */
-public class InternalServiceException extends AmazonServiceException {
+public class InternalServiceException
+        extends
+        com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException {
     private static final long serialVersionUID = 1L;
 
     /**

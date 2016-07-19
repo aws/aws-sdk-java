@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified continuation token is not valid.
  * </p>
  */
-public class InvalidContinuationTokenException extends AmazonServiceException {
+public class InvalidContinuationTokenException extends
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

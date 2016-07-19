@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.lambda.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The content type of the <code>Invoke</code> request body is not JSON.
  * </p>
  */
-public class UnsupportedMediaTypeException extends AmazonServiceException {
+public class UnsupportedMediaTypeException extends
+        com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
     private String type;

@@ -102,6 +102,18 @@ public class DeviceJsonMarshaller {
                 jsonGenerator.writeFieldName("radio").writeValue(
                         device.getRadio());
             }
+            if (device.getRemoteAccessEnabled() != null) {
+                jsonGenerator.writeFieldName("remoteAccessEnabled").writeValue(
+                        device.getRemoteAccessEnabled());
+            }
+            if (device.getFleetType() != null) {
+                jsonGenerator.writeFieldName("fleetType").writeValue(
+                        device.getFleetType());
+            }
+            if (device.getFleetName() != null) {
+                jsonGenerator.writeFieldName("fleetName").writeValue(
+                        device.getFleetName());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

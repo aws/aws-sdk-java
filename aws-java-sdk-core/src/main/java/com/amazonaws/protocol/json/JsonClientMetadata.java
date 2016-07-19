@@ -14,6 +14,7 @@
  */
 package com.amazonaws.protocol.json;
 
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.annotation.SdkProtectedApi;
 
@@ -36,6 +37,11 @@ public class JsonClientMetadata {
     private String contentTypeOverride;
 
     private boolean supportsCbor;
+
+    /**
+     * Base class is initialized to {@link AmazonServiceException} for backwards compatibility.
+     */
+    private Class<? extends AmazonServiceException> baseServiceExceptionClass = AmazonServiceException.class;
 
     public JsonClientMetadata addErrorMetadata(JsonErrorShapeMetadata errorShapeMetadata) {
         this.errorsMetadata.add(errorShapeMetadata);
@@ -75,6 +81,16 @@ public class JsonClientMetadata {
 
     public JsonClientMetadata withSupportsCbor(boolean supportsCbor) {
         this.supportsCbor = supportsCbor;
+        return this;
+    }
+
+    public Class<? extends AmazonServiceException> getBaseServiceExceptionClass() {
+        return baseServiceExceptionClass;
+    }
+
+    public JsonClientMetadata withBaseServiceExceptionClass(
+            Class<? extends AmazonServiceException> baseServiceExceptionClass) {
+        this.baseServiceExceptionClass = baseServiceExceptionClass;
         return this;
     }
 }

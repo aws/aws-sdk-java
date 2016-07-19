@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
  * </p>
  */
-public class DBSecurityGroupNotFoundException extends AmazonServiceException {
+public class DBSecurityGroupNotFoundException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

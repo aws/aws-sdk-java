@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.elastictranscoder.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested resource does not exist or is not available. For example, the
@@ -25,7 +23,9 @@ import com.amazonaws.AmazonServiceException;
  * created.
  * </p>
  */
-public class ResourceNotFoundException extends AmazonServiceException {
+public class ResourceNotFoundException
+        extends
+        com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException {
     private static final long serialVersionUID = 1L;
 
     /**

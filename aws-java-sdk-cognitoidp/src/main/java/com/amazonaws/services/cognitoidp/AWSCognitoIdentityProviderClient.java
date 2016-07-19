@@ -28,6 +28,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
@@ -36,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.cognitoidp.model.*;
 import com.amazonaws.services.cognitoidp.model.transform.*;
@@ -160,7 +162,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("CodeMismatchException")
                                     .withModeledClass(
-                                            com.amazonaws.services.cognitoidp.model.CodeMismatchException.class)));
+                                            com.amazonaws.services.cognitoidp.model.CodeMismatchException.class))
+                    .withBaseServiceExceptionClass(
+                            com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Cognito

@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.config.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified time range is not valid. The earlier time is not
  * chronologically before the later time.
  * </p>
  */
-public class InvalidTimeRangeException extends AmazonServiceException {
+public class InvalidTimeRangeException extends
+        com.amazonaws.services.config.model.AmazonConfigException {
     private static final long serialVersionUID = 1L;
 
     /**

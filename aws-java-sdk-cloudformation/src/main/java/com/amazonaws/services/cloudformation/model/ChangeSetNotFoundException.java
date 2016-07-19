@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.cloudformation.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified change set name or ID doesn't exit. To view valid change sets
  * for a stack, use the <code>ListChangeSets</code> action.
  * </p>
  */
-public class ChangeSetNotFoundException extends AmazonServiceException {
+public class ChangeSetNotFoundException
+        extends
+        com.amazonaws.services.cloudformation.model.AmazonCloudFormationException {
     private static final long serialVersionUID = 1L;
 
     /**

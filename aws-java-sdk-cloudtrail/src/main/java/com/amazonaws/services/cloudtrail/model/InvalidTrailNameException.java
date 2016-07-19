@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.cloudtrail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * This exception is thrown when the provided trail name is not valid. Trail
@@ -53,7 +51,8 @@ import com.amazonaws.AmazonServiceException;
  * </li>
  * </ul>
  */
-public class InvalidTrailNameException extends AmazonServiceException {
+public class InvalidTrailNameException extends
+        com.amazonaws.services.cloudtrail.model.AWSCloudTrailException {
     private static final long serialVersionUID = 1L;
 
     /**

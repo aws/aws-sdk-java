@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.iot.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The policy documentation is not valid.
  * </p>
  */
-public class MalformedPolicyException extends AmazonServiceException {
+public class MalformedPolicyException extends
+        com.amazonaws.services.iot.model.AWSIotException {
     private static final long serialVersionUID = 1L;
 
     /**

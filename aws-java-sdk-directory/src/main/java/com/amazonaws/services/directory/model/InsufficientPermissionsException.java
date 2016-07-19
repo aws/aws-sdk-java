@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.directory.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The account does not have sufficient permission to perform the operation.
  * </p>
  */
-public class InsufficientPermissionsException extends AmazonServiceException {
+public class InsufficientPermissionsException extends
+        com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 
     private String requestId;

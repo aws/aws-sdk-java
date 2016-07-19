@@ -28,6 +28,7 @@ import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
 import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
 import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
@@ -36,6 +37,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.services.cloudhsm.model.transform.*;
@@ -69,19 +71,21 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidRequestException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.cloudhsm.model.InvalidRequestException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("CloudHsmInternalException")
                                     .withModeledClass(
                                             com.amazonaws.services.cloudhsm.model.CloudHsmInternalException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidRequestException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudhsm.model.InvalidRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("CloudHsmServiceException")
                                     .withModeledClass(
-                                            com.amazonaws.services.cloudhsm.model.CloudHsmServiceException.class)));
+                                            com.amazonaws.services.cloudhsm.model.CloudHsmServiceException.class))
+                    .withBaseServiceExceptionClass(
+                            com.amazonaws.services.cloudhsm.model.AWSCloudHSMException.class));
 
     /**
      * Constructs a new client to invoke service methods on CloudHSM. A

@@ -16,14 +16,14 @@
 
 package com.amazonaws.services.elastictranscoder.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * General authentication failure. The request was not signed correctly.
  * </p>
  */
-public class AccessDeniedException extends AmazonServiceException {
+public class AccessDeniedException
+        extends
+        com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException {
     private static final long serialVersionUID = 1L;
 
     /**

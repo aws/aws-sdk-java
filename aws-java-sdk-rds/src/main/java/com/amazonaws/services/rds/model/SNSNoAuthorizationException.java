@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * You do not have permission to publish to the SNS topic ARN.
  * </p>
  */
-public class SNSNoAuthorizationException extends AmazonServiceException {
+public class SNSNoAuthorizationException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.elasticache.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The requested cache cluster is not in the <i>available</i> state.
  * </p>
  */
-public class InvalidCacheClusterStateException extends AmazonServiceException {
+public class InvalidCacheClusterStateException extends
+        com.amazonaws.services.elasticache.model.AmazonElastiCacheException {
     private static final long serialVersionUID = 1L;
 
     /**

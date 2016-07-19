@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An Amazon SNS topic with the specified Amazon Resource Name (ARN) does not
  * exist.
  * </p>
  */
-public class SNSTopicArnNotFoundException extends AmazonServiceException {
+public class SNSTopicArnNotFoundException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

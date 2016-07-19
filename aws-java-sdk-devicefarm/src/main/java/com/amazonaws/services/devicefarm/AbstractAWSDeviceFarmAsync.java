@@ -60,6 +60,21 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRemoteAccessSessionResult> createRemoteAccessSessionAsync(
+            CreateRemoteAccessSessionRequest request) {
+
+        return createRemoteAccessSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRemoteAccessSessionResult> createRemoteAccessSessionAsync(
+            CreateRemoteAccessSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRemoteAccessSessionRequest, CreateRemoteAccessSessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUploadResult> createUploadAsync(
             CreateUploadRequest request) {
 
@@ -100,6 +115,21 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(
             DeleteProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRemoteAccessSessionResult> deleteRemoteAccessSessionAsync(
+            DeleteRemoteAccessSessionRequest request) {
+
+        return deleteRemoteAccessSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRemoteAccessSessionResult> deleteRemoteAccessSessionAsync(
+            DeleteRemoteAccessSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRemoteAccessSessionRequest, DeleteRemoteAccessSessionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -240,6 +270,21 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetRemoteAccessSessionResult> getRemoteAccessSessionAsync(
+            GetRemoteAccessSessionRequest request) {
+
+        return getRemoteAccessSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRemoteAccessSessionResult> getRemoteAccessSessionAsync(
+            GetRemoteAccessSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRemoteAccessSessionRequest, GetRemoteAccessSessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRunResult> getRunAsync(
             GetRunRequest request) {
 
@@ -295,6 +340,21 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetUploadResult> getUploadAsync(
             GetUploadRequest request,
             com.amazonaws.handlers.AsyncHandler<GetUploadRequest, GetUploadResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<InstallToRemoteAccessSessionResult> installToRemoteAccessSessionAsync(
+            InstallToRemoteAccessSessionRequest request) {
+
+        return installToRemoteAccessSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<InstallToRemoteAccessSessionResult> installToRemoteAccessSessionAsync(
+            InstallToRemoteAccessSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<InstallToRemoteAccessSessionRequest, InstallToRemoteAccessSessionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -400,6 +460,21 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(
             ListProjectsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProjectsRequest, ListProjectsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRemoteAccessSessionsResult> listRemoteAccessSessionsAsync(
+            ListRemoteAccessSessionsRequest request) {
+
+        return listRemoteAccessSessionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRemoteAccessSessionsResult> listRemoteAccessSessionsAsync(
+            ListRemoteAccessSessionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRemoteAccessSessionsRequest, ListRemoteAccessSessionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -535,6 +610,21 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ScheduleRunResult> scheduleRunAsync(
             ScheduleRunRequest request,
             com.amazonaws.handlers.AsyncHandler<ScheduleRunRequest, ScheduleRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRemoteAccessSessionResult> stopRemoteAccessSessionAsync(
+            StopRemoteAccessSessionRequest request) {
+
+        return stopRemoteAccessSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRemoteAccessSessionResult> stopRemoteAccessSessionAsync(
+            StopRemoteAccessSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopRemoteAccessSessionRequest, StopRemoteAccessSessionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

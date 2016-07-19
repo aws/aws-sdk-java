@@ -135,6 +135,16 @@ public class SendCommandRequestMarshaller implements
                 jsonGenerator.writeFieldName("OutputS3KeyPrefix").writeValue(
                         sendCommandRequest.getOutputS3KeyPrefix());
             }
+            if (sendCommandRequest.getServiceRoleArn() != null) {
+                jsonGenerator.writeFieldName("ServiceRoleArn").writeValue(
+                        sendCommandRequest.getServiceRoleArn());
+            }
+            if (sendCommandRequest.getNotificationConfig() != null) {
+                jsonGenerator.writeFieldName("NotificationConfig");
+                NotificationConfigJsonMarshaller.getInstance().marshall(
+                        sendCommandRequest.getNotificationConfig(),
+                        jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
 

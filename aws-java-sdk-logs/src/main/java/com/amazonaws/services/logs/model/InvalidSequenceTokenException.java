@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.logs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * 
  */
-public class InvalidSequenceTokenException extends AmazonServiceException {
+public class InvalidSequenceTokenException extends
+        com.amazonaws.services.logs.model.AWSLogsException {
     private static final long serialVersionUID = 1L;
 
     private String expectedSequenceToken;

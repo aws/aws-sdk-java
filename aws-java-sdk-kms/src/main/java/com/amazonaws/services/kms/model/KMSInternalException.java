@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.kms.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because an internal exception occurred. The request
  * can be retried.
  * </p>
  */
-public class KMSInternalException extends AmazonServiceException {
+public class KMSInternalException extends
+        com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.directory.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The maximum allowed number of tags was exceeded.
  * </p>
  */
-public class TagLimitExceededException extends AmazonServiceException {
+public class TagLimitExceededException extends
+        com.amazonaws.services.directory.model.AWSDirectoryServiceException {
     private static final long serialVersionUID = 1L;
 
     private String requestId;

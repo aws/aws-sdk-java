@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
  * </p>
  */
-public class DBClusterNotFoundException extends AmazonServiceException {
+public class DBClusterNotFoundException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

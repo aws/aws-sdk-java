@@ -242,8 +242,7 @@ public class UploadObjectRequest extends AbstractPutObjectRequest implements
      */
     @Override
     public UploadObjectRequest clone() {
-        final UploadObjectRequest cloned = new UploadObjectRequest(
-                getBucketName(), getKey(), getFile());
+        final UploadObjectRequest cloned = (UploadObjectRequest) super.clone();
         super.copyPutObjectBaseTo(cloned);
         final Map<String, String> materialsDescription = getMaterialsDescription();
         final ObjectMetadata uploadPartMetadata = getUploadPartMetadata();

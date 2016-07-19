@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.simpleemail.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that the provided policy is invalid. Check the error stack for more
  * information about what caused the error.
  * </p>
  */
-public class InvalidPolicyException extends AmazonServiceException {
+public class InvalidPolicyException
+        extends
+        com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

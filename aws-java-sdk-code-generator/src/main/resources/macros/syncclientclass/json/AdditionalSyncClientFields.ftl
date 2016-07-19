@@ -12,5 +12,6 @@
                     .withModeledClass(${serviceModelRoot.metadata.packageName}.model.${shapeModel.shapeName}.class))
             </#if>
         </#list>
+        .withBaseServiceExceptionClass(${serviceModelRoot.sdkModeledExceptionBaseFqcn}.class)
         );
 </#macro>

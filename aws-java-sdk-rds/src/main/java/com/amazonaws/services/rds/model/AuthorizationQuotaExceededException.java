@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * DB security group authorization quota has been reached.
  * </p>
  */
-public class AuthorizationQuotaExceededException extends AmazonServiceException {
+public class AuthorizationQuotaExceededException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

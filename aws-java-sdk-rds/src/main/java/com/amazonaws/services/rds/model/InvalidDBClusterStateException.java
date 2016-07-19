@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The DB cluster is not in a valid state.
  * </p>
  */
-public class InvalidDBClusterStateException extends AmazonServiceException {
+public class InvalidDBClusterStateException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

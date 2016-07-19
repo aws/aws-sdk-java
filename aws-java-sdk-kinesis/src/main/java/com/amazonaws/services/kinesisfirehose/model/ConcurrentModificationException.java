@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.kinesisfirehose.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Another modification has already happened. Fetch <b>VersionId</b> again and
  * use it to update the destination.
  * </p>
  */
-public class ConcurrentModificationException extends AmazonServiceException {
+public class ConcurrentModificationException
+        extends
+        com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException {
     private static final long serialVersionUID = 1L;
 
     /**

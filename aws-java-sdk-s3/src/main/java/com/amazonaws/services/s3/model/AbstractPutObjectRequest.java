@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.s3.model;
 
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.event.ProgressListener;
+
 import java.io.File;
 import java.io.InputStream;
 import java.io.Serializable;
-
-import com.amazonaws.AmazonWebServiceRequest;
-import com.amazonaws.event.ProgressListener;
 
 /**
  * Abstract base class for a put object or put object like request.
@@ -847,7 +847,9 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
     }
 
     @Override
-    public abstract AbstractPutObjectRequest clone();
+    public AbstractPutObjectRequest clone() {
+        return (AbstractPutObjectRequest) super.clone();
+    }
 
     protected final <T extends AbstractPutObjectRequest> T copyPutObjectBaseTo(
             T target) {

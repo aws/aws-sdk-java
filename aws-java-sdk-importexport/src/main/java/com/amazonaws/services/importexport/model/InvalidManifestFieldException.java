@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * One or more manifest fields was invalid. Please correct and resubmit.
  */
-public class InvalidManifestFieldException extends AmazonServiceException {
+public class InvalidManifestFieldException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

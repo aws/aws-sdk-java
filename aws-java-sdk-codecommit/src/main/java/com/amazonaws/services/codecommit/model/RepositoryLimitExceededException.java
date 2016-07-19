@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A repository resource limit was exceeded.
  * </p>
  */
-public class RepositoryLimitExceededException extends AmazonServiceException {
+public class RepositoryLimitExceededException extends
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

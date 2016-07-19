@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.datapipeline.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified task was not found.
  * </p>
  */
-public class TaskNotFoundException extends AmazonServiceException {
+public class TaskNotFoundException extends
+        com.amazonaws.services.datapipeline.model.DataPipelineException {
     private static final long serialVersionUID = 1L;
 
     /**

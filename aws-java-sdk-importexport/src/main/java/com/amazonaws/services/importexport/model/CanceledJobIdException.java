@@ -16,12 +16,11 @@
 
 package com.amazonaws.services.importexport.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * The specified job ID has been canceled and is no longer valid.
  */
-public class CanceledJobIdException extends AmazonServiceException {
+public class CanceledJobIdException extends
+        com.amazonaws.services.importexport.model.AmazonImportExportException {
     private static final long serialVersionUID = 1L;
 
     /**

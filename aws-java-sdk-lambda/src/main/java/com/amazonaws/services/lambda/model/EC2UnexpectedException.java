@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.lambda.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * AWS Lambda received an unexpected EC2 client exception while setting up for
  * the Lambda function.
  * </p>
  */
-public class EC2UnexpectedException extends AmazonServiceException {
+public class EC2UnexpectedException extends
+        com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
     private String type;

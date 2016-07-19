@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A repository names object is required but was not specified.
  * </p>
  */
-public class RepositoryNamesRequiredException extends AmazonServiceException {
+public class RepositoryNamesRequiredException extends
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

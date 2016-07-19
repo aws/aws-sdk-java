@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.kms.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request was rejected because the marker that specifies where pagination
  * should next begin is not valid.
  * </p>
  */
-public class InvalidMarkerException extends AmazonServiceException {
+public class InvalidMarkerException extends
+        com.amazonaws.services.kms.model.AWSKMSException {
     private static final long serialVersionUID = 1L;
 
     /**

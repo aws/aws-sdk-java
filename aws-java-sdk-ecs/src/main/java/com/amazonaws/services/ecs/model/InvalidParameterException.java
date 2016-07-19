@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.ecs.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified parameter is invalid. Review the available parameters for the
  * API request.
  * </p>
  */
-public class InvalidParameterException extends AmazonServiceException {
+public class InvalidParameterException extends
+        com.amazonaws.services.ecs.model.AmazonECSException {
     private static final long serialVersionUID = 1L;
 
     /**

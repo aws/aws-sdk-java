@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.identitymanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The request failed because a provided policy could not be successfully
  * evaluated. An additional detail message indicates the source of the failure.
  * </p>
  */
-public class PolicyEvaluationException extends AmazonServiceException {
+public class PolicyEvaluationException
+        extends
+        com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

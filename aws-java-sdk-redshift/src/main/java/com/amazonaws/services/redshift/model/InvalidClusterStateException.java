@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified cluster is not in the <code>available</code> state.
  * </p>
  */
-public class InvalidClusterStateException extends AmazonServiceException {
+public class InvalidClusterStateException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

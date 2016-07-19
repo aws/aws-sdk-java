@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.elasticsearch.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An exception for trying to create more than allowed resources or
  * sub-resources. Gives http status code of 409.
  * </p>
  */
-public class LimitExceededException extends AmazonServiceException {
+public class LimitExceededException extends
+        com.amazonaws.services.elasticsearch.model.AWSElasticsearchException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,15 +16,15 @@
 
 package com.amazonaws.services.marketplacemetering.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * An internal error has occurred. Retry your request. If the problem persists,
  * post a message with details on the AWS forums.
  * </p>
  */
-public class InternalServiceErrorException extends AmazonServiceException {
+public class InternalServiceErrorException
+        extends
+        com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.securitytoken.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The identity provider (IdP) reported that authentication failed. This might
@@ -29,7 +27,9 @@ import com.amazonaws.AmazonServiceException;
  * revoked.
  * </p>
  */
-public class IDPRejectedClaimException extends AmazonServiceException {
+public class IDPRejectedClaimException
+        extends
+        com.amazonaws.services.securitytoken.model.AWSSecurityTokenServiceException {
     private static final long serialVersionUID = 1L;
 
     /**

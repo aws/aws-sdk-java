@@ -16,8 +16,6 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The document does not support the platform type of the given instance ID(s).
@@ -25,7 +23,9 @@ import com.amazonaws.AmazonServiceException;
  * instance.
  * </p>
  */
-public class UnsupportedPlatformTypeException extends AmazonServiceException {
+public class UnsupportedPlatformTypeException
+        extends
+        com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {
     private static final long serialVersionUID = 1L;
 
     /**

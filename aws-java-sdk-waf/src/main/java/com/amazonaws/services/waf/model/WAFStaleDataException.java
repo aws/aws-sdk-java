@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.waf.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The operation failed because you tried to create, update, or delete an object
  * by using a change token that has already been used.
  * </p>
  */
-public class WAFStaleDataException extends AmazonServiceException {
+public class WAFStaleDataException extends
+        com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     /**

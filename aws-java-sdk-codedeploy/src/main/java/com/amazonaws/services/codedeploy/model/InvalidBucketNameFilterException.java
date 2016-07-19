@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codedeploy.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The bucket name either doesn't exist or was specified in an invalid format.
  * </p>
  */
-public class InvalidBucketNameFilterException extends AmazonServiceException {
+public class InvalidBucketNameFilterException extends
+        com.amazonaws.services.codedeploy.model.AmazonCodeDeployException {
     private static final long serialVersionUID = 1L;
 
     /**

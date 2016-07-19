@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.rds.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The quota of 20 option groups was exceeded for this AWS account.
  * </p>
  */
-public class OptionGroupQuotaExceededException extends AmazonServiceException {
+public class OptionGroupQuotaExceededException extends
+        com.amazonaws.services.rds.model.AmazonRDSException {
     private static final long serialVersionUID = 1L;
 
     /**

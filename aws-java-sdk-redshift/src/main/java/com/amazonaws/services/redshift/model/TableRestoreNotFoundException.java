@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * The specified <code>TableRestoreRequestId</code> value was not found.
  * </p>
  */
-public class TableRestoreNotFoundException extends AmazonServiceException {
+public class TableRestoreNotFoundException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**

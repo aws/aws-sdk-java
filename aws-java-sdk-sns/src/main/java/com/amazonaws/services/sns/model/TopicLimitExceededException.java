@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.sns.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Indicates that the customer already owns the maximum allowed number of
  * topics.
  * </p>
  */
-public class TopicLimitExceededException extends AmazonServiceException {
+public class TopicLimitExceededException extends
+        com.amazonaws.services.sns.model.AmazonSNSException {
     private static final long serialVersionUID = 1L;
 
     /**

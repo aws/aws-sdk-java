@@ -16,14 +16,13 @@
 
 package com.amazonaws.services.codecommit.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * A branch name is required but was not specified.
  * </p>
  */
-public class BranchNameRequiredException extends AmazonServiceException {
+public class BranchNameRequiredException extends
+        com.amazonaws.services.codecommit.model.AWSCodeCommitException {
     private static final long serialVersionUID = 1L;
 
     /**

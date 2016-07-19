@@ -344,6 +344,42 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRemoteAccessSessionResult> createRemoteAccessSessionAsync(
+            CreateRemoteAccessSessionRequest request) {
+
+        return createRemoteAccessSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRemoteAccessSessionResult> createRemoteAccessSessionAsync(
+            final CreateRemoteAccessSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRemoteAccessSessionRequest, CreateRemoteAccessSessionResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateRemoteAccessSessionResult>() {
+                    @Override
+                    public CreateRemoteAccessSessionResult call()
+                            throws Exception {
+                        CreateRemoteAccessSessionResult result;
+
+                        try {
+                            result = createRemoteAccessSession(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUploadResult> createUploadAsync(
             CreateUploadRequest request) {
 
@@ -433,6 +469,42 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
 
                         try {
                             result = deleteProject(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRemoteAccessSessionResult> deleteRemoteAccessSessionAsync(
+            DeleteRemoteAccessSessionRequest request) {
+
+        return deleteRemoteAccessSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRemoteAccessSessionResult> deleteRemoteAccessSessionAsync(
+            final DeleteRemoteAccessSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRemoteAccessSessionRequest, DeleteRemoteAccessSessionResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteRemoteAccessSessionResult>() {
+                    @Override
+                    public DeleteRemoteAccessSessionResult call()
+                            throws Exception {
+                        DeleteRemoteAccessSessionResult result;
+
+                        try {
+                            result = deleteRemoteAccessSession(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -765,6 +837,41 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetRemoteAccessSessionResult> getRemoteAccessSessionAsync(
+            GetRemoteAccessSessionRequest request) {
+
+        return getRemoteAccessSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRemoteAccessSessionResult> getRemoteAccessSessionAsync(
+            final GetRemoteAccessSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRemoteAccessSessionRequest, GetRemoteAccessSessionResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetRemoteAccessSessionResult>() {
+                    @Override
+                    public GetRemoteAccessSessionResult call() throws Exception {
+                        GetRemoteAccessSessionResult result;
+
+                        try {
+                            result = getRemoteAccessSession(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRunResult> getRunAsync(
             GetRunRequest request) {
 
@@ -889,6 +996,42 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
 
                         try {
                             result = getUpload(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<InstallToRemoteAccessSessionResult> installToRemoteAccessSessionAsync(
+            InstallToRemoteAccessSessionRequest request) {
+
+        return installToRemoteAccessSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<InstallToRemoteAccessSessionResult> installToRemoteAccessSessionAsync(
+            final InstallToRemoteAccessSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<InstallToRemoteAccessSessionRequest, InstallToRemoteAccessSessionResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<InstallToRemoteAccessSessionResult>() {
+                    @Override
+                    public InstallToRemoteAccessSessionResult call()
+                            throws Exception {
+                        InstallToRemoteAccessSessionResult result;
+
+                        try {
+                            result = installToRemoteAccessSession(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1135,6 +1278,42 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
 
                         try {
                             result = listProjects(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRemoteAccessSessionsResult> listRemoteAccessSessionsAsync(
+            ListRemoteAccessSessionsRequest request) {
+
+        return listRemoteAccessSessionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRemoteAccessSessionsResult> listRemoteAccessSessionsAsync(
+            final ListRemoteAccessSessionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRemoteAccessSessionsRequest, ListRemoteAccessSessionsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListRemoteAccessSessionsResult>() {
+                    @Override
+                    public ListRemoteAccessSessionsResult call()
+                            throws Exception {
+                        ListRemoteAccessSessionsResult result;
+
+                        try {
+                            result = listRemoteAccessSessions(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1450,6 +1629,42 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements
 
                         try {
                             result = scheduleRun(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRemoteAccessSessionResult> stopRemoteAccessSessionAsync(
+            StopRemoteAccessSessionRequest request) {
+
+        return stopRemoteAccessSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRemoteAccessSessionResult> stopRemoteAccessSessionAsync(
+            final StopRemoteAccessSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopRemoteAccessSessionRequest, StopRemoteAccessSessionResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<StopRemoteAccessSessionResult>() {
+                    @Override
+                    public StopRemoteAccessSessionResult call()
+                            throws Exception {
+                        StopRemoteAccessSessionResult result;
+
+                        try {
+                            result = stopRemoteAccessSession(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

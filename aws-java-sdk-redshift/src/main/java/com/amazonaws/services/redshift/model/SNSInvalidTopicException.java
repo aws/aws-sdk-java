@@ -16,15 +16,14 @@
 
 package com.amazonaws.services.redshift.model;
 
-import com.amazonaws.AmazonServiceException;
-
 /**
  * <p>
  * Amazon SNS has responded that there is a problem with the specified Amazon
  * SNS topic.
  * </p>
  */
-public class SNSInvalidTopicException extends AmazonServiceException {
+public class SNSInvalidTopicException extends
+        com.amazonaws.services.redshift.model.AmazonRedshiftException {
     private static final long serialVersionUID = 1L;
 
     /**
