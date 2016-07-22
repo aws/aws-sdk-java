@@ -14,6 +14,45 @@
  */
 package com.amazonaws.http;
 
+import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
+import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
+import static com.amazonaws.event.SDKProgressPublisher.publishRequestContentLength;
+import static com.amazonaws.event.SDKProgressPublisher.publishResponseContentLength;
+import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolAvailableCount;
+import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolLeasedCount;
+import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolPendingCount;
+import static com.amazonaws.util.IOUtils.closeQuietly;
+
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Random;
+import java.util.UUID;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpEntityEnclosingRequest;
+import org.apache.http.HttpStatus;
+import org.apache.http.StatusLine;
+import org.apache.http.annotation.ThreadSafe;
+import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.entity.BufferedHttpEntity;
+import org.apache.http.pool.ConnPoolControl;
+import org.apache.http.protocol.HttpContext;
+
 import com.amazonaws.AbortedException;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -75,44 +114,6 @@ import com.amazonaws.util.ResponseMetadataCache;
 import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.TimingInfo;
 import com.amazonaws.util.UnreliableFilterInputStream;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpEntityEnclosingRequest;
-import org.apache.http.HttpStatus;
-import org.apache.http.StatusLine;
-import org.apache.http.annotation.ThreadSafe;
-import org.apache.http.client.methods.HttpRequestBase;
-import org.apache.http.client.protocol.HttpClientContext;
-import org.apache.http.entity.BufferedHttpEntity;
-import org.apache.http.pool.ConnPoolControl;
-
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URI;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Random;
-import java.util.UUID;
-
-import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
-import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
-import static com.amazonaws.event.SDKProgressPublisher.publishRequestContentLength;
-import static com.amazonaws.event.SDKProgressPublisher.publishResponseContentLength;
-import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolAvailableCount;
-import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolLeasedCount;
-import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolPendingCount;
-import static com.amazonaws.util.IOUtils.closeQuietly;
 
 @ThreadSafe
 public class AmazonHttpClient {
@@ -256,11 +257,29 @@ public class AmazonHttpClient {
     public AmazonHttpClient(ClientConfiguration config,
                             RequestMetricCollector requestMetricCollector,
                             boolean useBrowserCompatibleHostNameVerifier) {
-        this(config, requestMetricCollector, HttpClientSettings.adapt(config,
-                useBrowserCompatibleHostNameVerifier));
-        this.httpClient = httpClientFactory.create(this.httpClientSettings);
+        this(config, requestMetricCollector, useBrowserCompatibleHostNameVerifier, false);
     }
 
+    /**
+     * Constructs a new AWS client using the specified client configuration options (ex: max retry attempts, proxy
+     * httpClientSettings, etc), and request metric collector.
+     *
+     * @param config                 Configuration options specifying how this client will communicate with AWS (ex:
+     *                               proxy httpClientSettings, retry count, etc.).
+     * @param requestMetricCollector client specific request metric collector, which takes precedence over the one at
+     *                               the AWS SDK level; or null if there is none.
+     * @param calculateCRC32FromCompressedData
+     *                               The flag indicating whether the CRC32 checksum is calculated from compressed data
+     *                               or not. It is only applicable when the header "x-amz-crc32" is set in the response.
+     */
+    public AmazonHttpClient(ClientConfiguration config,
+                            RequestMetricCollector requestMetricCollector,
+                            boolean useBrowserCompatibleHostNameVerifier,
+                            boolean calculateCRC32FromCompressedData) {
+        this(config, requestMetricCollector, HttpClientSettings.adapt(config,
+                useBrowserCompatibleHostNameVerifier, calculateCRC32FromCompressedData));
+        this.httpClient = httpClientFactory.create(this.httpClientSettings);
+    }
 
     /**
      * Package-protected constructor for unit test purposes.
@@ -889,7 +908,7 @@ public class AmazonHttpClient {
              */
             execOneParams.leaveHttpConnectionOpen = responseHandler.needsConnectionLeftOpen();
             HttpResponse httpResponse = createResponse(execOneParams.apacheRequest, request,
-                    execOneParams.apacheResponse);
+                    execOneParams.apacheResponse, localRequestContext);
             T response = handleResponse(request, responseHandler, execOneParams.apacheRequest, httpResponse,
                     execOneParams.apacheResponse, execContext, isHeaderReqIdAvail, requestHandlers);
 
@@ -923,7 +942,7 @@ public class AmazonHttpClient {
         }
         execOneParams.leaveHttpConnectionOpen = errorResponseHandler.needsConnectionLeftOpen();
         final AmazonServiceException ase = handleErrorResponse(request, errorResponseHandler,
-                execOneParams.apacheRequest, execOneParams.apacheResponse);
+                execOneParams.apacheRequest, execOneParams.apacheResponse, localRequestContext);
         awsRequestMetrics.addPropertyWith(Field.AWSRequestID, ase.getRequestId())
                 .addPropertyWith(Field.AWSErrorCode, ase.getErrorCode())
                 .addPropertyWith(Field.StatusCode, ase.getStatusCode());
@@ -932,7 +951,7 @@ public class AmazonHttpClient {
         AuthErrorRetryStrategy authRetry = execContext.getAuthErrorRetryStrategy();
         if (authRetry != null) {
             HttpResponse httpResponse = createResponse(execOneParams.apacheRequest, request,
-                    execOneParams.apacheResponse);
+                    execOneParams.apacheResponse, localRequestContext);
             execOneParams.authRetryParam = authRetry.shouldRetryWithAuthParam(request, httpResponse, ase);
         }
         if (execOneParams.authRetryParam == null && !shouldRetry(request.getOriginalRequest(),
@@ -1330,7 +1349,8 @@ public class AmazonHttpClient {
     private AmazonServiceException handleErrorResponse(Request<?> request,
                                                        HttpResponseHandler<AmazonServiceException> errorResponseHandler,
                                                        HttpRequestBase method,
-                                                       final org.apache.http.HttpResponse apacheHttpResponse)
+                                                       final org.apache.http.HttpResponse apacheHttpResponse,
+                                                       final HttpContext context)
             throws IOException, InterruptedException {
         final StatusLine statusLine = apacheHttpResponse.getStatusLine();
         final int statusCode;
@@ -1342,7 +1362,7 @@ public class AmazonHttpClient {
             statusCode = statusLine.getStatusCode();
             reasonPhrase = statusLine.getReasonPhrase();
         }
-        HttpResponse response = createResponse(method, request, apacheHttpResponse);
+        HttpResponse response = createResponse(method, request, apacheHttpResponse, context);
         AmazonServiceException exception = null;
         try {
             exception = errorResponseHandler.handle(response);
@@ -1385,14 +1405,16 @@ public class AmazonHttpClient {
      *
      * @param method  The HTTP method that was invoked to get the response.
      * @param request The HTTP request associated with the response.
+     * @param context The HTTP context associated with the request and response.
      * @return The new, initialized HttpResponse object ready to be passed to an HTTP response handler object.
      * @throws IOException If there were any problems getting any response information from the HttpClient method
      *                     object.
      */
     private HttpResponse createResponse(HttpRequestBase method,
                                         Request<?> request,
-                                        org.apache.http.HttpResponse apacheHttpResponse) throws IOException {
-        HttpResponse httpResponse = new HttpResponse(request, method);
+                                        org.apache.http.HttpResponse apacheHttpResponse,
+                                        HttpContext context) throws IOException {
+        HttpResponse httpResponse = new HttpResponse(request, method, context);
 
         if (apacheHttpResponse.getEntity() != null) {
             httpResponse.setContent(apacheHttpResponse.getEntity().getContent());

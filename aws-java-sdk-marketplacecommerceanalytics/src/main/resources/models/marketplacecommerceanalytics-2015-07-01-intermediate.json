@@ -1263,15 +1263,16 @@
     "customErrorCodeFieldName" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "customSignerProvider" : null,
+    "calculateCRC32FromCompressedData" : false,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "sdkModeledExceptionBaseClassName" : "AWSMarketplaceCommerceAnalyticsException",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.marketplacecommerceanalytics.model.AWSMarketplaceCommerceAnalyticsException"
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.marketplacecommerceanalytics.model.AWSMarketplaceCommerceAnalyticsException",
+  "sdkModeledExceptionBaseClassName" : "AWSMarketplaceCommerceAnalyticsException"
 }

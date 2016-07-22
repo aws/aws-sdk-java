@@ -522,11 +522,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         }
 
         // Resolve by class
-        DynamoDBMapperConfig.TableNameResolver classResolver = config.getTableNameResolver();
-        if (classResolver == null) {
-            classResolver = DynamoDBMapperConfig.DefaultTableNameResolver.INSTANCE;
-        }
-        return classResolver.getTableName(clazz, config);
+        return config.getTableNameResolver(true).getTableName(clazz, config);
     }
 
     @Override
@@ -2288,17 +2284,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
             AttributeValueUpdate update = updateValues.get(entry.getKey());
             if (update != null) {
-                update.getValue()
-                    .withB(entry.getValue().getB())
-                    .withBS(entry.getValue().getBS())
-                    .withN(entry.getValue().getN())
-                    .withNS(entry.getValue().getNS())
-                    .withS(entry.getValue().getS())
-                    .withSS(entry.getValue().getSS())
-                    .withM(entry.getValue().getM())
-                    .withL(entry.getValue().getL())
-                    .withNULL(entry.getValue().getNULL())
-                    .withBOOL(entry.getValue().getBOOL());
+                StandardAttributeTypes.AttributeType.copyAll(entry.getValue(), update.getValue());
             } else {
                 updateValues.put(entry.getKey(),
                                  new AttributeValueUpdate(entry.getValue(),

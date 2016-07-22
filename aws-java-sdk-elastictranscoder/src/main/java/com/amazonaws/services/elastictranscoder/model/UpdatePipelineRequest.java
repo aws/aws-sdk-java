@@ -127,13 +127,13 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
      * the files that Elastic Transcoder adds to the bucket, including playlists
      * and video files. Valid values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the objects and metadata for
+     * <li><code>READ</code>: The grantee can read the objects and metadata for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the objects
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the objects
      * that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     * <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      * <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      * </ul>
@@ -194,13 +194,13 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
      * the thumbnail files that Elastic Transcoder adds to the bucket. Valid
      * values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the thumbnails and metadata
+     * <li><code>READ</code>: The grantee can read the thumbnails and metadata
      * for objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     * <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      * <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      * </ul>
@@ -591,13 +591,13 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
      * the files that Elastic Transcoder adds to the bucket, including playlists
      * and video files. Valid values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the objects and metadata for
+     * <li><code>READ</code>: The grantee can read the objects and metadata for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the objects
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the objects
      * that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     * <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      * <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      * </ul>
@@ -664,14 +664,14 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
      *        granted on the files that Elastic Transcoder adds to the bucket,
      *        including playlists and video files. Valid values include:
      *        <ul>
-     *        <li> <code>READ</code>: The grantee can read the objects and
+     *        <li><code>READ</code>: The grantee can read the objects and
      *        metadata for objects that Elastic Transcoder adds to the Amazon S3
      *        bucket.</li>
-     *        <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     *        <li><code>READ_ACP</code>: The grantee can read the object ACL for
      *        objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     *        <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      *        objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     *        <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      *        <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for
      *        the objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      *        </ul>
@@ -738,13 +738,13 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
      * the files that Elastic Transcoder adds to the bucket, including playlists
      * and video files. Valid values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the objects and metadata for
+     * <li><code>READ</code>: The grantee can read the objects and metadata for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the objects
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the objects
      * that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     * <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      * <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      * </ul>
@@ -812,15 +812,15 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
      *         bucket, including playlists and video files. Valid values
      *         include:
      *         <ul>
-     *         <li> <code>READ</code>: The grantee can read the objects and
+     *         <li><code>READ</code>: The grantee can read the objects and
      *         metadata for objects that Elastic Transcoder adds to the Amazon
      *         S3 bucket.</li>
-     *         <li> <code>READ_ACP</code>: The grantee can read the object ACL
+     *         <li><code>READ_ACP</code>: The grantee can read the object ACL
      *         for objects that Elastic Transcoder adds to the Amazon S3 bucket.
      *         </li>
-     *         <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     *         <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      *         objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *         <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     *         <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      *         <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for
      *         the objects that Elastic Transcoder adds to the Amazon S3 bucket.
      *         </li>
@@ -888,13 +888,13 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
      * the files that Elastic Transcoder adds to the bucket, including playlists
      * and video files. Valid values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the objects and metadata for
+     * <li><code>READ</code>: The grantee can read the objects and metadata for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the objects
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the objects
      * that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     * <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      * <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      * </ul>
@@ -961,14 +961,14 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
      *        granted on the files that Elastic Transcoder adds to the bucket,
      *        including playlists and video files. Valid values include:
      *        <ul>
-     *        <li> <code>READ</code>: The grantee can read the objects and
+     *        <li><code>READ</code>: The grantee can read the objects and
      *        metadata for objects that Elastic Transcoder adds to the Amazon S3
      *        bucket.</li>
-     *        <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     *        <li><code>READ_ACP</code>: The grantee can read the object ACL for
      *        objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     *        <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      *        objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     *        <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      *        <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for
      *        the objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      *        </ul>
@@ -1036,13 +1036,13 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
      * the thumbnail files that Elastic Transcoder adds to the bucket. Valid
      * values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the thumbnails and metadata
+     * <li><code>READ</code>: The grantee can read the thumbnails and metadata
      * for objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     * <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      * <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      * </ul>
@@ -1103,14 +1103,14 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
      *        granted on the thumbnail files that Elastic Transcoder adds to the
      *        bucket. Valid values include:
      *        <ul>
-     *        <li> <code>READ</code>: The grantee can read the thumbnails and
+     *        <li><code>READ</code>: The grantee can read the thumbnails and
      *        metadata for objects that Elastic Transcoder adds to the Amazon S3
      *        bucket.</li>
-     *        <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     *        <li><code>READ_ACP</code>: The grantee can read the object ACL for
      *        thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     *        <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      *        thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     *        <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      *        <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for
      *        the thumbnails that Elastic Transcoder adds to the Amazon S3
      *        bucket.</li>
@@ -1175,13 +1175,13 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
      * the thumbnail files that Elastic Transcoder adds to the bucket. Valid
      * values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the thumbnails and metadata
+     * <li><code>READ</code>: The grantee can read the thumbnails and metadata
      * for objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     * <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      * <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      * </ul>
@@ -1242,15 +1242,15 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
      *         are granted on the thumbnail files that Elastic Transcoder adds
      *         to the bucket. Valid values include:
      *         <ul>
-     *         <li> <code>READ</code>: The grantee can read the thumbnails and
+     *         <li><code>READ</code>: The grantee can read the thumbnails and
      *         metadata for objects that Elastic Transcoder adds to the Amazon
      *         S3 bucket.</li>
-     *         <li> <code>READ_ACP</code>: The grantee can read the object ACL
+     *         <li><code>READ_ACP</code>: The grantee can read the object ACL
      *         for thumbnails that Elastic Transcoder adds to the Amazon S3
      *         bucket.</li>
-     *         <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     *         <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      *         thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *         <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     *         <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      *         <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for
      *         the thumbnails that Elastic Transcoder adds to the Amazon S3
      *         bucket.</li>
@@ -1315,13 +1315,13 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
      * the thumbnail files that Elastic Transcoder adds to the bucket. Valid
      * values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the thumbnails and metadata
+     * <li><code>READ</code>: The grantee can read the thumbnails and metadata
      * for objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     * <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      * <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      * </ul>
@@ -1382,14 +1382,14 @@ public class UpdatePipelineRequest extends AmazonWebServiceRequest implements
      *        granted on the thumbnail files that Elastic Transcoder adds to the
      *        bucket. Valid values include:
      *        <ul>
-     *        <li> <code>READ</code>: The grantee can read the thumbnails and
+     *        <li><code>READ</code>: The grantee can read the thumbnails and
      *        metadata for objects that Elastic Transcoder adds to the Amazon S3
      *        bucket.</li>
-     *        <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     *        <li><code>READ_ACP</code>: The grantee can read the object ACL for
      *        thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     *        <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      *        thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     *        <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      *        <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for
      *        the thumbnails that Elastic Transcoder adds to the Amazon S3
      *        bucket.</li>

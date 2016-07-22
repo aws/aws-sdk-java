@@ -61,15 +61,17 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
     private String scalableDimension;
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a new
-     * policy.
+     * The policy type. If you are creating a new policy, this parameter is
+     * required. If you are updating an existing policy, this parameter is not
+     * required.
      * </p>
      */
     private String policyType;
     /**
      * <p>
-     * The configuration for the step scaling policy. This parameter is required
-     * if you are creating a new policy. For more information, see
+     * The configuration for the step scaling policy. If you are creating a new
+     * policy, this parameter is required. If you are updating an existing
+     * policy, this parameter is not required. For more information, see
      * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.
      * </p>
      */
@@ -405,13 +407,15 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a new
-     * policy.
+     * The policy type. If you are creating a new policy, this parameter is
+     * required. If you are updating an existing policy, this parameter is not
+     * required.
      * </p>
      * 
      * @param policyType
-     *        The policy type. This parameter is required if you are creating a
-     *        new policy.
+     *        The policy type. If you are creating a new policy, this parameter
+     *        is required. If you are updating an existing policy, this
+     *        parameter is not required.
      * @see PolicyType
      */
 
@@ -421,12 +425,14 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a new
-     * policy.
+     * The policy type. If you are creating a new policy, this parameter is
+     * required. If you are updating an existing policy, this parameter is not
+     * required.
      * </p>
      * 
-     * @return The policy type. This parameter is required if you are creating a
-     *         new policy.
+     * @return The policy type. If you are creating a new policy, this parameter
+     *         is required. If you are updating an existing policy, this
+     *         parameter is not required.
      * @see PolicyType
      */
 
@@ -436,13 +442,15 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a new
-     * policy.
+     * The policy type. If you are creating a new policy, this parameter is
+     * required. If you are updating an existing policy, this parameter is not
+     * required.
      * </p>
      * 
      * @param policyType
-     *        The policy type. This parameter is required if you are creating a
-     *        new policy.
+     *        The policy type. If you are creating a new policy, this parameter
+     *        is required. If you are updating an existing policy, this
+     *        parameter is not required.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see PolicyType
@@ -455,13 +463,15 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a new
-     * policy.
+     * The policy type. If you are creating a new policy, this parameter is
+     * required. If you are updating an existing policy, this parameter is not
+     * required.
      * </p>
      * 
      * @param policyType
-     *        The policy type. This parameter is required if you are creating a
-     *        new policy.
+     *        The policy type. If you are creating a new policy, this parameter
+     *        is required. If you are updating an existing policy, this
+     *        parameter is not required.
      * @see PolicyType
      */
 
@@ -471,13 +481,15 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a new
-     * policy.
+     * The policy type. If you are creating a new policy, this parameter is
+     * required. If you are updating an existing policy, this parameter is not
+     * required.
      * </p>
      * 
      * @param policyType
-     *        The policy type. This parameter is required if you are creating a
-     *        new policy.
+     *        The policy type. If you are creating a new policy, this parameter
+     *        is required. If you are updating an existing policy, this
+     *        parameter is not required.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see PolicyType
@@ -490,15 +502,17 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The configuration for the step scaling policy. This parameter is required
-     * if you are creating a new policy. For more information, see
+     * The configuration for the step scaling policy. If you are creating a new
+     * policy, this parameter is required. If you are updating an existing
+     * policy, this parameter is not required. For more information, see
      * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.
      * </p>
      * 
      * @param stepScalingPolicyConfiguration
-     *        The configuration for the step scaling policy. This parameter is
-     *        required if you are creating a new policy. For more information,
-     *        see <a>StepScalingPolicyConfiguration</a> and
+     *        The configuration for the step scaling policy. If you are creating
+     *        a new policy, this parameter is required. If you are updating an
+     *        existing policy, this parameter is not required. For more
+     *        information, see <a>StepScalingPolicyConfiguration</a> and
      *        <a>StepAdjustment</a>.
      */
 
@@ -509,14 +523,16 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The configuration for the step scaling policy. This parameter is required
-     * if you are creating a new policy. For more information, see
+     * The configuration for the step scaling policy. If you are creating a new
+     * policy, this parameter is required. If you are updating an existing
+     * policy, this parameter is not required. For more information, see
      * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.
      * </p>
      * 
-     * @return The configuration for the step scaling policy. This parameter is
-     *         required if you are creating a new policy. For more information,
-     *         see <a>StepScalingPolicyConfiguration</a> and
+     * @return The configuration for the step scaling policy. If you are
+     *         creating a new policy, this parameter is required. If you are
+     *         updating an existing policy, this parameter is not required. For
+     *         more information, see <a>StepScalingPolicyConfiguration</a> and
      *         <a>StepAdjustment</a>.
      */
 
@@ -526,15 +542,17 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The configuration for the step scaling policy. This parameter is required
-     * if you are creating a new policy. For more information, see
+     * The configuration for the step scaling policy. If you are creating a new
+     * policy, this parameter is required. If you are updating an existing
+     * policy, this parameter is not required. For more information, see
      * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.
      * </p>
      * 
      * @param stepScalingPolicyConfiguration
-     *        The configuration for the step scaling policy. This parameter is
-     *        required if you are creating a new policy. For more information,
-     *        see <a>StepScalingPolicyConfiguration</a> and
+     *        The configuration for the step scaling policy. If you are creating
+     *        a new policy, this parameter is required. If you are updating an
+     *        existing policy, this parameter is not required. For more
+     *        information, see <a>StepScalingPolicyConfiguration</a> and
      *        <a>StepAdjustment</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

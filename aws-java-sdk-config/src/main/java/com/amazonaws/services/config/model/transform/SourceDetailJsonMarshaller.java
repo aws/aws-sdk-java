@@ -55,6 +55,11 @@ public class SourceDetailJsonMarshaller {
                 jsonGenerator.writeFieldName("MessageType").writeValue(
                         sourceDetail.getMessageType());
             }
+            if (sourceDetail.getMaximumExecutionFrequency() != null) {
+                jsonGenerator
+                        .writeFieldName("MaximumExecutionFrequency")
+                        .writeValue(sourceDetail.getMaximumExecutionFrequency());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

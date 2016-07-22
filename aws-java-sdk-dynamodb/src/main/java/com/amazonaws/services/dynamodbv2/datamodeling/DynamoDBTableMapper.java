@@ -169,7 +169,7 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
      * @return The hash key field model.
      * @throws DynamoDBMappingException If the hash key is not present.
      */
-    public <H> DynamoDBMapperFieldModel<T,H> hashKey() {
+    public DynamoDBMapperFieldModel<T,H> hashKey() {
         return this.model.hashKey();
     }
 
@@ -179,7 +179,7 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
      * @return The range key field model.
      * @throws DynamoDBMappingException If the range key is not present.
      */
-    public <R> DynamoDBMapperFieldModel<T,R> rangeKey() {
+    public DynamoDBMapperFieldModel<T,R> rangeKey() {
         return this.model.rangeKey();
     }
 

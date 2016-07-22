@@ -46,9 +46,7 @@ public class UnmarshallerTest {
     private static final S3ClientCache S3CC =
             new S3ClientCache((AWSCredentialsProvider) null);
 
-    private static final ItemConverter CONVERTER = ConversionSchemas.V1
-            .getConverter(new ConversionSchema.Dependencies()
-                    .with(S3ClientCache.class, S3CC));
+    private static final ItemConverter CONVERTER = schema().getConverter(dependencies());
 
     @Test
     public void testBoolean() {
@@ -464,7 +462,7 @@ public class UnmarshallerTest {
 
             Method gm = TestClass.class.getMethod(getter);
             Method sm = TestClass.class.getMethod(setter, gm.getReturnType());
-            return CONVERTER.unconvert(gm, sm, value);
+            return unconvert(TestClass.class, gm, sm, value);
 
         } catch (RuntimeException e) {
             throw e;
@@ -472,4 +470,17 @@ public class UnmarshallerTest {
             throw new RuntimeException("BOOM", e);
         }
     }
+
+    protected <T> Object unconvert(Class<T> clazz, Method getter, Method setter, AttributeValue value) {
+        return CONVERTER.unconvert(getter, setter, value);
+    }
+
+    protected static final ConversionSchema.Dependencies dependencies() {
+        return new ConversionSchema.Dependencies().with(S3ClientCache.class, S3CC);
+    }
+
+    protected static final ConversionSchema schema() {
+        return ConversionSchemas.V2;
+    }
+
 }

@@ -34,6 +34,7 @@ import java.util.Set;
  * @see JsonMarshaller
  */
 @DynamoDB
+@DynamoDBTypeConverted(converter=DynamoDBMarshalling.Converter.class)
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBMarshalling {
@@ -43,4 +44,35 @@ public @interface DynamoDBMarshalling {
      * String.
      */
     Class<? extends DynamoDBMarshaller<? extends Object>> marshallerClass();
+
+    /**
+     * Marshalling type converter.
+     */
+    static final class Converter<T> implements DynamoDBTypeConverter<String,T> {
+        private final Class<DynamoDBMarshaller<T>> marshallerClass;
+        private final Class<T> targetType;
+
+        public Converter(final Class<T> targetType, final DynamoDBMarshalling annotation) {
+            this.marshallerClass = (Class<DynamoDBMarshaller<T>>)annotation.marshallerClass();
+            this.targetType = targetType;
+        }
+
+        @Override
+        public final String convert(final T object) {
+            return marshaller().marshall(object);
+        }
+
+        @Override
+        public final T unconvert(final String object) {
+            return marshaller().unmarshall(targetType, object);
+        }
+
+        private DynamoDBMarshaller<T> marshaller() {
+            try {
+                return marshallerClass.newInstance();
+            } catch (final Exception e) {
+                throw new DynamoDBMappingException("Unable to instantiate marshaller " + marshallerClass, e);
+            }
+        }
+    }
 }

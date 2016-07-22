@@ -61,12 +61,12 @@
         "documentation" : "<p>The request contains too many tags. Try the request again with fewer tags.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AddTagsToCertificateResult",
       "asyncReturnType" : "AddTagsToCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsToCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToCertificateRequest, AddTagsToCertificateResult>",
+      "authenticated" : true,
       "methodName" : "addTagsToCertificate"
     },
     "DeleteCertificate" : {
@@ -97,12 +97,12 @@
         "documentation" : "<p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteCertificateResult",
       "asyncReturnType" : "DeleteCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult>",
+      "authenticated" : true,
       "methodName" : "deleteCertificate"
     },
     "DescribeCertificate" : {
@@ -130,12 +130,12 @@
         "documentation" : "<p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeCertificateResult",
       "asyncReturnType" : "DescribeCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCertificateRequest, DescribeCertificateResult>",
+      "authenticated" : true,
       "methodName" : "describeCertificate"
     },
     "GetCertificate" : {
@@ -166,12 +166,12 @@
         "documentation" : "<p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetCertificateResult",
       "asyncReturnType" : "GetCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCertificateRequest, GetCertificateResult>",
+      "authenticated" : true,
       "methodName" : "getCertificate"
     },
     "ListCertificates" : {
@@ -193,12 +193,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListCertificatesResult",
       "asyncReturnType" : "ListCertificatesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCertificatesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListCertificatesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult>",
+      "authenticated" : true,
       "methodName" : "listCertificates"
     },
     "ListTagsForCertificate" : {
@@ -226,12 +226,12 @@
         "documentation" : "<p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTagsForCertificateResult",
       "asyncReturnType" : "ListTagsForCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForCertificateRequest, ListTagsForCertificateResult>",
+      "authenticated" : true,
       "methodName" : "listTagsForCertificate"
     },
     "RemoveTagsFromCertificate" : {
@@ -262,12 +262,12 @@
         "documentation" : "<p>One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RemoveTagsFromCertificateResult",
       "asyncReturnType" : "RemoveTagsFromCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromCertificateRequest, RemoveTagsFromCertificateResult>",
+      "authenticated" : true,
       "methodName" : "removeTagsFromCertificate"
     },
     "RequestCertificate" : {
@@ -295,12 +295,12 @@
         "documentation" : "<p>One or more values in the <a>DomainValidationOption</a> structure is incorrect.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RequestCertificateResult",
       "asyncReturnType" : "RequestCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<RequestCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RequestCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RequestCertificateRequest, RequestCertificateResult>",
+      "authenticated" : true,
       "methodName" : "requestCertificate"
     },
     "ResendValidationEmail" : {
@@ -334,12 +334,12 @@
         "documentation" : "<p>One or more values in the <a>DomainValidationOption</a> structure is incorrect.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ResendValidationEmailResult",
       "asyncReturnType" : "ResendValidationEmailResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResendValidationEmailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ResendValidationEmailResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResendValidationEmailRequest, ResendValidationEmailResult>",
+      "authenticated" : true,
       "methodName" : "resendValidationEmail"
     }
   },
@@ -4560,6 +4560,58 @@
         "getterDocumentation" : "/**<p>A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by multiple AWS resources.</p>\n@return A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by multiple AWS resources.*/",
         "fluentSetterDocumentation" : "/**<p>A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by multiple AWS resources.</p>\n@param inUseBy A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by multiple AWS resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by multiple AWS resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setInUseBy(java.util.Collection)} or {@link #withInUseBy(java.util.Collection)} if you want to override the existing values.</p>\n@param inUseBy A list of ARNs for the resources that are using the certificate. An ACM Certificate can be used by multiple AWS resources.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+      }, {
+        "documentation" : "<p>The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>",
+        "name" : "FailureReason",
+        "c2jName" : "FailureReason",
+        "c2jShape" : "FailureReason",
+        "variable" : {
+          "variableName" : "failureReason",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "<p>The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "setterModel" : {
+          "variableName" : "failureReason",
+          "variableType" : "String",
+          "variableDeclarationType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "unmarshallLocationName" : "FailureReason",
+          "marshallLocationName" : "FailureReason",
+          "additionalUnmarshallingPath" : null,
+          "additionalMarshallingPath" : null,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "flattened" : false,
+          "header" : false,
+          "uri" : false,
+          "statusCode" : false,
+          "queryString" : false
+        },
+        "deprecated" : false,
+        "listModel" : null,
+        "mapModel" : null,
+        "enumType" : "FailureReason",
+        "xmlNameSpaceUri" : null,
+        "idempotencyToken" : false,
+        "simple" : true,
+        "list" : false,
+        "map" : false,
+        "setterDocumentation" : "/**<p>The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>\n@param failureReason The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.\n@see FailureReason*/",
+        "getterDocumentation" : "/**<p>The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>\n@return The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.\n@see FailureReason*/",
+        "fluentSetterDocumentation" : "/**<p>The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>\n@param failureReason The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FailureReason*/",
+        "varargSetterDocumentation" : "/**<p>The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>\n@param failureReason The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FailureReason*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -5575,6 +5627,59 @@
           "getterDocumentation" : "/**<p>Contains information about the email address or addresses used for domain validation.</p>\n@return Contains information about the email address or addresses used for domain validation.*/",
           "fluentSetterDocumentation" : "/**<p>Contains information about the email address or addresses used for domain validation.</p>\n@param domainValidationOptions Contains information about the email address or addresses used for domain validation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>Contains information about the email address or addresses used for domain validation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainValidationOptions(java.util.Collection)} or {@link #withDomainValidationOptions(java.util.Collection)} if you want to override the existing values.</p>\n@param domainValidationOptions Contains information about the email address or addresses used for domain validation.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        },
+        "FailureReason" : {
+          "documentation" : "<p>The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>",
+          "name" : "FailureReason",
+          "c2jName" : "FailureReason",
+          "c2jShape" : "FailureReason",
+          "variable" : {
+            "variableName" : "failureReason",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "<p>The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "setterModel" : {
+            "variableName" : "failureReason",
+            "variableType" : "String",
+            "variableDeclarationType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "unmarshallLocationName" : "FailureReason",
+            "marshallLocationName" : "FailureReason",
+            "additionalUnmarshallingPath" : null,
+            "additionalMarshallingPath" : null,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "flattened" : false,
+            "header" : false,
+            "uri" : false,
+            "statusCode" : false,
+            "queryString" : false
+          },
+          "deprecated" : false,
+          "listModel" : null,
+          "mapModel" : null,
+          "enumType" : "FailureReason",
+          "xmlNameSpaceUri" : null,
+          "idempotencyToken" : false,
+          "simple" : true,
+          "list" : false,
+          "map" : false,
+          "setterDocumentation" : "/**<p>The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>\n@param failureReason The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.\n@see FailureReason*/",
+          "getterDocumentation" : "/**<p>The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>\n@return The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.\n@see FailureReason*/",
+          "fluentSetterDocumentation" : "/**<p>The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>\n@param failureReason The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FailureReason*/",
+          "varargSetterDocumentation" : "/**<p>The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>\n@param failureReason The reason the certificate request failed. This value exists only when the structure's <code>Status</code> is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FailureReason*/"
         },
         "NotBefore" : {
           "documentation" : "<p>The time before which the certificate is not valid.</p>",
@@ -7664,6 +7769,56 @@
       },
       "membersAsMap" : { }
     },
+    "FailureReason" : {
+      "c2jName" : "FailureReason",
+      "documentation" : "",
+      "shapeName" : "FailureReason",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : [ {
+        "name" : "NO_AVAILABLE_CONTACTS",
+        "value" : "NO_AVAILABLE_CONTACTS"
+      }, {
+        "name" : "ADDITIONAL_VERIFICATION_REQUIRED",
+        "value" : "ADDITIONAL_VERIFICATION_REQUIRED"
+      }, {
+        "name" : "DOMAIN_NOT_ALLOWED",
+        "value" : "DOMAIN_NOT_ALLOWED"
+      }, {
+        "name" : "INVALID_PUBLIC_DOMAIN",
+        "value" : "INVALID_PUBLIC_DOMAIN"
+      }, {
+        "name" : "OTHER",
+        "value" : "OTHER"
+      } ],
+      "variable" : {
+        "variableName" : "failureReason",
+        "variableType" : "FailureReason",
+        "variableDeclarationType" : "FailureReason",
+        "documentation" : null,
+        "simpleType" : "FailureReason",
+        "variableSetterType" : "FailureReason"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
+    },
     "InvalidArnException" : {
       "c2jName" : "InvalidArnException",
       "documentation" : "<p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>",
@@ -8491,15 +8646,16 @@
     "customErrorCodeFieldName" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "customSignerProvider" : null,
+    "calculateCRC32FromCompressedData" : false,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "exceptionUnmarshallerImpl" : null,
   "clientConfigFactory" : "ClientConfigurationFactory",
   "sdkModeledExceptionBaseClassName" : "AWSCertificateManagerException",
+  "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException"
 }

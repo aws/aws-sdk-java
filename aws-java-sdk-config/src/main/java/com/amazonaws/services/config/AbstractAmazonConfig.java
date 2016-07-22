@@ -57,6 +57,12 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public DeleteEvaluationResultsResult deleteEvaluationResults(
+            DeleteEvaluationResultsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeliverConfigSnapshotResult deliverConfigSnapshot(
             DeliverConfigSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -215,6 +221,12 @@ public class AbstractAmazonConfig implements AmazonConfig {
 
     @Override
     public PutEvaluationsResult putEvaluations(PutEvaluationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartConfigRulesEvaluationResult startConfigRulesEvaluation(
+            StartConfigRulesEvaluationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -70,7 +70,32 @@ import com.amazonaws.annotation.ThreadSafe;
  * </li>
  * <li>
  * <p>
+ * <code>us-west-1</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>us-west-2</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ap-southeast-1</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ap-southeast-2</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ap-northeast-1</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>eu-central-1</code>
  * </p>
  * </li>
  * <li>

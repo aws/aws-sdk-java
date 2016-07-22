@@ -52,13 +52,13 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "addTagsToResource",
       "syncReturnType" : "AddTagsToResourceResult",
       "asyncReturnType" : "AddTagsToResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsToResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult>",
-      "authenticated" : true,
-      "methodName" : "addTagsToResource"
+      "authenticated" : true
     },
     "CreateEndpoint" : {
       "documentation" : "<p>Creates an endpoint using the provided settings.</p>",
@@ -94,13 +94,13 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createEndpoint",
       "syncReturnType" : "CreateEndpointResult",
       "asyncReturnType" : "CreateEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateEndpointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateEndpointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateEndpointRequest, CreateEndpointResult>",
-      "authenticated" : true,
-      "methodName" : "createEndpoint"
+      "authenticated" : true
     },
     "CreateReplicationInstance" : {
       "documentation" : "<p>Creates the replication instance using the specified parameters.</p>",
@@ -151,13 +151,13 @@
         "documentation" : "<p>AWS DMS cannot access the KMS key.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createReplicationInstance",
       "syncReturnType" : "CreateReplicationInstanceResult",
       "asyncReturnType" : "CreateReplicationInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateReplicationInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateReplicationInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReplicationInstanceRequest, CreateReplicationInstanceResult>",
-      "authenticated" : true,
-      "methodName" : "createReplicationInstance"
+      "authenticated" : true
     },
     "CreateReplicationSubnetGroup" : {
       "documentation" : "<p>Creates a replication subnet group given a list of the subnet IDs in a VPC.</p>",
@@ -196,13 +196,13 @@
         "documentation" : "<p>The subnet provided is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createReplicationSubnetGroup",
       "syncReturnType" : "CreateReplicationSubnetGroupResult",
       "asyncReturnType" : "CreateReplicationSubnetGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateReplicationSubnetGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateReplicationSubnetGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReplicationSubnetGroupRequest, CreateReplicationSubnetGroupResult>",
-      "authenticated" : true,
-      "methodName" : "createReplicationSubnetGroup"
+      "authenticated" : true
     },
     "CreateReplicationTask" : {
       "documentation" : "<p>Creates a replication task using the specified parameters.</p>",
@@ -238,13 +238,13 @@
         "documentation" : "<p>The quota for this resource quota has been exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createReplicationTask",
       "syncReturnType" : "CreateReplicationTaskResult",
       "asyncReturnType" : "CreateReplicationTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateReplicationTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateReplicationTaskResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReplicationTaskRequest, CreateReplicationTaskResult>",
-      "authenticated" : true,
-      "methodName" : "createReplicationTask"
+      "authenticated" : true
     },
     "DeleteCertificate" : {
       "documentation" : "<p>Deletes the specified certificate. </p>",
@@ -271,13 +271,13 @@
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteCertificate",
       "syncReturnType" : "DeleteCertificateResult",
       "asyncReturnType" : "DeleteCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult>",
-      "authenticated" : true,
-      "methodName" : "deleteCertificate"
+      "authenticated" : true
     },
     "DeleteEndpoint" : {
       "documentation" : "<p>Deletes the specified endpoint.</p> <note> <p>All tasks associated with the endpoint must be deleted before you can delete the endpoint.</p> </note> <p/>",
@@ -304,13 +304,13 @@
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteEndpoint",
       "syncReturnType" : "DeleteEndpointResult",
       "asyncReturnType" : "DeleteEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteEndpointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteEndpointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResult>",
-      "authenticated" : true,
-      "methodName" : "deleteEndpoint"
+      "authenticated" : true
     },
     "DeleteReplicationInstance" : {
       "documentation" : "<p>Deletes the specified replication instance.</p> <note> <p>You must delete any migration tasks that are associated with the replication instance before you can delete it.</p> </note> <p/>",
@@ -337,13 +337,13 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteReplicationInstance",
       "syncReturnType" : "DeleteReplicationInstanceResult",
       "asyncReturnType" : "DeleteReplicationInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteReplicationInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteReplicationInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReplicationInstanceRequest, DeleteReplicationInstanceResult>",
-      "authenticated" : true,
-      "methodName" : "deleteReplicationInstance"
+      "authenticated" : true
     },
     "DeleteReplicationSubnetGroup" : {
       "documentation" : "<p>Deletes a subnet group.</p>",
@@ -370,13 +370,13 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteReplicationSubnetGroup",
       "syncReturnType" : "DeleteReplicationSubnetGroupResult",
       "asyncReturnType" : "DeleteReplicationSubnetGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteReplicationSubnetGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteReplicationSubnetGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReplicationSubnetGroupRequest, DeleteReplicationSubnetGroupResult>",
-      "authenticated" : true,
-      "methodName" : "deleteReplicationSubnetGroup"
+      "authenticated" : true
     },
     "DeleteReplicationTask" : {
       "documentation" : "<p>Deletes the specified replication task.</p>",
@@ -403,13 +403,13 @@
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteReplicationTask",
       "syncReturnType" : "DeleteReplicationTaskResult",
       "asyncReturnType" : "DeleteReplicationTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteReplicationTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteReplicationTaskResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReplicationTaskRequest, DeleteReplicationTaskResult>",
-      "authenticated" : true,
-      "methodName" : "deleteReplicationTask"
+      "authenticated" : true
     },
     "DescribeAccountAttributes" : {
       "documentation" : "<p>Lists all of the AWS DMS attributes for a customer account. The attributes include AWS DMS quotas for the account, such as the number of replication instances allowed. The description for a quota includes the quota name, current usage toward that quota, and the quota's maximum value.</p> <p>This command does not take any parameters.</p>",
@@ -430,13 +430,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeAccountAttributes",
       "syncReturnType" : "DescribeAccountAttributesResult",
       "asyncReturnType" : "DescribeAccountAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAccountAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAccountAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult>",
-      "authenticated" : true,
-      "methodName" : "describeAccountAttributes"
+      "authenticated" : true
     },
     "DescribeCertificates" : {
       "documentation" : "<p>Provides a description of the certificate.</p>",
@@ -460,13 +460,13 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeCertificates",
       "syncReturnType" : "DescribeCertificatesResult",
       "asyncReturnType" : "DescribeCertificatesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCertificatesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCertificatesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCertificatesRequest, DescribeCertificatesResult>",
-      "authenticated" : true,
-      "methodName" : "describeCertificates"
+      "authenticated" : true
     },
     "DescribeConnections" : {
       "documentation" : "<p>Describes the status of the connections that have been made between the replication instance and an endpoint. Connections are created when you test an endpoint.</p>",
@@ -490,13 +490,13 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeConnections",
       "syncReturnType" : "DescribeConnectionsResult",
       "asyncReturnType" : "DescribeConnectionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeConnectionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeConnectionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeConnectionsRequest, DescribeConnectionsResult>",
-      "authenticated" : true,
-      "methodName" : "describeConnections"
+      "authenticated" : true
     },
     "DescribeEndpointTypes" : {
       "documentation" : "<p>Returns information about the type of endpoints available.</p>",
@@ -517,13 +517,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeEndpointTypes",
       "syncReturnType" : "DescribeEndpointTypesResult",
       "asyncReturnType" : "DescribeEndpointTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEndpointTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEndpointTypesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEndpointTypesRequest, DescribeEndpointTypesResult>",
-      "authenticated" : true,
-      "methodName" : "describeEndpointTypes"
+      "authenticated" : true
     },
     "DescribeEndpoints" : {
       "documentation" : "<p>Returns information about the endpoints for your account in the current region.</p>",
@@ -547,13 +547,13 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeEndpoints",
       "syncReturnType" : "DescribeEndpointsResult",
       "asyncReturnType" : "DescribeEndpointsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEndpointsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEndpointsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEndpointsRequest, DescribeEndpointsResult>",
-      "authenticated" : true,
-      "methodName" : "describeEndpoints"
+      "authenticated" : true
     },
     "DescribeOrderableReplicationInstances" : {
       "documentation" : "<p>Returns information about the replication instance types that can be created in the specified region.</p>",
@@ -574,13 +574,13 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeOrderableReplicationInstances",
       "syncReturnType" : "DescribeOrderableReplicationInstancesResult",
       "asyncReturnType" : "DescribeOrderableReplicationInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeOrderableReplicationInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeOrderableReplicationInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeOrderableReplicationInstancesRequest, DescribeOrderableReplicationInstancesResult>",
-      "authenticated" : true,
-      "methodName" : "describeOrderableReplicationInstances"
+      "authenticated" : true
     },
     "DescribeRefreshSchemasStatus" : {
       "documentation" : "<p>Returns the status of the RefreshSchemas operation.</p>",
@@ -607,13 +607,13 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeRefreshSchemasStatus",
       "syncReturnType" : "DescribeRefreshSchemasStatusResult",
       "asyncReturnType" : "DescribeRefreshSchemasStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeRefreshSchemasStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeRefreshSchemasStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeRefreshSchemasStatusRequest, DescribeRefreshSchemasStatusResult>",
-      "authenticated" : true,
-      "methodName" : "describeRefreshSchemasStatus"
+      "authenticated" : true
     },
     "DescribeReplicationInstances" : {
       "documentation" : "<p>Returns information about replication instances for your account in the current region.</p>",
@@ -637,13 +637,13 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeReplicationInstances",
       "syncReturnType" : "DescribeReplicationInstancesResult",
       "asyncReturnType" : "DescribeReplicationInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeReplicationInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeReplicationInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReplicationInstancesRequest, DescribeReplicationInstancesResult>",
-      "authenticated" : true,
-      "methodName" : "describeReplicationInstances"
+      "authenticated" : true
     },
     "DescribeReplicationSubnetGroups" : {
       "documentation" : "<p>Returns information about the replication subnet groups.</p>",
@@ -667,13 +667,13 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeReplicationSubnetGroups",
       "syncReturnType" : "DescribeReplicationSubnetGroupsResult",
       "asyncReturnType" : "DescribeReplicationSubnetGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeReplicationSubnetGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeReplicationSubnetGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReplicationSubnetGroupsRequest, DescribeReplicationSubnetGroupsResult>",
-      "authenticated" : true,
-      "methodName" : "describeReplicationSubnetGroups"
+      "authenticated" : true
     },
     "DescribeReplicationTasks" : {
       "documentation" : "<p>Returns information about replication tasks for your account in the current region.</p>",
@@ -697,13 +697,13 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeReplicationTasks",
       "syncReturnType" : "DescribeReplicationTasksResult",
       "asyncReturnType" : "DescribeReplicationTasksResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeReplicationTasksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeReplicationTasksResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeReplicationTasksRequest, DescribeReplicationTasksResult>",
-      "authenticated" : true,
-      "methodName" : "describeReplicationTasks"
+      "authenticated" : true
     },
     "DescribeSchemas" : {
       "documentation" : "<p>Returns information about the schema for the specified endpoint.</p> <p/>",
@@ -730,13 +730,13 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeSchemas",
       "syncReturnType" : "DescribeSchemasResult",
       "asyncReturnType" : "DescribeSchemasResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeSchemasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeSchemasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSchemasRequest, DescribeSchemasResult>",
-      "authenticated" : true,
-      "methodName" : "describeSchemas"
+      "authenticated" : true
     },
     "DescribeTableStatistics" : {
       "documentation" : "<p>Returns table statistics on the database migration task, including table name, rows inserted, rows updated, and rows deleted.</p>",
@@ -763,13 +763,13 @@
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeTableStatistics",
       "syncReturnType" : "DescribeTableStatisticsResult",
       "asyncReturnType" : "DescribeTableStatisticsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTableStatisticsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTableStatisticsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTableStatisticsRequest, DescribeTableStatisticsResult>",
-      "authenticated" : true,
-      "methodName" : "describeTableStatistics"
+      "authenticated" : true
     },
     "ImportCertificate" : {
       "documentation" : "<p>Uploads the specified certificate.</p>",
@@ -796,13 +796,13 @@
         "documentation" : "<p>The certificate was not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "importCertificate",
       "syncReturnType" : "ImportCertificateResult",
       "asyncReturnType" : "ImportCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<ImportCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ImportCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ImportCertificateRequest, ImportCertificateResult>",
-      "authenticated" : true,
-      "methodName" : "importCertificate"
+      "authenticated" : true
     },
     "ListTagsForResource" : {
       "documentation" : "<p>Lists all tags for an AWS DMS resource.</p>",
@@ -826,13 +826,13 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listTagsForResource",
       "syncReturnType" : "ListTagsForResourceResult",
       "asyncReturnType" : "ListTagsForResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>",
-      "authenticated" : true,
-      "methodName" : "listTagsForResource"
+      "authenticated" : true
     },
     "ModifyEndpoint" : {
       "documentation" : "<p>Modifies the specified endpoint.</p>",
@@ -865,13 +865,13 @@
         "documentation" : "<p>AWS DMS cannot access the KMS key.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "modifyEndpoint",
       "syncReturnType" : "ModifyEndpointResult",
       "asyncReturnType" : "ModifyEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyEndpointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyEndpointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyEndpointRequest, ModifyEndpointResult>",
-      "authenticated" : true,
-      "methodName" : "modifyEndpoint"
+      "authenticated" : true
     },
     "ModifyReplicationInstance" : {
       "documentation" : "<p>Modifies the replication instance to apply new settings. You can change one or more parameters by specifying these parameters and the new values in the request.</p> <p>Some settings are applied during the maintenance window.</p> <p/>",
@@ -910,13 +910,13 @@
         "documentation" : "<p>An upgrade dependency is preventing the database migration.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "modifyReplicationInstance",
       "syncReturnType" : "ModifyReplicationInstanceResult",
       "asyncReturnType" : "ModifyReplicationInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyReplicationInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyReplicationInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyReplicationInstanceRequest, ModifyReplicationInstanceResult>",
-      "authenticated" : true,
-      "methodName" : "modifyReplicationInstance"
+      "authenticated" : true
     },
     "ModifyReplicationSubnetGroup" : {
       "documentation" : "<p>Modifies the settings for the specified replication subnet group.</p>",
@@ -955,13 +955,13 @@
         "documentation" : "<p>The subnet provided is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "modifyReplicationSubnetGroup",
       "syncReturnType" : "ModifyReplicationSubnetGroupResult",
       "asyncReturnType" : "ModifyReplicationSubnetGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyReplicationSubnetGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyReplicationSubnetGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyReplicationSubnetGroupRequest, ModifyReplicationSubnetGroupResult>",
-      "authenticated" : true,
-      "methodName" : "modifyReplicationSubnetGroup"
+      "authenticated" : true
     },
     "RefreshSchemas" : {
       "documentation" : "<p>Populates the schema for the specified endpoint. This is an asynchronous operation and can take several minutes. You can check the status of this operation by calling the DescribeRefreshSchemasStatus operation.</p>",
@@ -994,13 +994,13 @@
         "documentation" : "<p>The quota for this resource quota has been exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "refreshSchemas",
       "syncReturnType" : "RefreshSchemasResult",
       "asyncReturnType" : "RefreshSchemasResult",
       "asyncFutureType" : "java.util.concurrent.Future<RefreshSchemasResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RefreshSchemasResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RefreshSchemasRequest, RefreshSchemasResult>",
-      "authenticated" : true,
-      "methodName" : "refreshSchemas"
+      "authenticated" : true
     },
     "RemoveTagsFromResource" : {
       "documentation" : "<p>Removes metadata tags from a DMS resource.</p>",
@@ -1024,13 +1024,13 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "removeTagsFromResource",
       "syncReturnType" : "RemoveTagsFromResourceResult",
       "asyncReturnType" : "RemoveTagsFromResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult>",
-      "authenticated" : true,
-      "methodName" : "removeTagsFromResource"
+      "authenticated" : true
     },
     "StartReplicationTask" : {
       "documentation" : "<p>Starts the replication task.</p>",
@@ -1057,13 +1057,13 @@
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "startReplicationTask",
       "syncReturnType" : "StartReplicationTaskResult",
       "asyncReturnType" : "StartReplicationTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartReplicationTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartReplicationTaskResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartReplicationTaskRequest, StartReplicationTaskResult>",
-      "authenticated" : true,
-      "methodName" : "startReplicationTask"
+      "authenticated" : true
     },
     "StopReplicationTask" : {
       "documentation" : "<p>Stops the replication task.</p> <p/>",
@@ -1090,13 +1090,13 @@
         "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "stopReplicationTask",
       "syncReturnType" : "StopReplicationTaskResult",
       "asyncReturnType" : "StopReplicationTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<StopReplicationTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StopReplicationTaskResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopReplicationTaskRequest, StopReplicationTaskResult>",
-      "authenticated" : true,
-      "methodName" : "stopReplicationTask"
+      "authenticated" : true
     },
     "TestConnection" : {
       "documentation" : "<p>Tests the connection between the replication instance and the endpoint.</p>",
@@ -1129,13 +1129,13 @@
         "documentation" : "<p>The quota for this resource quota has been exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "testConnection",
       "syncReturnType" : "TestConnectionResult",
       "asyncReturnType" : "TestConnectionResult",
       "asyncFutureType" : "java.util.concurrent.Future<TestConnectionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TestConnectionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestConnectionRequest, TestConnectionResult>",
-      "authenticated" : true,
-      "methodName" : "testConnection"
+      "authenticated" : true
     }
   },
   "shapes" : {
@@ -37509,15 +37509,16 @@
     "customErrorCodeFieldName" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "customSignerProvider" : null,
+    "calculateCRC32FromCompressedData" : false,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "sdkModeledExceptionBaseClassName" : "AWSDatabaseMigrationServiceException",
+  "clientConfigFactory" : "ClientConfigurationFactory",
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException",
-  "clientConfigFactory" : "ClientConfigurationFactory",
-  "sdkModeledExceptionBaseClassName" : "AWSDatabaseMigrationServiceException",
   "exceptionUnmarshallerImpl" : null
 }

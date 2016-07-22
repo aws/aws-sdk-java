@@ -14,39 +14,49 @@
  */
 package com.amazonaws.http;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.protocol.HttpContext;
 
 import com.amazonaws.Request;
+import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
 
 /**
  * Represents an HTTP response returned by an AWS service in response to a
  * service request.
  */
 public class HttpResponse {
-    
+
     private final Request<?> request;
     private final HttpRequestBase httpRequest;
-    
+
     private String statusText;
     private int statusCode;
     private InputStream content;
     private Map<String, String> headers = new HashMap<String, String>();
+    private HttpContext context;
 
     /**
      * Constructs a new HttpResponse associated with the specified request.
-     * 
+     *
      * @param request
      *            The associated request that generated this response.
      * @param httpRequest
      *            The underlying http request that generated this response.
+     * @throws IOException
      */
     public HttpResponse(Request<?> request, HttpRequestBase httpRequest) {
+        this(request, httpRequest, null);
+    }
+
+    public HttpResponse(Request<?> request, HttpRequestBase httpRequest, HttpContext context) {
         this.request = request;
         this.httpRequest = httpRequest;
+        this.context = context;
     }
 
     /**
@@ -146,6 +156,20 @@ public class HttpResponse {
      */
     public int getStatusCode() {
         return statusCode;
+    }
+
+    /**
+     * Returns the CRC32 checksum calculated by the underlying CRC32ChecksumCalculatingInputStream.
+     *
+     * @return The CRC32 checksum.
+     */
+    public long getCRC32Checksum() {
+        if (context == null) {
+            return 0L;
+        }
+        CRC32ChecksumCalculatingInputStream crc32ChecksumInputStream =
+                (CRC32ChecksumCalculatingInputStream)context.getAttribute(CRC32ChecksumCalculatingInputStream.class.getName());
+        return crc32ChecksumInputStream == null ? 0L : crc32ChecksumInputStream.getCRC32Checksum();
     }
 
 }

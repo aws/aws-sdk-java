@@ -410,7 +410,7 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
     /**
      * {@link DynamoDBMapperTableModel} builder.
      */
-    static final class Builder<T> {
+    static class Builder<T> {
         private final Map<String,DynamoDBMapperFieldModel<T,Object>> fields;
         private final Map<KeyType,DynamoDBMapperFieldModel<T,Object>> keys;
         private final Properties.Builder<T> properties;

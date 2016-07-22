@@ -3,7 +3,7 @@
     "apiVersion" : "2016-02-06",
     "protocol" : "json",
     "checksumFormat" : null,
-    "documentation" : "<p>Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Auto Scaling.</p> <note> <p>At this time, Application Auto Scaling only supports scaling Amazon ECS services.</p> </note> <p>For example, you can use Application Auto Scaling to accomplish the following tasks:</p> <ul> <li> <p>Define scaling policies for automatically adjusting your application’s resources</p> </li> <li> <p>Scale your resources in response to CloudWatch alarms</p> </li> <li> <p>View history of your scaling events </p> </li> </ul> <p>Application Auto Scaling is available in the following regions:</p> <ul> <li> <p> <code>us-east-1</code> </p> </li> <li> <p> <code>us-west-2</code> </p> </li> <li> <p> <code>eu-west-1</code> </p> </li> </ul>",
+    "documentation" : "<p>Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Auto Scaling.</p> <note> <p>At this time, Application Auto Scaling only supports scaling Amazon ECS services.</p> </note> <p>For example, you can use Application Auto Scaling to accomplish the following tasks:</p> <ul> <li> <p>Define scaling policies for automatically adjusting your application’s resources</p> </li> <li> <p>Scale your resources in response to CloudWatch alarms</p> </li> <li> <p>View history of your scaling events </p> </li> </ul> <p>Application Auto Scaling is available in the following regions:</p> <ul> <li> <p> <code>us-east-1</code> </p> </li> <li> <p> <code>us-west-1</code> </p> </li> <li> <p> <code>us-west-2</code> </p> </li> <li> <p> <code>ap-southeast-1</code> </p> </li> <li> <p> <code>ap-southeast-2</code> </p> </li> <li> <p> <code>ap-northeast-1</code> </p> </li> <li> <p> <code>eu-central-1</code> </p> </li> <li> <p> <code>eu-west-1</code> </p> </li> </ul>",
     "defaultEndpoint" : "https://autoscaling.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "autoscaling.us-east-1.amazonaws.com",
     "syncInterface" : "AWSApplicationAutoScaling",
@@ -19,15 +19,15 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "autoscaling",
     "signingName" : "application-autoscaling",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSApplicationAutoScalingClientBuilder",
     "asyncClientBuilderClassName" : "AWSApplicationAutoScalingAsyncClientBuilder",
     "serviceName" : "Application Auto Scaling",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true
   },
   "operations" : {
     "DeleteScalingPolicy" : {
@@ -148,7 +148,7 @@
       "methodName" : "describeScalableTargets"
     },
     "DescribeScalingActivities" : {
-      "documentation" : "<p>Provides descriptive information for scaling activities with a specified service namespace.</p> <p>You can filter the results in a service namespace with the <code>ResourceId</code> and <code>ScalableDimension</code> parameters.</p> <p>Scaling activities are triggered by CloudWatch alarms that are associated with scaling policies. To view the existing scaling policies for a service namespace, see <a>DescribeScalingPolicies</a>. To create a new scaling policy or update an existing one, see <a>PutScalingPolicy</a>.</p>",
+      "documentation" : "<p>Provides descriptive information for scaling activities with a specified service namespace for the previous six weeks.</p> <p>You can filter the results in a service namespace with the <code>ResourceId</code> and <code>ScalableDimension</code> parameters.</p> <p>Scaling activities are triggered by CloudWatch alarms that are associated with scaling policies. To view the existing scaling policies for a service namespace, see <a>DescribeScalingPolicies</a>. To create a new scaling policy or update an existing one, see <a>PutScalingPolicy</a>.</p>",
       "operationName" : "DescribeScalingActivities",
       "deprecated" : false,
       "input" : {
@@ -2523,7 +2523,7 @@
         "fluentSetterDocumentation" : "/**<p>The scalable dimension of the scalable target that this scaling policy applies to. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service.</p>\n@param scalableDimension The scalable dimension of the scalable target that this scaling policy applies to. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScalableDimension*/",
         "varargSetterDocumentation" : "/**<p>The scalable dimension of the scalable target that this scaling policy applies to. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service.</p>\n@param scalableDimension The scalable dimension of the scalable target that this scaling policy applies to. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScalableDimension*/"
       }, {
-        "documentation" : "<p>The policy type. This parameter is required if you are creating a new policy.</p>",
+        "documentation" : "<p>The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.</p>",
         "name" : "PolicyType",
         "c2jName" : "PolicyType",
         "c2jShape" : "PolicyType",
@@ -2531,7 +2531,7 @@
           "variableName" : "policyType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
-          "documentation" : "<p>The policy type. This parameter is required if you are creating a new policy.</p>",
+          "documentation" : "<p>The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2570,12 +2570,12 @@
         "simple" : true,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The policy type. This parameter is required if you are creating a new policy.</p>\n@param policyType The policy type. This parameter is required if you are creating a new policy.\n@see PolicyType*/",
-        "getterDocumentation" : "/**<p>The policy type. This parameter is required if you are creating a new policy.</p>\n@return The policy type. This parameter is required if you are creating a new policy.\n@see PolicyType*/",
-        "fluentSetterDocumentation" : "/**<p>The policy type. This parameter is required if you are creating a new policy.</p>\n@param policyType The policy type. This parameter is required if you are creating a new policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyType*/",
-        "varargSetterDocumentation" : "/**<p>The policy type. This parameter is required if you are creating a new policy.</p>\n@param policyType The policy type. This parameter is required if you are creating a new policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyType*/"
+        "setterDocumentation" : "/**<p>The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.</p>\n@param policyType The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.\n@see PolicyType*/",
+        "getterDocumentation" : "/**<p>The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.</p>\n@return The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.\n@see PolicyType*/",
+        "fluentSetterDocumentation" : "/**<p>The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.</p>\n@param policyType The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyType*/",
+        "varargSetterDocumentation" : "/**<p>The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.</p>\n@param policyType The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyType*/"
       }, {
-        "documentation" : "<p>The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>",
+        "documentation" : "<p>The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>",
         "name" : "StepScalingPolicyConfiguration",
         "c2jName" : "StepScalingPolicyConfiguration",
         "c2jShape" : "StepScalingPolicyConfiguration",
@@ -2583,7 +2583,7 @@
           "variableName" : "stepScalingPolicyConfiguration",
           "variableType" : "StepScalingPolicyConfiguration",
           "variableDeclarationType" : "StepScalingPolicyConfiguration",
-          "documentation" : "<p>The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>",
+          "documentation" : "<p>The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>",
           "simpleType" : "StepScalingPolicyConfiguration",
           "variableSetterType" : "StepScalingPolicyConfiguration"
         },
@@ -2622,10 +2622,10 @@
         "simple" : false,
         "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@param stepScalingPolicyConfiguration The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.*/",
-        "getterDocumentation" : "/**<p>The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@return The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.*/",
-        "fluentSetterDocumentation" : "/**<p>The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@param stepScalingPolicyConfiguration The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "varargSetterDocumentation" : "/**<p>The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@param stepScalingPolicyConfiguration The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+        "setterDocumentation" : "/**<p>The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@param stepScalingPolicyConfiguration The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.*/",
+        "getterDocumentation" : "/**<p>The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@return The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.*/",
+        "fluentSetterDocumentation" : "/**<p>The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@param stepScalingPolicyConfiguration The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@param stepScalingPolicyConfiguration The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
       } ],
       "enums" : null,
       "variable" : {
@@ -2654,7 +2654,7 @@
       },
       "membersAsMap" : {
         "PolicyType" : {
-          "documentation" : "<p>The policy type. This parameter is required if you are creating a new policy.</p>",
+          "documentation" : "<p>The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.</p>",
           "name" : "PolicyType",
           "c2jName" : "PolicyType",
           "c2jShape" : "PolicyType",
@@ -2662,7 +2662,7 @@
             "variableName" : "policyType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
-            "documentation" : "<p>The policy type. This parameter is required if you are creating a new policy.</p>",
+            "documentation" : "<p>The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2701,10 +2701,10 @@
           "simple" : true,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The policy type. This parameter is required if you are creating a new policy.</p>\n@param policyType The policy type. This parameter is required if you are creating a new policy.\n@see PolicyType*/",
-          "getterDocumentation" : "/**<p>The policy type. This parameter is required if you are creating a new policy.</p>\n@return The policy type. This parameter is required if you are creating a new policy.\n@see PolicyType*/",
-          "fluentSetterDocumentation" : "/**<p>The policy type. This parameter is required if you are creating a new policy.</p>\n@param policyType The policy type. This parameter is required if you are creating a new policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyType*/",
-          "varargSetterDocumentation" : "/**<p>The policy type. This parameter is required if you are creating a new policy.</p>\n@param policyType The policy type. This parameter is required if you are creating a new policy.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyType*/"
+          "setterDocumentation" : "/**<p>The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.</p>\n@param policyType The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.\n@see PolicyType*/",
+          "getterDocumentation" : "/**<p>The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.</p>\n@return The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.\n@see PolicyType*/",
+          "fluentSetterDocumentation" : "/**<p>The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.</p>\n@param policyType The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyType*/",
+          "varargSetterDocumentation" : "/**<p>The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.</p>\n@param policyType The policy type. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PolicyType*/"
         },
         "ResourceId" : {
           "documentation" : "<p>The unique resource identifier string for the scalable target that this scaling policy applies to. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <code>service/default/sample-webapp</code>.</p>",
@@ -2919,7 +2919,7 @@
           "varargSetterDocumentation" : "/**<p>The scalable dimension of the scalable target that this scaling policy applies to. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service.</p>\n@param scalableDimension The scalable dimension of the scalable target that this scaling policy applies to. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScalableDimension*/"
         },
         "StepScalingPolicyConfiguration" : {
-          "documentation" : "<p>The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>",
+          "documentation" : "<p>The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>",
           "name" : "StepScalingPolicyConfiguration",
           "c2jName" : "StepScalingPolicyConfiguration",
           "c2jShape" : "StepScalingPolicyConfiguration",
@@ -2927,7 +2927,7 @@
             "variableName" : "stepScalingPolicyConfiguration",
             "variableType" : "StepScalingPolicyConfiguration",
             "variableDeclarationType" : "StepScalingPolicyConfiguration",
-            "documentation" : "<p>The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>",
+            "documentation" : "<p>The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>",
             "simpleType" : "StepScalingPolicyConfiguration",
             "variableSetterType" : "StepScalingPolicyConfiguration"
           },
@@ -2966,10 +2966,10 @@
           "simple" : false,
           "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@param stepScalingPolicyConfiguration The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.*/",
-          "getterDocumentation" : "/**<p>The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@return The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.*/",
-          "fluentSetterDocumentation" : "/**<p>The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@param stepScalingPolicyConfiguration The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "varargSetterDocumentation" : "/**<p>The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@param stepScalingPolicyConfiguration The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
+          "setterDocumentation" : "/**<p>The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@param stepScalingPolicyConfiguration The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.*/",
+          "getterDocumentation" : "/**<p>The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@return The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.*/",
+          "fluentSetterDocumentation" : "/**<p>The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@param stepScalingPolicyConfiguration The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>\n@param stepScalingPolicyConfiguration The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If you are updating an existing policy, this parameter is not required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
     },
@@ -10780,15 +10780,16 @@
     "customErrorCodeFieldName" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "customSignerProvider" : null,
+    "calculateCRC32FromCompressedData" : false,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "sdkModeledExceptionBaseClassName" : "AWSApplicationAutoScalingException",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException",
-  "sdkModeledExceptionBaseClassName" : "AWSApplicationAutoScalingException"
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException"
 }

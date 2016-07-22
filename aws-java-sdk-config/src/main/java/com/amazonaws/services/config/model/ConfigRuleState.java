@@ -22,7 +22,9 @@ package com.amazonaws.services.config.model;
 public enum ConfigRuleState {
 
     ACTIVE("ACTIVE"),
-    DELETING("DELETING");
+    DELETING("DELETING"),
+    DELETING_RESULTS("DELETING_RESULTS"),
+    EVALUATING("EVALUATING");
 
     private String value;
 

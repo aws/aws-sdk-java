@@ -19,15 +19,15 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "cognito-identity",
     "signingName" : "cognito-identity",
+    "syncClientBuilderClassName" : "AmazonCognitoIdentityClientBuilder",
+    "asyncClientBuilderClassName" : "AmazonCognitoIdentityAsyncClientBuilder",
+    "serviceName" : "Amazon Cognito Identity",
+    "cborProtocol" : false,
+    "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUmarshallerImpl" : null,
-    "cborProtocol" : false,
-    "xmlProtocol" : false,
-    "jsonProtocol" : true,
-    "syncClientBuilderClassName" : "AmazonCognitoIdentityClientBuilder",
-    "asyncClientBuilderClassName" : "AmazonCognitoIdentityAsyncClientBuilder",
-    "serviceName" : "Amazon Cognito Identity"
+    "jsonProtocol" : true
   },
   "operations" : {
     "CreateIdentityPool" : {
@@ -19741,6 +19741,7 @@
     "customErrorCodeFieldName" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "customSignerProvider" : null,
+    "calculateCRC32FromCompressedData" : false,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {

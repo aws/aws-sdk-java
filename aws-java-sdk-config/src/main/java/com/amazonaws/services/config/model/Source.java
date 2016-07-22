@@ -41,8 +41,8 @@ public class Source implements Serializable, Cloneable {
      * >Using AWS Managed Config Rules</a>.
      * </p>
      * <p>
-     * For customer managed Config rules, the identifier is the Amazon Resource
-     * Name (ARN) of the rule's AWS Lambda function.
+     * For custom Config rules, the identifier is the Amazon Resource Name (ARN)
+     * of the rule's AWS Lambda function.
      * </p>
      */
     private String sourceIdentifier;
@@ -147,8 +147,8 @@ public class Source implements Serializable, Cloneable {
      * >Using AWS Managed Config Rules</a>.
      * </p>
      * <p>
-     * For customer managed Config rules, the identifier is the Amazon Resource
-     * Name (ARN) of the rule's AWS Lambda function.
+     * For custom Config rules, the identifier is the Amazon Resource Name (ARN)
+     * of the rule's AWS Lambda function.
      * </p>
      * 
      * @param sourceIdentifier
@@ -157,8 +157,8 @@ public class Source implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"
      *        >Using AWS Managed Config Rules</a>.</p>
      *        <p>
-     *        For customer managed Config rules, the identifier is the Amazon
-     *        Resource Name (ARN) of the rule's AWS Lambda function.
+     *        For custom Config rules, the identifier is the Amazon Resource
+     *        Name (ARN) of the rule's AWS Lambda function.
      */
 
     public void setSourceIdentifier(String sourceIdentifier) {
@@ -173,8 +173,8 @@ public class Source implements Serializable, Cloneable {
      * >Using AWS Managed Config Rules</a>.
      * </p>
      * <p>
-     * For customer managed Config rules, the identifier is the Amazon Resource
-     * Name (ARN) of the rule's AWS Lambda function.
+     * For custom Config rules, the identifier is the Amazon Resource Name (ARN)
+     * of the rule's AWS Lambda function.
      * </p>
      * 
      * @return For AWS managed Config rules, a pre-defined identifier from a
@@ -182,8 +182,8 @@ public class Source implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"
      *         >Using AWS Managed Config Rules</a>.</p>
      *         <p>
-     *         For customer managed Config rules, the identifier is the Amazon
-     *         Resource Name (ARN) of the rule's AWS Lambda function.
+     *         For custom Config rules, the identifier is the Amazon Resource
+     *         Name (ARN) of the rule's AWS Lambda function.
      */
 
     public String getSourceIdentifier() {
@@ -198,8 +198,8 @@ public class Source implements Serializable, Cloneable {
      * >Using AWS Managed Config Rules</a>.
      * </p>
      * <p>
-     * For customer managed Config rules, the identifier is the Amazon Resource
-     * Name (ARN) of the rule's AWS Lambda function.
+     * For custom Config rules, the identifier is the Amazon Resource Name (ARN)
+     * of the rule's AWS Lambda function.
      * </p>
      * 
      * @param sourceIdentifier
@@ -208,8 +208,8 @@ public class Source implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"
      *        >Using AWS Managed Config Rules</a>.</p>
      *        <p>
-     *        For customer managed Config rules, the identifier is the Amazon
-     *        Resource Name (ARN) of the rule's AWS Lambda function.
+     *        For custom Config rules, the identifier is the Amazon Resource
+     *        Name (ARN) of the rule's AWS Lambda function.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

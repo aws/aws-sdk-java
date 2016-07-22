@@ -103,18 +103,11 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         log.trace("Parsing service response JSON");
 
         String CRC32Checksum = response.getHeaders().get("x-amz-crc32");
-        CRC32ChecksumCalculatingInputStream crc32ChecksumInputStream = null;
 
         JsonParser jsonParser = null;
 
         if (shouldParsePayloadAsJson()) {
-            if (CRC32Checksum != null) {
-                crc32ChecksumInputStream = new CRC32ChecksumCalculatingInputStream(
-                        response.getContent());
-                jsonParser = jsonFactory.createParser(crc32ChecksumInputStream);
-            } else {
-                jsonParser = jsonFactory.createParser(response.getContent());
-            }
+            jsonParser = jsonFactory.createParser(response.getContent());
         }
 
         try {
@@ -127,7 +120,7 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
 
             if (CRC32Checksum != null) {
                 long serverSideCRC = Long.parseLong(CRC32Checksum);
-                long clientSideCRC = crc32ChecksumInputStream.getCRC32Checksum();
+                long clientSideCRC = response.getCRC32Checksum();
                 if (clientSideCRC != serverSideCRC) {
                     throw new CRC32MismatchException(
                             "Client calculated crc32 checksum didn't match that calculated by server side");

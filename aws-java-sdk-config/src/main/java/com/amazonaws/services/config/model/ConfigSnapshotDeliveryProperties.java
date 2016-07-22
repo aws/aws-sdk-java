@@ -20,8 +20,72 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Options for how AWS Config delivers configuration snapshots to the Amazon S3
- * bucket in your delivery channel.
+ * Shows the options for how often AWS Config delivers configuration snapshots
+ * to the Amazon S3 bucket in your delivery channel.
+ * </p>
+ * <note>
+ * <p>
+ * If you want to create a rule that triggers evaluations for your resources
+ * when AWS Config delivers the configuration snapshot, see the following:
+ * </p>
+ * </note>
+ * <p>
+ * The frequency for a rule that triggers evaluations for your resources when
+ * AWS Config delivers the configuration snapshot is set by one of two values,
+ * depending on which is less frequent:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * The value for the <code>deliveryFrequency</code> parameter within the
+ * delivery channel configuration, which sets how often AWS Config delivers
+ * configuration snapshots. This value also sets how often AWS Config invokes
+ * evaluations for Config rules.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The value for the <code>MaximumExecutionFrequency</code> parameter, which
+ * sets the maximum frequency with which AWS Config invokes evaluations for the
+ * rule. For more information, see <a>ConfigRule</a>.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * If the <code>deliveryFrequency</code> value is less frequent than the
+ * <code>MaximumExecutionFrequency</code> value for a rule, AWS Config invokes
+ * the rule only as often as the <code>deliveryFrequency</code> value.
+ * </p>
+ * <ol>
+ * <li>
+ * <p>
+ * For example, you have a rule and you specify the
+ * <code>MaximumExecutionFrequency</code> value to be <code>Six_Hours</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You then specify the delivery channel <code>deliveryFrequency</code> value to
+ * <code>TwentyFour_Hours</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Because the value for <code>deliveryFrequency</code> is less frequent than
+ * <code>MaximumExecutionFrequency</code>, AWS Config invokes evaluations for
+ * the rule every 24 hours.
+ * </p>
+ * </li>
+ * </ol>
+ * <p>
+ * You should set the <code>MaximumExecutionFrequency</code> value to be at
+ * least as frequent as the <code>deliveryFrequency</code> value. You can view
+ * the <code>deliveryFrequency</code> value by using the
+ * <code>DescribeDeliveryChannnels</code> action.
+ * </p>
+ * <p>
+ * To update the frequency with which AWS Config delivers your configuration
+ * snapshots, use the <code>PutDeliveryChannel</code> action.
  * </p>
  */
 public class ConfigSnapshotDeliveryProperties implements Serializable,
@@ -29,21 +93,19 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
 
     /**
      * <p>
-     * The frequency with which AWS Config recurringly delivers configuration
-     * snapshots.
+     * The frequency with which AWS Config delivers configuration snapshots.
      * </p>
      */
     private String deliveryFrequency;
 
     /**
      * <p>
-     * The frequency with which AWS Config recurringly delivers configuration
-     * snapshots.
+     * The frequency with which AWS Config delivers configuration snapshots.
      * </p>
      * 
      * @param deliveryFrequency
-     *        The frequency with which AWS Config recurringly delivers
-     *        configuration snapshots.
+     *        The frequency with which AWS Config delivers configuration
+     *        snapshots.
      * @see MaximumExecutionFrequency
      */
 
@@ -53,12 +115,11 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
 
     /**
      * <p>
-     * The frequency with which AWS Config recurringly delivers configuration
-     * snapshots.
+     * The frequency with which AWS Config delivers configuration snapshots.
      * </p>
      * 
-     * @return The frequency with which AWS Config recurringly delivers
-     *         configuration snapshots.
+     * @return The frequency with which AWS Config delivers configuration
+     *         snapshots.
      * @see MaximumExecutionFrequency
      */
 
@@ -68,13 +129,12 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
 
     /**
      * <p>
-     * The frequency with which AWS Config recurringly delivers configuration
-     * snapshots.
+     * The frequency with which AWS Config delivers configuration snapshots.
      * </p>
      * 
      * @param deliveryFrequency
-     *        The frequency with which AWS Config recurringly delivers
-     *        configuration snapshots.
+     *        The frequency with which AWS Config delivers configuration
+     *        snapshots.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MaximumExecutionFrequency
@@ -88,13 +148,12 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
 
     /**
      * <p>
-     * The frequency with which AWS Config recurringly delivers configuration
-     * snapshots.
+     * The frequency with which AWS Config delivers configuration snapshots.
      * </p>
      * 
      * @param deliveryFrequency
-     *        The frequency with which AWS Config recurringly delivers
-     *        configuration snapshots.
+     *        The frequency with which AWS Config delivers configuration
+     *        snapshots.
      * @see MaximumExecutionFrequency
      */
 
@@ -104,13 +163,12 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
 
     /**
      * <p>
-     * The frequency with which AWS Config recurringly delivers configuration
-     * snapshots.
+     * The frequency with which AWS Config delivers configuration snapshots.
      * </p>
      * 
      * @param deliveryFrequency
-     *        The frequency with which AWS Config recurringly delivers
-     *        configuration snapshots.
+     *        The frequency with which AWS Config delivers configuration
+     *        snapshots.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MaximumExecutionFrequency

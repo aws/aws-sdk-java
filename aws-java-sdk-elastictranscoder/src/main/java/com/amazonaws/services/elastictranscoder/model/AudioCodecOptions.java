@@ -35,14 +35,14 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      * the following profiles:
      * </p>
      * <ul>
-     * <li> <code>auto</code>: If you specify <code>auto</code>, Elastic
+     * <li><code>auto</code>: If you specify <code>auto</code>, Elastic
      * Transcoder will select the profile based on the bit rate selected for the
      * output file.</li>
-     * <li> <code>AAC-LC</code>: The most common AAC profile. Use for bit rates
+     * <li><code>AAC-LC</code>: The most common AAC profile. Use for bit rates
      * larger than 64 kbps.</li>
-     * <li> <code>HE-AAC</code>: Not supported on some older players and devices.
+     * <li><code>HE-AAC</code>: Not supported on some older players and devices.
      * Use for bit rates between 40 and 80 kbps.</li>
-     * <li> <code>HE-AACv2</code>: Not supported on some players and devices. Use
+     * <li><code>HE-AACv2</code>: Not supported on some players and devices. Use
      * for bit rates less than 48 kbps.</li>
      * </ul>
      * <p>
@@ -114,14 +114,14 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      * the following profiles:
      * </p>
      * <ul>
-     * <li> <code>auto</code>: If you specify <code>auto</code>, Elastic
+     * <li><code>auto</code>: If you specify <code>auto</code>, Elastic
      * Transcoder will select the profile based on the bit rate selected for the
      * output file.</li>
-     * <li> <code>AAC-LC</code>: The most common AAC profile. Use for bit rates
+     * <li><code>AAC-LC</code>: The most common AAC profile. Use for bit rates
      * larger than 64 kbps.</li>
-     * <li> <code>HE-AAC</code>: Not supported on some older players and devices.
+     * <li><code>HE-AAC</code>: Not supported on some older players and devices.
      * Use for bit rates between 40 and 80 kbps.</li>
-     * <li> <code>HE-AACv2</code>: Not supported on some players and devices. Use
+     * <li><code>HE-AACv2</code>: Not supported on some players and devices. Use
      * for bit rates less than 48 kbps.</li>
      * </ul>
      * <p>
@@ -144,14 +144,14 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      *        supports the following profiles:
      *        </p>
      *        <ul>
-     *        <li> <code>auto</code>: If you specify <code>auto</code>, Elastic
+     *        <li><code>auto</code>: If you specify <code>auto</code>, Elastic
      *        Transcoder will select the profile based on the bit rate selected
      *        for the output file.</li>
-     *        <li> <code>AAC-LC</code>: The most common AAC profile. Use for bit
+     *        <li><code>AAC-LC</code>: The most common AAC profile. Use for bit
      *        rates larger than 64 kbps.</li>
-     *        <li> <code>HE-AAC</code>: Not supported on some older players and
+     *        <li><code>HE-AAC</code>: Not supported on some older players and
      *        devices. Use for bit rates between 40 and 80 kbps.</li>
-     *        <li> <code>HE-AACv2</code>: Not supported on some players and
+     *        <li><code>HE-AACv2</code>: Not supported on some players and
      *        devices. Use for bit rates less than 48 kbps.</li>
      *        </ul>
      *        <p>
@@ -180,14 +180,14 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      * the following profiles:
      * </p>
      * <ul>
-     * <li> <code>auto</code>: If you specify <code>auto</code>, Elastic
+     * <li><code>auto</code>: If you specify <code>auto</code>, Elastic
      * Transcoder will select the profile based on the bit rate selected for the
      * output file.</li>
-     * <li> <code>AAC-LC</code>: The most common AAC profile. Use for bit rates
+     * <li><code>AAC-LC</code>: The most common AAC profile. Use for bit rates
      * larger than 64 kbps.</li>
-     * <li> <code>HE-AAC</code>: Not supported on some older players and devices.
+     * <li><code>HE-AAC</code>: Not supported on some older players and devices.
      * Use for bit rates between 40 and 80 kbps.</li>
-     * <li> <code>HE-AACv2</code>: Not supported on some players and devices. Use
+     * <li><code>HE-AACv2</code>: Not supported on some players and devices. Use
      * for bit rates less than 48 kbps.</li>
      * </ul>
      * <p>
@@ -209,14 +209,14 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      *         supports the following profiles:
      *         </p>
      *         <ul>
-     *         <li> <code>auto</code>: If you specify <code>auto</code>, Elastic
+     *         <li><code>auto</code>: If you specify <code>auto</code>, Elastic
      *         Transcoder will select the profile based on the bit rate selected
      *         for the output file.</li>
-     *         <li> <code>AAC-LC</code>: The most common AAC profile. Use for bit
+     *         <li><code>AAC-LC</code>: The most common AAC profile. Use for bit
      *         rates larger than 64 kbps.</li>
-     *         <li> <code>HE-AAC</code>: Not supported on some older players and
+     *         <li><code>HE-AAC</code>: Not supported on some older players and
      *         devices. Use for bit rates between 40 and 80 kbps.</li>
-     *         <li> <code>HE-AACv2</code>: Not supported on some players and
+     *         <li><code>HE-AACv2</code>: Not supported on some players and
      *         devices. Use for bit rates less than 48 kbps.</li>
      *         </ul>
      *         <p>
@@ -245,14 +245,14 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      * the following profiles:
      * </p>
      * <ul>
-     * <li> <code>auto</code>: If you specify <code>auto</code>, Elastic
+     * <li><code>auto</code>: If you specify <code>auto</code>, Elastic
      * Transcoder will select the profile based on the bit rate selected for the
      * output file.</li>
-     * <li> <code>AAC-LC</code>: The most common AAC profile. Use for bit rates
+     * <li><code>AAC-LC</code>: The most common AAC profile. Use for bit rates
      * larger than 64 kbps.</li>
-     * <li> <code>HE-AAC</code>: Not supported on some older players and devices.
+     * <li><code>HE-AAC</code>: Not supported on some older players and devices.
      * Use for bit rates between 40 and 80 kbps.</li>
-     * <li> <code>HE-AACv2</code>: Not supported on some players and devices. Use
+     * <li><code>HE-AACv2</code>: Not supported on some players and devices. Use
      * for bit rates less than 48 kbps.</li>
      * </ul>
      * <p>
@@ -275,14 +275,14 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      *        supports the following profiles:
      *        </p>
      *        <ul>
-     *        <li> <code>auto</code>: If you specify <code>auto</code>, Elastic
+     *        <li><code>auto</code>: If you specify <code>auto</code>, Elastic
      *        Transcoder will select the profile based on the bit rate selected
      *        for the output file.</li>
-     *        <li> <code>AAC-LC</code>: The most common AAC profile. Use for bit
+     *        <li><code>AAC-LC</code>: The most common AAC profile. Use for bit
      *        rates larger than 64 kbps.</li>
-     *        <li> <code>HE-AAC</code>: Not supported on some older players and
+     *        <li><code>HE-AAC</code>: Not supported on some older players and
      *        devices. Use for bit rates between 40 and 80 kbps.</li>
-     *        <li> <code>HE-AACv2</code>: Not supported on some players and
+     *        <li><code>HE-AACv2</code>: Not supported on some players and
      *        devices. Use for bit rates less than 48 kbps.</li>
      *        </ul>
      *        <p>

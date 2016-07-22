@@ -37034,15 +37034,16 @@
     "customErrorCodeFieldName" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "customSignerProvider" : null,
+    "calculateCRC32FromCompressedData" : false,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "sdkModeledExceptionBaseClassName" : "AmazonGameLiftException",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.gamelift.model.AmazonGameLiftException",
-  "sdkModeledExceptionBaseClassName" : "AmazonGameLiftException"
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.gamelift.model.AmazonGameLiftException"
 }

@@ -2024,6 +2024,11 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    @Override
+    protected final boolean calculateCRC32FromCompressedData() {
+        return true;
+    }
+
     /**
      * Normal invoke with authentication. Credentials are required and may be
      * overriden at the request level.

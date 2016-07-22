@@ -145,6 +145,11 @@ public class CertificateDetailJsonUnmarshaller implements
                             context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("FailureReason", targetDepth)) {
+                    context.nextToken();
+                    certificateDetail.setFailureReason(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

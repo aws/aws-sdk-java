@@ -186,6 +186,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.config.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode(
                                             "LastDeliveryChannelDeleteFailedException")
                                     .withModeledClass(
@@ -466,8 +471,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      *         One or more AWS Config rules in the request are invalid. Verify
      *         that the rule names are correct and try again.
      * @throws ResourceInUseException
-     *         The rule is currently being deleted. Wait for a while and try
-     *         again.
+     *         The rule is currently being deleted or the rule is deleting your
+     *         evaluation results. Try your request again later.
      * @sample AmazonConfig.DeleteConfigRule
      */
     @Override
@@ -631,6 +636,62 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Deletes the evaluation results for the specified Config rule. You can
+     * specify one Config rule per request. After you delete the evaluation
+     * results, you can call the <a>StartConfigRulesEvaluation</a> API to start
+     * evaluating your AWS resources against the rule.
+     * </p>
+     * 
+     * @param deleteEvaluationResultsRequest
+     * @return Result of the DeleteEvaluationResults operation returned by the
+     *         service.
+     * @throws NoSuchConfigRuleException
+     *         One or more AWS Config rules in the request are invalid. Verify
+     *         that the rule names are correct and try again.
+     * @throws ResourceInUseException
+     *         The rule is currently being deleted or the rule is deleting your
+     *         evaluation results. Try your request again later.
+     * @sample AmazonConfig.DeleteEvaluationResults
+     */
+    @Override
+    public DeleteEvaluationResultsResult deleteEvaluationResults(
+            DeleteEvaluationResultsRequest deleteEvaluationResultsRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteEvaluationResultsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEvaluationResultsRequest> request = null;
+        Response<DeleteEvaluationResultsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEvaluationResultsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteEvaluationResultsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEvaluationResultsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteEvaluationResultsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Schedules delivery of a configuration snapshot to the Amazon S3 bucket in
      * the specified delivery channel. After the delivery has started, AWS
      * Config sends following notifications using an Amazon SNS topic that you
@@ -718,8 +779,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * <li>The rule's AWS Lambda function is failing to send evaluation results
      * to AWS Config. Verify that the role that you assigned to your
      * configuration recorder includes the <code>config:PutEvaluations</code>
-     * permission. If the rule is a customer managed rule, verify that the AWS
-     * Lambda execution role includes the <code>config:PutEvaluations</code>
+     * permission. If the rule is a custom rule, verify that the AWS Lambda
+     * execution role includes the <code>config:PutEvaluations</code>
      * permission.</li>
      * <li>The rule's AWS Lambda function has returned
      * <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if
@@ -804,8 +865,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * <li>The rule's AWS Lambda function is failing to send evaluation results
      * to AWS Config. Verify that the role that you assigned to your
      * configuration recorder includes the <code>config:PutEvaluations</code>
-     * permission. If the rule is a customer managed rule, verify that the AWS
-     * Lambda execution role includes the <code>config:PutEvaluations</code>
+     * permission. If the rule is a custom rule, verify that the AWS Lambda
+     * execution role includes the <code>config:PutEvaluations</code>
      * permission.</li>
      * <li>The rule's AWS Lambda function has returned
      * <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if
@@ -1629,17 +1690,17 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * resources comply with your desired configurations.
      * </p>
      * <p>
-     * You can use this action for customer managed Config rules and AWS managed
-     * Config rules. A customer managed Config rule is a custom rule that you
-     * develop and maintain. An AWS managed Config rule is a customizable,
-     * predefined rule that is provided by AWS Config.
+     * You can use this action for custom Config rules and AWS managed Config
+     * rules. A custom Config rule is a rule that you develop and maintain. An
+     * AWS managed Config rule is a customizable, predefined rule that AWS
+     * Config provides.
      * </p>
      * <p>
-     * If you are adding a new customer managed Config rule, you must first
-     * create the AWS Lambda function that the rule invokes to evaluate your
-     * resources. When you use the <code>PutConfigRule</code> action to add the
-     * rule to AWS Config, you must specify the Amazon Resource Name (ARN) that
-     * AWS Lambda assigns to the function. Specify the ARN for the
+     * If you are adding a new custom Config rule, you must first create the AWS
+     * Lambda function that the rule invokes to evaluate your resources. When
+     * you use the <code>PutConfigRule</code> action to add the rule to AWS
+     * Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda
+     * assigns to the function. Specify the ARN for the
      * <code>SourceIdentifier</code> key. This key is part of the
      * <code>Source</code> object, which is part of the <code>ConfigRule</code>
      * object.
@@ -1685,8 +1746,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      *         contains the maximum number of 25 rules. Consider deleting any
      *         deactivated rules before adding new rules.
      * @throws ResourceInUseException
-     *         The rule is currently being deleted. Wait for a while and try
-     *         again.
+     *         The rule is currently being deleted or the rule is deleting your
+     *         evaluation results. Try your request again later.
      * @throws InsufficientPermissionsException
      *         Indicates one of the following errors:
      *         </p>
@@ -1944,6 +2005,73 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new PutEvaluationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Evaluates your resources against the specified Config rules. You can
+     * specify up to 25 Config rules per request.
+     * </p>
+     * <p>
+     * An existing <a>StartConfigRulesEvaluation</a> call must complete for the
+     * rules that you specified before you can call the API again. If you chose
+     * to have AWS Config stream to an Amazon SNS topic, you will receive a
+     * notification when the evaluation starts.
+     * </p>
+     * 
+     * @param startConfigRulesEvaluationRequest
+     * @return Result of the StartConfigRulesEvaluation operation returned by
+     *         the service.
+     * @throws NoSuchConfigRuleException
+     *         One or more AWS Config rules in the request are invalid. Verify
+     *         that the rule names are correct and try again.
+     * @throws LimitExceededException
+     *         This exception is thrown when the previous
+     *         <a>StartConfigRulesEvaluation</a> call is in progress or a
+     *         previous evaluation is in progress.
+     * @throws ResourceInUseException
+     *         The rule is currently being deleted or the rule is deleting your
+     *         evaluation results. Try your request again later.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that
+     *         your parameters are valid and try again.
+     * @sample AmazonConfig.StartConfigRulesEvaluation
+     */
+    @Override
+    public StartConfigRulesEvaluationResult startConfigRulesEvaluation(
+            StartConfigRulesEvaluationRequest startConfigRulesEvaluationRequest) {
+        ExecutionContext executionContext = createExecutionContext(startConfigRulesEvaluationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartConfigRulesEvaluationRequest> request = null;
+        Response<StartConfigRulesEvaluationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartConfigRulesEvaluationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(startConfigRulesEvaluationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartConfigRulesEvaluationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new StartConfigRulesEvaluationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

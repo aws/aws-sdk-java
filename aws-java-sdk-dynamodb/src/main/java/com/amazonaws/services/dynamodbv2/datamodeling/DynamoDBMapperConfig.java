@@ -1053,6 +1053,17 @@ public class DynamoDBMapperConfig {
     }
 
     /**
+     * Ensures that the table name resolver is returned.
+     * Note, for backwards compatibility we we can't just set it in the config.
+     */
+    final TableNameResolver getTableNameResolver(final boolean defaultIfNotExists) {
+        if (defaultIfNotExists && getTableNameResolver() == null) {
+            return DefaultTableNameResolver.INSTANCE;
+        }
+        return getTableNameResolver();
+    }
+
+    /**
      * Returns the object table name resolver for this configuration. This value will
      * be used to determine the table name for objects. It can be
      * used for more powerful customization of table name than is possible using

@@ -107,16 +107,17 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
     /**
      * <p>
-     * A list of capabilities that you must specify before AWS CloudFormation
-     * can update certain stacks. Some stack templates might include resources
-     * that can affect permissions in your AWS account, for example, by creating
-     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * A list of values that you must specify before AWS CloudFormation can
+     * update certain stacks. Some stack templates might include resources that
+     * can affect permissions in your AWS account, for example, by creating new
+     * AWS Identity and Access Management (IAM) users. For those stacks, you
      * must explicitly acknowledge their capabilities by specifying this
      * parameter.
      * </p>
      * <p>
-     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
-     * required for the following resources: <a href=
+     * The only valid values are <code>CAPABILITY_IAM</code> and
+     * <code>CAPABILITY_NAMED_IAM</code>. The following resources require you to
+     * specify this parameter: <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      * > AWS::IAM::AccessKey</a>, <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -132,10 +133,18 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
      * these resources, we recommend that you review all permissions associated
-     * with them and edit their permissions if necessary. If your template
-     * contains any of the listed resources and you don't specify this
-     * parameter, this action returns an <code>InsufficientCapabilities</code>
-     * error.
+     * with them and edit their permissions if necessary.
+     * </p>
+     * <p>
+     * If you have IAM resources, you can specify either capability. If you have
+     * IAM resources with custom names, you must specify
+     * <code>CAPABILITY_NAMED_IAM</code>. If you don't specify this parameter,
+     * this action returns an <code>InsufficientCapabilities</code> error.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> capabilities;
@@ -780,16 +789,17 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of capabilities that you must specify before AWS CloudFormation
-     * can update certain stacks. Some stack templates might include resources
-     * that can affect permissions in your AWS account, for example, by creating
-     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * A list of values that you must specify before AWS CloudFormation can
+     * update certain stacks. Some stack templates might include resources that
+     * can affect permissions in your AWS account, for example, by creating new
+     * AWS Identity and Access Management (IAM) users. For those stacks, you
      * must explicitly acknowledge their capabilities by specifying this
      * parameter.
      * </p>
      * <p>
-     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
-     * required for the following resources: <a href=
+     * The only valid values are <code>CAPABILITY_IAM</code> and
+     * <code>CAPABILITY_NAMED_IAM</code>. The following resources require you to
+     * specify this parameter: <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      * > AWS::IAM::AccessKey</a>, <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -805,21 +815,30 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
      * these resources, we recommend that you review all permissions associated
-     * with them and edit their permissions if necessary. If your template
-     * contains any of the listed resources and you don't specify this
-     * parameter, this action returns an <code>InsufficientCapabilities</code>
-     * error.
+     * with them and edit their permissions if necessary.
+     * </p>
+     * <p>
+     * If you have IAM resources, you can specify either capability. If you have
+     * IAM resources with custom names, you must specify
+     * <code>CAPABILITY_NAMED_IAM</code>. If you don't specify this parameter,
+     * this action returns an <code>InsufficientCapabilities</code> error.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * 
-     * @return A list of capabilities that you must specify before AWS
-     *         CloudFormation can update certain stacks. Some stack templates
-     *         might include resources that can affect permissions in your AWS
-     *         account, for example, by creating new AWS Identity and Access
-     *         Management (IAM) users. For those stacks, you must explicitly
-     *         acknowledge their capabilities by specifying this parameter.</p>
+     * @return A list of values that you must specify before AWS CloudFormation
+     *         can update certain stacks. Some stack templates might include
+     *         resources that can affect permissions in your AWS account, for
+     *         example, by creating new AWS Identity and Access Management (IAM)
+     *         users. For those stacks, you must explicitly acknowledge their
+     *         capabilities by specifying this parameter.</p>
      *         <p>
-     *         Currently, the only valid value is <code>CAPABILITY_IAM</code>,
-     *         which is required for the following resources: <a href=
+     *         The only valid values are <code>CAPABILITY_IAM</code> and
+     *         <code>CAPABILITY_NAMED_IAM</code>. The following resources
+     *         require you to specify this parameter: <a href=
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      *         > AWS::IAM::AccessKey</a>, <a href=
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -836,9 +855,19 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         > AWS::IAM::UserToGroupAddition</a>. If your stack template
      *         contains these resources, we recommend that you review all
      *         permissions associated with them and edit their permissions if
-     *         necessary. If your template contains any of the listed resources
-     *         and you don't specify this parameter, this action returns an
+     *         necessary.
+     *         </p>
+     *         <p>
+     *         If you have IAM resources, you can specify either capability. If
+     *         you have IAM resources with custom names, you must specify
+     *         <code>CAPABILITY_NAMED_IAM</code>. If you don't specify this
+     *         parameter, this action returns an
      *         <code>InsufficientCapabilities</code> error.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *         >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * @see Capability
      */
 
@@ -851,16 +880,17 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of capabilities that you must specify before AWS CloudFormation
-     * can update certain stacks. Some stack templates might include resources
-     * that can affect permissions in your AWS account, for example, by creating
-     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * A list of values that you must specify before AWS CloudFormation can
+     * update certain stacks. Some stack templates might include resources that
+     * can affect permissions in your AWS account, for example, by creating new
+     * AWS Identity and Access Management (IAM) users. For those stacks, you
      * must explicitly acknowledge their capabilities by specifying this
      * parameter.
      * </p>
      * <p>
-     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
-     * required for the following resources: <a href=
+     * The only valid values are <code>CAPABILITY_IAM</code> and
+     * <code>CAPABILITY_NAMED_IAM</code>. The following resources require you to
+     * specify this parameter: <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      * > AWS::IAM::AccessKey</a>, <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -876,22 +906,31 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
      * these resources, we recommend that you review all permissions associated
-     * with them and edit their permissions if necessary. If your template
-     * contains any of the listed resources and you don't specify this
-     * parameter, this action returns an <code>InsufficientCapabilities</code>
-     * error.
+     * with them and edit their permissions if necessary.
+     * </p>
+     * <p>
+     * If you have IAM resources, you can specify either capability. If you have
+     * IAM resources with custom names, you must specify
+     * <code>CAPABILITY_NAMED_IAM</code>. If you don't specify this parameter,
+     * this action returns an <code>InsufficientCapabilities</code> error.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * 
      * @param capabilities
-     *        A list of capabilities that you must specify before AWS
-     *        CloudFormation can update certain stacks. Some stack templates
-     *        might include resources that can affect permissions in your AWS
-     *        account, for example, by creating new AWS Identity and Access
-     *        Management (IAM) users. For those stacks, you must explicitly
-     *        acknowledge their capabilities by specifying this parameter.</p>
+     *        A list of values that you must specify before AWS CloudFormation
+     *        can update certain stacks. Some stack templates might include
+     *        resources that can affect permissions in your AWS account, for
+     *        example, by creating new AWS Identity and Access Management (IAM)
+     *        users. For those stacks, you must explicitly acknowledge their
+     *        capabilities by specifying this parameter.</p>
      *        <p>
-     *        Currently, the only valid value is <code>CAPABILITY_IAM</code>,
-     *        which is required for the following resources: <a href=
+     *        The only valid values are <code>CAPABILITY_IAM</code> and
+     *        <code>CAPABILITY_NAMED_IAM</code>. The following resources require
+     *        you to specify this parameter: <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      *        > AWS::IAM::AccessKey</a>, <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -908,9 +947,19 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        > AWS::IAM::UserToGroupAddition</a>. If your stack template
      *        contains these resources, we recommend that you review all
      *        permissions associated with them and edit their permissions if
-     *        necessary. If your template contains any of the listed resources
-     *        and you don't specify this parameter, this action returns an
+     *        necessary.
+     *        </p>
+     *        <p>
+     *        If you have IAM resources, you can specify either capability. If
+     *        you have IAM resources with custom names, you must specify
+     *        <code>CAPABILITY_NAMED_IAM</code>. If you don't specify this
+     *        parameter, this action returns an
      *        <code>InsufficientCapabilities</code> error.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * @see Capability
      */
 
@@ -926,16 +975,17 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of capabilities that you must specify before AWS CloudFormation
-     * can update certain stacks. Some stack templates might include resources
-     * that can affect permissions in your AWS account, for example, by creating
-     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * A list of values that you must specify before AWS CloudFormation can
+     * update certain stacks. Some stack templates might include resources that
+     * can affect permissions in your AWS account, for example, by creating new
+     * AWS Identity and Access Management (IAM) users. For those stacks, you
      * must explicitly acknowledge their capabilities by specifying this
      * parameter.
      * </p>
      * <p>
-     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
-     * required for the following resources: <a href=
+     * The only valid values are <code>CAPABILITY_IAM</code> and
+     * <code>CAPABILITY_NAMED_IAM</code>. The following resources require you to
+     * specify this parameter: <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      * > AWS::IAM::AccessKey</a>, <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -951,10 +1001,18 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
      * these resources, we recommend that you review all permissions associated
-     * with them and edit their permissions if necessary. If your template
-     * contains any of the listed resources and you don't specify this
-     * parameter, this action returns an <code>InsufficientCapabilities</code>
-     * error.
+     * with them and edit their permissions if necessary.
+     * </p>
+     * <p>
+     * If you have IAM resources, you can specify either capability. If you have
+     * IAM resources with custom names, you must specify
+     * <code>CAPABILITY_NAMED_IAM</code>. If you don't specify this parameter,
+     * this action returns an <code>InsufficientCapabilities</code> error.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -964,15 +1022,16 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param capabilities
-     *        A list of capabilities that you must specify before AWS
-     *        CloudFormation can update certain stacks. Some stack templates
-     *        might include resources that can affect permissions in your AWS
-     *        account, for example, by creating new AWS Identity and Access
-     *        Management (IAM) users. For those stacks, you must explicitly
-     *        acknowledge their capabilities by specifying this parameter.</p>
+     *        A list of values that you must specify before AWS CloudFormation
+     *        can update certain stacks. Some stack templates might include
+     *        resources that can affect permissions in your AWS account, for
+     *        example, by creating new AWS Identity and Access Management (IAM)
+     *        users. For those stacks, you must explicitly acknowledge their
+     *        capabilities by specifying this parameter.</p>
      *        <p>
-     *        Currently, the only valid value is <code>CAPABILITY_IAM</code>,
-     *        which is required for the following resources: <a href=
+     *        The only valid values are <code>CAPABILITY_IAM</code> and
+     *        <code>CAPABILITY_NAMED_IAM</code>. The following resources require
+     *        you to specify this parameter: <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      *        > AWS::IAM::AccessKey</a>, <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -989,9 +1048,19 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        > AWS::IAM::UserToGroupAddition</a>. If your stack template
      *        contains these resources, we recommend that you review all
      *        permissions associated with them and edit their permissions if
-     *        necessary. If your template contains any of the listed resources
-     *        and you don't specify this parameter, this action returns an
+     *        necessary.
+     *        </p>
+     *        <p>
+     *        If you have IAM resources, you can specify either capability. If
+     *        you have IAM resources with custom names, you must specify
+     *        <code>CAPABILITY_NAMED_IAM</code>. If you don't specify this
+     *        parameter, this action returns an
      *        <code>InsufficientCapabilities</code> error.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Capability
@@ -1010,16 +1079,17 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of capabilities that you must specify before AWS CloudFormation
-     * can update certain stacks. Some stack templates might include resources
-     * that can affect permissions in your AWS account, for example, by creating
-     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * A list of values that you must specify before AWS CloudFormation can
+     * update certain stacks. Some stack templates might include resources that
+     * can affect permissions in your AWS account, for example, by creating new
+     * AWS Identity and Access Management (IAM) users. For those stacks, you
      * must explicitly acknowledge their capabilities by specifying this
      * parameter.
      * </p>
      * <p>
-     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
-     * required for the following resources: <a href=
+     * The only valid values are <code>CAPABILITY_IAM</code> and
+     * <code>CAPABILITY_NAMED_IAM</code>. The following resources require you to
+     * specify this parameter: <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      * > AWS::IAM::AccessKey</a>, <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -1035,22 +1105,31 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
      * these resources, we recommend that you review all permissions associated
-     * with them and edit their permissions if necessary. If your template
-     * contains any of the listed resources and you don't specify this
-     * parameter, this action returns an <code>InsufficientCapabilities</code>
-     * error.
+     * with them and edit their permissions if necessary.
+     * </p>
+     * <p>
+     * If you have IAM resources, you can specify either capability. If you have
+     * IAM resources with custom names, you must specify
+     * <code>CAPABILITY_NAMED_IAM</code>. If you don't specify this parameter,
+     * this action returns an <code>InsufficientCapabilities</code> error.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * 
      * @param capabilities
-     *        A list of capabilities that you must specify before AWS
-     *        CloudFormation can update certain stacks. Some stack templates
-     *        might include resources that can affect permissions in your AWS
-     *        account, for example, by creating new AWS Identity and Access
-     *        Management (IAM) users. For those stacks, you must explicitly
-     *        acknowledge their capabilities by specifying this parameter.</p>
+     *        A list of values that you must specify before AWS CloudFormation
+     *        can update certain stacks. Some stack templates might include
+     *        resources that can affect permissions in your AWS account, for
+     *        example, by creating new AWS Identity and Access Management (IAM)
+     *        users. For those stacks, you must explicitly acknowledge their
+     *        capabilities by specifying this parameter.</p>
      *        <p>
-     *        Currently, the only valid value is <code>CAPABILITY_IAM</code>,
-     *        which is required for the following resources: <a href=
+     *        The only valid values are <code>CAPABILITY_IAM</code> and
+     *        <code>CAPABILITY_NAMED_IAM</code>. The following resources require
+     *        you to specify this parameter: <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      *        > AWS::IAM::AccessKey</a>, <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -1067,9 +1146,19 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        > AWS::IAM::UserToGroupAddition</a>. If your stack template
      *        contains these resources, we recommend that you review all
      *        permissions associated with them and edit their permissions if
-     *        necessary. If your template contains any of the listed resources
-     *        and you don't specify this parameter, this action returns an
+     *        necessary.
+     *        </p>
+     *        <p>
+     *        If you have IAM resources, you can specify either capability. If
+     *        you have IAM resources with custom names, you must specify
+     *        <code>CAPABILITY_NAMED_IAM</code>. If you don't specify this
+     *        parameter, this action returns an
      *        <code>InsufficientCapabilities</code> error.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Capability
@@ -1083,16 +1172,17 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of capabilities that you must specify before AWS CloudFormation
-     * can update certain stacks. Some stack templates might include resources
-     * that can affect permissions in your AWS account, for example, by creating
-     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * A list of values that you must specify before AWS CloudFormation can
+     * update certain stacks. Some stack templates might include resources that
+     * can affect permissions in your AWS account, for example, by creating new
+     * AWS Identity and Access Management (IAM) users. For those stacks, you
      * must explicitly acknowledge their capabilities by specifying this
      * parameter.
      * </p>
      * <p>
-     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
-     * required for the following resources: <a href=
+     * The only valid values are <code>CAPABILITY_IAM</code> and
+     * <code>CAPABILITY_NAMED_IAM</code>. The following resources require you to
+     * specify this parameter: <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      * > AWS::IAM::AccessKey</a>, <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -1108,22 +1198,31 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
      * these resources, we recommend that you review all permissions associated
-     * with them and edit their permissions if necessary. If your template
-     * contains any of the listed resources and you don't specify this
-     * parameter, this action returns an <code>InsufficientCapabilities</code>
-     * error.
+     * with them and edit their permissions if necessary.
+     * </p>
+     * <p>
+     * If you have IAM resources, you can specify either capability. If you have
+     * IAM resources with custom names, you must specify
+     * <code>CAPABILITY_NAMED_IAM</code>. If you don't specify this parameter,
+     * this action returns an <code>InsufficientCapabilities</code> error.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * 
      * @param capabilities
-     *        A list of capabilities that you must specify before AWS
-     *        CloudFormation can update certain stacks. Some stack templates
-     *        might include resources that can affect permissions in your AWS
-     *        account, for example, by creating new AWS Identity and Access
-     *        Management (IAM) users. For those stacks, you must explicitly
-     *        acknowledge their capabilities by specifying this parameter.</p>
+     *        A list of values that you must specify before AWS CloudFormation
+     *        can update certain stacks. Some stack templates might include
+     *        resources that can affect permissions in your AWS account, for
+     *        example, by creating new AWS Identity and Access Management (IAM)
+     *        users. For those stacks, you must explicitly acknowledge their
+     *        capabilities by specifying this parameter.</p>
      *        <p>
-     *        Currently, the only valid value is <code>CAPABILITY_IAM</code>,
-     *        which is required for the following resources: <a href=
+     *        The only valid values are <code>CAPABILITY_IAM</code> and
+     *        <code>CAPABILITY_NAMED_IAM</code>. The following resources require
+     *        you to specify this parameter: <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      *        > AWS::IAM::AccessKey</a>, <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -1140,9 +1239,19 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        > AWS::IAM::UserToGroupAddition</a>. If your stack template
      *        contains these resources, we recommend that you review all
      *        permissions associated with them and edit their permissions if
-     *        necessary. If your template contains any of the listed resources
-     *        and you don't specify this parameter, this action returns an
+     *        necessary.
+     *        </p>
+     *        <p>
+     *        If you have IAM resources, you can specify either capability. If
+     *        you have IAM resources with custom names, you must specify
+     *        <code>CAPABILITY_NAMED_IAM</code>. If you don't specify this
+     *        parameter, this action returns an
      *        <code>InsufficientCapabilities</code> error.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Capability

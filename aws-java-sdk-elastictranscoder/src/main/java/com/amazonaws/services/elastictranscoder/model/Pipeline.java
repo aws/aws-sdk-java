@@ -54,8 +54,8 @@ public class Pipeline implements Serializable, Cloneable {
      * The current status of the pipeline:
      * </p>
      * <ul>
-     * <li> <code>Active</code>: The pipeline is processing jobs.</li>
-     * <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li>
+     * <li><code>Active</code>: The pipeline is processing jobs.</li>
+     * <li><code>Paused</code>: The pipeline is not currently processing jobs.</li>
      * </ul>
      */
     private String status;
@@ -136,27 +136,27 @@ public class Pipeline implements Serializable, Cloneable {
      * <li>GranteeType: The type of value that appears in the
      * <code>Grantee</code> object:
      * <ul>
-     * <li> <code>Canonical</code>: Either the canonical user ID for an AWS
+     * <li><code>Canonical</code>: Either the canonical user ID for an AWS
      * account or an origin access identity for an Amazon CloudFront
      * distribution.</li>
-     * <li> <code>Email</code>: The registered email address of an AWS account.</li>
-     * <li> <code>Group</code>: One of the following predefined Amazon S3 groups:
+     * <li><code>Email</code>: The registered email address of an AWS account.</li>
+     * <li><code>Group</code>: One of the following predefined Amazon S3 groups:
      * <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or
      * <code>LogDelivery</code>.</li>
      * </ul>
      * </li>
-     * <li> <code>Grantee</code>: The AWS user or group that you want to have
+     * <li><code>Grantee</code>: The AWS user or group that you want to have
      * access to transcoded files and playlists.</li>
-     * <li> <code>Access</code>: The permission that you want to give to the AWS
+     * <li><code>Access</code>: The permission that you want to give to the AWS
      * user that is listed in <code>Grantee</code>. Valid values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the objects and metadata for
+     * <li><code>READ</code>: The grantee can read the objects and metadata for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the objects
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the objects
      * that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     * <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      * <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      * </ul>
@@ -177,43 +177,43 @@ public class Pipeline implements Serializable, Cloneable {
      * specify <code>OutputBucket</code>.
      * </p>
      * <ul>
-     * <li> <code>Bucket</code>: The Amazon S3 bucket in which you want Elastic
+     * <li><code>Bucket</code>: The Amazon S3 bucket in which you want Elastic
      * Transcoder to save thumbnail files.</li>
-     * <li> <code>Permissions</code>: A list of the users and/or predefined
+     * <li><code>Permissions</code>: A list of the users and/or predefined
      * Amazon S3 groups you want to have access to thumbnail files, and the type
      * of access that you want them to have.
      * <ul>
      * <li>GranteeType: The type of value that appears in the Grantee object:
      * <ul>
-     * <li> <code>Canonical</code>: Either the canonical user ID for an AWS
+     * <li><code>Canonical</code>: Either the canonical user ID for an AWS
      * account or an origin access identity for an Amazon CloudFront
      * distribution. <important>A canonical user ID is not the same as an AWS
      * account number.</important></li>
-     * <li> <code>Email</code>: The registered email address of an AWS account.</li>
-     * <li> <code>Group</code>: One of the following predefined Amazon S3 groups:
+     * <li><code>Email</code>: The registered email address of an AWS account.</li>
+     * <li><code>Group</code>: One of the following predefined Amazon S3 groups:
      * <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or
      * <code>LogDelivery</code>.</li>
      * </ul>
      * </li>
-     * <li> <code>Grantee</code>: The AWS user or group that you want to have
+     * <li><code>Grantee</code>: The AWS user or group that you want to have
      * access to thumbnail files.</li>
      * <li>Access: The permission that you want to give to the AWS user that is
      * listed in Grantee. Valid values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the thumbnails and metadata
+     * <li><code>READ</code>: The grantee can read the thumbnails and metadata
      * for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and
+     * <li><code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and
      * WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds to
      * the Amazon S3 bucket.</li>
      * </ul>
      * </li>
      * </ul>
      * </li>
-     * <li> <code>StorageClass</code>: The Amazon S3 storage class,
+     * <li><code>StorageClass</code>: The Amazon S3 storage class,
      * <code>Standard</code> or <code>ReducedRedundancy</code>, that you want
      * Elastic Transcoder to assign to the thumbnails that it stores in your
      * Amazon S3 bucket.</li>
@@ -382,15 +382,15 @@ public class Pipeline implements Serializable, Cloneable {
      * The current status of the pipeline:
      * </p>
      * <ul>
-     * <li> <code>Active</code>: The pipeline is processing jobs.</li>
-     * <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li>
+     * <li><code>Active</code>: The pipeline is processing jobs.</li>
+     * <li><code>Paused</code>: The pipeline is not currently processing jobs.</li>
      * </ul>
      * 
      * @param status
      *        The current status of the pipeline:</p>
      *        <ul>
-     *        <li> <code>Active</code>: The pipeline is processing jobs.</li>
-     *        <li> <code>Paused</code>: The pipeline is not currently processing
+     *        <li><code>Active</code>: The pipeline is processing jobs.</li>
+     *        <li><code>Paused</code>: The pipeline is not currently processing
      *        jobs.</li>
      */
 
@@ -403,14 +403,14 @@ public class Pipeline implements Serializable, Cloneable {
      * The current status of the pipeline:
      * </p>
      * <ul>
-     * <li> <code>Active</code>: The pipeline is processing jobs.</li>
-     * <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li>
+     * <li><code>Active</code>: The pipeline is processing jobs.</li>
+     * <li><code>Paused</code>: The pipeline is not currently processing jobs.</li>
      * </ul>
      * 
      * @return The current status of the pipeline:</p>
      *         <ul>
-     *         <li> <code>Active</code>: The pipeline is processing jobs.</li>
-     *         <li> <code>Paused</code>: The pipeline is not currently processing
+     *         <li><code>Active</code>: The pipeline is processing jobs.</li>
+     *         <li><code>Paused</code>: The pipeline is not currently processing
      *         jobs.</li>
      */
 
@@ -423,15 +423,15 @@ public class Pipeline implements Serializable, Cloneable {
      * The current status of the pipeline:
      * </p>
      * <ul>
-     * <li> <code>Active</code>: The pipeline is processing jobs.</li>
-     * <li> <code>Paused</code>: The pipeline is not currently processing jobs.</li>
+     * <li><code>Active</code>: The pipeline is processing jobs.</li>
+     * <li><code>Paused</code>: The pipeline is not currently processing jobs.</li>
      * </ul>
      * 
      * @param status
      *        The current status of the pipeline:</p>
      *        <ul>
-     *        <li> <code>Active</code>: The pipeline is processing jobs.</li>
-     *        <li> <code>Paused</code>: The pipeline is not currently processing
+     *        <li><code>Active</code>: The pipeline is processing jobs.</li>
+     *        <li><code>Paused</code>: The pipeline is not currently processing
      *        jobs.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -843,27 +843,27 @@ public class Pipeline implements Serializable, Cloneable {
      * <li>GranteeType: The type of value that appears in the
      * <code>Grantee</code> object:
      * <ul>
-     * <li> <code>Canonical</code>: Either the canonical user ID for an AWS
+     * <li><code>Canonical</code>: Either the canonical user ID for an AWS
      * account or an origin access identity for an Amazon CloudFront
      * distribution.</li>
-     * <li> <code>Email</code>: The registered email address of an AWS account.</li>
-     * <li> <code>Group</code>: One of the following predefined Amazon S3 groups:
+     * <li><code>Email</code>: The registered email address of an AWS account.</li>
+     * <li><code>Group</code>: One of the following predefined Amazon S3 groups:
      * <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or
      * <code>LogDelivery</code>.</li>
      * </ul>
      * </li>
-     * <li> <code>Grantee</code>: The AWS user or group that you want to have
+     * <li><code>Grantee</code>: The AWS user or group that you want to have
      * access to transcoded files and playlists.</li>
-     * <li> <code>Access</code>: The permission that you want to give to the AWS
+     * <li><code>Access</code>: The permission that you want to give to the AWS
      * user that is listed in <code>Grantee</code>. Valid values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the objects and metadata for
+     * <li><code>READ</code>: The grantee can read the objects and metadata for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the objects
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the objects
      * that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     * <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      * <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      * </ul>
@@ -891,30 +891,30 @@ public class Pipeline implements Serializable, Cloneable {
      *        <li>GranteeType: The type of value that appears in the
      *        <code>Grantee</code> object:
      *        <ul>
-     *        <li> <code>Canonical</code>: Either the canonical user ID for an
+     *        <li><code>Canonical</code>: Either the canonical user ID for an
      *        AWS account or an origin access identity for an Amazon CloudFront
      *        distribution.</li>
-     *        <li> <code>Email</code>: The registered email address of an AWS
+     *        <li><code>Email</code>: The registered email address of an AWS
      *        account.</li>
-     *        <li> <code>Group</code>: One of the following predefined Amazon S3
+     *        <li><code>Group</code>: One of the following predefined Amazon S3
      *        groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or
      *        <code>LogDelivery</code>.</li>
      *        </ul>
      *        </li>
-     *        <li> <code>Grantee</code>: The AWS user or group that you want to
+     *        <li><code>Grantee</code>: The AWS user or group that you want to
      *        have access to transcoded files and playlists.</li>
-     *        <li> <code>Access</code>: The permission that you want to give to
+     *        <li><code>Access</code>: The permission that you want to give to
      *        the AWS user that is listed in <code>Grantee</code>. Valid values
      *        include:
      *        <ul>
-     *        <li> <code>READ</code>: The grantee can read the objects and
+     *        <li><code>READ</code>: The grantee can read the objects and
      *        metadata for objects that Elastic Transcoder adds to the Amazon S3
      *        bucket.</li>
-     *        <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     *        <li><code>READ_ACP</code>: The grantee can read the object ACL for
      *        objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     *        <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      *        objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     *        <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      *        <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for
      *        the objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      *        </ul>
@@ -948,27 +948,27 @@ public class Pipeline implements Serializable, Cloneable {
      * <li>GranteeType: The type of value that appears in the
      * <code>Grantee</code> object:
      * <ul>
-     * <li> <code>Canonical</code>: Either the canonical user ID for an AWS
+     * <li><code>Canonical</code>: Either the canonical user ID for an AWS
      * account or an origin access identity for an Amazon CloudFront
      * distribution.</li>
-     * <li> <code>Email</code>: The registered email address of an AWS account.</li>
-     * <li> <code>Group</code>: One of the following predefined Amazon S3 groups:
+     * <li><code>Email</code>: The registered email address of an AWS account.</li>
+     * <li><code>Group</code>: One of the following predefined Amazon S3 groups:
      * <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or
      * <code>LogDelivery</code>.</li>
      * </ul>
      * </li>
-     * <li> <code>Grantee</code>: The AWS user or group that you want to have
+     * <li><code>Grantee</code>: The AWS user or group that you want to have
      * access to transcoded files and playlists.</li>
-     * <li> <code>Access</code>: The permission that you want to give to the AWS
+     * <li><code>Access</code>: The permission that you want to give to the AWS
      * user that is listed in <code>Grantee</code>. Valid values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the objects and metadata for
+     * <li><code>READ</code>: The grantee can read the objects and metadata for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the objects
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the objects
      * that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     * <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      * <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      * </ul>
@@ -995,31 +995,31 @@ public class Pipeline implements Serializable, Cloneable {
      *         <li>GranteeType: The type of value that appears in the
      *         <code>Grantee</code> object:
      *         <ul>
-     *         <li> <code>Canonical</code>: Either the canonical user ID for an
+     *         <li><code>Canonical</code>: Either the canonical user ID for an
      *         AWS account or an origin access identity for an Amazon CloudFront
      *         distribution.</li>
-     *         <li> <code>Email</code>: The registered email address of an AWS
+     *         <li><code>Email</code>: The registered email address of an AWS
      *         account.</li>
-     *         <li> <code>Group</code>: One of the following predefined Amazon S3
+     *         <li><code>Group</code>: One of the following predefined Amazon S3
      *         groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>,
      *         or <code>LogDelivery</code>.</li>
      *         </ul>
      *         </li>
-     *         <li> <code>Grantee</code>: The AWS user or group that you want to
+     *         <li><code>Grantee</code>: The AWS user or group that you want to
      *         have access to transcoded files and playlists.</li>
-     *         <li> <code>Access</code>: The permission that you want to give to
+     *         <li><code>Access</code>: The permission that you want to give to
      *         the AWS user that is listed in <code>Grantee</code>. Valid values
      *         include:
      *         <ul>
-     *         <li> <code>READ</code>: The grantee can read the objects and
+     *         <li><code>READ</code>: The grantee can read the objects and
      *         metadata for objects that Elastic Transcoder adds to the Amazon
      *         S3 bucket.</li>
-     *         <li> <code>READ_ACP</code>: The grantee can read the object ACL
+     *         <li><code>READ_ACP</code>: The grantee can read the object ACL
      *         for objects that Elastic Transcoder adds to the Amazon S3 bucket.
      *         </li>
-     *         <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     *         <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      *         objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *         <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     *         <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      *         <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for
      *         the objects that Elastic Transcoder adds to the Amazon S3 bucket.
      *         </li>
@@ -1054,27 +1054,27 @@ public class Pipeline implements Serializable, Cloneable {
      * <li>GranteeType: The type of value that appears in the
      * <code>Grantee</code> object:
      * <ul>
-     * <li> <code>Canonical</code>: Either the canonical user ID for an AWS
+     * <li><code>Canonical</code>: Either the canonical user ID for an AWS
      * account or an origin access identity for an Amazon CloudFront
      * distribution.</li>
-     * <li> <code>Email</code>: The registered email address of an AWS account.</li>
-     * <li> <code>Group</code>: One of the following predefined Amazon S3 groups:
+     * <li><code>Email</code>: The registered email address of an AWS account.</li>
+     * <li><code>Group</code>: One of the following predefined Amazon S3 groups:
      * <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or
      * <code>LogDelivery</code>.</li>
      * </ul>
      * </li>
-     * <li> <code>Grantee</code>: The AWS user or group that you want to have
+     * <li><code>Grantee</code>: The AWS user or group that you want to have
      * access to transcoded files and playlists.</li>
-     * <li> <code>Access</code>: The permission that you want to give to the AWS
+     * <li><code>Access</code>: The permission that you want to give to the AWS
      * user that is listed in <code>Grantee</code>. Valid values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the objects and metadata for
+     * <li><code>READ</code>: The grantee can read the objects and metadata for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the objects
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the objects
      * that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     * <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      * <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
      * objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      * </ul>
@@ -1102,30 +1102,30 @@ public class Pipeline implements Serializable, Cloneable {
      *        <li>GranteeType: The type of value that appears in the
      *        <code>Grantee</code> object:
      *        <ul>
-     *        <li> <code>Canonical</code>: Either the canonical user ID for an
+     *        <li><code>Canonical</code>: Either the canonical user ID for an
      *        AWS account or an origin access identity for an Amazon CloudFront
      *        distribution.</li>
-     *        <li> <code>Email</code>: The registered email address of an AWS
+     *        <li><code>Email</code>: The registered email address of an AWS
      *        account.</li>
-     *        <li> <code>Group</code>: One of the following predefined Amazon S3
+     *        <li><code>Group</code>: One of the following predefined Amazon S3
      *        groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or
      *        <code>LogDelivery</code>.</li>
      *        </ul>
      *        </li>
-     *        <li> <code>Grantee</code>: The AWS user or group that you want to
+     *        <li><code>Grantee</code>: The AWS user or group that you want to
      *        have access to transcoded files and playlists.</li>
-     *        <li> <code>Access</code>: The permission that you want to give to
+     *        <li><code>Access</code>: The permission that you want to give to
      *        the AWS user that is listed in <code>Grantee</code>. Valid values
      *        include:
      *        <ul>
-     *        <li> <code>READ</code>: The grantee can read the objects and
+     *        <li><code>READ</code>: The grantee can read the objects and
      *        metadata for objects that Elastic Transcoder adds to the Amazon S3
      *        bucket.</li>
-     *        <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     *        <li><code>READ_ACP</code>: The grantee can read the object ACL for
      *        objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     *        <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      *        objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+     *        <li><code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
      *        <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for
      *        the objects that Elastic Transcoder adds to the Amazon S3 bucket.</li>
      *        </ul>
@@ -1153,43 +1153,43 @@ public class Pipeline implements Serializable, Cloneable {
      * specify <code>OutputBucket</code>.
      * </p>
      * <ul>
-     * <li> <code>Bucket</code>: The Amazon S3 bucket in which you want Elastic
+     * <li><code>Bucket</code>: The Amazon S3 bucket in which you want Elastic
      * Transcoder to save thumbnail files.</li>
-     * <li> <code>Permissions</code>: A list of the users and/or predefined
+     * <li><code>Permissions</code>: A list of the users and/or predefined
      * Amazon S3 groups you want to have access to thumbnail files, and the type
      * of access that you want them to have.
      * <ul>
      * <li>GranteeType: The type of value that appears in the Grantee object:
      * <ul>
-     * <li> <code>Canonical</code>: Either the canonical user ID for an AWS
+     * <li><code>Canonical</code>: Either the canonical user ID for an AWS
      * account or an origin access identity for an Amazon CloudFront
      * distribution. <important>A canonical user ID is not the same as an AWS
      * account number.</important></li>
-     * <li> <code>Email</code>: The registered email address of an AWS account.</li>
-     * <li> <code>Group</code>: One of the following predefined Amazon S3 groups:
+     * <li><code>Email</code>: The registered email address of an AWS account.</li>
+     * <li><code>Group</code>: One of the following predefined Amazon S3 groups:
      * <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or
      * <code>LogDelivery</code>.</li>
      * </ul>
      * </li>
-     * <li> <code>Grantee</code>: The AWS user or group that you want to have
+     * <li><code>Grantee</code>: The AWS user or group that you want to have
      * access to thumbnail files.</li>
      * <li>Access: The permission that you want to give to the AWS user that is
      * listed in Grantee. Valid values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the thumbnails and metadata
+     * <li><code>READ</code>: The grantee can read the thumbnails and metadata
      * for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and
+     * <li><code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and
      * WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds to
      * the Amazon S3 bucket.</li>
      * </ul>
      * </li>
      * </ul>
      * </li>
-     * <li> <code>StorageClass</code>: The Amazon S3 storage class,
+     * <li><code>StorageClass</code>: The Amazon S3 storage class,
      * <code>Standard</code> or <code>ReducedRedundancy</code>, that you want
      * Elastic Transcoder to assign to the thumbnails that it stores in your
      * Amazon S3 bucket.</li>
@@ -1201,46 +1201,46 @@ public class Pipeline implements Serializable, Cloneable {
      *        <code>ContentConfig</code> and <code>ThumbnailConfig</code>, or
      *        you specify <code>OutputBucket</code>.</p>
      *        <ul>
-     *        <li> <code>Bucket</code>: The Amazon S3 bucket in which you want
+     *        <li><code>Bucket</code>: The Amazon S3 bucket in which you want
      *        Elastic Transcoder to save thumbnail files.</li>
-     *        <li> <code>Permissions</code>: A list of the users and/or
+     *        <li><code>Permissions</code>: A list of the users and/or
      *        predefined Amazon S3 groups you want to have access to thumbnail
      *        files, and the type of access that you want them to have.
      *        <ul>
      *        <li>GranteeType: The type of value that appears in the Grantee
      *        object:
      *        <ul>
-     *        <li> <code>Canonical</code>: Either the canonical user ID for an
+     *        <li><code>Canonical</code>: Either the canonical user ID for an
      *        AWS account or an origin access identity for an Amazon CloudFront
      *        distribution. <important>A canonical user ID is not the same as an
      *        AWS account number.</important></li>
-     *        <li> <code>Email</code>: The registered email address of an AWS
+     *        <li><code>Email</code>: The registered email address of an AWS
      *        account.</li>
-     *        <li> <code>Group</code>: One of the following predefined Amazon S3
+     *        <li><code>Group</code>: One of the following predefined Amazon S3
      *        groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or
      *        <code>LogDelivery</code>.</li>
      *        </ul>
      *        </li>
-     *        <li> <code>Grantee</code>: The AWS user or group that you want to
+     *        <li><code>Grantee</code>: The AWS user or group that you want to
      *        have access to thumbnail files.</li>
      *        <li>Access: The permission that you want to give to the AWS user
      *        that is listed in Grantee. Valid values include:
      *        <ul>
-     *        <li> <code>READ</code>: The grantee can read the thumbnails and
+     *        <li><code>READ</code>: The grantee can read the thumbnails and
      *        metadata for thumbnails that Elastic Transcoder adds to the Amazon
      *        S3 bucket.</li>
-     *        <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     *        <li><code>READ_ACP</code>: The grantee can read the object ACL for
      *        thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     *        <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      *        thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and
+     *        <li><code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and
      *        WRITE_ACP permissions for the thumbnails that Elastic Transcoder
      *        adds to the Amazon S3 bucket.</li>
      *        </ul>
      *        </li>
      *        </ul>
      *        </li>
-     *        <li> <code>StorageClass</code>: The Amazon S3 storage class,
+     *        <li><code>StorageClass</code>: The Amazon S3 storage class,
      *        <code>Standard</code> or <code>ReducedRedundancy</code>, that you
      *        want Elastic Transcoder to assign to the thumbnails that it stores
      *        in your Amazon S3 bucket.</li>
@@ -1258,43 +1258,43 @@ public class Pipeline implements Serializable, Cloneable {
      * specify <code>OutputBucket</code>.
      * </p>
      * <ul>
-     * <li> <code>Bucket</code>: The Amazon S3 bucket in which you want Elastic
+     * <li><code>Bucket</code>: The Amazon S3 bucket in which you want Elastic
      * Transcoder to save thumbnail files.</li>
-     * <li> <code>Permissions</code>: A list of the users and/or predefined
+     * <li><code>Permissions</code>: A list of the users and/or predefined
      * Amazon S3 groups you want to have access to thumbnail files, and the type
      * of access that you want them to have.
      * <ul>
      * <li>GranteeType: The type of value that appears in the Grantee object:
      * <ul>
-     * <li> <code>Canonical</code>: Either the canonical user ID for an AWS
+     * <li><code>Canonical</code>: Either the canonical user ID for an AWS
      * account or an origin access identity for an Amazon CloudFront
      * distribution. <important>A canonical user ID is not the same as an AWS
      * account number.</important></li>
-     * <li> <code>Email</code>: The registered email address of an AWS account.</li>
-     * <li> <code>Group</code>: One of the following predefined Amazon S3 groups:
+     * <li><code>Email</code>: The registered email address of an AWS account.</li>
+     * <li><code>Group</code>: One of the following predefined Amazon S3 groups:
      * <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or
      * <code>LogDelivery</code>.</li>
      * </ul>
      * </li>
-     * <li> <code>Grantee</code>: The AWS user or group that you want to have
+     * <li><code>Grantee</code>: The AWS user or group that you want to have
      * access to thumbnail files.</li>
      * <li>Access: The permission that you want to give to the AWS user that is
      * listed in Grantee. Valid values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the thumbnails and metadata
+     * <li><code>READ</code>: The grantee can read the thumbnails and metadata
      * for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and
+     * <li><code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and
      * WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds to
      * the Amazon S3 bucket.</li>
      * </ul>
      * </li>
      * </ul>
      * </li>
-     * <li> <code>StorageClass</code>: The Amazon S3 storage class,
+     * <li><code>StorageClass</code>: The Amazon S3 storage class,
      * <code>Standard</code> or <code>ReducedRedundancy</code>, that you want
      * Elastic Transcoder to assign to the thumbnails that it stores in your
      * Amazon S3 bucket.</li>
@@ -1305,47 +1305,47 @@ public class Pipeline implements Serializable, Cloneable {
      *         <code>ContentConfig</code> and <code>ThumbnailConfig</code>, or
      *         you specify <code>OutputBucket</code>.</p>
      *         <ul>
-     *         <li> <code>Bucket</code>: The Amazon S3 bucket in which you want
+     *         <li><code>Bucket</code>: The Amazon S3 bucket in which you want
      *         Elastic Transcoder to save thumbnail files.</li>
-     *         <li> <code>Permissions</code>: A list of the users and/or
+     *         <li><code>Permissions</code>: A list of the users and/or
      *         predefined Amazon S3 groups you want to have access to thumbnail
      *         files, and the type of access that you want them to have.
      *         <ul>
      *         <li>GranteeType: The type of value that appears in the Grantee
      *         object:
      *         <ul>
-     *         <li> <code>Canonical</code>: Either the canonical user ID for an
+     *         <li><code>Canonical</code>: Either the canonical user ID for an
      *         AWS account or an origin access identity for an Amazon CloudFront
      *         distribution. <important>A canonical user ID is not the same as
      *         an AWS account number.</important></li>
-     *         <li> <code>Email</code>: The registered email address of an AWS
+     *         <li><code>Email</code>: The registered email address of an AWS
      *         account.</li>
-     *         <li> <code>Group</code>: One of the following predefined Amazon S3
+     *         <li><code>Group</code>: One of the following predefined Amazon S3
      *         groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>,
      *         or <code>LogDelivery</code>.</li>
      *         </ul>
      *         </li>
-     *         <li> <code>Grantee</code>: The AWS user or group that you want to
+     *         <li><code>Grantee</code>: The AWS user or group that you want to
      *         have access to thumbnail files.</li>
      *         <li>Access: The permission that you want to give to the AWS user
      *         that is listed in Grantee. Valid values include:
      *         <ul>
-     *         <li> <code>READ</code>: The grantee can read the thumbnails and
+     *         <li><code>READ</code>: The grantee can read the thumbnails and
      *         metadata for thumbnails that Elastic Transcoder adds to the
      *         Amazon S3 bucket.</li>
-     *         <li> <code>READ_ACP</code>: The grantee can read the object ACL
+     *         <li><code>READ_ACP</code>: The grantee can read the object ACL
      *         for thumbnails that Elastic Transcoder adds to the Amazon S3
      *         bucket.</li>
-     *         <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     *         <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      *         thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *         <li> <code>FULL_CONTROL</code>: The grantee has READ, READ_ACP,
+     *         <li><code>FULL_CONTROL</code>: The grantee has READ, READ_ACP,
      *         and WRITE_ACP permissions for the thumbnails that Elastic
      *         Transcoder adds to the Amazon S3 bucket.</li>
      *         </ul>
      *         </li>
      *         </ul>
      *         </li>
-     *         <li> <code>StorageClass</code>: The Amazon S3 storage class,
+     *         <li><code>StorageClass</code>: The Amazon S3 storage class,
      *         <code>Standard</code> or <code>ReducedRedundancy</code>, that you
      *         want Elastic Transcoder to assign to the thumbnails that it
      *         stores in your Amazon S3 bucket.</li>
@@ -1363,43 +1363,43 @@ public class Pipeline implements Serializable, Cloneable {
      * specify <code>OutputBucket</code>.
      * </p>
      * <ul>
-     * <li> <code>Bucket</code>: The Amazon S3 bucket in which you want Elastic
+     * <li><code>Bucket</code>: The Amazon S3 bucket in which you want Elastic
      * Transcoder to save thumbnail files.</li>
-     * <li> <code>Permissions</code>: A list of the users and/or predefined
+     * <li><code>Permissions</code>: A list of the users and/or predefined
      * Amazon S3 groups you want to have access to thumbnail files, and the type
      * of access that you want them to have.
      * <ul>
      * <li>GranteeType: The type of value that appears in the Grantee object:
      * <ul>
-     * <li> <code>Canonical</code>: Either the canonical user ID for an AWS
+     * <li><code>Canonical</code>: Either the canonical user ID for an AWS
      * account or an origin access identity for an Amazon CloudFront
      * distribution. <important>A canonical user ID is not the same as an AWS
      * account number.</important></li>
-     * <li> <code>Email</code>: The registered email address of an AWS account.</li>
-     * <li> <code>Group</code>: One of the following predefined Amazon S3 groups:
+     * <li><code>Email</code>: The registered email address of an AWS account.</li>
+     * <li><code>Group</code>: One of the following predefined Amazon S3 groups:
      * <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or
      * <code>LogDelivery</code>.</li>
      * </ul>
      * </li>
-     * <li> <code>Grantee</code>: The AWS user or group that you want to have
+     * <li><code>Grantee</code>: The AWS user or group that you want to have
      * access to thumbnail files.</li>
      * <li>Access: The permission that you want to give to the AWS user that is
      * listed in Grantee. Valid values include:
      * <ul>
-     * <li> <code>READ</code>: The grantee can read the thumbnails and metadata
+     * <li><code>READ</code>: The grantee can read the thumbnails and metadata
      * for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     * <li><code>READ_ACP</code>: The grantee can read the object ACL for
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     * <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      * thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     * <li> <code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and
+     * <li><code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and
      * WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds to
      * the Amazon S3 bucket.</li>
      * </ul>
      * </li>
      * </ul>
      * </li>
-     * <li> <code>StorageClass</code>: The Amazon S3 storage class,
+     * <li><code>StorageClass</code>: The Amazon S3 storage class,
      * <code>Standard</code> or <code>ReducedRedundancy</code>, that you want
      * Elastic Transcoder to assign to the thumbnails that it stores in your
      * Amazon S3 bucket.</li>
@@ -1411,46 +1411,46 @@ public class Pipeline implements Serializable, Cloneable {
      *        <code>ContentConfig</code> and <code>ThumbnailConfig</code>, or
      *        you specify <code>OutputBucket</code>.</p>
      *        <ul>
-     *        <li> <code>Bucket</code>: The Amazon S3 bucket in which you want
+     *        <li><code>Bucket</code>: The Amazon S3 bucket in which you want
      *        Elastic Transcoder to save thumbnail files.</li>
-     *        <li> <code>Permissions</code>: A list of the users and/or
+     *        <li><code>Permissions</code>: A list of the users and/or
      *        predefined Amazon S3 groups you want to have access to thumbnail
      *        files, and the type of access that you want them to have.
      *        <ul>
      *        <li>GranteeType: The type of value that appears in the Grantee
      *        object:
      *        <ul>
-     *        <li> <code>Canonical</code>: Either the canonical user ID for an
+     *        <li><code>Canonical</code>: Either the canonical user ID for an
      *        AWS account or an origin access identity for an Amazon CloudFront
      *        distribution. <important>A canonical user ID is not the same as an
      *        AWS account number.</important></li>
-     *        <li> <code>Email</code>: The registered email address of an AWS
+     *        <li><code>Email</code>: The registered email address of an AWS
      *        account.</li>
-     *        <li> <code>Group</code>: One of the following predefined Amazon S3
+     *        <li><code>Group</code>: One of the following predefined Amazon S3
      *        groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or
      *        <code>LogDelivery</code>.</li>
      *        </ul>
      *        </li>
-     *        <li> <code>Grantee</code>: The AWS user or group that you want to
+     *        <li><code>Grantee</code>: The AWS user or group that you want to
      *        have access to thumbnail files.</li>
      *        <li>Access: The permission that you want to give to the AWS user
      *        that is listed in Grantee. Valid values include:
      *        <ul>
-     *        <li> <code>READ</code>: The grantee can read the thumbnails and
+     *        <li><code>READ</code>: The grantee can read the thumbnails and
      *        metadata for thumbnails that Elastic Transcoder adds to the Amazon
      *        S3 bucket.</li>
-     *        <li> <code>READ_ACP</code>: The grantee can read the object ACL for
+     *        <li><code>READ_ACP</code>: The grantee can read the object ACL for
      *        thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>WRITE_ACP</code>: The grantee can write the ACL for the
+     *        <li><code>WRITE_ACP</code>: The grantee can write the ACL for the
      *        thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li>
-     *        <li> <code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and
+     *        <li><code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and
      *        WRITE_ACP permissions for the thumbnails that Elastic Transcoder
      *        adds to the Amazon S3 bucket.</li>
      *        </ul>
      *        </li>
      *        </ul>
      *        </li>
-     *        <li> <code>StorageClass</code>: The Amazon S3 storage class,
+     *        <li><code>StorageClass</code>: The Amazon S3 storage class,
      *        <code>Standard</code> or <code>ReducedRedundancy</code>, that you
      *        want Elastic Transcoder to assign to the thumbnails that it stores
      *        in your Amazon S3 bucket.</li>

@@ -39,7 +39,13 @@ public enum ResourceType {
     AWSIAMGroup("AWS::IAM::Group"),
     AWSIAMPolicy("AWS::IAM::Policy"),
     AWSIAMRole("AWS::IAM::Role"),
-    AWSIAMUser("AWS::IAM::User");
+    AWSIAMUser("AWS::IAM::User"),
+    AWSACMCertificate("AWS::ACM::Certificate"),
+    AWSRDSDBInstance("AWS::RDS::DBInstance"),
+    AWSRDSDBSubnetGroup("AWS::RDS::DBSubnetGroup"),
+    AWSRDSDBSecurityGroup("AWS::RDS::DBSecurityGroup"),
+    AWSRDSDBSnapshot("AWS::RDS::DBSnapshot"),
+    AWSRDSEventSubscription("AWS::RDS::EventSubscription");
 
     private String value;
 

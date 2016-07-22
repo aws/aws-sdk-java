@@ -25,8 +25,7 @@ import java.io.Serializable;
  * the related error for the last failure.
  * </p>
  * <p>
- * This action does not return status information about customer managed Config
- * rules.
+ * This action does not return status information about custom Config rules.
  * </p>
  */
 public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {

@@ -18,7 +18,8 @@ package com.amazonaws.services.config.model;
 
 /**
  * <p>
- * The rule is currently being deleted. Wait for a while and try again.
+ * The rule is currently being deleted or the rule is deleting your evaluation
+ * results. Try your request again later.
  * </p>
  */
 public class ResourceInUseException extends

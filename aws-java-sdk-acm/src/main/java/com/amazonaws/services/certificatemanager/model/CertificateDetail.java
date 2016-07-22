@@ -145,6 +145,17 @@ public class CertificateDetail implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<String> inUseBy;
+    /**
+     * <p>
+     * The reason the certificate request failed. This value exists only when
+     * the structure's <code>Status</code> is <code>FAILED</code>. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     * >Certificate Request Failed</a> in the <i>AWS Certificate Manager User
+     * Guide</i>.
+     * </p>
+     */
+    private String failureReason;
 
     /**
      * <p>
@@ -1182,6 +1193,131 @@ public class CertificateDetail implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The reason the certificate request failed. This value exists only when
+     * the structure's <code>Status</code> is <code>FAILED</code>. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     * >Certificate Request Failed</a> in the <i>AWS Certificate Manager User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param failureReason
+     *        The reason the certificate request failed. This value exists only
+     *        when the structure's <code>Status</code> is <code>FAILED</code>.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager
+     *        User Guide</i>.
+     * @see FailureReason
+     */
+
+    public void setFailureReason(String failureReason) {
+        this.failureReason = failureReason;
+    }
+
+    /**
+     * <p>
+     * The reason the certificate request failed. This value exists only when
+     * the structure's <code>Status</code> is <code>FAILED</code>. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     * >Certificate Request Failed</a> in the <i>AWS Certificate Manager User
+     * Guide</i>.
+     * </p>
+     * 
+     * @return The reason the certificate request failed. This value exists only
+     *         when the structure's <code>Status</code> is <code>FAILED</code>.
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     *         >Certificate Request Failed</a> in the <i>AWS Certificate Manager
+     *         User Guide</i>.
+     * @see FailureReason
+     */
+
+    public String getFailureReason() {
+        return this.failureReason;
+    }
+
+    /**
+     * <p>
+     * The reason the certificate request failed. This value exists only when
+     * the structure's <code>Status</code> is <code>FAILED</code>. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     * >Certificate Request Failed</a> in the <i>AWS Certificate Manager User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param failureReason
+     *        The reason the certificate request failed. This value exists only
+     *        when the structure's <code>Status</code> is <code>FAILED</code>.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager
+     *        User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see FailureReason
+     */
+
+    public CertificateDetail withFailureReason(String failureReason) {
+        setFailureReason(failureReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason the certificate request failed. This value exists only when
+     * the structure's <code>Status</code> is <code>FAILED</code>. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     * >Certificate Request Failed</a> in the <i>AWS Certificate Manager User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param failureReason
+     *        The reason the certificate request failed. This value exists only
+     *        when the structure's <code>Status</code> is <code>FAILED</code>.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager
+     *        User Guide</i>.
+     * @see FailureReason
+     */
+
+    public void setFailureReason(FailureReason failureReason) {
+        this.failureReason = failureReason.toString();
+    }
+
+    /**
+     * <p>
+     * The reason the certificate request failed. This value exists only when
+     * the structure's <code>Status</code> is <code>FAILED</code>. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     * >Certificate Request Failed</a> in the <i>AWS Certificate Manager User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param failureReason
+     *        The reason the certificate request failed. This value exists only
+     *        when the structure's <code>Status</code> is <code>FAILED</code>.
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager
+     *        User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see FailureReason
+     */
+
+    public CertificateDetail withFailureReason(FailureReason failureReason) {
+        setFailureReason(failureReason);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1228,7 +1364,9 @@ public class CertificateDetail implements Serializable, Cloneable {
         if (getSignatureAlgorithm() != null)
             sb.append("SignatureAlgorithm: " + getSignatureAlgorithm() + ",");
         if (getInUseBy() != null)
-            sb.append("InUseBy: " + getInUseBy());
+            sb.append("InUseBy: " + getInUseBy() + ",");
+        if (getFailureReason() != null)
+            sb.append("FailureReason: " + getFailureReason());
         sb.append("}");
         return sb.toString();
     }
@@ -1337,6 +1475,11 @@ public class CertificateDetail implements Serializable, Cloneable {
         if (other.getInUseBy() != null
                 && other.getInUseBy().equals(this.getInUseBy()) == false)
             return false;
+        if (other.getFailureReason() == null ^ this.getFailureReason() == null)
+            return false;
+        if (other.getFailureReason() != null
+                && other.getFailureReason().equals(this.getFailureReason()) == false)
+            return false;
         return true;
     }
 
@@ -1391,6 +1534,10 @@ public class CertificateDetail implements Serializable, Cloneable {
                         : getSignatureAlgorithm().hashCode());
         hashCode = prime * hashCode
                 + ((getInUseBy() == null) ? 0 : getInUseBy().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getFailureReason() == null) ? 0 : getFailureReason()
+                        .hashCode());
         return hashCode;
     }
 

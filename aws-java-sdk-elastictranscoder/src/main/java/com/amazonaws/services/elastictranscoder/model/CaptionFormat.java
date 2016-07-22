@@ -101,21 +101,21 @@ public class CaptionFormat implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li><i>description</i> is a description of the video.</li>
-     * <li> <code>{language}</code> is a literal value that Elastic Transcoder
+     * <li><code>{language}</code> is a literal value that Elastic Transcoder
      * replaces with the two- or three-letter code for the language of the
      * caption in the output file names.</li>
      * </ul>
      * <p>
-     * If you don't include <code>{language}</code> in the file name pattern,
-     * Elastic Transcoder automatically appends "<code>{language}</code>" to the
-     * value that you specify for the description. In addition, Elastic
-     * Transcoder automatically appends the count to the end of the segment
-     * files.
+     * If you don&apos;t include <code>{language}</code> in the file name
+     * pattern, Elastic Transcoder automatically appends "
+     * <code>{language}</code>" to the value that you specify for the
+     * description. In addition, Elastic Transcoder automatically appends the
+     * count to the end of the segment files.
      * </p>
      * <p>
-     * For example, suppose you're transcoding into srt format. When you enter
-     * "Sydney-{language}-sunrise", and the language of the captions is English
-     * (en), the name of the first caption file will be
+     * For example, suppose you&apos;re transcoding into srt format. When you
+     * enter "Sydney-{language}-sunrise", and the language of the captions is
+     * English (en), the name of the first caption file will be
      * Sydney-en-sunrise00000.srt.
      * </p>
      */
@@ -549,21 +549,21 @@ public class CaptionFormat implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li><i>description</i> is a description of the video.</li>
-     * <li> <code>{language}</code> is a literal value that Elastic Transcoder
+     * <li><code>{language}</code> is a literal value that Elastic Transcoder
      * replaces with the two- or three-letter code for the language of the
      * caption in the output file names.</li>
      * </ul>
      * <p>
-     * If you don't include <code>{language}</code> in the file name pattern,
-     * Elastic Transcoder automatically appends "<code>{language}</code>" to the
-     * value that you specify for the description. In addition, Elastic
-     * Transcoder automatically appends the count to the end of the segment
-     * files.
+     * If you don&apos;t include <code>{language}</code> in the file name
+     * pattern, Elastic Transcoder automatically appends "
+     * <code>{language}</code>" to the value that you specify for the
+     * description. In addition, Elastic Transcoder automatically appends the
+     * count to the end of the segment files.
      * </p>
      * <p>
-     * For example, suppose you're transcoding into srt format. When you enter
-     * "Sydney-{language}-sunrise", and the language of the captions is English
-     * (en), the name of the first caption file will be
+     * For example, suppose you&apos;re transcoding into srt format. When you
+     * enter "Sydney-{language}-sunrise", and the language of the captions is
+     * English (en), the name of the first caption file will be
      * Sydney-en-sunrise00000.srt.
      * </p>
      * 
@@ -572,20 +572,20 @@ public class CaptionFormat implements Serializable, Cloneable {
      *        <code>{language}</code>, where:</p>
      *        <ul>
      *        <li><i>description</i> is a description of the video.</li>
-     *        <li> <code>{language}</code> is a literal value that Elastic
+     *        <li><code>{language}</code> is a literal value that Elastic
      *        Transcoder replaces with the two- or three-letter code for the
      *        language of the caption in the output file names.</li>
      *        </ul>
      *        <p>
-     *        If you don't include <code>{language}</code> in the file name
+     *        If you don&apos;t include <code>{language}</code> in the file name
      *        pattern, Elastic Transcoder automatically appends "
      *        <code>{language}</code>" to the value that you specify for the
      *        description. In addition, Elastic Transcoder automatically appends
      *        the count to the end of the segment files.
      *        </p>
      *        <p>
-     *        For example, suppose you're transcoding into srt format. When you
-     *        enter "Sydney-{language}-sunrise", and the language of the
+     *        For example, suppose you&apos;re transcoding into srt format. When
+     *        you enter "Sydney-{language}-sunrise", and the language of the
      *        captions is English (en), the name of the first caption file will
      *        be Sydney-en-sunrise00000.srt.
      */
@@ -601,21 +601,21 @@ public class CaptionFormat implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li><i>description</i> is a description of the video.</li>
-     * <li> <code>{language}</code> is a literal value that Elastic Transcoder
+     * <li><code>{language}</code> is a literal value that Elastic Transcoder
      * replaces with the two- or three-letter code for the language of the
      * caption in the output file names.</li>
      * </ul>
      * <p>
-     * If you don't include <code>{language}</code> in the file name pattern,
-     * Elastic Transcoder automatically appends "<code>{language}</code>" to the
-     * value that you specify for the description. In addition, Elastic
-     * Transcoder automatically appends the count to the end of the segment
-     * files.
+     * If you don&apos;t include <code>{language}</code> in the file name
+     * pattern, Elastic Transcoder automatically appends "
+     * <code>{language}</code>" to the value that you specify for the
+     * description. In addition, Elastic Transcoder automatically appends the
+     * count to the end of the segment files.
      * </p>
      * <p>
-     * For example, suppose you're transcoding into srt format. When you enter
-     * "Sydney-{language}-sunrise", and the language of the captions is English
-     * (en), the name of the first caption file will be
+     * For example, suppose you&apos;re transcoding into srt format. When you
+     * enter "Sydney-{language}-sunrise", and the language of the captions is
+     * English (en), the name of the first caption file will be
      * Sydney-en-sunrise00000.srt.
      * </p>
      * 
@@ -623,22 +623,22 @@ public class CaptionFormat implements Serializable, Cloneable {
      *         <code>{language}</code>, where:</p>
      *         <ul>
      *         <li><i>description</i> is a description of the video.</li>
-     *         <li> <code>{language}</code> is a literal value that Elastic
+     *         <li><code>{language}</code> is a literal value that Elastic
      *         Transcoder replaces with the two- or three-letter code for the
      *         language of the caption in the output file names.</li>
      *         </ul>
      *         <p>
-     *         If you don't include <code>{language}</code> in the file name
-     *         pattern, Elastic Transcoder automatically appends "
+     *         If you don&apos;t include <code>{language}</code> in the file
+     *         name pattern, Elastic Transcoder automatically appends "
      *         <code>{language}</code>" to the value that you specify for the
      *         description. In addition, Elastic Transcoder automatically
      *         appends the count to the end of the segment files.
      *         </p>
      *         <p>
-     *         For example, suppose you're transcoding into srt format. When you
-     *         enter "Sydney-{language}-sunrise", and the language of the
-     *         captions is English (en), the name of the first caption file will
-     *         be Sydney-en-sunrise00000.srt.
+     *         For example, suppose you&apos;re transcoding into srt format.
+     *         When you enter "Sydney-{language}-sunrise", and the language of
+     *         the captions is English (en), the name of the first caption file
+     *         will be Sydney-en-sunrise00000.srt.
      */
 
     public String getPattern() {
@@ -652,21 +652,21 @@ public class CaptionFormat implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li><i>description</i> is a description of the video.</li>
-     * <li> <code>{language}</code> is a literal value that Elastic Transcoder
+     * <li><code>{language}</code> is a literal value that Elastic Transcoder
      * replaces with the two- or three-letter code for the language of the
      * caption in the output file names.</li>
      * </ul>
      * <p>
-     * If you don't include <code>{language}</code> in the file name pattern,
-     * Elastic Transcoder automatically appends "<code>{language}</code>" to the
-     * value that you specify for the description. In addition, Elastic
-     * Transcoder automatically appends the count to the end of the segment
-     * files.
+     * If you don&apos;t include <code>{language}</code> in the file name
+     * pattern, Elastic Transcoder automatically appends "
+     * <code>{language}</code>" to the value that you specify for the
+     * description. In addition, Elastic Transcoder automatically appends the
+     * count to the end of the segment files.
      * </p>
      * <p>
-     * For example, suppose you're transcoding into srt format. When you enter
-     * "Sydney-{language}-sunrise", and the language of the captions is English
-     * (en), the name of the first caption file will be
+     * For example, suppose you&apos;re transcoding into srt format. When you
+     * enter "Sydney-{language}-sunrise", and the language of the captions is
+     * English (en), the name of the first caption file will be
      * Sydney-en-sunrise00000.srt.
      * </p>
      * 
@@ -675,20 +675,20 @@ public class CaptionFormat implements Serializable, Cloneable {
      *        <code>{language}</code>, where:</p>
      *        <ul>
      *        <li><i>description</i> is a description of the video.</li>
-     *        <li> <code>{language}</code> is a literal value that Elastic
+     *        <li><code>{language}</code> is a literal value that Elastic
      *        Transcoder replaces with the two- or three-letter code for the
      *        language of the caption in the output file names.</li>
      *        </ul>
      *        <p>
-     *        If you don't include <code>{language}</code> in the file name
+     *        If you don&apos;t include <code>{language}</code> in the file name
      *        pattern, Elastic Transcoder automatically appends "
      *        <code>{language}</code>" to the value that you specify for the
      *        description. In addition, Elastic Transcoder automatically appends
      *        the count to the end of the segment files.
      *        </p>
      *        <p>
-     *        For example, suppose you're transcoding into srt format. When you
-     *        enter "Sydney-{language}-sunrise", and the language of the
+     *        For example, suppose you&apos;re transcoding into srt format. When
+     *        you enter "Sydney-{language}-sunrise", and the language of the
      *        captions is English (en), the name of the first caption file will
      *        be Sydney-en-sunrise00000.srt.
      * @return Returns a reference to this object so that method calls can be

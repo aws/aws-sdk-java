@@ -14,16 +14,14 @@
  */
 package com.amazonaws.http.settings;
 
+import java.net.InetAddress;
+import java.security.SecureRandom;
+
 import com.amazonaws.ApacheHttpClientConfig;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DnsResolver;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.ValidationUtils;
-
-import java.net.InetAddress;
-import java.security.SecureRandom;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * A convienient class that expose all settings in {@link ClientConfiguration} and other internal settings to the
@@ -36,15 +34,25 @@ public class HttpClientSettings {
 
     private final boolean useBrowserCompatibleHostNameVerifier;
 
+    private final boolean calculateCRC32FromCompressedData;
+
     HttpClientSettings(final ClientConfiguration config,
-                       final boolean useBrowserCompatibleHostNameVerifier) {
+                       final boolean useBrowserCompatibleHostNameVerifier,
+                       final boolean calculateCRC32FromCompressedData) {
         this.config = ValidationUtils.assertNotNull(config, "client configuration");
         this.useBrowserCompatibleHostNameVerifier = useBrowserCompatibleHostNameVerifier;
+        this.calculateCRC32FromCompressedData = calculateCRC32FromCompressedData;
+    }
+
+    public static HttpClientSettings adapt(final ClientConfiguration config,
+            final boolean useBrowserCompatibleHostNameVerifier,
+            final boolean calculateCRC32FromCompressedData) {
+        return new HttpClientSettings(config, useBrowserCompatibleHostNameVerifier, calculateCRC32FromCompressedData);
     }
 
     public static HttpClientSettings adapt(final ClientConfiguration config,
                                            final boolean useBrowserCompatibleHostNameVerifier) {
-        return new HttpClientSettings(config, useBrowserCompatibleHostNameVerifier);
+        return adapt(config, useBrowserCompatibleHostNameVerifier, false);
     }
 
     public static HttpClientSettings adapt(final ClientConfiguration config) {
@@ -53,6 +61,10 @@ public class HttpClientSettings {
 
     public boolean useBrowserCompatibleHostNameVerifier() {
         return useBrowserCompatibleHostNameVerifier;
+    }
+
+    public boolean calculateCRC32FromCompressedData() {
+        return calculateCRC32FromCompressedData;
     }
 
     public int getMaxConnections() {

@@ -18,6 +18,7 @@ import static com.amazonaws.services.dynamodbv2.model.KeyType.HASH;
 import static com.amazonaws.services.dynamodbv2.model.KeyType.RANGE;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.SaveBehavior;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Vector;
 import com.amazonaws.services.dynamodbv2.model.AttributeDefinition;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
@@ -46,12 +47,12 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
 
     private final Id<T> id;
     private final Reflect<T,V> reflect;
-    private final DynamoDBTypeConverter<AttributeValue,V> converter;
-    private final DynamoDBAttributeType dynamoDBAttributeType;
+    private final DynamoDBMapperValueConverter<V> converter;
     private final Properties<V> properties;
 
     @Deprecated
     private ArgumentMarshaller argumentMarshaller;
+    private DynamoDBAttributeType dynamoDBAttributeType;
 
     /**
      * {@deprecated}
@@ -78,7 +79,6 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
         this.properties = builder.properties;
         this.reflect = builder.reflect;
         this.converter = builder.converter;
-        this.dynamoDBAttributeType = builder.dynamoDBAttributeType;
     }
 
     /**
@@ -94,7 +94,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
      * stored as.
      */
     public DynamoDBAttributeType getDynamoDBAttributeType() {
-        return dynamoDBAttributeType;
+        return converter == null ? dynamoDBAttributeType : converter.getDynamoDBAttributeType();
     }
 
     /**
@@ -319,11 +319,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
      * @return The attribute values.
      */
     public final Collection<AttributeValue> convertAll(final Collection<V> values) {
-        final Collection<AttributeValue> converted = new ArrayList<AttributeValue>(values.size());
-        for (final V value : values) {
-            converted.add(convert(value));
-        }
-        return converted;
+        return Vector.convert(values, this);
     }
 
     /**
@@ -332,11 +328,7 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
      * @return The field model values.
      */
     public final Collection<V> unconvertAll(final Collection<AttributeValue> values) {
-        final Collection<V> unconverted = new ArrayList<V>(values.size());
-        for (final AttributeValue value : values) {
-            unconverted.add(unconvert(value));
-        }
-        return unconverted;
+        return Vector.unconvert(values, this);
     }
 
     /**
@@ -616,7 +608,6 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
      * @param <V> The value type.
      */
     static interface Reflect<T,V> {
-        public Class<V> targetType();
         public V get(T object);
         public void set(T object, V value);
     }
@@ -739,11 +730,10 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
     /**
      * {@link DynamoDBMapperFieldModel} builder.
      */
-    static final class Builder<T,V> {
+    static class Builder<T,V> {
         private final Id<T> id;
         private final Properties.Builder<V> properties;
-        private DynamoDBTypeConverter<AttributeValue,V> converter;
-        private DynamoDBAttributeType dynamoDBAttributeType;
+        private DynamoDBMapperValueConverter<V> converter;
         private Reflect<T,V> reflect;
 
         /**
@@ -772,18 +762,8 @@ public class DynamoDBMapperFieldModel<T,V> implements DynamoDBAutoGenerator<V>, 
          * @param converter The attribute value converter.
          * @return This builder instance for chaining.
          */
-        public Builder<T,V> with(final DynamoDBTypeConverter<AttributeValue,V> converter) {
+        public Builder<T,V> with(final DynamoDBMapperValueConverter<V> converter) {
             this.converter = converter;
-            return this;
-        }
-
-        /**
-         * Sets the DynamoDB attribute type.
-         * @param dynanmoDBAttributeType The DynamoDB attribute type.
-         * @return This builder instance for chaining.
-         */
-        public Builder<T,V> with(final DynamoDBAttributeType dynamoDBAttributeType) {
-            this.dynamoDBAttributeType = dynamoDBAttributeType;
             return this;
         }
 

@@ -410,6 +410,42 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteEvaluationResultsResult> deleteEvaluationResultsAsync(
+            DeleteEvaluationResultsRequest request) {
+
+        return deleteEvaluationResultsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEvaluationResultsResult> deleteEvaluationResultsAsync(
+            final DeleteEvaluationResultsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEvaluationResultsRequest, DeleteEvaluationResultsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteEvaluationResultsResult>() {
+                    @Override
+                    public DeleteEvaluationResultsResult call()
+                            throws Exception {
+                        DeleteEvaluationResultsResult result;
+
+                        try {
+                            result = deleteEvaluationResults(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeliverConfigSnapshotResult> deliverConfigSnapshotAsync(
             DeliverConfigSnapshotRequest request) {
 
@@ -1332,6 +1368,42 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements
 
                         try {
                             result = putEvaluations(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartConfigRulesEvaluationResult> startConfigRulesEvaluationAsync(
+            StartConfigRulesEvaluationRequest request) {
+
+        return startConfigRulesEvaluationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartConfigRulesEvaluationResult> startConfigRulesEvaluationAsync(
+            final StartConfigRulesEvaluationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartConfigRulesEvaluationRequest, StartConfigRulesEvaluationResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<StartConfigRulesEvaluationResult>() {
+                    @Override
+                    public StartConfigRulesEvaluationResult call()
+                            throws Exception {
+                        StartConfigRulesEvaluationResult result;
+
+                        try {
+                            result = startConfigRulesEvaluation(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

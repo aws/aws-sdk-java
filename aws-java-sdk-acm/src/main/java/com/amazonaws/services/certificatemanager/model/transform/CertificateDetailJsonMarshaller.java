@@ -145,6 +145,10 @@ public class CertificateDetailJsonMarshaller {
                 }
                 jsonGenerator.writeEndArray();
             }
+            if (certificateDetail.getFailureReason() != null) {
+                jsonGenerator.writeFieldName("FailureReason").writeValue(
+                        certificateDetail.getFailureReason());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

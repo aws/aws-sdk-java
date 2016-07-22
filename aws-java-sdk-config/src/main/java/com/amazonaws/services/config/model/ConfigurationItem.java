@@ -149,6 +149,14 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * </p>
      */
     private String configuration;
+    /**
+     * <p>
+     * Configuration attributes that AWS Config returns for certain resource
+     * types to supplement the information returned for the
+     * <code>configuration</code> parameter.
+     * </p>
+     */
+    private java.util.Map<String, String> supplementaryConfiguration;
 
     /**
      * <p>
@@ -1136,6 +1144,84 @@ public class ConfigurationItem implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Configuration attributes that AWS Config returns for certain resource
+     * types to supplement the information returned for the
+     * <code>configuration</code> parameter.
+     * </p>
+     * 
+     * @return Configuration attributes that AWS Config returns for certain
+     *         resource types to supplement the information returned for the
+     *         <code>configuration</code> parameter.
+     */
+
+    public java.util.Map<String, String> getSupplementaryConfiguration() {
+        return supplementaryConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration attributes that AWS Config returns for certain resource
+     * types to supplement the information returned for the
+     * <code>configuration</code> parameter.
+     * </p>
+     * 
+     * @param supplementaryConfiguration
+     *        Configuration attributes that AWS Config returns for certain
+     *        resource types to supplement the information returned for the
+     *        <code>configuration</code> parameter.
+     */
+
+    public void setSupplementaryConfiguration(
+            java.util.Map<String, String> supplementaryConfiguration) {
+        this.supplementaryConfiguration = supplementaryConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration attributes that AWS Config returns for certain resource
+     * types to supplement the information returned for the
+     * <code>configuration</code> parameter.
+     * </p>
+     * 
+     * @param supplementaryConfiguration
+     *        Configuration attributes that AWS Config returns for certain
+     *        resource types to supplement the information returned for the
+     *        <code>configuration</code> parameter.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ConfigurationItem withSupplementaryConfiguration(
+            java.util.Map<String, String> supplementaryConfiguration) {
+        setSupplementaryConfiguration(supplementaryConfiguration);
+        return this;
+    }
+
+    public ConfigurationItem addSupplementaryConfigurationEntry(String key,
+            String value) {
+        if (null == this.supplementaryConfiguration) {
+            this.supplementaryConfiguration = new java.util.HashMap<String, String>();
+        }
+        if (this.supplementaryConfiguration.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys ("
+                    + key.toString() + ") are provided.");
+        this.supplementaryConfiguration.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into SupplementaryConfiguration. &lt;p>
+     * Returns a reference to this object so that method calls can be chained
+     * together.
+     */
+
+    public ConfigurationItem clearSupplementaryConfigurationEntries() {
+        this.supplementaryConfiguration = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1185,7 +1271,10 @@ public class ConfigurationItem implements Serializable, Cloneable {
         if (getRelationships() != null)
             sb.append("Relationships: " + getRelationships() + ",");
         if (getConfiguration() != null)
-            sb.append("Configuration: " + getConfiguration());
+            sb.append("Configuration: " + getConfiguration() + ",");
+        if (getSupplementaryConfiguration() != null)
+            sb.append("SupplementaryConfiguration: "
+                    + getSupplementaryConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1297,6 +1386,13 @@ public class ConfigurationItem implements Serializable, Cloneable {
         if (other.getConfiguration() != null
                 && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
+        if (other.getSupplementaryConfiguration() == null
+                ^ this.getSupplementaryConfiguration() == null)
+            return false;
+        if (other.getSupplementaryConfiguration() != null
+                && other.getSupplementaryConfiguration().equals(
+                        this.getSupplementaryConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1361,6 +1457,10 @@ public class ConfigurationItem implements Serializable, Cloneable {
                 * hashCode
                 + ((getConfiguration() == null) ? 0 : getConfiguration()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSupplementaryConfiguration() == null) ? 0
+                        : getSupplementaryConfiguration().hashCode());
         return hashCode;
     }
 

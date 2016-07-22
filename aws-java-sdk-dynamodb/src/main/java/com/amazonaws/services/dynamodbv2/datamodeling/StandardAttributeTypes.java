@@ -1,0 +1,290 @@
+/*
+ * Copyright 2016-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at:
+ *
+ *    http://aws.amazon.com/apache2.0
+ *
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
+ * OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.amazonaws.services.dynamodbv2.datamodeling;
+
+import static com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Scalar.STRING;
+
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.DynamoDBAttributeType;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.Reflect;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+
+import java.nio.ByteBuffer;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Pre-defined strategies for mapping between Java types and DynamoDB types.
+ */
+@SdkInternalApi
+final class StandardAttributeTypes {
+
+    /**
+     * {@link AttributeValue} type conversions.
+     */
+    static enum AttributeType implements DynamoDBMapperValueConverter<Object> {
+        /**
+         * {@code BOOL} of {@link AttributeValue}
+         */
+        BOOL(new Reflect<AttributeValue,Boolean>() {
+            public final void set(final AttributeValue o, final Boolean value) {
+                o.setBOOL(value);
+            }
+            public final Boolean get(final AttributeValue o) {
+                return o.getBOOL();
+            }
+        }) {
+            @Override
+            public Object unconvert(final AttributeValue o) {
+                if (o.getBOOL() == null && o.getN() != null) {
+                    return STRING.getConverter(Boolean.class).unconvert(o.getN());
+                }
+                return super.unconvert(o);
+            }
+        },
+
+        /**
+         * {@code S} of {@link AttributeValue}
+         */
+        S(new Reflect<AttributeValue,String>() {
+            public final void set(final AttributeValue o, final String value) {
+                o.setS(value);
+            }
+            public final String get(final AttributeValue o) {
+                return o.getS();
+            }
+        }) {
+            @Override
+            public final AttributeValue convert(final Object o) {
+                return ((String)o).length() == 0 ? null : super.convert(o);
+            }
+        },
+
+        /**
+         * {@code N} of {@link AttributeValue}
+         */
+        N(new Reflect<AttributeValue,String>() {
+            public final void set(final AttributeValue o, final String value) {
+                o.setN(value);
+            }
+            public final String get(final AttributeValue o) {
+                return o.getN();
+            }
+        }),
+
+        /**
+         * {@code B} of {@link AttributeValue}
+         */
+        B(new Reflect<AttributeValue,ByteBuffer>() {
+            public final void set(final AttributeValue o, final ByteBuffer value) {
+                o.setB(value);
+            }
+            public final ByteBuffer get(final AttributeValue o) {
+                return o.getB();
+            }
+        }),
+
+        /**
+         * {@code SS} of {@link AttributeValue}
+         */
+        SS(new Reflect<AttributeValue,List<String>>() {
+            public final void set(final AttributeValue o, final List<String> value) {
+                o.setSS(value);
+            }
+            public final List<String> get(final AttributeValue o) {
+                return o.getSS();
+            }
+        }),
+
+        /**
+         * {@code NS} of {@link AttributeValue}
+         */
+        NS(new Reflect<AttributeValue,List<String>>() {
+            public final void set(final AttributeValue o, final List<String> value) {
+                o.setNS(value);
+            }
+            public final List<String> get(final AttributeValue o) {
+                return o.getNS();
+            }
+        }),
+
+        /**
+         * {@code BS} of {@link AttributeValue}
+         */
+        BS(new Reflect<AttributeValue,List<ByteBuffer>>() {
+            public final void set(final AttributeValue o, final List<ByteBuffer> value) {
+                o.setBS(value);
+            }
+            public final List<ByteBuffer> get(final AttributeValue o) {
+                return o.getBS();
+            }
+        }),
+
+        /**
+         * {@code L} of {@link AttributeValue}
+         */
+        L(new Reflect<AttributeValue,List<AttributeValue>>() {
+            public final void set(final AttributeValue o, final List<AttributeValue> value) {
+                o.setL(value);
+            }
+            public final List<AttributeValue> get(final AttributeValue o) {
+                return o.getL();
+            }
+        }),
+
+        /**
+         * {@code M} of {@link AttributeValue}
+         */
+        M(new Reflect<AttributeValue,Map<String,AttributeValue>>() {
+            public final void set(final AttributeValue o, final Map<String,AttributeValue> value) {
+                o.setM(value);
+            }
+            public final Map<String,AttributeValue> get(final AttributeValue o) {
+                return o.getM();
+            }
+        }),
+
+        /**
+         * {@code NULL} of {@link AttributeValue}
+         */
+        NULL(new Reflect<AttributeValue,Boolean>() {
+            public final void set(final AttributeValue o, final Boolean value) {
+                o.setNULL(value);
+            }
+            public final Boolean get(final AttributeValue o) {
+                return o.getNULL();
+            }
+        }) {
+            @Override
+            final <T> DynamoDBMapperValueConverter<T> wrap(final DynamoDBTypeConverter<AttributeValue,T> target) {
+                return super.wrap(new DynamoDBTypeConverter<AttributeValue,T>() {
+                    public final AttributeValue convert(final T o) {
+                        return o == null ? new AttributeValue().withNULL(true) : target.convert(o);
+                    }
+                    public final T unconvert(final AttributeValue o) {
+                        return target.unconvert(o);
+                    }
+                });
+            }
+        };
+
+        /**
+         * The reflection function.
+         */
+        private final Reflect<AttributeValue,Object> reflect;
+
+        /**
+         * Constructs a new attribute value data converter.
+         */
+        private AttributeType(final Reflect<AttributeValue,?> reflect) {
+            this.reflect = (Reflect<AttributeValue,Object>)reflect;
+        }
+
+        /**
+         * Creates a new attribute value converter using the target conversion.
+         */
+        <T> DynamoDBMapperValueConverter<T> wrap(final DynamoDBTypeConverter<AttributeValue,T> target) {
+            final DynamoDBMapperValueConverter<T> source = this.<T>converter();
+            return new DynamoDBMapperValueConverter<T>() {
+                public final DynamoDBAttributeType getDynamoDBAttributeType() {
+                    return source.getDynamoDBAttributeType();
+                }
+                public final AttributeValue convert(final T o) {
+                    return target.convert(o);
+                }
+                public final T unconvert(final AttributeValue o) {
+                    return target.unconvert(o);
+                }
+            };
+        }
+
+        /**
+         * Creates a new attribute value converter with the target conversion.
+         */
+        final <T,U> DynamoDBMapperValueConverter<U> join(final DynamoDBTypeConverter<T,U> target) {
+            return StandardAttributeTypes.<T,U>join(this.<T>converter(), target);
+        }
+
+        /**
+         * Creates a new attribute value converter with the target conversion.
+         */
+        final <T> DynamoDBMapperValueConverter<T> converter() {
+            return (DynamoDBMapperValueConverter<T>)this;
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        @Override
+        public final DynamoDBAttributeType getDynamoDBAttributeType() {
+            return DynamoDBAttributeType.valueOf(this.name());
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        @Override
+        public AttributeValue convert(final Object o) {
+            final AttributeValue value = new AttributeValue();
+            this.reflect.set(value, o);
+            return value;
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        @Override
+        public Object unconvert(final AttributeValue o) {
+            final Object value = this.reflect.get(o);
+            if (value == null && o.isNULL() == null) {
+                throw new DynamoDBMappingException("expected " + name() + " in value " + o);
+            }
+            return value;
+        }
+
+        /**
+         * Copies the contents from the fist {@link AttributeValue} into the second.
+         */
+        static final AttributeValue copyAll(final AttributeValue from, final AttributeValue into) {
+            for (final AttributeType attribute : AttributeType.values()) {
+                attribute.reflect.set(into, attribute.reflect.get(from));
+            }
+            return into;
+        }
+    }
+
+    /**
+     * Joins the source and target converters.
+     */
+    static final <T,U> DynamoDBMapperValueConverter<U> join(final DynamoDBMapperValueConverter<T> source, final DynamoDBTypeConverter<T,U> target) {
+        return new DynamoDBMapperValueConverter<U>() {
+            @Override
+            public final DynamoDBAttributeType getDynamoDBAttributeType() {
+                 return source.getDynamoDBAttributeType();
+            }
+            @Override
+            public final AttributeValue convert(final U o) {
+                final T object = o == null ? null : target.convert(o);
+                return object == null ? null : source.convert(object);
+            }
+            @Override
+            public final U unconvert(final AttributeValue o) {
+                final T object = o == null ? null : source.unconvert(o);
+                return object == null ? null : target.unconvert(object);
+            }
+        };
+    }
+
+}

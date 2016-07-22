@@ -23,7 +23,8 @@ public enum MessageType {
 
     ConfigurationItemChangeNotification("ConfigurationItemChangeNotification"),
     ConfigurationSnapshotDeliveryCompleted(
-            "ConfigurationSnapshotDeliveryCompleted");
+            "ConfigurationSnapshotDeliveryCompleted"),
+    ScheduledNotification("ScheduledNotification");
 
     private String value;
 

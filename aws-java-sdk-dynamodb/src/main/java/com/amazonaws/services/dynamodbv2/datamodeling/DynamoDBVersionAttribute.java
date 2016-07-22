@@ -21,6 +21,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.math.BigInteger;
+import java.util.Arrays;
 
 /**
  * Annotation for marking a property as an optimistic locking version attribute.
@@ -114,7 +115,7 @@ public @interface DynamoDBVersionAttribute {
             }
 
             private static final <T> Sequence<T> of(final Class<T> targetType) {
-                final Scalar target = Scalar.of(targetType, true);
+                final Scalar target = Scalar.of(targetType);
                 for (final Sequences s : Sequences.values()) {
                     if (s.scalar == target) {
                         return (Sequence<T>)s.sequence;
@@ -122,7 +123,8 @@ public @interface DynamoDBVersionAttribute {
                 }
                 return new Sequence<T>() { //<- for backwards compatibility
                     public T next(final T o) {
-                        throw new DynamoDBMappingException("unsupported version " + targetType);
+                        throw new DynamoDBMappingException("type [" + targetType + "] is not supported" +
+                            "; only " + Arrays.toString(Sequences.values()) + " allowed");
                     }
                 };
             }

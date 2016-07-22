@@ -25,11 +25,23 @@ public interface DynamoDBTypeConverter<S extends Object, T extends Object> {
     /**
      * Turns an object of type T into an object of type S.
      */
-    public S convert(T object);
+    S convert(T object);
 
     /**
      * Turns an object of type S into an objext of type T.
      */
-    public T unconvert(S object);
+    T unconvert(S object);
+
+    /**
+     * {@link DynamoDBTypeConverter} factory.
+     */
+    interface Factory {
+        /**
+         * Gets the type-converter matching the target conversion type.
+         * @param targetType The target conversion type.
+         * @return The type-converter, or null if no match.
+         */
+        <S,T> DynamoDBTypeConverter<S,T> getConverter(Class<T> targetType);
+    }
 
 }

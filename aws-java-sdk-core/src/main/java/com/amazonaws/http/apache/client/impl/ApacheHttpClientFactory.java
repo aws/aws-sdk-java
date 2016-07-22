@@ -16,6 +16,7 @@ package com.amazonaws.http.apache.client.impl;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.http.HttpResponseInterceptor;
 import org.apache.http.conn.ConnectionKeepAliveStrategy;
 import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -63,6 +64,13 @@ public class ApacheHttpClientFactory implements HttpClientFactory<ConnectionMana
         //
         if (!(settings.useGzip())) {
             builder.disableContentCompression();
+        }
+
+        HttpResponseInterceptor itcp = new CRC32ChecksumResponseInterceptor();
+        if (settings.calculateCRC32FromCompressedData()) {
+            builder.addInterceptorFirst(itcp);
+        } else {
+            builder.addInterceptorLast(itcp);
         }
 
         addProxyConfig(builder, settings);

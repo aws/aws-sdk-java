@@ -226,7 +226,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
 <@ClientInitMethodMacro.content .data_model />
 
 <#list operations?values as operationModel>
-    <@ClientMethodForOperation.content metadata operationModel />
+    <@ClientMethodForOperation.content metadata operationModel/>
     <@ClientMethodForOperationWithSimpleForm.content operationModel />
 </#list>
 
@@ -267,6 +267,13 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
     @Override
     protected final SignerProvider createSignerProvider(Signer signer) {
         return new ${customizationConfig.customSignerProvider}(this, signer);
+    }
+    </#if>
+
+    <#if customizationConfig.calculateCRC32FromCompressedData>
+    @Override
+    protected final boolean calculateCRC32FromCompressedData() {
+        return true;
     }
     </#if>
 

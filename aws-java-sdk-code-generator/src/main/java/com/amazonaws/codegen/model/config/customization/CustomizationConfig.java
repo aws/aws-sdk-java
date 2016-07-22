@@ -174,6 +174,11 @@ public class CustomizationConfig {
     private String customSignerProvider;
 
     /**
+     * Service calculates CRC32 checksum from compressed file when Accept-Encoding: gzip header is provided.
+     */
+    private boolean calculateCRC32FromCompressedData;
+
+    /**
      * List of 'convenience' overloads to generate for model classes. Convenience overloads expose a
      * different type that is adapted to the real type
      */
@@ -409,4 +414,12 @@ public class CustomizationConfig {
         this.customSignerProvider = customSignerProvider;
     }
 
+    public boolean isCalculateCRC32FromCompressedData() {
+        return calculateCRC32FromCompressedData;
+    }
+
+    public void setCalculateCRC32FromCompressedData(
+            boolean calculateCRC32FromCompressedData) {
+        this.calculateCRC32FromCompressedData = calculateCRC32FromCompressedData;
+    }
 }

@@ -34,6 +34,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.ByteBufferToBi
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CalendarSetToStringSetMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CalendarToStringMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CollectionToListMarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CustomMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.DateSetToStringSetMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.DateToStringMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.MapToMapMarshaller;
@@ -60,6 +61,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.ByteSetUnmar
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.ByteUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.CalendarSetUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.CalendarUnmarshaller;
+import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.CustomUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.DateSetUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.DateUnmarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.DoubleSetUnmarshaller;
@@ -281,7 +283,6 @@ public final class ConversionSchemas {
 
         @Override
         public DynamoDBMapperFieldModel getFieldModel(Method getter) {
-            final DynamoDBMappingsRegistry.Mapping mapping = registry.mappingOf(getter);
             ArgumentMarshaller marshaller = getMarshaller(getter);
 
             DynamoDBAttributeType attributeType = null;
@@ -309,7 +310,12 @@ public final class ConversionSchemas {
                                 + marshaller);
             }
 
-            return new DynamoDBMapperFieldModel(mapping.getAttributeName(), attributeType, marshaller);
+            // Note, generating the attribute name using this method is not
+            // actually correct for @DynamoDBFlattened attributes, however,
+            // its the best that can be done given only the method. The
+            // proper way to get this information is using the model factory.
+            final StandardAnnotationMaps.FieldMap annotations = StandardAnnotationMaps.of(getter);
+            return new DynamoDBMapperFieldModel(annotations.attributeName(), attributeType, marshaller);
         }
 
         @Override
@@ -1283,14 +1289,12 @@ public final class ConversionSchemas {
 
         @Override
         public ArgumentMarshaller getMarshaller(Method getter) {
-            final DynamoDBMappingsRegistry registry = DynamoDBMappingsRegistry.instance();
-            final DynamoDBMappingsRegistry.Mapping mapping = registry.mappingOf(getter);
-
-            ArgumentMarshaller customMarshaller = mapping.getCustomMarshaller();
-            if (customMarshaller != null) {
-                return customMarshaller;
+            final StandardAnnotationMaps.FieldMap annotations = StandardAnnotationMaps.of(getter);
+            if (annotations.marshalling() != null) {
+                return new CustomMarshaller(annotations.marshalling().marshallerClass());
+            } else if (annotations.nativeBoolean() != null) {
+                return BooleanToBooleanMarshaller.instance();
             }
-
             return wrapped.getMarshaller(getter);
         }
 
@@ -1313,15 +1317,10 @@ public final class ConversionSchemas {
         public ArgumentUnmarshaller getUnmarshaller(
                 Method getter,
                 Method setter) {
-
-            final DynamoDBMappingsRegistry registry = DynamoDBMappingsRegistry.instance();
-            final DynamoDBMappingsRegistry.Mapping mapping = registry.mappingOf(getter);
-
-            ArgumentUnmarshaller customUnmarshaller = mapping.getCustomUnmarshaller();
-            if (customUnmarshaller != null) {
-                return customUnmarshaller;
+            final StandardAnnotationMaps.FieldMap annotations = StandardAnnotationMaps.of(getter);
+            if (annotations.marshalling() != null) {
+                return new CustomUnmarshaller(getter.getReturnType(), annotations.marshalling().marshallerClass());
             }
-
             return wrapped.getUnmarshaller(getter, setter);
         }
 

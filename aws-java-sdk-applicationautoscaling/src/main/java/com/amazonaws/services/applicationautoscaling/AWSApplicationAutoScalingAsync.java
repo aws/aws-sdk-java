@@ -68,7 +68,32 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>us-west-1</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>us-west-2</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ap-southeast-1</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ap-southeast-2</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ap-northeast-1</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>eu-central-1</code>
  * </p>
  * </li>
  * <li>
@@ -236,7 +261,7 @@ public interface AWSApplicationAutoScalingAsync extends
     /**
      * <p>
      * Provides descriptive information for scaling activities with a specified
-     * service namespace.
+     * service namespace for the previous six weeks.
      * </p>
      * <p>
      * You can filter the results in a service namespace with the
@@ -260,7 +285,7 @@ public interface AWSApplicationAutoScalingAsync extends
     /**
      * <p>
      * Provides descriptive information for scaling activities with a specified
-     * service namespace.
+     * service namespace for the previous six weeks.
      * </p>
      * <p>
      * You can filter the results in a service namespace with the

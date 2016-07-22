@@ -160,14 +160,16 @@ public abstract class AmazonWebServiceClient {
         this.clientConfiguration = clientConfiguration;
         requestHandler2s = new CopyOnWriteArrayList<RequestHandler2>();
         client = new AmazonHttpClient(clientConfiguration,
-                requestMetricCollector, disableStrictHostNameVerification);
+                requestMetricCollector, disableStrictHostNameVerification,
+                calculateCRC32FromCompressedData());
     }
 
     protected AmazonWebServiceClient(AwsSyncClientParams clientParams) {
         this.clientConfiguration = clientParams.getClientConfiguration();
         requestHandler2s = clientParams.getRequestHandlers();
         client = new AmazonHttpClient(clientConfiguration, clientParams.getRequestMetricCollector(),
-                                      useStrictHostNameVerification());
+                                      !useStrictHostNameVerification(),
+                                      calculateCRC32FromCompressedData());
     }
 
     /**
@@ -816,5 +818,14 @@ public abstract class AmazonWebServiceClient {
      */
     protected boolean useStrictHostNameVerification() {
         return true;
+    }
+
+    /**
+     * Hook to allow clients to override CRC32 calculation behavior. Currently, only exercised by DynamoDB.
+     *
+     * @return True if the service returns CRC32 checksum from the compressed data, false otherwise.
+     */
+    protected boolean calculateCRC32FromCompressedData() {
+        return false;
     }
 }

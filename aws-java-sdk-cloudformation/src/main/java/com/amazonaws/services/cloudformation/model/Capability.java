@@ -21,7 +21,8 @@ package com.amazonaws.services.cloudformation.model;
  */
 public enum Capability {
 
-    CAPABILITY_IAM("CAPABILITY_IAM");
+    CAPABILITY_IAM("CAPABILITY_IAM"),
+    CAPABILITY_NAMED_IAM("CAPABILITY_NAMED_IAM");
 
     private String value;
 

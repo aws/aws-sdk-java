@@ -95,8 +95,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * PlayReady header is referenced in the protection header of the client
      * manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and
      * EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL
-     * looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting>
+     * looks like this: <code>https://www.example.com/exampleKey/</code>
      * </p>
      */
     private String licenseAcquisitionUrl;
@@ -455,8 +454,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * PlayReady header is referenced in the protection header of the client
      * manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and
      * EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL
-     * looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting>
+     * looks like this: <code>https://www.example.com/exampleKey/</code>
      * </p>
      * 
      * @param licenseAcquisitionUrl
@@ -466,8 +464,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      *        header of the client manifest for Smooth Streaming outputs, and in
      *        the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist
      *        outputs. An example URL looks like this:
-     *        <programlisting>https://www
-     *        .example.com/exampleKey/</programlisting>
+     *        <code>https://www.example.com/exampleKey/</code>
      */
 
     public void setLicenseAcquisitionUrl(String licenseAcquisitionUrl) {
@@ -481,8 +478,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * PlayReady header is referenced in the protection header of the client
      * manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and
      * EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL
-     * looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting>
+     * looks like this: <code>https://www.example.com/exampleKey/</code>
      * </p>
      * 
      * @return The location of the license key required to play DRM content. The
@@ -491,8 +487,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      *         header of the client manifest for Smooth Streaming outputs, and
      *         in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS
      *         playlist outputs. An example URL looks like this:
-     *         <programlisting>
-     *         https://www.example.com/exampleKey/</programlisting>
+     *         <code>https://www.example.com/exampleKey/</code>
      */
 
     public String getLicenseAcquisitionUrl() {
@@ -506,8 +501,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * PlayReady header is referenced in the protection header of the client
      * manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and
      * EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL
-     * looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting>
+     * looks like this: <code>https://www.example.com/exampleKey/</code>
      * </p>
      * 
      * @param licenseAcquisitionUrl
@@ -517,8 +511,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      *        header of the client manifest for Smooth Streaming outputs, and in
      *        the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist
      *        outputs. An example URL looks like this:
-     *        <programlisting>https://www
-     *        .example.com/exampleKey/</programlisting>
+     *        <code>https://www.example.com/exampleKey/</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

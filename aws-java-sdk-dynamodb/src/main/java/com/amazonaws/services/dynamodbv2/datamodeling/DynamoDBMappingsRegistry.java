@@ -23,9 +23,6 @@ import java.util.concurrent.ConcurrentMap;
 
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties.Bean;
-import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.BooleanToBooleanMarshaller;
-import com.amazonaws.services.dynamodbv2.datamodeling.marshallers.CustomMarshaller;
-import com.amazonaws.services.dynamodbv2.datamodeling.unmarshallers.CustomUnmarshaller;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
 
 /**
@@ -232,30 +229,6 @@ final class DynamoDBMappingsRegistry {
          */
         final String getAttributeName() {
             return attributeName;
-        }
-
-        /**
-         * Gets the custom marshaller.
-         * @return The marshaller or null if default should be used.
-         */
-        final ArgumentMarshaller getCustomMarshaller() {
-            if (bean.annotations().marshalling() != null) {
-                return new CustomMarshaller(bean.annotations().marshalling().marshallerClass());
-            } else if (bean.annotations().nativeBoolean() != null) {
-                return BooleanToBooleanMarshaller.instance();
-            }
-            return null;
-        }
-
-        /**
-         * Gets the custom unmarshaller.
-         * @return The unmarshaller or null if default should be used.
-         */
-        final ArgumentUnmarshaller getCustomUnmarshaller() {
-            if (bean.annotations().marshalling() != null) {
-                return new CustomUnmarshaller(bean.targetType(), bean.annotations().marshalling().marshallerClass());
-            }
-            return null;
         }
     }
 

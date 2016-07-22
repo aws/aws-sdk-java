@@ -18,11 +18,11 @@ import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.Id;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.Reflect;
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardAnnotationMaps.FieldMap;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardParameterTypes.ParamType;
 import com.amazonaws.util.StringUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.Collection;
 import java.util.LinkedHashMap;
@@ -65,6 +65,7 @@ final class StandardBeanProperties {
     static final class Bean<T,V> implements Reflect<T,V> {
         private final MethodReflect<T,V> reflect;
         private final FieldMap<V> annotations;
+        private final ParamType<V> type;
         private final Id<T> id;
 
         /**
@@ -74,6 +75,7 @@ final class StandardBeanProperties {
          * @param id The field identifier.
          */
         private Bean(final MethodReflect<T,V> reflect, final FieldMap<V> annotations, final Id<T> id) {
+            this.type = StandardParameterTypes.of(reflect.getter.getGenericReturnType());
             this.annotations = annotations;
             this.reflect = reflect;
             this.id = id;
@@ -93,6 +95,14 @@ final class StandardBeanProperties {
          */
         final FieldMap<V> annotations() {
             return this.annotations;
+        }
+
+        /**
+         * Gets the parameter type.
+         * @return The parameter type.
+         */
+        final ParamType<V> type() {
+            return this.type;
         }
 
         /**
@@ -120,22 +130,6 @@ final class StandardBeanProperties {
                 throw new DynamoDBMappingException("no access to public/one-argument setter for " + reflect.getter);
             }
             return reflect.setter;
-        }
-
-        /**
-         * Gets the generic target type.
-         * @return The generic type.
-         */
-        final Type genericTargetType() {
-            return this.reflect.getter.getGenericReturnType();
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public final Class<V> targetType() {
-            return reflect.targetType();
         }
 
         /**
@@ -171,9 +165,9 @@ final class StandardBeanProperties {
         }
 
         /**
-         * {@inheritDoc}
+         * Gets the target type.
+         * @return The target type.
          */
-        @Override
         public final Class<V> targetType() {
             return (Class<V>)getter.getReturnType();
         }
@@ -207,14 +201,14 @@ final class StandardBeanProperties {
      * Get/set reflection operations with a declaring property.
      */
     private static final class DeclaringMethodReflect<T,V> extends MethodReflect<T,V> {
-        private final Reflect<T,T> declaring;
+        private final MethodReflect<T,T> declaring;
 
         /**
          * Constructs a new declaring method reflection property.
          * @param getter The getter method.
          * @param declaring The declaring reflection property.
          */
-        private DeclaringMethodReflect(final Method getter, final Reflect<T,T> declaring) {
+        private DeclaringMethodReflect(final Method getter, final MethodReflect<T,T> declaring) {
             super(getter);
             this.declaring = declaring;
         }
@@ -304,7 +298,7 @@ final class StandardBeanProperties {
                 final Map<String,String> attributes = annotations.attributes();
                 for (final Method m : reflect.targetType().getMethods()) {
                     if (isGetter(m) && (name = attributes.remove(nameOf(m, null))) != null) {
-                        flatten(new DeclaringMethodReflect(m, (Reflect<T,T>)reflect), name);
+                        flatten(new DeclaringMethodReflect(m, (MethodReflect<T,T>)reflect), name);
                     }
                 }
                 if (!attributes.isEmpty()) { //<- this should be empty by now

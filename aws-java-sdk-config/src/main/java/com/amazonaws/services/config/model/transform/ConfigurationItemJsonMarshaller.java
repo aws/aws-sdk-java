@@ -157,6 +157,27 @@ public class ConfigurationItemJsonMarshaller {
                         configurationItem.getConfiguration());
             }
 
+            java.util.Map<String, String> supplementaryConfigurationMap = configurationItem
+                    .getSupplementaryConfiguration();
+            if (supplementaryConfigurationMap != null) {
+                jsonGenerator.writeFieldName("supplementaryConfiguration");
+                jsonGenerator.writeStartObject();
+
+                for (Map.Entry<String, String> supplementaryConfigurationMapValue : supplementaryConfigurationMap
+                        .entrySet()) {
+                    if (supplementaryConfigurationMapValue.getValue() != null) {
+                        jsonGenerator
+                                .writeFieldName(supplementaryConfigurationMapValue
+                                        .getKey());
+
+                        jsonGenerator
+                                .writeValue(supplementaryConfigurationMapValue
+                                        .getValue());
+                    }
+                }
+                jsonGenerator.writeEndObject();
+            }
+
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

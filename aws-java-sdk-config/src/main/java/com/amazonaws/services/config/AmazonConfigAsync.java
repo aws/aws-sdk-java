@@ -223,6 +223,44 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Deletes the evaluation results for the specified Config rule. You can
+     * specify one Config rule per request. After you delete the evaluation
+     * results, you can call the <a>StartConfigRulesEvaluation</a> API to start
+     * evaluating your AWS resources against the rule.
+     * </p>
+     * 
+     * @param deleteEvaluationResultsRequest
+     * @return A Java Future containing the result of the
+     *         DeleteEvaluationResults operation returned by the service.
+     * @sample AmazonConfigAsync.DeleteEvaluationResults
+     */
+    java.util.concurrent.Future<DeleteEvaluationResultsResult> deleteEvaluationResultsAsync(
+            DeleteEvaluationResultsRequest deleteEvaluationResultsRequest);
+
+    /**
+     * <p>
+     * Deletes the evaluation results for the specified Config rule. You can
+     * specify one Config rule per request. After you delete the evaluation
+     * results, you can call the <a>StartConfigRulesEvaluation</a> API to start
+     * evaluating your AWS resources against the rule.
+     * </p>
+     * 
+     * @param deleteEvaluationResultsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteEvaluationResults operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.DeleteEvaluationResults
+     */
+    java.util.concurrent.Future<DeleteEvaluationResultsResult> deleteEvaluationResultsAsync(
+            DeleteEvaluationResultsRequest deleteEvaluationResultsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEvaluationResultsRequest, DeleteEvaluationResultsResult> asyncHandler);
+
+    /**
+     * <p>
      * Schedules delivery of a configuration snapshot to the Amazon S3 bucket in
      * the specified delivery channel. After the delivery has started, AWS
      * Config sends following notifications using an Amazon SNS topic that you
@@ -298,8 +336,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <li>The rule's AWS Lambda function is failing to send evaluation results
      * to AWS Config. Verify that the role that you assigned to your
      * configuration recorder includes the <code>config:PutEvaluations</code>
-     * permission. If the rule is a customer managed rule, verify that the AWS
-     * Lambda execution role includes the <code>config:PutEvaluations</code>
+     * permission. If the rule is a custom rule, verify that the AWS Lambda
+     * execution role includes the <code>config:PutEvaluations</code>
      * permission.</li>
      * <li>The rule's AWS Lambda function has returned
      * <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if
@@ -337,8 +375,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <li>The rule's AWS Lambda function is failing to send evaluation results
      * to AWS Config. Verify that the role that you assigned to your
      * configuration recorder includes the <code>config:PutEvaluations</code>
-     * permission. If the rule is a customer managed rule, verify that the AWS
-     * Lambda execution role includes the <code>config:PutEvaluations</code>
+     * permission. If the rule is a custom rule, verify that the AWS Lambda
+     * execution role includes the <code>config:PutEvaluations</code>
      * permission.</li>
      * <li>The rule's AWS Lambda function has returned
      * <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if
@@ -401,8 +439,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <li>The rule's AWS Lambda function is failing to send evaluation results
      * to AWS Config. Verify that the role that you assigned to your
      * configuration recorder includes the <code>config:PutEvaluations</code>
-     * permission. If the rule is a customer managed rule, verify that the AWS
-     * Lambda execution role includes the <code>config:PutEvaluations</code>
+     * permission. If the rule is a custom rule, verify that the AWS Lambda
+     * execution role includes the <code>config:PutEvaluations</code>
      * permission.</li>
      * <li>The rule's AWS Lambda function has returned
      * <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if
@@ -441,8 +479,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <li>The rule's AWS Lambda function is failing to send evaluation results
      * to AWS Config. Verify that the role that you assigned to your
      * configuration recorder includes the <code>config:PutEvaluations</code>
-     * permission. If the rule is a customer managed rule, verify that the AWS
-     * Lambda execution role includes the <code>config:PutEvaluations</code>
+     * permission. If the rule is a custom rule, verify that the AWS Lambda
+     * execution role includes the <code>config:PutEvaluations</code>
      * permission.</li>
      * <li>The rule's AWS Lambda function has returned
      * <code>NOT_APPLICABLE</code> for all evaluation results. This can occur if
@@ -1192,17 +1230,17 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * resources comply with your desired configurations.
      * </p>
      * <p>
-     * You can use this action for customer managed Config rules and AWS managed
-     * Config rules. A customer managed Config rule is a custom rule that you
-     * develop and maintain. An AWS managed Config rule is a customizable,
-     * predefined rule that is provided by AWS Config.
+     * You can use this action for custom Config rules and AWS managed Config
+     * rules. A custom Config rule is a rule that you develop and maintain. An
+     * AWS managed Config rule is a customizable, predefined rule that AWS
+     * Config provides.
      * </p>
      * <p>
-     * If you are adding a new customer managed Config rule, you must first
-     * create the AWS Lambda function that the rule invokes to evaluate your
-     * resources. When you use the <code>PutConfigRule</code> action to add the
-     * rule to AWS Config, you must specify the Amazon Resource Name (ARN) that
-     * AWS Lambda assigns to the function. Specify the ARN for the
+     * If you are adding a new custom Config rule, you must first create the AWS
+     * Lambda function that the rule invokes to evaluate your resources. When
+     * you use the <code>PutConfigRule</code> action to add the rule to AWS
+     * Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda
+     * assigns to the function. Specify the ARN for the
      * <code>SourceIdentifier</code> key. This key is part of the
      * <code>Source</code> object, which is part of the <code>ConfigRule</code>
      * object.
@@ -1252,17 +1290,17 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * resources comply with your desired configurations.
      * </p>
      * <p>
-     * You can use this action for customer managed Config rules and AWS managed
-     * Config rules. A customer managed Config rule is a custom rule that you
-     * develop and maintain. An AWS managed Config rule is a customizable,
-     * predefined rule that is provided by AWS Config.
+     * You can use this action for custom Config rules and AWS managed Config
+     * rules. A custom Config rule is a rule that you develop and maintain. An
+     * AWS managed Config rule is a customizable, predefined rule that AWS
+     * Config provides.
      * </p>
      * <p>
-     * If you are adding a new customer managed Config rule, you must first
-     * create the AWS Lambda function that the rule invokes to evaluate your
-     * resources. When you use the <code>PutConfigRule</code> action to add the
-     * rule to AWS Config, you must specify the Amazon Resource Name (ARN) that
-     * AWS Lambda assigns to the function. Specify the ARN for the
+     * If you are adding a new custom Config rule, you must first create the AWS
+     * Lambda function that the rule invokes to evaluate your resources. When
+     * you use the <code>PutConfigRule</code> action to add the rule to AWS
+     * Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda
+     * assigns to the function. Specify the ARN for the
      * <code>SourceIdentifier</code> key. This key is part of the
      * <code>Source</code> object, which is part of the <code>ConfigRule</code>
      * object.
@@ -1485,6 +1523,52 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<PutEvaluationsResult> putEvaluationsAsync(
             PutEvaluationsRequest putEvaluationsRequest,
             com.amazonaws.handlers.AsyncHandler<PutEvaluationsRequest, PutEvaluationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Evaluates your resources against the specified Config rules. You can
+     * specify up to 25 Config rules per request.
+     * </p>
+     * <p>
+     * An existing <a>StartConfigRulesEvaluation</a> call must complete for the
+     * rules that you specified before you can call the API again. If you chose
+     * to have AWS Config stream to an Amazon SNS topic, you will receive a
+     * notification when the evaluation starts.
+     * </p>
+     * 
+     * @param startConfigRulesEvaluationRequest
+     * @return A Java Future containing the result of the
+     *         StartConfigRulesEvaluation operation returned by the service.
+     * @sample AmazonConfigAsync.StartConfigRulesEvaluation
+     */
+    java.util.concurrent.Future<StartConfigRulesEvaluationResult> startConfigRulesEvaluationAsync(
+            StartConfigRulesEvaluationRequest startConfigRulesEvaluationRequest);
+
+    /**
+     * <p>
+     * Evaluates your resources against the specified Config rules. You can
+     * specify up to 25 Config rules per request.
+     * </p>
+     * <p>
+     * An existing <a>StartConfigRulesEvaluation</a> call must complete for the
+     * rules that you specified before you can call the API again. If you chose
+     * to have AWS Config stream to an Amazon SNS topic, you will receive a
+     * notification when the evaluation starts.
+     * </p>
+     * 
+     * @param startConfigRulesEvaluationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         StartConfigRulesEvaluation operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.StartConfigRulesEvaluation
+     */
+    java.util.concurrent.Future<StartConfigRulesEvaluationResult> startConfigRulesEvaluationAsync(
+            StartConfigRulesEvaluationRequest startConfigRulesEvaluationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartConfigRulesEvaluationRequest, StartConfigRulesEvaluationResult> asyncHandler);
 
     /**
      * <p>

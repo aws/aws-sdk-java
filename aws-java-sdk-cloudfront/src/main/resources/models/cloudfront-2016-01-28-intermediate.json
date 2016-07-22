@@ -19,15 +19,15 @@
     "jsonVersion" : null,
     "endpointPrefix" : "cloudfront",
     "signingName" : "cloudfront",
+    "syncClientBuilderClassName" : "AmazonCloudFrontClientBuilder",
+    "asyncClientBuilderClassName" : "AmazonCloudFrontAsyncClientBuilder",
+    "serviceName" : "CloudFront",
     "jsonProtocol" : false,
     "xmlProtocol" : true,
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
-    "syncClientBuilderClassName" : "AmazonCloudFrontClientBuilder",
-    "asyncClientBuilderClassName" : "AmazonCloudFrontAsyncClientBuilder",
-    "serviceName" : "CloudFront"
+    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "CreateCloudFrontOriginAccessIdentity" : {
@@ -64,13 +64,13 @@
         "documentation" : "The value of Quantity and the size of Items do not match."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createCloudFrontOriginAccessIdentity",
       "syncReturnType" : "CreateCloudFrontOriginAccessIdentityResult",
       "asyncReturnType" : "CreateCloudFrontOriginAccessIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateCloudFrontOriginAccessIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateCloudFrontOriginAccessIdentityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCloudFrontOriginAccessIdentityRequest, CreateCloudFrontOriginAccessIdentityResult>",
-      "authenticated" : true,
-      "methodName" : "createCloudFrontOriginAccessIdentity"
+      "authenticated" : true
     },
     "CreateDistribution" : {
       "documentation" : "Create a new distribution.",
@@ -190,13 +190,13 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createDistribution",
       "syncReturnType" : "CreateDistributionResult",
       "asyncReturnType" : "CreateDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDistributionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDistributionRequest, CreateDistributionResult>",
-      "authenticated" : true,
-      "methodName" : "createDistribution"
+      "authenticated" : true
     },
     "CreateInvalidation" : {
       "documentation" : "Create a new invalidation.",
@@ -238,13 +238,13 @@
         "documentation" : "The value of Quantity and the size of Items do not match."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createInvalidation",
       "syncReturnType" : "CreateInvalidationResult",
       "asyncReturnType" : "CreateInvalidationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateInvalidationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateInvalidationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateInvalidationRequest, CreateInvalidationResult>",
-      "authenticated" : true,
-      "methodName" : "createInvalidation"
+      "authenticated" : true
     },
     "CreateStreamingDistribution" : {
       "documentation" : "Create a new streaming distribution.",
@@ -301,13 +301,13 @@
         "documentation" : "The value of Quantity and the size of Items do not match."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createStreamingDistribution",
       "syncReturnType" : "CreateStreamingDistributionResult",
       "asyncReturnType" : "CreateStreamingDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateStreamingDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateStreamingDistributionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionRequest, CreateStreamingDistributionResult>",
-      "authenticated" : true,
-      "methodName" : "createStreamingDistribution"
+      "authenticated" : true
     },
     "DeleteCloudFrontOriginAccessIdentity" : {
       "documentation" : "Delete an origin access identity.",
@@ -343,13 +343,13 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteCloudFrontOriginAccessIdentity",
       "syncReturnType" : "DeleteCloudFrontOriginAccessIdentityResult",
       "asyncReturnType" : "DeleteCloudFrontOriginAccessIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteCloudFrontOriginAccessIdentityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCloudFrontOriginAccessIdentityRequest, DeleteCloudFrontOriginAccessIdentityResult>",
-      "authenticated" : true,
-      "methodName" : "deleteCloudFrontOriginAccessIdentity"
+      "authenticated" : true
     },
     "DeleteDistribution" : {
       "documentation" : "Delete a distribution.",
@@ -385,13 +385,13 @@
         "documentation" : "The precondition given in one or more of the request-header fields evaluated to false."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteDistribution",
       "syncReturnType" : "DeleteDistributionResult",
       "asyncReturnType" : "DeleteDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDistributionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, DeleteDistributionResult>",
-      "authenticated" : true,
-      "methodName" : "deleteDistribution"
+      "authenticated" : true
     },
     "DeleteStreamingDistribution" : {
       "documentation" : "Delete a streaming distribution.",
@@ -427,13 +427,13 @@
         "documentation" : "The precondition given in one or more of the request-header fields evaluated to false."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteStreamingDistribution",
       "syncReturnType" : "DeleteStreamingDistributionResult",
       "asyncReturnType" : "DeleteStreamingDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteStreamingDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteStreamingDistributionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, DeleteStreamingDistributionResult>",
-      "authenticated" : true,
-      "methodName" : "deleteStreamingDistribution"
+      "authenticated" : true
     },
     "GetCloudFrontOriginAccessIdentity" : {
       "documentation" : "Get the information about an origin access identity.",
@@ -460,13 +460,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getCloudFrontOriginAccessIdentity",
       "syncReturnType" : "GetCloudFrontOriginAccessIdentityResult",
       "asyncReturnType" : "GetCloudFrontOriginAccessIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCloudFrontOriginAccessIdentityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCloudFrontOriginAccessIdentityRequest, GetCloudFrontOriginAccessIdentityResult>",
-      "authenticated" : true,
-      "methodName" : "getCloudFrontOriginAccessIdentity"
+      "authenticated" : true
     },
     "GetCloudFrontOriginAccessIdentityConfig" : {
       "documentation" : "Get the configuration information about an origin access identity.",
@@ -493,13 +493,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getCloudFrontOriginAccessIdentityConfig",
       "syncReturnType" : "GetCloudFrontOriginAccessIdentityConfigResult",
       "asyncReturnType" : "GetCloudFrontOriginAccessIdentityConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCloudFrontOriginAccessIdentityConfigResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCloudFrontOriginAccessIdentityConfigRequest, GetCloudFrontOriginAccessIdentityConfigResult>",
-      "authenticated" : true,
-      "methodName" : "getCloudFrontOriginAccessIdentityConfig"
+      "authenticated" : true
     },
     "GetDistribution" : {
       "documentation" : "Get the information about a distribution.",
@@ -526,13 +526,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getDistribution",
       "syncReturnType" : "GetDistributionResult",
       "asyncReturnType" : "GetDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDistributionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDistributionRequest, GetDistributionResult>",
-      "authenticated" : true,
-      "methodName" : "getDistribution"
+      "authenticated" : true
     },
     "GetDistributionConfig" : {
       "documentation" : "Get the configuration information about a distribution.",
@@ -559,13 +559,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getDistributionConfig",
       "syncReturnType" : "GetDistributionConfigResult",
       "asyncReturnType" : "GetDistributionConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDistributionConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDistributionConfigResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDistributionConfigRequest, GetDistributionConfigResult>",
-      "authenticated" : true,
-      "methodName" : "getDistributionConfig"
+      "authenticated" : true
     },
     "GetInvalidation" : {
       "documentation" : "Get the information about an invalidation.",
@@ -595,13 +595,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getInvalidation",
       "syncReturnType" : "GetInvalidationResult",
       "asyncReturnType" : "GetInvalidationResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetInvalidationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetInvalidationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetInvalidationRequest, GetInvalidationResult>",
-      "authenticated" : true,
-      "methodName" : "getInvalidation"
+      "authenticated" : true
     },
     "GetStreamingDistribution" : {
       "documentation" : "Get the information about a streaming distribution.",
@@ -628,13 +628,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getStreamingDistribution",
       "syncReturnType" : "GetStreamingDistributionResult",
       "asyncReturnType" : "GetStreamingDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetStreamingDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetStreamingDistributionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetStreamingDistributionRequest, GetStreamingDistributionResult>",
-      "authenticated" : true,
-      "methodName" : "getStreamingDistribution"
+      "authenticated" : true
     },
     "GetStreamingDistributionConfig" : {
       "documentation" : "Get the configuration information about a streaming distribution.",
@@ -661,13 +661,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getStreamingDistributionConfig",
       "syncReturnType" : "GetStreamingDistributionConfigResult",
       "asyncReturnType" : "GetStreamingDistributionConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetStreamingDistributionConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetStreamingDistributionConfigResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetStreamingDistributionConfigRequest, GetStreamingDistributionConfigResult>",
-      "authenticated" : true,
-      "methodName" : "getStreamingDistributionConfig"
+      "authenticated" : true
     },
     "ListCloudFrontOriginAccessIdentities" : {
       "documentation" : "List origin access identities.",
@@ -691,13 +691,13 @@
         "documentation" : "The argument is invalid."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listCloudFrontOriginAccessIdentities",
       "syncReturnType" : "ListCloudFrontOriginAccessIdentitiesResult",
       "asyncReturnType" : "ListCloudFrontOriginAccessIdentitiesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCloudFrontOriginAccessIdentitiesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListCloudFrontOriginAccessIdentitiesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListCloudFrontOriginAccessIdentitiesRequest, ListCloudFrontOriginAccessIdentitiesResult>",
-      "authenticated" : true,
-      "methodName" : "listCloudFrontOriginAccessIdentities"
+      "authenticated" : true
     },
     "ListDistributions" : {
       "documentation" : "List distributions.",
@@ -721,13 +721,13 @@
         "documentation" : "The argument is invalid."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listDistributions",
       "syncReturnType" : "ListDistributionsResult",
       "asyncReturnType" : "ListDistributionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDistributionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDistributionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDistributionsRequest, ListDistributionsResult>",
-      "authenticated" : true,
-      "methodName" : "listDistributions"
+      "authenticated" : true
     },
     "ListDistributionsByWebACLId" : {
       "documentation" : "List the distributions that are associated with a specified AWS WAF web ACL.",
@@ -754,13 +754,13 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listDistributionsByWebACLId",
       "syncReturnType" : "ListDistributionsByWebACLIdResult",
       "asyncReturnType" : "ListDistributionsByWebACLIdResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDistributionsByWebACLIdResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDistributionsByWebACLIdResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDistributionsByWebACLIdRequest, ListDistributionsByWebACLIdResult>",
-      "authenticated" : true,
-      "methodName" : "listDistributionsByWebACLId"
+      "authenticated" : true
     },
     "ListInvalidations" : {
       "documentation" : "List invalidation batches.",
@@ -790,13 +790,13 @@
         "documentation" : "Access denied."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listInvalidations",
       "syncReturnType" : "ListInvalidationsResult",
       "asyncReturnType" : "ListInvalidationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListInvalidationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListInvalidationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListInvalidationsRequest, ListInvalidationsResult>",
-      "authenticated" : true,
-      "methodName" : "listInvalidations"
+      "authenticated" : true
     },
     "ListStreamingDistributions" : {
       "documentation" : "List streaming distributions.",
@@ -820,13 +820,13 @@
         "documentation" : "The argument is invalid."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listStreamingDistributions",
       "syncReturnType" : "ListStreamingDistributionsResult",
       "asyncReturnType" : "ListStreamingDistributionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListStreamingDistributionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListStreamingDistributionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStreamingDistributionsRequest, ListStreamingDistributionsResult>",
-      "authenticated" : true,
-      "methodName" : "listStreamingDistributions"
+      "authenticated" : true
     },
     "UpdateCloudFrontOriginAccessIdentity" : {
       "documentation" : "Update an origin access identity.",
@@ -871,13 +871,13 @@
         "documentation" : "The value of Quantity and the size of Items do not match."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "updateCloudFrontOriginAccessIdentity",
       "syncReturnType" : "UpdateCloudFrontOriginAccessIdentityResult",
       "asyncReturnType" : "UpdateCloudFrontOriginAccessIdentityResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateCloudFrontOriginAccessIdentityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateCloudFrontOriginAccessIdentityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateCloudFrontOriginAccessIdentityRequest, UpdateCloudFrontOriginAccessIdentityResult>",
-      "authenticated" : true,
-      "methodName" : "updateCloudFrontOriginAccessIdentity"
+      "authenticated" : true
     },
     "UpdateDistribution" : {
       "documentation" : "Update a distribution.",
@@ -997,13 +997,13 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "updateDistribution",
       "syncReturnType" : "UpdateDistributionResult",
       "asyncReturnType" : "UpdateDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateDistributionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDistributionRequest, UpdateDistributionResult>",
-      "authenticated" : true,
-      "methodName" : "updateDistribution"
+      "authenticated" : true
     },
     "UpdateStreamingDistribution" : {
       "documentation" : "Update a streaming distribution.",
@@ -1063,13 +1063,13 @@
         "documentation" : "The value of Quantity and the size of Items do not match."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "updateStreamingDistribution",
       "syncReturnType" : "UpdateStreamingDistributionResult",
       "asyncReturnType" : "UpdateStreamingDistributionResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateStreamingDistributionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateStreamingDistributionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateStreamingDistributionRequest, UpdateStreamingDistributionResult>",
-      "authenticated" : true,
-      "methodName" : "updateStreamingDistribution"
+      "authenticated" : true
     }
   },
   "shapes" : {
@@ -2254,11 +2254,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CustomErrorResponse",
           "templateType" : "java.util.List<CustomErrorResponse>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CustomErrorResponse>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CustomErrorResponse>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2448,11 +2448,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CustomErrorResponse",
             "templateType" : "java.util.List<CustomErrorResponse>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CustomErrorResponse>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CustomErrorResponse>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2936,11 +2936,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "InvalidationSummary",
           "templateType" : "java.util.List<InvalidationSummary>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InvalidationSummary>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InvalidationSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3183,11 +3183,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "InvalidationSummary",
             "templateType" : "java.util.List<InvalidationSummary>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InvalidationSummary>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InvalidationSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -4922,11 +4922,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "Method",
@@ -5116,11 +5116,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "Method",
@@ -6252,11 +6252,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "OriginCustomHeader",
           "templateType" : "java.util.List<OriginCustomHeader>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<OriginCustomHeader>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<OriginCustomHeader>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6446,11 +6446,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "OriginCustomHeader",
             "templateType" : "java.util.List<OriginCustomHeader>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<OriginCustomHeader>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<OriginCustomHeader>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11906,11 +11906,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CloudFrontOriginAccessIdentitySummary",
           "templateType" : "java.util.List<CloudFrontOriginAccessIdentitySummary>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CloudFrontOriginAccessIdentitySummary>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CloudFrontOriginAccessIdentitySummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12153,11 +12153,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CloudFrontOriginAccessIdentitySummary",
             "templateType" : "java.util.List<CloudFrontOriginAccessIdentitySummary>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CloudFrontOriginAccessIdentitySummary>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CloudFrontOriginAccessIdentitySummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13857,11 +13857,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14051,11 +14051,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14904,11 +14904,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15151,11 +15151,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17780,11 +17780,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17974,11 +17974,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18581,11 +18581,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18775,11 +18775,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18994,11 +18994,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Origin",
           "templateType" : "java.util.List<Origin>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Origin>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Origin>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19188,11 +19188,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Origin",
             "templateType" : "java.util.List<Origin>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Origin>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Origin>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20736,11 +20736,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20930,11 +20930,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -23229,11 +23229,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "DistributionSummary",
           "templateType" : "java.util.List<DistributionSummary>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DistributionSummary>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DistributionSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23476,11 +23476,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "DistributionSummary",
             "templateType" : "java.util.List<DistributionSummary>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DistributionSummary>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DistributionSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24169,11 +24169,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "SslProtocol",
@@ -24363,11 +24363,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "SslProtocol",
@@ -26619,11 +26619,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26813,11 +26813,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27287,11 +27287,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "CacheBehavior",
           "templateType" : "java.util.List<CacheBehavior>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheBehavior>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheBehavior>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27481,11 +27481,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "CacheBehavior",
             "templateType" : "java.util.List<CacheBehavior>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheBehavior>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CacheBehavior>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -30222,11 +30222,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "StreamingDistributionSummary",
           "templateType" : "java.util.List<StreamingDistributionSummary>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<StreamingDistributionSummary>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<StreamingDistributionSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -30469,11 +30469,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "StreamingDistributionSummary",
             "templateType" : "java.util.List<StreamingDistributionSummary>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<StreamingDistributionSummary>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<StreamingDistributionSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31283,11 +31283,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31477,11 +31477,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32660,11 +32660,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Signer",
           "templateType" : "java.util.List<Signer>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Signer>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Signer>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32907,11 +32907,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Signer",
             "templateType" : "java.util.List<Signer>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Signer>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Signer>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -36644,11 +36644,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "Method",
@@ -36943,11 +36943,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "Method",
@@ -37636,15 +37636,16 @@
     "customErrorCodeFieldName" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "customSignerProvider" : null,
+    "calculateCRC32FromCompressedData" : false,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller",
-  "sdkModeledExceptionBaseClassName" : "AmazonCloudFrontException",
-  "clientConfigFactory" : "ClientConfigurationFactory",
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseClassName" : "AmazonCloudFrontException",
+  "exceptionUnmarshallerImpl" : "StandardErrorUnmarshaller",
+  "clientConfigFactory" : "ClientConfigurationFactory",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cloudfront.model.AmazonCloudFrontException"
 }

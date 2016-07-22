@@ -74,6 +74,21 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteEvaluationResultsResult> deleteEvaluationResultsAsync(
+            DeleteEvaluationResultsRequest request) {
+
+        return deleteEvaluationResultsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEvaluationResultsResult> deleteEvaluationResultsAsync(
+            DeleteEvaluationResultsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteEvaluationResultsRequest, DeleteEvaluationResultsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeliverConfigSnapshotResult> deliverConfigSnapshotAsync(
             DeliverConfigSnapshotRequest request) {
 
@@ -613,6 +628,21 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements
     public java.util.concurrent.Future<PutEvaluationsResult> putEvaluationsAsync(
             PutEvaluationsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutEvaluationsRequest, PutEvaluationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartConfigRulesEvaluationResult> startConfigRulesEvaluationAsync(
+            StartConfigRulesEvaluationRequest request) {
+
+        return startConfigRulesEvaluationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartConfigRulesEvaluationResult> startConfigRulesEvaluationAsync(
+            StartConfigRulesEvaluationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartConfigRulesEvaluationRequest, StartConfigRulesEvaluationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
