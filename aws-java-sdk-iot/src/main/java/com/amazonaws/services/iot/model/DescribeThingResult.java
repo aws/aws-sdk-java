@@ -1,19 +1,17 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not
+ * use this file except in compliance with the License. A copy of the License is
+ * located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
@@ -39,12 +37,30 @@ public class DescribeThingResult implements Serializable, Cloneable {
     private String thingName;
     /**
      * <p>
-     * The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})
+     * The thing type name.
+     * </p>
+     */
+    private String thingTypeName;
+    /**
+     * <p>
+     * The thing attributes.
      * </p>
      */
     private java.util.Map<String, String> attributes;
+    /**
+     * <p>
+     * The current version of the thing record in the registry.
+     * </p>
+     * <note>
+     * <p>
+     * To avoid unintentional changes to the information in the registry, you
+     * can pass the version information in the <code>expectedVersion</code>
+     * parameter of the <code>UpdateThing</code> and <code>DeleteThing</code>
+     * calls.
+     * </p>
+     * </note>
+     */
+    private Long version;
 
     /**
      * <p>
@@ -130,15 +146,51 @@ public class DescribeThingResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})
+     * The thing type name.
      * </p>
      * 
-     * @return The attributes, which are name/value pairs in JSON format (for
-     *         example: {\"attributes\":{\"some-name1\":\"some-value1\"},
-     *         {\"some-name2\":\"some-value2\"},
-     *         {\"some-name3\":\"some-value3\"}})
+     * @param thingTypeName
+     *        The thing type name.
+     */
+
+    public void setThingTypeName(String thingTypeName) {
+        this.thingTypeName = thingTypeName;
+    }
+
+    /**
+     * <p>
+     * The thing type name.
+     * </p>
+     * 
+     * @return The thing type name.
+     */
+
+    public String getThingTypeName() {
+        return this.thingTypeName;
+    }
+
+    /**
+     * <p>
+     * The thing type name.
+     * </p>
+     * 
+     * @param thingTypeName
+     *        The thing type name.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeThingResult withThingTypeName(String thingTypeName) {
+        setThingTypeName(thingTypeName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The thing attributes.
+     * </p>
+     * 
+     * @return The thing attributes.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -147,16 +199,11 @@ public class DescribeThingResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})
+     * The thing attributes.
      * </p>
      * 
      * @param attributes
-     *        The attributes, which are name/value pairs in JSON format (for
-     *        example: {\"attributes\":{\"some-name1\":\"some-value1\"},
-     *        {\"some-name2\":\"some-value2\"},
-     *        {\"some-name3\":\"some-value3\"}})
+     *        The thing attributes.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -165,16 +212,11 @@ public class DescribeThingResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})
+     * The thing attributes.
      * </p>
      * 
      * @param attributes
-     *        The attributes, which are name/value pairs in JSON format (for
-     *        example: {\"attributes\":{\"some-name1\":\"some-value1\"},
-     *        {\"some-name2\":\"some-value2\"},
-     *        {\"some-name3\":\"some-value3\"}})
+     *        The thing attributes.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -207,6 +249,92 @@ public class DescribeThingResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The current version of the thing record in the registry.
+     * </p>
+     * <note>
+     * <p>
+     * To avoid unintentional changes to the information in the registry, you
+     * can pass the version information in the <code>expectedVersion</code>
+     * parameter of the <code>UpdateThing</code> and <code>DeleteThing</code>
+     * calls.
+     * </p>
+     * </note>
+     * 
+     * @param version
+     *        The current version of the thing record in the registry.</p>
+     *        <note>
+     *        <p>
+     *        To avoid unintentional changes to the information in the registry,
+     *        you can pass the version information in the
+     *        <code>expectedVersion</code> parameter of the
+     *        <code>UpdateThing</code> and <code>DeleteThing</code> calls.
+     *        </p>
+     */
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    /**
+     * <p>
+     * The current version of the thing record in the registry.
+     * </p>
+     * <note>
+     * <p>
+     * To avoid unintentional changes to the information in the registry, you
+     * can pass the version information in the <code>expectedVersion</code>
+     * parameter of the <code>UpdateThing</code> and <code>DeleteThing</code>
+     * calls.
+     * </p>
+     * </note>
+     * 
+     * @return The current version of the thing record in the registry.</p>
+     *         <note>
+     *         <p>
+     *         To avoid unintentional changes to the information in the
+     *         registry, you can pass the version information in the
+     *         <code>expectedVersion</code> parameter of the
+     *         <code>UpdateThing</code> and <code>DeleteThing</code> calls.
+     *         </p>
+     */
+
+    public Long getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * The current version of the thing record in the registry.
+     * </p>
+     * <note>
+     * <p>
+     * To avoid unintentional changes to the information in the registry, you
+     * can pass the version information in the <code>expectedVersion</code>
+     * parameter of the <code>UpdateThing</code> and <code>DeleteThing</code>
+     * calls.
+     * </p>
+     * </note>
+     * 
+     * @param version
+     *        The current version of the thing record in the registry.</p>
+     *        <note>
+     *        <p>
+     *        To avoid unintentional changes to the information in the registry,
+     *        you can pass the version information in the
+     *        <code>expectedVersion</code> parameter of the
+     *        <code>UpdateThing</code> and <code>DeleteThing</code> calls.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeThingResult withVersion(Long version) {
+        setVersion(version);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -222,8 +350,12 @@ public class DescribeThingResult implements Serializable, Cloneable {
             sb.append("DefaultClientId: " + getDefaultClientId() + ",");
         if (getThingName() != null)
             sb.append("ThingName: " + getThingName() + ",");
+        if (getThingTypeName() != null)
+            sb.append("ThingTypeName: " + getThingTypeName() + ",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes());
+            sb.append("Attributes: " + getAttributes() + ",");
+        if (getVersion() != null)
+            sb.append("Version: " + getVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -249,10 +381,20 @@ public class DescribeThingResult implements Serializable, Cloneable {
         if (other.getThingName() != null
                 && other.getThingName().equals(this.getThingName()) == false)
             return false;
+        if (other.getThingTypeName() == null ^ this.getThingTypeName() == null)
+            return false;
+        if (other.getThingTypeName() != null
+                && other.getThingTypeName().equals(this.getThingTypeName()) == false)
+            return false;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
         if (other.getAttributes() != null
                 && other.getAttributes().equals(this.getAttributes()) == false)
+            return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null
+                && other.getVersion().equals(this.getVersion()) == false)
             return false;
         return true;
     }
@@ -268,8 +410,14 @@ public class DescribeThingResult implements Serializable, Cloneable {
                         .hashCode());
         hashCode = prime * hashCode
                 + ((getThingName() == null) ? 0 : getThingName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getThingTypeName() == null) ? 0 : getThingTypeName()
+                        .hashCode());
         hashCode = prime * hashCode
                 + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode
+                + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
 

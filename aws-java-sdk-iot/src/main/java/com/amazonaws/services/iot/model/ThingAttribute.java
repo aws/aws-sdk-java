@@ -1,26 +1,25 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not
+ * use this file except in compliance with the License. A copy of the License is
+ * located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * Describes a thing attribute.
+ * The properties of the thing, including thing name, thing type name, and a
+ * list of thing attributes.
  * </p>
  */
 public class ThingAttribute implements Serializable, Cloneable {
@@ -33,10 +32,22 @@ public class ThingAttribute implements Serializable, Cloneable {
     private String thingName;
     /**
      * <p>
-     * The attributes.
+     * The name of the thing type, if the thing has been associated with a type.
+     * </p>
+     */
+    private String thingTypeName;
+    /**
+     * <p>
+     * A list of thing attributes which are name-value pairs.
      * </p>
      */
     private java.util.Map<String, String> attributes;
+    /**
+     * <p>
+     * The version of the thing record in the registry.
+     * </p>
+     */
+    private Long version;
 
     /**
      * <p>
@@ -81,10 +92,54 @@ public class ThingAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The attributes.
+     * The name of the thing type, if the thing has been associated with a type.
      * </p>
      * 
-     * @return The attributes.
+     * @param thingTypeName
+     *        The name of the thing type, if the thing has been associated with
+     *        a type.
+     */
+
+    public void setThingTypeName(String thingTypeName) {
+        this.thingTypeName = thingTypeName;
+    }
+
+    /**
+     * <p>
+     * The name of the thing type, if the thing has been associated with a type.
+     * </p>
+     * 
+     * @return The name of the thing type, if the thing has been associated with
+     *         a type.
+     */
+
+    public String getThingTypeName() {
+        return this.thingTypeName;
+    }
+
+    /**
+     * <p>
+     * The name of the thing type, if the thing has been associated with a type.
+     * </p>
+     * 
+     * @param thingTypeName
+     *        The name of the thing type, if the thing has been associated with
+     *        a type.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ThingAttribute withThingTypeName(String thingTypeName) {
+        setThingTypeName(thingTypeName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of thing attributes which are name-value pairs.
+     * </p>
+     * 
+     * @return A list of thing attributes which are name-value pairs.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -93,11 +148,11 @@ public class ThingAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The attributes.
+     * A list of thing attributes which are name-value pairs.
      * </p>
      * 
      * @param attributes
-     *        The attributes.
+     *        A list of thing attributes which are name-value pairs.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -106,11 +161,11 @@ public class ThingAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The attributes.
+     * A list of thing attributes which are name-value pairs.
      * </p>
      * 
      * @param attributes
-     *        The attributes.
+     *        A list of thing attributes which are name-value pairs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -143,6 +198,47 @@ public class ThingAttribute implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The version of the thing record in the registry.
+     * </p>
+     * 
+     * @param version
+     *        The version of the thing record in the registry.
+     */
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    /**
+     * <p>
+     * The version of the thing record in the registry.
+     * </p>
+     * 
+     * @return The version of the thing record in the registry.
+     */
+
+    public Long getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * The version of the thing record in the registry.
+     * </p>
+     * 
+     * @param version
+     *        The version of the thing record in the registry.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ThingAttribute withVersion(Long version) {
+        setVersion(version);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -156,8 +252,12 @@ public class ThingAttribute implements Serializable, Cloneable {
         sb.append("{");
         if (getThingName() != null)
             sb.append("ThingName: " + getThingName() + ",");
+        if (getThingTypeName() != null)
+            sb.append("ThingTypeName: " + getThingTypeName() + ",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes());
+            sb.append("Attributes: " + getAttributes() + ",");
+        if (getVersion() != null)
+            sb.append("Version: " + getVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -177,10 +277,20 @@ public class ThingAttribute implements Serializable, Cloneable {
         if (other.getThingName() != null
                 && other.getThingName().equals(this.getThingName()) == false)
             return false;
+        if (other.getThingTypeName() == null ^ this.getThingTypeName() == null)
+            return false;
+        if (other.getThingTypeName() != null
+                && other.getThingTypeName().equals(this.getThingTypeName()) == false)
+            return false;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
         if (other.getAttributes() != null
                 && other.getAttributes().equals(this.getAttributes()) == false)
+            return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null
+                && other.getVersion().equals(this.getVersion()) == false)
             return false;
         return true;
     }
@@ -192,8 +302,14 @@ public class ThingAttribute implements Serializable, Cloneable {
 
         hashCode = prime * hashCode
                 + ((getThingName() == null) ? 0 : getThingName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getThingTypeName() == null) ? 0 : getThingTypeName()
+                        .hashCode());
         hashCode = prime * hashCode
                 + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode
+                + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
 

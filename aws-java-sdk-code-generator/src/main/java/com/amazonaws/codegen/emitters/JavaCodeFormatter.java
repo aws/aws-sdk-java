@@ -15,8 +15,7 @@
 
 package com.amazonaws.codegen.emitters;
 
-import java.util.Map;
-import java.util.HashMap;
+import com.amazonaws.codegen.internal.Constants;
 
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.ToolFactory;
@@ -26,7 +25,8 @@ import org.eclipse.jface.text.Document;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.text.edits.TextEdit;
 
-import com.amazonaws.codegen.internal.Constants;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Formats the generated java source code. Uses Eclipse JDT core plugin from the Eclipse SDK.
@@ -60,6 +60,10 @@ public class JavaCodeFormatter {
                 DefaultCodeFormatterConstants.createAlignmentValue(false,
                         DefaultCodeFormatterConstants.WRAP_COMPACT,
                         DefaultCodeFormatterConstants.INDENT_DEFAULT));
+        // Formats custom file headers if provided
+        DEFAULT_FORMATTER_OPTIONS
+                .put(DefaultCodeFormatterConstants.FORMATTER_COMMENT_FORMAT_HEADER,
+                     DefaultCodeFormatterConstants.TRUE);
     }
 
     /**

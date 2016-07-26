@@ -1,19 +1,17 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not
+ * use this file except in compliance with the License. A copy of the License is
+ * located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
@@ -29,13 +27,14 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token used to retrieve the next value.
+     * The token for the next set of results, or <b>null</b> if there are no
+     * additional results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of principals to return.
+     * The maximum number of results to return in this operation.
      * </p>
      */
     private Integer maxResults;
@@ -48,11 +47,13 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token used to retrieve the next value.
+     * The token for the next set of results, or <b>null</b> if there are no
+     * additional results.
      * </p>
      * 
      * @param nextToken
-     *        A token used to retrieve the next value.
+     *        The token for the next set of results, or <b>null</b> if there are
+     *        no additional results.
      */
 
     public void setNextToken(String nextToken) {
@@ -61,10 +62,12 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token used to retrieve the next value.
+     * The token for the next set of results, or <b>null</b> if there are no
+     * additional results.
      * </p>
      * 
-     * @return A token used to retrieve the next value.
+     * @return The token for the next set of results, or <b>null</b> if there
+     *         are no additional results.
      */
 
     public String getNextToken() {
@@ -73,11 +76,13 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token used to retrieve the next value.
+     * The token for the next set of results, or <b>null</b> if there are no
+     * additional results.
      * </p>
      * 
      * @param nextToken
-     *        A token used to retrieve the next value.
+     *        The token for the next set of results, or <b>null</b> if there are
+     *        no additional results.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -89,11 +94,11 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of principals to return.
+     * The maximum number of results to return in this operation.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of principals to return.
+     *        The maximum number of results to return in this operation.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -102,10 +107,10 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of principals to return.
+     * The maximum number of results to return in this operation.
      * </p>
      * 
-     * @return The maximum number of principals to return.
+     * @return The maximum number of results to return in this operation.
      */
 
     public Integer getMaxResults() {
@@ -114,11 +119,11 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of principals to return.
+     * The maximum number of results to return in this operation.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of principals to return.
+     *        The maximum number of results to return in this operation.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

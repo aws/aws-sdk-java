@@ -19,6 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "cognito-idp",
     "signingName" : "cognito-idp",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "syncClientBuilderClassName" : "AWSCognitoIdentityProviderClientBuilder",
     "asyncClientBuilderClassName" : "AWSCognitoIdentityProviderAsyncClientBuilder",
     "serviceName" : "Amazon Cognito Identity Provider",
@@ -26,7 +27,6 @@
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true
   },
   "operations" : {
@@ -61,12 +61,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddCustomAttributesResult",
       "asyncReturnType" : "AddCustomAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddCustomAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddCustomAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddCustomAttributesRequest, AddCustomAttributesResult>",
-      "authenticated" : true,
       "methodName" : "addCustomAttributes"
     },
     "AdminConfirmSignUp" : {
@@ -118,12 +118,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminConfirmSignUpResult",
       "asyncReturnType" : "AdminConfirmSignUpResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminConfirmSignUpResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminConfirmSignUpResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminConfirmSignUpRequest, AdminConfirmSignUpResult>",
-      "authenticated" : true,
       "methodName" : "adminConfirmSignUp"
     },
     "AdminDeleteUser" : {
@@ -157,12 +157,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminDeleteUserResult",
       "asyncReturnType" : "AdminDeleteUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminDeleteUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminDeleteUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminDeleteUserRequest, AdminDeleteUserResult>",
-      "authenticated" : true,
       "methodName" : "adminDeleteUser"
     },
     "AdminDeleteUserAttributes" : {
@@ -196,12 +196,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminDeleteUserAttributesResult",
       "asyncReturnType" : "AdminDeleteUserAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminDeleteUserAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminDeleteUserAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminDeleteUserAttributesRequest, AdminDeleteUserAttributesResult>",
-      "authenticated" : true,
       "methodName" : "adminDeleteUserAttributes"
     },
     "AdminDisableUser" : {
@@ -235,12 +235,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminDisableUserResult",
       "asyncReturnType" : "AdminDisableUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminDisableUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminDisableUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminDisableUserRequest, AdminDisableUserResult>",
-      "authenticated" : true,
       "methodName" : "adminDisableUser"
     },
     "AdminEnableUser" : {
@@ -274,12 +274,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminEnableUserResult",
       "asyncReturnType" : "AdminEnableUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminEnableUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminEnableUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminEnableUserRequest, AdminEnableUserResult>",
-      "authenticated" : true,
       "methodName" : "adminEnableUser"
     },
     "AdminGetUser" : {
@@ -313,12 +313,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminGetUserResult",
       "asyncReturnType" : "AdminGetUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminGetUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminGetUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminGetUserRequest, AdminGetUserResult>",
-      "authenticated" : true,
       "methodName" : "adminGetUser"
     },
     "AdminResetUserPassword" : {
@@ -367,12 +367,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminResetUserPasswordResult",
       "asyncReturnType" : "AdminResetUserPasswordResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminResetUserPasswordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminResetUserPasswordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminResetUserPasswordRequest, AdminResetUserPasswordResult>",
-      "authenticated" : true,
       "methodName" : "adminResetUserPassword"
     },
     "AdminSetUserSettings" : {
@@ -403,12 +403,12 @@
         "documentation" : "<p>This exception gets thrown when a user is not authorized.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminSetUserSettingsResult",
       "asyncReturnType" : "AdminSetUserSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminSetUserSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminSetUserSettingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminSetUserSettingsRequest, AdminSetUserSettingsResult>",
-      "authenticated" : true,
       "methodName" : "adminSetUserSettings"
     },
     "AdminUpdateUserAttributes" : {
@@ -454,12 +454,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminUpdateUserAttributesResult",
       "asyncReturnType" : "AdminUpdateUserAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminUpdateUserAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminUpdateUserAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminUpdateUserAttributesRequest, AdminUpdateUserAttributesResult>",
-      "authenticated" : true,
       "methodName" : "adminUpdateUserAttributes"
     },
     "ChangePassword" : {
@@ -499,12 +499,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "ChangePasswordResult",
       "asyncReturnType" : "ChangePasswordResult",
       "asyncFutureType" : "java.util.concurrent.Future<ChangePasswordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ChangePasswordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ChangePasswordRequest, ChangePasswordResult>",
-      "authenticated" : false,
       "methodName" : "changePassword"
     },
     "ConfirmForgotPassword" : {
@@ -565,12 +565,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "ConfirmForgotPasswordResult",
       "asyncReturnType" : "ConfirmForgotPasswordResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfirmForgotPasswordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfirmForgotPasswordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmForgotPasswordRequest, ConfirmForgotPasswordResult>",
-      "authenticated" : false,
       "methodName" : "confirmForgotPassword"
     },
     "ConfirmSignUp" : {
@@ -631,12 +631,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "ConfirmSignUpResult",
       "asyncReturnType" : "ConfirmSignUpResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfirmSignUpResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfirmSignUpResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmSignUpRequest, ConfirmSignUpResult>",
-      "authenticated" : false,
       "methodName" : "confirmSignUp"
     },
     "CreateUserPool" : {
@@ -670,12 +670,12 @@
         "documentation" : "<p>This exception is thrown when a user exceeds the limit for a requested AWS resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateUserPoolResult",
       "asyncReturnType" : "CreateUserPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateUserPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateUserPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateUserPoolRequest, CreateUserPoolResult>",
-      "authenticated" : true,
       "methodName" : "createUserPool"
     },
     "CreateUserPoolClient" : {
@@ -712,12 +712,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateUserPoolClientResult",
       "asyncReturnType" : "CreateUserPoolClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateUserPoolClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateUserPoolClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateUserPoolClientRequest, CreateUserPoolClientResult>",
-      "authenticated" : true,
       "methodName" : "createUserPoolClient"
     },
     "DeleteUser" : {
@@ -754,12 +754,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "DeleteUserResult",
       "asyncReturnType" : "DeleteUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult>",
-      "authenticated" : false,
       "methodName" : "deleteUser"
     },
     "DeleteUserAttributes" : {
@@ -796,12 +796,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "DeleteUserAttributesResult",
       "asyncReturnType" : "DeleteUserAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteUserAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteUserAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteUserAttributesRequest, DeleteUserAttributesResult>",
-      "authenticated" : false,
       "methodName" : "deleteUserAttributes"
     },
     "DeleteUserPool" : {
@@ -835,12 +835,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteUserPoolResult",
       "asyncReturnType" : "DeleteUserPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteUserPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteUserPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteUserPoolRequest, DeleteUserPoolResult>",
-      "authenticated" : true,
       "methodName" : "deleteUserPool"
     },
     "DeleteUserPoolClient" : {
@@ -874,12 +874,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteUserPoolClientResult",
       "asyncReturnType" : "DeleteUserPoolClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteUserPoolClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteUserPoolClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteUserPoolClientRequest, DeleteUserPoolClientResult>",
-      "authenticated" : true,
       "methodName" : "deleteUserPoolClient"
     },
     "DescribeUserPool" : {
@@ -913,12 +913,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeUserPoolResult",
       "asyncReturnType" : "DescribeUserPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeUserPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeUserPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeUserPoolRequest, DescribeUserPoolResult>",
-      "authenticated" : true,
       "methodName" : "describeUserPool"
     },
     "DescribeUserPoolClient" : {
@@ -952,12 +952,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeUserPoolClientResult",
       "asyncReturnType" : "DescribeUserPoolClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeUserPoolClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeUserPoolClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeUserPoolClientRequest, DescribeUserPoolClientResult>",
-      "authenticated" : true,
       "methodName" : "describeUserPoolClient"
     },
     "ForgotPassword" : {
@@ -1006,12 +1006,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "ForgotPasswordResult",
       "asyncReturnType" : "ForgotPasswordResult",
       "asyncFutureType" : "java.util.concurrent.Future<ForgotPasswordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ForgotPasswordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ForgotPasswordRequest, ForgotPasswordResult>",
-      "authenticated" : false,
       "methodName" : "forgotPassword"
     },
     "GetUser" : {
@@ -1048,12 +1048,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "GetUserResult",
       "asyncReturnType" : "GetUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetUserRequest, GetUserResult>",
-      "authenticated" : false,
       "methodName" : "getUser"
     },
     "GetUserAttributeVerificationCode" : {
@@ -1099,12 +1099,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "GetUserAttributeVerificationCodeResult",
       "asyncReturnType" : "GetUserAttributeVerificationCodeResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetUserAttributeVerificationCodeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetUserAttributeVerificationCodeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetUserAttributeVerificationCodeRequest, GetUserAttributeVerificationCodeResult>",
-      "authenticated" : false,
       "methodName" : "getUserAttributeVerificationCode"
     },
     "ListUserPoolClients" : {
@@ -1138,12 +1138,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListUserPoolClientsResult",
       "asyncReturnType" : "ListUserPoolClientsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListUserPoolClientsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListUserPoolClientsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListUserPoolClientsRequest, ListUserPoolClientsResult>",
-      "authenticated" : true,
       "methodName" : "listUserPoolClients"
     },
     "ListUserPools" : {
@@ -1174,12 +1174,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListUserPoolsResult",
       "asyncReturnType" : "ListUserPoolsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListUserPoolsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListUserPoolsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListUserPoolsRequest, ListUserPoolsResult>",
-      "authenticated" : true,
       "methodName" : "listUserPools"
     },
     "ListUsers" : {
@@ -1213,12 +1213,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListUsersResult",
       "asyncReturnType" : "ListUsersResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListUsersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListUsersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult>",
-      "authenticated" : true,
       "methodName" : "listUsers"
     },
     "ResendConfirmationCode" : {
@@ -1267,12 +1267,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "ResendConfirmationCodeResult",
       "asyncReturnType" : "ResendConfirmationCodeResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResendConfirmationCodeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ResendConfirmationCodeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResendConfirmationCodeRequest, ResendConfirmationCodeResult>",
-      "authenticated" : false,
       "methodName" : "resendConfirmationCode"
     },
     "SetUserSettings" : {
@@ -1303,12 +1303,12 @@
         "documentation" : "<p>This exception gets thrown when a user is not authorized.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "SetUserSettingsResult",
       "asyncReturnType" : "SetUserSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetUserSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetUserSettingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetUserSettingsRequest, SetUserSettingsResult>",
-      "authenticated" : false,
       "methodName" : "setUserSettings"
     },
     "SignUp" : {
@@ -1360,12 +1360,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "SignUpResult",
       "asyncReturnType" : "SignUpResult",
       "asyncFutureType" : "java.util.concurrent.Future<SignUpResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SignUpResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SignUpRequest, SignUpResult>",
-      "authenticated" : false,
       "methodName" : "signUp"
     },
     "UpdateUserAttributes" : {
@@ -1420,12 +1420,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "UpdateUserAttributesResult",
       "asyncReturnType" : "UpdateUserAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateUserAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateUserAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateUserAttributesRequest, UpdateUserAttributesResult>",
-      "authenticated" : false,
       "methodName" : "updateUserAttributes"
     },
     "UpdateUserPool" : {
@@ -1462,12 +1462,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateUserPoolResult",
       "asyncReturnType" : "UpdateUserPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateUserPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateUserPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateUserPoolRequest, UpdateUserPoolResult>",
-      "authenticated" : true,
       "methodName" : "updateUserPool"
     },
     "UpdateUserPoolClient" : {
@@ -1501,12 +1501,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateUserPoolClientResult",
       "asyncReturnType" : "UpdateUserPoolClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateUserPoolClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateUserPoolClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateUserPoolClientRequest, UpdateUserPoolClientResult>",
-      "authenticated" : true,
       "methodName" : "updateUserPoolClient"
     },
     "VerifyUserAttribute" : {
@@ -1549,12 +1549,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "VerifyUserAttributeResult",
       "asyncReturnType" : "VerifyUserAttributeResult",
       "asyncFutureType" : "java.util.concurrent.Future<VerifyUserAttributeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<VerifyUserAttributeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyUserAttributeRequest, VerifyUserAttributeResult>",
-      "authenticated" : false,
       "methodName" : "verifyUserAttribute"
     }
   },
@@ -29254,6 +29254,7 @@
     "sdkModeledExceptionBaseClassName" : null,
     "customSignerProvider" : null,
     "calculateCRC32FromCompressedData" : false,
+    "customFileHeader" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
@@ -29264,5 +29265,6 @@
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException"
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException",
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
 }

@@ -19,15 +19,15 @@
     "jsonVersion" : null,
     "endpointPrefix" : "route53",
     "signingName" : "route53",
+    "jsonProtocol" : false,
     "xmlProtocol" : true,
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
-    "jsonProtocol" : false,
+    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
     "syncClientBuilderClassName" : "AmazonRoute53ClientBuilder",
     "asyncClientBuilderClassName" : "AmazonRoute53AsyncClientBuilder",
-    "serviceName" : "Route 53",
-    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller"
+    "serviceName" : "Route 53"
   },
   "operations" : {
     "AssociateVPCWithHostedZone" : {
@@ -67,12 +67,12 @@
         "documentation" : "<p>The limits specified for a resource have been exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AssociateVPCWithHostedZoneResult",
       "asyncReturnType" : "AssociateVPCWithHostedZoneResult",
       "asyncFutureType" : "java.util.concurrent.Future<AssociateVPCWithHostedZoneResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AssociateVPCWithHostedZoneResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AssociateVPCWithHostedZoneRequest, AssociateVPCWithHostedZoneResult>",
+      "authenticated" : true,
       "methodName" : "associateVPCWithHostedZone"
     },
     "ChangeResourceRecordSets" : {
@@ -109,12 +109,12 @@
         "documentation" : "<p>The request was rejected because Amazon Route 53 was still processing a prior request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ChangeResourceRecordSetsResult",
       "asyncReturnType" : "ChangeResourceRecordSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ChangeResourceRecordSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ChangeResourceRecordSetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ChangeResourceRecordSetsRequest, ChangeResourceRecordSetsResult>",
+      "authenticated" : true,
       "methodName" : "changeResourceRecordSets"
     },
     "ChangeTagsForResource" : {
@@ -151,12 +151,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ChangeTagsForResourceResult",
       "asyncReturnType" : "ChangeTagsForResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ChangeTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ChangeTagsForResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ChangeTagsForResourceRequest, ChangeTagsForResourceResult>",
+      "authenticated" : true,
       "methodName" : "changeTagsForResource"
     },
     "CreateHealthCheck" : {
@@ -187,12 +187,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateHealthCheckResult",
       "asyncReturnType" : "CreateHealthCheckResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateHealthCheckResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateHealthCheckResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateHealthCheckRequest, CreateHealthCheckResult>",
+      "authenticated" : true,
       "methodName" : "createHealthCheck"
     },
     "CreateHostedZone" : {
@@ -241,12 +241,12 @@
         "documentation" : "<p>The specified delegation set has not been marked as reusable.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateHostedZoneResult",
       "asyncReturnType" : "CreateHostedZoneResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateHostedZoneResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateHostedZoneResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateHostedZoneRequest, CreateHostedZoneResult>",
+      "authenticated" : true,
       "methodName" : "createHostedZone"
     },
     "CreateReusableDelegationSet" : {
@@ -289,12 +289,12 @@
         "documentation" : "<p>The specified delegation set has already been marked as reusable.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateReusableDelegationSetResult",
       "asyncReturnType" : "CreateReusableDelegationSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateReusableDelegationSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateReusableDelegationSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateReusableDelegationSetRequest, CreateReusableDelegationSetResult>",
+      "authenticated" : true,
       "methodName" : "createReusableDelegationSet"
     },
     "CreateTrafficPolicy" : {
@@ -328,12 +328,12 @@
         "documentation" : "<p>The format of the traffic policy document that you specified in the <code>Document</code> element is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateTrafficPolicyResult",
       "asyncReturnType" : "CreateTrafficPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTrafficPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTrafficPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrafficPolicyRequest, CreateTrafficPolicyResult>",
+      "authenticated" : true,
       "methodName" : "createTrafficPolicy"
     },
     "CreateTrafficPolicyInstance" : {
@@ -370,12 +370,12 @@
         "documentation" : "<p>Traffic policy instance with given Id already exists.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateTrafficPolicyInstanceResult",
       "asyncReturnType" : "CreateTrafficPolicyInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTrafficPolicyInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTrafficPolicyInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrafficPolicyInstanceRequest, CreateTrafficPolicyInstanceResult>",
+      "authenticated" : true,
       "methodName" : "createTrafficPolicyInstance"
     },
     "CreateTrafficPolicyVersion" : {
@@ -409,12 +409,12 @@
         "documentation" : "<p>The format of the traffic policy document that you specified in the <code>Document</code> element is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateTrafficPolicyVersionResult",
       "asyncReturnType" : "CreateTrafficPolicyVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTrafficPolicyVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTrafficPolicyVersionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrafficPolicyVersionRequest, CreateTrafficPolicyVersionResult>",
+      "authenticated" : true,
       "methodName" : "createTrafficPolicyVersion"
     },
     "DeleteHealthCheck" : {
@@ -445,12 +445,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteHealthCheckResult",
       "asyncReturnType" : "DeleteHealthCheckResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteHealthCheckResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteHealthCheckResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteHealthCheckRequest, DeleteHealthCheckResult>",
+      "authenticated" : true,
       "methodName" : "deleteHealthCheck"
     },
     "DeleteHostedZone" : {
@@ -487,12 +487,12 @@
         "documentation" : "<p>This error indicates that the specified domain name is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteHostedZoneResult",
       "asyncReturnType" : "DeleteHostedZoneResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteHostedZoneResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteHostedZoneResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteHostedZoneRequest, DeleteHostedZoneResult>",
+      "authenticated" : true,
       "methodName" : "deleteHostedZone"
     },
     "DeleteReusableDelegationSet" : {
@@ -526,12 +526,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteReusableDelegationSetResult",
       "asyncReturnType" : "DeleteReusableDelegationSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteReusableDelegationSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteReusableDelegationSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteReusableDelegationSetRequest, DeleteReusableDelegationSetResult>",
+      "authenticated" : true,
       "methodName" : "deleteReusableDelegationSet"
     },
     "DeleteTrafficPolicy" : {
@@ -565,12 +565,12 @@
         "documentation" : "<p>Another user submitted a request to update the object at the same time that you did. Retry the request. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteTrafficPolicyResult",
       "asyncReturnType" : "DeleteTrafficPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTrafficPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTrafficPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTrafficPolicyRequest, DeleteTrafficPolicyResult>",
+      "authenticated" : true,
       "methodName" : "deleteTrafficPolicy"
     },
     "DeleteTrafficPolicyInstance" : {
@@ -601,12 +601,12 @@
         "documentation" : "<p>The request was rejected because Amazon Route 53 was still processing a prior request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteTrafficPolicyInstanceResult",
       "asyncReturnType" : "DeleteTrafficPolicyInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTrafficPolicyInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTrafficPolicyInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTrafficPolicyInstanceRequest, DeleteTrafficPolicyInstanceResult>",
+      "authenticated" : true,
       "methodName" : "deleteTrafficPolicyInstance"
     },
     "DisassociateVPCFromHostedZone" : {
@@ -643,12 +643,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DisassociateVPCFromHostedZoneResult",
       "asyncReturnType" : "DisassociateVPCFromHostedZoneResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisassociateVPCFromHostedZoneResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisassociateVPCFromHostedZoneResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisassociateVPCFromHostedZoneRequest, DisassociateVPCFromHostedZoneResult>",
+      "authenticated" : true,
       "methodName" : "disassociateVPCFromHostedZone"
     },
     "GetChange" : {
@@ -676,12 +676,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetChangeResult",
       "asyncReturnType" : "GetChangeResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetChangeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetChangeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetChangeRequest, GetChangeResult>",
+      "authenticated" : true,
       "methodName" : "getChange"
     },
     "GetChangeDetails" : {
@@ -709,12 +709,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetChangeDetailsResult",
       "asyncReturnType" : "GetChangeDetailsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetChangeDetailsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetChangeDetailsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetChangeDetailsRequest, GetChangeDetailsResult>",
+      "authenticated" : true,
       "methodName" : "getChangeDetails"
     },
     "GetCheckerIpRanges" : {
@@ -736,12 +736,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetCheckerIpRangesResult",
       "asyncReturnType" : "GetCheckerIpRangesResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCheckerIpRangesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCheckerIpRangesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCheckerIpRangesRequest, GetCheckerIpRangesResult>",
+      "authenticated" : true,
       "methodName" : "getCheckerIpRanges"
     },
     "GetGeoLocation" : {
@@ -769,12 +769,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetGeoLocationResult",
       "asyncReturnType" : "GetGeoLocationResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetGeoLocationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetGeoLocationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetGeoLocationRequest, GetGeoLocationResult>",
+      "authenticated" : true,
       "methodName" : "getGeoLocation"
     },
     "GetHealthCheck" : {
@@ -805,12 +805,12 @@
         "documentation" : "<p>The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider using a newer endpoint or a tool that does so.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetHealthCheckResult",
       "asyncReturnType" : "GetHealthCheckResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetHealthCheckResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetHealthCheckResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHealthCheckRequest, GetHealthCheckResult>",
+      "authenticated" : true,
       "methodName" : "getHealthCheck"
     },
     "GetHealthCheckCount" : {
@@ -832,12 +832,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetHealthCheckCountResult",
       "asyncReturnType" : "GetHealthCheckCountResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetHealthCheckCountResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetHealthCheckCountResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHealthCheckCountRequest, GetHealthCheckCountResult>",
+      "authenticated" : true,
       "methodName" : "getHealthCheckCount"
     },
     "GetHealthCheckLastFailureReason" : {
@@ -865,12 +865,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetHealthCheckLastFailureReasonResult",
       "asyncReturnType" : "GetHealthCheckLastFailureReasonResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetHealthCheckLastFailureReasonResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetHealthCheckLastFailureReasonResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHealthCheckLastFailureReasonRequest, GetHealthCheckLastFailureReasonResult>",
+      "authenticated" : true,
       "methodName" : "getHealthCheckLastFailureReason"
     },
     "GetHealthCheckStatus" : {
@@ -898,12 +898,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetHealthCheckStatusResult",
       "asyncReturnType" : "GetHealthCheckStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetHealthCheckStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetHealthCheckStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHealthCheckStatusRequest, GetHealthCheckStatusResult>",
+      "authenticated" : true,
       "methodName" : "getHealthCheckStatus"
     },
     "GetHostedZone" : {
@@ -931,12 +931,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetHostedZoneResult",
       "asyncReturnType" : "GetHostedZoneResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetHostedZoneResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetHostedZoneResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHostedZoneRequest, GetHostedZoneResult>",
+      "authenticated" : true,
       "methodName" : "getHostedZone"
     },
     "GetHostedZoneCount" : {
@@ -961,12 +961,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetHostedZoneCountResult",
       "asyncReturnType" : "GetHostedZoneCountResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetHostedZoneCountResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetHostedZoneCountResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetHostedZoneCountRequest, GetHostedZoneCountResult>",
+      "authenticated" : true,
       "methodName" : "getHostedZoneCount"
     },
     "GetReusableDelegationSet" : {
@@ -997,12 +997,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetReusableDelegationSetResult",
       "asyncReturnType" : "GetReusableDelegationSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetReusableDelegationSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetReusableDelegationSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetReusableDelegationSetRequest, GetReusableDelegationSetResult>",
+      "authenticated" : true,
       "methodName" : "getReusableDelegationSet"
     },
     "GetTrafficPolicy" : {
@@ -1030,12 +1030,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetTrafficPolicyResult",
       "asyncReturnType" : "GetTrafficPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTrafficPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTrafficPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyRequest, GetTrafficPolicyResult>",
+      "authenticated" : true,
       "methodName" : "getTrafficPolicy"
     },
     "GetTrafficPolicyInstance" : {
@@ -1063,12 +1063,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetTrafficPolicyInstanceResult",
       "asyncReturnType" : "GetTrafficPolicyInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTrafficPolicyInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTrafficPolicyInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyInstanceRequest, GetTrafficPolicyInstanceResult>",
+      "authenticated" : true,
       "methodName" : "getTrafficPolicyInstance"
     },
     "GetTrafficPolicyInstanceCount" : {
@@ -1090,12 +1090,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetTrafficPolicyInstanceCountResult",
       "asyncReturnType" : "GetTrafficPolicyInstanceCountResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTrafficPolicyInstanceCountResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTrafficPolicyInstanceCountResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyInstanceCountRequest, GetTrafficPolicyInstanceCountResult>",
+      "authenticated" : true,
       "methodName" : "getTrafficPolicyInstanceCount"
     },
     "ListChangeBatchesByHostedZone" : {
@@ -1123,12 +1123,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListChangeBatchesByHostedZoneResult",
       "asyncReturnType" : "ListChangeBatchesByHostedZoneResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListChangeBatchesByHostedZoneResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListChangeBatchesByHostedZoneResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByHostedZoneRequest, ListChangeBatchesByHostedZoneResult>",
+      "authenticated" : true,
       "methodName" : "listChangeBatchesByHostedZone"
     },
     "ListChangeBatchesByRRSet" : {
@@ -1156,12 +1156,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListChangeBatchesByRRSetResult",
       "asyncReturnType" : "ListChangeBatchesByRRSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListChangeBatchesByRRSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListChangeBatchesByRRSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByRRSetRequest, ListChangeBatchesByRRSetResult>",
+      "authenticated" : true,
       "methodName" : "listChangeBatchesByRRSet"
     },
     "ListGeoLocations" : {
@@ -1186,12 +1186,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListGeoLocationsResult",
       "asyncReturnType" : "ListGeoLocationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListGeoLocationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListGeoLocationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListGeoLocationsRequest, ListGeoLocationsResult>",
+      "authenticated" : true,
       "methodName" : "listGeoLocations"
     },
     "ListHealthChecks" : {
@@ -1219,12 +1219,12 @@
         "documentation" : "<p>The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider using a newer endpoint or a tool that does so.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListHealthChecksResult",
       "asyncReturnType" : "ListHealthChecksResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListHealthChecksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListHealthChecksResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListHealthChecksRequest, ListHealthChecksResult>",
+      "authenticated" : true,
       "methodName" : "listHealthChecks"
     },
     "ListHostedZones" : {
@@ -1255,12 +1255,12 @@
         "documentation" : "<p>The specified delegation set has not been marked as reusable.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListHostedZonesResult",
       "asyncReturnType" : "ListHostedZonesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListHostedZonesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListHostedZonesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListHostedZonesRequest, ListHostedZonesResult>",
+      "authenticated" : true,
       "methodName" : "listHostedZones"
     },
     "ListHostedZonesByName" : {
@@ -1288,12 +1288,12 @@
         "documentation" : "<p>This error indicates that the specified domain name is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListHostedZonesByNameResult",
       "asyncReturnType" : "ListHostedZonesByNameResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListHostedZonesByNameResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListHostedZonesByNameResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListHostedZonesByNameRequest, ListHostedZonesByNameResult>",
+      "authenticated" : true,
       "methodName" : "listHostedZonesByName"
     },
     "ListResourceRecordSets" : {
@@ -1321,12 +1321,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListResourceRecordSetsResult",
       "asyncReturnType" : "ListResourceRecordSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListResourceRecordSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListResourceRecordSetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListResourceRecordSetsRequest, ListResourceRecordSetsResult>",
+      "authenticated" : true,
       "methodName" : "listResourceRecordSets"
     },
     "ListReusableDelegationSets" : {
@@ -1351,12 +1351,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListReusableDelegationSetsResult",
       "asyncReturnType" : "ListReusableDelegationSetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListReusableDelegationSetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListReusableDelegationSetsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListReusableDelegationSetsRequest, ListReusableDelegationSetsResult>",
+      "authenticated" : true,
       "methodName" : "listReusableDelegationSets"
     },
     "ListTagsForResource" : {
@@ -1393,12 +1393,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTagsForResourceResult",
       "asyncReturnType" : "ListTagsForResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>",
+      "authenticated" : true,
       "methodName" : "listTagsForResource"
     },
     "ListTagsForResources" : {
@@ -1435,12 +1435,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTagsForResourcesResult",
       "asyncReturnType" : "ListTagsForResourcesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourcesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourcesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourcesRequest, ListTagsForResourcesResult>",
+      "authenticated" : true,
       "methodName" : "listTagsForResources"
     },
     "ListTrafficPolicies" : {
@@ -1465,12 +1465,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTrafficPoliciesResult",
       "asyncReturnType" : "ListTrafficPoliciesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTrafficPoliciesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTrafficPoliciesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPoliciesRequest, ListTrafficPoliciesResult>",
+      "authenticated" : true,
       "methodName" : "listTrafficPolicies"
     },
     "ListTrafficPolicyInstances" : {
@@ -1498,12 +1498,12 @@
         "documentation" : "<p>No traffic policy instance exists with the specified ID.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTrafficPolicyInstancesResult",
       "asyncReturnType" : "ListTrafficPolicyInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTrafficPolicyInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTrafficPolicyInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyInstancesRequest, ListTrafficPolicyInstancesResult>",
+      "authenticated" : true,
       "methodName" : "listTrafficPolicyInstances"
     },
     "ListTrafficPolicyInstancesByHostedZone" : {
@@ -1534,12 +1534,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTrafficPolicyInstancesByHostedZoneResult",
       "asyncReturnType" : "ListTrafficPolicyInstancesByHostedZoneResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTrafficPolicyInstancesByHostedZoneResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTrafficPolicyInstancesByHostedZoneResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyInstancesByHostedZoneRequest, ListTrafficPolicyInstancesByHostedZoneResult>",
+      "authenticated" : true,
       "methodName" : "listTrafficPolicyInstancesByHostedZone"
     },
     "ListTrafficPolicyInstancesByPolicy" : {
@@ -1570,12 +1570,12 @@
         "documentation" : "<p>No traffic policy exists with the specified ID.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTrafficPolicyInstancesByPolicyResult",
       "asyncReturnType" : "ListTrafficPolicyInstancesByPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTrafficPolicyInstancesByPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTrafficPolicyInstancesByPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyInstancesByPolicyRequest, ListTrafficPolicyInstancesByPolicyResult>",
+      "authenticated" : true,
       "methodName" : "listTrafficPolicyInstancesByPolicy"
     },
     "ListTrafficPolicyVersions" : {
@@ -1603,12 +1603,12 @@
         "documentation" : "<p>No traffic policy exists with the specified ID.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTrafficPolicyVersionsResult",
       "asyncReturnType" : "ListTrafficPolicyVersionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTrafficPolicyVersionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTrafficPolicyVersionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyVersionsRequest, ListTrafficPolicyVersionsResult>",
+      "authenticated" : true,
       "methodName" : "listTrafficPolicyVersions"
     },
     "UpdateHealthCheck" : {
@@ -1639,12 +1639,12 @@
         "documentation" : null
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateHealthCheckResult",
       "asyncReturnType" : "UpdateHealthCheckResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateHealthCheckResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateHealthCheckResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateHealthCheckRequest, UpdateHealthCheckResult>",
+      "authenticated" : true,
       "methodName" : "updateHealthCheck"
     },
     "UpdateHostedZoneComment" : {
@@ -1672,12 +1672,12 @@
         "documentation" : "<p>Some value specified in the request is invalid or the XML document is malformed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateHostedZoneCommentResult",
       "asyncReturnType" : "UpdateHostedZoneCommentResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateHostedZoneCommentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateHostedZoneCommentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateHostedZoneCommentRequest, UpdateHostedZoneCommentResult>",
+      "authenticated" : true,
       "methodName" : "updateHostedZoneComment"
     },
     "UpdateTrafficPolicyComment" : {
@@ -1708,12 +1708,12 @@
         "documentation" : "<p>Another user submitted a request to update the object at the same time that you did. Retry the request. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateTrafficPolicyCommentResult",
       "asyncReturnType" : "UpdateTrafficPolicyCommentResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateTrafficPolicyCommentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateTrafficPolicyCommentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateTrafficPolicyCommentRequest, UpdateTrafficPolicyCommentResult>",
+      "authenticated" : true,
       "methodName" : "updateTrafficPolicyComment"
     },
     "UpdateTrafficPolicyInstance" : {
@@ -1750,12 +1750,12 @@
         "documentation" : "<p>You tried to update a traffic policy instance by using a traffic policy version that has a different DNS type than the current type for the instance. You specified the type in the JSON document in the <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateTrafficPolicyInstanceResult",
       "asyncReturnType" : "UpdateTrafficPolicyInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateTrafficPolicyInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateTrafficPolicyInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateTrafficPolicyInstanceRequest, UpdateTrafficPolicyInstanceResult>",
+      "authenticated" : true,
       "methodName" : "updateTrafficPolicyInstance"
     }
   },
@@ -49913,6 +49913,7 @@
     "sdkModeledExceptionBaseClassName" : null,
     "customSignerProvider" : null,
     "calculateCRC32FromCompressedData" : false,
+    "customFileHeader" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
@@ -49923,5 +49924,6 @@
   "clientConfigFactory" : "ClientConfigurationFactory",
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.route53.model.AmazonRoute53Exception",
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "sdkModeledExceptionBaseClassName" : "AmazonRoute53Exception"
 }

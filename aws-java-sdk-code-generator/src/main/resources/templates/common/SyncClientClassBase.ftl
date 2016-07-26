@@ -1,4 +1,4 @@
-<@LicenseCommentBlockMacro.content />
+${fileHeader}
 <#assign serviceAbbreviation = (metadata.serviceAbbreviation)!metadata.serviceFullName/>
 package ${metadata.packageName};
 

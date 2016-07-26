@@ -1,19 +1,17 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not
+ * use this file except in compliance with the License. A copy of the License is
+ * located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
@@ -35,11 +33,9 @@ public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
     private String thingName;
     /**
      * <p>
-     * The principal.
-     * </p>
-     * <p>
-     * If the principal is a certificate, specify the certificate ARN. If the
-     * principal is an Amazon Cognito identity, specify the identity ID.
+     * If the principal is a certificate, this value must be ARN of the
+     * certificate. If the principal is an Amazon Cognito identity, this value
+     * must be the ID of the Amazon Cognito identity.
      * </p>
      */
     private String principal;
@@ -87,19 +83,15 @@ public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principal.
-     * </p>
-     * <p>
-     * If the principal is a certificate, specify the certificate ARN. If the
-     * principal is an Amazon Cognito identity, specify the identity ID.
+     * If the principal is a certificate, this value must be ARN of the
+     * certificate. If the principal is an Amazon Cognito identity, this value
+     * must be the ID of the Amazon Cognito identity.
      * </p>
      * 
      * @param principal
-     *        The principal.</p>
-     *        <p>
-     *        If the principal is a certificate, specify the certificate ARN. If
-     *        the principal is an Amazon Cognito identity, specify the identity
-     *        ID.
+     *        If the principal is a certificate, this value must be ARN of the
+     *        certificate. If the principal is an Amazon Cognito identity, this
+     *        value must be the ID of the Amazon Cognito identity.
      */
 
     public void setPrincipal(String principal) {
@@ -108,18 +100,14 @@ public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principal.
-     * </p>
-     * <p>
-     * If the principal is a certificate, specify the certificate ARN. If the
-     * principal is an Amazon Cognito identity, specify the identity ID.
+     * If the principal is a certificate, this value must be ARN of the
+     * certificate. If the principal is an Amazon Cognito identity, this value
+     * must be the ID of the Amazon Cognito identity.
      * </p>
      * 
-     * @return The principal.</p>
-     *         <p>
-     *         If the principal is a certificate, specify the certificate ARN.
-     *         If the principal is an Amazon Cognito identity, specify the
-     *         identity ID.
+     * @return If the principal is a certificate, this value must be ARN of the
+     *         certificate. If the principal is an Amazon Cognito identity, this
+     *         value must be the ID of the Amazon Cognito identity.
      */
 
     public String getPrincipal() {
@@ -128,19 +116,15 @@ public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principal.
-     * </p>
-     * <p>
-     * If the principal is a certificate, specify the certificate ARN. If the
-     * principal is an Amazon Cognito identity, specify the identity ID.
+     * If the principal is a certificate, this value must be ARN of the
+     * certificate. If the principal is an Amazon Cognito identity, this value
+     * must be the ID of the Amazon Cognito identity.
      * </p>
      * 
      * @param principal
-     *        The principal.</p>
-     *        <p>
-     *        If the principal is a certificate, specify the certificate ARN. If
-     *        the principal is an Amazon Cognito identity, specify the identity
-     *        ID.
+     *        If the principal is a certificate, this value must be ARN of the
+     *        certificate. If the principal is an Amazon Cognito identity, this
+     *        value must be the ID of the Amazon Cognito identity.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

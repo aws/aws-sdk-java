@@ -58,12 +58,12 @@
         "documentation" : "<p>An error occurred on the server side.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddTagsToResourceResult",
       "asyncReturnType" : "AddTagsToResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsToResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult>",
-      "authenticated" : true,
       "methodName" : "addTagsToResource"
     },
     "CancelCommand" : {
@@ -97,12 +97,12 @@
         "documentation" : "<p>You cannot specify an instance ID in more than one association.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CancelCommandResult",
       "asyncReturnType" : "CancelCommandResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelCommandResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CancelCommandResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelCommandRequest, CancelCommandResult>",
-      "authenticated" : true,
       "methodName" : "cancelCommand"
     },
     "CreateActivation" : {
@@ -127,12 +127,12 @@
         "documentation" : "<p>An error occurred on the server side.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateActivationResult",
       "asyncReturnType" : "CreateActivationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateActivationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateActivationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateActivationRequest, CreateActivationResult>",
-      "authenticated" : true,
       "methodName" : "createActivation"
     },
     "CreateAssociation" : {
@@ -175,12 +175,12 @@
         "documentation" : "<p>You must specify values for all required parameters in the SSM document. You can only supply values to parameters defined in the SSM document.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateAssociationResult",
       "asyncReturnType" : "CreateAssociationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAssociationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAssociationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAssociationRequest, CreateAssociationResult>",
-      "authenticated" : true,
       "methodName" : "createAssociation"
     },
     "CreateAssociationBatch" : {
@@ -223,12 +223,12 @@
         "documentation" : "<p>The document does not support the platform type of the given instance ID(s). For example, you sent an SSM document for a Windows instance to a Linux instance.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateAssociationBatchResult",
       "asyncReturnType" : "CreateAssociationBatchResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateAssociationBatchResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateAssociationBatchResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateAssociationBatchRequest, CreateAssociationBatchResult>",
-      "authenticated" : true,
       "methodName" : "createAssociationBatch"
     },
     "CreateDocument" : {
@@ -265,12 +265,12 @@
         "documentation" : "<p>You can have at most 100 active SSM documents.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateDocumentResult",
       "asyncReturnType" : "CreateDocumentResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDocumentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDocumentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDocumentRequest, CreateDocumentResult>",
-      "authenticated" : true,
       "methodName" : "createDocument"
     },
     "DeleteActivation" : {
@@ -301,12 +301,12 @@
         "documentation" : "<p>An error occurred on the server side.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteActivationResult",
       "asyncReturnType" : "DeleteActivationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteActivationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteActivationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteActivationRequest, DeleteActivationResult>",
-      "authenticated" : true,
       "methodName" : "deleteActivation"
     },
     "DeleteAssociation" : {
@@ -343,12 +343,12 @@
         "documentation" : "<p>There are concurrent updates for a resource that supports one update at a time.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteAssociationResult",
       "asyncReturnType" : "DeleteAssociationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteAssociationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteAssociationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteAssociationRequest, DeleteAssociationResult>",
-      "authenticated" : true,
       "methodName" : "deleteAssociation"
     },
     "DeleteDocument" : {
@@ -382,12 +382,12 @@
         "documentation" : "<p>You must disassociate an SSM document from all instances before you can delete it.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteDocumentResult",
       "asyncReturnType" : "DeleteDocumentResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDocumentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDocumentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDocumentRequest, DeleteDocumentResult>",
-      "authenticated" : true,
       "methodName" : "deleteDocument"
     },
     "DeregisterManagedInstance" : {
@@ -415,12 +415,12 @@
         "documentation" : "<p>An error occurred on the server side.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeregisterManagedInstanceResult",
       "asyncReturnType" : "DeregisterManagedInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeregisterManagedInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeregisterManagedInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeregisterManagedInstanceRequest, DeregisterManagedInstanceResult>",
-      "authenticated" : true,
       "methodName" : "deregisterManagedInstance"
     },
     "DescribeActivations" : {
@@ -451,12 +451,12 @@
         "documentation" : "<p>An error occurred on the server side.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeActivationsResult",
       "asyncReturnType" : "DescribeActivationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeActivationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeActivationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeActivationsRequest, DescribeActivationsResult>",
-      "authenticated" : true,
       "methodName" : "describeActivations"
     },
     "DescribeAssociation" : {
@@ -490,12 +490,12 @@
         "documentation" : "<p>The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeAssociationResult",
       "asyncReturnType" : "DescribeAssociationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAssociationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAssociationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAssociationRequest, DescribeAssociationResult>",
-      "authenticated" : true,
       "methodName" : "describeAssociation"
     },
     "DescribeDocument" : {
@@ -523,12 +523,12 @@
         "documentation" : "<p>The specified document does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeDocumentResult",
       "asyncReturnType" : "DescribeDocumentResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDocumentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDocumentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDocumentRequest, DescribeDocumentResult>",
-      "authenticated" : true,
       "methodName" : "describeDocument"
     },
     "DescribeDocumentPermission" : {
@@ -559,12 +559,12 @@
         "documentation" : "<p>The permission type is not supported. <i>Share</i> is the only supported permission type.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeDocumentPermissionResult",
       "asyncReturnType" : "DescribeDocumentPermissionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDocumentPermissionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDocumentPermissionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDocumentPermissionRequest, DescribeDocumentPermissionResult>",
-      "authenticated" : true,
       "methodName" : "describeDocumentPermission"
     },
     "DescribeInstanceInformation" : {
@@ -601,12 +601,12 @@
         "documentation" : "<p>The specified key is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeInstanceInformationResult",
       "asyncReturnType" : "DescribeInstanceInformationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeInstanceInformationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeInstanceInformationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeInstanceInformationRequest, DescribeInstanceInformationResult>",
-      "authenticated" : true,
       "methodName" : "describeInstanceInformation"
     },
     "GetDocument" : {
@@ -634,12 +634,12 @@
         "documentation" : "<p>The specified document does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetDocumentResult",
       "asyncReturnType" : "GetDocumentResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDocumentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDocumentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDocumentRequest, GetDocumentResult>",
-      "authenticated" : true,
       "methodName" : "getDocument"
     },
     "ListAssociations" : {
@@ -667,12 +667,12 @@
         "documentation" : "<p>The specified token is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListAssociationsResult",
       "asyncReturnType" : "ListAssociationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListAssociationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAssociationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAssociationsRequest, ListAssociationsResult>",
-      "authenticated" : true,
       "methodName" : "listAssociations"
     },
     "ListCommandInvocations" : {
@@ -709,12 +709,12 @@
         "documentation" : "<p>The specified token is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListCommandInvocationsResult",
       "asyncReturnType" : "ListCommandInvocationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCommandInvocationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListCommandInvocationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListCommandInvocationsRequest, ListCommandInvocationsResult>",
-      "authenticated" : true,
       "methodName" : "listCommandInvocations"
     },
     "ListCommands" : {
@@ -751,12 +751,12 @@
         "documentation" : "<p>The specified token is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListCommandsResult",
       "asyncReturnType" : "ListCommandsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCommandsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListCommandsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListCommandsRequest, ListCommandsResult>",
-      "authenticated" : true,
       "methodName" : "listCommands"
     },
     "ListDocuments" : {
@@ -787,12 +787,12 @@
         "documentation" : "<p>The specified key is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListDocumentsResult",
       "asyncReturnType" : "ListDocumentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDocumentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDocumentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDocumentsRequest, ListDocumentsResult>",
-      "authenticated" : true,
       "methodName" : "listDocuments"
     },
     "ListTagsForResource" : {
@@ -823,12 +823,12 @@
         "documentation" : "<p>An error occurred on the server side.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTagsForResourceResult",
       "asyncReturnType" : "ListTagsForResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>",
-      "authenticated" : true,
       "methodName" : "listTagsForResource"
     },
     "ModifyDocumentPermission" : {
@@ -865,12 +865,12 @@
         "documentation" : "<p>You can have at most 100 active SSM documents.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ModifyDocumentPermissionResult",
       "asyncReturnType" : "ModifyDocumentPermissionResult",
       "asyncFutureType" : "java.util.concurrent.Future<ModifyDocumentPermissionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyDocumentPermissionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyDocumentPermissionRequest, ModifyDocumentPermissionResult>",
-      "authenticated" : true,
       "methodName" : "modifyDocumentPermission"
     },
     "RemoveTagsFromResource" : {
@@ -901,12 +901,12 @@
         "documentation" : "<p>An error occurred on the server side.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RemoveTagsFromResourceResult",
       "asyncReturnType" : "RemoveTagsFromResourceResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult>",
-      "authenticated" : true,
       "methodName" : "removeTagsFromResource"
     },
     "SendCommand" : {
@@ -958,12 +958,12 @@
         "documentation" : "<p>One or more configuration items is not valid. Verify that a valid Amazon Resource Name (ARN) was provided for an Amazon SNS topic.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SendCommandResult",
       "asyncReturnType" : "SendCommandResult",
       "asyncFutureType" : "java.util.concurrent.Future<SendCommandResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SendCommandResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SendCommandRequest, SendCommandResult>",
-      "authenticated" : true,
       "methodName" : "sendCommand"
     },
     "UpdateAssociationStatus" : {
@@ -1003,12 +1003,12 @@
         "documentation" : "<p>There are concurrent updates for a resource that supports one update at a time.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateAssociationStatusResult",
       "asyncReturnType" : "UpdateAssociationStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateAssociationStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateAssociationStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateAssociationStatusRequest, UpdateAssociationStatusResult>",
-      "authenticated" : true,
       "methodName" : "updateAssociationStatus"
     },
     "UpdateManagedInstanceRole" : {
@@ -1036,12 +1036,12 @@
         "documentation" : "<p>An error occurred on the server side.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateManagedInstanceRoleResult",
       "asyncReturnType" : "UpdateManagedInstanceRoleResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateManagedInstanceRoleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateManagedInstanceRoleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateManagedInstanceRoleRequest, UpdateManagedInstanceRoleResult>",
-      "authenticated" : true,
       "methodName" : "updateManagedInstanceRole"
     }
   },
@@ -1212,9 +1212,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1410,9 +1410,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2209,9 +2209,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "NotificationEvent",
@@ -2508,9 +2508,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "NotificationEvent",
@@ -2897,9 +2897,9 @@
               "sendEmptyQueryString" : false,
               "simple" : true,
               "map" : false,
+              "simpleType" : "String",
               "templateType" : "java.util.List<String>",
-              "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-              "simpleType" : "String"
+              "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
             },
             "mapModel" : null,
             "enumType" : null,
@@ -2913,12 +2913,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,java.util.List<String>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : true,
-          "entryType" : "Map.Entry<String, java.util.List<String>>",
-          "templateType" : "java.util.Map<String,java.util.List<String>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+          "entryType" : "Map.Entry<String, java.util.List<String>>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -3158,9 +3158,9 @@
                 "sendEmptyQueryString" : false,
                 "simple" : true,
                 "map" : false,
+                "simpleType" : "String",
                 "templateType" : "java.util.List<String>",
-                "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-                "simpleType" : "String"
+                "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
               },
               "mapModel" : null,
               "enumType" : null,
@@ -3174,12 +3174,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,java.util.List<String>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : true,
-            "entryType" : "Map.Entry<String, java.util.List<String>>",
-            "templateType" : "java.util.Map<String,java.util.List<String>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+            "entryType" : "Map.Entry<String, java.util.List<String>>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -4228,9 +4228,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4369,9 +4369,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5297,9 +5297,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5415,9 +5415,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5560,9 +5560,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5679,9 +5679,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6005,9 +6005,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "Command",
           "templateType" : "java.util.List<Command>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Command>",
-          "simpleType" : "Command"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Command>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6251,9 +6251,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "Command",
             "templateType" : "java.util.List<Command>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Command>",
-            "simpleType" : "Command"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Command>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6591,9 +6591,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "CommandFilter",
           "templateType" : "java.util.List<CommandFilter>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>",
-          "simpleType" : "CommandFilter"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6736,9 +6736,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "CommandFilter",
             "templateType" : "java.util.List<CommandFilter>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>",
-            "simpleType" : "CommandFilter"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7265,9 +7265,9 @@
               "sendEmptyQueryString" : false,
               "simple" : true,
               "map" : false,
+              "simpleType" : "String",
               "templateType" : "java.util.List<String>",
-              "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-              "simpleType" : "String"
+              "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
             },
             "mapModel" : null,
             "enumType" : null,
@@ -7281,12 +7281,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,java.util.List<String>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : true,
-          "entryType" : "Map.Entry<String, java.util.List<String>>",
-          "templateType" : "java.util.Map<String,java.util.List<String>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+          "entryType" : "Map.Entry<String, java.util.List<String>>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -7477,9 +7477,9 @@
                 "sendEmptyQueryString" : false,
                 "simple" : true,
                 "map" : false,
+                "simpleType" : "String",
                 "templateType" : "java.util.List<String>",
-                "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-                "simpleType" : "String"
+                "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
               },
               "mapModel" : null,
               "enumType" : null,
@@ -7493,12 +7493,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,java.util.List<String>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : true,
-            "entryType" : "Map.Entry<String, java.util.List<String>>",
-            "templateType" : "java.util.Map<String,java.util.List<String>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+            "entryType" : "Map.Entry<String, java.util.List<String>>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -7733,9 +7733,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "Activation",
           "templateType" : "java.util.List<Activation>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activation>",
-          "simpleType" : "Activation"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7979,9 +7979,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "Activation",
             "templateType" : "java.util.List<Activation>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activation>",
-            "simpleType" : "Activation"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Activation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9520,9 +9520,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "CommandPlugin",
           "templateType" : "java.util.List<CommandPlugin>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandPlugin>",
-          "simpleType" : "CommandPlugin"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandPlugin>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10083,9 +10083,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "CommandPlugin",
             "templateType" : "java.util.List<CommandPlugin>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandPlugin>",
-            "simpleType" : "CommandPlugin"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandPlugin>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10793,9 +10793,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "InstanceInformation",
           "templateType" : "java.util.List<InstanceInformation>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformation>",
-          "simpleType" : "InstanceInformation"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11039,9 +11039,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "InstanceInformation",
             "templateType" : "java.util.List<InstanceInformation>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformation>",
-            "simpleType" : "InstanceInformation"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11171,9 +11171,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "Association",
           "templateType" : "java.util.List<Association>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Association>",
-          "simpleType" : "Association"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Association>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -11417,9 +11417,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "Association",
             "templateType" : "java.util.List<Association>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Association>",
-            "simpleType" : "Association"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Association>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12005,9 +12005,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "DocumentIdentifier",
           "templateType" : "java.util.List<DocumentIdentifier>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentIdentifier>",
-          "simpleType" : "DocumentIdentifier"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentIdentifier>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12198,9 +12198,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "DocumentIdentifier",
             "templateType" : "java.util.List<DocumentIdentifier>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentIdentifier>",
-            "simpleType" : "DocumentIdentifier"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentIdentifier>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12914,9 +12914,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "CreateAssociationBatchRequestEntry",
           "templateType" : "java.util.List<CreateAssociationBatchRequestEntry>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>",
-          "simpleType" : "CreateAssociationBatchRequestEntry"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13059,9 +13059,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "CreateAssociationBatchRequestEntry",
             "templateType" : "java.util.List<CreateAssociationBatchRequestEntry>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>",
-            "simpleType" : "CreateAssociationBatchRequestEntry"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14292,9 +14292,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14433,9 +14433,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15558,9 +15558,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "DocumentFilter",
           "templateType" : "java.util.List<DocumentFilter>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentFilter>",
-          "simpleType" : "DocumentFilter"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15913,9 +15913,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "DocumentFilter",
             "templateType" : "java.util.List<DocumentFilter>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentFilter>",
-            "simpleType" : "DocumentFilter"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16637,9 +16637,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simpleType" : "Tag"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16778,9 +16778,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simpleType" : "Tag"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17579,9 +17579,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17830,9 +17830,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20294,9 +20294,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "AssociationDescription",
           "templateType" : "java.util.List<AssociationDescription>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationDescription>",
-          "simpleType" : "AssociationDescription"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationDescription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20412,9 +20412,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "FailedCreateAssociation",
           "templateType" : "java.util.List<FailedCreateAssociation>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateAssociation>",
-          "simpleType" : "FailedCreateAssociation"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateAssociation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20553,9 +20553,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "FailedCreateAssociation",
             "templateType" : "java.util.List<FailedCreateAssociation>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateAssociation>",
-            "simpleType" : "FailedCreateAssociation"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<FailedCreateAssociation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20672,9 +20672,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "AssociationDescription",
             "templateType" : "java.util.List<AssociationDescription>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationDescription>",
-            "simpleType" : "AssociationDescription"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationDescription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21121,9 +21121,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21262,9 +21262,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21567,9 +21567,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "CommandInvocation",
           "templateType" : "java.util.List<CommandInvocation>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandInvocation>",
-          "simpleType" : "CommandInvocation"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandInvocation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21813,9 +21813,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "CommandInvocation",
             "templateType" : "java.util.List<CommandInvocation>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandInvocation>",
-            "simpleType" : "CommandInvocation"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandInvocation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22379,9 +22379,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22806,9 +22806,9 @@
               "sendEmptyQueryString" : false,
               "simple" : true,
               "map" : false,
+              "simpleType" : "String",
               "templateType" : "java.util.List<String>",
-              "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-              "simpleType" : "String"
+              "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
             },
             "mapModel" : null,
             "enumType" : null,
@@ -22822,12 +22822,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,java.util.List<String>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : true,
-          "entryType" : "Map.Entry<String, java.util.List<String>>",
-          "templateType" : "java.util.Map<String,java.util.List<String>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+          "entryType" : "Map.Entry<String, java.util.List<String>>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -23385,9 +23385,9 @@
                 "sendEmptyQueryString" : false,
                 "simple" : true,
                 "map" : false,
+                "simpleType" : "String",
                 "templateType" : "java.util.List<String>",
-                "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-                "simpleType" : "String"
+                "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
               },
               "mapModel" : null,
               "enumType" : null,
@@ -23401,12 +23401,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,java.util.List<String>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : true,
-            "entryType" : "Map.Entry<String, java.util.List<String>>",
-            "templateType" : "java.util.Map<String,java.util.List<String>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+            "entryType" : "Map.Entry<String, java.util.List<String>>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -23681,9 +23681,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24076,9 +24076,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "PlatformType",
@@ -24270,9 +24270,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "PlatformType",
@@ -24783,9 +24783,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "AssociationFilter",
           "templateType" : "java.util.List<AssociationFilter>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationFilter>",
-          "simpleType" : "AssociationFilter"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25085,9 +25085,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "AssociationFilter",
             "templateType" : "java.util.List<AssociationFilter>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationFilter>",
-            "simpleType" : "AssociationFilter"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AssociationFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25728,9 +25728,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "CommandFilter",
           "templateType" : "java.util.List<CommandFilter>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>",
-          "simpleType" : "CommandFilter"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25925,9 +25925,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "CommandFilter",
             "templateType" : "java.util.List<CommandFilter>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>",
-            "simpleType" : "CommandFilter"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CommandFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26461,9 +26461,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simpleType" : "Tag"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26712,9 +26712,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simpleType" : "Tag"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27296,9 +27296,9 @@
               "sendEmptyQueryString" : false,
               "simple" : true,
               "map" : false,
+              "simpleType" : "String",
               "templateType" : "java.util.List<String>",
-              "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-              "simpleType" : "String"
+              "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
             },
             "mapModel" : null,
             "enumType" : null,
@@ -27312,12 +27312,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,java.util.List<String>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : true,
-          "entryType" : "Map.Entry<String, java.util.List<String>>",
-          "templateType" : "java.util.Map<String,java.util.List<String>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+          "entryType" : "Map.Entry<String, java.util.List<String>>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -27504,9 +27504,9 @@
                 "sendEmptyQueryString" : false,
                 "simple" : true,
                 "map" : false,
+                "simpleType" : "String",
                 "templateType" : "java.util.List<String>",
-                "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-                "simpleType" : "String"
+                "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
               },
               "mapModel" : null,
               "enumType" : null,
@@ -27520,12 +27520,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,java.util.List<String>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : true,
-            "entryType" : "Map.Entry<String, java.util.List<String>>",
-            "templateType" : "java.util.Map<String,java.util.List<String>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+            "entryType" : "Map.Entry<String, java.util.List<String>>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -27937,9 +27937,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "InstanceInformationFilter",
           "templateType" : "java.util.List<InstanceInformationFilter>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformationFilter>",
-          "simpleType" : "InstanceInformationFilter"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformationFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28239,9 +28239,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "InstanceInformationFilter",
             "templateType" : "java.util.List<InstanceInformationFilter>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformationFilter>",
-            "simpleType" : "InstanceInformationFilter"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInformationFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28424,9 +28424,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "DescribeActivationsFilter",
           "templateType" : "java.util.List<DescribeActivationsFilter>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DescribeActivationsFilter>",
-          "simpleType" : "DescribeActivationsFilter"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DescribeActivationsFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28673,9 +28673,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "DescribeActivationsFilter",
             "templateType" : "java.util.List<DescribeActivationsFilter>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DescribeActivationsFilter>",
-            "simpleType" : "DescribeActivationsFilter"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DescribeActivationsFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29609,9 +29609,9 @@
           "sendEmptyQueryString" : false,
           "simple" : false,
           "map" : false,
+          "simpleType" : "DocumentParameter",
           "templateType" : "java.util.List<DocumentParameter>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentParameter>",
-          "simpleType" : "DocumentParameter"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentParameter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29727,9 +29727,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "PlatformType",
@@ -30080,9 +30080,9 @@
             "sendEmptyQueryString" : false,
             "simple" : false,
             "map" : false,
+            "simpleType" : "DocumentParameter",
             "templateType" : "java.util.List<DocumentParameter>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentParameter>",
-            "simpleType" : "DocumentParameter"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DocumentParameter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -30358,9 +30358,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "PlatformType",
@@ -30800,9 +30800,9 @@
               "sendEmptyQueryString" : false,
               "simple" : true,
               "map" : false,
+              "simpleType" : "String",
               "templateType" : "java.util.List<String>",
-              "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-              "simpleType" : "String"
+              "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
             },
             "mapModel" : null,
             "enumType" : null,
@@ -30816,12 +30816,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
+          "templateType" : "java.util.Map<String,java.util.List<String>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : true,
-          "entryType" : "Map.Entry<String, java.util.List<String>>",
-          "templateType" : "java.util.Map<String,java.util.List<String>>",
-          "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+          "entryType" : "Map.Entry<String, java.util.List<String>>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -30936,9 +30936,9 @@
           "sendEmptyQueryString" : false,
           "simple" : true,
           "map" : false,
+          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simpleType" : "String"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31597,9 +31597,9 @@
                 "sendEmptyQueryString" : false,
                 "simple" : true,
                 "map" : false,
+                "simpleType" : "String",
                 "templateType" : "java.util.List<String>",
-                "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-                "simpleType" : "String"
+                "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
               },
               "mapModel" : null,
               "enumType" : null,
@@ -31613,12 +31613,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
+            "templateType" : "java.util.Map<String,java.util.List<String>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : true,
-            "entryType" : "Map.Entry<String, java.util.List<String>>",
-            "templateType" : "java.util.Map<String,java.util.List<String>>",
-            "templateImplType" : "java.util.HashMap<String,java.util.List<String>>"
+            "entryType" : "Map.Entry<String, java.util.List<String>>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -31893,9 +31893,9 @@
             "sendEmptyQueryString" : false,
             "simple" : true,
             "map" : false,
+            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simpleType" : "String"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32509,15 +32509,17 @@
     "sdkModeledExceptionBaseClassName" : null,
     "customSignerProvider" : null,
     "calculateCRC32FromCompressedData" : false,
+    "customFileHeader" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "sdkModeledExceptionBaseClassName" : "AWSSimpleSystemsManagementException",
-  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException",
-  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "exceptionUnmarshallerImpl" : null
+  "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException",
+  "sdkModeledExceptionBaseClassName" : "AWSSimpleSystemsManagementException",
+  "exceptionUnmarshallerImpl" : null,
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
 }

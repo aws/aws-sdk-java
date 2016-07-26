@@ -35,6 +35,8 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 
+import utils.http.SocketUtils;
+
 public class EC2CredentialsUtilsTest {
 
     @ClassRule
@@ -57,7 +59,14 @@ public class EC2CredentialsUtilsTest {
      */
     @Test (expected = IOException.class)
     public void readResourceThrowsIOExceptionWhenNoConnection() throws IOException, URISyntaxException {
-       EC2CredentialsUtils.readResource(new URI("http://localhost/path"));
+        int port = 0;
+        try {
+            port = SocketUtils.getUnusedPort();
+        } catch (IOException ioexception) {
+            fail("Unable to find an unused port");
+        }
+
+        EC2CredentialsUtils.readResource(new URI("http://localhost:" + port));
     }
 
     /**

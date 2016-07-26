@@ -134,17 +134,19 @@ public class CodeEmitter implements AutoCloseable {
                 freemarker.getSyncClientTemplate(),
                 model));
 
-        submitTask(new ClassGeneratorTask(
-                baseDirectory,
-                model.getMetadata().getAsyncAbstractClass(),
-                freemarker.getAsyncAbstractClassTemplate(),
-                model));
+        if (model.getMetadata().hasAsyncClient()) {
+            submitTask(new ClassGeneratorTask(
+                    baseDirectory,
+                    model.getMetadata().getAsyncAbstractClass(),
+                    freemarker.getAsyncAbstractClassTemplate(),
+                    model));
 
-        submitTask(new ClassGeneratorTask(
-                baseDirectory,
-                model.getMetadata().getAsyncClient(),
-                freemarker.getAsyncClientTemplate(),
-                model));
+            submitTask(new ClassGeneratorTask(
+                    baseDirectory,
+                    model.getMetadata().getAsyncClient(),
+                    freemarker.getAsyncClientTemplate(),
+                    model));
+        }
     }
 
     /**
@@ -157,11 +159,13 @@ public class CodeEmitter implements AutoCloseable {
                 freemarker.getSyncClientBuilderTemplate(),
                 model));
 
-        submitTask(new ClassGeneratorTask(
-                baseDirectory,
-                model.getMetadata().getAsyncClientBuilderClassName(),
-                freemarker.getAsyncClientBuilderTemplate(),
-                model));
+        if (model.getMetadata().hasAsyncClient()) {
+            submitTask(new ClassGeneratorTask(
+                    baseDirectory,
+                    model.getMetadata().getAsyncClientBuilderClassName(),
+                    freemarker.getAsyncClientBuilderTemplate(),
+                    model));
+        }
     }
 
     private void submitTask(ClassGeneratorTask task) {
@@ -186,11 +190,13 @@ public class CodeEmitter implements AutoCloseable {
                 freemarker.getSyncInterfaceTemplate(),
                 model));
 
-        submitTask(new ClassGeneratorTask(
-                baseDirectory,
-                model.getMetadata().getAsyncInterface(),
-                freemarker.getAsyncInterfaceTemplate(),
-                model));
+        if (model.getMetadata().hasAsyncClient()) {
+            submitTask(new ClassGeneratorTask(
+                    baseDirectory,
+                    model.getMetadata().getAsyncInterface(),
+                    freemarker.getAsyncInterfaceTemplate(),
+                    model));
+        }
     }
 
     /**
@@ -211,6 +217,7 @@ public class CodeEmitter implements AutoCloseable {
             }
 
             Map<String, Object> dataModel = ImmutableMapParameter.of(
+                    "fileHeader", model.getFileHeader(),
                     "shape", shapeModel,
                     "metadata", metadata,
                     "baseExceptionFqcn", model.getSdkModeledExceptionBaseFqcn(),
@@ -230,11 +237,12 @@ public class CodeEmitter implements AutoCloseable {
         submitTask(new ClassGeneratorTask(modelClassDir,
                                           baseClassName,
                                           freemarker.getBaseExceptionClassTemplate(),
-                                          ImmutableMapParameter
-                                                  .of("className", baseClassName,
-                                                      "metadata", model.getMetadata(),
-                                                      "baseExceptionFqcn",
-                                                      model.getServiceBaseExceptionFqcn())));
+                                          ImmutableMapParameter.of(
+                                                  "fileHeader", model.getFileHeader(),
+                                                  "className", baseClassName,
+                                                  "metadata", model.getMetadata(),
+                                                  "baseExceptionFqcn",
+                                                  model.getServiceBaseExceptionFqcn())));
     }
 
     /**
@@ -260,6 +268,7 @@ public class CodeEmitter implements AutoCloseable {
             }
 
             Map<String, Object> marshallerDataModel = ImmutableMapParameter.of(
+                    "fileHeader", model.getFileHeader(),
                     "shapeName", javaShapeName,
                     "shapes", shapes,
                     "metadata", metadata,
@@ -316,6 +325,7 @@ public class CodeEmitter implements AutoCloseable {
             }
 
             Map<String, Object> dataModel = ImmutableMapParameter.of(
+                    "fileHeader", model.getFileHeader(),
                     "shape", shapeModel,
                     "metadata", metadata,
                     "exceptionUnmarshallerImpl", model.getExceptionUnmarshallerImpl());
@@ -396,6 +406,7 @@ public class CodeEmitter implements AutoCloseable {
         String actionPrefix = getEnumActionPrefix(model.getMetadata(), policyActions);
 
         Map<String, Object> dataModel = ImmutableMapParameter.of(
+                "fileHeader", model.getFileHeader(),
                 "operations", model.getOperations().keySet(),
                 "metadata", model.getMetadata(),
                 "serviceName", serviceName,

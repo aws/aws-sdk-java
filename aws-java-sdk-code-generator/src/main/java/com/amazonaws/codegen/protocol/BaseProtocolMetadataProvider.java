@@ -59,4 +59,12 @@ public abstract class BaseProtocolMetadataProvider implements ProtocolMetadataPr
     public String getBaseExceptionFqcn() {
         return AmazonServiceException.class.getName();
     }
+
+    /**
+     * All AWS clients generate async variants of the service clients.
+     */
+    @Override
+    public boolean hasAsyncClient() {
+        return true;
+    }
 }

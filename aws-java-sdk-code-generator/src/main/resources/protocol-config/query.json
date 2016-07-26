@@ -136,9 +136,6 @@
   },
   "commonChildTemplates" : [
     {
-      "location" : "/macros/common/LicenseCommentBlock.ftl",
-      "importAsNamespace" : "LicenseCommentBlockMacro"
-    }, {
       "location" : "/macros/common/VariableDeclarationMacro.ftl",
       "importAsNamespace" : "VariableDeclarationMacro"
     }, {

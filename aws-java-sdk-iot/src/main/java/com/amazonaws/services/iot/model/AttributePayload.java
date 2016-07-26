@@ -1,47 +1,70 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not
+ * use this file except in compliance with the License. A copy of the License is
+ * located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * The attribute payload, a JSON string containing up to three key-value pairs
- * (for example, {\"attributes\":{\"string1\":\"string2\"}}).
+ * The attribute payload.
  * </p>
  */
 public class AttributePayload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string containing up to three key-value pair in JSON format (for
-     * example, {\"attributes\":{\"string1\":\"string2\"}}).
+     * A JSON string containing up to three key-value pair in JSON format. For
+     * example:
+     * </p>
+     * <p>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      * </p>
      */
     private java.util.Map<String, String> attributes;
+    /**
+     * <p>
+     * Specifies whether the list of attributes provided in the
+     * <code>AttributePayload</code> is merged with the attributes stored in the
+     * registry, instead of overwriting them.
+     * </p>
+     * <p>
+     * To remove an attribute, call <code>UpdateThing</code> with an empty
+     * attribute value.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>merge</code> attribute is only valid when calling
+     * <code>UpdateThing</code>.
+     * </p>
+     * </note>
+     */
+    private Boolean merge;
 
     /**
      * <p>
-     * A JSON string containing up to three key-value pair in JSON format (for
-     * example, {\"attributes\":{\"string1\":\"string2\"}}).
+     * A JSON string containing up to three key-value pair in JSON format. For
+     * example:
+     * </p>
+     * <p>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      * </p>
      * 
      * @return A JSON string containing up to three key-value pair in JSON
-     *         format (for example, {\"attributes\":{\"string1\":\"string2\"}}).
+     *         format. For example:</p>
+     *         <p>
+     *         <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -50,13 +73,18 @@ public class AttributePayload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string containing up to three key-value pair in JSON format (for
-     * example, {\"attributes\":{\"string1\":\"string2\"}}).
+     * A JSON string containing up to three key-value pair in JSON format. For
+     * example:
+     * </p>
+     * <p>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      * </p>
      * 
      * @param attributes
-     *        A JSON string containing up to three key-value pair in JSON format
-     *        (for example, {\"attributes\":{\"string1\":\"string2\"}}).
+     *        A JSON string containing up to three key-value pair in JSON
+     *        format. For example:</p>
+     *        <p>
+     *        <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -65,13 +93,18 @@ public class AttributePayload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string containing up to three key-value pair in JSON format (for
-     * example, {\"attributes\":{\"string1\":\"string2\"}}).
+     * A JSON string containing up to three key-value pair in JSON format. For
+     * example:
+     * </p>
+     * <p>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      * </p>
      * 
      * @param attributes
-     *        A JSON string containing up to three key-value pair in JSON format
-     *        (for example, {\"attributes\":{\"string1\":\"string2\"}}).
+     *        A JSON string containing up to three key-value pair in JSON
+     *        format. For example:</p>
+     *        <p>
+     *        <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -104,6 +137,151 @@ public class AttributePayload implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies whether the list of attributes provided in the
+     * <code>AttributePayload</code> is merged with the attributes stored in the
+     * registry, instead of overwriting them.
+     * </p>
+     * <p>
+     * To remove an attribute, call <code>UpdateThing</code> with an empty
+     * attribute value.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>merge</code> attribute is only valid when calling
+     * <code>UpdateThing</code>.
+     * </p>
+     * </note>
+     * 
+     * @param merge
+     *        Specifies whether the list of attributes provided in the
+     *        <code>AttributePayload</code> is merged with the attributes stored
+     *        in the registry, instead of overwriting them.</p>
+     *        <p>
+     *        To remove an attribute, call <code>UpdateThing</code> with an
+     *        empty attribute value.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The <code>merge</code> attribute is only valid when calling
+     *        <code>UpdateThing</code>.
+     *        </p>
+     */
+
+    public void setMerge(Boolean merge) {
+        this.merge = merge;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the list of attributes provided in the
+     * <code>AttributePayload</code> is merged with the attributes stored in the
+     * registry, instead of overwriting them.
+     * </p>
+     * <p>
+     * To remove an attribute, call <code>UpdateThing</code> with an empty
+     * attribute value.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>merge</code> attribute is only valid when calling
+     * <code>UpdateThing</code>.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies whether the list of attributes provided in the
+     *         <code>AttributePayload</code> is merged with the attributes
+     *         stored in the registry, instead of overwriting them.</p>
+     *         <p>
+     *         To remove an attribute, call <code>UpdateThing</code> with an
+     *         empty attribute value.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The <code>merge</code> attribute is only valid when calling
+     *         <code>UpdateThing</code>.
+     *         </p>
+     */
+
+    public Boolean getMerge() {
+        return this.merge;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the list of attributes provided in the
+     * <code>AttributePayload</code> is merged with the attributes stored in the
+     * registry, instead of overwriting them.
+     * </p>
+     * <p>
+     * To remove an attribute, call <code>UpdateThing</code> with an empty
+     * attribute value.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>merge</code> attribute is only valid when calling
+     * <code>UpdateThing</code>.
+     * </p>
+     * </note>
+     * 
+     * @param merge
+     *        Specifies whether the list of attributes provided in the
+     *        <code>AttributePayload</code> is merged with the attributes stored
+     *        in the registry, instead of overwriting them.</p>
+     *        <p>
+     *        To remove an attribute, call <code>UpdateThing</code> with an
+     *        empty attribute value.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The <code>merge</code> attribute is only valid when calling
+     *        <code>UpdateThing</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public AttributePayload withMerge(Boolean merge) {
+        setMerge(merge);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the list of attributes provided in the
+     * <code>AttributePayload</code> is merged with the attributes stored in the
+     * registry, instead of overwriting them.
+     * </p>
+     * <p>
+     * To remove an attribute, call <code>UpdateThing</code> with an empty
+     * attribute value.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>merge</code> attribute is only valid when calling
+     * <code>UpdateThing</code>.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies whether the list of attributes provided in the
+     *         <code>AttributePayload</code> is merged with the attributes
+     *         stored in the registry, instead of overwriting them.</p>
+     *         <p>
+     *         To remove an attribute, call <code>UpdateThing</code> with an
+     *         empty attribute value.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The <code>merge</code> attribute is only valid when calling
+     *         <code>UpdateThing</code>.
+     *         </p>
+     */
+
+    public Boolean isMerge() {
+        return this.merge;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -116,7 +294,9 @@ public class AttributePayload implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes());
+            sb.append("Attributes: " + getAttributes() + ",");
+        if (getMerge() != null)
+            sb.append("Merge: " + getMerge());
         sb.append("}");
         return sb.toString();
     }
@@ -136,6 +316,11 @@ public class AttributePayload implements Serializable, Cloneable {
         if (other.getAttributes() != null
                 && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
+        if (other.getMerge() == null ^ this.getMerge() == null)
+            return false;
+        if (other.getMerge() != null
+                && other.getMerge().equals(this.getMerge()) == false)
+            return false;
         return true;
     }
 
@@ -146,6 +331,8 @@ public class AttributePayload implements Serializable, Cloneable {
 
         hashCode = prime * hashCode
                 + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode
+                + ((getMerge() == null) ? 0 : getMerge().hashCode());
         return hashCode;
     }
 

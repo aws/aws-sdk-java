@@ -1,15 +1,14 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not
+ * use this file except in compliance with the License. A copy of the License is
+ * located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
@@ -493,7 +492,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a thing in the Thing Registry.
+     * Creates a thing record in the thing registry.
      * </p>
      * 
      * @param createThingRequest
@@ -507,7 +506,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a thing in the Thing Registry.
+     * Creates a thing record in the thing registry.
      * </p>
      * 
      * @param createThingRequest
@@ -524,6 +523,40 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<CreateThingResult> createThingAsync(
             CreateThingRequest createThingRequest,
             com.amazonaws.handlers.AsyncHandler<CreateThingRequest, CreateThingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new thing type.
+     * </p>
+     * 
+     * @param createThingTypeRequest
+     *        The input for the CreateThingType operation.
+     * @return A Java Future containing the result of the CreateThingType
+     *         operation returned by the service.
+     * @sample AWSIotAsync.CreateThingType
+     */
+    java.util.concurrent.Future<CreateThingTypeResult> createThingTypeAsync(
+            CreateThingTypeRequest createThingTypeRequest);
+
+    /**
+     * <p>
+     * Creates a new thing type.
+     * </p>
+     * 
+     * @param createThingTypeRequest
+     *        The input for the CreateThingType operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateThingType
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateThingType
+     */
+    java.util.concurrent.Future<CreateThingTypeResult> createThingTypeAsync(
+            CreateThingTypeRequest createThingTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateThingTypeRequest, CreateThingTypeResult> asyncHandler);
 
     /**
      * <p>
@@ -783,7 +816,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Deletes the specified thing from the Thing Registry.
+     * Deletes the specified thing.
      * </p>
      * 
      * @param deleteThingRequest
@@ -797,7 +830,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Deletes the specified thing from the Thing Registry.
+     * Deletes the specified thing.
      * </p>
      * 
      * @param deleteThingRequest
@@ -814,6 +847,50 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<DeleteThingResult> deleteThingAsync(
             DeleteThingRequest deleteThingRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteThingRequest, DeleteThingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified thing type . You cannot delete a thing type if it
+     * has things associated with it. To delete a thing type, first mark it as
+     * deprecated by calling <a>DeprecateThingType</a>, then remove any
+     * associated things by calling <a>UpdateThing</a> to change the thing type
+     * on any associated thing, and finally use <a>DeleteThingType</a> to delete
+     * the thing type.
+     * </p>
+     * 
+     * @param deleteThingTypeRequest
+     *        The input for the DeleteThingType operation.
+     * @return A Java Future containing the result of the DeleteThingType
+     *         operation returned by the service.
+     * @sample AWSIotAsync.DeleteThingType
+     */
+    java.util.concurrent.Future<DeleteThingTypeResult> deleteThingTypeAsync(
+            DeleteThingTypeRequest deleteThingTypeRequest);
+
+    /**
+     * <p>
+     * Deletes the specified thing type . You cannot delete a thing type if it
+     * has things associated with it. To delete a thing type, first mark it as
+     * deprecated by calling <a>DeprecateThingType</a>, then remove any
+     * associated things by calling <a>UpdateThing</a> to change the thing type
+     * on any associated thing, and finally use <a>DeleteThingType</a> to delete
+     * the thing type.
+     * </p>
+     * 
+     * @param deleteThingTypeRequest
+     *        The input for the DeleteThingType operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteThingType
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteThingType
+     */
+    java.util.concurrent.Future<DeleteThingTypeResult> deleteThingTypeAsync(
+            DeleteThingTypeRequest deleteThingTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteThingTypeRequest, DeleteThingTypeResult> asyncHandler);
 
     /**
      * <p>
@@ -848,6 +925,42 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<DeleteTopicRuleResult> deleteTopicRuleAsync(
             DeleteTopicRuleRequest deleteTopicRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleRequest, DeleteTopicRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deprecates a thing type. You can not associate new things with deprecated
+     * thing type.
+     * </p>
+     * 
+     * @param deprecateThingTypeRequest
+     *        The input for the DeprecateThingType operation.
+     * @return A Java Future containing the result of the DeprecateThingType
+     *         operation returned by the service.
+     * @sample AWSIotAsync.DeprecateThingType
+     */
+    java.util.concurrent.Future<DeprecateThingTypeResult> deprecateThingTypeAsync(
+            DeprecateThingTypeRequest deprecateThingTypeRequest);
+
+    /**
+     * <p>
+     * Deprecates a thing type. You can not associate new things with deprecated
+     * thing type.
+     * </p>
+     * 
+     * @param deprecateThingTypeRequest
+     *        The input for the DeprecateThingType operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeprecateThingType
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeprecateThingType
+     */
+    java.util.concurrent.Future<DeprecateThingTypeResult> deprecateThingTypeAsync(
+            DeprecateThingTypeRequest deprecateThingTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeprecateThingTypeRequest, DeprecateThingTypeResult> asyncHandler);
 
     /**
      * <p>
@@ -984,6 +1097,40 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<DescribeThingResult> describeThingAsync(
             DescribeThingRequest describeThingRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeThingRequest, DescribeThingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about the specified thing type.
+     * </p>
+     * 
+     * @param describeThingTypeRequest
+     *        The input for the DescribeThingType operation.
+     * @return A Java Future containing the result of the DescribeThingType
+     *         operation returned by the service.
+     * @sample AWSIotAsync.DescribeThingType
+     */
+    java.util.concurrent.Future<DescribeThingTypeResult> describeThingTypeAsync(
+            DescribeThingTypeRequest describeThingTypeRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified thing type.
+     * </p>
+     * 
+     * @param describeThingTypeRequest
+     *        The input for the DescribeThingType operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeThingType
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeThingType
+     */
+    java.util.concurrent.Future<DescribeThingTypeResult> describeThingTypeAsync(
+            DescribeThingTypeRequest describeThingTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeThingTypeRequest, DescribeThingTypeResult> asyncHandler);
 
     /**
      * <p>
@@ -1625,9 +1772,45 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Lists your things. You can pass an AttributeName or AttributeValue to
-     * filter your things (for example,
-     * "ListThings where AttributeName=Color and AttributeValue=Red").
+     * Lists the existing thing types.
+     * </p>
+     * 
+     * @param listThingTypesRequest
+     *        The input for the ListThingTypes operation.
+     * @return A Java Future containing the result of the ListThingTypes
+     *         operation returned by the service.
+     * @sample AWSIotAsync.ListThingTypes
+     */
+    java.util.concurrent.Future<ListThingTypesResult> listThingTypesAsync(
+            ListThingTypesRequest listThingTypesRequest);
+
+    /**
+     * <p>
+     * Lists the existing thing types.
+     * </p>
+     * 
+     * @param listThingTypesRequest
+     *        The input for the ListThingTypes operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListThingTypes
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListThingTypes
+     */
+    java.util.concurrent.Future<ListThingTypesResult> listThingTypesAsync(
+            ListThingTypesRequest listThingTypesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListThingTypesRequest, ListThingTypesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b>
+     * parameters to filter your things. For example, calling
+     * <code>ListThings</code> with attributeName=Color and attributeValue=Red
+     * retrieves all things in the registry that contain an attribute
+     * <b>Color</b> with the value <b>Red</b>.
      * </p>
      * 
      * @param listThingsRequest
@@ -1641,9 +1824,11 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Lists your things. You can pass an AttributeName or AttributeValue to
-     * filter your things (for example,
-     * "ListThings where AttributeName=Color and AttributeValue=Red").
+     * Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b>
+     * parameters to filter your things. For example, calling
+     * <code>ListThings</code> with attributeName=Color and attributeValue=Red
+     * retrieves all things in the registry that contain an attribute
+     * <b>Color</b> with the value <b>Red</b>.
      * </p>
      * 
      * @param listThingsRequest

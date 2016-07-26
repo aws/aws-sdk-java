@@ -1,4 +1,4 @@
-<@LicenseCommentBlockMacro.content />
+${fileHeader}
 package ${metadata.packageName};
 
 import ${metadata.packageName}.model.*;

@@ -93,6 +93,10 @@ public class AWSRequestMetrics {
          */
         RetryCapacityConsumed,
         /**
+         * Number of retries that were not attempted due to retry throttling.
+         */
+        ThrottledRetryCount,
+        /**
          * Number of retries of the underlying http client library in sending a
          * request to AWS.
          */

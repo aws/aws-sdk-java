@@ -5,8 +5,7 @@
 <#local customConfig = dataModel.customConfig/>
 <#local contentType = (metadata.contentType)!""/>
 
-<@LicenseCommentBlockMacro.content />
-
+${dataModel.fileHeader}
 package ${metadata.packageName}.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;

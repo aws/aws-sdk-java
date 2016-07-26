@@ -179,6 +179,12 @@ public class CustomizationConfig {
     private boolean calculateCRC32FromCompressedData;
 
     /**
+     * Custom file header for all generated Java classes. If not specified uses default Amazon
+     * license header.
+     */
+    private String customFileHeader;
+
+    /**
      * List of 'convenience' overloads to generate for model classes. Convenience overloads expose a
      * different type that is adapted to the real type
      */
@@ -408,7 +414,9 @@ public class CustomizationConfig {
         this.sdkModeledExceptionBaseClassName = sdkModeledExceptionBaseClassName;
     }
 
-    public String getCustomSignerProvider() { return customSignerProvider; }
+    public String getCustomSignerProvider() {
+        return customSignerProvider;
+    }
 
     public void setCustomSignerProvider(String customSignerProvider) {
         this.customSignerProvider = customSignerProvider;
@@ -421,5 +429,13 @@ public class CustomizationConfig {
     public void setCalculateCRC32FromCompressedData(
             boolean calculateCRC32FromCompressedData) {
         this.calculateCRC32FromCompressedData = calculateCRC32FromCompressedData;
+    }
+
+    public String getCustomFileHeader() {
+        return customFileHeader;
+    }
+
+    public void setCustomFileHeader(String customFileHeader) {
+        this.customFileHeader = customFileHeader;
     }
 }

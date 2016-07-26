@@ -21,6 +21,7 @@ import static com.amazonaws.event.SDKProgressPublisher.publishResponseContentLen
 import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolAvailableCount;
 import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolLeasedCount;
 import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolPendingCount;
+import static com.amazonaws.util.AWSRequestMetrics.Field.ThrottledRetryCount;
 import static com.amazonaws.util.IOUtils.closeQuietly;
 
 import java.io.BufferedInputStream;
@@ -1192,6 +1193,7 @@ public class AmazonHttpClient {
             // See if we have enough available retry capacity to be able to execute
             // this retry attempt.
             if (!retryCapacity.acquire(THROTTLED_RETRY_COST)) {
+                executionContext.getAwsRequestMetrics().incrementCounter(ThrottledRetryCount);
                 return false;
             }
             executionContext.markRetryCapacityConsumed();

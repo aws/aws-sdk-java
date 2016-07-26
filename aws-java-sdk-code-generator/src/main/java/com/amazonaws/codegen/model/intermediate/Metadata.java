@@ -386,4 +386,8 @@ public class Metadata {
         return protocolMetadataProvider.getUnmarshallerClassSuffix();
     }
 
+    public boolean hasAsyncClient() {
+        return protocolMetadataProvider.hasAsyncClient();
+    }
+
 }

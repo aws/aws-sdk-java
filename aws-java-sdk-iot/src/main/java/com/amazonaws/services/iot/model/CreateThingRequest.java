@@ -1,19 +1,17 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not
+ * use this file except in compliance with the License. A copy of the License is
+ * located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
@@ -29,25 +27,34 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the thing.
+     * The name of the thing to create.
      * </p>
      */
     private String thingName;
     /**
      * <p>
-     * The attribute payload, which consists of up to 3 name/value pairs in a
-     * JSON document (for example, {\"attributes\":{\"string1\":\"string2\"}}).
+     * The name of the thing type associated with the new thing.
+     * </p>
+     */
+    private String thingTypeName;
+    /**
+     * <p>
+     * The attribute payload, which consists of up to three name/value pairs in
+     * a JSON document. For example:
+     * </p>
+     * <p>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      * </p>
      */
     private AttributePayload attributePayload;
 
     /**
      * <p>
-     * The name of the thing.
+     * The name of the thing to create.
      * </p>
      * 
      * @param thingName
-     *        The name of the thing.
+     *        The name of the thing to create.
      */
 
     public void setThingName(String thingName) {
@@ -56,10 +63,10 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the thing.
+     * The name of the thing to create.
      * </p>
      * 
-     * @return The name of the thing.
+     * @return The name of the thing to create.
      */
 
     public String getThingName() {
@@ -68,11 +75,11 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the thing.
+     * The name of the thing to create.
      * </p>
      * 
      * @param thingName
-     *        The name of the thing.
+     *        The name of the thing to create.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -84,14 +91,59 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attribute payload, which consists of up to 3 name/value pairs in a
-     * JSON document (for example, {\"attributes\":{\"string1\":\"string2\"}}).
+     * The name of the thing type associated with the new thing.
+     * </p>
+     * 
+     * @param thingTypeName
+     *        The name of the thing type associated with the new thing.
+     */
+
+    public void setThingTypeName(String thingTypeName) {
+        this.thingTypeName = thingTypeName;
+    }
+
+    /**
+     * <p>
+     * The name of the thing type associated with the new thing.
+     * </p>
+     * 
+     * @return The name of the thing type associated with the new thing.
+     */
+
+    public String getThingTypeName() {
+        return this.thingTypeName;
+    }
+
+    /**
+     * <p>
+     * The name of the thing type associated with the new thing.
+     * </p>
+     * 
+     * @param thingTypeName
+     *        The name of the thing type associated with the new thing.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateThingRequest withThingTypeName(String thingTypeName) {
+        setThingTypeName(thingTypeName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The attribute payload, which consists of up to three name/value pairs in
+     * a JSON document. For example:
+     * </p>
+     * <p>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      * </p>
      * 
      * @param attributePayload
-     *        The attribute payload, which consists of up to 3 name/value pairs
-     *        in a JSON document (for example,
-     *        {\"attributes\":{\"string1\":\"string2\"}}).
+     *        The attribute payload, which consists of up to three name/value
+     *        pairs in a JSON document. For example:</p>
+     *        <p>
+     *        <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      */
 
     public void setAttributePayload(AttributePayload attributePayload) {
@@ -100,13 +152,17 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attribute payload, which consists of up to 3 name/value pairs in a
-     * JSON document (for example, {\"attributes\":{\"string1\":\"string2\"}}).
+     * The attribute payload, which consists of up to three name/value pairs in
+     * a JSON document. For example:
+     * </p>
+     * <p>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      * </p>
      * 
-     * @return The attribute payload, which consists of up to 3 name/value pairs
-     *         in a JSON document (for example,
-     *         {\"attributes\":{\"string1\":\"string2\"}}).
+     * @return The attribute payload, which consists of up to three name/value
+     *         pairs in a JSON document. For example:</p>
+     *         <p>
+     *         <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      */
 
     public AttributePayload getAttributePayload() {
@@ -115,14 +171,18 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attribute payload, which consists of up to 3 name/value pairs in a
-     * JSON document (for example, {\"attributes\":{\"string1\":\"string2\"}}).
+     * The attribute payload, which consists of up to three name/value pairs in
+     * a JSON document. For example:
+     * </p>
+     * <p>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      * </p>
      * 
      * @param attributePayload
-     *        The attribute payload, which consists of up to 3 name/value pairs
-     *        in a JSON document (for example,
-     *        {\"attributes\":{\"string1\":\"string2\"}}).
+     *        The attribute payload, which consists of up to three name/value
+     *        pairs in a JSON document. For example:</p>
+     *        <p>
+     *        <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -147,6 +207,8 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
         sb.append("{");
         if (getThingName() != null)
             sb.append("ThingName: " + getThingName() + ",");
+        if (getThingTypeName() != null)
+            sb.append("ThingTypeName: " + getThingTypeName() + ",");
         if (getAttributePayload() != null)
             sb.append("AttributePayload: " + getAttributePayload());
         sb.append("}");
@@ -168,6 +230,11 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
         if (other.getThingName() != null
                 && other.getThingName().equals(this.getThingName()) == false)
             return false;
+        if (other.getThingTypeName() == null ^ this.getThingTypeName() == null)
+            return false;
+        if (other.getThingTypeName() != null
+                && other.getThingTypeName().equals(this.getThingTypeName()) == false)
+            return false;
         if (other.getAttributePayload() == null
                 ^ this.getAttributePayload() == null)
             return false;
@@ -185,6 +252,10 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
 
         hashCode = prime * hashCode
                 + ((getThingName() == null) ? 0 : getThingName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getThingTypeName() == null) ? 0 : getThingTypeName()
+                        .hashCode());
         hashCode = prime
                 * hashCode
                 + ((getAttributePayload() == null) ? 0 : getAttributePayload()

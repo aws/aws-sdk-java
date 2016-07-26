@@ -1,5 +1,4 @@
-<@LicenseCommentBlockMacro.content />
-
+${fileHeader}
 package ${metadata.packageName}.model.transform;
 
 import org.w3c.dom.Node;

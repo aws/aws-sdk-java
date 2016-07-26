@@ -1,15 +1,14 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not
+ * use this file except in compliance with the License. A copy of the License is
+ * located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
@@ -163,6 +162,21 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateThingTypeResult> createThingTypeAsync(
+            CreateThingTypeRequest request) {
+
+        return createThingTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThingTypeResult> createThingTypeAsync(
+            CreateThingTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateThingTypeRequest, CreateThingTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTopicRuleResult> createTopicRuleAsync(
             CreateTopicRuleRequest request) {
 
@@ -268,6 +282,21 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteThingTypeResult> deleteThingTypeAsync(
+            DeleteThingTypeRequest request) {
+
+        return deleteThingTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThingTypeResult> deleteThingTypeAsync(
+            DeleteThingTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteThingTypeRequest, DeleteThingTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTopicRuleResult> deleteTopicRuleAsync(
             DeleteTopicRuleRequest request) {
 
@@ -278,6 +307,21 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteTopicRuleResult> deleteTopicRuleAsync(
             DeleteTopicRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleRequest, DeleteTopicRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeprecateThingTypeResult> deprecateThingTypeAsync(
+            DeprecateThingTypeRequest request) {
+
+        return deprecateThingTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeprecateThingTypeResult> deprecateThingTypeAsync(
+            DeprecateThingTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeprecateThingTypeRequest, DeprecateThingTypeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -338,6 +382,21 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeThingResult> describeThingAsync(
             DescribeThingRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeThingRequest, DescribeThingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThingTypeResult> describeThingTypeAsync(
+            DescribeThingTypeRequest request) {
+
+        return describeThingTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThingTypeResult> describeThingTypeAsync(
+            DescribeThingTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeThingTypeRequest, DescribeThingTypeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -608,6 +667,21 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListThingPrincipalsResult> listThingPrincipalsAsync(
             ListThingPrincipalsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListThingPrincipalsRequest, ListThingPrincipalsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThingTypesResult> listThingTypesAsync(
+            ListThingTypesRequest request) {
+
+        return listThingTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThingTypesResult> listThingTypesAsync(
+            ListThingTypesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListThingTypesRequest, ListThingTypesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

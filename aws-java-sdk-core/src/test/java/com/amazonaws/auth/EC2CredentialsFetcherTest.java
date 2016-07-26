@@ -24,29 +24,25 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Date;
 
+import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.internal.CredentialsEndpointProvider;
 import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.IOUtils;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
-import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
 
 public class EC2CredentialsFetcherTest {
 
-    /*
-     *  When loading files, WireMock looks for __files folder under "src/test/resources/" path.
-     *  To customize the path, build wiremock with desired RootDirectory.
-     *
-     *  This test class looks for __files directory under "/tst/resources/" path relative to project home.
-     */
     @ClassRule
-    public static WireMockRule mockServer = new WireMockRule(wireMockConfig().port(0).withRootDirectory(System.getProperty("user.dir") + "/tst/resources/"));
+    public static WireMockRule mockServer = new WireMockRule(0);
 
     /** One minute (in milliseconds) */
     private static final long ONE_MINUTE = 1000L * 60;
@@ -54,24 +50,35 @@ public class EC2CredentialsFetcherTest {
     /** Environment variable name for the AWS ECS Container credentials path */
     private static final String CREDENTIALS_PATH = "/dummy/credentials/path";
 
+    private static String successResponse;
+
+    private static String successResponseWithInvalidBody;
+
+    @BeforeClass
+    public static void setup() throws IOException {
+        successResponse = IOUtils.toString(EC2CredentialsFetcherTest.class.getResourceAsStream("/resources/wiremock/successResponse.json"));
+        successResponseWithInvalidBody = IOUtils.toString(EC2CredentialsFetcherTest.class.getResourceAsStream("/resources/wiremock/successResponseWithInvalidBody.json"));
+    }
+
+
     /** Tests that the credentials provider reloads credentials appropriately */
     @Test
     public void testNeedsToLoadCredentialsMethod() throws Exception {
         TestCredentialsProvider credentialsProvider = new TestCredentialsProvider();
 
         // The provider should not refresh credentials when they aren't close to expiring and are recent
-        stubForSuccessResonseWithBody(200, DateUtils.formatISO8601Date(new Date(System.currentTimeMillis() + ONE_MINUTE * 60 * 24)).toString());
+        stubForSuccessResonseWithCustomExpirationDate(200, DateUtils.formatISO8601Date(new Date(System.currentTimeMillis() + ONE_MINUTE * 60 * 24)).toString());
         credentialsProvider.getCredentials();
         assertFalse(credentialsProvider.needsToLoadCredentials());
 
         // The provider should refresh credentials when they aren't close to expiring, but are more than an hour old
-        stubForSuccessResonseWithBody(200, DateUtils.formatISO8601Date(new Date(System.currentTimeMillis() + ONE_MINUTE * 16)).toString());
+        stubForSuccessResonseWithCustomExpirationDate(200, DateUtils.formatISO8601Date(new Date(System.currentTimeMillis() + ONE_MINUTE * 16)).toString());
         credentialsProvider.getCredentials();
         credentialsProvider.setLastInstanceProfileCheck(new Date(System.currentTimeMillis() - ONE_MINUTE * 61));
         assertTrue(credentialsProvider.needsToLoadCredentials());
 
         // The provider should refresh credentials when they are close to expiring
-        stubForSuccessResonseWithBody(200, DateUtils.formatISO8601Date(new Date(System.currentTimeMillis() + ONE_MINUTE * 14)).toString());
+        stubForSuccessResonseWithCustomExpirationDate(200, DateUtils.formatISO8601Date(new Date(System.currentTimeMillis() + ONE_MINUTE * 14)).toString());
         credentialsProvider.getCredentials();
         assertTrue(credentialsProvider.needsToLoadCredentials());
     }
@@ -81,7 +88,7 @@ public class EC2CredentialsFetcherTest {
      */
     @Test
     public void testLoadCredentialsParsesJsonResponseProperly() {
-        stubForSuccessResponseWithBodyFile(200, "successResponse.json");
+        stubForSuccessResponseWithCustomBody(200, successResponse);
 
          TestCredentialsProvider credentialsProvider = new TestCredentialsProvider();
          AWSSessionCredentials credentials = (AWSSessionCredentials) credentialsProvider.getCredentials();
@@ -98,7 +105,7 @@ public class EC2CredentialsFetcherTest {
     @Test
     public void testLoadCredentialsThrowsAceWhenClientResponseDontHaveKeys() {
         // Stub for success response but without keys in the response body
-        stubForSuccessResponseWithBodyFile(200, "successResponseWithInvalidBody.json");
+        stubForSuccessResponseWithCustomBody(200, successResponseWithInvalidBody);
 
         TestCredentialsProvider credentialsProvider = new TestCredentialsProvider();
 
@@ -130,7 +137,7 @@ public class EC2CredentialsFetcherTest {
 
         // When there are valid credentials (but need to be refreshed) and the endpoint returns 404 status,
         // the provider should throw an exception.
-        stubForSuccessResonseWithBody(200, new Date(System.currentTimeMillis() + ONE_MINUTE * 4).toString());
+        stubForSuccessResonseWithCustomExpirationDate(200, new Date(System.currentTimeMillis() + ONE_MINUTE * 4).toString());
         credentialsProvider.getCredentials(); // loads the credentials that will be expired soon
         credentialsProvider.setLastInstanceProfileCheck(new Date(System.currentTimeMillis() - (ONE_MINUTE * 61)));
         stubForErrorResponse();  // Behaves as if server is unavailable.
@@ -142,17 +149,17 @@ public class EC2CredentialsFetcherTest {
         }
     }
 
-    private void stubForSuccessResponseWithBodyFile(int statusCode, String filename) {
+    private void stubForSuccessResponseWithCustomBody(int statusCode, String body) {
         stubFor(
                 get(urlPathEqualTo(CREDENTIALS_PATH))
                 .willReturn(aResponse()
                                 .withStatus(statusCode)
                                 .withHeader("Content-Type", "application/json")
                                 .withHeader("charset", "utf-8")
-                                .withBodyFile(filename)));
+                                .withBody(body)));
     }
 
-    private void stubForSuccessResonseWithBody(int statusCode, String expiration) {
+    private void stubForSuccessResonseWithCustomExpirationDate(int statusCode, String expiration) {
         stubFor(
                 get(urlPathEqualTo(CREDENTIALS_PATH))
                 .willReturn(aResponse()

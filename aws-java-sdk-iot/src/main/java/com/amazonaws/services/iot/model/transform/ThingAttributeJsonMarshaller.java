@@ -1,19 +1,17 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not
+ * use this file except in compliance with the License. A copy of the License is
+ * located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
 package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
@@ -51,6 +49,10 @@ public class ThingAttributeJsonMarshaller {
                 jsonGenerator.writeFieldName("thingName").writeValue(
                         thingAttribute.getThingName());
             }
+            if (thingAttribute.getThingTypeName() != null) {
+                jsonGenerator.writeFieldName("thingTypeName").writeValue(
+                        thingAttribute.getThingTypeName());
+            }
 
             java.util.Map<String, String> attributesMap = thingAttribute
                     .getAttributes();
@@ -68,6 +70,10 @@ public class ThingAttributeJsonMarshaller {
                     }
                 }
                 jsonGenerator.writeEndObject();
+            }
+            if (thingAttribute.getVersion() != null) {
+                jsonGenerator.writeFieldName("version").writeValue(
+                        thingAttribute.getVersion());
             }
 
             jsonGenerator.writeEndObject();

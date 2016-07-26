@@ -1,5 +1,4 @@
-<@LicenseCommentBlockMacro.content />
-
+${fileHeader}
 package ${metadata.packageName}.model.transform;
 
 import java.util.Map;

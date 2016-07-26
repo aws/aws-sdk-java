@@ -4,8 +4,7 @@
 <#local shapeName = dataModel.shapeName/>
 <#local customConfig = dataModel.customConfig/>
 
-<@LicenseCommentBlockMacro.content />
-
+${dataModel.fileHeader}
 package ${metadata.packageName}.model.transform;
 
 import java.io.ByteArrayInputStream;

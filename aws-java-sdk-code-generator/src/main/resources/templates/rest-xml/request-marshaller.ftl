@@ -1,5 +1,4 @@
-<@LicenseCommentBlockMacro.content />
-
+${fileHeader}
 package ${metadata.packageName}.model.transform;
 
 import static com.amazonaws.util.StringUtils.UTF8;

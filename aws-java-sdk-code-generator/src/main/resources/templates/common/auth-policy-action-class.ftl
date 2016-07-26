@@ -1,5 +1,4 @@
-<@LicenseCommentBlockMacro.content />
-
+${fileHeader}
 package com.amazonaws.auth.policy.actions;
 
 import com.amazonaws.auth.policy.Action;

@@ -1,15 +1,14 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not
+ * use this file except in compliance with the License. A copy of the License is
+ * located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
@@ -415,7 +414,7 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Creates a thing in the Thing Registry.
+     * Creates a thing record in the thing registry.
      * </p>
      * 
      * @param createThingRequest
@@ -433,9 +432,36 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceAlreadyExistsException
      *         The resource already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
      * @sample AWSIot.CreateThing
      */
     CreateThingResult createThing(CreateThingRequest createThingRequest);
+
+    /**
+     * <p>
+     * Creates a new thing type.
+     * </p>
+     * 
+     * @param createThingTypeRequest
+     *        The input for the CreateThingType operation.
+     * @return Result of the CreateThingType operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @sample AWSIot.CreateThingType
+     */
+    CreateThingTypeResult createThingType(
+            CreateThingTypeRequest createThingTypeRequest);
 
     /**
      * <p>
@@ -627,7 +653,7 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Deletes the specified thing from the Thing Registry.
+     * Deletes the specified thing.
      * </p>
      * 
      * @param deleteThingRequest
@@ -635,6 +661,10 @@ public interface AWSIot {
      * @return Result of the DeleteThing operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws VersionConflictException
+     *         An exception thrown when the version of a thing passed to a
+     *         command is different than the version specified with the
+     *         --version parameter.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ThrottlingException
@@ -648,6 +678,36 @@ public interface AWSIot {
      * @sample AWSIot.DeleteThing
      */
     DeleteThingResult deleteThing(DeleteThingRequest deleteThingRequest);
+
+    /**
+     * <p>
+     * Deletes the specified thing type . You cannot delete a thing type if it
+     * has things associated with it. To delete a thing type, first mark it as
+     * deprecated by calling <a>DeprecateThingType</a>, then remove any
+     * associated things by calling <a>UpdateThing</a> to change the thing type
+     * on any associated thing, and finally use <a>DeleteThingType</a> to delete
+     * the thing type.
+     * </p>
+     * 
+     * @param deleteThingTypeRequest
+     *        The input for the DeleteThingType operation.
+     * @return Result of the DeleteThingType operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteThingType
+     */
+    DeleteThingTypeResult deleteThingType(
+            DeleteThingTypeRequest deleteThingTypeRequest);
 
     /**
      * <p>
@@ -669,6 +729,33 @@ public interface AWSIot {
      */
     DeleteTopicRuleResult deleteTopicRule(
             DeleteTopicRuleRequest deleteTopicRuleRequest);
+
+    /**
+     * <p>
+     * Deprecates a thing type. You can not associate new things with deprecated
+     * thing type.
+     * </p>
+     * 
+     * @param deprecateThingTypeRequest
+     *        The input for the DeprecateThingType operation.
+     * @return Result of the DeprecateThingType operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeprecateThingType
+     */
+    DeprecateThingTypeResult deprecateThingType(
+            DeprecateThingTypeRequest deprecateThingTypeRequest);
 
     /**
      * <p>
@@ -764,6 +851,32 @@ public interface AWSIot {
      * @sample AWSIot.DescribeThing
      */
     DescribeThingResult describeThing(DescribeThingRequest describeThingRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified thing type.
+     * </p>
+     * 
+     * @param describeThingTypeRequest
+     *        The input for the DescribeThingType operation.
+     * @return Result of the DescribeThingType operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeThingType
+     */
+    DescribeThingTypeResult describeThingType(
+            DescribeThingTypeRequest describeThingTypeRequest);
 
     /**
      * <p>
@@ -1175,6 +1288,8 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
      * @sample AWSIot.ListPrincipalThings
      */
     ListPrincipalThingsResult listPrincipalThings(
@@ -1199,6 +1314,8 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
      * @sample AWSIot.ListThingPrincipals
      */
     ListThingPrincipalsResult listThingPrincipals(
@@ -1206,9 +1323,34 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Lists your things. You can pass an AttributeName or AttributeValue to
-     * filter your things (for example,
-     * "ListThings where AttributeName=Color and AttributeValue=Red").
+     * Lists the existing thing types.
+     * </p>
+     * 
+     * @param listThingTypesRequest
+     *        The input for the ListThingTypes operation.
+     * @return Result of the ListThingTypes operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListThingTypes
+     */
+    ListThingTypesResult listThingTypes(
+            ListThingTypesRequest listThingTypesRequest);
+
+    /**
+     * <p>
+     * Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b>
+     * parameters to filter your things. For example, calling
+     * <code>ListThings</code> with attributeName=Color and attributeValue=Red
+     * retrieves all things in the registry that contain an attribute
+     * <b>Color</b> with the value <b>Red</b>.
      * </p>
      * 
      * @param listThingsRequest
@@ -1559,6 +1701,10 @@ public interface AWSIot {
      * @return Result of the UpdateThing operation returned by the service.
      * @throws InvalidRequestException
      *         The request is not valid.
+     * @throws VersionConflictException
+     *         An exception thrown when the version of a thing passed to a
+     *         command is different than the version specified with the
+     *         --version parameter.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws UnauthorizedException

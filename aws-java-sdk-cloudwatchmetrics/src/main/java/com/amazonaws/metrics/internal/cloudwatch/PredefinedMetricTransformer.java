@@ -64,7 +64,7 @@ public class PredefinedMetricTransformer {
      */
     public List<MetricDatum> toMetricData(MetricType metricType, Request<?> request, Response<?> response) {
         if (metricType instanceof Field) {
-            // Predefined metrics across all aws http clients
+            // Predefined metrics across all AWS http clients
             Field predefined = (Field) metricType;
             switch(predefined) {
                 case HttpClientRetryCount:
@@ -72,13 +72,14 @@ public class PredefinedMetricTransformer {
                 case HttpClientPoolLeasedCount:
                 case HttpClientPoolPendingCount:
                     return metricOfCount(predefined, request, response);
-                case RequestCount:  // intentionally fall thru to reuse the same routine as RetryCount
+                case RequestCount:  // intentionally fall through to reuse the same routine as RetryCount
                 case RetryCount:
                     return metricOfRequestOrRetryCount(predefined, request, response);
+                case ThrottledRetryCount: // drop through
                 case RetryCapacityConsumed:
                     return counterMetricOf(predefined, request, response, EXCLUDE_REQUEST_TYPE);
-                case ResponseProcessingTime: // drop thru
-                case RequestSigningTime: // drop thru
+                case ResponseProcessingTime: // drop through
+                case RequestSigningTime: // drop through
                     return latencyMetricOf(predefined, request, response, EXCLUDE_REQUEST_TYPE);
                 case ClientExecuteTime:
                     return latencyOfClientExecuteTime(request, response);

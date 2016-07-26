@@ -19,6 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "workspaces",
     "signingName" : "workspaces",
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonWorkspacesClientBuilder",
     "asyncClientBuilderClassName" : "AmazonWorkspacesAsyncClientBuilder",
     "serviceName" : "Amazon WorkSpaces",
@@ -26,8 +27,7 @@
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "CreateTags" : {
@@ -58,12 +58,12 @@
         "documentation" : "<p>Your resource limits have been exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateTagsResult",
       "asyncReturnType" : "CreateTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult>",
+      "authenticated" : true,
       "methodName" : "createTags"
     },
     "CreateWorkspaces" : {
@@ -91,12 +91,12 @@
         "documentation" : "<p>One or more parameter values are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateWorkspacesResult",
       "asyncReturnType" : "CreateWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateWorkspacesRequest, CreateWorkspacesResult>",
+      "authenticated" : true,
       "methodName" : "createWorkspaces"
     },
     "DeleteTags" : {
@@ -124,12 +124,12 @@
         "documentation" : "<p>One or more parameter values are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteTagsResult",
       "asyncReturnType" : "DeleteTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult>",
+      "authenticated" : true,
       "methodName" : "deleteTags"
     },
     "DescribeTags" : {
@@ -154,12 +154,12 @@
         "documentation" : "<p>The resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeTagsResult",
       "asyncReturnType" : "DescribeTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult>",
+      "authenticated" : true,
       "methodName" : "describeTags"
     },
     "DescribeWorkspaceBundles" : {
@@ -184,12 +184,12 @@
         "documentation" : "<p>One or more parameter values are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeWorkspaceBundlesResult",
       "asyncReturnType" : "DescribeWorkspaceBundlesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeWorkspaceBundlesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeWorkspaceBundlesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeWorkspaceBundlesRequest, DescribeWorkspaceBundlesResult>",
+      "authenticated" : true,
       "methodName" : "describeWorkspaceBundles"
     },
     "DescribeWorkspaceDirectories" : {
@@ -214,12 +214,12 @@
         "documentation" : "<p>One or more parameter values are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeWorkspaceDirectoriesResult",
       "asyncReturnType" : "DescribeWorkspaceDirectoriesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeWorkspaceDirectoriesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeWorkspaceDirectoriesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeWorkspaceDirectoriesRequest, DescribeWorkspaceDirectoriesResult>",
+      "authenticated" : true,
       "methodName" : "describeWorkspaceDirectories"
     },
     "DescribeWorkspaces" : {
@@ -247,12 +247,12 @@
         "documentation" : "<p>The specified resource is not available.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeWorkspacesResult",
       "asyncReturnType" : "DescribeWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeWorkspacesRequest, DescribeWorkspacesResult>",
+      "authenticated" : true,
       "methodName" : "describeWorkspaces"
     },
     "RebootWorkspaces" : {
@@ -274,12 +274,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RebootWorkspacesResult",
       "asyncReturnType" : "RebootWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<RebootWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RebootWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebootWorkspacesRequest, RebootWorkspacesResult>",
+      "authenticated" : true,
       "methodName" : "rebootWorkspaces"
     },
     "RebuildWorkspaces" : {
@@ -301,12 +301,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RebuildWorkspacesResult",
       "asyncReturnType" : "RebuildWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<RebuildWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RebuildWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RebuildWorkspacesRequest, RebuildWorkspacesResult>",
+      "authenticated" : true,
       "methodName" : "rebuildWorkspaces"
     },
     "TerminateWorkspaces" : {
@@ -328,12 +328,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "TerminateWorkspacesResult",
       "asyncReturnType" : "TerminateWorkspacesResult",
       "asyncFutureType" : "java.util.concurrent.Future<TerminateWorkspacesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TerminateWorkspacesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TerminateWorkspacesRequest, TerminateWorkspacesResult>",
+      "authenticated" : true,
       "methodName" : "terminateWorkspaces"
     }
   },
@@ -14157,6 +14157,7 @@
     "sdkModeledExceptionBaseClassName" : null,
     "customSignerProvider" : null,
     "calculateCRC32FromCompressedData" : false,
+    "customFileHeader" : null,
     "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
@@ -14164,6 +14165,7 @@
     "operationExamples" : { }
   },
   "sdkModeledExceptionBaseClassName" : "AmazonWorkspacesException",
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",

@@ -17,8 +17,13 @@ package com.amazonaws.codegen.model.intermediate;
 
 import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
+import com.amazonaws.util.IOUtils;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import org.joda.time.DateTime;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Map;
 
 public class IntermediateModel {
@@ -115,4 +120,25 @@ public class IntermediateModel {
         }
     }
 
+    public String getFileHeader() throws IOException {
+        if (customizationConfig.getCustomFileHeader() != null) {
+            return String.format("/**%n%s%n*/", customizationConfig.getCustomFileHeader());
+        } else {
+            return loadDeafultFileHeader();
+        }
+    }
+
+    private String loadDeafultFileHeader() throws IOException {
+        try (InputStream inputStream = getClass()
+                .getResourceAsStream("/com/amazonaws/codegen/DefaultFileHeader.txt")) {
+            return IOUtils.toString(inputStream)
+                    .replaceFirst("%COPYRIGHT_DATE_RANGE%", getCopyrightDateRange());
+        }
+    }
+
+    private String getCopyrightDateRange() {
+        final int currentYear = DateTime.now().getYear();
+        final int copyrightStartYear = currentYear - 5;
+        return String.format("%d-%d", copyrightStartYear, currentYear);
+    }
 }

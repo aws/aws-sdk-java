@@ -64,4 +64,9 @@ public interface ProtocolMetadataProvider {
      * would extend from this base exception.
      */
     String getBaseExceptionFqcn();
+
+    /**
+     * @return True if the protocol supports generation of an async client. False if not.
+     */
+    boolean hasAsyncClient();
 }

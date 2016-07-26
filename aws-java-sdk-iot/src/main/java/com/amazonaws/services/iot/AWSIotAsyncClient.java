@@ -1,15 +1,14 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not
+ * use this file except in compliance with the License. A copy of the License is
+ * located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
@@ -598,6 +597,41 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateThingTypeResult> createThingTypeAsync(
+            CreateThingTypeRequest request) {
+
+        return createThingTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThingTypeResult> createThingTypeAsync(
+            final CreateThingTypeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateThingTypeRequest, CreateThingTypeResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateThingTypeResult>() {
+                    @Override
+                    public CreateThingTypeResult call() throws Exception {
+                        CreateThingTypeResult result;
+
+                        try {
+                            result = createThingType(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTopicRuleResult> createTopicRuleAsync(
             CreateTopicRuleRequest request) {
 
@@ -843,6 +877,41 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteThingTypeResult> deleteThingTypeAsync(
+            DeleteThingTypeRequest request) {
+
+        return deleteThingTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThingTypeResult> deleteThingTypeAsync(
+            final DeleteThingTypeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteThingTypeRequest, DeleteThingTypeResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteThingTypeResult>() {
+                    @Override
+                    public DeleteThingTypeResult call() throws Exception {
+                        DeleteThingTypeResult result;
+
+                        try {
+                            result = deleteThingType(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTopicRuleResult> deleteTopicRuleAsync(
             DeleteTopicRuleRequest request) {
 
@@ -862,6 +931,41 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                         try {
                             result = deleteTopicRule(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeprecateThingTypeResult> deprecateThingTypeAsync(
+            DeprecateThingTypeRequest request) {
+
+        return deprecateThingTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeprecateThingTypeResult> deprecateThingTypeAsync(
+            final DeprecateThingTypeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeprecateThingTypeRequest, DeprecateThingTypeResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeprecateThingTypeResult>() {
+                    @Override
+                    public DeprecateThingTypeResult call() throws Exception {
+                        DeprecateThingTypeResult result;
+
+                        try {
+                            result = deprecateThingType(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1002,6 +1106,41 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                         try {
                             result = describeThing(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThingTypeResult> describeThingTypeAsync(
+            DescribeThingTypeRequest request) {
+
+        return describeThingTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThingTypeResult> describeThingTypeAsync(
+            final DescribeThingTypeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeThingTypeRequest, DescribeThingTypeResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeThingTypeResult>() {
+                    @Override
+                    public DescribeThingTypeResult call() throws Exception {
+                        DescribeThingTypeResult result;
+
+                        try {
+                            result = describeThingType(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1632,6 +1771,41 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                         try {
                             result = listThingPrincipals(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThingTypesResult> listThingTypesAsync(
+            ListThingTypesRequest request) {
+
+        return listThingTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThingTypesResult> listThingTypesAsync(
+            final ListThingTypesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListThingTypesRequest, ListThingTypesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListThingTypesResult>() {
+                    @Override
+                    public ListThingTypesResult call() throws Exception {
+                        ListThingTypesResult result;
+
+                        try {
+                            result = listThingTypes(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

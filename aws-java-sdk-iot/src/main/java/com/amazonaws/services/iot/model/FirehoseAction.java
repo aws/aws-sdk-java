@@ -1,19 +1,17 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not
+ * use this file except in compliance with the License. A copy of the License is
+ * located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
@@ -37,6 +35,14 @@ public class FirehoseAction implements Serializable, Cloneable {
      * </p>
      */
     private String deliveryStreamName;
+    /**
+     * <p>
+     * A character separator that will be used to separate records written to
+     * the firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
+     * (Windows newline), ',' (comma).
+     * </p>
+     */
+    private String separator;
 
     /**
      * <p>
@@ -124,6 +130,59 @@ public class FirehoseAction implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A character separator that will be used to separate records written to
+     * the firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
+     * (Windows newline), ',' (comma).
+     * </p>
+     * 
+     * @param separator
+     *        A character separator that will be used to separate records
+     *        written to the firehose stream. Valid values are: '\n' (newline),
+     *        '\t' (tab), '\r\n' (Windows newline), ',' (comma).
+     */
+
+    public void setSeparator(String separator) {
+        this.separator = separator;
+    }
+
+    /**
+     * <p>
+     * A character separator that will be used to separate records written to
+     * the firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
+     * (Windows newline), ',' (comma).
+     * </p>
+     * 
+     * @return A character separator that will be used to separate records
+     *         written to the firehose stream. Valid values are: '\n' (newline),
+     *         '\t' (tab), '\r\n' (Windows newline), ',' (comma).
+     */
+
+    public String getSeparator() {
+        return this.separator;
+    }
+
+    /**
+     * <p>
+     * A character separator that will be used to separate records written to
+     * the firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n'
+     * (Windows newline), ',' (comma).
+     * </p>
+     * 
+     * @param separator
+     *        A character separator that will be used to separate records
+     *        written to the firehose stream. Valid values are: '\n' (newline),
+     *        '\t' (tab), '\r\n' (Windows newline), ',' (comma).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public FirehoseAction withSeparator(String separator) {
+        setSeparator(separator);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -138,7 +197,9 @@ public class FirehoseAction implements Serializable, Cloneable {
         if (getRoleArn() != null)
             sb.append("RoleArn: " + getRoleArn() + ",");
         if (getDeliveryStreamName() != null)
-            sb.append("DeliveryStreamName: " + getDeliveryStreamName());
+            sb.append("DeliveryStreamName: " + getDeliveryStreamName() + ",");
+        if (getSeparator() != null)
+            sb.append("Separator: " + getSeparator());
         sb.append("}");
         return sb.toString();
     }
@@ -165,6 +226,11 @@ public class FirehoseAction implements Serializable, Cloneable {
                 && other.getDeliveryStreamName().equals(
                         this.getDeliveryStreamName()) == false)
             return false;
+        if (other.getSeparator() == null ^ this.getSeparator() == null)
+            return false;
+        if (other.getSeparator() != null
+                && other.getSeparator().equals(this.getSeparator()) == false)
+            return false;
         return true;
     }
 
@@ -179,6 +245,8 @@ public class FirehoseAction implements Serializable, Cloneable {
                 * hashCode
                 + ((getDeliveryStreamName() == null) ? 0
                         : getDeliveryStreamName().hashCode());
+        hashCode = prime * hashCode
+                + ((getSeparator() == null) ? 0 : getSeparator().hashCode());
         return hashCode;
     }
 

@@ -1,6 +1,5 @@
-<#macro content>
 /*
- * Copyright 2010-${.now?string["yyyy"]} Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright %COPYRIGHT_DATE_RANGE% Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,4 +13,3 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-</#macro>

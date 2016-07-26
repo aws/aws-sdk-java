@@ -1,19 +1,17 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not
+ * use this file except in compliance with the License. A copy of the License is
+ * located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
 package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
@@ -29,36 +27,45 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The token for the next value.
+     * The token for the next set of results, or <b>null</b> if there are no
+     * additional results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results.
+     * The maximum number of results to return in this operation.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The attribute name.
+     * The attribute name used to search for things.
      * </p>
      */
     private String attributeName;
     /**
      * <p>
-     * The attribute value.
+     * The attribute value used to search for things.
      * </p>
      */
     private String attributeValue;
+    /**
+     * <p>
+     * The name of the thing type used to search for things.
+     * </p>
+     */
+    private String thingTypeName;
 
     /**
      * <p>
-     * The token for the next value.
+     * The token for the next set of results, or <b>null</b> if there are no
+     * additional results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next value.
+     *        The token for the next set of results, or <b>null</b> if there are
+     *        no additional results.
      */
 
     public void setNextToken(String nextToken) {
@@ -67,10 +74,12 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The token for the next value.
+     * The token for the next set of results, or <b>null</b> if there are no
+     * additional results.
      * </p>
      * 
-     * @return The token for the next value.
+     * @return The token for the next set of results, or <b>null</b> if there
+     *         are no additional results.
      */
 
     public String getNextToken() {
@@ -79,11 +88,13 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The token for the next value.
+     * The token for the next set of results, or <b>null</b> if there are no
+     * additional results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next value.
+     *        The token for the next set of results, or <b>null</b> if there are
+     *        no additional results.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -95,11 +106,11 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of results.
+     * The maximum number of results to return in this operation.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results.
+     *        The maximum number of results to return in this operation.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -108,10 +119,10 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of results.
+     * The maximum number of results to return in this operation.
      * </p>
      * 
-     * @return The maximum number of results.
+     * @return The maximum number of results to return in this operation.
      */
 
     public Integer getMaxResults() {
@@ -120,11 +131,11 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of results.
+     * The maximum number of results to return in this operation.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results.
+     *        The maximum number of results to return in this operation.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -136,11 +147,11 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attribute name.
+     * The attribute name used to search for things.
      * </p>
      * 
      * @param attributeName
-     *        The attribute name.
+     *        The attribute name used to search for things.
      */
 
     public void setAttributeName(String attributeName) {
@@ -149,10 +160,10 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attribute name.
+     * The attribute name used to search for things.
      * </p>
      * 
-     * @return The attribute name.
+     * @return The attribute name used to search for things.
      */
 
     public String getAttributeName() {
@@ -161,11 +172,11 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attribute name.
+     * The attribute name used to search for things.
      * </p>
      * 
      * @param attributeName
-     *        The attribute name.
+     *        The attribute name used to search for things.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -177,11 +188,11 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attribute value.
+     * The attribute value used to search for things.
      * </p>
      * 
      * @param attributeValue
-     *        The attribute value.
+     *        The attribute value used to search for things.
      */
 
     public void setAttributeValue(String attributeValue) {
@@ -190,10 +201,10 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attribute value.
+     * The attribute value used to search for things.
      * </p>
      * 
-     * @return The attribute value.
+     * @return The attribute value used to search for things.
      */
 
     public String getAttributeValue() {
@@ -202,17 +213,58 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attribute value.
+     * The attribute value used to search for things.
      * </p>
      * 
      * @param attributeValue
-     *        The attribute value.
+     *        The attribute value used to search for things.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
     public ListThingsRequest withAttributeValue(String attributeValue) {
         setAttributeValue(attributeValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the thing type used to search for things.
+     * </p>
+     * 
+     * @param thingTypeName
+     *        The name of the thing type used to search for things.
+     */
+
+    public void setThingTypeName(String thingTypeName) {
+        this.thingTypeName = thingTypeName;
+    }
+
+    /**
+     * <p>
+     * The name of the thing type used to search for things.
+     * </p>
+     * 
+     * @return The name of the thing type used to search for things.
+     */
+
+    public String getThingTypeName() {
+        return this.thingTypeName;
+    }
+
+    /**
+     * <p>
+     * The name of the thing type used to search for things.
+     * </p>
+     * 
+     * @param thingTypeName
+     *        The name of the thing type used to search for things.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ListThingsRequest withThingTypeName(String thingTypeName) {
+        setThingTypeName(thingTypeName);
         return this;
     }
 
@@ -235,7 +287,9 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
         if (getAttributeName() != null)
             sb.append("AttributeName: " + getAttributeName() + ",");
         if (getAttributeValue() != null)
-            sb.append("AttributeValue: " + getAttributeValue());
+            sb.append("AttributeValue: " + getAttributeValue() + ",");
+        if (getThingTypeName() != null)
+            sb.append("ThingTypeName: " + getThingTypeName());
         sb.append("}");
         return sb.toString();
     }
@@ -271,6 +325,11 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
         if (other.getAttributeValue() != null
                 && other.getAttributeValue().equals(this.getAttributeValue()) == false)
             return false;
+        if (other.getThingTypeName() == null ^ this.getThingTypeName() == null)
+            return false;
+        if (other.getThingTypeName() != null
+                && other.getThingTypeName().equals(this.getThingTypeName()) == false)
+            return false;
         return true;
     }
 
@@ -290,6 +349,10 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
         hashCode = prime
                 * hashCode
                 + ((getAttributeValue() == null) ? 0 : getAttributeValue()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getThingTypeName() == null) ? 0 : getThingTypeName()
                         .hashCode());
         return hashCode;
     }
