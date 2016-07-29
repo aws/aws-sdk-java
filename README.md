@@ -66,8 +66,8 @@ dependencies.
 </dependencies>
 ```
 
-See the [Installing the AWS SDK for Java][docs-setup] section of the user guide for more information
-about installing the SDK through other means.
+See the [Set up the AWS SDK for Java][docs-setup] section of the developer guide for more
+information about installing the SDK through other means.
 
 ## Features
 
@@ -107,15 +107,15 @@ mvn clean install -Dgpg.skip=true
 * **1.10.x** - Approved. Only major critical bugs will be fixed. To get the new features, upgrade to
     1.11.x version of the SDK.
 
-[aws-iam-credentials]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/java-dg-roles.html
+[aws-iam-credentials]: http://docs.aws.amazon.com/java-sdk/latest/developer-guide/java-dg-roles.html
 [aws]: http://aws.amazon.com/
 [blog]: https://java.awsblog.com
 [docs-api]: http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/index.html
-[docs-guide]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/welcome.html
+[docs-guide]: http://docs.aws.amazon.com/java-sdk/latest/developer-guide/welcome.html
 [docs-guide-source]: https://github.com/awsdocs/aws-java-developer-guide
-[docs-java-env]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/java-dg-java-env.html
-[docs-signup]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/getting-started-signup.html
-[docs-setup]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/java-dg-install-sdk.html
+[docs-java-env]: http://docs.aws.amazon.com/java-sdk/latest/developer-guide/setup-install.html#installing-a-java-development-environment
+[docs-signup]: http://docs.aws.amazon.com/java-sdk/latest/developer-guide/signup-create-iam-user.html
+[docs-setup]: http://docs.aws.amazon.com/java-sdk/latest/developer-guide/setup-install.html
 [install-jar]: http://sdk-for-java.amazonwebservices.com/latest/aws-java-sdk.zip
 [sdk-forum]: http://developer.amazonwebservices.com/connect/forum.jspa?forumID=70
 [sdk-issues]: https://github.com/aws/aws-sdk-java/issues
