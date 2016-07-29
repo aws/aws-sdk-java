@@ -52,17 +52,10 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
     private String paginationToken;
     /**
      * <p>
-     * The user status. Can be one of the following:
+     * The filter for the list users request.
      * </p>
-     * <ul>
-     * <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     * <li>CONFIRMED - User has been confirmed.</li>
-     * <li>ARCHIVED - User is no longer active.</li>
-     * <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     * <li>UNKNOWN - User status is not known.</li>
-     * </ul>
      */
-    private String userStatus;
+    private String filter;
 
     /**
      * <p>
@@ -273,146 +266,42 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user status. Can be one of the following:
+     * The filter for the list users request.
      * </p>
-     * <ul>
-     * <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     * <li>CONFIRMED - User has been confirmed.</li>
-     * <li>ARCHIVED - User is no longer active.</li>
-     * <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     * <li>UNKNOWN - User status is not known.</li>
-     * </ul>
      * 
-     * @param userStatus
-     *        The user status. Can be one of the following:</p>
-     *        <ul>
-     *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     *        <li>CONFIRMED - User has been confirmed.</li>
-     *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security
-     *        threat.</li>
-     *        <li>UNKNOWN - User status is not known.</li>
-     * @see UserStatusType
+     * @param filter
+     *        The filter for the list users request.
      */
 
-    public void setUserStatus(String userStatus) {
-        this.userStatus = userStatus;
+    public void setFilter(String filter) {
+        this.filter = filter;
     }
 
     /**
      * <p>
-     * The user status. Can be one of the following:
+     * The filter for the list users request.
      * </p>
-     * <ul>
-     * <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     * <li>CONFIRMED - User has been confirmed.</li>
-     * <li>ARCHIVED - User is no longer active.</li>
-     * <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     * <li>UNKNOWN - User status is not known.</li>
-     * </ul>
      * 
-     * @return The user status. Can be one of the following:</p>
-     *         <ul>
-     *         <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     *         <li>CONFIRMED - User has been confirmed.</li>
-     *         <li>ARCHIVED - User is no longer active.</li>
-     *         <li>COMPROMISED - User is disabled due to a potential security
-     *         threat.</li>
-     *         <li>UNKNOWN - User status is not known.</li>
-     * @see UserStatusType
+     * @return The filter for the list users request.
      */
 
-    public String getUserStatus() {
-        return this.userStatus;
+    public String getFilter() {
+        return this.filter;
     }
 
     /**
      * <p>
-     * The user status. Can be one of the following:
+     * The filter for the list users request.
      * </p>
-     * <ul>
-     * <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     * <li>CONFIRMED - User has been confirmed.</li>
-     * <li>ARCHIVED - User is no longer active.</li>
-     * <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     * <li>UNKNOWN - User status is not known.</li>
-     * </ul>
      * 
-     * @param userStatus
-     *        The user status. Can be one of the following:</p>
-     *        <ul>
-     *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     *        <li>CONFIRMED - User has been confirmed.</li>
-     *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security
-     *        threat.</li>
-     *        <li>UNKNOWN - User status is not known.</li>
+     * @param filter
+     *        The filter for the list users request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
-     * @see UserStatusType
      */
 
-    public ListUsersRequest withUserStatus(String userStatus) {
-        setUserStatus(userStatus);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The user status. Can be one of the following:
-     * </p>
-     * <ul>
-     * <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     * <li>CONFIRMED - User has been confirmed.</li>
-     * <li>ARCHIVED - User is no longer active.</li>
-     * <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     * <li>UNKNOWN - User status is not known.</li>
-     * </ul>
-     * 
-     * @param userStatus
-     *        The user status. Can be one of the following:</p>
-     *        <ul>
-     *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     *        <li>CONFIRMED - User has been confirmed.</li>
-     *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security
-     *        threat.</li>
-     *        <li>UNKNOWN - User status is not known.</li>
-     * @see UserStatusType
-     */
-
-    public void setUserStatus(UserStatusType userStatus) {
-        this.userStatus = userStatus.toString();
-    }
-
-    /**
-     * <p>
-     * The user status. Can be one of the following:
-     * </p>
-     * <ul>
-     * <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     * <li>CONFIRMED - User has been confirmed.</li>
-     * <li>ARCHIVED - User is no longer active.</li>
-     * <li>COMPROMISED - User is disabled due to a potential security threat.</li>
-     * <li>UNKNOWN - User status is not known.</li>
-     * </ul>
-     * 
-     * @param userStatus
-     *        The user status. Can be one of the following:</p>
-     *        <ul>
-     *        <li>UNCONFIRMED - User has been created but not confirmed.</li>
-     *        <li>CONFIRMED - User has been confirmed.</li>
-     *        <li>ARCHIVED - User is no longer active.</li>
-     *        <li>COMPROMISED - User is disabled due to a potential security
-     *        threat.</li>
-     *        <li>UNKNOWN - User status is not known.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     * @see UserStatusType
-     */
-
-    public ListUsersRequest withUserStatus(UserStatusType userStatus) {
-        setUserStatus(userStatus);
+    public ListUsersRequest withFilter(String filter) {
+        setFilter(filter);
         return this;
     }
 
@@ -436,8 +325,8 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
             sb.append("Limit: " + getLimit() + ",");
         if (getPaginationToken() != null)
             sb.append("PaginationToken: " + getPaginationToken() + ",");
-        if (getUserStatus() != null)
-            sb.append("UserStatus: " + getUserStatus());
+        if (getFilter() != null)
+            sb.append("Filter: " + getFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -474,10 +363,10 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
         if (other.getPaginationToken() != null
                 && other.getPaginationToken().equals(this.getPaginationToken()) == false)
             return false;
-        if (other.getUserStatus() == null ^ this.getUserStatus() == null)
+        if (other.getFilter() == null ^ this.getFilter() == null)
             return false;
-        if (other.getUserStatus() != null
-                && other.getUserStatus().equals(this.getUserStatus()) == false)
+        if (other.getFilter() != null
+                && other.getFilter().equals(this.getFilter()) == false)
             return false;
         return true;
     }
@@ -500,7 +389,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
                 + ((getPaginationToken() == null) ? 0 : getPaginationToken()
                         .hashCode());
         hashCode = prime * hashCode
-                + ((getUserStatus() == null) ? 0 : getUserStatus().hashCode());
+                + ((getFilter() == null) ? 0 : getFilter().hashCode());
         return hashCode;
     }
 

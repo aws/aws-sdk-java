@@ -125,10 +125,42 @@ public class UserPoolType implements Serializable, Cloneable {
     private String mfaConfiguration;
     /**
      * <p>
+     * The device configuration.
+     * </p>
+     */
+    private DeviceConfigurationType deviceConfiguration;
+    /**
+     * <p>
      * A number estimating the size of the user pool.
      * </p>
      */
     private Integer estimatedNumberOfUsers;
+    /**
+     * <p>
+     * The email configuration.
+     * </p>
+     */
+    private EmailConfigurationType emailConfiguration;
+    /**
+     * <p>
+     * The SMS configuration.
+     * </p>
+     */
+    private SmsConfigurationType smsConfiguration;
+    /**
+     * <p>
+     * The reason why the SMS configuration cannot send the message(s) to your
+     * users.
+     * </p>
+     */
+    private String smsConfigurationFailure;
+    /**
+     * <p>
+     * The reason why the email configuration cannot send the messages to your
+     * users.
+     * </p>
+     */
+    private String emailConfigurationFailure;
 
     /**
      * <p>
@@ -1079,6 +1111,49 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The device configuration.
+     * </p>
+     * 
+     * @param deviceConfiguration
+     *        The device configuration.
+     */
+
+    public void setDeviceConfiguration(
+            DeviceConfigurationType deviceConfiguration) {
+        this.deviceConfiguration = deviceConfiguration;
+    }
+
+    /**
+     * <p>
+     * The device configuration.
+     * </p>
+     * 
+     * @return The device configuration.
+     */
+
+    public DeviceConfigurationType getDeviceConfiguration() {
+        return this.deviceConfiguration;
+    }
+
+    /**
+     * <p>
+     * The device configuration.
+     * </p>
+     * 
+     * @param deviceConfiguration
+     *        The device configuration.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UserPoolType withDeviceConfiguration(
+            DeviceConfigurationType deviceConfiguration) {
+        setDeviceConfiguration(deviceConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * A number estimating the size of the user pool.
      * </p>
      * 
@@ -1116,6 +1191,186 @@ public class UserPoolType implements Serializable, Cloneable {
     public UserPoolType withEstimatedNumberOfUsers(
             Integer estimatedNumberOfUsers) {
         setEstimatedNumberOfUsers(estimatedNumberOfUsers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The email configuration.
+     * </p>
+     * 
+     * @param emailConfiguration
+     *        The email configuration.
+     */
+
+    public void setEmailConfiguration(EmailConfigurationType emailConfiguration) {
+        this.emailConfiguration = emailConfiguration;
+    }
+
+    /**
+     * <p>
+     * The email configuration.
+     * </p>
+     * 
+     * @return The email configuration.
+     */
+
+    public EmailConfigurationType getEmailConfiguration() {
+        return this.emailConfiguration;
+    }
+
+    /**
+     * <p>
+     * The email configuration.
+     * </p>
+     * 
+     * @param emailConfiguration
+     *        The email configuration.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UserPoolType withEmailConfiguration(
+            EmailConfigurationType emailConfiguration) {
+        setEmailConfiguration(emailConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The SMS configuration.
+     * </p>
+     * 
+     * @param smsConfiguration
+     *        The SMS configuration.
+     */
+
+    public void setSmsConfiguration(SmsConfigurationType smsConfiguration) {
+        this.smsConfiguration = smsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The SMS configuration.
+     * </p>
+     * 
+     * @return The SMS configuration.
+     */
+
+    public SmsConfigurationType getSmsConfiguration() {
+        return this.smsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The SMS configuration.
+     * </p>
+     * 
+     * @param smsConfiguration
+     *        The SMS configuration.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UserPoolType withSmsConfiguration(
+            SmsConfigurationType smsConfiguration) {
+        setSmsConfiguration(smsConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason why the SMS configuration cannot send the message(s) to your
+     * users.
+     * </p>
+     * 
+     * @param smsConfigurationFailure
+     *        The reason why the SMS configuration cannot send the message(s) to
+     *        your users.
+     */
+
+    public void setSmsConfigurationFailure(String smsConfigurationFailure) {
+        this.smsConfigurationFailure = smsConfigurationFailure;
+    }
+
+    /**
+     * <p>
+     * The reason why the SMS configuration cannot send the message(s) to your
+     * users.
+     * </p>
+     * 
+     * @return The reason why the SMS configuration cannot send the message(s)
+     *         to your users.
+     */
+
+    public String getSmsConfigurationFailure() {
+        return this.smsConfigurationFailure;
+    }
+
+    /**
+     * <p>
+     * The reason why the SMS configuration cannot send the message(s) to your
+     * users.
+     * </p>
+     * 
+     * @param smsConfigurationFailure
+     *        The reason why the SMS configuration cannot send the message(s) to
+     *        your users.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UserPoolType withSmsConfigurationFailure(
+            String smsConfigurationFailure) {
+        setSmsConfigurationFailure(smsConfigurationFailure);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason why the email configuration cannot send the messages to your
+     * users.
+     * </p>
+     * 
+     * @param emailConfigurationFailure
+     *        The reason why the email configuration cannot send the messages to
+     *        your users.
+     */
+
+    public void setEmailConfigurationFailure(String emailConfigurationFailure) {
+        this.emailConfigurationFailure = emailConfigurationFailure;
+    }
+
+    /**
+     * <p>
+     * The reason why the email configuration cannot send the messages to your
+     * users.
+     * </p>
+     * 
+     * @return The reason why the email configuration cannot send the messages
+     *         to your users.
+     */
+
+    public String getEmailConfigurationFailure() {
+        return this.emailConfigurationFailure;
+    }
+
+    /**
+     * <p>
+     * The reason why the email configuration cannot send the messages to your
+     * users.
+     * </p>
+     * 
+     * @param emailConfigurationFailure
+     *        The reason why the email configuration cannot send the messages to
+     *        your users.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UserPoolType withEmailConfigurationFailure(
+            String emailConfigurationFailure) {
+        setEmailConfigurationFailure(emailConfigurationFailure);
         return this;
     }
 
@@ -1166,8 +1421,21 @@ public class UserPoolType implements Serializable, Cloneable {
                     + getSmsAuthenticationMessage() + ",");
         if (getMfaConfiguration() != null)
             sb.append("MfaConfiguration: " + getMfaConfiguration() + ",");
+        if (getDeviceConfiguration() != null)
+            sb.append("DeviceConfiguration: " + getDeviceConfiguration() + ",");
         if (getEstimatedNumberOfUsers() != null)
-            sb.append("EstimatedNumberOfUsers: " + getEstimatedNumberOfUsers());
+            sb.append("EstimatedNumberOfUsers: " + getEstimatedNumberOfUsers()
+                    + ",");
+        if (getEmailConfiguration() != null)
+            sb.append("EmailConfiguration: " + getEmailConfiguration() + ",");
+        if (getSmsConfiguration() != null)
+            sb.append("SmsConfiguration: " + getSmsConfiguration() + ",");
+        if (getSmsConfigurationFailure() != null)
+            sb.append("SmsConfigurationFailure: "
+                    + getSmsConfigurationFailure() + ",");
+        if (getEmailConfigurationFailure() != null)
+            sb.append("EmailConfigurationFailure: "
+                    + getEmailConfigurationFailure());
         sb.append("}");
         return sb.toString();
     }
@@ -1274,12 +1542,47 @@ public class UserPoolType implements Serializable, Cloneable {
                 && other.getMfaConfiguration().equals(
                         this.getMfaConfiguration()) == false)
             return false;
+        if (other.getDeviceConfiguration() == null
+                ^ this.getDeviceConfiguration() == null)
+            return false;
+        if (other.getDeviceConfiguration() != null
+                && other.getDeviceConfiguration().equals(
+                        this.getDeviceConfiguration()) == false)
+            return false;
         if (other.getEstimatedNumberOfUsers() == null
                 ^ this.getEstimatedNumberOfUsers() == null)
             return false;
         if (other.getEstimatedNumberOfUsers() != null
                 && other.getEstimatedNumberOfUsers().equals(
                         this.getEstimatedNumberOfUsers()) == false)
+            return false;
+        if (other.getEmailConfiguration() == null
+                ^ this.getEmailConfiguration() == null)
+            return false;
+        if (other.getEmailConfiguration() != null
+                && other.getEmailConfiguration().equals(
+                        this.getEmailConfiguration()) == false)
+            return false;
+        if (other.getSmsConfiguration() == null
+                ^ this.getSmsConfiguration() == null)
+            return false;
+        if (other.getSmsConfiguration() != null
+                && other.getSmsConfiguration().equals(
+                        this.getSmsConfiguration()) == false)
+            return false;
+        if (other.getSmsConfigurationFailure() == null
+                ^ this.getSmsConfigurationFailure() == null)
+            return false;
+        if (other.getSmsConfigurationFailure() != null
+                && other.getSmsConfigurationFailure().equals(
+                        this.getSmsConfigurationFailure()) == false)
+            return false;
+        if (other.getEmailConfigurationFailure() == null
+                ^ this.getEmailConfigurationFailure() == null)
+            return false;
+        if (other.getEmailConfigurationFailure() != null
+                && other.getEmailConfigurationFailure().equals(
+                        this.getEmailConfigurationFailure()) == false)
             return false;
         return true;
     }
@@ -1343,8 +1646,28 @@ public class UserPoolType implements Serializable, Cloneable {
                         .hashCode());
         hashCode = prime
                 * hashCode
+                + ((getDeviceConfiguration() == null) ? 0
+                        : getDeviceConfiguration().hashCode());
+        hashCode = prime
+                * hashCode
                 + ((getEstimatedNumberOfUsers() == null) ? 0
                         : getEstimatedNumberOfUsers().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEmailConfiguration() == null) ? 0
+                        : getEmailConfiguration().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSmsConfiguration() == null) ? 0 : getSmsConfiguration()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSmsConfigurationFailure() == null) ? 0
+                        : getSmsConfigurationFailure().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEmailConfigurationFailure() == null) ? 0
+                        : getEmailConfigurationFailure().hashCode());
         return hashCode;
     }
 

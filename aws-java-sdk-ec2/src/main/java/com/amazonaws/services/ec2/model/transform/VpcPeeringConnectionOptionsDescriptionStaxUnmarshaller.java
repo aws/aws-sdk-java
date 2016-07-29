@@ -67,6 +67,14 @@ public class VpcPeeringConnectionOptionsDescriptionStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("allowDnsResolutionFromRemoteVpc",
+                        targetDepth)) {
+                    vpcPeeringConnectionOptionsDescription
+                            .setAllowDnsResolutionFromRemoteVpc(BooleanStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpcPeeringConnectionOptionsDescription;

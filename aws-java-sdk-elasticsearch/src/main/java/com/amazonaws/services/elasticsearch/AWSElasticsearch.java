@@ -31,7 +31,7 @@ import com.amazonaws.services.elasticsearch.model.*;
  * The endpoint for configuration service requests is region-specific:
  * es.<i>region</i>.amazonaws.com. For example, es.us-east-1.amazonaws.com. For
  * a current list of supported regions and endpoints, see <a href=
- * "http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region"
+ * "http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticsearch-service-regions"
  * target="_blank">Regions and Endpoints</a>.
  * </p>
  */

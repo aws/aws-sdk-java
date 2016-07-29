@@ -224,21 +224,24 @@
           "endpoints": {
             "us-east-1": {},
             "eu-west-1": {},
-            "ap-northeast-1": {}
+            "ap-northeast-1": {},
+            "ap-northeast-2": {}
           }
         },
         "cognito-idp": {
           "endpoints": {
             "us-east-1": {},
             "eu-west-1": {},
-            "ap-northeast-1": {}
+            "ap-northeast-1": {},
+            "ap-northeast-2": {}
           }
         },
         "cognito-sync": {
           "endpoints": {
             "us-east-1": {},
             "eu-west-1": {},
-            "ap-northeast-1": {}
+            "ap-northeast-1": {},
+            "ap-northeast-2": {}
           }
         },
         "config": {

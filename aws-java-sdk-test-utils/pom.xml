@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.22-SNAPSHOT</version>
+    <version>1.11.22</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-test-utils</artifactId>
@@ -19,12 +19,36 @@
         <artifactId>aws-java-sdk-core</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
-        <version>1.11.22-SNAPSHOT</version>
+        <version>1.11.22</version>
     </dependency>
     <dependency>
         <artifactId>junit</artifactId>
         <groupId>junit</groupId>
         <optional>false</optional>
+    </dependency>
+    <dependency>
+        <artifactId>cucumber-java</artifactId>
+        <groupId>info.cukes</groupId>
+        <optional>false</optional>
+        <version>${cucumber.info.cukes.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>cucumber-junit</artifactId>
+        <groupId>info.cukes</groupId>
+        <optional>false</optional>
+        <version>${cucumber.info.cukes.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>cucumber-guice</artifactId>
+        <groupId>info.cukes</groupId>
+        <optional>false</optional>
+        <version>${cucumber.info.cukes.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>guice</artifactId>
+        <groupId>com.google.inject</groupId>
+        <optional>false</optional>
+        <version>${cucumber.guice.version}</version>
     </dependency>
 </dependencies>
 

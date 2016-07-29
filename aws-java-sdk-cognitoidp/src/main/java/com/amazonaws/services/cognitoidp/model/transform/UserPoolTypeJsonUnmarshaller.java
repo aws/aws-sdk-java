@@ -138,12 +138,42 @@ public class UserPoolTypeJsonUnmarshaller implements
                     userPoolType.setMfaConfiguration(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("DeviceConfiguration", targetDepth)) {
+                    context.nextToken();
+                    userPoolType
+                            .setDeviceConfiguration(DeviceConfigurationTypeJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("EstimatedNumberOfUsers",
                         targetDepth)) {
                     context.nextToken();
                     userPoolType
                             .setEstimatedNumberOfUsers(context.getUnmarshaller(
                                     Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("EmailConfiguration", targetDepth)) {
+                    context.nextToken();
+                    userPoolType
+                            .setEmailConfiguration(EmailConfigurationTypeJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SmsConfiguration", targetDepth)) {
+                    context.nextToken();
+                    userPoolType
+                            .setSmsConfiguration(SmsConfigurationTypeJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SmsConfigurationFailure",
+                        targetDepth)) {
+                    context.nextToken();
+                    userPoolType.setSmsConfigurationFailure(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EmailConfigurationFailure",
+                        targetDepth)) {
+                    context.nextToken();
+                    userPoolType.setEmailConfigurationFailure(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

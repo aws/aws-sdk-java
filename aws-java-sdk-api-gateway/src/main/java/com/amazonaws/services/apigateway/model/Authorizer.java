@@ -43,6 +43,8 @@ public class Authorizer implements Serializable, Cloneable {
      * </p>
      */
     private String type;
+
+    private java.util.List<String> providerARNs;
     /**
      * <p>
      * Optional customer-defined field, used in Swagger imports/exports. Has no
@@ -267,6 +269,61 @@ public class Authorizer implements Serializable, Cloneable {
 
     public Authorizer withType(AuthorizerType type) {
         setType(type);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.List<String> getProviderARNs() {
+        return providerARNs;
+    }
+
+    /**
+     * @param providerARNs
+     */
+
+    public void setProviderARNs(java.util.Collection<String> providerARNs) {
+        if (providerARNs == null) {
+            this.providerARNs = null;
+            return;
+        }
+
+        this.providerARNs = new java.util.ArrayList<String>(providerARNs);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setProviderARNs(java.util.Collection)} or
+     * {@link #withProviderARNs(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param providerARNs
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Authorizer withProviderARNs(String... providerARNs) {
+        if (this.providerARNs == null) {
+            setProviderARNs(new java.util.ArrayList<String>(providerARNs.length));
+        }
+        for (String ele : providerARNs) {
+            this.providerARNs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param providerARNs
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Authorizer withProviderARNs(java.util.Collection<String> providerARNs) {
+        setProviderARNs(providerARNs);
         return this;
     }
 
@@ -685,6 +742,8 @@ public class Authorizer implements Serializable, Cloneable {
             sb.append("Name: " + getName() + ",");
         if (getType() != null)
             sb.append("Type: " + getType() + ",");
+        if (getProviderARNs() != null)
+            sb.append("ProviderARNs: " + getProviderARNs() + ",");
         if (getAuthType() != null)
             sb.append("AuthType: " + getAuthType() + ",");
         if (getAuthorizerUri() != null)
@@ -728,6 +787,11 @@ public class Authorizer implements Serializable, Cloneable {
             return false;
         if (other.getType() != null
                 && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getProviderARNs() == null ^ this.getProviderARNs() == null)
+            return false;
+        if (other.getProviderARNs() != null
+                && other.getProviderARNs().equals(this.getProviderARNs()) == false)
             return false;
         if (other.getAuthType() == null ^ this.getAuthType() == null)
             return false;
@@ -780,6 +844,10 @@ public class Authorizer implements Serializable, Cloneable {
                 + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode
                 + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getProviderARNs() == null) ? 0 : getProviderARNs()
+                        .hashCode());
         hashCode = prime * hashCode
                 + ((getAuthType() == null) ? 0 : getAuthType().hashCode());
         hashCode = prime

@@ -402,6 +402,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @throws BadRequestException
      * @sample AmazonApiGateway.DeleteIntegrationResponse
      */
     DeleteIntegrationResponseResult deleteIntegrationResponse(
@@ -434,6 +435,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @throws BadRequestException
      * @sample AmazonApiGateway.DeleteMethodResponse
      */
     DeleteMethodResponseResult deleteMethodResponse(
@@ -1136,6 +1138,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.PutRestApi
      */
     PutRestApiResult putRestApi(PutRestApiRequest putRestApiRequest);

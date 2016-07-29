@@ -53,6 +53,24 @@ public class LambdaConfigType implements Serializable, Cloneable {
      * </p>
      */
     private String postAuthentication;
+    /**
+     * <p>
+     * Defines the authentication challenge.
+     * </p>
+     */
+    private String defineAuthChallenge;
+    /**
+     * <p>
+     * Creates an authentication challenge.
+     * </p>
+     */
+    private String createAuthChallenge;
+    /**
+     * <p>
+     * Verifies the authentication challenge response.
+     * </p>
+     */
+    private String verifyAuthChallengeResponse;
 
     /**
      * <p>
@@ -260,6 +278,131 @@ public class LambdaConfigType implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Defines the authentication challenge.
+     * </p>
+     * 
+     * @param defineAuthChallenge
+     *        Defines the authentication challenge.
+     */
+
+    public void setDefineAuthChallenge(String defineAuthChallenge) {
+        this.defineAuthChallenge = defineAuthChallenge;
+    }
+
+    /**
+     * <p>
+     * Defines the authentication challenge.
+     * </p>
+     * 
+     * @return Defines the authentication challenge.
+     */
+
+    public String getDefineAuthChallenge() {
+        return this.defineAuthChallenge;
+    }
+
+    /**
+     * <p>
+     * Defines the authentication challenge.
+     * </p>
+     * 
+     * @param defineAuthChallenge
+     *        Defines the authentication challenge.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public LambdaConfigType withDefineAuthChallenge(String defineAuthChallenge) {
+        setDefineAuthChallenge(defineAuthChallenge);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Creates an authentication challenge.
+     * </p>
+     * 
+     * @param createAuthChallenge
+     *        Creates an authentication challenge.
+     */
+
+    public void setCreateAuthChallenge(String createAuthChallenge) {
+        this.createAuthChallenge = createAuthChallenge;
+    }
+
+    /**
+     * <p>
+     * Creates an authentication challenge.
+     * </p>
+     * 
+     * @return Creates an authentication challenge.
+     */
+
+    public String getCreateAuthChallenge() {
+        return this.createAuthChallenge;
+    }
+
+    /**
+     * <p>
+     * Creates an authentication challenge.
+     * </p>
+     * 
+     * @param createAuthChallenge
+     *        Creates an authentication challenge.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public LambdaConfigType withCreateAuthChallenge(String createAuthChallenge) {
+        setCreateAuthChallenge(createAuthChallenge);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Verifies the authentication challenge response.
+     * </p>
+     * 
+     * @param verifyAuthChallengeResponse
+     *        Verifies the authentication challenge response.
+     */
+
+    public void setVerifyAuthChallengeResponse(
+            String verifyAuthChallengeResponse) {
+        this.verifyAuthChallengeResponse = verifyAuthChallengeResponse;
+    }
+
+    /**
+     * <p>
+     * Verifies the authentication challenge response.
+     * </p>
+     * 
+     * @return Verifies the authentication challenge response.
+     */
+
+    public String getVerifyAuthChallengeResponse() {
+        return this.verifyAuthChallengeResponse;
+    }
+
+    /**
+     * <p>
+     * Verifies the authentication challenge response.
+     * </p>
+     * 
+     * @param verifyAuthChallengeResponse
+     *        Verifies the authentication challenge response.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public LambdaConfigType withVerifyAuthChallengeResponse(
+            String verifyAuthChallengeResponse) {
+        setVerifyAuthChallengeResponse(verifyAuthChallengeResponse);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -280,7 +423,14 @@ public class LambdaConfigType implements Serializable, Cloneable {
         if (getPreAuthentication() != null)
             sb.append("PreAuthentication: " + getPreAuthentication() + ",");
         if (getPostAuthentication() != null)
-            sb.append("PostAuthentication: " + getPostAuthentication());
+            sb.append("PostAuthentication: " + getPostAuthentication() + ",");
+        if (getDefineAuthChallenge() != null)
+            sb.append("DefineAuthChallenge: " + getDefineAuthChallenge() + ",");
+        if (getCreateAuthChallenge() != null)
+            sb.append("CreateAuthChallenge: " + getCreateAuthChallenge() + ",");
+        if (getVerifyAuthChallengeResponse() != null)
+            sb.append("VerifyAuthChallengeResponse: "
+                    + getVerifyAuthChallengeResponse());
         sb.append("}");
         return sb.toString();
     }
@@ -326,6 +476,27 @@ public class LambdaConfigType implements Serializable, Cloneable {
                 && other.getPostAuthentication().equals(
                         this.getPostAuthentication()) == false)
             return false;
+        if (other.getDefineAuthChallenge() == null
+                ^ this.getDefineAuthChallenge() == null)
+            return false;
+        if (other.getDefineAuthChallenge() != null
+                && other.getDefineAuthChallenge().equals(
+                        this.getDefineAuthChallenge()) == false)
+            return false;
+        if (other.getCreateAuthChallenge() == null
+                ^ this.getCreateAuthChallenge() == null)
+            return false;
+        if (other.getCreateAuthChallenge() != null
+                && other.getCreateAuthChallenge().equals(
+                        this.getCreateAuthChallenge()) == false)
+            return false;
+        if (other.getVerifyAuthChallengeResponse() == null
+                ^ this.getVerifyAuthChallengeResponse() == null)
+            return false;
+        if (other.getVerifyAuthChallengeResponse() != null
+                && other.getVerifyAuthChallengeResponse().equals(
+                        this.getVerifyAuthChallengeResponse()) == false)
+            return false;
         return true;
     }
 
@@ -352,6 +523,18 @@ public class LambdaConfigType implements Serializable, Cloneable {
                 * hashCode
                 + ((getPostAuthentication() == null) ? 0
                         : getPostAuthentication().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDefineAuthChallenge() == null) ? 0
+                        : getDefineAuthChallenge().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCreateAuthChallenge() == null) ? 0
+                        : getCreateAuthChallenge().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getVerifyAuthChallengeResponse() == null) ? 0
+                        : getVerifyAuthChallengeResponse().hashCode());
         return hashCode;
     }
 

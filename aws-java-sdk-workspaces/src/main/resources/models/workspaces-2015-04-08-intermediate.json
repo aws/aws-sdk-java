@@ -19,14 +19,16 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "workspaces",
     "signingName" : "workspaces",
-    "jsonProtocol" : true,
-    "syncClientBuilderClassName" : "AmazonWorkspacesClientBuilder",
-    "asyncClientBuilderClassName" : "AmazonWorkspacesAsyncClientBuilder",
-    "serviceName" : "Amazon WorkSpaces",
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "jsonProtocol" : true,
+    "syncClientBuilderClassName" : "AmazonWorkspacesClientBuilder",
+    "asyncClientBuilderClassName" : "AmazonWorkspacesAsyncClientBuilder",
+    "cucumberModuleInjectorClassName" : "AmazonWorkspacesModuleInjector",
+    "smokeTestsPackageName" : "com.amazonaws.services.workspaces.smoketests",
+    "serviceName" : "Amazon WorkSpaces",
     "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
@@ -14158,7 +14160,8 @@
     "customSignerProvider" : null,
     "calculateCRC32FromCompressedData" : false,
     "customFileHeader" : null,
-    "convenienceTypeOverloads" : [ ]
+    "convenienceTypeOverloads" : [ ],
+    "skipSmokeTests" : false
   },
   "examples" : {
     "version" : "1.0",

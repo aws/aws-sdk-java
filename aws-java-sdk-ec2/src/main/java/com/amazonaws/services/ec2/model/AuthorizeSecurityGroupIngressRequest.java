@@ -69,7 +69,9 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * The IP protocol name (<code>tcp</code>, <code>udp</code>,
      * <code>icmp</code>) or number (see <a href=
      * "http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml"
-     * >Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify all.
+     * >Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify all
+     * traffic. If you specify <code>-1</code>, traffic on all ports is allowed,
+     * regardless of any ports you specify.
      * </p>
      */
     private String ipProtocol;
@@ -378,7 +380,9 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * The IP protocol name (<code>tcp</code>, <code>udp</code>,
      * <code>icmp</code>) or number (see <a href=
      * "http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml"
-     * >Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify all.
+     * >Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify all
+     * traffic. If you specify <code>-1</code>, traffic on all ports is allowed,
+     * regardless of any ports you specify.
      * </p>
      * 
      * @param ipProtocol
@@ -386,7 +390,8 @@ public class AuthorizeSecurityGroupIngressRequest extends
      *        <code>icmp</code>) or number (see <a href=
      *        "http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml"
      *        >Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify
-     *        all.
+     *        all traffic. If you specify <code>-1</code>, traffic on all ports
+     *        is allowed, regardless of any ports you specify.
      */
 
     public void setIpProtocol(String ipProtocol) {
@@ -398,14 +403,17 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * The IP protocol name (<code>tcp</code>, <code>udp</code>,
      * <code>icmp</code>) or number (see <a href=
      * "http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml"
-     * >Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify all.
+     * >Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify all
+     * traffic. If you specify <code>-1</code>, traffic on all ports is allowed,
+     * regardless of any ports you specify.
      * </p>
      * 
      * @return The IP protocol name (<code>tcp</code>, <code>udp</code>,
      *         <code>icmp</code>) or number (see <a href=
      *         "http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml"
      *         >Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify
-     *         all.
+     *         all traffic. If you specify <code>-1</code>, traffic on all ports
+     *         is allowed, regardless of any ports you specify.
      */
 
     public String getIpProtocol() {
@@ -417,7 +425,9 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * The IP protocol name (<code>tcp</code>, <code>udp</code>,
      * <code>icmp</code>) or number (see <a href=
      * "http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml"
-     * >Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify all.
+     * >Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify all
+     * traffic. If you specify <code>-1</code>, traffic on all ports is allowed,
+     * regardless of any ports you specify.
      * </p>
      * 
      * @param ipProtocol
@@ -425,7 +435,8 @@ public class AuthorizeSecurityGroupIngressRequest extends
      *        <code>icmp</code>) or number (see <a href=
      *        "http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml"
      *        >Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify
-     *        all.
+     *        all traffic. If you specify <code>-1</code>, traffic on all ports
+     *        is allowed, regardless of any ports you specify.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

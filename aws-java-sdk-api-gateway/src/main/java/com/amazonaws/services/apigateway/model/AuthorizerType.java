@@ -21,7 +21,8 @@ package com.amazonaws.services.apigateway.model;
  */
 public enum AuthorizerType {
 
-    TOKEN("TOKEN");
+    TOKEN("TOKEN"),
+    COGNITO_USER_POOLS("COGNITO_USER_POOLS");
 
     private String value;
 

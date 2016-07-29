@@ -34,6 +34,16 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
     private String domainName;
     /**
      * <p>
+     * String of format X.Y to specify version for the Elasticsearch domain eg.
+     * "1.5" or "2.3". For more information, see <a href=
+     * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon
+     * Elasticsearch Service Developer Guide</i>.
+     * </p>
+     */
+    private String elasticsearchVersion;
+    /**
+     * <p>
      * Configuration options for an Elasticsearch domain. Specifies the instance
      * type and number of instances in the domain cluster.
      * </p>
@@ -129,6 +139,72 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
 
     public CreateElasticsearchDomainRequest withDomainName(String domainName) {
         setDomainName(domainName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * String of format X.Y to specify version for the Elasticsearch domain eg.
+     * "1.5" or "2.3". For more information, see <a href=
+     * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon
+     * Elasticsearch Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param elasticsearchVersion
+     *        String of format X.Y to specify version for the Elasticsearch
+     *        domain eg. "1.5" or "2.3". For more information, see <a href=
+     *        "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     *        target="_blank">Creating Elasticsearch Domains</a> in the
+     *        <i>Amazon Elasticsearch Service Developer Guide</i>.
+     */
+
+    public void setElasticsearchVersion(String elasticsearchVersion) {
+        this.elasticsearchVersion = elasticsearchVersion;
+    }
+
+    /**
+     * <p>
+     * String of format X.Y to specify version for the Elasticsearch domain eg.
+     * "1.5" or "2.3". For more information, see <a href=
+     * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon
+     * Elasticsearch Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return String of format X.Y to specify version for the Elasticsearch
+     *         domain eg. "1.5" or "2.3". For more information, see <a href=
+     *         "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     *         target="_blank">Creating Elasticsearch Domains</a> in the
+     *         <i>Amazon Elasticsearch Service Developer Guide</i>.
+     */
+
+    public String getElasticsearchVersion() {
+        return this.elasticsearchVersion;
+    }
+
+    /**
+     * <p>
+     * String of format X.Y to specify version for the Elasticsearch domain eg.
+     * "1.5" or "2.3". For more information, see <a href=
+     * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon
+     * Elasticsearch Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param elasticsearchVersion
+     *        String of format X.Y to specify version for the Elasticsearch
+     *        domain eg. "1.5" or "2.3". For more information, see <a href=
+     *        "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     *        target="_blank">Creating Elasticsearch Domains</a> in the
+     *        <i>Amazon Elasticsearch Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateElasticsearchDomainRequest withElasticsearchVersion(
+            String elasticsearchVersion) {
+        setElasticsearchVersion(elasticsearchVersion);
         return this;
     }
 
@@ -426,6 +502,9 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
         sb.append("{");
         if (getDomainName() != null)
             sb.append("DomainName: " + getDomainName() + ",");
+        if (getElasticsearchVersion() != null)
+            sb.append("ElasticsearchVersion: " + getElasticsearchVersion()
+                    + ",");
         if (getElasticsearchClusterConfig() != null)
             sb.append("ElasticsearchClusterConfig: "
                     + getElasticsearchClusterConfig() + ",");
@@ -455,6 +534,13 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
             return false;
         if (other.getDomainName() != null
                 && other.getDomainName().equals(this.getDomainName()) == false)
+            return false;
+        if (other.getElasticsearchVersion() == null
+                ^ this.getElasticsearchVersion() == null)
+            return false;
+        if (other.getElasticsearchVersion() != null
+                && other.getElasticsearchVersion().equals(
+                        this.getElasticsearchVersion()) == false)
             return false;
         if (other.getElasticsearchClusterConfig() == null
                 ^ this.getElasticsearchClusterConfig() == null)
@@ -496,6 +582,10 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
 
         hashCode = prime * hashCode
                 + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getElasticsearchVersion() == null) ? 0
+                        : getElasticsearchVersion().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getElasticsearchClusterConfig() == null) ? 0

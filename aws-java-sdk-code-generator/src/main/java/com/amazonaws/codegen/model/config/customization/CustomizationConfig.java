@@ -190,6 +190,11 @@ public class CustomizationConfig {
      */
     private final List<ConvenienceTypeOverload> convenienceTypeOverloads = new ArrayList<ConvenienceTypeOverload>();
 
+    /**
+     * Skips generating smoketests if set to true.
+     */
+    private boolean skipSmokeTests;
+
     public String getRequestMetrics() {
         return requestMetrics;
     }
@@ -437,5 +442,13 @@ public class CustomizationConfig {
 
     public void setCustomFileHeader(String customFileHeader) {
         this.customFileHeader = customFileHeader;
+    }
+
+    public boolean isSkipSmokeTests() {
+        return skipSmokeTests;
+    }
+
+    public void setSkipSmokeTests(boolean skipSmokeTests) {
+        this.skipSmokeTests = skipSmokeTests;
     }
 }

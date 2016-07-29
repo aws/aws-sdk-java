@@ -19,14 +19,16 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "metering.marketplace",
     "signingName" : "aws-marketplace",
-    "cborProtocol" : false,
     "xmlProtocol" : false,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSMarketplaceMeteringClientBuilder",
     "asyncClientBuilderClassName" : "AWSMarketplaceMeteringAsyncClientBuilder",
+    "cucumberModuleInjectorClassName" : "AWSMarketplaceMeteringModuleInjector",
+    "smokeTestsPackageName" : "com.amazonaws.services.marketplacemetering.smoketests",
     "serviceName" : "AWSMarketplace Metering",
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "cborProtocol" : false,
     "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
@@ -70,12 +72,12 @@
         "documentation" : "<p>The calls to the MeterUsage API are throttled.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "MeterUsageResult",
       "asyncReturnType" : "MeterUsageResult",
       "asyncFutureType" : "java.util.concurrent.Future<MeterUsageResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<MeterUsageResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<MeterUsageRequest, MeterUsageResult>",
-      "authenticated" : true,
       "methodName" : "meterUsage"
     }
   },
@@ -1042,7 +1044,8 @@
     "customSignerProvider" : null,
     "calculateCRC32FromCompressedData" : false,
     "customFileHeader" : null,
-    "convenienceTypeOverloads" : [ ]
+    "convenienceTypeOverloads" : [ ],
+    "skipSmokeTests" : false
   },
   "examples" : {
     "version" : "1.0",

@@ -25,6 +25,12 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
 
     /**
      * <p>
+     * String of format X.Y to specify version for the Elasticsearch domain.
+     * </p>
+     */
+    private ElasticsearchVersionStatus elasticsearchVersion;
+    /**
+     * <p>
      * Specifies the <code>ElasticsearchClusterConfig</code> for the
      * Elasticsearch domain.
      * </p>
@@ -56,6 +62,52 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      * </p>
      */
     private AdvancedOptionsStatus advancedOptions;
+
+    /**
+     * <p>
+     * String of format X.Y to specify version for the Elasticsearch domain.
+     * </p>
+     * 
+     * @param elasticsearchVersion
+     *        String of format X.Y to specify version for the Elasticsearch
+     *        domain.
+     */
+
+    public void setElasticsearchVersion(
+            ElasticsearchVersionStatus elasticsearchVersion) {
+        this.elasticsearchVersion = elasticsearchVersion;
+    }
+
+    /**
+     * <p>
+     * String of format X.Y to specify version for the Elasticsearch domain.
+     * </p>
+     * 
+     * @return String of format X.Y to specify version for the Elasticsearch
+     *         domain.
+     */
+
+    public ElasticsearchVersionStatus getElasticsearchVersion() {
+        return this.elasticsearchVersion;
+    }
+
+    /**
+     * <p>
+     * String of format X.Y to specify version for the Elasticsearch domain.
+     * </p>
+     * 
+     * @param elasticsearchVersion
+     *        String of format X.Y to specify version for the Elasticsearch
+     *        domain.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ElasticsearchDomainConfig withElasticsearchVersion(
+            ElasticsearchVersionStatus elasticsearchVersion) {
+        setElasticsearchVersion(elasticsearchVersion);
+        return this;
+    }
 
     /**
      * <p>
@@ -309,6 +361,9 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getElasticsearchVersion() != null)
+            sb.append("ElasticsearchVersion: " + getElasticsearchVersion()
+                    + ",");
         if (getElasticsearchClusterConfig() != null)
             sb.append("ElasticsearchClusterConfig: "
                     + getElasticsearchClusterConfig() + ",");
@@ -334,6 +389,13 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
         if (obj instanceof ElasticsearchDomainConfig == false)
             return false;
         ElasticsearchDomainConfig other = (ElasticsearchDomainConfig) obj;
+        if (other.getElasticsearchVersion() == null
+                ^ this.getElasticsearchVersion() == null)
+            return false;
+        if (other.getElasticsearchVersion() != null
+                && other.getElasticsearchVersion().equals(
+                        this.getElasticsearchVersion()) == false)
+            return false;
         if (other.getElasticsearchClusterConfig() == null
                 ^ this.getElasticsearchClusterConfig() == null)
             return false;
@@ -372,6 +434,10 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime
+                * hashCode
+                + ((getElasticsearchVersion() == null) ? 0
+                        : getElasticsearchVersion().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getElasticsearchClusterConfig() == null) ? 0

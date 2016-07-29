@@ -87,6 +87,24 @@ public class CreateUserPoolRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String mfaConfiguration;
+    /**
+     * <p>
+     * The device configuration.
+     * </p>
+     */
+    private DeviceConfigurationType deviceConfiguration;
+    /**
+     * <p>
+     * The email configuration.
+     * </p>
+     */
+    private EmailConfigurationType emailConfiguration;
+    /**
+     * <p>
+     * The SMS configuration.
+     * </p>
+     */
+    private SmsConfigurationType smsConfiguration;
 
     /**
      * <p>
@@ -699,6 +717,133 @@ public class CreateUserPoolRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The device configuration.
+     * </p>
+     * 
+     * @param deviceConfiguration
+     *        The device configuration.
+     */
+
+    public void setDeviceConfiguration(
+            DeviceConfigurationType deviceConfiguration) {
+        this.deviceConfiguration = deviceConfiguration;
+    }
+
+    /**
+     * <p>
+     * The device configuration.
+     * </p>
+     * 
+     * @return The device configuration.
+     */
+
+    public DeviceConfigurationType getDeviceConfiguration() {
+        return this.deviceConfiguration;
+    }
+
+    /**
+     * <p>
+     * The device configuration.
+     * </p>
+     * 
+     * @param deviceConfiguration
+     *        The device configuration.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateUserPoolRequest withDeviceConfiguration(
+            DeviceConfigurationType deviceConfiguration) {
+        setDeviceConfiguration(deviceConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The email configuration.
+     * </p>
+     * 
+     * @param emailConfiguration
+     *        The email configuration.
+     */
+
+    public void setEmailConfiguration(EmailConfigurationType emailConfiguration) {
+        this.emailConfiguration = emailConfiguration;
+    }
+
+    /**
+     * <p>
+     * The email configuration.
+     * </p>
+     * 
+     * @return The email configuration.
+     */
+
+    public EmailConfigurationType getEmailConfiguration() {
+        return this.emailConfiguration;
+    }
+
+    /**
+     * <p>
+     * The email configuration.
+     * </p>
+     * 
+     * @param emailConfiguration
+     *        The email configuration.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateUserPoolRequest withEmailConfiguration(
+            EmailConfigurationType emailConfiguration) {
+        setEmailConfiguration(emailConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The SMS configuration.
+     * </p>
+     * 
+     * @param smsConfiguration
+     *        The SMS configuration.
+     */
+
+    public void setSmsConfiguration(SmsConfigurationType smsConfiguration) {
+        this.smsConfiguration = smsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The SMS configuration.
+     * </p>
+     * 
+     * @return The SMS configuration.
+     */
+
+    public SmsConfigurationType getSmsConfiguration() {
+        return this.smsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The SMS configuration.
+     * </p>
+     * 
+     * @param smsConfiguration
+     *        The SMS configuration.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateUserPoolRequest withSmsConfiguration(
+            SmsConfigurationType smsConfiguration) {
+        setSmsConfiguration(smsConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -734,7 +879,13 @@ public class CreateUserPoolRequest extends AmazonWebServiceRequest implements
             sb.append("SmsAuthenticationMessage: "
                     + getSmsAuthenticationMessage() + ",");
         if (getMfaConfiguration() != null)
-            sb.append("MfaConfiguration: " + getMfaConfiguration());
+            sb.append("MfaConfiguration: " + getMfaConfiguration() + ",");
+        if (getDeviceConfiguration() != null)
+            sb.append("DeviceConfiguration: " + getDeviceConfiguration() + ",");
+        if (getEmailConfiguration() != null)
+            sb.append("EmailConfiguration: " + getEmailConfiguration() + ",");
+        if (getSmsConfiguration() != null)
+            sb.append("SmsConfiguration: " + getSmsConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -812,6 +963,27 @@ public class CreateUserPoolRequest extends AmazonWebServiceRequest implements
                 && other.getMfaConfiguration().equals(
                         this.getMfaConfiguration()) == false)
             return false;
+        if (other.getDeviceConfiguration() == null
+                ^ this.getDeviceConfiguration() == null)
+            return false;
+        if (other.getDeviceConfiguration() != null
+                && other.getDeviceConfiguration().equals(
+                        this.getDeviceConfiguration()) == false)
+            return false;
+        if (other.getEmailConfiguration() == null
+                ^ this.getEmailConfiguration() == null)
+            return false;
+        if (other.getEmailConfiguration() != null
+                && other.getEmailConfiguration().equals(
+                        this.getEmailConfiguration()) == false)
+            return false;
+        if (other.getSmsConfiguration() == null
+                ^ this.getSmsConfiguration() == null)
+            return false;
+        if (other.getSmsConfiguration() != null
+                && other.getSmsConfiguration().equals(
+                        this.getSmsConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -855,6 +1027,18 @@ public class CreateUserPoolRequest extends AmazonWebServiceRequest implements
         hashCode = prime
                 * hashCode
                 + ((getMfaConfiguration() == null) ? 0 : getMfaConfiguration()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDeviceConfiguration() == null) ? 0
+                        : getDeviceConfiguration().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEmailConfiguration() == null) ? 0
+                        : getEmailConfiguration().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSmsConfiguration() == null) ? 0 : getSmsConfiguration()
                         .hashCode());
         return hashCode;
     }

@@ -25,7 +25,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the directory to which to add the tag.
+     * Identifier (ID) for the directory to which to add the tag.
      * </p>
      */
     private String resourceId;
@@ -38,11 +38,11 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the directory to which to add the tag.
+     * Identifier (ID) for the directory to which to add the tag.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the directory to which to add the tag.
+     *        Identifier (ID) for the directory to which to add the tag.
      */
 
     public void setResourceId(String resourceId) {
@@ -51,10 +51,10 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the directory to which to add the tag.
+     * Identifier (ID) for the directory to which to add the tag.
      * </p>
      * 
-     * @return The ID of the directory to which to add the tag.
+     * @return Identifier (ID) for the directory to which to add the tag.
      */
 
     public String getResourceId() {
@@ -63,11 +63,11 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the directory to which to add the tag.
+     * Identifier (ID) for the directory to which to add the tag.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the directory to which to add the tag.
+     *        Identifier (ID) for the directory to which to add the tag.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

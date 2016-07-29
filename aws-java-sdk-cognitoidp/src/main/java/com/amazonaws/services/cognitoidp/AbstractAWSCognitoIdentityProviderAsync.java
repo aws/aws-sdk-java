@@ -120,6 +120,36 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<AdminForgetDeviceResult> adminForgetDeviceAsync(
+            AdminForgetDeviceRequest request) {
+
+        return adminForgetDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminForgetDeviceResult> adminForgetDeviceAsync(
+            AdminForgetDeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AdminForgetDeviceRequest, AdminForgetDeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminGetDeviceResult> adminGetDeviceAsync(
+            AdminGetDeviceRequest request) {
+
+        return adminGetDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminGetDeviceResult> adminGetDeviceAsync(
+            AdminGetDeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AdminGetDeviceRequest, AdminGetDeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AdminGetUserResult> adminGetUserAsync(
             AdminGetUserRequest request) {
 
@@ -130,6 +160,36 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     public java.util.concurrent.Future<AdminGetUserResult> adminGetUserAsync(
             AdminGetUserRequest request,
             com.amazonaws.handlers.AsyncHandler<AdminGetUserRequest, AdminGetUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminInitiateAuthResult> adminInitiateAuthAsync(
+            AdminInitiateAuthRequest request) {
+
+        return adminInitiateAuthAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminInitiateAuthResult> adminInitiateAuthAsync(
+            AdminInitiateAuthRequest request,
+            com.amazonaws.handlers.AsyncHandler<AdminInitiateAuthRequest, AdminInitiateAuthResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminListDevicesResult> adminListDevicesAsync(
+            AdminListDevicesRequest request) {
+
+        return adminListDevicesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminListDevicesResult> adminListDevicesAsync(
+            AdminListDevicesRequest request,
+            com.amazonaws.handlers.AsyncHandler<AdminListDevicesRequest, AdminListDevicesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -150,6 +210,21 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<AdminRespondToAuthChallengeResult> adminRespondToAuthChallengeAsync(
+            AdminRespondToAuthChallengeRequest request) {
+
+        return adminRespondToAuthChallengeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminRespondToAuthChallengeResult> adminRespondToAuthChallengeAsync(
+            AdminRespondToAuthChallengeRequest request,
+            com.amazonaws.handlers.AsyncHandler<AdminRespondToAuthChallengeRequest, AdminRespondToAuthChallengeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AdminSetUserSettingsResult> adminSetUserSettingsAsync(
             AdminSetUserSettingsRequest request) {
 
@@ -160,6 +235,21 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     public java.util.concurrent.Future<AdminSetUserSettingsResult> adminSetUserSettingsAsync(
             AdminSetUserSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<AdminSetUserSettingsRequest, AdminSetUserSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminUpdateDeviceStatusResult> adminUpdateDeviceStatusAsync(
+            AdminUpdateDeviceStatusRequest request) {
+
+        return adminUpdateDeviceStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminUpdateDeviceStatusResult> adminUpdateDeviceStatusAsync(
+            AdminUpdateDeviceStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<AdminUpdateDeviceStatusRequest, AdminUpdateDeviceStatusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -180,6 +270,21 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<AdminUserGlobalSignOutResult> adminUserGlobalSignOutAsync(
+            AdminUserGlobalSignOutRequest request) {
+
+        return adminUserGlobalSignOutAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminUserGlobalSignOutResult> adminUserGlobalSignOutAsync(
+            AdminUserGlobalSignOutRequest request,
+            com.amazonaws.handlers.AsyncHandler<AdminUserGlobalSignOutRequest, AdminUserGlobalSignOutResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangePasswordResult> changePasswordAsync(
             ChangePasswordRequest request) {
 
@@ -190,6 +295,21 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     public java.util.concurrent.Future<ChangePasswordResult> changePasswordAsync(
             ChangePasswordRequest request,
             com.amazonaws.handlers.AsyncHandler<ChangePasswordRequest, ChangePasswordResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfirmDeviceResult> confirmDeviceAsync(
+            ConfirmDeviceRequest request) {
+
+        return confirmDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfirmDeviceResult> confirmDeviceAsync(
+            ConfirmDeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ConfirmDeviceRequest, ConfirmDeviceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -345,6 +465,21 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<ForgetDeviceResult> forgetDeviceAsync(
+            ForgetDeviceRequest request) {
+
+        return forgetDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ForgetDeviceResult> forgetDeviceAsync(
+            ForgetDeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ForgetDeviceRequest, ForgetDeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ForgotPasswordResult> forgotPasswordAsync(
             ForgotPasswordRequest request) {
 
@@ -355,6 +490,21 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     public java.util.concurrent.Future<ForgotPasswordResult> forgotPasswordAsync(
             ForgotPasswordRequest request,
             com.amazonaws.handlers.AsyncHandler<ForgotPasswordRequest, ForgotPasswordResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(
+            GetDeviceRequest request) {
+
+        return getDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(
+            GetDeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDeviceRequest, GetDeviceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -385,6 +535,51 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     public java.util.concurrent.Future<GetUserAttributeVerificationCodeResult> getUserAttributeVerificationCodeAsync(
             GetUserAttributeVerificationCodeRequest request,
             com.amazonaws.handlers.AsyncHandler<GetUserAttributeVerificationCodeRequest, GetUserAttributeVerificationCodeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalSignOutResult> globalSignOutAsync(
+            GlobalSignOutRequest request) {
+
+        return globalSignOutAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalSignOutResult> globalSignOutAsync(
+            GlobalSignOutRequest request,
+            com.amazonaws.handlers.AsyncHandler<GlobalSignOutRequest, GlobalSignOutResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<InitiateAuthResult> initiateAuthAsync(
+            InitiateAuthRequest request) {
+
+        return initiateAuthAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<InitiateAuthResult> initiateAuthAsync(
+            InitiateAuthRequest request,
+            com.amazonaws.handlers.AsyncHandler<InitiateAuthRequest, InitiateAuthResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(
+            ListDevicesRequest request) {
+
+        return listDevicesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(
+            ListDevicesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDevicesRequest, ListDevicesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -450,6 +645,21 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<RespondToAuthChallengeResult> respondToAuthChallengeAsync(
+            RespondToAuthChallengeRequest request) {
+
+        return respondToAuthChallengeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RespondToAuthChallengeResult> respondToAuthChallengeAsync(
+            RespondToAuthChallengeRequest request,
+            com.amazonaws.handlers.AsyncHandler<RespondToAuthChallengeRequest, RespondToAuthChallengeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SetUserSettingsResult> setUserSettingsAsync(
             SetUserSettingsRequest request) {
 
@@ -475,6 +685,21 @@ public class AbstractAWSCognitoIdentityProviderAsync extends
     public java.util.concurrent.Future<SignUpResult> signUpAsync(
             SignUpRequest request,
             com.amazonaws.handlers.AsyncHandler<SignUpRequest, SignUpResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDeviceStatusResult> updateDeviceStatusAsync(
+            UpdateDeviceStatusRequest request) {
+
+        return updateDeviceStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDeviceStatusResult> updateDeviceStatusAsync(
+            UpdateDeviceStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDeviceStatusRequest, UpdateDeviceStatusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

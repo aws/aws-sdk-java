@@ -1233,11 +1233,8 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
                 // If contains throttling exception, we do a backoff
                 if (containsThrottlingException(failedBatches)) {
-                    try {
-                        Thread.sleep(1000 * 2);
-                    } catch (InterruptedException e) {
-                        Thread.currentThread().interrupt();
-                    }
+                    pause(config.getBatchWriteRetryStrategy().getDelayBeforeRetryUnprocessedItems(
+                            Collections.unmodifiableMap(requestItems), 0));
                 }
             }
         }

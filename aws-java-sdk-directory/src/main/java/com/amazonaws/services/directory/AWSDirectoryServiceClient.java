@@ -132,6 +132,12 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
+                                            "IpRouteLimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.IpRouteLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
                                             "AuthenticationFailedException")
                                     .withModeledClass(
                                             com.amazonaws.services.directory.model.AuthenticationFailedException.class))
@@ -339,9 +345,73 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * If the DNS server for your on-premises domain uses a publicly addressable
+     * IP address, you must add a CIDR address block to correctly route traffic
+     * to and from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i>
+     * adds this address block. You can also use <i>AddIpRoutes</i> to
+     * facilitate routing traffic that uses public IP ranges from your Microsoft
+     * AD on AWS to a peer VPC.
+     * </p>
+     * 
+     * @param addIpRoutesRequest
+     * @return Result of the AddIpRoutes operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws EntityAlreadyExistsException
+     *         The specified entity already exists.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws IpRouteLimitExceededException
+     *         The maximum allowed number of IP addresses was exceeded. The
+     *         default limit is 100 IP address blocks.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.AddIpRoutes
+     */
+    @Override
+    public AddIpRoutesResult addIpRoutes(AddIpRoutesRequest addIpRoutesRequest) {
+        ExecutionContext executionContext = createExecutionContext(addIpRoutesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddIpRoutesRequest> request = null;
+        Response<AddIpRoutesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddIpRoutesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(addIpRoutesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AddIpRoutesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddIpRoutesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds or overwrites one or more tags for the specified Amazon Directory
      * Services directory. Each directory can have a maximum of 10 tags. Each
-     * tag consists of a key and optional value. Tag keys must be unique per
+     * tag consists of a key and optional value. Tag keys must be unique to each
      * resource.
      * </p>
      * 
@@ -1875,6 +1945,61 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Lists the address blocks that you have added to a directory.
+     * </p>
+     * 
+     * @param listIpRoutesRequest
+     * @return Result of the ListIpRoutes operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidNextTokenException
+     *         The <i>NextToken</i> value is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ListIpRoutes
+     */
+    @Override
+    public ListIpRoutesResult listIpRoutes(
+            ListIpRoutesRequest listIpRoutesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listIpRoutesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListIpRoutesRequest> request = null;
+        Response<ListIpRoutesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListIpRoutesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listIpRoutesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListIpRoutesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListIpRoutesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all tags on an Amazon Directory Services directory.
      * </p>
      * 
@@ -1981,6 +2106,62 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new RegisterEventTopicResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes IP address blocks from a directory.
+     * </p>
+     * 
+     * @param removeIpRoutesRequest
+     * @return Result of the RemoveIpRoutes operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RemoveIpRoutes
+     */
+    @Override
+    public RemoveIpRoutesResult removeIpRoutes(
+            RemoveIpRoutesRequest removeIpRoutesRequest) {
+        ExecutionContext executionContext = createExecutionContext(removeIpRoutesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveIpRoutesRequest> request = null;
+        Response<RemoveIpRoutesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveIpRoutesRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(removeIpRoutesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveIpRoutesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RemoveIpRoutesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

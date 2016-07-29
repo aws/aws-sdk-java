@@ -1146,6 +1146,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @throws BadRequestException
      * @sample AmazonApiGateway.DeleteIntegrationResponse
      */
     @Override
@@ -1246,6 +1247,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @throws BadRequestException
      * @sample AmazonApiGateway.DeleteMethodResponse
      */
     @Override
@@ -3326,6 +3328,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.PutRestApi
      */
     @Override

@@ -66,6 +66,12 @@ public class AuthorizerJsonUnmarshaller implements
                     authorizer.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
+                if (context.testExpression("providerARNs", targetDepth)) {
+                    context.nextToken();
+                    authorizer.setProviderARNs(new ListUnmarshaller<String>(
+                            context.getUnmarshaller(String.class))
+                            .unmarshall(context));
+                }
                 if (context.testExpression("authType", targetDepth)) {
                     context.nextToken();
                     authorizer.setAuthType(context

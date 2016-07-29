@@ -91,9 +91,9 @@ public class ListUsersRequestMarshaller implements
                 jsonGenerator.writeFieldName("PaginationToken").writeValue(
                         listUsersRequest.getPaginationToken());
             }
-            if (listUsersRequest.getUserStatus() != null) {
-                jsonGenerator.writeFieldName("UserStatus").writeValue(
-                        listUsersRequest.getUserStatus());
+            if (listUsersRequest.getFilter() != null) {
+                jsonGenerator.writeFieldName("Filter").writeValue(
+                        listUsersRequest.getFilter());
             }
 
             jsonGenerator.writeEndObject();

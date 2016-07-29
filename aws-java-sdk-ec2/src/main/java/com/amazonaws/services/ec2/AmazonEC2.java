@@ -738,6 +738,11 @@ public interface AmazonEC2 {
      * To copy an encrypted snapshot that has been shared from another account,
      * you must have permissions for the CMK used to encrypt the snapshot.
      * </p>
+     * </note> <note>
+     * <p>
+     * Snapshots created by the CopySnapshot action have an arbitrary volume ID
+     * that should not be used for any purpose.
+     * </p>
      * </note>
      * <p>
      * For more information, see <a href=
@@ -817,7 +822,10 @@ public interface AmazonEC2 {
      * <code>domain-name-servers</code> - The IP addresses of up to four domain
      * name servers, or AmazonProvidedDNS. The default DHCP option set specifies
      * AmazonProvidedDNS. If specifying more than one domain name server,
-     * specify the IP addresses in a single parameter, separated by commas.
+     * specify the IP addresses in a single parameter, separated by commas. If
+     * you want your instance to receive a custom DNS hostname as specified in
+     * <code>domain-name</code>, you must set <code>domain-name-servers</code>
+     * to a custom DNS server.
      * </p>
      * </li>
      * <li>
@@ -826,12 +834,13 @@ public interface AmazonEC2 {
      * "us-east-1", specify "ec2.internal". If you're using AmazonProvidedDNS in
      * another region, specify "region.compute.internal" (for example,
      * "ap-northeast-1.compute.internal"). Otherwise, specify a domain name (for
-     * example, "MyCompany.com"). <b>Important</b>: Some Linux operating systems
-     * accept multiple domain names separated by spaces. However, Windows and
-     * other Linux operating systems treat the value as a single domain, which
-     * results in unexpected behavior. If your DHCP options set is associated
-     * with a VPC that has instances with multiple operating systems, specify
-     * only one domain name.
+     * example, "MyCompany.com"). This value is used to complete unqualified DNS
+     * hostnames. <b>Important</b>: Some Linux operating systems accept multiple
+     * domain names separated by spaces. However, Windows and other Linux
+     * operating systems treat the value as a single domain, which results in
+     * unexpected behavior. If your DHCP options set is associated with a VPC
+     * that has instances with multiple operating systems, specify only one
+     * domain name.
      * </p>
      * </li>
      * <li>
@@ -4373,6 +4382,13 @@ public interface AmazonEC2 {
      * AWS Marketplace product codes cannot be modified. Images with an AWS
      * Marketplace product code cannot be made public.
      * </p>
+     * </note> <note>
+     * <p>
+     * The SriovNetSupport enhanced networking attribute cannot be changed using
+     * this command. Instead, enable SriovNetSupport on an instance and create
+     * an AMI from the instance. This will result in an image with
+     * SriovNetSupport enabled.
+     * </p>
      * </note>
      * 
      * @param modifyImageAttributeRequest
@@ -4641,15 +4657,21 @@ public interface AmazonEC2 {
      * peer VPC.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Enable/disable a local VPC to resolve public DNS hostnames to private IP
+     * addresses when queried from instances in the peer VPC.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the peered VPCs are in different accounts, each owner must initiate a
-     * separate request to enable or disable communication in either direction,
-     * depending on whether their VPC was the requester or accepter for the VPC
-     * peering connection. If the peered VPCs are in the same account, you can
-     * modify the requester and accepter options in the same request. To confirm
-     * which VPC is the accepter and requester for a VPC peering connection, use
-     * the <a>DescribeVpcPeeringConnections</a> command.
+     * separate request to modify the peering connection options, depending on
+     * whether their VPC was the requester or accepter for the VPC peering
+     * connection. If the peered VPCs are in the same account, you can modify
+     * the requester and accepter options in the same request. To confirm which
+     * VPC is the accepter and requester for a VPC peering connection, use the
+     * <a>DescribeVpcPeeringConnections</a> command.
      * </p>
      * 
      * @param modifyVpcPeeringConnectionOptionsRequest

@@ -144,6 +144,18 @@ public class Freemarker {
         return getTemplate(templateConfig.getPolicyActionClass());
     }
 
+    public Template getCucumberModuleInjectorTemplate() throws IOException {
+        return getTemplate(templateConfig.getCucumberModuleInjector());
+    }
+
+    public Template getCucumberTestTemplate() throws IOException {
+        return getTemplate(templateConfig.getCucumberTest());
+    }
+
+    public Template getCucumberPropertiesTemplate() throws IOException {
+        return getTemplate(templateConfig.getCucumberPropertiesFile());
+    }
+
     public Template getShapeTemplate(ShapeModel shape) throws IOException {
         switch (ShapeType.fromValue(shape.getType())) {
         case Request:

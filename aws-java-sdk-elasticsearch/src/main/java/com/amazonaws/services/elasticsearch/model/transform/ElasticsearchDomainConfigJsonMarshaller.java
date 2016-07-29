@@ -45,6 +45,15 @@ public class ElasticsearchDomainConfigJsonMarshaller {
         try {
             jsonGenerator.writeStartObject();
 
+            if (elasticsearchDomainConfig.getElasticsearchVersion() != null) {
+                jsonGenerator.writeFieldName("ElasticsearchVersion");
+                ElasticsearchVersionStatusJsonMarshaller
+                        .getInstance()
+                        .marshall(
+                                elasticsearchDomainConfig
+                                        .getElasticsearchVersion(),
+                                jsonGenerator);
+            }
             if (elasticsearchDomainConfig.getElasticsearchClusterConfig() != null) {
                 jsonGenerator.writeFieldName("ElasticsearchClusterConfig");
                 ElasticsearchClusterConfigStatusJsonMarshaller

@@ -29,7 +29,11 @@ import com.amazonaws.services.cognitoidp.model.*;
  * </p>
  * <p>
  * This API reference provides information about user pools in Amazon Cognito
- * Identity, which is a new capability that is available as a beta.
+ * Identity.
+ * </p>
+ * <p>
+ * For more information, see <a href="https://aws.amazon.com/cognito/">Amazon
+ * Cognito</a>.
  * </p>
  */
 public interface AWSCognitoIdentityProviderAsync extends
@@ -247,6 +251,74 @@ public interface AWSCognitoIdentityProviderAsync extends
 
     /**
      * <p>
+     * Forgets the device, as an administrator.
+     * </p>
+     * 
+     * @param adminForgetDeviceRequest
+     *        Sends the forgot device request, as an administrator.
+     * @return A Java Future containing the result of the AdminForgetDevice
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminForgetDevice
+     */
+    java.util.concurrent.Future<AdminForgetDeviceResult> adminForgetDeviceAsync(
+            AdminForgetDeviceRequest adminForgetDeviceRequest);
+
+    /**
+     * <p>
+     * Forgets the device, as an administrator.
+     * </p>
+     * 
+     * @param adminForgetDeviceRequest
+     *        Sends the forgot device request, as an administrator.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminForgetDevice
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminForgetDevice
+     */
+    java.util.concurrent.Future<AdminForgetDeviceResult> adminForgetDeviceAsync(
+            AdminForgetDeviceRequest adminForgetDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminForgetDeviceRequest, AdminForgetDeviceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the device, as an administrator.
+     * </p>
+     * 
+     * @param adminGetDeviceRequest
+     *        Represents the request to get the device, as an administrator.
+     * @return A Java Future containing the result of the AdminGetDevice
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminGetDevice
+     */
+    java.util.concurrent.Future<AdminGetDeviceResult> adminGetDeviceAsync(
+            AdminGetDeviceRequest adminGetDeviceRequest);
+
+    /**
+     * <p>
+     * Gets the device, as an administrator.
+     * </p>
+     * 
+     * @param adminGetDeviceRequest
+     *        Represents the request to get the device, as an administrator.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminGetDevice
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminGetDevice
+     */
+    java.util.concurrent.Future<AdminGetDeviceResult> adminGetDeviceAsync(
+            AdminGetDeviceRequest adminGetDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminGetDeviceRequest, AdminGetDeviceResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the specified user by user name in a user pool as an administrator.
      * Works on any user.
      * </p>
@@ -282,6 +354,74 @@ public interface AWSCognitoIdentityProviderAsync extends
     java.util.concurrent.Future<AdminGetUserResult> adminGetUserAsync(
             AdminGetUserRequest adminGetUserRequest,
             com.amazonaws.handlers.AsyncHandler<AdminGetUserRequest, AdminGetUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Initiates the authentication flow, as an administrator.
+     * </p>
+     * 
+     * @param adminInitiateAuthRequest
+     *        Initiates the authorization request, as an administrator.
+     * @return A Java Future containing the result of the AdminInitiateAuth
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminInitiateAuth
+     */
+    java.util.concurrent.Future<AdminInitiateAuthResult> adminInitiateAuthAsync(
+            AdminInitiateAuthRequest adminInitiateAuthRequest);
+
+    /**
+     * <p>
+     * Initiates the authentication flow, as an administrator.
+     * </p>
+     * 
+     * @param adminInitiateAuthRequest
+     *        Initiates the authorization request, as an administrator.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminInitiateAuth
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminInitiateAuth
+     */
+    java.util.concurrent.Future<AdminInitiateAuthResult> adminInitiateAuthAsync(
+            AdminInitiateAuthRequest adminInitiateAuthRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminInitiateAuthRequest, AdminInitiateAuthResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists devices, as an administrator.
+     * </p>
+     * 
+     * @param adminListDevicesRequest
+     *        Represents the request to list devices, as an administrator.
+     * @return A Java Future containing the result of the AdminListDevices
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminListDevices
+     */
+    java.util.concurrent.Future<AdminListDevicesResult> adminListDevicesAsync(
+            AdminListDevicesRequest adminListDevicesRequest);
+
+    /**
+     * <p>
+     * Lists devices, as an administrator.
+     * </p>
+     * 
+     * @param adminListDevicesRequest
+     *        Represents the request to list devices, as an administrator.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminListDevices
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminListDevices
+     */
+    java.util.concurrent.Future<AdminListDevicesResult> adminListDevicesAsync(
+            AdminListDevicesRequest adminListDevicesRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminListDevicesRequest, AdminListDevicesResult> asyncHandler);
 
     /**
      * <p>
@@ -323,6 +463,43 @@ public interface AWSCognitoIdentityProviderAsync extends
 
     /**
      * <p>
+     * Responds to an authentication challenge, as an administrator.
+     * </p>
+     * 
+     * @param adminRespondToAuthChallengeRequest
+     *        The request to respond to the authentication challenge, as an
+     *        administrator.
+     * @return A Java Future containing the result of the
+     *         AdminRespondToAuthChallenge operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminRespondToAuthChallenge
+     */
+    java.util.concurrent.Future<AdminRespondToAuthChallengeResult> adminRespondToAuthChallengeAsync(
+            AdminRespondToAuthChallengeRequest adminRespondToAuthChallengeRequest);
+
+    /**
+     * <p>
+     * Responds to an authentication challenge, as an administrator.
+     * </p>
+     * 
+     * @param adminRespondToAuthChallengeRequest
+     *        The request to respond to the authentication challenge, as an
+     *        administrator.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         AdminRespondToAuthChallenge operation returned by the service.
+     * @sample 
+     *         AWSCognitoIdentityProviderAsyncHandler.AdminRespondToAuthChallenge
+     */
+    java.util.concurrent.Future<AdminRespondToAuthChallengeResult> adminRespondToAuthChallengeAsync(
+            AdminRespondToAuthChallengeRequest adminRespondToAuthChallengeRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminRespondToAuthChallengeRequest, AdminRespondToAuthChallengeResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets all the user settings for a specified user name. Works on any user.
      * </p>
      * 
@@ -354,6 +531,40 @@ public interface AWSCognitoIdentityProviderAsync extends
     java.util.concurrent.Future<AdminSetUserSettingsResult> adminSetUserSettingsAsync(
             AdminSetUserSettingsRequest adminSetUserSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<AdminSetUserSettingsRequest, AdminSetUserSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the device status as an administrator.
+     * </p>
+     * 
+     * @param adminUpdateDeviceStatusRequest
+     *        The request to update the device status, as an administrator.
+     * @return A Java Future containing the result of the
+     *         AdminUpdateDeviceStatus operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminUpdateDeviceStatus
+     */
+    java.util.concurrent.Future<AdminUpdateDeviceStatusResult> adminUpdateDeviceStatusAsync(
+            AdminUpdateDeviceStatusRequest adminUpdateDeviceStatusRequest);
+
+    /**
+     * <p>
+     * Updates the device status as an administrator.
+     * </p>
+     * 
+     * @param adminUpdateDeviceStatusRequest
+     *        The request to update the device status, as an administrator.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         AdminUpdateDeviceStatus operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminUpdateDeviceStatus
+     */
+    java.util.concurrent.Future<AdminUpdateDeviceStatusResult> adminUpdateDeviceStatusAsync(
+            AdminUpdateDeviceStatusRequest adminUpdateDeviceStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminUpdateDeviceStatusRequest, AdminUpdateDeviceStatusResult> asyncHandler);
 
     /**
      * <p>
@@ -395,6 +606,40 @@ public interface AWSCognitoIdentityProviderAsync extends
 
     /**
      * <p>
+     * Signs out users from all devices, as an administrator.
+     * </p>
+     * 
+     * @param adminUserGlobalSignOutRequest
+     *        The request to sign out of all devices, as an administrator.
+     * @return A Java Future containing the result of the AdminUserGlobalSignOut
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminUserGlobalSignOut
+     */
+    java.util.concurrent.Future<AdminUserGlobalSignOutResult> adminUserGlobalSignOutAsync(
+            AdminUserGlobalSignOutRequest adminUserGlobalSignOutRequest);
+
+    /**
+     * <p>
+     * Signs out users from all devices, as an administrator.
+     * </p>
+     * 
+     * @param adminUserGlobalSignOutRequest
+     *        The request to sign out of all devices, as an administrator.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminUserGlobalSignOut
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminUserGlobalSignOut
+     */
+    java.util.concurrent.Future<AdminUserGlobalSignOutResult> adminUserGlobalSignOutAsync(
+            AdminUserGlobalSignOutRequest adminUserGlobalSignOutRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminUserGlobalSignOutRequest, AdminUserGlobalSignOutResult> asyncHandler);
+
+    /**
+     * <p>
      * Changes the password for a specified user in a user pool.
      * </p>
      * 
@@ -426,6 +671,42 @@ public interface AWSCognitoIdentityProviderAsync extends
     java.util.concurrent.Future<ChangePasswordResult> changePasswordAsync(
             ChangePasswordRequest changePasswordRequest,
             com.amazonaws.handlers.AsyncHandler<ChangePasswordRequest, ChangePasswordResult> asyncHandler);
+
+    /**
+     * <p>
+     * Confirms tracking of the device. This API call is the call that beings
+     * device tracking.
+     * </p>
+     * 
+     * @param confirmDeviceRequest
+     *        Confirms the device request.
+     * @return A Java Future containing the result of the ConfirmDevice
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.ConfirmDevice
+     */
+    java.util.concurrent.Future<ConfirmDeviceResult> confirmDeviceAsync(
+            ConfirmDeviceRequest confirmDeviceRequest);
+
+    /**
+     * <p>
+     * Confirms tracking of the device. This API call is the call that beings
+     * device tracking.
+     * </p>
+     * 
+     * @param confirmDeviceRequest
+     *        Confirms the device request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ConfirmDevice
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.ConfirmDevice
+     */
+    java.util.concurrent.Future<ConfirmDeviceResult> confirmDeviceAsync(
+            ConfirmDeviceRequest confirmDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<ConfirmDeviceRequest, ConfirmDeviceResult> asyncHandler);
 
     /**
      * <p>
@@ -779,6 +1060,40 @@ public interface AWSCognitoIdentityProviderAsync extends
 
     /**
      * <p>
+     * Forgets the specified device.
+     * </p>
+     * 
+     * @param forgetDeviceRequest
+     *        Represents the request to forget the device.
+     * @return A Java Future containing the result of the ForgetDevice operation
+     *         returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.ForgetDevice
+     */
+    java.util.concurrent.Future<ForgetDeviceResult> forgetDeviceAsync(
+            ForgetDeviceRequest forgetDeviceRequest);
+
+    /**
+     * <p>
+     * Forgets the specified device.
+     * </p>
+     * 
+     * @param forgetDeviceRequest
+     *        Represents the request to forget the device.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ForgetDevice operation
+     *         returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.ForgetDevice
+     */
+    java.util.concurrent.Future<ForgetDeviceResult> forgetDeviceAsync(
+            ForgetDeviceRequest forgetDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<ForgetDeviceRequest, ForgetDeviceResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the password for the specified client ID or username.
      * </p>
      * 
@@ -810,6 +1125,40 @@ public interface AWSCognitoIdentityProviderAsync extends
     java.util.concurrent.Future<ForgotPasswordResult> forgotPasswordAsync(
             ForgotPasswordRequest forgotPasswordRequest,
             com.amazonaws.handlers.AsyncHandler<ForgotPasswordRequest, ForgotPasswordResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the device.
+     * </p>
+     * 
+     * @param getDeviceRequest
+     *        Represents the request to get the device.
+     * @return A Java Future containing the result of the GetDevice operation
+     *         returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.GetDevice
+     */
+    java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(
+            GetDeviceRequest getDeviceRequest);
+
+    /**
+     * <p>
+     * Gets the device.
+     * </p>
+     * 
+     * @param getDeviceRequest
+     *        Represents the request to get the device.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDevice operation
+     *         returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.GetDevice
+     */
+    java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(
+            GetDeviceRequest getDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDeviceRequest, GetDeviceResult> asyncHandler);
 
     /**
      * <p>
@@ -883,6 +1232,108 @@ public interface AWSCognitoIdentityProviderAsync extends
     java.util.concurrent.Future<GetUserAttributeVerificationCodeResult> getUserAttributeVerificationCodeAsync(
             GetUserAttributeVerificationCodeRequest getUserAttributeVerificationCodeRequest,
             com.amazonaws.handlers.AsyncHandler<GetUserAttributeVerificationCodeRequest, GetUserAttributeVerificationCodeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Signs out users from all devices.
+     * </p>
+     * 
+     * @param globalSignOutRequest
+     *        Represents the request to sign out all devices.
+     * @return A Java Future containing the result of the GlobalSignOut
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.GlobalSignOut
+     */
+    java.util.concurrent.Future<GlobalSignOutResult> globalSignOutAsync(
+            GlobalSignOutRequest globalSignOutRequest);
+
+    /**
+     * <p>
+     * Signs out users from all devices.
+     * </p>
+     * 
+     * @param globalSignOutRequest
+     *        Represents the request to sign out all devices.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GlobalSignOut
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.GlobalSignOut
+     */
+    java.util.concurrent.Future<GlobalSignOutResult> globalSignOutAsync(
+            GlobalSignOutRequest globalSignOutRequest,
+            com.amazonaws.handlers.AsyncHandler<GlobalSignOutRequest, GlobalSignOutResult> asyncHandler);
+
+    /**
+     * <p>
+     * Initiates the authentication flow.
+     * </p>
+     * 
+     * @param initiateAuthRequest
+     *        Initiates the authentication request.
+     * @return A Java Future containing the result of the InitiateAuth operation
+     *         returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.InitiateAuth
+     */
+    java.util.concurrent.Future<InitiateAuthResult> initiateAuthAsync(
+            InitiateAuthRequest initiateAuthRequest);
+
+    /**
+     * <p>
+     * Initiates the authentication flow.
+     * </p>
+     * 
+     * @param initiateAuthRequest
+     *        Initiates the authentication request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the InitiateAuth operation
+     *         returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.InitiateAuth
+     */
+    java.util.concurrent.Future<InitiateAuthResult> initiateAuthAsync(
+            InitiateAuthRequest initiateAuthRequest,
+            com.amazonaws.handlers.AsyncHandler<InitiateAuthRequest, InitiateAuthResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the devices.
+     * </p>
+     * 
+     * @param listDevicesRequest
+     *        Represents the request to list the devices.
+     * @return A Java Future containing the result of the ListDevices operation
+     *         returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.ListDevices
+     */
+    java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(
+            ListDevicesRequest listDevicesRequest);
+
+    /**
+     * <p>
+     * Lists the devices.
+     * </p>
+     * 
+     * @param listDevicesRequest
+     *        Represents the request to list the devices.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDevices operation
+     *         returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.ListDevices
+     */
+    java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(
+            ListDevicesRequest listDevicesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDevicesRequest, ListDevicesResult> asyncHandler);
 
     /**
      * <p>
@@ -1024,6 +1475,40 @@ public interface AWSCognitoIdentityProviderAsync extends
 
     /**
      * <p>
+     * Responds to the authentication challenge.
+     * </p>
+     * 
+     * @param respondToAuthChallengeRequest
+     *        The request to respond to an authentication challenge.
+     * @return A Java Future containing the result of the RespondToAuthChallenge
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.RespondToAuthChallenge
+     */
+    java.util.concurrent.Future<RespondToAuthChallengeResult> respondToAuthChallengeAsync(
+            RespondToAuthChallengeRequest respondToAuthChallengeRequest);
+
+    /**
+     * <p>
+     * Responds to the authentication challenge.
+     * </p>
+     * 
+     * @param respondToAuthChallengeRequest
+     *        The request to respond to an authentication challenge.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RespondToAuthChallenge
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.RespondToAuthChallenge
+     */
+    java.util.concurrent.Future<RespondToAuthChallengeResult> respondToAuthChallengeAsync(
+            RespondToAuthChallengeRequest respondToAuthChallengeRequest,
+            com.amazonaws.handlers.AsyncHandler<RespondToAuthChallengeRequest, RespondToAuthChallengeResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets the user settings like multi-factor authentication (MFA). If MFA is
      * to be removed for a particular attribute pass the attribute with code
      * delivery as null. If null list is passed, all MFA options are removed.
@@ -1095,6 +1580,40 @@ public interface AWSCognitoIdentityProviderAsync extends
     java.util.concurrent.Future<SignUpResult> signUpAsync(
             SignUpRequest signUpRequest,
             com.amazonaws.handlers.AsyncHandler<SignUpRequest, SignUpResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the device status.
+     * </p>
+     * 
+     * @param updateDeviceStatusRequest
+     *        Represents the request to update the device status.
+     * @return A Java Future containing the result of the UpdateDeviceStatus
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.UpdateDeviceStatus
+     */
+    java.util.concurrent.Future<UpdateDeviceStatusResult> updateDeviceStatusAsync(
+            UpdateDeviceStatusRequest updateDeviceStatusRequest);
+
+    /**
+     * <p>
+     * Updates the device status.
+     * </p>
+     * 
+     * @param updateDeviceStatusRequest
+     *        Represents the request to update the device status.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDeviceStatus
+     *         operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.UpdateDeviceStatus
+     */
+    java.util.concurrent.Future<UpdateDeviceStatusResult> updateDeviceStatusAsync(
+            UpdateDeviceStatusRequest updateDeviceStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDeviceStatusRequest, UpdateDeviceStatusResult> asyncHandler);
 
     /**
      * <p>

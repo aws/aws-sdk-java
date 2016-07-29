@@ -24,10 +24,12 @@
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
     "syncClientBuilderClassName" : "AWSCloudHSMClientBuilder",
     "asyncClientBuilderClassName" : "AWSCloudHSMAsyncClientBuilder",
-    "serviceName" : "CloudHSM"
+    "cucumberModuleInjectorClassName" : "AWSCloudHSMModuleInjector",
+    "smokeTestsPackageName" : "com.amazonaws.services.cloudhsm.smoketests",
+    "serviceName" : "CloudHSM",
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "AddTagsToResource" : {
@@ -15002,7 +15004,8 @@
     "customSignerProvider" : null,
     "calculateCRC32FromCompressedData" : false,
     "customFileHeader" : null,
-    "convenienceTypeOverloads" : [ ]
+    "convenienceTypeOverloads" : [ ],
+    "skipSmokeTests" : false
   },
   "examples" : {
     "version" : "1.0",

@@ -21,7 +21,11 @@
  * </p>
  * <p>
  * This API reference provides information about user pools in Amazon Cognito
- * Identity, which is a new capability that is available as a beta.
+ * Identity.
+ * </p>
+ * <p>
+ * For more information, see <a href="https://aws.amazon.com/cognito/">Amazon
+ * Cognito</a>.
  * </p>
  */
 package com.amazonaws.services.cognitoidp;

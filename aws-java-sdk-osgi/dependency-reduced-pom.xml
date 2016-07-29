@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.21</version>
+    <version>1.11.22</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.21</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.22</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.21</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.22</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -417,7 +417,7 @@
                                   &lt;/div&gt;
                                   &lt;div id="nav-search-button" class="nav-sprite"&gt;
                                       &lt;button type="submit" style="border: 0;background: transparent;padding: 0;"&gt;
-                                          &lt;img src="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/search-button.png" width="37" height="36" alt="submit"&gt;
+                                          &lt;img src="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/search-button.png" width="40" height="37" alt="submit"&gt;
                                       &lt;/button&gt;
                                   &lt;/div&gt;
                                       &lt;input name="searchPath" type="hidden" value="documentation-guide" /&gt;
@@ -455,8 +455,6 @@
                                   document.getElementById("feedback_no").setAttribute("href", feedback_no_url + file_name);
                                   document.getElementById("go_cti").setAttribute("href", feedback_tellmore_url + file_name);
                                   } else {
-                                  // hide the search box and the feeback links in overview-frame page,
-                                  // show "AWS SDK for Java" instead.
                                   document.getElementById("feedback-section").outerHTML = "AWS SDK for Java";
                                   document.getElementById("divsearch").outerHTML = "";
                                   }
@@ -526,10 +524,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.21</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.22</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.21</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.22</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -829,7 +827,7 @@
                                   &lt;/div&gt;
                                   &lt;div id="nav-search-button" class="nav-sprite"&gt;
                                       &lt;button type="submit" style="border: 0;background: transparent;padding: 0;"&gt;
-                                          &lt;img src="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/search-button.png" width="37" height="36" alt="submit"&gt;
+                                          &lt;img src="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/search-button.png" width="40" height="37" alt="submit"&gt;
                                       &lt;/button&gt;
                                   &lt;/div&gt;
                                       &lt;input name="searchPath" type="hidden" value="documentation-guide" /&gt;
@@ -867,8 +865,6 @@
                                   document.getElementById("feedback_no").setAttribute("href", feedback_no_url + file_name);
                                   document.getElementById("go_cti").setAttribute("href", feedback_tellmore_url + file_name);
                                   } else {
-                                  // hide the search box and the feeback links in overview-frame page,
-                                  // show "AWS SDK for Java" instead.
                                   document.getElementById("feedback-section").outerHTML = "AWS SDK for Java";
                                   document.getElementById("divsearch").outerHTML = "";
                                   }
@@ -934,10 +930,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.21</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.22</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.21</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.22</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1237,7 +1233,7 @@
                                   &lt;/div&gt;
                                   &lt;div id="nav-search-button" class="nav-sprite"&gt;
                                       &lt;button type="submit" style="border: 0;background: transparent;padding: 0;"&gt;
-                                          &lt;img src="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/search-button.png" width="37" height="36" alt="submit"&gt;
+                                          &lt;img src="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/search-button.png" width="40" height="37" alt="submit"&gt;
                                       &lt;/button&gt;
                                   &lt;/div&gt;
                                       &lt;input name="searchPath" type="hidden" value="documentation-guide" /&gt;
@@ -1275,8 +1271,6 @@
                                   document.getElementById("feedback_no").setAttribute("href", feedback_no_url + file_name);
                                   document.getElementById("go_cti").setAttribute("href", feedback_tellmore_url + file_name);
                                   } else {
-                                  // hide the search box and the feeback links in overview-frame page,
-                                  // show "AWS SDK for Java" instead.
                                   document.getElementById("feedback-section").outerHTML = "AWS SDK for Java";
                                   document.getElementById("divsearch").outerHTML = "";
                                   }
@@ -1539,7 +1533,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.21-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.22-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

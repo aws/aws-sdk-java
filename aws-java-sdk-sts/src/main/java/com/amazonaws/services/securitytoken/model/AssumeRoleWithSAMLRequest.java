@@ -93,8 +93,15 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * The maximum duration for a session is 1 hour, and the minimum duration is
-     * 15 minutes, even if values outside this range are specified.
+     * This is separate from the duration of a console session that you might
+     * request using the returned credentials. The request to the federation
+     * endpoint for a console sign-in token takes a <code>SessionDuration</code>
+     * parameter that specifies the maximum length of the console session,
+     * separately from the <code>DurationSeconds</code> parameter on this API.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html"
+     * >Enabling SAML 2.0 Federated Users to Access the AWS Management
+     * Console</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
      */
@@ -496,8 +503,15 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * The maximum duration for a session is 1 hour, and the minimum duration is
-     * 15 minutes, even if values outside this range are specified.
+     * This is separate from the duration of a console session that you might
+     * request using the returned credentials. The request to the federation
+     * endpoint for a console sign-in token takes a <code>SessionDuration</code>
+     * parameter that specifies the maximum length of the console session,
+     * separately from the <code>DurationSeconds</code> parameter on this API.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html"
+     * >Enabling SAML 2.0 Federated Users to Access the AWS Management
+     * Console</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
      * 
@@ -509,9 +523,16 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        <code>SessionNotOnOrAfter</code> value. The actual expiration time
      *        is whichever value is shorter. </p> <note>
      *        <p>
-     *        The maximum duration for a session is 1 hour, and the minimum
-     *        duration is 15 minutes, even if values outside this range are
-     *        specified.
+     *        This is separate from the duration of a console session that you
+     *        might request using the returned credentials. The request to the
+     *        federation endpoint for a console sign-in token takes a
+     *        <code>SessionDuration</code> parameter that specifies the maximum
+     *        length of the console session, separately from the
+     *        <code>DurationSeconds</code> parameter on this API. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html"
+     *        >Enabling SAML 2.0 Federated Users to Access the AWS Management
+     *        Console</a> in the <i>IAM User Guide</i>.
      *        </p>
      */
 
@@ -529,8 +550,15 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * The maximum duration for a session is 1 hour, and the minimum duration is
-     * 15 minutes, even if values outside this range are specified.
+     * This is separate from the duration of a console session that you might
+     * request using the returned credentials. The request to the federation
+     * endpoint for a console sign-in token takes a <code>SessionDuration</code>
+     * parameter that specifies the maximum length of the console session,
+     * separately from the <code>DurationSeconds</code> parameter on this API.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html"
+     * >Enabling SAML 2.0 Federated Users to Access the AWS Management
+     * Console</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
      * 
@@ -541,9 +569,16 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *         <code>SessionNotOnOrAfter</code> value. The actual expiration
      *         time is whichever value is shorter. </p> <note>
      *         <p>
-     *         The maximum duration for a session is 1 hour, and the minimum
-     *         duration is 15 minutes, even if values outside this range are
-     *         specified.
+     *         This is separate from the duration of a console session that you
+     *         might request using the returned credentials. The request to the
+     *         federation endpoint for a console sign-in token takes a
+     *         <code>SessionDuration</code> parameter that specifies the maximum
+     *         length of the console session, separately from the
+     *         <code>DurationSeconds</code> parameter on this API. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html"
+     *         >Enabling SAML 2.0 Federated Users to Access the AWS Management
+     *         Console</a> in the <i>IAM User Guide</i>.
      *         </p>
      */
 
@@ -561,8 +596,15 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * The maximum duration for a session is 1 hour, and the minimum duration is
-     * 15 minutes, even if values outside this range are specified.
+     * This is separate from the duration of a console session that you might
+     * request using the returned credentials. The request to the federation
+     * endpoint for a console sign-in token takes a <code>SessionDuration</code>
+     * parameter that specifies the maximum length of the console session,
+     * separately from the <code>DurationSeconds</code> parameter on this API.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html"
+     * >Enabling SAML 2.0 Federated Users to Access the AWS Management
+     * Console</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
      * 
@@ -574,9 +616,16 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        <code>SessionNotOnOrAfter</code> value. The actual expiration time
      *        is whichever value is shorter. </p> <note>
      *        <p>
-     *        The maximum duration for a session is 1 hour, and the minimum
-     *        duration is 15 minutes, even if values outside this range are
-     *        specified.
+     *        This is separate from the duration of a console session that you
+     *        might request using the returned credentials. The request to the
+     *        federation endpoint for a console sign-in token takes a
+     *        <code>SessionDuration</code> parameter that specifies the maximum
+     *        length of the console session, separately from the
+     *        <code>DurationSeconds</code> parameter on this API. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html"
+     *        >Enabling SAML 2.0 Federated Users to Access the AWS Management
+     *        Console</a> in the <i>IAM User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

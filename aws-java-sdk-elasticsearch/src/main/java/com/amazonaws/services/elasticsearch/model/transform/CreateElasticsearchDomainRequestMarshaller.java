@@ -80,6 +80,12 @@ public class CreateElasticsearchDomainRequestMarshaller
                 jsonGenerator.writeFieldName("DomainName").writeValue(
                         createElasticsearchDomainRequest.getDomainName());
             }
+            if (createElasticsearchDomainRequest.getElasticsearchVersion() != null) {
+                jsonGenerator.writeFieldName("ElasticsearchVersion")
+                        .writeValue(
+                                createElasticsearchDomainRequest
+                                        .getElasticsearchVersion());
+            }
             if (createElasticsearchDomainRequest
                     .getElasticsearchClusterConfig() != null) {
                 jsonGenerator.writeFieldName("ElasticsearchClusterConfig");

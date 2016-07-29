@@ -30,7 +30,12 @@ public class Constants {
 
     public static final String PROTOCOL_CONFIG_LOCATION = "/protocol-config/%s.json";
 
+    @Deprecated
     public static final String FILE_NAME_SUFFIX = ".java";
+
+    public static final String JAVA_FILE_NAME_SUFFIX = ".java";
+
+    public static final String PROPERTIES_FILE_NAME_SUFFIX = ".properties";
 
     public static final String PACKAGE_NAME_MODEL_SUFFIX = "model";
 
@@ -51,5 +56,7 @@ public class Constants {
     public static final String LINE_SEPARATOR = System.getProperty("line.separator");
 
     public static final Log LOGGER = LogFactory.getLog("com.amazonaws.javasdk.codegen");
+
+    public static final String SMOKE_TESTS_DIR_NAME = "smoketests";
 
 }

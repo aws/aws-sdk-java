@@ -89,6 +89,11 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements
                             .setProcessing(context.getUnmarshaller(
                                     Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("ElasticsearchVersion", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setElasticsearchVersion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ElasticsearchClusterConfig",
                         targetDepth)) {
                     context.nextToken();

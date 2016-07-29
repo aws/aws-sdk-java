@@ -274,6 +274,41 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
     }
 
     @Override
+    public java.util.concurrent.Future<AddIpRoutesResult> addIpRoutesAsync(
+            AddIpRoutesRequest request) {
+
+        return addIpRoutesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddIpRoutesResult> addIpRoutesAsync(
+            final AddIpRoutesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddIpRoutesRequest, AddIpRoutesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<AddIpRoutesResult>() {
+                    @Override
+                    public AddIpRoutesResult call() throws Exception {
+                        AddIpRoutesResult result;
+
+                        try {
+                            result = addIpRoutes(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
             AddTagsToResourceRequest request) {
 
@@ -1227,6 +1262,41 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
     }
 
     @Override
+    public java.util.concurrent.Future<ListIpRoutesResult> listIpRoutesAsync(
+            ListIpRoutesRequest request) {
+
+        return listIpRoutesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIpRoutesResult> listIpRoutesAsync(
+            final ListIpRoutesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListIpRoutesRequest, ListIpRoutesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListIpRoutesResult>() {
+                    @Override
+                    public ListIpRoutesResult call() throws Exception {
+                        ListIpRoutesResult result;
+
+                        try {
+                            result = listIpRoutes(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
             ListTagsForResourceRequest request) {
 
@@ -1281,6 +1351,41 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
 
                         try {
                             result = registerEventTopic(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveIpRoutesResult> removeIpRoutesAsync(
+            RemoveIpRoutesRequest request) {
+
+        return removeIpRoutesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveIpRoutesResult> removeIpRoutesAsync(
+            final RemoveIpRoutesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveIpRoutesRequest, RemoveIpRoutesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<RemoveIpRoutesResult>() {
+                    @Override
+                    public RemoveIpRoutesResult call() throws Exception {
+                        RemoveIpRoutesResult result;
+
+                        try {
+                            result = removeIpRoutes(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

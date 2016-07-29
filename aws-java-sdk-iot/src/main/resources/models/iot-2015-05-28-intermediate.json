@@ -19,15 +19,17 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "iot",
     "signingName" : "execute-api",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true,
     "xmlProtocol" : false,
     "cborProtocol" : false,
+    "jsonProtocol" : true,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "syncClientBuilderClassName" : "AWSIotClientBuilder",
     "asyncClientBuilderClassName" : "AWSIotAsyncClientBuilder",
-    "serviceName" : "AWS IoT"
+    "cucumberModuleInjectorClassName" : "AWSIotModuleInjector",
+    "smokeTestsPackageName" : "com.amazonaws.services.iot.smoketests",
+    "serviceName" : "AWS IoT",
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "AcceptCertificateTransfer" : {
@@ -70,12 +72,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AcceptCertificateTransferResult",
       "asyncReturnType" : "AcceptCertificateTransferResult",
       "asyncFutureType" : "java.util.concurrent.Future<AcceptCertificateTransferResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AcceptCertificateTransferResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AcceptCertificateTransferRequest, AcceptCertificateTransferResult>",
-      "authenticated" : true,
       "methodName" : "acceptCertificateTransfer"
     },
     "AttachPrincipalPolicy" : {
@@ -118,12 +120,12 @@
         "documentation" : "<p>The number of attached entities exceeds the limit.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AttachPrincipalPolicyResult",
       "asyncReturnType" : "AttachPrincipalPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<AttachPrincipalPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AttachPrincipalPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AttachPrincipalPolicyRequest, AttachPrincipalPolicyResult>",
-      "authenticated" : true,
       "methodName" : "attachPrincipalPolicy"
     },
     "AttachThingPrincipal" : {
@@ -163,12 +165,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AttachThingPrincipalResult",
       "asyncReturnType" : "AttachThingPrincipalResult",
       "asyncFutureType" : "java.util.concurrent.Future<AttachThingPrincipalResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AttachThingPrincipalResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AttachThingPrincipalRequest, AttachThingPrincipalResult>",
-      "authenticated" : true,
       "methodName" : "attachThingPrincipal"
     },
     "CancelCertificateTransfer" : {
@@ -211,12 +213,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CancelCertificateTransferResult",
       "asyncReturnType" : "CancelCertificateTransferResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelCertificateTransferResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CancelCertificateTransferResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelCertificateTransferRequest, CancelCertificateTransferResult>",
-      "authenticated" : true,
       "methodName" : "cancelCertificateTransfer"
     },
     "CreateCertificateFromCsr" : {
@@ -253,12 +255,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateCertificateFromCsrResult",
       "asyncReturnType" : "CreateCertificateFromCsrResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateCertificateFromCsrResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateCertificateFromCsrResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCertificateFromCsrRequest, CreateCertificateFromCsrResult>",
-      "authenticated" : true,
       "methodName" : "createCertificateFromCsr"
     },
     "CreateKeysAndCertificate" : {
@@ -295,12 +297,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateKeysAndCertificateResult",
       "asyncReturnType" : "CreateKeysAndCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateKeysAndCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateKeysAndCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateKeysAndCertificateRequest, CreateKeysAndCertificateResult>",
-      "authenticated" : true,
       "methodName" : "createKeysAndCertificate"
     },
     "CreatePolicy" : {
@@ -343,12 +345,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreatePolicyResult",
       "asyncReturnType" : "CreatePolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePolicyRequest, CreatePolicyResult>",
-      "authenticated" : true,
       "methodName" : "createPolicy"
     },
     "CreatePolicyVersion" : {
@@ -394,12 +396,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreatePolicyVersionResult",
       "asyncReturnType" : "CreatePolicyVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePolicyVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePolicyVersionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePolicyVersionRequest, CreatePolicyVersionResult>",
-      "authenticated" : true,
       "methodName" : "createPolicyVersion"
     },
     "CreateThing" : {
@@ -442,12 +444,12 @@
         "documentation" : "<p>The specified resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateThingResult",
       "asyncReturnType" : "CreateThingResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateThingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateThingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateThingRequest, CreateThingResult>",
-      "authenticated" : true,
       "methodName" : "createThing"
     },
     "CreateThingType" : {
@@ -487,12 +489,12 @@
         "documentation" : "<p>The resource already exists.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateThingTypeResult",
       "asyncReturnType" : "CreateThingTypeResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateThingTypeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateThingTypeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateThingTypeRequest, CreateThingTypeResult>",
-      "authenticated" : true,
       "methodName" : "createThingType"
     },
     "CreateTopicRule" : {
@@ -529,12 +531,12 @@
         "documentation" : "<p>The service is temporarily unavailable.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateTopicRuleResult",
       "asyncReturnType" : "CreateTopicRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTopicRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTopicRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTopicRuleRequest, CreateTopicRuleResult>",
-      "authenticated" : true,
       "methodName" : "createTopicRule"
     },
     "DeleteCACertificate" : {
@@ -577,12 +579,12 @@
         "documentation" : "<p>The specified resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteCACertificateResult",
       "asyncReturnType" : "DeleteCACertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteCACertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteCACertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCACertificateRequest, DeleteCACertificateResult>",
-      "authenticated" : true,
       "methodName" : "deleteCACertificate"
     },
     "DeleteCertificate" : {
@@ -628,12 +630,12 @@
         "documentation" : "<p>The specified resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteCertificateResult",
       "asyncReturnType" : "DeleteCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult>",
-      "authenticated" : true,
       "methodName" : "deleteCertificate"
     },
     "DeletePolicy" : {
@@ -676,12 +678,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeletePolicyResult",
       "asyncReturnType" : "DeletePolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeletePolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeletePolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, DeletePolicyResult>",
-      "authenticated" : true,
       "methodName" : "deletePolicy"
     },
     "DeletePolicyVersion" : {
@@ -724,12 +726,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeletePolicyVersionResult",
       "asyncReturnType" : "DeletePolicyVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeletePolicyVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeletePolicyVersionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, DeletePolicyVersionResult>",
-      "authenticated" : true,
       "methodName" : "deletePolicyVersion"
     },
     "DeleteRegistrationCode" : {
@@ -766,12 +768,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteRegistrationCodeResult",
       "asyncReturnType" : "DeleteRegistrationCodeResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteRegistrationCodeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteRegistrationCodeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteRegistrationCodeRequest, DeleteRegistrationCodeResult>",
-      "authenticated" : true,
       "methodName" : "deleteRegistrationCode"
     },
     "DeleteThing" : {
@@ -814,12 +816,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteThingResult",
       "asyncReturnType" : "DeleteThingResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteThingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteThingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteThingRequest, DeleteThingResult>",
-      "authenticated" : true,
       "methodName" : "deleteThing"
     },
     "DeleteThingType" : {
@@ -859,12 +861,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteThingTypeResult",
       "asyncReturnType" : "DeleteThingTypeResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteThingTypeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteThingTypeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteThingTypeRequest, DeleteThingTypeResult>",
-      "authenticated" : true,
       "methodName" : "deleteThingType"
     },
     "DeleteTopicRule" : {
@@ -898,12 +900,12 @@
         "documentation" : "<p>You are not authorized to perform this operation.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteTopicRuleResult",
       "asyncReturnType" : "DeleteTopicRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTopicRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTopicRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleRequest, DeleteTopicRuleResult>",
-      "authenticated" : true,
       "methodName" : "deleteTopicRule"
     },
     "DeprecateThingType" : {
@@ -943,12 +945,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeprecateThingTypeResult",
       "asyncReturnType" : "DeprecateThingTypeResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeprecateThingTypeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeprecateThingTypeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeprecateThingTypeRequest, DeprecateThingTypeResult>",
-      "authenticated" : true,
       "methodName" : "deprecateThingType"
     },
     "DescribeCACertificate" : {
@@ -988,12 +990,12 @@
         "documentation" : "<p>The specified resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeCACertificateResult",
       "asyncReturnType" : "DescribeCACertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCACertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCACertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCACertificateRequest, DescribeCACertificateResult>",
-      "authenticated" : true,
       "methodName" : "describeCACertificate"
     },
     "DescribeCertificate" : {
@@ -1033,12 +1035,12 @@
         "documentation" : "<p>The specified resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeCertificateResult",
       "asyncReturnType" : "DescribeCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCertificateRequest, DescribeCertificateResult>",
-      "authenticated" : true,
       "methodName" : "describeCertificate"
     },
     "DescribeEndpoint" : {
@@ -1069,12 +1071,12 @@
         "documentation" : "<p>The rate exceeds the limit.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeEndpointResult",
       "asyncReturnType" : "DescribeEndpointResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEndpointResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEndpointResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEndpointRequest, DescribeEndpointResult>",
-      "authenticated" : true,
       "methodName" : "describeEndpoint"
     },
     "DescribeThing" : {
@@ -1114,12 +1116,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeThingResult",
       "asyncReturnType" : "DescribeThingResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeThingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeThingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeThingRequest, DescribeThingResult>",
-      "authenticated" : true,
       "methodName" : "describeThing"
     },
     "DescribeThingType" : {
@@ -1159,12 +1161,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeThingTypeResult",
       "asyncReturnType" : "DescribeThingTypeResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeThingTypeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeThingTypeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeThingTypeRequest, DescribeThingTypeResult>",
-      "authenticated" : true,
       "methodName" : "describeThingType"
     },
     "DetachPrincipalPolicy" : {
@@ -1204,12 +1206,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DetachPrincipalPolicyResult",
       "asyncReturnType" : "DetachPrincipalPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<DetachPrincipalPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DetachPrincipalPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DetachPrincipalPolicyRequest, DetachPrincipalPolicyResult>",
-      "authenticated" : true,
       "methodName" : "detachPrincipalPolicy"
     },
     "DetachThingPrincipal" : {
@@ -1249,12 +1251,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DetachThingPrincipalResult",
       "asyncReturnType" : "DetachThingPrincipalResult",
       "asyncFutureType" : "java.util.concurrent.Future<DetachThingPrincipalResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DetachThingPrincipalResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DetachThingPrincipalRequest, DetachThingPrincipalResult>",
-      "authenticated" : true,
       "methodName" : "detachThingPrincipal"
     },
     "DisableTopicRule" : {
@@ -1288,12 +1290,12 @@
         "documentation" : "<p>You are not authorized to perform this operation.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DisableTopicRuleResult",
       "asyncReturnType" : "DisableTopicRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableTopicRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableTopicRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableTopicRuleRequest, DisableTopicRuleResult>",
-      "authenticated" : true,
       "methodName" : "disableTopicRule"
     },
     "EnableTopicRule" : {
@@ -1327,12 +1329,12 @@
         "documentation" : "<p>You are not authorized to perform this operation.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "EnableTopicRuleResult",
       "asyncReturnType" : "EnableTopicRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableTopicRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnableTopicRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableTopicRuleRequest, EnableTopicRuleResult>",
-      "authenticated" : true,
       "methodName" : "enableTopicRule"
     },
     "GetLoggingOptions" : {
@@ -1363,12 +1365,12 @@
         "documentation" : "<p>The service is temporarily unavailable.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetLoggingOptionsResult",
       "asyncReturnType" : "GetLoggingOptionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetLoggingOptionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetLoggingOptionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetLoggingOptionsRequest, GetLoggingOptionsResult>",
-      "authenticated" : true,
       "methodName" : "getLoggingOptions"
     },
     "GetPolicy" : {
@@ -1408,12 +1410,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetPolicyResult",
       "asyncReturnType" : "GetPolicyResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetPolicyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetPolicyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetPolicyRequest, GetPolicyResult>",
-      "authenticated" : true,
       "methodName" : "getPolicy"
     },
     "GetPolicyVersion" : {
@@ -1453,12 +1455,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetPolicyVersionResult",
       "asyncReturnType" : "GetPolicyVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetPolicyVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetPolicyVersionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetPolicyVersionRequest, GetPolicyVersionResult>",
-      "authenticated" : true,
       "methodName" : "getPolicyVersion"
     },
     "GetRegistrationCode" : {
@@ -1495,12 +1497,12 @@
         "documentation" : "<p>The request is not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetRegistrationCodeResult",
       "asyncReturnType" : "GetRegistrationCodeResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRegistrationCodeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRegistrationCodeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRegistrationCodeRequest, GetRegistrationCodeResult>",
-      "authenticated" : true,
       "methodName" : "getRegistrationCode"
     },
     "GetTopicRule" : {
@@ -1534,12 +1536,12 @@
         "documentation" : "<p>You are not authorized to perform this operation.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetTopicRuleResult",
       "asyncReturnType" : "GetTopicRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTopicRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTopicRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTopicRuleRequest, GetTopicRuleResult>",
-      "authenticated" : true,
       "methodName" : "getTopicRule"
     },
     "ListCACertificates" : {
@@ -1576,12 +1578,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListCACertificatesResult",
       "asyncReturnType" : "ListCACertificatesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCACertificatesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListCACertificatesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListCACertificatesRequest, ListCACertificatesResult>",
-      "authenticated" : true,
       "methodName" : "listCACertificates"
     },
     "ListCertificates" : {
@@ -1618,12 +1620,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListCertificatesResult",
       "asyncReturnType" : "ListCertificatesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCertificatesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListCertificatesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult>",
-      "authenticated" : true,
       "methodName" : "listCertificates"
     },
     "ListCertificatesByCA" : {
@@ -1660,12 +1662,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListCertificatesByCAResult",
       "asyncReturnType" : "ListCertificatesByCAResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCertificatesByCAResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListCertificatesByCAResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListCertificatesByCARequest, ListCertificatesByCAResult>",
-      "authenticated" : true,
       "methodName" : "listCertificatesByCA"
     },
     "ListPolicies" : {
@@ -1702,12 +1704,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListPoliciesResult",
       "asyncReturnType" : "ListPoliciesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPoliciesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPoliciesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPoliciesRequest, ListPoliciesResult>",
-      "authenticated" : true,
       "methodName" : "listPolicies"
     },
     "ListPolicyPrincipals" : {
@@ -1747,12 +1749,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListPolicyPrincipalsResult",
       "asyncReturnType" : "ListPolicyPrincipalsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPolicyPrincipalsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPolicyPrincipalsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPolicyPrincipalsRequest, ListPolicyPrincipalsResult>",
-      "authenticated" : true,
       "methodName" : "listPolicyPrincipals"
     },
     "ListPolicyVersions" : {
@@ -1792,12 +1794,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListPolicyVersionsResult",
       "asyncReturnType" : "ListPolicyVersionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPolicyVersionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPolicyVersionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPolicyVersionsRequest, ListPolicyVersionsResult>",
-      "authenticated" : true,
       "methodName" : "listPolicyVersions"
     },
     "ListPrincipalPolicies" : {
@@ -1837,12 +1839,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListPrincipalPoliciesResult",
       "asyncReturnType" : "ListPrincipalPoliciesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPrincipalPoliciesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPrincipalPoliciesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPrincipalPoliciesRequest, ListPrincipalPoliciesResult>",
-      "authenticated" : true,
       "methodName" : "listPrincipalPolicies"
     },
     "ListPrincipalThings" : {
@@ -1882,12 +1884,12 @@
         "documentation" : "<p>The specified resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListPrincipalThingsResult",
       "asyncReturnType" : "ListPrincipalThingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPrincipalThingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPrincipalThingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPrincipalThingsRequest, ListPrincipalThingsResult>",
-      "authenticated" : true,
       "methodName" : "listPrincipalThings"
     },
     "ListThingPrincipals" : {
@@ -1927,12 +1929,12 @@
         "documentation" : "<p>The specified resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListThingPrincipalsResult",
       "asyncReturnType" : "ListThingPrincipalsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListThingPrincipalsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListThingPrincipalsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListThingPrincipalsRequest, ListThingPrincipalsResult>",
-      "authenticated" : true,
       "methodName" : "listThingPrincipals"
     },
     "ListThingTypes" : {
@@ -1969,12 +1971,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListThingTypesResult",
       "asyncReturnType" : "ListThingTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListThingTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListThingTypesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListThingTypesRequest, ListThingTypesResult>",
-      "authenticated" : true,
       "methodName" : "listThingTypes"
     },
     "ListThings" : {
@@ -2011,12 +2013,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListThingsResult",
       "asyncReturnType" : "ListThingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListThingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListThingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListThingsRequest, ListThingsResult>",
-      "authenticated" : true,
       "methodName" : "listThings"
     },
     "ListTopicRules" : {
@@ -2047,12 +2049,12 @@
         "documentation" : "<p>The service is temporarily unavailable.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTopicRulesResult",
       "asyncReturnType" : "ListTopicRulesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTopicRulesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTopicRulesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTopicRulesRequest, ListTopicRulesResult>",
-      "authenticated" : true,
       "methodName" : "listTopicRules"
     },
     "RegisterCACertificate" : {
@@ -2101,12 +2103,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RegisterCACertificateResult",
       "asyncReturnType" : "RegisterCACertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<RegisterCACertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RegisterCACertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterCACertificateRequest, RegisterCACertificateResult>",
-      "authenticated" : true,
       "methodName" : "registerCACertificate"
     },
     "RegisterCertificate" : {
@@ -2155,12 +2157,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RegisterCertificateResult",
       "asyncReturnType" : "RegisterCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<RegisterCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RegisterCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterCertificateRequest, RegisterCertificateResult>",
-      "authenticated" : true,
       "methodName" : "registerCertificate"
     },
     "RejectCertificateTransfer" : {
@@ -2203,12 +2205,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RejectCertificateTransferResult",
       "asyncReturnType" : "RejectCertificateTransferResult",
       "asyncFutureType" : "java.util.concurrent.Future<RejectCertificateTransferResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RejectCertificateTransferResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RejectCertificateTransferRequest, RejectCertificateTransferResult>",
-      "authenticated" : true,
       "methodName" : "rejectCertificateTransfer"
     },
     "ReplaceTopicRule" : {
@@ -2245,12 +2247,12 @@
         "documentation" : "<p>You are not authorized to perform this operation.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ReplaceTopicRuleResult",
       "asyncReturnType" : "ReplaceTopicRuleResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReplaceTopicRuleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReplaceTopicRuleResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReplaceTopicRuleRequest, ReplaceTopicRuleResult>",
-      "authenticated" : true,
       "methodName" : "replaceTopicRule"
     },
     "SetDefaultPolicyVersion" : {
@@ -2290,12 +2292,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SetDefaultPolicyVersionResult",
       "asyncReturnType" : "SetDefaultPolicyVersionResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetDefaultPolicyVersionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetDefaultPolicyVersionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetDefaultPolicyVersionRequest, SetDefaultPolicyVersionResult>",
-      "authenticated" : true,
       "methodName" : "setDefaultPolicyVersion"
     },
     "SetLoggingOptions" : {
@@ -2326,12 +2328,12 @@
         "documentation" : "<p>The service is temporarily unavailable.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SetLoggingOptionsResult",
       "asyncReturnType" : "SetLoggingOptionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetLoggingOptionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetLoggingOptionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetLoggingOptionsRequest, SetLoggingOptionsResult>",
-      "authenticated" : true,
       "methodName" : "setLoggingOptions"
     },
     "TransferCertificate" : {
@@ -2377,12 +2379,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "TransferCertificateResult",
       "asyncReturnType" : "TransferCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<TransferCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TransferCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TransferCertificateRequest, TransferCertificateResult>",
-      "authenticated" : true,
       "methodName" : "transferCertificate"
     },
     "UpdateCACertificate" : {
@@ -2422,12 +2424,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateCACertificateResult",
       "asyncReturnType" : "UpdateCACertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateCACertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateCACertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateCACertificateRequest, UpdateCACertificateResult>",
-      "authenticated" : true,
       "methodName" : "updateCACertificate"
     },
     "UpdateCertificate" : {
@@ -2470,12 +2472,12 @@
         "documentation" : "<p>An unexpected error has occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateCertificateResult",
       "asyncReturnType" : "UpdateCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateCertificateRequest, UpdateCertificateResult>",
-      "authenticated" : true,
       "methodName" : "updateCertificate"
     },
     "UpdateThing" : {
@@ -2518,12 +2520,12 @@
         "documentation" : "<p>The specified resource does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateThingResult",
       "asyncReturnType" : "UpdateThingResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateThingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateThingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateThingRequest, UpdateThingResult>",
-      "authenticated" : true,
       "methodName" : "updateThing"
     }
   },
@@ -7061,9 +7063,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "CACertificate",
           "simple" : false,
           "map" : false,
-          "simpleType" : "CACertificate",
           "templateType" : "java.util.List<CACertificate>",
           "templateImplType" : "java.util.ArrayList<CACertificate>"
         },
@@ -7254,9 +7256,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "CACertificate",
             "simple" : false,
             "map" : false,
-            "simpleType" : "CACertificate",
             "templateType" : "java.util.List<CACertificate>",
             "templateImplType" : "java.util.ArrayList<CACertificate>"
           },
@@ -7439,9 +7441,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "ThingAttribute",
           "simple" : false,
           "map" : false,
-          "simpleType" : "ThingAttribute",
           "templateType" : "java.util.List<ThingAttribute>",
           "templateImplType" : "java.util.ArrayList<ThingAttribute>"
         },
@@ -7685,9 +7687,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "ThingAttribute",
             "simple" : false,
             "map" : false,
-            "simpleType" : "ThingAttribute",
             "templateType" : "java.util.List<ThingAttribute>",
             "templateImplType" : "java.util.ArrayList<ThingAttribute>"
           },
@@ -10367,9 +10369,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "Action",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Action",
           "templateType" : "java.util.List<Action>",
           "templateImplType" : "java.util.ArrayList<Action>"
         },
@@ -10771,9 +10773,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "Action",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Action",
             "templateType" : "java.util.List<Action>",
             "templateImplType" : "java.util.ArrayList<Action>"
           },
@@ -11272,9 +11274,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "Action",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Action",
           "templateType" : "java.util.List<Action>",
           "templateImplType" : "java.util.ArrayList<Action>"
         },
@@ -11676,9 +11678,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "Action",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Action",
             "templateType" : "java.util.List<Action>",
             "templateImplType" : "java.util.ArrayList<Action>"
           },
@@ -12712,9 +12714,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "Certificate",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Certificate",
           "templateType" : "java.util.List<Certificate>",
           "templateImplType" : "java.util.ArrayList<Certificate>"
         },
@@ -12905,9 +12907,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "Certificate",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Certificate",
             "templateType" : "java.util.List<Certificate>",
             "templateImplType" : "java.util.ArrayList<Certificate>"
           },
@@ -16190,9 +16192,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -16436,9 +16438,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -17488,9 +17490,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "Certificate",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Certificate",
           "templateType" : "java.util.List<Certificate>",
           "templateImplType" : "java.util.ArrayList<Certificate>"
         },
@@ -17681,9 +17683,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "Certificate",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Certificate",
             "templateType" : "java.util.List<Certificate>",
             "templateImplType" : "java.util.ArrayList<Certificate>"
           },
@@ -17918,9 +17920,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -18112,9 +18114,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -22196,9 +22198,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -22337,9 +22339,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -22719,9 +22721,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -22912,9 +22914,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -28517,9 +28519,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "Policy",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Policy",
           "templateType" : "java.util.List<Policy>",
           "templateImplType" : "java.util.ArrayList<Policy>"
         },
@@ -28710,9 +28712,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "Policy",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Policy",
             "templateType" : "java.util.List<Policy>",
             "templateImplType" : "java.util.ArrayList<Policy>"
           },
@@ -30295,9 +30297,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "TopicRuleListItem",
           "simple" : false,
           "map" : false,
-          "simpleType" : "TopicRuleListItem",
           "templateType" : "java.util.List<TopicRuleListItem>",
           "templateImplType" : "java.util.ArrayList<TopicRuleListItem>"
         },
@@ -30541,9 +30543,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "TopicRuleListItem",
             "simple" : false,
             "map" : false,
-            "simpleType" : "TopicRuleListItem",
             "templateType" : "java.util.List<TopicRuleListItem>",
             "templateImplType" : "java.util.ArrayList<TopicRuleListItem>"
           },
@@ -35702,9 +35704,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "Policy",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Policy",
           "templateType" : "java.util.List<Policy>",
           "templateImplType" : "java.util.ArrayList<Policy>"
         },
@@ -35895,9 +35897,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "Policy",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Policy",
             "templateType" : "java.util.List<Policy>",
             "templateImplType" : "java.util.ArrayList<Policy>"
           },
@@ -36080,9 +36082,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "ThingTypeDefinition",
           "simple" : false,
           "map" : false,
-          "simpleType" : "ThingTypeDefinition",
           "templateType" : "java.util.List<ThingTypeDefinition>",
           "templateImplType" : "java.util.ArrayList<ThingTypeDefinition>"
         },
@@ -36273,9 +36275,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "ThingTypeDefinition",
             "simple" : false,
             "map" : false,
-            "simpleType" : "ThingTypeDefinition",
             "templateType" : "java.util.List<ThingTypeDefinition>",
             "templateImplType" : "java.util.ArrayList<ThingTypeDefinition>"
           },
@@ -42202,9 +42204,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "PolicyVersion",
           "simple" : false,
           "map" : false,
-          "simpleType" : "PolicyVersion",
           "templateType" : "java.util.List<PolicyVersion>",
           "templateImplType" : "java.util.ArrayList<PolicyVersion>"
         },
@@ -42343,9 +42345,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "PolicyVersion",
             "simple" : false,
             "map" : false,
-            "simpleType" : "PolicyVersion",
             "templateType" : "java.util.List<PolicyVersion>",
             "templateImplType" : "java.util.ArrayList<PolicyVersion>"
           },
@@ -42996,16 +42998,17 @@
     "customSignerProvider" : null,
     "calculateCRC32FromCompressedData" : false,
     "customFileHeader" : null,
-    "convenienceTypeOverloads" : [ ]
+    "convenienceTypeOverloads" : [ ],
+    "skipSmokeTests" : false
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "sdkModeledExceptionBaseClassName" : "AWSIotException",
+  "exceptionUnmarshallerImpl" : null,
   "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.iot.model.AWSIotException",
-  "sdkModeledExceptionBaseClassName" : "AWSIotException",
-  "exceptionUnmarshallerImpl" : null
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.iot.model.AWSIotException"
 }

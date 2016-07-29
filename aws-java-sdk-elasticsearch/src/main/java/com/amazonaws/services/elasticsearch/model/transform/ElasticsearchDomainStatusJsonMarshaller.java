@@ -73,6 +73,12 @@ public class ElasticsearchDomainStatusJsonMarshaller {
                 jsonGenerator.writeFieldName("Processing").writeValue(
                         elasticsearchDomainStatus.getProcessing());
             }
+            if (elasticsearchDomainStatus.getElasticsearchVersion() != null) {
+                jsonGenerator.writeFieldName("ElasticsearchVersion")
+                        .writeValue(
+                                elasticsearchDomainStatus
+                                        .getElasticsearchVersion());
+            }
             if (elasticsearchDomainStatus.getElasticsearchClusterConfig() != null) {
                 jsonGenerator.writeFieldName("ElasticsearchClusterConfig");
                 ElasticsearchClusterConfigJsonMarshaller

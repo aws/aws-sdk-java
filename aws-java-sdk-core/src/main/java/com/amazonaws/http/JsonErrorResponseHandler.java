@@ -24,6 +24,7 @@ import com.amazonaws.util.IOUtils;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.apache.commons.logging.Log;
@@ -139,7 +140,6 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
 
         public final byte[] rawContent;
         public final JsonNode jsonNode;
-        private final ObjectMapper mapper;
 
         /**
          * Static factory method to create a JsonContent object from the contents of the
@@ -155,14 +155,18 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
             } catch (Exception e) {
                 LOG.info("Unable to read HTTP response content", e);
             }
-            return new JsonContent(rawJsonContent, new ObjectMapper(jsonFactory)
-                    .configure(JsonParser.Feature.ALLOW_COMMENTS, true));
+            return new JsonContent(rawJsonContent, createMapper(jsonFactory));
+        }
+
+        private static ObjectMapper createMapper(JsonFactory jsonFactory) {
+            return new ObjectMapper(jsonFactory)
+                    .enable(JsonParser.Feature.ALLOW_COMMENTS)
+                    .disable(MapperFeature.CAN_OVERRIDE_ACCESS_MODIFIERS);
         }
 
         private JsonContent(byte[] rawJsonContent, ObjectMapper mapper) {
             this.rawContent = rawJsonContent;
             this.jsonNode = parseJsonContent(rawJsonContent, mapper);
-            this.mapper = mapper;
         }
 
         private static JsonNode parseJsonContent(byte[] rawJsonContent,

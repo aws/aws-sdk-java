@@ -33,8 +33,8 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      */
     private String name;
@@ -115,8 +115,8 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *        <p>
      *        The format for this parameter, as described by its regex pattern,
      *        is a string of characters consisting of upper- and lower-case
-     *        alphanumeric characters with no spaces. You can also include any
-     *        of the following characters: =,.@-
+     *        alphanumeric characters with no spaces. You can also include
+     *        underscores or any of the following characters: =,.@-
      */
     public GetFederationTokenRequest(String name) {
         setName(name);
@@ -132,8 +132,8 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param name
@@ -144,8 +144,8 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *        <p>
      *        The format for this parameter, as described by its regex pattern,
      *        is a string of characters consisting of upper- and lower-case
-     *        alphanumeric characters with no spaces. You can also include any
-     *        of the following characters: =,.@-
+     *        alphanumeric characters with no spaces. You can also include
+     *        underscores or any of the following characters: =,.@-
      */
 
     public void setName(String name) {
@@ -162,8 +162,8 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @return The name of the federated user. The name is used as an identifier
@@ -173,8 +173,8 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *         <p>
      *         The format for this parameter, as described by its regex pattern,
      *         is a string of characters consisting of upper- and lower-case
-     *         alphanumeric characters with no spaces. You can also include any
-     *         of the following characters: =,.@-
+     *         alphanumeric characters with no spaces. You can also include
+     *         underscores or any of the following characters: =,.@-
      */
 
     public String getName() {
@@ -191,8 +191,8 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param name
@@ -203,8 +203,8 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *        <p>
      *        The format for this parameter, as described by its regex pattern,
      *        is a string of characters consisting of upper- and lower-case
-     *        alphanumeric characters with no spaces. You can also include any
-     *        of the following characters: =,.@-
+     *        alphanumeric characters with no spaces. You can also include
+     *        underscores or any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -2190,6 +2190,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </li>
      * <li>
      * <p>
+     * Amazon SES overrides any Message-ID and Date headers you provide.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For every message that you send, the total number of recipients (To:, CC:
      * and BCC:) is counted against your sending quota - the maximum number of
      * emails you can send in a 24-hour period. For information about your

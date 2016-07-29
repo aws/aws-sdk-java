@@ -79,6 +79,8 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * </p>
      */
     private Boolean processing;
+
+    private String elasticsearchVersion;
     /**
      * <p>
      * The type and number of instances in the domain cluster.
@@ -545,6 +547,34 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
     }
 
     /**
+     * @param elasticsearchVersion
+     */
+
+    public void setElasticsearchVersion(String elasticsearchVersion) {
+        this.elasticsearchVersion = elasticsearchVersion;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getElasticsearchVersion() {
+        return this.elasticsearchVersion;
+    }
+
+    /**
+     * @param elasticsearchVersion
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ElasticsearchDomainStatus withElasticsearchVersion(
+            String elasticsearchVersion) {
+        setElasticsearchVersion(elasticsearchVersion);
+        return this;
+    }
+
+    /**
      * <p>
      * The type and number of instances in the domain cluster.
      * </p>
@@ -817,6 +847,9 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
             sb.append("Endpoint: " + getEndpoint() + ",");
         if (getProcessing() != null)
             sb.append("Processing: " + getProcessing() + ",");
+        if (getElasticsearchVersion() != null)
+            sb.append("ElasticsearchVersion: " + getElasticsearchVersion()
+                    + ",");
         if (getElasticsearchClusterConfig() != null)
             sb.append("ElasticsearchClusterConfig: "
                     + getElasticsearchClusterConfig() + ",");
@@ -877,6 +910,13 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
         if (other.getProcessing() != null
                 && other.getProcessing().equals(this.getProcessing()) == false)
             return false;
+        if (other.getElasticsearchVersion() == null
+                ^ this.getElasticsearchVersion() == null)
+            return false;
+        if (other.getElasticsearchVersion() != null
+                && other.getElasticsearchVersion().equals(
+                        this.getElasticsearchVersion()) == false)
+            return false;
         if (other.getElasticsearchClusterConfig() == null
                 ^ this.getElasticsearchClusterConfig() == null)
             return false;
@@ -929,6 +969,10 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
                 + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode
                 + ((getProcessing() == null) ? 0 : getProcessing().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getElasticsearchVersion() == null) ? 0
+                        : getElasticsearchVersion().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getElasticsearchClusterConfig() == null) ? 0

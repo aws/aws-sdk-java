@@ -14,10 +14,12 @@
  */
 package com.amazonaws.services.s3.model;
 
+import java.io.Serializable;
+
 /**
  * Represents the accelerate configuration for a bucket.
  */
-public class BucketAccelerateConfiguration {
+public class BucketAccelerateConfiguration implements Serializable {
 
     /** The current accelerate configuration status */
     private String status;

@@ -100,9 +100,40 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * If the DNS server for your on-premises domain uses a publicly addressable
+     * IP address, you must add a CIDR address block to correctly route traffic
+     * to and from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i>
+     * adds this address block. You can also use <i>AddIpRoutes</i> to
+     * facilitate routing traffic that uses public IP ranges from your Microsoft
+     * AD on AWS to a peer VPC.
+     * </p>
+     * 
+     * @param addIpRoutesRequest
+     * @return Result of the AddIpRoutes operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws EntityAlreadyExistsException
+     *         The specified entity already exists.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws IpRouteLimitExceededException
+     *         The maximum allowed number of IP addresses was exceeded. The
+     *         default limit is 100 IP address blocks.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.AddIpRoutes
+     */
+    AddIpRoutesResult addIpRoutes(AddIpRoutesRequest addIpRoutesRequest);
+
+    /**
+     * <p>
      * Adds or overwrites one or more tags for the specified Amazon Directory
      * Services directory. Each directory can have a maximum of 10 tags. Each
-     * tag consists of a key and optional value. Tag keys must be unique per
+     * tag consists of a key and optional value. Tag keys must be unique to each
      * resource.
      * </p>
      * 
@@ -796,6 +827,27 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Lists the address blocks that you have added to a directory.
+     * </p>
+     * 
+     * @param listIpRoutesRequest
+     * @return Result of the ListIpRoutes operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidNextTokenException
+     *         The <i>NextToken</i> value is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ListIpRoutes
+     */
+    ListIpRoutesResult listIpRoutes(ListIpRoutesRequest listIpRoutesRequest);
+
+    /**
+     * <p>
      * Lists all tags on an Amazon Directory Services directory.
      * </p>
      * 
@@ -843,6 +895,28 @@ public interface AWSDirectoryService {
      */
     RegisterEventTopicResult registerEventTopic(
             RegisterEventTopicRequest registerEventTopicRequest);
+
+    /**
+     * <p>
+     * Removes IP address blocks from a directory.
+     * </p>
+     * 
+     * @param removeIpRoutesRequest
+     * @return Result of the RemoveIpRoutes operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RemoveIpRoutes
+     */
+    RemoveIpRoutesResult removeIpRoutes(
+            RemoveIpRoutesRequest removeIpRoutesRequest);
 
     /**
      * <p>

@@ -90,7 +90,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * Content must be base64-encoded, if MIME requires it.
+     * Must be base64-encoded.
      * </p>
      * </li>
      * </ul>
@@ -228,7 +228,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        Content must be base64-encoded, if MIME requires it.
+     *        Must be base64-encoded.
      *        </p>
      *        </li>
      */
@@ -506,7 +506,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * Content must be base64-encoded, if MIME requires it.
+     * Must be base64-encoded.
      * </p>
      * </li>
      * </ul>
@@ -541,7 +541,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        Content must be base64-encoded, if MIME requires it.
+     *        Must be base64-encoded.
      *        </p>
      *        </li>
      */
@@ -581,7 +581,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * Content must be base64-encoded, if MIME requires it.
+     * Must be base64-encoded.
      * </p>
      * </li>
      * </ul>
@@ -615,7 +615,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         Content must be base64-encoded, if MIME requires it.
+     *         Must be base64-encoded.
      *         </p>
      *         </li>
      */
@@ -655,7 +655,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * Content must be base64-encoded, if MIME requires it.
+     * Must be base64-encoded.
      * </p>
      * </li>
      * </ul>
@@ -690,7 +690,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        Content must be base64-encoded, if MIME requires it.
+     *        Must be base64-encoded.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be

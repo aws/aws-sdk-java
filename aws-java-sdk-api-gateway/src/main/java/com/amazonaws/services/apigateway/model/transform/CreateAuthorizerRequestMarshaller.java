@@ -89,6 +89,19 @@ public class CreateAuthorizerRequestMarshaller implements
                 jsonGenerator.writeFieldName("type").writeValue(
                         createAuthorizerRequest.getType());
             }
+
+            java.util.List<String> providerARNsList = createAuthorizerRequest
+                    .getProviderARNs();
+            if (providerARNsList != null) {
+                jsonGenerator.writeFieldName("providerARNs");
+                jsonGenerator.writeStartArray();
+                for (String providerARNsListValue : providerARNsList) {
+                    if (providerARNsListValue != null) {
+                        jsonGenerator.writeValue(providerARNsListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
             if (createAuthorizerRequest.getAuthType() != null) {
                 jsonGenerator.writeFieldName("authType").writeValue(
                         createAuthorizerRequest.getAuthType());

@@ -138,9 +138,33 @@ public class UserPoolTypeJsonMarshaller {
                 jsonGenerator.writeFieldName("MfaConfiguration").writeValue(
                         userPoolType.getMfaConfiguration());
             }
+            if (userPoolType.getDeviceConfiguration() != null) {
+                jsonGenerator.writeFieldName("DeviceConfiguration");
+                DeviceConfigurationTypeJsonMarshaller.getInstance().marshall(
+                        userPoolType.getDeviceConfiguration(), jsonGenerator);
+            }
             if (userPoolType.getEstimatedNumberOfUsers() != null) {
                 jsonGenerator.writeFieldName("EstimatedNumberOfUsers")
                         .writeValue(userPoolType.getEstimatedNumberOfUsers());
+            }
+            if (userPoolType.getEmailConfiguration() != null) {
+                jsonGenerator.writeFieldName("EmailConfiguration");
+                EmailConfigurationTypeJsonMarshaller.getInstance().marshall(
+                        userPoolType.getEmailConfiguration(), jsonGenerator);
+            }
+            if (userPoolType.getSmsConfiguration() != null) {
+                jsonGenerator.writeFieldName("SmsConfiguration");
+                SmsConfigurationTypeJsonMarshaller.getInstance().marshall(
+                        userPoolType.getSmsConfiguration(), jsonGenerator);
+            }
+            if (userPoolType.getSmsConfigurationFailure() != null) {
+                jsonGenerator.writeFieldName("SmsConfigurationFailure")
+                        .writeValue(userPoolType.getSmsConfigurationFailure());
+            }
+            if (userPoolType.getEmailConfigurationFailure() != null) {
+                jsonGenerator
+                        .writeFieldName("EmailConfigurationFailure")
+                        .writeValue(userPoolType.getEmailConfigurationFailure());
             }
 
             jsonGenerator.writeEndObject();

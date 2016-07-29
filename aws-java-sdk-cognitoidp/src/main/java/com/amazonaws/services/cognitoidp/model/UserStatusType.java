@@ -23,7 +23,8 @@ public enum UserStatusType {
     CONFIRMED("CONFIRMED"),
     ARCHIVED("ARCHIVED"),
     COMPROMISED("COMPROMISED"),
-    UNKNOWN("UNKNOWN");
+    UNKNOWN("UNKNOWN"),
+    RESET_REQUIRED("RESET_REQUIRED");
 
     private String value;
 

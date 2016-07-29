@@ -25,7 +25,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the directory for which you want to retrieve tags.
+     * Identifier (ID) of the directory for which you want to retrieve tags.
      * </p>
      */
     private String resourceId;
@@ -44,11 +44,12 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the directory for which you want to retrieve tags.
+     * Identifier (ID) of the directory for which you want to retrieve tags.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the directory for which you want to retrieve tags.
+     *        Identifier (ID) of the directory for which you want to retrieve
+     *        tags.
      */
 
     public void setResourceId(String resourceId) {
@@ -57,10 +58,11 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the directory for which you want to retrieve tags.
+     * Identifier (ID) of the directory for which you want to retrieve tags.
      * </p>
      * 
-     * @return The ID of the directory for which you want to retrieve tags.
+     * @return Identifier (ID) of the directory for which you want to retrieve
+     *         tags.
      */
 
     public String getResourceId() {
@@ -69,11 +71,12 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the directory for which you want to retrieve tags.
+     * Identifier (ID) of the directory for which you want to retrieve tags.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the directory for which you want to retrieve tags.
+     *        Identifier (ID) of the directory for which you want to retrieve
+     *        tags.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

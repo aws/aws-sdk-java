@@ -15,10 +15,9 @@
 
 package com.amazonaws.codegen.emitters;
 
-import static com.amazonaws.codegen.internal.Constants.FILE_NAME_SUFFIX;
+import static com.amazonaws.codegen.internal.Constants.JAVA_FILE_NAME_SUFFIX;
 import static com.amazonaws.codegen.internal.Utils.closeQuietly;
 
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
@@ -37,8 +36,28 @@ class CodeWriter extends StringWriter {
 
     private final String file;
 
-    public CodeWriter(String dir, String file) throws IOException {
+    /**
+     * Constructor to use for .java files.
+     * @param dir
+     * 		    output directory where the file is to be created.
+     * @param file
+     * 		    name of the file without .java suffix.
+     */
+    public CodeWriter(String dir, String file) {
+        this(dir, file, JAVA_FILE_NAME_SUFFIX);
+    }
 
+    /**
+     * Constructor to use for custom file suffixes.
+     *
+     * @param dir
+     * 		 	output directory where the file is to be created.
+     * @param file
+     * 			name of the file excluding suffix.
+     * @param fileNameSuffix
+     * 			suffix to be appended at the end of file name.
+     */
+    public CodeWriter(String dir, String file, String fileNameSuffix) {
         if (dir == null) {
             throw new IllegalArgumentException(
                     "Output Directory cannot be null.");
@@ -48,8 +67,12 @@ class CodeWriter extends StringWriter {
             throw new IllegalArgumentException("File name cannot be null.");
         }
 
-        if (!(file.endsWith(FILE_NAME_SUFFIX))) {
-            file = file + FILE_NAME_SUFFIX;
+        if (fileNameSuffix == null) {
+            throw new IllegalArgumentException("File name suffix cannot be null.");
+        }
+
+        if (!file.endsWith(fileNameSuffix)) {
+            file = file + fileNameSuffix;
         }
 
         this.dir = dir;

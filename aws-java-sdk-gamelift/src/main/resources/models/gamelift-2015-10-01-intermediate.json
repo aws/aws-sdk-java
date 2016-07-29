@@ -19,14 +19,16 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "gamelift",
     "signingName" : "gamelift",
-    "cborProtocol" : false,
     "xmlProtocol" : false,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonGameLiftClientBuilder",
     "asyncClientBuilderClassName" : "AmazonGameLiftAsyncClientBuilder",
+    "cucumberModuleInjectorClassName" : "AmazonGameLiftModuleInjector",
+    "smokeTestsPackageName" : "com.amazonaws.services.gamelift.smoketests",
     "serviceName" : "Amazon GameLift",
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "cborProtocol" : false,
     "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
@@ -37036,7 +37038,8 @@
     "customSignerProvider" : null,
     "calculateCRC32FromCompressedData" : false,
     "customFileHeader" : null,
-    "convenienceTypeOverloads" : [ ]
+    "convenienceTypeOverloads" : [ ],
+    "skipSmokeTests" : false
   },
   "examples" : {
     "version" : "1.0",

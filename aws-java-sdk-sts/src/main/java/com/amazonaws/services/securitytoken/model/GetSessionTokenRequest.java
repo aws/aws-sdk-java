@@ -48,8 +48,8 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      */
     private String serialNumber;
@@ -157,8 +157,8 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param serialNumber
@@ -174,8 +174,8 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        The format for this parameter, as described by its regex pattern,
      *        is a string of characters consisting of upper- and lower-case
-     *        alphanumeric characters with no spaces. You can also include any
-     *        of the following characters: =,.@-
+     *        alphanumeric characters with no spaces. You can also include
+     *        underscores or any of the following characters: =,.@-
      */
 
     public void setSerialNumber(String serialNumber) {
@@ -196,8 +196,8 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @return The identification number of the MFA device that is associated
@@ -212,8 +212,8 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         The format for this parameter, as described by its regex pattern,
      *         is a string of characters consisting of upper- and lower-case
-     *         alphanumeric characters with no spaces. You can also include any
-     *         of the following characters: =,.@-
+     *         alphanumeric characters with no spaces. You can also include
+     *         underscores or any of the following characters: =,.@-
      */
 
     public String getSerialNumber() {
@@ -234,8 +234,8 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param serialNumber
@@ -251,8 +251,8 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        The format for this parameter, as described by its regex pattern,
      *        is a string of characters consisting of upper- and lower-case
-     *        alphanumeric characters with no spaces. You can also include any
-     *        of the following characters: =,.@-
+     *        alphanumeric characters with no spaces. You can also include
+     *        underscores or any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

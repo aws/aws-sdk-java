@@ -15,8 +15,10 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
+import static com.amazonaws.codegen.internal.Constants.SMOKE_TESTS_DIR_NAME;
 import com.amazonaws.codegen.protocol.ProtocolMetadataProvider;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 public class Metadata {
 
@@ -250,6 +252,20 @@ public class Metadata {
     public Metadata withPackagePath(String packagePath) {
         setPackagePath(packagePath);
         return this;
+    }
+
+    /**
+     * @return The class name for service specific ModuleInjector.
+     */
+    public String getCucumberModuleInjectorClassName() {
+        return getSyncInterface() + "ModuleInjector";
+    }
+
+    /**
+     * @return The package name for the smoke tests.
+     */
+    public String getSmokeTestsPackageName() {
+        return packageName + "." + SMOKE_TESTS_DIR_NAME;
     }
 
     /**

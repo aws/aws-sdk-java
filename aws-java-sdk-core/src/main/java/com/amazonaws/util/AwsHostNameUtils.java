@@ -171,8 +171,7 @@ public class AwsHostNameUtils {
         InternalConfig internConfig = InternalConfig.Factory.getInternalConfig();
 
         for (HostRegexToRegionMapping mapping : internConfig.getHostRegexToRegionMappings()) {
-            String hostNameRegex = mapping.getHostNameRegex();
-            if (host.matches(hostNameRegex)) {
+            if (mapping.isHostNameMatching(host)) {
                 return mapping.getRegionName();
             }
         }

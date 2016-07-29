@@ -19,14 +19,16 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "route53domains",
     "signingName" : "route53domains",
-    "cborProtocol" : false,
     "xmlProtocol" : false,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonRoute53DomainsClientBuilder",
     "asyncClientBuilderClassName" : "AmazonRoute53DomainsAsyncClientBuilder",
+    "cucumberModuleInjectorClassName" : "AmazonRoute53DomainsModuleInjector",
+    "smokeTestsPackageName" : "com.amazonaws.services.route53domains.smoketests",
     "serviceName" : "Amazon Route 53 Domains",
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "cborProtocol" : false,
     "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
@@ -18599,7 +18601,8 @@
     "customSignerProvider" : null,
     "calculateCRC32FromCompressedData" : false,
     "customFileHeader" : null,
-    "convenienceTypeOverloads" : [ ]
+    "convenienceTypeOverloads" : [ ],
+    "skipSmokeTests" : false
   },
   "examples" : {
     "version" : "1.0",

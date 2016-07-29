@@ -58,6 +58,8 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
 
     private java.util.Map<String, java.util.List<String>> authorization;
 
+    private java.util.Map<String, String> claims;
+
     /**
      * <p>
      * The HTTP status code that the client would have received. Value is 0 if
@@ -324,6 +326,55 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.Map<String, String> getClaims() {
+        return claims;
+    }
+
+    /**
+     * @param claims
+     */
+
+    public void setClaims(java.util.Map<String, String> claims) {
+        this.claims = claims;
+    }
+
+    /**
+     * @param claims
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public TestInvokeAuthorizerResult withClaims(
+            java.util.Map<String, String> claims) {
+        setClaims(claims);
+        return this;
+    }
+
+    public TestInvokeAuthorizerResult addClaimsEntry(String key, String value) {
+        if (null == this.claims) {
+            this.claims = new java.util.HashMap<String, String>();
+        }
+        if (this.claims.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys ("
+                    + key.toString() + ") are provided.");
+        this.claims.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Claims. &lt;p> Returns a reference to
+     * this object so that method calls can be chained together.
+     */
+
+    public TestInvokeAuthorizerResult clearClaimsEntries() {
+        this.claims = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -346,7 +397,9 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
         if (getPolicy() != null)
             sb.append("Policy: " + getPolicy() + ",");
         if (getAuthorization() != null)
-            sb.append("Authorization: " + getAuthorization());
+            sb.append("Authorization: " + getAuthorization() + ",");
+        if (getClaims() != null)
+            sb.append("Claims: " + getClaims());
         sb.append("}");
         return sb.toString();
     }
@@ -391,6 +444,11 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
         if (other.getAuthorization() != null
                 && other.getAuthorization().equals(this.getAuthorization()) == false)
             return false;
+        if (other.getClaims() == null ^ this.getClaims() == null)
+            return false;
+        if (other.getClaims() != null
+                && other.getClaims().equals(this.getClaims()) == false)
+            return false;
         return true;
     }
 
@@ -416,6 +474,8 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
                 * hashCode
                 + ((getAuthorization() == null) ? 0 : getAuthorization()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getClaims() == null) ? 0 : getClaims().hashCode());
         return hashCode;
     }
 

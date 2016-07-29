@@ -73,7 +73,30 @@ public class AbstractAWSCognitoIdentityProvider implements
     }
 
     @Override
+    public AdminForgetDeviceResult adminForgetDevice(
+            AdminForgetDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AdminGetDeviceResult adminGetDevice(AdminGetDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AdminGetUserResult adminGetUser(AdminGetUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AdminInitiateAuthResult adminInitiateAuth(
+            AdminInitiateAuthRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AdminListDevicesResult adminListDevices(
+            AdminListDevicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,8 +107,20 @@ public class AbstractAWSCognitoIdentityProvider implements
     }
 
     @Override
+    public AdminRespondToAuthChallengeResult adminRespondToAuthChallenge(
+            AdminRespondToAuthChallengeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AdminSetUserSettingsResult adminSetUserSettings(
             AdminSetUserSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AdminUpdateDeviceStatusResult adminUpdateDeviceStatus(
+            AdminUpdateDeviceStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -96,7 +131,18 @@ public class AbstractAWSCognitoIdentityProvider implements
     }
 
     @Override
+    public AdminUserGlobalSignOutResult adminUserGlobalSignOut(
+            AdminUserGlobalSignOutRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ChangePasswordResult changePassword(ChangePasswordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ConfirmDeviceResult confirmDevice(ConfirmDeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -157,7 +203,17 @@ public class AbstractAWSCognitoIdentityProvider implements
     }
 
     @Override
+    public ForgetDeviceResult forgetDevice(ForgetDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ForgotPasswordResult forgotPassword(ForgotPasswordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDeviceResult getDevice(GetDeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -169,6 +225,21 @@ public class AbstractAWSCognitoIdentityProvider implements
     @Override
     public GetUserAttributeVerificationCodeResult getUserAttributeVerificationCode(
             GetUserAttributeVerificationCodeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GlobalSignOutResult globalSignOut(GlobalSignOutRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public InitiateAuthResult initiateAuth(InitiateAuthRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDevicesResult listDevices(ListDevicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -195,12 +266,24 @@ public class AbstractAWSCognitoIdentityProvider implements
     }
 
     @Override
+    public RespondToAuthChallengeResult respondToAuthChallenge(
+            RespondToAuthChallengeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SetUserSettingsResult setUserSettings(SetUserSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public SignUpResult signUp(SignUpRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDeviceStatusResult updateDeviceStatus(
+            UpdateDeviceStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -32,7 +32,9 @@ public class Snapshot implements Serializable, Cloneable {
     private String snapshotId;
     /**
      * <p>
-     * The ID of the volume that was used to create the snapshot.
+     * The ID of the volume that was used to create the snapshot. Snapshots
+     * created by the <a>CopySnapshot</a> action have an arbitrary volume ID
+     * that should not be used for any purpose.
      * </p>
      */
     private String volumeId;
@@ -171,11 +173,15 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the volume that was used to create the snapshot.
+     * The ID of the volume that was used to create the snapshot. Snapshots
+     * created by the <a>CopySnapshot</a> action have an arbitrary volume ID
+     * that should not be used for any purpose.
      * </p>
      * 
      * @param volumeId
      *        The ID of the volume that was used to create the snapshot.
+     *        Snapshots created by the <a>CopySnapshot</a> action have an
+     *        arbitrary volume ID that should not be used for any purpose.
      */
 
     public void setVolumeId(String volumeId) {
@@ -184,10 +190,14 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the volume that was used to create the snapshot.
+     * The ID of the volume that was used to create the snapshot. Snapshots
+     * created by the <a>CopySnapshot</a> action have an arbitrary volume ID
+     * that should not be used for any purpose.
      * </p>
      * 
      * @return The ID of the volume that was used to create the snapshot.
+     *         Snapshots created by the <a>CopySnapshot</a> action have an
+     *         arbitrary volume ID that should not be used for any purpose.
      */
 
     public String getVolumeId() {
@@ -196,11 +206,15 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the volume that was used to create the snapshot.
+     * The ID of the volume that was used to create the snapshot. Snapshots
+     * created by the <a>CopySnapshot</a> action have an arbitrary volume ID
+     * that should not be used for any purpose.
      * </p>
      * 
      * @param volumeId
      *        The ID of the volume that was used to create the snapshot.
+     *        Snapshots created by the <a>CopySnapshot</a> action have an
+     *        arbitrary volume ID that should not be used for any purpose.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

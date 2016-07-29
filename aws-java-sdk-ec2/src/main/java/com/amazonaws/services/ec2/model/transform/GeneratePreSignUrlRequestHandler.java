@@ -131,7 +131,7 @@ public class GeneratePreSignUrlRequestHandler extends CredentialsRequestHandler 
 
         final Region region = RegionUtils.getRegion(regionName);
 
-        if (region == null || !region.isServiceSupported(serviceName)) {
+        if (region == null) {
             throw new AmazonClientException("{" + serviceName + ", " + regionName + "} was not "
                     + "found in region metadata. Update to latest version of SDK and try again.");
         }

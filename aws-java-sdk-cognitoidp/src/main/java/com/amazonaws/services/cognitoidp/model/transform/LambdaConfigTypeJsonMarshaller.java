@@ -65,6 +65,20 @@ public class LambdaConfigTypeJsonMarshaller {
                 jsonGenerator.writeFieldName("PostAuthentication").writeValue(
                         lambdaConfigType.getPostAuthentication());
             }
+            if (lambdaConfigType.getDefineAuthChallenge() != null) {
+                jsonGenerator.writeFieldName("DefineAuthChallenge").writeValue(
+                        lambdaConfigType.getDefineAuthChallenge());
+            }
+            if (lambdaConfigType.getCreateAuthChallenge() != null) {
+                jsonGenerator.writeFieldName("CreateAuthChallenge").writeValue(
+                        lambdaConfigType.getCreateAuthChallenge());
+            }
+            if (lambdaConfigType.getVerifyAuthChallengeResponse() != null) {
+                jsonGenerator.writeFieldName("VerifyAuthChallengeResponse")
+                        .writeValue(
+                                lambdaConfigType
+                                        .getVerifyAuthChallengeResponse());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

@@ -53,7 +53,11 @@ import com.amazonaws.services.cognitoidp.model.transform.*;
  * </p>
  * <p>
  * This API reference provides information about user pools in Amazon Cognito
- * Identity, which is a new capability that is available as a beta.
+ * Identity.
+ * </p>
+ * <p>
+ * For more information, see <a href="https://aws.amazon.com/cognito/">Amazon
+ * Cognito</a>.
  * </p>
  */
 @ThreadSafe
@@ -78,6 +82,12 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "PasswordResetRequiredException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.PasswordResetRequiredException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
@@ -109,14 +119,32 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
+                                            "InvalidSmsRoleTrustRelationshipException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.InvalidSmsRoleTrustRelationshipException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
                                             "TooManyFailedAttemptsException")
                                     .withModeledClass(
                                             com.amazonaws.services.cognitoidp.model.TooManyFailedAttemptsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidSmsRoleAccessPolicyException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.InvalidSmsRoleAccessPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("UsernameExistsException")
                                     .withModeledClass(
                                             com.amazonaws.services.cognitoidp.model.UsernameExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "CodeDeliveryFailureException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.CodeDeliveryFailureException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ExpiredCodeException")
@@ -129,9 +157,25 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                                             com.amazonaws.services.cognitoidp.model.InternalErrorException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidEmailRoleAccessPolicyException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.InvalidEmailRoleAccessPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("LimitExceededException")
                                     .withModeledClass(
                                             com.amazonaws.services.cognitoidp.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UserNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.UserNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("MFAMethodNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.MFAMethodNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidPasswordException")
@@ -152,6 +196,17 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                                     .withErrorCode("NotAuthorizedException")
                                     .withModeledClass(
                                             com.amazonaws.services.cognitoidp.model.NotAuthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UserNotConfirmedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.UserNotConfirmedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidUserPoolConfigurationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cognitoidp.model.InvalidUserPoolConfigurationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("TooManyRequestsException")
@@ -372,6 +427,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -454,6 +511,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
      * @sample AWSCognitoIdentityProvider.AdminConfirmSignUp
      */
     @Override
@@ -510,6 +569,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -572,6 +633,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -631,6 +694,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -690,6 +755,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -734,6 +801,135 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * Forgets the device, as an administrator.
+     * </p>
+     * 
+     * @param adminForgetDeviceRequest
+     *        Sends the forgot device request, as an administrator.
+     * @return Result of the AdminForgetDevice operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is
+     *         invalid.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @sample AWSCognitoIdentityProvider.AdminForgetDevice
+     */
+    @Override
+    public AdminForgetDeviceResult adminForgetDevice(
+            AdminForgetDeviceRequest adminForgetDeviceRequest) {
+        ExecutionContext executionContext = createExecutionContext(adminForgetDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminForgetDeviceRequest> request = null;
+        Response<AdminForgetDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminForgetDeviceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(adminForgetDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdminForgetDeviceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AdminForgetDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the device, as an administrator.
+     * </p>
+     * 
+     * @param adminGetDeviceRequest
+     *        Represents the request to get the device, as an administrator.
+     * @return Result of the AdminGetDevice operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is
+     *         invalid.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @sample AWSCognitoIdentityProvider.AdminGetDevice
+     */
+    @Override
+    public AdminGetDeviceResult adminGetDevice(
+            AdminGetDeviceRequest adminGetDeviceRequest) {
+        ExecutionContext executionContext = createExecutionContext(adminGetDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminGetDeviceRequest> request = null;
+        Response<AdminGetDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminGetDeviceRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(adminGetDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdminGetDeviceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AdminGetDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets the specified user by user name in a user pool as an administrator.
      * Works on any user.
      * </p>
@@ -751,6 +947,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -782,6 +980,158 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new AdminGetUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Initiates the authentication flow, as an administrator.
+     * </p>
+     * 
+     * @param adminInitiateAuthRequest
+     *        Initiates the authorization request, as an administrator.
+     * @return Result of the AdminInitiateAuth operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @throws UnexpectedLambdaException
+     *         This exception gets thrown when the Amazon Cognito service
+     *         encounters an unexpected exception with the AWS Lambda service.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is
+     *         invalid.
+     * @throws UserLambdaValidationException
+     *         This exception gets thrown when the Amazon Cognito service
+     *         encounters a user validation exception with the AWS Lambda
+     *         service.
+     * @throws InvalidLambdaResponseException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid AWS Lambda response.
+     * @throws MFAMethodNotFoundException
+     *         This exception is thrown when Amazon Cognito cannot find a
+     *         multi-factor authentication (MFA) method.
+     * @throws InvalidSmsRoleAccessPolicyException
+     *         This exception is returned when the role provided for SMS
+     *         configuration does not have permission to publish using Amazon
+     *         SNS.
+     * @throws InvalidSmsRoleTrustRelationshipException
+     *         This exception is thrown when the trust relationship is invalid
+     *         for the role provided for SMS configuration. This can happen if
+     *         you do not trust <b>cognito-idp.amazonaws.com</b> or the external
+     *         ID provided in the role does not match what is provided in the
+     *         SMS configuration for the user pool.
+     * @sample AWSCognitoIdentityProvider.AdminInitiateAuth
+     */
+    @Override
+    public AdminInitiateAuthResult adminInitiateAuth(
+            AdminInitiateAuthRequest adminInitiateAuthRequest) {
+        ExecutionContext executionContext = createExecutionContext(adminInitiateAuthRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminInitiateAuthRequest> request = null;
+        Response<AdminInitiateAuthResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminInitiateAuthRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(adminInitiateAuthRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdminInitiateAuthResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AdminInitiateAuthResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists devices, as an administrator.
+     * </p>
+     * 
+     * @param adminListDevicesRequest
+     *        Represents the request to list devices, as an administrator.
+     * @return Result of the AdminListDevices operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is
+     *         invalid.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @sample AWSCognitoIdentityProvider.AdminListDevices
+     */
+    @Override
+    public AdminListDevicesResult adminListDevices(
+            AdminListDevicesRequest adminListDevicesRequest) {
+        ExecutionContext executionContext = createExecutionContext(adminListDevicesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminListDevicesRequest> request = null;
+        Response<AdminListDevicesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminListDevicesRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(adminListDevicesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdminListDevicesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AdminListDevicesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -871,6 +1221,105 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * Responds to an authentication challenge, as an administrator.
+     * </p>
+     * 
+     * @param adminRespondToAuthChallengeRequest
+     *        The request to respond to the authentication challenge, as an
+     *        administrator.
+     * @return Result of the AdminRespondToAuthChallenge operation returned by
+     *         the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws CodeMismatchException
+     *         This exception is thrown if the provided code does not match what
+     *         the server was expecting.
+     * @throws ExpiredCodeException
+     *         This exception is thrown if a code has expired.
+     * @throws UnexpectedLambdaException
+     *         This exception gets thrown when the Amazon Cognito service
+     *         encounters an unexpected exception with the AWS Lambda service.
+     * @throws UserLambdaValidationException
+     *         This exception gets thrown when the Amazon Cognito service
+     *         encounters a user validation exception with the AWS Lambda
+     *         service.
+     * @throws InvalidLambdaResponseException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid AWS Lambda response.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is
+     *         invalid.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @throws MFAMethodNotFoundException
+     *         This exception is thrown when Amazon Cognito cannot find a
+     *         multi-factor authentication (MFA) method.
+     * @throws InvalidSmsRoleAccessPolicyException
+     *         This exception is returned when the role provided for SMS
+     *         configuration does not have permission to publish using Amazon
+     *         SNS.
+     * @throws InvalidSmsRoleTrustRelationshipException
+     *         This exception is thrown when the trust relationship is invalid
+     *         for the role provided for SMS configuration. This can happen if
+     *         you do not trust <b>cognito-idp.amazonaws.com</b> or the external
+     *         ID provided in the role does not match what is provided in the
+     *         SMS configuration for the user pool.
+     * @throws AliasExistsException
+     *         This exception is thrown when a user tries to confirm the account
+     *         with an email or phone number that has already been supplied as
+     *         an alias from a different account. This exception tells user that
+     *         an account with this email or phone already exists.
+     * @sample AWSCognitoIdentityProvider.AdminRespondToAuthChallenge
+     */
+    @Override
+    public AdminRespondToAuthChallengeResult adminRespondToAuthChallenge(
+            AdminRespondToAuthChallengeRequest adminRespondToAuthChallengeRequest) {
+        ExecutionContext executionContext = createExecutionContext(adminRespondToAuthChallengeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminRespondToAuthChallengeRequest> request = null;
+        Response<AdminRespondToAuthChallengeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminRespondToAuthChallengeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(adminRespondToAuthChallengeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdminRespondToAuthChallengeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new AdminRespondToAuthChallengeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sets all the user settings for a specified user name. Works on any user.
      * </p>
      * 
@@ -886,6 +1335,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      *         encounters an invalid parameter.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
      * @sample AWSCognitoIdentityProvider.AdminSetUserSettings
      */
     @Override
@@ -915,6 +1367,71 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new AdminSetUserSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the device status as an administrator.
+     * </p>
+     * 
+     * @param adminUpdateDeviceStatusRequest
+     *        The request to update the device status, as an administrator.
+     * @return Result of the AdminUpdateDeviceStatus operation returned by the
+     *         service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is
+     *         invalid.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @sample AWSCognitoIdentityProvider.AdminUpdateDeviceStatus
+     */
+    @Override
+    public AdminUpdateDeviceStatusResult adminUpdateDeviceStatus(
+            AdminUpdateDeviceStatusRequest adminUpdateDeviceStatusRequest) {
+        ExecutionContext executionContext = createExecutionContext(adminUpdateDeviceStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminUpdateDeviceStatusRequest> request = null;
+        Response<AdminUpdateDeviceStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminUpdateDeviceStatusRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(adminUpdateDeviceStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdminUpdateDeviceStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AdminUpdateDeviceStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -960,6 +1477,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -1004,6 +1523,68 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * Signs out users from all devices, as an administrator.
+     * </p>
+     * 
+     * @param adminUserGlobalSignOutRequest
+     *        The request to sign out of all devices, as an administrator.
+     * @return Result of the AdminUserGlobalSignOut operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @sample AWSCognitoIdentityProvider.AdminUserGlobalSignOut
+     */
+    @Override
+    public AdminUserGlobalSignOutResult adminUserGlobalSignOut(
+            AdminUserGlobalSignOutRequest adminUserGlobalSignOutRequest) {
+        ExecutionContext executionContext = createExecutionContext(adminUserGlobalSignOutRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminUserGlobalSignOutRequest> request = null;
+        Response<AdminUserGlobalSignOutResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminUserGlobalSignOutRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(adminUserGlobalSignOutRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdminUserGlobalSignOutResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AdminUserGlobalSignOutResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Changes the password for a specified user in a user pool.
      * </p>
      * 
@@ -1024,6 +1605,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws LimitExceededException
+     *         This exception is thrown when a user exceeds the limit for a
+     *         requested AWS resource.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -1058,6 +1642,79 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                             new ChangePasswordResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Confirms tracking of the device. This API call is the call that beings
+     * device tracking.
+     * </p>
+     * 
+     * @param confirmDeviceRequest
+     *        Confirms the device request.
+     * @return Result of the ConfirmDevice operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InvalidPasswordException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid password.
+     * @throws InvalidLambdaResponseException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid AWS Lambda response.
+     * @throws UsernameExistsException
+     *         This exception is thrown when Amazon Cognito encounters a user
+     *         name that already exists in the user pool.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is
+     *         invalid.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @sample AWSCognitoIdentityProvider.ConfirmDevice
+     */
+    @Override
+    public ConfirmDeviceResult confirmDevice(
+            ConfirmDeviceRequest confirmDeviceRequest) {
+        ExecutionContext executionContext = createExecutionContext(confirmDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ConfirmDeviceRequest> request = null;
+        Response<ConfirmDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ConfirmDeviceRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(confirmDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ConfirmDeviceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ConfirmDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1115,6 +1772,11 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
      * @sample AWSCognitoIdentityProvider.ConfirmForgotPassword
      */
     @Override
@@ -1204,6 +1866,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @sample AWSCognitoIdentityProvider.ConfirmSignUp
      */
     @Override
@@ -1258,12 +1922,27 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
-     * @throws InternalErrorException
-     *         This exception is thrown when Amazon Cognito encounters an
-     *         internal error.
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a
      *         requested AWS resource.
+     * @throws InvalidSmsRoleAccessPolicyException
+     *         This exception is returned when the role provided for SMS
+     *         configuration does not have permission to publish using Amazon
+     *         SNS.
+     * @throws InvalidSmsRoleTrustRelationshipException
+     *         This exception is thrown when the trust relationship is invalid
+     *         for the role provided for SMS configuration. This can happen if
+     *         you do not trust <b>cognito-idp.amazonaws.com</b> or the external
+     *         ID provided in the role does not match what is provided in the
+     *         SMS configuration for the user pool.
+     * @throws InvalidEmailRoleAccessPolicyException
+     *         This exception is thrown when Amazon Cognito is not allowed to
+     *         use your email identity. HTTP status code: 400.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
      * @sample AWSCognitoIdentityProvider.CreateUserPool
      */
     @Override
@@ -1324,6 +2003,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a
      *         requested AWS resource.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -1506,6 +2187,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -1566,6 +2249,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -1626,6 +2311,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -1687,6 +2374,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -1719,6 +2408,69 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new DescribeUserPoolClientResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Forgets the specified device.
+     * </p>
+     * 
+     * @param forgetDeviceRequest
+     *        Represents the request to forget the device.
+     * @return Result of the ForgetDevice operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is
+     *         invalid.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @sample AWSCognitoIdentityProvider.ForgetDevice
+     */
+    @Override
+    public ForgetDeviceResult forgetDevice(
+            ForgetDeviceRequest forgetDeviceRequest) {
+        ExecutionContext executionContext = createExecutionContext(forgetDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ForgetDeviceRequest> request = null;
+        Response<ForgetDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ForgetDeviceRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(forgetDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ForgetDeviceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ForgetDeviceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1764,6 +2516,27 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
+     * @throws InvalidSmsRoleAccessPolicyException
+     *         This exception is returned when the role provided for SMS
+     *         configuration does not have permission to publish using Amazon
+     *         SNS.
+     * @throws InvalidSmsRoleTrustRelationshipException
+     *         This exception is thrown when the trust relationship is invalid
+     *         for the role provided for SMS configuration. This can happen if
+     *         you do not trust <b>cognito-idp.amazonaws.com</b> or the external
+     *         ID provided in the role does not match what is provided in the
+     *         SMS configuration for the user pool.
+     * @throws InvalidEmailRoleAccessPolicyException
+     *         This exception is thrown when Amazon Cognito is not allowed to
+     *         use your email identity. HTTP status code: 400.
+     * @throws CodeDeliveryFailureException
+     *         This exception is thrown when a verification code fails to
+     *         deliver successfully.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
      * @sample AWSCognitoIdentityProvider.ForgotPassword
      */
     @Override
@@ -1795,6 +2568,68 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                             new ForgotPasswordResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the device.
+     * </p>
+     * 
+     * @param getDeviceRequest
+     *        Represents the request to get the device.
+     * @return Result of the GetDevice operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is
+     *         invalid.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @sample AWSCognitoIdentityProvider.GetDevice
+     */
+    @Override
+    public GetDeviceResult getDevice(GetDeviceRequest getDeviceRequest) {
+        ExecutionContext executionContext = createExecutionContext(getDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDeviceRequest> request = null;
+        Response<GetDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDeviceRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDeviceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -1898,6 +2733,25 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
+     * @throws InvalidSmsRoleAccessPolicyException
+     *         This exception is returned when the role provided for SMS
+     *         configuration does not have permission to publish using Amazon
+     *         SNS.
+     * @throws InvalidSmsRoleTrustRelationshipException
+     *         This exception is thrown when the trust relationship is invalid
+     *         for the role provided for SMS configuration. This can happen if
+     *         you do not trust <b>cognito-idp.amazonaws.com</b> or the external
+     *         ID provided in the role does not match what is provided in the
+     *         SMS configuration for the user pool.
+     * @throws InvalidEmailRoleAccessPolicyException
+     *         This exception is thrown when Amazon Cognito is not allowed to
+     *         use your email identity. HTTP status code: 400.
+     * @throws CodeDeliveryFailureException
+     *         This exception is thrown when a verification code fails to
+     *         deliver successfully.
+     * @throws LimitExceededException
+     *         This exception is thrown when a user exceeds the limit for a
+     *         requested AWS resource.
      * @sample AWSCognitoIdentityProvider.GetUserAttributeVerificationCode
      */
     @Override
@@ -1941,6 +2795,208 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * Signs out users from all devices.
+     * </p>
+     * 
+     * @param globalSignOutRequest
+     *        Represents the request to sign out all devices.
+     * @return Result of the GlobalSignOut operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @sample AWSCognitoIdentityProvider.GlobalSignOut
+     */
+    @Override
+    public GlobalSignOutResult globalSignOut(
+            GlobalSignOutRequest globalSignOutRequest) {
+        ExecutionContext executionContext = createExecutionContext(globalSignOutRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GlobalSignOutRequest> request = null;
+        Response<GlobalSignOutResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GlobalSignOutRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(globalSignOutRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GlobalSignOutResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GlobalSignOutResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Initiates the authentication flow.
+     * </p>
+     * 
+     * @param initiateAuthRequest
+     *        Initiates the authentication request.
+     * @return Result of the InitiateAuth operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @throws UnexpectedLambdaException
+     *         This exception gets thrown when the Amazon Cognito service
+     *         encounters an unexpected exception with the AWS Lambda service.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is
+     *         invalid.
+     * @throws UserLambdaValidationException
+     *         This exception gets thrown when the Amazon Cognito service
+     *         encounters a user validation exception with the AWS Lambda
+     *         service.
+     * @throws InvalidLambdaResponseException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid AWS Lambda response.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
+     * @sample AWSCognitoIdentityProvider.InitiateAuth
+     */
+    @Override
+    public InitiateAuthResult initiateAuth(
+            InitiateAuthRequest initiateAuthRequest) {
+        ExecutionContext executionContext = createExecutionContext(initiateAuthRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<InitiateAuthRequest> request = null;
+        Response<InitiateAuthResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new InitiateAuthRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(initiateAuthRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<InitiateAuthResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new InitiateAuthResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the devices.
+     * </p>
+     * 
+     * @param listDevicesRequest
+     *        Represents the request to list the devices.
+     * @return Result of the ListDevices operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is
+     *         invalid.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @sample AWSCognitoIdentityProvider.ListDevices
+     */
+    @Override
+    public ListDevicesResult listDevices(ListDevicesRequest listDevicesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listDevicesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDevicesRequest> request = null;
+        Response<ListDevicesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDevicesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listDevicesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDevicesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListDevicesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the clients that have been created for the specified user pool.
      * </p>
      * 
@@ -1957,6 +3013,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -2013,6 +3071,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -2071,6 +3131,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -2148,6 +3210,24 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
+     * @throws InvalidSmsRoleAccessPolicyException
+     *         This exception is returned when the role provided for SMS
+     *         configuration does not have permission to publish using Amazon
+     *         SNS.
+     * @throws InvalidSmsRoleTrustRelationshipException
+     *         This exception is thrown when the trust relationship is invalid
+     *         for the role provided for SMS configuration. This can happen if
+     *         you do not trust <b>cognito-idp.amazonaws.com</b> or the external
+     *         ID provided in the role does not match what is provided in the
+     *         SMS configuration for the user pool.
+     * @throws InvalidEmailRoleAccessPolicyException
+     *         This exception is thrown when Amazon Cognito is not allowed to
+     *         use your email identity. HTTP status code: 400.
+     * @throws CodeDeliveryFailureException
+     *         This exception is thrown when a verification code fails to
+     *         deliver successfully.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
      * @sample AWSCognitoIdentityProvider.ResendConfirmationCode
      */
     @Override
@@ -2179,6 +3259,111 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                             new ResendConfirmationCodeResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Responds to the authentication challenge.
+     * </p>
+     * 
+     * @param respondToAuthChallengeRequest
+     *        The request to respond to an authentication challenge.
+     * @return Result of the RespondToAuthChallenge operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws CodeMismatchException
+     *         This exception is thrown if the provided code does not match what
+     *         the server was expecting.
+     * @throws ExpiredCodeException
+     *         This exception is thrown if a code has expired.
+     * @throws UnexpectedLambdaException
+     *         This exception gets thrown when the Amazon Cognito service
+     *         encounters an unexpected exception with the AWS Lambda service.
+     * @throws UserLambdaValidationException
+     *         This exception gets thrown when the Amazon Cognito service
+     *         encounters a user validation exception with the AWS Lambda
+     *         service.
+     * @throws InvalidLambdaResponseException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid AWS Lambda response.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is
+     *         invalid.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @throws MFAMethodNotFoundException
+     *         This exception is thrown when Amazon Cognito cannot find a
+     *         multi-factor authentication (MFA) method.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed
+     *         successfully.
+     * @throws InvalidSmsRoleAccessPolicyException
+     *         This exception is returned when the role provided for SMS
+     *         configuration does not have permission to publish using Amazon
+     *         SNS.
+     * @throws InvalidSmsRoleTrustRelationshipException
+     *         This exception is thrown when the trust relationship is invalid
+     *         for the role provided for SMS configuration. This can happen if
+     *         you do not trust <b>cognito-idp.amazonaws.com</b> or the external
+     *         ID provided in the role does not match what is provided in the
+     *         SMS configuration for the user pool.
+     * @throws AliasExistsException
+     *         This exception is thrown when a user tries to confirm the account
+     *         with an email or phone number that has already been supplied as
+     *         an alias from a different account. This exception tells user that
+     *         an account with this email or phone already exists.
+     * @sample AWSCognitoIdentityProvider.RespondToAuthChallenge
+     */
+    @Override
+    public RespondToAuthChallengeResult respondToAuthChallenge(
+            RespondToAuthChallengeRequest respondToAuthChallengeRequest) {
+        ExecutionContext executionContext = createExecutionContext(respondToAuthChallengeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RespondToAuthChallengeRequest> request = null;
+        Response<RespondToAuthChallengeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RespondToAuthChallengeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(respondToAuthChallengeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RespondToAuthChallengeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RespondToAuthChallengeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -2285,6 +3470,22 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
+     * @throws InvalidSmsRoleAccessPolicyException
+     *         This exception is returned when the role provided for SMS
+     *         configuration does not have permission to publish using Amazon
+     *         SNS.
+     * @throws InvalidSmsRoleTrustRelationshipException
+     *         This exception is thrown when the trust relationship is invalid
+     *         for the role provided for SMS configuration. This can happen if
+     *         you do not trust <b>cognito-idp.amazonaws.com</b> or the external
+     *         ID provided in the role does not match what is provided in the
+     *         SMS configuration for the user pool.
+     * @throws InvalidEmailRoleAccessPolicyException
+     *         This exception is thrown when Amazon Cognito is not allowed to
+     *         use your email identity. HTTP status code: 400.
+     * @throws CodeDeliveryFailureException
+     *         This exception is thrown when a verification code fails to
+     *         deliver successfully.
      * @sample AWSCognitoIdentityProvider.SignUp
      */
     @Override
@@ -2314,6 +3515,71 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
                             new SignUpResultJsonUnmarshaller());
             response = anonymousInvoke(request, responseHandler,
                     executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the device status.
+     * </p>
+     * 
+     * @param updateDeviceStatusRequest
+     *        Represents the request to update the device status.
+     * @return Result of the UpdateDeviceStatus operation returned by the
+     *         service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service
+     *         encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot
+     *         find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is
+     *         invalid.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many
+     *         requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an
+     *         internal error.
+     * @sample AWSCognitoIdentityProvider.UpdateDeviceStatus
+     */
+    @Override
+    public UpdateDeviceStatusResult updateDeviceStatus(
+            UpdateDeviceStatusRequest updateDeviceStatusRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateDeviceStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDeviceStatusRequest> request = null;
+        Response<UpdateDeviceStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDeviceStatusRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateDeviceStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDeviceStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateDeviceStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -2366,6 +3632,22 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
+     * @throws InvalidSmsRoleAccessPolicyException
+     *         This exception is returned when the role provided for SMS
+     *         configuration does not have permission to publish using Amazon
+     *         SNS.
+     * @throws InvalidSmsRoleTrustRelationshipException
+     *         This exception is thrown when the trust relationship is invalid
+     *         for the role provided for SMS configuration. This can happen if
+     *         you do not trust <b>cognito-idp.amazonaws.com</b> or the external
+     *         ID provided in the role does not match what is provided in the
+     *         SMS configuration for the user pool.
+     * @throws InvalidEmailRoleAccessPolicyException
+     *         This exception is thrown when Amazon Cognito is not allowed to
+     *         use your email identity. HTTP status code: 400.
+     * @throws CodeDeliveryFailureException
+     *         This exception is thrown when a verification code fails to
+     *         deliver successfully.
      * @sample AWSCognitoIdentityProvider.UpdateUserAttributes
      */
     @Override
@@ -2426,9 +3708,24 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
+     * @throws InvalidSmsRoleAccessPolicyException
+     *         This exception is returned when the role provided for SMS
+     *         configuration does not have permission to publish using Amazon
+     *         SNS.
+     * @throws InvalidSmsRoleTrustRelationshipException
+     *         This exception is thrown when the trust relationship is invalid
+     *         for the role provided for SMS configuration. This can happen if
+     *         you do not trust <b>cognito-idp.amazonaws.com</b> or the external
+     *         ID provided in the role does not match what is provided in the
+     *         SMS configuration for the user pool.
+     * @throws InvalidEmailRoleAccessPolicyException
+     *         This exception is thrown when Amazon Cognito is not allowed to
+     *         use your email identity. HTTP status code: 400.
      * @sample AWSCognitoIdentityProvider.UpdateUserPool
      */
     @Override
@@ -2487,6 +3784,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.
@@ -2554,6 +3853,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient
      * @throws TooManyRequestsException
      *         This exception gets thrown when the user has made too many
      *         requests for a given operation.
+     * @throws LimitExceededException
+     *         This exception is thrown when a user exceeds the limit for a
+     *         requested AWS resource.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an
      *         internal error.

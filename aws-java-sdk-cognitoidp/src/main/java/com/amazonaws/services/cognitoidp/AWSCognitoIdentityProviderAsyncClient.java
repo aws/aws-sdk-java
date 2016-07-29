@@ -31,7 +31,11 @@ import com.amazonaws.annotation.ThreadSafe;
  * </p>
  * <p>
  * This API reference provides information about user pools in Amazon Cognito
- * Identity, which is a new capability that is available as a beta.
+ * Identity.
+ * </p>
+ * <p>
+ * For more information, see <a href="https://aws.amazon.com/cognito/">Amazon
+ * Cognito</a>.
  * </p>
  */
 @ThreadSafe
@@ -489,6 +493,76 @@ public class AWSCognitoIdentityProviderAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<AdminForgetDeviceResult> adminForgetDeviceAsync(
+            AdminForgetDeviceRequest request) {
+
+        return adminForgetDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminForgetDeviceResult> adminForgetDeviceAsync(
+            final AdminForgetDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminForgetDeviceRequest, AdminForgetDeviceResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<AdminForgetDeviceResult>() {
+                    @Override
+                    public AdminForgetDeviceResult call() throws Exception {
+                        AdminForgetDeviceResult result;
+
+                        try {
+                            result = adminForgetDevice(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminGetDeviceResult> adminGetDeviceAsync(
+            AdminGetDeviceRequest request) {
+
+        return adminGetDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminGetDeviceResult> adminGetDeviceAsync(
+            final AdminGetDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminGetDeviceRequest, AdminGetDeviceResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<AdminGetDeviceResult>() {
+                    @Override
+                    public AdminGetDeviceResult call() throws Exception {
+                        AdminGetDeviceResult result;
+
+                        try {
+                            result = adminGetDevice(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<AdminGetUserResult> adminGetUserAsync(
             AdminGetUserRequest request) {
 
@@ -508,6 +582,76 @@ public class AWSCognitoIdentityProviderAsyncClient extends
 
                         try {
                             result = adminGetUser(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminInitiateAuthResult> adminInitiateAuthAsync(
+            AdminInitiateAuthRequest request) {
+
+        return adminInitiateAuthAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminInitiateAuthResult> adminInitiateAuthAsync(
+            final AdminInitiateAuthRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminInitiateAuthRequest, AdminInitiateAuthResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<AdminInitiateAuthResult>() {
+                    @Override
+                    public AdminInitiateAuthResult call() throws Exception {
+                        AdminInitiateAuthResult result;
+
+                        try {
+                            result = adminInitiateAuth(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminListDevicesResult> adminListDevicesAsync(
+            AdminListDevicesRequest request) {
+
+        return adminListDevicesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminListDevicesResult> adminListDevicesAsync(
+            final AdminListDevicesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminListDevicesRequest, AdminListDevicesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<AdminListDevicesResult>() {
+                    @Override
+                    public AdminListDevicesResult call() throws Exception {
+                        AdminListDevicesResult result;
+
+                        try {
+                            result = adminListDevices(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -559,6 +703,42 @@ public class AWSCognitoIdentityProviderAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<AdminRespondToAuthChallengeResult> adminRespondToAuthChallengeAsync(
+            AdminRespondToAuthChallengeRequest request) {
+
+        return adminRespondToAuthChallengeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminRespondToAuthChallengeResult> adminRespondToAuthChallengeAsync(
+            final AdminRespondToAuthChallengeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminRespondToAuthChallengeRequest, AdminRespondToAuthChallengeResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<AdminRespondToAuthChallengeResult>() {
+                    @Override
+                    public AdminRespondToAuthChallengeResult call()
+                            throws Exception {
+                        AdminRespondToAuthChallengeResult result;
+
+                        try {
+                            result = adminRespondToAuthChallenge(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<AdminSetUserSettingsResult> adminSetUserSettingsAsync(
             AdminSetUserSettingsRequest request) {
 
@@ -578,6 +758,42 @@ public class AWSCognitoIdentityProviderAsyncClient extends
 
                         try {
                             result = adminSetUserSettings(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminUpdateDeviceStatusResult> adminUpdateDeviceStatusAsync(
+            AdminUpdateDeviceStatusRequest request) {
+
+        return adminUpdateDeviceStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminUpdateDeviceStatusResult> adminUpdateDeviceStatusAsync(
+            final AdminUpdateDeviceStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminUpdateDeviceStatusRequest, AdminUpdateDeviceStatusResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<AdminUpdateDeviceStatusResult>() {
+                    @Override
+                    public AdminUpdateDeviceStatusResult call()
+                            throws Exception {
+                        AdminUpdateDeviceStatusResult result;
+
+                        try {
+                            result = adminUpdateDeviceStatus(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -630,6 +846,41 @@ public class AWSCognitoIdentityProviderAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<AdminUserGlobalSignOutResult> adminUserGlobalSignOutAsync(
+            AdminUserGlobalSignOutRequest request) {
+
+        return adminUserGlobalSignOutAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminUserGlobalSignOutResult> adminUserGlobalSignOutAsync(
+            final AdminUserGlobalSignOutRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminUserGlobalSignOutRequest, AdminUserGlobalSignOutResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<AdminUserGlobalSignOutResult>() {
+                    @Override
+                    public AdminUserGlobalSignOutResult call() throws Exception {
+                        AdminUserGlobalSignOutResult result;
+
+                        try {
+                            result = adminUserGlobalSignOut(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangePasswordResult> changePasswordAsync(
             ChangePasswordRequest request) {
 
@@ -649,6 +900,41 @@ public class AWSCognitoIdentityProviderAsyncClient extends
 
                         try {
                             result = changePassword(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfirmDeviceResult> confirmDeviceAsync(
+            ConfirmDeviceRequest request) {
+
+        return confirmDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfirmDeviceResult> confirmDeviceAsync(
+            final ConfirmDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ConfirmDeviceRequest, ConfirmDeviceResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ConfirmDeviceResult>() {
+                    @Override
+                    public ConfirmDeviceResult call() throws Exception {
+                        ConfirmDeviceResult result;
+
+                        try {
+                            result = confirmDevice(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1015,6 +1301,41 @@ public class AWSCognitoIdentityProviderAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<ForgetDeviceResult> forgetDeviceAsync(
+            ForgetDeviceRequest request) {
+
+        return forgetDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ForgetDeviceResult> forgetDeviceAsync(
+            final ForgetDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ForgetDeviceRequest, ForgetDeviceResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ForgetDeviceResult>() {
+                    @Override
+                    public ForgetDeviceResult call() throws Exception {
+                        ForgetDeviceResult result;
+
+                        try {
+                            result = forgetDevice(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<ForgotPasswordResult> forgotPasswordAsync(
             ForgotPasswordRequest request) {
 
@@ -1034,6 +1355,41 @@ public class AWSCognitoIdentityProviderAsyncClient extends
 
                         try {
                             result = forgotPassword(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(
+            GetDeviceRequest request) {
+
+        return getDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(
+            final GetDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDeviceRequest, GetDeviceResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetDeviceResult>() {
+                    @Override
+                    public GetDeviceResult call() throws Exception {
+                        GetDeviceResult result;
+
+                        try {
+                            result = getDevice(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1105,6 +1461,111 @@ public class AWSCognitoIdentityProviderAsyncClient extends
 
                         try {
                             result = getUserAttributeVerificationCode(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalSignOutResult> globalSignOutAsync(
+            GlobalSignOutRequest request) {
+
+        return globalSignOutAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalSignOutResult> globalSignOutAsync(
+            final GlobalSignOutRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GlobalSignOutRequest, GlobalSignOutResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GlobalSignOutResult>() {
+                    @Override
+                    public GlobalSignOutResult call() throws Exception {
+                        GlobalSignOutResult result;
+
+                        try {
+                            result = globalSignOut(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<InitiateAuthResult> initiateAuthAsync(
+            InitiateAuthRequest request) {
+
+        return initiateAuthAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<InitiateAuthResult> initiateAuthAsync(
+            final InitiateAuthRequest request,
+            final com.amazonaws.handlers.AsyncHandler<InitiateAuthRequest, InitiateAuthResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<InitiateAuthResult>() {
+                    @Override
+                    public InitiateAuthResult call() throws Exception {
+                        InitiateAuthResult result;
+
+                        try {
+                            result = initiateAuth(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(
+            ListDevicesRequest request) {
+
+        return listDevicesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(
+            final ListDevicesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDevicesRequest, ListDevicesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListDevicesResult>() {
+                    @Override
+                    public ListDevicesResult call() throws Exception {
+                        ListDevicesResult result;
+
+                        try {
+                            result = listDevices(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1261,6 +1722,41 @@ public class AWSCognitoIdentityProviderAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<RespondToAuthChallengeResult> respondToAuthChallengeAsync(
+            RespondToAuthChallengeRequest request) {
+
+        return respondToAuthChallengeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RespondToAuthChallengeResult> respondToAuthChallengeAsync(
+            final RespondToAuthChallengeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RespondToAuthChallengeRequest, RespondToAuthChallengeResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<RespondToAuthChallengeResult>() {
+                    @Override
+                    public RespondToAuthChallengeResult call() throws Exception {
+                        RespondToAuthChallengeResult result;
+
+                        try {
+                            result = respondToAuthChallenge(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<SetUserSettingsResult> setUserSettingsAsync(
             SetUserSettingsRequest request) {
 
@@ -1315,6 +1811,41 @@ public class AWSCognitoIdentityProviderAsyncClient extends
 
                         try {
                             result = signUp(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDeviceStatusResult> updateDeviceStatusAsync(
+            UpdateDeviceStatusRequest request) {
+
+        return updateDeviceStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDeviceStatusResult> updateDeviceStatusAsync(
+            final UpdateDeviceStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDeviceStatusRequest, UpdateDeviceStatusResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateDeviceStatusResult>() {
+                    @Override
+                    public UpdateDeviceStatusResult call() throws Exception {
+                        UpdateDeviceStatusResult result;
+
+                        try {
+                            result = updateDeviceStatus(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

@@ -137,6 +137,24 @@ public class CreateUserPoolRequestMarshaller implements
                 jsonGenerator.writeFieldName("MfaConfiguration").writeValue(
                         createUserPoolRequest.getMfaConfiguration());
             }
+            if (createUserPoolRequest.getDeviceConfiguration() != null) {
+                jsonGenerator.writeFieldName("DeviceConfiguration");
+                DeviceConfigurationTypeJsonMarshaller.getInstance().marshall(
+                        createUserPoolRequest.getDeviceConfiguration(),
+                        jsonGenerator);
+            }
+            if (createUserPoolRequest.getEmailConfiguration() != null) {
+                jsonGenerator.writeFieldName("EmailConfiguration");
+                EmailConfigurationTypeJsonMarshaller.getInstance().marshall(
+                        createUserPoolRequest.getEmailConfiguration(),
+                        jsonGenerator);
+            }
+            if (createUserPoolRequest.getSmsConfiguration() != null) {
+                jsonGenerator.writeFieldName("SmsConfiguration");
+                SmsConfigurationTypeJsonMarshaller.getInstance().marshall(
+                        createUserPoolRequest.getSmsConfiguration(),
+                        jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
 

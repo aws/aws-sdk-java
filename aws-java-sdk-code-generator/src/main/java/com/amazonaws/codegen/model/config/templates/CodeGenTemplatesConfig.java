@@ -45,6 +45,10 @@ public class CodeGenTemplatesConfig {
     private TopLevelTemplate exceptionUnmarshaller;
     private TopLevelTemplate policyActionClass;
     private TopLevelTemplate packageInfo;
+    private TopLevelTemplate cucumberModuleInjector = new TopLevelTemplate("/templates/cucumber/ModuleInjector.ftl", null);
+    private TopLevelTemplate cucumberTest = new TopLevelTemplate("/templates/cucumber/RunCucumberTest.ftl", null);
+    private TopLevelTemplate cucumberPropertiesFile = new TopLevelTemplate("/templates/cucumber/cucumberProperties.ftl", null);
+
     private List<ChildTemplate> commonChildTemplates;
     private TopLevelTemplate baseExceptionClass = new TopLevelTemplate(
             "/templates/common/base-exception-class.ftl", null);
@@ -294,5 +298,17 @@ public class CodeGenTemplatesConfig {
 
     public TopLevelTemplate setBaseExceptionClass(TopLevelTemplate baseExceptionClass) {
         return baseExceptionClass;
+    }
+
+    public TopLevelTemplate getCucumberModuleInjector() {
+        return cucumberModuleInjector;
+    }
+
+    public TopLevelTemplate getCucumberTest() {
+        return cucumberTest;
+    }
+
+    public TopLevelTemplate getCucumberPropertiesFile() {
+        return cucumberPropertiesFile;
     }
 }

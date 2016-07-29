@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.22-SNAPSHOT</version>
+  <version>1.11.22</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -124,6 +124,9 @@
       <javax.mail.version>1.4.6</javax.mail.version>
       <jre.version>1.6</jre.version>
       <httpcomponents.httpclient.version>4.5.2</httpcomponents.httpclient.version>
+      <!-- These properties are used by cucumber tests related code -->
+      <cucumber.info.cukes.version>1.2.4</cucumber.info.cukes.version>
+      <cucumber.guice.version>4.0</cucumber.guice.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -184,6 +187,17 @@
             <maxmemory>1024m</maxmemory>
           </configuration>
         </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.19.1</version>
+          <configuration>
+            <excludes>
+              <exclude>**/*CucumberTest.java</exclude>
+            </excludes>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
@@ -226,6 +240,25 @@
         <properties>
           <additionalparam>-Xdoclint:none</additionalparam>
         </properties>
+    </profile>
+    <profile>
+      <id>smoketests</id>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin >
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <version>2.19.1</version>
+              <configuration>
+                <excludes combine.self="override">
+                  <exclude></exclude>
+                </excludes>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
     </profile>
   </profiles>
 </project>

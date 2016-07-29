@@ -19,14 +19,16 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "kms",
     "signingName" : "kms",
-    "cborProtocol" : false,
     "xmlProtocol" : false,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSKMSClientBuilder",
     "asyncClientBuilderClassName" : "AWSKMSAsyncClientBuilder",
+    "cucumberModuleInjectorClassName" : "AWSKMSModuleInjector",
+    "smokeTestsPackageName" : "com.amazonaws.services.kms.smoketests",
     "serviceName" : "KMS",
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "cborProtocol" : false,
     "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
@@ -21765,7 +21767,8 @@
     "customSignerProvider" : null,
     "calculateCRC32FromCompressedData" : false,
     "customFileHeader" : null,
-    "convenienceTypeOverloads" : [ ]
+    "convenienceTypeOverloads" : [ ],
+    "skipSmokeTests" : false
   },
   "examples" : {
     "version" : "1.0",

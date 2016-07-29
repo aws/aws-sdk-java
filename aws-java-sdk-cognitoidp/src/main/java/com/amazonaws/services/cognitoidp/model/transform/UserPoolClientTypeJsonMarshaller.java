@@ -69,6 +69,50 @@ public class UserPoolClientTypeJsonMarshaller {
                 jsonGenerator.writeFieldName("CreationDate").writeValue(
                         userPoolClientType.getCreationDate());
             }
+            if (userPoolClientType.getRefreshTokenValidity() != null) {
+                jsonGenerator.writeFieldName("RefreshTokenValidity")
+                        .writeValue(
+                                userPoolClientType.getRefreshTokenValidity());
+            }
+
+            java.util.List<String> readAttributesList = userPoolClientType
+                    .getReadAttributes();
+            if (readAttributesList != null) {
+                jsonGenerator.writeFieldName("ReadAttributes");
+                jsonGenerator.writeStartArray();
+                for (String readAttributesListValue : readAttributesList) {
+                    if (readAttributesListValue != null) {
+                        jsonGenerator.writeValue(readAttributesListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
+            java.util.List<String> writeAttributesList = userPoolClientType
+                    .getWriteAttributes();
+            if (writeAttributesList != null) {
+                jsonGenerator.writeFieldName("WriteAttributes");
+                jsonGenerator.writeStartArray();
+                for (String writeAttributesListValue : writeAttributesList) {
+                    if (writeAttributesListValue != null) {
+                        jsonGenerator.writeValue(writeAttributesListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
+            java.util.List<String> explicitAuthFlowsList = userPoolClientType
+                    .getExplicitAuthFlows();
+            if (explicitAuthFlowsList != null) {
+                jsonGenerator.writeFieldName("ExplicitAuthFlows");
+                jsonGenerator.writeStartArray();
+                for (String explicitAuthFlowsListValue : explicitAuthFlowsList) {
+                    if (explicitAuthFlowsListValue != null) {
+                        jsonGenerator.writeValue(explicitAuthFlowsListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

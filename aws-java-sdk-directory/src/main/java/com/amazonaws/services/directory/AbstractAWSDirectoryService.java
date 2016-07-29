@@ -38,6 +38,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public AddIpRoutesResult addIpRoutes(AddIpRoutesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddTagsToResourceResult addTagsToResource(
             AddTagsToResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -190,6 +195,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public ListIpRoutesResult listIpRoutes(ListIpRoutesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(
             ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -198,6 +208,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     @Override
     public RegisterEventTopicResult registerEventTopic(
             RegisterEventTopicRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveIpRoutesResult removeIpRoutes(RemoveIpRoutesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

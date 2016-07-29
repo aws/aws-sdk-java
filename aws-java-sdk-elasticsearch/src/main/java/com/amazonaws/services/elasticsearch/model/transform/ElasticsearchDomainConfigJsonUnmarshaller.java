@@ -51,6 +51,12 @@ public class ElasticsearchDomainConfigJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ElasticsearchVersion", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainConfig
+                            .setElasticsearchVersion(ElasticsearchVersionStatusJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ElasticsearchClusterConfig",
                         targetDepth)) {
                     context.nextToken();

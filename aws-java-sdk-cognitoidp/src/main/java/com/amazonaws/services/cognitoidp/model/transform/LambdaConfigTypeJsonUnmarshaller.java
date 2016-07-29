@@ -76,6 +76,22 @@ public class LambdaConfigTypeJsonUnmarshaller implements
                     lambdaConfigType.setPostAuthentication(context
                             .getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DefineAuthChallenge", targetDepth)) {
+                    context.nextToken();
+                    lambdaConfigType.setDefineAuthChallenge(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CreateAuthChallenge", targetDepth)) {
+                    context.nextToken();
+                    lambdaConfigType.setCreateAuthChallenge(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("VerifyAuthChallengeResponse",
+                        targetDepth)) {
+                    context.nextToken();
+                    lambdaConfigType.setVerifyAuthChallengeResponse(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

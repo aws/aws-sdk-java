@@ -98,6 +98,12 @@ public class AbortedExceptionClientExecutionTimerIntegrationTest extends
                 HttpMethodName.PUT, new SdkBufferedInputStream(new InputStream() {
             @Override
             public int read() throws IOException {
+                // Sleeping here to avoid OOM issues from a limitless InputStream
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
                 return 1;
             }
         })));

@@ -29,6 +29,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<AddIpRoutesResult> addIpRoutesAsync(
+            AddIpRoutesRequest request) {
+
+        return addIpRoutesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddIpRoutesResult> addIpRoutesAsync(
+            AddIpRoutesRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddIpRoutesRequest, AddIpRoutesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
             AddTagsToResourceRequest request) {
 
@@ -479,6 +494,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<ListIpRoutesResult> listIpRoutesAsync(
+            ListIpRoutesRequest request) {
+
+        return listIpRoutesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIpRoutesResult> listIpRoutesAsync(
+            ListIpRoutesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListIpRoutesRequest, ListIpRoutesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
             ListTagsForResourceRequest request) {
 
@@ -504,6 +534,21 @@ public class AbstractAWSDirectoryServiceAsync extends
     public java.util.concurrent.Future<RegisterEventTopicResult> registerEventTopicAsync(
             RegisterEventTopicRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterEventTopicRequest, RegisterEventTopicResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveIpRoutesResult> removeIpRoutesAsync(
+            RemoveIpRoutesRequest request) {
+
+        return removeIpRoutesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveIpRoutesResult> removeIpRoutesAsync(
+            RemoveIpRoutesRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveIpRoutesRequest, RemoveIpRoutesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

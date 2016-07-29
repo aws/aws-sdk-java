@@ -46,8 +46,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      */
     private String roleSessionName;
@@ -92,6 +92,19 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * 900 seconds (15 minutes) to 3600 seconds (1 hour). By default, the value
      * is set to 3600 seconds.
      * </p>
+     * <note>
+     * <p>
+     * This is separate from the duration of a console session that you might
+     * request using the returned credentials. The request to the federation
+     * endpoint for a console sign-in token takes a <code>SessionDuration</code>
+     * parameter that specifies the maximum length of the console session,
+     * separately from the <code>DurationSeconds</code> parameter on this API.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
+     * >Creating a URL that Enables Federated Users to Access the AWS Management
+     * Console</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
      */
     private Integer durationSeconds;
     /**
@@ -111,8 +124,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@:\/-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@:\/-
      * </p>
      */
     private String externalId;
@@ -129,8 +142,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      */
     private String serialNumber;
@@ -207,8 +220,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param roleSessionName
@@ -226,8 +239,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        The format for this parameter, as described by its regex pattern,
      *        is a string of characters consisting of upper- and lower-case
-     *        alphanumeric characters with no spaces. You can also include any
-     *        of the following characters: =,.@-
+     *        alphanumeric characters with no spaces. You can also include
+     *        underscores or any of the following characters: =,.@-
      */
 
     public void setRoleSessionName(String roleSessionName) {
@@ -251,8 +264,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @return An identifier for the assumed role session.</p>
@@ -269,8 +282,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         The format for this parameter, as described by its regex pattern,
      *         is a string of characters consisting of upper- and lower-case
-     *         alphanumeric characters with no spaces. You can also include any
-     *         of the following characters: =,.@-
+     *         alphanumeric characters with no spaces. You can also include
+     *         underscores or any of the following characters: =,.@-
      */
 
     public String getRoleSessionName() {
@@ -294,8 +307,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param roleSessionName
@@ -313,8 +326,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        The format for this parameter, as described by its regex pattern,
      *        is a string of characters consisting of upper- and lower-case
-     *        alphanumeric characters with no spaces. You can also include any
-     *        of the following characters: =,.@-
+     *        alphanumeric characters with no spaces. You can also include
+     *        underscores or any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -548,11 +561,36 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * 900 seconds (15 minutes) to 3600 seconds (1 hour). By default, the value
      * is set to 3600 seconds.
      * </p>
+     * <note>
+     * <p>
+     * This is separate from the duration of a console session that you might
+     * request using the returned credentials. The request to the federation
+     * endpoint for a console sign-in token takes a <code>SessionDuration</code>
+     * parameter that specifies the maximum length of the console session,
+     * separately from the <code>DurationSeconds</code> parameter on this API.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
+     * >Creating a URL that Enables Federated Users to Access the AWS Management
+     * Console</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param durationSeconds
      *        The duration, in seconds, of the role session. The value can range
      *        from 900 seconds (15 minutes) to 3600 seconds (1 hour). By
-     *        default, the value is set to 3600 seconds.
+     *        default, the value is set to 3600 seconds.</p> <note>
+     *        <p>
+     *        This is separate from the duration of a console session that you
+     *        might request using the returned credentials. The request to the
+     *        federation endpoint for a console sign-in token takes a
+     *        <code>SessionDuration</code> parameter that specifies the maximum
+     *        length of the console session, separately from the
+     *        <code>DurationSeconds</code> parameter on this API. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
+     *        >Creating a URL that Enables Federated Users to Access the AWS
+     *        Management Console</a> in the <i>IAM User Guide</i>.
+     *        </p>
      */
 
     public void setDurationSeconds(Integer durationSeconds) {
@@ -565,10 +603,35 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * 900 seconds (15 minutes) to 3600 seconds (1 hour). By default, the value
      * is set to 3600 seconds.
      * </p>
+     * <note>
+     * <p>
+     * This is separate from the duration of a console session that you might
+     * request using the returned credentials. The request to the federation
+     * endpoint for a console sign-in token takes a <code>SessionDuration</code>
+     * parameter that specifies the maximum length of the console session,
+     * separately from the <code>DurationSeconds</code> parameter on this API.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
+     * >Creating a URL that Enables Federated Users to Access the AWS Management
+     * Console</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @return The duration, in seconds, of the role session. The value can
      *         range from 900 seconds (15 minutes) to 3600 seconds (1 hour). By
-     *         default, the value is set to 3600 seconds.
+     *         default, the value is set to 3600 seconds.</p> <note>
+     *         <p>
+     *         This is separate from the duration of a console session that you
+     *         might request using the returned credentials. The request to the
+     *         federation endpoint for a console sign-in token takes a
+     *         <code>SessionDuration</code> parameter that specifies the maximum
+     *         length of the console session, separately from the
+     *         <code>DurationSeconds</code> parameter on this API. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
+     *         >Creating a URL that Enables Federated Users to Access the AWS
+     *         Management Console</a> in the <i>IAM User Guide</i>.
+     *         </p>
      */
 
     public Integer getDurationSeconds() {
@@ -581,11 +644,36 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * 900 seconds (15 minutes) to 3600 seconds (1 hour). By default, the value
      * is set to 3600 seconds.
      * </p>
+     * <note>
+     * <p>
+     * This is separate from the duration of a console session that you might
+     * request using the returned credentials. The request to the federation
+     * endpoint for a console sign-in token takes a <code>SessionDuration</code>
+     * parameter that specifies the maximum length of the console session,
+     * separately from the <code>DurationSeconds</code> parameter on this API.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
+     * >Creating a URL that Enables Federated Users to Access the AWS Management
+     * Console</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param durationSeconds
      *        The duration, in seconds, of the role session. The value can range
      *        from 900 seconds (15 minutes) to 3600 seconds (1 hour). By
-     *        default, the value is set to 3600 seconds.
+     *        default, the value is set to 3600 seconds.</p> <note>
+     *        <p>
+     *        This is separate from the duration of a console session that you
+     *        might request using the returned credentials. The request to the
+     *        federation endpoint for a console sign-in token takes a
+     *        <code>SessionDuration</code> parameter that specifies the maximum
+     *        length of the console session, separately from the
+     *        <code>DurationSeconds</code> parameter on this API. For more
+     *        information, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html"
+     *        >Creating a URL that Enables Federated Users to Access the AWS
+     *        Management Console</a> in the <i>IAM User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -612,8 +700,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@:\/-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@:\/-
      * </p>
      * 
      * @param externalId
@@ -632,8 +720,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        The format for this parameter, as described by its regex pattern,
      *        is a string of characters consisting of upper- and lower-case
-     *        alphanumeric characters with no spaces. You can also include any
-     *        of the following characters: =,.@:\/-
+     *        alphanumeric characters with no spaces. You can also include
+     *        underscores or any of the following characters: =,.@:\/-
      */
 
     public void setExternalId(String externalId) {
@@ -657,8 +745,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@:\/-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@:\/-
      * </p>
      * 
      * @return A unique identifier that is used by third parties when assuming
@@ -676,8 +764,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         The format for this parameter, as described by its regex pattern,
      *         is a string of characters consisting of upper- and lower-case
-     *         alphanumeric characters with no spaces. You can also include any
-     *         of the following characters: =,.@:\/-
+     *         alphanumeric characters with no spaces. You can also include
+     *         underscores or any of the following characters: =,.@:\/-
      */
 
     public String getExternalId() {
@@ -701,8 +789,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@:\/-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@:\/-
      * </p>
      * 
      * @param externalId
@@ -721,8 +809,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        The format for this parameter, as described by its regex pattern,
      *        is a string of characters consisting of upper- and lower-case
-     *        alphanumeric characters with no spaces. You can also include any
-     *        of the following characters: =,.@:\/-
+     *        alphanumeric characters with no spaces. You can also include
+     *        underscores or any of the following characters: =,.@:\/-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -745,8 +833,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param serialNumber
@@ -761,8 +849,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        The format for this parameter, as described by its regex pattern,
      *        is a string of characters consisting of upper- and lower-case
-     *        alphanumeric characters with no spaces. You can also include any
-     *        of the following characters: =,.@-
+     *        alphanumeric characters with no spaces. You can also include
+     *        underscores or any of the following characters: =,.@-
      */
 
     public void setSerialNumber(String serialNumber) {
@@ -782,8 +870,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @return The identification number of the MFA device that is associated
@@ -797,8 +885,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         The format for this parameter, as described by its regex pattern,
      *         is a string of characters consisting of upper- and lower-case
-     *         alphanumeric characters with no spaces. You can also include any
-     *         of the following characters: =,.@-
+     *         alphanumeric characters with no spaces. You can also include
+     *         underscores or any of the following characters: =,.@-
      */
 
     public String getSerialNumber() {
@@ -818,8 +906,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The format for this parameter, as described by its regex pattern, is a
      * string of characters consisting of upper- and lower-case alphanumeric
-     * characters with no spaces. You can also include any of the following
-     * characters: =,.@-
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param serialNumber
@@ -834,8 +922,8 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        The format for this parameter, as described by its regex pattern,
      *        is a string of characters consisting of upper- and lower-case
-     *        alphanumeric characters with no spaces. You can also include any
-     *        of the following characters: =,.@-
+     *        alphanumeric characters with no spaces. You can also include
+     *        underscores or any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

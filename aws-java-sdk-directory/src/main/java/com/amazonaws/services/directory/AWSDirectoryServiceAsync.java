@@ -33,9 +33,51 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * If the DNS server for your on-premises domain uses a publicly addressable
+     * IP address, you must add a CIDR address block to correctly route traffic
+     * to and from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i>
+     * adds this address block. You can also use <i>AddIpRoutes</i> to
+     * facilitate routing traffic that uses public IP ranges from your Microsoft
+     * AD on AWS to a peer VPC.
+     * </p>
+     * 
+     * @param addIpRoutesRequest
+     * @return A Java Future containing the result of the AddIpRoutes operation
+     *         returned by the service.
+     * @sample AWSDirectoryServiceAsync.AddIpRoutes
+     */
+    java.util.concurrent.Future<AddIpRoutesResult> addIpRoutesAsync(
+            AddIpRoutesRequest addIpRoutesRequest);
+
+    /**
+     * <p>
+     * If the DNS server for your on-premises domain uses a publicly addressable
+     * IP address, you must add a CIDR address block to correctly route traffic
+     * to and from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i>
+     * adds this address block. You can also use <i>AddIpRoutes</i> to
+     * facilitate routing traffic that uses public IP ranges from your Microsoft
+     * AD on AWS to a peer VPC.
+     * </p>
+     * 
+     * @param addIpRoutesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddIpRoutes operation
+     *         returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.AddIpRoutes
+     */
+    java.util.concurrent.Future<AddIpRoutesResult> addIpRoutesAsync(
+            AddIpRoutesRequest addIpRoutesRequest,
+            com.amazonaws.handlers.AsyncHandler<AddIpRoutesRequest, AddIpRoutesResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds or overwrites one or more tags for the specified Amazon Directory
      * Services directory. Each directory can have a maximum of 10 tags. Each
-     * tag consists of a key and optional value. Tag keys must be unique per
+     * tag consists of a key and optional value. Tag keys must be unique to each
      * resource.
      * </p>
      * 
@@ -51,7 +93,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      * <p>
      * Adds or overwrites one or more tags for the specified Amazon Directory
      * Services directory. Each directory can have a maximum of 10 tags. Each
-     * tag consists of a key and optional value. Tag keys must be unique per
+     * tag consists of a key and optional value. Tag keys must be unique to each
      * resource.
      * </p>
      * 
@@ -1122,6 +1164,38 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Lists the address blocks that you have added to a directory.
+     * </p>
+     * 
+     * @param listIpRoutesRequest
+     * @return A Java Future containing the result of the ListIpRoutes operation
+     *         returned by the service.
+     * @sample AWSDirectoryServiceAsync.ListIpRoutes
+     */
+    java.util.concurrent.Future<ListIpRoutesResult> listIpRoutesAsync(
+            ListIpRoutesRequest listIpRoutesRequest);
+
+    /**
+     * <p>
+     * Lists the address blocks that you have added to a directory.
+     * </p>
+     * 
+     * @param listIpRoutesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListIpRoutes operation
+     *         returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.ListIpRoutes
+     */
+    java.util.concurrent.Future<ListIpRoutesResult> listIpRoutesAsync(
+            ListIpRoutesRequest listIpRoutesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListIpRoutesRequest, ListIpRoutesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all tags on an Amazon Directory Services directory.
      * </p>
      * 
@@ -1195,6 +1269,38 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
     java.util.concurrent.Future<RegisterEventTopicResult> registerEventTopicAsync(
             RegisterEventTopicRequest registerEventTopicRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterEventTopicRequest, RegisterEventTopicResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes IP address blocks from a directory.
+     * </p>
+     * 
+     * @param removeIpRoutesRequest
+     * @return A Java Future containing the result of the RemoveIpRoutes
+     *         operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.RemoveIpRoutes
+     */
+    java.util.concurrent.Future<RemoveIpRoutesResult> removeIpRoutesAsync(
+            RemoveIpRoutesRequest removeIpRoutesRequest);
+
+    /**
+     * <p>
+     * Removes IP address blocks from a directory.
+     * </p>
+     * 
+     * @param removeIpRoutesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveIpRoutes
+     *         operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.RemoveIpRoutes
+     */
+    java.util.concurrent.Future<RemoveIpRoutesResult> removeIpRoutesAsync(
+            RemoveIpRoutesRequest removeIpRoutesRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveIpRoutesRequest, RemoveIpRoutesResult> asyncHandler);
 
     /**
      * <p>

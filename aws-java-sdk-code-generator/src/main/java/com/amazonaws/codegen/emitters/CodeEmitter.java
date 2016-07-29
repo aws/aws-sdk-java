@@ -41,8 +41,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import static com.amazonaws.codegen.internal.Constants.AUTH_POLICY_ENUM_CLASS_DIR;
+import static com.amazonaws.codegen.internal.Constants.SMOKE_TESTS_DIR_NAME;
 import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_MODEL_SUFFIX;
 import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_TRANSFORM_SUFFIX;
+import static com.amazonaws.codegen.internal.Constants.PROPERTIES_FILE_NAME_SUFFIX;
 
 /**
  * Consumes the intermediate model and submits tasks for generating the code. Waits until all tasks
@@ -65,6 +67,8 @@ public class CodeEmitter implements AutoCloseable {
 
     private final String policyEnumClassDir;
 
+    private final String smokeTestsPackageDir;
+
     protected final Freemarker freemarker;
 
     public CodeEmitter(IntermediateModel model, String outputDirectory) {
@@ -75,6 +79,7 @@ public class CodeEmitter implements AutoCloseable {
             throw new IllegalArgumentException("Invalid output directory path");
         }
         this.model = model;
+
         this.baseDirectory = outputDirectory + "/" + model.getMetadata().getPackagePath();
         this.modelClassDir = baseDirectory + "/" + PACKAGE_NAME_MODEL_SUFFIX;
 
@@ -82,6 +87,9 @@ public class CodeEmitter implements AutoCloseable {
 
         this.policyEnumClassDir = outputDirectory + "/" + AUTH_POLICY_ENUM_CLASS_DIR;
         this.freemarker = new Freemarker(loadProtocolTemplatesConfig(model.getMetadata().getProtocol()));
+
+        this.smokeTestsPackageDir = outputDirectory + "/../" + SMOKE_TESTS_DIR_NAME + "/" + model.getMetadata().getPackagePath() + "/" + SMOKE_TESTS_DIR_NAME;
+
     }
 
     public void emit() throws JsonGenerationException, JsonMappingException, IOException, InterruptedException,
@@ -89,6 +97,8 @@ public class CodeEmitter implements AutoCloseable {
 
         // This will also create the directory for model class.
         Utils.createDirectory(transformClassDir);
+
+        Utils.createDirectory(smokeTestsPackageDir);
 
         emitClientInterfaces();
         emitClientClasses();
@@ -103,6 +113,10 @@ public class CodeEmitter implements AutoCloseable {
         emitUnmarshallerClasses();
         emitPolicyActionEnumClass();
         emitPackageInfoFile();
+        // Skips generating smoketest files if skipSmokeTests is set in custom config
+        if (!model.getCustomizationConfig().isSkipSmokeTests()) {
+             emitSmokeTestFiles();
+        }
 
         waitForCompletion();
     }
@@ -116,6 +130,28 @@ public class CodeEmitter implements AutoCloseable {
     private void emitPackageInfoFile() throws IOException {
         submitTask(new ClassGeneratorTask(baseDirectory, "package-info.java", freemarker
                 .getPackageInfoTemplate(), model));
+    }
+
+    /**
+     * Submits a task to generate files needed for smoke tests.
+     */
+    private void emitSmokeTestFiles() throws IOException {
+        submitTask(new ClassGeneratorTask(
+                smokeTestsPackageDir,
+                model.getMetadata().getCucumberModuleInjectorClassName(),
+                freemarker.getCucumberModuleInjectorTemplate(),
+                model));
+
+        submitTask(new ClassGeneratorTask(
+                smokeTestsPackageDir,
+                "RunCucumberTest",
+                freemarker.getCucumberTestTemplate(),
+                model));
+
+        submitTask(new ClassGeneratorTask(
+                new CodeWriter(smokeTestsPackageDir, "cucumber", PROPERTIES_FILE_NAME_SUFFIX),
+                freemarker.getCucumberPropertiesTemplate(),
+                model));
     }
 
     /**

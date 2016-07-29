@@ -25,7 +25,7 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the directory from which to remove the tag.
+     * Identifier (ID) of the directory from which to remove the tag.
      * </p>
      */
     private String resourceId;
@@ -38,11 +38,11 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the directory from which to remove the tag.
+     * Identifier (ID) of the directory from which to remove the tag.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the directory from which to remove the tag.
+     *        Identifier (ID) of the directory from which to remove the tag.
      */
 
     public void setResourceId(String resourceId) {
@@ -51,10 +51,10 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the directory from which to remove the tag.
+     * Identifier (ID) of the directory from which to remove the tag.
      * </p>
      * 
-     * @return The ID of the directory from which to remove the tag.
+     * @return Identifier (ID) of the directory from which to remove the tag.
      */
 
     public String getResourceId() {
@@ -63,11 +63,11 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the directory from which to remove the tag.
+     * Identifier (ID) of the directory from which to remove the tag.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the directory from which to remove the tag.
+     *        Identifier (ID) of the directory from which to remove the tag.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

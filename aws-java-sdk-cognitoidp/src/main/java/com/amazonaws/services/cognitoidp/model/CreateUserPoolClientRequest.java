@@ -45,6 +45,30 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest
      * </p>
      */
     private Boolean generateSecret;
+    /**
+     * <p>
+     * Refreshes the token validity.
+     * </p>
+     */
+    private Integer refreshTokenValidity;
+    /**
+     * <p>
+     * The read attributes.
+     * </p>
+     */
+    private java.util.List<String> readAttributes;
+    /**
+     * <p>
+     * The write attributes.
+     * </p>
+     */
+    private java.util.List<String> writeAttributes;
+    /**
+     * <p>
+     * The explicit authentication flows.
+     * </p>
+     */
+    private java.util.List<String> explicitAuthFlows;
 
     /**
      * <p>
@@ -197,6 +221,309 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Refreshes the token validity.
+     * </p>
+     * 
+     * @param refreshTokenValidity
+     *        Refreshes the token validity.
+     */
+
+    public void setRefreshTokenValidity(Integer refreshTokenValidity) {
+        this.refreshTokenValidity = refreshTokenValidity;
+    }
+
+    /**
+     * <p>
+     * Refreshes the token validity.
+     * </p>
+     * 
+     * @return Refreshes the token validity.
+     */
+
+    public Integer getRefreshTokenValidity() {
+        return this.refreshTokenValidity;
+    }
+
+    /**
+     * <p>
+     * Refreshes the token validity.
+     * </p>
+     * 
+     * @param refreshTokenValidity
+     *        Refreshes the token validity.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateUserPoolClientRequest withRefreshTokenValidity(
+            Integer refreshTokenValidity) {
+        setRefreshTokenValidity(refreshTokenValidity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The read attributes.
+     * </p>
+     * 
+     * @return The read attributes.
+     */
+
+    public java.util.List<String> getReadAttributes() {
+        return readAttributes;
+    }
+
+    /**
+     * <p>
+     * The read attributes.
+     * </p>
+     * 
+     * @param readAttributes
+     *        The read attributes.
+     */
+
+    public void setReadAttributes(java.util.Collection<String> readAttributes) {
+        if (readAttributes == null) {
+            this.readAttributes = null;
+            return;
+        }
+
+        this.readAttributes = new java.util.ArrayList<String>(readAttributes);
+    }
+
+    /**
+     * <p>
+     * The read attributes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setReadAttributes(java.util.Collection)} or
+     * {@link #withReadAttributes(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param readAttributes
+     *        The read attributes.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateUserPoolClientRequest withReadAttributes(
+            String... readAttributes) {
+        if (this.readAttributes == null) {
+            setReadAttributes(new java.util.ArrayList<String>(
+                    readAttributes.length));
+        }
+        for (String ele : readAttributes) {
+            this.readAttributes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The read attributes.
+     * </p>
+     * 
+     * @param readAttributes
+     *        The read attributes.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateUserPoolClientRequest withReadAttributes(
+            java.util.Collection<String> readAttributes) {
+        setReadAttributes(readAttributes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The write attributes.
+     * </p>
+     * 
+     * @return The write attributes.
+     */
+
+    public java.util.List<String> getWriteAttributes() {
+        return writeAttributes;
+    }
+
+    /**
+     * <p>
+     * The write attributes.
+     * </p>
+     * 
+     * @param writeAttributes
+     *        The write attributes.
+     */
+
+    public void setWriteAttributes(java.util.Collection<String> writeAttributes) {
+        if (writeAttributes == null) {
+            this.writeAttributes = null;
+            return;
+        }
+
+        this.writeAttributes = new java.util.ArrayList<String>(writeAttributes);
+    }
+
+    /**
+     * <p>
+     * The write attributes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setWriteAttributes(java.util.Collection)} or
+     * {@link #withWriteAttributes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param writeAttributes
+     *        The write attributes.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateUserPoolClientRequest withWriteAttributes(
+            String... writeAttributes) {
+        if (this.writeAttributes == null) {
+            setWriteAttributes(new java.util.ArrayList<String>(
+                    writeAttributes.length));
+        }
+        for (String ele : writeAttributes) {
+            this.writeAttributes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The write attributes.
+     * </p>
+     * 
+     * @param writeAttributes
+     *        The write attributes.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateUserPoolClientRequest withWriteAttributes(
+            java.util.Collection<String> writeAttributes) {
+        setWriteAttributes(writeAttributes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The explicit authentication flows.
+     * </p>
+     * 
+     * @return The explicit authentication flows.
+     * @see ExplicitAuthFlowsType
+     */
+
+    public java.util.List<String> getExplicitAuthFlows() {
+        return explicitAuthFlows;
+    }
+
+    /**
+     * <p>
+     * The explicit authentication flows.
+     * </p>
+     * 
+     * @param explicitAuthFlows
+     *        The explicit authentication flows.
+     * @see ExplicitAuthFlowsType
+     */
+
+    public void setExplicitAuthFlows(
+            java.util.Collection<String> explicitAuthFlows) {
+        if (explicitAuthFlows == null) {
+            this.explicitAuthFlows = null;
+            return;
+        }
+
+        this.explicitAuthFlows = new java.util.ArrayList<String>(
+                explicitAuthFlows);
+    }
+
+    /**
+     * <p>
+     * The explicit authentication flows.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setExplicitAuthFlows(java.util.Collection)} or
+     * {@link #withExplicitAuthFlows(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param explicitAuthFlows
+     *        The explicit authentication flows.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ExplicitAuthFlowsType
+     */
+
+    public CreateUserPoolClientRequest withExplicitAuthFlows(
+            String... explicitAuthFlows) {
+        if (this.explicitAuthFlows == null) {
+            setExplicitAuthFlows(new java.util.ArrayList<String>(
+                    explicitAuthFlows.length));
+        }
+        for (String ele : explicitAuthFlows) {
+            this.explicitAuthFlows.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The explicit authentication flows.
+     * </p>
+     * 
+     * @param explicitAuthFlows
+     *        The explicit authentication flows.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ExplicitAuthFlowsType
+     */
+
+    public CreateUserPoolClientRequest withExplicitAuthFlows(
+            java.util.Collection<String> explicitAuthFlows) {
+        setExplicitAuthFlows(explicitAuthFlows);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The explicit authentication flows.
+     * </p>
+     * 
+     * @param explicitAuthFlows
+     *        The explicit authentication flows.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ExplicitAuthFlowsType
+     */
+
+    public CreateUserPoolClientRequest withExplicitAuthFlows(
+            ExplicitAuthFlowsType... explicitAuthFlows) {
+        java.util.ArrayList<String> explicitAuthFlowsCopy = new java.util.ArrayList<String>(
+                explicitAuthFlows.length);
+        for (ExplicitAuthFlowsType value : explicitAuthFlows) {
+            explicitAuthFlowsCopy.add(value.toString());
+        }
+        if (getExplicitAuthFlows() == null) {
+            setExplicitAuthFlows(explicitAuthFlowsCopy);
+        } else {
+            getExplicitAuthFlows().addAll(explicitAuthFlowsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -213,7 +540,16 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest
         if (getClientName() != null)
             sb.append("ClientName: " + getClientName() + ",");
         if (getGenerateSecret() != null)
-            sb.append("GenerateSecret: " + getGenerateSecret());
+            sb.append("GenerateSecret: " + getGenerateSecret() + ",");
+        if (getRefreshTokenValidity() != null)
+            sb.append("RefreshTokenValidity: " + getRefreshTokenValidity()
+                    + ",");
+        if (getReadAttributes() != null)
+            sb.append("ReadAttributes: " + getReadAttributes() + ",");
+        if (getWriteAttributes() != null)
+            sb.append("WriteAttributes: " + getWriteAttributes() + ",");
+        if (getExplicitAuthFlows() != null)
+            sb.append("ExplicitAuthFlows: " + getExplicitAuthFlows());
         sb.append("}");
         return sb.toString();
     }
@@ -244,6 +580,32 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest
         if (other.getGenerateSecret() != null
                 && other.getGenerateSecret().equals(this.getGenerateSecret()) == false)
             return false;
+        if (other.getRefreshTokenValidity() == null
+                ^ this.getRefreshTokenValidity() == null)
+            return false;
+        if (other.getRefreshTokenValidity() != null
+                && other.getRefreshTokenValidity().equals(
+                        this.getRefreshTokenValidity()) == false)
+            return false;
+        if (other.getReadAttributes() == null
+                ^ this.getReadAttributes() == null)
+            return false;
+        if (other.getReadAttributes() != null
+                && other.getReadAttributes().equals(this.getReadAttributes()) == false)
+            return false;
+        if (other.getWriteAttributes() == null
+                ^ this.getWriteAttributes() == null)
+            return false;
+        if (other.getWriteAttributes() != null
+                && other.getWriteAttributes().equals(this.getWriteAttributes()) == false)
+            return false;
+        if (other.getExplicitAuthFlows() == null
+                ^ this.getExplicitAuthFlows() == null)
+            return false;
+        if (other.getExplicitAuthFlows() != null
+                && other.getExplicitAuthFlows().equals(
+                        this.getExplicitAuthFlows()) == false)
+            return false;
         return true;
     }
 
@@ -260,6 +622,22 @@ public class CreateUserPoolClientRequest extends AmazonWebServiceRequest
                 * hashCode
                 + ((getGenerateSecret() == null) ? 0 : getGenerateSecret()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRefreshTokenValidity() == null) ? 0
+                        : getRefreshTokenValidity().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getReadAttributes() == null) ? 0 : getReadAttributes()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getWriteAttributes() == null) ? 0 : getWriteAttributes()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getExplicitAuthFlows() == null) ? 0
+                        : getExplicitAuthFlows().hashCode());
         return hashCode;
     }
 
