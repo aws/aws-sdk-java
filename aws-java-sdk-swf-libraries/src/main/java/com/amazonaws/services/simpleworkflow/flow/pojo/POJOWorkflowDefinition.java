@@ -71,8 +71,8 @@ public class POJOWorkflowDefinition extends WorkflowDefinition {
                 // after new parameters were added to @Execute method
                 // It requires creation of parameters array of the correct size and
                 // populating the new parameter values with default values for each type
-                Object[] parameters = c.fromData(input, Object[].class);
                 Method method = workflowMethod.getMethod();
+                Object[] parameters = deserializeParameters(c, input, method);
                 Object r = invokeMethod(method, parameters);
                 if (!method.getReturnType().equals(Void.TYPE)) {
                     methodResult.set((Promise) r);
@@ -108,8 +108,8 @@ public class POJOWorkflowDefinition extends WorkflowDefinition {
                 c = converter;
             }
             Method method = signalMethod.getMethod();
-            Object[] parameters = c.fromData(details, Object[].class);
             try {
+                Object[] parameters = deserializeParameters(c, details, method);
                 invokeMethod(method, parameters);
             }
             catch (Throwable e) {
@@ -142,6 +142,16 @@ public class POJOWorkflowDefinition extends WorkflowDefinition {
         catch (Throwable e) {
             throwWorkflowException(c, e);
             throw new IllegalStateException("Unreacheable");
+        }
+    }
+
+    private Object[] deserializeParameters(DataConverter c, String input, Method method)
+            throws DataConverterException {
+        if (c instanceof MethodAwareDataConverter) {
+            MethodAwareDataConverter madc = (MethodAwareDataConverter) c;
+            return madc.fromDataForMethod(input, method);
+        } else {
+            return c.fromData(input, Object[].class);
         }
     }
 
