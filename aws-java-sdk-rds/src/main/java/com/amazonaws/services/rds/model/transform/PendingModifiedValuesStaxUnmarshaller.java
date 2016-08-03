@@ -97,6 +97,13 @@ public class PendingModifiedValuesStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("LicenseModel", targetDepth)) {
+                    pendingModifiedValues
+                            .setLicenseModel(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Iops", targetDepth)) {
                     pendingModifiedValues.setIops(IntegerStaxUnmarshaller
                             .getInstance().unmarshall(context));

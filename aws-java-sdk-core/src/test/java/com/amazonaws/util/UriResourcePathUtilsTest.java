@@ -92,4 +92,17 @@ public class UriResourcePathUtilsTest {
         Assert.assertEquals(Arrays.asList("value2"), request.getParameters().get("param2"));
 
     }
+
+    @Test
+    public void queryparam_without_value_returns_list_containing_null_value() {
+        final String uriResourcePath = "/foo/bar";
+        final String uriResourcePathWithParams =
+                uriResourcePath + "?param";
+        final Request<Object> request = new DefaultRequest<Object>(null, null);
+
+        Assert.assertEquals(uriResourcePath, UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePathWithParams));
+
+        Assert.assertTrue(request.getParameters().containsKey("param"));
+        Assert.assertEquals(Arrays.asList((String)null), request.getParameters().get("param"));
+    }
 }

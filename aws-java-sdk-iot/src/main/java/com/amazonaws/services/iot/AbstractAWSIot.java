@@ -248,6 +248,12 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public ListOutgoingCertificatesResult listOutgoingCertificates(
+            ListOutgoingCertificatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPoliciesResult listPolicies(ListPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

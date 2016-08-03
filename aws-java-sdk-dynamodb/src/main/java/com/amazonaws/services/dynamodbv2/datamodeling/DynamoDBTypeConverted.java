@@ -59,10 +59,11 @@ import java.lang.annotation.Target;
  *
  * And user-defined annotation,
  * <pre class="brush: java">
- * &#064;DynamoDBTypeConverted(converter=CurrencyFormat.Converter.class)
- * &#064;Retention(RetentionPolicy.RUNTIME)
  * &#064;Target({ElementType.METHOD})
+ * &#064;Retention(RetentionPolicy.RUNTIME)
+ * &#064;DynamoDBTypeConverted(converter=CurrencyFormat.Converter.class)
  * public &#064;interface CurrencyFormat {
+ *
  *     String separator() default &quot; &quot;;
  *
  *     public static final class Converter implements DynamoDBTypeConverter&lt;String,Currency&gt; {
@@ -86,6 +87,7 @@ import java.lang.annotation.Target;
  *             return currency;
  *         }
  *     }
+ *
  * }
  * </pre>
  *

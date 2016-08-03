@@ -14,7 +14,6 @@
  */
 
 /**
- * <fullname>Amazon CloudWatch Logs API Reference</fullname>
  * <p>
  * You can use Amazon CloudWatch Logs to monitor, store, and access your log
  * files from Amazon Elastic Compute Cloud (Amazon EC2) instances, Amazon

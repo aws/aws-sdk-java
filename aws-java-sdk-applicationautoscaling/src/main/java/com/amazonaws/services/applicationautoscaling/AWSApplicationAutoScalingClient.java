@@ -766,10 +766,10 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient
      *         available parameters for the API request.
      * @throws LimitExceededException
      *         Your account exceeded a limit. This exception is thrown when a
-     *         per-account resource limit is exceeded. Application Auto Scaling
-     *         has a limit of 40 scalable targets per account for Amazon ECS
-     *         services, 50 scaling policies per scalable target, and 20 step
-     *         adjustments per step scaling policy.
+     *         per-account resource limit is exceeded. For more information, see
+     *         <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app"
+     *         >Application Auto Scaling Limits</a>.
      * @throws ObjectNotFoundException
      *         The specified object could not be found. For any <code>Put</code>
      *         or <code>Register</code> API operation, which depends on the
@@ -853,10 +853,10 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient
      *         available parameters for the API request.
      * @throws LimitExceededException
      *         Your account exceeded a limit. This exception is thrown when a
-     *         per-account resource limit is exceeded. Application Auto Scaling
-     *         has a limit of 40 scalable targets per account for Amazon ECS
-     *         services, 50 scaling policies per scalable target, and 20 step
-     *         adjustments per step scaling policy.
+     *         per-account resource limit is exceeded. For more information, see
+     *         <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app"
+     *         >Application Auto Scaling Limits</a>.
      * @throws ConcurrentUpdateException
      *         Concurrent updates caused an exception, for example, if you
      *         request an update to an Application Auto Scaling resource that

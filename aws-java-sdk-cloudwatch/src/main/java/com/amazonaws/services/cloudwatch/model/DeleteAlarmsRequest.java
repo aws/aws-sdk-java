@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Describes the inputs for DeleteAlarms.
+ * </p>
  */
 public class DeleteAlarmsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

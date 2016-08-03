@@ -155,6 +155,11 @@ public class ModifyDBInstanceRequestMarshaller implements
                             .getAutoMinorVersionUpgrade()));
         }
 
+        if (modifyDBInstanceRequest.getLicenseModel() != null) {
+            request.addParameter("LicenseModel", StringUtils
+                    .fromString(modifyDBInstanceRequest.getLicenseModel()));
+        }
+
         if (modifyDBInstanceRequest.getIops() != null) {
             request.addParameter("Iops",
                     StringUtils.fromInteger(modifyDBInstanceRequest.getIops()));

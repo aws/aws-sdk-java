@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.23-SNAPSHOT</version>
+  <version>1.11.23</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -71,7 +71,6 @@
     <module>aws-java-sdk-autoscaling</module>
     <module>aws-java-sdk-cloudsearch</module>
     <module>aws-java-sdk-cloudwatchmetrics</module>
-    <module>aws-java-sdk-swf-libraries</module>
     <module>aws-java-sdk-codedeploy</module>
     <module>aws-java-sdk-codepipeline</module>
     <module>aws-java-sdk-kms</module>

@@ -107,6 +107,18 @@ public class DataSourceJsonMarshaller {
                 jsonGenerator.writeFieldName("ComputeStatistics").writeValue(
                         dataSource.getComputeStatistics());
             }
+            if (dataSource.getComputeTime() != null) {
+                jsonGenerator.writeFieldName("ComputeTime").writeValue(
+                        dataSource.getComputeTime());
+            }
+            if (dataSource.getFinishedAt() != null) {
+                jsonGenerator.writeFieldName("FinishedAt").writeValue(
+                        dataSource.getFinishedAt());
+            }
+            if (dataSource.getStartedAt() != null) {
+                jsonGenerator.writeFieldName("StartedAt").writeValue(
+                        dataSource.getStartedAt());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

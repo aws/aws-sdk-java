@@ -111,10 +111,6 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * This operation disables automatic renewal of domain registration for the
      * specified domain.
      * </p>
-     * <note>Caution! Amazon Route 53 doesn't have a manual renewal process, so
-     * if you disable automatic renewal, registration for the domain will not be
-     * renewed when the expiration date passes, and you will lose control of the
-     * domain name.</note>
      * 
      * @param disableDomainAutoRenewRequest
      * @return A Java Future containing the result of the DisableDomainAutoRenew
@@ -129,10 +125,6 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * This operation disables automatic renewal of domain registration for the
      * specified domain.
      * </p>
-     * <note>Caution! Amazon Route 53 doesn't have a manual renewal process, so
-     * if you disable automatic renewal, registration for the domain will not be
-     * renewed when the expiration date passes, and you will lose control of the
-     * domain name.</note>
      * 
      * @param disableDomainAutoRenewRequest
      * @param asyncHandler
@@ -375,6 +367,72 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
     java.util.concurrent.Future<GetDomainDetailResult> getDomainDetailAsync(
             GetDomainDetailRequest getDomainDetailRequest,
             com.amazonaws.handlers.AsyncHandler<GetDomainDetailRequest, GetDomainDetailResult> asyncHandler);
+
+    /**
+     * <p>
+     * The GetDomainSuggestions operation returns a list of suggested domain
+     * names given a string, which can either be a domain name or simply a word
+     * or phrase (without spaces).
+     * </p>
+     * <p>
+     * Parameters:
+     * <ul>
+     * <li>DomainName (string): The basis for your domain suggestion search, a
+     * string with (or without) top-level domain specified.</li>
+     * <li>SuggestionCount (int): The number of domain suggestions to be
+     * returned, maximum 50, minimum 1.</li>
+     * <li>OnlyAvailable (bool): If true, availability check will be performed
+     * on suggestion results, and only available domains will be returned. If
+     * false, suggestions will be returned without checking whether the domain
+     * is actually available, and caller will have to call
+     * checkDomainAvailability for each suggestion to determine availability for
+     * registration.</li>
+     * </ul>
+     * </p>
+     * 
+     * @param getDomainSuggestionsRequest
+     * @return A Java Future containing the result of the GetDomainSuggestions
+     *         operation returned by the service.
+     * @sample AmazonRoute53DomainsAsync.GetDomainSuggestions
+     */
+    java.util.concurrent.Future<GetDomainSuggestionsResult> getDomainSuggestionsAsync(
+            GetDomainSuggestionsRequest getDomainSuggestionsRequest);
+
+    /**
+     * <p>
+     * The GetDomainSuggestions operation returns a list of suggested domain
+     * names given a string, which can either be a domain name or simply a word
+     * or phrase (without spaces).
+     * </p>
+     * <p>
+     * Parameters:
+     * <ul>
+     * <li>DomainName (string): The basis for your domain suggestion search, a
+     * string with (or without) top-level domain specified.</li>
+     * <li>SuggestionCount (int): The number of domain suggestions to be
+     * returned, maximum 50, minimum 1.</li>
+     * <li>OnlyAvailable (bool): If true, availability check will be performed
+     * on suggestion results, and only available domains will be returned. If
+     * false, suggestions will be returned without checking whether the domain
+     * is actually available, and caller will have to call
+     * checkDomainAvailability for each suggestion to determine availability for
+     * registration.</li>
+     * </ul>
+     * </p>
+     * 
+     * @param getDomainSuggestionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDomainSuggestions
+     *         operation returned by the service.
+     * @sample AmazonRoute53DomainsAsyncHandler.GetDomainSuggestions
+     */
+    java.util.concurrent.Future<GetDomainSuggestionsResult> getDomainSuggestionsAsync(
+            GetDomainSuggestionsRequest getDomainSuggestionsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDomainSuggestionsRequest, GetDomainSuggestionsResult> asyncHandler);
 
     /**
      * <p>
@@ -643,6 +701,60 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
     java.util.concurrent.Future<RegisterDomainResult> registerDomainAsync(
             RegisterDomainRequest registerDomainRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterDomainRequest, RegisterDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * This operation renews a domain for the specified number of years. The
+     * cost of renewing your domain is billed to your AWS account.
+     * </p>
+     * <p>
+     * We recommend that you renew your domain several weeks before the
+     * expiration date. Some TLD registries delete domains before the expiration
+     * date if you haven't renewed far enough in advance. For more information
+     * about renewing domain registration, see <a
+     * href="http://docs.aws.amazon.com/console/route53/domain-renew">Renewing
+     * Registration for a Domain</a> in the Amazon Route 53 documentation.
+     * </p>
+     * 
+     * @param renewDomainRequest
+     *        A <code>RenewDomain</code> request includes the number of years
+     *        that you want to renew for and the current expiration year.
+     * @return A Java Future containing the result of the RenewDomain operation
+     *         returned by the service.
+     * @sample AmazonRoute53DomainsAsync.RenewDomain
+     */
+    java.util.concurrent.Future<RenewDomainResult> renewDomainAsync(
+            RenewDomainRequest renewDomainRequest);
+
+    /**
+     * <p>
+     * This operation renews a domain for the specified number of years. The
+     * cost of renewing your domain is billed to your AWS account.
+     * </p>
+     * <p>
+     * We recommend that you renew your domain several weeks before the
+     * expiration date. Some TLD registries delete domains before the expiration
+     * date if you haven't renewed far enough in advance. For more information
+     * about renewing domain registration, see <a
+     * href="http://docs.aws.amazon.com/console/route53/domain-renew">Renewing
+     * Registration for a Domain</a> in the Amazon Route 53 documentation.
+     * </p>
+     * 
+     * @param renewDomainRequest
+     *        A <code>RenewDomain</code> request includes the number of years
+     *        that you want to renew for and the current expiration year.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RenewDomain operation
+     *         returned by the service.
+     * @sample AmazonRoute53DomainsAsyncHandler.RenewDomain
+     */
+    java.util.concurrent.Future<RenewDomainResult> renewDomainAsync(
+            RenewDomainRequest renewDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<RenewDomainRequest, RenewDomainResult> asyncHandler);
 
     /**
      * <p>
@@ -1013,5 +1125,41 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
     java.util.concurrent.Future<UpdateTagsForDomainResult> updateTagsForDomainAsync(
             UpdateTagsForDomainRequest updateTagsForDomainRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateTagsForDomainRequest, UpdateTagsForDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * This operation returns all the domain-related billing records for the
+     * current AWS account for a specified period
+     * </p>
+     * 
+     * @param viewBillingRequest
+     *        The ViewBilling request includes the following elements.
+     * @return A Java Future containing the result of the ViewBilling operation
+     *         returned by the service.
+     * @sample AmazonRoute53DomainsAsync.ViewBilling
+     */
+    java.util.concurrent.Future<ViewBillingResult> viewBillingAsync(
+            ViewBillingRequest viewBillingRequest);
+
+    /**
+     * <p>
+     * This operation returns all the domain-related billing records for the
+     * current AWS account for a specified period
+     * </p>
+     * 
+     * @param viewBillingRequest
+     *        The ViewBilling request includes the following elements.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ViewBilling operation
+     *         returned by the service.
+     * @sample AmazonRoute53DomainsAsyncHandler.ViewBilling
+     */
+    java.util.concurrent.Future<ViewBillingResult> viewBillingAsync(
+            ViewBillingRequest viewBillingRequest,
+            com.amazonaws.handlers.AsyncHandler<ViewBillingRequest, ViewBillingResult> asyncHandler);
 
 }

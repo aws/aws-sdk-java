@@ -55,6 +55,12 @@ public class Option implements Serializable, Cloneable {
     private Integer port;
     /**
      * <p>
+     * The version of the option.
+     * </p>
+     */
+    private String optionVersion;
+    /**
+     * <p>
      * The option settings for this option.
      * </p>
      */
@@ -300,6 +306,47 @@ public class Option implements Serializable, Cloneable {
 
     public Option withPort(Integer port) {
         setPort(port);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version of the option.
+     * </p>
+     * 
+     * @param optionVersion
+     *        The version of the option.
+     */
+
+    public void setOptionVersion(String optionVersion) {
+        this.optionVersion = optionVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the option.
+     * </p>
+     * 
+     * @return The version of the option.
+     */
+
+    public String getOptionVersion() {
+        return this.optionVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the option.
+     * </p>
+     * 
+     * @param optionVersion
+     *        The version of the option.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Option withOptionVersion(String optionVersion) {
+        setOptionVersion(optionVersion);
         return this;
     }
 
@@ -583,6 +630,8 @@ public class Option implements Serializable, Cloneable {
             sb.append("Permanent: " + getPermanent() + ",");
         if (getPort() != null)
             sb.append("Port: " + getPort() + ",");
+        if (getOptionVersion() != null)
+            sb.append("OptionVersion: " + getOptionVersion() + ",");
         if (getOptionSettings() != null)
             sb.append("OptionSettings: " + getOptionSettings() + ",");
         if (getDBSecurityGroupMemberships() != null)
@@ -632,6 +681,11 @@ public class Option implements Serializable, Cloneable {
         if (other.getPort() != null
                 && other.getPort().equals(this.getPort()) == false)
             return false;
+        if (other.getOptionVersion() == null ^ this.getOptionVersion() == null)
+            return false;
+        if (other.getOptionVersion() != null
+                && other.getOptionVersion().equals(this.getOptionVersion()) == false)
+            return false;
         if (other.getOptionSettings() == null
                 ^ this.getOptionSettings() == null)
             return false;
@@ -672,6 +726,10 @@ public class Option implements Serializable, Cloneable {
                 + ((getPermanent() == null) ? 0 : getPermanent().hashCode());
         hashCode = prime * hashCode
                 + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getOptionVersion() == null) ? 0 : getOptionVersion()
+                        .hashCode());
         hashCode = prime
                 * hashCode
                 + ((getOptionSettings() == null) ? 0 : getOptionSettings()

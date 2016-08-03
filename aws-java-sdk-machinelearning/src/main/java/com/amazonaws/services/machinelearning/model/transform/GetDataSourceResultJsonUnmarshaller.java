@@ -135,6 +135,21 @@ public class GetDataSourceResultJsonUnmarshaller implements
                             .setComputeStatistics(context.getUnmarshaller(
                                     Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("ComputeTime", targetDepth)) {
+                    context.nextToken();
+                    getDataSourceResult.setComputeTime(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
+                }
+                if (context.testExpression("FinishedAt", targetDepth)) {
+                    context.nextToken();
+                    getDataSourceResult.setFinishedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("StartedAt", targetDepth)) {
+                    context.nextToken();
+                    getDataSourceResult.setStartedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
                 if (context.testExpression("DataSourceSchema", targetDepth)) {
                     context.nextToken();
                     getDataSourceResult.setDataSourceSchema(context

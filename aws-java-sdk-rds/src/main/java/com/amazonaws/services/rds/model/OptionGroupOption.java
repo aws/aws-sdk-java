@@ -95,6 +95,12 @@ public class OptionGroupOption implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OptionGroupOptionSetting> optionGroupOptionSettings;
+    /**
+     * <p>
+     * Specifies the versions that are available for the option.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<OptionVersion> optionGroupOptionVersions;
 
     /**
      * <p>
@@ -723,6 +729,87 @@ public class OptionGroupOption implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the versions that are available for the option.
+     * </p>
+     * 
+     * @return Specifies the versions that are available for the option.
+     */
+
+    public java.util.List<OptionVersion> getOptionGroupOptionVersions() {
+        if (optionGroupOptionVersions == null) {
+            optionGroupOptionVersions = new com.amazonaws.internal.SdkInternalList<OptionVersion>();
+        }
+        return optionGroupOptionVersions;
+    }
+
+    /**
+     * <p>
+     * Specifies the versions that are available for the option.
+     * </p>
+     * 
+     * @param optionGroupOptionVersions
+     *        Specifies the versions that are available for the option.
+     */
+
+    public void setOptionGroupOptionVersions(
+            java.util.Collection<OptionVersion> optionGroupOptionVersions) {
+        if (optionGroupOptionVersions == null) {
+            this.optionGroupOptionVersions = null;
+            return;
+        }
+
+        this.optionGroupOptionVersions = new com.amazonaws.internal.SdkInternalList<OptionVersion>(
+                optionGroupOptionVersions);
+    }
+
+    /**
+     * <p>
+     * Specifies the versions that are available for the option.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setOptionGroupOptionVersions(java.util.Collection)} or
+     * {@link #withOptionGroupOptionVersions(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param optionGroupOptionVersions
+     *        Specifies the versions that are available for the option.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public OptionGroupOption withOptionGroupOptionVersions(
+            OptionVersion... optionGroupOptionVersions) {
+        if (this.optionGroupOptionVersions == null) {
+            setOptionGroupOptionVersions(new com.amazonaws.internal.SdkInternalList<OptionVersion>(
+                    optionGroupOptionVersions.length));
+        }
+        for (OptionVersion ele : optionGroupOptionVersions) {
+            this.optionGroupOptionVersions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the versions that are available for the option.
+     * </p>
+     * 
+     * @param optionGroupOptionVersions
+     *        Specifies the versions that are available for the option.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public OptionGroupOption withOptionGroupOptionVersions(
+            java.util.Collection<OptionVersion> optionGroupOptionVersions) {
+        setOptionGroupOptionVersions(optionGroupOptionVersions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -757,7 +844,10 @@ public class OptionGroupOption implements Serializable, Cloneable {
             sb.append("Permanent: " + getPermanent() + ",");
         if (getOptionGroupOptionSettings() != null)
             sb.append("OptionGroupOptionSettings: "
-                    + getOptionGroupOptionSettings());
+                    + getOptionGroupOptionSettings() + ",");
+        if (getOptionGroupOptionVersions() != null)
+            sb.append("OptionGroupOptionVersions: "
+                    + getOptionGroupOptionVersions());
         sb.append("}");
         return sb.toString();
     }
@@ -835,6 +925,13 @@ public class OptionGroupOption implements Serializable, Cloneable {
                 && other.getOptionGroupOptionSettings().equals(
                         this.getOptionGroupOptionSettings()) == false)
             return false;
+        if (other.getOptionGroupOptionVersions() == null
+                ^ this.getOptionGroupOptionVersions() == null)
+            return false;
+        if (other.getOptionGroupOptionVersions() != null
+                && other.getOptionGroupOptionVersions().equals(
+                        this.getOptionGroupOptionVersions()) == false)
+            return false;
         return true;
     }
 
@@ -877,6 +974,10 @@ public class OptionGroupOption implements Serializable, Cloneable {
                 * hashCode
                 + ((getOptionGroupOptionSettings() == null) ? 0
                         : getOptionGroupOptionSettings().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getOptionGroupOptionVersions() == null) ? 0
+                        : getOptionGroupOptionVersions().hashCode());
         return hashCode;
     }
 

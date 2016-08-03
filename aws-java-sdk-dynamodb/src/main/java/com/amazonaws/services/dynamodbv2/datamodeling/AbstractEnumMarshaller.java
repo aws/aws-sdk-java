@@ -27,7 +27,10 @@ import static com.amazonaws.util.Throwables.failure;
  * record in DynamoDB to your objects.
  *
  * @see DynamoDBMarshaller
+ *
+ * @deprecated Replaced by {@link DynamoDBTypeConvertedEnum}
  */
+@Deprecated
 public abstract class AbstractEnumMarshaller<T extends Enum<T>> implements DynamoDBMarshaller<T> {
 
     /**

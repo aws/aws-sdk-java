@@ -37,6 +37,13 @@ public class StepStatus implements Serializable, Cloneable {
     private StepStateChangeReason stateChangeReason;
     /**
      * <p>
+     * The details for the step failure including reason, message, and log file
+     * path where the root cause was identified.
+     * </p>
+     */
+    private FailureDetails failureDetails;
+    /**
+     * <p>
      * The timeline of the cluster step status over time.
      * </p>
      */
@@ -161,6 +168,53 @@ public class StepStatus implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The details for the step failure including reason, message, and log file
+     * path where the root cause was identified.
+     * </p>
+     * 
+     * @param failureDetails
+     *        The details for the step failure including reason, message, and
+     *        log file path where the root cause was identified.
+     */
+
+    public void setFailureDetails(FailureDetails failureDetails) {
+        this.failureDetails = failureDetails;
+    }
+
+    /**
+     * <p>
+     * The details for the step failure including reason, message, and log file
+     * path where the root cause was identified.
+     * </p>
+     * 
+     * @return The details for the step failure including reason, message, and
+     *         log file path where the root cause was identified.
+     */
+
+    public FailureDetails getFailureDetails() {
+        return this.failureDetails;
+    }
+
+    /**
+     * <p>
+     * The details for the step failure including reason, message, and log file
+     * path where the root cause was identified.
+     * </p>
+     * 
+     * @param failureDetails
+     *        The details for the step failure including reason, message, and
+     *        log file path where the root cause was identified.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public StepStatus withFailureDetails(FailureDetails failureDetails) {
+        setFailureDetails(failureDetails);
+        return this;
+    }
+
+    /**
+     * <p>
      * The timeline of the cluster step status over time.
      * </p>
      * 
@@ -216,6 +270,8 @@ public class StepStatus implements Serializable, Cloneable {
             sb.append("State: " + getState() + ",");
         if (getStateChangeReason() != null)
             sb.append("StateChangeReason: " + getStateChangeReason() + ",");
+        if (getFailureDetails() != null)
+            sb.append("FailureDetails: " + getFailureDetails() + ",");
         if (getTimeline() != null)
             sb.append("Timeline: " + getTimeline());
         sb.append("}");
@@ -244,6 +300,12 @@ public class StepStatus implements Serializable, Cloneable {
                 && other.getStateChangeReason().equals(
                         this.getStateChangeReason()) == false)
             return false;
+        if (other.getFailureDetails() == null
+                ^ this.getFailureDetails() == null)
+            return false;
+        if (other.getFailureDetails() != null
+                && other.getFailureDetails().equals(this.getFailureDetails()) == false)
+            return false;
         if (other.getTimeline() == null ^ this.getTimeline() == null)
             return false;
         if (other.getTimeline() != null
@@ -263,6 +325,10 @@ public class StepStatus implements Serializable, Cloneable {
                 * hashCode
                 + ((getStateChangeReason() == null) ? 0
                         : getStateChangeReason().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getFailureDetails() == null) ? 0 : getFailureDetails()
+                        .hashCode());
         hashCode = prime * hashCode
                 + ((getTimeline() == null) ? 0 : getTimeline().hashCode());
         return hashCode;

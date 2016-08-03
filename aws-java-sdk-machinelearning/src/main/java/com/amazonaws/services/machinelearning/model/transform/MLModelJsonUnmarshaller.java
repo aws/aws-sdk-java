@@ -134,6 +134,21 @@ public class MLModelJsonUnmarshaller implements
                     mLModel.setMessage(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
+                if (context.testExpression("ComputeTime", targetDepth)) {
+                    context.nextToken();
+                    mLModel.setComputeTime(context.getUnmarshaller(Long.class)
+                            .unmarshall(context));
+                }
+                if (context.testExpression("FinishedAt", targetDepth)) {
+                    context.nextToken();
+                    mLModel.setFinishedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("StartedAt", targetDepth)) {
+                    context.nextToken();
+                    mLModel.setStartedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

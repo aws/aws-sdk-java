@@ -127,6 +127,21 @@ public class DataSourceJsonUnmarshaller implements
                     dataSource.setComputeStatistics(context.getUnmarshaller(
                             Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("ComputeTime", targetDepth)) {
+                    context.nextToken();
+                    dataSource.setComputeTime(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
+                }
+                if (context.testExpression("FinishedAt", targetDepth)) {
+                    context.nextToken();
+                    dataSource.setFinishedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("StartedAt", targetDepth)) {
+                    context.nextToken();
+                    dataSource.setStartedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

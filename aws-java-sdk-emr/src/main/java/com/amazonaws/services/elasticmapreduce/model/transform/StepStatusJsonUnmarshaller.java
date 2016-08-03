@@ -62,6 +62,11 @@ public class StepStatusJsonUnmarshaller implements
                             .setStateChangeReason(StepStateChangeReasonJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("FailureDetails", targetDepth)) {
+                    context.nextToken();
+                    stepStatus.setFailureDetails(FailureDetailsJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Timeline", targetDepth)) {
                     context.nextToken();
                     stepStatus.setTimeline(StepTimelineJsonUnmarshaller

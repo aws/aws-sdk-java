@@ -536,10 +536,18 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
      * following criteria are returned:
      * </p>
      * <ul>
-     * <li>Job flows created and completed in the last two weeks</li>
-     * <li>Job flows created within the last two months that are in one of the
+     * <li>
+     * <p>
+     * Job flows created and completed in the last two weeks
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Job flows created within the last two months that are in one of the
      * following states: <code>RUNNING</code>, <code>WAITING</code>,
-     * <code>SHUTTING_DOWN</code>, <code>STARTING</code></li>
+     * <code>SHUTTING_DOWN</code>, <code>STARTING</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Amazon Elastic MapReduce can return a maximum of 512 job flow

@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Describes the inputs for SetAlarmState.
+ * </p>
  */
 public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

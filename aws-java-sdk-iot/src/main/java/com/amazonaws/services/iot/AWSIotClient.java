@@ -2687,6 +2687,64 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Lists certificates that are being transfered but not yet accepted.
+     * </p>
+     * 
+     * @param listOutgoingCertificatesRequest
+     *        The input to the ListOutgoingCertificates operation.
+     * @return Result of the ListOutgoingCertificates operation returned by the
+     *         service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListOutgoingCertificates
+     */
+    @Override
+    public ListOutgoingCertificatesResult listOutgoingCertificates(
+            ListOutgoingCertificatesRequest listOutgoingCertificatesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listOutgoingCertificatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOutgoingCertificatesRequest> request = null;
+        Response<ListOutgoingCertificatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOutgoingCertificatesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listOutgoingCertificatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListOutgoingCertificatesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new ListOutgoingCertificatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists your policies.
      * </p>
      * 

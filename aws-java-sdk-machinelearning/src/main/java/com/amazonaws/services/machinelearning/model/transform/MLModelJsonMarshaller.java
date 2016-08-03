@@ -125,6 +125,18 @@ public class MLModelJsonMarshaller {
                 jsonGenerator.writeFieldName("Message").writeValue(
                         mLModel.getMessage());
             }
+            if (mLModel.getComputeTime() != null) {
+                jsonGenerator.writeFieldName("ComputeTime").writeValue(
+                        mLModel.getComputeTime());
+            }
+            if (mLModel.getFinishedAt() != null) {
+                jsonGenerator.writeFieldName("FinishedAt").writeValue(
+                        mLModel.getFinishedAt());
+            }
+            if (mLModel.getStartedAt() != null) {
+                jsonGenerator.writeFieldName("StartedAt").writeValue(
+                        mLModel.getStartedAt());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

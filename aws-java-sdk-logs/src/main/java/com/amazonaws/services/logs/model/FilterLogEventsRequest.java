@@ -61,10 +61,9 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
     private String filterPattern;
     /**
      * <p>
-     * A pagination token obtained from a
-     * <code class="code">FilterLogEvents</code> response to continue paginating
-     * the FilterLogEvents results. This token is omitted from the response when
-     * there are no other events to display.
+     * A pagination token obtained from a <code>FilterLogEvents</code> response
+     * to continue paginating the FilterLogEvents results. This token is omitted
+     * from the response when there are no other events to display.
      * </p>
      */
     private String nextToken;
@@ -369,17 +368,16 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A pagination token obtained from a
-     * <code class="code">FilterLogEvents</code> response to continue paginating
-     * the FilterLogEvents results. This token is omitted from the response when
-     * there are no other events to display.
+     * A pagination token obtained from a <code>FilterLogEvents</code> response
+     * to continue paginating the FilterLogEvents results. This token is omitted
+     * from the response when there are no other events to display.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token obtained from a
-     *        <code class="code">FilterLogEvents</code> response to continue
-     *        paginating the FilterLogEvents results. This token is omitted from
-     *        the response when there are no other events to display.
+     *        A pagination token obtained from a <code>FilterLogEvents</code>
+     *        response to continue paginating the FilterLogEvents results. This
+     *        token is omitted from the response when there are no other events
+     *        to display.
      */
 
     public void setNextToken(String nextToken) {
@@ -388,16 +386,15 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A pagination token obtained from a
-     * <code class="code">FilterLogEvents</code> response to continue paginating
-     * the FilterLogEvents results. This token is omitted from the response when
-     * there are no other events to display.
+     * A pagination token obtained from a <code>FilterLogEvents</code> response
+     * to continue paginating the FilterLogEvents results. This token is omitted
+     * from the response when there are no other events to display.
      * </p>
      * 
-     * @return A pagination token obtained from a
-     *         <code class="code">FilterLogEvents</code> response to continue
-     *         paginating the FilterLogEvents results. This token is omitted
-     *         from the response when there are no other events to display.
+     * @return A pagination token obtained from a <code>FilterLogEvents</code>
+     *         response to continue paginating the FilterLogEvents results. This
+     *         token is omitted from the response when there are no other events
+     *         to display.
      */
 
     public String getNextToken() {
@@ -406,17 +403,16 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A pagination token obtained from a
-     * <code class="code">FilterLogEvents</code> response to continue paginating
-     * the FilterLogEvents results. This token is omitted from the response when
-     * there are no other events to display.
+     * A pagination token obtained from a <code>FilterLogEvents</code> response
+     * to continue paginating the FilterLogEvents results. This token is omitted
+     * from the response when there are no other events to display.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token obtained from a
-     *        <code class="code">FilterLogEvents</code> response to continue
-     *        paginating the FilterLogEvents results. This token is omitted from
-     *        the response when there are no other events to display.
+     *        A pagination token obtained from a <code>FilterLogEvents</code>
+     *        response to continue paginating the FilterLogEvents results. This
+     *        token is omitted from the response when there are no other events
+     *        to display.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

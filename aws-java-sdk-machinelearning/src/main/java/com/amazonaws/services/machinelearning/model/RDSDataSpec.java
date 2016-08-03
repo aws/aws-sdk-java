@@ -27,7 +27,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
     /**
      * <p>
      * Describes the <code>DatabaseName</code> and
-     * <code>InstanceIdentifier</code> of an an Amazon RDS database.
+     * <code>InstanceIdentifier</code> of an Amazon RDS database.
      * </p>
      */
     private RDSDatabase databaseInformation;
@@ -274,12 +274,12 @@ public class RDSDataSpec implements Serializable, Cloneable {
     /**
      * <p>
      * Describes the <code>DatabaseName</code> and
-     * <code>InstanceIdentifier</code> of an an Amazon RDS database.
+     * <code>InstanceIdentifier</code> of an Amazon RDS database.
      * </p>
      * 
      * @param databaseInformation
      *        Describes the <code>DatabaseName</code> and
-     *        <code>InstanceIdentifier</code> of an an Amazon RDS database.
+     *        <code>InstanceIdentifier</code> of an Amazon RDS database.
      */
 
     public void setDatabaseInformation(RDSDatabase databaseInformation) {
@@ -289,11 +289,11 @@ public class RDSDataSpec implements Serializable, Cloneable {
     /**
      * <p>
      * Describes the <code>DatabaseName</code> and
-     * <code>InstanceIdentifier</code> of an an Amazon RDS database.
+     * <code>InstanceIdentifier</code> of an Amazon RDS database.
      * </p>
      * 
      * @return Describes the <code>DatabaseName</code> and
-     *         <code>InstanceIdentifier</code> of an an Amazon RDS database.
+     *         <code>InstanceIdentifier</code> of an Amazon RDS database.
      */
 
     public RDSDatabase getDatabaseInformation() {
@@ -303,12 +303,12 @@ public class RDSDataSpec implements Serializable, Cloneable {
     /**
      * <p>
      * Describes the <code>DatabaseName</code> and
-     * <code>InstanceIdentifier</code> of an an Amazon RDS database.
+     * <code>InstanceIdentifier</code> of an Amazon RDS database.
      * </p>
      * 
      * @param databaseInformation
      *        Describes the <code>DatabaseName</code> and
-     *        <code>InstanceIdentifier</code> of an an Amazon RDS database.
+     *        <code>InstanceIdentifier</code> of an Amazon RDS database.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

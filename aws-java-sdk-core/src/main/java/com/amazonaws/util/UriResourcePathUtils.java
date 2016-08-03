@@ -42,6 +42,8 @@ public final class UriResourcePathUtils {
                 index = s.indexOf("=");
                 if (index != -1) {
                     request.addParameter(s.substring(0, index), s.substring(index + 1));
+                } else {
+                    request.addParameter(s, (String)null);
                 }
             }
         }

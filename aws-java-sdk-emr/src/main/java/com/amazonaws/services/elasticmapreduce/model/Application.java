@@ -28,11 +28,22 @@ import java.io.Serializable;
  * supported values are:
  * </p>
  * <ul>
- * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
- * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
- * <li>"mapr" with the user arguments specifying "--edition,m3" or
- * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition,
- * respectively.</li>
+ * <li>
+ * <p>
+ * "mapr-m3" - launch the job flow using MapR M3 Edition.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * "mapr-m5" - launch the job flow using MapR M5 Edition.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * "mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" -
+ * launch the job flow using MapR M3 or M5 Edition, respectively.
+ * </p>
+ * </li>
  * </ul>
  * <note>
  * <p>

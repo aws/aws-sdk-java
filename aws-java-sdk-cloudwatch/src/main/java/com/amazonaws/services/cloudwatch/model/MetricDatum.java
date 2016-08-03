@@ -51,12 +51,15 @@ public class MetricDatum implements Serializable, Cloneable {
      * <p>
      * The value for the metric.
      * </p>
-     * <important>Although the <code>Value</code> parameter accepts numbers of
-     * type <code>Double</code>, Amazon CloudWatch rejects values that are
-     * either too small or too large. Values must be in the range of
-     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
-     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not
-     * supported. </important>
+     * <important>
+     * <p>
+     * Although the <code>Value</code> parameter accepts numbers of type
+     * <code>Double</code>, Amazon CloudWatch rejects values that are either too
+     * small or too large. Values must be in the range of 8.515920e-109 to
+     * 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special
+     * values (e.g., NaN, +Infinity, -Infinity) are not supported.
+     * </p>
+     * </important>
      */
     private Double value;
     /**
@@ -264,21 +267,26 @@ public class MetricDatum implements Serializable, Cloneable {
      * <p>
      * The value for the metric.
      * </p>
-     * <important>Although the <code>Value</code> parameter accepts numbers of
-     * type <code>Double</code>, Amazon CloudWatch rejects values that are
-     * either too small or too large. Values must be in the range of
-     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
-     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not
-     * supported. </important>
+     * <important>
+     * <p>
+     * Although the <code>Value</code> parameter accepts numbers of type
+     * <code>Double</code>, Amazon CloudWatch rejects values that are either too
+     * small or too large. Values must be in the range of 8.515920e-109 to
+     * 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special
+     * values (e.g., NaN, +Infinity, -Infinity) are not supported.
+     * </p>
+     * </important>
      * 
      * @param value
-     *        The value for the metric. </p> <important>Although the
-     *        <code>Value</code> parameter accepts numbers of type
+     *        The value for the metric.</p> <important>
+     *        <p>
+     *        Although the <code>Value</code> parameter accepts numbers of type
      *        <code>Double</code>, Amazon CloudWatch rejects values that are
      *        either too small or too large. Values must be in the range of
      *        8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
      *        2). In addition, special values (e.g., NaN, +Infinity, -Infinity)
      *        are not supported.
+     *        </p>
      */
 
     public void setValue(Double value) {
@@ -289,20 +297,25 @@ public class MetricDatum implements Serializable, Cloneable {
      * <p>
      * The value for the metric.
      * </p>
-     * <important>Although the <code>Value</code> parameter accepts numbers of
-     * type <code>Double</code>, Amazon CloudWatch rejects values that are
-     * either too small or too large. Values must be in the range of
-     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
-     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not
-     * supported. </important>
+     * <important>
+     * <p>
+     * Although the <code>Value</code> parameter accepts numbers of type
+     * <code>Double</code>, Amazon CloudWatch rejects values that are either too
+     * small or too large. Values must be in the range of 8.515920e-109 to
+     * 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special
+     * values (e.g., NaN, +Infinity, -Infinity) are not supported.
+     * </p>
+     * </important>
      * 
-     * @return The value for the metric. </p> <important>Although the
-     *         <code>Value</code> parameter accepts numbers of type
+     * @return The value for the metric.</p> <important>
+     *         <p>
+     *         Although the <code>Value</code> parameter accepts numbers of type
      *         <code>Double</code>, Amazon CloudWatch rejects values that are
      *         either too small or too large. Values must be in the range of
      *         8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
      *         2). In addition, special values (e.g., NaN, +Infinity, -Infinity)
      *         are not supported.
+     *         </p>
      */
 
     public Double getValue() {
@@ -313,21 +326,26 @@ public class MetricDatum implements Serializable, Cloneable {
      * <p>
      * The value for the metric.
      * </p>
-     * <important>Although the <code>Value</code> parameter accepts numbers of
-     * type <code>Double</code>, Amazon CloudWatch rejects values that are
-     * either too small or too large. Values must be in the range of
-     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
-     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not
-     * supported. </important>
+     * <important>
+     * <p>
+     * Although the <code>Value</code> parameter accepts numbers of type
+     * <code>Double</code>, Amazon CloudWatch rejects values that are either too
+     * small or too large. Values must be in the range of 8.515920e-109 to
+     * 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special
+     * values (e.g., NaN, +Infinity, -Infinity) are not supported.
+     * </p>
+     * </important>
      * 
      * @param value
-     *        The value for the metric. </p> <important>Although the
-     *        <code>Value</code> parameter accepts numbers of type
+     *        The value for the metric.</p> <important>
+     *        <p>
+     *        Although the <code>Value</code> parameter accepts numbers of type
      *        <code>Double</code>, Amazon CloudWatch rejects values that are
      *        either too small or too large. Values must be in the range of
      *        8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
      *        2). In addition, special values (e.g., NaN, +Infinity, -Infinity)
      *        are not supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

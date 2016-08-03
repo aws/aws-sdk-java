@@ -416,10 +416,6 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
      * This operation disables automatic renewal of domain registration for the
      * specified domain.
      * </p>
-     * <note>Caution! Amazon Route 53 doesn't have a manual renewal process, so
-     * if you disable automatic renewal, registration for the domain will not be
-     * renewed when the expiration date passes, and you will lose control of the
-     * domain name.</note>
      * 
      * @param disableDomainAutoRenewRequest
      * @return Result of the DisableDomainAutoRenew operation returned by the
@@ -795,6 +791,77 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * The GetDomainSuggestions operation returns a list of suggested domain
+     * names given a string, which can either be a domain name or simply a word
+     * or phrase (without spaces).
+     * </p>
+     * <p>
+     * Parameters:
+     * <ul>
+     * <li>DomainName (string): The basis for your domain suggestion search, a
+     * string with (or without) top-level domain specified.</li>
+     * <li>SuggestionCount (int): The number of domain suggestions to be
+     * returned, maximum 50, minimum 1.</li>
+     * <li>OnlyAvailable (bool): If true, availability check will be performed
+     * on suggestion results, and only available domains will be returned. If
+     * false, suggestions will be returned without checking whether the domain
+     * is actually available, and caller will have to call
+     * checkDomainAvailability for each suggestion to determine availability for
+     * registration.</li>
+     * </ul>
+     * </p>
+     * 
+     * @param getDomainSuggestionsRequest
+     * @return Result of the GetDomainSuggestions operation returned by the
+     *         service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.GetDomainSuggestions
+     */
+    @Override
+    public GetDomainSuggestionsResult getDomainSuggestions(
+            GetDomainSuggestionsRequest getDomainSuggestionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(getDomainSuggestionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDomainSuggestionsRequest> request = null;
+        Response<GetDomainSuggestionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDomainSuggestionsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getDomainSuggestionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDomainSuggestionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetDomainSuggestionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * This operation returns the current status of an operation that is not
      * completed.
      * </p>
@@ -1102,6 +1169,75 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new RegisterDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This operation renews a domain for the specified number of years. The
+     * cost of renewing your domain is billed to your AWS account.
+     * </p>
+     * <p>
+     * We recommend that you renew your domain several weeks before the
+     * expiration date. Some TLD registries delete domains before the expiration
+     * date if you haven't renewed far enough in advance. For more information
+     * about renewing domain registration, see <a
+     * href="http://docs.aws.amazon.com/console/route53/domain-renew">Renewing
+     * Registration for a Domain</a> in the Amazon Route 53 documentation.
+     * </p>
+     * 
+     * @param renewDomainRequest
+     *        A <code>RenewDomain</code> request includes the number of years
+     *        that you want to renew for and the current expiration year.
+     * @return Result of the RenewDomain operation returned by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
+     * @throws DuplicateRequestException
+     *         The request is already in progress for the domain.
+     * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
+     * @sample AmazonRoute53Domains.RenewDomain
+     */
+    @Override
+    public RenewDomainResult renewDomain(RenewDomainRequest renewDomainRequest) {
+        ExecutionContext executionContext = createExecutionContext(renewDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RenewDomainRequest> request = null;
+        Response<RenewDomainResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RenewDomainRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(renewDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RenewDomainResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RenewDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1590,6 +1726,57 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new UpdateTagsForDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This operation returns all the domain-related billing records for the
+     * current AWS account for a specified period
+     * </p>
+     * 
+     * @param viewBillingRequest
+     *        The ViewBilling request includes the following elements.
+     * @return Result of the ViewBilling operation returned by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @sample AmazonRoute53Domains.ViewBilling
+     */
+    @Override
+    public ViewBillingResult viewBilling(ViewBillingRequest viewBillingRequest) {
+        ExecutionContext executionContext = createExecutionContext(viewBillingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ViewBillingRequest> request = null;
+        Response<ViewBillingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ViewBillingRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(viewBillingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ViewBillingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ViewBillingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

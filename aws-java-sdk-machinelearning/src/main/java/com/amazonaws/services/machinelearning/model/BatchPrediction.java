@@ -119,6 +119,16 @@ public class BatchPrediction implements Serializable, Cloneable {
      */
     private String message;
 
+    private Long computeTime;
+
+    private java.util.Date finishedAt;
+
+    private java.util.Date startedAt;
+
+    private Long totalRecordCount;
+
+    private Long invalidRecordCount;
+
     /**
      * <p>
      * The ID assigned to the <code>BatchPrediction</code> at creation. This
@@ -810,6 +820,141 @@ public class BatchPrediction implements Serializable, Cloneable {
     }
 
     /**
+     * @param computeTime
+     */
+
+    public void setComputeTime(Long computeTime) {
+        this.computeTime = computeTime;
+    }
+
+    /**
+     * @return
+     */
+
+    public Long getComputeTime() {
+        return this.computeTime;
+    }
+
+    /**
+     * @param computeTime
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public BatchPrediction withComputeTime(Long computeTime) {
+        setComputeTime(computeTime);
+        return this;
+    }
+
+    /**
+     * @param finishedAt
+     */
+
+    public void setFinishedAt(java.util.Date finishedAt) {
+        this.finishedAt = finishedAt;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getFinishedAt() {
+        return this.finishedAt;
+    }
+
+    /**
+     * @param finishedAt
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public BatchPrediction withFinishedAt(java.util.Date finishedAt) {
+        setFinishedAt(finishedAt);
+        return this;
+    }
+
+    /**
+     * @param startedAt
+     */
+
+    public void setStartedAt(java.util.Date startedAt) {
+        this.startedAt = startedAt;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getStartedAt() {
+        return this.startedAt;
+    }
+
+    /**
+     * @param startedAt
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public BatchPrediction withStartedAt(java.util.Date startedAt) {
+        setStartedAt(startedAt);
+        return this;
+    }
+
+    /**
+     * @param totalRecordCount
+     */
+
+    public void setTotalRecordCount(Long totalRecordCount) {
+        this.totalRecordCount = totalRecordCount;
+    }
+
+    /**
+     * @return
+     */
+
+    public Long getTotalRecordCount() {
+        return this.totalRecordCount;
+    }
+
+    /**
+     * @param totalRecordCount
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public BatchPrediction withTotalRecordCount(Long totalRecordCount) {
+        setTotalRecordCount(totalRecordCount);
+        return this;
+    }
+
+    /**
+     * @param invalidRecordCount
+     */
+
+    public void setInvalidRecordCount(Long invalidRecordCount) {
+        this.invalidRecordCount = invalidRecordCount;
+    }
+
+    /**
+     * @return
+     */
+
+    public Long getInvalidRecordCount() {
+        return this.invalidRecordCount;
+    }
+
+    /**
+     * @param invalidRecordCount
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public BatchPrediction withInvalidRecordCount(Long invalidRecordCount) {
+        setInvalidRecordCount(invalidRecordCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -843,7 +988,17 @@ public class BatchPrediction implements Serializable, Cloneable {
         if (getOutputUri() != null)
             sb.append("OutputUri: " + getOutputUri() + ",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage());
+            sb.append("Message: " + getMessage() + ",");
+        if (getComputeTime() != null)
+            sb.append("ComputeTime: " + getComputeTime() + ",");
+        if (getFinishedAt() != null)
+            sb.append("FinishedAt: " + getFinishedAt() + ",");
+        if (getStartedAt() != null)
+            sb.append("StartedAt: " + getStartedAt() + ",");
+        if (getTotalRecordCount() != null)
+            sb.append("TotalRecordCount: " + getTotalRecordCount() + ",");
+        if (getInvalidRecordCount() != null)
+            sb.append("InvalidRecordCount: " + getInvalidRecordCount());
         sb.append("}");
         return sb.toString();
     }
@@ -921,6 +1076,35 @@ public class BatchPrediction implements Serializable, Cloneable {
         if (other.getMessage() != null
                 && other.getMessage().equals(this.getMessage()) == false)
             return false;
+        if (other.getComputeTime() == null ^ this.getComputeTime() == null)
+            return false;
+        if (other.getComputeTime() != null
+                && other.getComputeTime().equals(this.getComputeTime()) == false)
+            return false;
+        if (other.getFinishedAt() == null ^ this.getFinishedAt() == null)
+            return false;
+        if (other.getFinishedAt() != null
+                && other.getFinishedAt().equals(this.getFinishedAt()) == false)
+            return false;
+        if (other.getStartedAt() == null ^ this.getStartedAt() == null)
+            return false;
+        if (other.getStartedAt() != null
+                && other.getStartedAt().equals(this.getStartedAt()) == false)
+            return false;
+        if (other.getTotalRecordCount() == null
+                ^ this.getTotalRecordCount() == null)
+            return false;
+        if (other.getTotalRecordCount() != null
+                && other.getTotalRecordCount().equals(
+                        this.getTotalRecordCount()) == false)
+            return false;
+        if (other.getInvalidRecordCount() == null
+                ^ this.getInvalidRecordCount() == null)
+            return false;
+        if (other.getInvalidRecordCount() != null
+                && other.getInvalidRecordCount().equals(
+                        this.getInvalidRecordCount()) == false)
+            return false;
         return true;
     }
 
@@ -961,6 +1145,21 @@ public class BatchPrediction implements Serializable, Cloneable {
                 + ((getOutputUri() == null) ? 0 : getOutputUri().hashCode());
         hashCode = prime * hashCode
                 + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getComputeTime() == null) ? 0 : getComputeTime().hashCode());
+        hashCode = prime * hashCode
+                + ((getFinishedAt() == null) ? 0 : getFinishedAt().hashCode());
+        hashCode = prime * hashCode
+                + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTotalRecordCount() == null) ? 0 : getTotalRecordCount()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInvalidRecordCount() == null) ? 0
+                        : getInvalidRecordCount().hashCode());
         return hashCode;
     }
 

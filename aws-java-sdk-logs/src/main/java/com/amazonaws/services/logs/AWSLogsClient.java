@@ -46,7 +46,6 @@ import com.amazonaws.services.logs.model.transform.*;
  * this client are blocking, and will not return until the service call
  * completes.
  * <p>
- * <fullname>Amazon CloudWatch Logs API Reference</fullname>
  * <p>
  * You can use Amazon CloudWatch Logs to monitor, store, and access your log
  * files from Amazon Elastic Compute Cloud (Amazon EC2) instances, Amazon
@@ -487,12 +486,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * <p>
      * You must use the following guidelines when naming a log group:
-     * <ul>
-     * <li>Log group names can be between 1 and 512 characters long.</li>
-     * <li>Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen),
-     * '/' (forward slash), and '.' (period).</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Log group names can be between 1 and 512 characters long.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/'
+     * (forward slash), and '.' (period).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createLogGroupRequest
      * @return Result of the CreateLogGroup operation returned by the service.
@@ -555,11 +562,19 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * <p>
      * You must use the following guidelines when naming a log stream:
-     * <ul>
-     * <li>Log stream names can be between 1 and 512 characters long.</li>
-     * <li>The ':' colon character is not allowed.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Log stream names can be between 1 and 512 characters long.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ':' colon character is not allowed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createLogStreamRequest
      * @return Result of the CreateLogStream operation returned by the service.
@@ -958,9 +973,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * <p>
      * By default, this operation returns up to 50 destinations. If there are
      * more destinations to list, the response would contain a
-     * <code class="code">nextToken</code> value in the response body. You can
-     * also limit the number of destinations returned in the response by
-     * specifying the <code class="code">limit</code> parameter in the request.
+     * <code>nextToken</code> value in the response body. You can also limit the
+     * number of destinations returned in the response by specifying the
+     * <code>limit</code> parameter in the request.
      * </p>
      * 
      * @param describeDestinationsRequest
@@ -1023,10 +1038,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * <p>
      * By default, this operation returns up to 50 export tasks that satisfy the
      * specified filters. If there are more export tasks to list, the response
-     * would contain a <code class="code">nextToken</code> value in the response
-     * body. You can also limit the number of export tasks returned in the
-     * response by specifying the <code class="code">limit</code> parameter in
-     * the request.
+     * would contain a <code>nextToken</code> value in the response body. You
+     * can also limit the number of export tasks returned in the response by
+     * specifying the <code>limit</code> parameter in the request.
      * </p>
      * 
      * @param describeExportTasksRequest
@@ -1083,10 +1097,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * <p>
      * By default, this operation returns up to 50 log groups. If there are more
-     * log groups to list, the response would contain a
-     * <code class="code">nextToken</code> value in the response body. You can
-     * also limit the number of log groups returned in the response by
-     * specifying the <code class="code">limit</code> parameter in the request.
+     * log groups to list, the response would contain a <code>nextToken</code>
+     * value in the response body. You can also limit the number of log groups
+     * returned in the response by specifying the <code>limit</code> parameter
+     * in the request.
      * </p>
      * 
      * @param describeLogGroupsRequest
@@ -1149,11 +1163,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * <p>
      * By default, this operation returns up to 50 log streams. If there are
      * more log streams to list, the response would contain a
-     * <code class="code">nextToken</code> value in the response body. You can
-     * also limit the number of log streams returned in the response by
-     * specifying the <code class="code">limit</code> parameter in the request.
-     * This operation has a limit of five transactions per second, after which
-     * transactions are throttled.
+     * <code>nextToken</code> value in the response body. You can also limit the
+     * number of log streams returned in the response by specifying the
+     * <code>limit</code> parameter in the request. This operation has a limit
+     * of five transactions per second, after which transactions are throttled.
      * </p>
      * 
      * @param describeLogStreamsRequest
@@ -1212,9 +1225,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * <p>
      * By default, this operation returns up to 50 metric filters. If there are
      * more metric filters to list, the response would contain a
-     * <code class="code">nextToken</code> value in the response body. You can
-     * also limit the number of metric filters returned in the response by
-     * specifying the <code class="code">limit</code> parameter in the request.
+     * <code>nextToken</code> value in the response body. You can also limit the
+     * number of metric filters returned in the response by specifying the
+     * <code>limit</code> parameter in the request.
      * </p>
      * 
      * @param describeMetricFiltersRequest
@@ -1273,9 +1286,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * <p>
      * By default, this operation returns up to 50 subscription filters. If
      * there are more subscription filters to list, the response would contain a
-     * <code class="code">nextToken</code> value in the response body. You can
-     * also limit the number of subscription filters returned in the response by
-     * specifying the <code class="code">limit</code> parameter in the request.
+     * <code>nextToken</code> value in the response body. You can also limit the
+     * number of subscription filters returned in the response by specifying the
+     * <code>limit</code> parameter in the request.
      * </p>
      * 
      * @param describeSubscriptionFiltersRequest
@@ -1330,22 +1343,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * <p>
      * Retrieves log events, optionally filtered by a filter pattern from the
      * specified log group. You can provide an optional time range to filter the
-     * results on the event <code class="code">timestamp</code>. You can limit
-     * the streams searched to an explicit list of
-     * <code class="code">logStreamNames</code>.
+     * results on the event <code>timestamp</code>. You can limit the streams
+     * searched to an explicit list of <code>logStreamNames</code>.
      * </p>
      * <p>
      * By default, this operation returns as much matching log events as can fit
      * in a response size of 1MB, up to 10,000 log events, or all the events
      * found within a time-bounded scan window. If the response includes a
-     * <code class="code">nextToken</code>, then there is more data to search,
-     * and the search can be resumed with a new request providing the nextToken.
-     * The response will contain a list of
-     * <code class="code">searchedLogStreams</code> that contains information
-     * about which streams were searched in the request and whether they have
-     * been searched completely or require further pagination. The
-     * <code class="code">limit</code> parameter in the request. can be used to
-     * specify the maximum number of events to return in a page.
+     * <code>nextToken</code>, then there is more data to search, and the search
+     * can be resumed with a new request providing the nextToken. The response
+     * will contain a list of <code>searchedLogStreams</code> that contains
+     * information about which streams were searched in the request and whether
+     * they have been searched completely or require further pagination. The
+     * <code>limit</code> parameter in the request can be used to specify the
+     * maximum number of events to return in a page.
      * </p>
      * 
      * @param filterLogEventsRequest
@@ -1399,18 +1410,17 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * <p>
      * Retrieves log events from the specified log stream. You can provide an
      * optional time range to filter the results on the event
-     * <code class="code">timestamp</code>.
+     * <code>timestamp</code>.
      * </p>
      * <p>
      * By default, this operation returns as much log events as can fit in a
      * response size of 1MB, up to 10,000 log events. The response will always
-     * include a <code class="code">nextForwardToken</code> and a
-     * <code class="code">nextBackwardToken</code> in the response body. You can
-     * use any of these tokens in subsequent
-     * <code class="code">GetLogEvents</code> requests to paginate through
-     * events in either forward or backward direction. You can also limit the
-     * number of log events returned in the response by specifying the
-     * <code class="code">limit</code> parameter in the request.
+     * include a <code>nextForwardToken</code> and a
+     * <code>nextBackwardToken</code> in the response body. You can use any of
+     * these tokens in subsequent <code>GetLogEvents</code> requests to paginate
+     * through events in either forward or backward direction. You can also
+     * limit the number of log events returned in the response by specifying the
+     * <code>limit</code> parameter in the request.
      * </p>
      * 
      * @param getLogEventsRequest
@@ -1464,9 +1474,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * Creates or updates a <code>Destination</code>. A destination encapsulates
      * a physical resource (such as a Kinesis stream) and allows you to
      * subscribe to a real-time stream of log events of a different account,
-     * ingested through <code class="code">PutLogEvents</code> requests.
-     * Currently, the only supported physical resource is a Amazon Kinesis
-     * stream belonging to the same account as the destination.
+     * ingested through <code>PutLogEvents</code> requests. Currently, the only
+     * supported physical resource is a Amazon Kinesis stream belonging to the
+     * same account as the destination.
      * </p>
      * <p>
      * A destination controls what is written to its Amazon Kinesis stream
@@ -1588,28 +1598,51 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * Uploads a batch of log events to the specified log stream.
      * </p>
      * <p>
-     * Every PutLogEvents request must include the
-     * <code class="code">sequenceToken</code> obtained from the response of the
-     * previous request. An upload in a newly created log stream does not
-     * require a <code class="code">sequenceToken</code>.
+     * Every PutLogEvents request must include the <code>sequenceToken</code>
+     * obtained from the response of the previous request. An upload in a newly
+     * created log stream does not require a <code>sequenceToken</code>. You can
+     * also get the <code>sequenceToken</code> using <a>DescribeLogStreams</a>.
      * </p>
      * <p>
      * The batch of events must satisfy the following constraints:
-     * <ul>
-     * <li>The maximum batch size is 1,048,576 bytes, and this size is
-     * calculated as the sum of all event messages in UTF-8, plus 26 bytes for
-     * each log event.</li>
-     * <li>None of the log events in the batch can be more than 2 hours in the
-     * future.</li>
-     * <li>None of the log events in the batch can be older than 14 days or the
-     * retention period of the log group.</li>
-     * <li>The log events in the batch must be in chronological ordered by their
-     * <code class="code">timestamp</code>.</li>
-     * <li>The maximum number of log events in a batch is 10,000.</li>
-     * <li>A batch of log events in a single PutLogEvents request cannot span
-     * more than 24 hours. Otherwise, the PutLogEvents operation will fail.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The maximum batch size is 1,048,576 bytes, and this size is calculated as
+     * the sum of all event messages in UTF-8, plus 26 bytes for each log event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None of the log events in the batch can be more than 2 hours in the
+     * future.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None of the log events in the batch can be older than 14 days or the
+     * retention period of the log group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The log events in the batch must be in chronological ordered by their
+     * <code>timestamp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The maximum number of log events in a batch is 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A batch of log events in a single PutLogEvents request cannot span more
+     * than 24 hours. Otherwise, the PutLogEvents operation will fail.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param putLogEventsRequest
      * @return Result of the PutLogEvents operation returned by the service.
@@ -1619,9 +1652,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @throws DataAlreadyAcceptedException
      * @throws ResourceNotFoundException
      *         Returned if the specified resource does not exist.
-     * @throws OperationAbortedException
-     *         Returned if multiple requests to update the same resource were in
-     *         conflict.
      * @throws ServiceUnavailableException
      *         Returned if the service cannot complete the request.
      * @sample AWSLogs.PutLogEvents
@@ -1666,8 +1696,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * <p>
      * Creates or updates a metric filter and associates it with the specified
      * log group. Metric filters allow you to configure rules to extract metric
-     * data from log events ingested through
-     * <code class="code">PutLogEvents</code> requests.
+     * data from log events ingested through <code>PutLogEvents</code> requests.
      * </p>
      * <p>
      * The maximum number of metric filters that can be associated with a log
@@ -1789,20 +1818,36 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * <p>
      * Creates or updates a subscription filter and associates it with the
      * specified log group. Subscription filters allow you to subscribe to a
-     * real-time stream of log events ingested through
-     * <code class="code">PutLogEvents</code> requests and have them delivered
-     * to a specific destination. Currently, the supported destinations are:
-     * <ul>
-     * <li>An Amazon Kinesis stream belonging to the same account as the
-     * subscription filter, for same-account delivery.</li>
-     * <li>A logical destination (used via an ARN of <code>Destination</code>)
-     * belonging to a different account, for cross-account delivery.</li>
-     * <li>An Amazon Kinesis Firehose stream belonging to the same account as
-     * the subscription filter, for same-account delivery.</li>
-     * <li>An AWS Lambda function belonging to the same account as the
-     * subscription filter, for same-account delivery.</li>
-     * </ul>
+     * real-time stream of log events ingested through <code>PutLogEvents</code>
+     * requests and have them delivered to a specific destination. Currently,
+     * the supported destinations are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Kinesis stream belonging to the same account as the
+     * subscription filter, for same-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A logical destination (used via an ARN of <code>Destination</code>)
+     * belonging to a different account, for cross-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An Amazon Kinesis Firehose stream belonging to the same account as the
+     * subscription filter, for same-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS Lambda function belonging to the same account as the subscription
+     * filter, for same-account delivery.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Currently there can only be one subscription filter associated with a log
      * group.

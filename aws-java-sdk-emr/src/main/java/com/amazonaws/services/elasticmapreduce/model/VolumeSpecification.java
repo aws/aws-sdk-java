@@ -38,7 +38,7 @@ public class VolumeSpecification implements Serializable, Cloneable {
     private Integer iops;
     /**
      * <p>
-     * The volume size, in gibibytes (GiB). This can be a number from 1 – 1024.
+     * The volume size, in gibibytes (GiB). This can be a number from 1 - 1024.
      * If the volume type is EBS-optimized, the minimum value is 10.
      * </p>
      */
@@ -131,12 +131,12 @@ public class VolumeSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in gibibytes (GiB). This can be a number from 1 – 1024.
+     * The volume size, in gibibytes (GiB). This can be a number from 1 - 1024.
      * If the volume type is EBS-optimized, the minimum value is 10.
      * </p>
      * 
      * @param sizeInGB
-     *        The volume size, in gibibytes (GiB). This can be a number from 1 –
+     *        The volume size, in gibibytes (GiB). This can be a number from 1 -
      *        1024. If the volume type is EBS-optimized, the minimum value is
      *        10.
      */
@@ -147,12 +147,12 @@ public class VolumeSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in gibibytes (GiB). This can be a number from 1 – 1024.
+     * The volume size, in gibibytes (GiB). This can be a number from 1 - 1024.
      * If the volume type is EBS-optimized, the minimum value is 10.
      * </p>
      * 
      * @return The volume size, in gibibytes (GiB). This can be a number from 1
-     *         – 1024. If the volume type is EBS-optimized, the minimum value is
+     *         - 1024. If the volume type is EBS-optimized, the minimum value is
      *         10.
      */
 
@@ -162,12 +162,12 @@ public class VolumeSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in gibibytes (GiB). This can be a number from 1 – 1024.
+     * The volume size, in gibibytes (GiB). This can be a number from 1 - 1024.
      * If the volume type is EBS-optimized, the minimum value is 10.
      * </p>
      * 
      * @param sizeInGB
-     *        The volume size, in gibibytes (GiB). This can be a number from 1 –
+     *        The volume size, in gibibytes (GiB). This can be a number from 1 -
      *        1024. If the volume type is EBS-optimized, the minimum value is
      *        10.
      * @return Returns a reference to this object so that method calls can be

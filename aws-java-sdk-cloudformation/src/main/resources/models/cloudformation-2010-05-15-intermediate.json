@@ -19,17 +19,17 @@
     "jsonVersion" : null,
     "endpointPrefix" : "cloudformation",
     "signingName" : "cloudformation",
-    "unmarshallerClassSuffix" : "StaxUnmarshaller",
+    "jsonProtocol" : false,
     "xmlProtocol" : true,
     "cborProtocol" : false,
-    "jsonProtocol" : false,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
-    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "syncClientBuilderClassName" : "AmazonCloudFormationClientBuilder",
     "asyncClientBuilderClassName" : "AmazonCloudFormationAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AmazonCloudFormationModuleInjector",
     "smokeTestsPackageName" : "com.amazonaws.services.cloudformation.smoketests",
-    "serviceName" : "AWS CloudFormation"
+    "serviceName" : "AWS CloudFormation",
+    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "CancelUpdateStack" : {

@@ -463,6 +463,16 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
+     * The license model for the DB instance.
+     * </p>
+     * <p>
+     * Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> | <code>general-public-license</code>
+     * </p>
+     */
+    private String licenseModel;
+    /**
+     * <p>
      * The new Provisioned IOPS (I/O operations per second) value for the RDS
      * instance. Changing this setting does not result in an outage and the
      * change is applied during the next maintenance window unless the
@@ -3828,6 +3838,71 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
+     * The license model for the DB instance.
+     * </p>
+     * <p>
+     * Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> | <code>general-public-license</code>
+     * </p>
+     * 
+     * @param licenseModel
+     *        The license model for the DB instance.</p>
+     *        <p>
+     *        Valid values: <code>license-included</code> |
+     *        <code>bring-your-own-license</code> |
+     *        <code>general-public-license</code>
+     */
+
+    public void setLicenseModel(String licenseModel) {
+        this.licenseModel = licenseModel;
+    }
+
+    /**
+     * <p>
+     * The license model for the DB instance.
+     * </p>
+     * <p>
+     * Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> | <code>general-public-license</code>
+     * </p>
+     * 
+     * @return The license model for the DB instance.</p>
+     *         <p>
+     *         Valid values: <code>license-included</code> |
+     *         <code>bring-your-own-license</code> |
+     *         <code>general-public-license</code>
+     */
+
+    public String getLicenseModel() {
+        return this.licenseModel;
+    }
+
+    /**
+     * <p>
+     * The license model for the DB instance.
+     * </p>
+     * <p>
+     * Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> | <code>general-public-license</code>
+     * </p>
+     * 
+     * @param licenseModel
+     *        The license model for the DB instance.</p>
+     *        <p>
+     *        Valid values: <code>license-included</code> |
+     *        <code>bring-your-own-license</code> |
+     *        <code>general-public-license</code>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyDBInstanceRequest withLicenseModel(String licenseModel) {
+        setLicenseModel(licenseModel);
+        return this;
+    }
+
+    /**
+     * <p>
      * The new Provisioned IOPS (I/O operations per second) value for the RDS
      * instance. Changing this setting does not result in an outage and the
      * change is applied during the next maintenance window unless the
@@ -5826,6 +5901,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
         if (getAutoMinorVersionUpgrade() != null)
             sb.append("AutoMinorVersionUpgrade: "
                     + getAutoMinorVersionUpgrade() + ",");
+        if (getLicenseModel() != null)
+            sb.append("LicenseModel: " + getLicenseModel() + ",");
         if (getIops() != null)
             sb.append("Iops: " + getIops() + ",");
         if (getOptionGroupName() != null)
@@ -5972,6 +6049,11 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
         if (other.getAutoMinorVersionUpgrade() != null
                 && other.getAutoMinorVersionUpgrade().equals(
                         this.getAutoMinorVersionUpgrade()) == false)
+            return false;
+        if (other.getLicenseModel() == null ^ this.getLicenseModel() == null)
+            return false;
+        if (other.getLicenseModel() != null
+                && other.getLicenseModel().equals(this.getLicenseModel()) == false)
             return false;
         if (other.getIops() == null ^ this.getIops() == null)
             return false;
@@ -6133,6 +6215,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getAutoMinorVersionUpgrade() == null) ? 0
                         : getAutoMinorVersionUpgrade().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLicenseModel() == null) ? 0 : getLicenseModel()
+                        .hashCode());
         hashCode = prime * hashCode
                 + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime

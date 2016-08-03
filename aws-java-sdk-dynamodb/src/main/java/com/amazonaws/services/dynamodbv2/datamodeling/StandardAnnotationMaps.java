@@ -18,7 +18,9 @@ import static com.amazonaws.services.dynamodbv2.model.KeyType.HASH;
 import static com.amazonaws.services.dynamodbv2.model.KeyType.RANGE;
 
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardParameterTypes.ParamType;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
+import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedElement;
@@ -42,8 +44,8 @@ final class StandardAnnotationMaps {
      * @return The map of annotation type to annotation instance.
      */
     static final <T> TableMap<T> of(final Class<T> clazz) {
-        final DynamoDBMapperTableModel.Properties.Builder<T> defaults;
-        defaults = new DynamoDBMapperTableModel.Properties.Builder();
+        final DynamoDBMapperTableModel.Properties.Buildable<T> defaults;
+        defaults = new DynamoDBMapperTableModel.Properties.Buildable();
         defaults.withTargetType(clazz);
 
         final TableMap<T> map = new TableMap(defaults);
@@ -58,10 +60,12 @@ final class StandardAnnotationMaps {
      * @return The map of annotation type to annotation instance.
      */
     static final <T> FieldMap<T> of(final Method getter) {
-        final DynamoDBMapperFieldModel.Properties.Builder<T> defaults;
-        defaults = new DynamoDBMapperFieldModel.Properties.Builder();
+        final ParamType<T> type = ParamType.of(getter.getGenericReturnType());
+        final DynamoDBMapperFieldModel.Properties.Buildable<T> defaults;
+        defaults = new DynamoDBMapperFieldModel.Properties.Buildable();
         defaults.withAttributeName(StandardBeanProperties.nameOf(getter, null));
-        defaults.withTargetType((Class<T>)getter.getReturnType());
+        defaults.withScalarAttributeType(type.scalar().scalarAttributeType());
+        defaults.withTargetType(type.type());
 
         final FieldMap<T> map = new FieldMap(defaults);
         map.putAll(getter.getReturnType());
@@ -355,6 +359,17 @@ final class StandardAnnotationMaps {
          * {@inheritDoc}
          */
         @Override
+        public final ScalarAttributeType scalarAttributeType() {
+            if (typeConverted() != null || nativeBoolean() != null) {
+                return null; //<- must by determined by model factory
+            }
+            return defaults.scalarAttributeType();
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        @Override
         public final String attributeName() {
             if (hashKey() != null && !hashKey().attributeName().isEmpty()) {
                 return hashKey().attributeName();
@@ -368,9 +383,8 @@ final class StandardAnnotationMaps {
                 return attribute().attributeName();
             } else if (version() != null && !version().attributeName().isEmpty()) {
                 return version().attributeName();
-            } else {
-                return defaults.attributeName();
             }
+            return defaults.attributeName();
         }
 
         /**

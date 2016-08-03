@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Describes the inputs for DescribeAlarmHistory.
+ * </p>
  */
 public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

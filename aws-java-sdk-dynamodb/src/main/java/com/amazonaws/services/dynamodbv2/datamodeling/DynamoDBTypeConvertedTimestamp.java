@@ -85,8 +85,9 @@ public @interface DynamoDBTypeConvertedTimestamp {
         private final DateTimeFormatter formatter;
 
         public Converter(final Class<T> targetType, final DynamoDBTypeConvertedTimestamp annotation) {
-            this.formatter = DateTimeFormat.forPattern(annotation.pattern()).withZone(DateTimeZone.forTimeZone(TimeZone.getTimeZone(annotation.timeZone())));
-            this.converter = StandardTypeConverters.Scalar.DATE.getConverter(targetType);
+            final TimeZone tz = StandardTypeConverters.convert(annotation.timeZone(), TimeZone.class);
+            this.formatter = DateTimeFormat.forPattern(annotation.pattern()).withZone(DateTimeZone.forTimeZone(tz));
+            this.converter = StandardTypeConverters.converter(Date.class, targetType);
         }
 
         @Override

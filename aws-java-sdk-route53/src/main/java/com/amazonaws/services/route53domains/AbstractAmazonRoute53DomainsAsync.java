@@ -149,6 +149,21 @@ public class AbstractAmazonRoute53DomainsAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<GetDomainSuggestionsResult> getDomainSuggestionsAsync(
+            GetDomainSuggestionsRequest request) {
+
+        return getDomainSuggestionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainSuggestionsResult> getDomainSuggestionsAsync(
+            GetDomainSuggestionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDomainSuggestionsRequest, GetDomainSuggestionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOperationDetailResult> getOperationDetailAsync(
             GetOperationDetailRequest request) {
 
@@ -272,6 +287,21 @@ public class AbstractAmazonRoute53DomainsAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<RenewDomainResult> renewDomainAsync(
+            RenewDomainRequest request) {
+
+        return renewDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RenewDomainResult> renewDomainAsync(
+            RenewDomainRequest request,
+            com.amazonaws.handlers.AsyncHandler<RenewDomainRequest, RenewDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ResendContactReachabilityEmailResult> resendContactReachabilityEmailAsync(
             ResendContactReachabilityEmailRequest request) {
 
@@ -372,6 +402,21 @@ public class AbstractAmazonRoute53DomainsAsync extends
     public java.util.concurrent.Future<UpdateTagsForDomainResult> updateTagsForDomainAsync(
             UpdateTagsForDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTagsForDomainRequest, UpdateTagsForDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ViewBillingResult> viewBillingAsync(
+            ViewBillingRequest request) {
+
+        return viewBillingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ViewBillingResult> viewBillingAsync(
+            ViewBillingRequest request,
+            com.amazonaws.handlers.AsyncHandler<ViewBillingRequest, ViewBillingResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

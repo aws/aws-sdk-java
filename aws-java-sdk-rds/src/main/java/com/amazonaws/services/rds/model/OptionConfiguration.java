@@ -37,6 +37,12 @@ public class OptionConfiguration implements Serializable, Cloneable {
     private Integer port;
     /**
      * <p>
+     * The version for the option.
+     * </p>
+     */
+    private String optionVersion;
+    /**
+     * <p>
      * A list of DBSecurityGroupMemebrship name strings used for this option.
      * </p>
      */
@@ -133,6 +139,47 @@ public class OptionConfiguration implements Serializable, Cloneable {
 
     public OptionConfiguration withPort(Integer port) {
         setPort(port);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version for the option.
+     * </p>
+     * 
+     * @param optionVersion
+     *        The version for the option.
+     */
+
+    public void setOptionVersion(String optionVersion) {
+        this.optionVersion = optionVersion;
+    }
+
+    /**
+     * <p>
+     * The version for the option.
+     * </p>
+     * 
+     * @return The version for the option.
+     */
+
+    public String getOptionVersion() {
+        return this.optionVersion;
+    }
+
+    /**
+     * <p>
+     * The version for the option.
+     * </p>
+     * 
+     * @param optionVersion
+     *        The version for the option.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public OptionConfiguration withOptionVersion(String optionVersion) {
+        setOptionVersion(optionVersion);
         return this;
     }
 
@@ -403,6 +450,8 @@ public class OptionConfiguration implements Serializable, Cloneable {
             sb.append("OptionName: " + getOptionName() + ",");
         if (getPort() != null)
             sb.append("Port: " + getPort() + ",");
+        if (getOptionVersion() != null)
+            sb.append("OptionVersion: " + getOptionVersion() + ",");
         if (getDBSecurityGroupMemberships() != null)
             sb.append("DBSecurityGroupMemberships: "
                     + getDBSecurityGroupMemberships() + ",");
@@ -434,6 +483,11 @@ public class OptionConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getPort() != null
                 && other.getPort().equals(this.getPort()) == false)
+            return false;
+        if (other.getOptionVersion() == null ^ this.getOptionVersion() == null)
+            return false;
+        if (other.getOptionVersion() != null
+                && other.getOptionVersion().equals(this.getOptionVersion()) == false)
             return false;
         if (other.getDBSecurityGroupMemberships() == null
                 ^ this.getDBSecurityGroupMemberships() == null)
@@ -467,6 +521,10 @@ public class OptionConfiguration implements Serializable, Cloneable {
                 + ((getOptionName() == null) ? 0 : getOptionName().hashCode());
         hashCode = prime * hashCode
                 + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getOptionVersion() == null) ? 0 : getOptionVersion()
+                        .hashCode());
         hashCode = prime
                 * hashCode
                 + ((getDBSecurityGroupMemberships() == null) ? 0

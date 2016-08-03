@@ -90,6 +90,18 @@ public class EvaluationJsonMarshaller {
                 jsonGenerator.writeFieldName("Message").writeValue(
                         evaluation.getMessage());
             }
+            if (evaluation.getComputeTime() != null) {
+                jsonGenerator.writeFieldName("ComputeTime").writeValue(
+                        evaluation.getComputeTime());
+            }
+            if (evaluation.getFinishedAt() != null) {
+                jsonGenerator.writeFieldName("FinishedAt").writeValue(
+                        evaluation.getFinishedAt());
+            }
+            if (evaluation.getStartedAt() != null) {
+                jsonGenerator.writeFieldName("StartedAt").writeValue(
+                        evaluation.getStartedAt());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

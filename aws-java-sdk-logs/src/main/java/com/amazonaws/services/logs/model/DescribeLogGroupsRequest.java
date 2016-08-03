@@ -34,7 +34,7 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeLogGroups</code> request.
+     * <code>DescribeLogGroups</code> request.
      * </p>
      */
     private String nextToken;
@@ -101,13 +101,13 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeLogGroups</code> request.
+     * <code>DescribeLogGroups</code> request.
      * </p>
      * 
      * @param nextToken
      *        A string token used for pagination that points to the next page of
      *        results. It must be a value obtained from the response of the
-     *        previous <code class="code">DescribeLogGroups</code> request.
+     *        previous <code>DescribeLogGroups</code> request.
      */
 
     public void setNextToken(String nextToken) {
@@ -118,12 +118,12 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeLogGroups</code> request.
+     * <code>DescribeLogGroups</code> request.
      * </p>
      * 
      * @return A string token used for pagination that points to the next page
      *         of results. It must be a value obtained from the response of the
-     *         previous <code class="code">DescribeLogGroups</code> request.
+     *         previous <code>DescribeLogGroups</code> request.
      */
 
     public String getNextToken() {
@@ -134,13 +134,13 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeLogGroups</code> request.
+     * <code>DescribeLogGroups</code> request.
      * </p>
      * 
      * @param nextToken
      *        A string token used for pagination that points to the next page of
      *        results. It must be a value obtained from the response of the
-     *        previous <code class="code">DescribeLogGroups</code> request.
+     *        previous <code>DescribeLogGroups</code> request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

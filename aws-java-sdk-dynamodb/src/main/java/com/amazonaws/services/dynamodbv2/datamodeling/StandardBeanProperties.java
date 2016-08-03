@@ -37,9 +37,7 @@ import java.util.concurrent.ConcurrentMap;
 final class StandardBeanProperties {
 
     /**
-     * Gets the bean properties for a given class.
-     * @param clazz The class.
-     * @return The bean properties.
+     * Returns the bean mappings for a given class.
      */
     static final <T,V> Map<String,Bean<T,V>> of(final Class<T> clazz) {
         return ((Beans<T,V>)Beans.CACHE).of(clazz);
@@ -62,7 +60,7 @@ final class StandardBeanProperties {
     /**
      * Holds the reflection bean properties for a given property.
      */
-    static final class Bean<T,V> implements Reflect<T,V> {
+    static final class Bean<T,V> {
         private final MethodReflect<T,V> reflect;
         private final FieldMap<V> annotations;
         private final ParamType<V> type;
@@ -70,12 +68,9 @@ final class StandardBeanProperties {
 
         /**
          * Constructs an object property mapping for the specified method.
-         * @param reflect The reflection property.
-         * @param annotations The annotations.
-         * @param id The field identifier.
          */
         private Bean(final MethodReflect<T,V> reflect, final FieldMap<V> annotations, final Id<T> id) {
-            this.type = StandardParameterTypes.of(reflect.getter.getGenericReturnType());
+            this.type = ParamType.of(reflect.getter.getGenericReturnType());
             this.annotations = annotations;
             this.reflect = reflect;
             this.id = id;
@@ -117,6 +112,7 @@ final class StandardBeanProperties {
          * Gets the getter method for this property.
          * @return The getter method.
          */
+        @Deprecated
         final Method getter() {
             return reflect.getter;
         }
@@ -125,27 +121,12 @@ final class StandardBeanProperties {
          * Gets the setter method for this property.
          * @return The setter method.
          */
+        @Deprecated
         final Method setter() {
             if (reflect.setter == null) {
                 throw new DynamoDBMappingException("no access to public/one-argument setter for " + reflect.getter);
             }
             return reflect.setter;
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public V get(final T object) {
-            return reflect.get(object);
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public void set(final T object, final V value) {
-            reflect.set(object, value);
         }
     }
 
@@ -154,27 +135,13 @@ final class StandardBeanProperties {
      */
     private static class MethodReflect<T,V> implements Reflect<T,V> {
         private final Method getter, setter;
-
-        /**
-         * Constructs a new method reflection property.
-         * @param getter The getter method.
-         */
         private MethodReflect(final Method getter) {
             this.setter = declaredSetterOf(getter);
             this.getter = getter;
         }
-
-        /**
-         * Gets the target type.
-         * @return The target type.
-         */
-        public final Class<V> targetType() {
+        final Class<V> targetType() {
             return (Class<V>)getter.getReturnType();
         }
-
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public V get(final T object) {
             try {
@@ -183,10 +150,6 @@ final class StandardBeanProperties {
                 throw new DynamoDBMappingException("could not invoke " + getter + " on " + object.getClass(), e);
             }
         }
-
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public void set(T object, final V value) {
             try {
@@ -202,20 +165,10 @@ final class StandardBeanProperties {
      */
     private static final class DeclaringMethodReflect<T,V> extends MethodReflect<T,V> {
         private final MethodReflect<T,T> declaring;
-
-        /**
-         * Constructs a new declaring method reflection property.
-         * @param getter The getter method.
-         * @param declaring The declaring reflection property.
-         */
         private DeclaringMethodReflect(final Method getter, final MethodReflect<T,T> declaring) {
             super(getter);
             this.declaring = declaring;
         }
-
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public final V get(final T object) {
             final T declaringObject = declaring.get(object);
@@ -224,10 +177,6 @@ final class StandardBeanProperties {
             }
             return super.get(declaringObject);
         }
-
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public final void set(final T object, final V value) {
             T declaringObject = declaring.get(object);
@@ -253,8 +202,6 @@ final class StandardBeanProperties {
 
         /**
          * Constructs a new builder instance.
-         * @param targetType The object type.
-         * @param inherited Indicates if we should ignore table/document restrictions.
          */
         Builder(final Class<T> targetType, final boolean inherited) {
             this.targetType = targetType;
@@ -263,7 +210,6 @@ final class StandardBeanProperties {
 
         /**
          * Builds the bean properties mapping.
-         * @return The built bean properties mapping.
          */
         public Map<String,Bean<T,V>> build() {
             for (final Method m : this.targetType.getMethods()) {
@@ -281,8 +227,6 @@ final class StandardBeanProperties {
 
         /**
          * Flattens or adds the bean to the mapping.
-         * @param bean The bean property.
-         * @param name The attribute name override.
          */
         private void flatten(final MethodReflect<T,V> reflect, String name) {
             final FieldMap<V> annotations = StandardAnnotationMaps.of(reflect.getter);
@@ -310,8 +254,6 @@ final class StandardBeanProperties {
 
     /**
      * Returns true if the method is a valid getter property.
-     * @param method The getter method.
-     * @return True if a getter method, false otherwise.
      */
     static final boolean isGetter(final Method method) {
         if (!method.getName().startsWith("get") && !method.getName().startsWith("is")) {
@@ -333,9 +275,6 @@ final class StandardBeanProperties {
 
     /**
      * Gets the property name of the specified getter method.
-     * @param getter The getter method.
-     * @param prefix An optional prefix to apply (for setter method).
-     * @return The property name.
      */
     static final String nameOf(final Method getter, final String prefix) {
         String name = getter.getName();
@@ -351,8 +290,6 @@ final class StandardBeanProperties {
 
     /**
      * Gets the declared field from the getter method.
-     * @param getter The getter method.
-     * @return The field, or null if none.
      */
     static final Field declaredFieldOf(final Method getter) {
         final String name = nameOf(getter, null);
@@ -366,8 +303,6 @@ final class StandardBeanProperties {
 
     /**
      * Gets the declared setter from the getter method.
-     * @param getter The getter method.
-     * @return The setter, or null if none.
      */
     static final Method declaredSetterOf(final Method getter) {
         final String name = nameOf(getter, "set");

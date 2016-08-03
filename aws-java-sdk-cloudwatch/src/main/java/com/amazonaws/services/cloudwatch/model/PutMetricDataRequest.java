@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Describes the inputs for PutMetricData.
+ * </p>
  */
 public class PutMetricDataRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -27,9 +29,13 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest implements
      * <p>
      * The namespace for the metric data.
      * </p>
-     * <note> You cannot specify a namespace that begins with "AWS/". Namespaces
-     * that begin with "AWS/" are reserved for other Amazon Web Services
-     * products that send metrics to Amazon CloudWatch. </note>
+     * <note>
+     * <p>
+     * You cannot specify a namespace that begins with "AWS/". Namespaces that
+     * begin with "AWS/" are reserved for other Amazon Web Services products
+     * that send metrics to Amazon CloudWatch.
+     * </p>
+     * </note>
      */
     private String namespace;
     /**
@@ -43,15 +49,21 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest implements
      * <p>
      * The namespace for the metric data.
      * </p>
-     * <note> You cannot specify a namespace that begins with "AWS/". Namespaces
-     * that begin with "AWS/" are reserved for other Amazon Web Services
-     * products that send metrics to Amazon CloudWatch. </note>
+     * <note>
+     * <p>
+     * You cannot specify a namespace that begins with "AWS/". Namespaces that
+     * begin with "AWS/" are reserved for other Amazon Web Services products
+     * that send metrics to Amazon CloudWatch.
+     * </p>
+     * </note>
      * 
      * @param namespace
-     *        The namespace for the metric data. </p> <note> You cannot specify
-     *        a namespace that begins with "AWS/". Namespaces that begin with
-     *        "AWS/" are reserved for other Amazon Web Services products that
-     *        send metrics to Amazon CloudWatch.
+     *        The namespace for the metric data.</p> <note>
+     *        <p>
+     *        You cannot specify a namespace that begins with "AWS/". Namespaces
+     *        that begin with "AWS/" are reserved for other Amazon Web Services
+     *        products that send metrics to Amazon CloudWatch.
+     *        </p>
      */
 
     public void setNamespace(String namespace) {
@@ -62,14 +74,20 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest implements
      * <p>
      * The namespace for the metric data.
      * </p>
-     * <note> You cannot specify a namespace that begins with "AWS/". Namespaces
-     * that begin with "AWS/" are reserved for other Amazon Web Services
-     * products that send metrics to Amazon CloudWatch. </note>
+     * <note>
+     * <p>
+     * You cannot specify a namespace that begins with "AWS/". Namespaces that
+     * begin with "AWS/" are reserved for other Amazon Web Services products
+     * that send metrics to Amazon CloudWatch.
+     * </p>
+     * </note>
      * 
-     * @return The namespace for the metric data. </p> <note> You cannot specify
-     *         a namespace that begins with "AWS/". Namespaces that begin with
-     *         "AWS/" are reserved for other Amazon Web Services products that
-     *         send metrics to Amazon CloudWatch.
+     * @return The namespace for the metric data.</p> <note>
+     *         <p>
+     *         You cannot specify a namespace that begins with "AWS/".
+     *         Namespaces that begin with "AWS/" are reserved for other Amazon
+     *         Web Services products that send metrics to Amazon CloudWatch.
+     *         </p>
      */
 
     public String getNamespace() {
@@ -80,15 +98,21 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest implements
      * <p>
      * The namespace for the metric data.
      * </p>
-     * <note> You cannot specify a namespace that begins with "AWS/". Namespaces
-     * that begin with "AWS/" are reserved for other Amazon Web Services
-     * products that send metrics to Amazon CloudWatch. </note>
+     * <note>
+     * <p>
+     * You cannot specify a namespace that begins with "AWS/". Namespaces that
+     * begin with "AWS/" are reserved for other Amazon Web Services products
+     * that send metrics to Amazon CloudWatch.
+     * </p>
+     * </note>
      * 
      * @param namespace
-     *        The namespace for the metric data. </p> <note> You cannot specify
-     *        a namespace that begins with "AWS/". Namespaces that begin with
-     *        "AWS/" are reserved for other Amazon Web Services products that
-     *        send metrics to Amazon CloudWatch.
+     *        The namespace for the metric data.</p> <note>
+     *        <p>
+     *        You cannot specify a namespace that begins with "AWS/". Namespaces
+     *        that begin with "AWS/" are reserved for other Amazon Web Services
+     *        products that send metrics to Amazon CloudWatch.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

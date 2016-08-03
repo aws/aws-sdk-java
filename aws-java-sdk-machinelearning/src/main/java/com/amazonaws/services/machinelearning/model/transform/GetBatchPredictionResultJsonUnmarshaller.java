@@ -116,6 +116,33 @@ public class GetBatchPredictionResultJsonUnmarshaller implements
                     getBatchPredictionResult.setMessage(context
                             .getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ComputeTime", targetDepth)) {
+                    context.nextToken();
+                    getBatchPredictionResult.setComputeTime(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("FinishedAt", targetDepth)) {
+                    context.nextToken();
+                    getBatchPredictionResult.setFinishedAt(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
+                }
+                if (context.testExpression("StartedAt", targetDepth)) {
+                    context.nextToken();
+                    getBatchPredictionResult.setStartedAt(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
+                }
+                if (context.testExpression("TotalRecordCount", targetDepth)) {
+                    context.nextToken();
+                    getBatchPredictionResult.setTotalRecordCount(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("InvalidRecordCount", targetDepth)) {
+                    context.nextToken();
+                    getBatchPredictionResult.setInvalidRecordCount(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

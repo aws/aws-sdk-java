@@ -40,7 +40,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A string token that must be obtained from the response of the previous
-     * <code class="code">PutLogEvents</code> request.
+     * <code>PutLogEvents</code> request.
      * </p>
      */
     private String sequenceToken;
@@ -217,12 +217,12 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A string token that must be obtained from the response of the previous
-     * <code class="code">PutLogEvents</code> request.
+     * <code>PutLogEvents</code> request.
      * </p>
      * 
      * @param sequenceToken
      *        A string token that must be obtained from the response of the
-     *        previous <code class="code">PutLogEvents</code> request.
+     *        previous <code>PutLogEvents</code> request.
      */
 
     public void setSequenceToken(String sequenceToken) {
@@ -232,11 +232,11 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A string token that must be obtained from the response of the previous
-     * <code class="code">PutLogEvents</code> request.
+     * <code>PutLogEvents</code> request.
      * </p>
      * 
      * @return A string token that must be obtained from the response of the
-     *         previous <code class="code">PutLogEvents</code> request.
+     *         previous <code>PutLogEvents</code> request.
      */
 
     public String getSequenceToken() {
@@ -246,12 +246,12 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A string token that must be obtained from the response of the previous
-     * <code class="code">PutLogEvents</code> request.
+     * <code>PutLogEvents</code> request.
      * </p>
      * 
      * @param sequenceToken
      *        A string token that must be obtained from the response of the
-     *        previous <code class="code">PutLogEvents</code> request.
+     *        previous <code>PutLogEvents</code> request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -21,14 +21,40 @@ import java.io.Serializable;
  */
 public class MetricTransformation implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Name of the metric.
+     * </p>
+     */
     private String metricName;
-
+    /**
+     * <p>
+     * Namespace to which the metric belongs.
+     * </p>
+     */
     private String metricNamespace;
-
+    /**
+     * <p>
+     * A string representing a value to publish to this metric when a filter
+     * pattern matches a log event.
+     * </p>
+     */
     private String metricValue;
+    /**
+     * <p>
+     * (Optional) A default value to emit when a filter pattern does not match a
+     * log event. Can be null.
+     * </p>
+     */
+    private Double defaultValue;
 
     /**
+     * <p>
+     * Name of the metric.
+     * </p>
+     * 
      * @param metricName
+     *        Name of the metric.
      */
 
     public void setMetricName(String metricName) {
@@ -36,7 +62,11 @@ public class MetricTransformation implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Name of the metric.
+     * </p>
+     * 
+     * @return Name of the metric.
      */
 
     public String getMetricName() {
@@ -44,7 +74,12 @@ public class MetricTransformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Name of the metric.
+     * </p>
+     * 
      * @param metricName
+     *        Name of the metric.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -55,7 +90,12 @@ public class MetricTransformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Namespace to which the metric belongs.
+     * </p>
+     * 
      * @param metricNamespace
+     *        Namespace to which the metric belongs.
      */
 
     public void setMetricNamespace(String metricNamespace) {
@@ -63,7 +103,11 @@ public class MetricTransformation implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Namespace to which the metric belongs.
+     * </p>
+     * 
+     * @return Namespace to which the metric belongs.
      */
 
     public String getMetricNamespace() {
@@ -71,7 +115,12 @@ public class MetricTransformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Namespace to which the metric belongs.
+     * </p>
+     * 
      * @param metricNamespace
+     *        Namespace to which the metric belongs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -82,7 +131,14 @@ public class MetricTransformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A string representing a value to publish to this metric when a filter
+     * pattern matches a log event.
+     * </p>
+     * 
      * @param metricValue
+     *        A string representing a value to publish to this metric when a
+     *        filter pattern matches a log event.
      */
 
     public void setMetricValue(String metricValue) {
@@ -90,7 +146,13 @@ public class MetricTransformation implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * A string representing a value to publish to this metric when a filter
+     * pattern matches a log event.
+     * </p>
+     * 
+     * @return A string representing a value to publish to this metric when a
+     *         filter pattern matches a log event.
      */
 
     public String getMetricValue() {
@@ -98,13 +160,67 @@ public class MetricTransformation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A string representing a value to publish to this metric when a filter
+     * pattern matches a log event.
+     * </p>
+     * 
      * @param metricValue
+     *        A string representing a value to publish to this metric when a
+     *        filter pattern matches a log event.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
     public MetricTransformation withMetricValue(String metricValue) {
         setMetricValue(metricValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) A default value to emit when a filter pattern does not match a
+     * log event. Can be null.
+     * </p>
+     * 
+     * @param defaultValue
+     *        (Optional) A default value to emit when a filter pattern does not
+     *        match a log event. Can be null.
+     */
+
+    public void setDefaultValue(Double defaultValue) {
+        this.defaultValue = defaultValue;
+    }
+
+    /**
+     * <p>
+     * (Optional) A default value to emit when a filter pattern does not match a
+     * log event. Can be null.
+     * </p>
+     * 
+     * @return (Optional) A default value to emit when a filter pattern does not
+     *         match a log event. Can be null.
+     */
+
+    public Double getDefaultValue() {
+        return this.defaultValue;
+    }
+
+    /**
+     * <p>
+     * (Optional) A default value to emit when a filter pattern does not match a
+     * log event. Can be null.
+     * </p>
+     * 
+     * @param defaultValue
+     *        (Optional) A default value to emit when a filter pattern does not
+     *        match a log event. Can be null.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public MetricTransformation withDefaultValue(Double defaultValue) {
+        setDefaultValue(defaultValue);
         return this;
     }
 
@@ -125,7 +241,9 @@ public class MetricTransformation implements Serializable, Cloneable {
         if (getMetricNamespace() != null)
             sb.append("MetricNamespace: " + getMetricNamespace() + ",");
         if (getMetricValue() != null)
-            sb.append("MetricValue: " + getMetricValue());
+            sb.append("MetricValue: " + getMetricValue() + ",");
+        if (getDefaultValue() != null)
+            sb.append("DefaultValue: " + getDefaultValue());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +274,11 @@ public class MetricTransformation implements Serializable, Cloneable {
         if (other.getMetricValue() != null
                 && other.getMetricValue().equals(this.getMetricValue()) == false)
             return false;
+        if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
+            return false;
+        if (other.getDefaultValue() != null
+                && other.getDefaultValue().equals(this.getDefaultValue()) == false)
+            return false;
         return true;
     }
 
@@ -173,6 +296,10 @@ public class MetricTransformation implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getMetricValue() == null) ? 0 : getMetricValue().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDefaultValue() == null) ? 0 : getDefaultValue()
+                        .hashCode());
         return hashCode;
     }
 

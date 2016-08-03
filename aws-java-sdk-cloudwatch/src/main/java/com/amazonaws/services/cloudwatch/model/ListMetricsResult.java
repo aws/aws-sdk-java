@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The output for the <a>ListMetrics</a> action.
+ * The output for <a>ListMetrics</a>.
  * </p>
  */
 public class ListMetricsResult implements Serializable, Cloneable {

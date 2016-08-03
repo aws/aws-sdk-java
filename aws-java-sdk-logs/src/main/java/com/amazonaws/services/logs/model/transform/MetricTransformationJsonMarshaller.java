@@ -57,6 +57,10 @@ public class MetricTransformationJsonMarshaller {
                 jsonGenerator.writeFieldName("metricValue").writeValue(
                         metricTransformation.getMetricValue());
             }
+            if (metricTransformation.getDefaultValue() != null) {
+                jsonGenerator.writeFieldName("defaultValue").writeValue(
+                        metricTransformation.getDefaultValue());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

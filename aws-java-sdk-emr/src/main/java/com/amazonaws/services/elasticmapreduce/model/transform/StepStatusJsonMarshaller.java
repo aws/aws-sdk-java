@@ -54,6 +54,11 @@ public class StepStatusJsonMarshaller {
                 StepStateChangeReasonJsonMarshaller.getInstance().marshall(
                         stepStatus.getStateChangeReason(), jsonGenerator);
             }
+            if (stepStatus.getFailureDetails() != null) {
+                jsonGenerator.writeFieldName("FailureDetails");
+                FailureDetailsJsonMarshaller.getInstance().marshall(
+                        stepStatus.getFailureDetails(), jsonGenerator);
+            }
             if (stepStatus.getTimeline() != null) {
                 jsonGenerator.writeFieldName("Timeline");
                 StepTimelineJsonMarshaller.getInstance().marshall(

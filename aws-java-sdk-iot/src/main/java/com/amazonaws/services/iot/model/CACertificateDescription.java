@@ -59,6 +59,13 @@ public class CACertificateDescription implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date creationDate;
+    /**
+     * <p>
+     * Whether the CA certificate configured for auto registration of device
+     * certificates. Valid values are "ENABLE" and "DISABLE"
+     * </p>
+     */
+    private String autoRegistrationStatus;
 
     /**
      * <p>
@@ -341,6 +348,94 @@ public class CACertificateDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Whether the CA certificate configured for auto registration of device
+     * certificates. Valid values are "ENABLE" and "DISABLE"
+     * </p>
+     * 
+     * @param autoRegistrationStatus
+     *        Whether the CA certificate configured for auto registration of
+     *        device certificates. Valid values are "ENABLE" and "DISABLE"
+     * @see AutoRegistrationStatus
+     */
+
+    public void setAutoRegistrationStatus(String autoRegistrationStatus) {
+        this.autoRegistrationStatus = autoRegistrationStatus;
+    }
+
+    /**
+     * <p>
+     * Whether the CA certificate configured for auto registration of device
+     * certificates. Valid values are "ENABLE" and "DISABLE"
+     * </p>
+     * 
+     * @return Whether the CA certificate configured for auto registration of
+     *         device certificates. Valid values are "ENABLE" and "DISABLE"
+     * @see AutoRegistrationStatus
+     */
+
+    public String getAutoRegistrationStatus() {
+        return this.autoRegistrationStatus;
+    }
+
+    /**
+     * <p>
+     * Whether the CA certificate configured for auto registration of device
+     * certificates. Valid values are "ENABLE" and "DISABLE"
+     * </p>
+     * 
+     * @param autoRegistrationStatus
+     *        Whether the CA certificate configured for auto registration of
+     *        device certificates. Valid values are "ENABLE" and "DISABLE"
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see AutoRegistrationStatus
+     */
+
+    public CACertificateDescription withAutoRegistrationStatus(
+            String autoRegistrationStatus) {
+        setAutoRegistrationStatus(autoRegistrationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the CA certificate configured for auto registration of device
+     * certificates. Valid values are "ENABLE" and "DISABLE"
+     * </p>
+     * 
+     * @param autoRegistrationStatus
+     *        Whether the CA certificate configured for auto registration of
+     *        device certificates. Valid values are "ENABLE" and "DISABLE"
+     * @see AutoRegistrationStatus
+     */
+
+    public void setAutoRegistrationStatus(
+            AutoRegistrationStatus autoRegistrationStatus) {
+        this.autoRegistrationStatus = autoRegistrationStatus.toString();
+    }
+
+    /**
+     * <p>
+     * Whether the CA certificate configured for auto registration of device
+     * certificates. Valid values are "ENABLE" and "DISABLE"
+     * </p>
+     * 
+     * @param autoRegistrationStatus
+     *        Whether the CA certificate configured for auto registration of
+     *        device certificates. Valid values are "ENABLE" and "DISABLE"
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see AutoRegistrationStatus
+     */
+
+    public CACertificateDescription withAutoRegistrationStatus(
+            AutoRegistrationStatus autoRegistrationStatus) {
+        setAutoRegistrationStatus(autoRegistrationStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -363,7 +458,9 @@ public class CACertificateDescription implements Serializable, Cloneable {
         if (getOwnedBy() != null)
             sb.append("OwnedBy: " + getOwnedBy() + ",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate());
+            sb.append("CreationDate: " + getCreationDate() + ",");
+        if (getAutoRegistrationStatus() != null)
+            sb.append("AutoRegistrationStatus: " + getAutoRegistrationStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -410,6 +507,13 @@ public class CACertificateDescription implements Serializable, Cloneable {
         if (other.getCreationDate() != null
                 && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
+        if (other.getAutoRegistrationStatus() == null
+                ^ this.getAutoRegistrationStatus() == null)
+            return false;
+        if (other.getAutoRegistrationStatus() != null
+                && other.getAutoRegistrationStatus().equals(
+                        this.getAutoRegistrationStatus()) == false)
+            return false;
         return true;
     }
 
@@ -438,6 +542,10 @@ public class CACertificateDescription implements Serializable, Cloneable {
                 * hashCode
                 + ((getCreationDate() == null) ? 0 : getCreationDate()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAutoRegistrationStatus() == null) ? 0
+                        : getAutoRegistrationStatus().hashCode());
         return hashCode;
     }
 

@@ -551,6 +551,41 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient
     }
 
     @Override
+    public java.util.concurrent.Future<GetDomainSuggestionsResult> getDomainSuggestionsAsync(
+            GetDomainSuggestionsRequest request) {
+
+        return getDomainSuggestionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainSuggestionsResult> getDomainSuggestionsAsync(
+            final GetDomainSuggestionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDomainSuggestionsRequest, GetDomainSuggestionsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetDomainSuggestionsResult>() {
+                    @Override
+                    public GetDomainSuggestionsResult call() throws Exception {
+                        GetDomainSuggestionsResult result;
+
+                        try {
+                            result = getDomainSuggestions(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOperationDetailResult> getOperationDetailAsync(
             GetOperationDetailRequest request) {
 
@@ -758,6 +793,41 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient
 
                         try {
                             result = registerDomain(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RenewDomainResult> renewDomainAsync(
+            RenewDomainRequest request) {
+
+        return renewDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RenewDomainResult> renewDomainAsync(
+            final RenewDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RenewDomainRequest, RenewDomainResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<RenewDomainResult>() {
+                    @Override
+                    public RenewDomainResult call() throws Exception {
+                        RenewDomainResult result;
+
+                        try {
+                            result = renewDomain(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1006,6 +1076,41 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient
 
                         try {
                             result = updateTagsForDomain(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ViewBillingResult> viewBillingAsync(
+            ViewBillingRequest request) {
+
+        return viewBillingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ViewBillingResult> viewBillingAsync(
+            final ViewBillingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ViewBillingRequest, ViewBillingResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ViewBillingResult>() {
+                    @Override
+                    public ViewBillingResult call() throws Exception {
+                        ViewBillingResult result;
+
+                        try {
+                            result = viewBilling(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

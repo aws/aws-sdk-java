@@ -126,6 +126,12 @@ public class DataSource implements Serializable, Cloneable {
      */
     private Boolean computeStatistics;
 
+    private Long computeTime;
+
+    private java.util.Date finishedAt;
+
+    private java.util.Date startedAt;
+
     /**
      * <p>
      * The ID that is assigned to the <code>DataSource</code> during creation.
@@ -917,6 +923,87 @@ public class DataSource implements Serializable, Cloneable {
     }
 
     /**
+     * @param computeTime
+     */
+
+    public void setComputeTime(Long computeTime) {
+        this.computeTime = computeTime;
+    }
+
+    /**
+     * @return
+     */
+
+    public Long getComputeTime() {
+        return this.computeTime;
+    }
+
+    /**
+     * @param computeTime
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DataSource withComputeTime(Long computeTime) {
+        setComputeTime(computeTime);
+        return this;
+    }
+
+    /**
+     * @param finishedAt
+     */
+
+    public void setFinishedAt(java.util.Date finishedAt) {
+        this.finishedAt = finishedAt;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getFinishedAt() {
+        return this.finishedAt;
+    }
+
+    /**
+     * @param finishedAt
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DataSource withFinishedAt(java.util.Date finishedAt) {
+        setFinishedAt(finishedAt);
+        return this;
+    }
+
+    /**
+     * @param startedAt
+     */
+
+    public void setStartedAt(java.util.Date startedAt) {
+        this.startedAt = startedAt;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getStartedAt() {
+        return this.startedAt;
+    }
+
+    /**
+     * @param startedAt
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DataSource withStartedAt(java.util.Date startedAt) {
+        setStartedAt(startedAt);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -957,7 +1044,13 @@ public class DataSource implements Serializable, Cloneable {
         if (getRoleARN() != null)
             sb.append("RoleARN: " + getRoleARN() + ",");
         if (getComputeStatistics() != null)
-            sb.append("ComputeStatistics: " + getComputeStatistics());
+            sb.append("ComputeStatistics: " + getComputeStatistics() + ",");
+        if (getComputeTime() != null)
+            sb.append("ComputeTime: " + getComputeTime() + ",");
+        if (getFinishedAt() != null)
+            sb.append("FinishedAt: " + getFinishedAt() + ",");
+        if (getStartedAt() != null)
+            sb.append("StartedAt: " + getStartedAt());
         sb.append("}");
         return sb.toString();
     }
@@ -1057,6 +1150,21 @@ public class DataSource implements Serializable, Cloneable {
                 && other.getComputeStatistics().equals(
                         this.getComputeStatistics()) == false)
             return false;
+        if (other.getComputeTime() == null ^ this.getComputeTime() == null)
+            return false;
+        if (other.getComputeTime() != null
+                && other.getComputeTime().equals(this.getComputeTime()) == false)
+            return false;
+        if (other.getFinishedAt() == null ^ this.getFinishedAt() == null)
+            return false;
+        if (other.getFinishedAt() != null
+                && other.getFinishedAt().equals(this.getFinishedAt()) == false)
+            return false;
+        if (other.getStartedAt() == null ^ this.getStartedAt() == null)
+            return false;
+        if (other.getStartedAt() != null
+                && other.getStartedAt().equals(this.getStartedAt()) == false)
+            return false;
         return true;
     }
 
@@ -1114,6 +1222,13 @@ public class DataSource implements Serializable, Cloneable {
                 * hashCode
                 + ((getComputeStatistics() == null) ? 0
                         : getComputeStatistics().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getComputeTime() == null) ? 0 : getComputeTime().hashCode());
+        hashCode = prime * hashCode
+                + ((getFinishedAt() == null) ? 0 : getFinishedAt().hashCode());
+        hashCode = prime * hashCode
+                + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         return hashCode;
     }
 

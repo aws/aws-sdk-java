@@ -1167,6 +1167,30 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Lists certificates that are being transfered but not yet accepted.
+     * </p>
+     * 
+     * @param listOutgoingCertificatesRequest
+     *        The input to the ListOutgoingCertificates operation.
+     * @return Result of the ListOutgoingCertificates operation returned by the
+     *         service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListOutgoingCertificates
+     */
+    ListOutgoingCertificatesResult listOutgoingCertificates(
+            ListOutgoingCertificatesRequest listOutgoingCertificatesRequest);
+
+    /**
+     * <p>
      * Lists your policies.
      * </p>
      * 

@@ -61,6 +61,12 @@ public class OptionConfigurationStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("OptionVersion", targetDepth)) {
+                    optionConfiguration.setOptionVersion(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression(
                         "DBSecurityGroupMemberships/DBSecurityGroupName",
                         targetDepth)) {

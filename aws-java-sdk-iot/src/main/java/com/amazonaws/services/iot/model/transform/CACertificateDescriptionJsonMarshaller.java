@@ -69,6 +69,12 @@ public class CACertificateDescriptionJsonMarshaller {
                 jsonGenerator.writeFieldName("creationDate").writeValue(
                         cACertificateDescription.getCreationDate());
             }
+            if (cACertificateDescription.getAutoRegistrationStatus() != null) {
+                jsonGenerator.writeFieldName("autoRegistrationStatus")
+                        .writeValue(
+                                cACertificateDescription
+                                        .getAutoRegistrationStatus());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

@@ -31,7 +31,7 @@ public class ExportTaskStatus implements Serializable, Cloneable {
     private String code;
     /**
      * <p>
-     * Status message related to the <code class="code">code</code>.
+     * Status message related to the <code>code</code>.
      * </p>
      */
     private String message;
@@ -113,11 +113,11 @@ public class ExportTaskStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status message related to the <code class="code">code</code>.
+     * Status message related to the <code>code</code>.
      * </p>
      * 
      * @param message
-     *        Status message related to the <code class="code">code</code>.
+     *        Status message related to the <code>code</code>.
      */
 
     public void setMessage(String message) {
@@ -126,10 +126,10 @@ public class ExportTaskStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status message related to the <code class="code">code</code>.
+     * Status message related to the <code>code</code>.
      * </p>
      * 
-     * @return Status message related to the <code class="code">code</code>.
+     * @return Status message related to the <code>code</code>.
      */
 
     public String getMessage() {
@@ -138,11 +138,11 @@ public class ExportTaskStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status message related to the <code class="code">code</code>.
+     * Status message related to the <code>code</code>.
      * </p>
      * 
      * @param message
-     *        Status message related to the <code class="code">code</code>.
+     *        Status message related to the <code>code</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

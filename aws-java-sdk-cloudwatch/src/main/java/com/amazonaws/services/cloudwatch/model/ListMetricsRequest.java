@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Describes the inputs for ListMetrics.
+ * </p>
  */
 public class ListMetricsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

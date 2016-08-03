@@ -52,6 +52,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param deleteAlarmsRequest
+     *        Describes the inputs for DeleteAlarms.
      * @return A Java Future containing the result of the DeleteAlarms operation
      *         returned by the service.
      * @sample AmazonCloudWatchAsync.DeleteAlarms
@@ -66,6 +67,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param deleteAlarmsRequest
+     *        Describes the inputs for DeleteAlarms.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -85,10 +87,15 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * item type. If an alarm name is not specified, Amazon CloudWatch returns
      * histories for all of the owner's alarms.
      * </p>
-     * <note> Amazon CloudWatch retains the history of an alarm for two weeks,
-     * whether or not you delete the alarm. </note>
+     * <note>
+     * <p>
+     * Amazon CloudWatch retains the history of an alarm for two weeks, whether
+     * or not you delete the alarm.
+     * </p>
+     * </note>
      * 
      * @param describeAlarmHistoryRequest
+     *        Describes the inputs for DescribeAlarmHistory.
      * @return A Java Future containing the result of the DescribeAlarmHistory
      *         operation returned by the service.
      * @sample AmazonCloudWatchAsync.DescribeAlarmHistory
@@ -102,10 +109,15 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * item type. If an alarm name is not specified, Amazon CloudWatch returns
      * histories for all of the owner's alarms.
      * </p>
-     * <note> Amazon CloudWatch retains the history of an alarm for two weeks,
-     * whether or not you delete the alarm. </note>
+     * <note>
+     * <p>
+     * Amazon CloudWatch retains the history of an alarm for two weeks, whether
+     * or not you delete the alarm.
+     * </p>
+     * </note>
      * 
      * @param describeAlarmHistoryRequest
+     *        Describes the inputs for DescribeAlarmHistory.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -144,6 +156,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param describeAlarmsRequest
+     *        Describes the inputs for DescribeAlarms.
      * @return A Java Future containing the result of the DescribeAlarms
      *         operation returned by the service.
      * @sample AmazonCloudWatchAsync.DescribeAlarms
@@ -159,6 +172,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param describeAlarmsRequest
+     *        Describes the inputs for DescribeAlarms.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -196,6 +210,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param describeAlarmsForMetricRequest
+     *        Describes the inputs for DescribeAlarmsForMetric.
      * @return A Java Future containing the result of the
      *         DescribeAlarmsForMetric operation returned by the service.
      * @sample AmazonCloudWatchAsync.DescribeAlarmsForMetric
@@ -210,6 +225,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param describeAlarmsForMetricRequest
+     *        Describes the inputs for DescribeAlarmsForMetric.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -265,6 +281,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param enableAlarmActionsRequest
+     *        Describes the inputs for EnableAlarmActions.
      * @return A Java Future containing the result of the EnableAlarmActions
      *         operation returned by the service.
      * @sample AmazonCloudWatchAsync.EnableAlarmActions
@@ -278,6 +295,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param enableAlarmActionsRequest
+     *        Describes the inputs for EnableAlarmActions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -301,9 +319,10 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * <code>GetMetricStatistics</code> request is 1,440. If you make a request
      * that generates more than 1,440 data points, Amazon CloudWatch returns an
      * error. In such a case, you can alter the request by narrowing the
-     * specified time range or increasing the specified period. Alternatively,
-     * you can make multiple requests across adjacent time ranges.
-     * <code>GetMetricStatistics</code> does not return the data in
+     * specified time range or increasing the specified period. A period can be
+     * as short as one minute (60 seconds) or as long as one day (86,400
+     * seconds). Alternatively, you can make multiple requests across adjacent
+     * time ranges. <code>GetMetricStatistics</code> does not return the data in
      * chronological order.
      * </p>
      * <p>
@@ -320,9 +339,21 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * Amazon EC2 instances with detailed (one-minute) monitoring enabled:
      * </p>
      * <ul>
-     * <li>Statistics for up to 400 instances for a span of one hour</li>
-     * <li>Statistics for up to 35 instances over a span of 24 hours</li>
-     * <li>Statistics for up to 2 instances over a span of 2 weeks</li>
+     * <li>
+     * <p>
+     * Statistics for up to 400 instances for a span of one hour
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Statistics for up to 35 instances over a span of 24 hours
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Statistics for up to 2 instances over a span of 2 weeks
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For information about the namespace, metric names, and dimensions that
@@ -334,6 +365,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param getMetricStatisticsRequest
+     *        Describes the inputs for GetMetricStatistics.
      * @return A Java Future containing the result of the GetMetricStatistics
      *         operation returned by the service.
      * @sample AmazonCloudWatchAsync.GetMetricStatistics
@@ -351,9 +383,10 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * <code>GetMetricStatistics</code> request is 1,440. If you make a request
      * that generates more than 1,440 data points, Amazon CloudWatch returns an
      * error. In such a case, you can alter the request by narrowing the
-     * specified time range or increasing the specified period. Alternatively,
-     * you can make multiple requests across adjacent time ranges.
-     * <code>GetMetricStatistics</code> does not return the data in
+     * specified time range or increasing the specified period. A period can be
+     * as short as one minute (60 seconds) or as long as one day (86,400
+     * seconds). Alternatively, you can make multiple requests across adjacent
+     * time ranges. <code>GetMetricStatistics</code> does not return the data in
      * chronological order.
      * </p>
      * <p>
@@ -370,9 +403,21 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * Amazon EC2 instances with detailed (one-minute) monitoring enabled:
      * </p>
      * <ul>
-     * <li>Statistics for up to 400 instances for a span of one hour</li>
-     * <li>Statistics for up to 35 instances over a span of 24 hours</li>
-     * <li>Statistics for up to 2 instances over a span of 2 weeks</li>
+     * <li>
+     * <p>
+     * Statistics for up to 400 instances for a span of one hour
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Statistics for up to 35 instances over a span of 24 hours
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Statistics for up to 2 instances over a span of 2 weeks
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For information about the namespace, metric names, and dimensions that
@@ -384,6 +429,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param getMetricStatisticsRequest
+     *        Describes the inputs for GetMetricStatistics.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -403,15 +449,23 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * Returned metrics can be used with <a>GetMetricStatistics</a> to obtain
      * statistical data for a given metric.
      * </p>
-     * <note> Up to 500 results are returned for any one call. To retrieve
-     * further results, use returned <code>NextToken</code> values with
-     * subsequent <code>ListMetrics</code> operations. </note> <note> If you
-     * create a metric with the <a>PutMetricData</a> action, allow up to fifteen
-     * minutes for the metric to appear in calls to the <code>ListMetrics</code>
-     * action. Statistics about the metric, however, are available sooner using
-     * <a>GetMetricStatistics</a>. </note>
+     * <note>
+     * <p>
+     * Up to 500 results are returned for any one call. To retrieve further
+     * results, use returned <code>NextToken</code> values with subsequent
+     * <code>ListMetrics</code> operations.
+     * </p>
+     * </note> <note>
+     * <p>
+     * If you create a metric with <a>PutMetricData</a>, allow up to fifteen
+     * minutes for the metric to appear in calls to <code>ListMetrics</code>.
+     * Statistics about the metric, however, are available sooner using
+     * <a>GetMetricStatistics</a>.
+     * </p>
+     * </note>
      * 
      * @param listMetricsRequest
+     *        Describes the inputs for ListMetrics.
      * @return A Java Future containing the result of the ListMetrics operation
      *         returned by the service.
      * @sample AmazonCloudWatchAsync.ListMetrics
@@ -425,15 +479,23 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * Returned metrics can be used with <a>GetMetricStatistics</a> to obtain
      * statistical data for a given metric.
      * </p>
-     * <note> Up to 500 results are returned for any one call. To retrieve
-     * further results, use returned <code>NextToken</code> values with
-     * subsequent <code>ListMetrics</code> operations. </note> <note> If you
-     * create a metric with the <a>PutMetricData</a> action, allow up to fifteen
-     * minutes for the metric to appear in calls to the <code>ListMetrics</code>
-     * action. Statistics about the metric, however, are available sooner using
-     * <a>GetMetricStatistics</a>. </note>
+     * <note>
+     * <p>
+     * Up to 500 results are returned for any one call. To retrieve further
+     * results, use returned <code>NextToken</code> values with subsequent
+     * <code>ListMetrics</code> operations.
+     * </p>
+     * </note> <note>
+     * <p>
+     * If you create a metric with <a>PutMetricData</a>, allow up to fifteen
+     * minutes for the metric to appear in calls to <code>ListMetrics</code>.
+     * Statistics about the metric, however, are available sooner using
+     * <a>GetMetricStatistics</a>.
+     * </p>
+     * </note>
      * 
      * @param listMetricsRequest
+     *        Describes the inputs for ListMetrics.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -468,27 +530,50 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * <p>
      * Creates or updates an alarm and associates it with the specified Amazon
      * CloudWatch metric. Optionally, this operation can associate one or more
-     * Amazon Simple Notification Service resources with the alarm.
+     * Amazon SNS resources with the alarm.
      * </p>
      * <p>
      * When this operation creates an alarm, the alarm state is immediately set
      * to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its
      * <code>StateValue</code> is set appropriately. Any actions associated with
-     * the <code>StateValue</code> is then executed.
+     * the <code>StateValue</code> are then executed.
      * </p>
-     * <note> When updating an existing alarm, its <code>StateValue</code> is
-     * left unchanged. </note> <note> If you are using an AWS Identity and
-     * Access Management (IAM) account to create or modify an alarm, you must
-     * have the following Amazon EC2 permissions:
+     * <note>
+     * <p>
+     * When updating an existing alarm, its <code>StateValue</code> is left
+     * unchanged, but it completely overwrites the alarm's previous
+     * configuration.
+     * </p>
+     * </note> <note>
+     * <p>
+     * If you are using an AWS Identity and Access Management (IAM) account to
+     * create or modify an alarm, you must have the following Amazon EC2
+     * permissions:
+     * </p>
      * <ul>
-     * <li><code>ec2:DescribeInstanceStatus</code> and
+     * <li>
+     * <p>
+     * <code>ec2:DescribeInstanceStatus</code> and
      * <code>ec2:DescribeInstances</code> for all alarms on Amazon EC2 instance
-     * status metrics.</li>
-     * <li><code>ec2:StopInstances</code> for alarms with stop actions.</li>
-     * <li><code>ec2:TerminateInstances</code> for alarms with terminate
-     * actions.</li>
-     * <li><code>ec2:DescribeInstanceRecoveryAttribute</code>, and
-     * <code>ec2:RecoverInstances</code> for alarms with recover actions.</li>
+     * status metrics.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:StopInstances</code> for alarms with stop actions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:TerminateInstances</code> for alarms with terminate actions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeInstanceRecoveryAttribute</code>, and
+     * <code>ec2:RecoverInstances</code> for alarms with recover actions.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you have read/write permissions for Amazon CloudWatch but not for
@@ -497,7 +582,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * are later granted permission to use the associated Amazon EC2 APIs, the
      * alarm actions you created earlier will be performed. For more information
      * about IAM permissions, see <a href=
-     * "http://docs.aws.amazon.com//IAM/latest/UserGuide/PermissionsAndPolicies.html"
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
      * >Permissions and Policies</a> in <i>Using IAM</i>.
      * </p>
      * <p>
@@ -514,6 +599,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </note>
      * 
      * @param putMetricAlarmRequest
+     *        Describes the inputs for PutMetricAlarm.
      * @return A Java Future containing the result of the PutMetricAlarm
      *         operation returned by the service.
      * @sample AmazonCloudWatchAsync.PutMetricAlarm
@@ -525,27 +611,50 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * <p>
      * Creates or updates an alarm and associates it with the specified Amazon
      * CloudWatch metric. Optionally, this operation can associate one or more
-     * Amazon Simple Notification Service resources with the alarm.
+     * Amazon SNS resources with the alarm.
      * </p>
      * <p>
      * When this operation creates an alarm, the alarm state is immediately set
      * to <code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its
      * <code>StateValue</code> is set appropriately. Any actions associated with
-     * the <code>StateValue</code> is then executed.
+     * the <code>StateValue</code> are then executed.
      * </p>
-     * <note> When updating an existing alarm, its <code>StateValue</code> is
-     * left unchanged. </note> <note> If you are using an AWS Identity and
-     * Access Management (IAM) account to create or modify an alarm, you must
-     * have the following Amazon EC2 permissions:
+     * <note>
+     * <p>
+     * When updating an existing alarm, its <code>StateValue</code> is left
+     * unchanged, but it completely overwrites the alarm's previous
+     * configuration.
+     * </p>
+     * </note> <note>
+     * <p>
+     * If you are using an AWS Identity and Access Management (IAM) account to
+     * create or modify an alarm, you must have the following Amazon EC2
+     * permissions:
+     * </p>
      * <ul>
-     * <li><code>ec2:DescribeInstanceStatus</code> and
+     * <li>
+     * <p>
+     * <code>ec2:DescribeInstanceStatus</code> and
      * <code>ec2:DescribeInstances</code> for all alarms on Amazon EC2 instance
-     * status metrics.</li>
-     * <li><code>ec2:StopInstances</code> for alarms with stop actions.</li>
-     * <li><code>ec2:TerminateInstances</code> for alarms with terminate
-     * actions.</li>
-     * <li><code>ec2:DescribeInstanceRecoveryAttribute</code>, and
-     * <code>ec2:RecoverInstances</code> for alarms with recover actions.</li>
+     * status metrics.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:StopInstances</code> for alarms with stop actions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:TerminateInstances</code> for alarms with terminate actions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeInstanceRecoveryAttribute</code>, and
+     * <code>ec2:RecoverInstances</code> for alarms with recover actions.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you have read/write permissions for Amazon CloudWatch but not for
@@ -554,7 +663,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * are later granted permission to use the associated Amazon EC2 APIs, the
      * alarm actions you created earlier will be performed. For more information
      * about IAM permissions, see <a href=
-     * "http://docs.aws.amazon.com//IAM/latest/UserGuide/PermissionsAndPolicies.html"
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html"
      * >Permissions and Policies</a> in <i>Using IAM</i>.
      * </p>
      * <p>
@@ -571,6 +680,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </note>
      * 
      * @param putMetricAlarmRequest
+     *        Describes the inputs for PutMetricAlarm.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -590,18 +700,21 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * associates the data points with the specified metric. If the specified
      * metric does not exist, Amazon CloudWatch creates the metric. When Amazon
      * CloudWatch creates a metric, it can take up to fifteen minutes for the
-     * metric to appear in calls to the <a>ListMetrics</a> action.
+     * metric to appear in calls to <a>ListMetrics</a>.
      * </p>
      * <p>
      * Each <code>PutMetricData</code> request is limited to 8 KB in size for
      * HTTP GET requests and is limited to 40 KB in size for HTTP POST requests.
      * </p>
-     * <important>Although the <code>Value</code> parameter accepts numbers of
-     * type <code>Double</code>, Amazon CloudWatch rejects values that are
-     * either too small or too large. Values must be in the range of
-     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
-     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not
-     * supported. </important>
+     * <important>
+     * <p>
+     * Although the <code>Value</code> parameter accepts numbers of type
+     * <code>Double</code>, Amazon CloudWatch rejects values that are either too
+     * small or too large. Values must be in the range of 8.515920e-109 to
+     * 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special
+     * values (e.g., NaN, +Infinity, -Infinity) are not supported.
+     * </p>
+     * </important>
      * <p>
      * Data that is timestamped 24 hours or more in the past may take in excess
      * of 48 hours to become available from submission time using
@@ -609,6 +722,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param putMetricDataRequest
+     *        Describes the inputs for PutMetricData.
      * @return A Java Future containing the result of the PutMetricData
      *         operation returned by the service.
      * @sample AmazonCloudWatchAsync.PutMetricData
@@ -622,18 +736,21 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * associates the data points with the specified metric. If the specified
      * metric does not exist, Amazon CloudWatch creates the metric. When Amazon
      * CloudWatch creates a metric, it can take up to fifteen minutes for the
-     * metric to appear in calls to the <a>ListMetrics</a> action.
+     * metric to appear in calls to <a>ListMetrics</a>.
      * </p>
      * <p>
      * Each <code>PutMetricData</code> request is limited to 8 KB in size for
      * HTTP GET requests and is limited to 40 KB in size for HTTP POST requests.
      * </p>
-     * <important>Although the <code>Value</code> parameter accepts numbers of
-     * type <code>Double</code>, Amazon CloudWatch rejects values that are
-     * either too small or too large. Values must be in the range of
-     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
-     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not
-     * supported. </important>
+     * <important>
+     * <p>
+     * Although the <code>Value</code> parameter accepts numbers of type
+     * <code>Double</code>, Amazon CloudWatch rejects values that are either too
+     * small or too large. Values must be in the range of 8.515920e-109 to
+     * 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special
+     * values (e.g., NaN, +Infinity, -Infinity) are not supported.
+     * </p>
+     * </important>
      * <p>
      * Data that is timestamped 24 hours or more in the past may take in excess
      * of 48 hours to become available from submission time using
@@ -641,6 +758,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </p>
      * 
      * @param putMetricDataRequest
+     *        Describes the inputs for PutMetricData.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -656,19 +774,19 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
-     * Temporarily sets the state of an alarm. When the updated
-     * <code>StateValue</code> differs from the previous value, the action
-     * configured for the appropriate state is invoked. For example, if your
-     * alarm is configured to send an Amazon SNS message when an alarm is
-     * triggered, temporarily changing the alarm's state to <b>ALARM</b> will
-     * send an Amazon SNS message. This is not a permanent change. The next
-     * periodic alarm check (in about a minute) will set the alarm to its actual
-     * state. Because the alarm state change happens very quickly, it is
-     * typically only visibile in the alarm's <b>History</b> tab in the Amazon
+     * Temporarily sets the state of an alarm for testing purposes. When the
+     * updated <code>StateValue</code> differs from the previous value, the
+     * action configured for the appropriate state is invoked. For example, if
+     * your alarm is configured to send an Amazon SNS message when an alarm is
+     * triggered, temporarily changing the alarm's state to <b>ALARM</b> sends
+     * an Amazon SNS message. The alarm returns to its actual state (often
+     * within seconds). Because the alarm state change happens very quickly, it
+     * is typically only visible in the alarm's <b>History</b> tab in the Amazon
      * CloudWatch console or through <code>DescribeAlarmHistory</code>.
      * </p>
      * 
      * @param setAlarmStateRequest
+     *        Describes the inputs for SetAlarmState.
      * @return A Java Future containing the result of the SetAlarmState
      *         operation returned by the service.
      * @sample AmazonCloudWatchAsync.SetAlarmState
@@ -678,19 +796,19 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
-     * Temporarily sets the state of an alarm. When the updated
-     * <code>StateValue</code> differs from the previous value, the action
-     * configured for the appropriate state is invoked. For example, if your
-     * alarm is configured to send an Amazon SNS message when an alarm is
-     * triggered, temporarily changing the alarm's state to <b>ALARM</b> will
-     * send an Amazon SNS message. This is not a permanent change. The next
-     * periodic alarm check (in about a minute) will set the alarm to its actual
-     * state. Because the alarm state change happens very quickly, it is
-     * typically only visibile in the alarm's <b>History</b> tab in the Amazon
+     * Temporarily sets the state of an alarm for testing purposes. When the
+     * updated <code>StateValue</code> differs from the previous value, the
+     * action configured for the appropriate state is invoked. For example, if
+     * your alarm is configured to send an Amazon SNS message when an alarm is
+     * triggered, temporarily changing the alarm's state to <b>ALARM</b> sends
+     * an Amazon SNS message. The alarm returns to its actual state (often
+     * within seconds). Because the alarm state change happens very quickly, it
+     * is typically only visible in the alarm's <b>History</b> tab in the Amazon
      * CloudWatch console or through <code>DescribeAlarmHistory</code>.
      * </p>
      * 
      * @param setAlarmStateRequest
+     *        Describes the inputs for SetAlarmState.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

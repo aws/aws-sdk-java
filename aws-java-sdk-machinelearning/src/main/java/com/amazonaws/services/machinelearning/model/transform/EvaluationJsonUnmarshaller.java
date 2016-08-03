@@ -108,6 +108,21 @@ public class EvaluationJsonUnmarshaller implements
                     evaluation.setMessage(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
+                if (context.testExpression("ComputeTime", targetDepth)) {
+                    context.nextToken();
+                    evaluation.setComputeTime(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
+                }
+                if (context.testExpression("FinishedAt", targetDepth)) {
+                    context.nextToken();
+                    evaluation.setFinishedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("StartedAt", targetDepth)) {
+                    context.nextToken();
+                    evaluation.setStartedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

@@ -133,6 +133,35 @@ public class GetDataSourceResult implements Serializable, Cloneable {
     private Boolean computeStatistics;
     /**
      * <p>
+     * The approximate CPU time in milliseconds that Amazon Machine Learning
+     * spent processing the <code>DataSource</code>, normalized and scaled on
+     * computation resources. <code>ComputeTime</code> is only available if the
+     * <code>DataSource</code> is in the <code>COMPLETED</code> state and the
+     * <code>ComputeStatistics</code> is set to true.
+     * </p>
+     */
+    private Long computeTime;
+    /**
+     * <p>
+     * The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the
+     * <code>DataSource</code> is in the <code>COMPLETED</code> or
+     * <code>FAILED</code> state.
+     * </p>
+     */
+    private java.util.Date finishedAt;
+    /**
+     * <p>
+     * The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>INPROGRESS</code>.
+     * <code>StartedAt</code> isn't available if the <code>DataSource</code> is
+     * in the <code>PENDING</code> state.
+     * </p>
+     */
+    private java.util.Date startedAt;
+    /**
+     * <p>
      * The schema used by all of the data files of this <code>DataSource</code>.
      * </p>
      * <note><title>Note</title>
@@ -1000,6 +1029,198 @@ public class GetDataSourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The approximate CPU time in milliseconds that Amazon Machine Learning
+     * spent processing the <code>DataSource</code>, normalized and scaled on
+     * computation resources. <code>ComputeTime</code> is only available if the
+     * <code>DataSource</code> is in the <code>COMPLETED</code> state and the
+     * <code>ComputeStatistics</code> is set to true.
+     * </p>
+     * 
+     * @param computeTime
+     *        The approximate CPU time in milliseconds that Amazon Machine
+     *        Learning spent processing the <code>DataSource</code>, normalized
+     *        and scaled on computation resources. <code>ComputeTime</code> is
+     *        only available if the <code>DataSource</code> is in the
+     *        <code>COMPLETED</code> state and the
+     *        <code>ComputeStatistics</code> is set to true.
+     */
+
+    public void setComputeTime(Long computeTime) {
+        this.computeTime = computeTime;
+    }
+
+    /**
+     * <p>
+     * The approximate CPU time in milliseconds that Amazon Machine Learning
+     * spent processing the <code>DataSource</code>, normalized and scaled on
+     * computation resources. <code>ComputeTime</code> is only available if the
+     * <code>DataSource</code> is in the <code>COMPLETED</code> state and the
+     * <code>ComputeStatistics</code> is set to true.
+     * </p>
+     * 
+     * @return The approximate CPU time in milliseconds that Amazon Machine
+     *         Learning spent processing the <code>DataSource</code>, normalized
+     *         and scaled on computation resources. <code>ComputeTime</code> is
+     *         only available if the <code>DataSource</code> is in the
+     *         <code>COMPLETED</code> state and the
+     *         <code>ComputeStatistics</code> is set to true.
+     */
+
+    public Long getComputeTime() {
+        return this.computeTime;
+    }
+
+    /**
+     * <p>
+     * The approximate CPU time in milliseconds that Amazon Machine Learning
+     * spent processing the <code>DataSource</code>, normalized and scaled on
+     * computation resources. <code>ComputeTime</code> is only available if the
+     * <code>DataSource</code> is in the <code>COMPLETED</code> state and the
+     * <code>ComputeStatistics</code> is set to true.
+     * </p>
+     * 
+     * @param computeTime
+     *        The approximate CPU time in milliseconds that Amazon Machine
+     *        Learning spent processing the <code>DataSource</code>, normalized
+     *        and scaled on computation resources. <code>ComputeTime</code> is
+     *        only available if the <code>DataSource</code> is in the
+     *        <code>COMPLETED</code> state and the
+     *        <code>ComputeStatistics</code> is set to true.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public GetDataSourceResult withComputeTime(Long computeTime) {
+        setComputeTime(computeTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the
+     * <code>DataSource</code> is in the <code>COMPLETED</code> or
+     * <code>FAILED</code> state.
+     * </p>
+     * 
+     * @param finishedAt
+     *        The epoch time when Amazon Machine Learning marked the
+     *        <code>DataSource</code> as <code>COMPLETED</code> or
+     *        <code>FAILED</code>. <code>FinishedAt</code> is only available
+     *        when the <code>DataSource</code> is in the <code>COMPLETED</code>
+     *        or <code>FAILED</code> state.
+     */
+
+    public void setFinishedAt(java.util.Date finishedAt) {
+        this.finishedAt = finishedAt;
+    }
+
+    /**
+     * <p>
+     * The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the
+     * <code>DataSource</code> is in the <code>COMPLETED</code> or
+     * <code>FAILED</code> state.
+     * </p>
+     * 
+     * @return The epoch time when Amazon Machine Learning marked the
+     *         <code>DataSource</code> as <code>COMPLETED</code> or
+     *         <code>FAILED</code>. <code>FinishedAt</code> is only available
+     *         when the <code>DataSource</code> is in the <code>COMPLETED</code>
+     *         or <code>FAILED</code> state.
+     */
+
+    public java.util.Date getFinishedAt() {
+        return this.finishedAt;
+    }
+
+    /**
+     * <p>
+     * The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the
+     * <code>DataSource</code> is in the <code>COMPLETED</code> or
+     * <code>FAILED</code> state.
+     * </p>
+     * 
+     * @param finishedAt
+     *        The epoch time when Amazon Machine Learning marked the
+     *        <code>DataSource</code> as <code>COMPLETED</code> or
+     *        <code>FAILED</code>. <code>FinishedAt</code> is only available
+     *        when the <code>DataSource</code> is in the <code>COMPLETED</code>
+     *        or <code>FAILED</code> state.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public GetDataSourceResult withFinishedAt(java.util.Date finishedAt) {
+        setFinishedAt(finishedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>INPROGRESS</code>.
+     * <code>StartedAt</code> isn't available if the <code>DataSource</code> is
+     * in the <code>PENDING</code> state.
+     * </p>
+     * 
+     * @param startedAt
+     *        The epoch time when Amazon Machine Learning marked the
+     *        <code>DataSource</code> as <code>INPROGRESS</code>.
+     *        <code>StartedAt</code> isn't available if the
+     *        <code>DataSource</code> is in the <code>PENDING</code> state.
+     */
+
+    public void setStartedAt(java.util.Date startedAt) {
+        this.startedAt = startedAt;
+    }
+
+    /**
+     * <p>
+     * The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>INPROGRESS</code>.
+     * <code>StartedAt</code> isn't available if the <code>DataSource</code> is
+     * in the <code>PENDING</code> state.
+     * </p>
+     * 
+     * @return The epoch time when Amazon Machine Learning marked the
+     *         <code>DataSource</code> as <code>INPROGRESS</code>.
+     *         <code>StartedAt</code> isn't available if the
+     *         <code>DataSource</code> is in the <code>PENDING</code> state.
+     */
+
+    public java.util.Date getStartedAt() {
+        return this.startedAt;
+    }
+
+    /**
+     * <p>
+     * The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>INPROGRESS</code>.
+     * <code>StartedAt</code> isn't available if the <code>DataSource</code> is
+     * in the <code>PENDING</code> state.
+     * </p>
+     * 
+     * @param startedAt
+     *        The epoch time when Amazon Machine Learning marked the
+     *        <code>DataSource</code> as <code>INPROGRESS</code>.
+     *        <code>StartedAt</code> isn't available if the
+     *        <code>DataSource</code> is in the <code>PENDING</code> state.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public GetDataSourceResult withStartedAt(java.util.Date startedAt) {
+        setStartedAt(startedAt);
+        return this;
+    }
+
+    /**
+     * <p>
      * The schema used by all of the data files of this <code>DataSource</code>.
      * </p>
      * <note><title>Note</title>
@@ -1110,6 +1331,12 @@ public class GetDataSourceResult implements Serializable, Cloneable {
             sb.append("RoleARN: " + getRoleARN() + ",");
         if (getComputeStatistics() != null)
             sb.append("ComputeStatistics: " + getComputeStatistics() + ",");
+        if (getComputeTime() != null)
+            sb.append("ComputeTime: " + getComputeTime() + ",");
+        if (getFinishedAt() != null)
+            sb.append("FinishedAt: " + getFinishedAt() + ",");
+        if (getStartedAt() != null)
+            sb.append("StartedAt: " + getStartedAt() + ",");
         if (getDataSourceSchema() != null)
             sb.append("DataSourceSchema: " + getDataSourceSchema());
         sb.append("}");
@@ -1216,6 +1443,21 @@ public class GetDataSourceResult implements Serializable, Cloneable {
                 && other.getComputeStatistics().equals(
                         this.getComputeStatistics()) == false)
             return false;
+        if (other.getComputeTime() == null ^ this.getComputeTime() == null)
+            return false;
+        if (other.getComputeTime() != null
+                && other.getComputeTime().equals(this.getComputeTime()) == false)
+            return false;
+        if (other.getFinishedAt() == null ^ this.getFinishedAt() == null)
+            return false;
+        if (other.getFinishedAt() != null
+                && other.getFinishedAt().equals(this.getFinishedAt()) == false)
+            return false;
+        if (other.getStartedAt() == null ^ this.getStartedAt() == null)
+            return false;
+        if (other.getStartedAt() != null
+                && other.getStartedAt().equals(this.getStartedAt()) == false)
+            return false;
         if (other.getDataSourceSchema() == null
                 ^ this.getDataSourceSchema() == null)
             return false;
@@ -1282,6 +1524,13 @@ public class GetDataSourceResult implements Serializable, Cloneable {
                 * hashCode
                 + ((getComputeStatistics() == null) ? 0
                         : getComputeStatistics().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getComputeTime() == null) ? 0 : getComputeTime().hashCode());
+        hashCode = prime * hashCode
+                + ((getFinishedAt() == null) ? 0 : getFinishedAt().hashCode());
+        hashCode = prime * hashCode
+                + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getDataSourceSchema() == null) ? 0 : getDataSourceSchema()

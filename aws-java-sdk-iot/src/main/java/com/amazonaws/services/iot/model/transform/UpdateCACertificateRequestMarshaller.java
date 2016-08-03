@@ -84,6 +84,12 @@ public class UpdateCACertificateRequestMarshaller
                     .fromString(updateCACertificateRequest.getNewStatus()));
         }
 
+        if (updateCACertificateRequest.getNewAutoRegistrationStatus() != null) {
+            request.addParameter("newAutoRegistrationStatus", StringUtils
+                    .fromString(updateCACertificateRequest
+                            .getNewAutoRegistrationStatus()));
+        }
+
         request.setContent(new ByteArrayInputStream(new byte[0]));
         if (!request.getHeaders().containsKey("Content-Type")) {
             request.addHeader("Content-Type", protocolFactory.getContentType());

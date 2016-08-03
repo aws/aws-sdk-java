@@ -77,6 +77,15 @@ public class ModifyOptionGroupRequestMarshaller implements
                                     .getPort()));
                 }
 
+                if (optionsToIncludeListValue.getOptionVersion() != null) {
+                    request.addParameter(
+                            "OptionsToInclude.OptionConfiguration."
+                                    + optionsToIncludeListIndex
+                                    + ".OptionVersion", StringUtils
+                                    .fromString(optionsToIncludeListValue
+                                            .getOptionVersion()));
+                }
+
                 com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupMembershipsList = (com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue
                         .getDBSecurityGroupMemberships();
                 if (!dBSecurityGroupMembershipsList.isEmpty()

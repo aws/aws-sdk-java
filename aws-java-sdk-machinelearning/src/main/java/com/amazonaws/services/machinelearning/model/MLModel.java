@@ -220,6 +220,12 @@ public class MLModel implements Serializable, Cloneable {
      */
     private String message;
 
+    private Long computeTime;
+
+    private java.util.Date finishedAt;
+
+    private java.util.Date startedAt;
+
     /**
      * <p>
      * The ID assigned to the <code>MLModel</code> at creation.
@@ -1730,6 +1736,87 @@ public class MLModel implements Serializable, Cloneable {
     }
 
     /**
+     * @param computeTime
+     */
+
+    public void setComputeTime(Long computeTime) {
+        this.computeTime = computeTime;
+    }
+
+    /**
+     * @return
+     */
+
+    public Long getComputeTime() {
+        return this.computeTime;
+    }
+
+    /**
+     * @param computeTime
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public MLModel withComputeTime(Long computeTime) {
+        setComputeTime(computeTime);
+        return this;
+    }
+
+    /**
+     * @param finishedAt
+     */
+
+    public void setFinishedAt(java.util.Date finishedAt) {
+        this.finishedAt = finishedAt;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getFinishedAt() {
+        return this.finishedAt;
+    }
+
+    /**
+     * @param finishedAt
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public MLModel withFinishedAt(java.util.Date finishedAt) {
+        setFinishedAt(finishedAt);
+        return this;
+    }
+
+    /**
+     * @param startedAt
+     */
+
+    public void setStartedAt(java.util.Date startedAt) {
+        this.startedAt = startedAt;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getStartedAt() {
+        return this.startedAt;
+    }
+
+    /**
+     * @param startedAt
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public MLModel withStartedAt(java.util.Date startedAt) {
+        setStartedAt(startedAt);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1774,7 +1861,13 @@ public class MLModel implements Serializable, Cloneable {
             sb.append("ScoreThresholdLastUpdatedAt: "
                     + getScoreThresholdLastUpdatedAt() + ",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage());
+            sb.append("Message: " + getMessage() + ",");
+        if (getComputeTime() != null)
+            sb.append("ComputeTime: " + getComputeTime() + ",");
+        if (getFinishedAt() != null)
+            sb.append("FinishedAt: " + getFinishedAt() + ",");
+        if (getStartedAt() != null)
+            sb.append("StartedAt: " + getStartedAt());
         sb.append("}");
         return sb.toString();
     }
@@ -1880,6 +1973,21 @@ public class MLModel implements Serializable, Cloneable {
         if (other.getMessage() != null
                 && other.getMessage().equals(this.getMessage()) == false)
             return false;
+        if (other.getComputeTime() == null ^ this.getComputeTime() == null)
+            return false;
+        if (other.getComputeTime() != null
+                && other.getComputeTime().equals(this.getComputeTime()) == false)
+            return false;
+        if (other.getFinishedAt() == null ^ this.getFinishedAt() == null)
+            return false;
+        if (other.getFinishedAt() != null
+                && other.getFinishedAt().equals(this.getFinishedAt()) == false)
+            return false;
+        if (other.getStartedAt() == null ^ this.getStartedAt() == null)
+            return false;
+        if (other.getStartedAt() != null
+                && other.getStartedAt().equals(this.getStartedAt()) == false)
+            return false;
         return true;
     }
 
@@ -1938,6 +2046,13 @@ public class MLModel implements Serializable, Cloneable {
                         : getScoreThresholdLastUpdatedAt().hashCode());
         hashCode = prime * hashCode
                 + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getComputeTime() == null) ? 0 : getComputeTime().hashCode());
+        hashCode = prime * hashCode
+                + ((getFinishedAt() == null) ? 0 : getFinishedAt().hashCode());
+        hashCode = prime * hashCode
+                + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         return hashCode;
     }
 

@@ -41,6 +41,13 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
      * </p>
      */
     private String newStatus;
+    /**
+     * <p>
+     * The new value for the auto registration status. Valid values are:
+     * "ENABLE" or "DISABLE".
+     * </p>
+     */
+    private String newAutoRegistrationStatus;
 
     /**
      * <p>
@@ -195,6 +202,94 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The new value for the auto registration status. Valid values are:
+     * "ENABLE" or "DISABLE".
+     * </p>
+     * 
+     * @param newAutoRegistrationStatus
+     *        The new value for the auto registration status. Valid values are:
+     *        "ENABLE" or "DISABLE".
+     * @see AutoRegistrationStatus
+     */
+
+    public void setNewAutoRegistrationStatus(String newAutoRegistrationStatus) {
+        this.newAutoRegistrationStatus = newAutoRegistrationStatus;
+    }
+
+    /**
+     * <p>
+     * The new value for the auto registration status. Valid values are:
+     * "ENABLE" or "DISABLE".
+     * </p>
+     * 
+     * @return The new value for the auto registration status. Valid values are:
+     *         "ENABLE" or "DISABLE".
+     * @see AutoRegistrationStatus
+     */
+
+    public String getNewAutoRegistrationStatus() {
+        return this.newAutoRegistrationStatus;
+    }
+
+    /**
+     * <p>
+     * The new value for the auto registration status. Valid values are:
+     * "ENABLE" or "DISABLE".
+     * </p>
+     * 
+     * @param newAutoRegistrationStatus
+     *        The new value for the auto registration status. Valid values are:
+     *        "ENABLE" or "DISABLE".
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see AutoRegistrationStatus
+     */
+
+    public UpdateCACertificateRequest withNewAutoRegistrationStatus(
+            String newAutoRegistrationStatus) {
+        setNewAutoRegistrationStatus(newAutoRegistrationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The new value for the auto registration status. Valid values are:
+     * "ENABLE" or "DISABLE".
+     * </p>
+     * 
+     * @param newAutoRegistrationStatus
+     *        The new value for the auto registration status. Valid values are:
+     *        "ENABLE" or "DISABLE".
+     * @see AutoRegistrationStatus
+     */
+
+    public void setNewAutoRegistrationStatus(
+            AutoRegistrationStatus newAutoRegistrationStatus) {
+        this.newAutoRegistrationStatus = newAutoRegistrationStatus.toString();
+    }
+
+    /**
+     * <p>
+     * The new value for the auto registration status. Valid values are:
+     * "ENABLE" or "DISABLE".
+     * </p>
+     * 
+     * @param newAutoRegistrationStatus
+     *        The new value for the auto registration status. Valid values are:
+     *        "ENABLE" or "DISABLE".
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see AutoRegistrationStatus
+     */
+
+    public UpdateCACertificateRequest withNewAutoRegistrationStatus(
+            AutoRegistrationStatus newAutoRegistrationStatus) {
+        setNewAutoRegistrationStatus(newAutoRegistrationStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -209,7 +304,10 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
         if (getCertificateId() != null)
             sb.append("CertificateId: " + getCertificateId() + ",");
         if (getNewStatus() != null)
-            sb.append("NewStatus: " + getNewStatus());
+            sb.append("NewStatus: " + getNewStatus() + ",");
+        if (getNewAutoRegistrationStatus() != null)
+            sb.append("NewAutoRegistrationStatus: "
+                    + getNewAutoRegistrationStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -234,6 +332,13 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
         if (other.getNewStatus() != null
                 && other.getNewStatus().equals(this.getNewStatus()) == false)
             return false;
+        if (other.getNewAutoRegistrationStatus() == null
+                ^ this.getNewAutoRegistrationStatus() == null)
+            return false;
+        if (other.getNewAutoRegistrationStatus() != null
+                && other.getNewAutoRegistrationStatus().equals(
+                        this.getNewAutoRegistrationStatus()) == false)
+            return false;
         return true;
     }
 
@@ -248,6 +353,10 @@ public class UpdateCACertificateRequest extends AmazonWebServiceRequest
                         .hashCode());
         hashCode = prime * hashCode
                 + ((getNewStatus() == null) ? 0 : getNewStatus().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNewAutoRegistrationStatus() == null) ? 0
+                        : getNewAutoRegistrationStatus().hashCode());
         return hashCode;
     }
 

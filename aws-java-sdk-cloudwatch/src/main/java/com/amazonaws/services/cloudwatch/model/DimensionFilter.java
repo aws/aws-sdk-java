@@ -34,9 +34,12 @@ public class DimensionFilter implements Serializable, Cloneable {
      * <p>
      * The value of the dimension to be matched.
      * </p>
-     * <note> Specifying a <code>Name</code> without specifying a
-     * <code>Value</code> returns all values associated with that
-     * <code>Name</code>. </note>
+     * <note>
+     * <p>
+     * Specifying a <code>Name</code> without specifying a <code>Value</code>
+     * returns all values associated with that <code>Name</code>.
+     * </p>
+     * </note>
      */
     private String value;
 
@@ -85,14 +88,20 @@ public class DimensionFilter implements Serializable, Cloneable {
      * <p>
      * The value of the dimension to be matched.
      * </p>
-     * <note> Specifying a <code>Name</code> without specifying a
-     * <code>Value</code> returns all values associated with that
-     * <code>Name</code>. </note>
+     * <note>
+     * <p>
+     * Specifying a <code>Name</code> without specifying a <code>Value</code>
+     * returns all values associated with that <code>Name</code>.
+     * </p>
+     * </note>
      * 
      * @param value
-     *        The value of the dimension to be matched. </p> <note> Specifying a
-     *        <code>Name</code> without specifying a <code>Value</code> returns
-     *        all values associated with that <code>Name</code>.
+     *        The value of the dimension to be matched.</p> <note>
+     *        <p>
+     *        Specifying a <code>Name</code> without specifying a
+     *        <code>Value</code> returns all values associated with that
+     *        <code>Name</code>.
+     *        </p>
      */
 
     public void setValue(String value) {
@@ -103,13 +112,19 @@ public class DimensionFilter implements Serializable, Cloneable {
      * <p>
      * The value of the dimension to be matched.
      * </p>
-     * <note> Specifying a <code>Name</code> without specifying a
-     * <code>Value</code> returns all values associated with that
-     * <code>Name</code>. </note>
+     * <note>
+     * <p>
+     * Specifying a <code>Name</code> without specifying a <code>Value</code>
+     * returns all values associated with that <code>Name</code>.
+     * </p>
+     * </note>
      * 
-     * @return The value of the dimension to be matched. </p> <note> Specifying
-     *         a <code>Name</code> without specifying a <code>Value</code>
-     *         returns all values associated with that <code>Name</code>.
+     * @return The value of the dimension to be matched.</p> <note>
+     *         <p>
+     *         Specifying a <code>Name</code> without specifying a
+     *         <code>Value</code> returns all values associated with that
+     *         <code>Name</code>.
+     *         </p>
      */
 
     public String getValue() {
@@ -120,14 +135,20 @@ public class DimensionFilter implements Serializable, Cloneable {
      * <p>
      * The value of the dimension to be matched.
      * </p>
-     * <note> Specifying a <code>Name</code> without specifying a
-     * <code>Value</code> returns all values associated with that
-     * <code>Name</code>. </note>
+     * <note>
+     * <p>
+     * Specifying a <code>Name</code> without specifying a <code>Value</code>
+     * returns all values associated with that <code>Name</code>.
+     * </p>
+     * </note>
      * 
      * @param value
-     *        The value of the dimension to be matched. </p> <note> Specifying a
-     *        <code>Name</code> without specifying a <code>Value</code> returns
-     *        all values associated with that <code>Name</code>.
+     *        The value of the dimension to be matched.</p> <note>
+     *        <p>
+     *        Specifying a <code>Name</code> without specifying a
+     *        <code>Value</code> returns all values associated with that
+     *        <code>Name</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

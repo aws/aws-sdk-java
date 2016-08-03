@@ -19,7 +19,9 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "servicecatalog",
     "signingName" : "servicecatalog",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "xmlProtocol" : false,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSServiceCatalogClientBuilder",
     "asyncClientBuilderClassName" : "AWSServiceCatalogAsyncClientBuilder",
@@ -27,9 +29,7 @@
     "smokeTestsPackageName" : "com.amazonaws.services.servicecatalog.smoketests",
     "serviceName" : "AWS Service Catalog",
     "cborProtocol" : false,
-    "xmlProtocol" : false,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "DescribeProduct" : {

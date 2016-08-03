@@ -816,9 +816,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
      * <code>CreateMLModel</code> requires a <code>DataSource</code> with
      * computed statistics, which can be created by setting
      * <code>ComputeStatistics</code> to <code>true</code> in
-     * <code>CreateDataSourcceFromRDS</code>,
-     * <code>CreateDataSourceFromS3</code>, or
-     * <code>CreateDataSourceFromRedshift</code> operations.
+     * <code>CreateDataSourceFromRDS</code>, <code>CreateDataSourceFromS3</code>
+     * , or <code>CreateDataSourceFromRedshift</code> operations.
      * </p>
      * 
      * @param createMLModelRequest

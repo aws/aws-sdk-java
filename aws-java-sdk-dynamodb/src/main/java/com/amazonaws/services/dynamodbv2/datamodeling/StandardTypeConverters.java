@@ -18,19 +18,11 @@ import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
 import com.amazonaws.util.DateUtils;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.Date;
-import java.util.EnumMap;
 import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Type conversions.
@@ -38,52 +30,56 @@ import java.util.Set;
  * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverter
  */
 @SdkInternalApi
-final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
- 
+final class StandardTypeConverters<S,T> implements DynamoDBTypeConverterFactory<S,T> {
+
     /**
      * Standard scalar type-converter factory.
      */
-    private static final DynamoDBTypeConverter.Factory FACTORY = new StandardTypeConverters();
-    static final DynamoDBTypeConverter.Factory factory() {
-        return StandardTypeConverters.FACTORY;
+    private static final DynamoDBTypeConverterFactory<?,?> FACTORY = new StandardTypeConverters();
+    static final <S,T> DynamoDBTypeConverterFactory<S,T> factory() {
+        return (DynamoDBTypeConverterFactory<S,T>)StandardTypeConverters.FACTORY;
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public <S,T> DynamoDBTypeConverter<S,T> getConverter(final Class<T> targetType) {
-        final ScalarAttributeType scalarType = Scalar.of(targetType).scalarType;
-        if (scalarType == ScalarAttributeType.B) {
-            return Scalar.BYTE_BUFFER.getConverter(targetType);
-        } else if (scalarType != null) {
-            return Scalar.STRING.getConverter(targetType);
-        }
-        return null;
+    public DynamoDBTypeConverter<S,T> getConverter(final Class<S> sourceType, final Class<T> targetType) {
+        final Scalar source = Scalar.of(sourceType), target = Scalar.of(targetType);
+        final ConvertTo<S,T> sourceFromTarget = source.from(sourceType, (Class<T>)target.map.types[0]);
+        final ConvertTo<T,S> targetFromSource = target.from(targetType, (Class<S>)source.map.types[0]);
+        return new DynamoDBTypeConverter<S,T>() {
+            public final S convert(final T o) {
+                return sourceFromTarget.convertTo(o);
+            }
+            public final T unconvert(final S o) {
+                return targetFromSource.convertTo(o);
+            }
+        };
     }
 
     /**
      * Standard scalar types.
      */
-    static enum Scalar implements DynamoDBTypeConverter.Factory {
+    static enum Scalar {
         /**
-         * {@link BigDecimal}
+         * {@link java.math.BigDecimal}
          */
-        BIG_DECIMAL(BigDecimal.class, null, ScalarAttributeType.N, new ConvertToMap()
-            .with(String.class, new ConvertTo<BigDecimal,String>() {
-                public final BigDecimal convertTo(final String o) {
-                    return new BigDecimal(o);
+        BIG_DECIMAL(ScalarAttributeType.N, new ConvertToMap(java.math.BigDecimal.class)
+            .with(String.class, new ConvertTo<java.math.BigDecimal,String>() {
+                public final java.math.BigDecimal convertTo(final String o) {
+                    return new java.math.BigDecimal(o);
                 }
             })
         ),
 
         /**
-         * {@link BigInteger}
+         * {@link java.math.BigInteger}
          */
-        BIG_INTEGER(BigInteger.class, null, ScalarAttributeType.N, new ConvertToMap()
-            .with(String.class, new ConvertTo<BigInteger,String>() {
-                public final BigInteger convertTo(final String o) {
-                    return new BigInteger(o);
+        BIG_INTEGER(ScalarAttributeType.N, new ConvertToMap(java.math.BigInteger.class)
+            .with(String.class, new ConvertTo<java.math.BigInteger,String>() {
+                public final java.math.BigInteger convertTo(final String o) {
+                    return new java.math.BigInteger(o);
                 }
             })
         ),
@@ -91,7 +87,7 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
         /**
          * {@link Boolean}
          */
-        BOOLEAN(Boolean.class, Boolean.TYPE, ScalarAttributeType.N, new ConvertToMap()
+        BOOLEAN(ScalarAttributeType.N, new ConvertToMap(Boolean.class, Boolean.TYPE)
             .with(String.class, new ConvertTo<Boolean,String>() {
                 public final Boolean convertTo(final String o) {
                     return "0".equals(o) ? Boolean.FALSE : "1".equals(o) ? Boolean.TRUE : Boolean.valueOf(o);
@@ -102,7 +98,7 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
         /**
          * {@link Byte}
          */
-        BYTE(Byte.class, Byte.TYPE, ScalarAttributeType.N, new ConvertToMap()
+        BYTE(ScalarAttributeType.N, new ConvertToMap(Byte.class, Byte.TYPE)
             .with(String.class, new ConvertTo<Byte,String>() {
                 public final Byte convertTo(final String o) {
                     return Byte.valueOf(o);
@@ -113,46 +109,55 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
         /**
          * {@link Byte} array
          */
-        BYTE_ARRAY(byte[].class, null, ScalarAttributeType.B, new ConvertToMap()
-            .with(ByteBuffer.class, new ConvertTo<byte[],ByteBuffer>() {
-                public final byte[] convertTo(final ByteBuffer o) {
+        BYTE_ARRAY(ScalarAttributeType.B, new ConvertToMap(byte[].class)
+            .with(java.nio.ByteBuffer.class, new ConvertTo<byte[],java.nio.ByteBuffer>() {
+                public final byte[] convertTo(final java.nio.ByteBuffer o) {
                     if (o.hasArray()) {
                         return o.array();
                     }
-                    final byte[] array = new byte[o.remaining()];
-                    o.get(array);
-                    return array;
+                    final byte[] value = new byte[o.remaining()];
+                    o.get(value);
+                    return value;
                 }
             })
         ),
 
         /**
-         * {@link ByteBuffer}
+         * {@link java.nio.ByteBuffer}
          */
-        BYTE_BUFFER(ByteBuffer.class, null, ScalarAttributeType.B, new ConvertToMap()
-            .with(byte[].class, new ConvertTo<ByteBuffer,byte[]>() {
-                public final ByteBuffer convertTo(final byte[] o) {
-                    return ByteBuffer.wrap(o);
+        BYTE_BUFFER(ScalarAttributeType.B, new ConvertToMap(java.nio.ByteBuffer.class)
+            .with(byte[].class, new ConvertTo<java.nio.ByteBuffer,byte[]>() {
+                public final java.nio.ByteBuffer convertTo(final byte[] o) {
+                    return java.nio.ByteBuffer.wrap(o);
+                }
+            })
+            .with(java.util.UUID.class, new ConvertTo<java.nio.ByteBuffer,java.util.UUID>() {
+                public final java.nio.ByteBuffer convertTo(final java.util.UUID o) {
+                    final java.nio.ByteBuffer value = java.nio.ByteBuffer.allocate(16);
+                    value.putLong(o.getMostSignificantBits());
+                    value.putLong(o.getLeastSignificantBits());
+                    value.position(0);
+                    return value;
                 }
             })
         ),
 
         /**
-         * {@link Calendar}
+         * {@link java.util.Calendar}
          */
-        CALENDAR(Calendar.class, null, ScalarAttributeType.S, new ConvertToMap()
-            .with(Date.class, new ConvertTo<Calendar,Date>() {
-                public final Calendar convertTo(final Date o) {
-                    final Calendar calendar = Calendar.getInstance();
-                    calendar.setTime(o);
-                    return calendar;
+        CALENDAR(ScalarAttributeType.S, new ConvertToMap(java.util.Calendar.class)
+            .with(java.util.Date.class, new ConvertTo<java.util.Calendar,java.util.Date>() {
+                public final java.util.Calendar convertTo(final java.util.Date o) {
+                    final java.util.Calendar value = java.util.Calendar.getInstance();
+                    value.setTime(o);
+                    return value;
                 }
             })
-            .with(String.class, new ConvertTo<Calendar,String>() {
-                public final Calendar convertTo(final String o) {
-                    final Calendar calendar = Calendar.getInstance();
-                    calendar.setTime(DateUtils.parseISO8601Date(o));
-                    return calendar;
+            .with(String.class, new ConvertTo<java.util.Calendar,String>() {
+                public final java.util.Calendar convertTo(final String o) {
+                    final java.util.Calendar value = java.util.Calendar.getInstance();
+                    value.setTime(DateUtils.parseISO8601Date(o));
+                    return value;
                 }
             })
         ),
@@ -160,7 +165,7 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
         /**
          * {@link Character}
          */
-        CHARACTER(Character.class, Character.TYPE, ScalarAttributeType.S, new ConvertToMap()
+        CHARACTER(ScalarAttributeType.S, new ConvertToMap(Character.class, Character.TYPE)
             .with(String.class, new ConvertTo<Character,String>() {
                 public final Character convertTo(final String o) {
                     if (o.length() != 1) {
@@ -172,21 +177,32 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
         ),
 
         /**
-         * {@link Date}
+         * {@link java.util.Currency}
          */
-        DATE(Date.class, null, ScalarAttributeType.S, new ConvertToMap()
-            .with(Calendar.class, new ConvertTo<Date,Calendar>() {
-                public final Date convertTo(final Calendar o) {
+        CURRENCY(ScalarAttributeType.S, new ConvertToMap(java.util.Currency.class)
+            .with(String.class, new ConvertTo<java.util.Currency,String>() {
+                public final java.util.Currency convertTo(final String o) {
+                    return java.util.Currency.getInstance(o);
+                }
+            })
+        ),
+
+        /**
+         * {@link java.util.Date}
+         */
+        DATE(ScalarAttributeType.S, new ConvertToMap(java.util.Date.class)
+            .with(java.util.Calendar.class, new ConvertTo<java.util.Date,java.util.Calendar>() {
+                public final java.util.Date convertTo(final java.util.Calendar o) {
                     return o.getTime();
                 }
             })
-            .with(Long.class, new ConvertTo<Date,Long>() {
-                public final Date convertTo(final Long o) {
-                    return new Date(o);
+            .with(Long.class, new ConvertTo<java.util.Date,Long>() {
+                public final java.util.Date convertTo(final Long o) {
+                    return new java.util.Date(o);
                 }
             })
-            .with(String.class, new ConvertTo<Date,String>() {
-                public final Date convertTo(final String o) {
+            .with(String.class, new ConvertTo<java.util.Date,String>() {
+                public final java.util.Date convertTo(final String o) {
                     return DateUtils.parseISO8601Date(o);
                 }
             })
@@ -195,7 +211,7 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
         /**
          * {@link Double}
          */
-        DOUBLE(Double.class, Double.TYPE, ScalarAttributeType.N, new ConvertToMap()
+        DOUBLE(ScalarAttributeType.N, new ConvertToMap(Double.class, Double.TYPE)
             .with(String.class, new ConvertTo<Double,String>() {
                 public final Double convertTo(final String o) {
                     return Double.valueOf(o);
@@ -204,9 +220,26 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
         ),
 
         /**
+         * {@link Enum}
+         */
+        ENUM(null, new ConvertToMap<Enum,Object>(Enum.class)) {
+            @Override
+            final <S,T> ConvertTo<S,T> from(final Class<S> sourceType, final Class<T> targetType) {
+                if (sourceType.isEnum() && Scalar.STRING.is(targetType)) {
+                    return (ConvertTo<S,T>)new ConvertTo<Enum,String>() {
+                        public final Enum convertTo(final String o) {
+                            return Enum.valueOf((Class<Enum>)sourceType, o);
+                        }
+                    };
+                }
+                return super.from(sourceType, targetType);
+            }
+        },
+
+        /**
          * {@link Float}
          */
-        FLOAT(Float.class, Float.TYPE, ScalarAttributeType.N, new ConvertToMap()
+        FLOAT(ScalarAttributeType.N, new ConvertToMap(Float.class, Float.TYPE)
             .with(String.class, new ConvertTo<Float,String>() {
                 public final Float convertTo(final String o) {
                     return Float.valueOf(o);
@@ -217,7 +250,7 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
         /**
          * {@link Integer}
          */
-        INTEGER(Integer.class, Integer.TYPE, ScalarAttributeType.N, new ConvertToMap()
+        INTEGER(ScalarAttributeType.N, new ConvertToMap(Integer.class, Integer.TYPE)
             .with(String.class, new ConvertTo<Integer,String>() {
                 public final Integer convertTo(final String o) {
                     return Integer.valueOf(o);
@@ -226,11 +259,28 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
         ),
 
         /**
+         * {@link java.util.List}
+         */
+        LIST(null, new ConvertToMap(java.util.List.class)) {
+            @Override
+            final <S,T> DynamoDBTypeConverter<S,T> wrap(final DynamoDBTypeConverter<S,T> converter) {
+                return (DynamoDBTypeConverter<S,T>)new DynamoDBTypeConverter<Collection<S>,Collection<T>>() {
+                    public final Collection<S> convert(final Collection<T> o) {
+                        return convertAll(o, converter);
+                    }
+                    public final Collection<T> unconvert(final Collection<S> o) {
+                        return unconvertAll(o, converter);
+                    }
+                };
+            }
+        },
+
+        /**
          * {@link Long}
          */
-        LONG(Long.class, Long.TYPE, ScalarAttributeType.N, new ConvertToMap()
-            .with(Date.class, new ConvertTo<Long,Date>() {
-                public final Long convertTo(final Date o) {
+        LONG(ScalarAttributeType.N, new ConvertToMap(Long.class, Long.TYPE)
+            .with(java.util.Date.class, new ConvertTo<Long,java.util.Date>() {
+                public final Long convertTo(final java.util.Date o) {
                     return o.getTime();
                 }
             })
@@ -242,9 +292,60 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
         ),
 
         /**
+         * {@link java.util.Map}
+         */
+        MAP(null, new ConvertToMap(java.util.Map.class)) {
+            @Override
+            final <S,T> DynamoDBTypeConverter<S,T> wrap(final DynamoDBTypeConverter<S,T> converter) {
+                return (DynamoDBTypeConverter<S,T>)new DynamoDBTypeConverter<Map<Object,S>,Map<Object,T>>() {
+                    public final Map<Object,S> convert(final Map<Object,T> o) {
+                        return convertAll(o, converter);
+                    }
+                    public final Map<Object,T> unconvert(final Map<Object,S> o) {
+                        return unconvertAll(o, converter);
+                    }
+                };
+            }
+        },
+
+        /**
+         * {@link S3Link}
+         */
+        S3_LINK(ScalarAttributeType.S, new ConvertToMap(S3Link.class)
+            .with(String.class, new ConvertTo<S3Link,String>() {
+                public final S3Link convertTo(final String o) {
+                    return S3Link.fromJson((S3ClientCache)null, o); //<- placeholder
+                }
+            })
+        ),
+
+        /**
+         * {@link java.util.Set}
+         */
+        SET(null, new ConvertToMap(java.util.Set.class)) {
+            @Override
+            final <S,T> DynamoDBTypeConverter<S,T> wrap(final DynamoDBTypeConverter<S,T> converter) {
+                return (DynamoDBTypeConverter<S,T>)new DynamoDBTypeConverter<Collection<S>,Collection<T>>() {
+                    public final Collection<S> convert(final Collection<T> o) {
+                        return convertAll(o, converter);
+                    }
+                    public final Collection<T> unconvert(final Collection<S> o) {
+                        final Collection<T> vector = new java.util.LinkedHashSet();
+                        for (final S s : o) {
+                            if (vector.add(converter.unconvert(s)) == false) {
+                                throw new DynamoDBMappingException("duplicate value (" + s + ")");
+                            }
+                        }
+                        return vector;
+                    }
+                };
+            }
+        },
+
+        /**
          * {@link Short}
          */
-        SHORT(Short.class, Short.TYPE, ScalarAttributeType.N, new ConvertToMap()
+        SHORT(ScalarAttributeType.N, new ConvertToMap(Short.class, Short.TYPE)
             .with(String.class, new ConvertTo<Short,String>() {
                 public final Short convertTo(final String o) {
                     return Short.valueOf(o);
@@ -255,20 +356,35 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
         /**
          * {@link String}
          */
-        STRING(String.class, null, ScalarAttributeType.S, new ConvertToMap()
+        STRING(ScalarAttributeType.S, new ConvertToMap(String.class)
             .with(Boolean.class, new ConvertTo<String,Boolean>() {
                 public final String convertTo(final Boolean o) {
                     return Boolean.TRUE.equals(o) ? "1" : "0";
                 }
             })
-            .with(Calendar.class, new ConvertTo<String,Calendar>() {
-                public final String convertTo(final Calendar o) {
+            .with(java.util.Calendar.class, new ConvertTo<String,java.util.Calendar>() {
+                public final String convertTo(final java.util.Calendar o) {
                     return DateUtils.formatISO8601Date(o.getTime());
                 }
             })
-            .with(Date.class, new ConvertTo<String,Date>() {
-                public final String convertTo(final Date o) {
+            .with(java.util.Date.class, new ConvertTo<String,java.util.Date>() {
+                public final String convertTo(final java.util.Date o) {
                     return DateUtils.formatISO8601Date(o);
+                }
+            })
+            .with(Enum.class, new ConvertTo<String,Enum>() {
+                public final String convertTo(final Enum o) {
+                    return o.name();
+                }
+            })
+            .with(S3Link.class, new ConvertTo<String,S3Link>() {
+                public final String convertTo(final S3Link o) {
+                    return o.getBucketName() == null || o.getKey() == null ? null : o.toJson();
+                }
+            })
+            .with(java.util.TimeZone.class, new ConvertTo<String,java.util.TimeZone>() {
+                public final String convertTo(final java.util.TimeZone o) {
+                    return o.getID();
                 }
             })
             .with(Object.class, new ConvertTo<String,Object>() {
@@ -279,9 +395,25 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
         ),
 
         /**
+         * {@link java.util.TimeZone}
+         */
+        TIME_ZONE(ScalarAttributeType.S, new ConvertToMap(java.util.TimeZone.class)
+            .with(String.class, new ConvertTo<java.util.TimeZone,String>() {
+                public final java.util.TimeZone convertTo(final String o) {
+                    return java.util.TimeZone.getTimeZone(o);
+                }
+            })
+        ),
+
+        /**
          * {@link java.util.UUID}
          */
-        UUID(java.util.UUID.class, null, ScalarAttributeType.S, new ConvertToMap()
+        UUID(ScalarAttributeType.S, new ConvertToMap(java.util.UUID.class)
+            .with(java.nio.ByteBuffer.class, new ConvertTo<java.util.UUID,java.nio.ByteBuffer>() {
+                public final java.util.UUID convertTo(final java.nio.ByteBuffer o) {
+                    return new java.util.UUID(o.getLong(), o.getLong());
+                }
+            })
             .with(String.class, new ConvertTo<java.util.UUID,String>() {
                 public final java.util.UUID convertTo(final String o) {
                     return java.util.UUID.fromString(o);
@@ -292,74 +424,47 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
         /**
          * {@link Object}; default must be last
          */
-        DEFAULT(Object.class, null, null, new ConvertToMap());
-
-        /**
-         * The mapping of conversion functions for this scalar.
-         */
-        private final ConvertToMap<?,ConvertTo<?,?>> map;
-
-        /**
-         * The conversion types.
-         */
-        private final Class<?> type, primitiveType;
+        DEFAULT(null, new ConvertToMap(Object.class));
 
         /**
          * The scalar attribute type.
          */
-        private final ScalarAttributeType scalarType;
+        private final ScalarAttributeType scalarAttributeType;
+
+        /**
+         * The mapping of conversion functions for this scalar.
+         */
+        private final ConvertToMap<?,?> map;
 
         /**
          * Constructs a new scalar with the specified conversion mappings.
          */
-        private Scalar(final Class<?> type, final Class<?> primitiveType, final ScalarAttributeType scalarType, final ConvertToMap<?,ConvertTo<?,?>> map) {
-            this.type = type;
-            this.primitiveType = primitiveType;
-            this.scalarType = scalarType;
+        private Scalar(final ScalarAttributeType scalarAttributeType, final ConvertToMap<?,?> map) {
+            this.scalarAttributeType = scalarAttributeType;
             this.map = map;
         }
 
         /**
-         * {@inheritDoc}
+         * Wraps the scalar conversion function with the vector conversion if
+         * applicable, otherwise, simply returns the same scalar converter.
          */
-        @Override
-        public <S,T> DynamoDBTypeConverter<S,T> getConverter(final Class<T> targetType) {
-            if (this == STRING && targetType.isEnum()) {
-                return (DynamoDBTypeConverter<S,T>)new DynamoDBTypeConverter<String,Enum>() {
-                    public final String convert(final Enum o) {
-                        return o.name();
-                    }
-                    public final Enum unconvert(final String o) {
-                        return Enum.valueOf((Class<Enum>)targetType, o);
-                    }
-                };
-            }
-            final Scalar source = this, target = Scalar.of(targetType);
-            final ConvertTo<S,T> sourceFromTarget = source.from(targetType);
-            final ConvertTo<T,S> targetFromSource = target.from((Class<S>)type);
-            return new DynamoDBTypeConverter<S,T>() {
-                public final S convert(final T o) {
-                    return sourceFromTarget.convertTo(o);
-                }
-                public final T unconvert(final S o) {
-                    return targetFromSource.convertTo(o);
-                }
-            };
+        <S,T> DynamoDBTypeConverter<S,T> wrap(final DynamoDBTypeConverter<S,T> converter) {
+            return converter;
         }
 
         /**
-         * Gets the conversion function for the specified target type.
+         * Returns the function to convert from the specified target class to
+         * this scalar type.
          */
-        final <S,T> ConvertTo<S,T> from(final Class<T> targetType) {
-            ConvertTo<?,?> converter = map.from(Scalar.of(targetType).type);
-            if (converter == null) {
-                if (is(targetType) == false) {
-                    throw new DynamoDBMappingException("type [" + targetType + "] is not supported" +
-                        "; not convertible from " + this);
-                }
-                converter = ConvertTo.ANY;
-            }
-            return (ConvertTo<S,T>)converter;
+        <S,T> ConvertTo<S,T> from(final Class<S> sourceType, final Class<T> targetType) {
+            return (ConvertTo<S,T>)this.map.getConverter(targetType);
+        }
+
+        /**
+         * Returns the scalar attribute type of this scalar instance.
+         */
+        final ScalarAttributeType scalarAttributeType() {
+            return this.scalarAttributeType;
         }
 
         /**
@@ -367,31 +472,7 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
          * same as or a supertype of the specified target type.
          */
         final boolean is(final Class<?> sourceType) {
-            if (sourceType.isPrimitive()) {
-                return primitiveType == sourceType;
-            }
-            return type.isAssignableFrom(sourceType);
-        }
-
-        /**
-         * Returns the scalar attribute type.
-         */
-        final ScalarAttributeType scalarType() {
-            return this.scalarType;
-        }
-
-        /**
-         * Returns the conversion type.
-         */
-        final <S> Class<S> type() {
-            return (Class<S>)this.type;
-        }
-
-        /**
-         * Returns the primitive conversion type.
-         */
-        final <S> Class<S> primitiveType() {
-            return (Class<S>)this.primitiveType;
+            return this.map.isAssignableFrom(sourceType);
         }
 
         /**
@@ -409,156 +490,35 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
     }
 
     /**
-     * Standard collection types.
-     */
-    static enum Vector {
-        /**
-         * {@link List}
-         */
-        LIST(List.class) {
-            @Override
-            final <S,T> DynamoDBTypeConverter<S,T> wrap(final DynamoDBTypeConverter<S,T> scalar) {
-                return (DynamoDBTypeConverter<S,T>)new DynamoDBTypeConverter<Collection<S>,Collection<T>>() {
-                    public final Collection<S> convert(final Collection<T> o) {
-                        return Vector.convert(o, scalar);
-                    }
-                    public final Collection<T> unconvert(final Collection<S> o) {
-                        return Vector.unconvert(o, scalar);
-                    }
-                };
-            }
-        },
-
-        /**
-         * {@link Map}
-         */
-        MAP(Map.class) {
-            @Override
-            final <S,T> DynamoDBTypeConverter<S,T> wrap(final DynamoDBTypeConverter<S,T> scalar) {
-                return (DynamoDBTypeConverter<S,T>)new DynamoDBTypeConverter<Map<Object,S>,Map<Object,T>>() {
-                    public final Map<Object,S> convert(final Map<Object,T> o) {
-                        return Vector.convert(o, scalar);
-                    }
-                    public final Map<Object,T> unconvert(final Map<Object,S> o) {
-                        return Vector.unconvert(o, scalar);
-                    }
-                };
-            }
-        },
-
-        /**
-         * {@link Set}
-         */
-        SET(Set.class) {
-            @Override
-            final <S,T> DynamoDBTypeConverter<S,T> wrap(final DynamoDBTypeConverter<S,T> scalar) {
-                return (DynamoDBTypeConverter<S,T>)new DynamoDBTypeConverter<Collection<S>,Collection<T>>() {
-                    public final Collection<S> convert(final Collection<T> o) {
-                        return Vector.convert(o, scalar);
-                    }
-                    public final Collection<T> unconvert(final Collection<S> o) {
-                        final Collection<T> vector = new LinkedHashSet();
-                        for (final S s : o) {
-                            if (vector.add(scalar.unconvert(s)) == false) {
-                                throw new DynamoDBMappingException("duplicate value (" + s + ")");
-                            }
-                        }
-                        return vector;
-                    }
-                };
-            }
-        };
-
-        /**
-         * Wraps the scalar conversion function with the vector conversion.
-         */
-        abstract <S,T> DynamoDBTypeConverter<S,T> wrap(DynamoDBTypeConverter<S,T> scalar);
-
-        /**
-         * The conversion type.
-         */
-        private final Class<?> type;
-
-        /**
-         * Constructs a new vector.
-         */
-        private Vector(final Class<?> type) {
-            this.type = type;
-        }
-
-        /**
-         * Determines if the class represented by this vector is either the
-         * same as or a supertype of the specified target type.
-         */
-        final boolean is(final Class<?> sourceType) {
-            return type.isAssignableFrom(sourceType);
-        }
-
-        /**
-         * Converts the {@link Collection} to another applying the scalar
-         */
-        static final <S,T> List<S> convert(final Collection<T> o, final DynamoDBTypeConverter<S,T> scalar) {
-            final List<S> vector = new ArrayList<S>(o.size());
-            for (final T t : o) {
-                vector.add(scalar.convert(t));
-            }
-            return vector;
-        }
-
-        /**
-         * Unconverts the {@link Collection} to another applying the scalar
-         * conversion function to each entry.
-         */
-        static final <S,T> List<T> unconvert(final Collection<S> o, final DynamoDBTypeConverter<S,T> scalar) {
-            final List<T> vector = new ArrayList<T>(o.size());
-            for (final S s : o) {
-                vector.add(scalar.unconvert(s));
-            }
-            return vector;
-        }
-
-        /**
-         * Converts the {@link Map} to another applying the scalar conversion
-         * function to each entry.
-         * function to each entry.
-         */
-        static final <K,S,T> Map<K,S> convert(final Map<K,T> o, final DynamoDBTypeConverter<S,T> scalar) {
-            final Map<K,S> vector = new LinkedHashMap<K,S>();
-            for (final Map.Entry<K,T> t : o.entrySet()) {
-                vector.put(t.getKey(), scalar.convert(t.getValue()));
-            }
-            return vector;
-        }
-
-    
-        /**
-         * Unconverts the {@link Map} to another applying the scalar conversion
-         * function to each entry.
-         */
-        static final <K,S,T> Map<K,T> unconvert(final Map<K,S> o, final DynamoDBTypeConverter<S,T> scalar) {
-            final Map<K,T> vector = new LinkedHashMap<K,T>();
-            for (final Map.Entry<K,S> s : o.entrySet()) {
-                vector.put(s.getKey(), scalar.unconvert(s.getValue()));
-            }
-            return vector;
-        }
-    }
-
-    /**
      * Maps classes to converters.
      */
-    static class ConvertToMap<t,T> extends LinkedHashMap<Class<t>,T> {
-        public ConvertToMap<t,T> with(final Class<?> key, final T value) {
-            put((Class<t>)key, value);
+    private static class ConvertToMap<S,T> extends LinkedHashMap<Class<?>,ConvertTo<S,T>> {
+        private final Class<S>[] types;
+        private ConvertToMap(final Class<S> ... sourceTypes) {
+            this.types = sourceTypes;
+        }
+        final <s extends S,t extends T> ConvertToMap<S,T> with(final Class<t> targetType, final ConvertTo<s,t> converter) {
+            this.put((Class<T>)targetType, (ConvertTo<S,T>)converter);
             return this;
         }
-        public T from(final Class<?> key) {
-            for (final Map.Entry<Class<t>,T> entry : this.entrySet()) {
-                if (entry.getKey().isAssignableFrom(key)) {
+        final boolean isAssignableFrom(final Class<?> sourceType) {
+            for (final Class<?> type : this.types) {
+                if (type.isAssignableFrom(sourceType)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public ConvertTo<S,T> getConverter(final Class<?> targetType) {
+            for (final Map.Entry<Class<?>,ConvertTo<S,T>> entry : this.entrySet()) {
+                if (entry.getKey().isAssignableFrom(targetType)) {
                     return entry.getValue();
                 }
             }
-            return null;
+            if (this.isAssignableFrom(targetType)) {
+                return (ConvertTo<S,T>)ConvertTo.ANY;
+            }
+            throw new DynamoDBMappingException("type [" + targetType + "] is not supported; no conversion from " + Arrays.toString(types));
         }
     }
 
@@ -569,6 +529,109 @@ final class StandardTypeConverters implements DynamoDBTypeConverter.Factory {
         private static final ConvertTo<?,?> ANY = new ConvertTo();
         public S convertTo(final T o) {
             return (S)o;
+        }
+    }
+
+    /**
+     * Returns the standard type-converter for the given source to target
+     * conversion types.
+     */
+    static final <S,T> DynamoDBTypeConverter<S,T> converter(final Class<S> sourceType, final Class<T> targetType) {
+        return StandardTypeConverters.<S,T>factory().getConverter(sourceType, targetType);
+    }
+
+    /**
+     * Converts the target instance using the standard type-conversions.
+     */
+    static final <S,T> S convert(final T o, final Class<S> sourceType) {
+        return converter(sourceType, (Class<T>)o.getClass()).convert(o);
+    }
+
+    /**
+     * Unconverts the source instance using the standard type-conversions.
+     */
+    static final <S,T> T unconvert(final S o, final Class<T> targetType) {
+        return converter((Class<S>)o.getClass(), targetType).unconvert(o);
+    }
+
+    /**
+     * Converts the {@link Collection} to another applying the scalar
+     */
+    static final <S,T> List<S> convertAll(final Collection<T> o, final DynamoDBTypeConverter<S,T> scalar) {
+        final List<S> vector = new java.util.ArrayList<S>(o.size());
+        for (final T t : o) {
+            vector.add(scalar.convert(t));
+        }
+        return vector;
+    }
+
+    /**
+     * Unconverts the {@link Collection} to another applying the scalar
+     * conversion function to each entry.
+     */
+    static final <S,T> List<T> unconvertAll(final Collection<S> o, final DynamoDBTypeConverter<S,T> scalar) {
+        final List<T> vector = new java.util.ArrayList<T>(o.size());
+        for (final S s : o) {
+            vector.add(scalar.unconvert(s));
+        }
+        return vector;
+    }
+
+    /**
+     * Converts the {@link Map} to another applying the scalar conversion
+     * function to each entry.
+     */
+    static final <K,S,T> Map<K,S> convertAll(final Map<K,T> o, final DynamoDBTypeConverter<S,T> scalar) {
+        final Map<K,S> vector = new LinkedHashMap<K,S>();
+        for (final Map.Entry<K,T> t : o.entrySet()) {
+            vector.put(t.getKey(), scalar.convert(t.getValue()));
+        }
+        return vector;
+    }
+
+    /**
+     * Unconverts the {@link Map} to another applying the scalar conversion
+     * function to each entry.
+     */
+    static final <K,S,T> Map<K,T> unconvertAll(final Map<K,S> o, final DynamoDBTypeConverter<S,T> scalar) {
+        final Map<K,T> vector = new LinkedHashMap<K,T>();
+        for (final Map.Entry<K,S> s : o.entrySet()) {
+            vector.put(s.getKey(), scalar.unconvert(s.getValue()));
+        }
+        return vector;
+    }
+
+    /**
+     * Joins the source and target converters.
+     */
+    static final <S,T,U> DynamoDBTypeConverter<S,U> join(final DynamoDBTypeConverter<S,T> source, final DynamoDBTypeConverter<T,U> target) {
+        return new DynamoDBTypeConverter<S,U>() {
+            public final S convert(final U o) {
+                final T object = o == null ? null : target.convert(o);
+                return object == null ? null : source.convert(object);
+            }
+            public final U unconvert(final S o) {
+                final T object = o == null ? null : source.unconvert(o);
+                return object == null ? null : target.unconvert(object);
+            }
+        };
+    }
+
+    /**
+     * Delegate type-converter.
+     */
+    static class DelegateConverter<S,T> implements DynamoDBTypeConverter<S,T> {
+        private final DynamoDBTypeConverter<S,T> delegate;
+        public DelegateConverter(final DynamoDBTypeConverter<S,T> delegate) {
+            this.delegate = delegate;
+        }
+        @Override
+        public S convert(final T o) {
+            return this.delegate.convert(o);
+        }
+        @Override
+        public T unconvert(final S o) {
+            return this.delegate.unconvert(o);
         }
     }
 

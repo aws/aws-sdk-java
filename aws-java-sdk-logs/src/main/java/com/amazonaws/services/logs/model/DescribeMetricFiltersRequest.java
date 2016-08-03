@@ -40,7 +40,7 @@ public class DescribeMetricFiltersRequest extends AmazonWebServiceRequest
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeMetricFilters</code> request.
+     * <code>DescribeMetricFilters</code> request.
      * </p>
      */
     private String nextToken;
@@ -168,13 +168,13 @@ public class DescribeMetricFiltersRequest extends AmazonWebServiceRequest
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeMetricFilters</code> request.
+     * <code>DescribeMetricFilters</code> request.
      * </p>
      * 
      * @param nextToken
      *        A string token used for pagination that points to the next page of
      *        results. It must be a value obtained from the response of the
-     *        previous <code class="code">DescribeMetricFilters</code> request.
+     *        previous <code>DescribeMetricFilters</code> request.
      */
 
     public void setNextToken(String nextToken) {
@@ -185,12 +185,12 @@ public class DescribeMetricFiltersRequest extends AmazonWebServiceRequest
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeMetricFilters</code> request.
+     * <code>DescribeMetricFilters</code> request.
      * </p>
      * 
      * @return A string token used for pagination that points to the next page
      *         of results. It must be a value obtained from the response of the
-     *         previous <code class="code">DescribeMetricFilters</code> request.
+     *         previous <code>DescribeMetricFilters</code> request.
      */
 
     public String getNextToken() {
@@ -201,13 +201,13 @@ public class DescribeMetricFiltersRequest extends AmazonWebServiceRequest
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeMetricFilters</code> request.
+     * <code>DescribeMetricFilters</code> request.
      * </p>
      * 
      * @param nextToken
      *        A string token used for pagination that points to the next page of
      *        results. It must be a value obtained from the response of the
-     *        previous <code class="code">DescribeMetricFilters</code> request.
+     *        previous <code>DescribeMetricFilters</code> request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

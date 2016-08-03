@@ -56,7 +56,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * Amazon EC2 instances in the job flow. The following values are valid:
      * </p>
      * <ul>
-     * <li>The version number of the AMI to use, for example, "2.0."</li>
+     * <li>
+     * <p>
+     * The version number of the AMI to use, for example, "2.0."
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
@@ -120,8 +124,16 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * values are:
      * </p>
      * <ul>
-     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
-     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
+     * <li>
+     * <p>
+     * "mapr-m3" - launch the job flow using MapR M3 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr-m5" - launch the job flow using MapR M5 Edition.
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedProducts;
@@ -142,18 +154,49 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * supported values are:
      * </p>
      * <ul>
-     * <li>"mapr-m3" - launch the cluster using MapR M3 Edition.</li>
-     * <li>"mapr-m5" - launch the cluster using MapR M5 Edition.</li>
-     * <li>"mapr" with the user arguments specifying "--edition,m3" or
-     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     * respectively.</li>
-     * <li>"mapr-m7" - launch the cluster using MapR M7 Edition.</li>
-     * <li>"hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * <li>
+     * <p>
+     * "mapr-m3" - launch the cluster using MapR M3 Edition.
+     * </p>
      * </li>
-     * <li>"hue"- launch the cluster with Hue installed.</li>
-     * <li>"spark" - launch the cluster with Apache Spark installed.</li>
-     * <li>"ganglia" - launch the cluster with the Ganglia Monitoring System
-     * installed.</li>
+     * <li>
+     * <p>
+     * "mapr-m5" - launch the cluster using MapR M5 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr" with the user arguments specifying "--edition,m3" or
+     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
+     * respectively.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr-m7" - launch the cluster using MapR M7 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "hue"- launch the cluster with Hue installed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "spark" - launch the cluster with Apache Spark installed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "ganglia" - launch the cluster with the Ganglia Monitoring System
+     * installed.
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<SupportedProductConfig> newSupportedProducts;
@@ -380,7 +423,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * Amazon EC2 instances in the job flow. The following values are valid:
      * </p>
      * <ul>
-     * <li>The version number of the AMI to use, for example, "2.0."</li>
+     * <li>
+     * <p>
+     * The version number of the AMI to use, for example, "2.0."
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
@@ -397,15 +444,22 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param amiVersion
+     *        <p>
      *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x
-     *        and greater, use ReleaseLabel.</p></note>
+     *        and greater, use ReleaseLabel.
+     *        </p>
+     *        </note>
      *        <p>
      *        The version of the Amazon Machine Image (AMI) to use when
      *        launching Amazon EC2 instances in the job flow. The following
      *        values are valid:
      *        </p>
      *        <ul>
-     *        <li>The version number of the AMI to use, for example, "2.0."</li>
+     *        <li>
+     *        <p>
+     *        The version number of the AMI to use, for example, "2.0."
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If the AMI supports multiple versions of Hadoop (for example, AMI
@@ -418,7 +472,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        Elastic MapReduce, go to <a href=
      *        "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
      *        >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon
-     *        Elastic MapReduce Developer's Guide.
+     *        Elastic MapReduce Developer's Guide.</i>
      */
 
     public void setAmiVersion(String amiVersion) {
@@ -437,7 +491,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * Amazon EC2 instances in the job flow. The following values are valid:
      * </p>
      * <ul>
-     * <li>The version number of the AMI to use, for example, "2.0."</li>
+     * <li>
+     * <p>
+     * The version number of the AMI to use, for example, "2.0."
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
@@ -453,15 +511,22 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * MapReduce Developer's Guide.</i>
      * </p>
      * 
-     * @return For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x
-     *         and greater, use ReleaseLabel.</p></note>
+     * @return <p>
+     *         For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x
+     *         and greater, use ReleaseLabel.
+     *         </p>
+     *         </note>
      *         <p>
      *         The version of the Amazon Machine Image (AMI) to use when
      *         launching Amazon EC2 instances in the job flow. The following
      *         values are valid:
      *         </p>
      *         <ul>
-     *         <li>The version number of the AMI to use, for example, "2.0."</li>
+     *         <li>
+     *         <p>
+     *         The version number of the AMI to use, for example, "2.0."
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         If the AMI supports multiple versions of Hadoop (for example, AMI
@@ -475,7 +540,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *         Elastic MapReduce, go to <a href=
      *         "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
      *         >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon
-     *         Elastic MapReduce Developer's Guide.
+     *         Elastic MapReduce Developer's Guide.</i>
      */
 
     public String getAmiVersion() {
@@ -494,7 +559,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * Amazon EC2 instances in the job flow. The following values are valid:
      * </p>
      * <ul>
-     * <li>The version number of the AMI to use, for example, "2.0."</li>
+     * <li>
+     * <p>
+     * The version number of the AMI to use, for example, "2.0."
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
@@ -511,15 +580,22 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param amiVersion
+     *        <p>
      *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x
-     *        and greater, use ReleaseLabel.</p></note>
+     *        and greater, use ReleaseLabel.
+     *        </p>
+     *        </note>
      *        <p>
      *        The version of the Amazon Machine Image (AMI) to use when
      *        launching Amazon EC2 instances in the job flow. The following
      *        values are valid:
      *        </p>
      *        <ul>
-     *        <li>The version number of the AMI to use, for example, "2.0."</li>
+     *        <li>
+     *        <p>
+     *        The version number of the AMI to use, for example, "2.0."
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        If the AMI supports multiple versions of Hadoop (for example, AMI
@@ -532,7 +608,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        Elastic MapReduce, go to <a href=
      *        "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
      *        >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon
-     *        Elastic MapReduce Developer's Guide.
+     *        Elastic MapReduce Developer's Guide.</i>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -554,7 +630,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param releaseLabel
-     *        Amazon EMR releases 4.x or later.</p></note>
+     *        <p>
+     *        Amazon EMR releases 4.x or later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The release label for the Amazon EMR release. For Amazon EMR 3.x
+     *        and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
      */
 
     public void setReleaseLabel(String releaseLabel) {
@@ -572,7 +654,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * AMIs, use amiVersion instead instead of ReleaseLabel.
      * </p>
      * 
-     * @return Amazon EMR releases 4.x or later.</p></note>
+     * @return <p>
+     *         Amazon EMR releases 4.x or later.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The release label for the Amazon EMR release. For Amazon EMR 3.x
+     *         and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
      */
 
     public String getReleaseLabel() {
@@ -591,7 +679,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param releaseLabel
-     *        Amazon EMR releases 4.x or later.</p></note>
+     *        <p>
+     *        Amazon EMR releases 4.x or later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The release label for the Amazon EMR release. For Amazon EMR 3.x
+     *        and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -830,12 +924,23 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * values are:
      * </p>
      * <ul>
-     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
-     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
+     * <li>
+     * <p>
+     * "mapr-m3" - launch the job flow using MapR M3 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr-m5" - launch the job flow using MapR M5 Edition.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x
-     *         and greater, use Applications.</p></note>
+     * @return <p>
+     *         For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x
+     *         and greater, use Applications.
+     *         </p>
+     *         </note>
      *         <p>
      *         A list of strings that indicates third-party software to use with
      *         the job flow. For more information, go to <a href=
@@ -844,8 +949,16 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *         supported values are:
      *         </p>
      *         <ul>
-     *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
-     *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.
+     *         <li>
+     *         <p>
+     *         "mapr-m3" - launch the job flow using MapR M3 Edition.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "mapr-m5" - launch the job flow using MapR M5 Edition.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getSupportedProducts() {
@@ -870,13 +983,24 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * values are:
      * </p>
      * <ul>
-     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
-     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
+     * <li>
+     * <p>
+     * "mapr-m3" - launch the job flow using MapR M3 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr-m5" - launch the job flow using MapR M5 Edition.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param supportedProducts
+     *        <p>
      *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x
-     *        and greater, use Applications.</p></note>
+     *        and greater, use Applications.
+     *        </p>
+     *        </note>
      *        <p>
      *        A list of strings that indicates third-party software to use with
      *        the job flow. For more information, go to <a href=
@@ -885,8 +1009,16 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        supported values are:
      *        </p>
      *        <ul>
-     *        <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
-     *        <li>"mapr-m5" - launch the job flow using MapR M5 Edition.
+     *        <li>
+     *        <p>
+     *        "mapr-m3" - launch the job flow using MapR M3 Edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "mapr-m5" - launch the job flow using MapR M5 Edition.
+     *        </p>
+     *        </li>
      */
 
     public void setSupportedProducts(
@@ -915,8 +1047,16 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * values are:
      * </p>
      * <ul>
-     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
-     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
+     * <li>
+     * <p>
+     * "mapr-m3" - launch the job flow using MapR M3 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr-m5" - launch the job flow using MapR M5 Edition.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -926,8 +1066,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param supportedProducts
+     *        <p>
      *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x
-     *        and greater, use Applications.</p></note>
+     *        and greater, use Applications.
+     *        </p>
+     *        </note>
      *        <p>
      *        A list of strings that indicates third-party software to use with
      *        the job flow. For more information, go to <a href=
@@ -936,8 +1079,16 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        supported values are:
      *        </p>
      *        <ul>
-     *        <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
-     *        <li>"mapr-m5" - launch the job flow using MapR M5 Edition.
+     *        <li>
+     *        <p>
+     *        "mapr-m3" - launch the job flow using MapR M3 Edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "mapr-m5" - launch the job flow using MapR M5 Edition.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -968,13 +1119,24 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * values are:
      * </p>
      * <ul>
-     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
-     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
+     * <li>
+     * <p>
+     * "mapr-m3" - launch the job flow using MapR M3 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr-m5" - launch the job flow using MapR M5 Edition.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param supportedProducts
+     *        <p>
      *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x
-     *        and greater, use Applications.</p></note>
+     *        and greater, use Applications.
+     *        </p>
+     *        </note>
      *        <p>
      *        A list of strings that indicates third-party software to use with
      *        the job flow. For more information, go to <a href=
@@ -983,8 +1145,16 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        supported values are:
      *        </p>
      *        <ul>
-     *        <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
-     *        <li>"mapr-m5" - launch the job flow using MapR M5 Edition.
+     *        <li>
+     *        <p>
+     *        "mapr-m3" - launch the job flow using MapR M3 Edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "mapr-m5" - launch the job flow using MapR M5 Edition.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1012,22 +1182,56 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * supported values are:
      * </p>
      * <ul>
-     * <li>"mapr-m3" - launch the cluster using MapR M3 Edition.</li>
-     * <li>"mapr-m5" - launch the cluster using MapR M5 Edition.</li>
-     * <li>"mapr" with the user arguments specifying "--edition,m3" or
-     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     * respectively.</li>
-     * <li>"mapr-m7" - launch the cluster using MapR M7 Edition.</li>
-     * <li>"hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * <li>
+     * <p>
+     * "mapr-m3" - launch the cluster using MapR M3 Edition.
+     * </p>
      * </li>
-     * <li>"hue"- launch the cluster with Hue installed.</li>
-     * <li>"spark" - launch the cluster with Apache Spark installed.</li>
-     * <li>"ganglia" - launch the cluster with the Ganglia Monitoring System
-     * installed.</li>
+     * <li>
+     * <p>
+     * "mapr-m5" - launch the cluster using MapR M5 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr" with the user arguments specifying "--edition,m3" or
+     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
+     * respectively.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr-m7" - launch the cluster using MapR M7 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "hue"- launch the cluster with Hue installed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "spark" - launch the cluster with Apache Spark installed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "ganglia" - launch the cluster with the Ganglia Monitoring System
+     * installed.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x
-     *         and greater, use Applications.</p></note>
+     * @return <p>
+     *         For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x
+     *         and greater, use Applications.
+     *         </p>
+     *         </note>
      *         <p>
      *         A list of strings that indicates third-party software to use with
      *         the job flow that accepts a user argument list. EMR accepts and
@@ -1039,18 +1243,50 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *         Currently supported values are:
      *         </p>
      *         <ul>
-     *         <li>"mapr-m3" - launch the cluster using MapR M3 Edition.</li>
-     *         <li>"mapr-m5" - launch the cluster using MapR M5 Edition.</li>
-     *         <li>"mapr" with the user arguments specifying "--edition,m3" or
+     *         <li>
+     *         <p>
+     *         "mapr-m3" - launch the cluster using MapR M3 Edition.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "mapr-m5" - launch the cluster using MapR M5 Edition.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "mapr" with the user arguments specifying "--edition,m3" or
      *         "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     *         respectively.</li>
-     *         <li>"mapr-m7" - launch the cluster using MapR M7 Edition.</li>
-     *         <li>"hunk" - launch the cluster with the Hunk Big Data Analtics
-     *         Platform.</li>
-     *         <li>"hue"- launch the cluster with Hue installed.</li>
-     *         <li>"spark" - launch the cluster with Apache Spark installed.</li>
-     *         <li>"ganglia" - launch the cluster with the Ganglia Monitoring
-     *         System installed.
+     *         respectively.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "mapr-m7" - launch the cluster using MapR M7 Edition.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "hunk" - launch the cluster with the Hunk Big Data Analtics
+     *         Platform.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "hue"- launch the cluster with Hue installed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "spark" - launch the cluster with Apache Spark installed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "ganglia" - launch the cluster with the Ganglia Monitoring System
+     *         installed.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<SupportedProductConfig> getNewSupportedProducts() {
@@ -1077,23 +1313,57 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * supported values are:
      * </p>
      * <ul>
-     * <li>"mapr-m3" - launch the cluster using MapR M3 Edition.</li>
-     * <li>"mapr-m5" - launch the cluster using MapR M5 Edition.</li>
-     * <li>"mapr" with the user arguments specifying "--edition,m3" or
-     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     * respectively.</li>
-     * <li>"mapr-m7" - launch the cluster using MapR M7 Edition.</li>
-     * <li>"hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * <li>
+     * <p>
+     * "mapr-m3" - launch the cluster using MapR M3 Edition.
+     * </p>
      * </li>
-     * <li>"hue"- launch the cluster with Hue installed.</li>
-     * <li>"spark" - launch the cluster with Apache Spark installed.</li>
-     * <li>"ganglia" - launch the cluster with the Ganglia Monitoring System
-     * installed.</li>
+     * <li>
+     * <p>
+     * "mapr-m5" - launch the cluster using MapR M5 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr" with the user arguments specifying "--edition,m3" or
+     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
+     * respectively.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr-m7" - launch the cluster using MapR M7 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "hue"- launch the cluster with Hue installed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "spark" - launch the cluster with Apache Spark installed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "ganglia" - launch the cluster with the Ganglia Monitoring System
+     * installed.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newSupportedProducts
+     *        <p>
      *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x
-     *        and greater, use Applications.</p></note>
+     *        and greater, use Applications.
+     *        </p>
+     *        </note>
      *        <p>
      *        A list of strings that indicates third-party software to use with
      *        the job flow that accepts a user argument list. EMR accepts and
@@ -1105,18 +1375,50 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        Currently supported values are:
      *        </p>
      *        <ul>
-     *        <li>"mapr-m3" - launch the cluster using MapR M3 Edition.</li>
-     *        <li>"mapr-m5" - launch the cluster using MapR M5 Edition.</li>
-     *        <li>"mapr" with the user arguments specifying "--edition,m3" or
+     *        <li>
+     *        <p>
+     *        "mapr-m3" - launch the cluster using MapR M3 Edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "mapr-m5" - launch the cluster using MapR M5 Edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "mapr" with the user arguments specifying "--edition,m3" or
      *        "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     *        respectively.</li>
-     *        <li>"mapr-m7" - launch the cluster using MapR M7 Edition.</li>
-     *        <li>"hunk" - launch the cluster with the Hunk Big Data Analtics
-     *        Platform.</li>
-     *        <li>"hue"- launch the cluster with Hue installed.</li>
-     *        <li>"spark" - launch the cluster with Apache Spark installed.</li>
-     *        <li>"ganglia" - launch the cluster with the Ganglia Monitoring
-     *        System installed.
+     *        respectively.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "mapr-m7" - launch the cluster using MapR M7 Edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "hunk" - launch the cluster with the Hunk Big Data Analtics
+     *        Platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "hue"- launch the cluster with Hue installed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "spark" - launch the cluster with Apache Spark installed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "ganglia" - launch the cluster with the Ganglia Monitoring System
+     *        installed.
+     *        </p>
+     *        </li>
      */
 
     public void setNewSupportedProducts(
@@ -1147,18 +1449,49 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * supported values are:
      * </p>
      * <ul>
-     * <li>"mapr-m3" - launch the cluster using MapR M3 Edition.</li>
-     * <li>"mapr-m5" - launch the cluster using MapR M5 Edition.</li>
-     * <li>"mapr" with the user arguments specifying "--edition,m3" or
-     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     * respectively.</li>
-     * <li>"mapr-m7" - launch the cluster using MapR M7 Edition.</li>
-     * <li>"hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * <li>
+     * <p>
+     * "mapr-m3" - launch the cluster using MapR M3 Edition.
+     * </p>
      * </li>
-     * <li>"hue"- launch the cluster with Hue installed.</li>
-     * <li>"spark" - launch the cluster with Apache Spark installed.</li>
-     * <li>"ganglia" - launch the cluster with the Ganglia Monitoring System
-     * installed.</li>
+     * <li>
+     * <p>
+     * "mapr-m5" - launch the cluster using MapR M5 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr" with the user arguments specifying "--edition,m3" or
+     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
+     * respectively.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr-m7" - launch the cluster using MapR M7 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "hue"- launch the cluster with Hue installed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "spark" - launch the cluster with Apache Spark installed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "ganglia" - launch the cluster with the Ganglia Monitoring System
+     * installed.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -1168,8 +1501,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param newSupportedProducts
+     *        <p>
      *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x
-     *        and greater, use Applications.</p></note>
+     *        and greater, use Applications.
+     *        </p>
+     *        </note>
      *        <p>
      *        A list of strings that indicates third-party software to use with
      *        the job flow that accepts a user argument list. EMR accepts and
@@ -1181,18 +1517,50 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        Currently supported values are:
      *        </p>
      *        <ul>
-     *        <li>"mapr-m3" - launch the cluster using MapR M3 Edition.</li>
-     *        <li>"mapr-m5" - launch the cluster using MapR M5 Edition.</li>
-     *        <li>"mapr" with the user arguments specifying "--edition,m3" or
+     *        <li>
+     *        <p>
+     *        "mapr-m3" - launch the cluster using MapR M3 Edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "mapr-m5" - launch the cluster using MapR M5 Edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "mapr" with the user arguments specifying "--edition,m3" or
      *        "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     *        respectively.</li>
-     *        <li>"mapr-m7" - launch the cluster using MapR M7 Edition.</li>
-     *        <li>"hunk" - launch the cluster with the Hunk Big Data Analtics
-     *        Platform.</li>
-     *        <li>"hue"- launch the cluster with Hue installed.</li>
-     *        <li>"spark" - launch the cluster with Apache Spark installed.</li>
-     *        <li>"ganglia" - launch the cluster with the Ganglia Monitoring
-     *        System installed.
+     *        respectively.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "mapr-m7" - launch the cluster using MapR M7 Edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "hunk" - launch the cluster with the Hunk Big Data Analtics
+     *        Platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "hue"- launch the cluster with Hue installed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "spark" - launch the cluster with Apache Spark installed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "ganglia" - launch the cluster with the Ganglia Monitoring System
+     *        installed.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1226,23 +1594,57 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * supported values are:
      * </p>
      * <ul>
-     * <li>"mapr-m3" - launch the cluster using MapR M3 Edition.</li>
-     * <li>"mapr-m5" - launch the cluster using MapR M5 Edition.</li>
-     * <li>"mapr" with the user arguments specifying "--edition,m3" or
-     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     * respectively.</li>
-     * <li>"mapr-m7" - launch the cluster using MapR M7 Edition.</li>
-     * <li>"hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * <li>
+     * <p>
+     * "mapr-m3" - launch the cluster using MapR M3 Edition.
+     * </p>
      * </li>
-     * <li>"hue"- launch the cluster with Hue installed.</li>
-     * <li>"spark" - launch the cluster with Apache Spark installed.</li>
-     * <li>"ganglia" - launch the cluster with the Ganglia Monitoring System
-     * installed.</li>
+     * <li>
+     * <p>
+     * "mapr-m5" - launch the cluster using MapR M5 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr" with the user arguments specifying "--edition,m3" or
+     * "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
+     * respectively.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "mapr-m7" - launch the cluster using MapR M7 Edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "hunk" - launch the cluster with the Hunk Big Data Analtics Platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "hue"- launch the cluster with Hue installed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "spark" - launch the cluster with Apache Spark installed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "ganglia" - launch the cluster with the Ganglia Monitoring System
+     * installed.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param newSupportedProducts
+     *        <p>
      *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x
-     *        and greater, use Applications.</p></note>
+     *        and greater, use Applications.
+     *        </p>
+     *        </note>
      *        <p>
      *        A list of strings that indicates third-party software to use with
      *        the job flow that accepts a user argument list. EMR accepts and
@@ -1254,18 +1656,50 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        Currently supported values are:
      *        </p>
      *        <ul>
-     *        <li>"mapr-m3" - launch the cluster using MapR M3 Edition.</li>
-     *        <li>"mapr-m5" - launch the cluster using MapR M5 Edition.</li>
-     *        <li>"mapr" with the user arguments specifying "--edition,m3" or
+     *        <li>
+     *        <p>
+     *        "mapr-m3" - launch the cluster using MapR M3 Edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "mapr-m5" - launch the cluster using MapR M5 Edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "mapr" with the user arguments specifying "--edition,m3" or
      *        "--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-     *        respectively.</li>
-     *        <li>"mapr-m7" - launch the cluster using MapR M7 Edition.</li>
-     *        <li>"hunk" - launch the cluster with the Hunk Big Data Analtics
-     *        Platform.</li>
-     *        <li>"hue"- launch the cluster with Hue installed.</li>
-     *        <li>"spark" - launch the cluster with Apache Spark installed.</li>
-     *        <li>"ganglia" - launch the cluster with the Ganglia Monitoring
-     *        System installed.
+     *        respectively.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "mapr-m7" - launch the cluster using MapR M7 Edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "hunk" - launch the cluster with the Hunk Big Data Analtics
+     *        Platform.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "hue"- launch the cluster with Hue installed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "spark" - launch the cluster with Apache Spark installed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "ganglia" - launch the cluster with the Ganglia Monitoring System
+     *        installed.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1287,7 +1721,14 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
      * </p>
      * 
-     * @return Amazon EMR releases 4.x or later.</p></note>
+     * @return <p>
+     *         Amazon EMR releases 4.x or later.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         A list of applications for the cluster. Valid values are:
+     *         "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They are case
+     *         insensitive.
      */
 
     public java.util.List<Application> getApplications() {
@@ -1309,7 +1750,14 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param applications
-     *        Amazon EMR releases 4.x or later.</p></note>
+     *        <p>
+     *        Amazon EMR releases 4.x or later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        A list of applications for the cluster. Valid values are:
+     *        "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They are case
+     *        insensitive.
      */
 
     public void setApplications(java.util.Collection<Application> applications) {
@@ -1340,7 +1788,14 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param applications
-     *        Amazon EMR releases 4.x or later.</p></note>
+     *        <p>
+     *        Amazon EMR releases 4.x or later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        A list of applications for the cluster. Valid values are:
+     *        "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They are case
+     *        insensitive.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1368,7 +1823,14 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param applications
-     *        Amazon EMR releases 4.x or later.</p></note>
+     *        <p>
+     *        Amazon EMR releases 4.x or later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        A list of applications for the cluster. Valid values are:
+     *        "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They are case
+     *        insensitive.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1389,7 +1851,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * The list of configurations supplied for the EMR cluster you are creating.
      * </p>
      * 
-     * @return Amazon EMR releases 4.x or later.</p></note>
+     * @return <p>
+     *         Amazon EMR releases 4.x or later.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The list of configurations supplied for the EMR cluster you are
+     *         creating.
      */
 
     public java.util.List<Configuration> getConfigurations() {
@@ -1410,7 +1878,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param configurations
-     *        Amazon EMR releases 4.x or later.</p></note>
+     *        <p>
+     *        Amazon EMR releases 4.x or later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The list of configurations supplied for the EMR cluster you are
+     *        creating.
      */
 
     public void setConfigurations(
@@ -1441,7 +1915,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param configurations
-     *        Amazon EMR releases 4.x or later.</p></note>
+     *        <p>
+     *        Amazon EMR releases 4.x or later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The list of configurations supplied for the EMR cluster you are
+     *        creating.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1468,7 +1948,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param configurations
-     *        Amazon EMR releases 4.x or later.</p></note>
+     *        <p>
+     *        Amazon EMR releases 4.x or later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The list of configurations supplied for the EMR cluster you are
+     *        creating.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

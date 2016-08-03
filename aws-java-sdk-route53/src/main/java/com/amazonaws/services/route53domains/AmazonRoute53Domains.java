@@ -148,10 +148,6 @@ public interface AmazonRoute53Domains {
      * This operation disables automatic renewal of domain registration for the
      * specified domain.
      * </p>
-     * <note>Caution! Amazon Route 53 doesn't have a manual renewal process, so
-     * if you disable automatic renewal, registration for the domain will not be
-     * renewed when the expiration date passes, and you will lose control of the
-     * domain name.</note>
      * 
      * @param disableDomainAutoRenewRequest
      * @return Result of the DisableDomainAutoRenew operation returned by the
@@ -322,6 +318,43 @@ public interface AmazonRoute53Domains {
 
     /**
      * <p>
+     * The GetDomainSuggestions operation returns a list of suggested domain
+     * names given a string, which can either be a domain name or simply a word
+     * or phrase (without spaces).
+     * </p>
+     * <p>
+     * Parameters:
+     * <ul>
+     * <li>DomainName (string): The basis for your domain suggestion search, a
+     * string with (or without) top-level domain specified.</li>
+     * <li>SuggestionCount (int): The number of domain suggestions to be
+     * returned, maximum 50, minimum 1.</li>
+     * <li>OnlyAvailable (bool): If true, availability check will be performed
+     * on suggestion results, and only available domains will be returned. If
+     * false, suggestions will be returned without checking whether the domain
+     * is actually available, and caller will have to call
+     * checkDomainAvailability for each suggestion to determine availability for
+     * registration.</li>
+     * </ul>
+     * </p>
+     * 
+     * @param getDomainSuggestionsRequest
+     * @return Result of the GetDomainSuggestions operation returned by the
+     *         service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.GetDomainSuggestions
+     */
+    GetDomainSuggestionsResult getDomainSuggestions(
+            GetDomainSuggestionsRequest getDomainSuggestionsRequest);
+
+    /**
+     * <p>
      * This operation returns the current status of an operation that is not
      * completed.
      * </p>
@@ -473,6 +506,42 @@ public interface AmazonRoute53Domains {
      */
     RegisterDomainResult registerDomain(
             RegisterDomainRequest registerDomainRequest);
+
+    /**
+     * <p>
+     * This operation renews a domain for the specified number of years. The
+     * cost of renewing your domain is billed to your AWS account.
+     * </p>
+     * <p>
+     * We recommend that you renew your domain several weeks before the
+     * expiration date. Some TLD registries delete domains before the expiration
+     * date if you haven't renewed far enough in advance. For more information
+     * about renewing domain registration, see <a
+     * href="http://docs.aws.amazon.com/console/route53/domain-renew">Renewing
+     * Registration for a Domain</a> in the Amazon Route 53 documentation.
+     * </p>
+     * 
+     * @param renewDomainRequest
+     *        A <code>RenewDomain</code> request includes the number of years
+     *        that you want to renew for and the current expiration year.
+     * @return Result of the RenewDomain operation returned by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
+     * @throws DuplicateRequestException
+     *         The request is already in progress for the domain.
+     * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
+     * @sample AmazonRoute53Domains.RenewDomain
+     */
+    RenewDomainResult renewDomain(RenewDomainRequest renewDomainRequest);
 
     /**
      * <p>
@@ -722,6 +791,24 @@ public interface AmazonRoute53Domains {
      */
     UpdateTagsForDomainResult updateTagsForDomain(
             UpdateTagsForDomainRequest updateTagsForDomainRequest);
+
+    /**
+     * <p>
+     * This operation returns all the domain-related billing records for the
+     * current AWS account for a specified period
+     * </p>
+     * 
+     * @param viewBillingRequest
+     *        The ViewBilling request includes the following elements.
+     * @return Result of the ViewBilling operation returned by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @sample AmazonRoute53Domains.ViewBilling
+     */
+    ViewBillingResult viewBilling(ViewBillingRequest viewBillingRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held

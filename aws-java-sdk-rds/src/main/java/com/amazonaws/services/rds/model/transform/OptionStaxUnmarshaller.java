@@ -78,6 +78,12 @@ public class OptionStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("OptionVersion", targetDepth)) {
+                    option.setOptionVersion(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("OptionSettings/OptionSetting",
                         targetDepth)) {
                     option.withOptionSettings(OptionSettingStaxUnmarshaller

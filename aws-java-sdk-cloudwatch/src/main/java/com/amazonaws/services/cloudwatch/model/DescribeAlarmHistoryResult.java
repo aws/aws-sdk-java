@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The output for the <a>DescribeAlarmHistory</a> action.
+ * The output for <a>DescribeAlarmHistory</a>.
  * </p>
  */
 public class DescribeAlarmHistoryResult implements Serializable, Cloneable {

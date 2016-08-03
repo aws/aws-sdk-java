@@ -18,15 +18,6 @@ package com.amazonaws.services.elasticmapreduce.model;
  * <p>
  * The type of instance.
  * </p>
- * <enumValues> <value name="JobFlowExecutionState$COMPLETED">
- * <p>
- * A small instance
- * </p>
- * </value> <value name="JobFlowExecutionState$FAILED">
- * <p>
- * A large instance
- * </p>
- * </value> </enumValues>
  */
 public enum JobFlowExecutionState {
 

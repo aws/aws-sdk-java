@@ -91,6 +91,26 @@ public class BatchPredictionJsonMarshaller {
                 jsonGenerator.writeFieldName("Message").writeValue(
                         batchPrediction.getMessage());
             }
+            if (batchPrediction.getComputeTime() != null) {
+                jsonGenerator.writeFieldName("ComputeTime").writeValue(
+                        batchPrediction.getComputeTime());
+            }
+            if (batchPrediction.getFinishedAt() != null) {
+                jsonGenerator.writeFieldName("FinishedAt").writeValue(
+                        batchPrediction.getFinishedAt());
+            }
+            if (batchPrediction.getStartedAt() != null) {
+                jsonGenerator.writeFieldName("StartedAt").writeValue(
+                        batchPrediction.getStartedAt());
+            }
+            if (batchPrediction.getTotalRecordCount() != null) {
+                jsonGenerator.writeFieldName("TotalRecordCount").writeValue(
+                        batchPrediction.getTotalRecordCount());
+            }
+            if (batchPrediction.getInvalidRecordCount() != null) {
+                jsonGenerator.writeFieldName("InvalidRecordCount").writeValue(
+                        batchPrediction.getInvalidRecordCount());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

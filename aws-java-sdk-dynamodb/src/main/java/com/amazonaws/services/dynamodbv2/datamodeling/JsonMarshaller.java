@@ -23,7 +23,10 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 /**
  * A simple JSON marshaller that uses the Jackson JSON processor. It shares all limitations of that
  * library. For more information about Jackson, see: http://wiki.fasterxml.com/JacksonHome
+ *
+ * @deprecated Replaced by {@link DynamoDBTypeConvertedJson}
  */
+@Deprecated
 public class JsonMarshaller<T extends Object> implements DynamoDBMarshaller<T> {
 
     private static final ObjectMapper mapper = new ObjectMapper();

@@ -76,12 +76,12 @@ import org.apache.commons.logging.LogFactory;
  *
  * Or, if the table does not have a range key,
  * <pre class="brush: java">
- * DynamoDBTableMapper&lt;TestClass,Long,?&gt; mapper = dbMapper.newTableMapper(TestClass.class);
+ * DynamoDBTableMapper&lt;TestClass,Long,?&gt; table = dbMapper.newTableMapper(TestClass.class);
  * </pre>
  *
  * If you don't have your DynamoDB table set up yet, you can use,
  * <pre class="brush: java">
- * mapper.createTableIfNotExists(new ProvisionedThroughput(25L, 25L));
+ * table.createTableIfNotExists(new ProvisionedThroughput(25L, 25L));
  * </pre>
  *
  * Save instances of annotated classes and retrieve them,
@@ -92,7 +92,7 @@ import org.apache.commons.logging.LogFactory;
  * object.setAmount(101D);
  *
  * try {
- *     mapper.saveIfNotExists(object);
+ *     table.saveIfNotExists(object);
  * } catch (ConditionalCheckFailedException e) {
  *     // handle already existing
  * }
@@ -103,9 +103,9 @@ import org.apache.commons.logging.LogFactory;
  * int limit = 10;
  * List&lt;TestClass&gt; objects = new ArrayList&lt;TestClass&gt;(limit);
  *
- * DynamoDBQueryExpression&lt;TestClass&gt; query = mapper.queryExpressionOf(1234L)
- *     .withRangeKeyCondition(mapper..rangeKey().name(), mapper.rangeKey().ge(&quot;ABAA&quot;))
- *     .withQueryFilterEntry(&quot;amount&quot;, mapper.field(&quot;amount&quot;).gt(100D))
+ * DynamoDBQueryExpression&lt;TestClass&gt; query = table.expressionForKey(1234L)
+ *     .withRangeKeyCondition(table.rangeKey().name(), table.rangeKey().ge(&quot;ABAA&quot;))
+ *     .withQueryFilterEntry(&quot;amount&quot;, table.field(&quot;amount&quot;).gt(100D))
  *     .withConsistentReads(true);
  *
  * QueryResultPage&lt;TestClass&gt; results = new QueryResultPage&lt;TestClass&gt;();
@@ -346,6 +346,7 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
      * @param queryExpression The query expression.
      * @return The count.
      * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper#count
+     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTableMapper#expressionForKey
      */
     public final int count(final DynamoDBQueryExpression<T> queryExpression) {
         return mapper.<T>count(model.targetType(), queryExpression);
@@ -357,6 +358,7 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
      * @param queryExpression The query expression.
      * @return The query results.
      * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper#query
+     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTableMapper#expressionForKey
      */
     public final QueryResultPage<T> query(final DynamoDBQueryExpression<T> queryExpression) {
         return mapper.<T>queryPage(model.targetType(), queryExpression);
@@ -368,9 +370,23 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
      * @param queryExpression The query expression.
      * @return The query results.
      * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper#query
+     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTableMapper#expressionForKey
      */
     public final QueryResultPage<T> queryPage(final DynamoDBQueryExpression<T> queryExpression) {
         return mapper.<T>queryPage(model.targetType(), queryExpression);
+    }
+
+    /**
+     * Creates a new {@link DynamoDBQueryExpression} with the specified hash key
+     * value populated.
+     * @param hashKey The hash key value.
+     * @return The query expression.
+     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTableMapper#count
+     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTableMapper#query
+     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTableMapper#queryPage
+     */
+    public final DynamoDBQueryExpression<T> expressionForKey(final H hashKey) {
+        return new DynamoDBQueryExpression<T>().withHashKeyValues(model.newKey(hashKey, (R)null));
     }
 
     /**

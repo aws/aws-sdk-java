@@ -42,22 +42,22 @@ import java.util.Map;
  */
 public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<Map<String,AttributeValue>,T>  {
 
+    private final DynamoDBMapperTableModel.Properties<T> properties;
     private final Map<String,DynamoDBMapperFieldModel<T,Object>> fields;
     private final Map<KeyType,DynamoDBMapperFieldModel<T,Object>> keys;
     private final Map<String,GlobalSecondaryIndex> gsis;
     private final Map<String,LocalSecondaryIndex> lsis;
-    private final Properties<T> properties;
 
     /**
      * Constructs a new table model for the specified class.
      * @param builder The builder.
      */
     private DynamoDBMapperTableModel(final DynamoDBMapperTableModel.Builder<T> builder) {
-        this.properties = builder.properties;
-        this.fields = builder.fields;
-        this.keys = builder.keys;
+        this.fields = Collections.unmodifiableMap(builder.fields);
+        this.keys = Collections.unmodifiableMap(builder.keys);
         this.gsis = builder.globalSecondaryIndexes();
         this.lsis = builder.localSecondaryIndexes();
+        this.properties = builder.copy();
     }
 
     /**
@@ -351,40 +351,32 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
         public Class<T> targetType();
         public String tableName();
 
-         /**
-          * Properties builder.
-          */
-        static final class Builder<T> implements Properties<T> {
+        /**
+         * Properties builder.
+         */
+        static class Buildable<T> implements Properties<T> {
             private Class<T> targetType;
             private String tableName;
 
             /**
              * Populates the builder properties with the specified defaults.
-             * @param defaults The default properties.
-             * @return This builder instance for chaining.
              */
-            public Builder<T> with(final Properties<T> defaults) {
-                this.targetType = defaults.targetType();
-                this.tableName = defaults.tableName();
-                return this;
+            public Buildable<T> with(final Properties<T> defaults) {
+                return withTargetType(defaults.targetType()).withTableName(defaults.tableName());
             }
 
             /**
              * Sets the target type.
-             * @param targetType The target type.
-             * @return This builder instance for chaining.
              */
-            public Builder<T> withTargetType(final Class<T> targetType) {
+            public Buildable<T> withTargetType(final Class<T> targetType) {
                 this.targetType = targetType;
                 return this;
             }
 
             /**
              * Sets the table name.
-             * @param tableName The table name.
-             * @return This builder instance for chaining.
              */
-            public Builder<T> withTableName(final String tableName) {
+            public Buildable<T> withTableName(final String tableName) {
                 this.tableName = tableName;
                 return this;
             }
@@ -404,43 +396,27 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
             public String tableName() {
                 return tableName;
             }
+
+            /**
+             * Creates a copy of the current properties.
+             */
+            public Buildable<T> copy() {
+                return new Buildable<T>().with(this);
+            }
         }
     }
 
     /**
      * {@link DynamoDBMapperTableModel} builder.
      */
-    static class Builder<T> {
-        private final Map<String,DynamoDBMapperFieldModel<T,Object>> fields;
-        private final Map<KeyType,DynamoDBMapperFieldModel<T,Object>> keys;
-        private final Properties.Builder<T> properties;
-
-        /**
-         * Construts a new builder.
-         * @param defaults The default properties.
-         */
-        public Builder(final Properties<T> defaults) {
-            this.fields = new LinkedHashMap<String,DynamoDBMapperFieldModel<T,Object>>();
-            this.keys = new LinkedHashMap<KeyType,DynamoDBMapperFieldModel<T,Object>>(4);
-            this.properties = new Properties.Builder().with(defaults);
-        }
-
-        /**
-         * Sets the table name.
-         * @param tableName The table name.
-         * @return This builder instance for chaining.
-         */
-        public Builder<T> withTableName(final String tableName) {
-            this.properties.withTableName(tableName);
-            return this;
-        }
+    static final class Builder<T> extends DynamoDBMapperTableModel.Properties.Buildable<T> {
+        private final Map<String,DynamoDBMapperFieldModel<T,Object>> fields = new LinkedHashMap<String,DynamoDBMapperFieldModel<T,Object>>();
+        private final Map<KeyType,DynamoDBMapperFieldModel<T,Object>> keys = new LinkedHashMap<KeyType,DynamoDBMapperFieldModel<T,Object>>(4);
 
         /**
          * Adds a field model to this builder.
-         * @param field The field model.
-         * @return This builder instance for chaining.
          */
-        public Builder<T> with(final DynamoDBMapperFieldModel field) {
+        public DynamoDBMapperTableModel.Builder<T> with(final DynamoDBMapperFieldModel field) {
             if (fields.put(field.name(), field) != null) {
                 throw new DynamoDBMappingException(field.id().format("must not duplicate attribute name"));
             }
@@ -452,7 +428,6 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
 
         /**
          * Builds the GSI mappings.
-         * @return The mappings.
          */
         public Map<String,GlobalSecondaryIndex> globalSecondaryIndexes() {
             final Map<String,GlobalSecondaryIndex> map = new LinkedHashMap<String,GlobalSecondaryIndex>();
@@ -480,7 +455,6 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
 
         /**
          * Builds the LSI mappings.
-         * @return The mappings.
          */
         public Map<String,LocalSecondaryIndex> localSecondaryIndexes() {
             final Map<String,LocalSecondaryIndex> map = new LinkedHashMap<String,LocalSecondaryIndex>();
@@ -500,7 +474,6 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
 
         /**
          * Builds the instance.
-         * @return The built instance.
          */
         public final DynamoDBMapperTableModel<T> build() {
             return new DynamoDBMapperTableModel(this);

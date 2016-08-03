@@ -57,7 +57,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeLogStreams</code> request.
+     * <code>DescribeLogStreams</code> request.
      * </p>
      */
     private String nextToken;
@@ -364,13 +364,13 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeLogStreams</code> request.
+     * <code>DescribeLogStreams</code> request.
      * </p>
      * 
      * @param nextToken
      *        A string token used for pagination that points to the next page of
      *        results. It must be a value obtained from the response of the
-     *        previous <code class="code">DescribeLogStreams</code> request.
+     *        previous <code>DescribeLogStreams</code> request.
      */
 
     public void setNextToken(String nextToken) {
@@ -381,12 +381,12 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeLogStreams</code> request.
+     * <code>DescribeLogStreams</code> request.
      * </p>
      * 
      * @return A string token used for pagination that points to the next page
      *         of results. It must be a value obtained from the response of the
-     *         previous <code class="code">DescribeLogStreams</code> request.
+     *         previous <code>DescribeLogStreams</code> request.
      */
 
     public String getNextToken() {
@@ -397,13 +397,13 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the response of the previous
-     * <code class="code">DescribeLogStreams</code> request.
+     * <code>DescribeLogStreams</code> request.
      * </p>
      * 
      * @param nextToken
      *        A string token used for pagination that points to the next page of
      *        results. It must be a value obtained from the response of the
-     *        previous <code class="code">DescribeLogStreams</code> request.
+     *        previous <code>DescribeLogStreams</code> request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

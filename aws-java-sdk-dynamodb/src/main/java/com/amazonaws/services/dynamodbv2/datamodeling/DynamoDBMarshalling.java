@@ -32,7 +32,10 @@ import java.util.Set;
  * 
  * @see DynamoDBMarshaller
  * @see JsonMarshaller
+ *
+ * @deprecated Replaced by {@link DynamoDBTypeConverted}
  */
+@Deprecated
 @DynamoDB
 @DynamoDBTypeConverted(converter=DynamoDBMarshalling.Converter.class)
 @Retention(RetentionPolicy.RUNTIME)
@@ -75,4 +78,5 @@ public @interface DynamoDBMarshalling {
             }
         }
     }
+
 }

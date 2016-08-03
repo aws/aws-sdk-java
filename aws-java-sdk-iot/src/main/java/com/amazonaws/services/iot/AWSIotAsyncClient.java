@@ -1577,6 +1577,42 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListOutgoingCertificatesResult> listOutgoingCertificatesAsync(
+            ListOutgoingCertificatesRequest request) {
+
+        return listOutgoingCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOutgoingCertificatesResult> listOutgoingCertificatesAsync(
+            final ListOutgoingCertificatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOutgoingCertificatesRequest, ListOutgoingCertificatesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListOutgoingCertificatesResult>() {
+                    @Override
+                    public ListOutgoingCertificatesResult call()
+                            throws Exception {
+                        ListOutgoingCertificatesResult result;
+
+                        try {
+                            result = listOutgoingCertificates(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPoliciesResult> listPoliciesAsync(
             ListPoliciesRequest request) {
 

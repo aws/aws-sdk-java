@@ -19,8 +19,6 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "cognito-idp",
     "signingName" : "cognito-idp",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSCognitoIdentityProviderClientBuilder",
     "asyncClientBuilderClassName" : "AWSCognitoIdentityProviderAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AWSCognitoIdentityProviderModuleInjector",
@@ -29,7 +27,9 @@
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true
   },
   "operations" : {
     "AddCustomAttributes" : {
@@ -66,12 +66,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddCustomAttributesResult",
       "asyncReturnType" : "AddCustomAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddCustomAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddCustomAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddCustomAttributesRequest, AddCustomAttributesResult>",
-      "authenticated" : true,
       "methodName" : "addCustomAttributes"
     },
     "AdminConfirmSignUp" : {
@@ -126,12 +126,12 @@
         "documentation" : "<p>This exception is thrown when a password reset is required.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminConfirmSignUpResult",
       "asyncReturnType" : "AdminConfirmSignUpResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminConfirmSignUpResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminConfirmSignUpResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminConfirmSignUpRequest, AdminConfirmSignUpResult>",
-      "authenticated" : true,
       "methodName" : "adminConfirmSignUp"
     },
     "AdminDeleteUser" : {
@@ -168,12 +168,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminDeleteUserResult",
       "asyncReturnType" : "AdminDeleteUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminDeleteUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminDeleteUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminDeleteUserRequest, AdminDeleteUserResult>",
-      "authenticated" : true,
       "methodName" : "adminDeleteUser"
     },
     "AdminDeleteUserAttributes" : {
@@ -210,12 +210,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminDeleteUserAttributesResult",
       "asyncReturnType" : "AdminDeleteUserAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminDeleteUserAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminDeleteUserAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminDeleteUserAttributesRequest, AdminDeleteUserAttributesResult>",
-      "authenticated" : true,
       "methodName" : "adminDeleteUserAttributes"
     },
     "AdminDisableUser" : {
@@ -252,12 +252,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminDisableUserResult",
       "asyncReturnType" : "AdminDisableUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminDisableUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminDisableUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminDisableUserRequest, AdminDisableUserResult>",
-      "authenticated" : true,
       "methodName" : "adminDisableUser"
     },
     "AdminEnableUser" : {
@@ -294,12 +294,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminEnableUserResult",
       "asyncReturnType" : "AdminEnableUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminEnableUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminEnableUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminEnableUserRequest, AdminEnableUserResult>",
-      "authenticated" : true,
       "methodName" : "adminEnableUser"
     },
     "AdminForgetDevice" : {
@@ -339,12 +339,12 @@
         "documentation" : "<p>This exception gets thrown when a user is not authorized.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminForgetDeviceResult",
       "asyncReturnType" : "AdminForgetDeviceResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminForgetDeviceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminForgetDeviceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminForgetDeviceRequest, AdminForgetDeviceResult>",
-      "authenticated" : true,
       "methodName" : "adminForgetDevice"
     },
     "AdminGetDevice" : {
@@ -384,12 +384,12 @@
         "documentation" : "<p>This exception gets thrown when a user is not authorized.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminGetDeviceResult",
       "asyncReturnType" : "AdminGetDeviceResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminGetDeviceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminGetDeviceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminGetDeviceRequest, AdminGetDeviceResult>",
-      "authenticated" : true,
       "methodName" : "adminGetDevice"
     },
     "AdminGetUser" : {
@@ -426,12 +426,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminGetUserResult",
       "asyncReturnType" : "AdminGetUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminGetUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminGetUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminGetUserRequest, AdminGetUserResult>",
-      "authenticated" : true,
       "methodName" : "adminGetUser"
     },
     "AdminInitiateAuth" : {
@@ -489,12 +489,12 @@
         "documentation" : "<p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminInitiateAuthResult",
       "asyncReturnType" : "AdminInitiateAuthResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminInitiateAuthResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminInitiateAuthResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminInitiateAuthRequest, AdminInitiateAuthResult>",
-      "authenticated" : true,
       "methodName" : "adminInitiateAuth"
     },
     "AdminListDevices" : {
@@ -534,12 +534,12 @@
         "documentation" : "<p>This exception gets thrown when a user is not authorized.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminListDevicesResult",
       "asyncReturnType" : "AdminListDevicesResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminListDevicesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminListDevicesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminListDevicesRequest, AdminListDevicesResult>",
-      "authenticated" : true,
       "methodName" : "adminListDevices"
     },
     "AdminResetUserPassword" : {
@@ -588,12 +588,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminResetUserPasswordResult",
       "asyncReturnType" : "AdminResetUserPasswordResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminResetUserPasswordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminResetUserPasswordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminResetUserPasswordRequest, AdminResetUserPasswordResult>",
-      "authenticated" : true,
       "methodName" : "adminResetUserPassword"
     },
     "AdminRespondToAuthChallenge" : {
@@ -660,12 +660,12 @@
         "documentation" : "<p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminRespondToAuthChallengeResult",
       "asyncReturnType" : "AdminRespondToAuthChallengeResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminRespondToAuthChallengeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminRespondToAuthChallengeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminRespondToAuthChallengeRequest, AdminRespondToAuthChallengeResult>",
-      "authenticated" : true,
       "methodName" : "adminRespondToAuthChallenge"
     },
     "AdminSetUserSettings" : {
@@ -699,12 +699,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminSetUserSettingsResult",
       "asyncReturnType" : "AdminSetUserSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminSetUserSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminSetUserSettingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminSetUserSettingsRequest, AdminSetUserSettingsResult>",
-      "authenticated" : true,
       "methodName" : "adminSetUserSettings"
     },
     "AdminUpdateDeviceStatus" : {
@@ -744,12 +744,12 @@
         "documentation" : "<p>This exception gets thrown when a user is not authorized.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminUpdateDeviceStatusResult",
       "asyncReturnType" : "AdminUpdateDeviceStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminUpdateDeviceStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminUpdateDeviceStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminUpdateDeviceStatusRequest, AdminUpdateDeviceStatusResult>",
-      "authenticated" : true,
       "methodName" : "adminUpdateDeviceStatus"
     },
     "AdminUpdateUserAttributes" : {
@@ -798,12 +798,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminUpdateUserAttributesResult",
       "asyncReturnType" : "AdminUpdateUserAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminUpdateUserAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminUpdateUserAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminUpdateUserAttributesRequest, AdminUpdateUserAttributesResult>",
-      "authenticated" : true,
       "methodName" : "adminUpdateUserAttributes"
     },
     "AdminUserGlobalSignOut" : {
@@ -840,12 +840,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AdminUserGlobalSignOutResult",
       "asyncReturnType" : "AdminUserGlobalSignOutResult",
       "asyncFutureType" : "java.util.concurrent.Future<AdminUserGlobalSignOutResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AdminUserGlobalSignOutResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AdminUserGlobalSignOutRequest, AdminUserGlobalSignOutResult>",
-      "authenticated" : true,
       "methodName" : "adminUserGlobalSignOut"
     },
     "ChangePassword" : {
@@ -888,12 +888,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "ChangePasswordResult",
       "asyncReturnType" : "ChangePasswordResult",
       "asyncFutureType" : "java.util.concurrent.Future<ChangePasswordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ChangePasswordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ChangePasswordRequest, ChangePasswordResult>",
-      "authenticated" : false,
       "methodName" : "changePassword"
     },
     "ConfirmDevice" : {
@@ -942,12 +942,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ConfirmDeviceResult",
       "asyncReturnType" : "ConfirmDeviceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfirmDeviceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfirmDeviceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmDeviceRequest, ConfirmDeviceResult>",
-      "authenticated" : true,
       "methodName" : "confirmDevice"
     },
     "ConfirmForgotPassword" : {
@@ -1014,12 +1014,12 @@
         "documentation" : "<p>This exception is thrown when a user is not confirmed successfully.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "ConfirmForgotPasswordResult",
       "asyncReturnType" : "ConfirmForgotPasswordResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfirmForgotPasswordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfirmForgotPasswordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmForgotPasswordRequest, ConfirmForgotPasswordResult>",
-      "authenticated" : false,
       "methodName" : "confirmForgotPassword"
     },
     "ConfirmSignUp" : {
@@ -1083,12 +1083,12 @@
         "documentation" : "<p>This exception is thrown when a user is not found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "ConfirmSignUpResult",
       "asyncReturnType" : "ConfirmSignUpResult",
       "asyncFutureType" : "java.util.concurrent.Future<ConfirmSignUpResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ConfirmSignUpResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ConfirmSignUpRequest, ConfirmSignUpResult>",
-      "authenticated" : false,
       "methodName" : "confirmSignUp"
     },
     "CreateUserPool" : {
@@ -1134,12 +1134,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateUserPoolResult",
       "asyncReturnType" : "CreateUserPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateUserPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateUserPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateUserPoolRequest, CreateUserPoolResult>",
-      "authenticated" : true,
       "methodName" : "createUserPool"
     },
     "CreateUserPoolClient" : {
@@ -1179,12 +1179,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateUserPoolClientResult",
       "asyncReturnType" : "CreateUserPoolClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateUserPoolClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateUserPoolClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateUserPoolClientRequest, CreateUserPoolClientResult>",
-      "authenticated" : true,
       "methodName" : "createUserPoolClient"
     },
     "DeleteUser" : {
@@ -1221,12 +1221,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "DeleteUserResult",
       "asyncReturnType" : "DeleteUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult>",
-      "authenticated" : false,
       "methodName" : "deleteUser"
     },
     "DeleteUserAttributes" : {
@@ -1263,12 +1263,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "DeleteUserAttributesResult",
       "asyncReturnType" : "DeleteUserAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteUserAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteUserAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteUserAttributesRequest, DeleteUserAttributesResult>",
-      "authenticated" : false,
       "methodName" : "deleteUserAttributes"
     },
     "DeleteUserPool" : {
@@ -1305,12 +1305,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteUserPoolResult",
       "asyncReturnType" : "DeleteUserPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteUserPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteUserPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteUserPoolRequest, DeleteUserPoolResult>",
-      "authenticated" : true,
       "methodName" : "deleteUserPool"
     },
     "DeleteUserPoolClient" : {
@@ -1347,12 +1347,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteUserPoolClientResult",
       "asyncReturnType" : "DeleteUserPoolClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteUserPoolClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteUserPoolClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteUserPoolClientRequest, DeleteUserPoolClientResult>",
-      "authenticated" : true,
       "methodName" : "deleteUserPoolClient"
     },
     "DescribeUserPool" : {
@@ -1389,12 +1389,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeUserPoolResult",
       "asyncReturnType" : "DescribeUserPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeUserPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeUserPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeUserPoolRequest, DescribeUserPoolResult>",
-      "authenticated" : true,
       "methodName" : "describeUserPool"
     },
     "DescribeUserPoolClient" : {
@@ -1431,12 +1431,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeUserPoolClientResult",
       "asyncReturnType" : "DescribeUserPoolClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeUserPoolClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeUserPoolClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeUserPoolClientRequest, DescribeUserPoolClientResult>",
-      "authenticated" : true,
       "methodName" : "describeUserPoolClient"
     },
     "ForgetDevice" : {
@@ -1476,12 +1476,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ForgetDeviceResult",
       "asyncReturnType" : "ForgetDeviceResult",
       "asyncFutureType" : "java.util.concurrent.Future<ForgetDeviceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ForgetDeviceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ForgetDeviceRequest, ForgetDeviceResult>",
-      "authenticated" : true,
       "methodName" : "forgetDevice"
     },
     "ForgotPassword" : {
@@ -1548,12 +1548,12 @@
         "documentation" : "<p>This exception is thrown when a user is not confirmed successfully.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "ForgotPasswordResult",
       "asyncReturnType" : "ForgotPasswordResult",
       "asyncFutureType" : "java.util.concurrent.Future<ForgotPasswordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ForgotPasswordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ForgotPasswordRequest, ForgotPasswordResult>",
-      "authenticated" : false,
       "methodName" : "forgotPassword"
     },
     "GetDevice" : {
@@ -1593,12 +1593,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetDeviceResult",
       "asyncReturnType" : "GetDeviceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDeviceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDeviceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDeviceRequest, GetDeviceResult>",
-      "authenticated" : true,
       "methodName" : "getDevice"
     },
     "GetUser" : {
@@ -1635,12 +1635,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "GetUserResult",
       "asyncReturnType" : "GetUserResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetUserResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetUserResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetUserRequest, GetUserResult>",
-      "authenticated" : false,
       "methodName" : "getUser"
     },
     "GetUserAttributeVerificationCode" : {
@@ -1701,12 +1701,12 @@
         "documentation" : "<p>This exception is thrown when a user exceeds the limit for a requested AWS resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "GetUserAttributeVerificationCodeResult",
       "asyncReturnType" : "GetUserAttributeVerificationCodeResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetUserAttributeVerificationCodeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetUserAttributeVerificationCodeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetUserAttributeVerificationCodeRequest, GetUserAttributeVerificationCodeResult>",
-      "authenticated" : false,
       "methodName" : "getUserAttributeVerificationCode"
     },
     "GlobalSignOut" : {
@@ -1743,12 +1743,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GlobalSignOutResult",
       "asyncReturnType" : "GlobalSignOutResult",
       "asyncFutureType" : "java.util.concurrent.Future<GlobalSignOutResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GlobalSignOutResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GlobalSignOutRequest, GlobalSignOutResult>",
-      "authenticated" : true,
       "methodName" : "globalSignOut"
     },
     "InitiateAuth" : {
@@ -1806,12 +1806,12 @@
         "documentation" : "<p>This exception is thrown when a user is not confirmed successfully.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "InitiateAuthResult",
       "asyncReturnType" : "InitiateAuthResult",
       "asyncFutureType" : "java.util.concurrent.Future<InitiateAuthResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<InitiateAuthResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<InitiateAuthRequest, InitiateAuthResult>",
-      "authenticated" : true,
       "methodName" : "initiateAuth"
     },
     "ListDevices" : {
@@ -1851,12 +1851,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListDevicesResult",
       "asyncReturnType" : "ListDevicesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDevicesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDevicesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDevicesRequest, ListDevicesResult>",
-      "authenticated" : true,
       "methodName" : "listDevices"
     },
     "ListUserPoolClients" : {
@@ -1893,12 +1893,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListUserPoolClientsResult",
       "asyncReturnType" : "ListUserPoolClientsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListUserPoolClientsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListUserPoolClientsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListUserPoolClientsRequest, ListUserPoolClientsResult>",
-      "authenticated" : true,
       "methodName" : "listUserPoolClients"
     },
     "ListUserPools" : {
@@ -1932,12 +1932,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListUserPoolsResult",
       "asyncReturnType" : "ListUserPoolsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListUserPoolsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListUserPoolsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListUserPoolsRequest, ListUserPoolsResult>",
-      "authenticated" : true,
       "methodName" : "listUserPools"
     },
     "ListUsers" : {
@@ -1974,12 +1974,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListUsersResult",
       "asyncReturnType" : "ListUsersResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListUsersResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListUsersResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult>",
-      "authenticated" : true,
       "methodName" : "listUsers"
     },
     "ResendConfirmationCode" : {
@@ -2043,12 +2043,12 @@
         "documentation" : "<p>This exception is thrown when a user is not found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "ResendConfirmationCodeResult",
       "asyncReturnType" : "ResendConfirmationCodeResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResendConfirmationCodeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ResendConfirmationCodeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResendConfirmationCodeRequest, ResendConfirmationCodeResult>",
-      "authenticated" : false,
       "methodName" : "resendConfirmationCode"
     },
     "RespondToAuthChallenge" : {
@@ -2124,12 +2124,12 @@
         "documentation" : "<p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RespondToAuthChallengeResult",
       "asyncReturnType" : "RespondToAuthChallengeResult",
       "asyncFutureType" : "java.util.concurrent.Future<RespondToAuthChallengeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RespondToAuthChallengeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RespondToAuthChallengeRequest, RespondToAuthChallengeResult>",
-      "authenticated" : true,
       "methodName" : "respondToAuthChallenge"
     },
     "SetUserSettings" : {
@@ -2160,12 +2160,12 @@
         "documentation" : "<p>This exception gets thrown when a user is not authorized.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "SetUserSettingsResult",
       "asyncReturnType" : "SetUserSettingsResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetUserSettingsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetUserSettingsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetUserSettingsRequest, SetUserSettingsResult>",
-      "authenticated" : false,
       "methodName" : "setUserSettings"
     },
     "SignUp" : {
@@ -2229,12 +2229,12 @@
         "documentation" : "<p>This exception is thrown when a verification code fails to deliver successfully.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "SignUpResult",
       "asyncReturnType" : "SignUpResult",
       "asyncFutureType" : "java.util.concurrent.Future<SignUpResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SignUpResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SignUpRequest, SignUpResult>",
-      "authenticated" : false,
       "methodName" : "signUp"
     },
     "UpdateDeviceStatus" : {
@@ -2274,12 +2274,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateDeviceStatusResult",
       "asyncReturnType" : "UpdateDeviceStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDeviceStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateDeviceStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDeviceStatusRequest, UpdateDeviceStatusResult>",
-      "authenticated" : true,
       "methodName" : "updateDeviceStatus"
     },
     "UpdateUserAttributes" : {
@@ -2346,12 +2346,12 @@
         "documentation" : "<p>This exception is thrown when a verification code fails to deliver successfully.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "UpdateUserAttributesResult",
       "asyncReturnType" : "UpdateUserAttributesResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateUserAttributesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateUserAttributesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateUserAttributesRequest, UpdateUserAttributesResult>",
-      "authenticated" : false,
       "methodName" : "updateUserAttributes"
     },
     "UpdateUserPool" : {
@@ -2400,12 +2400,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code: 400.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateUserPoolResult",
       "asyncReturnType" : "UpdateUserPoolResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateUserPoolResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateUserPoolResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateUserPoolRequest, UpdateUserPoolResult>",
-      "authenticated" : true,
       "methodName" : "updateUserPool"
     },
     "UpdateUserPoolClient" : {
@@ -2442,12 +2442,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateUserPoolClientResult",
       "asyncReturnType" : "UpdateUserPoolClientResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateUserPoolClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateUserPoolClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateUserPoolClientRequest, UpdateUserPoolClientResult>",
-      "authenticated" : true,
       "methodName" : "updateUserPoolClient"
     },
     "VerifyUserAttribute" : {
@@ -2493,12 +2493,12 @@
         "documentation" : "<p>This exception is thrown when Amazon Cognito encounters an internal error.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : false,
       "syncReturnType" : "VerifyUserAttributeResult",
       "asyncReturnType" : "VerifyUserAttributeResult",
       "asyncFutureType" : "java.util.concurrent.Future<VerifyUserAttributeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<VerifyUserAttributeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<VerifyUserAttributeRequest, VerifyUserAttributeResult>",
-      "authenticated" : false,
       "methodName" : "verifyUserAttribute"
     }
   },
@@ -4867,9 +4867,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -5012,9 +5012,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -5317,9 +5317,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "DeviceType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "DeviceType",
           "templateType" : "java.util.List<DeviceType>",
           "templateImplType" : "java.util.ArrayList<DeviceType>"
         },
@@ -5510,9 +5510,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "DeviceType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "DeviceType",
             "templateType" : "java.util.List<DeviceType>",
             "templateImplType" : "java.util.ArrayList<DeviceType>"
           },
@@ -10617,9 +10617,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "AttributeType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "AttributeType",
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
@@ -11072,9 +11072,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "AttributeType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "AttributeType",
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
@@ -11543,9 +11543,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "AttributeType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "AttributeType",
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
@@ -11793,9 +11793,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "AttributeType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "AttributeType",
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
@@ -15797,9 +15797,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "UserPoolDescriptionType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "UserPoolDescriptionType",
           "templateType" : "java.util.List<UserPoolDescriptionType>",
           "templateImplType" : "java.util.ArrayList<UserPoolDescriptionType>"
         },
@@ -16043,9 +16043,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "UserPoolDescriptionType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "UserPoolDescriptionType",
             "templateType" : "java.util.List<UserPoolDescriptionType>",
             "templateImplType" : "java.util.ArrayList<UserPoolDescriptionType>"
           },
@@ -16539,9 +16539,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "SchemaAttributeType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "SchemaAttributeType",
           "templateType" : "java.util.List<SchemaAttributeType>",
           "templateImplType" : "java.util.ArrayList<SchemaAttributeType>"
         },
@@ -16657,9 +16657,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -16775,9 +16775,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -17700,9 +17700,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "SchemaAttributeType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "SchemaAttributeType",
             "templateType" : "java.util.List<SchemaAttributeType>",
             "templateImplType" : "java.util.ArrayList<SchemaAttributeType>"
           },
@@ -18296,9 +18296,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -18574,9 +18574,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -19943,9 +19943,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -20350,9 +20350,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -20744,9 +20744,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -21782,9 +21782,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -22677,9 +22677,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "SchemaAttributeType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "SchemaAttributeType",
           "templateType" : "java.util.List<SchemaAttributeType>",
           "templateImplType" : "java.util.ArrayList<SchemaAttributeType>"
         },
@@ -22875,9 +22875,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "SchemaAttributeType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "SchemaAttributeType",
             "templateType" : "java.util.List<SchemaAttributeType>",
             "templateImplType" : "java.util.ArrayList<SchemaAttributeType>"
           },
@@ -23887,9 +23887,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "UserType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "UserType",
           "templateType" : "java.util.List<UserType>",
           "templateImplType" : "java.util.ArrayList<UserType>"
         },
@@ -24080,9 +24080,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "UserType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "UserType",
             "templateType" : "java.util.List<UserType>",
             "templateImplType" : "java.util.ArrayList<UserType>"
           },
@@ -24265,9 +24265,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -24462,9 +24462,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -25950,9 +25950,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -26068,9 +26068,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -26186,9 +26186,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -26592,9 +26592,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -26817,9 +26817,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -26936,9 +26936,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -28133,9 +28133,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "CodeDeliveryDetailsType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "CodeDeliveryDetailsType",
           "templateType" : "java.util.List<CodeDeliveryDetailsType>",
           "templateImplType" : "java.util.ArrayList<CodeDeliveryDetailsType>"
         },
@@ -28274,9 +28274,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "CodeDeliveryDetailsType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "CodeDeliveryDetailsType",
             "templateType" : "java.util.List<CodeDeliveryDetailsType>",
             "templateImplType" : "java.util.ArrayList<CodeDeliveryDetailsType>"
           },
@@ -31768,9 +31768,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "AttributeType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "AttributeType",
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
@@ -31886,9 +31886,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "MFAOptionType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "MFAOptionType",
           "templateType" : "java.util.List<MFAOptionType>",
           "templateImplType" : "java.util.ArrayList<MFAOptionType>"
         },
@@ -32080,9 +32080,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "MFAOptionType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "MFAOptionType",
             "templateType" : "java.util.List<MFAOptionType>",
             "templateImplType" : "java.util.ArrayList<MFAOptionType>"
           },
@@ -32199,9 +32199,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "AttributeType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "AttributeType",
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
@@ -32557,9 +32557,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -32675,9 +32675,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -33607,9 +33607,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -33832,9 +33832,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -34719,9 +34719,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "AttributeType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "AttributeType",
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
@@ -35069,9 +35069,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "AttributeType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "AttributeType",
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
@@ -35360,9 +35360,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "DeviceType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "DeviceType",
           "templateType" : "java.util.List<DeviceType>",
           "templateImplType" : "java.util.ArrayList<DeviceType>"
         },
@@ -35553,9 +35553,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "DeviceType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "DeviceType",
             "templateType" : "java.util.List<DeviceType>",
             "templateImplType" : "java.util.ArrayList<DeviceType>"
           },
@@ -36442,9 +36442,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "AttributeType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "AttributeType",
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
@@ -36560,9 +36560,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "AttributeType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "AttributeType",
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
@@ -36705,9 +36705,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "AttributeType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "AttributeType",
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
@@ -37036,9 +37036,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "AttributeType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "AttributeType",
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
@@ -37590,9 +37590,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "UserPoolClientDescription",
           "simple" : false,
           "map" : false,
-          "simpleType" : "UserPoolClientDescription",
           "templateType" : "java.util.List<UserPoolClientDescription>",
           "templateImplType" : "java.util.ArrayList<UserPoolClientDescription>"
         },
@@ -37836,9 +37836,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "UserPoolClientDescription",
             "simple" : false,
             "map" : false,
-            "simpleType" : "UserPoolClientDescription",
             "templateType" : "java.util.List<UserPoolClientDescription>",
             "templateImplType" : "java.util.ArrayList<UserPoolClientDescription>"
           },
@@ -38407,9 +38407,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "AttributeType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "AttributeType",
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
@@ -38733,9 +38733,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "MFAOptionType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "MFAOptionType",
           "templateType" : "java.util.List<MFAOptionType>",
           "templateImplType" : "java.util.ArrayList<MFAOptionType>"
         },
@@ -39139,9 +39139,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "MFAOptionType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "MFAOptionType",
             "templateType" : "java.util.List<MFAOptionType>",
             "templateImplType" : "java.util.ArrayList<MFAOptionType>"
           },
@@ -39258,9 +39258,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "AttributeType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "AttributeType",
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
@@ -41151,9 +41151,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -41269,9 +41269,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -41387,9 +41387,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -41638,9 +41638,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -41863,9 +41863,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -41982,9 +41982,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -42416,9 +42416,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "MFAOptionType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "MFAOptionType",
           "templateType" : "java.util.List<MFAOptionType>",
           "templateImplType" : "java.util.ArrayList<MFAOptionType>"
         },
@@ -42614,9 +42614,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "MFAOptionType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "MFAOptionType",
             "templateType" : "java.util.List<MFAOptionType>",
             "templateImplType" : "java.util.ArrayList<MFAOptionType>"
           },
@@ -42954,9 +42954,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -43072,9 +43072,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -43190,9 +43190,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "String",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String",
           "templateType" : "java.util.List<String>",
           "templateImplType" : "java.util.ArrayList<String>"
         },
@@ -43494,9 +43494,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -43666,9 +43666,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -43785,9 +43785,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "String",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String",
             "templateType" : "java.util.List<String>",
             "templateImplType" : "java.util.ArrayList<String>"
           },
@@ -45551,9 +45551,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "MFAOptionType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "MFAOptionType",
           "templateType" : "java.util.List<MFAOptionType>",
           "templateImplType" : "java.util.ArrayList<MFAOptionType>"
         },
@@ -45802,9 +45802,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "MFAOptionType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "MFAOptionType",
             "templateType" : "java.util.List<MFAOptionType>",
             "templateImplType" : "java.util.ArrayList<MFAOptionType>"
           },
@@ -46922,9 +46922,9 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simpleType" : "AttributeType",
           "simple" : false,
           "map" : false,
-          "simpleType" : "AttributeType",
           "templateType" : "java.util.List<AttributeType>",
           "templateImplType" : "java.util.ArrayList<AttributeType>"
         },
@@ -47173,9 +47173,9 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simpleType" : "AttributeType",
             "simple" : false,
             "map" : false,
-            "simpleType" : "AttributeType",
             "templateType" : "java.util.List<AttributeType>",
             "templateImplType" : "java.util.ArrayList<AttributeType>"
           },
@@ -47482,9 +47482,9 @@
     "operationExamples" : { }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "sdkModeledExceptionBaseClassName" : "AWSCognitoIdentityProviderException",
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException",
-  "sdkModeledExceptionBaseClassName" : "AWSCognitoIdentityProviderException",
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException"
 }

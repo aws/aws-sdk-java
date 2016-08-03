@@ -1030,7 +1030,12 @@ public class Cluster implements Serializable, Cloneable {
      * The list of Configurations supplied to the EMR cluster.
      * </p>
      * 
-     * @return Amazon EMR releases 4.x or later.</p></note>
+     * @return <p>
+     *         Amazon EMR releases 4.x or later.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The list of Configurations supplied to the EMR cluster.
      */
 
     public java.util.List<Configuration> getConfigurations() {
@@ -1051,7 +1056,12 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param configurations
-     *        Amazon EMR releases 4.x or later.</p></note>
+     *        <p>
+     *        Amazon EMR releases 4.x or later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The list of Configurations supplied to the EMR cluster.
      */
 
     public void setConfigurations(
@@ -1082,7 +1092,12 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param configurations
-     *        Amazon EMR releases 4.x or later.</p></note>
+     *        <p>
+     *        Amazon EMR releases 4.x or later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The list of Configurations supplied to the EMR cluster.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1109,7 +1124,12 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param configurations
-     *        Amazon EMR releases 4.x or later.</p></note>
+     *        <p>
+     *        Amazon EMR releases 4.x or later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The list of Configurations supplied to the EMR cluster.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

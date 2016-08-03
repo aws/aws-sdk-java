@@ -206,7 +206,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * <note>
      * <p>
-     * This parameter doesn't apply to the MySQL or MariaDB engines.
+     * This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB
+     * engines.
      * </p>
      * </note>
      */
@@ -1600,14 +1601,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * <note>
      * <p>
-     * This parameter doesn't apply to the MySQL or MariaDB engines.
+     * This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB
+     * engines.
      * </p>
      * </note>
      * 
      * @param dBName
      *        The database name for the restored DB instance.</p> <note>
      *        <p>
-     *        This parameter doesn't apply to the MySQL or MariaDB engines.
+     *        This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB
+     *        engines.
      *        </p>
      */
 
@@ -1621,13 +1624,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * <note>
      * <p>
-     * This parameter doesn't apply to the MySQL or MariaDB engines.
+     * This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB
+     * engines.
      * </p>
      * </note>
      * 
      * @return The database name for the restored DB instance.</p> <note>
      *         <p>
-     *         This parameter doesn't apply to the MySQL or MariaDB engines.
+     *         This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB
+     *         engines.
      *         </p>
      */
 
@@ -1641,14 +1646,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends
      * </p>
      * <note>
      * <p>
-     * This parameter doesn't apply to the MySQL or MariaDB engines.
+     * This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB
+     * engines.
      * </p>
      * </note>
      * 
      * @param dBName
      *        The database name for the restored DB instance.</p> <note>
      *        <p>
-     *        This parameter doesn't apply to the MySQL or MariaDB engines.
+     *        This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB
+     *        engines.
      *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

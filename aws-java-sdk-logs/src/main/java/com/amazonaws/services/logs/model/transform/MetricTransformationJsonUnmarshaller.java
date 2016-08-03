@@ -66,6 +66,11 @@ public class MetricTransformationJsonUnmarshaller implements
                     metricTransformation.setMetricValue(context
                             .getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("defaultValue", targetDepth)) {
+                    context.nextToken();
+                    metricTransformation.setDefaultValue(context
+                            .getUnmarshaller(Double.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

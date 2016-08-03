@@ -23,37 +23,36 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code class="code">FilteredLogEvent</code> objects representing
-     * the matched events from the request.
+     * A list of <code>FilteredLogEvent</code> objects representing the matched
+     * events from the request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FilteredLogEvent> events;
     /**
      * <p>
-     * A list of <code class="code">SearchedLogStream</code> objects indicating
-     * which log streams have been searched in this request and whether each has
-     * been searched completely or still has more to be paginated.
+     * A list of <code>SearchedLogStream</code> objects indicating which log
+     * streams have been searched in this request and whether each has been
+     * searched completely or still has more to be paginated.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SearchedLogStream> searchedLogStreams;
     /**
      * <p>
-     * A pagination token obtained from a
-     * <code class="code">FilterLogEvents</code> response to continue paginating
-     * the FilterLogEvents results. This token is omitted from the response when
-     * there are no other events to display.
+     * A pagination token obtained from a <code>FilterLogEvents</code> response
+     * to continue paginating the FilterLogEvents results. This token is omitted
+     * from the response when there are no other events to display.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of <code class="code">FilteredLogEvent</code> objects representing
-     * the matched events from the request.
+     * A list of <code>FilteredLogEvent</code> objects representing the matched
+     * events from the request.
      * </p>
      * 
-     * @return A list of <code class="code">FilteredLogEvent</code> objects
-     *         representing the matched events from the request.
+     * @return A list of <code>FilteredLogEvent</code> objects representing the
+     *         matched events from the request.
      */
 
     public java.util.List<FilteredLogEvent> getEvents() {
@@ -65,13 +64,13 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code class="code">FilteredLogEvent</code> objects representing
-     * the matched events from the request.
+     * A list of <code>FilteredLogEvent</code> objects representing the matched
+     * events from the request.
      * </p>
      * 
      * @param events
-     *        A list of <code class="code">FilteredLogEvent</code> objects
-     *        representing the matched events from the request.
+     *        A list of <code>FilteredLogEvent</code> objects representing the
+     *        matched events from the request.
      */
 
     public void setEvents(java.util.Collection<FilteredLogEvent> events) {
@@ -86,8 +85,8 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code class="code">FilteredLogEvent</code> objects representing
-     * the matched events from the request.
+     * A list of <code>FilteredLogEvent</code> objects representing the matched
+     * events from the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -97,8 +96,8 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param events
-     *        A list of <code class="code">FilteredLogEvent</code> objects
-     *        representing the matched events from the request.
+     *        A list of <code>FilteredLogEvent</code> objects representing the
+     *        matched events from the request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -116,13 +115,13 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code class="code">FilteredLogEvent</code> objects representing
-     * the matched events from the request.
+     * A list of <code>FilteredLogEvent</code> objects representing the matched
+     * events from the request.
      * </p>
      * 
      * @param events
-     *        A list of <code class="code">FilteredLogEvent</code> objects
-     *        representing the matched events from the request.
+     *        A list of <code>FilteredLogEvent</code> objects representing the
+     *        matched events from the request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -135,15 +134,14 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code class="code">SearchedLogStream</code> objects indicating
-     * which log streams have been searched in this request and whether each has
-     * been searched completely or still has more to be paginated.
+     * A list of <code>SearchedLogStream</code> objects indicating which log
+     * streams have been searched in this request and whether each has been
+     * searched completely or still has more to be paginated.
      * </p>
      * 
-     * @return A list of <code class="code">SearchedLogStream</code> objects
-     *         indicating which log streams have been searched in this request
-     *         and whether each has been searched completely or still has more
-     *         to be paginated.
+     * @return A list of <code>SearchedLogStream</code> objects indicating which
+     *         log streams have been searched in this request and whether each
+     *         has been searched completely or still has more to be paginated.
      */
 
     public java.util.List<SearchedLogStream> getSearchedLogStreams() {
@@ -155,16 +153,15 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code class="code">SearchedLogStream</code> objects indicating
-     * which log streams have been searched in this request and whether each has
-     * been searched completely or still has more to be paginated.
+     * A list of <code>SearchedLogStream</code> objects indicating which log
+     * streams have been searched in this request and whether each has been
+     * searched completely or still has more to be paginated.
      * </p>
      * 
      * @param searchedLogStreams
-     *        A list of <code class="code">SearchedLogStream</code> objects
-     *        indicating which log streams have been searched in this request
-     *        and whether each has been searched completely or still has more to
-     *        be paginated.
+     *        A list of <code>SearchedLogStream</code> objects indicating which
+     *        log streams have been searched in this request and whether each
+     *        has been searched completely or still has more to be paginated.
      */
 
     public void setSearchedLogStreams(
@@ -180,9 +177,9 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code class="code">SearchedLogStream</code> objects indicating
-     * which log streams have been searched in this request and whether each has
-     * been searched completely or still has more to be paginated.
+     * A list of <code>SearchedLogStream</code> objects indicating which log
+     * streams have been searched in this request and whether each has been
+     * searched completely or still has more to be paginated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -192,10 +189,9 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param searchedLogStreams
-     *        A list of <code class="code">SearchedLogStream</code> objects
-     *        indicating which log streams have been searched in this request
-     *        and whether each has been searched completely or still has more to
-     *        be paginated.
+     *        A list of <code>SearchedLogStream</code> objects indicating which
+     *        log streams have been searched in this request and whether each
+     *        has been searched completely or still has more to be paginated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -214,16 +210,15 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <code class="code">SearchedLogStream</code> objects indicating
-     * which log streams have been searched in this request and whether each has
-     * been searched completely or still has more to be paginated.
+     * A list of <code>SearchedLogStream</code> objects indicating which log
+     * streams have been searched in this request and whether each has been
+     * searched completely or still has more to be paginated.
      * </p>
      * 
      * @param searchedLogStreams
-     *        A list of <code class="code">SearchedLogStream</code> objects
-     *        indicating which log streams have been searched in this request
-     *        and whether each has been searched completely or still has more to
-     *        be paginated.
+     *        A list of <code>SearchedLogStream</code> objects indicating which
+     *        log streams have been searched in this request and whether each
+     *        has been searched completely or still has more to be paginated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -236,17 +231,16 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A pagination token obtained from a
-     * <code class="code">FilterLogEvents</code> response to continue paginating
-     * the FilterLogEvents results. This token is omitted from the response when
-     * there are no other events to display.
+     * A pagination token obtained from a <code>FilterLogEvents</code> response
+     * to continue paginating the FilterLogEvents results. This token is omitted
+     * from the response when there are no other events to display.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token obtained from a
-     *        <code class="code">FilterLogEvents</code> response to continue
-     *        paginating the FilterLogEvents results. This token is omitted from
-     *        the response when there are no other events to display.
+     *        A pagination token obtained from a <code>FilterLogEvents</code>
+     *        response to continue paginating the FilterLogEvents results. This
+     *        token is omitted from the response when there are no other events
+     *        to display.
      */
 
     public void setNextToken(String nextToken) {
@@ -255,16 +249,15 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A pagination token obtained from a
-     * <code class="code">FilterLogEvents</code> response to continue paginating
-     * the FilterLogEvents results. This token is omitted from the response when
-     * there are no other events to display.
+     * A pagination token obtained from a <code>FilterLogEvents</code> response
+     * to continue paginating the FilterLogEvents results. This token is omitted
+     * from the response when there are no other events to display.
      * </p>
      * 
-     * @return A pagination token obtained from a
-     *         <code class="code">FilterLogEvents</code> response to continue
-     *         paginating the FilterLogEvents results. This token is omitted
-     *         from the response when there are no other events to display.
+     * @return A pagination token obtained from a <code>FilterLogEvents</code>
+     *         response to continue paginating the FilterLogEvents results. This
+     *         token is omitted from the response when there are no other events
+     *         to display.
      */
 
     public String getNextToken() {
@@ -273,17 +266,16 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A pagination token obtained from a
-     * <code class="code">FilterLogEvents</code> response to continue paginating
-     * the FilterLogEvents results. This token is omitted from the response when
-     * there are no other events to display.
+     * A pagination token obtained from a <code>FilterLogEvents</code> response
+     * to continue paginating the FilterLogEvents results. This token is omitted
+     * from the response when there are no other events to display.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token obtained from a
-     *        <code class="code">FilterLogEvents</code> response to continue
-     *        paginating the FilterLogEvents results. This token is omitted from
-     *        the response when there are no other events to display.
+     *        A pagination token obtained from a <code>FilterLogEvents</code>
+     *        response to continue paginating the FilterLogEvents results. This
+     *        token is omitted from the response when there are no other events
+     *        to display.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

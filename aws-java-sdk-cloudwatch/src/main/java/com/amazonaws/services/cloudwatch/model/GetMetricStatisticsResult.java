@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The output for the <a>GetMetricStatistics</a> action.
+ * The output for <a>GetMetricStatistics</a>.
  * </p>
  */
 public class GetMetricStatisticsResult implements Serializable, Cloneable {

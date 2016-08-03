@@ -77,8 +77,11 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
      * specified as an Amazon Resource Name (ARN).
      * </p>
-     * <important>The current WSDL lists this attribute as
-     * <code>UnknownActions</code>.</important>
+     * <important>
+     * <p>
+     * The current WSDL lists this attribute as <code>UnknownActions</code>.
+     * </p>
+     * </important>
      */
     private com.amazonaws.internal.SdkInternalList<String> insufficientDataActions;
     /**
@@ -585,14 +588,20 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
      * specified as an Amazon Resource Name (ARN).
      * </p>
-     * <important>The current WSDL lists this attribute as
-     * <code>UnknownActions</code>.</important>
+     * <important>
+     * <p>
+     * The current WSDL lists this attribute as <code>UnknownActions</code>.
+     * </p>
+     * </important>
      * 
      * @return The list of actions to execute when this alarm transitions into
      *         an <code>INSUFFICIENT_DATA</code> state from any other state.
      *         Each action is specified as an Amazon Resource Name (ARN). </p>
-     *         <important>The current WSDL lists this attribute as
+     *         <important>
+     *         <p>
+     *         The current WSDL lists this attribute as
      *         <code>UnknownActions</code>.
+     *         </p>
      */
 
     public java.util.List<String> getInsufficientDataActions() {
@@ -608,15 +617,21 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
      * specified as an Amazon Resource Name (ARN).
      * </p>
-     * <important>The current WSDL lists this attribute as
-     * <code>UnknownActions</code>.</important>
+     * <important>
+     * <p>
+     * The current WSDL lists this attribute as <code>UnknownActions</code>.
+     * </p>
+     * </important>
      * 
      * @param insufficientDataActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>INSUFFICIENT_DATA</code> state from any other state. Each
      *        action is specified as an Amazon Resource Name (ARN). </p>
-     *        <important>The current WSDL lists this attribute as
+     *        <important>
+     *        <p>
+     *        The current WSDL lists this attribute as
      *        <code>UnknownActions</code>.
+     *        </p>
      */
 
     public void setInsufficientDataActions(
@@ -636,8 +651,11 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
      * specified as an Amazon Resource Name (ARN).
      * </p>
-     * <important>The current WSDL lists this attribute as
-     * <code>UnknownActions</code>.</important>
+     * <important>
+     * <p>
+     * The current WSDL lists this attribute as <code>UnknownActions</code>.
+     * </p>
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setInsufficientDataActions(java.util.Collection)} or
@@ -649,8 +667,11 @@ public class MetricAlarm implements Serializable, Cloneable {
      *        The list of actions to execute when this alarm transitions into an
      *        <code>INSUFFICIENT_DATA</code> state from any other state. Each
      *        action is specified as an Amazon Resource Name (ARN). </p>
-     *        <important>The current WSDL lists this attribute as
+     *        <important>
+     *        <p>
+     *        The current WSDL lists this attribute as
      *        <code>UnknownActions</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -673,15 +694,21 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
      * specified as an Amazon Resource Name (ARN).
      * </p>
-     * <important>The current WSDL lists this attribute as
-     * <code>UnknownActions</code>.</important>
+     * <important>
+     * <p>
+     * The current WSDL lists this attribute as <code>UnknownActions</code>.
+     * </p>
+     * </important>
      * 
      * @param insufficientDataActions
      *        The list of actions to execute when this alarm transitions into an
      *        <code>INSUFFICIENT_DATA</code> state from any other state. Each
      *        action is specified as an Amazon Resource Name (ARN). </p>
-     *        <important>The current WSDL lists this attribute as
+     *        <important>
+     *        <p>
+     *        The current WSDL lists this attribute as
      *        <code>UnknownActions</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

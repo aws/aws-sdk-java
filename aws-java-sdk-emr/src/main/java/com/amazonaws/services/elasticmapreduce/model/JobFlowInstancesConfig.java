@@ -649,7 +649,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *        VPC), set this parameter to the identifier of the Amazon VPC
      *        subnet where you want the job flow to launch. If you do not
      *        specify this value, the job flow is launched in the normal Amazon
-     *        Web Services cloud, outside of an Amazon VPC. </p>
+     *        Web Services cloud, outside of an Amazon VPC.</p>
      *        <p>
      *        Amazon VPC currently does not support cluster compute quadruple
      *        extra large (cc1.4xlarge) instances. Thus you cannot specify the
@@ -679,7 +679,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *         VPC), set this parameter to the identifier of the Amazon VPC
      *         subnet where you want the job flow to launch. If you do not
      *         specify this value, the job flow is launched in the normal Amazon
-     *         Web Services cloud, outside of an Amazon VPC. </p>
+     *         Web Services cloud, outside of an Amazon VPC.</p>
      *         <p>
      *         Amazon VPC currently does not support cluster compute quadruple
      *         extra large (cc1.4xlarge) instances. Thus you cannot specify the
@@ -710,7 +710,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *        VPC), set this parameter to the identifier of the Amazon VPC
      *        subnet where you want the job flow to launch. If you do not
      *        specify this value, the job flow is launched in the normal Amazon
-     *        Web Services cloud, outside of an Amazon VPC. </p>
+     *        Web Services cloud, outside of an Amazon VPC.</p>
      *        <p>
      *        Amazon VPC currently does not support cluster compute quadruple
      *        extra large (cc1.4xlarge) instances. Thus you cannot specify the

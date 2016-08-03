@@ -46,4 +46,20 @@ public class ValidationUtilsTest {
         ValidationUtils.assertAllAreNull("foo");
     }
 
+    @Test
+    public void assertIsPositive_PositiveNumber_ReturnsSameNumber() {
+        assertEquals(42, ValidationUtils.assertIsPositive(42, "num"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void assertIsPositive_Zero_ThrowsException() {
+        ValidationUtils.assertIsPositive(0, "num");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void assertIsPositive_NegativeNumber_ThrowsException() {
+        ValidationUtils.assertIsPositive(-9001, "num");
+    }
+
+
 }

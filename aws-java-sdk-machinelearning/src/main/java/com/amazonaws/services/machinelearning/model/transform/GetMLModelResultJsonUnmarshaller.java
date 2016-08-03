@@ -137,6 +137,21 @@ public class GetMLModelResultJsonUnmarshaller implements
                     getMLModelResult.setMessage(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("ComputeTime", targetDepth)) {
+                    context.nextToken();
+                    getMLModelResult.setComputeTime(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
+                }
+                if (context.testExpression("FinishedAt", targetDepth)) {
+                    context.nextToken();
+                    getMLModelResult.setFinishedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("StartedAt", targetDepth)) {
+                    context.nextToken();
+                    getMLModelResult.setStartedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
                 if (context.testExpression("Recipe", targetDepth)) {
                     context.nextToken();
                     getMLModelResult.setRecipe(context.getUnmarshaller(

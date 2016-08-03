@@ -101,7 +101,7 @@ public class InstanceGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<EbsBlockDevice> ebsBlockDevices;
     /**
      * <p>
-     * If the instance group is EBS-optimized. An Amazon EBS–optimized instance
+     * If the instance group is EBS-optimized. An Amazon EBS-optimized instance
      * uses an optimized configuration stack and provides additional, dedicated
      * capacity for Amazon EBS I/O.
      * </p>
@@ -586,7 +586,14 @@ public class InstanceGroup implements Serializable, Cloneable {
      * core, and task).
      * </p>
      * 
-     * @return Amazon EMR releases 4.x or later.</p></note>
+     * @return <p>
+     *         Amazon EMR releases 4.x or later.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The list of configurations supplied for an EMR cluster instance
+     *         group. You can specify a separate configuration for each instance
+     *         group (master, core, and task).
      */
 
     public java.util.List<Configuration> getConfigurations() {
@@ -609,7 +616,14 @@ public class InstanceGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param configurations
-     *        Amazon EMR releases 4.x or later.</p></note>
+     *        <p>
+     *        Amazon EMR releases 4.x or later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The list of configurations supplied for an EMR cluster instance
+     *        group. You can specify a separate configuration for each instance
+     *        group (master, core, and task).
      */
 
     public void setConfigurations(
@@ -642,7 +656,14 @@ public class InstanceGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param configurations
-     *        Amazon EMR releases 4.x or later.</p></note>
+     *        <p>
+     *        Amazon EMR releases 4.x or later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The list of configurations supplied for an EMR cluster instance
+     *        group. You can specify a separate configuration for each instance
+     *        group (master, core, and task).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -671,7 +692,14 @@ public class InstanceGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param configurations
-     *        Amazon EMR releases 4.x or later.</p></note>
+     *        <p>
+     *        Amazon EMR releases 4.x or later.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The list of configurations supplied for an EMR cluster instance
+     *        group. You can specify a separate configuration for each instance
+     *        group (master, core, and task).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -764,13 +792,13 @@ public class InstanceGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the instance group is EBS-optimized. An Amazon EBS–optimized instance
+     * If the instance group is EBS-optimized. An Amazon EBS-optimized instance
      * uses an optimized configuration stack and provides additional, dedicated
      * capacity for Amazon EBS I/O.
      * </p>
      * 
      * @param ebsOptimized
-     *        If the instance group is EBS-optimized. An Amazon EBS–optimized
+     *        If the instance group is EBS-optimized. An Amazon EBS-optimized
      *        instance uses an optimized configuration stack and provides
      *        additional, dedicated capacity for Amazon EBS I/O.
      */
@@ -781,12 +809,12 @@ public class InstanceGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the instance group is EBS-optimized. An Amazon EBS–optimized instance
+     * If the instance group is EBS-optimized. An Amazon EBS-optimized instance
      * uses an optimized configuration stack and provides additional, dedicated
      * capacity for Amazon EBS I/O.
      * </p>
      * 
-     * @return If the instance group is EBS-optimized. An Amazon EBS–optimized
+     * @return If the instance group is EBS-optimized. An Amazon EBS-optimized
      *         instance uses an optimized configuration stack and provides
      *         additional, dedicated capacity for Amazon EBS I/O.
      */
@@ -797,13 +825,13 @@ public class InstanceGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the instance group is EBS-optimized. An Amazon EBS–optimized instance
+     * If the instance group is EBS-optimized. An Amazon EBS-optimized instance
      * uses an optimized configuration stack and provides additional, dedicated
      * capacity for Amazon EBS I/O.
      * </p>
      * 
      * @param ebsOptimized
-     *        If the instance group is EBS-optimized. An Amazon EBS–optimized
+     *        If the instance group is EBS-optimized. An Amazon EBS-optimized
      *        instance uses an optimized configuration stack and provides
      *        additional, dedicated capacity for Amazon EBS I/O.
      * @return Returns a reference to this object so that method calls can be
@@ -817,12 +845,12 @@ public class InstanceGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the instance group is EBS-optimized. An Amazon EBS–optimized instance
+     * If the instance group is EBS-optimized. An Amazon EBS-optimized instance
      * uses an optimized configuration stack and provides additional, dedicated
      * capacity for Amazon EBS I/O.
      * </p>
      * 
-     * @return If the instance group is EBS-optimized. An Amazon EBS–optimized
+     * @return If the instance group is EBS-optimized. An Amazon EBS-optimized
      *         instance uses an optimized configuration stack and provides
      *         additional, dedicated capacity for Amazon EBS I/O.
      */

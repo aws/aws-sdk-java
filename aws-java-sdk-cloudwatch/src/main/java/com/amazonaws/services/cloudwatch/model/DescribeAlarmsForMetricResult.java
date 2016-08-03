@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The output for the <a>DescribeAlarmsForMetric</a> action.
+ * The output for <a>DescribeAlarmsForMetric</a>.
  * </p>
  */
 public class DescribeAlarmsForMetricResult implements Serializable, Cloneable {

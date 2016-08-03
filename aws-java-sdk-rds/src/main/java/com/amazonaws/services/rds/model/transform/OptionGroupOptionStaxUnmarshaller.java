@@ -123,6 +123,14 @@ public class OptionGroupOptionStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression(
+                        "OptionGroupOptionVersions/OptionVersion", targetDepth)) {
+                    optionGroupOption
+                            .withOptionGroupOptionVersions(OptionVersionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return optionGroupOption;

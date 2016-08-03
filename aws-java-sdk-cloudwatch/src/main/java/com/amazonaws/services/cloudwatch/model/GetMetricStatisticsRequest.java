@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Describes the inputs for GetMetricStatistics.
+ * </p>
  */
 public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -48,10 +50,13 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
      * 2014-09-03T23:00:00Z).
      * </p>
-     * <note> The specified start time is rounded down to the nearest value.
-     * Datapoints are returned for start times up to two weeks in the past.
-     * Specified start times that are more than two weeks in the past will not
-     * return datapoints for metrics that are older than two weeks.
+     * <note>
+     * <p>
+     * The specified start time is rounded down to the nearest value. Datapoints
+     * are returned for start times up to two weeks in the past. Specified start
+     * times that are more than two weeks in the past will not return datapoints
+     * for metrics that are older than two weeks.
+     * </p>
      * <p>
      * Data that is timestamped 24 hours or more in the past may take in excess
      * of 48 hours to become available from submission time using
@@ -71,9 +76,10 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
     private java.util.Date endTime;
     /**
      * <p>
-     * The granularity, in seconds, of the returned datapoints.
-     * <code>Period</code> must be at least 60 seconds and must be a multiple of
-     * 60. The default value is 60.
+     * The granularity, in seconds, of the returned datapoints. A
+     * <code>Period</code> can be as short as one minute (60 seconds) or as long
+     * as one day (86,400 seconds), and must be a multiple of 60. The default
+     * value is 60.
      * </p>
      */
     private Integer period;
@@ -88,7 +94,9 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<String> statistics;
     /**
      * <p>
-     * The unit for the metric.
+     * The specific unit for a given metric. Metrics may be reported in multiple
+     * units. Not supplying a unit results in all units being returned. If the
+     * metric only ever reports one unit, specifying a unit will have no effect.
      * </p>
      */
     private String unit;
@@ -261,10 +269,13 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
      * 2014-09-03T23:00:00Z).
      * </p>
-     * <note> The specified start time is rounded down to the nearest value.
-     * Datapoints are returned for start times up to two weeks in the past.
-     * Specified start times that are more than two weeks in the past will not
-     * return datapoints for metrics that are older than two weeks.
+     * <note>
+     * <p>
+     * The specified start time is rounded down to the nearest value. Datapoints
+     * are returned for start times up to two weeks in the past. Specified start
+     * times that are more than two weeks in the past will not return datapoints
+     * for metrics that are older than two weeks.
+     * </p>
      * <p>
      * Data that is timestamped 24 hours or more in the past may take in excess
      * of 48 hours to become available from submission time using
@@ -276,12 +287,14 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *        The time stamp to use for determining the first datapoint to
      *        return. The value specified is inclusive; results include
      *        datapoints with the time stamp specified. The time stamp must be
-     *        in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z). </p> <note>
+     *        in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z).</p> <note>
+     *        <p>
      *        The specified start time is rounded down to the nearest value.
      *        Datapoints are returned for start times up to two weeks in the
      *        past. Specified start times that are more than two weeks in the
      *        past will not return datapoints for metrics that are older than
      *        two weeks.
+     *        </p>
      *        <p>
      *        Data that is timestamped 24 hours or more in the past may take in
      *        excess of 48 hours to become available from submission time using
@@ -300,10 +313,13 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
      * 2014-09-03T23:00:00Z).
      * </p>
-     * <note> The specified start time is rounded down to the nearest value.
-     * Datapoints are returned for start times up to two weeks in the past.
-     * Specified start times that are more than two weeks in the past will not
-     * return datapoints for metrics that are older than two weeks.
+     * <note>
+     * <p>
+     * The specified start time is rounded down to the nearest value. Datapoints
+     * are returned for start times up to two weeks in the past. Specified start
+     * times that are more than two weeks in the past will not return datapoints
+     * for metrics that are older than two weeks.
+     * </p>
      * <p>
      * Data that is timestamped 24 hours or more in the past may take in excess
      * of 48 hours to become available from submission time using
@@ -314,12 +330,14 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * @return The time stamp to use for determining the first datapoint to
      *         return. The value specified is inclusive; results include
      *         datapoints with the time stamp specified. The time stamp must be
-     *         in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z). </p> <note>
+     *         in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z).</p> <note>
+     *         <p>
      *         The specified start time is rounded down to the nearest value.
      *         Datapoints are returned for start times up to two weeks in the
      *         past. Specified start times that are more than two weeks in the
      *         past will not return datapoints for metrics that are older than
      *         two weeks.
+     *         </p>
      *         <p>
      *         Data that is timestamped 24 hours or more in the past may take in
      *         excess of 48 hours to become available from submission time using
@@ -338,10 +356,13 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * stamp specified. The time stamp must be in ISO 8601 UTC format (e.g.,
      * 2014-09-03T23:00:00Z).
      * </p>
-     * <note> The specified start time is rounded down to the nearest value.
-     * Datapoints are returned for start times up to two weeks in the past.
-     * Specified start times that are more than two weeks in the past will not
-     * return datapoints for metrics that are older than two weeks.
+     * <note>
+     * <p>
+     * The specified start time is rounded down to the nearest value. Datapoints
+     * are returned for start times up to two weeks in the past. Specified start
+     * times that are more than two weeks in the past will not return datapoints
+     * for metrics that are older than two weeks.
+     * </p>
      * <p>
      * Data that is timestamped 24 hours or more in the past may take in excess
      * of 48 hours to become available from submission time using
@@ -353,12 +374,14 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *        The time stamp to use for determining the first datapoint to
      *        return. The value specified is inclusive; results include
      *        datapoints with the time stamp specified. The time stamp must be
-     *        in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z). </p> <note>
+     *        in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z).</p> <note>
+     *        <p>
      *        The specified start time is rounded down to the nearest value.
      *        Datapoints are returned for start times up to two weeks in the
      *        past. Specified start times that are more than two weeks in the
      *        past will not return datapoints for metrics that are older than
      *        two weeks.
+     *        </p>
      *        <p>
      *        Data that is timestamped 24 hours or more in the past may take in
      *        excess of 48 hours to become available from submission time using
@@ -434,15 +457,17 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The granularity, in seconds, of the returned datapoints.
-     * <code>Period</code> must be at least 60 seconds and must be a multiple of
-     * 60. The default value is 60.
+     * The granularity, in seconds, of the returned datapoints. A
+     * <code>Period</code> can be as short as one minute (60 seconds) or as long
+     * as one day (86,400 seconds), and must be a multiple of 60. The default
+     * value is 60.
      * </p>
      * 
      * @param period
-     *        The granularity, in seconds, of the returned datapoints.
-     *        <code>Period</code> must be at least 60 seconds and must be a
-     *        multiple of 60. The default value is 60.
+     *        The granularity, in seconds, of the returned datapoints. A
+     *        <code>Period</code> can be as short as one minute (60 seconds) or
+     *        as long as one day (86,400 seconds), and must be a multiple of 60.
+     *        The default value is 60.
      */
 
     public void setPeriod(Integer period) {
@@ -451,14 +476,16 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The granularity, in seconds, of the returned datapoints.
-     * <code>Period</code> must be at least 60 seconds and must be a multiple of
-     * 60. The default value is 60.
+     * The granularity, in seconds, of the returned datapoints. A
+     * <code>Period</code> can be as short as one minute (60 seconds) or as long
+     * as one day (86,400 seconds), and must be a multiple of 60. The default
+     * value is 60.
      * </p>
      * 
-     * @return The granularity, in seconds, of the returned datapoints.
-     *         <code>Period</code> must be at least 60 seconds and must be a
-     *         multiple of 60. The default value is 60.
+     * @return The granularity, in seconds, of the returned datapoints. A
+     *         <code>Period</code> can be as short as one minute (60 seconds) or
+     *         as long as one day (86,400 seconds), and must be a multiple of
+     *         60. The default value is 60.
      */
 
     public Integer getPeriod() {
@@ -467,15 +494,17 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The granularity, in seconds, of the returned datapoints.
-     * <code>Period</code> must be at least 60 seconds and must be a multiple of
-     * 60. The default value is 60.
+     * The granularity, in seconds, of the returned datapoints. A
+     * <code>Period</code> can be as short as one minute (60 seconds) or as long
+     * as one day (86,400 seconds), and must be a multiple of 60. The default
+     * value is 60.
      * </p>
      * 
      * @param period
-     *        The granularity, in seconds, of the returned datapoints.
-     *        <code>Period</code> must be at least 60 seconds and must be a
-     *        multiple of 60. The default value is 60.
+     *        The granularity, in seconds, of the returned datapoints. A
+     *        <code>Period</code> can be as short as one minute (60 seconds) or
+     *        as long as one day (86,400 seconds), and must be a multiple of 60.
+     *        The default value is 60.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -626,11 +655,16 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unit for the metric.
+     * The specific unit for a given metric. Metrics may be reported in multiple
+     * units. Not supplying a unit results in all units being returned. If the
+     * metric only ever reports one unit, specifying a unit will have no effect.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric.
+     *        The specific unit for a given metric. Metrics may be reported in
+     *        multiple units. Not supplying a unit results in all units being
+     *        returned. If the metric only ever reports one unit, specifying a
+     *        unit will have no effect.
      * @see StandardUnit
      */
 
@@ -640,10 +674,15 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unit for the metric.
+     * The specific unit for a given metric. Metrics may be reported in multiple
+     * units. Not supplying a unit results in all units being returned. If the
+     * metric only ever reports one unit, specifying a unit will have no effect.
      * </p>
      * 
-     * @return The unit for the metric.
+     * @return The specific unit for a given metric. Metrics may be reported in
+     *         multiple units. Not supplying a unit results in all units being
+     *         returned. If the metric only ever reports one unit, specifying a
+     *         unit will have no effect.
      * @see StandardUnit
      */
 
@@ -653,11 +692,16 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unit for the metric.
+     * The specific unit for a given metric. Metrics may be reported in multiple
+     * units. Not supplying a unit results in all units being returned. If the
+     * metric only ever reports one unit, specifying a unit will have no effect.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric.
+     *        The specific unit for a given metric. Metrics may be reported in
+     *        multiple units. Not supplying a unit results in all units being
+     *        returned. If the metric only ever reports one unit, specifying a
+     *        unit will have no effect.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see StandardUnit
@@ -670,11 +714,16 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unit for the metric.
+     * The specific unit for a given metric. Metrics may be reported in multiple
+     * units. Not supplying a unit results in all units being returned. If the
+     * metric only ever reports one unit, specifying a unit will have no effect.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric.
+     *        The specific unit for a given metric. Metrics may be reported in
+     *        multiple units. Not supplying a unit results in all units being
+     *        returned. If the metric only ever reports one unit, specifying a
+     *        unit will have no effect.
      * @see StandardUnit
      */
 
@@ -684,11 +733,16 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unit for the metric.
+     * The specific unit for a given metric. Metrics may be reported in multiple
+     * units. Not supplying a unit results in all units being returned. If the
+     * metric only ever reports one unit, specifying a unit will have no effect.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric.
+     *        The specific unit for a given metric. Metrics may be reported in
+     *        multiple units. Not supplying a unit results in all units being
+     *        returned. If the metric only ever reports one unit, specifying a
+     *        unit will have no effect.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see StandardUnit

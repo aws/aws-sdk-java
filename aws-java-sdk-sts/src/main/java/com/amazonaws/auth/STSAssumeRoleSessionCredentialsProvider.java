@@ -63,6 +63,11 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      */
     private final int roleSessionDurationSeconds;
 
+    /**
+     * Scope down policy to limit permissions from the assumed role.
+     */
+    private final String scopeDownPolicy;
+
     private final Callable<SessionCredentialsHolder> refreshCallable = new Callable<SessionCredentialsHolder>() {
         @Override
         public SessionCredentialsHolder call() throws Exception {
@@ -212,6 +217,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
         }
 
         this.refreshableTask = createRefreshableTask();
+        this.scopeDownPolicy = builder.scopeDownPolicy;
     }
 
     /**
@@ -294,7 +300,8 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
     private SessionCredentialsHolder newSession() {
         AssumeRoleRequest assumeRoleRequest = new AssumeRoleRequest().withRoleArn(roleArn)
                 .withDurationSeconds(roleSessionDurationSeconds)
-                .withRoleSessionName(roleSessionName);
+                .withRoleSessionName(roleSessionName)
+                .withPolicy(scopeDownPolicy);
         if (roleExternalId != null) {
             assumeRoleRequest = assumeRoleRequest.withExternalId(roleExternalId);
         }
@@ -319,6 +326,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
         private String roleExternalId;
         private String serviceEndpoint;
         private int roleSessionDurationSeconds;
+        private String scopeDownPolicy;
         private AWSSecurityTokenService sts;
 
         /**
@@ -410,6 +418,80 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
          */
         public Builder withServiceEndpoint(String serviceEndpoint) {
             this.serviceEndpoint = serviceEndpoint;
+            return this;
+        }
+
+        /**
+         * <p>
+         * An IAM policy in JSON format to scope down permissions granted from the assume role.
+         * </p>
+         * <p>
+         * This parameter is optional. If you pass a policy, the temporary security
+         * credentials that are returned by the operation have the permissions that
+         * are allowed by both (the intersection of) the access policy of the role
+         * that is being assumed, <i>and</i> the policy that you pass. This gives
+         * you a way to further restrict the permissions for the resulting temporary
+         * security credentials. You cannot use the passed policy to grant
+         * permissions that are in excess of those allowed by the access policy of
+         * the role that is being assumed. For more information, see <a href=
+         * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
+         * >Permissions for AssumeRole, AssumeRoleWithSAML, and
+         * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
+         * </p>
+         * <p>
+         * The format for this parameter, as described by its regex pattern, is a
+         * string of characters up to 2048 characters in length. The characters can
+         * be any ASCII character from the space character to the end of the valid
+         * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+         * and carriage return ( ) characters.
+         * </p>
+         * <note>
+         * <p>
+         * The policy plain text must be 2048 bytes or shorter. However, an internal
+         * conversion compresses it into a packed binary format with a separate
+         * limit. The PackedPolicySize response element indicates by percentage how
+         * close to the upper size limit the policy is, with 100% equaling the
+         * maximum allowed size.
+         * </p>
+         * </note>
+         *
+         * @param scopeDownPolicy
+         *        An IAM policy in JSON format.</p>
+         *        <p>
+         *        This parameter is optional. If you pass a policy, the temporary
+         *        security credentials that are returned by the operation have the
+         *        permissions that are allowed by both (the intersection of) the
+         *        access policy of the role that is being assumed, <i>and</i> the
+         *        policy that you pass. This gives you a way to further restrict the
+         *        permissions for the resulting temporary security credentials. You
+         *        cannot use the passed policy to grant permissions that are in
+         *        excess of those allowed by the access policy of the role that is
+         *        being assumed. For more information, see <a href=
+         *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
+         *        >Permissions for AssumeRole, AssumeRoleWithSAML, and
+         *        AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
+         *        </p>
+         *        <p>
+         *        The format for this parameter, as described by its regex pattern,
+         *        is a string of characters up to 2048 characters in length. The
+         *        characters can be any ASCII character from the space character to
+         *        the end of the valid character list ( -\u00FF). It can also
+         *        include the tab ( ), linefeed ( ), and carriage return ( )
+         *        characters.
+         *        </p>
+         *        <note>
+         *        <p>
+         *        The policy plain text must be 2048 bytes or shorter. However, an
+         *        internal conversion compresses it into a packed binary format with
+         *        a separate limit. The PackedPolicySize response element indicates
+         *        by percentage how close to the upper size limit the policy is,
+         *        with 100% equaling the maximum allowed size.
+         *        </p>
+         * @return Returns a reference to this object so that method calls can be
+         *         chained together.
+         */
+        public Builder withScopeDownPolicy(String scopeDownPolicy) {
+            this.scopeDownPolicy = scopeDownPolicy;
             return this;
         }
 

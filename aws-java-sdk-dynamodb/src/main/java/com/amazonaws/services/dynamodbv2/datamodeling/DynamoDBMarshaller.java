@@ -18,7 +18,10 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
  * Marshaller interface for storing complex types in DynamoDB as Strings.
  * Implementors provide methods to transform instances of a class to and from
  * Strings.
+ *
+ * @deprecated Replaced by {@link DynamoDBTypeConverter}
  */
+@Deprecated
 public interface DynamoDBMarshaller<T extends Object> {
 
     /**

@@ -73,6 +73,16 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private String engineVersion;
     /**
      * <p>
+     * The license model for the DB instance.
+     * </p>
+     * <p>
+     * Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> | <code>general-public-license</code>
+     * </p>
+     */
+    private String licenseModel;
+    /**
+     * <p>
      * Specifies the new Provisioned IOPS value for the DB instance that will be
      * applied or is being applied.
      * </p>
@@ -433,6 +443,71 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The license model for the DB instance.
+     * </p>
+     * <p>
+     * Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> | <code>general-public-license</code>
+     * </p>
+     * 
+     * @param licenseModel
+     *        The license model for the DB instance.</p>
+     *        <p>
+     *        Valid values: <code>license-included</code> |
+     *        <code>bring-your-own-license</code> |
+     *        <code>general-public-license</code>
+     */
+
+    public void setLicenseModel(String licenseModel) {
+        this.licenseModel = licenseModel;
+    }
+
+    /**
+     * <p>
+     * The license model for the DB instance.
+     * </p>
+     * <p>
+     * Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> | <code>general-public-license</code>
+     * </p>
+     * 
+     * @return The license model for the DB instance.</p>
+     *         <p>
+     *         Valid values: <code>license-included</code> |
+     *         <code>bring-your-own-license</code> |
+     *         <code>general-public-license</code>
+     */
+
+    public String getLicenseModel() {
+        return this.licenseModel;
+    }
+
+    /**
+     * <p>
+     * The license model for the DB instance.
+     * </p>
+     * <p>
+     * Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> | <code>general-public-license</code>
+     * </p>
+     * 
+     * @param licenseModel
+     *        The license model for the DB instance.</p>
+     *        <p>
+     *        Valid values: <code>license-included</code> |
+     *        <code>bring-your-own-license</code> |
+     *        <code>general-public-license</code>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public PendingModifiedValues withLicenseModel(String licenseModel) {
+        setLicenseModel(licenseModel);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the new Provisioned IOPS value for the DB instance that will be
      * applied or is being applied.
      * </p>
@@ -639,6 +714,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
             sb.append("MultiAZ: " + getMultiAZ() + ",");
         if (getEngineVersion() != null)
             sb.append("EngineVersion: " + getEngineVersion() + ",");
+        if (getLicenseModel() != null)
+            sb.append("LicenseModel: " + getLicenseModel() + ",");
         if (getIops() != null)
             sb.append("Iops: " + getIops() + ",");
         if (getDBInstanceIdentifier() != null)
@@ -705,6 +782,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         if (other.getEngineVersion() != null
                 && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
+        if (other.getLicenseModel() == null ^ this.getLicenseModel() == null)
+            return false;
+        if (other.getLicenseModel() != null
+                && other.getLicenseModel().equals(this.getLicenseModel()) == false)
+            return false;
         if (other.getIops() == null ^ this.getIops() == null)
             return false;
         if (other.getIops() != null
@@ -760,6 +842,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getEngineVersion() == null) ? 0 : getEngineVersion()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLicenseModel() == null) ? 0 : getLicenseModel()
                         .hashCode());
         hashCode = prime * hashCode
                 + ((getIops() == null) ? 0 : getIops().hashCode());

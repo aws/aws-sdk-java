@@ -43,6 +43,13 @@ public class RegisterCACertificateRequest extends AmazonWebServiceRequest
      * </p>
      */
     private Boolean setAsActive;
+    /**
+     * <p>
+     * Allows this CA certificate to be used for auto registration of device
+     * certificates.
+     * </p>
+     */
+    private Boolean allowAutoRegistration;
 
     /**
      * <p>
@@ -185,6 +192,68 @@ public class RegisterCACertificateRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Allows this CA certificate to be used for auto registration of device
+     * certificates.
+     * </p>
+     * 
+     * @param allowAutoRegistration
+     *        Allows this CA certificate to be used for auto registration of
+     *        device certificates.
+     */
+
+    public void setAllowAutoRegistration(Boolean allowAutoRegistration) {
+        this.allowAutoRegistration = allowAutoRegistration;
+    }
+
+    /**
+     * <p>
+     * Allows this CA certificate to be used for auto registration of device
+     * certificates.
+     * </p>
+     * 
+     * @return Allows this CA certificate to be used for auto registration of
+     *         device certificates.
+     */
+
+    public Boolean getAllowAutoRegistration() {
+        return this.allowAutoRegistration;
+    }
+
+    /**
+     * <p>
+     * Allows this CA certificate to be used for auto registration of device
+     * certificates.
+     * </p>
+     * 
+     * @param allowAutoRegistration
+     *        Allows this CA certificate to be used for auto registration of
+     *        device certificates.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RegisterCACertificateRequest withAllowAutoRegistration(
+            Boolean allowAutoRegistration) {
+        setAllowAutoRegistration(allowAutoRegistration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows this CA certificate to be used for auto registration of device
+     * certificates.
+     * </p>
+     * 
+     * @return Allows this CA certificate to be used for auto registration of
+     *         device certificates.
+     */
+
+    public Boolean isAllowAutoRegistration() {
+        return this.allowAutoRegistration;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -202,7 +271,9 @@ public class RegisterCACertificateRequest extends AmazonWebServiceRequest
             sb.append("VerificationCertificate: "
                     + getVerificationCertificate() + ",");
         if (getSetAsActive() != null)
-            sb.append("SetAsActive: " + getSetAsActive());
+            sb.append("SetAsActive: " + getSetAsActive() + ",");
+        if (getAllowAutoRegistration() != null)
+            sb.append("AllowAutoRegistration: " + getAllowAutoRegistration());
         sb.append("}");
         return sb.toString();
     }
@@ -234,6 +305,13 @@ public class RegisterCACertificateRequest extends AmazonWebServiceRequest
         if (other.getSetAsActive() != null
                 && other.getSetAsActive().equals(this.getSetAsActive()) == false)
             return false;
+        if (other.getAllowAutoRegistration() == null
+                ^ this.getAllowAutoRegistration() == null)
+            return false;
+        if (other.getAllowAutoRegistration() != null
+                && other.getAllowAutoRegistration().equals(
+                        this.getAllowAutoRegistration()) == false)
+            return false;
         return true;
     }
 
@@ -253,6 +331,10 @@ public class RegisterCACertificateRequest extends AmazonWebServiceRequest
         hashCode = prime
                 * hashCode
                 + ((getSetAsActive() == null) ? 0 : getSetAsActive().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAllowAutoRegistration() == null) ? 0
+                        : getAllowAutoRegistration().hashCode());
         return hashCode;
     }
 

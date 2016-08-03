@@ -1560,6 +1560,40 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Lists certificates that are being transfered but not yet accepted.
+     * </p>
+     * 
+     * @param listOutgoingCertificatesRequest
+     *        The input to the ListOutgoingCertificates operation.
+     * @return A Java Future containing the result of the
+     *         ListOutgoingCertificates operation returned by the service.
+     * @sample AWSIotAsync.ListOutgoingCertificates
+     */
+    java.util.concurrent.Future<ListOutgoingCertificatesResult> listOutgoingCertificatesAsync(
+            ListOutgoingCertificatesRequest listOutgoingCertificatesRequest);
+
+    /**
+     * <p>
+     * Lists certificates that are being transfered but not yet accepted.
+     * </p>
+     * 
+     * @param listOutgoingCertificatesRequest
+     *        The input to the ListOutgoingCertificates operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ListOutgoingCertificates operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListOutgoingCertificates
+     */
+    java.util.concurrent.Future<ListOutgoingCertificatesResult> listOutgoingCertificatesAsync(
+            ListOutgoingCertificatesRequest listOutgoingCertificatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOutgoingCertificatesRequest, ListOutgoingCertificatesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists your policies.
      * </p>
      * 

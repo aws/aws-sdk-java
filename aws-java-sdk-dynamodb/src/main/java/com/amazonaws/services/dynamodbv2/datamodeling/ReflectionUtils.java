@@ -18,17 +18,13 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.util.LinkedList;
-import java.util.List;
 
 import com.amazonaws.util.StringUtils;
 
 /**
- * Utilities for reflecting field or method annotations in a DynamoDB table
- * POJO.
+ * @deprecated Replaced by {@link StandardBeanProperties}
  */
+@Deprecated
 class ReflectionUtils {
 
     /**
@@ -63,29 +59,6 @@ class ReflectionUtils {
             return fieldNameWithUpperCamelCase;
         }
 
-    }
-
-    /**
-     * Returns the declared field that corresponds to the given method.
-     * @param getter The getter method.
-     * @return The field.
-     */
-    static final Field getDeclaredFieldByGetter(final Method getter) {
-        return getClassFieldByName(getter.getDeclaringClass(), getFieldNameByGetter(getter, true));
-    }
-
-    /**
-     * Returns the declared setter method that corresponds to the given method.
-     * @param getter The getter method.
-     * @return The method.
-     */
-    static final Method getDeclaredSetterByGetter(final Method getter) {
-        final String setterName = "set" + getFieldNameByGetter(getter, false);
-        try {
-            return getter.getDeclaringClass().getMethod(setterName, getter.getReturnType());
-        } catch (final Exception e) {
-            return null;
-        }
     }
 
     /**
@@ -141,62 +114,6 @@ class ReflectionUtils {
     static <T extends Annotation> boolean getterOrFieldHasAnnotation(
             Method getter, Class<T> annotationClass) {
         return getAnnotationFromGetterOrField(getter, annotationClass) != null;
-    }
-
-    /**
-     * Resolve the raw class for the given type.
-     */
-    static Class<?> resolveClass(Type type) {
-        Type localType = type;
-
-        if (localType instanceof ParameterizedType) {
-            localType = ((ParameterizedType) type).getRawType();
-        }
-
-        if (!(localType instanceof Class)) {
-            throw new DynamoDBMappingException("Cannot resolve class for type "
-                    + type);
-        }
-
-        return (Class<?>) localType;
-    }
-
-    /**
-     * Returns all the getter methods for the specified type.
-     * @param clazz The declaring class.
-     * @return The getter methods.
-     */
-    static final List<Method> getters(final Class<?> clazz) {
-        final List<Method> getters = new LinkedList<Method>();
-        for (final Method method : clazz.getMethods()) {
-            if (isGetter(method)) {
-                getters.add(method);
-            }
-        }
-        return getters;
-    }
-
-    /**
-     * Returns true if the method is a valid getter property.
-     * @param method The getter method.
-     * @return True if a getter method, false otherwise.
-     */
-    private static final boolean isGetter(final Method method) {
-        if (!method.getName().startsWith("get") && !method.getName().startsWith("is")) {
-            return false;
-        } else if (method.getParameterTypes().length != 0) {
-            return false;
-        } else if (method.getReturnType() == Void.TYPE) {
-            return false;
-        } else if (method.isBridge()) {
-            return false;
-        } else if (method.isSynthetic()) {
-            return false;
-        } else if (method.getDeclaringClass() == Object.class) {
-            return false;
-        } else {
-            return true;
-        }
     }
 
 }

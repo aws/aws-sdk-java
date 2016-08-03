@@ -17,7 +17,6 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.Id;
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties.Bean;
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties.Builder;
-import com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Scalar;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -204,7 +203,7 @@ public @interface DynamoDBDelimited {
 
             private Field(final Class<T> type, final Bean<T,V> bean) {
                 if (bean.annotations().typeConverted() == null) {
-                    this.converter = Scalar.STRING.getConverter(bean.type().type());
+                    this.converter = StandardTypeConverters.converter(String.class, bean.type().type());
                 } else {
                     this.converter = bean.annotations().typeConverter();
                 }

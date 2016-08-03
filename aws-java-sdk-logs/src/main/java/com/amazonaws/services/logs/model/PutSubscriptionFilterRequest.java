@@ -46,17 +46,33 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * <p>
      * The ARN of the destination to deliver matching log events to. Currently,
      * the supported destinations are:
-     * <ul>
-     * <li>An Amazon Kinesis stream belonging to the same account as the
-     * subscription filter, for same-account delivery.</li>
-     * <li>A logical destination (used via an ARN of <code>Destination</code>)
-     * belonging to a different account, for cross-account delivery.</li>
-     * <li>An Amazon Kinesis Firehose stream belonging to the same account as
-     * the subscription filter, for same-account delivery.</li>
-     * <li>An AWS Lambda function belonging to the same account as the
-     * subscription filter, for same-account delivery.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Kinesis stream belonging to the same account as the
+     * subscription filter, for same-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A logical destination (used via an ARN of <code>Destination</code>)
+     * belonging to a different account, for cross-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An Amazon Kinesis Firehose stream belonging to the same account as the
+     * subscription filter, for same-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS Lambda function belonging to the same account as the subscription
+     * filter, for same-account delivery.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String destinationArn;
     /**
@@ -205,32 +221,62 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * <p>
      * The ARN of the destination to deliver matching log events to. Currently,
      * the supported destinations are:
-     * <ul>
-     * <li>An Amazon Kinesis stream belonging to the same account as the
-     * subscription filter, for same-account delivery.</li>
-     * <li>A logical destination (used via an ARN of <code>Destination</code>)
-     * belonging to a different account, for cross-account delivery.</li>
-     * <li>An Amazon Kinesis Firehose stream belonging to the same account as
-     * the subscription filter, for same-account delivery.</li>
-     * <li>An AWS Lambda function belonging to the same account as the
-     * subscription filter, for same-account delivery.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Kinesis stream belonging to the same account as the
+     * subscription filter, for same-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A logical destination (used via an ARN of <code>Destination</code>)
+     * belonging to a different account, for cross-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An Amazon Kinesis Firehose stream belonging to the same account as the
+     * subscription filter, for same-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS Lambda function belonging to the same account as the subscription
+     * filter, for same-account delivery.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param destinationArn
      *        The ARN of the destination to deliver matching log events to.
-     *        Currently, the supported destinations are:
+     *        Currently, the supported destinations are:</p>
      *        <ul>
-     *        <li>An Amazon Kinesis stream belonging to the same account as the
-     *        subscription filter, for same-account delivery.</li>
-     *        <li>A logical destination (used via an ARN of
-     *        <code>Destination</code>) belonging to a different account, for
-     *        cross-account delivery.</li>
-     *        <li>An Amazon Kinesis Firehose stream belonging to the same
-     *        account as the subscription filter, for same-account delivery.</li>
-     *        <li>An AWS Lambda function belonging to the same account as the
-     *        subscription filter, for same-account delivery.</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        An Amazon Kinesis stream belonging to the same account as the
+     *        subscription filter, for same-account delivery.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A logical destination (used via an ARN of <code>Destination</code>
+     *        ) belonging to a different account, for cross-account delivery.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An Amazon Kinesis Firehose stream belonging to the same account as
+     *        the subscription filter, for same-account delivery.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An AWS Lambda function belonging to the same account as the
+     *        subscription filter, for same-account delivery.
+     *        </p>
+     *        </li>
      */
 
     public void setDestinationArn(String destinationArn) {
@@ -241,31 +287,62 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * <p>
      * The ARN of the destination to deliver matching log events to. Currently,
      * the supported destinations are:
-     * <ul>
-     * <li>An Amazon Kinesis stream belonging to the same account as the
-     * subscription filter, for same-account delivery.</li>
-     * <li>A logical destination (used via an ARN of <code>Destination</code>)
-     * belonging to a different account, for cross-account delivery.</li>
-     * <li>An Amazon Kinesis Firehose stream belonging to the same account as
-     * the subscription filter, for same-account delivery.</li>
-     * <li>An AWS Lambda function belonging to the same account as the
-     * subscription filter, for same-account delivery.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Kinesis stream belonging to the same account as the
+     * subscription filter, for same-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A logical destination (used via an ARN of <code>Destination</code>)
+     * belonging to a different account, for cross-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An Amazon Kinesis Firehose stream belonging to the same account as the
+     * subscription filter, for same-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS Lambda function belonging to the same account as the subscription
+     * filter, for same-account delivery.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The ARN of the destination to deliver matching log events to.
-     *         Currently, the supported destinations are:
+     *         Currently, the supported destinations are:</p>
      *         <ul>
-     *         <li>An Amazon Kinesis stream belonging to the same account as the
-     *         subscription filter, for same-account delivery.</li>
-     *         <li>A logical destination (used via an ARN of
+     *         <li>
+     *         <p>
+     *         An Amazon Kinesis stream belonging to the same account as the
+     *         subscription filter, for same-account delivery.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A logical destination (used via an ARN of
      *         <code>Destination</code>) belonging to a different account, for
-     *         cross-account delivery.</li>
-     *         <li>An Amazon Kinesis Firehose stream belonging to the same
-     *         account as the subscription filter, for same-account delivery.</li>
-     *         <li>An AWS Lambda function belonging to the same account as the
-     *         subscription filter, for same-account delivery.</li>
-     *         </ul>
+     *         cross-account delivery.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An Amazon Kinesis Firehose stream belonging to the same account
+     *         as the subscription filter, for same-account delivery.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An AWS Lambda function belonging to the same account as the
+     *         subscription filter, for same-account delivery.
+     *         </p>
+     *         </li>
      */
 
     public String getDestinationArn() {
@@ -276,32 +353,62 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * <p>
      * The ARN of the destination to deliver matching log events to. Currently,
      * the supported destinations are:
-     * <ul>
-     * <li>An Amazon Kinesis stream belonging to the same account as the
-     * subscription filter, for same-account delivery.</li>
-     * <li>A logical destination (used via an ARN of <code>Destination</code>)
-     * belonging to a different account, for cross-account delivery.</li>
-     * <li>An Amazon Kinesis Firehose stream belonging to the same account as
-     * the subscription filter, for same-account delivery.</li>
-     * <li>An AWS Lambda function belonging to the same account as the
-     * subscription filter, for same-account delivery.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Kinesis stream belonging to the same account as the
+     * subscription filter, for same-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A logical destination (used via an ARN of <code>Destination</code>)
+     * belonging to a different account, for cross-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An Amazon Kinesis Firehose stream belonging to the same account as the
+     * subscription filter, for same-account delivery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS Lambda function belonging to the same account as the subscription
+     * filter, for same-account delivery.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param destinationArn
      *        The ARN of the destination to deliver matching log events to.
-     *        Currently, the supported destinations are:
+     *        Currently, the supported destinations are:</p>
      *        <ul>
-     *        <li>An Amazon Kinesis stream belonging to the same account as the
-     *        subscription filter, for same-account delivery.</li>
-     *        <li>A logical destination (used via an ARN of
-     *        <code>Destination</code>) belonging to a different account, for
-     *        cross-account delivery.</li>
-     *        <li>An Amazon Kinesis Firehose stream belonging to the same
-     *        account as the subscription filter, for same-account delivery.</li>
-     *        <li>An AWS Lambda function belonging to the same account as the
-     *        subscription filter, for same-account delivery.</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        An Amazon Kinesis stream belonging to the same account as the
+     *        subscription filter, for same-account delivery.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A logical destination (used via an ARN of <code>Destination</code>
+     *        ) belonging to a different account, for cross-account delivery.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An Amazon Kinesis Firehose stream belonging to the same account as
+     *        the subscription filter, for same-account delivery.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An AWS Lambda function belonging to the same account as the
+     *        subscription filter, for same-account delivery.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

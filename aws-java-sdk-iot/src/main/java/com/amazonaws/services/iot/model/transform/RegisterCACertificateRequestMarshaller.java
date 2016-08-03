@@ -76,6 +76,12 @@ public class RegisterCACertificateRequestMarshaller
                     .fromBoolean(registerCACertificateRequest.getSetAsActive()));
         }
 
+        if (registerCACertificateRequest.getAllowAutoRegistration() != null) {
+            request.addParameter("allowAutoRegistration", StringUtils
+                    .fromBoolean(registerCACertificateRequest
+                            .getAllowAutoRegistration()));
+        }
+
         try {
             final StructuredJsonGenerator jsonGenerator = protocolFactory
                     .createGenerator();

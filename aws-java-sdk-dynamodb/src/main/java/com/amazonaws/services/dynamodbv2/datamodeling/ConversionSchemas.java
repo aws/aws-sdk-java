@@ -251,7 +251,6 @@ public final class ConversionSchemas {
             return new StandardItemConverter(
                     marshallers,
                     unmarshallers,
-                    DynamoDBMappingsRegistry.instance(),
                     s3cc);
         }
 
@@ -266,26 +265,23 @@ public final class ConversionSchemas {
 
         private final MarshallerSet marshallerSet;
         private final UnmarshallerSet unmarshallerSet;
-        private final DynamoDBMappingsRegistry registry;
         private final S3ClientCache s3cc;
 
         public StandardItemConverter(
                 MarshallerSet marshallerSet,
                 UnmarshallerSet unmarshallerSet,
-                DynamoDBMappingsRegistry registry,
                 S3ClientCache s3cc) {
 
             this.marshallerSet = marshallerSet;
             this.unmarshallerSet = unmarshallerSet;
-            this.registry = registry;
             this.s3cc = s3cc;
         }
 
         @Override
         public DynamoDBMapperFieldModel getFieldModel(Method getter) {
-            ArgumentMarshaller marshaller = getMarshaller(getter);
+            final ArgumentMarshaller marshaller = getMarshaller(getter);
 
-            DynamoDBAttributeType attributeType = null;
+            final DynamoDBAttributeType attributeType;
             if (marshaller instanceof StringAttributeMarshaller) {
                 attributeType = DynamoDBAttributeType.S;
             } else if (marshaller instanceof NumberAttributeMarshaller) {
@@ -314,8 +310,11 @@ public final class ConversionSchemas {
             // actually correct for @DynamoDBFlattened attributes, however,
             // its the best that can be done given only the method. The
             // proper way to get this information is using the model factory.
-            final StandardAnnotationMaps.FieldMap annotations = StandardAnnotationMaps.of(getter);
-            return new DynamoDBMapperFieldModel(annotations.attributeName(), attributeType, marshaller);
+            final DynamoDBMapperFieldModel.Builder builder = new DynamoDBMapperFieldModel.Builder();
+            builder.with(StandardAnnotationMaps.of(getter));
+            builder.with(new DynamoDBMapperFieldModel.Id(Void.class, builder.attributeName()));
+            builder.with(attributeType);
+            return builder.build();
         }
 
         @Override
@@ -334,18 +333,16 @@ public final class ConversionSchemas {
                 return null;
             }
 
-            Class<?> clazz = object.getClass();
+            Class<Object> clazz = (Class<Object>)object.getClass();
             Map<String, AttributeValue> result =
                     new HashMap<String, AttributeValue>();
 
-            final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
-
-            for (final DynamoDBMappingsRegistry.Mapping mapping : mappings.getMappings()) {
-                Object getterResult = mapping.bean().get(object);
+            for (final StandardBeanProperties.Bean<Object,Object> bean : StandardBeanProperties.of(clazz).values()) {
+                Object getterResult = bean.reflect().get(object);
                 if (getterResult != null) {
-                    AttributeValue value = convert(mapping.bean().getter(), getterResult);
+                    AttributeValue value = convert(bean.getter(), getterResult);
                     if (value != null) {
-                        result.put(mapping.getAttributeName(), value);
+                        result.put(bean.id().name(), value);
                     }
                 }
             }
@@ -483,15 +480,12 @@ public final class ConversionSchemas {
                 return result;
             }
 
-            final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
-
-            for (final DynamoDBMappingsRegistry.Mapping mapping : mappings.getMappings()) {
-                String attributeName = mapping.getAttributeName();
-                AttributeValue av = value.get(attributeName);
+            for (final StandardBeanProperties.Bean<T,Object> bean : StandardBeanProperties.of(clazz).values()) {
+                AttributeValue av = value.get(bean.id().name());
                 if (av != null) {
-                    ArgumentUnmarshaller unmarshaller = getUnmarshaller(mapping.bean().getter(), mapping.bean().setter());
-                    Object unmarshalled = unmarshall(unmarshaller, mapping.bean().setter(), av);
-                    mapping.bean().set(result, unmarshalled);
+                    ArgumentUnmarshaller unmarshaller = getUnmarshaller(bean.getter(), bean.setter());
+                    Object unmarshalled = unmarshall(unmarshaller, bean.setter(), av);
+                    bean.reflect().set(result, unmarshalled);
                 }
             }
 
@@ -976,7 +970,7 @@ public final class ConversionSchemas {
 
         @Override
         public ArgumentMarshaller getMemberMarshaller(Type memberType) {
-            Class<?> clazz = ReflectionUtils.resolveClass(memberType);
+            Class<?> clazz = resolveClass(memberType);
             if (Set.class.isAssignableFrom(clazz)) {
                 Class<?> setMemberType = unwrapGenericSetParam(memberType);
                 return getSet(null, setMemberType);
@@ -1167,7 +1161,7 @@ public final class ConversionSchemas {
 
         @Override
         public ArgumentUnmarshaller getMemberUnmarshaller(Type memberType) {
-            Class<?> clazz = ReflectionUtils.resolveClass(memberType);
+            Class<?> clazz = resolveClass(memberType);
             if (Set.class.isAssignableFrom(clazz)) {
                 Class<?> setMemberType = unwrapGenericSetParam(memberType);
                 return getSet(null, setMemberType);
@@ -1242,6 +1236,18 @@ public final class ConversionSchemas {
         } else {
             return (Class<?>) arguments[0];
         }
+    }
+
+    private static Class<?> resolveClass(Type type) {
+        Type localType = type;
+        if (localType instanceof ParameterizedType) {
+            localType = ((ParameterizedType) type).getRawType();
+        }
+        if (!(localType instanceof Class)) {
+            throw new DynamoDBMappingException("Cannot resolve class for type "
+                    + type);
+        }
+        return (Class<?>) localType;
     }
 
     private static <T> T find(Class<?> needle, List<Pair<T>> haystack) {

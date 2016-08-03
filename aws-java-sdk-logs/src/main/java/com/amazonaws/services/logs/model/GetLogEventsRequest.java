@@ -43,9 +43,8 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the
-     * <code class="code">nextForwardToken</code> or
-     * <code class="code">nextBackwardToken</code> fields in the response of the
-     * previous <code class="code">GetLogEvents</code> request.
+     * <code>nextForwardToken</code> or <code>nextBackwardToken</code> fields in
+     * the response of the previous <code>GetLogEvents</code> request.
      * </p>
      */
     private String nextToken;
@@ -228,17 +227,16 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the
-     * <code class="code">nextForwardToken</code> or
-     * <code class="code">nextBackwardToken</code> fields in the response of the
-     * previous <code class="code">GetLogEvents</code> request.
+     * <code>nextForwardToken</code> or <code>nextBackwardToken</code> fields in
+     * the response of the previous <code>GetLogEvents</code> request.
      * </p>
      * 
      * @param nextToken
      *        A string token used for pagination that points to the next page of
      *        results. It must be a value obtained from the
-     *        <code class="code">nextForwardToken</code> or
-     *        <code class="code">nextBackwardToken</code> fields in the response
-     *        of the previous <code class="code">GetLogEvents</code> request.
+     *        <code>nextForwardToken</code> or <code>nextBackwardToken</code>
+     *        fields in the response of the previous <code>GetLogEvents</code>
+     *        request.
      */
 
     public void setNextToken(String nextToken) {
@@ -249,16 +247,14 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the
-     * <code class="code">nextForwardToken</code> or
-     * <code class="code">nextBackwardToken</code> fields in the response of the
-     * previous <code class="code">GetLogEvents</code> request.
+     * <code>nextForwardToken</code> or <code>nextBackwardToken</code> fields in
+     * the response of the previous <code>GetLogEvents</code> request.
      * </p>
      * 
      * @return A string token used for pagination that points to the next page
      *         of results. It must be a value obtained from the
-     *         <code class="code">nextForwardToken</code> or
-     *         <code class="code">nextBackwardToken</code> fields in the
-     *         response of the previous <code class="code">GetLogEvents</code>
+     *         <code>nextForwardToken</code> or <code>nextBackwardToken</code>
+     *         fields in the response of the previous <code>GetLogEvents</code>
      *         request.
      */
 
@@ -270,17 +266,16 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A string token used for pagination that points to the next page of
      * results. It must be a value obtained from the
-     * <code class="code">nextForwardToken</code> or
-     * <code class="code">nextBackwardToken</code> fields in the response of the
-     * previous <code class="code">GetLogEvents</code> request.
+     * <code>nextForwardToken</code> or <code>nextBackwardToken</code> fields in
+     * the response of the previous <code>GetLogEvents</code> request.
      * </p>
      * 
      * @param nextToken
      *        A string token used for pagination that points to the next page of
      *        results. It must be a value obtained from the
-     *        <code class="code">nextForwardToken</code> or
-     *        <code class="code">nextBackwardToken</code> fields in the response
-     *        of the previous <code class="code">GetLogEvents</code> request.
+     *        <code>nextForwardToken</code> or <code>nextBackwardToken</code>
+     *        fields in the response of the previous <code>GetLogEvents</code>
+     *        request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Describes the inputs for EnableAlarmActions.
+ * </p>
  */
 public class EnableAlarmActionsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

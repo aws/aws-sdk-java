@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Describes the inputs for DescribeAlarmsForMetric.
+ * </p>
  */
 public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

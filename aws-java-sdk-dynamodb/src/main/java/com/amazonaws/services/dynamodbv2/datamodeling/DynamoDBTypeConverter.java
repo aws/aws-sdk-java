@@ -32,16 +32,4 @@ public interface DynamoDBTypeConverter<S extends Object, T extends Object> {
      */
     T unconvert(S object);
 
-    /**
-     * {@link DynamoDBTypeConverter} factory.
-     */
-    interface Factory {
-        /**
-         * Gets the type-converter matching the target conversion type.
-         * @param targetType The target conversion type.
-         * @return The type-converter, or null if no match.
-         */
-        <S,T> DynamoDBTypeConverter<S,T> getConverter(Class<T> targetType);
-    }
-
 }

@@ -24,12 +24,12 @@
     "xmlProtocol" : false,
     "cborProtocol" : false,
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "syncClientBuilderClassName" : "AmazonInspectorClientBuilder",
     "asyncClientBuilderClassName" : "AmazonInspectorAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AmazonInspectorModuleInjector",
     "smokeTestsPackageName" : "com.amazonaws.services.inspector.smoketests",
-    "serviceName" : "Amazon Inspector",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "serviceName" : "Amazon Inspector"
   },
   "operations" : {
     "AddAttributesToFindings" : {
@@ -40345,10 +40345,10 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "clientConfigFactory" : "ClientConfigurationFactory",
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "sdkModeledExceptionBaseClassName" : "AmazonInspectorException",
   "exceptionUnmarshallerImpl" : null,
+  "clientConfigFactory" : "ClientConfigurationFactory",
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.inspector.model.AmazonInspectorException"
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.inspector.model.AmazonInspectorException",
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
 }

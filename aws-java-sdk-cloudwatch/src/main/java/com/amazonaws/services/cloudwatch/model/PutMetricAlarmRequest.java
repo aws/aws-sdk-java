@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Describes the inputs for PutMetricAlarm.
+ * </p>
  */
 public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -1467,7 +1469,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        interfaces. You can also specify a unit when you create a custom
      *        metric. Units help provide conceptual meaning to your data. Metric
      *        data points that specify a unit of measure, such as Percent, are
-     *        aggregated separately. </p>
+     *        aggregated separately.</p>
      *        <p>
      *        <b>Note:</b> If you specify a unit, you must use a unit that is
      *        appropriate for the metric. Otherwise, this can cause an Amazon
@@ -1500,7 +1502,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         interfaces. You can also specify a unit when you create a custom
      *         metric. Units help provide conceptual meaning to your data.
      *         Metric data points that specify a unit of measure, such as
-     *         Percent, are aggregated separately. </p>
+     *         Percent, are aggregated separately.</p>
      *         <p>
      *         <b>Note:</b> If you specify a unit, you must use a unit that is
      *         appropriate for the metric. Otherwise, this can cause an Amazon
@@ -1534,7 +1536,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        interfaces. You can also specify a unit when you create a custom
      *        metric. Units help provide conceptual meaning to your data. Metric
      *        data points that specify a unit of measure, such as Percent, are
-     *        aggregated separately. </p>
+     *        aggregated separately.</p>
      *        <p>
      *        <b>Note:</b> If you specify a unit, you must use a unit that is
      *        appropriate for the metric. Otherwise, this can cause an Amazon
@@ -1571,7 +1573,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        interfaces. You can also specify a unit when you create a custom
      *        metric. Units help provide conceptual meaning to your data. Metric
      *        data points that specify a unit of measure, such as Percent, are
-     *        aggregated separately. </p>
+     *        aggregated separately.</p>
      *        <p>
      *        <b>Note:</b> If you specify a unit, you must use a unit that is
      *        appropriate for the metric. Otherwise, this can cause an Amazon
@@ -1605,7 +1607,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        interfaces. You can also specify a unit when you create a custom
      *        metric. Units help provide conceptual meaning to your data. Metric
      *        data points that specify a unit of measure, such as Percent, are
-     *        aggregated separately. </p>
+     *        aggregated separately.</p>
      *        <p>
      *        <b>Note:</b> If you specify a unit, you must use a unit that is
      *        appropriate for the metric. Otherwise, this can cause an Amazon

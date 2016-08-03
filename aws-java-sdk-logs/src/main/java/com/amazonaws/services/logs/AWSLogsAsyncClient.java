@@ -24,7 +24,6 @@ import com.amazonaws.annotation.ThreadSafe;
  * asynchronous operation; overloads which accept an {@code AsyncHandler} can be
  * used to receive notification when an asynchronous operation completes.
  * <p>
- * <fullname>Amazon CloudWatch Logs API Reference</fullname>
  * <p>
  * You can use Amazon CloudWatch Logs to monitor, store, and access your log
  * files from Amazon Elastic Compute Cloud (Amazon EC2) instances, Amazon

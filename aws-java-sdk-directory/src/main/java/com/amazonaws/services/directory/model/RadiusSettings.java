@@ -54,8 +54,7 @@ public class RadiusSettings implements Serializable, Cloneable {
     private Integer radiusRetries;
     /**
      * <p>
-     * The shared secret code that was specified when your RADIUS endpoints were
-     * created.
+     * Not currently used.
      * </p>
      */
     private String sharedSecret;
@@ -315,13 +314,11 @@ public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shared secret code that was specified when your RADIUS endpoints were
-     * created.
+     * Not currently used.
      * </p>
      * 
      * @param sharedSecret
-     *        The shared secret code that was specified when your RADIUS
-     *        endpoints were created.
+     *        Not currently used.
      */
 
     public void setSharedSecret(String sharedSecret) {
@@ -330,12 +327,10 @@ public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shared secret code that was specified when your RADIUS endpoints were
-     * created.
+     * Not currently used.
      * </p>
      * 
-     * @return The shared secret code that was specified when your RADIUS
-     *         endpoints were created.
+     * @return Not currently used.
      */
 
     public String getSharedSecret() {
@@ -344,13 +339,11 @@ public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shared secret code that was specified when your RADIUS endpoints were
-     * created.
+     * Not currently used.
      * </p>
      * 
      * @param sharedSecret
-     *        The shared secret code that was specified when your RADIUS
-     *        endpoints were created.
+     *        Not currently used.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
