@@ -49,23 +49,25 @@ public class PlayerSession implements Serializable, Cloneable {
     private String fleetId;
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      */
     private java.util.Date terminationTime;
     /**
      * <p>
-     * Current status of the player session. Possible player session states
-     * include the following:
+     * Current status of the player session.
+     * </p>
+     * <p>
+     * Possible player session statuses include the following:
+     * </p>
      * <ul>
      * <li><b>RESERVED</b> – The player session request has been received, but
      * the player has not yet connected to the server process and/or been
@@ -77,7 +79,6 @@ public class PlayerSession implements Serializable, Cloneable {
      * player did not connect and/or was not validated within the time-out limit
      * (60 seconds).</li>
      * </ul>
-     * </p>
      */
     private String status;
     /**
@@ -261,14 +262,14 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this data object was created. Format is
+     *        a number expressed in Unix time as milliseconds (ex:
+     *        "1469498468.057".
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -277,13 +278,13 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
-     * @return Time stamp indicating when this object was created. Format is an
-     *         integer representing the number of seconds since the Unix epoch
-     *         (Unix time).
+     * @return Time stamp indicating when this data object was created. Format
+     *         is a number expressed in Unix time as milliseconds (ex:
+     *         "1469498468.057".
      */
 
     public java.util.Date getCreationTime() {
@@ -292,14 +293,14 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this data object was created. Format is
+     *        a number expressed in Unix time as milliseconds (ex:
+     *        "1469498468.057".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -311,15 +312,14 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param terminationTime
-     *        Time stamp indicating when this fleet was terminated. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this data object was terminated. Format
+     *        is a number expressed in Unix time as milliseconds (ex:
+     *        "1469498468.057".
      */
 
     public void setTerminationTime(java.util.Date terminationTime) {
@@ -328,14 +328,13 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
-     * @return Time stamp indicating when this fleet was terminated. Format is
-     *         an integer representing the number of seconds since the Unix
-     *         epoch (Unix time).
+     * @return Time stamp indicating when this data object was terminated.
+     *         Format is a number expressed in Unix time as milliseconds (ex:
+     *         "1469498468.057".
      */
 
     public java.util.Date getTerminationTime() {
@@ -344,15 +343,14 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param terminationTime
-     *        Time stamp indicating when this fleet was terminated. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this data object was terminated. Format
+     *        is a number expressed in Unix time as milliseconds (ex:
+     *        "1469498468.057".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -364,8 +362,11 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the player session. Possible player session states
-     * include the following:
+     * Current status of the player session.
+     * </p>
+     * <p>
+     * Possible player session statuses include the following:
+     * </p>
      * <ul>
      * <li><b>RESERVED</b> – The player session request has been received, but
      * the player has not yet connected to the server process and/or been
@@ -377,11 +378,12 @@ public class PlayerSession implements Serializable, Cloneable {
      * player did not connect and/or was not validated within the time-out limit
      * (60 seconds).</li>
      * </ul>
-     * </p>
      * 
      * @param status
-     *        Current status of the player session. Possible player session
-     *        states include the following:
+     *        Current status of the player session.</p>
+     *        <p>
+     *        Possible player session statuses include the following:
+     *        </p>
      *        <ul>
      *        <li><b>RESERVED</b> – The player session request has been
      *        received, but the player has not yet connected to the server
@@ -392,7 +394,6 @@ public class PlayerSession implements Serializable, Cloneable {
      *        <li><b>TIMEDOUT</b> – A player session request was received, but
      *        the player did not connect and/or was not validated within the
      *        time-out limit (60 seconds).</li>
-     *        </ul>
      * @see PlayerSessionStatus
      */
 
@@ -402,8 +403,11 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the player session. Possible player session states
-     * include the following:
+     * Current status of the player session.
+     * </p>
+     * <p>
+     * Possible player session statuses include the following:
+     * </p>
      * <ul>
      * <li><b>RESERVED</b> – The player session request has been received, but
      * the player has not yet connected to the server process and/or been
@@ -415,10 +419,11 @@ public class PlayerSession implements Serializable, Cloneable {
      * player did not connect and/or was not validated within the time-out limit
      * (60 seconds).</li>
      * </ul>
-     * </p>
      * 
-     * @return Current status of the player session. Possible player session
-     *         states include the following:
+     * @return Current status of the player session.</p>
+     *         <p>
+     *         Possible player session statuses include the following:
+     *         </p>
      *         <ul>
      *         <li><b>RESERVED</b> – The player session request has been
      *         received, but the player has not yet connected to the server
@@ -429,7 +434,6 @@ public class PlayerSession implements Serializable, Cloneable {
      *         <li><b>TIMEDOUT</b> – A player session request was received, but
      *         the player did not connect and/or was not validated within the
      *         time-out limit (60 seconds).</li>
-     *         </ul>
      * @see PlayerSessionStatus
      */
 
@@ -439,8 +443,11 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the player session. Possible player session states
-     * include the following:
+     * Current status of the player session.
+     * </p>
+     * <p>
+     * Possible player session statuses include the following:
+     * </p>
      * <ul>
      * <li><b>RESERVED</b> – The player session request has been received, but
      * the player has not yet connected to the server process and/or been
@@ -452,11 +459,12 @@ public class PlayerSession implements Serializable, Cloneable {
      * player did not connect and/or was not validated within the time-out limit
      * (60 seconds).</li>
      * </ul>
-     * </p>
      * 
      * @param status
-     *        Current status of the player session. Possible player session
-     *        states include the following:
+     *        Current status of the player session.</p>
+     *        <p>
+     *        Possible player session statuses include the following:
+     *        </p>
      *        <ul>
      *        <li><b>RESERVED</b> – The player session request has been
      *        received, but the player has not yet connected to the server
@@ -467,7 +475,6 @@ public class PlayerSession implements Serializable, Cloneable {
      *        <li><b>TIMEDOUT</b> – A player session request was received, but
      *        the player did not connect and/or was not validated within the
      *        time-out limit (60 seconds).</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see PlayerSessionStatus
@@ -480,8 +487,11 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the player session. Possible player session states
-     * include the following:
+     * Current status of the player session.
+     * </p>
+     * <p>
+     * Possible player session statuses include the following:
+     * </p>
      * <ul>
      * <li><b>RESERVED</b> – The player session request has been received, but
      * the player has not yet connected to the server process and/or been
@@ -493,11 +503,12 @@ public class PlayerSession implements Serializable, Cloneable {
      * player did not connect and/or was not validated within the time-out limit
      * (60 seconds).</li>
      * </ul>
-     * </p>
      * 
      * @param status
-     *        Current status of the player session. Possible player session
-     *        states include the following:
+     *        Current status of the player session.</p>
+     *        <p>
+     *        Possible player session statuses include the following:
+     *        </p>
      *        <ul>
      *        <li><b>RESERVED</b> – The player session request has been
      *        received, but the player has not yet connected to the server
@@ -508,7 +519,6 @@ public class PlayerSession implements Serializable, Cloneable {
      *        <li><b>TIMEDOUT</b> – A player session request was received, but
      *        the player did not connect and/or was not validated within the
      *        time-out limit (60 seconds).</li>
-     *        </ul>
      * @see PlayerSessionStatus
      */
 
@@ -518,8 +528,11 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the player session. Possible player session states
-     * include the following:
+     * Current status of the player session.
+     * </p>
+     * <p>
+     * Possible player session statuses include the following:
+     * </p>
      * <ul>
      * <li><b>RESERVED</b> – The player session request has been received, but
      * the player has not yet connected to the server process and/or been
@@ -531,11 +544,12 @@ public class PlayerSession implements Serializable, Cloneable {
      * player did not connect and/or was not validated within the time-out limit
      * (60 seconds).</li>
      * </ul>
-     * </p>
      * 
      * @param status
-     *        Current status of the player session. Possible player session
-     *        states include the following:
+     *        Current status of the player session.</p>
+     *        <p>
+     *        Possible player session statuses include the following:
+     *        </p>
      *        <ul>
      *        <li><b>RESERVED</b> – The player session request has been
      *        received, but the player has not yet connected to the server
@@ -546,7 +560,6 @@ public class PlayerSession implements Serializable, Cloneable {
      *        <li><b>TIMEDOUT</b> – A player session request was received, but
      *        the player did not connect and/or was not validated within the
      *        time-out limit (60 seconds).</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see PlayerSessionStatus

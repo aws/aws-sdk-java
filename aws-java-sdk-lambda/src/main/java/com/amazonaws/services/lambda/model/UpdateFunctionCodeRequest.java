@@ -18,7 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -40,7 +40,13 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest
     private String functionName;
     /**
      * <p>
-     * Based64-encoded .zip file containing your packaged source code.
+     * The contents of your zip file containing your deployment package. If you
+     * are using the web API directly, the contents of the zip file must be
+     * base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or
+     * CLI will do the encoding for you. For more information about creating a
+     * .zip file, go to <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
+     * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      * </p>
      */
     private java.nio.ByteBuffer zipFile;
@@ -173,7 +179,13 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Based64-encoded .zip file containing your packaged source code.
+     * The contents of your zip file containing your deployment package. If you
+     * are using the web API directly, the contents of the zip file must be
+     * base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or
+     * CLI will do the encoding for you. For more information about creating a
+     * .zip file, go to <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
+     * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      * </p>
      * <p>
      * AWS SDK for Java performs a Base64 encoding on this field before sending
@@ -190,7 +202,14 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param zipFile
-     *        Based64-encoded .zip file containing your packaged source code.
+     *        The contents of your zip file containing your deployment package.
+     *        If you are using the web API directly, the contents of the zip
+     *        file must be base64-encoded. If you are using the AWS SDKs or the
+     *        AWS CLI, the SDKs or CLI will do the encoding for you. For more
+     *        information about creating a .zip file, go to <a href=
+     *        "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
+     *        >Execution Permissions</a> in the <i>AWS Lambda Developer
+     *        Guide</i>.
      */
 
     public void setZipFile(java.nio.ByteBuffer zipFile) {
@@ -199,7 +218,13 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Based64-encoded .zip file containing your packaged source code.
+     * The contents of your zip file containing your deployment package. If you
+     * are using the web API directly, the contents of the zip file must be
+     * base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or
+     * CLI will do the encoding for you. For more information about creating a
+     * .zip file, go to <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
+     * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
@@ -212,7 +237,14 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest
      * .
      * </p>
      * 
-     * @return Based64-encoded .zip file containing your packaged source code.
+     * @return The contents of your zip file containing your deployment package.
+     *         If you are using the web API directly, the contents of the zip
+     *         file must be base64-encoded. If you are using the AWS SDKs or the
+     *         AWS CLI, the SDKs or CLI will do the encoding for you. For more
+     *         information about creating a .zip file, go to <a href=
+     *         "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
+     *         >Execution Permissions</a> in the <i>AWS Lambda Developer
+     *         Guide</i>.
      */
 
     public java.nio.ByteBuffer getZipFile() {
@@ -221,11 +253,24 @@ public class UpdateFunctionCodeRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Based64-encoded .zip file containing your packaged source code.
+     * The contents of your zip file containing your deployment package. If you
+     * are using the web API directly, the contents of the zip file must be
+     * base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or
+     * CLI will do the encoding for you. For more information about creating a
+     * .zip file, go to <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
+     * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      * </p>
      * 
      * @param zipFile
-     *        Based64-encoded .zip file containing your packaged source code.
+     *        The contents of your zip file containing your deployment package.
+     *        If you are using the web API directly, the contents of the zip
+     *        file must be base64-encoded. If you are using the AWS SDKs or the
+     *        AWS CLI, the SDKs or CLI will do the encoding for you. For more
+     *        information about creating a .zip file, go to <a href=
+     *        "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
+     *        >Execution Permissions</a> in the <i>AWS Lambda Developer
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

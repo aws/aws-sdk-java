@@ -50,6 +50,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * Game session protection policy to apply to all new instances created in
      * this fleet. Instances that already exist are not affected. You can set
      * protection for individual instances using <a>UpdateGameSession</a>.
+     * </p>
      * <ul>
      * <li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li>
@@ -57,7 +58,6 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
      * </ul>
-     * </p>
      */
     private String newGameSessionProtectionPolicy;
 
@@ -201,6 +201,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * Game session protection policy to apply to all new instances created in
      * this fleet. Instances that already exist are not affected. You can set
      * protection for individual instances using <a>UpdateGameSession</a>.
+     * </p>
      * <ul>
      * <li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li>
@@ -208,20 +209,18 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
      * </ul>
-     * </p>
      * 
      * @param newGameSessionProtectionPolicy
      *        Game session protection policy to apply to all new instances
      *        created in this fleet. Instances that already exist are not
      *        affected. You can set protection for individual instances using
-     *        <a>UpdateGameSession</a>.
+     *        <a>UpdateGameSession</a>.</p>
      *        <ul>
      *        <li><b>NoProtection</b> – The game session can be terminated
      *        during a scale-down event.</li>
      *        <li><b>FullProtection</b> – If the game session is in an
      *        <code>ACTIVE</code> status, it cannot be terminated during a
      *        scale-down event.</li>
-     *        </ul>
      * @see ProtectionPolicy
      */
 
@@ -235,6 +234,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * Game session protection policy to apply to all new instances created in
      * this fleet. Instances that already exist are not affected. You can set
      * protection for individual instances using <a>UpdateGameSession</a>.
+     * </p>
      * <ul>
      * <li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li>
@@ -242,19 +242,17 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
      * </ul>
-     * </p>
      * 
      * @return Game session protection policy to apply to all new instances
      *         created in this fleet. Instances that already exist are not
      *         affected. You can set protection for individual instances using
-     *         <a>UpdateGameSession</a>.
+     *         <a>UpdateGameSession</a>.</p>
      *         <ul>
      *         <li><b>NoProtection</b> – The game session can be terminated
      *         during a scale-down event.</li>
      *         <li><b>FullProtection</b> – If the game session is in an
      *         <code>ACTIVE</code> status, it cannot be terminated during a
      *         scale-down event.</li>
-     *         </ul>
      * @see ProtectionPolicy
      */
 
@@ -267,6 +265,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * Game session protection policy to apply to all new instances created in
      * this fleet. Instances that already exist are not affected. You can set
      * protection for individual instances using <a>UpdateGameSession</a>.
+     * </p>
      * <ul>
      * <li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li>
@@ -274,20 +273,18 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
      * </ul>
-     * </p>
      * 
      * @param newGameSessionProtectionPolicy
      *        Game session protection policy to apply to all new instances
      *        created in this fleet. Instances that already exist are not
      *        affected. You can set protection for individual instances using
-     *        <a>UpdateGameSession</a>.
+     *        <a>UpdateGameSession</a>.</p>
      *        <ul>
      *        <li><b>NoProtection</b> – The game session can be terminated
      *        during a scale-down event.</li>
      *        <li><b>FullProtection</b> – If the game session is in an
      *        <code>ACTIVE</code> status, it cannot be terminated during a
      *        scale-down event.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ProtectionPolicy
@@ -304,6 +301,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * Game session protection policy to apply to all new instances created in
      * this fleet. Instances that already exist are not affected. You can set
      * protection for individual instances using <a>UpdateGameSession</a>.
+     * </p>
      * <ul>
      * <li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li>
@@ -311,20 +309,18 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
      * </ul>
-     * </p>
      * 
      * @param newGameSessionProtectionPolicy
      *        Game session protection policy to apply to all new instances
      *        created in this fleet. Instances that already exist are not
      *        affected. You can set protection for individual instances using
-     *        <a>UpdateGameSession</a>.
+     *        <a>UpdateGameSession</a>.</p>
      *        <ul>
      *        <li><b>NoProtection</b> – The game session can be terminated
      *        during a scale-down event.</li>
      *        <li><b>FullProtection</b> – If the game session is in an
      *        <code>ACTIVE</code> status, it cannot be terminated during a
      *        scale-down event.</li>
-     *        </ul>
      * @see ProtectionPolicy
      */
 
@@ -339,6 +335,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * Game session protection policy to apply to all new instances created in
      * this fleet. Instances that already exist are not affected. You can set
      * protection for individual instances using <a>UpdateGameSession</a>.
+     * </p>
      * <ul>
      * <li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li>
@@ -346,20 +343,18 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
      * </ul>
-     * </p>
      * 
      * @param newGameSessionProtectionPolicy
      *        Game session protection policy to apply to all new instances
      *        created in this fleet. Instances that already exist are not
      *        affected. You can set protection for individual instances using
-     *        <a>UpdateGameSession</a>.
+     *        <a>UpdateGameSession</a>.</p>
      *        <ul>
      *        <li><b>NoProtection</b> – The game session can be terminated
      *        during a scale-down event.</li>
      *        <li><b>FullProtection</b> – If the game session is in an
      *        <code>ACTIVE</code> status, it cannot be terminated during a
      *        scale-down event.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ProtectionPolicy

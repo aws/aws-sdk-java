@@ -19,7 +19,9 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "cognito-identity",
     "signingName" : "cognito-identity",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "xmlProtocol" : false,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonCognitoIdentityClientBuilder",
     "asyncClientBuilderClassName" : "AmazonCognitoIdentityAsyncClientBuilder",
@@ -27,9 +29,7 @@
     "smokeTestsPackageName" : "com.amazonaws.services.cognitoidentity.smoketests",
     "serviceName" : "Amazon Cognito Identity",
     "cborProtocol" : false,
-    "xmlProtocol" : false,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "CreateIdentityPool" : {
@@ -19752,10 +19752,10 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "sdkModeledExceptionBaseClassName" : "AmazonCognitoIdentityException",
   "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException",
-  "sdkModeledExceptionBaseClassName" : "AmazonCognitoIdentityException"
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException"
 }

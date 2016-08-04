@@ -118,11 +118,12 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest
      * </ul>
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both
-     * automated and manual snapshots are returned. You can include shared
-     * snapshots with these results by setting the <code>IncludeShared</code>
-     * parameter to <code>true</code>. You can include public snapshots with
-     * these results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.
+     * automated and manual snapshots are returned. Shared and public DB
+     * snapshots are not included in the returned results by default. You can
+     * include shared snapshots with these results by setting the
+     * <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.
      * </p>
      * <p>
      * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
@@ -608,11 +609,12 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest
      * </ul>
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both
-     * automated and manual snapshots are returned. You can include shared
-     * snapshots with these results by setting the <code>IncludeShared</code>
-     * parameter to <code>true</code>. You can include public snapshots with
-     * these results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.
+     * automated and manual snapshots are returned. Shared and public DB
+     * snapshots are not included in the returned results by default. You can
+     * include shared snapshots with these results by setting the
+     * <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.
      * </p>
      * <p>
      * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
@@ -654,8 +656,9 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        If you don't specify a <code>SnapshotType</code> value, then both
-     *        automated and manual snapshots are returned. You can include
-     *        shared snapshots with these results by setting the
+     *        automated and manual snapshots are returned. Shared and public DB
+     *        snapshots are not included in the returned results by default. You
+     *        can include shared snapshots with these results by setting the
      *        <code>IncludeShared</code> parameter to <code>true</code>. You can
      *        include public snapshots with these results by setting the
      *        <code>IncludePublic</code> parameter to <code>true</code>.
@@ -707,11 +710,12 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest
      * </ul>
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both
-     * automated and manual snapshots are returned. You can include shared
-     * snapshots with these results by setting the <code>IncludeShared</code>
-     * parameter to <code>true</code>. You can include public snapshots with
-     * these results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.
+     * automated and manual snapshots are returned. Shared and public DB
+     * snapshots are not included in the returned results by default. You can
+     * include shared snapshots with these results by setting the
+     * <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.
      * </p>
      * <p>
      * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
@@ -752,11 +756,12 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest
      *         </ul>
      *         <p>
      *         If you don't specify a <code>SnapshotType</code> value, then both
-     *         automated and manual snapshots are returned. You can include
-     *         shared snapshots with these results by setting the
-     *         <code>IncludeShared</code> parameter to <code>true</code>. You
-     *         can include public snapshots with these results by setting the
-     *         <code>IncludePublic</code> parameter to <code>true</code>.
+     *         automated and manual snapshots are returned. Shared and public DB
+     *         snapshots are not included in the returned results by default.
+     *         You can include shared snapshots with these results by setting
+     *         the <code>IncludeShared</code> parameter to <code>true</code>.
+     *         You can include public snapshots with these results by setting
+     *         the <code>IncludePublic</code> parameter to <code>true</code>.
      *         </p>
      *         <p>
      *         The <code>IncludeShared</code> and <code>IncludePublic</code>
@@ -805,11 +810,12 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest
      * </ul>
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both
-     * automated and manual snapshots are returned. You can include shared
-     * snapshots with these results by setting the <code>IncludeShared</code>
-     * parameter to <code>true</code>. You can include public snapshots with
-     * these results by setting the <code>IncludePublic</code> parameter to
-     * <code>true</code>.
+     * automated and manual snapshots are returned. Shared and public DB
+     * snapshots are not included in the returned results by default. You can
+     * include shared snapshots with these results by setting the
+     * <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.
      * </p>
      * <p>
      * The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
@@ -851,8 +857,9 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        If you don't specify a <code>SnapshotType</code> value, then both
-     *        automated and manual snapshots are returned. You can include
-     *        shared snapshots with these results by setting the
+     *        automated and manual snapshots are returned. Shared and public DB
+     *        snapshots are not included in the returned results by default. You
+     *        can include shared snapshots with these results by setting the
      *        <code>IncludeShared</code> parameter to <code>true</code>. You can
      *        include public snapshots with these results by setting the
      *        <code>IncludePublic</code> parameter to <code>true</code>.

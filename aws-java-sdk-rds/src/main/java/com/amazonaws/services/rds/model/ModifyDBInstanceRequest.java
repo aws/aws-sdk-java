@@ -173,6 +173,30 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
     private String dBInstanceClass;
     /**
      * <p>
+     * The new DB subnet group for the DB instance. You can use this parameter
+     * to move your DB instance to a different VPC, or to a different subnet
+     * group in the same VPC. If your DB instance is not in a VPC, you can also
+     * use this parameter to move your DB instance into a VPC. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC"
+     * >Updating the VPC for a DB Instance</a>.
+     * </p>
+     * <p>
+     * Changing the subnet group causes an outage during the change. The change
+     * is applied during the next maintenance window, unless you specify
+     * <code>true</code> for the <code>ApplyImmediately</code> parameter.
+     * </p>
+     * <p>
+     * Constraints: Must contain no more than 255 alphanumeric characters,
+     * periods, underscores, spaces, or hyphens.
+     * </p>
+     * <p>
+     * Example: <code>mySubnetGroup</code>
+     * </p>
+     */
+    private String dBSubnetGroupName;
+    /**
+     * <p>
      * A list of DB security groups to authorize on this DB instance. Changing
      * this setting does not result in an outage and the change is
      * asynchronously applied as soon as possible.
@@ -1736,6 +1760,156 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
 
     public ModifyDBInstanceRequest withDBInstanceClass(String dBInstanceClass) {
         setDBInstanceClass(dBInstanceClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The new DB subnet group for the DB instance. You can use this parameter
+     * to move your DB instance to a different VPC, or to a different subnet
+     * group in the same VPC. If your DB instance is not in a VPC, you can also
+     * use this parameter to move your DB instance into a VPC. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC"
+     * >Updating the VPC for a DB Instance</a>.
+     * </p>
+     * <p>
+     * Changing the subnet group causes an outage during the change. The change
+     * is applied during the next maintenance window, unless you specify
+     * <code>true</code> for the <code>ApplyImmediately</code> parameter.
+     * </p>
+     * <p>
+     * Constraints: Must contain no more than 255 alphanumeric characters,
+     * periods, underscores, spaces, or hyphens.
+     * </p>
+     * <p>
+     * Example: <code>mySubnetGroup</code>
+     * </p>
+     * 
+     * @param dBSubnetGroupName
+     *        The new DB subnet group for the DB instance. You can use this
+     *        parameter to move your DB instance to a different VPC, or to a
+     *        different subnet group in the same VPC. If your DB instance is not
+     *        in a VPC, you can also use this parameter to move your DB instance
+     *        into a VPC. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC"
+     *        >Updating the VPC for a DB Instance</a>. </p>
+     *        <p>
+     *        Changing the subnet group causes an outage during the change. The
+     *        change is applied during the next maintenance window, unless you
+     *        specify <code>true</code> for the <code>ApplyImmediately</code>
+     *        parameter.
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain no more than 255 alphanumeric
+     *        characters, periods, underscores, spaces, or hyphens.
+     *        </p>
+     *        <p>
+     *        Example: <code>mySubnetGroup</code>
+     */
+
+    public void setDBSubnetGroupName(String dBSubnetGroupName) {
+        this.dBSubnetGroupName = dBSubnetGroupName;
+    }
+
+    /**
+     * <p>
+     * The new DB subnet group for the DB instance. You can use this parameter
+     * to move your DB instance to a different VPC, or to a different subnet
+     * group in the same VPC. If your DB instance is not in a VPC, you can also
+     * use this parameter to move your DB instance into a VPC. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC"
+     * >Updating the VPC for a DB Instance</a>.
+     * </p>
+     * <p>
+     * Changing the subnet group causes an outage during the change. The change
+     * is applied during the next maintenance window, unless you specify
+     * <code>true</code> for the <code>ApplyImmediately</code> parameter.
+     * </p>
+     * <p>
+     * Constraints: Must contain no more than 255 alphanumeric characters,
+     * periods, underscores, spaces, or hyphens.
+     * </p>
+     * <p>
+     * Example: <code>mySubnetGroup</code>
+     * </p>
+     * 
+     * @return The new DB subnet group for the DB instance. You can use this
+     *         parameter to move your DB instance to a different VPC, or to a
+     *         different subnet group in the same VPC. If your DB instance is
+     *         not in a VPC, you can also use this parameter to move your DB
+     *         instance into a VPC. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC"
+     *         >Updating the VPC for a DB Instance</a>. </p>
+     *         <p>
+     *         Changing the subnet group causes an outage during the change. The
+     *         change is applied during the next maintenance window, unless you
+     *         specify <code>true</code> for the <code>ApplyImmediately</code>
+     *         parameter.
+     *         </p>
+     *         <p>
+     *         Constraints: Must contain no more than 255 alphanumeric
+     *         characters, periods, underscores, spaces, or hyphens.
+     *         </p>
+     *         <p>
+     *         Example: <code>mySubnetGroup</code>
+     */
+
+    public String getDBSubnetGroupName() {
+        return this.dBSubnetGroupName;
+    }
+
+    /**
+     * <p>
+     * The new DB subnet group for the DB instance. You can use this parameter
+     * to move your DB instance to a different VPC, or to a different subnet
+     * group in the same VPC. If your DB instance is not in a VPC, you can also
+     * use this parameter to move your DB instance into a VPC. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC"
+     * >Updating the VPC for a DB Instance</a>.
+     * </p>
+     * <p>
+     * Changing the subnet group causes an outage during the change. The change
+     * is applied during the next maintenance window, unless you specify
+     * <code>true</code> for the <code>ApplyImmediately</code> parameter.
+     * </p>
+     * <p>
+     * Constraints: Must contain no more than 255 alphanumeric characters,
+     * periods, underscores, spaces, or hyphens.
+     * </p>
+     * <p>
+     * Example: <code>mySubnetGroup</code>
+     * </p>
+     * 
+     * @param dBSubnetGroupName
+     *        The new DB subnet group for the DB instance. You can use this
+     *        parameter to move your DB instance to a different VPC, or to a
+     *        different subnet group in the same VPC. If your DB instance is not
+     *        in a VPC, you can also use this parameter to move your DB instance
+     *        into a VPC. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC"
+     *        >Updating the VPC for a DB Instance</a>. </p>
+     *        <p>
+     *        Changing the subnet group causes an outage during the change. The
+     *        change is applied during the next maintenance window, unless you
+     *        specify <code>true</code> for the <code>ApplyImmediately</code>
+     *        parameter.
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain no more than 255 alphanumeric
+     *        characters, periods, underscores, spaces, or hyphens.
+     *        </p>
+     *        <p>
+     *        Example: <code>mySubnetGroup</code>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ModifyDBInstanceRequest withDBSubnetGroupName(
+            String dBSubnetGroupName) {
+        setDBSubnetGroupName(dBSubnetGroupName);
         return this;
     }
 
@@ -5871,6 +6045,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
             sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
         if (getDBInstanceClass() != null)
             sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
+        if (getDBSubnetGroupName() != null)
+            sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");
         if (getDBSecurityGroups() != null)
             sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ",");
         if (getVpcSecurityGroupIds() != null)
@@ -5969,6 +6145,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
             return false;
         if (other.getDBInstanceClass() != null
                 && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false)
+            return false;
+        if (other.getDBSubnetGroupName() == null
+                ^ this.getDBSubnetGroupName() == null)
+            return false;
+        if (other.getDBSubnetGroupName() != null
+                && other.getDBSubnetGroupName().equals(
+                        this.getDBSubnetGroupName()) == false)
             return false;
         if (other.getDBSecurityGroups() == null
                 ^ this.getDBSecurityGroups() == null)
@@ -6169,6 +6352,10 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDBSubnetGroupName() == null) ? 0
+                        : getDBSubnetGroupName().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getDBSecurityGroups() == null) ? 0 : getDBSecurityGroups()

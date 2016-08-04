@@ -45,8 +45,11 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
     private String playerSessionId;
     /**
      * <p>
-     * Player session status to filter results on. Possible player session
-     * states include the following:
+     * Player session status to filter results on.
+     * </p>
+     * <p>
+     * Possible player session statuses include the following:
+     * </p>
      * <ul>
      * <li><b>RESERVED</b> – The player session request has been received, but
      * the player has not yet connected to the server process and/or been
@@ -58,7 +61,6 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * player did not connect and/or was not validated within the time-out limit
      * (60 seconds).</li>
      * </ul>
-     * </p>
      */
     private String playerSessionStatusFilter;
     /**
@@ -205,8 +207,11 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Player session status to filter results on. Possible player session
-     * states include the following:
+     * Player session status to filter results on.
+     * </p>
+     * <p>
+     * Possible player session statuses include the following:
+     * </p>
      * <ul>
      * <li><b>RESERVED</b> – The player session request has been received, but
      * the player has not yet connected to the server process and/or been
@@ -218,11 +223,12 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * player did not connect and/or was not validated within the time-out limit
      * (60 seconds).</li>
      * </ul>
-     * </p>
      * 
      * @param playerSessionStatusFilter
-     *        Player session status to filter results on. Possible player
-     *        session states include the following:
+     *        Player session status to filter results on.</p>
+     *        <p>
+     *        Possible player session statuses include the following:
+     *        </p>
      *        <ul>
      *        <li><b>RESERVED</b> – The player session request has been
      *        received, but the player has not yet connected to the server
@@ -233,7 +239,6 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      *        <li><b>TIMEDOUT</b> – A player session request was received, but
      *        the player did not connect and/or was not validated within the
      *        time-out limit (60 seconds).</li>
-     *        </ul>
      */
 
     public void setPlayerSessionStatusFilter(String playerSessionStatusFilter) {
@@ -242,8 +247,11 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Player session status to filter results on. Possible player session
-     * states include the following:
+     * Player session status to filter results on.
+     * </p>
+     * <p>
+     * Possible player session statuses include the following:
+     * </p>
      * <ul>
      * <li><b>RESERVED</b> – The player session request has been received, but
      * the player has not yet connected to the server process and/or been
@@ -255,10 +263,11 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * player did not connect and/or was not validated within the time-out limit
      * (60 seconds).</li>
      * </ul>
-     * </p>
      * 
-     * @return Player session status to filter results on. Possible player
-     *         session states include the following:
+     * @return Player session status to filter results on.</p>
+     *         <p>
+     *         Possible player session statuses include the following:
+     *         </p>
      *         <ul>
      *         <li><b>RESERVED</b> – The player session request has been
      *         received, but the player has not yet connected to the server
@@ -269,7 +278,6 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      *         <li><b>TIMEDOUT</b> – A player session request was received, but
      *         the player did not connect and/or was not validated within the
      *         time-out limit (60 seconds).</li>
-     *         </ul>
      */
 
     public String getPlayerSessionStatusFilter() {
@@ -278,8 +286,11 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Player session status to filter results on. Possible player session
-     * states include the following:
+     * Player session status to filter results on.
+     * </p>
+     * <p>
+     * Possible player session statuses include the following:
+     * </p>
      * <ul>
      * <li><b>RESERVED</b> – The player session request has been received, but
      * the player has not yet connected to the server process and/or been
@@ -291,11 +302,12 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * player did not connect and/or was not validated within the time-out limit
      * (60 seconds).</li>
      * </ul>
-     * </p>
      * 
      * @param playerSessionStatusFilter
-     *        Player session status to filter results on. Possible player
-     *        session states include the following:
+     *        Player session status to filter results on.</p>
+     *        <p>
+     *        Possible player session statuses include the following:
+     *        </p>
      *        <ul>
      *        <li><b>RESERVED</b> – The player session request has been
      *        received, but the player has not yet connected to the server
@@ -306,7 +318,6 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      *        <li><b>TIMEDOUT</b> – A player session request was received, but
      *        the player did not connect and/or was not validated within the
      *        time-out limit (60 seconds).</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

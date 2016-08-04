@@ -18,7 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class RemovePermissionRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

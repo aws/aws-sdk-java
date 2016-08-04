@@ -72,6 +72,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * <li><a>DescribeGameSessions</a></li>
  * <li><a>DescribeGameSessionDetails</a></li>
  * <li><a>UpdateGameSession</a></li>
+ * <li><a>SearchGameSessions</a></li>
  * </ul>
  * </li>
  * <li><b>Player sessions</b>
@@ -1443,6 +1444,41 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements
 
                         try {
                             result = resolveAlias(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchGameSessionsResult> searchGameSessionsAsync(
+            SearchGameSessionsRequest request) {
+
+        return searchGameSessionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchGameSessionsResult> searchGameSessionsAsync(
+            final SearchGameSessionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchGameSessionsRequest, SearchGameSessionsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<SearchGameSessionsResult>() {
+                    @Override
+                    public SearchGameSessionsResult call() throws Exception {
+                        SearchGameSessionsResult result;
+
+                        try {
+                            result = searchGameSessions(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

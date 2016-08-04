@@ -85,6 +85,8 @@ public enum GameliftActions implements Action {
     RequestUploadCredentials("gamelift:RequestUploadCredentials"),
     /** Action for the ResolveAlias operation. */
     ResolveAlias("gamelift:ResolveAlias"),
+    /** Action for the SearchGameSessions operation. */
+    SearchGameSessions("gamelift:SearchGameSessions"),
     /** Action for the UpdateAlias operation. */
     UpdateAlias("gamelift:UpdateAlias"),
     /** Action for the UpdateBuild operation. */

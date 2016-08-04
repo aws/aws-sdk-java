@@ -18,7 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class GetPolicyRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -70,7 +70,7 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param functionName
-     *        Function name whose resource policy you want to retrieve. </p>
+     *        Function name whose resource policy you want to retrieve.</p>
      *        <p>
      *        You can specify the function name (for example,
      *        <code>Thumbnail</code>) or you can specify Amazon Resource Name
@@ -106,7 +106,7 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
      * only the function name, it is limited to 64 character in length.
      * </p>
      * 
-     * @return Function name whose resource policy you want to retrieve. </p>
+     * @return Function name whose resource policy you want to retrieve.</p>
      *         <p>
      *         You can specify the function name (for example,
      *         <code>Thumbnail</code>) or you can specify Amazon Resource Name
@@ -143,7 +143,7 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param functionName
-     *        Function name whose resource policy you want to retrieve. </p>
+     *        Function name whose resource policy you want to retrieve.</p>
      *        <p>
      *        You can specify the function name (for example,
      *        <code>Thumbnail</code>) or you can specify Amazon Resource Name

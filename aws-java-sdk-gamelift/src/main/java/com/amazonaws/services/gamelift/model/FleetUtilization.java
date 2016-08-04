@@ -32,7 +32,7 @@ public class FleetUtilization implements Serializable, Cloneable {
     private String fleetId;
     /**
      * <p>
-     * Number of server processes in an <code>ACTIVE</code> state currently
+     * Number of server processes in an <code>ACTIVE</code> status currently
      * running across all instances in the fleet
      * </p>
      */
@@ -102,12 +102,12 @@ public class FleetUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of server processes in an <code>ACTIVE</code> state currently
+     * Number of server processes in an <code>ACTIVE</code> status currently
      * running across all instances in the fleet
      * </p>
      * 
      * @param activeServerProcessCount
-     *        Number of server processes in an <code>ACTIVE</code> state
+     *        Number of server processes in an <code>ACTIVE</code> status
      *        currently running across all instances in the fleet
      */
 
@@ -117,11 +117,11 @@ public class FleetUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of server processes in an <code>ACTIVE</code> state currently
+     * Number of server processes in an <code>ACTIVE</code> status currently
      * running across all instances in the fleet
      * </p>
      * 
-     * @return Number of server processes in an <code>ACTIVE</code> state
+     * @return Number of server processes in an <code>ACTIVE</code> status
      *         currently running across all instances in the fleet
      */
 
@@ -131,12 +131,12 @@ public class FleetUtilization implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of server processes in an <code>ACTIVE</code> state currently
+     * Number of server processes in an <code>ACTIVE</code> status currently
      * running across all instances in the fleet
      * </p>
      * 
      * @param activeServerProcessCount
-     *        Number of server processes in an <code>ACTIVE</code> state
+     *        Number of server processes in an <code>ACTIVE</code> status
      *        currently running across all instances in the fleet
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

@@ -56,11 +56,6 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest
      * Must not be "Default"
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Cannot contain spaces
-     * </p>
-     * </li>
      * </ul>
      */
     private String dBSecurityGroupName;
@@ -108,11 +103,6 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest
      *        Must not be "Default"
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot contain spaces
-     *        </p>
-     *        </li>
      */
     public DeleteDBSecurityGroupRequest(String dBSecurityGroupName) {
         setDBSecurityGroupName(dBSecurityGroupName);
@@ -151,11 +141,6 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest
      * Must not be "Default"
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Cannot contain spaces
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param dBSecurityGroupName
@@ -186,11 +171,6 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        Must not be "Default"
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot contain spaces
      *        </p>
      *        </li>
      */
@@ -232,11 +212,6 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest
      * Must not be "Default"
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Cannot contain spaces
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return The name of the DB security group to delete.</p> <note>
@@ -266,11 +241,6 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         Must not be "Default"
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot contain spaces
      *         </p>
      *         </li>
      */
@@ -312,11 +282,6 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest
      * Must not be "Default"
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Cannot contain spaces
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param dBSecurityGroupName
@@ -347,11 +312,6 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        Must not be "Default"
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot contain spaces
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be

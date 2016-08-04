@@ -2420,6 +2420,59 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Creates an Amazon Aurora DB cluster from data stored in an Amazon S3
+     * bucket. Amazon RDS must be authorized to access the Amazon S3 bucket and
+     * the data must be created using the Percona XtraBackup utility as
+     * described in <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.html"
+     * >Migrating Data from an External MySQL Database to an Amazon Aurora DB
+     * Cluster</a>.
+     * </p>
+     * 
+     * @param restoreDBClusterFromS3Request
+     * @return Result of the RestoreDBClusterFromS3 operation returned by the
+     *         service.
+     * @throws DBClusterAlreadyExistsException
+     *         User already has a DB cluster with the given identifier.
+     * @throws DBClusterQuotaExceededException
+     *         User attempted to create a new DB cluster and the user has
+     *         already reached the maximum allowed DB cluster quota.
+     * @throws StorageQuotaExceededException
+     *         Request would result in user exceeding the allowed amount of
+     *         storage available across all DB instances.
+     * @throws DBSubnetGroupNotFoundException
+     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet
+     *         group.
+     * @throws InvalidVPCNetworkStateException
+     *         DB subnet group does not cover all Availability Zones after it is
+     *         created because users' change.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws InvalidDBSubnetGroupStateException
+     *         The DB subnet group cannot be deleted because it is in use.
+     * @throws InvalidSubnetException
+     *         The requested subnet is invalid, or multiple subnets were
+     *         requested that are not all in a common VPC.
+     * @throws InvalidS3BucketException
+     *         The specified Amazon S3 bucket name could not be found or Amazon
+     *         RDS is not authorized to access the specified Amazon S3 bucket.
+     *         Verify the <b>SourceS3BucketName</b> and
+     *         <b>S3IngestionRoleArn</b> values and try again.
+     * @throws DBClusterParameterGroupNotFoundException
+     *         <i>DBClusterParameterGroupName</i> does not refer to an existing
+     *         DB Cluster parameter group.
+     * @throws KMSKeyNotAccessibleException
+     *         Error accessing KMS key.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB
+     *         cluster.
+     * @sample AmazonRDS.RestoreDBClusterFromS3
+     */
+    DBCluster restoreDBClusterFromS3(
+            RestoreDBClusterFromS3Request restoreDBClusterFromS3Request);
+
+    /**
+     * <p>
      * Creates a new DB cluster from a DB cluster snapshot. The target DB
      * cluster is created from the source DB cluster restore point with the same
      * configuration as the original source DB cluster, except that the new DB

@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.24-SNAPSHOT</version>
+    <version>1.11.24</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-codegen-maven-plugin</artifactId>
@@ -44,7 +44,7 @@
         <artifactId>aws-java-sdk-code-generator</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
-        <version>1.11.24-SNAPSHOT</version>
+        <version>1.11.24</version>
     </dependency>
 </dependencies>
 

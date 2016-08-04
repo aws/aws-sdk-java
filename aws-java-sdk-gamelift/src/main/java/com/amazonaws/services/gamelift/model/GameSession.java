@@ -44,16 +44,15 @@ public class GameSession implements Serializable, Cloneable {
     private String fleetId;
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      */
     private java.util.Date terminationTime;
@@ -72,7 +71,7 @@ public class GameSession implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the game session. A game session must be in an
-     * <code>ACTIVE</code> state to have player sessions.
+     * <code>ACTIVE</code> status to have player sessions.
      * </p>
      */
     private String status;
@@ -234,14 +233,14 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this data object was created. Format is
+     *        a number expressed in Unix time as milliseconds (ex:
+     *        "1469498468.057".
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -250,13 +249,13 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
-     * @return Time stamp indicating when this object was created. Format is an
-     *         integer representing the number of seconds since the Unix epoch
-     *         (Unix time).
+     * @return Time stamp indicating when this data object was created. Format
+     *         is a number expressed in Unix time as milliseconds (ex:
+     *         "1469498468.057".
      */
 
     public java.util.Date getCreationTime() {
@@ -265,14 +264,14 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this data object was created. Format is
+     *        a number expressed in Unix time as milliseconds (ex:
+     *        "1469498468.057".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -284,15 +283,14 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param terminationTime
-     *        Time stamp indicating when this fleet was terminated. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this data object was terminated. Format
+     *        is a number expressed in Unix time as milliseconds (ex:
+     *        "1469498468.057".
      */
 
     public void setTerminationTime(java.util.Date terminationTime) {
@@ -301,14 +299,13 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
-     * @return Time stamp indicating when this fleet was terminated. Format is
-     *         an integer representing the number of seconds since the Unix
-     *         epoch (Unix time).
+     * @return Time stamp indicating when this data object was terminated.
+     *         Format is a number expressed in Unix time as milliseconds (ex:
+     *         "1469498468.057".
      */
 
     public java.util.Date getTerminationTime() {
@@ -317,15 +314,14 @@ public class GameSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param terminationTime
-     *        Time stamp indicating when this fleet was terminated. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this data object was terminated. Format
+     *        is a number expressed in Unix time as milliseconds (ex:
+     *        "1469498468.057".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -422,12 +418,12 @@ public class GameSession implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the game session. A game session must be in an
-     * <code>ACTIVE</code> state to have player sessions.
+     * <code>ACTIVE</code> status to have player sessions.
      * </p>
      * 
      * @param status
      *        Current status of the game session. A game session must be in an
-     *        <code>ACTIVE</code> state to have player sessions.
+     *        <code>ACTIVE</code> status to have player sessions.
      * @see GameSessionStatus
      */
 
@@ -438,11 +434,11 @@ public class GameSession implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the game session. A game session must be in an
-     * <code>ACTIVE</code> state to have player sessions.
+     * <code>ACTIVE</code> status to have player sessions.
      * </p>
      * 
      * @return Current status of the game session. A game session must be in an
-     *         <code>ACTIVE</code> state to have player sessions.
+     *         <code>ACTIVE</code> status to have player sessions.
      * @see GameSessionStatus
      */
 
@@ -453,12 +449,12 @@ public class GameSession implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the game session. A game session must be in an
-     * <code>ACTIVE</code> state to have player sessions.
+     * <code>ACTIVE</code> status to have player sessions.
      * </p>
      * 
      * @param status
      *        Current status of the game session. A game session must be in an
-     *        <code>ACTIVE</code> state to have player sessions.
+     *        <code>ACTIVE</code> status to have player sessions.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see GameSessionStatus
@@ -472,12 +468,12 @@ public class GameSession implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the game session. A game session must be in an
-     * <code>ACTIVE</code> state to have player sessions.
+     * <code>ACTIVE</code> status to have player sessions.
      * </p>
      * 
      * @param status
      *        Current status of the game session. A game session must be in an
-     *        <code>ACTIVE</code> state to have player sessions.
+     *        <code>ACTIVE</code> status to have player sessions.
      * @see GameSessionStatus
      */
 
@@ -488,12 +484,12 @@ public class GameSession implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the game session. A game session must be in an
-     * <code>ACTIVE</code> state to have player sessions.
+     * <code>ACTIVE</code> status to have player sessions.
      * </p>
      * 
      * @param status
      *        Current status of the game session. A game session must be in an
-     *        <code>ACTIVE</code> state to have player sessions.
+     *        <code>ACTIVE</code> status to have player sessions.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see GameSessionStatus

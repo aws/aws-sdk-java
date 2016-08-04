@@ -49,6 +49,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
+     * </p>
      * <ul>
      * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
      * value from the current instance count. Positive values scale up while
@@ -60,7 +61,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * values scale up while negative values scale down; for example, a value of
      * "-10" scales the fleet down by 10%.</li>
      * </ul>
-     * </p>
      */
     private String scalingAdjustmentType;
     /**
@@ -87,6 +87,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * Name of the Amazon GameLift-defined metric that is used to trigger an
      * adjustment.
+     * </p>
      * <ul>
      * <li><b>ActivatingGameSessions</b> – number of game sessions in the
      * process of being created (game session status = <code>ACTIVATING</code>).
@@ -107,7 +108,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <li><b>IdleInstances</b> – number of instances not currently running a
      * game session.</li>
      * </ul>
-     * </p>
      */
     private String metricName;
 
@@ -254,6 +254,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
+     * </p>
      * <ul>
      * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
      * value from the current instance count. Positive values scale up while
@@ -265,11 +266,10 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * values scale up while negative values scale down; for example, a value of
      * "-10" scales the fleet down by 10%.</li>
      * </ul>
-     * </p>
      * 
      * @param scalingAdjustmentType
      *        Type of adjustment to make to a fleet's instance count (see
-     *        <a>FleetCapacity</a>):
+     *        <a>FleetCapacity</a>):</p>
      *        <ul>
      *        <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
      *        adjustment value from the current instance count. Positive values
@@ -280,7 +280,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        current instance count by the scaling adjustment, read as a
      *        percentage. Positive values scale up while negative values scale
      *        down; for example, a value of "-10" scales the fleet down by 10%.</li>
-     *        </ul>
      * @see ScalingAdjustmentType
      */
 
@@ -292,6 +291,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
+     * </p>
      * <ul>
      * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
      * value from the current instance count. Positive values scale up while
@@ -303,10 +303,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * values scale up while negative values scale down; for example, a value of
      * "-10" scales the fleet down by 10%.</li>
      * </ul>
-     * </p>
      * 
      * @return Type of adjustment to make to a fleet's instance count (see
-     *         <a>FleetCapacity</a>):
+     *         <a>FleetCapacity</a>):</p>
      *         <ul>
      *         <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
      *         adjustment value from the current instance count. Positive values
@@ -318,7 +317,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *         percentage. Positive values scale up while negative values scale
      *         down; for example, a value of "-10" scales the fleet down by 10%.
      *         </li>
-     *         </ul>
      * @see ScalingAdjustmentType
      */
 
@@ -330,6 +328,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
+     * </p>
      * <ul>
      * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
      * value from the current instance count. Positive values scale up while
@@ -341,11 +340,10 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * values scale up while negative values scale down; for example, a value of
      * "-10" scales the fleet down by 10%.</li>
      * </ul>
-     * </p>
      * 
      * @param scalingAdjustmentType
      *        Type of adjustment to make to a fleet's instance count (see
-     *        <a>FleetCapacity</a>):
+     *        <a>FleetCapacity</a>):</p>
      *        <ul>
      *        <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
      *        adjustment value from the current instance count. Positive values
@@ -356,7 +354,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        current instance count by the scaling adjustment, read as a
      *        percentage. Positive values scale up while negative values scale
      *        down; for example, a value of "-10" scales the fleet down by 10%.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ScalingAdjustmentType
@@ -372,6 +369,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
+     * </p>
      * <ul>
      * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
      * value from the current instance count. Positive values scale up while
@@ -383,11 +381,10 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * values scale up while negative values scale down; for example, a value of
      * "-10" scales the fleet down by 10%.</li>
      * </ul>
-     * </p>
      * 
      * @param scalingAdjustmentType
      *        Type of adjustment to make to a fleet's instance count (see
-     *        <a>FleetCapacity</a>):
+     *        <a>FleetCapacity</a>):</p>
      *        <ul>
      *        <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
      *        adjustment value from the current instance count. Positive values
@@ -398,7 +395,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        current instance count by the scaling adjustment, read as a
      *        percentage. Positive values scale up while negative values scale
      *        down; for example, a value of "-10" scales the fleet down by 10%.</li>
-     *        </ul>
      * @see ScalingAdjustmentType
      */
 
@@ -411,6 +407,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
+     * </p>
      * <ul>
      * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
      * value from the current instance count. Positive values scale up while
@@ -422,11 +419,10 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * values scale up while negative values scale down; for example, a value of
      * "-10" scales the fleet down by 10%.</li>
      * </ul>
-     * </p>
      * 
      * @param scalingAdjustmentType
      *        Type of adjustment to make to a fleet's instance count (see
-     *        <a>FleetCapacity</a>):
+     *        <a>FleetCapacity</a>):</p>
      *        <ul>
      *        <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
      *        adjustment value from the current instance count. Positive values
@@ -437,7 +433,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        current instance count by the scaling adjustment, read as a
      *        percentage. Positive values scale up while negative values scale
      *        down; for example, a value of "-10" scales the fleet down by 10%.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ScalingAdjustmentType
@@ -629,6 +624,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * Name of the Amazon GameLift-defined metric that is used to trigger an
      * adjustment.
+     * </p>
      * <ul>
      * <li><b>ActivatingGameSessions</b> – number of game sessions in the
      * process of being created (game session status = <code>ACTIVATING</code>).
@@ -649,11 +645,10 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <li><b>IdleInstances</b> – number of instances not currently running a
      * game session.</li>
      * </ul>
-     * </p>
      * 
      * @param metricName
      *        Name of the Amazon GameLift-defined metric that is used to trigger
-     *        an adjustment.
+     *        an adjustment.</p>
      *        <ul>
      *        <li><b>ActivatingGameSessions</b> – number of game sessions in the
      *        process of being created (game session status =
@@ -674,7 +669,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        a game session.</li>
      *        <li><b>IdleInstances</b> – number of instances not currently
      *        running a game session.</li>
-     *        </ul>
      * @see MetricName
      */
 
@@ -686,6 +680,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * Name of the Amazon GameLift-defined metric that is used to trigger an
      * adjustment.
+     * </p>
      * <ul>
      * <li><b>ActivatingGameSessions</b> – number of game sessions in the
      * process of being created (game session status = <code>ACTIVATING</code>).
@@ -706,10 +701,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <li><b>IdleInstances</b> – number of instances not currently running a
      * game session.</li>
      * </ul>
-     * </p>
      * 
      * @return Name of the Amazon GameLift-defined metric that is used to
-     *         trigger an adjustment.
+     *         trigger an adjustment.</p>
      *         <ul>
      *         <li><b>ActivatingGameSessions</b> – number of game sessions in
      *         the process of being created (game session status =
@@ -730,7 +724,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *         running a game session.</li>
      *         <li><b>IdleInstances</b> – number of instances not currently
      *         running a game session.</li>
-     *         </ul>
      * @see MetricName
      */
 
@@ -742,6 +735,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * Name of the Amazon GameLift-defined metric that is used to trigger an
      * adjustment.
+     * </p>
      * <ul>
      * <li><b>ActivatingGameSessions</b> – number of game sessions in the
      * process of being created (game session status = <code>ACTIVATING</code>).
@@ -762,11 +756,10 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <li><b>IdleInstances</b> – number of instances not currently running a
      * game session.</li>
      * </ul>
-     * </p>
      * 
      * @param metricName
      *        Name of the Amazon GameLift-defined metric that is used to trigger
-     *        an adjustment.
+     *        an adjustment.</p>
      *        <ul>
      *        <li><b>ActivatingGameSessions</b> – number of game sessions in the
      *        process of being created (game session status =
@@ -787,7 +780,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        a game session.</li>
      *        <li><b>IdleInstances</b> – number of instances not currently
      *        running a game session.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MetricName
@@ -802,6 +794,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * Name of the Amazon GameLift-defined metric that is used to trigger an
      * adjustment.
+     * </p>
      * <ul>
      * <li><b>ActivatingGameSessions</b> – number of game sessions in the
      * process of being created (game session status = <code>ACTIVATING</code>).
@@ -822,11 +815,10 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <li><b>IdleInstances</b> – number of instances not currently running a
      * game session.</li>
      * </ul>
-     * </p>
      * 
      * @param metricName
      *        Name of the Amazon GameLift-defined metric that is used to trigger
-     *        an adjustment.
+     *        an adjustment.</p>
      *        <ul>
      *        <li><b>ActivatingGameSessions</b> – number of game sessions in the
      *        process of being created (game session status =
@@ -847,7 +839,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        a game session.</li>
      *        <li><b>IdleInstances</b> – number of instances not currently
      *        running a game session.</li>
-     *        </ul>
      * @see MetricName
      */
 
@@ -859,6 +850,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * Name of the Amazon GameLift-defined metric that is used to trigger an
      * adjustment.
+     * </p>
      * <ul>
      * <li><b>ActivatingGameSessions</b> – number of game sessions in the
      * process of being created (game session status = <code>ACTIVATING</code>).
@@ -879,11 +871,10 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * <li><b>IdleInstances</b> – number of instances not currently running a
      * game session.</li>
      * </ul>
-     * </p>
      * 
      * @param metricName
      *        Name of the Amazon GameLift-defined metric that is used to trigger
-     *        an adjustment.
+     *        an adjustment.</p>
      *        <ul>
      *        <li><b>ActivatingGameSessions</b> – number of game sessions in the
      *        process of being created (game session status =
@@ -904,7 +895,6 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        a game session.</li>
      *        <li><b>IdleInstances</b> – number of instances not currently
      *        running a game session.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MetricName

@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This response contains the object for the Lambda function location (see
- * <a>API_FunctionCodeLocation</a>.
+ * This response contains the object for the Lambda function location (see .
  * </p>
  */
 public class GetFunctionResult implements Serializable, Cloneable {

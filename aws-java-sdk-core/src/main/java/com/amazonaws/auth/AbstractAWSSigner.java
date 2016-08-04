@@ -22,14 +22,8 @@ import java.io.InputStream;
 import java.net.URI;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.security.NoSuchAlgorithmException;
+import java.util.*;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -52,9 +46,23 @@ import com.amazonaws.util.StringUtils;
  * Not intended to be sub-classed by developers.
  */
 public abstract class AbstractAWSSigner implements Signer {
+
     public static final String EMPTY_STRING_SHA256_HEX;
+    private static final ThreadLocal<MessageDigest> SHA256_MESSAGE_DIGEST;
 
     static {
+        SHA256_MESSAGE_DIGEST = new ThreadLocal<MessageDigest>() {
+            @Override
+            protected MessageDigest initialValue() {
+                try {
+                    return MessageDigest.getInstance("SHA-256");
+                } catch (NoSuchAlgorithmException e) {
+                    throw new AmazonClientException(
+                            "Unable to get SHA256 Function"
+                                    + e.getMessage(), e);
+                }
+            }
+        };
         EMPTY_STRING_SHA256_HEX = BinaryUtils.toHex(doHash(""));
     }
 
@@ -108,7 +116,7 @@ public abstract class AbstractAWSSigner implements Signer {
     protected byte[] sign(byte[] data, byte[] key,
             SigningAlgorithm algorithm) throws AmazonClientException {
         try {
-            Mac mac = Mac.getInstance(algorithm.toString());
+            Mac mac = algorithm.getMac();
             mac.init(new SecretKeySpec(key, algorithm.toString()));
             return mac.doFinal(data);
         } catch (Exception e) {
@@ -136,7 +144,7 @@ public abstract class AbstractAWSSigner implements Signer {
 
     private static byte[] doHash(String text) throws AmazonClientException {
         try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            MessageDigest md = getMessageDigestInstance();
             md.update(text.getBytes(UTF8));
             return md.digest();
         } catch (Exception e) {
@@ -148,7 +156,7 @@ public abstract class AbstractAWSSigner implements Signer {
 
     protected byte[] hash(InputStream input) throws AmazonClientException {
         try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            MessageDigest md = getMessageDigestInstance();
             @SuppressWarnings("resource")
             DigestInputStream digestInputStream = new SdkDigestInputStream(
                     input, md);
@@ -176,7 +184,7 @@ public abstract class AbstractAWSSigner implements Signer {
      */
     public byte[] hash(byte[] data) throws AmazonClientException {
         try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            MessageDigest md =  getMessageDigestInstance();
             md.update(data);
             return md.digest();
         } catch (Exception e) {
@@ -459,4 +467,16 @@ public abstract class AbstractAWSSigner implements Signer {
      */
     protected abstract void addSessionCredentials(SignableRequest<?> request,
             AWSSessionCredentials credentials);
+
+
+    /**
+     * Returns the re-usable thread local version of MessageDigest.
+     * @return
+     */
+    private static MessageDigest getMessageDigestInstance() {
+        MessageDigest messageDigest = SHA256_MESSAGE_DIGEST.get();
+        messageDigest.reset();
+        return messageDigest;
+    }
+
 }

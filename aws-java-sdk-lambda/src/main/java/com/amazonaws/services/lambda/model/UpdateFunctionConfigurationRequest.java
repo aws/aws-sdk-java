@@ -18,7 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -82,7 +82,15 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest
     private Integer memorySize;
 
     private VpcConfig vpcConfig;
-
+    /**
+     * <p>
+     * The runtime environment for the Lambda function.
+     * </p>
+     * <p>
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
+     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * </p>
+     */
     private String runtime;
 
     /**
@@ -486,7 +494,19 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The runtime environment for the Lambda function.
+     * </p>
+     * <p>
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
+     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * </p>
+     * 
      * @param runtime
+     *        The runtime environment for the Lambda function.</p>
+     *        <p>
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
+     *        use earlier runtime (v0.10.42), set the value to "nodejs".
      * @see Runtime
      */
 
@@ -495,7 +515,18 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The runtime environment for the Lambda function.
+     * </p>
+     * <p>
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
+     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * </p>
+     * 
+     * @return The runtime environment for the Lambda function.</p>
+     *         <p>
+     *         To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
+     *         use earlier runtime (v0.10.42), set the value to "nodejs".
      * @see Runtime
      */
 
@@ -504,7 +535,19 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The runtime environment for the Lambda function.
+     * </p>
+     * <p>
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
+     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * </p>
+     * 
      * @param runtime
+     *        The runtime environment for the Lambda function.</p>
+     *        <p>
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
+     *        use earlier runtime (v0.10.42), set the value to "nodejs".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Runtime
@@ -516,7 +559,19 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The runtime environment for the Lambda function.
+     * </p>
+     * <p>
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
+     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * </p>
+     * 
      * @param runtime
+     *        The runtime environment for the Lambda function.</p>
+     *        <p>
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
+     *        use earlier runtime (v0.10.42), set the value to "nodejs".
      * @see Runtime
      */
 
@@ -525,7 +580,19 @@ public class UpdateFunctionConfigurationRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The runtime environment for the Lambda function.
+     * </p>
+     * <p>
+     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use
+     * earlier runtime (v0.10.42), set the value to "nodejs".
+     * </p>
+     * 
      * @param runtime
+     *        The runtime environment for the Lambda function.</p>
+     *        <p>
+     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
+     *        use earlier runtime (v0.10.42), set the value to "nodejs".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Runtime

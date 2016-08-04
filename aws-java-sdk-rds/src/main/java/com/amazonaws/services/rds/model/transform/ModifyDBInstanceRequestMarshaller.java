@@ -64,6 +64,11 @@ public class ModifyDBInstanceRequestMarshaller implements
                     .fromString(modifyDBInstanceRequest.getDBInstanceClass()));
         }
 
+        if (modifyDBInstanceRequest.getDBSubnetGroupName() != null) {
+            request.addParameter("DBSubnetGroupName", StringUtils
+                    .fromString(modifyDBInstanceRequest.getDBSubnetGroupName()));
+        }
+
         com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest
                 .getDBSecurityGroups();
         if (!dBSecurityGroupsList.isEmpty()

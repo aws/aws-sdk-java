@@ -50,8 +50,8 @@ public class Event implements Serializable, Cloneable {
     private String message;
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this event occurred. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      */
     private java.util.Date eventTime;
@@ -256,14 +256,13 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this event occurred. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param eventTime
-     *        Time stamp indicating when this event occurred. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this event occurred. Format is a number
+     *        expressed in Unix time as milliseconds (ex: "1469498468.057".
      */
 
     public void setEventTime(java.util.Date eventTime) {
@@ -272,13 +271,13 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this event occurred. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
-     * @return Time stamp indicating when this event occurred. Format is an
-     *         integer representing the number of seconds since the Unix epoch
-     *         (Unix time).
+     * @return Time stamp indicating when this event occurred. Format is a
+     *         number expressed in Unix time as milliseconds (ex:
+     *         "1469498468.057".
      */
 
     public java.util.Date getEventTime() {
@@ -287,14 +286,13 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this event occurred. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param eventTime
-     *        Time stamp indicating when this event occurred. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this event occurred. Format is a number
+     *        expressed in Unix time as milliseconds (ex: "1469498468.057".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

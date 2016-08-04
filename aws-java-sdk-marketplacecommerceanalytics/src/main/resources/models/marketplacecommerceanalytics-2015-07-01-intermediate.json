@@ -54,12 +54,12 @@
         "documentation" : "This exception is thrown when an internal service error occurs."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GenerateDataSetResult",
       "asyncReturnType" : "GenerateDataSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GenerateDataSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GenerateDataSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GenerateDataSetRequest, GenerateDataSetResult>",
-      "authenticated" : true,
       "methodName" : "generateDataSet"
     }
   },

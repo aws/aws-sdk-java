@@ -25,7 +25,7 @@ import java.io.Serializable;
  * processes to match the latest version.
  * </p>
  * <p>
- * The key purpose of a a runtime configuration with multiple server process
+ * The key purpose of a runtime configuration with multiple server process
  * configurations is to be able to run more than one kind of game server in a
  * single fleet. You can include configurations for more than one server
  * executable in order to run two or more different programs to run on the same

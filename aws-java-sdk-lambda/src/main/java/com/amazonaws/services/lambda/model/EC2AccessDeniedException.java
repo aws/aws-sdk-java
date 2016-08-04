@@ -15,7 +15,7 @@
 package com.amazonaws.services.lambda.model;
 
 /**
- * 
+ * <p/>
  */
 public class EC2AccessDeniedException extends
         com.amazonaws.services.lambda.model.AWSLambdaException {

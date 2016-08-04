@@ -20,7 +20,6 @@
     "endpointPrefix" : "datapipeline",
     "signingName" : "datapipeline",
     "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "DataPipelineClientBuilder",
     "asyncClientBuilderClassName" : "DataPipelineAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "DataPipelineModuleInjector",
@@ -29,7 +28,8 @@
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "jsonProtocol" : true
   },
   "operations" : {
     "ActivatePipeline" : {
@@ -63,13 +63,13 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "activatePipeline",
       "syncReturnType" : "ActivatePipelineResult",
       "asyncReturnType" : "ActivatePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<ActivatePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ActivatePipelineResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ActivatePipelineRequest, ActivatePipelineResult>",
-      "authenticated" : true,
-      "methodName" : "activatePipeline"
+      "authenticated" : true
     },
     "AddTags" : {
       "documentation" : "<p>Adds or modifies tags for the specified pipeline.</p>",
@@ -102,13 +102,13 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "addTags",
       "syncReturnType" : "AddTagsResult",
       "asyncReturnType" : "AddTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>",
-      "authenticated" : true,
-      "methodName" : "addTags"
+      "authenticated" : true
     },
     "CreatePipeline" : {
       "documentation" : "<p>Creates a new, empty pipeline. Use <a>PutPipelineDefinition</a> to populate the pipeline.</p>",
@@ -135,13 +135,13 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createPipeline",
       "syncReturnType" : "CreatePipelineResult",
       "asyncReturnType" : "CreatePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePipelineResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult>",
-      "authenticated" : true,
-      "methodName" : "createPipeline"
+      "authenticated" : true
     },
     "DeactivatePipeline" : {
       "documentation" : "<p>Deactivates the specified running pipeline. The pipeline is set to the <code>DEACTIVATING</code> state until the deactivation process completes.</p> <p>To resume a deactivated pipeline, use <a>ActivatePipeline</a>. By default, the pipeline resumes from the last completed execution. Optionally, you can specify the date and time to resume the pipeline.</p>",
@@ -174,13 +174,13 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deactivatePipeline",
       "syncReturnType" : "DeactivatePipelineResult",
       "asyncReturnType" : "DeactivatePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeactivatePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeactivatePipelineResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeactivatePipelineRequest, DeactivatePipelineResult>",
-      "authenticated" : true,
-      "methodName" : "deactivatePipeline"
+      "authenticated" : true
     },
     "DeletePipeline" : {
       "documentation" : "<p>Deletes a pipeline, its pipeline definition, and its run history. AWS Data Pipeline attempts to cancel instances associated with the pipeline that are currently being processed by task runners.</p> <p>Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline. To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with the status set to <code>PAUSE</code> on individual components. Components that are paused by <a>SetStatus</a> can be resumed.</p>",
@@ -210,13 +210,13 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deletePipeline",
       "syncReturnType" : "DeletePipelineResult",
       "asyncReturnType" : "DeletePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeletePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeletePipelineResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult>",
-      "authenticated" : true,
-      "methodName" : "deletePipeline"
+      "authenticated" : true
     },
     "DescribeObjects" : {
       "documentation" : "<p>Gets the object definitions for a set of objects associated with the pipeline. Object definitions are composed of a set of fields that define the properties of the object.</p>",
@@ -249,13 +249,13 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeObjects",
       "syncReturnType" : "DescribeObjectsResult",
       "asyncReturnType" : "DescribeObjectsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeObjectsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeObjectsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeObjectsRequest, DescribeObjectsResult>",
-      "authenticated" : true,
-      "methodName" : "describeObjects"
+      "authenticated" : true
     },
     "DescribePipelines" : {
       "documentation" : "<p>Retrieves metadata about one or more pipelines. The information retrieved includes the name of the pipeline, the pipeline identifier, its current state, and the user account that owns the pipeline. Using account credentials, you can retrieve metadata about pipelines that you or your IAM users have created. If you are using an IAM user account, you can retrieve metadata about only those pipelines for which you have read permissions.</p> <p>To retrieve the full pipeline definition instead of metadata about the pipeline, call <a>GetPipelineDefinition</a>.</p>",
@@ -288,13 +288,13 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describePipelines",
       "syncReturnType" : "DescribePipelinesResult",
       "asyncReturnType" : "DescribePipelinesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribePipelinesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribePipelinesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribePipelinesRequest, DescribePipelinesResult>",
-      "authenticated" : true,
-      "methodName" : "describePipelines"
+      "authenticated" : true
     },
     "EvaluateExpression" : {
       "documentation" : "<p>Task runners call <code>EvaluateExpression</code> to evaluate a string in the context of the specified object. For example, a task runner can evaluate SQL queries stored in Amazon S3.</p>",
@@ -330,13 +330,13 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "evaluateExpression",
       "syncReturnType" : "EvaluateExpressionResult",
       "asyncReturnType" : "EvaluateExpressionResult",
       "asyncFutureType" : "java.util.concurrent.Future<EvaluateExpressionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EvaluateExpressionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EvaluateExpressionRequest, EvaluateExpressionResult>",
-      "authenticated" : true,
-      "methodName" : "evaluateExpression"
+      "authenticated" : true
     },
     "GetPipelineDefinition" : {
       "documentation" : "<p>Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code> to retrieve the pipeline definition that you provided using <a>PutPipelineDefinition</a>.</p>",
@@ -369,13 +369,13 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getPipelineDefinition",
       "syncReturnType" : "GetPipelineDefinitionResult",
       "asyncReturnType" : "GetPipelineDefinitionResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetPipelineDefinitionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetPipelineDefinitionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetPipelineDefinitionRequest, GetPipelineDefinitionResult>",
-      "authenticated" : true,
-      "methodName" : "getPipelineDefinition"
+      "authenticated" : true
     },
     "ListPipelines" : {
       "documentation" : "<p>Lists the pipeline identifiers for all active pipelines that you have permission to access.</p>",
@@ -402,13 +402,13 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listPipelines",
       "syncReturnType" : "ListPipelinesResult",
       "asyncReturnType" : "ListPipelinesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPipelinesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPipelinesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult>",
-      "authenticated" : true,
-      "methodName" : "listPipelines"
+      "authenticated" : true
     },
     "PollForTask" : {
       "documentation" : "<p>Task runners call <code>PollForTask</code> to receive a task to perform from AWS Data Pipeline. The task runner specifies which tasks it can perform by setting a value for the <code>workerGroup</code> parameter. The task returned can come from any of the pipelines that match the <code>workerGroup</code> value passed in by the task runner and that was launched using the IAM user credentials specified by the task runner.</p> <p>If tasks are ready in the work queue, <code>PollForTask</code> returns a response immediately. If no tasks are available in the queue, <code>PollForTask</code> uses long-polling and holds on to a poll connection for up to a 90 seconds, during which time the first newly scheduled task is handed to the task runner. To accomodate this, set the socket timeout in your task runner to 90 seconds. The task runner should not call <code>PollForTask</code> again on the same <code>workerGroup</code> until it receives a response, and this can take up to 90 seconds. </p>",
@@ -438,13 +438,13 @@
         "documentation" : "<p>The specified task was not found. </p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "pollForTask",
       "syncReturnType" : "PollForTaskResult",
       "asyncReturnType" : "PollForTaskResult",
       "asyncFutureType" : "java.util.concurrent.Future<PollForTaskResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PollForTaskResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PollForTaskRequest, PollForTaskResult>",
-      "authenticated" : true,
-      "methodName" : "pollForTask"
+      "authenticated" : true
     },
     "PutPipelineDefinition" : {
       "documentation" : "<p>Adds tasks, schedules, and preconditions to the specified pipeline. You can use <code>PutPipelineDefinition</code> to populate a new pipeline.</p> <p> <code>PutPipelineDefinition</code> also validates the configuration as it adds it to the pipeline. Changes to the pipeline are saved unless one of the following three validation errors exists in the pipeline. </p> <ol> <li>An object is missing a name or identifier field.</li> <li>A string or reference field is empty.</li> <li>The number of objects in the pipeline exceeds the maximum allowed objects.</li> <li>The pipeline is in a FINISHED state.</li> </ol> <p> Pipeline object definitions are passed to the <code>PutPipelineDefinition</code> action and returned by the <a>GetPipelineDefinition</a> action. </p>",
@@ -477,13 +477,13 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "putPipelineDefinition",
       "syncReturnType" : "PutPipelineDefinitionResult",
       "asyncReturnType" : "PutPipelineDefinitionResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutPipelineDefinitionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutPipelineDefinitionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutPipelineDefinitionRequest, PutPipelineDefinitionResult>",
-      "authenticated" : true,
-      "methodName" : "putPipelineDefinition"
+      "authenticated" : true
     },
     "QueryObjects" : {
       "documentation" : "<p>Queries the specified pipeline for the names of objects that match the specified set of conditions.</p>",
@@ -516,13 +516,13 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "queryObjects",
       "syncReturnType" : "QueryObjectsResult",
       "asyncReturnType" : "QueryObjectsResult",
       "asyncFutureType" : "java.util.concurrent.Future<QueryObjectsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<QueryObjectsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<QueryObjectsRequest, QueryObjectsResult>",
-      "authenticated" : true,
-      "methodName" : "queryObjects"
+      "authenticated" : true
     },
     "RemoveTags" : {
       "documentation" : "<p>Removes existing tags from the specified pipeline.</p>",
@@ -555,13 +555,13 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "removeTags",
       "syncReturnType" : "RemoveTagsResult",
       "asyncReturnType" : "RemoveTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>",
-      "authenticated" : true,
-      "methodName" : "removeTags"
+      "authenticated" : true
     },
     "ReportTaskProgress" : {
       "documentation" : "<p>Task runners call <code>ReportTaskProgress</code> when assigned a task to acknowledge that it has the task. If the web service does not receive this acknowledgement within 2 minutes, it assigns the task in a subsequent <a>PollForTask</a> call. After this initial acknowledgement, the task runner only needs to report progress every 15 minutes to maintain its ownership of the task. You can change this reporting time from 15 minutes by specifying a <code>reportProgressTimeout</code> field in your pipeline.</p> <p>If a task runner does not report its status after 5 minutes, AWS Data Pipeline assumes that the task runner is unable to process the task and reassigns the task in a subsequent response to <a>PollForTask</a>. Task runners should call <code>ReportTaskProgress</code> every 60 seconds.</p>",
@@ -597,13 +597,13 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "reportTaskProgress",
       "syncReturnType" : "ReportTaskProgressResult",
       "asyncReturnType" : "ReportTaskProgressResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReportTaskProgressResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReportTaskProgressResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReportTaskProgressRequest, ReportTaskProgressResult>",
-      "authenticated" : true,
-      "methodName" : "reportTaskProgress"
+      "authenticated" : true
     },
     "ReportTaskRunnerHeartbeat" : {
       "documentation" : "<p>Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed and restart a new instance.</p>",
@@ -630,13 +630,13 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "reportTaskRunnerHeartbeat",
       "syncReturnType" : "ReportTaskRunnerHeartbeatResult",
       "asyncReturnType" : "ReportTaskRunnerHeartbeatResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReportTaskRunnerHeartbeatResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReportTaskRunnerHeartbeatResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReportTaskRunnerHeartbeatRequest, ReportTaskRunnerHeartbeatResult>",
-      "authenticated" : true,
-      "methodName" : "reportTaskRunnerHeartbeat"
+      "authenticated" : true
     },
     "SetStatus" : {
       "documentation" : "<p>Requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline. This update might not occur immediately, but is eventually consistent. The status that can be set depends on the type of object (for example, DataNode or Activity). You cannot perform this operation on <code>FINISHED</code> pipelines and attempting to do so returns <code>InvalidRequestException</code>.</p>",
@@ -669,13 +669,13 @@
         "documentation" : "<p>The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "setStatus",
       "syncReturnType" : "SetStatusResult",
       "asyncReturnType" : "SetStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetStatusRequest, SetStatusResult>",
-      "authenticated" : true,
-      "methodName" : "setStatus"
+      "authenticated" : true
     },
     "SetTaskStatus" : {
       "documentation" : "<p>Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task is completed and provide information about the final status. A task runner makes this call regardless of whether the task was sucessful. A task runner does not need to call <code>SetTaskStatus</code> for tasks that are canceled by the web service during a call to <a>ReportTaskProgress</a>.</p>",
@@ -711,13 +711,13 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "setTaskStatus",
       "syncReturnType" : "SetTaskStatusResult",
       "asyncReturnType" : "SetTaskStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<SetTaskStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SetTaskStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SetTaskStatusRequest, SetTaskStatusResult>",
-      "authenticated" : true,
-      "methodName" : "setTaskStatus"
+      "authenticated" : true
     },
     "ValidatePipelineDefinition" : {
       "documentation" : "<p>Validates the specified pipeline definition to ensure that it is well formed and can be run without error.</p>",
@@ -750,13 +750,13 @@
         "documentation" : "<p>The specified pipeline has been deleted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "validatePipelineDefinition",
       "syncReturnType" : "ValidatePipelineDefinitionResult",
       "asyncReturnType" : "ValidatePipelineDefinitionResult",
       "asyncFutureType" : "java.util.concurrent.Future<ValidatePipelineDefinitionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ValidatePipelineDefinitionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ValidatePipelineDefinitionRequest, ValidatePipelineDefinitionResult>",
-      "authenticated" : true,
-      "methodName" : "validatePipelineDefinition"
+      "authenticated" : true
     }
   },
   "shapes" : {
@@ -2207,10 +2207,10 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "keySimple" : true,
-          "valueSimple" : false,
           "valueList" : false,
           "entryType" : "Map.Entry<String, PipelineObject>",
+          "keySimple" : true,
+          "valueSimple" : false,
           "templateType" : "java.util.Map<String,PipelineObject>",
           "templateImplType" : "java.util.HashMap<String,PipelineObject>"
         },
@@ -2455,10 +2455,10 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "keySimple" : true,
-            "valueSimple" : false,
             "valueList" : false,
             "entryType" : "Map.Entry<String, PipelineObject>",
+            "keySimple" : true,
+            "valueSimple" : false,
             "templateType" : "java.util.Map<String,PipelineObject>",
             "templateImplType" : "java.util.HashMap<String,PipelineObject>"
           },
@@ -19494,10 +19494,10 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
+  "sdkModeledExceptionBaseClassName" : "DataPipelineException",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.datapipeline.model.DataPipelineException",
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
-  "sdkModeledExceptionBaseClassName" : "DataPipelineException"
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
 }

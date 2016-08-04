@@ -1694,6 +1694,21 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements
     }
 
     @Override
+    public java.util.concurrent.Future<DBCluster> restoreDBClusterFromS3Async(
+            RestoreDBClusterFromS3Request request) {
+
+        return restoreDBClusterFromS3Async(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBCluster> restoreDBClusterFromS3Async(
+            RestoreDBClusterFromS3Request request,
+            com.amazonaws.handlers.AsyncHandler<RestoreDBClusterFromS3Request, DBCluster> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DBCluster> restoreDBClusterFromSnapshotAsync(
             RestoreDBClusterFromSnapshotRequest request) {
 

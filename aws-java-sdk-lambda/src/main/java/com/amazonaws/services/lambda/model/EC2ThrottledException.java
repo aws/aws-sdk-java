@@ -16,7 +16,7 @@ package com.amazonaws.services.lambda.model;
 
 /**
  * <p>
- * AWS Lambda was throttled by Amazon EC2 during Lambda function initiatization
+ * AWS Lambda was throttled by Amazon EC2 during Lambda function initialization
  * using the execution role provided for the Lambda function.
  * </p>
  */

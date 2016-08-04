@@ -19,6 +19,9 @@
     "jsonVersion" : null,
     "endpointPrefix" : "importexport",
     "signingName" : "importexport",
+    "xmlProtocol" : true,
+    "unmarshallerContextClassName" : "StaxUnmarshallerContext",
+    "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "jsonProtocol" : false,
     "syncClientBuilderClassName" : "AmazonImportExportClientBuilder",
     "asyncClientBuilderClassName" : "AmazonImportExportAsyncClientBuilder",
@@ -26,9 +29,6 @@
     "smokeTestsPackageName" : "com.amazonaws.services.importexport.smoketests",
     "serviceName" : "AWS Import/Export",
     "cborProtocol" : false,
-    "xmlProtocol" : true,
-    "unmarshallerContextClassName" : "StaxUnmarshallerContext",
-    "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller"
   },
   "operations" : {

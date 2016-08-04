@@ -14,9 +14,38 @@
  */
 package com.amazonaws.auth;
 
+import com.amazonaws.AmazonClientException;
+
+import javax.crypto.Mac;
+import java.security.NoSuchAlgorithmException;
+
 public enum SigningAlgorithm {
-    
+
     HmacSHA1,
     HmacSHA256;
 
+    private final ThreadLocal<Mac> macReference;
+
+    private SigningAlgorithm() {
+        final String algorithmName = this.toString();
+        macReference = new ThreadLocal<Mac>() {
+            @Override
+            protected Mac initialValue() {
+                try {
+                    return Mac.getInstance(algorithmName);
+                } catch (NoSuchAlgorithmException e) {
+                    throw new AmazonClientException("Unable to fetch Mac instance for Algorithm "
+                            + algorithmName + e.getMessage(),e);
+
+                }
+            }
+        };
+    }
+
+    /**
+     * Returns the thread local reference for the crypto algorithm
+     */
+    public Mac getMac() {
+        return macReference.get();
+    }
 }

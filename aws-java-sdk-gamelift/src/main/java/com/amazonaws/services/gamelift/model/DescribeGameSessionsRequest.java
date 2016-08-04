@@ -48,7 +48,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
     private String aliasId;
     /**
      * <p>
-     * Game session status to filter results on. Possible game session states
+     * Game session status to filter results on. Possible game session statuses
      * include <code>ACTIVE</code>, <code>TERMINATED</code>,
      * <code>ACTIVATING</code>, and <code>TERMINATING</code> (the last two are
      * transitory).
@@ -214,7 +214,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Game session status to filter results on. Possible game session states
+     * Game session status to filter results on. Possible game session statuses
      * include <code>ACTIVE</code>, <code>TERMINATED</code>,
      * <code>ACTIVATING</code>, and <code>TERMINATING</code> (the last two are
      * transitory).
@@ -222,7 +222,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      * 
      * @param statusFilter
      *        Game session status to filter results on. Possible game session
-     *        states include <code>ACTIVE</code>, <code>TERMINATED</code>,
+     *        statuses include <code>ACTIVE</code>, <code>TERMINATED</code>,
      *        <code>ACTIVATING</code>, and <code>TERMINATING</code> (the last
      *        two are transitory).
      */
@@ -233,14 +233,14 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Game session status to filter results on. Possible game session states
+     * Game session status to filter results on. Possible game session statuses
      * include <code>ACTIVE</code>, <code>TERMINATED</code>,
      * <code>ACTIVATING</code>, and <code>TERMINATING</code> (the last two are
      * transitory).
      * </p>
      * 
      * @return Game session status to filter results on. Possible game session
-     *         states include <code>ACTIVE</code>, <code>TERMINATED</code>,
+     *         statuses include <code>ACTIVE</code>, <code>TERMINATED</code>,
      *         <code>ACTIVATING</code>, and <code>TERMINATING</code> (the last
      *         two are transitory).
      */
@@ -251,7 +251,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Game session status to filter results on. Possible game session states
+     * Game session status to filter results on. Possible game session statuses
      * include <code>ACTIVE</code>, <code>TERMINATED</code>,
      * <code>ACTIVATING</code>, and <code>TERMINATING</code> (the last two are
      * transitory).
@@ -259,7 +259,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      * 
      * @param statusFilter
      *        Game session status to filter results on. Possible game session
-     *        states include <code>ACTIVE</code>, <code>TERMINATED</code>,
+     *        statuses include <code>ACTIVE</code>, <code>TERMINATED</code>,
      *        <code>ACTIVATING</code>, and <code>TERMINATING</code> (the last
      *        two are transitory).
      * @return Returns a reference to this object so that method calls can be

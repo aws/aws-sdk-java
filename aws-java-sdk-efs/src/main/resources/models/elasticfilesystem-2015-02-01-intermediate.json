@@ -19,17 +19,17 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "elasticfilesystem",
     "signingName" : "elasticfilesystem",
-    "serviceName" : "EFS",
+    "asyncClientBuilderClassName" : "AmazonElasticFileSystemAsyncClientBuilder",
     "protocolDefaultExceptionUmarshallerImpl" : null,
     "syncClientBuilderClassName" : "AmazonElasticFileSystemClientBuilder",
-    "asyncClientBuilderClassName" : "AmazonElasticFileSystemAsyncClientBuilder",
-    "cucumberModuleInjectorClassName" : "AmazonElasticFileSystemModuleInjector",
-    "smokeTestsPackageName" : "com.amazonaws.services.elasticfilesystem.smoketests",
     "jsonProtocol" : true,
     "xmlProtocol" : false,
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "cucumberModuleInjectorClassName" : "AmazonElasticFileSystemModuleInjector",
+    "smokeTestsPackageName" : "com.amazonaws.services.elasticfilesystem.smoketests",
+    "serviceName" : "EFS"
   },
   "operations" : {
     "CreateFileSystem" : {

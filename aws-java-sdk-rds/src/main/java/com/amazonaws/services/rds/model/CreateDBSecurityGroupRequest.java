@@ -52,11 +52,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      * Must not be "Default"
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Cannot contain spaces
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * Example: <code>mysecuritygroup</code>
@@ -112,11 +107,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      *        Must not be "Default"
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot contain spaces
-     *        </p>
-     *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>mysecuritygroup</code>
@@ -158,11 +148,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      * Must not be "Default"
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Cannot contain spaces
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * Example: <code>mysecuritygroup</code>
@@ -193,11 +178,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        Must not be "Default"
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot contain spaces
      *        </p>
      *        </li>
      *        </ul>
@@ -238,11 +218,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      * Must not be "Default"
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Cannot contain spaces
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * Example: <code>mysecuritygroup</code>
@@ -272,11 +247,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         Must not be "Default"
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot contain spaces
      *         </p>
      *         </li>
      *         </ul>
@@ -317,11 +287,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      * Must not be "Default"
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Cannot contain spaces
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * Example: <code>mysecuritygroup</code>
@@ -352,11 +317,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        Must not be "Default"
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot contain spaces
      *        </p>
      *        </li>
      *        </ul>

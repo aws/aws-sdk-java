@@ -18,7 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class GetFunctionConfigurationRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

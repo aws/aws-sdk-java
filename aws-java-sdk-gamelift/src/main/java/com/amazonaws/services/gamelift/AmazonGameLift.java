@@ -70,6 +70,7 @@ import com.amazonaws.services.gamelift.model.*;
  * <li><a>DescribeGameSessions</a></li>
  * <li><a>DescribeGameSessionDetails</a></li>
  * <li><a>UpdateGameSession</a></li>
+ * <li><a>SearchGameSessions</a></li>
  * </ul>
  * </li>
  * <li><b>Player sessions</b>
@@ -272,7 +273,7 @@ public interface AmazonGameLift {
      * <p>
      * Initializes a new build record and generates information required to
      * upload a game build to Amazon GameLift. Once the build record has been
-     * created and is in an <code>INITIALIZED</code> state, you can upload your
+     * created and its status is <code>INITIALIZED</code>, you can upload your
      * game build.
      * </p>
      * <important>
@@ -325,8 +326,8 @@ public interface AmazonGameLift {
      * create instances with certain hardware specifications (see <a
      * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
      * Types</a> for more information), and deploy a specified game build to
-     * each instance. A newly created fleet passes through several states; once
-     * it reaches the <code>ACTIVE</code> state, it can begin hosting game
+     * each instance. A newly created fleet passes through several statuses;
+     * once it reaches the <code>ACTIVE</code> status, it can begin hosting game
      * sessions.
      * </p>
      * <p>
@@ -343,8 +344,8 @@ public interface AmazonGameLift {
      * performs the following tasks:
      * </p>
      * <ul>
-     * <li>Creates a fleet record and sets the state to <code>NEW</code>
-     * (followed by other states as the fleet is activated).</li>
+     * <li>Creates a fleet record and sets the status to <code>NEW</code>
+     * (followed by other statuses as the fleet is activated).</li>
      * <li>Sets the fleet's capacity to 1 "desired", which causes GameLift to
      * start one new EC2 instance.</li>
      * <li>Starts launching server processes on the instance. If the fleet is
@@ -403,7 +404,7 @@ public interface AmazonGameLift {
      * Creates a multiplayer game session for players. This action creates a
      * game session record and assigns the new session to an instance in the
      * specified fleet, which initializes a new server process to host the game
-     * session. A fleet must be in an <code>ACTIVE</code> state before a game
+     * session. A fleet must be in an <code>ACTIVE</code> status before a game
      * session can be created in it.
      * </p>
      * <p>
@@ -439,9 +440,9 @@ public interface AmazonGameLift {
      *         The service is unable to resolve the routing for a particular
      *         alias because it has a terminal <a>RoutingStrategy</a> associated
      *         with it. The message returned in this exception is the message
-     *         defined in the TerminalRoutingStrategy itself. Such requests
-     *         should only be retried if the routing strategy for the specified
-     *         alias is modified.
+     *         defined in the routing strategy itself. Such requests should only
+     *         be retried if the routing strategy for the specified alias is
+     *         modified.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
      *         invalid. Correct the invalid parameters before retrying.
@@ -460,7 +461,7 @@ public interface AmazonGameLift {
     /**
      * <p>
      * Adds a player to a game session and creates a player session record. A
-     * game session must be in an <code>ACTIVE</code> state, have a creation
+     * game session must be in an <code>ACTIVE</code> status, have a creation
      * policy of <code>ALLOW_ALL</code>, and have an open player slot before
      * players can be added to the session.
      * </p>
@@ -494,9 +495,9 @@ public interface AmazonGameLift {
      *         The service is unable to resolve the routing for a particular
      *         alias because it has a terminal <a>RoutingStrategy</a> associated
      *         with it. The message returned in this exception is the message
-     *         defined in the TerminalRoutingStrategy itself. Such requests
-     *         should only be retried if the routing strategy for the specified
-     *         alias is modified.
+     *         defined in the routing strategy itself. Such requests should only
+     *         be retried if the routing strategy for the specified alias is
+     *         modified.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
      *         invalid. Correct the invalid parameters before retrying.
@@ -514,7 +515,7 @@ public interface AmazonGameLift {
      * <a>CreatePlayerSession</a>, this action allows you to add multiple
      * players in a single call, which is useful for games that provide party
      * and/or matchmaking features. A game session must be in an
-     * <code>ACTIVE</code> state, have a creation policy of
+     * <code>ACTIVE</code> status, have a creation policy of
      * <code>ALLOW_ALL</code>, and have an open player slot before players can
      * be added to the session.
      * </p>
@@ -548,9 +549,9 @@ public interface AmazonGameLift {
      *         The service is unable to resolve the routing for a particular
      *         alias because it has a terminal <a>RoutingStrategy</a> associated
      *         with it. The message returned in this exception is the message
-     *         defined in the TerminalRoutingStrategy itself. Such requests
-     *         should only be retried if the routing strategy for the specified
-     *         alias is modified.
+     *         defined in the routing strategy itself. Such requests should only
+     *         be retried if the routing strategy for the specified alias is
+     *         modified.
      * @throws InvalidRequestException
      *         One or more parameters specified as part of the request are
      *         invalid. Correct the invalid parameters before retrying.
@@ -992,9 +993,9 @@ public interface AmazonGameLift {
      *         The service is unable to resolve the routing for a particular
      *         alias because it has a terminal <a>RoutingStrategy</a> associated
      *         with it. The message returned in this exception is the message
-     *         defined in the TerminalRoutingStrategy itself. Such requests
-     *         should only be retried if the routing strategy for the specified
-     *         alias is modified.
+     *         defined in the routing strategy itself. Such requests should only
+     *         be retried if the routing strategy for the specified alias is
+     *         modified.
      * @sample AmazonGameLift.DescribeGameSessionDetails
      */
     DescribeGameSessionDetailsResult describeGameSessionDetails(
@@ -1037,9 +1038,9 @@ public interface AmazonGameLift {
      *         The service is unable to resolve the routing for a particular
      *         alias because it has a terminal <a>RoutingStrategy</a> associated
      *         with it. The message returned in this exception is the message
-     *         defined in the TerminalRoutingStrategy itself. Such requests
-     *         should only be retried if the routing strategy for the specified
-     *         alias is modified.
+     *         defined in the routing strategy itself. Such requests should only
+     *         be retried if the routing strategy for the specified alias is
+     *         modified.
      * @sample AmazonGameLift.DescribeGameSessions
      */
     DescribeGameSessionsResult describeGameSessions(
@@ -1218,9 +1219,9 @@ public interface AmazonGameLift {
     /**
      * <p>
      * Retrieves build records for all builds associated with the AWS account in
-     * use. You can limit results to builds in a specific state using the
-     * <code>Status</code> parameter. Use the pagination parameters to retrieve
-     * results in a set of sequential pages.
+     * use. You can limit results to builds that are in a specific status by
+     * using the <code>Status</code> parameter. Use the pagination parameters to
+     * retrieve results in a set of sequential pages.
      * </p>
      * <note>
      * <p>
@@ -1349,7 +1350,7 @@ public interface AmazonGameLift {
      * <p>
      * Upload credentials are returned when you create the build, but they have
      * a limited lifespan. You can get fresh credentials and use them to
-     * re-upload game files until the state of that build changes to
+     * re-upload game files until the status of that build changes to
      * <code>READY</code>. Once this happens, you must create a brand new build.
      * </p>
      * 
@@ -1396,9 +1397,9 @@ public interface AmazonGameLift {
      *         The service is unable to resolve the routing for a particular
      *         alias because it has a terminal <a>RoutingStrategy</a> associated
      *         with it. The message returned in this exception is the message
-     *         defined in the TerminalRoutingStrategy itself. Such requests
-     *         should only be retried if the routing strategy for the specified
-     *         alias is modified.
+     *         defined in the routing strategy itself. Such requests should only
+     *         be retried if the routing strategy for the specified alias is
+     *         modified.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while
      *         processing the request. Clients can retry such requests, either
@@ -1406,6 +1407,85 @@ public interface AmazonGameLift {
      * @sample AmazonGameLift.ResolveAlias
      */
     ResolveAliasResult resolveAlias(ResolveAliasRequest resolveAliasRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of game sessions in a fleet that match a set of search
+     * criteria and sorts them in a specified order. Currently game session
+     * searches are limited to a single fleet. Search results include only game
+     * sessions that are in ACTIVE status.
+     * </p>
+     * <p>
+     * You can search or sort by the following game session attributes:
+     * </p>
+     * <ul>
+     * <li><b>gameSessionId</b> -- ID value assigned to a game session. This
+     * unique value is returned in a <a>GameSession</a> object when a new game
+     * session is created.</li>
+     * <li><b>gameSessionName</b> -- Name assigned to a game session. This value
+     * is set when requesting a new game session with <a>CreateGameSession</a>
+     * or updating with <a>UpdateGameSession</a>. Game session names do not need
+     * to be unique to a game session.</li>
+     * <li><b>creationTimeMillis</b> -- Value indicating when a game session was
+     * created. It is expressed in Unix time as milliseconds.</li>
+     * <li><b>playerSessionCount</b> -- Number of players currently connected to
+     * a game session. This value changes rapidly as players join the session or
+     * drop out.</li>
+     * <li><b>maximumSessions</b> -- Maximum number of player sessions allowed
+     * for a game session. This value is set when requesting a new game session
+     * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.</li>
+     * <li><b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether
+     * or not a game session has reached its maximum number of players. When
+     * searching with this attribute, the search value must be <code>true</code>
+     * or <code>false</code>. It is highly recommended that all search requests
+     * include this filter attribute to optimize search performance and return
+     * only sessions that players can join.</li>
+     * </ul>
+     * <p>
+     * To search or sort, specify either a fleet ID or an alias ID, and provide
+     * a search filter expression, a sort expression, or both. Use the
+     * pagination parameters to retrieve results as a set of sequential pages.
+     * If successful, a collection of <a>GameSession</a> objects matching the
+     * request is returned.
+     * </p>
+     * <note>
+     * <p>
+     * Returned values for <code>playerSessionCount</code> and
+     * <code>hasAvailablePlayerSessions</code> change quickly as players join
+     * sessions and others drop out. Results should be considered a snapshot in
+     * time. Be sure to refresh search results often, and handle sessions that
+     * fill up before a player can join.
+     * </p>
+     * </note>
+     * 
+     * @param searchGameSessionsRequest
+     *        Represents the input for a request action.
+     * @return Result of the SearchGameSessions operation returned by the
+     *         service.
+     * @throws InternalServiceException
+     *         The service encountered an unrecoverable internal failure while
+     *         processing the request. Clients can retry such requests, either
+     *         immediately or after a back-off period.
+     * @throws NotFoundException
+     *         A service resource associated with the request could not be
+     *         found. Clients should not retry such requests
+     * @throws InvalidRequestException
+     *         One or more parameters specified as part of the request are
+     *         invalid. Correct the invalid parameters before retrying.
+     * @throws UnauthorizedException
+     *         The client failed authentication. Clients should not retry such
+     *         requests
+     * @throws TerminalRoutingStrategyException
+     *         The service is unable to resolve the routing for a particular
+     *         alias because it has a terminal <a>RoutingStrategy</a> associated
+     *         with it. The message returned in this exception is the message
+     *         defined in the routing strategy itself. Such requests should only
+     *         be retried if the routing strategy for the specified alias is
+     *         modified.
+     * @sample AmazonGameLift.SearchGameSessions
+     */
+    SearchGameSessionsResult searchGameSessions(
+            SearchGameSessionsRequest searchGameSessionsRequest);
 
     /**
      * <p>
@@ -1652,7 +1732,8 @@ public interface AmazonGameLift {
      * Updates the current runtime configuration for the specified fleet, which
      * tells GameLift how to launch server processes on instances in the fleet.
      * You can update a fleet's runtime configuration at any time after the
-     * fleet is created; it does not need to be in an <code>ACTIVE</code> state.
+     * fleet is created; it does not need to be in an <code>ACTIVE</code>
+     * status.
      * </p>
      * <p>
      * To update runtime configuration, specify the fleet ID and provide a

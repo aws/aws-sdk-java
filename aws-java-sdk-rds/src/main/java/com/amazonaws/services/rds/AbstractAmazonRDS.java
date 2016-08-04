@@ -582,6 +582,12 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DBCluster restoreDBClusterFromS3(
+            RestoreDBClusterFromS3Request request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBCluster restoreDBClusterFromSnapshot(
             RestoreDBClusterFromSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();

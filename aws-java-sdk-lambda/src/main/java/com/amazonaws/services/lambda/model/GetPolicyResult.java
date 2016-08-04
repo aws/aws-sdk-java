@@ -17,7 +17,7 @@ package com.amazonaws.services.lambda.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p/>
  */
 public class GetPolicyResult implements Serializable, Cloneable {
 

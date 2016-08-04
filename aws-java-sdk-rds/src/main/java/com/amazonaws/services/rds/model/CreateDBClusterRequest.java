@@ -101,8 +101,8 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> for
-     * the specified engine will be used.
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will
+     * be used.
      * </p>
      * <p>
      * Constraints:
@@ -178,7 +178,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
     private Integer port;
     /**
      * <p>
-     * The name of the master user for the client DB cluster.
+     * The name of the master user for the DB cluster.
      * </p>
      * <p>
      * Constraints:
@@ -846,8 +846,8 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> for
-     * the specified engine will be used.
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will
+     * be used.
      * </p>
      * <p>
      * Constraints:
@@ -873,8 +873,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * @param dBClusterParameterGroupName
      *        The name of the DB cluster parameter group to associate with this
      *        DB cluster. If this argument is omitted,
-     *        <code>default.aurora5.6</code> for the specified engine will be
-     *        used. </p>
+     *        <code>default.aurora5.6</code> will be used. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -904,8 +903,8 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> for
-     * the specified engine will be used.
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will
+     * be used.
      * </p>
      * <p>
      * Constraints:
@@ -930,8 +929,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the DB cluster parameter group to associate with this
      *         DB cluster. If this argument is omitted,
-     *         <code>default.aurora5.6</code> for the specified engine will be
-     *         used. </p>
+     *         <code>default.aurora5.6</code> will be used. </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -960,8 +958,8 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> for
-     * the specified engine will be used.
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will
+     * be used.
      * </p>
      * <p>
      * Constraints:
@@ -987,8 +985,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * @param dBClusterParameterGroupName
      *        The name of the DB cluster parameter group to associate with this
      *        DB cluster. If this argument is omitted,
-     *        <code>default.aurora5.6</code> for the specified engine will be
-     *        used. </p>
+     *        <code>default.aurora5.6</code> will be used. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -1383,7 +1380,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the master user for the client DB cluster.
+     * The name of the master user for the DB cluster.
      * </p>
      * <p>
      * Constraints:
@@ -1407,7 +1404,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * </ul>
      * 
      * @param masterUsername
-     *        The name of the master user for the client DB cluster.</p>
+     *        The name of the master user for the DB cluster.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -1435,7 +1432,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the master user for the client DB cluster.
+     * The name of the master user for the DB cluster.
      * </p>
      * <p>
      * Constraints:
@@ -1458,7 +1455,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * </li>
      * </ul>
      * 
-     * @return The name of the master user for the client DB cluster.</p>
+     * @return The name of the master user for the DB cluster.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -1486,7 +1483,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the master user for the client DB cluster.
+     * The name of the master user for the DB cluster.
      * </p>
      * <p>
      * Constraints:
@@ -1510,7 +1507,7 @@ public class CreateDBClusterRequest extends AmazonWebServiceRequest implements
      * </ul>
      * 
      * @param masterUsername
-     *        The name of the master user for the client DB cluster.</p>
+     *        The name of the master user for the DB cluster.</p>
      *        <p>
      *        Constraints:
      *        </p>

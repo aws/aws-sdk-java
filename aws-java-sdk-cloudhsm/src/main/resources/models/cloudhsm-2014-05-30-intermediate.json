@@ -60,12 +60,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "AddTagsToResourceResult",
-      "asyncReturnType" : "AddTagsToResourceResult",
-      "asyncFutureType" : "java.util.concurrent.Future<AddTagsToResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult>",
       "authenticated" : true,
+      "syncReturnType" : "AddTagsToResourceResult",
+      "asyncReturnType" : "AddTagsToResourceResult",
+      "asyncFutureType" : "java.util.concurrent.Future<AddTagsToResourceResult>",
       "methodName" : "addTagsToResource"
     },
     "CreateHapg" : {
@@ -96,12 +96,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "CreateHapgResult",
-      "asyncReturnType" : "CreateHapgResult",
-      "asyncFutureType" : "java.util.concurrent.Future<CreateHapgResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateHapgResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateHapgRequest, CreateHapgResult>",
       "authenticated" : true,
+      "syncReturnType" : "CreateHapgResult",
+      "asyncReturnType" : "CreateHapgResult",
+      "asyncFutureType" : "java.util.concurrent.Future<CreateHapgResult>",
       "methodName" : "createHapg"
     },
     "CreateHsm" : {
@@ -132,12 +132,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "CreateHsmResult",
-      "asyncReturnType" : "CreateHsmResult",
-      "asyncFutureType" : "java.util.concurrent.Future<CreateHsmResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateHsmResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateHsmRequest, CreateHsmResult>",
       "authenticated" : true,
+      "syncReturnType" : "CreateHsmResult",
+      "asyncReturnType" : "CreateHsmResult",
+      "asyncFutureType" : "java.util.concurrent.Future<CreateHsmResult>",
       "methodName" : "createHsm"
     },
     "CreateLunaClient" : {
@@ -168,12 +168,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "CreateLunaClientResult",
-      "asyncReturnType" : "CreateLunaClientResult",
-      "asyncFutureType" : "java.util.concurrent.Future<CreateLunaClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateLunaClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateLunaClientRequest, CreateLunaClientResult>",
       "authenticated" : true,
+      "syncReturnType" : "CreateLunaClientResult",
+      "asyncReturnType" : "CreateLunaClientResult",
+      "asyncFutureType" : "java.util.concurrent.Future<CreateLunaClientResult>",
       "methodName" : "createLunaClient"
     },
     "DeleteHapg" : {
@@ -204,12 +204,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "DeleteHapgResult",
-      "asyncReturnType" : "DeleteHapgResult",
-      "asyncFutureType" : "java.util.concurrent.Future<DeleteHapgResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteHapgResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteHapgRequest, DeleteHapgResult>",
       "authenticated" : true,
+      "syncReturnType" : "DeleteHapgResult",
+      "asyncReturnType" : "DeleteHapgResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteHapgResult>",
       "methodName" : "deleteHapg"
     },
     "DeleteHsm" : {
@@ -240,12 +240,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "DeleteHsmResult",
-      "asyncReturnType" : "DeleteHsmResult",
-      "asyncFutureType" : "java.util.concurrent.Future<DeleteHsmResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteHsmResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteHsmRequest, DeleteHsmResult>",
       "authenticated" : true,
+      "syncReturnType" : "DeleteHsmResult",
+      "asyncReturnType" : "DeleteHsmResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteHsmResult>",
       "methodName" : "deleteHsm"
     },
     "DeleteLunaClient" : {
@@ -276,12 +276,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "DeleteLunaClientResult",
-      "asyncReturnType" : "DeleteLunaClientResult",
-      "asyncFutureType" : "java.util.concurrent.Future<DeleteLunaClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteLunaClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteLunaClientRequest, DeleteLunaClientResult>",
       "authenticated" : true,
+      "syncReturnType" : "DeleteLunaClientResult",
+      "asyncReturnType" : "DeleteLunaClientResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteLunaClientResult>",
       "methodName" : "deleteLunaClient"
     },
     "DescribeHapg" : {
@@ -312,12 +312,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "DescribeHapgResult",
-      "asyncReturnType" : "DescribeHapgResult",
-      "asyncFutureType" : "java.util.concurrent.Future<DescribeHapgResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeHapgResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeHapgRequest, DescribeHapgResult>",
       "authenticated" : true,
+      "syncReturnType" : "DescribeHapgResult",
+      "asyncReturnType" : "DescribeHapgResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeHapgResult>",
       "methodName" : "describeHapg"
     },
     "DescribeHsm" : {
@@ -348,12 +348,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "DescribeHsmResult",
-      "asyncReturnType" : "DescribeHsmResult",
-      "asyncFutureType" : "java.util.concurrent.Future<DescribeHsmResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeHsmResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeHsmRequest, DescribeHsmResult>",
       "authenticated" : true,
+      "syncReturnType" : "DescribeHsmResult",
+      "asyncReturnType" : "DescribeHsmResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeHsmResult>",
       "methodName" : "describeHsm"
     },
     "DescribeLunaClient" : {
@@ -384,12 +384,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "DescribeLunaClientResult",
-      "asyncReturnType" : "DescribeLunaClientResult",
-      "asyncFutureType" : "java.util.concurrent.Future<DescribeLunaClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeLunaClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeLunaClientRequest, DescribeLunaClientResult>",
       "authenticated" : true,
+      "syncReturnType" : "DescribeLunaClientResult",
+      "asyncReturnType" : "DescribeLunaClientResult",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeLunaClientResult>",
       "methodName" : "describeLunaClient"
     },
     "GetConfig" : {
@@ -420,12 +420,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "GetConfigResult",
-      "asyncReturnType" : "GetConfigResult",
-      "asyncFutureType" : "java.util.concurrent.Future<GetConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetConfigResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetConfigRequest, GetConfigResult>",
       "authenticated" : true,
+      "syncReturnType" : "GetConfigResult",
+      "asyncReturnType" : "GetConfigResult",
+      "asyncFutureType" : "java.util.concurrent.Future<GetConfigResult>",
       "methodName" : "getConfig"
     },
     "ListAvailableZones" : {
@@ -456,12 +456,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "ListAvailableZonesResult",
-      "asyncReturnType" : "ListAvailableZonesResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ListAvailableZonesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListAvailableZonesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListAvailableZonesRequest, ListAvailableZonesResult>",
       "authenticated" : true,
+      "syncReturnType" : "ListAvailableZonesResult",
+      "asyncReturnType" : "ListAvailableZonesResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ListAvailableZonesResult>",
       "methodName" : "listAvailableZones"
     },
     "ListHapgs" : {
@@ -492,12 +492,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "ListHapgsResult",
-      "asyncReturnType" : "ListHapgsResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ListHapgsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListHapgsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListHapgsRequest, ListHapgsResult>",
       "authenticated" : true,
+      "syncReturnType" : "ListHapgsResult",
+      "asyncReturnType" : "ListHapgsResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ListHapgsResult>",
       "methodName" : "listHapgs"
     },
     "ListHsms" : {
@@ -528,12 +528,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "ListHsmsResult",
-      "asyncReturnType" : "ListHsmsResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ListHsmsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListHsmsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListHsmsRequest, ListHsmsResult>",
       "authenticated" : true,
+      "syncReturnType" : "ListHsmsResult",
+      "asyncReturnType" : "ListHsmsResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ListHsmsResult>",
       "methodName" : "listHsms"
     },
     "ListLunaClients" : {
@@ -564,12 +564,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "ListLunaClientsResult",
-      "asyncReturnType" : "ListLunaClientsResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ListLunaClientsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListLunaClientsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListLunaClientsRequest, ListLunaClientsResult>",
       "authenticated" : true,
+      "syncReturnType" : "ListLunaClientsResult",
+      "asyncReturnType" : "ListLunaClientsResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ListLunaClientsResult>",
       "methodName" : "listLunaClients"
     },
     "ListTagsForResource" : {
@@ -600,12 +600,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "ListTagsForResourceResult",
-      "asyncReturnType" : "ListTagsForResourceResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult>",
       "authenticated" : true,
+      "syncReturnType" : "ListTagsForResourceResult",
+      "asyncReturnType" : "ListTagsForResourceResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ListTagsForResourceResult>",
       "methodName" : "listTagsForResource"
     },
     "ModifyHapg" : {
@@ -636,12 +636,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "ModifyHapgResult",
-      "asyncReturnType" : "ModifyHapgResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ModifyHapgResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyHapgResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyHapgRequest, ModifyHapgResult>",
       "authenticated" : true,
+      "syncReturnType" : "ModifyHapgResult",
+      "asyncReturnType" : "ModifyHapgResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ModifyHapgResult>",
       "methodName" : "modifyHapg"
     },
     "ModifyHsm" : {
@@ -672,12 +672,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "ModifyHsmResult",
-      "asyncReturnType" : "ModifyHsmResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ModifyHsmResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyHsmResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyHsmRequest, ModifyHsmResult>",
       "authenticated" : true,
+      "syncReturnType" : "ModifyHsmResult",
+      "asyncReturnType" : "ModifyHsmResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ModifyHsmResult>",
       "methodName" : "modifyHsm"
     },
     "ModifyLunaClient" : {
@@ -702,12 +702,12 @@
         "documentation" : "<p>Indicates that an exception occurred in the AWS CloudHSM service.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "ModifyLunaClientResult",
-      "asyncReturnType" : "ModifyLunaClientResult",
-      "asyncFutureType" : "java.util.concurrent.Future<ModifyLunaClientResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ModifyLunaClientResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyLunaClientRequest, ModifyLunaClientResult>",
       "authenticated" : true,
+      "syncReturnType" : "ModifyLunaClientResult",
+      "asyncReturnType" : "ModifyLunaClientResult",
+      "asyncFutureType" : "java.util.concurrent.Future<ModifyLunaClientResult>",
       "methodName" : "modifyLunaClient"
     },
     "RemoveTagsFromResource" : {
@@ -738,12 +738,12 @@
         "documentation" : "<p>Indicates that one or more of the request parameters are not valid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "RemoveTagsFromResourceResult",
-      "asyncReturnType" : "RemoveTagsFromResourceResult",
-      "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromResourceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromResourceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult>",
       "authenticated" : true,
+      "syncReturnType" : "RemoveTagsFromResourceResult",
+      "asyncReturnType" : "RemoveTagsFromResourceResult",
+      "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromResourceResult>",
       "methodName" : "removeTagsFromResource"
     }
   },

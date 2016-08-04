@@ -479,6 +479,21 @@ public class AbstractAmazonGameLiftAsync extends AbstractAmazonGameLift
     }
 
     @Override
+    public java.util.concurrent.Future<SearchGameSessionsResult> searchGameSessionsAsync(
+            SearchGameSessionsRequest request) {
+
+        return searchGameSessionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchGameSessionsResult> searchGameSessionsAsync(
+            SearchGameSessionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<SearchGameSessionsRequest, SearchGameSessionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAliasResult> updateAliasAsync(
             UpdateAliasRequest request) {
 

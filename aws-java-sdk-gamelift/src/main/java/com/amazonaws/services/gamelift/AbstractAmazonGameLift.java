@@ -206,6 +206,12 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public SearchGameSessionsResult searchGameSessions(
+            SearchGameSessionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateAliasResult updateAlias(UpdateAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

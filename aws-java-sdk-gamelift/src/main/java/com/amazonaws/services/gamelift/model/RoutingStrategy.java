@@ -25,7 +25,11 @@ public class RoutingStrategy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of routing strategy. Possible routing types include the following:
+     * Type of routing strategy.
+     * </p>
+     * <p>
+     * Possible routing types include the following:
+     * </p>
      * <ul>
      * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
      * type when routing to active fleets.</li>
@@ -34,7 +38,6 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
-     * </p>
      */
     private String type;
     /**
@@ -52,7 +55,11 @@ public class RoutingStrategy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of routing strategy. Possible routing types include the following:
+     * Type of routing strategy.
+     * </p>
+     * <p>
+     * Possible routing types include the following:
+     * </p>
      * <ul>
      * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
      * type when routing to active fleets.</li>
@@ -61,11 +68,12 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
-     * </p>
      * 
      * @param type
-     *        Type of routing strategy. Possible routing types include the
-     *        following:
+     *        Type of routing strategy.</p>
+     *        <p>
+     *        Possible routing types include the following:
+     *        </p>
      *        <ul>
      *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
      *        this type when routing to active fleets.</li>
@@ -73,7 +81,6 @@ public class RoutingStrategy implements Serializable, Cloneable {
      *        instead can be used to display a message to the user. A terminal
      *        alias throws a TerminalRoutingStrategyException with the
      *        <a>RoutingStrategy</a> message embedded.</li>
-     *        </ul>
      * @see RoutingStrategyType
      */
 
@@ -83,7 +90,11 @@ public class RoutingStrategy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of routing strategy. Possible routing types include the following:
+     * Type of routing strategy.
+     * </p>
+     * <p>
+     * Possible routing types include the following:
+     * </p>
      * <ul>
      * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
      * type when routing to active fleets.</li>
@@ -92,10 +103,11 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
-     * </p>
      * 
-     * @return Type of routing strategy. Possible routing types include the
-     *         following:
+     * @return Type of routing strategy.</p>
+     *         <p>
+     *         Possible routing types include the following:
+     *         </p>
      *         <ul>
      *         <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
      *         this type when routing to active fleets.</li>
@@ -103,7 +115,6 @@ public class RoutingStrategy implements Serializable, Cloneable {
      *         instead can be used to display a message to the user. A terminal
      *         alias throws a TerminalRoutingStrategyException with the
      *         <a>RoutingStrategy</a> message embedded.</li>
-     *         </ul>
      * @see RoutingStrategyType
      */
 
@@ -113,7 +124,11 @@ public class RoutingStrategy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of routing strategy. Possible routing types include the following:
+     * Type of routing strategy.
+     * </p>
+     * <p>
+     * Possible routing types include the following:
+     * </p>
      * <ul>
      * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
      * type when routing to active fleets.</li>
@@ -122,11 +137,12 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
-     * </p>
      * 
      * @param type
-     *        Type of routing strategy. Possible routing types include the
-     *        following:
+     *        Type of routing strategy.</p>
+     *        <p>
+     *        Possible routing types include the following:
+     *        </p>
      *        <ul>
      *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
      *        this type when routing to active fleets.</li>
@@ -134,7 +150,6 @@ public class RoutingStrategy implements Serializable, Cloneable {
      *        instead can be used to display a message to the user. A terminal
      *        alias throws a TerminalRoutingStrategyException with the
      *        <a>RoutingStrategy</a> message embedded.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RoutingStrategyType
@@ -147,7 +162,11 @@ public class RoutingStrategy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of routing strategy. Possible routing types include the following:
+     * Type of routing strategy.
+     * </p>
+     * <p>
+     * Possible routing types include the following:
+     * </p>
      * <ul>
      * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
      * type when routing to active fleets.</li>
@@ -156,11 +175,12 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
-     * </p>
      * 
      * @param type
-     *        Type of routing strategy. Possible routing types include the
-     *        following:
+     *        Type of routing strategy.</p>
+     *        <p>
+     *        Possible routing types include the following:
+     *        </p>
      *        <ul>
      *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
      *        this type when routing to active fleets.</li>
@@ -168,7 +188,6 @@ public class RoutingStrategy implements Serializable, Cloneable {
      *        instead can be used to display a message to the user. A terminal
      *        alias throws a TerminalRoutingStrategyException with the
      *        <a>RoutingStrategy</a> message embedded.</li>
-     *        </ul>
      * @see RoutingStrategyType
      */
 
@@ -178,7 +197,11 @@ public class RoutingStrategy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of routing strategy. Possible routing types include the following:
+     * Type of routing strategy.
+     * </p>
+     * <p>
+     * Possible routing types include the following:
+     * </p>
      * <ul>
      * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
      * type when routing to active fleets.</li>
@@ -187,11 +210,12 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
-     * </p>
      * 
      * @param type
-     *        Type of routing strategy. Possible routing types include the
-     *        following:
+     *        Type of routing strategy.</p>
+     *        <p>
+     *        Possible routing types include the following:
+     *        </p>
      *        <ul>
      *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
      *        this type when routing to active fleets.</li>
@@ -199,7 +223,6 @@ public class RoutingStrategy implements Serializable, Cloneable {
      *        instead can be used to display a message to the user. A terminal
      *        alias throws a TerminalRoutingStrategyException with the
      *        <a>RoutingStrategy</a> message embedded.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RoutingStrategyType

@@ -40,7 +40,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the scaling policy. The scaling policy is only in force
-     * when in an Active state.
+     * when in an <code>ACTIVE</code> status.
+     * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
@@ -53,7 +54,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
      * removed and recreated.</li>
      * </ul>
-     * </p>
      */
     private String status;
     /**
@@ -66,6 +66,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <p>
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
+     * </p>
      * <ul>
      * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
      * value from the current instance count. Positive values scale up while
@@ -76,7 +77,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * instance count by the scaling adjustment, read as a percentage. Positive
      * values scale up while negative values scale down.</li>
      * </ul>
-     * </p>
      */
     private String scalingAdjustmentType;
     /**
@@ -103,6 +103,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <p>
      * Name of the GameLift-defined metric that is used to trigger an
      * adjustment.
+     * </p>
      * <ul>
      * <li><b>ActivatingGameSessions</b> – number of game sessions in the
      * process of being created (game session status = <code>ACTIVATING</code>).
@@ -123,7 +124,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <li><b>IdleInstances</b> – number of instances not currently running a
      * game session.</li>
      * </ul>
-     * </p>
      */
     private String metricName;
 
@@ -219,7 +219,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the scaling policy. The scaling policy is only in force
-     * when in an Active state.
+     * when in an <code>ACTIVE</code> status.
+     * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
@@ -232,11 +233,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
      * removed and recreated.</li>
      * </ul>
-     * </p>
      * 
      * @param status
      *        Current status of the scaling policy. The scaling policy is only
-     *        in force when in an Active state.
+     *        in force when in an <code>ACTIVE</code> status.</p>
      *        <ul>
      *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
@@ -249,7 +249,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
      *        <li><b>ERROR</b> – An error occurred in creating the policy. It
      *        should be removed and recreated.</li>
-     *        </ul>
      * @see ScalingStatusType
      */
 
@@ -260,7 +259,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the scaling policy. The scaling policy is only in force
-     * when in an Active state.
+     * when in an <code>ACTIVE</code> status.
+     * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
@@ -273,10 +273,9 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
      * removed and recreated.</li>
      * </ul>
-     * </p>
      * 
      * @return Current status of the scaling policy. The scaling policy is only
-     *         in force when in an Active state.
+     *         in force when in an <code>ACTIVE</code> status.</p>
      *         <ul>
      *         <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      *         <li><b>UPDATEREQUESTED</b> – A request to update the scaling
@@ -289,7 +288,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *         <li><b>DELETED</b> – The scaling policy has been deleted.</li>
      *         <li><b>ERROR</b> – An error occurred in creating the policy. It
      *         should be removed and recreated.</li>
-     *         </ul>
      * @see ScalingStatusType
      */
 
@@ -300,7 +298,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the scaling policy. The scaling policy is only in force
-     * when in an Active state.
+     * when in an <code>ACTIVE</code> status.
+     * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
@@ -313,11 +312,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
      * removed and recreated.</li>
      * </ul>
-     * </p>
      * 
      * @param status
      *        Current status of the scaling policy. The scaling policy is only
-     *        in force when in an Active state.
+     *        in force when in an <code>ACTIVE</code> status.</p>
      *        <ul>
      *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
@@ -330,7 +328,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
      *        <li><b>ERROR</b> – An error occurred in creating the policy. It
      *        should be removed and recreated.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ScalingStatusType
@@ -344,7 +341,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the scaling policy. The scaling policy is only in force
-     * when in an Active state.
+     * when in an <code>ACTIVE</code> status.
+     * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
@@ -357,11 +355,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
      * removed and recreated.</li>
      * </ul>
-     * </p>
      * 
      * @param status
      *        Current status of the scaling policy. The scaling policy is only
-     *        in force when in an Active state.
+     *        in force when in an <code>ACTIVE</code> status.</p>
      *        <ul>
      *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
@@ -374,7 +371,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
      *        <li><b>ERROR</b> – An error occurred in creating the policy. It
      *        should be removed and recreated.</li>
-     *        </ul>
      * @see ScalingStatusType
      */
 
@@ -385,7 +381,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the scaling policy. The scaling policy is only in force
-     * when in an Active state.
+     * when in an <code>ACTIVE</code> status.
+     * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
@@ -398,11 +395,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
      * removed and recreated.</li>
      * </ul>
-     * </p>
      * 
      * @param status
      *        Current status of the scaling policy. The scaling policy is only
-     *        in force when in an Active state.
+     *        in force when in an <code>ACTIVE</code> status.</p>
      *        <ul>
      *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
@@ -415,7 +411,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
      *        <li><b>ERROR</b> – An error occurred in creating the policy. It
      *        should be removed and recreated.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ScalingStatusType
@@ -474,6 +469,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <p>
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
+     * </p>
      * <ul>
      * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
      * value from the current instance count. Positive values scale up while
@@ -484,11 +480,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * instance count by the scaling adjustment, read as a percentage. Positive
      * values scale up while negative values scale down.</li>
      * </ul>
-     * </p>
      * 
      * @param scalingAdjustmentType
      *        Type of adjustment to make to a fleet's instance count (see
-     *        <a>FleetCapacity</a>):
+     *        <a>FleetCapacity</a>):</p>
      *        <ul>
      *        <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
      *        adjustment value from the current instance count. Positive values
@@ -499,7 +494,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        current instance count by the scaling adjustment, read as a
      *        percentage. Positive values scale up while negative values scale
      *        down.</li>
-     *        </ul>
      * @see ScalingAdjustmentType
      */
 
@@ -511,6 +505,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <p>
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
+     * </p>
      * <ul>
      * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
      * value from the current instance count. Positive values scale up while
@@ -521,10 +516,9 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * instance count by the scaling adjustment, read as a percentage. Positive
      * values scale up while negative values scale down.</li>
      * </ul>
-     * </p>
      * 
      * @return Type of adjustment to make to a fleet's instance count (see
-     *         <a>FleetCapacity</a>):
+     *         <a>FleetCapacity</a>):</p>
      *         <ul>
      *         <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
      *         adjustment value from the current instance count. Positive values
@@ -535,7 +529,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *         current instance count by the scaling adjustment, read as a
      *         percentage. Positive values scale up while negative values scale
      *         down.</li>
-     *         </ul>
      * @see ScalingAdjustmentType
      */
 
@@ -547,6 +540,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <p>
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
+     * </p>
      * <ul>
      * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
      * value from the current instance count. Positive values scale up while
@@ -557,11 +551,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * instance count by the scaling adjustment, read as a percentage. Positive
      * values scale up while negative values scale down.</li>
      * </ul>
-     * </p>
      * 
      * @param scalingAdjustmentType
      *        Type of adjustment to make to a fleet's instance count (see
-     *        <a>FleetCapacity</a>):
+     *        <a>FleetCapacity</a>):</p>
      *        <ul>
      *        <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
      *        adjustment value from the current instance count. Positive values
@@ -572,7 +565,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        current instance count by the scaling adjustment, read as a
      *        percentage. Positive values scale up while negative values scale
      *        down.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ScalingAdjustmentType
@@ -587,6 +579,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <p>
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
+     * </p>
      * <ul>
      * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
      * value from the current instance count. Positive values scale up while
@@ -597,11 +590,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * instance count by the scaling adjustment, read as a percentage. Positive
      * values scale up while negative values scale down.</li>
      * </ul>
-     * </p>
      * 
      * @param scalingAdjustmentType
      *        Type of adjustment to make to a fleet's instance count (see
-     *        <a>FleetCapacity</a>):
+     *        <a>FleetCapacity</a>):</p>
      *        <ul>
      *        <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
      *        adjustment value from the current instance count. Positive values
@@ -612,7 +604,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        current instance count by the scaling adjustment, read as a
      *        percentage. Positive values scale up while negative values scale
      *        down.</li>
-     *        </ul>
      * @see ScalingAdjustmentType
      */
 
@@ -625,6 +616,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <p>
      * Type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):
+     * </p>
      * <ul>
      * <li><b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment
      * value from the current instance count. Positive values scale up while
@@ -635,11 +627,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * instance count by the scaling adjustment, read as a percentage. Positive
      * values scale up while negative values scale down.</li>
      * </ul>
-     * </p>
      * 
      * @param scalingAdjustmentType
      *        Type of adjustment to make to a fleet's instance count (see
-     *        <a>FleetCapacity</a>):
+     *        <a>FleetCapacity</a>):</p>
      *        <ul>
      *        <li><b>ChangeInCapacity</b> – add (or subtract) the scaling
      *        adjustment value from the current instance count. Positive values
@@ -650,7 +641,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        current instance count by the scaling adjustment, read as a
      *        percentage. Positive values scale up while negative values scale
      *        down.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ScalingAdjustmentType
@@ -840,6 +830,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <p>
      * Name of the GameLift-defined metric that is used to trigger an
      * adjustment.
+     * </p>
      * <ul>
      * <li><b>ActivatingGameSessions</b> – number of game sessions in the
      * process of being created (game session status = <code>ACTIVATING</code>).
@@ -860,11 +851,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <li><b>IdleInstances</b> – number of instances not currently running a
      * game session.</li>
      * </ul>
-     * </p>
      * 
      * @param metricName
      *        Name of the GameLift-defined metric that is used to trigger an
-     *        adjustment.
+     *        adjustment.</p>
      *        <ul>
      *        <li><b>ActivatingGameSessions</b> – number of game sessions in the
      *        process of being created (game session status =
@@ -885,7 +875,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        a game session.</li>
      *        <li><b>IdleInstances</b> – number of instances not currently
      *        running a game session.</li>
-     *        </ul>
      * @see MetricName
      */
 
@@ -897,6 +886,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <p>
      * Name of the GameLift-defined metric that is used to trigger an
      * adjustment.
+     * </p>
      * <ul>
      * <li><b>ActivatingGameSessions</b> – number of game sessions in the
      * process of being created (game session status = <code>ACTIVATING</code>).
@@ -917,10 +907,9 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <li><b>IdleInstances</b> – number of instances not currently running a
      * game session.</li>
      * </ul>
-     * </p>
      * 
      * @return Name of the GameLift-defined metric that is used to trigger an
-     *         adjustment.
+     *         adjustment.</p>
      *         <ul>
      *         <li><b>ActivatingGameSessions</b> – number of game sessions in
      *         the process of being created (game session status =
@@ -941,7 +930,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *         running a game session.</li>
      *         <li><b>IdleInstances</b> – number of instances not currently
      *         running a game session.</li>
-     *         </ul>
      * @see MetricName
      */
 
@@ -953,6 +941,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <p>
      * Name of the GameLift-defined metric that is used to trigger an
      * adjustment.
+     * </p>
      * <ul>
      * <li><b>ActivatingGameSessions</b> – number of game sessions in the
      * process of being created (game session status = <code>ACTIVATING</code>).
@@ -973,11 +962,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <li><b>IdleInstances</b> – number of instances not currently running a
      * game session.</li>
      * </ul>
-     * </p>
      * 
      * @param metricName
      *        Name of the GameLift-defined metric that is used to trigger an
-     *        adjustment.
+     *        adjustment.</p>
      *        <ul>
      *        <li><b>ActivatingGameSessions</b> – number of game sessions in the
      *        process of being created (game session status =
@@ -998,7 +986,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        a game session.</li>
      *        <li><b>IdleInstances</b> – number of instances not currently
      *        running a game session.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MetricName
@@ -1013,6 +1000,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <p>
      * Name of the GameLift-defined metric that is used to trigger an
      * adjustment.
+     * </p>
      * <ul>
      * <li><b>ActivatingGameSessions</b> – number of game sessions in the
      * process of being created (game session status = <code>ACTIVATING</code>).
@@ -1033,11 +1021,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <li><b>IdleInstances</b> – number of instances not currently running a
      * game session.</li>
      * </ul>
-     * </p>
      * 
      * @param metricName
      *        Name of the GameLift-defined metric that is used to trigger an
-     *        adjustment.
+     *        adjustment.</p>
      *        <ul>
      *        <li><b>ActivatingGameSessions</b> – number of game sessions in the
      *        process of being created (game session status =
@@ -1058,7 +1045,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        a game session.</li>
      *        <li><b>IdleInstances</b> – number of instances not currently
      *        running a game session.</li>
-     *        </ul>
      * @see MetricName
      */
 
@@ -1070,6 +1056,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <p>
      * Name of the GameLift-defined metric that is used to trigger an
      * adjustment.
+     * </p>
      * <ul>
      * <li><b>ActivatingGameSessions</b> – number of game sessions in the
      * process of being created (game session status = <code>ACTIVATING</code>).
@@ -1090,11 +1077,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <li><b>IdleInstances</b> – number of instances not currently running a
      * game session.</li>
      * </ul>
-     * </p>
      * 
      * @param metricName
      *        Name of the GameLift-defined metric that is used to trigger an
-     *        adjustment.
+     *        adjustment.</p>
      *        <ul>
      *        <li><b>ActivatingGameSessions</b> – number of game sessions in the
      *        process of being created (game session status =
@@ -1115,7 +1101,6 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        a game session.</li>
      *        <li><b>IdleInstances</b> – number of instances not currently
      *        running a game session.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MetricName

@@ -107,6 +107,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * </p>
      */
     private String cACertificateIdentifier;
+    /**
+     * <p>
+     * The new DB subnet group for the DB instance.
+     * </p>
+     */
+    private String dBSubnetGroupName;
 
     /**
      * <p>
@@ -688,6 +694,47 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The new DB subnet group for the DB instance.
+     * </p>
+     * 
+     * @param dBSubnetGroupName
+     *        The new DB subnet group for the DB instance.
+     */
+
+    public void setDBSubnetGroupName(String dBSubnetGroupName) {
+        this.dBSubnetGroupName = dBSubnetGroupName;
+    }
+
+    /**
+     * <p>
+     * The new DB subnet group for the DB instance.
+     * </p>
+     * 
+     * @return The new DB subnet group for the DB instance.
+     */
+
+    public String getDBSubnetGroupName() {
+        return this.dBSubnetGroupName;
+    }
+
+    /**
+     * <p>
+     * The new DB subnet group for the DB instance.
+     * </p>
+     * 
+     * @param dBSubnetGroupName
+     *        The new DB subnet group for the DB instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public PendingModifiedValues withDBSubnetGroupName(String dBSubnetGroupName) {
+        setDBSubnetGroupName(dBSubnetGroupName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -725,7 +772,9 @@ public class PendingModifiedValues implements Serializable, Cloneable {
             sb.append("StorageType: " + getStorageType() + ",");
         if (getCACertificateIdentifier() != null)
             sb.append("CACertificateIdentifier: "
-                    + getCACertificateIdentifier());
+                    + getCACertificateIdentifier() + ",");
+        if (getDBSubnetGroupName() != null)
+            sb.append("DBSubnetGroupName: " + getDBSubnetGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -811,6 +860,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
                 && other.getCACertificateIdentifier().equals(
                         this.getCACertificateIdentifier()) == false)
             return false;
+        if (other.getDBSubnetGroupName() == null
+                ^ this.getDBSubnetGroupName() == null)
+            return false;
+        if (other.getDBSubnetGroupName() != null
+                && other.getDBSubnetGroupName().equals(
+                        this.getDBSubnetGroupName()) == false)
+            return false;
         return true;
     }
 
@@ -860,6 +916,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
                 * hashCode
                 + ((getCACertificateIdentifier() == null) ? 0
                         : getCACertificateIdentifier().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDBSubnetGroupName() == null) ? 0
+                        : getDBSubnetGroupName().hashCode());
         return hashCode;
     }
 

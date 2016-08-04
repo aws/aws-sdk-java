@@ -184,6 +184,8 @@ public enum RDSActions implements Action {
     ResetDBClusterParameterGroup("rds:ResetDBClusterParameterGroup"),
     /** Action for the ResetDBParameterGroup operation. */
     ResetDBParameterGroup("rds:ResetDBParameterGroup"),
+    /** Action for the RestoreDBClusterFromS3 operation. */
+    RestoreDBClusterFromS3("rds:RestoreDBClusterFromS3"),
     /** Action for the RestoreDBClusterFromSnapshot operation. */
     RestoreDBClusterFromSnapshot("rds:RestoreDBClusterFromSnapshot"),
     /** Action for the RestoreDBClusterToPointInTime operation. */

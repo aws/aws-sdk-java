@@ -62,6 +62,7 @@
  * <li><a>DescribeGameSessions</a></li>
  * <li><a>DescribeGameSessionDetails</a></li>
  * <li><a>UpdateGameSession</a></li>
+ * <li><a>SearchGameSessions</a></li>
  * </ul>
  * </li>
  * <li><b>Player sessions</b>

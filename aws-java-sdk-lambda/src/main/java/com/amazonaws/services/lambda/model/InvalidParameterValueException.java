@@ -26,6 +26,7 @@ public class InvalidParameterValueException extends
         com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
+    /** <p/> */
     private String type;
 
     /**
@@ -40,6 +41,8 @@ public class InvalidParameterValueException extends
     }
 
     /**
+     * <p/>
+     * 
      * @param type
      */
 
@@ -49,6 +52,8 @@ public class InvalidParameterValueException extends
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -58,6 +63,8 @@ public class InvalidParameterValueException extends
     }
 
     /**
+     * <p/>
+     * 
      * @param type
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

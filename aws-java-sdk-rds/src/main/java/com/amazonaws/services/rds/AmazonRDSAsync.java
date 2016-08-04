@@ -4005,6 +4005,50 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Creates an Amazon Aurora DB cluster from data stored in an Amazon S3
+     * bucket. Amazon RDS must be authorized to access the Amazon S3 bucket and
+     * the data must be created using the Percona XtraBackup utility as
+     * described in <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.html"
+     * >Migrating Data from an External MySQL Database to an Amazon Aurora DB
+     * Cluster</a>.
+     * </p>
+     * 
+     * @param restoreDBClusterFromS3Request
+     * @return A Java Future containing the result of the RestoreDBClusterFromS3
+     *         operation returned by the service.
+     * @sample AmazonRDSAsync.RestoreDBClusterFromS3
+     */
+    java.util.concurrent.Future<DBCluster> restoreDBClusterFromS3Async(
+            RestoreDBClusterFromS3Request restoreDBClusterFromS3Request);
+
+    /**
+     * <p>
+     * Creates an Amazon Aurora DB cluster from data stored in an Amazon S3
+     * bucket. Amazon RDS must be authorized to access the Amazon S3 bucket and
+     * the data must be created using the Percona XtraBackup utility as
+     * described in <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.html"
+     * >Migrating Data from an External MySQL Database to an Amazon Aurora DB
+     * Cluster</a>.
+     * </p>
+     * 
+     * @param restoreDBClusterFromS3Request
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RestoreDBClusterFromS3
+     *         operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.RestoreDBClusterFromS3
+     */
+    java.util.concurrent.Future<DBCluster> restoreDBClusterFromS3Async(
+            RestoreDBClusterFromS3Request restoreDBClusterFromS3Request,
+            com.amazonaws.handlers.AsyncHandler<RestoreDBClusterFromS3Request, DBCluster> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new DB cluster from a DB cluster snapshot. The target DB
      * cluster is created from the source DB cluster restore point with the same
      * configuration as the original source DB cluster, except that the new DB

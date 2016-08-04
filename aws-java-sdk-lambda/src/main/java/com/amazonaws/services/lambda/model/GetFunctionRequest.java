@@ -18,7 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class GetFunctionRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -67,7 +67,7 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param functionName
-     *        The Lambda function name. </p>
+     *        The Lambda function name.</p>
      *        <p>
      *        You can specify a function name (for example,
      *        <code>Thumbnail</code>) or you can specify Amazon Resource Name
@@ -97,7 +97,7 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements
      * limited to 64 character in length.
      * </p>
      * 
-     * @return The Lambda function name. </p>
+     * @return The Lambda function name.</p>
      *         <p>
      *         You can specify a function name (for example,
      *         <code>Thumbnail</code>) or you can specify Amazon Resource Name
@@ -128,7 +128,7 @@ public class GetFunctionRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param functionName
-     *        The Lambda function name. </p>
+     *        The Lambda function name.</p>
      *        <p>
      *        You can specify a function name (for example,
      *        <code>Thumbnail</code>) or you can specify Amazon Resource Name

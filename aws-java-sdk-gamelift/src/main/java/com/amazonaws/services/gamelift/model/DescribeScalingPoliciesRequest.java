@@ -34,8 +34,9 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
     private String fleetId;
     /**
      * <p>
-     * Game session status to filter results on. A scaling policy is only in
-     * force when in an Active state.
+     * Scaling policy status to filter results on. A scaling policy is only in
+     * force when in an <code>ACTIVE</code> status.
+     * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
@@ -48,7 +49,6 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
      * removed and recreated.</li>
      * </ul>
-     * </p>
      */
     private String statusFilter;
     /**
@@ -116,8 +116,9 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Game session status to filter results on. A scaling policy is only in
-     * force when in an Active state.
+     * Scaling policy status to filter results on. A scaling policy is only in
+     * force when in an <code>ACTIVE</code> status.
+     * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
@@ -130,11 +131,10 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
      * removed and recreated.</li>
      * </ul>
-     * </p>
      * 
      * @param statusFilter
-     *        Game session status to filter results on. A scaling policy is only
-     *        in force when in an Active state.
+     *        Scaling policy status to filter results on. A scaling policy is
+     *        only in force when in an <code>ACTIVE</code> status.</p>
      *        <ul>
      *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
@@ -147,7 +147,6 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
      *        <li><b>ERROR</b> – An error occurred in creating the policy. It
      *        should be removed and recreated.</li>
-     *        </ul>
      * @see ScalingStatusType
      */
 
@@ -157,8 +156,9 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Game session status to filter results on. A scaling policy is only in
-     * force when in an Active state.
+     * Scaling policy status to filter results on. A scaling policy is only in
+     * force when in an <code>ACTIVE</code> status.
+     * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
@@ -171,10 +171,9 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
      * removed and recreated.</li>
      * </ul>
-     * </p>
      * 
-     * @return Game session status to filter results on. A scaling policy is
-     *         only in force when in an Active state.
+     * @return Scaling policy status to filter results on. A scaling policy is
+     *         only in force when in an <code>ACTIVE</code> status.</p>
      *         <ul>
      *         <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      *         <li><b>UPDATEREQUESTED</b> – A request to update the scaling
@@ -187,7 +186,6 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      *         <li><b>DELETED</b> – The scaling policy has been deleted.</li>
      *         <li><b>ERROR</b> – An error occurred in creating the policy. It
      *         should be removed and recreated.</li>
-     *         </ul>
      * @see ScalingStatusType
      */
 
@@ -197,8 +195,9 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Game session status to filter results on. A scaling policy is only in
-     * force when in an Active state.
+     * Scaling policy status to filter results on. A scaling policy is only in
+     * force when in an <code>ACTIVE</code> status.
+     * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
@@ -211,11 +210,10 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
      * removed and recreated.</li>
      * </ul>
-     * </p>
      * 
      * @param statusFilter
-     *        Game session status to filter results on. A scaling policy is only
-     *        in force when in an Active state.
+     *        Scaling policy status to filter results on. A scaling policy is
+     *        only in force when in an <code>ACTIVE</code> status.</p>
      *        <ul>
      *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
@@ -228,7 +226,6 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
      *        <li><b>ERROR</b> – An error occurred in creating the policy. It
      *        should be removed and recreated.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ScalingStatusType
@@ -241,8 +238,9 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Game session status to filter results on. A scaling policy is only in
-     * force when in an Active state.
+     * Scaling policy status to filter results on. A scaling policy is only in
+     * force when in an <code>ACTIVE</code> status.
+     * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
@@ -255,11 +253,10 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
      * removed and recreated.</li>
      * </ul>
-     * </p>
      * 
      * @param statusFilter
-     *        Game session status to filter results on. A scaling policy is only
-     *        in force when in an Active state.
+     *        Scaling policy status to filter results on. A scaling policy is
+     *        only in force when in an <code>ACTIVE</code> status.</p>
      *        <ul>
      *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
@@ -272,7 +269,6 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
      *        <li><b>ERROR</b> – An error occurred in creating the policy. It
      *        should be removed and recreated.</li>
-     *        </ul>
      * @see ScalingStatusType
      */
 
@@ -282,8 +278,9 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Game session status to filter results on. A scaling policy is only in
-     * force when in an Active state.
+     * Scaling policy status to filter results on. A scaling policy is only in
+     * force when in an <code>ACTIVE</code> status.
+     * </p>
      * <ul>
      * <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      * <li><b>UPDATEREQUESTED</b> – A request to update the scaling policy has
@@ -296,11 +293,10 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      * <li><b>ERROR</b> – An error occurred in creating the policy. It should be
      * removed and recreated.</li>
      * </ul>
-     * </p>
      * 
      * @param statusFilter
-     *        Game session status to filter results on. A scaling policy is only
-     *        in force when in an Active state.
+     *        Scaling policy status to filter results on. A scaling policy is
+     *        only in force when in an <code>ACTIVE</code> status.</p>
      *        <ul>
      *        <li><b>ACTIVE</b> – The scaling policy is currently in force.</li>
      *        <li><b>UPDATEREQUESTED</b> – A request to update the scaling
@@ -313,7 +309,6 @@ public class DescribeScalingPoliciesRequest extends AmazonWebServiceRequest
      *        <li><b>DELETED</b> – The scaling policy has been deleted.</li>
      *        <li><b>ERROR</b> – An error occurred in creating the policy. It
      *        should be removed and recreated.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ScalingStatusType

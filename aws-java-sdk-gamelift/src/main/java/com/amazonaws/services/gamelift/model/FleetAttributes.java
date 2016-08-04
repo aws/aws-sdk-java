@@ -44,22 +44,25 @@ public class FleetAttributes implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      */
     private java.util.Date terminationTime;
     /**
      * <p>
-     * Current status of the fleet. Possible fleet states include the following:
+     * Current status of the fleet.
+     * </p>
+     * <p>
+     * Possible fleet statuses include the following:
+     * </p>
      * <ul>
      * <li><b>NEW</b> – A new fleet has been defined and desired instances is
      * set to 1.</li>
@@ -72,7 +75,6 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
      * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
      * </ul>
-     * </p>
      */
     private String status;
     /**
@@ -113,6 +115,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Type of game session protection to set for all new instances started in
      * the fleet.
+     * </p>
      * <ul>
      * <li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li>
@@ -120,7 +123,6 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
      * </ul>
-     * </p>
      */
     private String newGameSessionProtectionPolicy;
 
@@ -255,14 +257,14 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this data object was created. Format is
+     *        a number expressed in Unix time as milliseconds (ex:
+     *        "1469498468.057".
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -271,13 +273,13 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
-     * @return Time stamp indicating when this object was created. Format is an
-     *         integer representing the number of seconds since the Unix epoch
-     *         (Unix time).
+     * @return Time stamp indicating when this data object was created. Format
+     *         is a number expressed in Unix time as milliseconds (ex:
+     *         "1469498468.057".
      */
 
     public java.util.Date getCreationTime() {
@@ -286,14 +288,14 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).
+     * Time stamp indicating when this data object was created. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this data object was created. Format is
+     *        a number expressed in Unix time as milliseconds (ex:
+     *        "1469498468.057".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -305,15 +307,14 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param terminationTime
-     *        Time stamp indicating when this fleet was terminated. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this data object was terminated. Format
+     *        is a number expressed in Unix time as milliseconds (ex:
+     *        "1469498468.057".
      */
 
     public void setTerminationTime(java.util.Date terminationTime) {
@@ -322,14 +323,13 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
-     * @return Time stamp indicating when this fleet was terminated. Format is
-     *         an integer representing the number of seconds since the Unix
-     *         epoch (Unix time).
+     * @return Time stamp indicating when this data object was terminated.
+     *         Format is a number expressed in Unix time as milliseconds (ex:
+     *         "1469498468.057".
      */
 
     public java.util.Date getTerminationTime() {
@@ -338,15 +338,14 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since the Unix epoch (Unix
-     * time).
+     * Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".
      * </p>
      * 
      * @param terminationTime
-     *        Time stamp indicating when this fleet was terminated. Format is an
-     *        integer representing the number of seconds since the Unix epoch
-     *        (Unix time).
+     *        Time stamp indicating when this data object was terminated. Format
+     *        is a number expressed in Unix time as milliseconds (ex:
+     *        "1469498468.057".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -358,7 +357,11 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the fleet. Possible fleet states include the following:
+     * Current status of the fleet.
+     * </p>
+     * <p>
+     * Possible fleet statuses include the following:
+     * </p>
      * <ul>
      * <li><b>NEW</b> – A new fleet has been defined and desired instances is
      * set to 1.</li>
@@ -371,11 +374,12 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
      * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
      * </ul>
-     * </p>
      * 
      * @param status
-     *        Current status of the fleet. Possible fleet states include the
-     *        following:
+     *        Current status of the fleet.</p>
+     *        <p>
+     *        Possible fleet statuses include the following:
+     *        </p>
      *        <ul>
      *        <li><b>NEW</b> – A new fleet has been defined and desired
      *        instances is set to 1.</li>
@@ -388,7 +392,6 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        <li><b>DELETING</b> – Hosts are responding to a delete fleet
      *        request.</li>
      *        <li><b>TERMINATED</b> – The fleet no longer exists.</li>
-     *        </ul>
      * @see FleetStatus
      */
 
@@ -398,7 +401,11 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the fleet. Possible fleet states include the following:
+     * Current status of the fleet.
+     * </p>
+     * <p>
+     * Possible fleet statuses include the following:
+     * </p>
      * <ul>
      * <li><b>NEW</b> – A new fleet has been defined and desired instances is
      * set to 1.</li>
@@ -411,10 +418,11 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
      * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
      * </ul>
-     * </p>
      * 
-     * @return Current status of the fleet. Possible fleet states include the
-     *         following:
+     * @return Current status of the fleet.</p>
+     *         <p>
+     *         Possible fleet statuses include the following:
+     *         </p>
      *         <ul>
      *         <li><b>NEW</b> – A new fleet has been defined and desired
      *         instances is set to 1.</li>
@@ -427,7 +435,6 @@ public class FleetAttributes implements Serializable, Cloneable {
      *         <li><b>DELETING</b> – Hosts are responding to a delete fleet
      *         request.</li>
      *         <li><b>TERMINATED</b> – The fleet no longer exists.</li>
-     *         </ul>
      * @see FleetStatus
      */
 
@@ -437,7 +444,11 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the fleet. Possible fleet states include the following:
+     * Current status of the fleet.
+     * </p>
+     * <p>
+     * Possible fleet statuses include the following:
+     * </p>
      * <ul>
      * <li><b>NEW</b> – A new fleet has been defined and desired instances is
      * set to 1.</li>
@@ -450,11 +461,12 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
      * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
      * </ul>
-     * </p>
      * 
      * @param status
-     *        Current status of the fleet. Possible fleet states include the
-     *        following:
+     *        Current status of the fleet.</p>
+     *        <p>
+     *        Possible fleet statuses include the following:
+     *        </p>
      *        <ul>
      *        <li><b>NEW</b> – A new fleet has been defined and desired
      *        instances is set to 1.</li>
@@ -467,7 +479,6 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        <li><b>DELETING</b> – Hosts are responding to a delete fleet
      *        request.</li>
      *        <li><b>TERMINATED</b> – The fleet no longer exists.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see FleetStatus
@@ -480,7 +491,11 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the fleet. Possible fleet states include the following:
+     * Current status of the fleet.
+     * </p>
+     * <p>
+     * Possible fleet statuses include the following:
+     * </p>
      * <ul>
      * <li><b>NEW</b> – A new fleet has been defined and desired instances is
      * set to 1.</li>
@@ -493,11 +508,12 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
      * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
      * </ul>
-     * </p>
      * 
      * @param status
-     *        Current status of the fleet. Possible fleet states include the
-     *        following:
+     *        Current status of the fleet.</p>
+     *        <p>
+     *        Possible fleet statuses include the following:
+     *        </p>
      *        <ul>
      *        <li><b>NEW</b> – A new fleet has been defined and desired
      *        instances is set to 1.</li>
@@ -510,7 +526,6 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        <li><b>DELETING</b> – Hosts are responding to a delete fleet
      *        request.</li>
      *        <li><b>TERMINATED</b> – The fleet no longer exists.</li>
-     *        </ul>
      * @see FleetStatus
      */
 
@@ -520,7 +535,11 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the fleet. Possible fleet states include the following:
+     * Current status of the fleet.
+     * </p>
+     * <p>
+     * Possible fleet statuses include the following:
+     * </p>
      * <ul>
      * <li><b>NEW</b> – A new fleet has been defined and desired instances is
      * set to 1.</li>
@@ -533,11 +552,12 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <li><b>DELETING</b> – Hosts are responding to a delete fleet request.</li>
      * <li><b>TERMINATED</b> – The fleet no longer exists.</li>
      * </ul>
-     * </p>
      * 
      * @param status
-     *        Current status of the fleet. Possible fleet states include the
-     *        following:
+     *        Current status of the fleet.</p>
+     *        <p>
+     *        Possible fleet statuses include the following:
+     *        </p>
      *        <ul>
      *        <li><b>NEW</b> – A new fleet has been defined and desired
      *        instances is set to 1.</li>
@@ -550,7 +570,6 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        <li><b>DELETING</b> – Hosts are responding to a delete fleet
      *        request.</li>
      *        <li><b>TERMINATED</b> – The fleet no longer exists.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see FleetStatus
@@ -838,6 +857,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Type of game session protection to set for all new instances started in
      * the fleet.
+     * </p>
      * <ul>
      * <li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li>
@@ -845,18 +865,16 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
      * </ul>
-     * </p>
      * 
      * @param newGameSessionProtectionPolicy
      *        Type of game session protection to set for all new instances
-     *        started in the fleet.
+     *        started in the fleet.</p>
      *        <ul>
      *        <li><b>NoProtection</b> – The game session can be terminated
      *        during a scale-down event.</li>
      *        <li><b>FullProtection</b> – If the game session is in an
      *        <code>ACTIVE</code> status, it cannot be terminated during a
      *        scale-down event.</li>
-     *        </ul>
      * @see ProtectionPolicy
      */
 
@@ -869,6 +887,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Type of game session protection to set for all new instances started in
      * the fleet.
+     * </p>
      * <ul>
      * <li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li>
@@ -876,17 +895,15 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
      * </ul>
-     * </p>
      * 
      * @return Type of game session protection to set for all new instances
-     *         started in the fleet.
+     *         started in the fleet.</p>
      *         <ul>
      *         <li><b>NoProtection</b> – The game session can be terminated
      *         during a scale-down event.</li>
      *         <li><b>FullProtection</b> – If the game session is in an
      *         <code>ACTIVE</code> status, it cannot be terminated during a
      *         scale-down event.</li>
-     *         </ul>
      * @see ProtectionPolicy
      */
 
@@ -898,6 +915,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Type of game session protection to set for all new instances started in
      * the fleet.
+     * </p>
      * <ul>
      * <li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li>
@@ -905,18 +923,16 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
      * </ul>
-     * </p>
      * 
      * @param newGameSessionProtectionPolicy
      *        Type of game session protection to set for all new instances
-     *        started in the fleet.
+     *        started in the fleet.</p>
      *        <ul>
      *        <li><b>NoProtection</b> – The game session can be terminated
      *        during a scale-down event.</li>
      *        <li><b>FullProtection</b> – If the game session is in an
      *        <code>ACTIVE</code> status, it cannot be terminated during a
      *        scale-down event.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ProtectionPolicy
@@ -932,6 +948,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Type of game session protection to set for all new instances started in
      * the fleet.
+     * </p>
      * <ul>
      * <li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li>
@@ -939,18 +956,16 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
      * </ul>
-     * </p>
      * 
      * @param newGameSessionProtectionPolicy
      *        Type of game session protection to set for all new instances
-     *        started in the fleet.
+     *        started in the fleet.</p>
      *        <ul>
      *        <li><b>NoProtection</b> – The game session can be terminated
      *        during a scale-down event.</li>
      *        <li><b>FullProtection</b> – If the game session is in an
      *        <code>ACTIVE</code> status, it cannot be terminated during a
      *        scale-down event.</li>
-     *        </ul>
      * @see ProtectionPolicy
      */
 
@@ -964,6 +979,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Type of game session protection to set for all new instances started in
      * the fleet.
+     * </p>
      * <ul>
      * <li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li>
@@ -971,18 +987,16 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li>
      * </ul>
-     * </p>
      * 
      * @param newGameSessionProtectionPolicy
      *        Type of game session protection to set for all new instances
-     *        started in the fleet.
+     *        started in the fleet.</p>
      *        <ul>
      *        <li><b>NoProtection</b> – The game session can be terminated
      *        during a scale-down event.</li>
      *        <li><b>FullProtection</b> – If the game session is in an
      *        <code>ACTIVE</code> status, it cannot be terminated during a
      *        scale-down event.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ProtectionPolicy

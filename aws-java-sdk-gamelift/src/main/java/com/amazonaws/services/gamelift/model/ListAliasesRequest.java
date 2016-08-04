@@ -29,7 +29,11 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * <p>
      * Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty. Possible routing types include the following:
+     * empty.
+     * </p>
+     * <p>
+     * Possible routing types include the following:
+     * </p>
      * <ul>
      * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
      * type when routing to active fleets.</li>
@@ -38,7 +42,6 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
-     * </p>
      */
     private String routingStrategyType;
     /**
@@ -68,7 +71,11 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * <p>
      * Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty. Possible routing types include the following:
+     * empty.
+     * </p>
+     * <p>
+     * Possible routing types include the following:
+     * </p>
      * <ul>
      * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
      * type when routing to active fleets.</li>
@@ -77,13 +84,14 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
-     * </p>
      * 
      * @param routingStrategyType
      *        Type of routing to filter results on. Use this parameter to
      *        retrieve only aliases of a certain type. To retrieve all aliases,
-     *        leave this parameter empty. Possible routing types include the
-     *        following:
+     *        leave this parameter empty.</p>
+     *        <p>
+     *        Possible routing types include the following:
+     *        </p>
      *        <ul>
      *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
      *        this type when routing to active fleets.</li>
@@ -91,7 +99,6 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *        instead can be used to display a message to the user. A terminal
      *        alias throws a TerminalRoutingStrategyException with the
      *        <a>RoutingStrategy</a> message embedded.</li>
-     *        </ul>
      * @see RoutingStrategyType
      */
 
@@ -103,7 +110,11 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * <p>
      * Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty. Possible routing types include the following:
+     * empty.
+     * </p>
+     * <p>
+     * Possible routing types include the following:
+     * </p>
      * <ul>
      * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
      * type when routing to active fleets.</li>
@@ -112,12 +123,13 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
-     * </p>
      * 
      * @return Type of routing to filter results on. Use this parameter to
      *         retrieve only aliases of a certain type. To retrieve all aliases,
-     *         leave this parameter empty. Possible routing types include the
-     *         following:
+     *         leave this parameter empty.</p>
+     *         <p>
+     *         Possible routing types include the following:
+     *         </p>
      *         <ul>
      *         <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
      *         this type when routing to active fleets.</li>
@@ -125,7 +137,6 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *         instead can be used to display a message to the user. A terminal
      *         alias throws a TerminalRoutingStrategyException with the
      *         <a>RoutingStrategy</a> message embedded.</li>
-     *         </ul>
      * @see RoutingStrategyType
      */
 
@@ -137,7 +148,11 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * <p>
      * Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty. Possible routing types include the following:
+     * empty.
+     * </p>
+     * <p>
+     * Possible routing types include the following:
+     * </p>
      * <ul>
      * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
      * type when routing to active fleets.</li>
@@ -146,13 +161,14 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
-     * </p>
      * 
      * @param routingStrategyType
      *        Type of routing to filter results on. Use this parameter to
      *        retrieve only aliases of a certain type. To retrieve all aliases,
-     *        leave this parameter empty. Possible routing types include the
-     *        following:
+     *        leave this parameter empty.</p>
+     *        <p>
+     *        Possible routing types include the following:
+     *        </p>
      *        <ul>
      *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
      *        this type when routing to active fleets.</li>
@@ -160,7 +176,6 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *        instead can be used to display a message to the user. A terminal
      *        alias throws a TerminalRoutingStrategyException with the
      *        <a>RoutingStrategy</a> message embedded.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RoutingStrategyType
@@ -175,7 +190,11 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * <p>
      * Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty. Possible routing types include the following:
+     * empty.
+     * </p>
+     * <p>
+     * Possible routing types include the following:
+     * </p>
      * <ul>
      * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
      * type when routing to active fleets.</li>
@@ -184,13 +203,14 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
-     * </p>
      * 
      * @param routingStrategyType
      *        Type of routing to filter results on. Use this parameter to
      *        retrieve only aliases of a certain type. To retrieve all aliases,
-     *        leave this parameter empty. Possible routing types include the
-     *        following:
+     *        leave this parameter empty.</p>
+     *        <p>
+     *        Possible routing types include the following:
+     *        </p>
      *        <ul>
      *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
      *        this type when routing to active fleets.</li>
@@ -198,7 +218,6 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *        instead can be used to display a message to the user. A terminal
      *        alias throws a TerminalRoutingStrategyException with the
      *        <a>RoutingStrategy</a> message embedded.</li>
-     *        </ul>
      * @see RoutingStrategyType
      */
 
@@ -210,7 +229,11 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * <p>
      * Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
-     * empty. Possible routing types include the following:
+     * empty.
+     * </p>
+     * <p>
+     * Possible routing types include the following:
+     * </p>
      * <ul>
      * <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this
      * type when routing to active fleets.</li>
@@ -219,13 +242,14 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</li>
      * </ul>
-     * </p>
      * 
      * @param routingStrategyType
      *        Type of routing to filter results on. Use this parameter to
      *        retrieve only aliases of a certain type. To retrieve all aliases,
-     *        leave this parameter empty. Possible routing types include the
-     *        following:
+     *        leave this parameter empty.</p>
+     *        <p>
+     *        Possible routing types include the following:
+     *        </p>
      *        <ul>
      *        <li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use
      *        this type when routing to active fleets.</li>
@@ -233,7 +257,6 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *        instead can be used to display a message to the user. A terminal
      *        alias throws a TerminalRoutingStrategyException with the
      *        <a>RoutingStrategy</a> message embedded.</li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RoutingStrategyType

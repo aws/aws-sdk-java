@@ -15,7 +15,7 @@
 package com.amazonaws.services.lambda.model;
 
 /**
- * 
+ * <p/>
  */
 public class TooManyRequestsException extends
         com.amazonaws.services.lambda.model.AWSLambdaException {
@@ -29,6 +29,8 @@ public class TooManyRequestsException extends
     private String retryAfterSeconds;
 
     private String type;
+
+    private String reason;
 
     /**
      * Constructs a new TooManyRequestsException with the specified error
@@ -111,6 +113,59 @@ public class TooManyRequestsException extends
 
     public TooManyRequestsException withType(String type) {
         setType(type);
+        return this;
+    }
+
+    /**
+     * @param reason
+     * @see ThrottleReason
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("Reason")
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * @return
+     * @see ThrottleReason
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("Reason")
+    public String getReason() {
+        return this.reason;
+    }
+
+    /**
+     * @param reason
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ThrottleReason
+     */
+
+    public TooManyRequestsException withReason(String reason) {
+        setReason(reason);
+        return this;
+    }
+
+    /**
+     * @param reason
+     * @see ThrottleReason
+     */
+
+    public void setReason(ThrottleReason reason) {
+        this.reason = reason.toString();
+    }
+
+    /**
+     * @param reason
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ThrottleReason
+     */
+
+    public TooManyRequestsException withReason(ThrottleReason reason) {
+        setReason(reason);
         return this;
     }
 

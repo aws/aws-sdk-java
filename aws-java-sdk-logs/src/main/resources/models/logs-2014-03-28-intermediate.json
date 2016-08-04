@@ -20,6 +20,7 @@
     "endpointPrefix" : "logs",
     "signingName" : "logs",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSLogsClientBuilder",
     "asyncClientBuilderClassName" : "AWSLogsAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AWSLogsModuleInjector",
@@ -28,8 +29,7 @@
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "jsonProtocol" : true
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "CancelExportTask" : {

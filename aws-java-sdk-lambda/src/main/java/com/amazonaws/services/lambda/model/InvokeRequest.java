@@ -18,7 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class InvokeRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -58,7 +58,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements
      * only if you specify the <code>InvocationType</code> parameter with value
      * <code>RequestResponse</code>. In this case, AWS Lambda returns the
      * base64-encoded last 4 KB of log data produced by your Lambda function in
-     * the <code>x-amz-log-results</code> header.
+     * the <code>x-amz-log-result</code> header.
      * </p>
      */
     private String logType;
@@ -115,7 +115,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param functionName
-     *        The Lambda function name. </p>
+     *        The Lambda function name.</p>
      *        <p>
      *        You can specify a function name (for example,
      *        <code>Thumbnail</code>) or you can specify Amazon Resource Name
@@ -145,7 +145,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements
      * limited to 64 character in length.
      * </p>
      * 
-     * @return The Lambda function name. </p>
+     * @return The Lambda function name.</p>
      *         <p>
      *         You can specify a function name (for example,
      *         <code>Thumbnail</code>) or you can specify Amazon Resource Name
@@ -176,7 +176,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param functionName
-     *        The Lambda function name. </p>
+     *        The Lambda function name.</p>
      *        <p>
      *        You can specify a function name (for example,
      *        <code>Thumbnail</code>) or you can specify Amazon Resource Name
@@ -362,7 +362,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements
      * only if you specify the <code>InvocationType</code> parameter with value
      * <code>RequestResponse</code>. In this case, AWS Lambda returns the
      * base64-encoded last 4 KB of log data produced by your Lambda function in
-     * the <code>x-amz-log-results</code> header.
+     * the <code>x-amz-log-result</code> header.
      * </p>
      * 
      * @param logType
@@ -371,7 +371,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements
      *        parameter with value <code>RequestResponse</code>. In this case,
      *        AWS Lambda returns the base64-encoded last 4 KB of log data
      *        produced by your Lambda function in the
-     *        <code>x-amz-log-results</code> header.
+     *        <code>x-amz-log-result</code> header.
      * @see LogType
      */
 
@@ -385,7 +385,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements
      * only if you specify the <code>InvocationType</code> parameter with value
      * <code>RequestResponse</code>. In this case, AWS Lambda returns the
      * base64-encoded last 4 KB of log data produced by your Lambda function in
-     * the <code>x-amz-log-results</code> header.
+     * the <code>x-amz-log-result</code> header.
      * </p>
      * 
      * @return You can set this optional parameter to <code>Tail</code> in the
@@ -393,7 +393,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements
      *         parameter with value <code>RequestResponse</code>. In this case,
      *         AWS Lambda returns the base64-encoded last 4 KB of log data
      *         produced by your Lambda function in the
-     *         <code>x-amz-log-results</code> header.
+     *         <code>x-amz-log-result</code> header.
      * @see LogType
      */
 
@@ -407,7 +407,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements
      * only if you specify the <code>InvocationType</code> parameter with value
      * <code>RequestResponse</code>. In this case, AWS Lambda returns the
      * base64-encoded last 4 KB of log data produced by your Lambda function in
-     * the <code>x-amz-log-results</code> header.
+     * the <code>x-amz-log-result</code> header.
      * </p>
      * 
      * @param logType
@@ -416,7 +416,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements
      *        parameter with value <code>RequestResponse</code>. In this case,
      *        AWS Lambda returns the base64-encoded last 4 KB of log data
      *        produced by your Lambda function in the
-     *        <code>x-amz-log-results</code> header.
+     *        <code>x-amz-log-result</code> header.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see LogType
@@ -433,7 +433,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements
      * only if you specify the <code>InvocationType</code> parameter with value
      * <code>RequestResponse</code>. In this case, AWS Lambda returns the
      * base64-encoded last 4 KB of log data produced by your Lambda function in
-     * the <code>x-amz-log-results</code> header.
+     * the <code>x-amz-log-result</code> header.
      * </p>
      * 
      * @param logType
@@ -442,7 +442,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements
      *        parameter with value <code>RequestResponse</code>. In this case,
      *        AWS Lambda returns the base64-encoded last 4 KB of log data
      *        produced by your Lambda function in the
-     *        <code>x-amz-log-results</code> header.
+     *        <code>x-amz-log-result</code> header.
      * @see LogType
      */
 
@@ -456,7 +456,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements
      * only if you specify the <code>InvocationType</code> parameter with value
      * <code>RequestResponse</code>. In this case, AWS Lambda returns the
      * base64-encoded last 4 KB of log data produced by your Lambda function in
-     * the <code>x-amz-log-results</code> header.
+     * the <code>x-amz-log-result</code> header.
      * </p>
      * 
      * @param logType
@@ -465,7 +465,7 @@ public class InvokeRequest extends AmazonWebServiceRequest implements
      *        parameter with value <code>RequestResponse</code>. In this case,
      *        AWS Lambda returns the base64-encoded last 4 KB of log data
      *        produced by your Lambda function in the
-     *        <code>x-amz-log-results</code> header.
+     *        <code>x-amz-log-result</code> header.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see LogType

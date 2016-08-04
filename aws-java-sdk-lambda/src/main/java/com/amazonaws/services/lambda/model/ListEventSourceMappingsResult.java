@@ -18,8 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains a list of event sources (see
- * <a>API_EventSourceMappingConfiguration</a>)
+ * Contains a list of event sources (see )
  * </p>
  */
 public class ListEventSourceMappingsResult implements Serializable, Cloneable {

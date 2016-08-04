@@ -141,6 +141,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
                                             com.amazonaws.services.lambda.model.ENILimitReachedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidZipFileException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.InvalidZipFileException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode(
                                             "SubnetIPAddressLimitReachedException")
                                     .withModeledClass(
@@ -445,9 +450,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
      * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"
      * >Introduction to AWS Lambda Aliases</a>.
      * </p>
-     * Alias names are unique for a given function.
      * <p>
-     * This requires permission for the lambda:CreateAlias action.
+     * Alias names are unique for a given function. This requires permission for
+     * the lambda:CreateAlias action.
      * </p>
      * 
      * @param createAliasRequest
@@ -513,12 +518,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
      * This association between a stream source and a Lambda function is called
      * the event source mapping.
      * </p>
-     * <important>This event source mapping is relevant only in the AWS Lambda
-     * pull model, where AWS Lambda invokes the function. For more information,
-     * go to <a href=
-     * "http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"
-     * >AWS Lambda: How it Works</a> in the <i>AWS Lambda Developer
-     * Guide</i>.</important>
+     * <important>
+     * <p>
+     * This event source mapping is relevant only in the AWS Lambda pull model,
+     * where AWS Lambda invokes the function. For more information, go to <a
+     * href
+     * ="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"
+     * >AWS Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
+     * </p>
+     * </important>
      * <p>
      * You provide mapping information (for example, which stream to read from
      * and which Lambda function to invoke) in the request body.
@@ -529,13 +537,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
      * be associated with multiple AWS event sources.
      * </p>
      * <p>
-     * <p>
      * If you are using versioning, you can specify a specific function version
      * or an alias via the function name parameter. For more information about
      * versioning, see <a href=
      * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
      * Lambda Function Versioning and Aliases</a>.
-     * </p>
      * </p>
      * <p>
      * This operation requires permission for the
@@ -1232,7 +1238,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
      * pointing to the function version using the <code>Qualifier</code>
      * parameter in the request. If you don't provide the <code>Qualifier</code>
      * parameter, the <code>$LATEST</code> version of the Lambda function is
-     * invoked. For information about the versioning feature, see <a href=
+     * invoked. Invocations occur at least once in response to an event and
+     * functions must be idempotent to handle this. For information about the
+     * versioning feature, see <a href=
      * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
      * Lambda Function Versioning and Aliases</a>.
      * </p>
@@ -1279,7 +1287,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
      *         reached.
      * @throws EC2ThrottledException
      *         AWS Lambda was throttled by Amazon EC2 during Lambda function
-     *         initiatization using the execution role provided for the Lambda
+     *         initialization using the execution role provided for the Lambda
      *         function.
      * @throws EC2AccessDeniedException
      * @throws InvalidSubnetIDException
@@ -1288,6 +1296,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
      * @throws InvalidSecurityGroupIDException
      *         The Security Group ID provided in the Lambda function VPC
      *         configuration is invalid.
+     * @throws InvalidZipFileException
+     *         AWS Lambda could not unzip the function zip file.
      * @sample AWSLambda.Invoke
      */
     @Override
@@ -1326,8 +1336,12 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements
     }
 
     /**
-     * <important>This API is deprecated. We recommend you use
-     * <code>Invoke</code> API (see <a>Invoke</a>).</important>
+     * <important>
+     * <p>
+     * This API is deprecated. We recommend you use <code>Invoke</code> API (see
+     * <a>Invoke</a>).
+     * </p>
+     * </important>
      * <p>
      * Submits an invocation request to AWS Lambda. Upon receiving the request,
      * Lambda executes the specified function asynchronously. To see the logs

@@ -18,7 +18,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class AddPermissionRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -49,9 +49,9 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * <p>
      * The AWS Lambda action you want to allow in this statement. Each Lambda
      * action is a string starting with <code>lambda:</code> followed by the API
-     * name (see <a>Operations</a>). For example,
-     * <code>lambda:CreateFunction</code>. You can use wildcard (
-     * <code>lambda:*</code>) to grant permission for all AWS Lambda actions.
+     * name . For example, <code>lambda:CreateFunction</code>. You can use
+     * wildcard (<code>lambda:*</code>) to grant permission for all AWS Lambda
+     * actions.
      * </p>
      */
     private String action;
@@ -70,30 +70,38 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * This is optional; however, when granting Amazon S3 permission to invoke
-     * your function, you should specify this field with the bucket Amazon
-     * Resource Name (ARN) as its value. This ensures that only events generated
-     * from the specified bucket can invoke the function.
+     * your function, you should specify this field with the Amazon Resource
+     * Name (ARN) as its value. This ensures that only events generated from the
+     * specified source can invoke the function.
      * </p>
-     * <important>If you add a permission for the Amazon S3 principal without
-     * providing the source ARN, any AWS account that creates a mapping to your
-     * function ARN can send events to invoke your Lambda function from Amazon
-     * S3.</important>
+     * <important>
+     * <p>
+     * If you add a permission for the Amazon S3 principal without providing the
+     * source ARN, any AWS account that creates a mapping to your function ARN
+     * can send events to invoke your Lambda function from Amazon S3.
+     * </p>
+     * </important>
      */
     private String sourceArn;
     /**
      * <p>
-     * The AWS account ID (without a hyphen) of the source owner. For example,
-     * if the <code>SourceArn</code> identifies a bucket, then this is the
-     * bucket owner's account ID. You can use this additional condition to
-     * ensure the bucket you specify is owned by a specific account (it is
-     * possible the bucket owner deleted the bucket and some other AWS account
-     * created the bucket). You can also use this condition to specify all
-     * sources (that is, you don't specify the <code>SourceArn</code>) owned by
-     * a specific account.
+     * This parameter is used for S3 and SES only. The AWS account ID (without a
+     * hyphen) of the source owner. For example, if the <code>SourceArn</code>
+     * identifies a bucket, then this is the bucket owner's account ID. You can
+     * use this additional condition to ensure the bucket you specify is owned
+     * by a specific account (it is possible the bucket owner deleted the bucket
+     * and some other AWS account created the bucket). You can also use this
+     * condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account.
      * </p>
      */
     private String sourceAccount;
-
+    /**
+     * <p>
+     * A unique token that must be supplied by the principal invoking the
+     * function. This is currently only used for Alexa Smart Home functions.
+     * </p>
+     */
     private String eventSourceToken;
     /**
      * <p>
@@ -269,15 +277,15 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * <p>
      * The AWS Lambda action you want to allow in this statement. Each Lambda
      * action is a string starting with <code>lambda:</code> followed by the API
-     * name (see <a>Operations</a>). For example,
-     * <code>lambda:CreateFunction</code>. You can use wildcard (
-     * <code>lambda:*</code>) to grant permission for all AWS Lambda actions.
+     * name . For example, <code>lambda:CreateFunction</code>. You can use
+     * wildcard (<code>lambda:*</code>) to grant permission for all AWS Lambda
+     * actions.
      * </p>
      * 
      * @param action
      *        The AWS Lambda action you want to allow in this statement. Each
      *        Lambda action is a string starting with <code>lambda:</code>
-     *        followed by the API name (see <a>Operations</a>). For example,
+     *        followed by the API name . For example,
      *        <code>lambda:CreateFunction</code>. You can use wildcard (
      *        <code>lambda:*</code>) to grant permission for all AWS Lambda
      *        actions.
@@ -291,14 +299,14 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * <p>
      * The AWS Lambda action you want to allow in this statement. Each Lambda
      * action is a string starting with <code>lambda:</code> followed by the API
-     * name (see <a>Operations</a>). For example,
-     * <code>lambda:CreateFunction</code>. You can use wildcard (
-     * <code>lambda:*</code>) to grant permission for all AWS Lambda actions.
+     * name . For example, <code>lambda:CreateFunction</code>. You can use
+     * wildcard (<code>lambda:*</code>) to grant permission for all AWS Lambda
+     * actions.
      * </p>
      * 
      * @return The AWS Lambda action you want to allow in this statement. Each
      *         Lambda action is a string starting with <code>lambda:</code>
-     *         followed by the API name (see <a>Operations</a>). For example,
+     *         followed by the API name . For example,
      *         <code>lambda:CreateFunction</code>. You can use wildcard (
      *         <code>lambda:*</code>) to grant permission for all AWS Lambda
      *         actions.
@@ -312,15 +320,15 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * <p>
      * The AWS Lambda action you want to allow in this statement. Each Lambda
      * action is a string starting with <code>lambda:</code> followed by the API
-     * name (see <a>Operations</a>). For example,
-     * <code>lambda:CreateFunction</code>. You can use wildcard (
-     * <code>lambda:*</code>) to grant permission for all AWS Lambda actions.
+     * name . For example, <code>lambda:CreateFunction</code>. You can use
+     * wildcard (<code>lambda:*</code>) to grant permission for all AWS Lambda
+     * actions.
      * </p>
      * 
      * @param action
      *        The AWS Lambda action you want to allow in this statement. Each
      *        Lambda action is a string starting with <code>lambda:</code>
-     *        followed by the API name (see <a>Operations</a>). For example,
+     *        followed by the API name . For example,
      *        <code>lambda:CreateFunction</code>. You can use wildcard (
      *        <code>lambda:*</code>) to grant permission for all AWS Lambda
      *        actions.
@@ -413,24 +421,30 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * This is optional; however, when granting Amazon S3 permission to invoke
-     * your function, you should specify this field with the bucket Amazon
-     * Resource Name (ARN) as its value. This ensures that only events generated
-     * from the specified bucket can invoke the function.
+     * your function, you should specify this field with the Amazon Resource
+     * Name (ARN) as its value. This ensures that only events generated from the
+     * specified source can invoke the function.
      * </p>
-     * <important>If you add a permission for the Amazon S3 principal without
-     * providing the source ARN, any AWS account that creates a mapping to your
-     * function ARN can send events to invoke your Lambda function from Amazon
-     * S3.</important>
+     * <important>
+     * <p>
+     * If you add a permission for the Amazon S3 principal without providing the
+     * source ARN, any AWS account that creates a mapping to your function ARN
+     * can send events to invoke your Lambda function from Amazon S3.
+     * </p>
+     * </important>
      * 
      * @param sourceArn
      *        This is optional; however, when granting Amazon S3 permission to
      *        invoke your function, you should specify this field with the
-     *        bucket Amazon Resource Name (ARN) as its value. This ensures that
-     *        only events generated from the specified bucket can invoke the
-     *        function. </p> <important>If you add a permission for the Amazon
-     *        S3 principal without providing the source ARN, any AWS account
-     *        that creates a mapping to your function ARN can send events to
-     *        invoke your Lambda function from Amazon S3.
+     *        Amazon Resource Name (ARN) as its value. This ensures that only
+     *        events generated from the specified source can invoke the
+     *        function.</p> <important>
+     *        <p>
+     *        If you add a permission for the Amazon S3 principal without
+     *        providing the source ARN, any AWS account that creates a mapping
+     *        to your function ARN can send events to invoke your Lambda
+     *        function from Amazon S3.
+     *        </p>
      */
 
     public void setSourceArn(String sourceArn) {
@@ -440,23 +454,29 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * This is optional; however, when granting Amazon S3 permission to invoke
-     * your function, you should specify this field with the bucket Amazon
-     * Resource Name (ARN) as its value. This ensures that only events generated
-     * from the specified bucket can invoke the function.
+     * your function, you should specify this field with the Amazon Resource
+     * Name (ARN) as its value. This ensures that only events generated from the
+     * specified source can invoke the function.
      * </p>
-     * <important>If you add a permission for the Amazon S3 principal without
-     * providing the source ARN, any AWS account that creates a mapping to your
-     * function ARN can send events to invoke your Lambda function from Amazon
-     * S3.</important>
+     * <important>
+     * <p>
+     * If you add a permission for the Amazon S3 principal without providing the
+     * source ARN, any AWS account that creates a mapping to your function ARN
+     * can send events to invoke your Lambda function from Amazon S3.
+     * </p>
+     * </important>
      * 
      * @return This is optional; however, when granting Amazon S3 permission to
      *         invoke your function, you should specify this field with the
-     *         bucket Amazon Resource Name (ARN) as its value. This ensures that
-     *         only events generated from the specified bucket can invoke the
-     *         function. </p> <important>If you add a permission for the Amazon
-     *         S3 principal without providing the source ARN, any AWS account
-     *         that creates a mapping to your function ARN can send events to
-     *         invoke your Lambda function from Amazon S3.
+     *         Amazon Resource Name (ARN) as its value. This ensures that only
+     *         events generated from the specified source can invoke the
+     *         function.</p> <important>
+     *         <p>
+     *         If you add a permission for the Amazon S3 principal without
+     *         providing the source ARN, any AWS account that creates a mapping
+     *         to your function ARN can send events to invoke your Lambda
+     *         function from Amazon S3.
+     *         </p>
      */
 
     public String getSourceArn() {
@@ -466,24 +486,30 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * This is optional; however, when granting Amazon S3 permission to invoke
-     * your function, you should specify this field with the bucket Amazon
-     * Resource Name (ARN) as its value. This ensures that only events generated
-     * from the specified bucket can invoke the function.
+     * your function, you should specify this field with the Amazon Resource
+     * Name (ARN) as its value. This ensures that only events generated from the
+     * specified source can invoke the function.
      * </p>
-     * <important>If you add a permission for the Amazon S3 principal without
-     * providing the source ARN, any AWS account that creates a mapping to your
-     * function ARN can send events to invoke your Lambda function from Amazon
-     * S3.</important>
+     * <important>
+     * <p>
+     * If you add a permission for the Amazon S3 principal without providing the
+     * source ARN, any AWS account that creates a mapping to your function ARN
+     * can send events to invoke your Lambda function from Amazon S3.
+     * </p>
+     * </important>
      * 
      * @param sourceArn
      *        This is optional; however, when granting Amazon S3 permission to
      *        invoke your function, you should specify this field with the
-     *        bucket Amazon Resource Name (ARN) as its value. This ensures that
-     *        only events generated from the specified bucket can invoke the
-     *        function. </p> <important>If you add a permission for the Amazon
-     *        S3 principal without providing the source ARN, any AWS account
-     *        that creates a mapping to your function ARN can send events to
-     *        invoke your Lambda function from Amazon S3.
+     *        Amazon Resource Name (ARN) as its value. This ensures that only
+     *        events generated from the specified source can invoke the
+     *        function.</p> <important>
+     *        <p>
+     *        If you add a permission for the Amazon S3 principal without
+     *        providing the source ARN, any AWS account that creates a mapping
+     *        to your function ARN can send events to invoke your Lambda
+     *        function from Amazon S3.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -495,24 +521,25 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS account ID (without a hyphen) of the source owner. For example,
-     * if the <code>SourceArn</code> identifies a bucket, then this is the
-     * bucket owner's account ID. You can use this additional condition to
-     * ensure the bucket you specify is owned by a specific account (it is
-     * possible the bucket owner deleted the bucket and some other AWS account
-     * created the bucket). You can also use this condition to specify all
-     * sources (that is, you don't specify the <code>SourceArn</code>) owned by
-     * a specific account.
+     * This parameter is used for S3 and SES only. The AWS account ID (without a
+     * hyphen) of the source owner. For example, if the <code>SourceArn</code>
+     * identifies a bucket, then this is the bucket owner's account ID. You can
+     * use this additional condition to ensure the bucket you specify is owned
+     * by a specific account (it is possible the bucket owner deleted the bucket
+     * and some other AWS account created the bucket). You can also use this
+     * condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account.
      * </p>
      * 
      * @param sourceAccount
-     *        The AWS account ID (without a hyphen) of the source owner. For
-     *        example, if the <code>SourceArn</code> identifies a bucket, then
-     *        this is the bucket owner's account ID. You can use this additional
-     *        condition to ensure the bucket you specify is owned by a specific
-     *        account (it is possible the bucket owner deleted the bucket and
-     *        some other AWS account created the bucket). You can also use this
-     *        condition to specify all sources (that is, you don't specify the
+     *        This parameter is used for S3 and SES only. The AWS account ID
+     *        (without a hyphen) of the source owner. For example, if the
+     *        <code>SourceArn</code> identifies a bucket, then this is the
+     *        bucket owner's account ID. You can use this additional condition
+     *        to ensure the bucket you specify is owned by a specific account
+     *        (it is possible the bucket owner deleted the bucket and some other
+     *        AWS account created the bucket). You can also use this condition
+     *        to specify all sources (that is, you don't specify the
      *        <code>SourceArn</code>) owned by a specific account.
      */
 
@@ -522,25 +549,25 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS account ID (without a hyphen) of the source owner. For example,
-     * if the <code>SourceArn</code> identifies a bucket, then this is the
-     * bucket owner's account ID. You can use this additional condition to
-     * ensure the bucket you specify is owned by a specific account (it is
-     * possible the bucket owner deleted the bucket and some other AWS account
-     * created the bucket). You can also use this condition to specify all
-     * sources (that is, you don't specify the <code>SourceArn</code>) owned by
-     * a specific account.
+     * This parameter is used for S3 and SES only. The AWS account ID (without a
+     * hyphen) of the source owner. For example, if the <code>SourceArn</code>
+     * identifies a bucket, then this is the bucket owner's account ID. You can
+     * use this additional condition to ensure the bucket you specify is owned
+     * by a specific account (it is possible the bucket owner deleted the bucket
+     * and some other AWS account created the bucket). You can also use this
+     * condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account.
      * </p>
      * 
-     * @return The AWS account ID (without a hyphen) of the source owner. For
-     *         example, if the <code>SourceArn</code> identifies a bucket, then
-     *         this is the bucket owner's account ID. You can use this
-     *         additional condition to ensure the bucket you specify is owned by
-     *         a specific account (it is possible the bucket owner deleted the
-     *         bucket and some other AWS account created the bucket). You can
-     *         also use this condition to specify all sources (that is, you
-     *         don't specify the <code>SourceArn</code>) owned by a specific
-     *         account.
+     * @return This parameter is used for S3 and SES only. The AWS account ID
+     *         (without a hyphen) of the source owner. For example, if the
+     *         <code>SourceArn</code> identifies a bucket, then this is the
+     *         bucket owner's account ID. You can use this additional condition
+     *         to ensure the bucket you specify is owned by a specific account
+     *         (it is possible the bucket owner deleted the bucket and some
+     *         other AWS account created the bucket). You can also use this
+     *         condition to specify all sources (that is, you don't specify the
+     *         <code>SourceArn</code>) owned by a specific account.
      */
 
     public String getSourceAccount() {
@@ -549,24 +576,25 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS account ID (without a hyphen) of the source owner. For example,
-     * if the <code>SourceArn</code> identifies a bucket, then this is the
-     * bucket owner's account ID. You can use this additional condition to
-     * ensure the bucket you specify is owned by a specific account (it is
-     * possible the bucket owner deleted the bucket and some other AWS account
-     * created the bucket). You can also use this condition to specify all
-     * sources (that is, you don't specify the <code>SourceArn</code>) owned by
-     * a specific account.
+     * This parameter is used for S3 and SES only. The AWS account ID (without a
+     * hyphen) of the source owner. For example, if the <code>SourceArn</code>
+     * identifies a bucket, then this is the bucket owner's account ID. You can
+     * use this additional condition to ensure the bucket you specify is owned
+     * by a specific account (it is possible the bucket owner deleted the bucket
+     * and some other AWS account created the bucket). You can also use this
+     * condition to specify all sources (that is, you don't specify the
+     * <code>SourceArn</code>) owned by a specific account.
      * </p>
      * 
      * @param sourceAccount
-     *        The AWS account ID (without a hyphen) of the source owner. For
-     *        example, if the <code>SourceArn</code> identifies a bucket, then
-     *        this is the bucket owner's account ID. You can use this additional
-     *        condition to ensure the bucket you specify is owned by a specific
-     *        account (it is possible the bucket owner deleted the bucket and
-     *        some other AWS account created the bucket). You can also use this
-     *        condition to specify all sources (that is, you don't specify the
+     *        This parameter is used for S3 and SES only. The AWS account ID
+     *        (without a hyphen) of the source owner. For example, if the
+     *        <code>SourceArn</code> identifies a bucket, then this is the
+     *        bucket owner's account ID. You can use this additional condition
+     *        to ensure the bucket you specify is owned by a specific account
+     *        (it is possible the bucket owner deleted the bucket and some other
+     *        AWS account created the bucket). You can also use this condition
+     *        to specify all sources (that is, you don't specify the
      *        <code>SourceArn</code>) owned by a specific account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -578,7 +606,15 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A unique token that must be supplied by the principal invoking the
+     * function. This is currently only used for Alexa Smart Home functions.
+     * </p>
+     * 
      * @param eventSourceToken
+     *        A unique token that must be supplied by the principal invoking the
+     *        function. This is currently only used for Alexa Smart Home
+     *        functions.
      */
 
     public void setEventSourceToken(String eventSourceToken) {
@@ -586,7 +622,14 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * A unique token that must be supplied by the principal invoking the
+     * function. This is currently only used for Alexa Smart Home functions.
+     * </p>
+     * 
+     * @return A unique token that must be supplied by the principal invoking
+     *         the function. This is currently only used for Alexa Smart Home
+     *         functions.
      */
 
     public String getEventSourceToken() {
@@ -594,7 +637,15 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A unique token that must be supplied by the principal invoking the
+     * function. This is currently only used for Alexa Smart Home functions.
+     * </p>
+     * 
      * @param eventSourceToken
+     *        A unique token that must be supplied by the principal invoking the
+     *        function. This is currently only used for Alexa Smart Home
+     *        functions.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -635,8 +686,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *        ARN using a function version or an alias name. The permission will
      *        then apply to the specific qualified ARN. For example, if you
      *        specify function version 2 as the qualifier, then permission
-     *        applies only when request is made using qualified function ARN:
-     *        </p>
+     *        applies only when request is made using qualified function
+     *        ARN:</p>
      *        <p>
      *        <code>arn:aws:lambda:aws-region:acct-id:function:function-name:2</code>
      *        </p>
@@ -690,8 +741,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *         ARN using a function version or an alias name. The permission
      *         will then apply to the specific qualified ARN. For example, if
      *         you specify function version 2 as the qualifier, then permission
-     *         applies only when request is made using qualified function ARN:
-     *         </p>
+     *         applies only when request is made using qualified function
+     *         ARN:</p>
      *         <p>
      *         <code>arn:aws:lambda:aws-region:acct-id:function:function-name:2</code>
      *         </p>
@@ -746,8 +797,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *        ARN using a function version or an alias name. The permission will
      *        then apply to the specific qualified ARN. For example, if you
      *        specify function version 2 as the qualifier, then permission
-     *        applies only when request is made using qualified function ARN:
-     *        </p>
+     *        applies only when request is made using qualified function
+     *        ARN:</p>
      *        <p>
      *        <code>arn:aws:lambda:aws-region:acct-id:function:function-name:2</code>
      *        </p>

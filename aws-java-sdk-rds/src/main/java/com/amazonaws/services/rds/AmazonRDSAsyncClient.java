@@ -3577,6 +3577,41 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DBCluster> restoreDBClusterFromS3Async(
+            RestoreDBClusterFromS3Request request) {
+
+        return restoreDBClusterFromS3Async(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBCluster> restoreDBClusterFromS3Async(
+            final RestoreDBClusterFromS3Request request,
+            final com.amazonaws.handlers.AsyncHandler<RestoreDBClusterFromS3Request, DBCluster> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DBCluster>() {
+                    @Override
+                    public DBCluster call() throws Exception {
+                        DBCluster result;
+
+                        try {
+                            result = restoreDBClusterFromS3(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DBCluster> restoreDBClusterFromSnapshotAsync(
             RestoreDBClusterFromSnapshotRequest request) {
 

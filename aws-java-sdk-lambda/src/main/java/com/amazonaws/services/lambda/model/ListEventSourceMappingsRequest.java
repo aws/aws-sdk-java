@@ -18,14 +18,15 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class ListEventSourceMappingsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This
+     * parameter is optional.)
      * </p>
      */
     private String eventSourceArn;
@@ -65,11 +66,13 @@ public class ListEventSourceMappingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This
+     * parameter is optional.)
      * </p>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the Amazon Kinesis stream.
+     *        The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This
+     *        parameter is optional.)
      */
 
     public void setEventSourceArn(String eventSourceArn) {
@@ -78,10 +81,12 @@ public class ListEventSourceMappingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This
+     * parameter is optional.)
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon Kinesis stream.
+     *         (This parameter is optional.)
      */
 
     public String getEventSourceArn() {
@@ -90,11 +95,13 @@ public class ListEventSourceMappingsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This
+     * parameter is optional.)
      * </p>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the Amazon Kinesis stream.
+     *        The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This
+     *        parameter is optional.)
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
