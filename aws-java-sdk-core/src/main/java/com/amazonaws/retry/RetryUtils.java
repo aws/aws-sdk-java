@@ -110,4 +110,18 @@ public class RetryUtils {
         int delayUpperBound = Math.min(baseDelay * (1 << retriesAttempted), maxBackoffTime);
         return random.nextInt(delayUpperBound + 1);
     }
+
+    /**
+     * Returns true if the specified exception is dns resolution issue.
+     *
+     * @param ase
+     *            The exception to test.
+     *
+     * @return True if the exception resulted from dns resolution failure,
+     *         otherwise false
+     */
+    public static boolean isDnsError(AmazonServiceException ase) {
+        return ase != null && ase.getCause() != null
+            && ase.getCause() instanceof java.net.UnknownHostException;
+    }
 }
