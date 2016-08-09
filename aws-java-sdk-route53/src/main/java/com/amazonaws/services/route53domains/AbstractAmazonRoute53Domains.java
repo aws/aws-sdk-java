@@ -188,4 +188,5 @@ public class AbstractAmazonRoute53Domains implements AmazonRoute53Domains {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

@@ -6,6 +6,9 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import ${metadata.packageName}.model.*;
+<#if hasWaiters>
+import ${metadata.packageName}.waiters.${metadata.syncInterface}Waiters;
+</#if>
 
 /**
  * Interface for accessing ${serviceAbbreviation}.
@@ -118,5 +121,9 @@ public interface ${metadata.syncInterface} {
      *         is available.
      */
     ${responseMetadataClassName} getCachedResponseMetadata(AmazonWebServiceRequest request);
+  </#if>
+
+  <#if hasWaiters>
+    ${metadata.syncInterface}Waiters waiters();
   </#if>
 }

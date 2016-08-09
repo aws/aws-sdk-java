@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.ec2.model.*;
+import com.amazonaws.services.ec2.waiters.AmazonEC2Waiters;
 
 /**
  * Interface for accessing Amazon EC2.
@@ -5586,4 +5587,6 @@ public interface AmazonEC2 {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonEC2Waiters waiters();
 }

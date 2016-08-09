@@ -211,6 +211,7 @@ import com.amazonaws.services.s3.model.transform.Unmarshallers;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
 import com.amazonaws.services.s3.request.S3HandlerContextKeys;
+import com.amazonaws.services.s3.waiters.AmazonS3Waiters;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -310,6 +311,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         SignerFactory.registerSigner(S3_SIGNER, S3Signer.class);
         SignerFactory.registerSigner(S3_V4_SIGNER, AWSS3V4Signer.class);
     }
+
+    private volatile AmazonS3Waiters waiters;
 
     /** Provider for AWS credentials. */
     protected final AWSCredentialsProvider awsCredentialsProvider;
@@ -4448,5 +4451,16 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         return bucketRegion;
+    }
+
+    public AmazonS3Waiters waiters(){
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonS3Waiters(this);
+                }
+            }
+        }
+        return waiters;
     }
 }

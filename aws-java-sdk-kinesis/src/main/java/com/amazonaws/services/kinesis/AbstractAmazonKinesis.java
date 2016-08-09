@@ -16,6 +16,7 @@ package com.amazonaws.services.kinesis;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.kinesis.waiters.AmazonKinesisWaiters;
 
 /**
  * Abstract implementation of {@code AmazonKinesis}. Convenient method forms
@@ -238,6 +239,11 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonKinesisWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

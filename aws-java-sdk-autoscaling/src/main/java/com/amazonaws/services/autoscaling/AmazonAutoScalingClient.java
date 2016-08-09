@@ -36,6 +36,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.autoscaling.waiters.AmazonAutoScalingWaiters;
+
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.autoscaling.model.*;
@@ -63,6 +65,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "autoscaling";
+
+    private volatile AmazonAutoScalingWaiters waiters;
 
     /**
      * Client configuration factory providing ClientConfigurations tailored to
@@ -3144,6 +3148,17 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);
+    }
+
+    public AmazonAutoScalingWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonAutoScalingWaiters(this);
+                }
+            }
+        }
+        return waiters;
     }
 
 }

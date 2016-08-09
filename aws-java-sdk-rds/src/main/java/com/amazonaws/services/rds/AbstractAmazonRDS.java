@@ -16,6 +16,7 @@ package com.amazonaws.services.rds;
 
 import com.amazonaws.services.rds.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.rds.waiters.AmazonRDSWaiters;
 
 /**
  * Abstract implementation of {@code AmazonRDS}. Convenient method forms pass
@@ -625,6 +626,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonRDSWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

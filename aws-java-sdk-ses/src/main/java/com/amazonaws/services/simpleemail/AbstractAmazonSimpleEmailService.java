@@ -16,6 +16,7 @@ package com.amazonaws.services.simpleemail;
 
 import com.amazonaws.services.simpleemail.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.simpleemail.waiters.AmazonSimpleEmailServiceWaiters;
 
 /**
  * Abstract implementation of {@code AmazonSimpleEmailService}. Convenient
@@ -312,6 +313,11 @@ public class AbstractAmazonSimpleEmailService implements
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonSimpleEmailServiceWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

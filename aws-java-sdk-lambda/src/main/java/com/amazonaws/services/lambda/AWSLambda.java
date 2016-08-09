@@ -1081,4 +1081,5 @@ public interface AWSLambda {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

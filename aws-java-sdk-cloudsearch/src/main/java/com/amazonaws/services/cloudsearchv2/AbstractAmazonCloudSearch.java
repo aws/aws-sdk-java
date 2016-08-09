@@ -193,4 +193,5 @@ public class AbstractAmazonCloudSearch implements AmazonCloudSearch {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

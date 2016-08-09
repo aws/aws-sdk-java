@@ -16,6 +16,7 @@ package com.amazonaws.services.ecs;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.ecs.waiters.AmazonECSWaiters;
 
 /**
  * Abstract implementation of {@code AmazonECS}. Convenient method forms pass
@@ -245,6 +246,11 @@ public class AbstractAmazonECS implements AmazonECS {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonECSWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

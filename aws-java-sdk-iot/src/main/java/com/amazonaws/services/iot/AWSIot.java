@@ -1771,4 +1771,5 @@ public interface AWSIot {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

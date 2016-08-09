@@ -379,4 +379,5 @@ public interface AWSServiceCatalog {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

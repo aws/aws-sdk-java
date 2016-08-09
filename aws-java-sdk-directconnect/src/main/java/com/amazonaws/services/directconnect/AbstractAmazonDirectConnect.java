@@ -198,4 +198,5 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

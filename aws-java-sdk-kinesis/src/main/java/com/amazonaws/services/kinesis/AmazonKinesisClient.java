@@ -36,6 +36,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.kinesis.waiters.AmazonKinesisWaiters;
+
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.kinesis.model.*;
@@ -61,6 +63,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "kinesis";
+
+    private volatile AmazonKinesisWaiters waiters;
 
     /**
      * Client configuration factory providing ClientConfigurations tailored to
@@ -2018,6 +2022,17 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);
+    }
+
+    public AmazonKinesisWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonKinesisWaiters(this);
+                }
+            }
+        }
+        return waiters;
     }
 
 }

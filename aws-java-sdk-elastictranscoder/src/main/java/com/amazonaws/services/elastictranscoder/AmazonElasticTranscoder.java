@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.elastictranscoder.model.*;
+import com.amazonaws.services.elastictranscoder.waiters.AmazonElasticTranscoderWaiters;
 
 /**
  * Interface for accessing Amazon Elastic Transcoder.
@@ -681,4 +682,6 @@ public interface AmazonElasticTranscoder {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonElasticTranscoderWaiters waiters();
 }

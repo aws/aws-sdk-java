@@ -307,6 +307,41 @@ public class AWSMarketplaceCommerceAnalyticsAsyncClient extends
                 });
     }
 
+    @Override
+    public java.util.concurrent.Future<StartSupportDataExportResult> startSupportDataExportAsync(
+            StartSupportDataExportRequest request) {
+
+        return startSupportDataExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSupportDataExportResult> startSupportDataExportAsync(
+            final StartSupportDataExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSupportDataExportRequest, StartSupportDataExportResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<StartSupportDataExportResult>() {
+                    @Override
+                    public StartSupportDataExportResult call() throws Exception {
+                        StartSupportDataExportResult result;
+
+                        try {
+                            result = startSupportDataExport(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who

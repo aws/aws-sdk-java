@@ -16,6 +16,7 @@ package com.amazonaws.services.elasticmapreduce;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.elasticmapreduce.waiters.AmazonElasticMapReduceWaiters;
 
 /**
  * Abstract implementation of {@code AmazonElasticMapReduce}. Convenient method
@@ -155,6 +156,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonElasticMapReduceWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

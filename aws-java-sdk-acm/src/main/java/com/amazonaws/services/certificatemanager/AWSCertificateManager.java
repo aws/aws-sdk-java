@@ -405,4 +405,5 @@ public interface AWSCertificateManager {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

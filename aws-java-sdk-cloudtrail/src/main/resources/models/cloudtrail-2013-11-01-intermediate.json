@@ -19,9 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "cloudtrail",
     "signingName" : "cloudtrail",
-    "xmlProtocol" : false,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSCloudTrailClientBuilder",
     "asyncClientBuilderClassName" : "AWSCloudTrailAsyncClientBuilder",
@@ -29,7 +27,9 @@
     "smokeTestsPackageName" : "com.amazonaws.services.cloudtrail.smoketests",
     "serviceName" : "CloudTrail",
     "cborProtocol" : false,
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "xmlProtocol" : false,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "AddTags" : {
@@ -75,13 +75,13 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "addTags",
       "authenticated" : true,
       "syncReturnType" : "AddTagsResult",
       "asyncReturnType" : "AddTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>",
-      "methodName" : "addTags"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult>"
     },
     "CreateTrail" : {
       "documentation" : "<p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five trails can exist in a region, irrespective of the region in which they were created.</p>",
@@ -165,13 +165,13 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "createTrail",
       "authenticated" : true,
       "syncReturnType" : "CreateTrailResult",
       "asyncReturnType" : "CreateTrailResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateTrailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateTrailResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrailRequest, CreateTrailResult>",
-      "methodName" : "createTrail"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateTrailRequest, CreateTrailResult>"
     },
     "DeleteTrail" : {
       "documentation" : "<p>Deletes a trail. This operation must be called from the region in which the trail was created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>",
@@ -201,13 +201,13 @@
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "deleteTrail",
       "authenticated" : true,
       "syncReturnType" : "DeleteTrailResult",
       "asyncReturnType" : "DeleteTrailResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTrailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTrailResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTrailRequest, DeleteTrailResult>",
-      "methodName" : "deleteTrail"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTrailRequest, DeleteTrailResult>"
     },
     "DescribeTrails" : {
       "documentation" : "<p>Retrieves settings for the trail associated with the current region for your account.</p>",
@@ -234,13 +234,13 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "describeTrails",
       "authenticated" : true,
       "syncReturnType" : "DescribeTrailsResult",
       "asyncReturnType" : "DescribeTrailsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTrailsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTrailsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrailsRequest, DescribeTrailsResult>",
-      "methodName" : "describeTrails"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrailsRequest, DescribeTrailsResult>"
     },
     "GetTrailStatus" : {
       "documentation" : "<p>Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail. This operation returns trail status from a single region. To return trail status from all regions, you must call the operation on each region.</p>",
@@ -267,13 +267,13 @@
         "documentation" : "<p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "getTrailStatus",
       "authenticated" : true,
       "syncReturnType" : "GetTrailStatusResult",
       "asyncReturnType" : "GetTrailStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetTrailStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetTrailStatusResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrailStatusRequest, GetTrailStatusResult>",
-      "methodName" : "getTrailStatus"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetTrailStatusRequest, GetTrailStatusResult>"
     },
     "ListPublicKeys" : {
       "documentation" : "<p>Returns all public keys whose private keys were used to sign the digest files within the specified time range. The public key is needed to validate digest files that were signed with its corresponding private key.</p> <note> <p>CloudTrail uses different private/public key pairs per region. Each digest file is signed with a private key unique to its region. Therefore, when you validate a digest file from a particular region, you must look in the same region for its corresponding public key.</p> </note>",
@@ -306,13 +306,13 @@
         "documentation" : "<p>Reserved for future use.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listPublicKeys",
       "authenticated" : true,
       "syncReturnType" : "ListPublicKeysResult",
       "asyncReturnType" : "ListPublicKeysResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPublicKeysResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPublicKeysResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPublicKeysRequest, ListPublicKeysResult>",
-      "methodName" : "listPublicKeys"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPublicKeysRequest, ListPublicKeysResult>"
     },
     "ListTags" : {
       "documentation" : "<p>Lists the tags for the trail in the current region.</p>",
@@ -354,13 +354,13 @@
         "documentation" : "<p>Reserved for future use.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "listTags",
       "authenticated" : true,
       "syncReturnType" : "ListTagsResult",
       "asyncReturnType" : "ListTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult>",
-      "methodName" : "listTags"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult>"
     },
     "LookupEvents" : {
       "documentation" : "<p>Looks up API activity events captured by CloudTrail that create, update, or delete resources in your account. Events for a region can be looked up for the times in which you had CloudTrail turned on in that region during the last seven days. Lookup supports five different attributes: time range (defined by a start time and end time), user name, event name, resource type, and resource name. All attributes are optional. The maximum number of attributes that can be specified in any one lookup request are time range and one other attribute. The default number of results returned is 10, with a maximum of 50 possible. The response includes a token that you can use to get the next page of results.</p> <important> <p>The rate of lookup requests is limited to one per second per account. If this limit is exceeded, a throttling error occurs.</p> </important> <important> <p>Events that occurred during the selected time range will not be available for lookup if CloudTrail logging was not enabled when the events occurred.</p> </important>",
@@ -393,13 +393,13 @@
         "documentation" : "<p>Invalid token or token that was previously used in a request with different parameters. This exception is thrown if the token is invalid.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "lookupEvents",
       "authenticated" : true,
       "syncReturnType" : "LookupEventsResult",
       "asyncReturnType" : "LookupEventsResult",
       "asyncFutureType" : "java.util.concurrent.Future<LookupEventsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<LookupEventsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<LookupEventsRequest, LookupEventsResult>",
-      "methodName" : "lookupEvents"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<LookupEventsRequest, LookupEventsResult>"
     },
     "RemoveTags" : {
       "documentation" : "<p>Removes the specified tags from a trail.</p>",
@@ -441,13 +441,13 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "removeTags",
       "authenticated" : true,
       "syncReturnType" : "RemoveTagsResult",
       "asyncReturnType" : "RemoveTagsResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>",
-      "methodName" : "removeTags"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult>"
     },
     "StartLogging" : {
       "documentation" : "<p>Starts the recording of AWS API calls and log file delivery for a trail. For a trail that is enabled in all regions, this operation must be called from the region in which the trail was created. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>",
@@ -477,13 +477,13 @@
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "startLogging",
       "authenticated" : true,
       "syncReturnType" : "StartLoggingResult",
       "asyncReturnType" : "StartLoggingResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartLoggingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartLoggingResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartLoggingRequest, StartLoggingResult>",
-      "methodName" : "startLogging"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartLoggingRequest, StartLoggingResult>"
     },
     "StopLogging" : {
       "documentation" : "<p>Suspends the recording of AWS API calls and log file delivery for the specified trail. Under most circumstances, there is no need to use this action. You can update a trail without stopping it first. This action is the only way to stop recording. For a trail enabled in all regions, this operation must be called from the region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail enabled in all regions.</p>",
@@ -513,13 +513,13 @@
         "documentation" : "<p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "stopLogging",
       "authenticated" : true,
       "syncReturnType" : "StopLoggingResult",
       "asyncReturnType" : "StopLoggingResult",
       "asyncFutureType" : "java.util.concurrent.Future<StopLoggingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StopLoggingResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopLoggingRequest, StopLoggingResult>",
-      "methodName" : "stopLogging"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopLoggingRequest, StopLoggingResult>"
     },
     "UpdateTrail" : {
       "documentation" : "<p>Updates the settings that specify delivery of log files. Changes to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from the region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.</p>",
@@ -603,13 +603,13 @@
         "documentation" : "<p>This exception is thrown when the requested operation is not permitted.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "methodName" : "updateTrail",
       "authenticated" : true,
       "syncReturnType" : "UpdateTrailResult",
       "asyncReturnType" : "UpdateTrailResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateTrailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateTrailResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateTrailRequest, UpdateTrailResult>",
-      "methodName" : "updateTrail"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateTrailRequest, UpdateTrailResult>"
     }
   },
   "shapes" : {
@@ -728,8 +728,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "PublicKey",
-          "templateType" : "java.util.List<PublicKey>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>",
+          "templateType" : "java.util.List<PublicKey>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -974,8 +974,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "PublicKey",
-            "templateType" : "java.util.List<PublicKey>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>",
+            "templateType" : "java.util.List<PublicKey>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1399,8 +1399,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Tag",
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "templateType" : "java.util.List<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1597,8 +1597,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Tag",
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "templateType" : "java.util.List<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1729,8 +1729,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1979,8 +1979,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2193,8 +2193,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Trail",
-          "templateType" : "java.util.List<Trail>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>",
+          "templateType" : "java.util.List<Trail>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2334,8 +2334,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Trail",
-            "templateType" : "java.util.List<Trail>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>",
+            "templateType" : "java.util.List<Trail>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3343,8 +3343,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3540,8 +3540,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8104,8 +8104,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ResourceTag",
-          "templateType" : "java.util.List<ResourceTag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
+          "templateType" : "java.util.List<ResourceTag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8350,8 +8350,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ResourceTag",
-            "templateType" : "java.util.List<ResourceTag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
+            "templateType" : "java.util.List<ResourceTag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8694,8 +8694,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Event",
-          "templateType" : "java.util.List<Event>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>",
+          "templateType" : "java.util.List<Event>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8940,8 +8940,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Event",
-            "templateType" : "java.util.List<Event>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>",
+            "templateType" : "java.util.List<Event>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9299,8 +9299,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "LookupAttribute",
-          "templateType" : "java.util.List<LookupAttribute>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>",
+          "templateType" : "java.util.List<LookupAttribute>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9864,8 +9864,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "LookupAttribute",
-            "templateType" : "java.util.List<LookupAttribute>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>",
+            "templateType" : "java.util.List<LookupAttribute>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14784,8 +14784,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Tag",
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "templateType" : "java.util.List<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14982,8 +14982,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Tag",
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "templateType" : "java.util.List<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15343,8 +15343,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Tag",
-          "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "templateType" : "java.util.List<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15537,8 +15537,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Tag",
-            "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "templateType" : "java.util.List<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15976,8 +15976,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Resource",
-          "templateType" : "java.util.List<Resource>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>"
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
+          "templateType" : "java.util.List<Resource>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16381,8 +16381,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Resource",
-            "templateType" : "java.util.List<Resource>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>"
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
+            "templateType" : "java.util.List<Resource>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16870,14 +16870,16 @@
     "convenienceTypeOverloads" : [ ],
     "skipSmokeTests" : false
   },
+  "waiters" : { },
   "examples" : {
-    "version" : "1.0",
-    "operationExamples" : { }
+    "examples" : { },
+    "version" : "1.0"
   },
-  "sdkModeledExceptionBaseClassName" : "AWSCloudTrailException",
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cloudtrail.model.AWSCloudTrailException"
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cloudtrail.model.AWSCloudTrailException",
+  "hasWaiters" : false,
+  "sdkModeledExceptionBaseClassName" : "AWSCloudTrailException",
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
 }

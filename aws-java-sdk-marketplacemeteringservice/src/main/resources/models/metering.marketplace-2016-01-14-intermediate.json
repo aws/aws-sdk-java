@@ -19,7 +19,6 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "metering.marketplace",
     "signingName" : "aws-marketplace",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSMarketplaceMeteringClientBuilder",
     "asyncClientBuilderClassName" : "AWSMarketplaceMeteringAsyncClientBuilder",
@@ -29,7 +28,8 @@
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller"
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "MeterUsage" : {
@@ -41,8 +41,8 @@
         "variableType" : "MeterUsageRequest",
         "variableDeclarationType" : "MeterUsageRequest",
         "documentation" : "",
-        "simpleType" : "MeterUsageRequest",
-        "variableSetterType" : "MeterUsageRequest"
+        "variableSetterType" : "MeterUsageRequest",
+        "simpleType" : "MeterUsageRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -72,12 +72,12 @@
         "documentation" : "<p>The calls to the MeterUsage API are throttled.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<MeterUsageRequest, MeterUsageResult>",
       "syncReturnType" : "MeterUsageResult",
       "asyncReturnType" : "MeterUsageResult",
       "asyncFutureType" : "java.util.concurrent.Future<MeterUsageResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<MeterUsageResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<MeterUsageRequest, MeterUsageResult>",
-      "authenticated" : true,
       "methodName" : "meterUsage"
     }
   },
@@ -100,8 +100,8 @@
         "variableType" : "TimestampOutOfBoundsException",
         "variableDeclarationType" : "TimestampOutOfBoundsException",
         "documentation" : null,
-        "simpleType" : "TimestampOutOfBoundsException",
-        "variableSetterType" : "TimestampOutOfBoundsException"
+        "variableSetterType" : "TimestampOutOfBoundsException",
+        "simpleType" : "TimestampOutOfBoundsException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -132,8 +132,8 @@
         "variableType" : "InternalServiceErrorException",
         "variableDeclarationType" : "InternalServiceErrorException",
         "documentation" : null,
-        "simpleType" : "InternalServiceErrorException",
-        "variableSetterType" : "InternalServiceErrorException"
+        "variableSetterType" : "InternalServiceErrorException",
+        "simpleType" : "InternalServiceErrorException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -164,8 +164,8 @@
         "variableType" : "InvalidUsageDimensionException",
         "variableDeclarationType" : "InvalidUsageDimensionException",
         "documentation" : null,
-        "simpleType" : "InvalidUsageDimensionException",
-        "variableSetterType" : "InvalidUsageDimensionException"
+        "variableSetterType" : "InvalidUsageDimensionException",
+        "simpleType" : "InvalidUsageDimensionException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -196,8 +196,8 @@
         "variableType" : "ThrottlingException",
         "variableDeclarationType" : "ThrottlingException",
         "documentation" : null,
-        "simpleType" : "ThrottlingException",
-        "variableSetterType" : "ThrottlingException"
+        "variableSetterType" : "ThrottlingException",
+        "simpleType" : "ThrottlingException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -231,16 +231,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "productCode",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -283,16 +283,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>",
-          "simpleType" : "Date",
-          "variableSetterType" : "java.util.Date"
+          "variableSetterType" : "java.util.Date",
+          "simpleType" : "Date"
         },
         "setterModel" : {
           "variableName" : "timestamp",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "simpleType" : "Date",
-          "variableSetterType" : "java.util.Date"
+          "variableSetterType" : "java.util.Date",
+          "simpleType" : "Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -335,16 +335,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "usageDimension",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -387,16 +387,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>Consumption value for the hour.</p>",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "usageQuantity",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -439,16 +439,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "dryRun",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -488,8 +488,8 @@
         "variableType" : "MeterUsageRequest",
         "variableDeclarationType" : "MeterUsageRequest",
         "documentation" : null,
-        "simpleType" : "MeterUsageRequest",
-        "variableSetterType" : "MeterUsageRequest"
+        "variableSetterType" : "MeterUsageRequest",
+        "simpleType" : "MeterUsageRequest"
       },
       "marshaller" : {
         "action" : "MeterUsage",
@@ -518,16 +518,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "productCode",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -571,16 +571,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "dryRun",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -624,16 +624,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>Consumption value for the hour.</p>",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "usageQuantity",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -677,16 +677,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>",
-            "simpleType" : "Date",
-            "variableSetterType" : "java.util.Date"
+            "variableSetterType" : "java.util.Date",
+            "simpleType" : "Date"
           },
           "setterModel" : {
             "variableName" : "timestamp",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "simpleType" : "Date",
-            "variableSetterType" : "java.util.Date"
+            "variableSetterType" : "java.util.Date",
+            "simpleType" : "Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -730,16 +730,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>It will be one of the 'fcp dimension name' provided during the publishing of the product.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "usageDimension",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -796,16 +796,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "meteringRecordId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -845,8 +845,8 @@
         "variableType" : "MeterUsageResult",
         "variableDeclarationType" : "MeterUsageResult",
         "documentation" : null,
-        "simpleType" : "MeterUsageResult",
-        "variableSetterType" : "MeterUsageResult"
+        "variableSetterType" : "MeterUsageResult",
+        "simpleType" : "MeterUsageResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -871,16 +871,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "meteringRecordId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -934,8 +934,8 @@
         "variableType" : "DuplicateRequestException",
         "variableDeclarationType" : "DuplicateRequestException",
         "documentation" : null,
-        "simpleType" : "DuplicateRequestException",
-        "variableSetterType" : "DuplicateRequestException"
+        "variableSetterType" : "DuplicateRequestException",
+        "simpleType" : "DuplicateRequestException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -966,8 +966,8 @@
         "variableType" : "InvalidEndpointRegionException",
         "variableDeclarationType" : "InvalidEndpointRegionException",
         "documentation" : null,
-        "simpleType" : "InvalidEndpointRegionException",
-        "variableSetterType" : "InvalidEndpointRegionException"
+        "variableSetterType" : "InvalidEndpointRegionException",
+        "simpleType" : "InvalidEndpointRegionException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -998,8 +998,8 @@
         "variableType" : "InvalidProductCodeException",
         "variableDeclarationType" : "InvalidProductCodeException",
         "documentation" : null,
-        "simpleType" : "InvalidProductCodeException",
-        "variableSetterType" : "InvalidProductCodeException"
+        "variableSetterType" : "InvalidProductCodeException",
+        "simpleType" : "InvalidProductCodeException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -1047,14 +1047,16 @@
     "convenienceTypeOverloads" : [ ],
     "skipSmokeTests" : false
   },
+  "waiters" : { },
   "examples" : {
-    "version" : "1.0",
-    "operationExamples" : { }
+    "examples" : { },
+    "version" : "1.0"
   },
+  "sdkModeledExceptionBaseClassName" : "AWSMarketplaceMeteringException",
   "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException",
-  "sdkModeledExceptionBaseClassName" : "AWSMarketplaceMeteringException"
+  "hasWaiters" : false
 }

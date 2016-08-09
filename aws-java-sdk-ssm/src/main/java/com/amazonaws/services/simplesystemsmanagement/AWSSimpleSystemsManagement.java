@@ -1017,4 +1017,5 @@ public interface AWSSimpleSystemsManagement {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

@@ -376,7 +376,7 @@ public class EC2MetadataUtils {
         List<String> items;
         try {
             String hostAddress = getHostAddressForEC2MetadataService();
-            String response = EC2CredentialsUtils.readResource(new URI(hostAddress + path));
+            String response = EC2CredentialsUtils.getInstance().readResource(new URI(hostAddress + path));
             if (slurp)
                 items = Collections.singletonList(response);
             else

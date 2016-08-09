@@ -532,4 +532,5 @@ public interface AmazonKinesisFirehose {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

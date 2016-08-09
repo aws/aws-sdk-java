@@ -69,11 +69,7 @@ public class MetricAdmin implements MetricAdminMBean {
     }
     @Override
     public void setRegion(String region) {
-        if (region == null || region.isEmpty())
-            AwsSdkMetrics.setRegion(null);
-        else {
-            AwsSdkMetrics.setRegion(Regions.fromName(region));
-        }
+        AwsSdkMetrics.setRegion(region);
     }
     @Override
     public Integer getMetricQueueSize() {
@@ -82,7 +78,7 @@ public class MetricAdmin implements MetricAdminMBean {
     @Override
     public void setMetricQueueSize(Integer metricQueueSize) {
         AwsSdkMetrics.setMetricQueueSize(metricQueueSize);
-        
+
     }
     @Override
     public Integer getQueuePollTimeoutMilli() {
@@ -130,7 +126,7 @@ public class MetricAdmin implements MetricAdminMBean {
     public String getCredentialFile() {
         return AwsSdkMetrics.getCredentailFile();
     }
-    
+
     @Override
     public void setCredentialFile(String filepath)
             throws FileNotFoundException, IOException {

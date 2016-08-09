@@ -711,4 +711,5 @@ public interface AmazonCognitoSync {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

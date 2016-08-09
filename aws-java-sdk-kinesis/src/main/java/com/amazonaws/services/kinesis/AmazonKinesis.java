@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.kinesis.model.*;
+import com.amazonaws.services.kinesis.waiters.AmazonKinesisWaiters;
 
 /**
  * Interface for accessing Kinesis.
@@ -1220,4 +1221,6 @@ public interface AmazonKinesis {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonKinesisWaiters waiters();
 }

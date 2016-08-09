@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.glacier.model.*;
+import com.amazonaws.services.glacier.waiters.AmazonGlacierWaiters;
 
 /**
  * Interface for accessing Amazon Glacier.
@@ -1982,4 +1983,6 @@ public interface AmazonGlacier {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonGlacierWaiters waiters();
 }

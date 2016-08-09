@@ -2495,4 +2495,5 @@ public interface AWSWAF {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

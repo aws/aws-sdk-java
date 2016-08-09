@@ -16,6 +16,7 @@ package com.amazonaws.services.cloudformation;
 
 import com.amazonaws.services.cloudformation.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.cloudformation.waiters.AmazonCloudFormationWaiters;
 
 /**
  * Abstract implementation of {@code AmazonCloudFormation}. Convenient method
@@ -197,6 +198,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonCloudFormationWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -915,4 +915,5 @@ public interface AmazonInspector {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

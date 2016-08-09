@@ -16,6 +16,7 @@ package com.amazonaws.services.route53;
 
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.route53.waiters.AmazonRoute53Waiters;
 
 /**
  * Abstract implementation of {@code AmazonRoute53}. Convenient method forms
@@ -391,6 +392,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonRoute53Waiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

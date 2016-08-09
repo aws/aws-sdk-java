@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
+import com.amazonaws.services.elasticmapreduce.waiters.AmazonElasticMapReduceWaiters;
 
 /**
  * Interface for accessing Amazon EMR.
@@ -609,4 +610,6 @@ public interface AmazonElasticMapReduce {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonElasticMapReduceWaiters waiters();
 }

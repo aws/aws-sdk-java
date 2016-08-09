@@ -87,4 +87,5 @@ public class AbstractAmazonKinesisFirehose implements AmazonKinesisFirehose {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

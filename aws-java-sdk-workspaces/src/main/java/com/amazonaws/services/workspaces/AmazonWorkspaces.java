@@ -398,4 +398,5 @@ public interface AmazonWorkspaces {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

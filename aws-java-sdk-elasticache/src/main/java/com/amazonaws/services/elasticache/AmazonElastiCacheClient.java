@@ -36,6 +36,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.elasticache.waiters.AmazonElastiCacheWaiters;
+
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.elasticache.model.*;
@@ -72,6 +74,8 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "elasticache";
+
+    private volatile AmazonElastiCacheWaiters waiters;
 
     /**
      * Client configuration factory providing ClientConfigurations tailored to
@@ -2901,6 +2905,17 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);
+    }
+
+    public AmazonElastiCacheWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonElastiCacheWaiters(this);
+                }
+            }
+        }
+        return waiters;
     }
 
 }

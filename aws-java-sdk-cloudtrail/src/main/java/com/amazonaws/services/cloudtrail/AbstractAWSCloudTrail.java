@@ -122,4 +122,5 @@ public class AbstractAWSCloudTrail implements AWSCloudTrail {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

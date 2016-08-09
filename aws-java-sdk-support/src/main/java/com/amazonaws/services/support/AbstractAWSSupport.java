@@ -148,4 +148,5 @@ public class AbstractAWSSupport implements AWSSupport {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

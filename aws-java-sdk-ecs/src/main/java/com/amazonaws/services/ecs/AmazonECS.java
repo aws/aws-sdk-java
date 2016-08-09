@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.ecs.model.*;
+import com.amazonaws.services.ecs.waiters.AmazonECSWaiters;
 
 /**
  * Interface for accessing Amazon ECS.
@@ -1208,4 +1209,6 @@ public interface AmazonECS {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonECSWaiters waiters();
 }

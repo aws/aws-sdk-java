@@ -36,6 +36,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.elastictranscoder.waiters.AmazonElasticTranscoderWaiters;
+
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.elastictranscoder.model.*;
@@ -62,6 +64,8 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "elastictranscoder";
+
+    private volatile AmazonElasticTranscoderWaiters waiters;
 
     /**
      * Client configuration factory providing ClientConfigurations tailored to
@@ -1494,6 +1498,17 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);
+    }
+
+    public AmazonElasticTranscoderWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonElasticTranscoderWaiters(this);
+                }
+            }
+        }
+        return waiters;
     }
 
 }

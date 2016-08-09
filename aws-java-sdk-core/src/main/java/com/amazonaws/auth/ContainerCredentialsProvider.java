@@ -21,6 +21,7 @@ import java.util.Date;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.internal.CredentialsEndpointProvider;
+import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
 
 /**
  * <p>
@@ -66,7 +67,7 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
     }
 
 
-    private static class ECSCredentialsEndpointProvider implements CredentialsEndpointProvider {
+    private static class ECSCredentialsEndpointProvider extends CredentialsEndpointProvider {
         @Override
         public URI getCredentialsEndpoint() throws URISyntaxException {
             String path = System.getenv(ECS_CONTAINER_CREDENTIALS_PATH);
@@ -76,6 +77,11 @@ public class ContainerCredentialsProvider implements AWSCredentialsProvider {
             }
 
             return new URI(ECS_CREDENTIALS_ENDPOINT + path);
+        }
+
+        @Override
+        public CredentialsEndpointRetryPolicy getRetryPolicy() {
+            return ContainerCredentialsRetryPolicy.getInstance();
         }
     }
 

@@ -36,6 +36,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.route53.waiters.AmazonRoute53Waiters;
+
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.route53.model.*;
@@ -57,6 +59,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "route53";
+
+    private volatile AmazonRoute53Waiters waiters;
 
     /**
      * Client configuration factory providing ClientConfigurations tailored to
@@ -3705,6 +3709,17 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);
+    }
+
+    public AmazonRoute53Waiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonRoute53Waiters(this);
+                }
+            }
+        }
+        return waiters;
     }
 
 }

@@ -109,12 +109,12 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
         credentialsFetcher.refresh();
     }
 
-    private static class InstanceMetadataCredentialsEndpointProvider implements CredentialsEndpointProvider {
+    private static class InstanceMetadataCredentialsEndpointProvider extends CredentialsEndpointProvider {
         @Override
         public URI getCredentialsEndpoint() throws URISyntaxException, IOException {
             String host = EC2MetadataUtils.getHostAddressForEC2MetadataService();
 
-            String securityCredentialsList = EC2CredentialsUtils.readResource(new URI(host + EC2MetadataUtils.SECURITY_CREDENTIALS_RESOURCE));
+            String securityCredentialsList = EC2CredentialsUtils.getInstance().readResource(new URI(host + EC2MetadataUtils.SECURITY_CREDENTIALS_RESOURCE));
             String[] securityCredentials = securityCredentialsList.trim().split("\n");
             if (securityCredentials.length == 0) {
                 throw new AmazonClientException("Unable to load credentials path");

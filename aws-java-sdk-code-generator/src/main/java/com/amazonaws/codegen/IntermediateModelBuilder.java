@@ -21,17 +21,15 @@ import com.amazonaws.codegen.internal.TypeUtils;
 import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.config.BasicCodeGenConfig;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
-import com.amazonaws.codegen.model.intermediate.IntermediateModel;
-import com.amazonaws.codegen.model.intermediate.MemberModel;
-import com.amazonaws.codegen.model.intermediate.OperationModel;
-import com.amazonaws.codegen.model.intermediate.ServiceExamples;
-import com.amazonaws.codegen.model.intermediate.ShapeModel;
+import com.amazonaws.codegen.model.intermediate.*;
 import com.amazonaws.codegen.model.service.Operation;
 import com.amazonaws.codegen.model.service.ServiceModel;
+import com.amazonaws.codegen.model.service.Waiters;
 import com.amazonaws.codegen.naming.DefaultNamingStrategy;
 import com.amazonaws.codegen.naming.NamingStrategy;
 import com.amazonaws.util.StringUtils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -55,10 +53,11 @@ public class IntermediateModelBuilder {
     private final NamingStrategy namingStrategy;
     private final TypeUtils typeUtils;
     private final List<IntermediateModelShapeProcessor> shapeProcessors;
+    private final Waiters waiters;
 
     public IntermediateModelBuilder(CustomizationConfig customConfig,
                                     BasicCodeGenConfig codeGenConfig, ServiceModel service,
-                                    ServiceExamples examples) {
+                                    ServiceExamples examples, Waiters waiters) {
         this.customConfig = customConfig;
         this.codeGenConfig = codeGenConfig;
         this.service = service;
@@ -66,6 +65,7 @@ public class IntermediateModelBuilder {
         this.namingStrategy = new DefaultNamingStrategy(service, codeGenConfig, customConfig);
         this.typeUtils = new TypeUtils(namingStrategy);
         this.shapeProcessors = createShapeProcessors();
+        this.waiters = waiters;
     }
 
     /**
@@ -82,7 +82,7 @@ public class IntermediateModelBuilder {
         return processors;
     }
 
-    public IntermediateModel build() {
+    public IntermediateModel build() throws IOException{
 
         CodegenCustomizationProcessor customization = DefaultCustomizationProcessor
                 .getProcessorFor(customConfig);
@@ -91,8 +91,10 @@ public class IntermediateModelBuilder {
 
         final Map<String, OperationModel> operations = new TreeMap<>();
         final Map<String, ShapeModel> shapes = new HashMap<>();
+        final Map<String, WaiterDefinitionModel> waiters = new HashMap<>();
 
         operations.putAll(new AddOperations(this).constructOperations());
+        waiters.putAll(new AddWaiters(this.waiters, operations).constructWaiters());
 
         for (IntermediateModelShapeProcessor processor : shapeProcessors) {
             shapes.putAll(processor.process(Collections.unmodifiableMap(operations),
@@ -103,7 +105,7 @@ public class IntermediateModelBuilder {
 
         IntermediateModel fullModel = new IntermediateModel(
                 constructMetadata(service, codeGenConfig, customConfig), operations, shapes,
-                customConfig, examples);
+                customConfig, examples, waiters);
 
         customization.postprocess(fullModel);
 
@@ -118,7 +120,8 @@ public class IntermediateModelBuilder {
                                                                fullModel.getOperations(),
                                                                trimmedShapes,
                                                                fullModel.getCustomizationConfig(),
-                                                               fullModel.getExamples());
+                                                               fullModel.getExamples(),
+                                                               fullModel.getWaiters());
 
         linkMembersToShapes(trimmedModel);
         linkOperationsToInputOutputShapes(trimmedModel);

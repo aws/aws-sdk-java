@@ -16,6 +16,7 @@ package com.amazonaws.services.autoscaling;
 
 import com.amazonaws.services.autoscaling.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.autoscaling.waiters.AmazonAutoScalingWaiters;
 
 /**
  * Abstract implementation of {@code AmazonAutoScaling}. Convenient method forms
@@ -415,6 +416,11 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonAutoScalingWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

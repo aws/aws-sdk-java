@@ -16,6 +16,7 @@ package com.amazonaws.services.opsworks;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.opsworks.waiters.AWSOpsWorksWaiters;
 
 /**
  * Abstract implementation of {@code AWSOpsWorks}. Convenient method forms pass
@@ -435,6 +436,11 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSOpsWorksWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

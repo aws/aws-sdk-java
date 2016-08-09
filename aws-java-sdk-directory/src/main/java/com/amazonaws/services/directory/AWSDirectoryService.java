@@ -1077,4 +1077,5 @@ public interface AWSDirectoryService {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

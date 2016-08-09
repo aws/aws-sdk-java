@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.elasticache.model.*;
+import com.amazonaws.services.elasticache.waiters.AmazonElastiCacheWaiters;
 
 /**
  * Interface for accessing Amazon ElastiCache.
@@ -1471,4 +1472,6 @@ public interface AmazonElastiCache {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonElastiCacheWaiters waiters();
 }

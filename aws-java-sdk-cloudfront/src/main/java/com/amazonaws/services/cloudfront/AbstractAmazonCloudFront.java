@@ -16,6 +16,7 @@ package com.amazonaws.services.cloudfront;
 
 import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.cloudfront.waiters.AmazonCloudFrontWaiters;
 
 /**
  * Abstract implementation of {@code AmazonCloudFront}. Convenient method forms
@@ -175,6 +176,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonCloudFrontWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

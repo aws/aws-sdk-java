@@ -25,6 +25,8 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.RegionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -245,7 +247,7 @@ public enum AwsSdkMetrics {
      */
     private static volatile boolean httpSocketReadMetricEnabled;
 
-    private static volatile Regions region;
+    private static volatile Region region;
     private static volatile Integer metricQueueSize;
     private static volatile Long queuePollTimeoutMilli;
     private static volatile String metricNameSpace = DEFAULT_METRIC_NAMESPACE;
@@ -306,7 +308,7 @@ public enum AwsSdkMetrics {
                                     || AWS_CREDENTIAL_PROPERTIES_FILE.equals(key)) {
                                 setCredentialFile0(value);
                             } else if (CLOUDWATCH_REGION.equals(key)) {
-                                region = Regions.fromName(value);
+                                region = RegionUtils.getRegion(value);
                             } else if (METRIC_QUEUE_SIZE.equals(key)) {
                             	Integer i = Integer.valueOf(value);
                                 if (i.intValue() < 1)
@@ -711,9 +713,22 @@ public enum AwsSdkMetrics {
     /**
      * Returns the region configured for the default AWS SDK metric collector;
      * or null if the default is to be used.
+     *
+     * @throws IllegalArgumentException when using a region not included in
+     * {@link Regions}
+     *
+     * @deprecated Use {@link #getRegionName()}
      */
-    public static Regions getRegion() {
-        return region;
+    public static Regions getRegion() throws IllegalArgumentException {
+        return Regions.fromName(region.getName());
+    }
+
+    /**
+     * Returns the region name configured for the default AWS SDK metric collector;
+     * or null if the default is to be used.
+     */
+    public static String getRegionName() {
+        return region == null ? null : region.getName();
     }
 
     /**
@@ -721,7 +736,15 @@ public enum AwsSdkMetrics {
      * or null if the default is to be used.
      */
     public static void setRegion(Regions region) {
-        AwsSdkMetrics.region = region;
+        AwsSdkMetrics.region = RegionUtils.getRegion(region.getName());
+    }
+
+    /**
+     * Sets the region to be used for the default AWS SDK metric collector;
+     * or null if the default is to be used.
+     */
+    public static void setRegion(String region) {
+        AwsSdkMetrics.region = RegionUtils.getRegion(region);
     }
 
     /**

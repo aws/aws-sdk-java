@@ -36,6 +36,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.glacier.waiters.AmazonGlacierWaiters;
+
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.glacier.model.*;
@@ -106,6 +108,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "glacier";
+
+    private volatile AmazonGlacierWaiters waiters;
 
     /**
      * Client configuration factory providing ClientConfigurations tailored to
@@ -3285,6 +3289,17 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);
+    }
+
+    public AmazonGlacierWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonGlacierWaiters(this);
+                }
+            }
+        }
+        return waiters;
     }
 
 }

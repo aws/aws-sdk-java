@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.machinelearning.model.*;
+import com.amazonaws.services.machinelearning.waiters.AmazonMachineLearningWaiters;
 
 /**
  * Interface for accessing Amazon Machine Learning.
@@ -969,4 +970,6 @@ public interface AmazonMachineLearning {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonMachineLearningWaiters waiters();
 }

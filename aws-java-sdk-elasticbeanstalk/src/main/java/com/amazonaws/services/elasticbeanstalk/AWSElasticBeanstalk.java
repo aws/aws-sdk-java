@@ -959,4 +959,5 @@ public interface AWSElasticBeanstalk {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

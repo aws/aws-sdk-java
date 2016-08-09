@@ -372,4 +372,5 @@ public class AbstractAWSIot implements AWSIot {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.redshift.model.*;
+import com.amazonaws.services.redshift.waiters.AmazonRedshiftWaiters;
 
 /**
  * Interface for accessing Amazon Redshift.
@@ -2335,4 +2336,6 @@ public interface AmazonRedshift {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonRedshiftWaiters waiters();
 }

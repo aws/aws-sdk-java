@@ -27,6 +27,10 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+<#if hasWaiters>
+import ${metadata.packageName}.waiters.${metadata.syncInterface}Waiters;
+</#if>
+
 <#if customizationConfig.serviceClientHoldInputStream>
 import com.amazonaws.util.ServiceClientHolderInputStream;
 </#if>
@@ -60,6 +64,10 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "${metadata.signingName}";
+
+<#if hasWaiters>
+    private volatile ${metadata.syncInterface}Waiters waiters;
+</#if>
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ${clientConfigFactory} configFactory = new ${clientConfigFactory}();
@@ -317,5 +325,18 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
         return client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);
     }
+
+    <#if hasWaiters>
+        public ${metadata.syncInterface}Waiters waiters(){
+            if(waiters == null) {
+                   synchronized (this) {
+                        if(waiters == null) {
+                                waiters = new ${metadata.syncInterface}Waiters(this);
+                        }
+                   }
+            }
+            return waiters;
+        }
+    </#if>
 
 }

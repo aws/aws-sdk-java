@@ -929,4 +929,5 @@ public interface AWSLogs {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

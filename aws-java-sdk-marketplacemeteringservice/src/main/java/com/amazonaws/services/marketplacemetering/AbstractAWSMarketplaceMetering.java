@@ -52,4 +52,5 @@ public class AbstractAWSMarketplaceMetering implements AWSMarketplaceMetering {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

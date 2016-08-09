@@ -139,4 +139,5 @@ public class AbstractAmazonECR implements AmazonECR {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

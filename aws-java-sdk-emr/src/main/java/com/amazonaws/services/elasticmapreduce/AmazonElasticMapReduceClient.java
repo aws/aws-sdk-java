@@ -36,6 +36,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.elasticmapreduce.waiters.AmazonElasticMapReduceWaiters;
+
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
@@ -64,6 +66,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "elasticmapreduce";
+
+    private volatile AmazonElasticMapReduceWaiters waiters;
 
     /**
      * Client configuration factory providing ClientConfigurations tailored to
@@ -1394,6 +1398,17 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);
+    }
+
+    public AmazonElasticMapReduceWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonElasticMapReduceWaiters(this);
+                }
+            }
+        }
+        return waiters;
     }
 
 }

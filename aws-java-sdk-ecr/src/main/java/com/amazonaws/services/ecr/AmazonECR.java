@@ -594,4 +594,5 @@ public interface AmazonECR {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

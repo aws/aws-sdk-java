@@ -17,7 +17,11 @@ package com.amazonaws.codegen.model.intermediate;
 
 import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
+
 import com.amazonaws.util.IOUtils;
+
+import com.amazonaws.util.ValidationUtils;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import org.joda.time.DateTime;
@@ -43,16 +47,22 @@ public class IntermediateModel {
 
     private final ServiceExamples examples;
 
-    public IntermediateModel(@JsonProperty("metadata") Metadata metadata,
-                             @JsonProperty("operations") Map<String, OperationModel> operations,
-                             @JsonProperty("shapes") Map<String, ShapeModel> shapes,
-                             @JsonProperty("customizationConfig") CustomizationConfig customizationConfig,
-                             @JsonProperty("serviceExamples") ServiceExamples examples) {
+    private final Map<String, WaiterDefinitionModel> waiters;
+
+    public IntermediateModel(
+            @JsonProperty("metadata") Metadata metadata,
+            @JsonProperty("operations") Map<String, OperationModel> operations,
+            @JsonProperty("shapes") Map<String, ShapeModel> shapes,
+            @JsonProperty("customizationConfig") CustomizationConfig customizationConfig,
+            @JsonProperty("serviceExamples") ServiceExamples examples,
+            @JsonProperty("waiters") Map<String, WaiterDefinitionModel> waiters) {
+
         this.metadata = metadata;
         this.operations = operations;
         this.shapes = shapes;
         this.customizationConfig = customizationConfig;
         this.examples = examples;
+        this.waiters = ValidationUtils.assertNotNull(waiters, "waiters");
     }
 
     public Metadata getMetadata() {
@@ -61,6 +71,10 @@ public class IntermediateModel {
 
     public Map<String, OperationModel> getOperations() {
         return operations;
+    }
+
+    public OperationModel getOperation(String operationName){
+        return getOperations().get(operationName);
     }
 
     public Map<String, ShapeModel> getShapes() {
@@ -78,6 +92,8 @@ public class IntermediateModel {
     public ServiceExamples getExamples() {
         return examples;
     }
+
+    public Map<String, WaiterDefinitionModel> getWaiters() {return waiters;}
 
     /**
      * ClientConfigurationFactory to use when producing default client configuration for the
@@ -140,5 +156,9 @@ public class IntermediateModel {
         final int currentYear = DateTime.now().getYear();
         final int copyrightStartYear = currentYear - 5;
         return String.format("%d-%d", copyrightStartYear, currentYear);
+    }
+
+    public boolean getHasWaiters(){
+        return waiters.size() > 0;
     }
 }

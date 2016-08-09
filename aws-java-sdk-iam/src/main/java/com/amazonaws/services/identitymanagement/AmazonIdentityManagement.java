@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.identitymanagement.model.*;
+import com.amazonaws.services.identitymanagement.waiters.AmazonIdentityManagementWaiters;
 
 /**
  * Interface for accessing IAM.
@@ -4190,4 +4191,6 @@ public interface AmazonIdentityManagement {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonIdentityManagementWaiters waiters();
 }

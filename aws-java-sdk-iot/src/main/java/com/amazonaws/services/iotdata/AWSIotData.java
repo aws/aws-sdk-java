@@ -260,4 +260,5 @@ public interface AWSIotData {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

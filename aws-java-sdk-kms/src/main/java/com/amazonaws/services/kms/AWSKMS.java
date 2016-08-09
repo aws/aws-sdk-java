@@ -1500,4 +1500,5 @@ public interface AWSKMS {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

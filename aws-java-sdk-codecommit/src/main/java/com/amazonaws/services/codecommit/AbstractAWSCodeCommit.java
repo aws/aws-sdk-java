@@ -132,4 +132,5 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

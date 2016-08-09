@@ -46,6 +46,13 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      * <code>nextToken</code> value. This value is <code>null</code> when there
      * are no more results to return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic
+     * purposes.
+     * </p>
+     * </note>
      */
     private String nextToken;
     /**
@@ -62,6 +69,8 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private Integer maxResults;
+
+    private ListImagesFilter filter;
 
     /**
      * <p>
@@ -166,6 +175,13 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      * <code>nextToken</code> value. This value is <code>null</code> when there
      * are no more results to return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic
+     * purposes.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous
@@ -174,7 +190,12 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      *        value of that parameter. Pagination continues from the end of the
      *        previous results that returned the <code>nextToken</code> value.
      *        This value is <code>null</code> when there are no more results to
-     *        return.
+     *        return.</p> <note>
+     *        <p>
+     *        This token should be treated as an opaque identifier that is only
+     *        used to retrieve the next items in a list and not for other
+     *        programmatic purposes.
+     *        </p>
      */
 
     public void setNextToken(String nextToken) {
@@ -190,6 +211,13 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      * <code>nextToken</code> value. This value is <code>null</code> when there
      * are no more results to return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic
+     * purposes.
+     * </p>
+     * </note>
      * 
      * @return The <code>nextToken</code> value returned from a previous
      *         paginated <code>ListImages</code> request where
@@ -197,7 +225,12 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      *         value of that parameter. Pagination continues from the end of the
      *         previous results that returned the <code>nextToken</code> value.
      *         This value is <code>null</code> when there are no more results to
-     *         return.
+     *         return.</p> <note>
+     *         <p>
+     *         This token should be treated as an opaque identifier that is only
+     *         used to retrieve the next items in a list and not for other
+     *         programmatic purposes.
+     *         </p>
      */
 
     public String getNextToken() {
@@ -213,6 +246,13 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      * <code>nextToken</code> value. This value is <code>null</code> when there
      * are no more results to return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic
+     * purposes.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous
@@ -221,7 +261,12 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      *        value of that parameter. Pagination continues from the end of the
      *        previous results that returned the <code>nextToken</code> value.
      *        This value is <code>null</code> when there are no more results to
-     *        return.
+     *        return.</p> <note>
+     *        <p>
+     *        This token should be treated as an opaque identifier that is only
+     *        used to retrieve the next items in a list and not for other
+     *        programmatic purposes.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -327,6 +372,33 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * @param filter
+     */
+
+    public void setFilter(ListImagesFilter filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * @return
+     */
+
+    public ListImagesFilter getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * @param filter
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ListImagesRequest withFilter(ListImagesFilter filter) {
+        setFilter(filter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -345,7 +417,9 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
         if (getNextToken() != null)
             sb.append("NextToken: " + getNextToken() + ",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults());
+            sb.append("MaxResults: " + getMaxResults() + ",");
+        if (getFilter() != null)
+            sb.append("Filter: " + getFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -381,6 +455,11 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
         if (other.getMaxResults() != null
                 && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null
+                && other.getFilter().equals(this.getFilter()) == false)
+            return false;
         return true;
     }
 
@@ -399,6 +478,8 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
                 + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode
                 + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode
+                + ((getFilter() == null) ? 0 : getFilter().hashCode());
         return hashCode;
     }
 

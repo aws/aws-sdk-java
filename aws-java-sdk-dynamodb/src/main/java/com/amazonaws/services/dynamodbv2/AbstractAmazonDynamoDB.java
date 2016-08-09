@@ -16,6 +16,7 @@ package com.amazonaws.services.dynamodbv2;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.dynamodbv2.waiters.AmazonDynamoDBWaiters;
 
 /**
  * Abstract implementation of {@code AmazonDynamoDB}. Convenient method forms
@@ -273,6 +274,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonDynamoDBWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

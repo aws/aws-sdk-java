@@ -838,4 +838,5 @@ public interface AmazonRoute53Domains {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

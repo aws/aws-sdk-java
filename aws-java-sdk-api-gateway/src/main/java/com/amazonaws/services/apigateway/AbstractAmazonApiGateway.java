@@ -465,4 +465,5 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

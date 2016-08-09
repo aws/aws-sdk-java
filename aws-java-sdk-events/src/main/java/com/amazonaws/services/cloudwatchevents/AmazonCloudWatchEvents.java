@@ -456,4 +456,5 @@ public interface AmazonCloudWatchEvents {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

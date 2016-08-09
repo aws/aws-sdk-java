@@ -16,6 +16,7 @@ package com.amazonaws.services.glacier;
 
 import com.amazonaws.services.glacier.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.glacier.waiters.AmazonGlacierWaiters;
 
 /**
  * Abstract implementation of {@code AmazonGlacier}. Convenient method forms
@@ -217,6 +218,11 @@ public class AbstractAmazonGlacier implements AmazonGlacier {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonGlacierWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

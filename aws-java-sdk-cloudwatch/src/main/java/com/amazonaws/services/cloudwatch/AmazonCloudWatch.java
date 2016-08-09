@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.cloudwatch.model.*;
+import com.amazonaws.services.cloudwatch.waiters.AmazonCloudWatchWaiters;
 
 /**
  * Interface for accessing CloudWatch.
@@ -518,4 +519,6 @@ public interface AmazonCloudWatch {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonCloudWatchWaiters waiters();
 }

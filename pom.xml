@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.25-SNAPSHOT</version>
+  <version>1.11.25</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -106,6 +106,7 @@
     <module>aws-java-sdk-test-utils</module>
     <module>aws-java-sdk-code-generator</module>
     <module>aws-java-sdk-codegen-maven-plugin</module>
+    <module>jmespath-java</module>
 </modules>
   <scm>
     <url>https://github.com/aws/aws-sdk-java.git</url>
@@ -158,6 +159,11 @@
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
         <version>2.4</version>
+      </dependency>
+      <dependency>
+        <groupId>com.amazonaws</groupId>
+        <artifactId>jmespath-java</artifactId>
+        <version>1.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

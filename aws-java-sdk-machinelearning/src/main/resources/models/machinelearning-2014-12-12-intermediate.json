@@ -19,6 +19,8 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "machinelearning",
     "signingName" : "machinelearning",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonMachineLearningClientBuilder",
     "asyncClientBuilderClassName" : "AmazonMachineLearningAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AmazonMachineLearningModuleInjector",
@@ -27,9 +29,7 @@
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "jsonProtocol" : true
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "AddTags" : {
@@ -4141,11 +4141,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4496,11 +4496,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9689,11 +9689,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "MLModel",
           "templateType" : "java.util.List<MLModel>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MLModel>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<MLModel>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9935,11 +9935,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "MLModel",
             "templateType" : "java.util.List<MLModel>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MLModel>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<MLModel>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19848,11 +19848,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20203,11 +20203,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28298,11 +28298,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28545,11 +28545,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -35712,11 +35712,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Evaluation",
           "templateType" : "java.util.List<Evaluation>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -35958,11 +35958,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Evaluation",
             "templateType" : "java.util.List<Evaluation>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Evaluation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -39714,11 +39714,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -40279,11 +40279,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -40662,11 +40662,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "BatchPrediction",
           "templateType" : "java.util.List<BatchPrediction>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<BatchPrediction>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<BatchPrediction>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -40908,11 +40908,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "BatchPrediction",
             "templateType" : "java.util.List<BatchPrediction>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<BatchPrediction>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<BatchPrediction>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -41040,11 +41040,11 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "DataSource",
           "templateType" : "java.util.List<DataSource>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DataSource>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DataSource>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -41286,11 +41286,11 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "DataSource",
             "templateType" : "java.util.List<DataSource>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DataSource>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DataSource>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -41911,14 +41911,289 @@
     "convenienceTypeOverloads" : [ ],
     "skipSmokeTests" : false
   },
-  "examples" : {
-    "version" : "1.0",
-    "operationExamples" : { }
+  "waiters" : {
+    "BatchPredictionAvailable" : {
+      "waiterName" : "BatchPredictionAvailable",
+      "delay" : 30,
+      "maxAttempts" : 60,
+      "acceptors" : [ {
+        "matcher" : "pathAll",
+        "argument" : "Results[].Status",
+        "state" : "success",
+        "expected" : "COMPLETED",
+        "ast" : "new JmesPathProjection( new JmesPathFlatten( new JmesPathField( \"Results\")), new JmesPathField( \"Status\"))",
+        "expectedAsCamelCase" : "COMPLETED",
+        "expectedAsEscapedJson" : "\\\"COMPLETED\\\"",
+        "expectedAsString" : "\"COMPLETED\"",
+        "expectedAsNumber" : null,
+        "enumState" : "WaiterState.SUCCESS",
+        "isStatusMatcher" : false,
+        "isErrorMatcher" : false
+      }, {
+        "matcher" : "pathAny",
+        "argument" : "Results[].Status",
+        "state" : "failure",
+        "expected" : "FAILED",
+        "ast" : "new JmesPathProjection( new JmesPathFlatten( new JmesPathField( \"Results\")), new JmesPathField( \"Status\"))",
+        "expectedAsCamelCase" : "FAILED",
+        "expectedAsEscapedJson" : "\\\"FAILED\\\"",
+        "expectedAsString" : "\"FAILED\"",
+        "expectedAsNumber" : null,
+        "enumState" : "WaiterState.FAILURE",
+        "isStatusMatcher" : false,
+        "isErrorMatcher" : false
+      } ],
+      "operationModel" : {
+        "documentation" : "<p>Returns a list of <code>BatchPrediction</code> operations that match the search criteria in the request.</p>",
+        "operationName" : "DescribeBatchPredictions",
+        "deprecated" : false,
+        "input" : {
+          "variableName" : "describeBatchPredictionsRequest",
+          "variableType" : "DescribeBatchPredictionsRequest",
+          "variableDeclarationType" : "DescribeBatchPredictionsRequest",
+          "documentation" : "",
+          "simpleType" : "DescribeBatchPredictionsRequest",
+          "variableSetterType" : "DescribeBatchPredictionsRequest"
+        },
+        "inputStreamPropertyName" : null,
+        "returnType" : {
+          "returnType" : "DescribeBatchPredictionsResult",
+          "documentation" : "<p>Represents the output of a <code>DescribeBatchPredictions</code> operation. The content is essentially a list of <code>BatchPrediction</code>s.</p>"
+        },
+        "exceptions" : [ {
+          "exceptionName" : "InvalidInputException",
+          "documentation" : "<p>An error on the client occurred. Typically, the cause is an invalid input value.</p>"
+        }, {
+          "exceptionName" : "InternalServerException",
+          "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
+        } ],
+        "hasBlobMemberAsPayload" : false,
+        "syncReturnType" : "DescribeBatchPredictionsResult",
+        "asyncReturnType" : "DescribeBatchPredictionsResult",
+        "asyncFutureType" : "java.util.concurrent.Future<DescribeBatchPredictionsResult>",
+        "asyncCallableType" : "java.util.concurrent.Callable<DescribeBatchPredictionsResult>",
+        "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeBatchPredictionsRequest, DescribeBatchPredictionsResult>",
+        "authenticated" : true,
+        "methodName" : "describeBatchPredictions"
+      },
+      "operationName" : "DescribeBatchPredictions",
+      "waiterMethodName" : "batchPredictionAvailable",
+      "operationMethodName" : "describeBatchPredictions"
+    },
+    "MLModelAvailable" : {
+      "waiterName" : "MLModelAvailable",
+      "delay" : 30,
+      "maxAttempts" : 60,
+      "acceptors" : [ {
+        "matcher" : "pathAll",
+        "argument" : "Results[].Status",
+        "state" : "success",
+        "expected" : "COMPLETED",
+        "ast" : "new JmesPathProjection( new JmesPathFlatten( new JmesPathField( \"Results\")), new JmesPathField( \"Status\"))",
+        "expectedAsCamelCase" : "COMPLETED",
+        "expectedAsEscapedJson" : "\\\"COMPLETED\\\"",
+        "expectedAsString" : "\"COMPLETED\"",
+        "expectedAsNumber" : null,
+        "enumState" : "WaiterState.SUCCESS",
+        "isStatusMatcher" : false,
+        "isErrorMatcher" : false
+      }, {
+        "matcher" : "pathAny",
+        "argument" : "Results[].Status",
+        "state" : "failure",
+        "expected" : "FAILED",
+        "ast" : "new JmesPathProjection( new JmesPathFlatten( new JmesPathField( \"Results\")), new JmesPathField( \"Status\"))",
+        "expectedAsCamelCase" : "FAILED",
+        "expectedAsEscapedJson" : "\\\"FAILED\\\"",
+        "expectedAsString" : "\"FAILED\"",
+        "expectedAsNumber" : null,
+        "enumState" : "WaiterState.FAILURE",
+        "isStatusMatcher" : false,
+        "isErrorMatcher" : false
+      } ],
+      "operationModel" : {
+        "documentation" : "<p>Returns a list of <code>MLModel</code> that match the search criteria in the request.</p>",
+        "operationName" : "DescribeMLModels",
+        "deprecated" : false,
+        "input" : {
+          "variableName" : "describeMLModelsRequest",
+          "variableType" : "DescribeMLModelsRequest",
+          "variableDeclarationType" : "DescribeMLModelsRequest",
+          "documentation" : "",
+          "simpleType" : "DescribeMLModelsRequest",
+          "variableSetterType" : "DescribeMLModelsRequest"
+        },
+        "inputStreamPropertyName" : null,
+        "returnType" : {
+          "returnType" : "DescribeMLModelsResult",
+          "documentation" : "<p>Represents the output of a <code>DescribeMLModels</code> operation. The content is essentially a list of <code>MLModel</code>.</p>"
+        },
+        "exceptions" : [ {
+          "exceptionName" : "InvalidInputException",
+          "documentation" : "<p>An error on the client occurred. Typically, the cause is an invalid input value.</p>"
+        }, {
+          "exceptionName" : "InternalServerException",
+          "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
+        } ],
+        "hasBlobMemberAsPayload" : false,
+        "syncReturnType" : "DescribeMLModelsResult",
+        "asyncReturnType" : "DescribeMLModelsResult",
+        "asyncFutureType" : "java.util.concurrent.Future<DescribeMLModelsResult>",
+        "asyncCallableType" : "java.util.concurrent.Callable<DescribeMLModelsResult>",
+        "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeMLModelsRequest, DescribeMLModelsResult>",
+        "authenticated" : true,
+        "methodName" : "describeMLModels"
+      },
+      "operationName" : "DescribeMLModels",
+      "waiterMethodName" : "mLModelAvailable",
+      "operationMethodName" : "describeMLModels"
+    },
+    "DataSourceAvailable" : {
+      "waiterName" : "DataSourceAvailable",
+      "delay" : 30,
+      "maxAttempts" : 60,
+      "acceptors" : [ {
+        "matcher" : "pathAll",
+        "argument" : "Results[].Status",
+        "state" : "success",
+        "expected" : "COMPLETED",
+        "ast" : "new JmesPathProjection( new JmesPathFlatten( new JmesPathField( \"Results\")), new JmesPathField( \"Status\"))",
+        "expectedAsCamelCase" : "COMPLETED",
+        "expectedAsEscapedJson" : "\\\"COMPLETED\\\"",
+        "expectedAsString" : "\"COMPLETED\"",
+        "expectedAsNumber" : null,
+        "enumState" : "WaiterState.SUCCESS",
+        "isStatusMatcher" : false,
+        "isErrorMatcher" : false
+      }, {
+        "matcher" : "pathAny",
+        "argument" : "Results[].Status",
+        "state" : "failure",
+        "expected" : "FAILED",
+        "ast" : "new JmesPathProjection( new JmesPathFlatten( new JmesPathField( \"Results\")), new JmesPathField( \"Status\"))",
+        "expectedAsCamelCase" : "FAILED",
+        "expectedAsEscapedJson" : "\\\"FAILED\\\"",
+        "expectedAsString" : "\"FAILED\"",
+        "expectedAsNumber" : null,
+        "enumState" : "WaiterState.FAILURE",
+        "isStatusMatcher" : false,
+        "isErrorMatcher" : false
+      } ],
+      "operationModel" : {
+        "documentation" : "<p>Returns a list of <code>DataSource</code> that match the search criteria in the request.</p>",
+        "operationName" : "DescribeDataSources",
+        "deprecated" : false,
+        "input" : {
+          "variableName" : "describeDataSourcesRequest",
+          "variableType" : "DescribeDataSourcesRequest",
+          "variableDeclarationType" : "DescribeDataSourcesRequest",
+          "documentation" : "",
+          "simpleType" : "DescribeDataSourcesRequest",
+          "variableSetterType" : "DescribeDataSourcesRequest"
+        },
+        "inputStreamPropertyName" : null,
+        "returnType" : {
+          "returnType" : "DescribeDataSourcesResult",
+          "documentation" : "<p>Represents the query results from a <a>DescribeDataSources</a> operation. The content is essentially a list of <code>DataSource</code>.</p>"
+        },
+        "exceptions" : [ {
+          "exceptionName" : "InvalidInputException",
+          "documentation" : "<p>An error on the client occurred. Typically, the cause is an invalid input value.</p>"
+        }, {
+          "exceptionName" : "InternalServerException",
+          "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
+        } ],
+        "hasBlobMemberAsPayload" : false,
+        "syncReturnType" : "DescribeDataSourcesResult",
+        "asyncReturnType" : "DescribeDataSourcesResult",
+        "asyncFutureType" : "java.util.concurrent.Future<DescribeDataSourcesResult>",
+        "asyncCallableType" : "java.util.concurrent.Callable<DescribeDataSourcesResult>",
+        "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDataSourcesRequest, DescribeDataSourcesResult>",
+        "authenticated" : true,
+        "methodName" : "describeDataSources"
+      },
+      "operationName" : "DescribeDataSources",
+      "waiterMethodName" : "dataSourceAvailable",
+      "operationMethodName" : "describeDataSources"
+    },
+    "EvaluationAvailable" : {
+      "waiterName" : "EvaluationAvailable",
+      "delay" : 30,
+      "maxAttempts" : 60,
+      "acceptors" : [ {
+        "matcher" : "pathAll",
+        "argument" : "Results[].Status",
+        "state" : "success",
+        "expected" : "COMPLETED",
+        "ast" : "new JmesPathProjection( new JmesPathFlatten( new JmesPathField( \"Results\")), new JmesPathField( \"Status\"))",
+        "expectedAsCamelCase" : "COMPLETED",
+        "expectedAsEscapedJson" : "\\\"COMPLETED\\\"",
+        "expectedAsString" : "\"COMPLETED\"",
+        "expectedAsNumber" : null,
+        "enumState" : "WaiterState.SUCCESS",
+        "isStatusMatcher" : false,
+        "isErrorMatcher" : false
+      }, {
+        "matcher" : "pathAny",
+        "argument" : "Results[].Status",
+        "state" : "failure",
+        "expected" : "FAILED",
+        "ast" : "new JmesPathProjection( new JmesPathFlatten( new JmesPathField( \"Results\")), new JmesPathField( \"Status\"))",
+        "expectedAsCamelCase" : "FAILED",
+        "expectedAsEscapedJson" : "\\\"FAILED\\\"",
+        "expectedAsString" : "\"FAILED\"",
+        "expectedAsNumber" : null,
+        "enumState" : "WaiterState.FAILURE",
+        "isStatusMatcher" : false,
+        "isErrorMatcher" : false
+      } ],
+      "operationModel" : {
+        "documentation" : "<p>Returns a list of <code>DescribeEvaluations</code> that match the search criteria in the request.</p>",
+        "operationName" : "DescribeEvaluations",
+        "deprecated" : false,
+        "input" : {
+          "variableName" : "describeEvaluationsRequest",
+          "variableType" : "DescribeEvaluationsRequest",
+          "variableDeclarationType" : "DescribeEvaluationsRequest",
+          "documentation" : "",
+          "simpleType" : "DescribeEvaluationsRequest",
+          "variableSetterType" : "DescribeEvaluationsRequest"
+        },
+        "inputStreamPropertyName" : null,
+        "returnType" : {
+          "returnType" : "DescribeEvaluationsResult",
+          "documentation" : "<p>Represents the query results from a <code>DescribeEvaluations</code> operation. The content is essentially a list of <code>Evaluation</code>.</p>"
+        },
+        "exceptions" : [ {
+          "exceptionName" : "InvalidInputException",
+          "documentation" : "<p>An error on the client occurred. Typically, the cause is an invalid input value.</p>"
+        }, {
+          "exceptionName" : "InternalServerException",
+          "documentation" : "<p>An error on the server occurred when trying to process a request.</p>"
+        } ],
+        "hasBlobMemberAsPayload" : false,
+        "syncReturnType" : "DescribeEvaluationsResult",
+        "asyncReturnType" : "DescribeEvaluationsResult",
+        "asyncFutureType" : "java.util.concurrent.Future<DescribeEvaluationsResult>",
+        "asyncCallableType" : "java.util.concurrent.Callable<DescribeEvaluationsResult>",
+        "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEvaluationsRequest, DescribeEvaluationsResult>",
+        "authenticated" : true,
+        "methodName" : "describeEvaluations"
+      },
+      "operationName" : "DescribeEvaluations",
+      "waiterMethodName" : "evaluationAvailable",
+      "operationMethodName" : "describeEvaluations"
+    }
   },
+  "examples" : {
+    "examples" : { },
+    "version" : "1.0"
+  },
+  "sdkModeledExceptionBaseClassName" : "AmazonMachineLearningException",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.machinelearning.model.AmazonMachineLearningException",
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
-  "sdkModeledExceptionBaseClassName" : "AmazonMachineLearningException"
+  "hasWaiters" : true,
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
 }

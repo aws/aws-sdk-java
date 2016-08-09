@@ -225,4 +225,5 @@ public class AbstractAWSKMS implements AWSKMS {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

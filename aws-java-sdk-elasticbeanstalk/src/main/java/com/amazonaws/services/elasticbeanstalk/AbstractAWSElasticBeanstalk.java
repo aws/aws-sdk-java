@@ -302,4 +302,5 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

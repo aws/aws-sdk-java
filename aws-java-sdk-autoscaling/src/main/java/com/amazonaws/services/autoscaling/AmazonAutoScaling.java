@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.autoscaling.model.*;
+import com.amazonaws.services.autoscaling.waiters.AmazonAutoScalingWaiters;
 
 /**
  * Interface for accessing Auto Scaling.
@@ -1466,4 +1467,6 @@ public interface AmazonAutoScaling {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonAutoScalingWaiters waiters();
 }

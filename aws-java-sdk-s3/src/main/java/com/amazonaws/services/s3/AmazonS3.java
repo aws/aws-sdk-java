@@ -28,6 +28,7 @@ import com.amazonaws.HttpMethod;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.S3DirectSpi;
 import com.amazonaws.services.s3.model.*;
+import com.amazonaws.services.s3.waiters.AmazonS3Waiters;
 
 /**
  * <p>
@@ -4590,4 +4591,6 @@ public interface AmazonS3 extends S3DirectSpi {
      *         key.
      */
     URL getUrl(String bucketName, String key);
+
+    AmazonS3Waiters waiters();
 }

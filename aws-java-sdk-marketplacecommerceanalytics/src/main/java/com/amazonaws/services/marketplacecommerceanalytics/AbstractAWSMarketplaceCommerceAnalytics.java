@@ -44,6 +44,12 @@ public class AbstractAWSMarketplaceCommerceAnalytics implements
     }
 
     @Override
+    public StartSupportDataExportResult startSupportDataExport(
+            StartSupportDataExportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -53,4 +59,5 @@ public class AbstractAWSMarketplaceCommerceAnalytics implements
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

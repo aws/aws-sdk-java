@@ -16,6 +16,7 @@ package com.amazonaws.services.codedeploy;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.codedeploy.waiters.AmazonCodeDeployWaiters;
 
 /**
  * Abstract implementation of {@code AmazonCodeDeploy}. Convenient method forms
@@ -291,6 +292,11 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonCodeDeployWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

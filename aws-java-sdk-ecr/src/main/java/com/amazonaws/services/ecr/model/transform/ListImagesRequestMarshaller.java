@@ -83,6 +83,11 @@ public class ListImagesRequestMarshaller implements
                 jsonGenerator.writeFieldName("maxResults").writeValue(
                         listImagesRequest.getMaxResults());
             }
+            if (listImagesRequest.getFilter() != null) {
+                jsonGenerator.writeFieldName("filter");
+                ListImagesFilterJsonMarshaller.getInstance().marshall(
+                        listImagesRequest.getFilter(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
 

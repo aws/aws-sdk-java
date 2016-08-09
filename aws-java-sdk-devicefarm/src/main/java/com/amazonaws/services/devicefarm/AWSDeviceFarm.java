@@ -1088,4 +1088,5 @@ public interface AWSDeviceFarm {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

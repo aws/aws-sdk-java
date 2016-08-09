@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Object representing an image.
+ * An object representing an Amazon ECR image.
  * </p>
  */
 public class Image implements Serializable, Cloneable {

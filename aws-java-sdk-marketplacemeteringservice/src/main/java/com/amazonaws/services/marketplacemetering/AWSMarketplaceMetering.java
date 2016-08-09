@@ -174,4 +174,5 @@ public interface AWSMarketplaceMetering {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

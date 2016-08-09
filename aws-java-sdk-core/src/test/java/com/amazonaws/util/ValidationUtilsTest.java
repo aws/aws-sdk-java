@@ -16,6 +16,9 @@ package com.amazonaws.util;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 public class ValidationUtilsTest {
@@ -61,5 +64,22 @@ public class ValidationUtilsTest {
         ValidationUtils.assertIsPositive(-9001, "num");
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void assertNotEmpty_NullCollection(){
+        ValidationUtils.assertNotEmpty(null, "someCollection");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void assertNotEmpty_EmptyCollection(){
+        List<String> testList = new ArrayList<String>();
+        ValidationUtils.assertNotEmpty(testList, "testList");
+    }
+
+    @Test
+    public void assertNotEmpty_NonNullCollection_ReturnsSameObject(){
+        List<String> testList = new ArrayList<String>();
+        testList.add("sample");
+        assertEquals(testList, ValidationUtils.assertNotEmpty(testList, "testList"));
+    }
 
 }

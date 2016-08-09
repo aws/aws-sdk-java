@@ -36,6 +36,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.cloudwatch.waiters.AmazonCloudWatchWaiters;
+
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.cloudwatch.model.*;
@@ -76,6 +78,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "monitoring";
+
+    private volatile AmazonCloudWatchWaiters waiters;
 
     /**
      * Client configuration factory providing ClientConfigurations tailored to
@@ -1063,6 +1067,17 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);
+    }
+
+    public AmazonCloudWatchWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonCloudWatchWaiters(this);
+                }
+            }
+        }
+        return waiters;
     }
 
 }

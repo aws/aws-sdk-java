@@ -16,6 +16,7 @@ package com.amazonaws.services.redshift;
 
 import com.amazonaws.services.redshift.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.redshift.waiters.AmazonRedshiftWaiters;
 
 /**
  * Abstract implementation of {@code AmazonRedshift}. Convenient method forms
@@ -483,6 +484,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonRedshiftWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

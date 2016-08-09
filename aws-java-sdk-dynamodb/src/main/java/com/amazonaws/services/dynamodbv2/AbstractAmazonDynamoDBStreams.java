@@ -68,4 +68,5 @@ public class AbstractAmazonDynamoDBStreams implements AmazonDynamoDBStreams {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

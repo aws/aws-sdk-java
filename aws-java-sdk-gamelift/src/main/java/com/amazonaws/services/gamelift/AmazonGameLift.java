@@ -1805,4 +1805,5 @@ public interface AmazonGameLift {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

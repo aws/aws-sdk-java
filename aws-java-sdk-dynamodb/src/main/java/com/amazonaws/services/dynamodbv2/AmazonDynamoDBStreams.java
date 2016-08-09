@@ -333,4 +333,5 @@ public interface AmazonDynamoDBStreams {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

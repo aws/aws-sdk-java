@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.25-SNAPSHOT</version>
+    <version>1.11.25</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-code-generator</artifactId>
@@ -14,7 +14,7 @@
   <url>https://aws.amazon.com/sdkforjava</url>
 
   <properties>
-    <jre.version>1.7</jre.version>
+    <jre.version>1.8</jre.version>
   </properties>
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
@@ -22,7 +22,7 @@
         <artifactId>aws-java-sdk-core</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
-        <version>1.11.25-SNAPSHOT</version>
+        <version>1.11.25</version>
     </dependency>
     <dependency>
         <artifactId>org.eclipse.jdt.core</artifactId>
@@ -41,6 +41,17 @@
         <groupId>org.freemarker</groupId>
         <optional>false</optional>
         <version>2.3.24-incubating</version>
+    </dependency>
+    <dependency>
+        <artifactId>jmespath-java</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+    </dependency>
+    <dependency>
+        <artifactId>commons-lang3</artifactId>
+        <groupId>org.apache.commons</groupId>
+        <optional>false</optional>
+        <version>3.4</version>
     </dependency>
 </dependencies>
 

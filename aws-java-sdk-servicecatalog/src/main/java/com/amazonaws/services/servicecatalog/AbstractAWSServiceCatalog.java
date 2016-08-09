@@ -109,4 +109,5 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

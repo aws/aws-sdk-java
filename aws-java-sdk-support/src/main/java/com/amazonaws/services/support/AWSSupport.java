@@ -620,4 +620,5 @@ public interface AWSSupport {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

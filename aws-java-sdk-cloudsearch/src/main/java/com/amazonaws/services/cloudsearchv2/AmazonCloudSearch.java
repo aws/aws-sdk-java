@@ -973,4 +973,5 @@ public interface AmazonCloudSearch {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

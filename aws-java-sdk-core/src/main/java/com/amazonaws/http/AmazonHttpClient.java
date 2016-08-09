@@ -726,8 +726,10 @@ public class AmazonHttpClient {
                     return response;
                 }
             } catch (IOException ioe) {
-                if (log.isInfoEnabled()) {
-                    log.info("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
+                if (log.isTraceEnabled()) {
+                    log.trace("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
+                } else if (log.isDebugEnabled()) {
+                    log.debug("Unable to execute HTTP request: " + ioe.getMessage());
                 }
                 captureExceptionMetrics(ioe, awsRequestMetrics);
                 awsRequestMetrics.addProperty(Field.AWSRequestID, null);
@@ -819,6 +821,9 @@ public class AmazonHttpClient {
                                               List<RequestHandler2> requestHandlers)
             throws IOException, InterruptedException {
         if (execOneParams.isRetry()) {
+            if (requestLog.isDebugEnabled()) {
+                requestLog.debug("Request is being retried: " + request);
+            }
             resetRequestInputStream(request);
         }
         checkInterrupted();

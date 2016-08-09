@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.cloudfront.model.*;
+import com.amazonaws.services.cloudfront.waiters.AmazonCloudFrontWaiters;
 
 /**
  * Interface for accessing CloudFront.
@@ -701,4 +702,6 @@ public interface AmazonCloudFront {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonCloudFrontWaiters waiters();
 }

@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.codedeploy.model.*;
+import com.amazonaws.services.codedeploy.waiters.AmazonCodeDeployWaiters;
 
 /**
  * Interface for accessing CodeDeploy.
@@ -1239,4 +1240,6 @@ public interface AmazonCodeDeploy {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonCodeDeployWaiters waiters();
 }

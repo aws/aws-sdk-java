@@ -17,7 +17,9 @@ package com.amazonaws.services.ecr.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * An object with identifying information for an Amazon ECR image.
+ * </p>
  */
 public class ImageIdentifier implements Serializable, Cloneable {
 

@@ -258,4 +258,5 @@ public interface AmazonCloudSearchDomain {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

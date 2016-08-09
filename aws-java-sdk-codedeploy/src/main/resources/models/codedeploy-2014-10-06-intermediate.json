@@ -19,6 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "codedeploy",
     "signingName" : "codedeploy",
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonCodeDeployClientBuilder",
     "asyncClientBuilderClassName" : "AmazonCodeDeployAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AmazonCodeDeployModuleInjector",
@@ -28,7 +29,6 @@
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "jsonProtocol" : true,
     "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
@@ -69,12 +69,12 @@
         "documentation" : "<p>The specified on-premises instance is not registered.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AddTagsToOnPremisesInstancesResult",
       "asyncReturnType" : "AddTagsToOnPremisesInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsToOnPremisesInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToOnPremisesInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToOnPremisesInstancesRequest, AddTagsToOnPremisesInstancesResult>",
+      "authenticated" : true,
       "methodName" : "addTagsToOnPremisesInstances"
     },
     "BatchGetApplicationRevisions" : {
@@ -114,12 +114,12 @@
         "documentation" : "<p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BatchGetApplicationRevisionsResult",
       "asyncReturnType" : "BatchGetApplicationRevisionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetApplicationRevisionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetApplicationRevisionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetApplicationRevisionsRequest, BatchGetApplicationRevisionsResult>",
+      "authenticated" : true,
       "methodName" : "batchGetApplicationRevisions"
     },
     "BatchGetApplications" : {
@@ -153,12 +153,12 @@
         "documentation" : "<p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BatchGetApplicationsResult",
       "asyncReturnType" : "BatchGetApplicationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetApplicationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetApplicationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetApplicationsRequest, BatchGetApplicationsResult>",
+      "authenticated" : true,
       "methodName" : "batchGetApplications"
     },
     "BatchGetDeploymentGroups" : {
@@ -198,12 +198,12 @@
         "documentation" : "<p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BatchGetDeploymentGroupsResult",
       "asyncReturnType" : "BatchGetDeploymentGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetDeploymentGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetDeploymentGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentGroupsRequest, BatchGetDeploymentGroupsResult>",
+      "authenticated" : true,
       "methodName" : "batchGetDeploymentGroups"
     },
     "BatchGetDeploymentInstances" : {
@@ -243,12 +243,12 @@
         "documentation" : "<p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BatchGetDeploymentInstancesResult",
       "asyncReturnType" : "BatchGetDeploymentInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetDeploymentInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetDeploymentInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentInstancesRequest, BatchGetDeploymentInstancesResult>",
+      "authenticated" : true,
       "methodName" : "batchGetDeploymentInstances"
     },
     "BatchGetDeployments" : {
@@ -279,12 +279,12 @@
         "documentation" : "<p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BatchGetDeploymentsResult",
       "asyncReturnType" : "BatchGetDeploymentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetDeploymentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetDeploymentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentsRequest, BatchGetDeploymentsResult>",
+      "authenticated" : true,
       "methodName" : "batchGetDeployments"
     },
     "BatchGetOnPremisesInstances" : {
@@ -315,12 +315,12 @@
         "documentation" : "<p>The maximum number of names or IDs allowed for this request (100) was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "BatchGetOnPremisesInstancesResult",
       "asyncReturnType" : "BatchGetOnPremisesInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<BatchGetOnPremisesInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<BatchGetOnPremisesInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<BatchGetOnPremisesInstancesRequest, BatchGetOnPremisesInstancesResult>",
+      "authenticated" : true,
       "methodName" : "batchGetOnPremisesInstances"
     },
     "CreateApplication" : {
@@ -354,12 +354,12 @@
         "documentation" : "<p>More applications were attempted to be created than are allowed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateApplicationResult",
       "asyncReturnType" : "CreateApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateApplicationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult>",
+      "authenticated" : true,
       "methodName" : "createApplication"
     },
     "CreateDeployment" : {
@@ -417,12 +417,12 @@
         "documentation" : "<p>The number of allowed deployments was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateDeploymentResult",
       "asyncReturnType" : "CreateDeploymentResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDeploymentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDeploymentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDeploymentRequest, CreateDeploymentResult>",
+      "authenticated" : true,
       "methodName" : "createDeployment"
     },
     "CreateDeploymentConfig" : {
@@ -459,12 +459,12 @@
         "documentation" : "<p>The deployment configurations limit was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateDeploymentConfigResult",
       "asyncReturnType" : "CreateDeploymentConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDeploymentConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDeploymentConfigResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDeploymentConfigRequest, CreateDeploymentConfigResult>",
+      "authenticated" : true,
       "methodName" : "createDeploymentConfig"
     },
     "CreateDeploymentGroup" : {
@@ -537,12 +537,12 @@
         "documentation" : "<p>The maximum allowed number of triggers was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "CreateDeploymentGroupResult",
       "asyncReturnType" : "CreateDeploymentGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDeploymentGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDeploymentGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDeploymentGroupRequest, CreateDeploymentGroupResult>",
+      "authenticated" : true,
       "methodName" : "createDeploymentGroup"
     },
     "DeleteApplication" : {
@@ -570,12 +570,12 @@
         "documentation" : "<p>The application name was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteApplicationResult",
       "asyncReturnType" : "DeleteApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteApplicationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult>",
+      "authenticated" : true,
       "methodName" : "deleteApplication"
     },
     "DeleteDeploymentConfig" : {
@@ -609,12 +609,12 @@
         "documentation" : "<p>An invalid operation was detected.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteDeploymentConfigResult",
       "asyncReturnType" : "DeleteDeploymentConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDeploymentConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDeploymentConfigResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDeploymentConfigRequest, DeleteDeploymentConfigResult>",
+      "authenticated" : true,
       "methodName" : "deleteDeploymentConfig"
     },
     "DeleteDeploymentGroup" : {
@@ -651,12 +651,12 @@
         "documentation" : "<p>The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified service role does not grant the appropriate permissions to Auto Scaling.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteDeploymentGroupResult",
       "asyncReturnType" : "DeleteDeploymentGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDeploymentGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDeploymentGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDeploymentGroupRequest, DeleteDeploymentGroupResult>",
+      "authenticated" : true,
       "methodName" : "deleteDeploymentGroup"
     },
     "DeregisterOnPremisesInstance" : {
@@ -684,12 +684,12 @@
         "documentation" : "<p>The specified on-premises instance name was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeregisterOnPremisesInstanceResult",
       "asyncReturnType" : "DeregisterOnPremisesInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeregisterOnPremisesInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeregisterOnPremisesInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeregisterOnPremisesInstanceRequest, DeregisterOnPremisesInstanceResult>",
+      "authenticated" : true,
       "methodName" : "deregisterOnPremisesInstance"
     },
     "GetApplication" : {
@@ -720,12 +720,12 @@
         "documentation" : "<p>The application does not exist with the applicable IAM user or AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetApplicationResult",
       "asyncReturnType" : "GetApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetApplicationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetApplicationRequest, GetApplicationResult>",
+      "authenticated" : true,
       "methodName" : "getApplication"
     },
     "GetApplicationRevision" : {
@@ -765,12 +765,12 @@
         "documentation" : "<p>The revision was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetApplicationRevisionResult",
       "asyncReturnType" : "GetApplicationRevisionResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetApplicationRevisionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetApplicationRevisionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetApplicationRevisionRequest, GetApplicationRevisionResult>",
+      "authenticated" : true,
       "methodName" : "getApplicationRevision"
     },
     "GetDeployment" : {
@@ -801,12 +801,12 @@
         "documentation" : "<p>The deployment does not exist with the applicable IAM user or AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetDeploymentResult",
       "asyncReturnType" : "GetDeploymentResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDeploymentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDeploymentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDeploymentRequest, GetDeploymentResult>",
+      "authenticated" : true,
       "methodName" : "getDeployment"
     },
     "GetDeploymentConfig" : {
@@ -837,12 +837,12 @@
         "documentation" : "<p>The deployment configuration does not exist with the applicable IAM user or AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetDeploymentConfigResult",
       "asyncReturnType" : "GetDeploymentConfigResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDeploymentConfigResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDeploymentConfigResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDeploymentConfigRequest, GetDeploymentConfigResult>",
+      "authenticated" : true,
       "methodName" : "getDeploymentConfig"
     },
     "GetDeploymentGroup" : {
@@ -882,12 +882,12 @@
         "documentation" : "<p>The named deployment group does not exist with the applicable IAM user or AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetDeploymentGroupResult",
       "asyncReturnType" : "GetDeploymentGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDeploymentGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDeploymentGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDeploymentGroupRequest, GetDeploymentGroupResult>",
+      "authenticated" : true,
       "methodName" : "getDeploymentGroup"
     },
     "GetDeploymentInstance" : {
@@ -927,12 +927,12 @@
         "documentation" : "<p>The specified on-premises instance name was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetDeploymentInstanceResult",
       "asyncReturnType" : "GetDeploymentInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDeploymentInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDeploymentInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDeploymentInstanceRequest, GetDeploymentInstanceResult>",
+      "authenticated" : true,
       "methodName" : "getDeploymentInstance"
     },
     "GetOnPremisesInstance" : {
@@ -963,12 +963,12 @@
         "documentation" : "<p>The specified on-premises instance name was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetOnPremisesInstanceResult",
       "asyncReturnType" : "GetOnPremisesInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetOnPremisesInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetOnPremisesInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetOnPremisesInstanceRequest, GetOnPremisesInstanceResult>",
+      "authenticated" : true,
       "methodName" : "getOnPremisesInstance"
     },
     "ListApplicationRevisions" : {
@@ -1020,12 +1020,12 @@
         "documentation" : "<p>The next token was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListApplicationRevisionsResult",
       "asyncReturnType" : "ListApplicationRevisionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListApplicationRevisionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListApplicationRevisionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListApplicationRevisionsRequest, ListApplicationRevisionsResult>",
+      "authenticated" : true,
       "methodName" : "listApplicationRevisions"
     },
     "ListApplications" : {
@@ -1050,12 +1050,12 @@
         "documentation" : "<p>The next token was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListApplicationsResult",
       "asyncReturnType" : "ListApplicationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListApplicationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListApplicationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult>",
+      "authenticated" : true,
       "methodName" : "listApplications"
     },
     "ListDeploymentConfigs" : {
@@ -1080,12 +1080,12 @@
         "documentation" : "<p>The next token was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListDeploymentConfigsResult",
       "asyncReturnType" : "ListDeploymentConfigsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDeploymentConfigsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDeploymentConfigsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDeploymentConfigsRequest, ListDeploymentConfigsResult>",
+      "authenticated" : true,
       "methodName" : "listDeploymentConfigs"
     },
     "ListDeploymentGroups" : {
@@ -1119,12 +1119,12 @@
         "documentation" : "<p>The next token was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListDeploymentGroupsResult",
       "asyncReturnType" : "ListDeploymentGroupsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDeploymentGroupsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDeploymentGroupsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDeploymentGroupsRequest, ListDeploymentGroupsResult>",
+      "authenticated" : true,
       "methodName" : "listDeploymentGroups"
     },
     "ListDeploymentInstances" : {
@@ -1164,12 +1164,12 @@
         "documentation" : "<p>The specified instance status does not exist.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListDeploymentInstancesResult",
       "asyncReturnType" : "ListDeploymentInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDeploymentInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDeploymentInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDeploymentInstancesRequest, ListDeploymentInstancesResult>",
+      "authenticated" : true,
       "methodName" : "listDeploymentInstances"
     },
     "ListDeployments" : {
@@ -1218,12 +1218,12 @@
         "documentation" : "<p>The next token was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListDeploymentsResult",
       "asyncReturnType" : "ListDeploymentsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDeploymentsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDeploymentsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResult>",
+      "authenticated" : true,
       "methodName" : "listDeployments"
     },
     "ListOnPremisesInstances" : {
@@ -1254,12 +1254,12 @@
         "documentation" : "<p>The next token was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListOnPremisesInstancesResult",
       "asyncReturnType" : "ListOnPremisesInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListOnPremisesInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListOnPremisesInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListOnPremisesInstancesRequest, ListOnPremisesInstancesResult>",
+      "authenticated" : true,
       "methodName" : "listOnPremisesInstances"
     },
     "RegisterApplicationRevision" : {
@@ -1299,12 +1299,12 @@
         "documentation" : "<p>The revision was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RegisterApplicationRevisionResult",
       "asyncReturnType" : "RegisterApplicationRevisionResult",
       "asyncFutureType" : "java.util.concurrent.Future<RegisterApplicationRevisionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RegisterApplicationRevisionResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterApplicationRevisionRequest, RegisterApplicationRevisionResult>",
+      "authenticated" : true,
       "methodName" : "registerApplicationRevision"
     },
     "RegisterOnPremisesInstance" : {
@@ -1344,12 +1344,12 @@
         "documentation" : "<p>The IAM user ARN was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RegisterOnPremisesInstanceResult",
       "asyncReturnType" : "RegisterOnPremisesInstanceResult",
       "asyncFutureType" : "java.util.concurrent.Future<RegisterOnPremisesInstanceResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RegisterOnPremisesInstanceResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterOnPremisesInstanceRequest, RegisterOnPremisesInstanceResult>",
+      "authenticated" : true,
       "methodName" : "registerOnPremisesInstance"
     },
     "RemoveTagsFromOnPremisesInstances" : {
@@ -1389,12 +1389,12 @@
         "documentation" : "<p>The specified on-premises instance is not registered.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RemoveTagsFromOnPremisesInstancesResult",
       "asyncReturnType" : "RemoveTagsFromOnPremisesInstancesResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromOnPremisesInstancesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromOnPremisesInstancesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromOnPremisesInstancesRequest, RemoveTagsFromOnPremisesInstancesResult>",
+      "authenticated" : true,
       "methodName" : "removeTagsFromOnPremisesInstances"
     },
     "StopDeployment" : {
@@ -1428,12 +1428,12 @@
         "documentation" : "<p>At least one of the deployment IDs was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "StopDeploymentResult",
       "asyncReturnType" : "StopDeploymentResult",
       "asyncFutureType" : "java.util.concurrent.Future<StopDeploymentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StopDeploymentResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopDeploymentRequest, StopDeploymentResult>",
+      "authenticated" : true,
       "methodName" : "stopDeployment"
     },
     "UpdateApplication" : {
@@ -1467,12 +1467,12 @@
         "documentation" : "<p>The application does not exist with the applicable IAM user or AWS account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateApplicationResult",
       "asyncReturnType" : "UpdateApplicationResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateApplicationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateApplicationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult>",
+      "authenticated" : true,
       "methodName" : "updateApplication"
     },
     "UpdateDeploymentGroup" : {
@@ -1542,12 +1542,12 @@
         "documentation" : "<p>The maximum allowed number of triggers was exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "UpdateDeploymentGroupResult",
       "asyncReturnType" : "UpdateDeploymentGroupResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDeploymentGroupResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateDeploymentGroupResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDeploymentGroupRequest, UpdateDeploymentGroupResult>",
+      "authenticated" : true,
       "methodName" : "updateDeploymentGroup"
     }
   },
@@ -1719,8 +1719,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1917,8 +1917,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2185,8 +2185,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "TriggerEventType",
@@ -2379,8 +2379,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "TriggerEventType",
@@ -4254,8 +4254,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "DeploymentStatus",
@@ -4715,8 +4715,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "DeploymentStatus",
@@ -5055,8 +5055,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "LifecycleEvent",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LifecycleEvent>",
-          "templateType" : "java.util.List<LifecycleEvent>"
+          "templateType" : "java.util.List<LifecycleEvent>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LifecycleEvent>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5408,8 +5408,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "LifecycleEvent",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LifecycleEvent>",
-            "templateType" : "java.util.List<LifecycleEvent>"
+            "templateType" : "java.util.List<LifecycleEvent>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LifecycleEvent>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6582,8 +6582,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6775,8 +6775,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7013,8 +7013,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Tag",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7131,8 +7131,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7276,8 +7276,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7395,8 +7395,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Tag",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8164,8 +8164,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "ApplicationInfo",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationInfo>",
-          "templateType" : "java.util.List<ApplicationInfo>"
+          "templateType" : "java.util.List<ApplicationInfo>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8305,8 +8305,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "ApplicationInfo",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationInfo>",
-            "templateType" : "java.util.List<ApplicationInfo>"
+            "templateType" : "java.util.List<ApplicationInfo>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ApplicationInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8715,8 +8715,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8860,8 +8860,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9265,8 +9265,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9458,8 +9458,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9918,8 +9918,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10063,8 +10063,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10262,8 +10262,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "InstanceInfo",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInfo>",
-          "templateType" : "java.util.List<InstanceInfo>"
+          "templateType" : "java.util.List<InstanceInfo>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10403,8 +10403,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "InstanceInfo",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInfo>",
-            "templateType" : "java.util.List<InstanceInfo>"
+            "templateType" : "java.util.List<InstanceInfo>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -10654,8 +10654,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -10852,8 +10852,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -11898,8 +11898,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12043,8 +12043,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12175,8 +12175,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "InstanceSummary",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceSummary>",
-          "templateType" : "java.util.List<InstanceSummary>"
+          "templateType" : "java.util.List<InstanceSummary>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceSummary>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12368,8 +12368,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "InstanceSummary",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceSummary>",
-            "templateType" : "java.util.List<InstanceSummary>"
+            "templateType" : "java.util.List<InstanceSummary>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<InstanceSummary>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -12585,8 +12585,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -12831,8 +12831,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13645,8 +13645,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13838,8 +13838,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14023,8 +14023,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14216,8 +14216,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15751,8 +15751,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "EC2TagFilter",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>",
-          "templateType" : "java.util.List<EC2TagFilter>"
+          "templateType" : "java.util.List<EC2TagFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15869,8 +15869,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TagFilter",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-          "templateType" : "java.util.List<TagFilter>"
+          "templateType" : "java.util.List<TagFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15987,8 +15987,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16157,8 +16157,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TriggerConfig",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>",
-          "templateType" : "java.util.List<TriggerConfig>"
+          "templateType" : "java.util.List<TriggerConfig>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16408,8 +16408,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16527,8 +16527,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TriggerConfig",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>",
-            "templateType" : "java.util.List<TriggerConfig>"
+            "templateType" : "java.util.List<TriggerConfig>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16752,8 +16752,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "EC2TagFilter",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>",
-            "templateType" : "java.util.List<EC2TagFilter>"
+            "templateType" : "java.util.List<EC2TagFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16871,8 +16871,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TagFilter",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-            "templateType" : "java.util.List<TagFilter>"
+            "templateType" : "java.util.List<TagFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17232,8 +17232,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17529,8 +17529,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18211,8 +18211,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TagFilter",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-          "templateType" : "java.util.List<TagFilter>"
+          "templateType" : "java.util.List<TagFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18514,8 +18514,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TagFilter",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-            "templateType" : "java.util.List<TagFilter>"
+            "templateType" : "java.util.List<TagFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18924,8 +18924,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Tag",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19042,8 +19042,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19187,8 +19187,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19306,8 +19306,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Tag",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -20526,8 +20526,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "EC2TagFilter",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>",
-          "templateType" : "java.util.List<EC2TagFilter>"
+          "templateType" : "java.util.List<EC2TagFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20644,8 +20644,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TagFilter",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-          "templateType" : "java.util.List<TagFilter>"
+          "templateType" : "java.util.List<TagFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20762,8 +20762,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AutoScalingGroup",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
-          "templateType" : "java.util.List<AutoScalingGroup>"
+          "templateType" : "java.util.List<AutoScalingGroup>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20984,8 +20984,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TriggerConfig",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>",
-          "templateType" : "java.util.List<TriggerConfig>"
+          "templateType" : "java.util.List<TriggerConfig>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21284,8 +21284,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AutoScalingGroup",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
-            "templateType" : "java.util.List<AutoScalingGroup>"
+            "templateType" : "java.util.List<AutoScalingGroup>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21403,8 +21403,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TriggerConfig",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>",
-            "templateType" : "java.util.List<TriggerConfig>"
+            "templateType" : "java.util.List<TriggerConfig>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21681,8 +21681,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "EC2TagFilter",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>",
-            "templateType" : "java.util.List<EC2TagFilter>"
+            "templateType" : "java.util.List<EC2TagFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21800,8 +21800,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TagFilter",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-            "templateType" : "java.util.List<TagFilter>"
+            "templateType" : "java.util.List<TagFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24352,8 +24352,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "RevisionLocation",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>",
-          "templateType" : "java.util.List<RevisionLocation>"
+          "templateType" : "java.util.List<RevisionLocation>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24598,8 +24598,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "RevisionLocation",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>",
-            "templateType" : "java.util.List<RevisionLocation>"
+            "templateType" : "java.util.List<RevisionLocation>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24871,8 +24871,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "DeploymentGroupInfo",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentGroupInfo>",
-          "templateType" : "java.util.List<DeploymentGroupInfo>"
+          "templateType" : "java.util.List<DeploymentGroupInfo>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentGroupInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25064,8 +25064,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "DeploymentGroupInfo",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentGroupInfo>",
-            "templateType" : "java.util.List<DeploymentGroupInfo>"
+            "templateType" : "java.util.List<DeploymentGroupInfo>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentGroupInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25429,8 +25429,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "RevisionInfo",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionInfo>",
-          "templateType" : "java.util.List<RevisionInfo>"
+          "templateType" : "java.util.List<RevisionInfo>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -25676,8 +25676,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "RevisionInfo",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionInfo>",
-            "templateType" : "java.util.List<RevisionInfo>"
+            "templateType" : "java.util.List<RevisionInfo>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -26912,8 +26912,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "EC2TagFilter",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>",
-          "templateType" : "java.util.List<EC2TagFilter>"
+          "templateType" : "java.util.List<EC2TagFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27030,8 +27030,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TagFilter",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-          "templateType" : "java.util.List<TagFilter>"
+          "templateType" : "java.util.List<TagFilter>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27148,8 +27148,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27318,8 +27318,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "TriggerConfig",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>",
-          "templateType" : "java.util.List<TriggerConfig>"
+          "templateType" : "java.util.List<TriggerConfig>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -27569,8 +27569,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27688,8 +27688,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TriggerConfig",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>",
-            "templateType" : "java.util.List<TriggerConfig>"
+            "templateType" : "java.util.List<TriggerConfig>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TriggerConfig>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -27913,8 +27913,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "EC2TagFilter",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>",
-            "templateType" : "java.util.List<EC2TagFilter>"
+            "templateType" : "java.util.List<EC2TagFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<EC2TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28085,8 +28085,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "TagFilter",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>",
-            "templateType" : "java.util.List<TagFilter>"
+            "templateType" : "java.util.List<TagFilter>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<TagFilter>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28217,8 +28217,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28463,8 +28463,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28953,8 +28953,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AutoScalingGroup",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
-          "templateType" : "java.util.List<AutoScalingGroup>"
+          "templateType" : "java.util.List<AutoScalingGroup>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -29094,8 +29094,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AutoScalingGroup",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
-            "templateType" : "java.util.List<AutoScalingGroup>"
+            "templateType" : "java.util.List<AutoScalingGroup>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31573,8 +31573,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "Tag",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "templateType" : "java.util.List<Tag>"
+          "templateType" : "java.util.List<Tag>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -31926,8 +31926,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "Tag",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "templateType" : "java.util.List<Tag>"
+            "templateType" : "java.util.List<Tag>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -32247,8 +32247,8 @@
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "templateType" : "java.util.List<String>"
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : "InstanceStatus",
@@ -32498,8 +32498,8 @@
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "templateType" : "java.util.List<String>"
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : "InstanceStatus",
@@ -32682,8 +32682,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "RevisionLocation",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>",
-          "templateType" : "java.util.List<RevisionLocation>"
+          "templateType" : "java.util.List<RevisionLocation>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32880,8 +32880,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "RevisionLocation",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>",
-            "templateType" : "java.util.List<RevisionLocation>"
+            "templateType" : "java.util.List<RevisionLocation>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<RevisionLocation>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -35382,8 +35382,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "AutoScalingGroup",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
-          "templateType" : "java.util.List<AutoScalingGroup>"
+          "templateType" : "java.util.List<AutoScalingGroup>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -35523,8 +35523,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "AutoScalingGroup",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>",
-            "templateType" : "java.util.List<AutoScalingGroup>"
+            "templateType" : "java.util.List<AutoScalingGroup>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<AutoScalingGroup>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -35719,8 +35719,8 @@
           "simple" : false,
           "map" : false,
           "simpleType" : "DeploymentInfo",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentInfo>",
-          "templateType" : "java.util.List<DeploymentInfo>"
+          "templateType" : "java.util.List<DeploymentInfo>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentInfo>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -35860,8 +35860,8 @@
             "simple" : false,
             "map" : false,
             "simpleType" : "DeploymentInfo",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentInfo>",
-            "templateType" : "java.util.List<DeploymentInfo>"
+            "templateType" : "java.util.List<DeploymentInfo>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<DeploymentInfo>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -36619,14 +36619,101 @@
     "convenienceTypeOverloads" : [ ],
     "skipSmokeTests" : false
   },
+  "waiters" : {
+    "DeploymentSuccessful" : {
+      "waiterName" : "DeploymentSuccessful",
+      "delay" : 15,
+      "maxAttempts" : 120,
+      "acceptors" : [ {
+        "matcher" : "path",
+        "argument" : "deploymentInfo.status",
+        "state" : "success",
+        "expected" : "Succeeded",
+        "ast" : "new JmesPathSubExpression( new JmesPathField( \"deploymentInfo\"),new JmesPathField( \"status\"))",
+        "expectedAsCamelCase" : "Succeeded",
+        "expectedAsEscapedJson" : "\\\"Succeeded\\\"",
+        "expectedAsString" : "\"Succeeded\"",
+        "expectedAsNumber" : null,
+        "enumState" : "WaiterState.SUCCESS",
+        "isStatusMatcher" : false,
+        "isErrorMatcher" : false
+      }, {
+        "matcher" : "path",
+        "argument" : "deploymentInfo.status",
+        "state" : "failure",
+        "expected" : "Failed",
+        "ast" : "new JmesPathSubExpression( new JmesPathField( \"deploymentInfo\"),new JmesPathField( \"status\"))",
+        "expectedAsCamelCase" : "Failed",
+        "expectedAsEscapedJson" : "\\\"Failed\\\"",
+        "expectedAsString" : "\"Failed\"",
+        "expectedAsNumber" : null,
+        "enumState" : "WaiterState.FAILURE",
+        "isStatusMatcher" : false,
+        "isErrorMatcher" : false
+      }, {
+        "matcher" : "path",
+        "argument" : "deploymentInfo.status",
+        "state" : "failure",
+        "expected" : "Stopped",
+        "ast" : "new JmesPathSubExpression( new JmesPathField( \"deploymentInfo\"),new JmesPathField( \"status\"))",
+        "expectedAsCamelCase" : "Stopped",
+        "expectedAsEscapedJson" : "\\\"Stopped\\\"",
+        "expectedAsString" : "\"Stopped\"",
+        "expectedAsNumber" : null,
+        "enumState" : "WaiterState.FAILURE",
+        "isStatusMatcher" : false,
+        "isErrorMatcher" : false
+      } ],
+      "operationModel" : {
+        "documentation" : "<p>Gets information about a deployment.</p>",
+        "operationName" : "GetDeployment",
+        "deprecated" : false,
+        "input" : {
+          "variableName" : "getDeploymentRequest",
+          "variableType" : "GetDeploymentRequest",
+          "variableDeclarationType" : "GetDeploymentRequest",
+          "documentation" : "<p>Represents the input of a get deployment operation.</p>",
+          "simpleType" : "GetDeploymentRequest",
+          "variableSetterType" : "GetDeploymentRequest"
+        },
+        "inputStreamPropertyName" : null,
+        "returnType" : {
+          "returnType" : "GetDeploymentResult",
+          "documentation" : "<p>Represents the output of a get deployment operation.</p>"
+        },
+        "exceptions" : [ {
+          "exceptionName" : "DeploymentIdRequiredException",
+          "documentation" : "<p>At least one deployment ID must be specified.</p>"
+        }, {
+          "exceptionName" : "InvalidDeploymentIdException",
+          "documentation" : "<p>At least one of the deployment IDs was specified in an invalid format.</p>"
+        }, {
+          "exceptionName" : "DeploymentDoesNotExistException",
+          "documentation" : "<p>The deployment does not exist with the applicable IAM user or AWS account.</p>"
+        } ],
+        "hasBlobMemberAsPayload" : false,
+        "syncReturnType" : "GetDeploymentResult",
+        "asyncReturnType" : "GetDeploymentResult",
+        "asyncFutureType" : "java.util.concurrent.Future<GetDeploymentResult>",
+        "asyncCallableType" : "java.util.concurrent.Callable<GetDeploymentResult>",
+        "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDeploymentRequest, GetDeploymentResult>",
+        "authenticated" : true,
+        "methodName" : "getDeployment"
+      },
+      "operationName" : "GetDeployment",
+      "waiterMethodName" : "deploymentSuccessful",
+      "operationMethodName" : "getDeployment"
+    }
+  },
   "examples" : {
-    "version" : "1.0",
-    "operationExamples" : { }
+    "examples" : { },
+    "version" : "1.0"
   },
   "sdkModeledExceptionBaseClassName" : "AmazonCodeDeployException",
   "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
-  "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.codedeploy.model.AmazonCodeDeployException"
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.codedeploy.model.AmazonCodeDeployException",
+  "hasWaiters" : true,
+  "clientConfigFactory" : "ClientConfigurationFactory"
 }

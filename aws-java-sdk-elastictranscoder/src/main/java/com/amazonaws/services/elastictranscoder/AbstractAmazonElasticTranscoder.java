@@ -16,6 +16,7 @@ package com.amazonaws.services.elastictranscoder;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.elastictranscoder.waiters.AmazonElasticTranscoderWaiters;
 
 /**
  * Abstract implementation of {@code AmazonElasticTranscoder}. Convenient method
@@ -144,6 +145,11 @@ public class AbstractAmazonElasticTranscoder implements AmazonElasticTranscoder 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonElasticTranscoderWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

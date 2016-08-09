@@ -1482,4 +1482,5 @@ public interface AmazonApiGateway {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

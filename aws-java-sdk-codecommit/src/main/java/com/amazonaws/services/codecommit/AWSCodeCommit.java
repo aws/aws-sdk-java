@@ -855,4 +855,5 @@ public interface AWSCodeCommit {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

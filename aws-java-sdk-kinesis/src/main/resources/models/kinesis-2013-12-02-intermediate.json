@@ -19,9 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "kinesis",
     "signingName" : "kinesis",
-    "xmlProtocol" : false,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonKinesisClientBuilder",
     "asyncClientBuilderClassName" : "AmazonKinesisAsyncClientBuilder",
@@ -29,7 +27,9 @@
     "smokeTestsPackageName" : "com.amazonaws.services.kinesis.smoketests",
     "serviceName" : "Kinesis",
     "cborProtocol" : true,
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "xmlProtocol" : false,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "AddTagsToStream" : {
@@ -63,12 +63,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddTagsToStreamResult",
       "asyncReturnType" : "AddTagsToStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsToStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToStreamRequest, AddTagsToStreamResult>",
-      "authenticated" : true,
       "methodName" : "addTagsToStream"
     },
     "CreateStream" : {
@@ -99,12 +99,12 @@
         "documentation" : "<p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateStreamResult",
       "asyncReturnType" : "CreateStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, CreateStreamResult>",
-      "authenticated" : true,
       "methodName" : "createStream"
     },
     "DecreaseStreamRetentionPeriod" : {
@@ -138,12 +138,12 @@
         "documentation" : "<p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DecreaseStreamRetentionPeriodResult",
       "asyncReturnType" : "DecreaseStreamRetentionPeriodResult",
       "asyncFutureType" : "java.util.concurrent.Future<DecreaseStreamRetentionPeriodResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DecreaseStreamRetentionPeriodResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DecreaseStreamRetentionPeriodRequest, DecreaseStreamRetentionPeriodResult>",
-      "authenticated" : true,
       "methodName" : "decreaseStreamRetentionPeriod"
     },
     "DeleteStream" : {
@@ -171,12 +171,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteStreamResult",
       "asyncReturnType" : "DeleteStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, DeleteStreamResult>",
-      "authenticated" : true,
       "methodName" : "deleteStream"
     },
     "DescribeStream" : {
@@ -204,12 +204,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeStreamResult",
       "asyncReturnType" : "DescribeStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult>",
-      "authenticated" : true,
       "methodName" : "describeStream"
     },
     "DisableEnhancedMonitoring" : {
@@ -243,12 +243,12 @@
         "documentation" : "<p>The requested resource could not be found. The stream might not be specified correctly, or it might not be in the <code>ACTIVE</code> state if the operation requires it.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DisableEnhancedMonitoringResult",
       "asyncReturnType" : "DisableEnhancedMonitoringResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableEnhancedMonitoringResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableEnhancedMonitoringResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableEnhancedMonitoringRequest, DisableEnhancedMonitoringResult>",
-      "authenticated" : true,
       "methodName" : "disableEnhancedMonitoring"
     },
     "EnableEnhancedMonitoring" : {
@@ -282,12 +282,12 @@
         "documentation" : "<p>The requested resource could not be found. The stream might not be specified correctly, or it might not be in the <code>ACTIVE</code> state if the operation requires it.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "EnableEnhancedMonitoringResult",
       "asyncReturnType" : "EnableEnhancedMonitoringResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableEnhancedMonitoringResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnableEnhancedMonitoringResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableEnhancedMonitoringRequest, EnableEnhancedMonitoringResult>",
-      "authenticated" : true,
       "methodName" : "enableEnhancedMonitoring"
     },
     "GetRecords" : {
@@ -321,12 +321,12 @@
         "documentation" : "<p>The provided iterator exceeds the maximum age allowed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetRecordsResult",
       "asyncReturnType" : "GetRecordsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRecordsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRecordsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRecordsRequest, GetRecordsResult>",
-      "authenticated" : true,
       "methodName" : "getRecords"
     },
     "GetShardIterator" : {
@@ -357,12 +357,12 @@
         "documentation" : "<p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html\">Streams Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>, and <a href=\"http://docs.aws.amazon.com/general/latest/gr/api-retries.html\">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetShardIteratorResult",
       "asyncReturnType" : "GetShardIteratorResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetShardIteratorResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetShardIteratorResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetShardIteratorRequest, GetShardIteratorResult>",
-      "authenticated" : true,
       "methodName" : "getShardIterator"
     },
     "IncreaseStreamRetentionPeriod" : {
@@ -396,12 +396,12 @@
         "documentation" : "<p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "IncreaseStreamRetentionPeriodResult",
       "asyncReturnType" : "IncreaseStreamRetentionPeriodResult",
       "asyncFutureType" : "java.util.concurrent.Future<IncreaseStreamRetentionPeriodResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<IncreaseStreamRetentionPeriodResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<IncreaseStreamRetentionPeriodRequest, IncreaseStreamRetentionPeriodResult>",
-      "authenticated" : true,
       "methodName" : "increaseStreamRetentionPeriod"
     },
     "ListStreams" : {
@@ -426,12 +426,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListStreamsResult",
       "asyncReturnType" : "ListStreamsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListStreamsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListStreamsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult>",
-      "authenticated" : true,
       "methodName" : "listStreams"
     },
     "ListTagsForStream" : {
@@ -462,12 +462,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTagsForStreamResult",
       "asyncReturnType" : "ListTagsForStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForStreamRequest, ListTagsForStreamResult>",
-      "authenticated" : true,
       "methodName" : "listTagsForStream"
     },
     "MergeShards" : {
@@ -501,12 +501,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "MergeShardsResult",
       "asyncReturnType" : "MergeShardsResult",
       "asyncFutureType" : "java.util.concurrent.Future<MergeShardsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<MergeShardsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<MergeShardsRequest, MergeShardsResult>",
-      "authenticated" : true,
       "methodName" : "mergeShards"
     },
     "PutRecord" : {
@@ -537,12 +537,12 @@
         "documentation" : "<p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html\">Streams Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>, and <a href=\"http://docs.aws.amazon.com/general/latest/gr/api-retries.html\">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutRecordResult",
       "asyncReturnType" : "PutRecordResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRecordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRecordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRecordRequest, PutRecordResult>",
-      "authenticated" : true,
       "methodName" : "putRecord"
     },
     "PutRecords" : {
@@ -573,12 +573,12 @@
         "documentation" : "<p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html\">Streams Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>, and <a href=\"http://docs.aws.amazon.com/general/latest/gr/api-retries.html\">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutRecordsResult",
       "asyncReturnType" : "PutRecordsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRecordsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRecordsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRecordsRequest, PutRecordsResult>",
-      "authenticated" : true,
       "methodName" : "putRecords"
     },
     "RemoveTagsFromStream" : {
@@ -612,12 +612,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RemoveTagsFromStreamResult",
       "asyncReturnType" : "RemoveTagsFromStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromStreamRequest, RemoveTagsFromStreamResult>",
-      "authenticated" : true,
       "methodName" : "removeTagsFromStream"
     },
     "SplitShard" : {
@@ -651,12 +651,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SplitShardResult",
       "asyncReturnType" : "SplitShardResult",
       "asyncFutureType" : "java.util.concurrent.Future<SplitShardResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SplitShardResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SplitShardRequest, SplitShardResult>",
-      "authenticated" : true,
       "methodName" : "splitShard"
     }
   },
@@ -14454,14 +14454,72 @@
     "convenienceTypeOverloads" : [ ],
     "skipSmokeTests" : false
   },
+  "waiters" : {
+    "StreamExists" : {
+      "waiterName" : "StreamExists",
+      "delay" : 10,
+      "maxAttempts" : 18,
+      "acceptors" : [ {
+        "matcher" : "path",
+        "argument" : "StreamDescription.StreamStatus",
+        "state" : "success",
+        "expected" : "ACTIVE",
+        "ast" : "new JmesPathSubExpression( new JmesPathField( \"StreamDescription\"),new JmesPathField( \"StreamStatus\"))",
+        "enumState" : "WaiterState.SUCCESS",
+        "expectedAsCamelCase" : "ACTIVE",
+        "expectedAsEscapedJson" : "\\\"ACTIVE\\\"",
+        "expectedAsString" : "\"ACTIVE\"",
+        "expectedAsNumber" : null,
+        "isStatusMatcher" : false,
+        "isErrorMatcher" : false
+      } ],
+      "operationModel" : {
+        "documentation" : "<p>Describes the specified Amazon Kinesis stream.</p> <p>The information about the stream includes its current status, its Amazon Resource Name (ARN), and an array of shard objects. For each shard object, there is information about the hash key and sequence number ranges that the shard spans, and the IDs of any earlier shards that played in a role in creating the shard. A sequence number is the identifier associated with every record ingested in the stream. The sequence number is assigned when a record is put into the stream.</p> <p>You can limit the number of returned shards using the <code>Limit</code> parameter. The number of shards in a stream may be too large to return from a single call to <code>DescribeStream</code>. You can detect this by using the <code>HasMoreShards</code> flag in the returned output. <code>HasMoreShards</code> is set to <code>true</code> when there is more data available. </p> <p><code>DescribeStream</code> is a paginated operation. If there are more shards available, you can request them using the shard ID of the last shard returned. Specify this ID in the <code>ExclusiveStartShardId</code> parameter in a subsequent request to <code>DescribeStream</code>. </p> <p>There are no guarantees about the chronological order shards returned in <code>DescribeStream</code> results. If you want to process shards in chronological order, use <code>ParentShardId</code> to track lineage to the oldest shard.</p> <p><a>DescribeStream</a> has a limit of 10 transactions per second per account.</p>",
+        "operationName" : "DescribeStream",
+        "deprecated" : false,
+        "input" : {
+          "variableName" : "describeStreamRequest",
+          "variableType" : "DescribeStreamRequest",
+          "variableDeclarationType" : "DescribeStreamRequest",
+          "documentation" : "<p>Represents the input for <code>DescribeStream</code>.</p>",
+          "simpleType" : "DescribeStreamRequest",
+          "variableSetterType" : "DescribeStreamRequest"
+        },
+        "inputStreamPropertyName" : null,
+        "returnType" : {
+          "returnType" : "DescribeStreamResult",
+          "documentation" : "<p>Represents the output for <code>DescribeStream</code>.</p>"
+        },
+        "exceptions" : [ {
+          "exceptionName" : "ResourceNotFoundException",
+          "documentation" : "<p>The requested resource could not be found. The stream might not be specified correctly, or it might not be in the <code>ACTIVE</code> state if the operation requires it.</p>"
+        }, {
+          "exceptionName" : "LimitExceededException",
+          "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
+        } ],
+        "hasBlobMemberAsPayload" : false,
+        "authenticated" : true,
+        "syncReturnType" : "DescribeStreamResult",
+        "asyncReturnType" : "DescribeStreamResult",
+        "asyncFutureType" : "java.util.concurrent.Future<DescribeStreamResult>",
+        "asyncCallableType" : "java.util.concurrent.Callable<DescribeStreamResult>",
+        "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult>",
+        "methodName" : "describeStream"
+      },
+      "operationName" : "DescribeStream",
+      "waiterMethodName" : "streamExists",
+      "operationMethodName" : "describeStream"
+    }
+  },
   "examples" : {
-    "version" : "1.0",
-    "operationExamples" : { }
+    "examples" : { },
+    "version" : "1.0"
   },
   "sdkModeledExceptionBaseClassName" : "AmazonKinesisException",
   "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.kinesis.model.AmazonKinesisException"
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.kinesis.model.AmazonKinesisException",
+  "hasWaiters" : true
 }

@@ -21,6 +21,7 @@ package com.amazonaws.metrics;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
@@ -183,4 +184,23 @@ public class AwsSdkMetricsTest {
         });
         assertTrue(AwsSdkMetrics.isMetricsEnabled());
     }
+
+    @Test
+    public void setRegion_WithoutRegionsEnum() {
+        AwsSdkMetrics.setRegion("us-east-1");
+        assertTrue(AwsSdkMetrics.getRegionName().equals("us-east-1"));
+    }
+
+    @Test
+    public void setRegion_WithNonStandardRegion() {
+        AwsSdkMetrics.setRegion("us-east-9");
+        assertTrue(AwsSdkMetrics.getRegionName().equals("us-east-9"));
+    }
+
+    @Test
+    public void setRegions_RegionIsNull_When_NonExistingRegion() {
+        AwsSdkMetrics.setRegion("non-existent-region");
+        assertNull(AwsSdkMetrics.getRegionName());
+    }
+
 }

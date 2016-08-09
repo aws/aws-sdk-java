@@ -421,4 +421,5 @@ public interface AWSElasticsearch {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

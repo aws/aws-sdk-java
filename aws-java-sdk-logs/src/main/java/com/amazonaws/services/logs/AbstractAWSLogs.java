@@ -198,4 +198,5 @@ public class AbstractAWSLogs implements AWSLogs {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

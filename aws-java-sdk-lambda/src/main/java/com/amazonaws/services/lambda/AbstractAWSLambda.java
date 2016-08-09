@@ -188,4 +188,5 @@ public class AbstractAWSLambda implements AWSLambda {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

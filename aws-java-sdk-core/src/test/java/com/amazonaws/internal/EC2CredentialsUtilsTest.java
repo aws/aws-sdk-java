@@ -30,13 +30,20 @@ import java.net.URISyntaxException;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.retry.internal.CredentialsEndpointRetryParameters;
+import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 
 import utils.http.SocketUtils;
 
+@RunWith(MockitoJUnitRunner.class)
 public class EC2CredentialsUtilsTest {
 
     @ClassRule
@@ -49,9 +56,18 @@ public class EC2CredentialsUtilsTest {
 
     private static URI endpoint;
 
+    private static CustomRetryPolicy customRetryPolicy;
+
+    private static EC2CredentialsUtils ec2CredentialsUtils;
+
+    @Mock
+    private ConnectionUtils mockConnection;
+
     @BeforeClass
     public static void setup() throws URISyntaxException {
         endpoint = new URI("http://localhost:" + mockServer.port() + CREDENTIALS_PATH);
+        customRetryPolicy = new CustomRetryPolicy();
+        ec2CredentialsUtils = EC2CredentialsUtils.getInstance();
     }
 
     /**
@@ -66,7 +82,7 @@ public class EC2CredentialsUtilsTest {
             fail("Unable to find an unused port");
         }
 
-        EC2CredentialsUtils.readResource(new URI("http://localhost:" + port));
+        ec2CredentialsUtils.readResource(new URI("http://localhost:" + port));
     }
 
     /**
@@ -77,7 +93,7 @@ public class EC2CredentialsUtilsTest {
     public void readResouceReturnsResponseBodyFor200Response() throws IOException {
         generateStub(200, SUCCESS_BODY);
 
-        assertEquals(SUCCESS_BODY, EC2CredentialsUtils.readResource(endpoint));
+        assertEquals(SUCCESS_BODY, ec2CredentialsUtils.readResource(endpoint));
     }
 
     /**
@@ -87,7 +103,7 @@ public class EC2CredentialsUtilsTest {
     @Test
     public void readResouceReturnsAceFor404ErrorResponse() throws Exception {
         try {
-            EC2CredentialsUtils.readResource(new URI("http://localhost:" + mockServer.port() + "/dummyPath"));
+            ec2CredentialsUtils.readResource(new URI("http://localhost:" + mockServer.port() + "/dummyPath"));
             fail("Expected AmazonClientException");
         } catch (AmazonClientException ace) {
             assertTrue(ace.getMessage().contains("The requested metadata is not found at"));
@@ -96,14 +112,15 @@ public class EC2CredentialsUtilsTest {
 
     /**
      * When server returns a status code other than 200 and 404,
-     * the test should throw AmazonServiceException.
+     * the test should throw AmazonServiceException. The request
+     * is not retried.
      */
     @Test
     public void readResouceReturnsAseFor5xxResponse() throws IOException {
         generateStub(500, "{\"code\":\"500 Internal Server Error\",\"message\":\"ERROR_MESSAGE\"}");
 
         try {
-            EC2CredentialsUtils.readResource(endpoint);
+            ec2CredentialsUtils.readResource(endpoint);
             fail("Expected AmazonServiceException");
         } catch (AmazonServiceException ase) {
             assertEquals(500, ase.getStatusCode());
@@ -122,11 +139,62 @@ public class EC2CredentialsUtilsTest {
         generateStub(500, "Non Json error body");
 
         try {
-            EC2CredentialsUtils.readResource(endpoint);
+            ec2CredentialsUtils.readResource(endpoint);
             fail("Expected AmazonServiceException");
         } catch (AmazonServiceException ase) {
             assertEquals(500, ase.getStatusCode());
             assertNotNull(ase.getErrorMessage());
+        }
+    }
+
+    /**
+     * When readResource is called with default retry policy and IOException occurs,
+     * the request is not retried.
+     */
+    @Test
+    public void readResouceWithDefaultRetryPolicy_DoesNotRetry_ForIoException() throws IOException {
+        Mockito.when(mockConnection.connectToEndpoint(endpoint)).thenThrow(new IOException());
+
+        try {
+            new EC2CredentialsUtils(mockConnection).readResource(endpoint);
+            fail("Expected an IOexception");
+        } catch (IOException exception) {
+            Mockito.verify(mockConnection, Mockito.times(1)).connectToEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * When readResource is called with custom retry policy and IOException occurs,
+     * the request is retried and the number of retries is equal to the value
+     * returned by getMaxRetries method of the custom retry policy.
+     */
+    @Test
+    public void readResouceWithCustomRetryPolicy_DoesRetry_ForIoException() throws IOException {
+        Mockito.when(mockConnection.connectToEndpoint(endpoint)).thenThrow(new IOException());
+
+        try {
+            new EC2CredentialsUtils(mockConnection).readResource(endpoint, customRetryPolicy);
+            fail("Expected an IOexception");
+        } catch (IOException exception) {
+             Mockito.verify(mockConnection, Mockito.times(CustomRetryPolicy.MAX_RETRIES + 1)).connectToEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * When readResource is called with custom retry policy
+     * and the exception is not an IOException,
+     * then the request is not retried.
+     */
+    @Test
+    public void readResouceWithCustomRetryPolicy_DoesNotRetry_ForNonIoException() throws IOException {
+        generateStub(500, "Non Json error body");
+        Mockito.when(mockConnection.connectToEndpoint(endpoint)).thenCallRealMethod();
+
+        try {
+            new EC2CredentialsUtils(mockConnection).readResource(endpoint, customRetryPolicy);
+            fail("Expected an AmazonServiceException");
+        } catch (AmazonServiceException ase) {
+            Mockito.verify(mockConnection, Mockito.times(1)).connectToEndpoint(endpoint);
         }
     }
 
@@ -138,6 +206,29 @@ public class EC2CredentialsUtilsTest {
                                 .withHeader("Content-Type", "application/json")
                                 .withHeader("charset", "utf-8")
                                 .withBody(message)));
+    }
+
+    /**
+     * Retry policy that retries only if a request fails with an IOException.
+     */
+    private static class CustomRetryPolicy implements CredentialsEndpointRetryPolicy {
+
+        private static final int MAX_RETRIES = 3;
+
+        @Override
+        public boolean shouldRetry(int retriesAttempted, CredentialsEndpointRetryParameters retryParams) {
+
+            if (retriesAttempted >= MAX_RETRIES) {
+                return false;
+            }
+
+            if (retryParams.getException() != null && retryParams.getException() instanceof IOException) {
+                return true;
+            }
+
+            return false;
+        }
+
     }
 
 }

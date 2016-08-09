@@ -16,6 +16,7 @@ package com.amazonaws.services.identitymanagement;
 
 import com.amazonaws.services.identitymanagement.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.identitymanagement.waiters.AmazonIdentityManagementWaiters;
 
 /**
  * Abstract implementation of {@code AmazonIdentityManagement}. Convenient
@@ -798,6 +799,11 @@ public class AbstractAmazonIdentityManagement implements
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonIdentityManagementWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

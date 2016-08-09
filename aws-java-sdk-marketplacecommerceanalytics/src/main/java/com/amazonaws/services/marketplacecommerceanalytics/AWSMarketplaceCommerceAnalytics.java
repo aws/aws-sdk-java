@@ -122,6 +122,32 @@ public interface AWSMarketplaceCommerceAnalytics {
             GenerateDataSetRequest generateDataSetRequest);
 
     /**
+     * Given a data set type and a from date, asynchronously publishes the
+     * requested customer support data to the specified S3 bucket and notifies
+     * the specified SNS topic once the data is available. Returns a unique
+     * request identifier that can be used to correlate requests with
+     * notifications from the SNS topic. Data sets will be published in
+     * comma-separated values (CSV) format with the file name
+     * {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv. If a file with the same name
+     * already exists (e.g. if the same data set is requested twice), the
+     * original file will be overwritten by the new file. Requires a Role with an
+     * attached permissions policy providing Allow permissions for the following
+     * actions: s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes,
+     * sns:Publish, iam:GetRolePolicy.
+     * 
+     * @param startSupportDataExportRequest
+     *        Container for the parameters to the StartSupportDataExport
+     *        operation.
+     * @return Result of the StartSupportDataExport operation returned by the
+     *         service.
+     * @throws MarketplaceCommerceAnalyticsException
+     *         This exception is thrown when an internal service error occurs.
+     * @sample AWSMarketplaceCommerceAnalytics.StartSupportDataExport
+     */
+    StartSupportDataExportResult startSupportDataExport(
+            StartSupportDataExportRequest startSupportDataExportRequest);
+
+    /**
      * Shuts down this client object, releasing any resources that might be held
      * open. This is an optional method, and callers are not expected to call
      * it, but can if they want to explicitly release any open resources. Once a
@@ -149,4 +175,5 @@ public interface AWSMarketplaceCommerceAnalytics {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

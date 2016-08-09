@@ -1031,4 +1031,5 @@ public interface AmazonConfig {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

@@ -155,6 +155,7 @@ public class ParameterHttpMapping {
 
         URI("uri"),
         HEADER("header"),
+        HEADERS("headers"),
         STATUS_CODE("statusCode"),
         QUERY_STRING("querystring");
 

@@ -15,13 +15,15 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
-import java.util.Map;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Map;
+
 public class ExampleComments {
-	
+
+	@JsonProperty(value = "input")
 	private final Map<String, String> inputComments;
+	@JsonProperty(value = "output")
 	private final Map<String, String> outputComments;
 	
     public ExampleComments(

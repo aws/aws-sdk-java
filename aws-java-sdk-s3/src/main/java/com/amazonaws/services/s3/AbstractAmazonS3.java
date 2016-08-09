@@ -26,6 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.HttpMethod;
 import com.amazonaws.regions.Region;
 import com.amazonaws.services.s3.model.*;
+import com.amazonaws.services.s3.waiters.AmazonS3Waiters;
 
 /**
  * An Abstract class that users needs to extend instead of {@link AmazonS3}
@@ -928,6 +929,11 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public URL getUrl(String bucketName, String key) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public AmazonS3Waiters waiters() {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }
 }

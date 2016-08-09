@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.simpleemail.model.*;
+import com.amazonaws.services.simpleemail.waiters.AmazonSimpleEmailServiceWaiters;
 
 /**
  * Interface for accessing Amazon SES.
@@ -1647,4 +1648,6 @@ public interface AmazonSimpleEmailService {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonSimpleEmailServiceWaiters waiters();
 }

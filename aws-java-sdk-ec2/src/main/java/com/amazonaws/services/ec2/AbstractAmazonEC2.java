@@ -16,6 +16,7 @@ package com.amazonaws.services.ec2;
 
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.ec2.waiters.AmazonEC2Waiters;
 
 /**
  * Abstract implementation of {@code AmazonEC2}. Convenient method forms pass
@@ -1519,6 +1520,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonEC2Waiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

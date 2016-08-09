@@ -14,6 +14,8 @@
  */
 package com.amazonaws.util;
 
+import java.util.Collection;
+
 /**
  * Useful utilities to validate dependencies
  */
@@ -63,5 +65,15 @@ public class ValidationUtils {
             throw new IllegalArgumentException(String.format("%s must be positive", fieldName));
         }
         return num;
+    }
+
+    public static <T extends Collection<?>> T assertNotEmpty(T collection, String fieldName) throws IllegalArgumentException{
+        if(collection == null){
+            throw new IllegalArgumentException(String.format("%s cannot be null", fieldName));
+        }
+        if (collection.isEmpty()) {
+            throw new IllegalArgumentException(String.format("%s cannot be empty", fieldName));
+        }
+        return collection;
     }
 }

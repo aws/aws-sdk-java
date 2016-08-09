@@ -3,6 +3,9 @@ package ${metadata.packageName};
 
 import ${metadata.packageName}.model.*;
 import com.amazonaws.*;
+<#if hasWaiters>
+import ${metadata.packageName}.waiters.${metadata.syncInterface}Waiters;
+</#if>
 
 /**
  * Abstract implementation of {@code ${metadata.syncInterface}}. Convenient
@@ -44,5 +47,12 @@ public class ${metadata.syncAbstractClass} implements ${metadata.syncInterface} 
     public ${responseMetadataClassName} getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+  </#if>
+
+  <#if hasWaiters>
+      @Override
+      public ${metadata.syncInterface}Waiters waiters() {
+           throw new java.lang.UnsupportedOperationException();
+      }
   </#if>
 }

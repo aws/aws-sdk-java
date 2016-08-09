@@ -152,7 +152,7 @@ public class ContainerCredentialsProviderTest {
      * Dummy CredentialsPathProvider that overrides the endpoint
      * and connects to the WireMock server.
      */
-    private static class TestCredentialsEndpointProvider implements CredentialsEndpointProvider {
+    private static class TestCredentialsEndpointProvider extends CredentialsEndpointProvider {
 
         private final String host;
 

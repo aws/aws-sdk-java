@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.inspector.model.*;

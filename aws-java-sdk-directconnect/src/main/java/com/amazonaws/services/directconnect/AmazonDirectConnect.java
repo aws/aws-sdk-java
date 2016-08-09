@@ -752,4 +752,5 @@ public interface AmazonDirectConnect {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

@@ -103,4 +103,5 @@ public class AbstractAWSElasticsearch implements AWSElasticsearch {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

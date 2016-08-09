@@ -118,7 +118,7 @@ class EC2CredentialsFetcher {
         try {
             lastInstanceProfileCheck = new Date();
 
-            String credentialsResponse = EC2CredentialsUtils.readResource(credentailsEndpointProvider.getCredentialsEndpoint());
+            String credentialsResponse = EC2CredentialsUtils.getInstance().readResource(credentailsEndpointProvider.getCredentialsEndpoint(), credentailsEndpointProvider.getRetryPolicy());
 
             node = Jackson.jsonNodeOf(credentialsResponse);
             accessKey = node.get(ACCESS_KEY_ID);

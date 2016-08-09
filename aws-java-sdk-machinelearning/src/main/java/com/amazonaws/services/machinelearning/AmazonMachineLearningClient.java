@@ -36,6 +36,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.machinelearning.waiters.AmazonMachineLearningWaiters;
+
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.machinelearning.model.*;
@@ -59,6 +61,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "machinelearning";
+
+    private volatile AmazonMachineLearningWaiters waiters;
 
     /**
      * Client configuration factory providing ClientConfigurations tailored to
@@ -2159,6 +2163,17 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);
+    }
+
+    public AmazonMachineLearningWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonMachineLearningWaiters(this);
+                }
+            }
+        }
+        return waiters;
     }
 
 }

@@ -47,6 +47,13 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      * <code>nextToken</code> value. This value is <code>null</code> when there
      * are no more results to return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic
+     * purposes.
+     * </p>
+     * </note>
      */
     private String nextToken;
     /**
@@ -212,6 +219,13 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      * <code>nextToken</code> value. This value is <code>null</code> when there
      * are no more results to return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic
+     * purposes.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous
@@ -220,7 +234,12 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      *        value of that parameter. Pagination continues from the end of the
      *        previous results that returned the <code>nextToken</code> value.
      *        This value is <code>null</code> when there are no more results to
-     *        return.
+     *        return.</p> <note>
+     *        <p>
+     *        This token should be treated as an opaque identifier that is only
+     *        used to retrieve the next items in a list and not for other
+     *        programmatic purposes.
+     *        </p>
      */
 
     public void setNextToken(String nextToken) {
@@ -236,6 +255,13 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      * <code>nextToken</code> value. This value is <code>null</code> when there
      * are no more results to return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic
+     * purposes.
+     * </p>
+     * </note>
      * 
      * @return The <code>nextToken</code> value returned from a previous
      *         paginated <code>DescribeRepositories</code> request where
@@ -243,7 +269,12 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      *         value of that parameter. Pagination continues from the end of the
      *         previous results that returned the <code>nextToken</code> value.
      *         This value is <code>null</code> when there are no more results to
-     *         return.
+     *         return.</p> <note>
+     *         <p>
+     *         This token should be treated as an opaque identifier that is only
+     *         used to retrieve the next items in a list and not for other
+     *         programmatic purposes.
+     *         </p>
      */
 
     public String getNextToken() {
@@ -259,6 +290,13 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      * <code>nextToken</code> value. This value is <code>null</code> when there
      * are no more results to return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic
+     * purposes.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous
@@ -267,7 +305,12 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      *        value of that parameter. Pagination continues from the end of the
      *        previous results that returned the <code>nextToken</code> value.
      *        This value is <code>null</code> when there are no more results to
-     *        return.
+     *        return.</p> <note>
+     *        <p>
+     *        This token should be treated as an opaque identifier that is only
+     *        used to retrieve the next items in a list and not for other
+     *        programmatic purposes.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -16,6 +16,7 @@ package com.amazonaws.services.elasticache;
 
 import com.amazonaws.services.elasticache.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.elasticache.waiters.AmazonElastiCacheWaiters;
 
 /**
  * Abstract implementation of {@code AmazonElastiCache}. Convenient method forms
@@ -320,6 +321,11 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonElastiCacheWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

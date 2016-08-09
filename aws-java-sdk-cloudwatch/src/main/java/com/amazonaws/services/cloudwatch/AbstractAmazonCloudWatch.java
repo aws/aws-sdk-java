@@ -16,6 +16,7 @@ package com.amazonaws.services.cloudwatch;
 
 import com.amazonaws.services.cloudwatch.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.cloudwatch.waiters.AmazonCloudWatchWaiters;
 
 /**
  * Abstract implementation of {@code AmazonCloudWatch}. Convenient method forms
@@ -120,6 +121,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonCloudWatchWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

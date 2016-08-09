@@ -901,4 +901,5 @@ public interface AWSCloudTrail {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

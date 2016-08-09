@@ -156,4 +156,5 @@ public class AbstractDataPipeline implements DataPipeline {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

@@ -69,4 +69,5 @@ public class AbstractAWSIotData implements AWSIotData {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Object representing a repository.
+ * An object representing a repository.
  * </p>
  */
 public class Repository implements Serializable, Cloneable {

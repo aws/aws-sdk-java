@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.route53.model.*;
+import com.amazonaws.services.route53.waiters.AmazonRoute53Waiters;
 
 /**
  * Interface for accessing Route 53.
@@ -1973,4 +1974,6 @@ public interface AmazonRoute53 {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonRoute53Waiters waiters();
 }

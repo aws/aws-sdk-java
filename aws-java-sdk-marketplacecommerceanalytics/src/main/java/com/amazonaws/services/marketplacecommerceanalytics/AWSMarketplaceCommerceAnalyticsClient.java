@@ -36,6 +36,7 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.marketplacecommerceanalytics.model.*;
@@ -316,6 +317,66 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new GenerateDataSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Given a data set type and a from date, asynchronously publishes the
+     * requested customer support data to the specified S3 bucket and notifies
+     * the specified SNS topic once the data is available. Returns a unique
+     * request identifier that can be used to correlate requests with
+     * notifications from the SNS topic. Data sets will be published in
+     * comma-separated values (CSV) format with the file name
+     * {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv. If a file with the same name
+     * already exists (e.g. if the same data set is requested twice), the
+     * original file will be overwritten by the new file. Requires a Role with an
+     * attached permissions policy providing Allow permissions for the following
+     * actions: s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes,
+     * sns:Publish, iam:GetRolePolicy.
+     * 
+     * @param startSupportDataExportRequest
+     *        Container for the parameters to the StartSupportDataExport
+     *        operation.
+     * @return Result of the StartSupportDataExport operation returned by the
+     *         service.
+     * @throws MarketplaceCommerceAnalyticsException
+     *         This exception is thrown when an internal service error occurs.
+     * @sample AWSMarketplaceCommerceAnalytics.StartSupportDataExport
+     */
+    @Override
+    public StartSupportDataExportResult startSupportDataExport(
+            StartSupportDataExportRequest startSupportDataExportRequest) {
+        ExecutionContext executionContext = createExecutionContext(startSupportDataExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSupportDataExportRequest> request = null;
+        Response<StartSupportDataExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSupportDataExportRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(startSupportDataExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSupportDataExportResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StartSupportDataExportResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

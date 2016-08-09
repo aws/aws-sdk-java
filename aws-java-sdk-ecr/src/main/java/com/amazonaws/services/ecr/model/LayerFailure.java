@@ -17,7 +17,9 @@ package com.amazonaws.services.ecr.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * An object representing an Amazon ECR image layer failure.
+ * </p>
  */
 public class LayerFailure implements Serializable, Cloneable {
 

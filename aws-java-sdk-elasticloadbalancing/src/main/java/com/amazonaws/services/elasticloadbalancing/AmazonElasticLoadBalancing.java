@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.elasticloadbalancing.model.*;
+import com.amazonaws.services.elasticloadbalancing.waiters.AmazonElasticLoadBalancingWaiters;
 
 /**
  * Interface for accessing Elastic Load Balancing.
@@ -964,4 +965,6 @@ public interface AmazonElasticLoadBalancing {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonElasticLoadBalancingWaiters waiters();
 }

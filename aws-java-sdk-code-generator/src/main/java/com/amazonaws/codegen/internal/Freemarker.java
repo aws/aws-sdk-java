@@ -182,4 +182,18 @@ public class Freemarker {
     public Template getBaseExceptionClassTemplate() throws IOException {
         return getTemplate(templateConfig.getBaseExceptionClass());
     }
+
+    public Template getWaiterSDKFunctionTemplate() throws IOException{
+        return getTemplate(templateConfig.getSdkFunctionClass());
+    }
+
+    public Template getWaiterAcceptorTemplate() throws IOException{
+        return getTemplate(templateConfig.getAcceptorClass());
+    }
+
+    public Template getWaiterTemplate() throws IOException{
+        return getTemplate(templateConfig.getWaiterClass());
+
+
+    }
 }

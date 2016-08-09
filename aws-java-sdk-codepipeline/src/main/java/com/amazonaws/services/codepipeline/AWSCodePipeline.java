@@ -910,4 +910,5 @@ public interface AWSCodePipeline {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

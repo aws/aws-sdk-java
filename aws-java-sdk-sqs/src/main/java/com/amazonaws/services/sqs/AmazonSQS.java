@@ -1013,4 +1013,5 @@ public interface AmazonSQS {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

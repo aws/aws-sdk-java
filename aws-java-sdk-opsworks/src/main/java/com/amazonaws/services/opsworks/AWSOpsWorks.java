@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.opsworks.model.*;
+import com.amazonaws.services.opsworks.waiters.AWSOpsWorksWaiters;
 
 /**
  * Interface for accessing AWS OpsWorks.
@@ -2109,4 +2110,6 @@ public interface AWSOpsWorks {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AWSOpsWorksWaiters waiters();
 }

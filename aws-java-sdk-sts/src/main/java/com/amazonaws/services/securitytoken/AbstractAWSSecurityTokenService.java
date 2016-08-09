@@ -92,4 +92,5 @@ public class AbstractAWSSecurityTokenService implements AWSSecurityTokenService 
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

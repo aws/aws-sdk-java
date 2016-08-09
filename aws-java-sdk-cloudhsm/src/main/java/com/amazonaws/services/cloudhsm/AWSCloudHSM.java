@@ -604,4 +604,5 @@ public interface AWSCloudHSM {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

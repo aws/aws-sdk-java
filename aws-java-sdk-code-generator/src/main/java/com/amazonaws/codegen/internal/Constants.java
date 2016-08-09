@@ -41,6 +41,8 @@ public class Constants {
 
     public static final String PACKAGE_NAME_TRANSFORM_SUFFIX = "transform";
 
+    public static final String PACKAGE_NAME_WAITERS_SUFFIX = "waiters";
+
     public static final String AUTH_POLICY_ENUM_CLASS_DIR = "com/amazonaws/auth/policy/actions";
 
     public static final String REQUEST_CLASS_SUFFIX = "Request";

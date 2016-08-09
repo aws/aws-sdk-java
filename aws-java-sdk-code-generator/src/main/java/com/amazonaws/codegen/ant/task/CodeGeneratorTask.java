@@ -27,6 +27,7 @@ import com.amazonaws.codegen.model.config.BasicCodeGenConfig;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.intermediate.ServiceExamples;
 import com.amazonaws.codegen.model.service.ServiceModel;
+import com.amazonaws.codegen.model.service.Waiters;
 
 /**
  * Ant task interface to generate the Java client code from a C2J model
@@ -35,14 +36,24 @@ public class CodeGeneratorTask {
 
     private static final String P_MODEL_FILE = "modelFile";
     private static final String P_EXAMPLES_FILE = "examplesFile";
+    private static final String P_WAITERS_FILE = "waiterFile";
     private static final String P_CODEGEN_CONFIG_FILE = "codeGenConfigFile";
     private static final String P_CUSTOMIZATION_CONFIG_FILE = "customizationConfigFile";
     private static final String P_OUTPUT_DIRECTORY = "outputDirectory";
     private static final String MODEL_DIR_NAME = "models";
 
+
     public static void main(String[] args) throws IOException {
+
         final String outputDirectory = Utils.getRequiredSystemProperty(P_OUTPUT_DIRECTORY,
                 "Use -DoutputDirectory={path} to specify the output directory for the code generator.");
+
+        final Waiters waiterModel = loadOptionalConfigurationModel(
+                                            Waiters.class,
+                                            getWaitersFileClasspathLocation());
+        final Waiters waiters = waiterModel == null ? new Waiters() : waiterModel;
+
+
         final ServiceModel serviceModel = loadConfigurationModel(
                                             ServiceModel.class,
                                             getModelFileClasspathLocation());
@@ -58,16 +69,21 @@ public class CodeGeneratorTask {
                 getCodeGenConfig(),
                 getCustomizationConfig(),
                 outputDirectory,
-                fileNamePrefix);
+                fileNamePrefix,
+                waiters);
         codeGenerator.execute();
         snapshotServiceModelFile(
                 fileNamePrefix, outputDirectory);
     }
 
-    private static String getModelFileClasspathLocation() {
+    private static String getWaitersFileClasspathLocation(){
+        return Utils.getOptionalSystemProperty(P_WAITERS_FILE);
+    }
+
+    private static String getModelFileClasspathLocation(){
         return Utils.getRequiredSystemProperty(P_MODEL_FILE,
-                                               "No C2j Model available for code generation. " +
-                                               "Use -DmodelFile={path} to specify the C2j model file.");
+                                                "No C2j Model available for code generation. " +
+                                                "Use -DmodelFile={path} to specify the C2j model file.");
     }
 
     static File getModelDirectory(String outputDirectory) {
@@ -165,6 +181,22 @@ public class CodeGeneratorTask {
             if (fileContents != null) {
                 Utils.closeQuietly(fileContents);
             }
+        }
+    }
+
+    /**
+     * Deserialize the contents of a given configuration file.
+     * Returns null if file doesn't exist.
+     * @param clzz                      Class to deserialize into
+     * @param configurationFileLocation Location of config file to load
+     * @return Marshalled configuration class if file exists;
+     * Null otherwise
+     */
+    private static <T> T loadOptionalConfigurationModel(Class<T> clzz, String configurationFileLocation) {
+        try {
+            return loadConfigurationModel(clzz, configurationFileLocation);
+        } catch (Exception e) {
+            return null;
         }
     }
 

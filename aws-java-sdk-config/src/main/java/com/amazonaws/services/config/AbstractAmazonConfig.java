@@ -251,4 +251,5 @@ public class AbstractAmazonConfig implements AmazonConfig {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

@@ -36,6 +36,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.rds.waiters.AmazonRDSWaiters;
+
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.rds.model.*;
@@ -140,6 +142,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "rds";
+
+    private volatile AmazonRDSWaiters waiters;
 
     /**
      * Client configuration factory providing ClientConfigurations tailored to
@@ -5693,6 +5697,17 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);
+    }
+
+    public AmazonRDSWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonRDSWaiters(this);
+                }
+            }
+        }
+        return waiters;
     }
 
 }

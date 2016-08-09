@@ -36,6 +36,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.ec2.waiters.AmazonEC2Waiters;
+
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.ec2.model.*;
@@ -63,6 +65,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "ec2";
+
+    private volatile AmazonEC2Waiters waiters;
 
     /**
      * Client configuration factory providing ClientConfigurations tailored to
@@ -12026,6 +12030,17 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);
+    }
+
+    public AmazonEC2Waiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonEC2Waiters(this);
+                }
+            }
+        }
+        return waiters;
     }
 
 }

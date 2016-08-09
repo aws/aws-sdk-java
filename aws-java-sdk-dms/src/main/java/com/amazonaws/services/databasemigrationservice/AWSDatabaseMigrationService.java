@@ -764,4 +764,5 @@ public interface AWSDatabaseMigrationService {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

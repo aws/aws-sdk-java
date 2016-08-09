@@ -28,6 +28,7 @@ import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.intermediate.IntermediateModel;
 import com.amazonaws.codegen.model.intermediate.ServiceExamples;
 import com.amazonaws.codegen.model.service.ServiceModel;
+import com.amazonaws.codegen.model.service.Waiters;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
@@ -40,28 +41,30 @@ public class CodeGenerator {
     private final String outputDirectory;
     /** The prefix for the file name that contains the intermediate model. */
     private final String fileNamePrefix;
+    private final Waiters waiters;
 
 	public CodeGenerator(ServiceModel serviceModel, ServiceExamples serviceExamples, BasicCodeGenConfig codeGenConfig,
-			CustomizationConfig customConfig, String outputDirectory, String fileNamePrefix) {
+			CustomizationConfig customConfig, String outputDirectory, String fileNamePrefix, Waiters waiters) {
         this.serviceModel = serviceModel;
         this.serviceExamples = serviceExamples;
         this.codeGenConfig = codeGenConfig;
         this.customConfig = customConfig;
         this.outputDirectory = outputDirectory;
         this.fileNamePrefix = fileNamePrefix;
+        this.waiters = waiters;
     }
 
     /**
-     * load ServiceModel. load code gen configuration from individual client. generate intermediate
+     * load ServiceModel. load code gen configuration from individual client. load Waiters. generate intermediate
      * model. generate code.
      */
     public void execute() {
         try {
             final IntermediateModel intermediateModel = new IntermediateModelBuilder(
-                    customConfig, codeGenConfig, serviceModel, serviceExamples).build();
+                    customConfig, codeGenConfig, serviceModel, serviceExamples, waiters).build();
 
             // Dump the intermediate model to a file
-            writeIntemediateModel(intermediateModel);
+            writeIntermediateModel(intermediateModel);
 
             emitCode(intermediateModel);
 
@@ -73,7 +76,7 @@ public class CodeGenerator {
         }
     }
 
-    private void writeIntemediateModel(IntermediateModel model)
+    private void writeIntermediateModel(IntermediateModel model)
             throws IOException {
         final File modelDir = CodeGeneratorTask.getModelDirectory(outputDirectory);
         PrintWriter writer = null;

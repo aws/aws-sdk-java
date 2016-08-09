@@ -16,6 +16,7 @@ package com.amazonaws.services.elasticloadbalancing;
 
 import com.amazonaws.services.elasticloadbalancing.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.elasticloadbalancing.waiters.AmazonElasticLoadBalancingWaiters;
 
 /**
  * Abstract implementation of {@code AmazonElasticLoadBalancing}. Convenient
@@ -226,6 +227,11 @@ public class AbstractAmazonElasticLoadBalancing implements
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonElasticLoadBalancingWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

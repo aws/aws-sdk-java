@@ -19,15 +19,18 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
 
 /**
  * <p>
- * Provides an interface that returns an endpoint URI
- * from which the credentials can be loaded.
+ * Abstract class to return an endpoint URI from which the credentials can be loaded.
+ * </p>
+ * <p>
+ * By default, the request won't be retried if the request fails while computing endpoint.
  * </p>
  */
 @SdkInternalApi
-public interface CredentialsEndpointProvider {
+public abstract class CredentialsEndpointProvider {
     /**
      * Returns the URI that contains the credentials.
      * @return
@@ -40,5 +43,13 @@ public interface CredentialsEndpointProvider {
      * 				If any problems are encountered while connecting to the
      *             	service to retrieve the endpoint.
      */
-    URI getCredentialsEndpoint() throws URISyntaxException, IOException;
+    public abstract URI getCredentialsEndpoint() throws URISyntaxException, IOException;
+
+    /**
+     * Allows the extending class to provide a custom retry policy.
+     * The default behavior is not to retry.
+     */
+    public CredentialsEndpointRetryPolicy getRetryPolicy() {
+        return CredentialsEndpointRetryPolicy.NO_RETRY;
+    }
 }

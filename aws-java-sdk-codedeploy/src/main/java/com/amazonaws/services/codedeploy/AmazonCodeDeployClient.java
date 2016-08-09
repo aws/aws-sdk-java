@@ -36,6 +36,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.codedeploy.waiters.AmazonCodeDeployWaiters;
+
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.codedeploy.model.*;
@@ -138,6 +140,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "codedeploy";
+
+    private volatile AmazonCodeDeployWaiters waiters;
 
     /**
      * Client configuration factory providing ClientConfigurations tailored to
@@ -2966,6 +2970,17 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);
+    }
+
+    public AmazonCodeDeployWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonCodeDeployWaiters(this);
+                }
+            }
+        }
+        return waiters;
     }
 
 }

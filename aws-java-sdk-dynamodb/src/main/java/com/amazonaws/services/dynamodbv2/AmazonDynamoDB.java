@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.dynamodbv2.model.*;
+import com.amazonaws.services.dynamodbv2.waiters.AmazonDynamoDBWaiters;
 
 /**
  * Interface for accessing DynamoDB.
@@ -1376,4 +1377,6 @@ public interface AmazonDynamoDB {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonDynamoDBWaiters waiters();
 }

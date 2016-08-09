@@ -16,6 +16,7 @@ package com.amazonaws.services.machinelearning;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.machinelearning.waiters.AmazonMachineLearningWaiters;
 
 /**
  * Abstract implementation of {@code AmazonMachineLearning}. Convenient method
@@ -223,6 +224,11 @@ public class AbstractAmazonMachineLearning implements AmazonMachineLearning {
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(
             com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonMachineLearningWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

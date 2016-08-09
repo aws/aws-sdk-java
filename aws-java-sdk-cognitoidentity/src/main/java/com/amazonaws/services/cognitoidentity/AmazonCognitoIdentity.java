@@ -815,4 +815,5 @@ public interface AmazonCognitoIdentity {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

@@ -254,4 +254,5 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

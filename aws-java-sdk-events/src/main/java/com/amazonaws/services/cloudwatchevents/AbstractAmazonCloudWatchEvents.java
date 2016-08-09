@@ -110,4 +110,5 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
             com.amazonaws.AmazonWebServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
+
 }

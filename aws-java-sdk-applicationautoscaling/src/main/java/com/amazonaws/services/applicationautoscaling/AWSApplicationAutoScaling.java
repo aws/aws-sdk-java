@@ -487,4 +487,5 @@ public interface AWSApplicationAutoScaling {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

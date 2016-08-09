@@ -1949,4 +1949,5 @@ public interface AWSCognitoIdentityProvider {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }

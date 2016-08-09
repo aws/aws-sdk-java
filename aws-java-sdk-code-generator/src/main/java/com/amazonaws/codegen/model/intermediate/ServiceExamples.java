@@ -15,17 +15,18 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class ServiceExamples {
 
+    @JsonProperty(value = "examples")
     private final Map<String, List<Example>> operationExamples;
     private final String version;
-    
+
     public ServiceExamples() {
         this.operationExamples = null;
         this.version = null;
@@ -35,7 +36,7 @@ public class ServiceExamples {
             @JsonProperty(value = "examples") Map<String, List<Example>> examples,
             @JsonProperty(value = "version") String version) {
         this.operationExamples = examples == null
-                ? new HashMap<String, List<Example>>()
+                ? new HashMap<>()
                 : examples;
 
         this.version = version;

@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.rds.model.*;
+import com.amazonaws.services.rds.waiters.AmazonRDSWaiters;
 
 /**
  * Interface for accessing Amazon RDS.
@@ -2828,4 +2829,6 @@ public interface AmazonRDS {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonRDSWaiters waiters();
 }

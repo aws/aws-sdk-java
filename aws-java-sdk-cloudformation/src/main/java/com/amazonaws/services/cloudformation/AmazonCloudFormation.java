@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.cloudformation.model.*;
+import com.amazonaws.services.cloudformation.waiters.AmazonCloudFormationWaiters;
 
 /**
  * Interface for accessing AWS CloudFormation.
@@ -694,4 +695,6 @@ public interface AmazonCloudFormation {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonCloudFormationWaiters waiters();
 }

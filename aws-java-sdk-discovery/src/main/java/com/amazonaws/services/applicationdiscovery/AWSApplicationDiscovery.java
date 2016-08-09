@@ -792,4 +792,5 @@ public interface AWSApplicationDiscovery {
      *         is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }
