@@ -172,5 +172,16 @@ public class StringUtilsTest {
     public void begins_with_ignore_case_returns_false_when_seq_doesnot_match() {
         Assert.assertFalse(StringUtils.beginsWithIgnoreCase("foobar", "baz"));
     }
+    
+    @Test
+    public void testExistsNullOrEmpty() {
+    	Assert.assertTrue(StringUtils.existsNullOrEmpty());
+    	Assert.assertTrue(StringUtils.existsNullOrEmpty(null));
+    	Assert.assertTrue(StringUtils.existsNullOrEmpty(null, "foobar"));
+    	Assert.assertTrue(StringUtils.existsNullOrEmpty(null, "foobar", ""));
+    	Assert.assertTrue(StringUtils.existsNullOrEmpty(""));
+    	Assert.assertFalse(StringUtils.existsNullOrEmpty("foobar","baz"));
+    	
+    }
 
 }
