@@ -7,6 +7,27 @@
   <artifactId>jmespath-java</artifactId>
   <name>JMES Path Query library</name>
   <description>Implementation of the JMES Path JSON Query langauge for Java.</description>
+  <url>https://aws.amazon.com/sdkforjava</url>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://aws.amazon.com/apache2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>amazonwebservices</id>
+      <organization>Amazon Web Services</organization>
+      <organizationUrl>https://aws.amazon.com</organizationUrl>
+      <roles>
+        <role>developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <scm>
+    <url>https://github.com/aws/aws-sdk-java.git</url>
+  </scm>
 
   <dependencies>
       <dependency>
