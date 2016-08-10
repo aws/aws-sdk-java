@@ -1104,7 +1104,7 @@ public class DynamoDBMapperConfig {
     }
 
     /**
-     * Default configuration uses UPDATE behavior for saves and EVENTUALly
+     * Default configuration uses UPDATE behavior for saves and eventually
      * consistent reads, with no table name override and lazy-loading strategy.
      */
     public static final DynamoDBMapperConfig DEFAULT = new DynamoDBMapperConfig(
