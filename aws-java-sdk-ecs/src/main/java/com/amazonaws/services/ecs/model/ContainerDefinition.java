@@ -171,8 +171,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Create a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> docker run
-     * </a>.
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * <important>
      * <p>
@@ -1379,8 +1378,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Create a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> docker run
-     * </a>.
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * <important>
      * <p>
@@ -1406,8 +1404,8 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         >Create a container</a> section of the <a href=
      *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *         >Docker Remote API</a> and the <code>--link</code> option to <a
-     *         href="https://docs.docker.com/reference/commandline/run/"> docker
-     *         run </a>.</p> <important>
+     *         href="https://docs.docker.com/reference/commandline/run/">docker
+     *         run</a>.</p> <important>
      *         <p>
      *         Containers that are collocated on a single container instance may
      *         be able to communicate with each other without requiring links or
@@ -1439,8 +1437,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Create a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> docker run
-     * </a>.
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * <important>
      * <p>
@@ -1467,8 +1464,8 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        >Create a container</a> section of the <a href=
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a> and the <code>--link</code> option to <a
-     *        href="https://docs.docker.com/reference/commandline/run/"> docker
-     *        run </a>.</p> <important>
+     *        href="https://docs.docker.com/reference/commandline/run/">docker
+     *        run</a>.</p> <important>
      *        <p>
      *        Containers that are collocated on a single container instance may
      *        be able to communicate with each other without requiring links or
@@ -1502,8 +1499,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Create a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> docker run
-     * </a>.
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * <important>
      * <p>
@@ -1536,8 +1532,8 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        >Create a container</a> section of the <a href=
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a> and the <code>--link</code> option to <a
-     *        href="https://docs.docker.com/reference/commandline/run/"> docker
-     *        run </a>.</p> <important>
+     *        href="https://docs.docker.com/reference/commandline/run/">docker
+     *        run</a>.</p> <important>
      *        <p>
      *        Containers that are collocated on a single container instance may
      *        be able to communicate with each other without requiring links or
@@ -1575,8 +1571,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * >Create a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> docker run
-     * </a>.
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * <important>
      * <p>
@@ -1603,8 +1598,8 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        >Create a container</a> section of the <a href=
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a> and the <code>--link</code> option to <a
-     *        href="https://docs.docker.com/reference/commandline/run/"> docker
-     *        run </a>.</p> <important>
+     *        href="https://docs.docker.com/reference/commandline/run/">docker
+     *        run</a>.</p> <important>
      *        <p>
      *        Containers that are collocated on a single container instance may
      *        be able to communicate with each other without requiring links or

@@ -18,14 +18,17 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeAutoScalingGroups.
+ * </p>
  */
 public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The group names.
+     * The group names. If you omit this parameter, all Auto Scaling groups are
+     * described.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> autoScalingGroupNames;
@@ -45,10 +48,12 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The group names.
+     * The group names. If you omit this parameter, all Auto Scaling groups are
+     * described.
      * </p>
      * 
-     * @return The group names.
+     * @return The group names. If you omit this parameter, all Auto Scaling
+     *         groups are described.
      */
 
     public java.util.List<String> getAutoScalingGroupNames() {
@@ -60,11 +65,13 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The group names.
+     * The group names. If you omit this parameter, all Auto Scaling groups are
+     * described.
      * </p>
      * 
      * @param autoScalingGroupNames
-     *        The group names.
+     *        The group names. If you omit this parameter, all Auto Scaling
+     *        groups are described.
      */
 
     public void setAutoScalingGroupNames(
@@ -80,7 +87,8 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The group names.
+     * The group names. If you omit this parameter, all Auto Scaling groups are
+     * described.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -90,7 +98,8 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param autoScalingGroupNames
-     *        The group names.
+     *        The group names. If you omit this parameter, all Auto Scaling
+     *        groups are described.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -109,11 +118,13 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The group names.
+     * The group names. If you omit this parameter, all Auto Scaling groups are
+     * described.
      * </p>
      * 
      * @param autoScalingGroupNames
-     *        The group names.
+     *        The group names. If you omit this parameter, all Auto Scaling
+     *        groups are described.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

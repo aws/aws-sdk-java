@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for SetDesiredCapacity.
+ * </p>
  */
 public class SetDesiredCapacityRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

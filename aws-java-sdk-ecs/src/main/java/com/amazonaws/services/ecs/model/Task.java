@@ -89,24 +89,22 @@ public class Task implements Serializable, Cloneable {
     private String stoppedReason;
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the task was created (the
-     * task entered the <code>PENDING</code> state).
+     * The Unix timestamp for when the task was created (the task entered the
+     * <code>PENDING</code> state).
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the task was started (the
-     * task transitioned from the <code>PENDING</code> state to the
-     * <code>RUNNING</code> state).
+     * The Unix timestamp for when the task was started (the task transitioned
+     * from the <code>PENDING</code> state to the <code>RUNNING</code> state).
      * </p>
      */
     private java.util.Date startedAt;
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the task was stopped (the
-     * task transitioned from the <code>RUNNING</code> state to the
-     * <code>STOPPED</code> state).
+     * The Unix timestamp for when the task was stopped (the task transitioned
+     * from the <code>RUNNING</code> state to the <code>STOPPED</code> state).
      * </p>
      */
     private java.util.Date stoppedAt;
@@ -588,13 +586,13 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the task was created (the
-     * task entered the <code>PENDING</code> state).
+     * The Unix timestamp for when the task was created (the task entered the
+     * <code>PENDING</code> state).
      * </p>
      * 
      * @param createdAt
-     *        The Unix time in seconds and milliseconds when the task was
-     *        created (the task entered the <code>PENDING</code> state).
+     *        The Unix timestamp for when the task was created (the task entered
+     *        the <code>PENDING</code> state).
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -603,12 +601,12 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the task was created (the
-     * task entered the <code>PENDING</code> state).
+     * The Unix timestamp for when the task was created (the task entered the
+     * <code>PENDING</code> state).
      * </p>
      * 
-     * @return The Unix time in seconds and milliseconds when the task was
-     *         created (the task entered the <code>PENDING</code> state).
+     * @return The Unix timestamp for when the task was created (the task
+     *         entered the <code>PENDING</code> state).
      */
 
     public java.util.Date getCreatedAt() {
@@ -617,13 +615,13 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the task was created (the
-     * task entered the <code>PENDING</code> state).
+     * The Unix timestamp for when the task was created (the task entered the
+     * <code>PENDING</code> state).
      * </p>
      * 
      * @param createdAt
-     *        The Unix time in seconds and milliseconds when the task was
-     *        created (the task entered the <code>PENDING</code> state).
+     *        The Unix timestamp for when the task was created (the task entered
+     *        the <code>PENDING</code> state).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -635,15 +633,14 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the task was started (the
-     * task transitioned from the <code>PENDING</code> state to the
-     * <code>RUNNING</code> state).
+     * The Unix timestamp for when the task was started (the task transitioned
+     * from the <code>PENDING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix time in seconds and milliseconds when the task was
-     *        started (the task transitioned from the <code>PENDING</code> state
-     *        to the <code>RUNNING</code> state).
+     *        The Unix timestamp for when the task was started (the task
+     *        transitioned from the <code>PENDING</code> state to the
+     *        <code>RUNNING</code> state).
      */
 
     public void setStartedAt(java.util.Date startedAt) {
@@ -652,14 +649,13 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the task was started (the
-     * task transitioned from the <code>PENDING</code> state to the
-     * <code>RUNNING</code> state).
+     * The Unix timestamp for when the task was started (the task transitioned
+     * from the <code>PENDING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
-     * @return The Unix time in seconds and milliseconds when the task was
-     *         started (the task transitioned from the <code>PENDING</code>
-     *         state to the <code>RUNNING</code> state).
+     * @return The Unix timestamp for when the task was started (the task
+     *         transitioned from the <code>PENDING</code> state to the
+     *         <code>RUNNING</code> state).
      */
 
     public java.util.Date getStartedAt() {
@@ -668,15 +664,14 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the task was started (the
-     * task transitioned from the <code>PENDING</code> state to the
-     * <code>RUNNING</code> state).
+     * The Unix timestamp for when the task was started (the task transitioned
+     * from the <code>PENDING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix time in seconds and milliseconds when the task was
-     *        started (the task transitioned from the <code>PENDING</code> state
-     *        to the <code>RUNNING</code> state).
+     *        The Unix timestamp for when the task was started (the task
+     *        transitioned from the <code>PENDING</code> state to the
+     *        <code>RUNNING</code> state).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -688,15 +683,14 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the task was stopped (the
-     * task transitioned from the <code>RUNNING</code> state to the
-     * <code>STOPPED</code> state).
+     * The Unix timestamp for when the task was stopped (the task transitioned
+     * from the <code>RUNNING</code> state to the <code>STOPPED</code> state).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix time in seconds and milliseconds when the task was
-     *        stopped (the task transitioned from the <code>RUNNING</code> state
-     *        to the <code>STOPPED</code> state).
+     *        The Unix timestamp for when the task was stopped (the task
+     *        transitioned from the <code>RUNNING</code> state to the
+     *        <code>STOPPED</code> state).
      */
 
     public void setStoppedAt(java.util.Date stoppedAt) {
@@ -705,14 +699,13 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the task was stopped (the
-     * task transitioned from the <code>RUNNING</code> state to the
-     * <code>STOPPED</code> state).
+     * The Unix timestamp for when the task was stopped (the task transitioned
+     * from the <code>RUNNING</code> state to the <code>STOPPED</code> state).
      * </p>
      * 
-     * @return The Unix time in seconds and milliseconds when the task was
-     *         stopped (the task transitioned from the <code>RUNNING</code>
-     *         state to the <code>STOPPED</code> state).
+     * @return The Unix timestamp for when the task was stopped (the task
+     *         transitioned from the <code>RUNNING</code> state to the
+     *         <code>STOPPED</code> state).
      */
 
     public java.util.Date getStoppedAt() {
@@ -721,15 +714,14 @@ public class Task implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the task was stopped (the
-     * task transitioned from the <code>RUNNING</code> state to the
-     * <code>STOPPED</code> state).
+     * The Unix timestamp for when the task was stopped (the task transitioned
+     * from the <code>RUNNING</code> state to the <code>STOPPED</code> state).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix time in seconds and milliseconds when the task was
-     *        stopped (the task transitioned from the <code>RUNNING</code> state
-     *        to the <code>STOPPED</code> state).
+     *        The Unix timestamp for when the task was stopped (the task
+     *        transitioned from the <code>RUNNING</code> state to the
+     *        <code>STOPPED</code> state).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

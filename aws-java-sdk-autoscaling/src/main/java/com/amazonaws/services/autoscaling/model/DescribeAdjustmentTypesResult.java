@@ -17,7 +17,9 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeAdjustmentTypes.
+ * </p>
  */
 public class DescribeAdjustmentTypesResult implements Serializable, Cloneable {
 

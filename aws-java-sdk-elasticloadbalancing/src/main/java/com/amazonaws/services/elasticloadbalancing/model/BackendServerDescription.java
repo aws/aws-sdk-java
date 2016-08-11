@@ -18,31 +18,31 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about the configuration of a back-end server.
+ * Information about the configuration of an EC2 instance.
  * </p>
  */
 public class BackendServerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on which the back-end server is listening.
+     * The port on which the EC2 instance is listening.
      * </p>
      */
     private Integer instancePort;
     /**
      * <p>
-     * The names of the policies enabled for the back-end server.
+     * The names of the policies enabled for the EC2 instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyNames;
 
     /**
      * <p>
-     * The port on which the back-end server is listening.
+     * The port on which the EC2 instance is listening.
      * </p>
      * 
      * @param instancePort
-     *        The port on which the back-end server is listening.
+     *        The port on which the EC2 instance is listening.
      */
 
     public void setInstancePort(Integer instancePort) {
@@ -51,10 +51,10 @@ public class BackendServerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on which the back-end server is listening.
+     * The port on which the EC2 instance is listening.
      * </p>
      * 
-     * @return The port on which the back-end server is listening.
+     * @return The port on which the EC2 instance is listening.
      */
 
     public Integer getInstancePort() {
@@ -63,11 +63,11 @@ public class BackendServerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on which the back-end server is listening.
+     * The port on which the EC2 instance is listening.
      * </p>
      * 
      * @param instancePort
-     *        The port on which the back-end server is listening.
+     *        The port on which the EC2 instance is listening.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -79,10 +79,10 @@ public class BackendServerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of the policies enabled for the back-end server.
+     * The names of the policies enabled for the EC2 instance.
      * </p>
      * 
-     * @return The names of the policies enabled for the back-end server.
+     * @return The names of the policies enabled for the EC2 instance.
      */
 
     public java.util.List<String> getPolicyNames() {
@@ -94,11 +94,11 @@ public class BackendServerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of the policies enabled for the back-end server.
+     * The names of the policies enabled for the EC2 instance.
      * </p>
      * 
      * @param policyNames
-     *        The names of the policies enabled for the back-end server.
+     *        The names of the policies enabled for the EC2 instance.
      */
 
     public void setPolicyNames(java.util.Collection<String> policyNames) {
@@ -113,7 +113,7 @@ public class BackendServerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of the policies enabled for the back-end server.
+     * The names of the policies enabled for the EC2 instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -123,7 +123,7 @@ public class BackendServerDescription implements Serializable, Cloneable {
      * </p>
      * 
      * @param policyNames
-     *        The names of the policies enabled for the back-end server.
+     *        The names of the policies enabled for the EC2 instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -141,11 +141,11 @@ public class BackendServerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of the policies enabled for the back-end server.
+     * The names of the policies enabled for the EC2 instance.
      * </p>
      * 
      * @param policyNames
-     *        The names of the policies enabled for the back-end server.
+     *        The names of the policies enabled for the EC2 instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

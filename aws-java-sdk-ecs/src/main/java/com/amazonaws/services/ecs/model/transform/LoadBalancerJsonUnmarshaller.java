@@ -51,6 +51,11 @@ public class LoadBalancerJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("targetGroupArn", targetDepth)) {
+                    context.nextToken();
+                    loadBalancer.setTargetGroupArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("loadBalancerName", targetDepth)) {
                     context.nextToken();
                     loadBalancer.setLoadBalancerName(context.getUnmarshaller(

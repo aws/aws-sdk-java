@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for PutScheduledUpdateGroupAction.
+ * </p>
  */
 public class PutScheduledUpdateGroupActionRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

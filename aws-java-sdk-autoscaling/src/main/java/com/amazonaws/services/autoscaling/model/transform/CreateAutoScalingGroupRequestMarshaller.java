@@ -120,6 +120,22 @@ public class CreateAutoScalingGroupRequestMarshaller
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<String> targetGroupARNsList = (com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest
+                .getTargetGroupARNs();
+        if (!targetGroupARNsList.isEmpty()
+                || !targetGroupARNsList.isAutoConstruct()) {
+            int targetGroupARNsListIndex = 1;
+
+            for (String targetGroupARNsListValue : targetGroupARNsList) {
+                if (targetGroupARNsListValue != null) {
+                    request.addParameter("TargetGroupARNs.member."
+                            + targetGroupARNsListIndex,
+                            StringUtils.fromString(targetGroupARNsListValue));
+                }
+                targetGroupARNsListIndex++;
+            }
+        }
+
         if (createAutoScalingGroupRequest.getHealthCheckType() != null) {
             request.addParameter("HealthCheckType", StringUtils
                     .fromString(createAutoScalingGroupRequest

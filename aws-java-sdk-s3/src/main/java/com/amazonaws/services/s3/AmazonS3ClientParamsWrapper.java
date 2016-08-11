@@ -29,9 +29,9 @@ class AmazonS3ClientParamsWrapper extends AmazonS3ClientParams {
     private final AwsSyncClientParams clientParams;
     private final S3ClientOptions s3ClientOptions;
 
-    public AmazonS3ClientParamsWrapper(AwsSyncClientParams delegate, S3ClientOptions s3ClientOptibns) {
+    public AmazonS3ClientParamsWrapper(AwsSyncClientParams delegate, S3ClientOptions s3ClientOptions) {
         this.clientParams = ValidationUtils.assertNotNull(delegate, "delegate");
-        this.s3ClientOptions = s3ClientOptibns;
+        this.s3ClientOptions = s3ClientOptions;
     }
 
     @Override
@@ -43,5 +43,4 @@ class AmazonS3ClientParamsWrapper extends AmazonS3ClientParams {
     public S3ClientOptions getS3ClientOptions() {
         return s3ClientOptions;
     }
-
 }

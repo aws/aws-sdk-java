@@ -31,7 +31,7 @@ public class ServiceEvent implements Serializable, Cloneable {
     private String id;
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the event was triggered.
+     * The Unix timestamp for when the event was triggered.
      * </p>
      */
     private java.util.Date createdAt;
@@ -85,12 +85,11 @@ public class ServiceEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the event was triggered.
+     * The Unix timestamp for when the event was triggered.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time in seconds and milliseconds when the event was
-     *        triggered.
+     *        The Unix timestamp for when the event was triggered.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -99,11 +98,10 @@ public class ServiceEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the event was triggered.
+     * The Unix timestamp for when the event was triggered.
      * </p>
      * 
-     * @return The Unix time in seconds and milliseconds when the event was
-     *         triggered.
+     * @return The Unix timestamp for when the event was triggered.
      */
 
     public java.util.Date getCreatedAt() {
@@ -112,12 +110,11 @@ public class ServiceEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the event was triggered.
+     * The Unix timestamp for when the event was triggered.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time in seconds and milliseconds when the event was
-     *        triggered.
+     *        The Unix timestamp for when the event was triggered.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

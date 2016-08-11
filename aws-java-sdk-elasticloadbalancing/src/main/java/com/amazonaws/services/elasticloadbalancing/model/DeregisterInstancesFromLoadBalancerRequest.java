@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeregisterInstancesFromLoadBalancer.
+ * </p>
  */
 public class DeregisterInstancesFromLoadBalancerRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

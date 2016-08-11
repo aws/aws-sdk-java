@@ -66,6 +66,7 @@ import com.amazonaws.services.s3.internal.CompleteMultipartUploadRetryCondition;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.internal.DigestValidationInputStream;
+import com.amazonaws.services.s3.internal.DualstackEndpointBuilder;
 import com.amazonaws.services.s3.internal.InitiateMultipartUploadHeaderHandler;
 import com.amazonaws.services.s3.internal.InputSubstream;
 import com.amazonaws.services.s3.internal.ListPartsHeaderHandler;
@@ -600,6 +601,22 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 "/com/amazonaws/services/s3/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
                 "/com/amazonaws/services/s3/request.handler2s"));
+    }
+
+    /**
+     * Validates whether the supplied client options are a valid instantiation
+     * of an AmazonS3Client.
+     */
+    private void validateClientOptions() {
+
+        /** Dualstack mode requires setting the region */
+        if (clientOptions.isDualstackEnabled()) {
+            if (getRegion() == null) {
+                throw new IllegalStateException("The dualstack mode of Amazon S3 cannot be used without specifiying a region");
+            } else if (clientOptions.isAccelerateModeEnabled()) {
+                throw new IllegalStateException("The dualstack mode of Amazon S3 cannot be used with accelerate mode");
+            }
+        }
     }
 
     @Override
@@ -3901,6 +3918,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             endpoint = RuntimeHttpUtils.toUri(Constants.S3_ACCELERATE_HOSTNAME, clientConfiguration);
         }
 
+        /** Validates the specified client options before creating the request */
+        validateClientOptions();
+
         Request<X> request = new DefaultRequest<X>(originalRequest, Constants.S3_SERVICE_DISPLAY_NAME);
         request.setHttpMethod(httpMethod);
         request.addHandlerContext(S3HandlerContextKeys.IS_CHUNKED_ENCODING_DISABLED,
@@ -3916,13 +3936,25 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * key provided
      */
     private void resolveRequestEndpoint(Request<?> request, String bucketName, String key, URI endpoint) {
-        buildEndpointResolver(new IdentityEndpointBuilder(endpoint), bucketName, key)
-            .resolveRequestEndpoint(request);
+        ServiceEndpointBuilder builder = getBuilder(endpoint, endpoint.getScheme(), false);
+        buildEndpointResolver(builder, bucketName, key).resolveRequestEndpoint(request);
     }
 
     private S3RequestEndpointResolver buildDefaultEndpointResolver(String protocol, String bucketName, String key) {
-        return new S3RequestEndpointResolver(new DefaultServiceEndpointBuilder(
-                getServiceNameIntern(), protocol), clientOptions.isPathStyleAccess(), bucketName, key);
+        ServiceEndpointBuilder builder = getBuilder(endpoint, protocol, true);
+        return new S3RequestEndpointResolver(builder, clientOptions.isPathStyleAccess(), bucketName, key);
+    }
+
+    private ServiceEndpointBuilder getBuilder(URI endpoint, String protocol, boolean useDefaultBuilder) {
+        if(clientOptions.isDualstackEnabled()) {
+            return new DualstackEndpointBuilder(getServiceNameIntern(), protocol, getRegion().toAWSRegion());
+        } else {
+            if(useDefaultBuilder) {
+                return new DefaultServiceEndpointBuilder(getServiceName(), protocol);
+            } else {
+                return new IdentityEndpointBuilder(endpoint);
+            }
+        }
     }
 
     private S3RequestEndpointResolver buildEndpointResolver(ServiceEndpointBuilder serviceEndpointBuilder, String bucketName, String key) {
@@ -3944,7 +3976,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             String bucket, String key) {
-
+        
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         checkHttps(originalRequest);
         S3SignerProvider signerProvider = new S3SignerProvider(this, getSigner());

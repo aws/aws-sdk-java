@@ -17,7 +17,9 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of DescribeTerminationPolicyTypes.
+ * </p>
  */
 public class DescribeTerminationPolicyTypesResult implements Serializable,
         Cloneable {

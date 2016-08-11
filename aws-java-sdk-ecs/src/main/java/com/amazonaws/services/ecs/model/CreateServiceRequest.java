@@ -51,9 +51,26 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
     private String taskDefinition;
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A load balancer object representing the load balancer to use with your
+     * service. Currently, you are limited to one load balancer per service.
+     * After you create a service, the load balancer name, container name, and
+     * container port specified in the service definition are immutable.
+     * </p>
+     * <p>
+     * For Elastic Load Balancing Classic load balancers, this object must
+     * contain the load balancer name, the container name (as it appears in a
+     * container definition), and the container port to access from the load
+     * balancer. When a task from this service is placed on a container
+     * instance, the container instance is registered with the load balancer
+     * specified here.
+     * </p>
+     * <p>
+     * For Elastic Load Balancing Application load balancers, this object must
+     * contain the load balancer target group ARN, the container name (as it
+     * appears in a container definition), and the container port to access from
+     * the load balancer. When a task from this service is placed on a container
+     * instance, the container instance and port combination is registered as a
+     * target in the target group specified here.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
@@ -278,15 +295,49 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A load balancer object representing the load balancer to use with your
+     * service. Currently, you are limited to one load balancer per service.
+     * After you create a service, the load balancer name, container name, and
+     * container port specified in the service definition are immutable.
+     * </p>
+     * <p>
+     * For Elastic Load Balancing Classic load balancers, this object must
+     * contain the load balancer name, the container name (as it appears in a
+     * container definition), and the container port to access from the load
+     * balancer. When a task from this service is placed on a container
+     * instance, the container instance is registered with the load balancer
+     * specified here.
+     * </p>
+     * <p>
+     * For Elastic Load Balancing Application load balancers, this object must
+     * contain the load balancer target group ARN, the container name (as it
+     * appears in a container definition), and the container port to access from
+     * the load balancer. When a task from this service is placed on a container
+     * instance, the container instance and port combination is registered as a
+     * target in the target group specified here.
      * </p>
      * 
-     * @return A list of load balancer objects, containing the load balancer
-     *         name, the container name (as it appears in a container
-     *         definition), and the container port to access from the load
-     *         balancer.
+     * @return A load balancer object representing the load balancer to use with
+     *         your service. Currently, you are limited to one load balancer per
+     *         service. After you create a service, the load balancer name,
+     *         container name, and container port specified in the service
+     *         definition are immutable.</p>
+     *         <p>
+     *         For Elastic Load Balancing Classic load balancers, this object
+     *         must contain the load balancer name, the container name (as it
+     *         appears in a container definition), and the container port to
+     *         access from the load balancer. When a task from this service is
+     *         placed on a container instance, the container instance is
+     *         registered with the load balancer specified here.
+     *         </p>
+     *         <p>
+     *         For Elastic Load Balancing Application load balancers, this
+     *         object must contain the load balancer target group ARN, the
+     *         container name (as it appears in a container definition), and the
+     *         container port to access from the load balancer. When a task from
+     *         this service is placed on a container instance, the container
+     *         instance and port combination is registered as a target in the
+     *         target group specified here.
      */
 
     public java.util.List<LoadBalancer> getLoadBalancers() {
@@ -298,16 +349,50 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A load balancer object representing the load balancer to use with your
+     * service. Currently, you are limited to one load balancer per service.
+     * After you create a service, the load balancer name, container name, and
+     * container port specified in the service definition are immutable.
+     * </p>
+     * <p>
+     * For Elastic Load Balancing Classic load balancers, this object must
+     * contain the load balancer name, the container name (as it appears in a
+     * container definition), and the container port to access from the load
+     * balancer. When a task from this service is placed on a container
+     * instance, the container instance is registered with the load balancer
+     * specified here.
+     * </p>
+     * <p>
+     * For Elastic Load Balancing Application load balancers, this object must
+     * contain the load balancer target group ARN, the container name (as it
+     * appears in a container definition), and the container port to access from
+     * the load balancer. When a task from this service is placed on a container
+     * instance, the container instance and port combination is registered as a
+     * target in the target group specified here.
      * </p>
      * 
      * @param loadBalancers
-     *        A list of load balancer objects, containing the load balancer
-     *        name, the container name (as it appears in a container
-     *        definition), and the container port to access from the load
-     *        balancer.
+     *        A load balancer object representing the load balancer to use with
+     *        your service. Currently, you are limited to one load balancer per
+     *        service. After you create a service, the load balancer name,
+     *        container name, and container port specified in the service
+     *        definition are immutable.</p>
+     *        <p>
+     *        For Elastic Load Balancing Classic load balancers, this object
+     *        must contain the load balancer name, the container name (as it
+     *        appears in a container definition), and the container port to
+     *        access from the load balancer. When a task from this service is
+     *        placed on a container instance, the container instance is
+     *        registered with the load balancer specified here.
+     *        </p>
+     *        <p>
+     *        For Elastic Load Balancing Application load balancers, this object
+     *        must contain the load balancer target group ARN, the container
+     *        name (as it appears in a container definition), and the container
+     *        port to access from the load balancer. When a task from this
+     *        service is placed on a container instance, the container instance
+     *        and port combination is registered as a target in the target group
+     *        specified here.
      */
 
     public void setLoadBalancers(
@@ -323,9 +408,26 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A load balancer object representing the load balancer to use with your
+     * service. Currently, you are limited to one load balancer per service.
+     * After you create a service, the load balancer name, container name, and
+     * container port specified in the service definition are immutable.
+     * </p>
+     * <p>
+     * For Elastic Load Balancing Classic load balancers, this object must
+     * contain the load balancer name, the container name (as it appears in a
+     * container definition), and the container port to access from the load
+     * balancer. When a task from this service is placed on a container
+     * instance, the container instance is registered with the load balancer
+     * specified here.
+     * </p>
+     * <p>
+     * For Elastic Load Balancing Application load balancers, this object must
+     * contain the load balancer target group ARN, the container name (as it
+     * appears in a container definition), and the container port to access from
+     * the load balancer. When a task from this service is placed on a container
+     * instance, the container instance and port combination is registered as a
+     * target in the target group specified here.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -335,10 +437,27 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param loadBalancers
-     *        A list of load balancer objects, containing the load balancer
-     *        name, the container name (as it appears in a container
-     *        definition), and the container port to access from the load
-     *        balancer.
+     *        A load balancer object representing the load balancer to use with
+     *        your service. Currently, you are limited to one load balancer per
+     *        service. After you create a service, the load balancer name,
+     *        container name, and container port specified in the service
+     *        definition are immutable.</p>
+     *        <p>
+     *        For Elastic Load Balancing Classic load balancers, this object
+     *        must contain the load balancer name, the container name (as it
+     *        appears in a container definition), and the container port to
+     *        access from the load balancer. When a task from this service is
+     *        placed on a container instance, the container instance is
+     *        registered with the load balancer specified here.
+     *        </p>
+     *        <p>
+     *        For Elastic Load Balancing Application load balancers, this object
+     *        must contain the load balancer target group ARN, the container
+     *        name (as it appears in a container definition), and the container
+     *        port to access from the load balancer. When a task from this
+     *        service is placed on a container instance, the container instance
+     *        and port combination is registered as a target in the target group
+     *        specified here.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -356,16 +475,50 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A load balancer object representing the load balancer to use with your
+     * service. Currently, you are limited to one load balancer per service.
+     * After you create a service, the load balancer name, container name, and
+     * container port specified in the service definition are immutable.
+     * </p>
+     * <p>
+     * For Elastic Load Balancing Classic load balancers, this object must
+     * contain the load balancer name, the container name (as it appears in a
+     * container definition), and the container port to access from the load
+     * balancer. When a task from this service is placed on a container
+     * instance, the container instance is registered with the load balancer
+     * specified here.
+     * </p>
+     * <p>
+     * For Elastic Load Balancing Application load balancers, this object must
+     * contain the load balancer target group ARN, the container name (as it
+     * appears in a container definition), and the container port to access from
+     * the load balancer. When a task from this service is placed on a container
+     * instance, the container instance and port combination is registered as a
+     * target in the target group specified here.
      * </p>
      * 
      * @param loadBalancers
-     *        A list of load balancer objects, containing the load balancer
-     *        name, the container name (as it appears in a container
-     *        definition), and the container port to access from the load
-     *        balancer.
+     *        A load balancer object representing the load balancer to use with
+     *        your service. Currently, you are limited to one load balancer per
+     *        service. After you create a service, the load balancer name,
+     *        container name, and container port specified in the service
+     *        definition are immutable.</p>
+     *        <p>
+     *        For Elastic Load Balancing Classic load balancers, this object
+     *        must contain the load balancer name, the container name (as it
+     *        appears in a container definition), and the container port to
+     *        access from the load balancer. When a task from this service is
+     *        placed on a container instance, the container instance is
+     *        registered with the load balancer specified here.
+     *        </p>
+     *        <p>
+     *        For Elastic Load Balancing Application load balancers, this object
+     *        must contain the load balancer target group ARN, the container
+     *        name (as it appears in a container definition), and the container
+     *        port to access from the load balancer. When a task from this
+     *        service is placed on a container instance, the container instance
+     *        and port combination is registered as a target in the target group
+     *        specified here.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

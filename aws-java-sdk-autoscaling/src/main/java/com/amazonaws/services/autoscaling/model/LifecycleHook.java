@@ -23,13 +23,21 @@ import java.io.Serializable;
  * hook in place, the Auto Scaling group will either:
  * </p>
  * <ul>
- * <li>Pause the instance after it launches, but before it is put into service</li>
- * <li>Pause the instance as it terminates, but before it is fully terminated</li>
+ * <li>
+ * <p>
+ * Pause the instance after it launches, but before it is put into service
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Pause the instance as it terminates, but before it is fully terminated
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * For more information, see <a href=
  * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
- * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
+ * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
  * </p>
  */
 public class LifecycleHook implements Serializable, Cloneable {
@@ -62,13 +70,41 @@ public class LifecycleHook implements Serializable, Cloneable {
      * message sent to the target includes the following:
      * </p>
      * <ul>
-     * <li>Lifecycle action token</li>
-     * <li>User account ID</li>
-     * <li>Name of the Auto Scaling group</li>
-     * <li>Lifecycle hook name</li>
-     * <li>EC2 instance ID</li>
-     * <li>Lifecycle transition</li>
-     * <li>Notification metadata</li>
+     * <li>
+     * <p>
+     * Lifecycle action token
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User account ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Name of the Auto Scaling group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lifecycle hook name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 instance ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lifecycle transition
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Notification metadata
+     * </p>
+     * </li>
      * </ul>
      */
     private String notificationTargetARN;
@@ -257,13 +293,41 @@ public class LifecycleHook implements Serializable, Cloneable {
      * message sent to the target includes the following:
      * </p>
      * <ul>
-     * <li>Lifecycle action token</li>
-     * <li>User account ID</li>
-     * <li>Name of the Auto Scaling group</li>
-     * <li>Lifecycle hook name</li>
-     * <li>EC2 instance ID</li>
-     * <li>Lifecycle transition</li>
-     * <li>Notification metadata</li>
+     * <li>
+     * <p>
+     * Lifecycle action token
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User account ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Name of the Auto Scaling group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lifecycle hook name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 instance ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lifecycle transition
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Notification metadata
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param notificationTargetARN
@@ -273,13 +337,41 @@ public class LifecycleHook implements Serializable, Cloneable {
      *        SNS topic. The notification message sent to the target includes
      *        the following:</p>
      *        <ul>
-     *        <li>Lifecycle action token</li>
-     *        <li>User account ID</li>
-     *        <li>Name of the Auto Scaling group</li>
-     *        <li>Lifecycle hook name</li>
-     *        <li>EC2 instance ID</li>
-     *        <li>Lifecycle transition</li>
-     *        <li>Notification metadata</li>
+     *        <li>
+     *        <p>
+     *        Lifecycle action token
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        User account ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Name of the Auto Scaling group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lifecycle hook name
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EC2 instance ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lifecycle transition
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Notification metadata
+     *        </p>
+     *        </li>
      */
 
     public void setNotificationTargetARN(String notificationTargetARN) {
@@ -294,13 +386,41 @@ public class LifecycleHook implements Serializable, Cloneable {
      * message sent to the target includes the following:
      * </p>
      * <ul>
-     * <li>Lifecycle action token</li>
-     * <li>User account ID</li>
-     * <li>Name of the Auto Scaling group</li>
-     * <li>Lifecycle hook name</li>
-     * <li>EC2 instance ID</li>
-     * <li>Lifecycle transition</li>
-     * <li>Notification metadata</li>
+     * <li>
+     * <p>
+     * Lifecycle action token
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User account ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Name of the Auto Scaling group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lifecycle hook name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 instance ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lifecycle transition
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Notification metadata
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The ARN of the notification target that Auto Scaling uses to
@@ -309,13 +429,41 @@ public class LifecycleHook implements Serializable, Cloneable {
      *         SNS topic. The notification message sent to the target includes
      *         the following:</p>
      *         <ul>
-     *         <li>Lifecycle action token</li>
-     *         <li>User account ID</li>
-     *         <li>Name of the Auto Scaling group</li>
-     *         <li>Lifecycle hook name</li>
-     *         <li>EC2 instance ID</li>
-     *         <li>Lifecycle transition</li>
-     *         <li>Notification metadata</li>
+     *         <li>
+     *         <p>
+     *         Lifecycle action token
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         User account ID
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Name of the Auto Scaling group
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Lifecycle hook name
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EC2 instance ID
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Lifecycle transition
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Notification metadata
+     *         </p>
+     *         </li>
      */
 
     public String getNotificationTargetARN() {
@@ -330,13 +478,41 @@ public class LifecycleHook implements Serializable, Cloneable {
      * message sent to the target includes the following:
      * </p>
      * <ul>
-     * <li>Lifecycle action token</li>
-     * <li>User account ID</li>
-     * <li>Name of the Auto Scaling group</li>
-     * <li>Lifecycle hook name</li>
-     * <li>EC2 instance ID</li>
-     * <li>Lifecycle transition</li>
-     * <li>Notification metadata</li>
+     * <li>
+     * <p>
+     * Lifecycle action token
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User account ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Name of the Auto Scaling group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lifecycle hook name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EC2 instance ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lifecycle transition
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Notification metadata
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param notificationTargetARN
@@ -346,13 +522,41 @@ public class LifecycleHook implements Serializable, Cloneable {
      *        SNS topic. The notification message sent to the target includes
      *        the following:</p>
      *        <ul>
-     *        <li>Lifecycle action token</li>
-     *        <li>User account ID</li>
-     *        <li>Name of the Auto Scaling group</li>
-     *        <li>Lifecycle hook name</li>
-     *        <li>EC2 instance ID</li>
-     *        <li>Lifecycle transition</li>
-     *        <li>Notification metadata</li>
+     *        <li>
+     *        <p>
+     *        Lifecycle action token
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        User account ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Name of the Auto Scaling group
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lifecycle hook name
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EC2 instance ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lifecycle transition
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Notification metadata
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

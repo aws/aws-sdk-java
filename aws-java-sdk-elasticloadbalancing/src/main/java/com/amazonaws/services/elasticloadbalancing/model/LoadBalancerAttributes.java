@@ -26,13 +26,13 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * If enabled, the load balancer routes the request traffic evenly across
-     * all back-end instances regardless of the Availability Zones.
+     * all instances regardless of the Availability Zones.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html"
-     * >Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
+     * >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      */
     private CrossZoneLoadBalancing crossZoneLoadBalancing;
@@ -44,9 +44,8 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html"
-     * >Enable Access Logs</a> in the <i>Elastic Load Balancing Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+     * >Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
     private AccessLog accessLog;
@@ -54,13 +53,13 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * <p>
      * If enabled, the load balancer allows existing requests to complete before
      * the load balancer shifts traffic away from a deregistered or unhealthy
-     * back-end instance.
+     * instance.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html"
-     * >Enable Connection Draining</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
+     * >Configure Connection Draining</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      */
     private ConnectionDraining connectionDraining;
@@ -73,9 +72,9 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * By default, Elastic Load Balancing maintains a 60-second idle connection
      * timeout for both front-end and back-end connections of your load
      * balancer. For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html"
-     * >Configure Idle Connection Timeout</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
+     * >Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      */
     private ConnectionSettings connectionSettings;
@@ -89,24 +88,23 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * If enabled, the load balancer routes the request traffic evenly across
-     * all back-end instances regardless of the Availability Zones.
+     * all instances regardless of the Availability Zones.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html"
-     * >Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
+     * >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @param crossZoneLoadBalancing
      *        If enabled, the load balancer routes the request traffic evenly
-     *        across all back-end instances regardless of the Availability
-     *        Zones.</p>
+     *        across all instances regardless of the Availability Zones.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html"
-     *        >Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load
-     *        Balancing Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
+     *        >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load
+     *        Balancers Guide</i>.
      */
 
     public void setCrossZoneLoadBalancing(
@@ -117,23 +115,22 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * If enabled, the load balancer routes the request traffic evenly across
-     * all back-end instances regardless of the Availability Zones.
+     * all instances regardless of the Availability Zones.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html"
-     * >Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
+     * >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @return If enabled, the load balancer routes the request traffic evenly
-     *         across all back-end instances regardless of the Availability
-     *         Zones.</p>
+     *         across all instances regardless of the Availability Zones.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html"
-     *         >Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load
-     *         Balancing Developer Guide</i>.
+     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
+     *         >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load
+     *         Balancers Guide</i>.
      */
 
     public CrossZoneLoadBalancing getCrossZoneLoadBalancing() {
@@ -143,24 +140,23 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * If enabled, the load balancer routes the request traffic evenly across
-     * all back-end instances regardless of the Availability Zones.
+     * all instances regardless of the Availability Zones.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html"
-     * >Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
+     * >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @param crossZoneLoadBalancing
      *        If enabled, the load balancer routes the request traffic evenly
-     *        across all back-end instances regardless of the Availability
-     *        Zones.</p>
+     *        across all instances regardless of the Availability Zones.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html"
-     *        >Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load
-     *        Balancing Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
+     *        >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load
+     *        Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -179,9 +175,8 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html"
-     * >Enable Access Logs</a> in the <i>Elastic Load Balancing Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+     * >Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param accessLog
@@ -190,8 +185,8 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        you specify.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html"
-     *        >Enable Access Logs</a> in the <i>Elastic Load Balancing Developer
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+     *        >Enable Access Logs</a> in the <i>Classic Load Balancers
      *        Guide</i>.
      */
 
@@ -207,9 +202,8 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html"
-     * >Enable Access Logs</a> in the <i>Elastic Load Balancing Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+     * >Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @return If enabled, the load balancer captures detailed information of
@@ -217,9 +211,9 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *         that you specify.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html"
-     *         >Enable Access Logs</a> in the <i>Elastic Load Balancing
-     *         Developer Guide</i>.
+     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+     *         >Enable Access Logs</a> in the <i>Classic Load Balancers
+     *         Guide</i>.
      */
 
     public AccessLog getAccessLog() {
@@ -234,9 +228,8 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html"
-     * >Enable Access Logs</a> in the <i>Elastic Load Balancing Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+     * >Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param accessLog
@@ -245,8 +238,8 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        you specify.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html"
-     *        >Enable Access Logs</a> in the <i>Elastic Load Balancing Developer
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html"
+     *        >Enable Access Logs</a> in the <i>Classic Load Balancers
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -261,24 +254,24 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * <p>
      * If enabled, the load balancer allows existing requests to complete before
      * the load balancer shifts traffic away from a deregistered or unhealthy
-     * back-end instance.
+     * instance.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html"
-     * >Enable Connection Draining</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
+     * >Configure Connection Draining</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @param connectionDraining
      *        If enabled, the load balancer allows existing requests to complete
      *        before the load balancer shifts traffic away from a deregistered
-     *        or unhealthy back-end instance.</p>
+     *        or unhealthy instance.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html"
-     *        >Enable Connection Draining</a> in the <i>Elastic Load Balancing
-     *        Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
+     *        >Configure Connection Draining</a> in the <i>Classic Load
+     *        Balancers Guide</i>.
      */
 
     public void setConnectionDraining(ConnectionDraining connectionDraining) {
@@ -289,23 +282,23 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * <p>
      * If enabled, the load balancer allows existing requests to complete before
      * the load balancer shifts traffic away from a deregistered or unhealthy
-     * back-end instance.
+     * instance.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html"
-     * >Enable Connection Draining</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
+     * >Configure Connection Draining</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @return If enabled, the load balancer allows existing requests to
      *         complete before the load balancer shifts traffic away from a
-     *         deregistered or unhealthy back-end instance.</p>
+     *         deregistered or unhealthy instance.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html"
-     *         >Enable Connection Draining</a> in the <i>Elastic Load Balancing
-     *         Developer Guide</i>.
+     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
+     *         >Configure Connection Draining</a> in the <i>Classic Load
+     *         Balancers Guide</i>.
      */
 
     public ConnectionDraining getConnectionDraining() {
@@ -316,24 +309,24 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * <p>
      * If enabled, the load balancer allows existing requests to complete before
      * the load balancer shifts traffic away from a deregistered or unhealthy
-     * back-end instance.
+     * instance.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html"
-     * >Enable Connection Draining</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
+     * >Configure Connection Draining</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @param connectionDraining
      *        If enabled, the load balancer allows existing requests to complete
      *        before the load balancer shifts traffic away from a deregistered
-     *        or unhealthy back-end instance.</p>
+     *        or unhealthy instance.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html"
-     *        >Enable Connection Draining</a> in the <i>Elastic Load Balancing
-     *        Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
+     *        >Configure Connection Draining</a> in the <i>Classic Load
+     *        Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -353,9 +346,9 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * By default, Elastic Load Balancing maintains a 60-second idle connection
      * timeout for both front-end and back-end connections of your load
      * balancer. For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html"
-     * >Configure Idle Connection Timeout</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
+     * >Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @param connectionSettings
@@ -366,9 +359,9 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        By default, Elastic Load Balancing maintains a 60-second idle
      *        connection timeout for both front-end and back-end connections of
      *        your load balancer. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html"
-     *        >Configure Idle Connection Timeout</a> in the <i>Elastic Load
-     *        Balancing Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
+     *        >Configure Idle Connection Timeout</a> in the <i>Classic Load
+     *        Balancers Guide</i>.
      */
 
     public void setConnectionSettings(ConnectionSettings connectionSettings) {
@@ -384,9 +377,9 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * By default, Elastic Load Balancing maintains a 60-second idle connection
      * timeout for both front-end and back-end connections of your load
      * balancer. For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html"
-     * >Configure Idle Connection Timeout</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
+     * >Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @return If enabled, the load balancer allows the connections to remain
@@ -396,9 +389,9 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *         By default, Elastic Load Balancing maintains a 60-second idle
      *         connection timeout for both front-end and back-end connections of
      *         your load balancer. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html"
-     *         >Configure Idle Connection Timeout</a> in the <i>Elastic Load
-     *         Balancing Developer Guide</i>.
+     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
+     *         >Configure Idle Connection Timeout</a> in the <i>Classic Load
+     *         Balancers Guide</i>.
      */
 
     public ConnectionSettings getConnectionSettings() {
@@ -414,9 +407,9 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * By default, Elastic Load Balancing maintains a 60-second idle connection
      * timeout for both front-end and back-end connections of your load
      * balancer. For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html"
-     * >Configure Idle Connection Timeout</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
+     * >Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @param connectionSettings
@@ -427,9 +420,9 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        By default, Elastic Load Balancing maintains a 60-second idle
      *        connection timeout for both front-end and back-end connections of
      *        your load balancer. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-idle-timeout.html"
-     *        >Configure Idle Connection Timeout</a> in the <i>Elastic Load
-     *        Balancing Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
+     *        >Configure Idle Connection Timeout</a> in the <i>Classic Load
+     *        Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

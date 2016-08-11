@@ -50,7 +50,7 @@ public class AmazonCodeDeployWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter deploymentSuccessful() {
+    public Waiter<GetDeploymentRequest> deploymentSuccessful() {
 
         return new WaiterBuilder<GetDeploymentRequest, GetDeploymentResult>()
                 .withSdkFunction(new GetDeploymentFunction(client))

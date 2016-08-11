@@ -73,7 +73,7 @@ public class WaiterBuilder<Input extends AmazonWebServiceRequest, Output> {
         return this.executorService;
     }
 
-    public Waiter<Input, Output> build() {
+    public Waiter<Input> build() {
         return new WaiterImpl<Input, Output>(this);
     }
 

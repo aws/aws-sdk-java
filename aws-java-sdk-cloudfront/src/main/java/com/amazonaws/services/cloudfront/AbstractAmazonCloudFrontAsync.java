@@ -59,6 +59,21 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDistributionWithTagsResult> createDistributionWithTagsAsync(
+            CreateDistributionWithTagsRequest request) {
+
+        return createDistributionWithTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDistributionWithTagsResult> createDistributionWithTagsAsync(
+            CreateDistributionWithTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDistributionWithTagsRequest, CreateDistributionWithTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateInvalidationResult> createInvalidationAsync(
             CreateInvalidationRequest request) {
 
@@ -84,6 +99,21 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront
     public java.util.concurrent.Future<CreateStreamingDistributionResult> createStreamingDistributionAsync(
             CreateStreamingDistributionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionRequest, CreateStreamingDistributionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStreamingDistributionWithTagsResult> createStreamingDistributionWithTagsAsync(
+            CreateStreamingDistributionWithTagsRequest request) {
+
+        return createStreamingDistributionWithTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStreamingDistributionWithTagsResult> createStreamingDistributionWithTagsAsync(
+            CreateStreamingDistributionWithTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionWithTagsRequest, CreateStreamingDistributionWithTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -309,6 +339,51 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront
     public java.util.concurrent.Future<ListStreamingDistributionsResult> listStreamingDistributionsAsync(
             ListStreamingDistributionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListStreamingDistributionsRequest, ListStreamingDistributionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(
+            TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(
+            TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(
+            UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(
+            UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

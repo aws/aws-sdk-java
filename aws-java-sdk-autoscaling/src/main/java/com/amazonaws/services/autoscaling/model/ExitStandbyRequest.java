@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ExitStandby.
+ * </p>
  */
 public class ExitStandbyRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

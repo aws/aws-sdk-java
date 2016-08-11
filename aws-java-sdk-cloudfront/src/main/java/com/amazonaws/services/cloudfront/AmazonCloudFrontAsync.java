@@ -21,6 +21,15 @@ import com.amazonaws.services.cloudfront.model.*;
  * will return a Java Future object representing the asynchronous operation;
  * overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
+ * <p>
+ * <fullname>Amazon CloudFront</fullname>
+ * <p>
+ * Amazon CloudFront is a global content delivery network (CDN) service that
+ * accelerates delivery of your websites, APIs, video content or other web
+ * assets. It integrates with other Amazon Web Services products to give
+ * developers and businesses an easy way to accelerate content to end users with
+ * no minimum usage commitments.
+ * </p>
  */
 public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
@@ -87,6 +96,36 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<CreateDistributionRequest, CreateDistributionResult> asyncHandler);
 
     /**
+     * Create a new distribution with tags.
+     * 
+     * @param createDistributionWithTagsRequest
+     *        The request to create a new distribution with tags
+     * @return A Java Future containing the result of the
+     *         CreateDistributionWithTags operation returned by the service.
+     * @sample AmazonCloudFrontAsync.CreateDistributionWithTags
+     */
+    java.util.concurrent.Future<CreateDistributionWithTagsResult> createDistributionWithTagsAsync(
+            CreateDistributionWithTagsRequest createDistributionWithTagsRequest);
+
+    /**
+     * Create a new distribution with tags.
+     * 
+     * @param createDistributionWithTagsRequest
+     *        The request to create a new distribution with tags
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         CreateDistributionWithTags operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.CreateDistributionWithTags
+     */
+    java.util.concurrent.Future<CreateDistributionWithTagsResult> createDistributionWithTagsAsync(
+            CreateDistributionWithTagsRequest createDistributionWithTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDistributionWithTagsRequest, CreateDistributionWithTagsResult> asyncHandler);
+
+    /**
      * Create a new invalidation.
      * 
      * @param createInvalidationRequest
@@ -145,6 +184,38 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<CreateStreamingDistributionResult> createStreamingDistributionAsync(
             CreateStreamingDistributionRequest createStreamingDistributionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionRequest, CreateStreamingDistributionResult> asyncHandler);
+
+    /**
+     * Create a new streaming distribution with tags.
+     * 
+     * @param createStreamingDistributionWithTagsRequest
+     *        The request to create a new streaming distribution with tags.
+     * @return A Java Future containing the result of the
+     *         CreateStreamingDistributionWithTags operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsync.CreateStreamingDistributionWithTags
+     */
+    java.util.concurrent.Future<CreateStreamingDistributionWithTagsResult> createStreamingDistributionWithTagsAsync(
+            CreateStreamingDistributionWithTagsRequest createStreamingDistributionWithTagsRequest);
+
+    /**
+     * Create a new streaming distribution with tags.
+     * 
+     * @param createStreamingDistributionWithTagsRequest
+     *        The request to create a new streaming distribution with tags.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         CreateStreamingDistributionWithTags operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsyncHandler.CreateStreamingDistributionWithTags
+     */
+    java.util.concurrent.Future<CreateStreamingDistributionWithTagsResult> createStreamingDistributionWithTagsAsync(
+            CreateStreamingDistributionWithTagsRequest createStreamingDistributionWithTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionWithTagsRequest, CreateStreamingDistributionWithTagsResult> asyncHandler);
 
     /**
      * Delete an origin access identity.
@@ -608,6 +679,96 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<ListStreamingDistributionsResult> listStreamingDistributionsAsync(
             ListStreamingDistributionsRequest listStreamingDistributionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListStreamingDistributionsRequest, ListStreamingDistributionsResult> asyncHandler);
+
+    /**
+     * List tags for a CloudFront resource.
+     * 
+     * @param listTagsForResourceRequest
+     *        The request to list tags for a CloudFront resource.
+     * @return A Java Future containing the result of the ListTagsForResource
+     *         operation returned by the service.
+     * @sample AmazonCloudFrontAsync.ListTagsForResource
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * List tags for a CloudFront resource.
+     * 
+     * @param listTagsForResourceRequest
+     *        The request to list tags for a CloudFront resource.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource
+     *         operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.ListTagsForResource
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * Add tags to a CloudFront resource.
+     * 
+     * @param tagResourceRequest
+     *        The request to add tags to a CloudFront resource.
+     * @return A Java Future containing the result of the TagResource operation
+     *         returned by the service.
+     * @sample AmazonCloudFrontAsync.TagResource
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(
+            TagResourceRequest tagResourceRequest);
+
+    /**
+     * Add tags to a CloudFront resource.
+     * 
+     * @param tagResourceRequest
+     *        The request to add tags to a CloudFront resource.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation
+     *         returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.TagResource
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(
+            TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * Remove tags from a CloudFront resource.
+     * 
+     * @param untagResourceRequest
+     *        The request to remove tags from a CloudFront resource.
+     * @return A Java Future containing the result of the UntagResource
+     *         operation returned by the service.
+     * @sample AmazonCloudFrontAsync.UntagResource
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(
+            UntagResourceRequest untagResourceRequest);
+
+    /**
+     * Remove tags from a CloudFront resource.
+     * 
+     * @param untagResourceRequest
+     *        The request to remove tags from a CloudFront resource.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource
+     *         operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.UntagResource
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(
+            UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * Update an origin access identity.

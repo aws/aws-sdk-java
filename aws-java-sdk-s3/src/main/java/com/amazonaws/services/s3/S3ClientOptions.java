@@ -27,6 +27,8 @@ public class S3ClientOptions {
     public static final boolean DEFAULT_PAYLOAD_SIGNING_ENABLED = false;
     /** S3 accelerate is by default not enabled */
     public static final boolean DEFAULT_ACCELERATE_MODE_ENABLED = false;
+    /** S3 dualstack endpoint is by default not enabled */
+    public static final boolean DEFAULT_DUALSTACK_ENABLED = false;
 
     /*
      * TODO: make it final after we remove the deprecated setters.
@@ -35,6 +37,7 @@ public class S3ClientOptions {
     private boolean chunkedEncodingDisabled;
     private final boolean accelerateModeEnabled;
     private final boolean payloadSigningEnabled;
+    private final boolean dualstackEnabled;
 
     /**
      * @return a new S3ClientOptions builder.
@@ -50,12 +53,13 @@ public class S3ClientOptions {
         private boolean chunkedEncodingDisabled = DEFAULT_CHUNKED_ENCODING_DISABLED;
         private boolean accelerateModeEnabled = DEFAULT_ACCELERATE_MODE_ENABLED;
         private boolean payloadSigningEnabled = DEFAULT_PAYLOAD_SIGNING_ENABLED;
+        private boolean dualstackEnabled = DEFAULT_DUALSTACK_ENABLED;
 
         private Builder() {}
 
         public S3ClientOptions build() {
             return new S3ClientOptions(pathStyleAccess, chunkedEncodingDisabled,
-                    accelerateModeEnabled, payloadSigningEnabled);
+                    accelerateModeEnabled, payloadSigningEnabled, dualstackEnabled);
         }
         /**
          * <p>
@@ -146,6 +150,19 @@ public class S3ClientOptions {
             this.chunkedEncodingDisabled = true;
             return this;
         }
+
+        /**
+         * <p>
+         * Configures the client to use the dualstack endpoint for a region
+         * <p>
+         * S3 supports dualstack endpoints which return both IPv6 and IPv4 values.
+         * Use of these endpoints is optional.
+         * </p>
+         */
+        public Builder enableDualstack() {
+            this.dualstackEnabled = true;
+            return this;
+        }
     }
 
     /**
@@ -158,6 +175,7 @@ public class S3ClientOptions {
         this.chunkedEncodingDisabled = DEFAULT_CHUNKED_ENCODING_DISABLED;
         this.accelerateModeEnabled = DEFAULT_ACCELERATE_MODE_ENABLED;
         this.payloadSigningEnabled = DEFAULT_PAYLOAD_SIGNING_ENABLED;
+        this.dualstackEnabled = DEFAULT_DUALSTACK_ENABLED;
     }
 
     /**
@@ -170,14 +188,16 @@ public class S3ClientOptions {
         this.chunkedEncodingDisabled = other.chunkedEncodingDisabled;
         this.accelerateModeEnabled = other.accelerateModeEnabled;
         this.payloadSigningEnabled = other.payloadSigningEnabled;
+        this.dualstackEnabled = other.dualstackEnabled;
     }
 
     private S3ClientOptions(boolean pathStyleAccess, boolean chunkedEncodingDisabled, boolean accelerateModeEnabled,
-                            boolean payloadSigningEnabled) {
+                            boolean payloadSigningEnabled, boolean dualstackEnabled) {
         this.pathStyleAccess = pathStyleAccess;
         this.chunkedEncodingDisabled = chunkedEncodingDisabled;
         this.accelerateModeEnabled = accelerateModeEnabled;
         this.payloadSigningEnabled = payloadSigningEnabled;
+        this.dualstackEnabled = dualstackEnabled;
     }
 
     /**
@@ -260,6 +280,18 @@ public class S3ClientOptions {
      */
     public boolean isPayloadSigningEnabled() {
         return payloadSigningEnabled;
+    }
+
+    /**
+     * <p>
+     * Returns whether the client is configured to use dualstack mode for
+     * accessing S3.
+     * </p>
+     *
+     * @return True if the client will use the dualstack mode
+     */
+    public boolean isDualstackEnabled() {
+        return dualstackEnabled;
     }
 
     /**

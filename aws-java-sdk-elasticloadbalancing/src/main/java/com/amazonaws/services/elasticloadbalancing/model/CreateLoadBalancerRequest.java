@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateLoadBalancer.
+ * </p>
  */
 public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -41,16 +43,15 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html"
-     * >Listeners for Your Load Balancer</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
+     * >Listeners for Your Classic Load Balancer</a> in the <i>Classic Load
+     * Balancers Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Listener> listeners;
     /**
      * <p>
      * One or more Availability Zones from the same region as the load balancer.
-     * Traffic is equally distributed across all specified Availability Zones.
      * </p>
      * <p>
      * You must specify at least one Availability Zone.
@@ -81,16 +82,16 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * By default, Elastic Load Balancing creates an Internet-facing load
-     * balancer with a publicly resolvable DNS name, which resolves to public IP
-     * addresses. For more information about Internet-facing and Internal load
-     * balancers, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html"
-     * >Internet-facing and Internal Load Balancers</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * balancer with a DNS name that resolves to public IP addresses. For more
+     * information about Internet-facing and Internal load balancers, see <a
+     * href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme"
+     * >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User
+     * Guide</i>.
      * </p>
      * <p>
-     * Specify <code>internal</code> to create an internal load balancer with a
-     * DNS name that resolves to private IP addresses.
+     * Specify <code>internal</code> to create a load balancer with a DNS name
+     * that resolves to private IP addresses.
      * </p>
      */
     private String scheme;
@@ -100,8 +101,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * For more information about tagging your load balancer, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb"
-     * >Tagging</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
+     * >Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -148,13 +150,12 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html"
-     *        >Listeners for Your Load Balancer</a> in the <i>Elastic Load
-     *        Balancing Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
+     *        >Listeners for Your Classic Load Balancer</a> in the <i>Classic
+     *        Load Balancers Guide</i>.
      * @param availabilityZones
      *        One or more Availability Zones from the same region as the load
-     *        balancer. Traffic is equally distributed across all specified
-     *        Availability Zones.
+     *        balancer.
      *        </p>
      *        <p>
      *        You must specify at least one Availability Zone.
@@ -252,17 +253,17 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html"
-     * >Listeners for Your Load Balancer</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
+     * >Listeners for Your Classic Load Balancer</a> in the <i>Classic Load
+     * Balancers Guide</i>.
      * </p>
      * 
      * @return The listeners.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html"
-     *         >Listeners for Your Load Balancer</a> in the <i>Elastic Load
-     *         Balancing Developer Guide</i>.
+     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
+     *         >Listeners for Your Classic Load Balancer</a> in the <i>Classic
+     *         Load Balancers Guide</i>.
      */
 
     public java.util.List<Listener> getListeners() {
@@ -278,18 +279,18 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html"
-     * >Listeners for Your Load Balancer</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
+     * >Listeners for Your Classic Load Balancer</a> in the <i>Classic Load
+     * Balancers Guide</i>.
      * </p>
      * 
      * @param listeners
      *        The listeners.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html"
-     *        >Listeners for Your Load Balancer</a> in the <i>Elastic Load
-     *        Balancing Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
+     *        >Listeners for Your Classic Load Balancer</a> in the <i>Classic
+     *        Load Balancers Guide</i>.
      */
 
     public void setListeners(java.util.Collection<Listener> listeners) {
@@ -308,9 +309,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html"
-     * >Listeners for Your Load Balancer</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
+     * >Listeners for Your Classic Load Balancer</a> in the <i>Classic Load
+     * Balancers Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -323,9 +324,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      *        The listeners.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html"
-     *        >Listeners for Your Load Balancer</a> in the <i>Elastic Load
-     *        Balancing Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
+     *        >Listeners for Your Classic Load Balancer</a> in the <i>Classic
+     *        Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -347,18 +348,18 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html"
-     * >Listeners for Your Load Balancer</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
+     * >Listeners for Your Classic Load Balancer</a> in the <i>Classic Load
+     * Balancers Guide</i>.
      * </p>
      * 
      * @param listeners
      *        The listeners.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html"
-     *        >Listeners for Your Load Balancer</a> in the <i>Elastic Load
-     *        Balancing Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
+     *        >Listeners for Your Classic Load Balancer</a> in the <i>Classic
+     *        Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -372,7 +373,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * One or more Availability Zones from the same region as the load balancer.
-     * Traffic is equally distributed across all specified Availability Zones.
      * </p>
      * <p>
      * You must specify at least one Availability Zone.
@@ -383,8 +383,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return One or more Availability Zones from the same region as the load
-     *         balancer. Traffic is equally distributed across all specified
-     *         Availability Zones.</p>
+     *         balancer.</p>
      *         <p>
      *         You must specify at least one Availability Zone.
      *         </p>
@@ -403,7 +402,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * One or more Availability Zones from the same region as the load balancer.
-     * Traffic is equally distributed across all specified Availability Zones.
      * </p>
      * <p>
      * You must specify at least one Availability Zone.
@@ -415,8 +413,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * 
      * @param availabilityZones
      *        One or more Availability Zones from the same region as the load
-     *        balancer. Traffic is equally distributed across all specified
-     *        Availability Zones.</p>
+     *        balancer.</p>
      *        <p>
      *        You must specify at least one Availability Zone.
      *        </p>
@@ -439,7 +436,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * One or more Availability Zones from the same region as the load balancer.
-     * Traffic is equally distributed across all specified Availability Zones.
      * </p>
      * <p>
      * You must specify at least one Availability Zone.
@@ -457,8 +453,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * 
      * @param availabilityZones
      *        One or more Availability Zones from the same region as the load
-     *        balancer. Traffic is equally distributed across all specified
-     *        Availability Zones.</p>
+     *        balancer.</p>
      *        <p>
      *        You must specify at least one Availability Zone.
      *        </p>
@@ -484,7 +479,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * One or more Availability Zones from the same region as the load balancer.
-     * Traffic is equally distributed across all specified Availability Zones.
      * </p>
      * <p>
      * You must specify at least one Availability Zone.
@@ -496,8 +490,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * 
      * @param availabilityZones
      *        One or more Availability Zones from the same region as the load
-     *        balancer. Traffic is equally distributed across all specified
-     *        Availability Zones.</p>
+     *        balancer.</p>
      *        <p>
      *        You must specify at least one Availability Zone.
      *        </p>
@@ -695,16 +688,16 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * By default, Elastic Load Balancing creates an Internet-facing load
-     * balancer with a publicly resolvable DNS name, which resolves to public IP
-     * addresses. For more information about Internet-facing and Internal load
-     * balancers, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html"
-     * >Internet-facing and Internal Load Balancers</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * balancer with a DNS name that resolves to public IP addresses. For more
+     * information about Internet-facing and Internal load balancers, see <a
+     * href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme"
+     * >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User
+     * Guide</i>.
      * </p>
      * <p>
-     * Specify <code>internal</code> to create an internal load balancer with a
-     * DNS name that resolves to private IP addresses.
+     * Specify <code>internal</code> to create a load balancer with a DNS name
+     * that resolves to private IP addresses.
      * </p>
      * 
      * @param scheme
@@ -712,16 +705,16 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      *        VPC.</p>
      *        <p>
      *        By default, Elastic Load Balancing creates an Internet-facing load
-     *        balancer with a publicly resolvable DNS name, which resolves to
-     *        public IP addresses. For more information about Internet-facing
-     *        and Internal load balancers, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html"
-     *        >Internet-facing and Internal Load Balancers</a> in the <i>Elastic
-     *        Load Balancing Developer Guide</i>.
+     *        balancer with a DNS name that resolves to public IP addresses. For
+     *        more information about Internet-facing and Internal load
+     *        balancers, see <a href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme"
+     *        >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User
+     *        Guide</i>.
      *        </p>
      *        <p>
-     *        Specify <code>internal</code> to create an internal load balancer
-     *        with a DNS name that resolves to private IP addresses.
+     *        Specify <code>internal</code> to create a load balancer with a DNS
+     *        name that resolves to private IP addresses.
      */
 
     public void setScheme(String scheme) {
@@ -734,32 +727,32 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * By default, Elastic Load Balancing creates an Internet-facing load
-     * balancer with a publicly resolvable DNS name, which resolves to public IP
-     * addresses. For more information about Internet-facing and Internal load
-     * balancers, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html"
-     * >Internet-facing and Internal Load Balancers</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * balancer with a DNS name that resolves to public IP addresses. For more
+     * information about Internet-facing and Internal load balancers, see <a
+     * href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme"
+     * >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User
+     * Guide</i>.
      * </p>
      * <p>
-     * Specify <code>internal</code> to create an internal load balancer with a
-     * DNS name that resolves to private IP addresses.
+     * Specify <code>internal</code> to create a load balancer with a DNS name
+     * that resolves to private IP addresses.
      * </p>
      * 
      * @return The type of a load balancer. Valid only for load balancers in a
      *         VPC.</p>
      *         <p>
      *         By default, Elastic Load Balancing creates an Internet-facing
-     *         load balancer with a publicly resolvable DNS name, which resolves
-     *         to public IP addresses. For more information about
-     *         Internet-facing and Internal load balancers, see <a href=
-     *         "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html"
-     *         >Internet-facing and Internal Load Balancers</a> in the
-     *         <i>Elastic Load Balancing Developer Guide</i>.
+     *         load balancer with a DNS name that resolves to public IP
+     *         addresses. For more information about Internet-facing and
+     *         Internal load balancers, see <a href=
+     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme"
+     *         >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User
+     *         Guide</i>.
      *         </p>
      *         <p>
-     *         Specify <code>internal</code> to create an internal load balancer
-     *         with a DNS name that resolves to private IP addresses.
+     *         Specify <code>internal</code> to create a load balancer with a
+     *         DNS name that resolves to private IP addresses.
      */
 
     public String getScheme() {
@@ -772,16 +765,16 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * By default, Elastic Load Balancing creates an Internet-facing load
-     * balancer with a publicly resolvable DNS name, which resolves to public IP
-     * addresses. For more information about Internet-facing and Internal load
-     * balancers, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html"
-     * >Internet-facing and Internal Load Balancers</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * balancer with a DNS name that resolves to public IP addresses. For more
+     * information about Internet-facing and Internal load balancers, see <a
+     * href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme"
+     * >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User
+     * Guide</i>.
      * </p>
      * <p>
-     * Specify <code>internal</code> to create an internal load balancer with a
-     * DNS name that resolves to private IP addresses.
+     * Specify <code>internal</code> to create a load balancer with a DNS name
+     * that resolves to private IP addresses.
      * </p>
      * 
      * @param scheme
@@ -789,16 +782,16 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      *        VPC.</p>
      *        <p>
      *        By default, Elastic Load Balancing creates an Internet-facing load
-     *        balancer with a publicly resolvable DNS name, which resolves to
-     *        public IP addresses. For more information about Internet-facing
-     *        and Internal load balancers, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/vpc-loadbalancer-types.html"
-     *        >Internet-facing and Internal Load Balancers</a> in the <i>Elastic
-     *        Load Balancing Developer Guide</i>.
+     *        balancer with a DNS name that resolves to public IP addresses. For
+     *        more information about Internet-facing and Internal load
+     *        balancers, see <a href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme"
+     *        >Load Balancer Scheme</a> in the <i>Elastic Load Balancing User
+     *        Guide</i>.
      *        </p>
      *        <p>
-     *        Specify <code>internal</code> to create an internal load balancer
-     *        with a DNS name that resolves to private IP addresses.
+     *        Specify <code>internal</code> to create a load balancer with a DNS
+     *        name that resolves to private IP addresses.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -814,17 +807,18 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * For more information about tagging your load balancer, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb"
-     * >Tagging</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
+     * >Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @return A list of tags to assign to the load balancer.</p>
      *         <p>
      *         For more information about tagging your load balancer, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb"
-     *         >Tagging</a> in the <i>Elastic Load Balancing Developer
-     *         Guide</i>.
+     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
+     *         >Tag Your Classic Load Balancer</a> in the <i>Classic Load
+     *         Balancers Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -840,8 +834,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * For more information about tagging your load balancer, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb"
-     * >Tagging</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
+     * >Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @param tags
@@ -849,8 +844,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      *        <p>
      *        For more information about tagging your load balancer, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb"
-     *        >Tagging</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
+     *        >Tag Your Classic Load Balancer</a> in the <i>Classic Load
+     *        Balancers Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -868,8 +864,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * For more information about tagging your load balancer, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb"
-     * >Tagging</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
+     * >Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -883,8 +880,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      *        <p>
      *        For more information about tagging your load balancer, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb"
-     *        >Tagging</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
+     *        >Tag Your Classic Load Balancer</a> in the <i>Classic Load
+     *        Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -905,8 +903,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * For more information about tagging your load balancer, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb"
-     * >Tagging</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
+     * >Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @param tags
@@ -914,8 +913,9 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest
      *        <p>
      *        For more information about tagging your load balancer, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#tagging-elb"
-     *        >Tagging</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
+     *        >Tag Your Classic Load Balancer</a> in the <i>Classic Load
+     *        Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

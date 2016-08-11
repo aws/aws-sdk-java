@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.25</version>
+    <version>1.11.26</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.25</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.26</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.25</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.26</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -382,6 +382,10 @@
                     <group>
                       <title>AWS Application Auto Scaling</title>
                       <packages>com.amazonaws.services.applicationautoscaling*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Snowball</title>
+                      <packages>com.amazonaws.services.snowball*</packages>
                     </group>
                     <group>
                       <title>AWS Service Catalog</title>
@@ -524,10 +528,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.25</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.26</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.25</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.26</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -794,6 +798,10 @@
                       <packages>com.amazonaws.services.applicationautoscaling*</packages>
                     </group>
                     <group>
+                      <title>Amazon Snowball</title>
+                      <packages>com.amazonaws.services.snowball*</packages>
+                    </group>
+                    <group>
                       <title>AWS Service Catalog</title>
                       <packages>com.amazonaws.services.servicecatalog*</packages>
                     </group>
@@ -930,10 +938,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.25</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.26</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.25</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.26</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1198,6 +1206,10 @@
                 <group>
                   <title>AWS Application Auto Scaling</title>
                   <packages>com.amazonaws.services.applicationautoscaling*</packages>
+                </group>
+                <group>
+                  <title>Amazon Snowball</title>
+                  <packages>com.amazonaws.services.snowball*</packages>
                 </group>
                 <group>
                   <title>AWS Service Catalog</title>
@@ -1533,7 +1545,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.25-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.26-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

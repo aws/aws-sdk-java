@@ -17,104 +17,26 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of DescribeAutoScalingNotificationTypes.
+ * </p>
  */
 public class DescribeAutoScalingNotificationTypesResult implements
         Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more of the following notification types:
+     * The notification types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:TEST_NOTIFICATION</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> autoScalingNotificationTypes;
 
     /**
      * <p>
-     * One or more of the following notification types:
+     * The notification types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:TEST_NOTIFICATION</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return One or more of the following notification types:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>autoscaling:EC2_INSTANCE_LAUNCH</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>autoscaling:EC2_INSTANCE_TERMINATE</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>autoscaling:TEST_NOTIFICATION</code>
-     *         </p>
-     *         </li>
+     * @return The notification types.
      */
 
     public java.util.List<String> getAutoScalingNotificationTypes() {
@@ -126,64 +48,11 @@ public class DescribeAutoScalingNotificationTypesResult implements
 
     /**
      * <p>
-     * One or more of the following notification types:
+     * The notification types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:TEST_NOTIFICATION</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param autoScalingNotificationTypes
-     *        One or more of the following notification types:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_LAUNCH</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_TERMINATE</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:TEST_NOTIFICATION</code>
-     *        </p>
-     *        </li>
+     *        The notification types.
      */
 
     public void setAutoScalingNotificationTypes(
@@ -199,35 +68,8 @@ public class DescribeAutoScalingNotificationTypesResult implements
 
     /**
      * <p>
-     * One or more of the following notification types:
+     * The notification types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:TEST_NOTIFICATION</code>
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setAutoScalingNotificationTypes(java.util.Collection)}
@@ -236,33 +78,7 @@ public class DescribeAutoScalingNotificationTypesResult implements
      * </p>
      * 
      * @param autoScalingNotificationTypes
-     *        One or more of the following notification types:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_LAUNCH</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_TERMINATE</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:TEST_NOTIFICATION</code>
-     *        </p>
-     *        </li>
+     *        The notification types.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -281,64 +97,11 @@ public class DescribeAutoScalingNotificationTypesResult implements
 
     /**
      * <p>
-     * One or more of the following notification types:
+     * The notification types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:TEST_NOTIFICATION</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param autoScalingNotificationTypes
-     *        One or more of the following notification types:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_LAUNCH</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_TERMINATE</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:TEST_NOTIFICATION</code>
-     *        </p>
-     *        </li>
+     *        The notification types.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

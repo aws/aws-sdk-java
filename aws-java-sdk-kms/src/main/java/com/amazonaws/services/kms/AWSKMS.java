@@ -399,7 +399,8 @@ public interface AWSKMS {
      *         The request was rejected because a specified ARN was not valid.
      * @throws UnsupportedOperationException
      *         The request was rejected because a specified parameter is not
-     *         supported.
+     *         supported or a specified resource is not valid for this
+     *         operation.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred.
      *         The request can be retried.
@@ -522,6 +523,57 @@ public interface AWSKMS {
 
     /**
      * <p>
+     * Deletes key material that you previously imported and makes the specified
+     * customer master key (CMK) unusable. For more information about importing
+     * key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * When the specified CMK is in the <code>PendingDeletion</code> state, this
+     * operation does not change the CMK's state. Otherwise, it changes the
+     * CMK's state to <code>PendingImport</code>.
+     * </p>
+     * <p>
+     * After you delete key material, you can use <a>ImportKeyMaterial</a> to
+     * reimport the same key material into the CMK.
+     * </p>
+     * 
+     * @param deleteImportedKeyMaterialRequest
+     * @return Result of the DeleteImportedKeyMaterial operation returned by the
+     *         service.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN was not valid.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not
+     *         supported or a specified resource is not valid for this
+     *         operation.
+     * @throws DependencyTimeoutException
+     *         The system timed out while trying to fulfill the request. The
+     *         request can be retried.
+     * @throws NotFoundException
+     *         The request was rejected because the specified entity or resource
+     *         could not be found.
+     * @throws KMSInternalException
+     *         The request was rejected because an internal exception occurred.
+     *         The request can be retried.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified
+     *         resource is not valid for this request.</p>
+     *         <p>
+     *         For more information about how key state affects the use of a
+     *         customer master key (CMK), see <a href=
+     *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     *         >How Key State Affects the Use of a Customer Master Key</a> in
+     *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.DeleteImportedKeyMaterial
+     */
+    DeleteImportedKeyMaterialResult deleteImportedKeyMaterial(
+            DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest);
+
+    /**
+     * <p>
      * Provides detailed information about the specified customer master key.
      * </p>
      * 
@@ -609,6 +661,10 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not
+     *         supported or a specified resource is not valid for this
+     *         operation.
      * @sample AWSKMS.DisableKeyRotation
      */
     DisableKeyRotationResult disableKeyRotation(
@@ -682,6 +738,10 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not
+     *         supported or a specified resource is not valid for this
+     *         operation.
      * @sample AWSKMS.EnableKeyRotation
      */
     EnableKeyRotationResult enableKeyRotation(
@@ -975,10 +1035,152 @@ public interface AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not
+     *         supported or a specified resource is not valid for this
+     *         operation.
      * @sample AWSKMS.GetKeyRotationStatus
      */
     GetKeyRotationStatusResult getKeyRotationStatus(
             GetKeyRotationStatusRequest getKeyRotationStatusRequest);
+
+    /**
+     * <p>
+     * Returns the items you need in order to import key material into AWS KMS
+     * from your existing key management infrastructure. For more information
+     * about importing key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * You must specify the key ID of the customer master key (CMK) into which
+     * you will import key material. This CMK's <code>Origin</code> must be
+     * <code>EXTERNAL</code>. You must also specify the wrapping algorithm and
+     * type of wrapping key (public key) that you will use to encrypt the key
+     * material.
+     * </p>
+     * <p>
+     * This operation returns a public key and an import token. Use the public
+     * key to encrypt the key material. Store the import token to send with a
+     * subsequent <a>ImportKeyMaterial</a> request. The public key and import
+     * token from the same response must be used together. These items are valid
+     * for 24 hours, after which they cannot be used for a subsequent
+     * <a>ImportKeyMaterial</a> request. To retrieve new ones, send another
+     * <code>GetParametersForImport</code> request.
+     * </p>
+     * 
+     * @param getParametersForImportRequest
+     * @return Result of the GetParametersForImport operation returned by the
+     *         service.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN was not valid.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not
+     *         supported or a specified resource is not valid for this
+     *         operation.
+     * @throws DependencyTimeoutException
+     *         The system timed out while trying to fulfill the request. The
+     *         request can be retried.
+     * @throws NotFoundException
+     *         The request was rejected because the specified entity or resource
+     *         could not be found.
+     * @throws KMSInternalException
+     *         The request was rejected because an internal exception occurred.
+     *         The request can be retried.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified
+     *         resource is not valid for this request.</p>
+     *         <p>
+     *         For more information about how key state affects the use of a
+     *         customer master key (CMK), see <a href=
+     *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     *         >How Key State Affects the Use of a Customer Master Key</a> in
+     *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.GetParametersForImport
+     */
+    GetParametersForImportResult getParametersForImport(
+            GetParametersForImportRequest getParametersForImportRequest);
+
+    /**
+     * <p>
+     * Imports key material into an AWS KMS customer master key (CMK) from your
+     * existing key management infrastructure. For more information about
+     * importing key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * You must specify the key ID of the CMK to import the key material into.
+     * This CMK's <code>Origin</code> must be <code>EXTERNAL</code>. You must
+     * also send an import token and the encrypted key material. Send the import
+     * token that you received in the same <a>GetParametersForImport</a>
+     * response that contained the public key that you used to encrypt the key
+     * material. You must also specify whether the key material expires and if
+     * so, when. When the key material expires, AWS KMS deletes the key material
+     * and the CMK becomes unusable. To use the CMK again, you can reimport the
+     * same key material. If you set an expiration date, you can change it only
+     * by reimporting the same key material and specifying a new expiration
+     * date.
+     * </p>
+     * <p>
+     * When this operation is successful, the specified CMK's key state changes
+     * to <code>Enabled</code>, and you can use the CMK.
+     * </p>
+     * <p>
+     * After you successfully import key material into a CMK, you can reimport
+     * the same key material into that CMK, but you cannot import different key
+     * material.
+     * </p>
+     * 
+     * @param importKeyMaterialRequest
+     * @return Result of the ImportKeyMaterial operation returned by the
+     *         service.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN was not valid.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not
+     *         supported or a specified resource is not valid for this
+     *         operation.
+     * @throws DependencyTimeoutException
+     *         The system timed out while trying to fulfill the request. The
+     *         request can be retried.
+     * @throws NotFoundException
+     *         The request was rejected because the specified entity or resource
+     *         could not be found.
+     * @throws KMSInternalException
+     *         The request was rejected because an internal exception occurred.
+     *         The request can be retried.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified
+     *         resource is not valid for this request.</p>
+     *         <p>
+     *         For more information about how key state affects the use of a
+     *         customer master key (CMK), see <a href=
+     *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     *         >How Key State Affects the Use of a Customer Master Key</a> in
+     *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @throws InvalidCiphertextException
+     *         The request was rejected because the specified ciphertext has
+     *         been corrupted or is otherwise invalid.
+     * @throws IncorrectKeyMaterialException
+     *         The request was rejected because the provided key material is
+     *         invalid or is not the same key material that was previously
+     *         imported into this customer master key (CMK).
+     * @throws ExpiredImportTokenException
+     *         The request was rejected because the provided import token is
+     *         expired. Use <a>GetParametersForImport</a> to retrieve a new
+     *         import token and public key, use the new public key to encrypt
+     *         the key material, and then try the request again.
+     * @throws InvalidImportTokenException
+     *         The request was rejected because the provided import token is
+     *         invalid or is associated with a different customer master key
+     *         (CMK).
+     * @sample AWSKMS.ImportKeyMaterial
+     */
+    ImportKeyMaterialResult importKeyMaterial(
+            ImportKeyMaterialRequest importKeyMaterialRequest);
 
     /**
      * <p>
@@ -1155,7 +1357,8 @@ public interface AWSKMS {
      *         request can be retried.
      * @throws UnsupportedOperationException
      *         The request was rejected because a specified parameter is not
-     *         supported.
+     *         supported or a specified resource is not valid for this
+     *         operation.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred.
      *         The request can be retried.

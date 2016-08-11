@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateLaunchConfiguration.
+ * </p>
  */
 public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -117,7 +119,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html"
      * >Create a Launch Configuration Using an EC2 Instance</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      */
     private String instanceId;
@@ -165,7 +167,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * metrics every 5 minutes. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
      * >Monitoring Your Auto Scaling Instances and Groups</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      */
     private InstanceMonitoring instanceMonitoring;
@@ -177,7 +179,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"
      * >Launching Spot Instances in Your Auto Scaling Group</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      */
     private String spotPrice;
@@ -193,7 +195,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * securely access other AWS resources. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html"
      * >Launch Auto Scaling Instances with an IAM Role</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      */
     private String iamInstanceProfile;
@@ -218,7 +220,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * User Guide</i>.
      * </p>
      * <p>
      * If you specify this parameter, be sure to specify at least one subnet
@@ -254,7 +256,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * User Guide</i>.
      * </p>
      * <p>
      * Valid values: <code>default</code> | <code>dedicated</code>
@@ -912,7 +914,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html"
      * >Create a Launch Configuration Using an EC2 Instance</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @param instanceId
@@ -931,7 +933,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html"
      *        >Create a Launch Configuration Using an EC2 Instance</a> in the
-     *        <i>Auto Scaling Developer Guide</i>.
+     *        <i>Auto Scaling User Guide</i>.
      */
 
     public void setInstanceId(String instanceId) {
@@ -954,7 +956,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html"
      * >Create a Launch Configuration Using an EC2 Instance</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @return The ID of the instance to use to create the launch
@@ -972,7 +974,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html"
      *         >Create a Launch Configuration Using an EC2 Instance</a> in the
-     *         <i>Auto Scaling Developer Guide</i>.
+     *         <i>Auto Scaling User Guide</i>.
      */
 
     public String getInstanceId() {
@@ -995,7 +997,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html"
      * >Create a Launch Configuration Using an EC2 Instance</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @param instanceId
@@ -1014,7 +1016,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html"
      *        >Create a Launch Configuration Using an EC2 Instance</a> in the
-     *        <i>Auto Scaling Developer Guide</i>.
+     *        <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1296,7 +1298,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * metrics every 5 minutes. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
      * >Monitoring Your Auto Scaling Instances and Groups</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @param instanceMonitoring
@@ -1310,7 +1312,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
      *        >Monitoring Your Auto Scaling Instances and Groups</a> in the
-     *        <i>Auto Scaling Developer Guide</i>.
+     *        <i>Auto Scaling User Guide</i>.
      */
 
     public void setInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
@@ -1329,7 +1331,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * metrics every 5 minutes. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
      * >Monitoring Your Auto Scaling Instances and Groups</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @return Enables detailed monitoring if it is disabled. Detailed
@@ -1342,7 +1344,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *         information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
      *         >Monitoring Your Auto Scaling Instances and Groups</a> in the
-     *         <i>Auto Scaling Developer Guide</i>.
+     *         <i>Auto Scaling User Guide</i>.
      */
 
     public InstanceMonitoring getInstanceMonitoring() {
@@ -1361,7 +1363,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * metrics every 5 minutes. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
      * >Monitoring Your Auto Scaling Instances and Groups</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @param instanceMonitoring
@@ -1375,7 +1377,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-instance-monitoring.html"
      *        >Monitoring Your Auto Scaling Instances and Groups</a> in the
-     *        <i>Auto Scaling Developer Guide</i>.
+     *        <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1394,7 +1396,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"
      * >Launching Spot Instances in Your Auto Scaling Group</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @param spotPrice
@@ -1404,7 +1406,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"
      *        >Launching Spot Instances in Your Auto Scaling Group</a> in the
-     *        <i>Auto Scaling Developer Guide</i>.
+     *        <i>Auto Scaling User Guide</i>.
      */
 
     public void setSpotPrice(String spotPrice) {
@@ -1419,7 +1421,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"
      * >Launching Spot Instances in Your Auto Scaling Group</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @return The maximum hourly price to be paid for any Spot Instance
@@ -1428,7 +1430,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *         more information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"
      *         >Launching Spot Instances in Your Auto Scaling Group</a> in the
-     *         <i>Auto Scaling Developer Guide</i>.
+     *         <i>Auto Scaling User Guide</i>.
      */
 
     public String getSpotPrice() {
@@ -1443,7 +1445,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"
      * >Launching Spot Instances in Your Auto Scaling Group</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @param spotPrice
@@ -1453,7 +1455,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html"
      *        >Launching Spot Instances in Your Auto Scaling Group</a> in the
-     *        <i>Auto Scaling Developer Guide</i>.
+     *        <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1475,7 +1477,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * securely access other AWS resources. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html"
      * >Launch Auto Scaling Instances with an IAM Role</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @param iamInstanceProfile
@@ -1489,7 +1491,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html"
      *        >Launch Auto Scaling Instances with an IAM Role</a> in the <i>Auto
-     *        Scaling Developer Guide</i>.
+     *        Scaling User Guide</i>.
      */
 
     public void setIamInstanceProfile(String iamInstanceProfile) {
@@ -1508,7 +1510,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * securely access other AWS resources. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html"
      * >Launch Auto Scaling Instances with an IAM Role</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @return The name or the Amazon Resource Name (ARN) of the instance
@@ -1521,7 +1523,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *         information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html"
      *         >Launch Auto Scaling Instances with an IAM Role</a> in the
-     *         <i>Auto Scaling Developer Guide</i>.
+     *         <i>Auto Scaling User Guide</i>.
      */
 
     public String getIamInstanceProfile() {
@@ -1540,7 +1542,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * securely access other AWS resources. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html"
      * >Launch Auto Scaling Instances with an IAM Role</a> in the <i>Auto
-     * Scaling Developer Guide</i>.
+     * Scaling User Guide</i>.
      * </p>
      * 
      * @param iamInstanceProfile
@@ -1554,7 +1556,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html"
      *        >Launch Auto Scaling Instances with an IAM Role</a> in the <i>Auto
-     *        Scaling Developer Guide</i>.
+     *        Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1692,7 +1694,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * User Guide</i>.
      * </p>
      * <p>
      * If you specify this parameter, be sure to specify at least one subnet
@@ -1714,7 +1716,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        instance. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      *        >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
-     *        Scaling Developer Guide</i>.</p>
+     *        Scaling User Guide</i>.</p>
      *        <p>
      *        If you specify this parameter, be sure to specify at least one
      *        subnet when you create your group.
@@ -1740,7 +1742,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * User Guide</i>.
      * </p>
      * <p>
      * If you specify this parameter, be sure to specify at least one subnet
@@ -1761,7 +1763,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *         each instance. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      *         >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
-     *         Scaling Developer Guide</i>.</p>
+     *         Scaling User Guide</i>.</p>
      *         <p>
      *         If you specify this parameter, be sure to specify at least one
      *         subnet when you create your group.
@@ -1787,7 +1789,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * User Guide</i>.
      * </p>
      * <p>
      * If you specify this parameter, be sure to specify at least one subnet
@@ -1809,7 +1811,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        instance. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      *        >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
-     *        Scaling Developer Guide</i>.</p>
+     *        Scaling User Guide</i>.</p>
      *        <p>
      *        If you specify this parameter, be sure to specify at least one
      *        subnet when you create your group.
@@ -1839,7 +1841,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * User Guide</i>.
      * </p>
      * <p>
      * If you specify this parameter, be sure to specify at least one subnet
@@ -1860,7 +1862,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *         each instance. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      *         >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
-     *         Scaling Developer Guide</i>.</p>
+     *         Scaling User Guide</i>.</p>
      *         <p>
      *         If you specify this parameter, be sure to specify at least one
      *         subnet when you create your group.
@@ -1898,7 +1900,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * User Guide</i>.
      * </p>
      * <p>
      * Valid values: <code>default</code> | <code>dedicated</code>
@@ -1922,7 +1924,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      *        >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
-     *        Scaling Developer Guide</i>.
+     *        Scaling User Guide</i>.
      *        </p>
      *        <p>
      *        Valid values: <code>default</code> | <code>dedicated</code>
@@ -1951,7 +1953,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * User Guide</i>.
      * </p>
      * <p>
      * Valid values: <code>default</code> | <code>dedicated</code>
@@ -1974,7 +1976,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      *         >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
-     *         Scaling Developer Guide</i>.
+     *         Scaling User Guide</i>.
      *         </p>
      *         <p>
      *         Valid values: <code>default</code> | <code>dedicated</code>
@@ -2003,7 +2005,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * User Guide</i>.
      * </p>
      * <p>
      * Valid values: <code>default</code> | <code>dedicated</code>
@@ -2027,7 +2029,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      *        >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
-     *        Scaling Developer Guide</i>.
+     *        Scaling User Guide</i>.
      *        </p>
      *        <p>
      *        Valid values: <code>default</code> | <code>dedicated</code>

@@ -518,6 +518,66 @@ public interface AWSKMSAsync extends AWSKMS {
 
     /**
      * <p>
+     * Deletes key material that you previously imported and makes the specified
+     * customer master key (CMK) unusable. For more information about importing
+     * key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * When the specified CMK is in the <code>PendingDeletion</code> state, this
+     * operation does not change the CMK's state. Otherwise, it changes the
+     * CMK's state to <code>PendingImport</code>.
+     * </p>
+     * <p>
+     * After you delete key material, you can use <a>ImportKeyMaterial</a> to
+     * reimport the same key material into the CMK.
+     * </p>
+     * 
+     * @param deleteImportedKeyMaterialRequest
+     * @return A Java Future containing the result of the
+     *         DeleteImportedKeyMaterial operation returned by the service.
+     * @sample AWSKMSAsync.DeleteImportedKeyMaterial
+     */
+    java.util.concurrent.Future<DeleteImportedKeyMaterialResult> deleteImportedKeyMaterialAsync(
+            DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest);
+
+    /**
+     * <p>
+     * Deletes key material that you previously imported and makes the specified
+     * customer master key (CMK) unusable. For more information about importing
+     * key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * When the specified CMK is in the <code>PendingDeletion</code> state, this
+     * operation does not change the CMK's state. Otherwise, it changes the
+     * CMK's state to <code>PendingImport</code>.
+     * </p>
+     * <p>
+     * After you delete key material, you can use <a>ImportKeyMaterial</a> to
+     * reimport the same key material into the CMK.
+     * </p>
+     * 
+     * @param deleteImportedKeyMaterialRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteImportedKeyMaterial operation returned by the service.
+     * @sample AWSKMSAsyncHandler.DeleteImportedKeyMaterial
+     */
+    java.util.concurrent.Future<DeleteImportedKeyMaterialResult> deleteImportedKeyMaterialAsync(
+            DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides detailed information about the specified customer master key.
      * </p>
      * 
@@ -1052,6 +1112,166 @@ public interface AWSKMSAsync extends AWSKMS {
     java.util.concurrent.Future<GetKeyRotationStatusResult> getKeyRotationStatusAsync(
             GetKeyRotationStatusRequest getKeyRotationStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetKeyRotationStatusRequest, GetKeyRotationStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the items you need in order to import key material into AWS KMS
+     * from your existing key management infrastructure. For more information
+     * about importing key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * You must specify the key ID of the customer master key (CMK) into which
+     * you will import key material. This CMK's <code>Origin</code> must be
+     * <code>EXTERNAL</code>. You must also specify the wrapping algorithm and
+     * type of wrapping key (public key) that you will use to encrypt the key
+     * material.
+     * </p>
+     * <p>
+     * This operation returns a public key and an import token. Use the public
+     * key to encrypt the key material. Store the import token to send with a
+     * subsequent <a>ImportKeyMaterial</a> request. The public key and import
+     * token from the same response must be used together. These items are valid
+     * for 24 hours, after which they cannot be used for a subsequent
+     * <a>ImportKeyMaterial</a> request. To retrieve new ones, send another
+     * <code>GetParametersForImport</code> request.
+     * </p>
+     * 
+     * @param getParametersForImportRequest
+     * @return A Java Future containing the result of the GetParametersForImport
+     *         operation returned by the service.
+     * @sample AWSKMSAsync.GetParametersForImport
+     */
+    java.util.concurrent.Future<GetParametersForImportResult> getParametersForImportAsync(
+            GetParametersForImportRequest getParametersForImportRequest);
+
+    /**
+     * <p>
+     * Returns the items you need in order to import key material into AWS KMS
+     * from your existing key management infrastructure. For more information
+     * about importing key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * You must specify the key ID of the customer master key (CMK) into which
+     * you will import key material. This CMK's <code>Origin</code> must be
+     * <code>EXTERNAL</code>. You must also specify the wrapping algorithm and
+     * type of wrapping key (public key) that you will use to encrypt the key
+     * material.
+     * </p>
+     * <p>
+     * This operation returns a public key and an import token. Use the public
+     * key to encrypt the key material. Store the import token to send with a
+     * subsequent <a>ImportKeyMaterial</a> request. The public key and import
+     * token from the same response must be used together. These items are valid
+     * for 24 hours, after which they cannot be used for a subsequent
+     * <a>ImportKeyMaterial</a> request. To retrieve new ones, send another
+     * <code>GetParametersForImport</code> request.
+     * </p>
+     * 
+     * @param getParametersForImportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetParametersForImport
+     *         operation returned by the service.
+     * @sample AWSKMSAsyncHandler.GetParametersForImport
+     */
+    java.util.concurrent.Future<GetParametersForImportResult> getParametersForImportAsync(
+            GetParametersForImportRequest getParametersForImportRequest,
+            com.amazonaws.handlers.AsyncHandler<GetParametersForImportRequest, GetParametersForImportResult> asyncHandler);
+
+    /**
+     * <p>
+     * Imports key material into an AWS KMS customer master key (CMK) from your
+     * existing key management infrastructure. For more information about
+     * importing key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * You must specify the key ID of the CMK to import the key material into.
+     * This CMK's <code>Origin</code> must be <code>EXTERNAL</code>. You must
+     * also send an import token and the encrypted key material. Send the import
+     * token that you received in the same <a>GetParametersForImport</a>
+     * response that contained the public key that you used to encrypt the key
+     * material. You must also specify whether the key material expires and if
+     * so, when. When the key material expires, AWS KMS deletes the key material
+     * and the CMK becomes unusable. To use the CMK again, you can reimport the
+     * same key material. If you set an expiration date, you can change it only
+     * by reimporting the same key material and specifying a new expiration
+     * date.
+     * </p>
+     * <p>
+     * When this operation is successful, the specified CMK's key state changes
+     * to <code>Enabled</code>, and you can use the CMK.
+     * </p>
+     * <p>
+     * After you successfully import key material into a CMK, you can reimport
+     * the same key material into that CMK, but you cannot import different key
+     * material.
+     * </p>
+     * 
+     * @param importKeyMaterialRequest
+     * @return A Java Future containing the result of the ImportKeyMaterial
+     *         operation returned by the service.
+     * @sample AWSKMSAsync.ImportKeyMaterial
+     */
+    java.util.concurrent.Future<ImportKeyMaterialResult> importKeyMaterialAsync(
+            ImportKeyMaterialRequest importKeyMaterialRequest);
+
+    /**
+     * <p>
+     * Imports key material into an AWS KMS customer master key (CMK) from your
+     * existing key management infrastructure. For more information about
+     * importing key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * You must specify the key ID of the CMK to import the key material into.
+     * This CMK's <code>Origin</code> must be <code>EXTERNAL</code>. You must
+     * also send an import token and the encrypted key material. Send the import
+     * token that you received in the same <a>GetParametersForImport</a>
+     * response that contained the public key that you used to encrypt the key
+     * material. You must also specify whether the key material expires and if
+     * so, when. When the key material expires, AWS KMS deletes the key material
+     * and the CMK becomes unusable. To use the CMK again, you can reimport the
+     * same key material. If you set an expiration date, you can change it only
+     * by reimporting the same key material and specifying a new expiration
+     * date.
+     * </p>
+     * <p>
+     * When this operation is successful, the specified CMK's key state changes
+     * to <code>Enabled</code>, and you can use the CMK.
+     * </p>
+     * <p>
+     * After you successfully import key material into a CMK, you can reimport
+     * the same key material into that CMK, but you cannot import different key
+     * material.
+     * </p>
+     * 
+     * @param importKeyMaterialRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportKeyMaterial
+     *         operation returned by the service.
+     * @sample AWSKMSAsyncHandler.ImportKeyMaterial
+     */
+    java.util.concurrent.Future<ImportKeyMaterialResult> importKeyMaterialAsync(
+            ImportKeyMaterialRequest importKeyMaterialRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportKeyMaterialRequest, ImportKeyMaterialResult> asyncHandler);
 
     /**
      * <p>

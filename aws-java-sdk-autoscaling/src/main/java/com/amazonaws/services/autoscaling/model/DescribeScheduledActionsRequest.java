@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeScheduledActions.
+ * </p>
  */
 public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -31,9 +33,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
     private String autoScalingGroupName;
     /**
      * <p>
-     * Describes one or more scheduled actions. If you omit this list, the call
-     * describes all scheduled actions. If you specify an unknown scheduled
-     * action it is ignored with no error.
+     * Describes one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled
+     * action, it is ignored with no error.
      * </p>
      * <p>
      * You can describe up to a maximum of 50 instances with a single call. If
@@ -114,9 +116,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Describes one or more scheduled actions. If you omit this list, the call
-     * describes all scheduled actions. If you specify an unknown scheduled
-     * action it is ignored with no error.
+     * Describes one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled
+     * action, it is ignored with no error.
      * </p>
      * <p>
      * You can describe up to a maximum of 50 instances with a single call. If
@@ -124,9 +126,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * set of items, repeat the call with the returned token.
      * </p>
      * 
-     * @return Describes one or more scheduled actions. If you omit this list,
-     *         the call describes all scheduled actions. If you specify an
-     *         unknown scheduled action it is ignored with no error.</p>
+     * @return Describes one or more scheduled actions. If you omit this
+     *         parameter, all scheduled actions are described. If you specify an
+     *         unknown scheduled action, it is ignored with no error.</p>
      *         <p>
      *         You can describe up to a maximum of 50 instances with a single
      *         call. If there are more items to return, the call returns a
@@ -143,9 +145,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Describes one or more scheduled actions. If you omit this list, the call
-     * describes all scheduled actions. If you specify an unknown scheduled
-     * action it is ignored with no error.
+     * Describes one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled
+     * action, it is ignored with no error.
      * </p>
      * <p>
      * You can describe up to a maximum of 50 instances with a single call. If
@@ -154,9 +156,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param scheduledActionNames
-     *        Describes one or more scheduled actions. If you omit this list,
-     *        the call describes all scheduled actions. If you specify an
-     *        unknown scheduled action it is ignored with no error.</p>
+     *        Describes one or more scheduled actions. If you omit this
+     *        parameter, all scheduled actions are described. If you specify an
+     *        unknown scheduled action, it is ignored with no error.</p>
      *        <p>
      *        You can describe up to a maximum of 50 instances with a single
      *        call. If there are more items to return, the call returns a token.
@@ -177,9 +179,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Describes one or more scheduled actions. If you omit this list, the call
-     * describes all scheduled actions. If you specify an unknown scheduled
-     * action it is ignored with no error.
+     * Describes one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled
+     * action, it is ignored with no error.
      * </p>
      * <p>
      * You can describe up to a maximum of 50 instances with a single call. If
@@ -194,9 +196,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param scheduledActionNames
-     *        Describes one or more scheduled actions. If you omit this list,
-     *        the call describes all scheduled actions. If you specify an
-     *        unknown scheduled action it is ignored with no error.</p>
+     *        Describes one or more scheduled actions. If you omit this
+     *        parameter, all scheduled actions are described. If you specify an
+     *        unknown scheduled action, it is ignored with no error.</p>
      *        <p>
      *        You can describe up to a maximum of 50 instances with a single
      *        call. If there are more items to return, the call returns a token.
@@ -220,9 +222,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Describes one or more scheduled actions. If you omit this list, the call
-     * describes all scheduled actions. If you specify an unknown scheduled
-     * action it is ignored with no error.
+     * Describes one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled
+     * action, it is ignored with no error.
      * </p>
      * <p>
      * You can describe up to a maximum of 50 instances with a single call. If
@@ -231,9 +233,9 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param scheduledActionNames
-     *        Describes one or more scheduled actions. If you omit this list,
-     *        the call describes all scheduled actions. If you specify an
-     *        unknown scheduled action it is ignored with no error.</p>
+     *        Describes one or more scheduled actions. If you omit this
+     *        parameter, all scheduled actions are described. If you specify an
+     *        unknown scheduled action, it is ignored with no error.</p>
      *        <p>
      *        You can describe up to a maximum of 50 instances with a single
      *        call. If there are more items to return, the call returns a token.

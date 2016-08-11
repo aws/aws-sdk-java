@@ -60,7 +60,8 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      * The key policy to attach to the CMK.
      * </p>
      * <p>
-     * The key policy must meet the following criteria:
+     * If you do not set <code>BypassPolicyLockoutSafetyCheck</code> to true,
+     * the policy must meet the following criteria:
      * </p>
      * <ul>
      * <li>
@@ -320,7 +321,8 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      * The key policy to attach to the CMK.
      * </p>
      * <p>
-     * The key policy must meet the following criteria:
+     * If you do not set <code>BypassPolicyLockoutSafetyCheck</code> to true,
+     * the policy must meet the following criteria:
      * </p>
      * <ul>
      * <li>
@@ -354,7 +356,8 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      * @param policy
      *        The key policy to attach to the CMK.</p>
      *        <p>
-     *        The key policy must meet the following criteria:
+     *        If you do not set <code>BypassPolicyLockoutSafetyCheck</code> to
+     *        true, the policy must meet the following criteria:
      *        </p>
      *        <ul>
      *        <li>
@@ -396,7 +399,8 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      * The key policy to attach to the CMK.
      * </p>
      * <p>
-     * The key policy must meet the following criteria:
+     * If you do not set <code>BypassPolicyLockoutSafetyCheck</code> to true,
+     * the policy must meet the following criteria:
      * </p>
      * <ul>
      * <li>
@@ -429,7 +433,8 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The key policy to attach to the CMK.</p>
      *         <p>
-     *         The key policy must meet the following criteria:
+     *         If you do not set <code>BypassPolicyLockoutSafetyCheck</code> to
+     *         true, the policy must meet the following criteria:
      *         </p>
      *         <ul>
      *         <li>
@@ -471,7 +476,8 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      * The key policy to attach to the CMK.
      * </p>
      * <p>
-     * The key policy must meet the following criteria:
+     * If you do not set <code>BypassPolicyLockoutSafetyCheck</code> to true,
+     * the policy must meet the following criteria:
      * </p>
      * <ul>
      * <li>
@@ -505,7 +511,8 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      * @param policy
      *        The key policy to attach to the CMK.</p>
      *        <p>
-     *        The key policy must meet the following criteria:
+     *        If you do not set <code>BypassPolicyLockoutSafetyCheck</code> to
+     *        true, the policy must meet the following criteria:
      *        </p>
      *        <ul>
      *        <li>

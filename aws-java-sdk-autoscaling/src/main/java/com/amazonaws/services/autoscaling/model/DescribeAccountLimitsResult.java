@@ -17,7 +17,9 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeAccountLimits.
+ * </p>
  */
 public class DescribeAccountLimitsResult implements Serializable, Cloneable {
 

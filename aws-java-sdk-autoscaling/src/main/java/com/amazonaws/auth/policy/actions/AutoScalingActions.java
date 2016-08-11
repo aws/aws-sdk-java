@@ -27,6 +27,8 @@ public enum AutoScalingActions implements Action {
 
     /** Action for the AttachInstances operation. */
     AttachInstances("autoscaling:AttachInstances"),
+    /** Action for the AttachLoadBalancerTargetGroups operation. */
+    AttachLoadBalancerTargetGroups("autoscaling:AttachLoadBalancerTargetGroups"),
     /** Action for the AttachLoadBalancers operation. */
     AttachLoadBalancers("autoscaling:AttachLoadBalancers"),
     /** Action for the CompleteLifecycleAction operation. */
@@ -69,6 +71,9 @@ public enum AutoScalingActions implements Action {
     DescribeLifecycleHookTypes("autoscaling:DescribeLifecycleHookTypes"),
     /** Action for the DescribeLifecycleHooks operation. */
     DescribeLifecycleHooks("autoscaling:DescribeLifecycleHooks"),
+    /** Action for the DescribeLoadBalancerTargetGroups operation. */
+    DescribeLoadBalancerTargetGroups(
+            "autoscaling:DescribeLoadBalancerTargetGroups"),
     /** Action for the DescribeLoadBalancers operation. */
     DescribeLoadBalancers("autoscaling:DescribeLoadBalancers"),
     /** Action for the DescribeMetricCollectionTypes operation. */
@@ -90,6 +95,8 @@ public enum AutoScalingActions implements Action {
     DescribeTerminationPolicyTypes("autoscaling:DescribeTerminationPolicyTypes"),
     /** Action for the DetachInstances operation. */
     DetachInstances("autoscaling:DetachInstances"),
+    /** Action for the DetachLoadBalancerTargetGroups operation. */
+    DetachLoadBalancerTargetGroups("autoscaling:DetachLoadBalancerTargetGroups"),
     /** Action for the DetachLoadBalancers operation. */
     DetachLoadBalancers("autoscaling:DetachLoadBalancers"),
     /** Action for the DisableMetricsCollection operation. */

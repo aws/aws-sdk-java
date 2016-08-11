@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeleteLoadBalancerListeners.
+ * </p>
  */
 public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

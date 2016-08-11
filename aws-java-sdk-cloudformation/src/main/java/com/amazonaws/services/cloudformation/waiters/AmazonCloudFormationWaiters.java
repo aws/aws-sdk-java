@@ -50,7 +50,7 @@ public class AmazonCloudFormationWaiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter stackExists() {
+    public Waiter<DescribeStacksRequest> stackExists() {
 
         return new WaiterBuilder<DescribeStacksRequest, DescribeStacksResult>()
                 .withSdkFunction(new DescribeStacksFunction(client))
@@ -70,7 +70,7 @@ public class AmazonCloudFormationWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter stackCreateComplete() {
+    public Waiter<DescribeStacksRequest> stackCreateComplete() {
 
         return new WaiterBuilder<DescribeStacksRequest, DescribeStacksResult>()
                 .withSdkFunction(new DescribeStacksFunction(client))
@@ -97,7 +97,7 @@ public class AmazonCloudFormationWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter stackDeleteComplete() {
+    public Waiter<DescribeStacksRequest> stackDeleteComplete() {
 
         return new WaiterBuilder<DescribeStacksRequest, DescribeStacksResult>()
                 .withSdkFunction(new DescribeStacksFunction(client))
@@ -131,7 +131,7 @@ public class AmazonCloudFormationWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter stackUpdateComplete() {
+    public Waiter<DescribeStacksRequest> stackUpdateComplete() {
 
         return new WaiterBuilder<DescribeStacksRequest, DescribeStacksResult>()
                 .withSdkFunction(new DescribeStacksFunction(client))

@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DisableAvailabilityZonesForLoadBalancer.
+ * </p>
  */
 public class DisableAvailabilityZonesForLoadBalancerRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

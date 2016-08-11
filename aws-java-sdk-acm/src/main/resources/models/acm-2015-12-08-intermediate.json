@@ -20,6 +20,7 @@
     "endpointPrefix" : "acm",
     "signingName" : "acm",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSCertificateManagerClientBuilder",
     "asyncClientBuilderClassName" : "AWSCertificateManagerAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AWSCertificateManagerModuleInjector",
@@ -28,8 +29,7 @@
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "jsonProtocol" : true
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "AddTagsToCertificate" : {
@@ -63,12 +63,12 @@
         "documentation" : "<p>The request contains too many tags. Try the request again with fewer tags.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "AddTagsToCertificateResult",
       "asyncReturnType" : "AddTagsToCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsToCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToCertificateRequest, AddTagsToCertificateResult>",
+      "authenticated" : true,
       "methodName" : "addTagsToCertificate"
     },
     "DeleteCertificate" : {
@@ -99,12 +99,12 @@
         "documentation" : "<p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DeleteCertificateResult",
       "asyncReturnType" : "DeleteCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult>",
+      "authenticated" : true,
       "methodName" : "deleteCertificate"
     },
     "DescribeCertificate" : {
@@ -132,12 +132,12 @@
         "documentation" : "<p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "DescribeCertificateResult",
       "asyncReturnType" : "DescribeCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCertificateRequest, DescribeCertificateResult>",
+      "authenticated" : true,
       "methodName" : "describeCertificate"
     },
     "GetCertificate" : {
@@ -168,12 +168,12 @@
         "documentation" : "<p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "GetCertificateResult",
       "asyncReturnType" : "GetCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetCertificateRequest, GetCertificateResult>",
+      "authenticated" : true,
       "methodName" : "getCertificate"
     },
     "ListCertificates" : {
@@ -195,12 +195,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListCertificatesResult",
       "asyncReturnType" : "ListCertificatesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListCertificatesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListCertificatesResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult>",
+      "authenticated" : true,
       "methodName" : "listCertificates"
     },
     "ListTagsForCertificate" : {
@@ -228,12 +228,12 @@
         "documentation" : "<p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ListTagsForCertificateResult",
       "asyncReturnType" : "ListTagsForCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForCertificateRequest, ListTagsForCertificateResult>",
+      "authenticated" : true,
       "methodName" : "listTagsForCertificate"
     },
     "RemoveTagsFromCertificate" : {
@@ -264,12 +264,12 @@
         "documentation" : "<p>One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RemoveTagsFromCertificateResult",
       "asyncReturnType" : "RemoveTagsFromCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromCertificateRequest, RemoveTagsFromCertificateResult>",
+      "authenticated" : true,
       "methodName" : "removeTagsFromCertificate"
     },
     "RequestCertificate" : {
@@ -297,12 +297,12 @@
         "documentation" : "<p>One or more values in the <a>DomainValidationOption</a> structure is incorrect.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "RequestCertificateResult",
       "asyncReturnType" : "RequestCertificateResult",
       "asyncFutureType" : "java.util.concurrent.Future<RequestCertificateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RequestCertificateResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RequestCertificateRequest, RequestCertificateResult>",
+      "authenticated" : true,
       "methodName" : "requestCertificate"
     },
     "ResendValidationEmail" : {
@@ -336,12 +336,12 @@
         "documentation" : "<p>One or more values in the <a>DomainValidationOption</a> structure is incorrect.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "authenticated" : true,
       "syncReturnType" : "ResendValidationEmailResult",
       "asyncReturnType" : "ResendValidationEmailResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResendValidationEmailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ResendValidationEmailResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResendValidationEmailRequest, ResendValidationEmailResult>",
+      "authenticated" : true,
       "methodName" : "resendValidationEmail"
     }
   },
@@ -8658,11 +8658,11 @@
     "examples" : { },
     "version" : "1.0"
   },
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException",
   "hasWaiters" : false,
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "sdkModeledExceptionBaseClassName" : "AWSCertificateManagerException"
 }

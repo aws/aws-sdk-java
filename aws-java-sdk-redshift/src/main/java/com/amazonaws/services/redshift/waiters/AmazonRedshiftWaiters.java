@@ -50,7 +50,7 @@ public class AmazonRedshiftWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter clusterDeleted() {
+    public Waiter<DescribeClustersRequest> clusterDeleted() {
 
         return new WaiterBuilder<DescribeClustersRequest, DescribeClustersResult>()
                 .withSdkFunction(new DescribeClustersFunction(client))
@@ -70,7 +70,7 @@ public class AmazonRedshiftWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter snapshotAvailable() {
+    public Waiter<DescribeClusterSnapshotsRequest> snapshotAvailable() {
 
         return new WaiterBuilder<DescribeClusterSnapshotsRequest, DescribeClusterSnapshotsResult>()
                 .withSdkFunction(new DescribeClusterSnapshotsFunction(client))
@@ -90,7 +90,7 @@ public class AmazonRedshiftWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter clusterRestored() {
+    public Waiter<DescribeClustersRequest> clusterRestored() {
 
         return new WaiterBuilder<DescribeClustersRequest, DescribeClustersResult>()
                 .withSdkFunction(new DescribeClustersFunction(client))
@@ -109,7 +109,7 @@ public class AmazonRedshiftWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter clusterAvailable() {
+    public Waiter<DescribeClustersRequest> clusterAvailable() {
 
         return new WaiterBuilder<DescribeClustersRequest, DescribeClustersResult>()
                 .withSdkFunction(new DescribeClustersFunction(client))

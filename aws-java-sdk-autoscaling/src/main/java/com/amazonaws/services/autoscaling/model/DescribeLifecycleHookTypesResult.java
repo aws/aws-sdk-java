@@ -17,59 +17,26 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of DescribeLifecycleHookTypes.
+ * </p>
  */
 public class DescribeLifecycleHookTypesResult implements Serializable,
         Cloneable {
 
     /**
      * <p>
-     * One or more of the following notification types:
+     * The lifecycle hook types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> lifecycleHookTypes;
 
     /**
      * <p>
-     * One or more of the following notification types:
+     * The lifecycle hook types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return One or more of the following notification types:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
-     *         </p>
-     *         </li>
+     * @return The lifecycle hook types.
      */
 
     public java.util.List<String> getLifecycleHookTypes() {
@@ -81,34 +48,11 @@ public class DescribeLifecycleHookTypesResult implements Serializable,
 
     /**
      * <p>
-     * One or more of the following notification types:
+     * The lifecycle hook types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param lifecycleHookTypes
-     *        One or more of the following notification types:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
-     *        </p>
-     *        </li>
+     *        The lifecycle hook types.
      */
 
     public void setLifecycleHookTypes(
@@ -124,20 +68,8 @@ public class DescribeLifecycleHookTypesResult implements Serializable,
 
     /**
      * <p>
-     * One or more of the following notification types:
+     * The lifecycle hook types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setLifecycleHookTypes(java.util.Collection)} or
@@ -146,18 +78,7 @@ public class DescribeLifecycleHookTypesResult implements Serializable,
      * </p>
      * 
      * @param lifecycleHookTypes
-     *        One or more of the following notification types:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
-     *        </p>
-     *        </li>
+     *        The lifecycle hook types.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -176,34 +97,11 @@ public class DescribeLifecycleHookTypesResult implements Serializable,
 
     /**
      * <p>
-     * One or more of the following notification types:
+     * The lifecycle hook types.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param lifecycleHookTypes
-     *        One or more of the following notification types:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
-     *        </p>
-     *        </li>
+     *        The lifecycle hook types.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

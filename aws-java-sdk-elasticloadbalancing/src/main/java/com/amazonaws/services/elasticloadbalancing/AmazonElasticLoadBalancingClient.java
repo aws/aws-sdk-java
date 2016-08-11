@@ -50,21 +50,33 @@ import com.amazonaws.services.elasticloadbalancing.model.transform.*;
  * <p>
  * <fullname>Elastic Load Balancing</fullname>
  * <p>
- * Elastic Load Balancing distributes incoming traffic across your EC2
- * instances.
+ * A load balancer distributes incoming traffic across your EC2 instances. This
+ * enables you to increase the availability of your application. The load
+ * balancer also monitors the health of its registered instances and ensures
+ * that it routes traffic only to healthy instances. You configure your load
+ * balancer to accept incoming traffic by specifying one or more listeners,
+ * which are configured with a protocol and port number for connections from
+ * clients to the load balancer and a protocol and port number for connections
+ * from the load balancer to the instances.
  * </p>
  * <p>
- * For information about the features of Elastic Load Balancing, see <a href=
- * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elastic-load-balancing.html"
- * >What Is Elastic Load Balancing?</a> in the <i>Elastic Load Balancing
- * Developer Guide</i>.
+ * Elastic Load Balancing supports two types of load balancers: Classic load
+ * balancers and Application load balancers (new). A Classic load balancer makes
+ * routing and load balancing decisions either at the transport layer (TCP/SSL)
+ * or the application layer (HTTP/HTTPS), and supports either EC2-Classic or a
+ * VPC. An Application load balancer makes routing and load balancing decisions
+ * at the application layer (HTTP/HTTPS), supports path-based routing, and can
+ * route requests to one or more ports on each EC2 instance or container
+ * instance in your virtual private cloud (VPC). For more information, see the .
  * </p>
  * <p>
- * For information about the AWS regions supported by Elastic Load Balancing,
- * see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region"
- * >Regions and Endpoints - Elastic Load Balancing</a> in the <i>Amazon Web
- * Services General Reference</i>.
+ * This reference covers the 2012-06-01 API, which supports Classic load
+ * balancers. The 2015-12-01 API supports Application load balancers.
+ * </p>
+ * <p>
+ * To get started, create a load balancer with one or more listeners using
+ * <a>CreateLoadBalancer</a>. Register your instances with the load balancer
+ * using <a>RegisterInstancesWithLoadBalancer</a>.
  * </p>
  * <p>
  * All Elastic Load Balancing operations are <i>idempotent</i>, which means that
@@ -274,6 +286,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
 
     private void init() {
         exceptionUnmarshallers
+                .add(new UnsupportedProtocolExceptionUnmarshaller());
+        exceptionUnmarshallers
                 .add(new LoadBalancerAttributeNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new LoadBalancerNotFoundExceptionUnmarshaller());
@@ -285,6 +299,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
                 .add(new InvalidSecurityGroupExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new DuplicateLoadBalancerNameExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new DependencyThrottleExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PolicyNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new CertificateNotFoundExceptionUnmarshaller());
@@ -331,12 +347,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/add-remove-tags.html"
-     * >Tag Your Load Balancer</a> in the <i>Elastic Load Balancing Developer
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html"
+     * >Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.
      * </p>
      * 
      * @param addTagsRequest
+     *        Contains the parameters for AddTags.
      * @return Result of the AddTags operation returned by the service.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
@@ -387,12 +404,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-security-groups.html#elb-vpc-security-groups"
-     * >Security Groups for Load Balancers in a VPC</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups"
+     * >Security Groups for Load Balancers in a VPC</a> in the <i>Classic Load
+     * Balancers Guide</i>.
      * </p>
      * 
      * @param applySecurityGroupsToLoadBalancerRequest
+     *        Contains the parameters for ApplySecurityGroupsToLoadBalancer.
      * @return Result of the ApplySecurityGroupsToLoadBalancer operation
      *         returned by the service.
      * @throws LoadBalancerNotFoundException
@@ -445,12 +463,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * <p>
      * The load balancer evenly distributes requests across all registered
      * subnets. For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-manage-subnets.html"
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html"
      * >Add or Remove Subnets for Your Load Balancer in a VPC</a> in the
-     * <i>Elastic Load Balancing Developer Guide</i>.
+     * <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param attachLoadBalancerToSubnetsRequest
+     *        Contains the parameters for AttachLoaBalancerToSubnets.
      * @return Result of the AttachLoadBalancerToSubnets operation returned by
      *         the service.
      * @throws LoadBalancerNotFoundException
@@ -500,16 +519,17 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
     /**
      * <p>
      * Specifies the health check settings to use when evaluating the health
-     * state of your back-end instances.
+     * state of your EC2 instances.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-healthchecks.html"
-     * >Configure Health Checks</a> in the <i>Elastic Load Balancing Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html"
+     * >Configure Health Checks for Your Load Balancer</a> in the <i>Classic
+     * Load Balancers Guide</i>.
      * </p>
      * 
      * @param configureHealthCheckRequest
+     *        Contains the parameters for ConfigureHealthCheck.
      * @return Result of the ConfigureHealthCheck operation returned by the
      *         service.
      * @throws LoadBalancerNotFoundException
@@ -570,12 +590,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-sticky-sessions.html#enable-sticky-sessions-application"
-     * >Application-Controlled Session Stickiness</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application"
+     * >Application-Controlled Session Stickiness</a> in the <i>Classic Load
+     * Balancers Guide</i>.
      * </p>
      * 
      * @param createAppCookieStickinessPolicyRequest
+     *        Contains the parameters for CreateAppCookieStickinessPolicy.
      * @return Result of the CreateAppCookieStickinessPolicy operation returned
      *         by the service.
      * @throws LoadBalancerNotFoundException
@@ -632,12 +653,12 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * <p>
      * When a load balancer implements this policy, the load balancer uses a
-     * special cookie to track the back-end server instance for each request.
-     * When the load balancer receives a request, it first checks to see if this
-     * cookie is present in the request. If so, the load balancer sends the
-     * request to the application server specified in the cookie. If not, the
-     * load balancer sends the request to a server that is chosen based on the
-     * existing load-balancing algorithm.
+     * special cookie to track the instance for each request. When the load
+     * balancer receives a request, it first checks to see if this cookie is
+     * present in the request. If so, the load balancer sends the request to the
+     * application server specified in the cookie. If not, the load balancer
+     * sends the request to a server that is chosen based on the existing
+     * load-balancing algorithm.
      * </p>
      * <p>
      * A cookie is inserted into the response for binding subsequent requests
@@ -647,12 +668,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-sticky-sessions.html#enable-sticky-sessions-duration"
-     * >Duration-Based Session Stickiness</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration"
+     * >Duration-Based Session Stickiness</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @param createLBCookieStickinessPolicyRequest
+     *        Contains the parameters for CreateLBCookieStickinessPolicy.
      * @return Result of the CreateLBCookieStickinessPolicy operation returned
      *         by the service.
      * @throws LoadBalancerNotFoundException
@@ -703,27 +725,31 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Creates a load balancer.
+     * Creates a Classic load balancer.
      * </p>
      * <p>
-     * If the call completes successfully, a new load balancer is created with a
-     * unique Domain Name Service (DNS) name. The load balancer receives
-     * incoming traffic and routes it to the registered instances. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/how-elb-works.html"
-     * >How Elastic Load Balancing Works</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * You can add listeners, security groups, subnets, and tags when you create
+     * your load balancer, or you can add them later using
+     * <a>CreateLoadBalancerListeners</a>,
+     * <a>ApplySecurityGroupsToLoadBalancer</a>,
+     * <a>AttachLoadBalancerToSubnets</a>, and <a>AddTags</a>.
+     * </p>
+     * <p>
+     * To describe your current load balancers, see
+     * <a>DescribeLoadBalancers</a>. When you are finished with a load balancer,
+     * you can delete it using <a>DeleteLoadBalancer</a>.
      * </p>
      * <p>
      * You can create up to 20 load balancers per region per account. You can
      * request an increase for the number of load balancers for your account.
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-limits.html"
-     * >Elastic Load Balancing Limits</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html"
+     * >Limits for Your Classic Load Balancer</a> in the <i>Classic Load
+     * Balancers Guide</i>.
      * </p>
      * 
      * @param createLoadBalancerRequest
+     *        Contains the parameters for CreateLoadBalancer.
      * @return Result of the CreateLoadBalancer operation returned by the
      *         service.
      * @throws DuplicateLoadBalancerNameException
@@ -731,8 +757,11 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * @throws TooManyLoadBalancersException
      *         The quota for the number of load balancers has been reached.
      * @throws CertificateNotFoundException
-     *         The specified SSL ID does not refer to a valid SSL certificate in
-     *         AWS Identity and Access Management (IAM).
+     *         The specified ARN does not refer to a valid SSL certificate in
+     *         AWS Identity and Access Management (IAM) or AWS Certificate
+     *         Manager (ACM). Note that if you recently uploaded the certificate
+     *         to IAM, this error might indicate that the certificate is not
+     *         fully available yet.
      * @throws InvalidConfigurationRequestException
      *         The requested configuration change is not valid.
      * @throws SubnetNotFoundException
@@ -749,6 +778,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      *         balancer has been reached.
      * @throws DuplicateTagKeysException
      *         A tag key was specified more than once.
+     * @throws UnsupportedProtocolException
      * @sample AmazonElasticLoadBalancing.CreateLoadBalancer
      */
     @Override
@@ -794,26 +824,30 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html"
-     * >Add a Listener to Your Load Balancer</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html"
+     * >Listeners for Your Classic Load Balancer</a> in the <i>Classic Load
+     * Balancers Guide</i>.
      * </p>
      * 
      * @param createLoadBalancerListenersRequest
+     *        Contains the parameters for CreateLoadBalancerListeners.
      * @return Result of the CreateLoadBalancerListeners operation returned by
      *         the service.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
      * @throws DuplicateListenerException
-     *         A listener already exists for the specified
-     *         <code>LoadBalancerName</code> and <code>LoadBalancerPort</code>,
-     *         but with a different <code>InstancePort</code>,
-     *         <code>Protocol</code>, or <code>SSLCertificateId</code>.
+     *         A listener already exists for the specified load balancer name
+     *         and port, but with a different instance port, protocol, or SSL
+     *         certificate.
      * @throws CertificateNotFoundException
-     *         The specified SSL ID does not refer to a valid SSL certificate in
-     *         AWS Identity and Access Management (IAM).
+     *         The specified ARN does not refer to a valid SSL certificate in
+     *         AWS Identity and Access Management (IAM) or AWS Certificate
+     *         Manager (ACM). Note that if you recently uploaded the certificate
+     *         to IAM, this error might indicate that the certificate is not
+     *         fully available yet.
      * @throws InvalidConfigurationRequestException
      *         The requested configuration change is not valid.
+     * @throws UnsupportedProtocolException
      * @sample AmazonElasticLoadBalancing.CreateLoadBalancerListeners
      */
     @Override
@@ -857,11 +891,12 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * <p>
      * Policies are settings that are saved for your load balancer and that can
-     * be applied to the front-end listener or the back-end application server,
-     * depending on the policy type.
+     * be applied to the listener or the application server, depending on the
+     * policy type.
      * </p>
      * 
      * @param createLoadBalancerPolicyRequest
+     *        Contains the parameters for CreateLoadBalancerPolicy.
      * @return Result of the CreateLoadBalancerPolicy operation returned by the
      *         service.
      * @throws LoadBalancerNotFoundException
@@ -921,7 +956,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * all settings. The DNS name associated with a deleted load balancer are no
      * longer usable. The name and associated DNS record of the deleted load
      * balancer no longer exist and traffic sent to any of its IP addresses is
-     * no longer delivered to back-end instances.
+     * no longer delivered to your instances.
      * </p>
      * <p>
      * If the load balancer does not exist or has already been deleted, the call
@@ -929,6 +964,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteLoadBalancerRequest
+     *        Contains the parameters for DeleteLoadBalancer.
      * @return Result of the DeleteLoadBalancer operation returned by the
      *         service.
      * @sample AmazonElasticLoadBalancing.DeleteLoadBalancer
@@ -973,6 +1009,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteLoadBalancerListenersRequest
+     *        Contains the parameters for DeleteLoadBalancerListeners.
      * @return Result of the DeleteLoadBalancerListeners operation returned by
      *         the service.
      * @throws LoadBalancerNotFoundException
@@ -1020,7 +1057,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteLoadBalancerPolicyRequest
-     *        =
+     *        Contains the parameters for DeleteLoadBalancerPolicy.
      * @return Result of the DeleteLoadBalancerPolicy operation returned by the
      *         service.
      * @throws LoadBalancerNotFoundException
@@ -1075,12 +1112,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"
-     * >Deregister and Register Amazon EC2 Instances</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html"
+     * >Register or De-Register EC2 Instances</a> in the <i>Classic Load
+     * Balancers Guide</i>.
      * </p>
      * 
      * @param deregisterInstancesFromLoadBalancerRequest
+     *        Contains the parameters for DeregisterInstancesFromLoadBalancer.
      * @return Result of the DeregisterInstancesFromLoadBalancer operation
      *         returned by the service.
      * @throws LoadBalancerNotFoundException
@@ -1134,6 +1172,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param describeInstanceHealthRequest
+     *        Contains the parameters for DescribeInstanceHealth.
      * @return Result of the DescribeInstanceHealth operation returned by the
      *         service.
      * @throws LoadBalancerNotFoundException
@@ -1182,6 +1221,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param describeLoadBalancerAttributesRequest
+     *        Contains the parameters for DescribeLoadBalancerAttributes.
      * @return Result of the DescribeLoadBalancerAttributes operation returned
      *         by the service.
      * @throws LoadBalancerNotFoundException
@@ -1239,6 +1279,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param describeLoadBalancerPoliciesRequest
+     *        Contains the parameters for DescribeLoadBalancerPolicies.
      * @return Result of the DescribeLoadBalancerPolicies operation returned by
      *         the service.
      * @throws LoadBalancerNotFoundException
@@ -1288,14 +1329,24 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Describes the specified load balancer policy types.
+     * Describes the specified load balancer policy types or all load balancer
+     * policy types.
      * </p>
      * <p>
-     * You can use these policy types with <a>CreateLoadBalancerPolicy</a> to
-     * create policy configurations for a load balancer.
+     * The description of each type indicates how it can be used. For example,
+     * some policies can be used only with layer 7 listeners, some policies can
+     * be used only with layer 4 listeners, and some policies can be used only
+     * with your EC2 instances.
+     * </p>
+     * <p>
+     * You can use <a>CreateLoadBalancerPolicy</a> to create a policy
+     * configuration for any of these policy types. Then, depending on the
+     * policy type, use either <a>SetLoadBalancerPoliciesOfListener</a> or
+     * <a>SetLoadBalancerPoliciesForBackendServer</a> to set the policy.
      * </p>
      * 
      * @param describeLoadBalancerPolicyTypesRequest
+     *        Contains the parameters for DescribeLoadBalancerPolicyTypes.
      * @return Result of the DescribeLoadBalancerPolicyTypes operation returned
      *         by the service.
      * @throws PolicyTypeNotFoundException
@@ -1348,10 +1399,12 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param describeLoadBalancersRequest
+     *        Contains the parameters for DescribeLoadBalancers.
      * @return Result of the DescribeLoadBalancers operation returned by the
      *         service.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
+     * @throws DependencyThrottleException
      * @sample AmazonElasticLoadBalancing.DescribeLoadBalancers
      */
     @Override
@@ -1399,6 +1452,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param describeTagsRequest
+     *        Contains the parameters for DescribeTags.
      * @return Result of the DescribeTags operation returned by the service.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
@@ -1450,6 +1504,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param detachLoadBalancerFromSubnetsRequest
+     *        Contains the parameters for DetachLoadBalancerFromSubnets.
      * @return Result of the DetachLoadBalancerFromSubnets operation returned by
      *         the service.
      * @throws LoadBalancerNotFoundException
@@ -1507,12 +1562,14 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html"
-     * >Disable an Availability Zone from a Load-Balanced Application</a> in the
-     * <i>Elastic Load Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html"
+     * >Add or Remove Availability Zones</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @param disableAvailabilityZonesForLoadBalancerRequest
+     *        Contains the parameters for
+     *        DisableAvailabilityZonesForLoadBalancer.
      * @return Result of the DisableAvailabilityZonesForLoadBalancer operation
      *         returned by the service.
      * @throws LoadBalancerNotFoundException
@@ -1567,12 +1624,14 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html"
-     * >Add Availability Zone</a> in the <i>Elastic Load Balancing Developer
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html"
+     * >Add or Remove Availability Zones</a> in the <i>Classic Load Balancers
      * Guide</i>.
      * </p>
      * 
      * @param enableAvailabilityZonesForLoadBalancerRequest
+     *        Contains the parameters for
+     *        EnableAvailabilityZonesForLoadBalancer.
      * @return Result of the EnableAvailabilityZonesForLoadBalancer operation
      *         returned by the service.
      * @throws LoadBalancerNotFoundException
@@ -1626,25 +1685,42 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * value for your load balancer.
      * </p>
      * <p>
-     * For more information, see the following in the <i>Elastic Load Balancing
-     * Developer Guide</i>:
+     * For more information, see the following in the <i>Classic Load Balancers
+     * Guide</i>:
      * </p>
      * <ul>
-     * <li><a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#request-routing"
-     * >Cross-Zone Load Balancing</a></li>
-     * <li><a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
-     * >Connection Draining</a></li>
-     * <li><a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html"
-     * >Access Logs</a></li>
-     * <li><a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#idle-timeout"
-     * >Idle Connection Timeout</a></li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
+     * >Cross-Zone Load Balancing</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html"
+     * >Connection Draining</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html"
+     * >Access Logs</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html"
+     * >Idle Connection Timeout</a>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param modifyLoadBalancerAttributesRequest
+     *        Contains the parameters for ModifyLoadBalancerAttributes.
      * @return Result of the ModifyLoadBalancerAttributes operation returned by
      *         the service.
      * @throws LoadBalancerNotFoundException
@@ -1715,22 +1791,18 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * to the <code>InService</code> state.
      * </p>
      * <p>
-     * If you stop an instance registered with a load balancer and then start
-     * it, the IP addresses associated with the instance changes. Elastic Load
-     * Balancing cannot recognize the new IP address, which prevents it from
-     * routing traffic to the instances. We recommend that you use the following
-     * sequence: stop the instance, deregister the instance, start the instance,
-     * and then register the instance. To deregister instances from a load
-     * balancer, use <a>DeregisterInstancesFromLoadBalancer</a>.
+     * To deregister instances from a load balancer, use
+     * <a>DeregisterInstancesFromLoadBalancer</a>.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"
-     * >Deregister and Register EC2 Instances</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html"
+     * >Register or De-Register EC2 Instances</a> in the <i>Classic Load
+     * Balancers Guide</i>.
      * </p>
      * 
      * @param registerInstancesWithLoadBalancerRequest
+     *        Contains the parameters for RegisterInstancesWithLoadBalancer.
      * @return Result of the RegisterInstancesWithLoadBalancer operation
      *         returned by the service.
      * @throws LoadBalancerNotFoundException
@@ -1779,6 +1851,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param removeTagsRequest
+     *        Contains the parameters for RemoveTags.
      * @return Result of the RemoveTags operation returned by the service.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
@@ -1824,17 +1897,21 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * </p>
      * <p>
      * For more information about updating your SSL certificate, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html"
-     * >Updating an SSL Certificate for a Load Balancer</a> in the <i>Elastic
-     * Load Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html"
+     * >Replace the SSL Certificate for Your Load Balancer</a> in the <i>Classic
+     * Load Balancers Guide</i>.
      * </p>
      * 
      * @param setLoadBalancerListenerSSLCertificateRequest
+     *        Contains the parameters for SetLoadBalancerListenerSSLCertificate.
      * @return Result of the SetLoadBalancerListenerSSLCertificate operation
      *         returned by the service.
      * @throws CertificateNotFoundException
-     *         The specified SSL ID does not refer to a valid SSL certificate in
-     *         AWS Identity and Access Management (IAM).
+     *         The specified ARN does not refer to a valid SSL certificate in
+     *         AWS Identity and Access Management (IAM) or AWS Certificate
+     *         Manager (ACM). Note that if you recently uploaded the certificate
+     *         to IAM, this error might indicate that the certificate is not
+     *         fully available yet.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
      * @throws ListenerNotFoundException
@@ -1842,6 +1919,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      *         specified port.
      * @throws InvalidConfigurationRequestException
      *         The requested configuration change is not valid.
+     * @throws UnsupportedProtocolException
      * @sample AmazonElasticLoadBalancing.SetLoadBalancerListenerSSLCertificate
      */
     @Override
@@ -1881,10 +1959,10 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
     /**
      * <p>
      * Replaces the set of policies associated with the specified port on which
-     * the back-end server is listening with a new set of policies. At this
-     * time, only the back-end server authentication policy type can be applied
-     * to the back-end ports; this policy type is composed of multiple public
-     * key policies.
+     * the EC2 instance is listening with a new set of policies. At this time,
+     * only the back-end server authentication policy type can be applied to the
+     * instance ports; this policy type is composed of multiple public key
+     * policies.
      * </p>
      * <p>
      * Each time you use <code>SetLoadBalancerPoliciesForBackendServer</code> to
@@ -1894,10 +1972,23 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * <p>
      * You can use <a>DescribeLoadBalancers</a> or
      * <a>DescribeLoadBalancerPolicies</a> to verify that the policy is
-     * associated with the back-end server.
+     * associated with the EC2 instance.
+     * </p>
+     * <p>
+     * For more information about enabling back-end instance authentication, see
+     * <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html#configure_backendauth_clt"
+     * >Configure Back-end Instance Authentication</a> in the <i>Classic Load
+     * Balancers Guide</i>. For more information about Proxy Protocol, see <a
+     * href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html"
+     * >Configure Proxy Protocol Support</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @param setLoadBalancerPoliciesForBackendServerRequest
+     *        Contains the parameters for
+     *        SetLoadBalancerPoliciesForBackendServer.
      * @return Result of the SetLoadBalancerPoliciesForBackendServer operation
      *         returned by the service.
      * @throws LoadBalancerNotFoundException
@@ -1945,12 +2036,26 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Associates, updates, or disables a policy with a listener for the
-     * specified load balancer. You can associate multiple policies with a
-     * listener.
+     * Replaces the current set of policies for the specified load balancer port
+     * with the specified set of policies.
+     * </p>
+     * <p>
+     * To enable back-end server authentication, use
+     * <a>SetLoadBalancerPoliciesForBackendServer</a>.
+     * </p>
+     * <p>
+     * For more information about setting policies, see <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/ssl-config-update.html"
+     * >Update the SSL Negotiation Configuration</a>, <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration"
+     * >Duration-Based Session Stickiness</a>, and <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application"
+     * >Application-Controlled Session Stickiness</a> in the <i>Classic Load
+     * Balancers Guide</i>.
      * </p>
      * 
      * @param setLoadBalancerPoliciesOfListenerRequest
+     *        Contains the parameters for SetLoadBalancePoliciesOfListener.
      * @return Result of the SetLoadBalancerPoliciesOfListener operation
      *         returned by the service.
      * @throws LoadBalancerNotFoundException

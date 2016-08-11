@@ -111,6 +111,13 @@ public class AutoScalingGroupStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("TargetGroupARNs/member",
+                        targetDepth)) {
+                    autoScalingGroup.withTargetGroupARNs(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("HealthCheckType", targetDepth)) {
                     autoScalingGroup.setHealthCheckType(StringStaxUnmarshaller
                             .getInstance().unmarshall(context));

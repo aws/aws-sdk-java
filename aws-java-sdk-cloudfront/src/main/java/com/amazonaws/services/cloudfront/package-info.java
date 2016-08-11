@@ -14,7 +14,14 @@
  */
 
 /**
- * 
+ * <fullname>Amazon CloudFront</fullname>
+ * <p>
+ * Amazon CloudFront is a global content delivery network (CDN) service that
+ * accelerates delivery of your websites, APIs, video content or other web
+ * assets. It integrates with other Amazon Web Services products to give
+ * developers and businesses an easy way to accelerate content to end users with
+ * no minimum usage commitments.
+ * </p>
  */
 package com.amazonaws.services.cloudfront;
 

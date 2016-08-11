@@ -44,6 +44,7 @@ public final class AmazonS3ClientBuilder extends
     private Boolean chunkedEncodingDisabled;
     private Boolean accelerateModeEnabled;
     private Boolean payloadSigningEnabled;
+    private Boolean dualstackEnabled;
 
     /**
      * @return Create new instance of builder with all defaults set.
@@ -313,6 +314,44 @@ public final class AmazonS3ClientBuilder extends
     }
 
     /**
+     * @return The current setting for dualstack mode configured in the builder.
+     */
+    public Boolean isDualstackEnabled() {
+        return dualstackEnabled;
+    }
+
+    /**
+     * <p>Configures the client to use Amazon S3 dualstack mode for all requests.</p>
+     *
+     * @param dualstackEnabled True to enable dualstack mode.
+     * @return This object for method chaining.
+     */
+    public void setDualstackEnabled(Boolean dualstackEnabled) {
+        this.dualstackEnabled = dualstackEnabled;
+    }
+
+    /**
+     * <p>Configures the client to use Amazon S3 dualstack mode for all requests.</p>
+     *
+     * @param dualstackEnabled True to enable dualstack mode.
+     * @return This object for method chaining.
+     */
+    public AmazonS3ClientBuilder withDualstackEnabled(Boolean dualstackEnabled) {
+        setDualstackEnabled(dualstackEnabled);
+        return this;
+    }
+
+    /**
+     * <p>Enables dualstack mode on clients built with the builder.</p>
+
+     * @return This object for method chaining.
+     */
+    public AmazonS3ClientBuilder enableDualstack() {
+        setDualstackEnabled(Boolean.TRUE);
+        return this;
+    }
+
+    /**
      * Construct a synchronous implementation of AmazonS3 using the current builder configuration.
      *
      * @return Fully configured implementation of AmazonS3.
@@ -336,6 +375,9 @@ public final class AmazonS3ClientBuilder extends
         }
         if (this.pathStyleAccessEnabled != null) {
             builder.setPathStyleAccess(this.pathStyleAccessEnabled);
+        }
+        if(this.dualstackEnabled != null && this.dualstackEnabled) {
+            builder.enableDualstack();
         }
         return builder.build();
     }

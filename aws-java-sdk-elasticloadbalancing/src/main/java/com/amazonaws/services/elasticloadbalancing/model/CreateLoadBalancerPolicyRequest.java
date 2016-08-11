@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateLoadBalancerPolicy.
+ * </p>
  */
 public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -45,7 +47,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
     private String policyTypeName;
     /**
      * <p>
-     * The attributes for the policy.
+     * The policy attributes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PolicyAttribute> policyAttributes;
@@ -189,10 +191,10 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The attributes for the policy.
+     * The policy attributes.
      * </p>
      * 
-     * @return The attributes for the policy.
+     * @return The policy attributes.
      */
 
     public java.util.List<PolicyAttribute> getPolicyAttributes() {
@@ -204,11 +206,11 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The attributes for the policy.
+     * The policy attributes.
      * </p>
      * 
      * @param policyAttributes
-     *        The attributes for the policy.
+     *        The policy attributes.
      */
 
     public void setPolicyAttributes(
@@ -224,7 +226,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The attributes for the policy.
+     * The policy attributes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -234,7 +236,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param policyAttributes
-     *        The attributes for the policy.
+     *        The policy attributes.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -253,11 +255,11 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The attributes for the policy.
+     * The policy attributes.
      * </p>
      * 
      * @param policyAttributes
-     *        The attributes for the policy.
+     *        The policy attributes.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

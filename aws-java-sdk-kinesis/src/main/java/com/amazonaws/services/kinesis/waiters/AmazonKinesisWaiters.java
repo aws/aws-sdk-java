@@ -50,7 +50,7 @@ public class AmazonKinesisWaiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter streamExists() {
+    public Waiter<DescribeStreamRequest> streamExists() {
 
         return new WaiterBuilder<DescribeStreamRequest, DescribeStreamResult>()
                 .withSdkFunction(new DescribeStreamFunction(client))

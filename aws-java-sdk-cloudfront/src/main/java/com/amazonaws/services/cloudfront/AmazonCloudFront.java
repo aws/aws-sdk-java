@@ -22,6 +22,15 @@ import com.amazonaws.services.cloudfront.waiters.AmazonCloudFrontWaiters;
 
 /**
  * Interface for accessing CloudFront.
+ * <p>
+ * <fullname>Amazon CloudFront</fullname>
+ * <p>
+ * Amazon CloudFront is a global content delivery network (CDN) service that
+ * accelerates delivery of your websites, APIs, video content or other web
+ * assets. It integrates with other Amazon Web Services products to give
+ * developers and businesses an easy way to accelerate content to end users with
+ * no minimum usage commitments.
+ * </p>
  */
 public interface AmazonCloudFront {
 
@@ -203,6 +212,91 @@ public interface AmazonCloudFront {
             CreateDistributionRequest createDistributionRequest);
 
     /**
+     * Create a new distribution with tags.
+     * 
+     * @param createDistributionWithTagsRequest
+     *        The request to create a new distribution with tags
+     * @return Result of the CreateDistributionWithTags operation returned by
+     *         the service.
+     * @throws CNAMEAlreadyExistsException
+     * @throws DistributionAlreadyExistsException
+     *         The caller reference you attempted to create the distribution
+     *         with is associated with another distribution.
+     * @throws InvalidOriginException
+     *         The Amazon S3 origin server specified does not refer to a valid
+     *         Amazon S3 bucket.
+     * @throws InvalidOriginAccessIdentityException
+     *         The origin access identity is not valid or doesn't exist.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws TooManyTrustedSignersException
+     *         Your request contains more trusted signers than are allowed per
+     *         distribution.
+     * @throws TrustedSignerDoesNotExistException
+     *         One or more of your trusted signers do not exist.
+     * @throws InvalidViewerCertificateException
+     * @throws InvalidMinimumProtocolVersionException
+     * @throws MissingBodyException
+     *         This operation requires a body. Ensure that the body is present
+     *         and the Content-Type header is set.
+     * @throws TooManyDistributionCNAMEsException
+     *         Your request contains more CNAMEs than are allowed per
+     *         distribution.
+     * @throws TooManyDistributionsException
+     *         Processing your request would cause you to exceed the maximum
+     *         number of distributions allowed.
+     * @throws InvalidDefaultRootObjectException
+     *         The default root object file name is too big or contains an
+     *         invalid character.
+     * @throws InvalidRelativePathException
+     *         The relative path is too big, is not URL-encoded, or does not
+     *         begin with a slash (/).
+     * @throws InvalidErrorCodeException
+     * @throws InvalidResponseCodeException
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InvalidRequiredProtocolException
+     *         This operation requires the HTTPS protocol. Ensure that you
+     *         specify the HTTPS protocol in your request, or omit the
+     *         RequiredProtocols element from your distribution configuration.
+     * @throws NoSuchOriginException
+     *         No origin exists with the specified Origin Id.
+     * @throws TooManyOriginsException
+     *         You cannot create anymore origins for the distribution.
+     * @throws TooManyCacheBehaviorsException
+     *         You cannot create anymore cache behaviors for the distribution.
+     * @throws TooManyCookieNamesInWhiteListException
+     *         Your request contains more cookie names in the whitelist than are
+     *         allowed per cache behavior.
+     * @throws InvalidForwardCookiesException
+     *         Your request contains forward cookies option which doesn't match
+     *         with the expectation for the whitelisted list of cookie names.
+     *         Either list of cookie names has been specified when not allowed
+     *         or list of cookie names is missing when expected.
+     * @throws TooManyHeadersInForwardedValuesException
+     * @throws InvalidHeadersForS3OriginException
+     * @throws InconsistentQuantitiesException
+     *         The value of Quantity and the size of Items do not match.
+     * @throws TooManyCertificatesException
+     *         You cannot create anymore custom ssl certificates.
+     * @throws InvalidLocationCodeException
+     * @throws InvalidGeoRestrictionParameterException
+     * @throws InvalidProtocolSettingsException
+     *         You cannot specify SSLv3 as the minimum protocol version if you
+     *         only want to support only clients that Support Server Name
+     *         Indication (SNI).
+     * @throws InvalidTTLOrderException
+     * @throws InvalidWebACLIdException
+     * @throws TooManyOriginCustomHeadersException
+     * @throws InvalidTaggingException
+     *         The specified tagging for a CloudFront resource is invalid. For
+     *         more information, see the error text.
+     * @sample AmazonCloudFront.CreateDistributionWithTags
+     */
+    CreateDistributionWithTagsResult createDistributionWithTags(
+            CreateDistributionWithTagsRequest createDistributionWithTagsRequest);
+
+    /**
      * Create a new invalidation.
      * 
      * @param createInvalidationRequest
@@ -265,6 +359,46 @@ public interface AmazonCloudFront {
      */
     CreateStreamingDistributionResult createStreamingDistribution(
             CreateStreamingDistributionRequest createStreamingDistributionRequest);
+
+    /**
+     * Create a new streaming distribution with tags.
+     * 
+     * @param createStreamingDistributionWithTagsRequest
+     *        The request to create a new streaming distribution with tags.
+     * @return Result of the CreateStreamingDistributionWithTags operation
+     *         returned by the service.
+     * @throws CNAMEAlreadyExistsException
+     * @throws StreamingDistributionAlreadyExistsException
+     * @throws InvalidOriginException
+     *         The Amazon S3 origin server specified does not refer to a valid
+     *         Amazon S3 bucket.
+     * @throws InvalidOriginAccessIdentityException
+     *         The origin access identity is not valid or doesn't exist.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws TooManyTrustedSignersException
+     *         Your request contains more trusted signers than are allowed per
+     *         distribution.
+     * @throws TrustedSignerDoesNotExistException
+     *         One or more of your trusted signers do not exist.
+     * @throws MissingBodyException
+     *         This operation requires a body. Ensure that the body is present
+     *         and the Content-Type header is set.
+     * @throws TooManyStreamingDistributionCNAMEsException
+     * @throws TooManyStreamingDistributionsException
+     *         Processing your request would cause you to exceed the maximum
+     *         number of streaming distributions allowed.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InconsistentQuantitiesException
+     *         The value of Quantity and the size of Items do not match.
+     * @throws InvalidTaggingException
+     *         The specified tagging for a CloudFront resource is invalid. For
+     *         more information, see the error text.
+     * @sample AmazonCloudFront.CreateStreamingDistributionWithTags
+     */
+    CreateStreamingDistributionWithTagsResult createStreamingDistributionWithTags(
+            CreateStreamingDistributionWithTagsRequest createStreamingDistributionWithTagsRequest);
 
     /**
      * Delete an origin access identity.
@@ -523,6 +657,65 @@ public interface AmazonCloudFront {
      */
     ListStreamingDistributionsResult listStreamingDistributions(
             ListStreamingDistributionsRequest listStreamingDistributionsRequest);
+
+    /**
+     * List tags for a CloudFront resource.
+     * 
+     * @param listTagsForResourceRequest
+     *        The request to list tags for a CloudFront resource.
+     * @return Result of the ListTagsForResource operation returned by the
+     *         service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InvalidTaggingException
+     *         The specified tagging for a CloudFront resource is invalid. For
+     *         more information, see the error text.
+     * @throws NoSuchResourceException
+     *         The specified CloudFront resource does not exist.
+     * @sample AmazonCloudFront.ListTagsForResource
+     */
+    ListTagsForResourceResult listTagsForResource(
+            ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * Add tags to a CloudFront resource.
+     * 
+     * @param tagResourceRequest
+     *        The request to add tags to a CloudFront resource.
+     * @return Result of the TagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InvalidTaggingException
+     *         The specified tagging for a CloudFront resource is invalid. For
+     *         more information, see the error text.
+     * @throws NoSuchResourceException
+     *         The specified CloudFront resource does not exist.
+     * @sample AmazonCloudFront.TagResource
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * Remove tags from a CloudFront resource.
+     * 
+     * @param untagResourceRequest
+     *        The request to remove tags from a CloudFront resource.
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InvalidTaggingException
+     *         The specified tagging for a CloudFront resource is invalid. For
+     *         more information, see the error text.
+     * @throws NoSuchResourceException
+     *         The specified CloudFront resource does not exist.
+     * @sample AmazonCloudFront.UntagResource
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Update an origin access identity.

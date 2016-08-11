@@ -17,7 +17,9 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output from DescribeNotificationConfigurations.
+ * </p>
  */
 public class DescribeNotificationConfigurationsResult implements Serializable,
         Cloneable {

@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for AddTags.
+ * </p>
  */
 public class AddTagsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

@@ -25,8 +25,8 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name for the policy being created. The name must be unique within the
-     * set of policies for this load balancer.
+     * The name of the policy. This name must be unique within the set of
+     * policies for this load balancer.
      * </p>
      */
     private String policyName;
@@ -53,8 +53,8 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
      * object members.
      * 
      * @param policyName
-     *        The name for the policy being created. The name must be unique
-     *        within the set of policies for this load balancer.
+     *        The name of the policy. This name must be unique within the set of
+     *        policies for this load balancer.
      * @param cookieExpirationPeriod
      *        The time period, in seconds, after which the cookie should be
      *        considered stale. If this parameter is not specified, the
@@ -68,13 +68,13 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name for the policy being created. The name must be unique within the
-     * set of policies for this load balancer.
+     * The name of the policy. This name must be unique within the set of
+     * policies for this load balancer.
      * </p>
      * 
      * @param policyName
-     *        The name for the policy being created. The name must be unique
-     *        within the set of policies for this load balancer.
+     *        The name of the policy. This name must be unique within the set of
+     *        policies for this load balancer.
      */
 
     public void setPolicyName(String policyName) {
@@ -83,12 +83,12 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name for the policy being created. The name must be unique within the
-     * set of policies for this load balancer.
+     * The name of the policy. This name must be unique within the set of
+     * policies for this load balancer.
      * </p>
      * 
-     * @return The name for the policy being created. The name must be unique
-     *         within the set of policies for this load balancer.
+     * @return The name of the policy. This name must be unique within the set
+     *         of policies for this load balancer.
      */
 
     public String getPolicyName() {
@@ -97,13 +97,13 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name for the policy being created. The name must be unique within the
-     * set of policies for this load balancer.
+     * The name of the policy. This name must be unique within the set of
+     * policies for this load balancer.
      * </p>
      * 
      * @param policyName
-     *        The name for the policy being created. The name must be unique
-     *        within the set of policies for this load balancer.
+     *        The name of the policy. This name must be unique within the set of
+     *        policies for this load balancer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

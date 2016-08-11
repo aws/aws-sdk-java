@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateLBCookieStickinessPolicy.
+ * </p>
  */
 public class CreateLBCookieStickinessPolicyRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -40,8 +42,9 @@ public class CreateLBCookieStickinessPolicyRequest extends
     /**
      * <p>
      * The time period, in seconds, after which the cookie should be considered
-     * stale. If you do not specify this parameter, the sticky session lasts for
-     * the duration of the browser session.
+     * stale. If you do not specify this parameter, the default value is 0,
+     * which indicates that the sticky session should last for the duration of
+     * the browser session.
      * </p>
      */
     private Long cookieExpirationPeriod;
@@ -171,14 +174,16 @@ public class CreateLBCookieStickinessPolicyRequest extends
     /**
      * <p>
      * The time period, in seconds, after which the cookie should be considered
-     * stale. If you do not specify this parameter, the sticky session lasts for
-     * the duration of the browser session.
+     * stale. If you do not specify this parameter, the default value is 0,
+     * which indicates that the sticky session should last for the duration of
+     * the browser session.
      * </p>
      * 
      * @param cookieExpirationPeriod
      *        The time period, in seconds, after which the cookie should be
-     *        considered stale. If you do not specify this parameter, the sticky
-     *        session lasts for the duration of the browser session.
+     *        considered stale. If you do not specify this parameter, the
+     *        default value is 0, which indicates that the sticky session should
+     *        last for the duration of the browser session.
      */
 
     public void setCookieExpirationPeriod(Long cookieExpirationPeriod) {
@@ -188,13 +193,15 @@ public class CreateLBCookieStickinessPolicyRequest extends
     /**
      * <p>
      * The time period, in seconds, after which the cookie should be considered
-     * stale. If you do not specify this parameter, the sticky session lasts for
-     * the duration of the browser session.
+     * stale. If you do not specify this parameter, the default value is 0,
+     * which indicates that the sticky session should last for the duration of
+     * the browser session.
      * </p>
      * 
      * @return The time period, in seconds, after which the cookie should be
      *         considered stale. If you do not specify this parameter, the
-     *         sticky session lasts for the duration of the browser session.
+     *         default value is 0, which indicates that the sticky session
+     *         should last for the duration of the browser session.
      */
 
     public Long getCookieExpirationPeriod() {
@@ -204,14 +211,16 @@ public class CreateLBCookieStickinessPolicyRequest extends
     /**
      * <p>
      * The time period, in seconds, after which the cookie should be considered
-     * stale. If you do not specify this parameter, the sticky session lasts for
-     * the duration of the browser session.
+     * stale. If you do not specify this parameter, the default value is 0,
+     * which indicates that the sticky session should last for the duration of
+     * the browser session.
      * </p>
      * 
      * @param cookieExpirationPeriod
      *        The time period, in seconds, after which the cookie should be
-     *        considered stale. If you do not specify this parameter, the sticky
-     *        session lasts for the duration of the browser session.
+     *        considered stale. If you do not specify this parameter, the
+     *        default value is 0, which indicates that the sticky session should
+     *        last for the duration of the browser session.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

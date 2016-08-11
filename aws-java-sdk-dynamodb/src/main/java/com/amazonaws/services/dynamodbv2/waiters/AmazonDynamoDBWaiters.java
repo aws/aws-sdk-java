@@ -50,7 +50,7 @@ public class AmazonDynamoDBWaiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter tableExists() {
+    public Waiter<DescribeTableRequest> tableExists() {
 
         return new WaiterBuilder<DescribeTableRequest, DescribeTableResult>()
                 .withSdkFunction(new DescribeTableFunction(client))
@@ -69,7 +69,7 @@ public class AmazonDynamoDBWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter tableNotExists() {
+    public Waiter<DescribeTableRequest> tableNotExists() {
 
         return new WaiterBuilder<DescribeTableRequest, DescribeTableResult>()
                 .withSdkFunction(new DescribeTableFunction(client))

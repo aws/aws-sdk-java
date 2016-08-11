@@ -50,7 +50,7 @@ public class AmazonIdentityManagementWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter instanceProfileExists() {
+    public Waiter<GetInstanceProfileRequest> instanceProfileExists() {
 
         return new WaiterBuilder<GetInstanceProfileRequest, GetInstanceProfileResult>()
                 .withSdkFunction(new GetInstanceProfileFunction(client))
@@ -70,7 +70,7 @@ public class AmazonIdentityManagementWaiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter userExists() {
+    public Waiter<GetUserRequest> userExists() {
 
         return new WaiterBuilder<GetUserRequest, GetUserResult>()
                 .withSdkFunction(new GetUserFunction(client))

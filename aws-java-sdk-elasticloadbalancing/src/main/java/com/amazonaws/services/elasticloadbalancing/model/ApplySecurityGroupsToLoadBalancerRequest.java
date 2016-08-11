@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ApplySecurityGroupsToLoadBalancer.
+ * </p>
  */
 public class ApplySecurityGroupsToLoadBalancerRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

@@ -23,7 +23,7 @@ import java.io.Serializable;
  * <p>
  * For more information, see <a href=
  * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html"
- * >Dynamic Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
+ * >Dynamic Scaling</a> in the <i>Auto Scaling User Guide</i>.
  * </p>
  */
 public class AdjustmentType implements Serializable, Cloneable {

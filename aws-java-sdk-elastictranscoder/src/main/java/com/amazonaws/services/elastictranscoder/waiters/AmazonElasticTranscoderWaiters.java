@@ -50,7 +50,7 @@ public class AmazonElasticTranscoderWaiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter jobComplete() {
+    public Waiter<ReadJobRequest> jobComplete() {
 
         return new WaiterBuilder<ReadJobRequest, ReadJobResult>()
                 .withSdkFunction(new ReadJobFunction(client))

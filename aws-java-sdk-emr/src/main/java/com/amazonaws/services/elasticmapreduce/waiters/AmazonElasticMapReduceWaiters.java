@@ -50,7 +50,7 @@ public class AmazonElasticMapReduceWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter clusterRunning() {
+    public Waiter<DescribeClusterRequest> clusterRunning() {
 
         return new WaiterBuilder<DescribeClusterRequest, DescribeClusterResult>()
                 .withSdkFunction(new DescribeClusterFunction(client))
@@ -72,7 +72,7 @@ public class AmazonElasticMapReduceWaiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter stepComplete() {
+    public Waiter<DescribeStepRequest> stepComplete() {
 
         return new WaiterBuilder<DescribeStepRequest, DescribeStepResult>()
                 .withSdkFunction(new DescribeStepFunction(client))

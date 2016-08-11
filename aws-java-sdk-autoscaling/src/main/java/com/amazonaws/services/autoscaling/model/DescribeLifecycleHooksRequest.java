@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeLifecycleHooks.
+ * </p>
  */
 public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -31,7 +33,8 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
     private String autoScalingGroupName;
     /**
      * <p>
-     * The names of one or more lifecycle hooks.
+     * The names of one or more lifecycle hooks. If you omit this parameter, all
+     * lifecycle hooks are described.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> lifecycleHookNames;
@@ -80,10 +83,12 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The names of one or more lifecycle hooks.
+     * The names of one or more lifecycle hooks. If you omit this parameter, all
+     * lifecycle hooks are described.
      * </p>
      * 
-     * @return The names of one or more lifecycle hooks.
+     * @return The names of one or more lifecycle hooks. If you omit this
+     *         parameter, all lifecycle hooks are described.
      */
 
     public java.util.List<String> getLifecycleHookNames() {
@@ -95,11 +100,13 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The names of one or more lifecycle hooks.
+     * The names of one or more lifecycle hooks. If you omit this parameter, all
+     * lifecycle hooks are described.
      * </p>
      * 
      * @param lifecycleHookNames
-     *        The names of one or more lifecycle hooks.
+     *        The names of one or more lifecycle hooks. If you omit this
+     *        parameter, all lifecycle hooks are described.
      */
 
     public void setLifecycleHookNames(
@@ -115,7 +122,8 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The names of one or more lifecycle hooks.
+     * The names of one or more lifecycle hooks. If you omit this parameter, all
+     * lifecycle hooks are described.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -125,7 +133,8 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param lifecycleHookNames
-     *        The names of one or more lifecycle hooks.
+     *        The names of one or more lifecycle hooks. If you omit this
+     *        parameter, all lifecycle hooks are described.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -144,11 +153,13 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The names of one or more lifecycle hooks.
+     * The names of one or more lifecycle hooks. If you omit this parameter, all
+     * lifecycle hooks are described.
      * </p>
      * 
      * @param lifecycleHookNames
-     *        The names of one or more lifecycle hooks.
+     *        The names of one or more lifecycle hooks. If you omit this
+     *        parameter, all lifecycle hooks are described.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

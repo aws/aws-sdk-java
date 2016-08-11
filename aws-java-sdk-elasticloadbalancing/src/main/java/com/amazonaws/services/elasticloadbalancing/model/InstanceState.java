@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about the state of a back-end instance.
+ * Information about the state of an EC2 instance.
  * </p>
  */
 public class InstanceState implements Serializable, Cloneable {

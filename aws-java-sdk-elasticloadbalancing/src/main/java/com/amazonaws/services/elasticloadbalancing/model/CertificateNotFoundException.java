@@ -16,8 +16,10 @@ package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
  * <p>
- * The specified SSL ID does not refer to a valid SSL certificate in AWS
- * Identity and Access Management (IAM).
+ * The specified ARN does not refer to a valid SSL certificate in AWS Identity
+ * and Access Management (IAM) or AWS Certificate Manager (ACM). Note that if
+ * you recently uploaded the certificate to IAM, this error might indicate that
+ * the certificate is not fully available yet.
  * </p>
  */
 public class CertificateNotFoundException

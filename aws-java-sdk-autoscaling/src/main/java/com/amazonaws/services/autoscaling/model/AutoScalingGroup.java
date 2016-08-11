@@ -80,6 +80,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> loadBalancerNames;
     /**
      * <p>
+     * The Amazon Resource Names (ARN) of the target groups for your load
+     * balancer.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> targetGroupARNs;
+    /**
+     * <p>
      * The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>.
      * </p>
@@ -615,6 +622,93 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     public AutoScalingGroup withLoadBalancerNames(
             java.util.Collection<String> loadBalancerNames) {
         setLoadBalancerNames(loadBalancerNames);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARN) of the target groups for your load
+     * balancer.
+     * </p>
+     * 
+     * @return The Amazon Resource Names (ARN) of the target groups for your
+     *         load balancer.
+     */
+
+    public java.util.List<String> getTargetGroupARNs() {
+        if (targetGroupARNs == null) {
+            targetGroupARNs = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return targetGroupARNs;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARN) of the target groups for your load
+     * balancer.
+     * </p>
+     * 
+     * @param targetGroupARNs
+     *        The Amazon Resource Names (ARN) of the target groups for your load
+     *        balancer.
+     */
+
+    public void setTargetGroupARNs(java.util.Collection<String> targetGroupARNs) {
+        if (targetGroupARNs == null) {
+            this.targetGroupARNs = null;
+            return;
+        }
+
+        this.targetGroupARNs = new com.amazonaws.internal.SdkInternalList<String>(
+                targetGroupARNs);
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARN) of the target groups for your load
+     * balancer.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTargetGroupARNs(java.util.Collection)} or
+     * {@link #withTargetGroupARNs(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param targetGroupARNs
+     *        The Amazon Resource Names (ARN) of the target groups for your load
+     *        balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public AutoScalingGroup withTargetGroupARNs(String... targetGroupARNs) {
+        if (this.targetGroupARNs == null) {
+            setTargetGroupARNs(new com.amazonaws.internal.SdkInternalList<String>(
+                    targetGroupARNs.length));
+        }
+        for (String ele : targetGroupARNs) {
+            this.targetGroupARNs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARN) of the target groups for your load
+     * balancer.
+     * </p>
+     * 
+     * @param targetGroupARNs
+     *        The Amazon Resource Names (ARN) of the target groups for your load
+     *        balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public AutoScalingGroup withTargetGroupARNs(
+            java.util.Collection<String> targetGroupARNs) {
+        setTargetGroupARNs(targetGroupARNs);
         return this;
     }
 
@@ -1432,6 +1526,8 @@ public class AutoScalingGroup implements Serializable, Cloneable {
             sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
         if (getLoadBalancerNames() != null)
             sb.append("LoadBalancerNames: " + getLoadBalancerNames() + ",");
+        if (getTargetGroupARNs() != null)
+            sb.append("TargetGroupARNs: " + getTargetGroupARNs() + ",");
         if (getHealthCheckType() != null)
             sb.append("HealthCheckType: " + getHealthCheckType() + ",");
         if (getHealthCheckGracePeriod() != null)
@@ -1528,6 +1624,12 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (other.getLoadBalancerNames() != null
                 && other.getLoadBalancerNames().equals(
                         this.getLoadBalancerNames()) == false)
+            return false;
+        if (other.getTargetGroupARNs() == null
+                ^ this.getTargetGroupARNs() == null)
+            return false;
+        if (other.getTargetGroupARNs() != null
+                && other.getTargetGroupARNs().equals(this.getTargetGroupARNs()) == false)
             return false;
         if (other.getHealthCheckType() == null
                 ^ this.getHealthCheckType() == null)
@@ -1642,6 +1744,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
                 * hashCode
                 + ((getLoadBalancerNames() == null) ? 0
                         : getLoadBalancerNames().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTargetGroupARNs() == null) ? 0 : getTargetGroupARNs()
+                        .hashCode());
         hashCode = prime
                 * hashCode
                 + ((getHealthCheckType() == null) ? 0 : getHealthCheckType()

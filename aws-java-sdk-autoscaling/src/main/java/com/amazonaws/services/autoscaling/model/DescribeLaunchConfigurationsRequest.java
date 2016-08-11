@@ -18,14 +18,17 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeLaunchConfigurations.
+ * </p>
  */
 public class DescribeLaunchConfigurationsRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch configuration names.
+     * The launch configuration names. If you omit this parameter, all launch
+     * configurations are described.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> launchConfigurationNames;
@@ -45,10 +48,12 @@ public class DescribeLaunchConfigurationsRequest extends
 
     /**
      * <p>
-     * The launch configuration names.
+     * The launch configuration names. If you omit this parameter, all launch
+     * configurations are described.
      * </p>
      * 
-     * @return The launch configuration names.
+     * @return The launch configuration names. If you omit this parameter, all
+     *         launch configurations are described.
      */
 
     public java.util.List<String> getLaunchConfigurationNames() {
@@ -60,11 +65,13 @@ public class DescribeLaunchConfigurationsRequest extends
 
     /**
      * <p>
-     * The launch configuration names.
+     * The launch configuration names. If you omit this parameter, all launch
+     * configurations are described.
      * </p>
      * 
      * @param launchConfigurationNames
-     *        The launch configuration names.
+     *        The launch configuration names. If you omit this parameter, all
+     *        launch configurations are described.
      */
 
     public void setLaunchConfigurationNames(
@@ -80,7 +87,8 @@ public class DescribeLaunchConfigurationsRequest extends
 
     /**
      * <p>
-     * The launch configuration names.
+     * The launch configuration names. If you omit this parameter, all launch
+     * configurations are described.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -90,7 +98,8 @@ public class DescribeLaunchConfigurationsRequest extends
      * </p>
      * 
      * @param launchConfigurationNames
-     *        The launch configuration names.
+     *        The launch configuration names. If you omit this parameter, all
+     *        launch configurations are described.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -109,11 +118,13 @@ public class DescribeLaunchConfigurationsRequest extends
 
     /**
      * <p>
-     * The launch configuration names.
+     * The launch configuration names. If you omit this parameter, all launch
+     * configurations are described.
      * </p>
      * 
      * @param launchConfigurationNames
-     *        The launch configuration names.
+     *        The launch configuration names. If you omit this parameter, all
+     *        launch configurations are described.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

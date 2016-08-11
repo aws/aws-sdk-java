@@ -39,6 +39,11 @@ public final class WaiterParameters<Input extends AmazonWebServiceRequest> {
         this.pollingStrategy = null;
     }
 
+    public WaiterParameters(Input request) {
+        this.request = request;
+        this.pollingStrategy = null;
+    }
+
     /**
      * Constructs a new WaiterParameters with the given request
      * and polling strategy
@@ -58,7 +63,7 @@ public final class WaiterParameters<Input extends AmazonWebServiceRequest> {
      * @param request Input of the operation
      * @return WaiterParameters Object
      */
-    public WaiterParameters withRequest(Input request) {
+    public WaiterParameters<Input> withRequest(Input request) {
         return new WaiterParameters<Input>(request, this.pollingStrategy);
     }
 
@@ -68,7 +73,7 @@ public final class WaiterParameters<Input extends AmazonWebServiceRequest> {
      * @param pollingStrategy Custom polling strategy
      * @return WaiterParameters Object
      */
-    public WaiterParameters withPollingStrategy(PollingStrategy pollingStrategy) {
+    public WaiterParameters<Input> withPollingStrategy(PollingStrategy pollingStrategy) {
         return new WaiterParameters<Input>(this.request, pollingStrategy);
     }
 

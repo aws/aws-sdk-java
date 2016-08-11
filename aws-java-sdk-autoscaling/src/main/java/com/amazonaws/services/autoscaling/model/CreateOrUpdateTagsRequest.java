@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateOrUpdateTags.
+ * </p>
  */
 public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

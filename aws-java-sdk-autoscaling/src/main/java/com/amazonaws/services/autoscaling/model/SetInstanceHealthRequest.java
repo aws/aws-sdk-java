@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for SetInstanceHealth.
+ * </p>
  */
 public class SetInstanceHealthRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

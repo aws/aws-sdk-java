@@ -50,7 +50,7 @@ public class AmazonMachineLearningWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter batchPredictionAvailable() {
+    public Waiter<DescribeBatchPredictionsRequest> batchPredictionAvailable() {
 
         return new WaiterBuilder<DescribeBatchPredictionsRequest, DescribeBatchPredictionsResult>()
                 .withSdkFunction(new DescribeBatchPredictionsFunction(client))
@@ -70,7 +70,7 @@ public class AmazonMachineLearningWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter mLModelAvailable() {
+    public Waiter<DescribeMLModelsRequest> mLModelAvailable() {
 
         return new WaiterBuilder<DescribeMLModelsRequest, DescribeMLModelsResult>()
                 .withSdkFunction(new DescribeMLModelsFunction(client))
@@ -89,7 +89,7 @@ public class AmazonMachineLearningWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter dataSourceAvailable() {
+    public Waiter<DescribeDataSourcesRequest> dataSourceAvailable() {
 
         return new WaiterBuilder<DescribeDataSourcesRequest, DescribeDataSourcesResult>()
                 .withSdkFunction(new DescribeDataSourcesFunction(client))
@@ -108,7 +108,7 @@ public class AmazonMachineLearningWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter evaluationAvailable() {
+    public Waiter<DescribeEvaluationsRequest> evaluationAvailable() {
 
         return new WaiterBuilder<DescribeEvaluationsRequest, DescribeEvaluationsResult>()
                 .withSdkFunction(new DescribeEvaluationsFunction(client))

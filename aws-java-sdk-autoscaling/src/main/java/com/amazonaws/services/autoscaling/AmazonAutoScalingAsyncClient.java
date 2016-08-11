@@ -309,6 +309,42 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
+    public java.util.concurrent.Future<AttachLoadBalancerTargetGroupsResult> attachLoadBalancerTargetGroupsAsync(
+            AttachLoadBalancerTargetGroupsRequest request) {
+
+        return attachLoadBalancerTargetGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachLoadBalancerTargetGroupsResult> attachLoadBalancerTargetGroupsAsync(
+            final AttachLoadBalancerTargetGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AttachLoadBalancerTargetGroupsRequest, AttachLoadBalancerTargetGroupsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<AttachLoadBalancerTargetGroupsResult>() {
+                    @Override
+                    public AttachLoadBalancerTargetGroupsResult call()
+                            throws Exception {
+                        AttachLoadBalancerTargetGroupsResult result;
+
+                        try {
+                            result = attachLoadBalancerTargetGroups(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachLoadBalancersResult> attachLoadBalancersAsync(
             AttachLoadBalancersRequest request) {
 
@@ -1225,6 +1261,42 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeLoadBalancerTargetGroupsResult> describeLoadBalancerTargetGroupsAsync(
+            DescribeLoadBalancerTargetGroupsRequest request) {
+
+        return describeLoadBalancerTargetGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLoadBalancerTargetGroupsResult> describeLoadBalancerTargetGroupsAsync(
+            final DescribeLoadBalancerTargetGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancerTargetGroupsRequest, DescribeLoadBalancerTargetGroupsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeLoadBalancerTargetGroupsResult>() {
+                    @Override
+                    public DescribeLoadBalancerTargetGroupsResult call()
+                            throws Exception {
+                        DescribeLoadBalancerTargetGroupsResult result;
+
+                        try {
+                            result = describeLoadBalancerTargetGroups(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeLoadBalancersResult> describeLoadBalancersAsync(
             DescribeLoadBalancersRequest request) {
 
@@ -1770,6 +1842,42 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
 
                         try {
                             result = detachInstances(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachLoadBalancerTargetGroupsResult> detachLoadBalancerTargetGroupsAsync(
+            DetachLoadBalancerTargetGroupsRequest request) {
+
+        return detachLoadBalancerTargetGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachLoadBalancerTargetGroupsResult> detachLoadBalancerTargetGroupsAsync(
+            final DetachLoadBalancerTargetGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetachLoadBalancerTargetGroupsRequest, DetachLoadBalancerTargetGroupsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DetachLoadBalancerTargetGroupsResult>() {
+                    @Override
+                    public DetachLoadBalancerTargetGroupsResult call()
+                            throws Exception {
+                        DetachLoadBalancerTargetGroupsResult result;
+
+                        try {
+                            result = detachLoadBalancerTargetGroups(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

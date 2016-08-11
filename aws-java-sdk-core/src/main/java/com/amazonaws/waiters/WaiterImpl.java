@@ -28,7 +28,7 @@ import java.util.concurrent.Future;
  * Created by meghbyar on 8/4/16.
  */
 @SdkProtectedApi
-public class WaiterImpl<Input extends AmazonWebServiceRequest, Output> implements Waiter<Input, Output>{
+public class WaiterImpl<Input extends AmazonWebServiceRequest, Output> implements Waiter<Input>{
 
     /**
      * Represents the operation function

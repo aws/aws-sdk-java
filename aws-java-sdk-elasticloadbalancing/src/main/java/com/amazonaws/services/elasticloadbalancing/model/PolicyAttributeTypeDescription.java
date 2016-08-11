@@ -56,10 +56,26 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * Valid values:
      * </p>
      * <ul>
-     * <li>ONE(1) : Single value required</li>
-     * <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li>
-     * <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li>
-     * <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
+     * <li>
+     * <p>
+     * ONE(1) : Single value required
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ZERO_OR_ONE(0..1) : Up to one value is allowed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ONE_OR_MORE(1..*0) : Required. Multiple values are allowed
+     * </p>
+     * </li>
      * </ul>
      */
     private String cardinality;
@@ -242,10 +258,26 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * Valid values:
      * </p>
      * <ul>
-     * <li>ONE(1) : Single value required</li>
-     * <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li>
-     * <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li>
-     * <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
+     * <li>
+     * <p>
+     * ONE(1) : Single value required
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ZERO_OR_ONE(0..1) : Up to one value is allowed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ONE_OR_MORE(1..*0) : Required. Multiple values are allowed
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param cardinality
@@ -254,10 +286,26 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      *        Valid values:
      *        </p>
      *        <ul>
-     *        <li>ONE(1) : Single value required</li>
-     *        <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li>
-     *        <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li>
-     *        <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
+     *        <li>
+     *        <p>
+     *        ONE(1) : Single value required
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ZERO_OR_ONE(0..1) : Up to one value is allowed
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ONE_OR_MORE(1..*0) : Required. Multiple values are allowed
+     *        </p>
+     *        </li>
      */
 
     public void setCardinality(String cardinality) {
@@ -272,10 +320,26 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * Valid values:
      * </p>
      * <ul>
-     * <li>ONE(1) : Single value required</li>
-     * <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li>
-     * <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li>
-     * <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
+     * <li>
+     * <p>
+     * ONE(1) : Single value required
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ZERO_OR_ONE(0..1) : Up to one value is allowed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ONE_OR_MORE(1..*0) : Required. Multiple values are allowed
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The cardinality of the attribute.</p>
@@ -283,10 +347,26 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      *         Valid values:
      *         </p>
      *         <ul>
-     *         <li>ONE(1) : Single value required</li>
-     *         <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li>
-     *         <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li>
-     *         <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
+     *         <li>
+     *         <p>
+     *         ONE(1) : Single value required
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ZERO_OR_ONE(0..1) : Up to one value is allowed
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ONE_OR_MORE(1..*0) : Required. Multiple values are allowed
+     *         </p>
+     *         </li>
      */
 
     public String getCardinality() {
@@ -301,10 +381,26 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * Valid values:
      * </p>
      * <ul>
-     * <li>ONE(1) : Single value required</li>
-     * <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li>
-     * <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li>
-     * <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
+     * <li>
+     * <p>
+     * ONE(1) : Single value required
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ZERO_OR_ONE(0..1) : Up to one value is allowed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ONE_OR_MORE(1..*0) : Required. Multiple values are allowed
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param cardinality
@@ -313,10 +409,26 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      *        Valid values:
      *        </p>
      *        <ul>
-     *        <li>ONE(1) : Single value required</li>
-     *        <li>ZERO_OR_ONE(0..1) : Up to one value can be supplied</li>
-     *        <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li>
-     *        <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
+     *        <li>
+     *        <p>
+     *        ONE(1) : Single value required
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ZERO_OR_ONE(0..1) : Up to one value is allowed
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ONE_OR_MORE(1..*0) : Required. Multiple values are allowed
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

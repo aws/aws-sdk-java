@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DetachInstances.
+ * </p>
  */
 public class DetachInstancesRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

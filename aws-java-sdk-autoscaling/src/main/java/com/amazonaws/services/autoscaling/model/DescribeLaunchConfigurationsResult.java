@@ -17,7 +17,9 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of DescribeLaunchConfigurations.
+ * </p>
  */
 public class DescribeLaunchConfigurationsResult implements Serializable,
         Cloneable {

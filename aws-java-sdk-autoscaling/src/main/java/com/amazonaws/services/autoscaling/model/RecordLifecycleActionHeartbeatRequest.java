@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for RecordLifecycleActionHeartbeat.
+ * </p>
  */
 public class RecordLifecycleActionHeartbeatRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

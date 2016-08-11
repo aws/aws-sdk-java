@@ -96,6 +96,21 @@ public class KeyMetadataJsonUnmarshaller implements
                     keyMetadata.setDeletionDate(context.getUnmarshaller(
                             java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("ValidTo", targetDepth)) {
+                    context.nextToken();
+                    keyMetadata.setValidTo(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("Origin", targetDepth)) {
+                    context.nextToken();
+                    keyMetadata.setOrigin(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
+                }
+                if (context.testExpression("ExpirationModel", targetDepth)) {
+                    context.nextToken();
+                    keyMetadata.setExpirationModel(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

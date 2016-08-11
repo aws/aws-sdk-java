@@ -50,7 +50,7 @@ public class AmazonCloudFrontWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter distributionDeployed() {
+    public Waiter<GetDistributionRequest> distributionDeployed() {
 
         return new WaiterBuilder<GetDistributionRequest, GetDistributionResult>()
                 .withSdkFunction(new GetDistributionFunction(client))
@@ -68,7 +68,7 @@ public class AmazonCloudFrontWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter streamingDistributionDeployed() {
+    public Waiter<GetStreamingDistributionRequest> streamingDistributionDeployed() {
 
         return new WaiterBuilder<GetStreamingDistributionRequest, GetStreamingDistributionResult>()
                 .withSdkFunction(new GetStreamingDistributionFunction(client))
@@ -87,7 +87,7 @@ public class AmazonCloudFrontWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter invalidationCompleted() {
+    public Waiter<GetInvalidationRequest> invalidationCompleted() {
 
         return new WaiterBuilder<GetInvalidationRequest, GetInvalidationResult>()
                 .withSdkFunction(new GetInvalidationFunction(client))

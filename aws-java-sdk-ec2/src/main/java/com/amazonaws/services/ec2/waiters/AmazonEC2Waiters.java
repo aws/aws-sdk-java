@@ -50,7 +50,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter passwordDataAvailable() {
+    public Waiter<GetPasswordDataRequest> passwordDataAvailable() {
 
         return new WaiterBuilder<GetPasswordDataRequest, GetPasswordDataResult>()
                 .withSdkFunction(new GetPasswordDataFunction(client))
@@ -68,7 +68,7 @@ public class AmazonEC2Waiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter volumeInUse() {
+    public Waiter<DescribeVolumesRequest> volumeInUse() {
 
         return new WaiterBuilder<DescribeVolumesRequest, DescribeVolumesResult>()
                 .withSdkFunction(new DescribeVolumesFunction(client))
@@ -87,7 +87,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter imageAvailable() {
+    public Waiter<DescribeImagesRequest> imageAvailable() {
 
         return new WaiterBuilder<DescribeImagesRequest, DescribeImagesResult>()
                 .withSdkFunction(new DescribeImagesFunction(client))
@@ -106,7 +106,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter networkInterfaceAvailable() {
+    public Waiter<DescribeNetworkInterfacesRequest> networkInterfaceAvailable() {
 
         return new WaiterBuilder<DescribeNetworkInterfacesRequest, DescribeNetworkInterfacesResult>()
                 .withSdkFunction(new DescribeNetworkInterfacesFunction(client))
@@ -126,7 +126,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter systemStatusOk() {
+    public Waiter<DescribeInstanceStatusRequest> systemStatusOk() {
 
         return new WaiterBuilder<DescribeInstanceStatusRequest, DescribeInstanceStatusResult>()
                 .withSdkFunction(new DescribeInstanceStatusFunction(client))
@@ -144,7 +144,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter vpcPeeringConnectionExists() {
+    public Waiter<DescribeVpcPeeringConnectionsRequest> vpcPeeringConnectionExists() {
 
         return new WaiterBuilder<DescribeVpcPeeringConnectionsRequest, DescribeVpcPeeringConnectionsResult>()
                 .withSdkFunction(
@@ -165,7 +165,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter volumeAvailable() {
+    public Waiter<DescribeVolumesRequest> volumeAvailable() {
 
         return new WaiterBuilder<DescribeVolumesRequest, DescribeVolumesResult>()
                 .withSdkFunction(new DescribeVolumesFunction(client))
@@ -184,7 +184,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter instanceStatusOk() {
+    public Waiter<DescribeInstanceStatusRequest> instanceStatusOk() {
 
         return new WaiterBuilder<DescribeInstanceStatusRequest, DescribeInstanceStatusResult>()
                 .withSdkFunction(new DescribeInstanceStatusFunction(client))
@@ -204,7 +204,7 @@ public class AmazonEC2Waiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter volumeDeleted() {
+    public Waiter<DescribeVolumesRequest> volumeDeleted() {
 
         return new WaiterBuilder<DescribeVolumesRequest, DescribeVolumesResult>()
                 .withSdkFunction(new DescribeVolumesFunction(client))
@@ -223,7 +223,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter customerGatewayAvailable() {
+    public Waiter<DescribeCustomerGatewaysRequest> customerGatewayAvailable() {
 
         return new WaiterBuilder<DescribeCustomerGatewaysRequest, DescribeCustomerGatewaysResult>()
                 .withSdkFunction(new DescribeCustomerGatewaysFunction(client))
@@ -244,7 +244,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter natGatewayAvailable() {
+    public Waiter<DescribeNatGatewaysRequest> natGatewayAvailable() {
 
         return new WaiterBuilder<DescribeNatGatewaysRequest, DescribeNatGatewaysResult>()
                 .withSdkFunction(new DescribeNatGatewaysFunction(client))
@@ -266,7 +266,7 @@ public class AmazonEC2Waiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter vpcExists() {
+    public Waiter<DescribeVpcsRequest> vpcExists() {
 
         return new WaiterBuilder<DescribeVpcsRequest, DescribeVpcsResult>()
                 .withSdkFunction(new DescribeVpcsFunction(client))
@@ -286,7 +286,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter conversionTaskDeleted() {
+    public Waiter<DescribeConversionTasksRequest> conversionTaskDeleted() {
 
         return new WaiterBuilder<DescribeConversionTasksRequest, DescribeConversionTasksResult>()
                 .withSdkFunction(new DescribeConversionTasksFunction(client))
@@ -304,7 +304,7 @@ public class AmazonEC2Waiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter imageExists() {
+    public Waiter<DescribeImagesRequest> imageExists() {
 
         return new WaiterBuilder<DescribeImagesRequest, DescribeImagesResult>()
                 .withSdkFunction(new DescribeImagesFunction(client))
@@ -323,7 +323,7 @@ public class AmazonEC2Waiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter vpcAvailable() {
+    public Waiter<DescribeVpcsRequest> vpcAvailable() {
 
         return new WaiterBuilder<DescribeVpcsRequest, DescribeVpcsResult>()
                 .withSdkFunction(new DescribeVpcsFunction(client))
@@ -341,7 +341,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter conversionTaskCancelled() {
+    public Waiter<DescribeConversionTasksRequest> conversionTaskCancelled() {
 
         return new WaiterBuilder<DescribeConversionTasksRequest, DescribeConversionTasksResult>()
                 .withSdkFunction(new DescribeConversionTasksFunction(client))
@@ -359,7 +359,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter instanceExists() {
+    public Waiter<DescribeInstancesRequest> instanceExists() {
 
         return new WaiterBuilder<DescribeInstancesRequest, DescribeInstancesResult>()
                 .withSdkFunction(new DescribeInstancesFunction(client))
@@ -378,7 +378,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter instanceTerminated() {
+    public Waiter<DescribeInstancesRequest> instanceTerminated() {
 
         return new WaiterBuilder<DescribeInstancesRequest, DescribeInstancesResult>()
                 .withSdkFunction(new DescribeInstancesFunction(client))
@@ -398,7 +398,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter conversionTaskCompleted() {
+    public Waiter<DescribeConversionTasksRequest> conversionTaskCompleted() {
 
         return new WaiterBuilder<DescribeConversionTasksRequest, DescribeConversionTasksResult>()
                 .withSdkFunction(new DescribeConversionTasksFunction(client))
@@ -419,7 +419,7 @@ public class AmazonEC2Waiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter keyPairExists() {
+    public Waiter<DescribeKeyPairsRequest> keyPairExists() {
 
         return new WaiterBuilder<DescribeKeyPairsRequest, DescribeKeyPairsResult>()
                 .withSdkFunction(new DescribeKeyPairsFunction(client))
@@ -438,7 +438,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter spotInstanceRequestFulfilled() {
+    public Waiter<DescribeSpotInstanceRequestsRequest> spotInstanceRequestFulfilled() {
 
         return new WaiterBuilder<DescribeSpotInstanceRequestsRequest, DescribeSpotInstanceRequestsResult>()
                 .withSdkFunction(
@@ -462,7 +462,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter bundleTaskComplete() {
+    public Waiter<DescribeBundleTasksRequest> bundleTaskComplete() {
 
         return new WaiterBuilder<DescribeBundleTasksRequest, DescribeBundleTasksResult>()
                 .withSdkFunction(new DescribeBundleTasksFunction(client))
@@ -481,7 +481,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter instanceRunning() {
+    public Waiter<DescribeInstancesRequest> instanceRunning() {
 
         return new WaiterBuilder<DescribeInstancesRequest, DescribeInstancesResult>()
                 .withSdkFunction(new DescribeInstancesFunction(client))
@@ -504,7 +504,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter exportTaskCompleted() {
+    public Waiter<DescribeExportTasksRequest> exportTaskCompleted() {
 
         return new WaiterBuilder<DescribeExportTasksRequest, DescribeExportTasksResult>()
                 .withSdkFunction(new DescribeExportTasksFunction(client))
@@ -522,7 +522,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter snapshotCompleted() {
+    public Waiter<DescribeSnapshotsRequest> snapshotCompleted() {
 
         return new WaiterBuilder<DescribeSnapshotsRequest, DescribeSnapshotsResult>()
                 .withSdkFunction(new DescribeSnapshotsFunction(client))
@@ -540,7 +540,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter exportTaskCancelled() {
+    public Waiter<DescribeExportTasksRequest> exportTaskCancelled() {
 
         return new WaiterBuilder<DescribeExportTasksRequest, DescribeExportTasksResult>()
                 .withSdkFunction(new DescribeExportTasksFunction(client))
@@ -558,7 +558,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter vpnConnectionDeleted() {
+    public Waiter<DescribeVpnConnectionsRequest> vpnConnectionDeleted() {
 
         return new WaiterBuilder<DescribeVpnConnectionsRequest, DescribeVpnConnectionsResult>()
                 .withSdkFunction(new DescribeVpnConnectionsFunction(client))
@@ -577,7 +577,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter vpnConnectionAvailable() {
+    public Waiter<DescribeVpnConnectionsRequest> vpnConnectionAvailable() {
 
         return new WaiterBuilder<DescribeVpnConnectionsRequest, DescribeVpnConnectionsResult>()
                 .withSdkFunction(new DescribeVpnConnectionsFunction(client))
@@ -597,7 +597,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter instanceStopped() {
+    public Waiter<DescribeInstancesRequest> instanceStopped() {
 
         return new WaiterBuilder<DescribeInstancesRequest, DescribeInstancesResult>()
                 .withSdkFunction(new DescribeInstancesFunction(client))
@@ -617,7 +617,7 @@ public class AmazonEC2Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter subnetAvailable() {
+    public Waiter<DescribeSubnetsRequest> subnetAvailable() {
 
         return new WaiterBuilder<DescribeSubnetsRequest, DescribeSubnetsResult>()
                 .withSdkFunction(new DescribeSubnetsFunction(client))

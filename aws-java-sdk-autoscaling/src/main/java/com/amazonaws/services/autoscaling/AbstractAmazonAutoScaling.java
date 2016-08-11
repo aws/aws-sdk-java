@@ -44,6 +44,12 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
+    public AttachLoadBalancerTargetGroupsResult attachLoadBalancerTargetGroups(
+            AttachLoadBalancerTargetGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AttachLoadBalancersResult attachLoadBalancers(
             AttachLoadBalancersRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -202,6 +208,12 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
+    public DescribeLoadBalancerTargetGroupsResult describeLoadBalancerTargetGroups(
+            DescribeLoadBalancerTargetGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeLoadBalancersResult describeLoadBalancers(
             DescribeLoadBalancersRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -296,6 +308,12 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
 
     @Override
     public DetachInstancesResult detachInstances(DetachInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DetachLoadBalancerTargetGroupsResult detachLoadBalancerTargetGroups(
+            DetachLoadBalancerTargetGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

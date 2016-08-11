@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeTags.
+ * </p>
  */
 public class DescribeTagsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

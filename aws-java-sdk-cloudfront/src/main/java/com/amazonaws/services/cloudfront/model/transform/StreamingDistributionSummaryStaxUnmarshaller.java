@@ -55,6 +55,12 @@ public class StreamingDistributionSummaryStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("ARN", targetDepth)) {
+                    streamingDistributionSummary.setARN(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Status", targetDepth)) {
                     streamingDistributionSummary
                             .setStatus(StringStaxUnmarshaller.getInstance()

@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for SuspendProcesses and ResumeProcesses.
+ * </p>
  */
 public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -31,7 +33,8 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
     private String autoScalingGroupName;
     /**
      * <p>
-     * One or more of the following processes:
+     * One or more of the following processes. If you omit this parameter, all
+     * processes are specified.
      * </p>
      * <ul>
      * <li>
@@ -122,7 +125,8 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more of the following processes:
+     * One or more of the following processes. If you omit this parameter, all
+     * processes are specified.
      * </p>
      * <ul>
      * <li>
@@ -167,7 +171,8 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
      * </li>
      * </ul>
      * 
-     * @return One or more of the following processes:</p>
+     * @return One or more of the following processes. If you omit this
+     *         parameter, all processes are specified.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -220,7 +225,8 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more of the following processes:
+     * One or more of the following processes. If you omit this parameter, all
+     * processes are specified.
      * </p>
      * <ul>
      * <li>
@@ -266,7 +272,8 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
      * </ul>
      * 
      * @param scalingProcesses
-     *        One or more of the following processes:</p>
+     *        One or more of the following processes. If you omit this
+     *        parameter, all processes are specified.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -323,7 +330,8 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more of the following processes:
+     * One or more of the following processes. If you omit this parameter, all
+     * processes are specified.
      * </p>
      * <ul>
      * <li>
@@ -375,7 +383,8 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param scalingProcesses
-     *        One or more of the following processes:</p>
+     *        One or more of the following processes. If you omit this
+     *        parameter, all processes are specified.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -435,7 +444,8 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more of the following processes:
+     * One or more of the following processes. If you omit this parameter, all
+     * processes are specified.
      * </p>
      * <ul>
      * <li>
@@ -481,7 +491,8 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
      * </ul>
      * 
      * @param scalingProcesses
-     *        One or more of the following processes:</p>
+     *        One or more of the following processes. If you omit this
+     *        parameter, all processes are specified.</p>
      *        <ul>
      *        <li>
      *        <p>

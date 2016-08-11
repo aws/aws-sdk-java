@@ -17,13 +17,16 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of DescribeScalingActivities.
+ * </p>
  */
 public class DescribeScalingActivitiesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The scaling activities.
+     * The scaling activities. Activities are sorted by start time. Activities
+     * still in progress are described first.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Activity> activities;
@@ -37,10 +40,12 @@ public class DescribeScalingActivitiesResult implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The scaling activities.
+     * The scaling activities. Activities are sorted by start time. Activities
+     * still in progress are described first.
      * </p>
      * 
-     * @return The scaling activities.
+     * @return The scaling activities. Activities are sorted by start time.
+     *         Activities still in progress are described first.
      */
 
     public java.util.List<Activity> getActivities() {
@@ -52,11 +57,13 @@ public class DescribeScalingActivitiesResult implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The scaling activities.
+     * The scaling activities. Activities are sorted by start time. Activities
+     * still in progress are described first.
      * </p>
      * 
      * @param activities
-     *        The scaling activities.
+     *        The scaling activities. Activities are sorted by start time.
+     *        Activities still in progress are described first.
      */
 
     public void setActivities(java.util.Collection<Activity> activities) {
@@ -71,7 +78,8 @@ public class DescribeScalingActivitiesResult implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The scaling activities.
+     * The scaling activities. Activities are sorted by start time. Activities
+     * still in progress are described first.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -81,7 +89,8 @@ public class DescribeScalingActivitiesResult implements Serializable, Cloneable 
      * </p>
      * 
      * @param activities
-     *        The scaling activities.
+     *        The scaling activities. Activities are sorted by start time.
+     *        Activities still in progress are described first.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -100,11 +109,13 @@ public class DescribeScalingActivitiesResult implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The scaling activities.
+     * The scaling activities. Activities are sorted by start time. Activities
+     * still in progress are described first.
      * </p>
      * 
      * @param activities
-     *        The scaling activities.
+     *        The scaling activities. Activities are sorted by start time.
+     *        Activities still in progress are described first.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

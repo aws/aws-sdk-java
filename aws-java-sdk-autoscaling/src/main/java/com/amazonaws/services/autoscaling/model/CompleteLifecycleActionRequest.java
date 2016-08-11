@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CompleteLifecycleAction.
+ * </p>
  */
 public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

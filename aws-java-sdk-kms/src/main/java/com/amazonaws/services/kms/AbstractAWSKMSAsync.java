@@ -141,6 +141,21 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteImportedKeyMaterialResult> deleteImportedKeyMaterialAsync(
+            DeleteImportedKeyMaterialRequest request) {
+
+        return deleteImportedKeyMaterialAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImportedKeyMaterialResult> deleteImportedKeyMaterialAsync(
+            DeleteImportedKeyMaterialRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeKeyResult> describeKeyAsync(
             DescribeKeyRequest request) {
 
@@ -325,6 +340,36 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
     public java.util.concurrent.Future<GetKeyRotationStatusResult> getKeyRotationStatusAsync(
             GetKeyRotationStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<GetKeyRotationStatusRequest, GetKeyRotationStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetParametersForImportResult> getParametersForImportAsync(
+            GetParametersForImportRequest request) {
+
+        return getParametersForImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetParametersForImportResult> getParametersForImportAsync(
+            GetParametersForImportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetParametersForImportRequest, GetParametersForImportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportKeyMaterialResult> importKeyMaterialAsync(
+            ImportKeyMaterialRequest request) {
+
+        return importKeyMaterialAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportKeyMaterialResult> importKeyMaterialAsync(
+            ImportKeyMaterialRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportKeyMaterialRequest, ImportKeyMaterialResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

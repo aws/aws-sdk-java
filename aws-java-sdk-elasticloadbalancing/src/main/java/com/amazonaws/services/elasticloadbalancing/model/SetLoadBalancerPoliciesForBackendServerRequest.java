@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for SetLoadBalancerPoliciesForBackendServer.
+ * </p>
  */
 public class SetLoadBalancerPoliciesForBackendServerRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -31,14 +33,14 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
     private String loadBalancerName;
     /**
      * <p>
-     * The port number associated with the back-end server.
+     * The port number associated with the EC2 instance.
      * </p>
      */
     private Integer instancePort;
     /**
      * <p>
      * The names of the policies. If the list is empty, then all current polices
-     * are removed from the back-end server.
+     * are removed from the EC2 instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyNames;
@@ -87,11 +89,11 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
 
     /**
      * <p>
-     * The port number associated with the back-end server.
+     * The port number associated with the EC2 instance.
      * </p>
      * 
      * @param instancePort
-     *        The port number associated with the back-end server.
+     *        The port number associated with the EC2 instance.
      */
 
     public void setInstancePort(Integer instancePort) {
@@ -100,10 +102,10 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
 
     /**
      * <p>
-     * The port number associated with the back-end server.
+     * The port number associated with the EC2 instance.
      * </p>
      * 
-     * @return The port number associated with the back-end server.
+     * @return The port number associated with the EC2 instance.
      */
 
     public Integer getInstancePort() {
@@ -112,11 +114,11 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
 
     /**
      * <p>
-     * The port number associated with the back-end server.
+     * The port number associated with the EC2 instance.
      * </p>
      * 
      * @param instancePort
-     *        The port number associated with the back-end server.
+     *        The port number associated with the EC2 instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -130,11 +132,11 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
     /**
      * <p>
      * The names of the policies. If the list is empty, then all current polices
-     * are removed from the back-end server.
+     * are removed from the EC2 instance.
      * </p>
      * 
      * @return The names of the policies. If the list is empty, then all current
-     *         polices are removed from the back-end server.
+     *         polices are removed from the EC2 instance.
      */
 
     public java.util.List<String> getPolicyNames() {
@@ -147,12 +149,12 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
     /**
      * <p>
      * The names of the policies. If the list is empty, then all current polices
-     * are removed from the back-end server.
+     * are removed from the EC2 instance.
      * </p>
      * 
      * @param policyNames
      *        The names of the policies. If the list is empty, then all current
-     *        polices are removed from the back-end server.
+     *        polices are removed from the EC2 instance.
      */
 
     public void setPolicyNames(java.util.Collection<String> policyNames) {
@@ -168,7 +170,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
     /**
      * <p>
      * The names of the policies. If the list is empty, then all current polices
-     * are removed from the back-end server.
+     * are removed from the EC2 instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -179,7 +181,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
      * 
      * @param policyNames
      *        The names of the policies. If the list is empty, then all current
-     *        polices are removed from the back-end server.
+     *        polices are removed from the EC2 instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -199,12 +201,12 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
     /**
      * <p>
      * The names of the policies. If the list is empty, then all current polices
-     * are removed from the back-end server.
+     * are removed from the EC2 instance.
      * </p>
      * 
      * @param policyNames
      *        The names of the policies. If the list is empty, then all current
-     *        polices are removed from the back-end server.
+     *        polices are removed from the EC2 instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

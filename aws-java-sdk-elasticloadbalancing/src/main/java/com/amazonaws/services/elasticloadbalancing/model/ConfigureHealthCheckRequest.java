@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ConfigureHealthCheck.
+ * </p>
  */
 public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -31,7 +33,7 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest
     private String loadBalancerName;
     /**
      * <p>
-     * The configuration information for the new health check.
+     * The configuration information.
      * </p>
      */
     private HealthCheck healthCheck;
@@ -52,7 +54,7 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest
      * @param loadBalancerName
      *        The name of the load balancer.
      * @param healthCheck
-     *        The configuration information for the new health check.
+     *        The configuration information.
      */
     public ConfigureHealthCheckRequest(String loadBalancerName,
             HealthCheck healthCheck) {
@@ -104,11 +106,11 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The configuration information for the new health check.
+     * The configuration information.
      * </p>
      * 
      * @param healthCheck
-     *        The configuration information for the new health check.
+     *        The configuration information.
      */
 
     public void setHealthCheck(HealthCheck healthCheck) {
@@ -117,10 +119,10 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The configuration information for the new health check.
+     * The configuration information.
      * </p>
      * 
-     * @return The configuration information for the new health check.
+     * @return The configuration information.
      */
 
     public HealthCheck getHealthCheck() {
@@ -129,11 +131,11 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The configuration information for the new health check.
+     * The configuration information.
      * </p>
      * 
      * @param healthCheck
-     *        The configuration information for the new health check.
+     *        The configuration information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

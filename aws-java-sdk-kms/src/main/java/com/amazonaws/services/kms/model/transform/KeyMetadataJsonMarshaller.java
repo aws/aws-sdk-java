@@ -81,6 +81,18 @@ public class KeyMetadataJsonMarshaller {
                 jsonGenerator.writeFieldName("DeletionDate").writeValue(
                         keyMetadata.getDeletionDate());
             }
+            if (keyMetadata.getValidTo() != null) {
+                jsonGenerator.writeFieldName("ValidTo").writeValue(
+                        keyMetadata.getValidTo());
+            }
+            if (keyMetadata.getOrigin() != null) {
+                jsonGenerator.writeFieldName("Origin").writeValue(
+                        keyMetadata.getOrigin());
+            }
+            if (keyMetadata.getExpirationModel() != null) {
+                jsonGenerator.writeFieldName("ExpirationModel").writeValue(
+                        keyMetadata.getExpirationModel());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

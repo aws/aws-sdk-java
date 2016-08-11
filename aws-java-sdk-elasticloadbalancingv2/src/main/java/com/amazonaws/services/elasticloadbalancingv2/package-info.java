@@ -1,0 +1,101 @@
+/*
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not
+ * use this file except in compliance with the License. A copy of the License is
+ * located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/**
+ * <fullname>Elastic Load Balancing</fullname>
+ * <p>
+ * A load balancer distributes incoming traffic across targets, such as your EC2
+ * instances. This enables you to increase the availability of your application.
+ * The load balancer also monitors the health of its registered targets and
+ * ensures that it routes traffic only to healthy targets. You configure your
+ * load balancer to accept incoming traffic by specifying one or more listeners,
+ * which are configured with a protocol and port number for connections from
+ * clients to the load balancer. You configure a target group with a protocol
+ * and port number for connections from the load balancer to the targets, and
+ * with health check settings to be used when checking the health status of the
+ * targets.
+ * </p>
+ * <p>
+ * Elastic Load Balancing supports two types of load balancers: Classic load
+ * balancers and Application load balancers (new). A Classic load balancer makes
+ * routing and load balancing decisions either at the transport layer (TCP/SSL)
+ * or the application layer (HTTP/HTTPS), and supports either EC2-Classic or a
+ * VPC. An Application load balancer makes routing and load balancing decisions
+ * at the application layer (HTTP/HTTPS), supports path-based routing, and can
+ * route requests to one or more ports on each EC2 instance or container
+ * instance in your virtual private cloud (VPC). For more information, see the
+ * <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">
+ * Elastic Load Balancing User Guide</a>.
+ * </p>
+ * <p>
+ * This reference covers the 2015-12-01 API, which supports Application load
+ * balancers. The 2012-06-01 API supports Classic load balancers.
+ * </p>
+ * <p>
+ * To get started with an Application load balancer, complete the following
+ * tasks:
+ * </p>
+ * <ol>
+ * <li>
+ * <p>
+ * Create a load balancer using <a>CreateLoadBalancer</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Create a target group using <a>CreateTargetGroup</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Register targets for the target group using <a>RegisterTargets</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Create one or more listeners for your load balancer using
+ * <a>CreateListener</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * (Optional) Create one or more rules for content routing based on URL using
+ * <a>CreateRule</a>.
+ * </p>
+ * </li>
+ * </ol>
+ * <p>
+ * To delete an Application load balancer and its related resources, complete
+ * the following tasks:
+ * </p>
+ * <ol>
+ * <li>
+ * <p>
+ * Delete the load balancer using <a>DeleteLoadBalancer</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Delete the target group using <a>DeleteTargetGroup</a>.
+ * </p>
+ * </li>
+ * </ol>
+ * <p>
+ * All Elastic Load Balancing operations are idempotent, which means that they
+ * complete at most one time. If you repeat an operation, it succeeds.
+ * </p>
+ */
+package com.amazonaws.services.elasticloadbalancingv2;
+

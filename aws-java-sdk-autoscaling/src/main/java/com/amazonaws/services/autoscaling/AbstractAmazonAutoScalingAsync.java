@@ -44,6 +44,21 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling
     }
 
     @Override
+    public java.util.concurrent.Future<AttachLoadBalancerTargetGroupsResult> attachLoadBalancerTargetGroupsAsync(
+            AttachLoadBalancerTargetGroupsRequest request) {
+
+        return attachLoadBalancerTargetGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachLoadBalancerTargetGroupsResult> attachLoadBalancerTargetGroupsAsync(
+            AttachLoadBalancerTargetGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<AttachLoadBalancerTargetGroupsRequest, AttachLoadBalancerTargetGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachLoadBalancersResult> attachLoadBalancersAsync(
             AttachLoadBalancersRequest request) {
 
@@ -550,6 +565,21 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeLoadBalancerTargetGroupsResult> describeLoadBalancerTargetGroupsAsync(
+            DescribeLoadBalancerTargetGroupsRequest request) {
+
+        return describeLoadBalancerTargetGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLoadBalancerTargetGroupsResult> describeLoadBalancerTargetGroupsAsync(
+            DescribeLoadBalancerTargetGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancerTargetGroupsRequest, DescribeLoadBalancerTargetGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeLoadBalancersResult> describeLoadBalancersAsync(
             DescribeLoadBalancersRequest request) {
 
@@ -900,6 +930,21 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling
     public java.util.concurrent.Future<DetachInstancesResult> detachInstancesAsync(
             DetachInstancesRequest request,
             com.amazonaws.handlers.AsyncHandler<DetachInstancesRequest, DetachInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachLoadBalancerTargetGroupsResult> detachLoadBalancerTargetGroupsAsync(
+            DetachLoadBalancerTargetGroupsRequest request) {
+
+        return detachLoadBalancerTargetGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachLoadBalancerTargetGroupsResult> detachLoadBalancerTargetGroupsAsync(
+            DetachLoadBalancerTargetGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DetachLoadBalancerTargetGroupsRequest, DetachLoadBalancerTargetGroupsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

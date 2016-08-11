@@ -50,7 +50,7 @@ public class AmazonCloudWatchWaiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter alarmExists() {
+    public Waiter<DescribeAlarmsRequest> alarmExists() {
 
         return new WaiterBuilder<DescribeAlarmsRequest, DescribeAlarmsResult>()
                 .withSdkFunction(new DescribeAlarmsFunction(client))

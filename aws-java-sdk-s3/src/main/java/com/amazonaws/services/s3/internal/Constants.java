@@ -34,6 +34,9 @@ public class Constants {
     /** Service hostname for accessing accelerated S3 buckets */
     public static final String S3_ACCELERATE_HOSTNAME = "s3-accelerate.amazonaws.com";
 
+    /** Dualstack qualifier for S3 */
+    public static final String S3_DUALSTACK_QUALIFIER = "dualstack";
+
     /** Service display name for Amazon S3 (not to be used in SigV4 signing) */
     public static final String S3_SERVICE_DISPLAY_NAME = "Amazon S3";
 

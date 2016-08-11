@@ -50,7 +50,7 @@ public class AmazonGlacierWaiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter vaultExists() {
+    public Waiter<DescribeVaultRequest> vaultExists() {
 
         return new WaiterBuilder<DescribeVaultRequest, DescribeVaultResult>()
                 .withSdkFunction(new DescribeVaultFunction(client))
@@ -70,7 +70,7 @@ public class AmazonGlacierWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter vaultNotExists() {
+    public Waiter<DescribeVaultRequest> vaultNotExists() {
 
         return new WaiterBuilder<DescribeVaultRequest, DescribeVaultResult>()
                 .withSdkFunction(new DescribeVaultFunction(client))

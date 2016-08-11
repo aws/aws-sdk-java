@@ -50,7 +50,7 @@ public class AmazonElastiCacheWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter cacheClusterDeleted() {
+    public Waiter<DescribeCacheClustersRequest> cacheClusterDeleted() {
 
         return new WaiterBuilder<DescribeCacheClustersRequest, DescribeCacheClustersResult>()
                 .withSdkFunction(new DescribeCacheClustersFunction(client))
@@ -76,7 +76,7 @@ public class AmazonElastiCacheWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter replicationGroupAvailable() {
+    public Waiter<DescribeReplicationGroupsRequest> replicationGroupAvailable() {
 
         return new WaiterBuilder<DescribeReplicationGroupsRequest, DescribeReplicationGroupsResult>()
                 .withSdkFunction(new DescribeReplicationGroupsFunction(client))
@@ -96,7 +96,7 @@ public class AmazonElastiCacheWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter cacheClusterAvailable() {
+    public Waiter<DescribeCacheClustersRequest> cacheClusterAvailable() {
 
         return new WaiterBuilder<DescribeCacheClustersRequest, DescribeCacheClustersResult>()
                 .withSdkFunction(new DescribeCacheClustersFunction(client))
@@ -119,7 +119,7 @@ public class AmazonElastiCacheWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter replicationGroupDeleted() {
+    public Waiter<DescribeReplicationGroupsRequest> replicationGroupDeleted() {
 
         return new WaiterBuilder<DescribeReplicationGroupsRequest, DescribeReplicationGroupsResult>()
                 .withSdkFunction(new DescribeReplicationGroupsFunction(client))

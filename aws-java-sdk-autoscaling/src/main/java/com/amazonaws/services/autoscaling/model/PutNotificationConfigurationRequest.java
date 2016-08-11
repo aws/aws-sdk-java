@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for PutNotificationConfiguration.
+ * </p>
  */
 public class PutNotificationConfigurationRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

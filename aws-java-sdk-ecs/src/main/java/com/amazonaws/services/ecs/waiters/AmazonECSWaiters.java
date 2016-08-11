@@ -50,7 +50,7 @@ public class AmazonECSWaiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter tasksRunning() {
+    public Waiter<DescribeTasksRequest> tasksRunning() {
 
         return new WaiterBuilder<DescribeTasksRequest, DescribeTasksResult>()
                 .withSdkFunction(new DescribeTasksFunction(client))
@@ -70,7 +70,7 @@ public class AmazonECSWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter servicesStable() {
+    public Waiter<DescribeServicesRequest> servicesStable() {
 
         return new WaiterBuilder<DescribeServicesRequest, DescribeServicesResult>()
                 .withSdkFunction(new DescribeServicesFunction(client))
@@ -91,7 +91,7 @@ public class AmazonECSWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter servicesInactive() {
+    public Waiter<DescribeServicesRequest> servicesInactive() {
 
         return new WaiterBuilder<DescribeServicesRequest, DescribeServicesResult>()
                 .withSdkFunction(new DescribeServicesFunction(client))
@@ -110,7 +110,7 @@ public class AmazonECSWaiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter tasksStopped() {
+    public Waiter<DescribeTasksRequest> tasksStopped() {
 
         return new WaiterBuilder<DescribeTasksRequest, DescribeTasksResult>()
                 .withSdkFunction(new DescribeTasksFunction(client))

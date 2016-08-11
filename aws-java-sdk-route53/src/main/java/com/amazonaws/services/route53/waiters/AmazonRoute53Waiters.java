@@ -50,7 +50,7 @@ public class AmazonRoute53Waiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter resourceRecordSetsChanged() {
+    public Waiter<GetChangeRequest> resourceRecordSetsChanged() {
 
         return new WaiterBuilder<GetChangeRequest, GetChangeResult>()
                 .withSdkFunction(new GetChangeFunction(client))

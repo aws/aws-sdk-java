@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeLoadBalancers.
+ * </p>
  */
 public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

@@ -30,10 +30,15 @@ public enum CloudFrontActions implements Action {
             "cloudfront:CreateCloudFrontOriginAccessIdentity"),
     /** Action for the CreateDistribution operation. */
     CreateDistribution("cloudfront:CreateDistribution"),
+    /** Action for the CreateDistributionWithTags operation. */
+    CreateDistributionWithTags("cloudfront:CreateDistributionWithTags"),
     /** Action for the CreateInvalidation operation. */
     CreateInvalidation("cloudfront:CreateInvalidation"),
     /** Action for the CreateStreamingDistribution operation. */
     CreateStreamingDistribution("cloudfront:CreateStreamingDistribution"),
+    /** Action for the CreateStreamingDistributionWithTags operation. */
+    CreateStreamingDistributionWithTags(
+            "cloudfront:CreateStreamingDistributionWithTags"),
     /** Action for the DeleteCloudFrontOriginAccessIdentity operation. */
     DeleteCloudFrontOriginAccessIdentity(
             "cloudfront:DeleteCloudFrontOriginAccessIdentity"),
@@ -68,6 +73,12 @@ public enum CloudFrontActions implements Action {
     ListInvalidations("cloudfront:ListInvalidations"),
     /** Action for the ListStreamingDistributions operation. */
     ListStreamingDistributions("cloudfront:ListStreamingDistributions"),
+    /** Action for the ListTagsForResource operation. */
+    ListTagsForResource("cloudfront:ListTagsForResource"),
+    /** Action for the TagResource operation. */
+    TagResource("cloudfront:TagResource"),
+    /** Action for the UntagResource operation. */
+    UntagResource("cloudfront:UntagResource"),
     /** Action for the UpdateCloudFrontOriginAccessIdentity operation. */
     UpdateCloudFrontOriginAccessIdentity(
             "cloudfront:UpdateCloudFrontOriginAccessIdentity"),

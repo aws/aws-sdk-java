@@ -24,6 +24,13 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     /** The identifier for the distribution. For example: EDFDVBD632BHDS5. */
     private String id;
     /**
+     * The ARN (Amazon Resource Name) for the streaming distribution. For
+     * example:
+     * arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5,
+     * where 123456789012 is your AWS account Id.
+     */
+    private String aRN;
+    /**
      * Indicates the current status of the distribution. When the status is
      * Deployed, the distribution's information is fully propagated throughout
      * the Amazon CloudFront system.
@@ -104,6 +111,57 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
 
     public StreamingDistributionSummary withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * The ARN (Amazon Resource Name) for the streaming distribution. For
+     * example:
+     * arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5,
+     * where 123456789012 is your AWS account Id.
+     * 
+     * @param aRN
+     *        The ARN (Amazon Resource Name) for the streaming distribution. For
+     *        example: arn:aws:cloudfront::123456789012:streaming-distribution/
+     *        EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     */
+
+    public void setARN(String aRN) {
+        this.aRN = aRN;
+    }
+
+    /**
+     * The ARN (Amazon Resource Name) for the streaming distribution. For
+     * example:
+     * arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5,
+     * where 123456789012 is your AWS account Id.
+     * 
+     * @return The ARN (Amazon Resource Name) for the streaming distribution.
+     *         For example:
+     *         arn:aws:cloudfront::123456789012:streaming-distribution
+     *         /EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     */
+
+    public String getARN() {
+        return this.aRN;
+    }
+
+    /**
+     * The ARN (Amazon Resource Name) for the streaming distribution. For
+     * example:
+     * arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5,
+     * where 123456789012 is your AWS account Id.
+     * 
+     * @param aRN
+     *        The ARN (Amazon Resource Name) for the streaming distribution. For
+     *        example: arn:aws:cloudfront::123456789012:streaming-distribution/
+     *        EDFDVBD632BHDS5, where 123456789012 is your AWS account Id.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public StreamingDistributionSummary withARN(String aRN) {
+        setARN(aRN);
         return this;
     }
 
@@ -578,6 +636,8 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
         sb.append("{");
         if (getId() != null)
             sb.append("Id: " + getId() + ",");
+        if (getARN() != null)
+            sb.append("ARN: " + getARN() + ",");
         if (getStatus() != null)
             sb.append("Status: " + getStatus() + ",");
         if (getLastModifiedTime() != null)
@@ -614,6 +674,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
             return false;
         if (other.getId() != null
                 && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getARN() == null ^ this.getARN() == null)
+            return false;
+        if (other.getARN() != null
+                && other.getARN().equals(this.getARN()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -673,6 +738,8 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
 
         hashCode = prime * hashCode
                 + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode
+                + ((getARN() == null) ? 0 : getARN().hashCode());
         hashCode = prime * hashCode
                 + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime

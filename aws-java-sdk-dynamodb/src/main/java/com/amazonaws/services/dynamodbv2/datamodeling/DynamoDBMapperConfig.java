@@ -293,11 +293,11 @@ public class DynamoDBMapperConfig {
             setBatchWriteRetryStrategy(value);
             return this;
         }
-        
+
         public BatchLoadRetryStrategy getBatchLoadRetryStrategy() {
             return batchLoadRetryStrategy;
         }
-        
+
         /**
          * @param value the new BatchLoadRetryStrategy
          */
@@ -319,7 +319,7 @@ public class DynamoDBMapperConfig {
             setBatchLoadRetryStrategy(value);
             return this;
         }
-        
+
         /**
          * Builds a new {@code DynamoDBMapperConfig} object.
          *
@@ -619,7 +619,7 @@ public class DynamoDBMapperConfig {
                 int retriesAttempted);
     }
 
-    
+
     /**
      * {@link DynamoDBMapper#batchLoad(List)} breaks the requested items in batches of maximum size 100.
      * When calling the Dyanmo Db client, there is a chance that due to throttling, some unprocessed keys will be returned.
@@ -629,23 +629,23 @@ public class DynamoDBMapperConfig {
         /**
          * Checks if the batch load request should be retried.
          * @param batchLoadContext see {@link BatchLoadContext}
-         * 
+         *
          * @return a boolean true or false value.
          */
         public boolean shouldRetry(final BatchLoadContext batchLoadContext);
-        
+
         /**
          * Returns delay(in milliseconds) before retrying Unprocessed keys
-         * 
+         *
          * @param batchLoadContext see {@link BatchLoadContext}
          * @return delay(in milliseconds) before attempting to read unprocessed keys
          */
         public long getDelayBeforeNextRetry(final BatchLoadContext batchLoadContext);
     }
-    
+
     /**
      * This strategy, like name suggests will not attempt any retries on Unprocessed keys
-     * 
+     *
      * @author smihir
      *
      */
@@ -667,7 +667,7 @@ public class DynamoDBMapperConfig {
             return -1;
         }
     }
-    
+
     /**
      * This is the default strategy.
      * If unprocessed keys is equal to requested keys, the request will retried 5 times with a back off strategy
@@ -707,7 +707,7 @@ public class DynamoDBMapperConfig {
         }
 
     }
-    
+
     /**
      * The default BatchWriteRetryStrategy which always retries on
      * UnprocessedItem up to a maximum number of times and use exponential
@@ -1000,7 +1000,7 @@ public class DynamoDBMapperConfig {
             this.batchWriteRetryStrategy = (overrides.getBatchWriteRetryStrategy() == null)
                     ? defaults.getBatchWriteRetryStrategy()
                     : overrides.getBatchWriteRetryStrategy();
-                    
+
             this.batchLoadRetryStrategy = (overrides.getBatchLoadRetryStrategy() == null)
                             ? defaults.getBatchLoadRetryStrategy()
                             : overrides.getBatchLoadRetryStrategy();
@@ -1011,7 +1011,7 @@ public class DynamoDBMapperConfig {
     public BatchLoadRetryStrategy getBatchLoadRetryStrategy() {
         return batchLoadRetryStrategy;
     }
-    
+
     /**
      * Returns the save behavior for this configuration.
      */

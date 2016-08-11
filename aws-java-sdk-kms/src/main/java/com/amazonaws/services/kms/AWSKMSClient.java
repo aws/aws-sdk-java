@@ -193,6 +193,60 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ExpiredImportTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.ExpiredImportTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "MalformedPolicyDocumentException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.MalformedPolicyDocumentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "IncorrectKeyMaterialException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.IncorrectKeyMaterialException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidImportTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidImportTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidArnException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidArnException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("KMSInvalidStateException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.KMSInvalidStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DisabledException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.DisabledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("NotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.NotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("KeyUnavailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.KeyUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidCiphertextException")
                                     .withModeledClass(
                                             com.amazonaws.services.kms.model.InvalidCiphertextException.class))
@@ -209,12 +263,6 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "MalformedPolicyDocumentException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kms.model.MalformedPolicyDocumentException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(
                                             "UnsupportedOperationException")
                                     .withModeledClass(
                                             com.amazonaws.services.kms.model.UnsupportedOperationException.class))
@@ -225,29 +273,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                                             com.amazonaws.services.kms.model.AlreadyExistsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("InvalidArnException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kms.model.InvalidArnException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("KMSInvalidStateException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kms.model.KMSInvalidStateException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidKeyUsageException")
                                     .withModeledClass(
                                             com.amazonaws.services.kms.model.InvalidKeyUsageException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("DisabledException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kms.model.DisabledException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("NotFoundException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kms.model.NotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("InvalidMarkerException")
@@ -265,19 +293,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                                             com.amazonaws.services.kms.model.DependencyTimeoutException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
-                                    .withErrorCode("KeyUnavailableException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kms.model.KeyUnavailableException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
                                     .withErrorCode("KMSInternalException")
                                     .withModeledClass(
                                             com.amazonaws.services.kms.model.KMSInternalException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("LimitExceededException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.kms.model.LimitExceededException.class))
                     .withBaseServiceExceptionClass(
                             com.amazonaws.services.kms.model.AWSKMSException.class));
 
@@ -742,7 +760,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because a specified ARN was not valid.
      * @throws UnsupportedOperationException
      *         The request was rejected because a specified parameter is not
-     *         supported.
+     *         supported or a specified resource is not valid for this
+     *         operation.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred.
      *         The request can be retried.
@@ -962,6 +981,91 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
+     * Deletes key material that you previously imported and makes the specified
+     * customer master key (CMK) unusable. For more information about importing
+     * key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * When the specified CMK is in the <code>PendingDeletion</code> state, this
+     * operation does not change the CMK's state. Otherwise, it changes the
+     * CMK's state to <code>PendingImport</code>.
+     * </p>
+     * <p>
+     * After you delete key material, you can use <a>ImportKeyMaterial</a> to
+     * reimport the same key material into the CMK.
+     * </p>
+     * 
+     * @param deleteImportedKeyMaterialRequest
+     * @return Result of the DeleteImportedKeyMaterial operation returned by the
+     *         service.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN was not valid.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not
+     *         supported or a specified resource is not valid for this
+     *         operation.
+     * @throws DependencyTimeoutException
+     *         The system timed out while trying to fulfill the request. The
+     *         request can be retried.
+     * @throws NotFoundException
+     *         The request was rejected because the specified entity or resource
+     *         could not be found.
+     * @throws KMSInternalException
+     *         The request was rejected because an internal exception occurred.
+     *         The request can be retried.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified
+     *         resource is not valid for this request.</p>
+     *         <p>
+     *         For more information about how key state affects the use of a
+     *         customer master key (CMK), see <a href=
+     *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     *         >How Key State Affects the Use of a Customer Master Key</a> in
+     *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.DeleteImportedKeyMaterial
+     */
+    @Override
+    public DeleteImportedKeyMaterialResult deleteImportedKeyMaterial(
+            DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteImportedKeyMaterialRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteImportedKeyMaterialRequest> request = null;
+        Response<DeleteImportedKeyMaterialResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteImportedKeyMaterialRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteImportedKeyMaterialRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteImportedKeyMaterialResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeleteImportedKeyMaterialResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides detailed information about the specified customer master key.
      * </p>
      * 
@@ -1115,6 +1219,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not
+     *         supported or a specified resource is not valid for this
+     *         operation.
      * @sample AWSKMS.DisableKeyRotation
      */
     @Override
@@ -1255,6 +1363,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not
+     *         supported or a specified resource is not valid for this
+     *         operation.
      * @sample AWSKMS.EnableKeyRotation
      */
     @Override
@@ -1750,6 +1862,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not
+     *         supported or a specified resource is not valid for this
+     *         operation.
      * @sample AWSKMS.GetKeyRotationStatus
      */
     @Override
@@ -1779,6 +1895,212 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new GetKeyRotationStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the items you need in order to import key material into AWS KMS
+     * from your existing key management infrastructure. For more information
+     * about importing key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * You must specify the key ID of the customer master key (CMK) into which
+     * you will import key material. This CMK's <code>Origin</code> must be
+     * <code>EXTERNAL</code>. You must also specify the wrapping algorithm and
+     * type of wrapping key (public key) that you will use to encrypt the key
+     * material.
+     * </p>
+     * <p>
+     * This operation returns a public key and an import token. Use the public
+     * key to encrypt the key material. Store the import token to send with a
+     * subsequent <a>ImportKeyMaterial</a> request. The public key and import
+     * token from the same response must be used together. These items are valid
+     * for 24 hours, after which they cannot be used for a subsequent
+     * <a>ImportKeyMaterial</a> request. To retrieve new ones, send another
+     * <code>GetParametersForImport</code> request.
+     * </p>
+     * 
+     * @param getParametersForImportRequest
+     * @return Result of the GetParametersForImport operation returned by the
+     *         service.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN was not valid.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not
+     *         supported or a specified resource is not valid for this
+     *         operation.
+     * @throws DependencyTimeoutException
+     *         The system timed out while trying to fulfill the request. The
+     *         request can be retried.
+     * @throws NotFoundException
+     *         The request was rejected because the specified entity or resource
+     *         could not be found.
+     * @throws KMSInternalException
+     *         The request was rejected because an internal exception occurred.
+     *         The request can be retried.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified
+     *         resource is not valid for this request.</p>
+     *         <p>
+     *         For more information about how key state affects the use of a
+     *         customer master key (CMK), see <a href=
+     *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     *         >How Key State Affects the Use of a Customer Master Key</a> in
+     *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AWSKMS.GetParametersForImport
+     */
+    @Override
+    public GetParametersForImportResult getParametersForImport(
+            GetParametersForImportRequest getParametersForImportRequest) {
+        ExecutionContext executionContext = createExecutionContext(getParametersForImportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetParametersForImportRequest> request = null;
+        Response<GetParametersForImportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetParametersForImportRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getParametersForImportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetParametersForImportResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetParametersForImportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Imports key material into an AWS KMS customer master key (CMK) from your
+     * existing key management infrastructure. For more information about
+     * importing key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * You must specify the key ID of the CMK to import the key material into.
+     * This CMK's <code>Origin</code> must be <code>EXTERNAL</code>. You must
+     * also send an import token and the encrypted key material. Send the import
+     * token that you received in the same <a>GetParametersForImport</a>
+     * response that contained the public key that you used to encrypt the key
+     * material. You must also specify whether the key material expires and if
+     * so, when. When the key material expires, AWS KMS deletes the key material
+     * and the CMK becomes unusable. To use the CMK again, you can reimport the
+     * same key material. If you set an expiration date, you can change it only
+     * by reimporting the same key material and specifying a new expiration
+     * date.
+     * </p>
+     * <p>
+     * When this operation is successful, the specified CMK's key state changes
+     * to <code>Enabled</code>, and you can use the CMK.
+     * </p>
+     * <p>
+     * After you successfully import key material into a CMK, you can reimport
+     * the same key material into that CMK, but you cannot import different key
+     * material.
+     * </p>
+     * 
+     * @param importKeyMaterialRequest
+     * @return Result of the ImportKeyMaterial operation returned by the
+     *         service.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN was not valid.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not
+     *         supported or a specified resource is not valid for this
+     *         operation.
+     * @throws DependencyTimeoutException
+     *         The system timed out while trying to fulfill the request. The
+     *         request can be retried.
+     * @throws NotFoundException
+     *         The request was rejected because the specified entity or resource
+     *         could not be found.
+     * @throws KMSInternalException
+     *         The request was rejected because an internal exception occurred.
+     *         The request can be retried.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified
+     *         resource is not valid for this request.</p>
+     *         <p>
+     *         For more information about how key state affects the use of a
+     *         customer master key (CMK), see <a href=
+     *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     *         >How Key State Affects the Use of a Customer Master Key</a> in
+     *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @throws InvalidCiphertextException
+     *         The request was rejected because the specified ciphertext has
+     *         been corrupted or is otherwise invalid.
+     * @throws IncorrectKeyMaterialException
+     *         The request was rejected because the provided key material is
+     *         invalid or is not the same key material that was previously
+     *         imported into this customer master key (CMK).
+     * @throws ExpiredImportTokenException
+     *         The request was rejected because the provided import token is
+     *         expired. Use <a>GetParametersForImport</a> to retrieve a new
+     *         import token and public key, use the new public key to encrypt
+     *         the key material, and then try the request again.
+     * @throws InvalidImportTokenException
+     *         The request was rejected because the provided import token is
+     *         invalid or is associated with a different customer master key
+     *         (CMK).
+     * @sample AWSKMS.ImportKeyMaterial
+     */
+    @Override
+    public ImportKeyMaterialResult importKeyMaterial(
+            ImportKeyMaterialRequest importKeyMaterialRequest) {
+        ExecutionContext executionContext = createExecutionContext(importKeyMaterialRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportKeyMaterialRequest> request = null;
+        Response<ImportKeyMaterialResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportKeyMaterialRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(importKeyMaterialRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportKeyMaterialResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ImportKeyMaterialResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2127,7 +2449,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         request can be retried.
      * @throws UnsupportedOperationException
      *         The request was rejected because a specified parameter is not
-     *         supported.
+     *         supported or a specified resource is not valid for this
+     *         operation.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred.
      *         The request can be retried.

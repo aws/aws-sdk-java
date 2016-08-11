@@ -74,6 +74,12 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
+    public DeleteImportedKeyMaterialResult deleteImportedKeyMaterial(
+            DeleteImportedKeyMaterialRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeKeyResult describeKey(DescribeKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -134,6 +140,18 @@ public class AbstractAWSKMS implements AWSKMS {
     @Override
     public GetKeyRotationStatusResult getKeyRotationStatus(
             GetKeyRotationStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetParametersForImportResult getParametersForImport(
+            GetParametersForImportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportKeyMaterialResult importKeyMaterial(
+            ImportKeyMaterialRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

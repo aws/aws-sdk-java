@@ -16,7 +16,8 @@ package com.amazonaws.services.kms.model;
 
 /**
  * <p>
- * The request was rejected because a specified parameter is not supported.
+ * The request was rejected because a specified parameter is not supported or a
+ * specified resource is not valid for this operation.
  * </p>
  */
 public class UnsupportedOperationException extends

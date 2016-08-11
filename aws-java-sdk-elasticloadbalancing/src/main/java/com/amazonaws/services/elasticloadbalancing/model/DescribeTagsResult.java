@@ -17,7 +17,9 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output for DescribeTags.
+ * </p>
  */
 public class DescribeTagsResult implements Serializable, Cloneable {
 

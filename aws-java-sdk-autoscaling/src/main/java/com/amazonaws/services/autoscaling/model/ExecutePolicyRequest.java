@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ExecutePolicy.
+ * </p>
  */
 public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -48,7 +50,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      */
     private Boolean honorCooldown;
@@ -177,7 +179,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param honorCooldown
@@ -192,8 +194,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     *        >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer
-     *        Guide</i>.
+     *        >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public void setHonorCooldown(Boolean honorCooldown) {
@@ -213,7 +214,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return If this parameter is true, Auto Scaling waits for the cooldown
@@ -227,7 +228,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     *         >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer
+     *         >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User
      *         Guide</i>.
      */
 
@@ -248,7 +249,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param honorCooldown
@@ -263,8 +264,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     *        >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer
-     *        Guide</i>.
+     *        >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -287,7 +287,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return If this parameter is true, Auto Scaling waits for the cooldown
@@ -301,7 +301,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     *         >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer
+     *         >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User
      *         Guide</i>.
      */
 

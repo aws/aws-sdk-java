@@ -45,15 +45,16 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * <p>
      * The lifecycle state for the instance. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
-     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      */
     private String lifecycleState;
     /**
      * <p>
-     * The health status of this instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance
-     * is unhealthy and Auto Scaling should terminate and replace it.
+     * The last reported health status of this instance. "Healthy" means that
+     * the instance is healthy and should remain in service. "Unhealthy" means
+     * that the instance is unhealthy and Auto Scaling should terminate and
+     * replace it.
      * </p>
      */
     private String healthStatus;
@@ -200,15 +201,14 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * <p>
      * The lifecycle state for the instance. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
-     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param lifecycleState
      *        The lifecycle state for the instance. For more information, see <a
      *        href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
-     *        >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer
-     *        Guide</i>.
+     *        >Auto Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public void setLifecycleState(String lifecycleState) {
@@ -219,13 +219,13 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * <p>
      * The lifecycle state for the instance. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
-     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The lifecycle state for the instance. For more information, see
      *         <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
-     *         >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer
+     *         >Auto Scaling Lifecycle</a> in the <i>Auto Scaling User
      *         Guide</i>.
      */
 
@@ -237,15 +237,14 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * <p>
      * The lifecycle state for the instance. For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
-     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param lifecycleState
      *        The lifecycle state for the instance. For more information, see <a
      *        href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
-     *        >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer
-     *        Guide</i>.
+     *        >Auto Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -257,16 +256,17 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The health status of this instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance
-     * is unhealthy and Auto Scaling should terminate and replace it.
+     * The last reported health status of this instance. "Healthy" means that
+     * the instance is healthy and should remain in service. "Unhealthy" means
+     * that the instance is unhealthy and Auto Scaling should terminate and
+     * replace it.
      * </p>
      * 
      * @param healthStatus
-     *        The health status of this instance. "Healthy" means that the
-     *        instance is healthy and should remain in service. "Unhealthy"
-     *        means that the instance is unhealthy and Auto Scaling should
-     *        terminate and replace it.
+     *        The last reported health status of this instance. "Healthy" means
+     *        that the instance is healthy and should remain in service.
+     *        "Unhealthy" means that the instance is unhealthy and Auto Scaling
+     *        should terminate and replace it.
      */
 
     public void setHealthStatus(String healthStatus) {
@@ -275,15 +275,16 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The health status of this instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance
-     * is unhealthy and Auto Scaling should terminate and replace it.
+     * The last reported health status of this instance. "Healthy" means that
+     * the instance is healthy and should remain in service. "Unhealthy" means
+     * that the instance is unhealthy and Auto Scaling should terminate and
+     * replace it.
      * </p>
      * 
-     * @return The health status of this instance. "Healthy" means that the
-     *         instance is healthy and should remain in service. "Unhealthy"
-     *         means that the instance is unhealthy and Auto Scaling should
-     *         terminate and replace it.
+     * @return The last reported health status of this instance. "Healthy" means
+     *         that the instance is healthy and should remain in service.
+     *         "Unhealthy" means that the instance is unhealthy and Auto Scaling
+     *         should terminate and replace it.
      */
 
     public String getHealthStatus() {
@@ -292,16 +293,17 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The health status of this instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance
-     * is unhealthy and Auto Scaling should terminate and replace it.
+     * The last reported health status of this instance. "Healthy" means that
+     * the instance is healthy and should remain in service. "Unhealthy" means
+     * that the instance is unhealthy and Auto Scaling should terminate and
+     * replace it.
      * </p>
      * 
      * @param healthStatus
-     *        The health status of this instance. "Healthy" means that the
-     *        instance is healthy and should remain in service. "Unhealthy"
-     *        means that the instance is unhealthy and Auto Scaling should
-     *        terminate and replace it.
+     *        The last reported health status of this instance. "Healthy" means
+     *        that the instance is healthy and should remain in service.
+     *        "Unhealthy" means that the instance is unhealthy and Auto Scaling
+     *        should terminate and replace it.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

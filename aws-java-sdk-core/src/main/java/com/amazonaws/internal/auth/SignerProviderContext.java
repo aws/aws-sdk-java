@@ -15,16 +15,20 @@
  */
 package com.amazonaws.internal.auth;
 
+import com.amazonaws.Request;
+
 import java.net.URI;
 
 public class SignerProviderContext {
 
     private final URI uri;
     private final boolean isRedirect;
+    private final Request<?> request;
 
     private SignerProviderContext(Builder builder) {
         this.uri = builder.uri;
         this.isRedirect = builder.isRedirect;
+        this.request = builder.request;
     }
 
     public URI getUri() {
@@ -35,6 +39,8 @@ public class SignerProviderContext {
         return isRedirect;
     }
 
+    public Request<?> getRequest() { return request; }
+
     public static Builder builder() { return new Builder(); }
 
     public static class Builder {
@@ -43,30 +49,20 @@ public class SignerProviderContext {
 
         private URI uri;
         private boolean isRedirect;
-
-        public URI getUri() {
-            return uri;
-        }
-
-        public void setUri(final URI uri) {
-            this.uri = uri;
-        }
+        private Request<?> request;
 
         public Builder withUri(final URI uri) {
-            setUri(uri);
+            this.uri = uri;
             return this;
         }
 
-        public boolean isRedirect() {
-            return isRedirect;
-        }
-
-        public void setIsRedirect(final boolean isRedirect) {
-            this.isRedirect = isRedirect;
-        }
-
         public Builder withIsRedirect(final boolean withIsRedirect) {
-            setIsRedirect(withIsRedirect);
+            this.isRedirect = withIsRedirect;
+            return this;
+        }
+
+        public Builder withRequest(final Request<?> request) {
+            this.request = request;
             return this;
         }
 

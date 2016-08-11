@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Contains the parameters for DeletePolicy.
+ * </p>
  */
 public class DeletePolicyRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {

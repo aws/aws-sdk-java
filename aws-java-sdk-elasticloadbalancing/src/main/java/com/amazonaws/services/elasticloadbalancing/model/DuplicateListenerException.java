@@ -16,8 +16,8 @@ package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
  * <p>
- * A listener already exists for the specified <code>LoadBalancerName</code> and
- * <code>LoadBalancerPort</code>, but with a different <code>InstancePort</code>, <code>Protocol</code>, or <code>SSLCertificateId</code>.
+ * A listener already exists for the specified load balancer name and port, but
+ * with a different instance port, protocol, or SSL certificate.
  * </p>
  */
 public class DuplicateListenerException

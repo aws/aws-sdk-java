@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for PutLifecycleHook.
+ * </p>
  */
 public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -70,13 +72,41 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * information:
      * </p>
      * <ul>
-     * <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling group.</li>
-     * <li><b>AccountId</b>. The AWS account ID.</li>
-     * <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
-     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
-     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
-     * <li><b>NotificationMetadata</b>. User-defined information.</li>
+     * <li>
+     * <p>
+     * <b>AutoScalingGroupName</b>. The name of the Auto Scaling group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AccountId</b>. The AWS account ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>LifecycleTransition</b>. The lifecycle hook type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>LifecycleActionToken</b>. The lifecycle action token.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>EC2InstanceId</b>. The EC2 instance ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>LifecycleHookName</b>. The name of the lifecycle hook.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NotificationMetadata</b>. User-defined information.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * This operation uses the JSON format when sending notifications to an
@@ -359,13 +389,41 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * information:
      * </p>
      * <ul>
-     * <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling group.</li>
-     * <li><b>AccountId</b>. The AWS account ID.</li>
-     * <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
-     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
-     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
-     * <li><b>NotificationMetadata</b>. User-defined information.</li>
+     * <li>
+     * <p>
+     * <b>AutoScalingGroupName</b>. The name of the Auto Scaling group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AccountId</b>. The AWS account ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>LifecycleTransition</b>. The lifecycle hook type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>LifecycleActionToken</b>. The lifecycle action token.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>EC2InstanceId</b>. The EC2 instance ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>LifecycleHookName</b>. The name of the lifecycle hook.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NotificationMetadata</b>. User-defined information.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * This operation uses the JSON format when sending notifications to an
@@ -389,14 +447,41 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *        information:
      *        </p>
      *        <ul>
-     *        <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling
-     *        group.</li>
-     *        <li><b>AccountId</b>. The AWS account ID.</li>
-     *        <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
-     *        <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
-     *        <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     *        <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
-     *        <li><b>NotificationMetadata</b>. User-defined information.</li>
+     *        <li>
+     *        <p>
+     *        <b>AutoScalingGroupName</b>. The name of the Auto Scaling group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AccountId</b>. The AWS account ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>LifecycleTransition</b>. The lifecycle hook type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>LifecycleActionToken</b>. The lifecycle action token.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>EC2InstanceId</b>. The EC2 instance ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>LifecycleHookName</b>. The name of the lifecycle hook.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>NotificationMetadata</b>. User-defined information.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        This operation uses the JSON format when sending notifications to
@@ -426,13 +511,41 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * information:
      * </p>
      * <ul>
-     * <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling group.</li>
-     * <li><b>AccountId</b>. The AWS account ID.</li>
-     * <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
-     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
-     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
-     * <li><b>NotificationMetadata</b>. User-defined information.</li>
+     * <li>
+     * <p>
+     * <b>AutoScalingGroupName</b>. The name of the Auto Scaling group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AccountId</b>. The AWS account ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>LifecycleTransition</b>. The lifecycle hook type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>LifecycleActionToken</b>. The lifecycle action token.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>EC2InstanceId</b>. The EC2 instance ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>LifecycleHookName</b>. The name of the lifecycle hook.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NotificationMetadata</b>. User-defined information.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * This operation uses the JSON format when sending notifications to an
@@ -455,14 +568,41 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *         following information:
      *         </p>
      *         <ul>
-     *         <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling
-     *         group.</li>
-     *         <li><b>AccountId</b>. The AWS account ID.</li>
-     *         <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
-     *         <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
-     *         <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     *         <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
-     *         <li><b>NotificationMetadata</b>. User-defined information.</li>
+     *         <li>
+     *         <p>
+     *         <b>AutoScalingGroupName</b>. The name of the Auto Scaling group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>AccountId</b>. The AWS account ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>LifecycleTransition</b>. The lifecycle hook type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>LifecycleActionToken</b>. The lifecycle action token.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>EC2InstanceId</b>. The EC2 instance ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>LifecycleHookName</b>. The name of the lifecycle hook.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>NotificationMetadata</b>. User-defined information.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         This operation uses the JSON format when sending notifications to
@@ -492,13 +632,41 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * information:
      * </p>
      * <ul>
-     * <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling group.</li>
-     * <li><b>AccountId</b>. The AWS account ID.</li>
-     * <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
-     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
-     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
-     * <li><b>NotificationMetadata</b>. User-defined information.</li>
+     * <li>
+     * <p>
+     * <b>AutoScalingGroupName</b>. The name of the Auto Scaling group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AccountId</b>. The AWS account ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>LifecycleTransition</b>. The lifecycle hook type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>LifecycleActionToken</b>. The lifecycle action token.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>EC2InstanceId</b>. The EC2 instance ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>LifecycleHookName</b>. The name of the lifecycle hook.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NotificationMetadata</b>. User-defined information.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * This operation uses the JSON format when sending notifications to an
@@ -522,14 +690,41 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *        information:
      *        </p>
      *        <ul>
-     *        <li><b>AutoScalingGroupName</b>. The name of the Auto Scaling
-     *        group.</li>
-     *        <li><b>AccountId</b>. The AWS account ID.</li>
-     *        <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
-     *        <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
-     *        <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     *        <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
-     *        <li><b>NotificationMetadata</b>. User-defined information.</li>
+     *        <li>
+     *        <p>
+     *        <b>AutoScalingGroupName</b>. The name of the Auto Scaling group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AccountId</b>. The AWS account ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>LifecycleTransition</b>. The lifecycle hook type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>LifecycleActionToken</b>. The lifecycle action token.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>EC2InstanceId</b>. The EC2 instance ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>LifecycleHookName</b>. The name of the lifecycle hook.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>NotificationMetadata</b>. User-defined information.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        This operation uses the JSON format when sending notifications to

@@ -55,7 +55,7 @@ public class ListDistributionsRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2016-01-28/distribution";
+        String uriResourcePath = "/2016-08-01/distribution";
 
         request.setResourcePath(uriResourcePath);
 

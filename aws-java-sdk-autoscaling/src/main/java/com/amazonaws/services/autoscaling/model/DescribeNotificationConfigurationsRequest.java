@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeNotificationConfigurations.
+ * </p>
  */
 public class DescribeNotificationConfigurationsRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

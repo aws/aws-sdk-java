@@ -28,7 +28,9 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      * The key policy to attach to the CMK.
      * </p>
      * <p>
-     * If you specify a key policy, it must meet the following criteria:
+     * If you specify a policy and do not set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet
+     * the following criteria:
      * </p>
      * <ul>
      * <li>
@@ -88,6 +90,26 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
     private String keyUsage;
     /**
      * <p>
+     * The source of the CMK's key material.
+     * </p>
+     * <p>
+     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key
+     * material. When this parameter is set to <code>EXTERNAL</code>, the
+     * request creates a CMK without key material so that you can import key
+     * material from your existing key management infrastructure. For more
+     * information about importing key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * The CMK's <code>Origin</code> is immutable and is set when the CMK is
+     * created.
+     * </p>
+     */
+    private String origin;
+    /**
+     * <p>
      * A flag to indicate whether to bypass the key policy lockout safety check.
      * </p>
      * <important>
@@ -118,7 +140,9 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      * The key policy to attach to the CMK.
      * </p>
      * <p>
-     * If you specify a key policy, it must meet the following criteria:
+     * If you specify a policy and do not set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet
+     * the following criteria:
      * </p>
      * <ul>
      * <li>
@@ -159,7 +183,9 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      * @param policy
      *        The key policy to attach to the CMK.</p>
      *        <p>
-     *        If you specify a key policy, it must meet the following criteria:
+     *        If you specify a policy and do not set
+     *        <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy
+     *        must meet the following criteria:
      *        </p>
      *        <ul>
      *        <li>
@@ -208,7 +234,9 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      * The key policy to attach to the CMK.
      * </p>
      * <p>
-     * If you specify a key policy, it must meet the following criteria:
+     * If you specify a policy and do not set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet
+     * the following criteria:
      * </p>
      * <ul>
      * <li>
@@ -248,7 +276,9 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The key policy to attach to the CMK.</p>
      *         <p>
-     *         If you specify a key policy, it must meet the following criteria:
+     *         If you specify a policy and do not set
+     *         <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy
+     *         must meet the following criteria:
      *         </p>
      *         <ul>
      *         <li>
@@ -297,7 +327,9 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      * The key policy to attach to the CMK.
      * </p>
      * <p>
-     * If you specify a key policy, it must meet the following criteria:
+     * If you specify a policy and do not set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet
+     * the following criteria:
      * </p>
      * <ul>
      * <li>
@@ -338,7 +370,9 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      * @param policy
      *        The key policy to attach to the CMK.</p>
      *        <p>
-     *        If you specify a key policy, it must meet the following criteria:
+     *        If you specify a policy and do not set
+     *        <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy
+     *        must meet the following criteria:
      *        </p>
      *        <ul>
      *        <li>
@@ -544,6 +578,221 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
 
     public CreateKeyRequest withKeyUsage(KeyUsageType keyUsage) {
         setKeyUsage(keyUsage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source of the CMK's key material.
+     * </p>
+     * <p>
+     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key
+     * material. When this parameter is set to <code>EXTERNAL</code>, the
+     * request creates a CMK without key material so that you can import key
+     * material from your existing key management infrastructure. For more
+     * information about importing key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * The CMK's <code>Origin</code> is immutable and is set when the CMK is
+     * created.
+     * </p>
+     * 
+     * @param origin
+     *        The source of the CMK's key material.</p>
+     *        <p>
+     *        The default is <code>AWS_KMS</code>, which means AWS KMS creates
+     *        the key material. When this parameter is set to
+     *        <code>EXTERNAL</code>, the request creates a CMK without key
+     *        material so that you can import key material from your existing
+     *        key management infrastructure. For more information about
+     *        importing key material into AWS KMS, see <a href=
+     *        "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     *        >Importing Key Material</a> in the <i>AWS Key Management Service
+     *        Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        The CMK's <code>Origin</code> is immutable and is set when the CMK
+     *        is created.
+     * @see OriginType
+     */
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
+    /**
+     * <p>
+     * The source of the CMK's key material.
+     * </p>
+     * <p>
+     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key
+     * material. When this parameter is set to <code>EXTERNAL</code>, the
+     * request creates a CMK without key material so that you can import key
+     * material from your existing key management infrastructure. For more
+     * information about importing key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * The CMK's <code>Origin</code> is immutable and is set when the CMK is
+     * created.
+     * </p>
+     * 
+     * @return The source of the CMK's key material.</p>
+     *         <p>
+     *         The default is <code>AWS_KMS</code>, which means AWS KMS creates
+     *         the key material. When this parameter is set to
+     *         <code>EXTERNAL</code>, the request creates a CMK without key
+     *         material so that you can import key material from your existing
+     *         key management infrastructure. For more information about
+     *         importing key material into AWS KMS, see <a href=
+     *         "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     *         >Importing Key Material</a> in the <i>AWS Key Management Service
+     *         Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         The CMK's <code>Origin</code> is immutable and is set when the
+     *         CMK is created.
+     * @see OriginType
+     */
+
+    public String getOrigin() {
+        return this.origin;
+    }
+
+    /**
+     * <p>
+     * The source of the CMK's key material.
+     * </p>
+     * <p>
+     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key
+     * material. When this parameter is set to <code>EXTERNAL</code>, the
+     * request creates a CMK without key material so that you can import key
+     * material from your existing key management infrastructure. For more
+     * information about importing key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * The CMK's <code>Origin</code> is immutable and is set when the CMK is
+     * created.
+     * </p>
+     * 
+     * @param origin
+     *        The source of the CMK's key material.</p>
+     *        <p>
+     *        The default is <code>AWS_KMS</code>, which means AWS KMS creates
+     *        the key material. When this parameter is set to
+     *        <code>EXTERNAL</code>, the request creates a CMK without key
+     *        material so that you can import key material from your existing
+     *        key management infrastructure. For more information about
+     *        importing key material into AWS KMS, see <a href=
+     *        "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     *        >Importing Key Material</a> in the <i>AWS Key Management Service
+     *        Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        The CMK's <code>Origin</code> is immutable and is set when the CMK
+     *        is created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see OriginType
+     */
+
+    public CreateKeyRequest withOrigin(String origin) {
+        setOrigin(origin);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source of the CMK's key material.
+     * </p>
+     * <p>
+     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key
+     * material. When this parameter is set to <code>EXTERNAL</code>, the
+     * request creates a CMK without key material so that you can import key
+     * material from your existing key management infrastructure. For more
+     * information about importing key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * The CMK's <code>Origin</code> is immutable and is set when the CMK is
+     * created.
+     * </p>
+     * 
+     * @param origin
+     *        The source of the CMK's key material.</p>
+     *        <p>
+     *        The default is <code>AWS_KMS</code>, which means AWS KMS creates
+     *        the key material. When this parameter is set to
+     *        <code>EXTERNAL</code>, the request creates a CMK without key
+     *        material so that you can import key material from your existing
+     *        key management infrastructure. For more information about
+     *        importing key material into AWS KMS, see <a href=
+     *        "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     *        >Importing Key Material</a> in the <i>AWS Key Management Service
+     *        Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        The CMK's <code>Origin</code> is immutable and is set when the CMK
+     *        is created.
+     * @see OriginType
+     */
+
+    public void setOrigin(OriginType origin) {
+        this.origin = origin.toString();
+    }
+
+    /**
+     * <p>
+     * The source of the CMK's key material.
+     * </p>
+     * <p>
+     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key
+     * material. When this parameter is set to <code>EXTERNAL</code>, the
+     * request creates a CMK without key material so that you can import key
+     * material from your existing key management infrastructure. For more
+     * information about importing key material into AWS KMS, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     * >Importing Key Material</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * The CMK's <code>Origin</code> is immutable and is set when the CMK is
+     * created.
+     * </p>
+     * 
+     * @param origin
+     *        The source of the CMK's key material.</p>
+     *        <p>
+     *        The default is <code>AWS_KMS</code>, which means AWS KMS creates
+     *        the key material. When this parameter is set to
+     *        <code>EXTERNAL</code>, the request creates a CMK without key
+     *        material so that you can import key material from your existing
+     *        key management infrastructure. For more information about
+     *        importing key material into AWS KMS, see <a href=
+     *        "http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html"
+     *        >Importing Key Material</a> in the <i>AWS Key Management Service
+     *        Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        The CMK's <code>Origin</code> is immutable and is set when the CMK
+     *        is created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see OriginType
+     */
+
+    public CreateKeyRequest withOrigin(OriginType origin) {
+        setOrigin(origin);
         return this;
     }
 
@@ -780,6 +1029,8 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
             sb.append("Description: " + getDescription() + ",");
         if (getKeyUsage() != null)
             sb.append("KeyUsage: " + getKeyUsage() + ",");
+        if (getOrigin() != null)
+            sb.append("Origin: " + getOrigin() + ",");
         if (getBypassPolicyLockoutSafetyCheck() != null)
             sb.append("BypassPolicyLockoutSafetyCheck: "
                     + getBypassPolicyLockoutSafetyCheck());
@@ -812,6 +1063,11 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
         if (other.getKeyUsage() != null
                 && other.getKeyUsage().equals(this.getKeyUsage()) == false)
             return false;
+        if (other.getOrigin() == null ^ this.getOrigin() == null)
+            return false;
+        if (other.getOrigin() != null
+                && other.getOrigin().equals(this.getOrigin()) == false)
+            return false;
         if (other.getBypassPolicyLockoutSafetyCheck() == null
                 ^ this.getBypassPolicyLockoutSafetyCheck() == null)
             return false;
@@ -834,6 +1090,8 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
                 + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode
                 + ((getKeyUsage() == null) ? 0 : getKeyUsage().hashCode());
+        hashCode = prime * hashCode
+                + ((getOrigin() == null) ? 0 : getOrigin().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getBypassPolicyLockoutSafetyCheck() == null) ? 0

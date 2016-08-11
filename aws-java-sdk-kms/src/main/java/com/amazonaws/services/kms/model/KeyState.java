@@ -21,7 +21,8 @@ public enum KeyState {
 
     Enabled("Enabled"),
     Disabled("Disabled"),
-    PendingDeletion("PendingDeletion");
+    PendingDeletion("PendingDeletion"),
+    PendingImport("PendingImport");
 
     private String value;
 

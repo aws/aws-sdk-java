@@ -31,26 +31,25 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
     private String loadBalancerName;
     /**
      * <p>
-     * The external DNS name of the load balancer.
+     * The DNS name of the load balancer.
      * </p>
      */
     private String dNSName;
     /**
      * <p>
-     * The Amazon Route 53 hosted zone associated with the load balancer.
+     * The DNS name of the load balancer.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html"
-     * >Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic
-     * Load Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
+     * >Configure a Custom Domain Name</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      */
     private String canonicalHostedZoneName;
     /**
      * <p>
-     * The ID of the Amazon Route 53 hosted zone name associated with the load
-     * balancer.
+     * The ID of the Amazon Route 53 hosted zone for the load balancer.
      * </p>
      */
     private String canonicalHostedZoneNameID;
@@ -68,7 +67,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
     private Policies policies;
     /**
      * <p>
-     * Information about the back-end servers.
+     * Information about your EC2 instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BackendServerDescription> backendServerDescriptions;
@@ -104,10 +103,10 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
     private HealthCheck healthCheck;
     /**
      * <p>
-     * The security group that you can use as part of your inbound rules for
-     * your load balancer's back-end application instances. To only allow
-     * traffic from load balancers, add a security group rule to your back end
-     * instance that specifies this source security group as the inbound source.
+     * The security group for the load balancer, which you can use as part of
+     * your inbound rules for your registered instances. To only allow traffic
+     * from load balancers, add a security group rule that specifies this source
+     * security group as the inbound source.
      * </p>
      */
     private SourceSecurityGroup sourceSecurityGroup;
@@ -182,11 +181,11 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The external DNS name of the load balancer.
+     * The DNS name of the load balancer.
      * </p>
      * 
      * @param dNSName
-     *        The external DNS name of the load balancer.
+     *        The DNS name of the load balancer.
      */
 
     public void setDNSName(String dNSName) {
@@ -195,10 +194,10 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The external DNS name of the load balancer.
+     * The DNS name of the load balancer.
      * </p>
      * 
-     * @return The external DNS name of the load balancer.
+     * @return The DNS name of the load balancer.
      */
 
     public String getDNSName() {
@@ -207,11 +206,11 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The external DNS name of the load balancer.
+     * The DNS name of the load balancer.
      * </p>
      * 
      * @param dNSName
-     *        The external DNS name of the load balancer.
+     *        The DNS name of the load balancer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -223,23 +222,22 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Route 53 hosted zone associated with the load balancer.
+     * The DNS name of the load balancer.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html"
-     * >Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic
-     * Load Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
+     * >Configure a Custom Domain Name</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @param canonicalHostedZoneName
-     *        The Amazon Route 53 hosted zone associated with the load
-     *        balancer.</p>
+     *        The DNS name of the load balancer.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html"
-     *        >Using Domain Names With Elastic Load Balancing</a> in the
-     *        <i>Elastic Load Balancing Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
+     *        >Configure a Custom Domain Name</a> in the <i>Classic Load
+     *        Balancers Guide</i>.
      */
 
     public void setCanonicalHostedZoneName(String canonicalHostedZoneName) {
@@ -248,22 +246,21 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Route 53 hosted zone associated with the load balancer.
+     * The DNS name of the load balancer.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html"
-     * >Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic
-     * Load Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
+     * >Configure a Custom Domain Name</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
-     * @return The Amazon Route 53 hosted zone associated with the load
-     *         balancer.</p>
+     * @return The DNS name of the load balancer.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html"
-     *         >Using Domain Names With Elastic Load Balancing</a> in the
-     *         <i>Elastic Load Balancing Developer Guide</i>.
+     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
+     *         >Configure a Custom Domain Name</a> in the <i>Classic Load
+     *         Balancers Guide</i>.
      */
 
     public String getCanonicalHostedZoneName() {
@@ -272,23 +269,22 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Route 53 hosted zone associated with the load balancer.
+     * The DNS name of the load balancer.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html"
-     * >Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic
-     * Load Balancing Developer Guide</i>.
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
+     * >Configure a Custom Domain Name</a> in the <i>Classic Load Balancers
+     * Guide</i>.
      * </p>
      * 
      * @param canonicalHostedZoneName
-     *        The Amazon Route 53 hosted zone associated with the load
-     *        balancer.</p>
+     *        The DNS name of the load balancer.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html"
-     *        >Using Domain Names With Elastic Load Balancing</a> in the
-     *        <i>Elastic Load Balancing Developer Guide</i>.
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
+     *        >Configure a Custom Domain Name</a> in the <i>Classic Load
+     *        Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -301,13 +297,11 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Amazon Route 53 hosted zone name associated with the load
-     * balancer.
+     * The ID of the Amazon Route 53 hosted zone for the load balancer.
      * </p>
      * 
      * @param canonicalHostedZoneNameID
-     *        The ID of the Amazon Route 53 hosted zone name associated with the
-     *        load balancer.
+     *        The ID of the Amazon Route 53 hosted zone for the load balancer.
      */
 
     public void setCanonicalHostedZoneNameID(String canonicalHostedZoneNameID) {
@@ -316,12 +310,10 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Amazon Route 53 hosted zone name associated with the load
-     * balancer.
+     * The ID of the Amazon Route 53 hosted zone for the load balancer.
      * </p>
      * 
-     * @return The ID of the Amazon Route 53 hosted zone name associated with
-     *         the load balancer.
+     * @return The ID of the Amazon Route 53 hosted zone for the load balancer.
      */
 
     public String getCanonicalHostedZoneNameID() {
@@ -330,13 +322,11 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Amazon Route 53 hosted zone name associated with the load
-     * balancer.
+     * The ID of the Amazon Route 53 hosted zone for the load balancer.
      * </p>
      * 
      * @param canonicalHostedZoneNameID
-     *        The ID of the Amazon Route 53 hosted zone name associated with the
-     *        load balancer.
+     *        The ID of the Amazon Route 53 hosted zone for the load balancer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -471,10 +461,10 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the back-end servers.
+     * Information about your EC2 instances.
      * </p>
      * 
-     * @return Information about the back-end servers.
+     * @return Information about your EC2 instances.
      */
 
     public java.util.List<BackendServerDescription> getBackendServerDescriptions() {
@@ -486,11 +476,11 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the back-end servers.
+     * Information about your EC2 instances.
      * </p>
      * 
      * @param backendServerDescriptions
-     *        Information about the back-end servers.
+     *        Information about your EC2 instances.
      */
 
     public void setBackendServerDescriptions(
@@ -506,7 +496,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the back-end servers.
+     * Information about your EC2 instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -516,7 +506,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * </p>
      * 
      * @param backendServerDescriptions
-     *        Information about the back-end servers.
+     *        Information about your EC2 instances.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -535,11 +525,11 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the back-end servers.
+     * Information about your EC2 instances.
      * </p>
      * 
      * @param backendServerDescriptions
-     *        Information about the back-end servers.
+     *        Information about your EC2 instances.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -876,18 +866,17 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The security group that you can use as part of your inbound rules for
-     * your load balancer's back-end application instances. To only allow
-     * traffic from load balancers, add a security group rule to your back end
-     * instance that specifies this source security group as the inbound source.
+     * The security group for the load balancer, which you can use as part of
+     * your inbound rules for your registered instances. To only allow traffic
+     * from load balancers, add a security group rule that specifies this source
+     * security group as the inbound source.
      * </p>
      * 
      * @param sourceSecurityGroup
-     *        The security group that you can use as part of your inbound rules
-     *        for your load balancer's back-end application instances. To only
-     *        allow traffic from load balancers, add a security group rule to
-     *        your back end instance that specifies this source security group
-     *        as the inbound source.
+     *        The security group for the load balancer, which you can use as
+     *        part of your inbound rules for your registered instances. To only
+     *        allow traffic from load balancers, add a security group rule that
+     *        specifies this source security group as the inbound source.
      */
 
     public void setSourceSecurityGroup(SourceSecurityGroup sourceSecurityGroup) {
@@ -896,17 +885,16 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The security group that you can use as part of your inbound rules for
-     * your load balancer's back-end application instances. To only allow
-     * traffic from load balancers, add a security group rule to your back end
-     * instance that specifies this source security group as the inbound source.
+     * The security group for the load balancer, which you can use as part of
+     * your inbound rules for your registered instances. To only allow traffic
+     * from load balancers, add a security group rule that specifies this source
+     * security group as the inbound source.
      * </p>
      * 
-     * @return The security group that you can use as part of your inbound rules
-     *         for your load balancer's back-end application instances. To only
-     *         allow traffic from load balancers, add a security group rule to
-     *         your back end instance that specifies this source security group
-     *         as the inbound source.
+     * @return The security group for the load balancer, which you can use as
+     *         part of your inbound rules for your registered instances. To only
+     *         allow traffic from load balancers, add a security group rule that
+     *         specifies this source security group as the inbound source.
      */
 
     public SourceSecurityGroup getSourceSecurityGroup() {
@@ -915,18 +903,17 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The security group that you can use as part of your inbound rules for
-     * your load balancer's back-end application instances. To only allow
-     * traffic from load balancers, add a security group rule to your back end
-     * instance that specifies this source security group as the inbound source.
+     * The security group for the load balancer, which you can use as part of
+     * your inbound rules for your registered instances. To only allow traffic
+     * from load balancers, add a security group rule that specifies this source
+     * security group as the inbound source.
      * </p>
      * 
      * @param sourceSecurityGroup
-     *        The security group that you can use as part of your inbound rules
-     *        for your load balancer's back-end application instances. To only
-     *        allow traffic from load balancers, add a security group rule to
-     *        your back end instance that specifies this source security group
-     *        as the inbound source.
+     *        The security group for the load balancer, which you can use as
+     *        part of your inbound rules for your registered instances. To only
+     *        allow traffic from load balancers, add a security group rule that
+     *        specifies this source security group as the inbound source.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

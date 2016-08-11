@@ -69,14 +69,13 @@ public class Deployment implements Serializable, Cloneable {
     private Integer runningCount;
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the service was last
-     * updated.
+     * The Unix timestamp for when the service was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -380,12 +379,11 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time in seconds and milliseconds when the service was
-     *        created.
+     *        The Unix timestamp for when the service was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -394,11 +392,10 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      * 
-     * @return The Unix time in seconds and milliseconds when the service was
-     *         created.
+     * @return The Unix timestamp for when the service was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -407,12 +404,11 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time in seconds and milliseconds when the service was
-     *        created.
+     *        The Unix timestamp for when the service was created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -424,13 +420,11 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the service was last
-     * updated.
+     * The Unix timestamp for when the service was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix time in seconds and milliseconds when the service was
-     *        last updated.
+     *        The Unix timestamp for when the service was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -439,12 +433,10 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the service was last
-     * updated.
+     * The Unix timestamp for when the service was last updated.
      * </p>
      * 
-     * @return The Unix time in seconds and milliseconds when the service was
-     *         last updated.
+     * @return The Unix timestamp for when the service was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -453,13 +445,11 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the service was last
-     * updated.
+     * The Unix timestamp for when the service was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix time in seconds and milliseconds when the service was
-     *        last updated.
+     *        The Unix timestamp for when the service was last updated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

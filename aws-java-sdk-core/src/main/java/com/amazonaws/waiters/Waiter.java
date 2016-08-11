@@ -27,7 +27,7 @@ import java.util.concurrent.Future;
 /**
  * Created by meghbyar on 7/29/16.
  */
-public interface Waiter<Input extends AmazonWebServiceRequest, Output> {
+public interface Waiter<Input extends AmazonWebServiceRequest> {
 
     /**
      * Polls synchronously until it is determined that the resource

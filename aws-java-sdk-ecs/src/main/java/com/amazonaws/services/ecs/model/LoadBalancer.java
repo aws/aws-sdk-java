@@ -25,6 +25,13 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
+     * group associated with a service.
+     * </p>
+     */
+    private String targetGroupArn;
+    /**
+     * <p>
      * The name of the load balancer.
      * </p>
      */
@@ -45,6 +52,53 @@ public class LoadBalancer implements Serializable, Cloneable {
      * </p>
      */
     private Integer containerPort;
+
+    /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
+     * group associated with a service.
+     * </p>
+     * 
+     * @param targetGroupArn
+     *        The full Amazon Resource Name (ARN) of the Elastic Load Balancing
+     *        target group associated with a service.
+     */
+
+    public void setTargetGroupArn(String targetGroupArn) {
+        this.targetGroupArn = targetGroupArn;
+    }
+
+    /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
+     * group associated with a service.
+     * </p>
+     * 
+     * @return The full Amazon Resource Name (ARN) of the Elastic Load Balancing
+     *         target group associated with a service.
+     */
+
+    public String getTargetGroupArn() {
+        return this.targetGroupArn;
+    }
+
+    /**
+     * <p>
+     * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
+     * group associated with a service.
+     * </p>
+     * 
+     * @param targetGroupArn
+     *        The full Amazon Resource Name (ARN) of the Elastic Load Balancing
+     *        target group associated with a service.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public LoadBalancer withTargetGroupArn(String targetGroupArn) {
+        setTargetGroupArn(targetGroupArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -205,6 +259,8 @@ public class LoadBalancer implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getTargetGroupArn() != null)
+            sb.append("TargetGroupArn: " + getTargetGroupArn() + ",");
         if (getLoadBalancerName() != null)
             sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
         if (getContainerName() != null)
@@ -225,6 +281,12 @@ public class LoadBalancer implements Serializable, Cloneable {
         if (obj instanceof LoadBalancer == false)
             return false;
         LoadBalancer other = (LoadBalancer) obj;
+        if (other.getTargetGroupArn() == null
+                ^ this.getTargetGroupArn() == null)
+            return false;
+        if (other.getTargetGroupArn() != null
+                && other.getTargetGroupArn().equals(this.getTargetGroupArn()) == false)
+            return false;
         if (other.getLoadBalancerName() == null
                 ^ this.getLoadBalancerName() == null)
             return false;
@@ -250,6 +312,10 @@ public class LoadBalancer implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime
+                * hashCode
+                + ((getTargetGroupArn() == null) ? 0 : getTargetGroupArn()
+                        .hashCode());
         hashCode = prime
                 * hashCode
                 + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName()

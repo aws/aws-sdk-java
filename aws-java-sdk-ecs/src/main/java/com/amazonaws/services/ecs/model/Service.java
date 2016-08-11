@@ -51,9 +51,9 @@ public class Service implements Serializable, Cloneable {
     private String clusterArn;
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects, containing the
+     * load balancer name, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
@@ -112,7 +112,7 @@ public class Service implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role associated with the
      * service that allows the Amazon ECS container agent to register container
-     * instances with a load balancer.
+     * instances with an Elastic Load Balancing load balancer.
      * </p>
      */
     private String roleArn;
@@ -125,7 +125,7 @@ public class Service implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<ServiceEvent> events;
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -312,15 +312,15 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects, containing the
+     * load balancer name, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer.
      * </p>
      * 
-     * @return A list of load balancer objects, containing the load balancer
-     *         name, the container name (as it appears in a container
-     *         definition), and the container port to access from the load
-     *         balancer.
+     * @return A list of Elastic Load Balancing load balancer objects,
+     *         containing the load balancer name, the container name (as it
+     *         appears in a container definition), and the container port to
+     *         access from the load balancer.
      */
 
     public java.util.List<LoadBalancer> getLoadBalancers() {
@@ -332,16 +332,16 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects, containing the
+     * load balancer name, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer.
      * </p>
      * 
      * @param loadBalancers
-     *        A list of load balancer objects, containing the load balancer
-     *        name, the container name (as it appears in a container
-     *        definition), and the container port to access from the load
-     *        balancer.
+     *        A list of Elastic Load Balancing load balancer objects, containing
+     *        the load balancer name, the container name (as it appears in a
+     *        container definition), and the container port to access from the
+     *        load balancer.
      */
 
     public void setLoadBalancers(
@@ -357,9 +357,9 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects, containing the
+     * load balancer name, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -369,10 +369,10 @@ public class Service implements Serializable, Cloneable {
      * </p>
      * 
      * @param loadBalancers
-     *        A list of load balancer objects, containing the load balancer
-     *        name, the container name (as it appears in a container
-     *        definition), and the container port to access from the load
-     *        balancer.
+     *        A list of Elastic Load Balancing load balancer objects, containing
+     *        the load balancer name, the container name (as it appears in a
+     *        container definition), and the container port to access from the
+     *        load balancer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -390,16 +390,16 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects, containing the
+     * load balancer name, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer.
      * </p>
      * 
      * @param loadBalancers
-     *        A list of load balancer objects, containing the load balancer
-     *        name, the container name (as it appears in a container
-     *        definition), and the container port to access from the load
-     *        balancer.
+     *        A list of Elastic Load Balancing load balancer objects, containing
+     *        the load balancer name, the container name (as it appears in a
+     *        container definition), and the container port to access from the
+     *        load balancer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -801,13 +801,13 @@ public class Service implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role associated with the
      * service that allows the Amazon ECS container agent to register container
-     * instances with a load balancer.
+     * instances with an Elastic Load Balancing load balancer.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the IAM role associated with the
      *        service that allows the Amazon ECS container agent to register
-     *        container instances with a load balancer.
+     *        container instances with an Elastic Load Balancing load balancer.
      */
 
     public void setRoleArn(String roleArn) {
@@ -818,12 +818,13 @@ public class Service implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role associated with the
      * service that allows the Amazon ECS container agent to register container
-     * instances with a load balancer.
+     * instances with an Elastic Load Balancing load balancer.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM role associated with
      *         the service that allows the Amazon ECS container agent to
-     *         register container instances with a load balancer.
+     *         register container instances with an Elastic Load Balancing load
+     *         balancer.
      */
 
     public String getRoleArn() {
@@ -834,13 +835,13 @@ public class Service implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role associated with the
      * service that allows the Amazon ECS container agent to register container
-     * instances with a load balancer.
+     * instances with an Elastic Load Balancing load balancer.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the IAM role associated with the
      *        service that allows the Amazon ECS container agent to register
-     *        container instances with a load balancer.
+     *        container instances with an Elastic Load Balancing load balancer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -938,12 +939,11 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time in seconds and milliseconds when the service was
-     *        created.
+     *        The Unix timestamp for when the service was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -952,11 +952,10 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      * 
-     * @return The Unix time in seconds and milliseconds when the service was
-     *         created.
+     * @return The Unix timestamp for when the service was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -965,12 +964,11 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix time in seconds and milliseconds when the service was created.
+     * The Unix timestamp for when the service was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time in seconds and milliseconds when the service was
-     *        created.
+     *        The Unix timestamp for when the service was created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

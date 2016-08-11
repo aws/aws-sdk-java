@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeleteAutoScalingGroup.
+ * </p>
  */
 public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

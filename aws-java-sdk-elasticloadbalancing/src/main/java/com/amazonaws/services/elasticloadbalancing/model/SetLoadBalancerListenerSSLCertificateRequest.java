@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for SetLoadBalancerListenerSSLCertificate.
+ * </p>
  */
 public class SetLoadBalancerListenerSSLCertificateRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

@@ -44,9 +44,10 @@ public class Instance implements Serializable, Cloneable {
     private String lifecycleState;
     /**
      * <p>
-     * The health status of the instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance
-     * is unhealthy and Auto Scaling should terminate and replace it.
+     * The last reported health status of the instance. "Healthy" means that the
+     * instance is healthy and should remain in service. "Unhealthy" means that
+     * the instance is unhealthy and Auto Scaling should terminate and replace
+     * it.
      * </p>
      */
     private String healthStatus;
@@ -233,16 +234,17 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The health status of the instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance
-     * is unhealthy and Auto Scaling should terminate and replace it.
+     * The last reported health status of the instance. "Healthy" means that the
+     * instance is healthy and should remain in service. "Unhealthy" means that
+     * the instance is unhealthy and Auto Scaling should terminate and replace
+     * it.
      * </p>
      * 
      * @param healthStatus
-     *        The health status of the instance. "Healthy" means that the
-     *        instance is healthy and should remain in service. "Unhealthy"
-     *        means that the instance is unhealthy and Auto Scaling should
-     *        terminate and replace it.
+     *        The last reported health status of the instance. "Healthy" means
+     *        that the instance is healthy and should remain in service.
+     *        "Unhealthy" means that the instance is unhealthy and Auto Scaling
+     *        should terminate and replace it.
      */
 
     public void setHealthStatus(String healthStatus) {
@@ -251,15 +253,16 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The health status of the instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance
-     * is unhealthy and Auto Scaling should terminate and replace it.
+     * The last reported health status of the instance. "Healthy" means that the
+     * instance is healthy and should remain in service. "Unhealthy" means that
+     * the instance is unhealthy and Auto Scaling should terminate and replace
+     * it.
      * </p>
      * 
-     * @return The health status of the instance. "Healthy" means that the
-     *         instance is healthy and should remain in service. "Unhealthy"
-     *         means that the instance is unhealthy and Auto Scaling should
-     *         terminate and replace it.
+     * @return The last reported health status of the instance. "Healthy" means
+     *         that the instance is healthy and should remain in service.
+     *         "Unhealthy" means that the instance is unhealthy and Auto Scaling
+     *         should terminate and replace it.
      */
 
     public String getHealthStatus() {
@@ -268,16 +271,17 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The health status of the instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance
-     * is unhealthy and Auto Scaling should terminate and replace it.
+     * The last reported health status of the instance. "Healthy" means that the
+     * instance is healthy and should remain in service. "Unhealthy" means that
+     * the instance is unhealthy and Auto Scaling should terminate and replace
+     * it.
      * </p>
      * 
      * @param healthStatus
-     *        The health status of the instance. "Healthy" means that the
-     *        instance is healthy and should remain in service. "Unhealthy"
-     *        means that the instance is unhealthy and Auto Scaling should
-     *        terminate and replace it.
+     *        The last reported health status of the instance. "Healthy" means
+     *        that the instance is healthy and should remain in service.
+     *        "Unhealthy" means that the instance is unhealthy and Auto Scaling
+     *        should terminate and replace it.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

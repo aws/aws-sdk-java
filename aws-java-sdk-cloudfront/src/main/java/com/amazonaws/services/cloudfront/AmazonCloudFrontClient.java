@@ -47,7 +47,14 @@ import com.amazonaws.services.cloudfront.model.transform.*;
  * Client for accessing CloudFront. All service calls made using this client are
  * blocking, and will not return until the service call completes.
  * <p>
- * 
+ * <fullname>Amazon CloudFront</fullname>
+ * <p>
+ * Amazon CloudFront is a global content delivery network (CDN) service that
+ * accelerates delivery of your websites, APIs, video content or other web
+ * assets. It integrates with other Amazon Web Services products to give
+ * developers and businesses an easy way to accelerate content to end users with
+ * no minimum usage commitments.
+ * </p>
  */
 @ThreadSafe
 public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
@@ -276,6 +283,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
                 .add(new NoSuchDistributionExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new TooManyInvalidationsInProgressExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchResourceExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidErrorCodeExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new TooManyCacheBehaviorsExceptionUnmarshaller());
@@ -326,6 +334,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
                 .add(new InvalidIfMatchVersionExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new CloudFrontOriginAccessIdentityAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidTaggingExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidOriginExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new NoSuchCloudFrontOriginAccessIdentityExceptionUnmarshaller());
@@ -521,6 +530,122 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * Create a new distribution with tags.
+     * 
+     * @param createDistributionWithTagsRequest
+     *        The request to create a new distribution with tags
+     * @return Result of the CreateDistributionWithTags operation returned by
+     *         the service.
+     * @throws CNAMEAlreadyExistsException
+     * @throws DistributionAlreadyExistsException
+     *         The caller reference you attempted to create the distribution
+     *         with is associated with another distribution.
+     * @throws InvalidOriginException
+     *         The Amazon S3 origin server specified does not refer to a valid
+     *         Amazon S3 bucket.
+     * @throws InvalidOriginAccessIdentityException
+     *         The origin access identity is not valid or doesn't exist.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws TooManyTrustedSignersException
+     *         Your request contains more trusted signers than are allowed per
+     *         distribution.
+     * @throws TrustedSignerDoesNotExistException
+     *         One or more of your trusted signers do not exist.
+     * @throws InvalidViewerCertificateException
+     * @throws InvalidMinimumProtocolVersionException
+     * @throws MissingBodyException
+     *         This operation requires a body. Ensure that the body is present
+     *         and the Content-Type header is set.
+     * @throws TooManyDistributionCNAMEsException
+     *         Your request contains more CNAMEs than are allowed per
+     *         distribution.
+     * @throws TooManyDistributionsException
+     *         Processing your request would cause you to exceed the maximum
+     *         number of distributions allowed.
+     * @throws InvalidDefaultRootObjectException
+     *         The default root object file name is too big or contains an
+     *         invalid character.
+     * @throws InvalidRelativePathException
+     *         The relative path is too big, is not URL-encoded, or does not
+     *         begin with a slash (/).
+     * @throws InvalidErrorCodeException
+     * @throws InvalidResponseCodeException
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InvalidRequiredProtocolException
+     *         This operation requires the HTTPS protocol. Ensure that you
+     *         specify the HTTPS protocol in your request, or omit the
+     *         RequiredProtocols element from your distribution configuration.
+     * @throws NoSuchOriginException
+     *         No origin exists with the specified Origin Id.
+     * @throws TooManyOriginsException
+     *         You cannot create anymore origins for the distribution.
+     * @throws TooManyCacheBehaviorsException
+     *         You cannot create anymore cache behaviors for the distribution.
+     * @throws TooManyCookieNamesInWhiteListException
+     *         Your request contains more cookie names in the whitelist than are
+     *         allowed per cache behavior.
+     * @throws InvalidForwardCookiesException
+     *         Your request contains forward cookies option which doesn't match
+     *         with the expectation for the whitelisted list of cookie names.
+     *         Either list of cookie names has been specified when not allowed
+     *         or list of cookie names is missing when expected.
+     * @throws TooManyHeadersInForwardedValuesException
+     * @throws InvalidHeadersForS3OriginException
+     * @throws InconsistentQuantitiesException
+     *         The value of Quantity and the size of Items do not match.
+     * @throws TooManyCertificatesException
+     *         You cannot create anymore custom ssl certificates.
+     * @throws InvalidLocationCodeException
+     * @throws InvalidGeoRestrictionParameterException
+     * @throws InvalidProtocolSettingsException
+     *         You cannot specify SSLv3 as the minimum protocol version if you
+     *         only want to support only clients that Support Server Name
+     *         Indication (SNI).
+     * @throws InvalidTTLOrderException
+     * @throws InvalidWebACLIdException
+     * @throws TooManyOriginCustomHeadersException
+     * @throws InvalidTaggingException
+     *         The specified tagging for a CloudFront resource is invalid. For
+     *         more information, see the error text.
+     * @sample AmazonCloudFront.CreateDistributionWithTags
+     */
+    @Override
+    public CreateDistributionWithTagsResult createDistributionWithTags(
+            CreateDistributionWithTagsRequest createDistributionWithTagsRequest) {
+        ExecutionContext executionContext = createExecutionContext(createDistributionWithTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDistributionWithTagsRequest> request = null;
+        Response<CreateDistributionWithTagsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDistributionWithTagsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(createDistributionWithTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateDistributionWithTagsResult> responseHandler = new StaxResponseHandler<CreateDistributionWithTagsResult>(
+                    new CreateDistributionWithTagsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Create a new invalidation.
      * 
      * @param createInvalidationRequest
@@ -636,6 +761,77 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<CreateStreamingDistributionResult> responseHandler = new StaxResponseHandler<CreateStreamingDistributionResult>(
                     new CreateStreamingDistributionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Create a new streaming distribution with tags.
+     * 
+     * @param createStreamingDistributionWithTagsRequest
+     *        The request to create a new streaming distribution with tags.
+     * @return Result of the CreateStreamingDistributionWithTags operation
+     *         returned by the service.
+     * @throws CNAMEAlreadyExistsException
+     * @throws StreamingDistributionAlreadyExistsException
+     * @throws InvalidOriginException
+     *         The Amazon S3 origin server specified does not refer to a valid
+     *         Amazon S3 bucket.
+     * @throws InvalidOriginAccessIdentityException
+     *         The origin access identity is not valid or doesn't exist.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws TooManyTrustedSignersException
+     *         Your request contains more trusted signers than are allowed per
+     *         distribution.
+     * @throws TrustedSignerDoesNotExistException
+     *         One or more of your trusted signers do not exist.
+     * @throws MissingBodyException
+     *         This operation requires a body. Ensure that the body is present
+     *         and the Content-Type header is set.
+     * @throws TooManyStreamingDistributionCNAMEsException
+     * @throws TooManyStreamingDistributionsException
+     *         Processing your request would cause you to exceed the maximum
+     *         number of streaming distributions allowed.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InconsistentQuantitiesException
+     *         The value of Quantity and the size of Items do not match.
+     * @throws InvalidTaggingException
+     *         The specified tagging for a CloudFront resource is invalid. For
+     *         more information, see the error text.
+     * @sample AmazonCloudFront.CreateStreamingDistributionWithTags
+     */
+    @Override
+    public CreateStreamingDistributionWithTagsResult createStreamingDistributionWithTags(
+            CreateStreamingDistributionWithTagsRequest createStreamingDistributionWithTagsRequest) {
+        ExecutionContext executionContext = createExecutionContext(createStreamingDistributionWithTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateStreamingDistributionWithTagsRequest> request = null;
+        Response<CreateStreamingDistributionWithTagsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateStreamingDistributionWithTagsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(createStreamingDistributionWithTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateStreamingDistributionWithTagsResult> responseHandler = new StaxResponseHandler<CreateStreamingDistributionWithTagsResult>(
+                    new CreateStreamingDistributionWithTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1357,6 +1553,157 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<ListStreamingDistributionsResult> responseHandler = new StaxResponseHandler<ListStreamingDistributionsResult>(
                     new ListStreamingDistributionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * List tags for a CloudFront resource.
+     * 
+     * @param listTagsForResourceRequest
+     *        The request to list tags for a CloudFront resource.
+     * @return Result of the ListTagsForResource operation returned by the
+     *         service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InvalidTaggingException
+     *         The specified tagging for a CloudFront resource is invalid. For
+     *         more information, see the error text.
+     * @throws NoSuchResourceException
+     *         The specified CloudFront resource does not exist.
+     * @sample AmazonCloudFront.ListTagsForResource
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(
+            ListTagsForResourceRequest listTagsForResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
+                    new ListTagsForResourceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Add tags to a CloudFront resource.
+     * 
+     * @param tagResourceRequest
+     *        The request to add tags to a CloudFront resource.
+     * @return Result of the TagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InvalidTaggingException
+     *         The specified tagging for a CloudFront resource is invalid. For
+     *         more information, see the error text.
+     * @throws NoSuchResourceException
+     *         The specified CloudFront resource does not exist.
+     * @sample AmazonCloudFront.TagResource
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest tagResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestMarshaller().marshall(super
+                        .beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<TagResourceResult> responseHandler = new StaxResponseHandler<TagResourceResult>(
+                    new TagResourceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Remove tags from a CloudFront resource.
+     * 
+     * @param untagResourceRequest
+     *        The request to remove tags from a CloudFront resource.
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InvalidTaggingException
+     *         The specified tagging for a CloudFront resource is invalid. For
+     *         more information, see the error text.
+     * @throws NoSuchResourceException
+     *         The specified CloudFront resource does not exist.
+     * @sample AmazonCloudFront.UntagResource
+     */
+    @Override
+    public UntagResourceResult untagResource(
+            UntagResourceRequest untagResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestMarshaller().marshall(super
+                        .beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UntagResourceResult> responseHandler = new StaxResponseHandler<UntagResourceResult>(
+                    new UntagResourceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

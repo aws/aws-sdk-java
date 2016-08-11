@@ -17,7 +17,9 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of PutScalingPolicy.
+ * </p>
  */
 public class PutScalingPolicyResult implements Serializable, Cloneable {
 

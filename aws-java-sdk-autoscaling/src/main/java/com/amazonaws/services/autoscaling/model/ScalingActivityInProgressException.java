@@ -16,8 +16,8 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The Auto Scaling group can't be deleted because there are scaling activities
- * in progress.
+ * The operation can't be performed because there are scaling activities in
+ * progress.
  * </p>
  */
 public class ScalingActivityInProgressException extends

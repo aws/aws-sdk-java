@@ -726,17 +726,18 @@ public class AmazonHttpClient {
                     return response;
                 }
             } catch (IOException ioe) {
-                if (log.isTraceEnabled()) {
-                    log.trace("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
-                } else if (log.isDebugEnabled()) {
-                    log.debug("Unable to execute HTTP request: " + ioe.getMessage());
-                }
                 captureExceptionMetrics(ioe, awsRequestMetrics);
                 awsRequestMetrics.addProperty(Field.AWSRequestID, null);
                 AmazonClientException ace = new AmazonClientException(
                         "Unable to execute HTTP request: " + ioe.getMessage(), ioe);
-                if (!shouldRetry(request.getOriginalRequest(), execOneParams, ace,
-                        executionContext)) {
+                boolean willRetry = shouldRetry(request.getOriginalRequest(), execOneParams, ace,
+                        executionContext);
+                if (log.isTraceEnabled()) {
+                    log.trace(ace.getMessage() + (willRetry ? " Request will be retried." : ""), ioe);
+                } else if (log.isDebugEnabled()) {
+                    log.trace(ace.getMessage() + (willRetry ? " Request will be retried." : ""));
+                }
+                if (!willRetry) {
                     throw lastReset(ace, request);
                 }
                 // Cache the retryable exception
@@ -821,14 +822,11 @@ public class AmazonHttpClient {
                                               List<RequestHandler2> requestHandlers)
             throws IOException, InterruptedException {
         if (execOneParams.isRetry()) {
-            if (requestLog.isDebugEnabled()) {
-                requestLog.debug("Request is being retried: " + request);
-            }
             resetRequestInputStream(request);
         }
         checkInterrupted();
         if (requestLog.isDebugEnabled()) {
-            requestLog.debug("Sending Request: " + request);
+            requestLog.debug((execOneParams.isRetry() ? "Retrying " : "Sending ") + "Request: " + request);
         }
         final AWSCredentials credentials = getCredentialsFromContext(execContext, awsRequestMetrics);
         final AmazonWebServiceRequest awsreq = request.getOriginalRequest();
@@ -1623,6 +1621,8 @@ public class AmazonHttpClient {
         }
 
         Signer newSigner(final Request<?> request, final ExecutionContext execContext) {
+            final SignerProviderContext.Builder signerProviderContext =
+                    SignerProviderContext.builder().withRequest(request);
             if (authRetryParam != null) {
                 signerURI = authRetryParam.getEndpointForRetry();
                 signer = authRetryParam.getSignerForRetry();
@@ -1630,10 +1630,10 @@ public class AmazonHttpClient {
                 execContext.setSigner(signer);
             } else if (redirectedURI != null && !redirectedURI.equals(signerURI)) {
                 signerURI = redirectedURI;
-                signer = execContext.getSigner(SignerProviderContext.builder().withUri(signerURI).withIsRedirect(true).build());
+                signer = execContext.getSigner(signerProviderContext.withUri(signerURI).withIsRedirect(true).build());
             } else if (signer == null) {
                 signerURI = request.getEndpoint();
-                signer = execContext.getSigner(SignerProviderContext.builder().withUri(signerURI).build());
+                signer = execContext.getSigner(signerProviderContext.withUri(signerURI).build());
             }
             return signer;
         }

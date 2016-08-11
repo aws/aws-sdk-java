@@ -50,7 +50,7 @@ public class AWSOpsWorksWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter instanceTerminated() {
+    public Waiter<DescribeInstancesRequest> instanceTerminated() {
 
         return new WaiterBuilder<DescribeInstancesRequest, DescribeInstancesResult>()
                 .withSdkFunction(new DescribeInstancesFunction(client))
@@ -78,7 +78,7 @@ public class AWSOpsWorksWaiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter appExists() {
+    public Waiter<DescribeAppsRequest> appExists() {
 
         return new WaiterBuilder<DescribeAppsRequest, DescribeAppsResult>()
                 .withSdkFunction(new DescribeAppsFunction(client))
@@ -98,7 +98,7 @@ public class AWSOpsWorksWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter instanceOnline() {
+    public Waiter<DescribeInstancesRequest> instanceOnline() {
 
         return new WaiterBuilder<DescribeInstancesRequest, DescribeInstancesResult>()
                 .withSdkFunction(new DescribeInstancesFunction(client))
@@ -124,7 +124,7 @@ public class AWSOpsWorksWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter deploymentSuccessful() {
+    public Waiter<DescribeDeploymentsRequest> deploymentSuccessful() {
 
         return new WaiterBuilder<DescribeDeploymentsRequest, DescribeDeploymentsResult>()
                 .withSdkFunction(new DescribeDeploymentsFunction(client))
@@ -143,7 +143,7 @@ public class AWSOpsWorksWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter instanceStopped() {
+    public Waiter<DescribeInstancesRequest> instanceStopped() {
 
         return new WaiterBuilder<DescribeInstancesRequest, DescribeInstancesResult>()
                 .withSdkFunction(new DescribeInstancesFunction(client))
@@ -170,7 +170,7 @@ public class AWSOpsWorksWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter instanceRegistered() {
+    public Waiter<DescribeInstancesRequest> instanceRegistered() {
 
         return new WaiterBuilder<DescribeInstancesRequest, DescribeInstancesResult>()
                 .withSdkFunction(new DescribeInstancesFunction(client))

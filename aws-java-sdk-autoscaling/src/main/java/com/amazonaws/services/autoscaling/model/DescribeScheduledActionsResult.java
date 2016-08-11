@@ -17,7 +17,9 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of DescribeScheduledActions.
+ * </p>
  */
 public class DescribeScheduledActionsResult implements Serializable, Cloneable {
 

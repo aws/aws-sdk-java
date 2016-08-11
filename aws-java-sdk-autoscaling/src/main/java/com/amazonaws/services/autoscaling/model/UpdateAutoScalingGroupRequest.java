@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for UpdateAutoScalingGroup.
+ * </p>
  */
 public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -63,7 +65,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      */
     private Integer defaultCooldown;
@@ -84,12 +86,12 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The amount of time, in seconds, that Auto Scaling waits before checking
      * the health status of an EC2 instance that has come into service. The
-     * default is 300.
+     * default is 0.
      * </p>
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html"
-     * >Health Checks</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Health Checks</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      */
     private Integer healthCheckGracePeriod;
@@ -117,7 +119,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * User Guide</i>.
      * </p>
      */
     private String vPCZoneIdentifier;
@@ -131,7 +133,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
      * >Controlling Which Instances Auto Scaling Terminates During Scale In</a>
-     * in the <i>Auto Scaling Developer Guide</i>.
+     * in the <i>Auto Scaling User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> terminationPolicies;
@@ -374,7 +376,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param defaultCooldown
@@ -383,8 +385,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     *        >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer
-     *        Guide</i>.
+     *        >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public void setDefaultCooldown(Integer defaultCooldown) {
@@ -399,7 +400,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The amount of time, in seconds, after a scaling activity
@@ -408,7 +409,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      *         <p>
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     *         >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer
+     *         >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User
      *         Guide</i>.
      */
 
@@ -424,7 +425,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param defaultCooldown
@@ -433,8 +434,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html"
-     *        >Auto Scaling Cooldowns</a> in the <i>Auto Scaling Developer
-     *        Guide</i>.
+     *        >Auto Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -578,22 +578,22 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The amount of time, in seconds, that Auto Scaling waits before checking
      * the health status of an EC2 instance that has come into service. The
-     * default is 300.
+     * default is 0.
      * </p>
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html"
-     * >Health Checks</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Health Checks</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param healthCheckGracePeriod
      *        The amount of time, in seconds, that Auto Scaling waits before
      *        checking the health status of an EC2 instance that has come into
-     *        service. The default is 300.</p>
+     *        service. The default is 0.</p>
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html"
-     *        >Health Checks</a> in the <i>Auto Scaling Developer Guide</i>.
+     *        >Health Checks</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public void setHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
@@ -604,21 +604,21 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The amount of time, in seconds, that Auto Scaling waits before checking
      * the health status of an EC2 instance that has come into service. The
-     * default is 300.
+     * default is 0.
      * </p>
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html"
-     * >Health Checks</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Health Checks</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The amount of time, in seconds, that Auto Scaling waits before
      *         checking the health status of an EC2 instance that has come into
-     *         service. The default is 300.</p>
+     *         service. The default is 0.</p>
      *         <p>
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html"
-     *         >Health Checks</a> in the <i>Auto Scaling Developer Guide</i>.
+     *         >Health Checks</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public Integer getHealthCheckGracePeriod() {
@@ -629,22 +629,22 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * <p>
      * The amount of time, in seconds, that Auto Scaling waits before checking
      * the health status of an EC2 instance that has come into service. The
-     * default is 300.
+     * default is 0.
      * </p>
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html"
-     * >Health Checks</a> in the <i>Auto Scaling Developer Guide</i>.
+     * >Health Checks</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param healthCheckGracePeriod
      *        The amount of time, in seconds, that Auto Scaling waits before
      *        checking the health status of an EC2 instance that has come into
-     *        service. The default is 300.</p>
+     *        service. The default is 0.</p>
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html"
-     *        >Health Checks</a> in the <i>Auto Scaling Developer Guide</i>.
+     *        >Health Checks</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -735,7 +735,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * User Guide</i>.
      * </p>
      * 
      * @param vPCZoneIdentifier
@@ -751,7 +751,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      *        >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
-     *        Scaling Developer Guide</i>.
+     *        Scaling User Guide</i>.
      */
 
     public void setVPCZoneIdentifier(String vPCZoneIdentifier) {
@@ -772,7 +772,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * User Guide</i>.
      * </p>
      * 
      * @return The ID of the subnet, if you are launching into a VPC. You can
@@ -787,7 +787,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      *         >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
-     *         Scaling Developer Guide</i>.
+     *         Scaling User Guide</i>.
      */
 
     public String getVPCZoneIdentifier() {
@@ -808,7 +808,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      * >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * User Guide</i>.
      * </p>
      * 
      * @param vPCZoneIdentifier
@@ -824,7 +824,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html"
      *        >Launching Auto Scaling Instances in a VPC</a> in the <i>Auto
-     *        Scaling Developer Guide</i>.
+     *        Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -845,7 +845,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
      * >Controlling Which Instances Auto Scaling Terminates During Scale In</a>
-     * in the <i>Auto Scaling Developer Guide</i>.
+     * in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return A standalone termination policy or a list of termination policies
@@ -855,7 +855,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
      *         >Controlling Which Instances Auto Scaling Terminates During Scale
-     *         In</a> in the <i>Auto Scaling Developer Guide</i>.
+     *         In</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public java.util.List<String> getTerminationPolicies() {
@@ -875,7 +875,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
      * >Controlling Which Instances Auto Scaling Terminates During Scale In</a>
-     * in the <i>Auto Scaling Developer Guide</i>.
+     * in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param terminationPolicies
@@ -886,7 +886,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
      *        >Controlling Which Instances Auto Scaling Terminates During Scale
-     *        In</a> in the <i>Auto Scaling Developer Guide</i>.
+     *        In</a> in the <i>Auto Scaling User Guide</i>.
      */
 
     public void setTerminationPolicies(
@@ -910,7 +910,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
      * >Controlling Which Instances Auto Scaling Terminates During Scale In</a>
-     * in the <i>Auto Scaling Developer Guide</i>.
+     * in the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -927,7 +927,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
      *        >Controlling Which Instances Auto Scaling Terminates During Scale
-     *        In</a> in the <i>Auto Scaling Developer Guide</i>.
+     *        In</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -954,7 +954,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
      * >Controlling Which Instances Auto Scaling Terminates During Scale In</a>
-     * in the <i>Auto Scaling Developer Guide</i>.
+     * in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param terminationPolicies
@@ -965,7 +965,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html"
      *        >Controlling Which Instances Auto Scaling Terminates During Scale
-     *        In</a> in the <i>Auto Scaling Developer Guide</i>.
+     *        In</a> in the <i>Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribePolicies.
+ * </p>
  */
 public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -32,9 +34,9 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * One or more policy names or policy ARNs to be described. If you omit this
-     * list, all policy names are described. If an group name is provided, the
-     * results are limited to that group. This list is limited to 50 items. If
-     * you specify an unknown policy name, it is ignored with no error.
+     * parameter, all policy names are described. If an group name is provided,
+     * the results are limited to that group. This list is limited to 50 items.
+     * If you specify an unknown policy name, it is ignored with no error.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyNames;
@@ -104,16 +106,16 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * One or more policy names or policy ARNs to be described. If you omit this
-     * list, all policy names are described. If an group name is provided, the
-     * results are limited to that group. This list is limited to 50 items. If
-     * you specify an unknown policy name, it is ignored with no error.
+     * parameter, all policy names are described. If an group name is provided,
+     * the results are limited to that group. This list is limited to 50 items.
+     * If you specify an unknown policy name, it is ignored with no error.
      * </p>
      * 
      * @return One or more policy names or policy ARNs to be described. If you
-     *         omit this list, all policy names are described. If an group name
-     *         is provided, the results are limited to that group. This list is
-     *         limited to 50 items. If you specify an unknown policy name, it is
-     *         ignored with no error.
+     *         omit this parameter, all policy names are described. If an group
+     *         name is provided, the results are limited to that group. This
+     *         list is limited to 50 items. If you specify an unknown policy
+     *         name, it is ignored with no error.
      */
 
     public java.util.List<String> getPolicyNames() {
@@ -126,17 +128,17 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * One or more policy names or policy ARNs to be described. If you omit this
-     * list, all policy names are described. If an group name is provided, the
-     * results are limited to that group. This list is limited to 50 items. If
-     * you specify an unknown policy name, it is ignored with no error.
+     * parameter, all policy names are described. If an group name is provided,
+     * the results are limited to that group. This list is limited to 50 items.
+     * If you specify an unknown policy name, it is ignored with no error.
      * </p>
      * 
      * @param policyNames
      *        One or more policy names or policy ARNs to be described. If you
-     *        omit this list, all policy names are described. If an group name
-     *        is provided, the results are limited to that group. This list is
-     *        limited to 50 items. If you specify an unknown policy name, it is
-     *        ignored with no error.
+     *        omit this parameter, all policy names are described. If an group
+     *        name is provided, the results are limited to that group. This list
+     *        is limited to 50 items. If you specify an unknown policy name, it
+     *        is ignored with no error.
      */
 
     public void setPolicyNames(java.util.Collection<String> policyNames) {
@@ -152,9 +154,9 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * One or more policy names or policy ARNs to be described. If you omit this
-     * list, all policy names are described. If an group name is provided, the
-     * results are limited to that group. This list is limited to 50 items. If
-     * you specify an unknown policy name, it is ignored with no error.
+     * parameter, all policy names are described. If an group name is provided,
+     * the results are limited to that group. This list is limited to 50 items.
+     * If you specify an unknown policy name, it is ignored with no error.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -165,10 +167,10 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      * 
      * @param policyNames
      *        One or more policy names or policy ARNs to be described. If you
-     *        omit this list, all policy names are described. If an group name
-     *        is provided, the results are limited to that group. This list is
-     *        limited to 50 items. If you specify an unknown policy name, it is
-     *        ignored with no error.
+     *        omit this parameter, all policy names are described. If an group
+     *        name is provided, the results are limited to that group. This list
+     *        is limited to 50 items. If you specify an unknown policy name, it
+     *        is ignored with no error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -187,17 +189,17 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * One or more policy names or policy ARNs to be described. If you omit this
-     * list, all policy names are described. If an group name is provided, the
-     * results are limited to that group. This list is limited to 50 items. If
-     * you specify an unknown policy name, it is ignored with no error.
+     * parameter, all policy names are described. If an group name is provided,
+     * the results are limited to that group. This list is limited to 50 items.
+     * If you specify an unknown policy name, it is ignored with no error.
      * </p>
      * 
      * @param policyNames
      *        One or more policy names or policy ARNs to be described. If you
-     *        omit this list, all policy names are described. If an group name
-     *        is provided, the results are limited to that group. This list is
-     *        limited to 50 items. If you specify an unknown policy name, it is
-     *        ignored with no error.
+     *        omit this parameter, all policy names are described. If an group
+     *        name is provided, the results are limited to that group. This list
+     *        is limited to 50 items. If you specify an unknown policy name, it
+     *        is ignored with no error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

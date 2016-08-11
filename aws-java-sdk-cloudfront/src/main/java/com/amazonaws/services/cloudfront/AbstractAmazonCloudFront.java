@@ -51,6 +51,12 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public CreateDistributionWithTagsResult createDistributionWithTags(
+            CreateDistributionWithTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateInvalidationResult createInvalidation(
             CreateInvalidationRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -59,6 +65,12 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     @Override
     public CreateStreamingDistributionResult createStreamingDistribution(
             CreateStreamingDistributionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateStreamingDistributionWithTagsResult createStreamingDistributionWithTags(
+            CreateStreamingDistributionWithTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -147,6 +159,22 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     @Override
     public ListStreamingDistributionsResult listStreamingDistributions(
             ListStreamingDistributionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTagsForResourceResult listTagsForResource(
+            ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

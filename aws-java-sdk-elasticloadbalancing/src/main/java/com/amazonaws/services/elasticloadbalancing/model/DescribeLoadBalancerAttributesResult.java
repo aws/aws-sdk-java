@@ -17,7 +17,9 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of DescribeLoadBalancerAttributes.
+ * </p>
  */
 public class DescribeLoadBalancerAttributesResult implements Serializable,
         Cloneable {

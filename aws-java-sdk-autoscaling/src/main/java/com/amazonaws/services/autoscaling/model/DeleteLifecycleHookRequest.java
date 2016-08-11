@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeleteLifecycleHook.
+ * </p>
  */
 public class DeleteLifecycleHookRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

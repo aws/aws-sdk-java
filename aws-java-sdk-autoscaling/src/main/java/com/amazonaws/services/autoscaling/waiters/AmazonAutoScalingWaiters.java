@@ -50,7 +50,7 @@ public class AmazonAutoScalingWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter groupInService() {
+    public Waiter<DescribeAutoScalingGroupsRequest> groupInService() {
 
         return new WaiterBuilder<DescribeAutoScalingGroupsRequest, DescribeAutoScalingGroupsResult>()
                 .withSdkFunction(new DescribeAutoScalingGroupsFunction(client))
@@ -69,7 +69,7 @@ public class AmazonAutoScalingWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter groupNotExists() {
+    public Waiter<DescribeAutoScalingGroupsRequest> groupNotExists() {
 
         return new WaiterBuilder<DescribeAutoScalingGroupsRequest, DescribeAutoScalingGroupsResult>()
                 .withSdkFunction(new DescribeAutoScalingGroupsFunction(client))
@@ -88,7 +88,7 @@ public class AmazonAutoScalingWaiters {
      * not, where polling criteria is bound by either default polling strategy
      * or custom polling strategy.
      */
-    public Waiter groupExists() {
+    public Waiter<DescribeAutoScalingGroupsRequest> groupExists() {
 
         return new WaiterBuilder<DescribeAutoScalingGroupsRequest, DescribeAutoScalingGroupsResult>()
                 .withSdkFunction(new DescribeAutoScalingGroupsFunction(client))

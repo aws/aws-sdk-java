@@ -45,6 +45,10 @@ public class LoadBalancerJsonMarshaller {
         try {
             jsonGenerator.writeStartObject();
 
+            if (loadBalancer.getTargetGroupArn() != null) {
+                jsonGenerator.writeFieldName("targetGroupArn").writeValue(
+                        loadBalancer.getTargetGroupArn());
+            }
             if (loadBalancer.getLoadBalancerName() != null) {
                 jsonGenerator.writeFieldName("loadBalancerName").writeValue(
                         loadBalancer.getLoadBalancerName());

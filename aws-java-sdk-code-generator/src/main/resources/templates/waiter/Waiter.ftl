@@ -30,6 +30,8 @@ public class ${className}{
     }
 
     <#list waiters?values as waiters>
+        <#assign outputType = waiters.operationModel.returnType.returnType>
+        <#assign inputType = waiters.operationModel.input.variableType>
     /**
       * Builds a ${waiters.waiterName} waiter by using custom parameters
       * waiterParameters and other parameters defined in the waiters
@@ -37,10 +39,8 @@ public class ${className}{
       * entered the desired state or not, where polling criteria is bound by
       * either default polling strategy or custom polling strategy.
       */
-    public Waiter ${waiters.waiterMethodName}() {
+    public Waiter<${inputType}> ${waiters.waiterMethodName}() {
 
-        <#assign outputType = waiters.operationModel.returnType.returnType>
-        <#assign inputType = waiters.operationModel.input.variableType>
         <#assign acceptorArray = "">
         <#list waiters.acceptors as acceptor>
             <#if acceptor.matcher == "status">

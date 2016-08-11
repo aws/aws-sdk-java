@@ -50,7 +50,7 @@ public class AmazonSimpleEmailServiceWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter identityExists() {
+    public Waiter<GetIdentityVerificationAttributesRequest> identityExists() {
 
         return new WaiterBuilder<GetIdentityVerificationAttributesRequest, GetIdentityVerificationAttributesResult>()
                 .withSdkFunction(

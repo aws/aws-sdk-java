@@ -23,6 +23,15 @@ import com.amazonaws.annotation.ThreadSafe;
  * will return a Java Future object representing the asynchronous operation;
  * overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
+ * <p>
+ * <fullname>Amazon CloudFront</fullname>
+ * <p>
+ * Amazon CloudFront is a global content delivery network (CDN) service that
+ * accelerates delivery of your websites, APIs, video content or other web
+ * assets. It integrates with other Amazon Web Services products to give
+ * developers and businesses an easy way to accelerate content to end users with
+ * no minimum usage commitments.
+ * </p>
  */
 @ThreadSafe
 public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
@@ -337,6 +346,42 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDistributionWithTagsResult> createDistributionWithTagsAsync(
+            CreateDistributionWithTagsRequest request) {
+
+        return createDistributionWithTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDistributionWithTagsResult> createDistributionWithTagsAsync(
+            final CreateDistributionWithTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDistributionWithTagsRequest, CreateDistributionWithTagsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateDistributionWithTagsResult>() {
+                    @Override
+                    public CreateDistributionWithTagsResult call()
+                            throws Exception {
+                        CreateDistributionWithTagsResult result;
+
+                        try {
+                            result = createDistributionWithTags(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateInvalidationResult> createInvalidationAsync(
             CreateInvalidationRequest request) {
 
@@ -392,6 +437,42 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
 
                         try {
                             result = createStreamingDistribution(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStreamingDistributionWithTagsResult> createStreamingDistributionWithTagsAsync(
+            CreateStreamingDistributionWithTagsRequest request) {
+
+        return createStreamingDistributionWithTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStreamingDistributionWithTagsResult> createStreamingDistributionWithTagsAsync(
+            final CreateStreamingDistributionWithTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionWithTagsRequest, CreateStreamingDistributionWithTagsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateStreamingDistributionWithTagsResult>() {
+                    @Override
+                    public CreateStreamingDistributionWithTagsResult call()
+                            throws Exception {
+                        CreateStreamingDistributionWithTagsResult result;
+
+                        try {
+                            result = createStreamingDistributionWithTags(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -926,6 +1007,111 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient
 
                         try {
                             result = listStreamingDistributions(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+                    @Override
+                    public ListTagsForResourceResult call() throws Exception {
+                        ListTagsForResourceResult result;
+
+                        try {
+                            result = listTagsForResource(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(
+            TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(
+            final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<TagResourceResult>() {
+                    @Override
+                    public TagResourceResult call() throws Exception {
+                        TagResourceResult result;
+
+                        try {
+                            result = tagResource(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(
+            UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(
+            final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+                    @Override
+                    public UntagResourceResult call() throws Exception {
+                        UntagResourceResult result;
+
+                        try {
+                            result = untagResource(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

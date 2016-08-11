@@ -50,7 +50,7 @@ public class AmazonRDSWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter dBInstanceAvailable() {
+    public Waiter<DescribeDBInstancesRequest> dBInstanceAvailable() {
 
         return new WaiterBuilder<DescribeDBInstancesRequest, DescribeDBInstancesResult>()
                 .withSdkFunction(new DescribeDBInstancesFunction(client))
@@ -74,7 +74,7 @@ public class AmazonRDSWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter dBInstanceDeleted() {
+    public Waiter<DescribeDBInstancesRequest> dBInstanceDeleted() {
 
         return new WaiterBuilder<DescribeDBInstancesRequest, DescribeDBInstancesResult>()
                 .withSdkFunction(new DescribeDBInstancesFunction(client))

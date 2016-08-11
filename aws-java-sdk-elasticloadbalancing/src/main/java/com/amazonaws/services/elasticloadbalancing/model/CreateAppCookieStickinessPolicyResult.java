@@ -17,7 +17,9 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output for CreateAppCookieStickinessPolicy.
+ * </p>
  */
 public class CreateAppCookieStickinessPolicyResult implements Serializable,
         Cloneable {

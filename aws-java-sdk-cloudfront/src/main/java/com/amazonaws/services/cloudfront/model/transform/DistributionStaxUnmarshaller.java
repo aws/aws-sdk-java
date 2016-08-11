@@ -55,6 +55,12 @@ public class DistributionStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("ARN", targetDepth)) {
+                    distribution.setARN(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Status", targetDepth)) {
                     distribution.setStatus(StringStaxUnmarshaller.getInstance()
                             .unmarshall(context));

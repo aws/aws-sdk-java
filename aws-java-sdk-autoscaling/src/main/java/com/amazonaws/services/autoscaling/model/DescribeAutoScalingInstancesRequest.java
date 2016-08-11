@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeAutoScalingInstances.
+ * </p>
  */
 public class DescribeAutoScalingInstancesRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {

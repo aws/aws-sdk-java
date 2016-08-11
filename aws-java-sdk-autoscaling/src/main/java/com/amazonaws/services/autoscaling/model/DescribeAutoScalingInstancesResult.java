@@ -17,7 +17,9 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of DescribeAutoScalingInstances.
+ * </p>
  */
 public class DescribeAutoScalingInstancesResult implements Serializable,
         Cloneable {

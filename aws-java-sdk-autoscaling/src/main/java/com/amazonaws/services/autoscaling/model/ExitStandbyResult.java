@@ -17,7 +17,9 @@ package com.amazonaws.services.autoscaling.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for ExitStandby.
+ * </p>
  */
 public class ExitStandbyResult implements Serializable, Cloneable {
 

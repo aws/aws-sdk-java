@@ -50,7 +50,7 @@ public class AmazonElasticLoadBalancingWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter anyInstanceInService() {
+    public Waiter<DescribeInstanceHealthRequest> anyInstanceInService() {
 
         return new WaiterBuilder<DescribeInstanceHealthRequest, DescribeInstanceHealthResult>()
                 .withSdkFunction(new DescribeInstanceHealthFunction(client))
@@ -68,7 +68,7 @@ public class AmazonElasticLoadBalancingWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter instanceDeregistered() {
+    public Waiter<DescribeInstanceHealthRequest> instanceDeregistered() {
 
         return new WaiterBuilder<DescribeInstanceHealthRequest, DescribeInstanceHealthResult>()
                 .withSdkFunction(new DescribeInstanceHealthFunction(client))
@@ -88,7 +88,7 @@ public class AmazonElasticLoadBalancingWaiters {
      * entered the desired state or not, where polling criteria is bound by
      * either default polling strategy or custom polling strategy.
      */
-    public Waiter instanceInService() {
+    public Waiter<DescribeInstanceHealthRequest> instanceInService() {
 
         return new WaiterBuilder<DescribeInstanceHealthRequest, DescribeInstanceHealthResult>()
                 .withSdkFunction(new DescribeInstanceHealthFunction(client))

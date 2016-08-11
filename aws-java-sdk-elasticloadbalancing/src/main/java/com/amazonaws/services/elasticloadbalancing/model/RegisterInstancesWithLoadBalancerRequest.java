@@ -18,7 +18,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for RegisterInstancesWithLoadBalancer.
+ * </p>
  */
 public class RegisterInstancesWithLoadBalancerRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
