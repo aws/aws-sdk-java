@@ -19,17 +19,17 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "glacier",
     "signingName" : "glacier",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "xmlProtocol" : false,
+    "cborProtocol" : false,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonGlacierClientBuilder",
     "asyncClientBuilderClassName" : "AmazonGlacierAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AmazonGlacierModuleInjector",
     "smokeTestsPackageName" : "com.amazonaws.services.glacier.smoketests",
     "serviceName" : "Amazon Glacier",
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "xmlProtocol" : false,
-    "cborProtocol" : false,
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "AbortMultipartUpload" : {
@@ -4602,11 +4602,12 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simpleType" : "String",
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
-          "map" : false
+          "map" : false,
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -4853,11 +4854,12 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simpleType" : "String",
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
-            "map" : false
+            "map" : false,
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5843,11 +5845,12 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<PartListElement>",
-          "templateImplType" : "java.util.ArrayList<PartListElement>",
-          "simpleType" : "PartListElement",
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "PartListElement",
+          "templateType" : "java.util.List<PartListElement>",
+          "templateImplType" : "java.util.ArrayList<PartListElement>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6195,11 +6198,12 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<PartListElement>",
-            "templateImplType" : "java.util.ArrayList<PartListElement>",
-            "simpleType" : "PartListElement",
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "PartListElement",
+            "templateType" : "java.util.List<PartListElement>",
+            "templateImplType" : "java.util.ArrayList<PartListElement>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8824,11 +8828,12 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<UploadListElement>",
-          "templateImplType" : "java.util.ArrayList<UploadListElement>",
-          "simpleType" : "UploadListElement",
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "UploadListElement",
+          "templateType" : "java.util.List<UploadListElement>",
+          "templateImplType" : "java.util.ArrayList<UploadListElement>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9017,11 +9022,12 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<UploadListElement>",
-            "templateImplType" : "java.util.ArrayList<UploadListElement>",
-            "simpleType" : "UploadListElement",
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "UploadListElement",
+            "templateType" : "java.util.List<UploadListElement>",
+            "templateImplType" : "java.util.ArrayList<UploadListElement>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17840,11 +17846,12 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<GlacierJobDescription>",
-          "templateImplType" : "java.util.ArrayList<GlacierJobDescription>",
-          "simpleType" : "GlacierJobDescription",
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "GlacierJobDescription",
+          "templateType" : "java.util.List<GlacierJobDescription>",
+          "templateImplType" : "java.util.ArrayList<GlacierJobDescription>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18033,11 +18040,12 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<GlacierJobDescription>",
-            "templateImplType" : "java.util.ArrayList<GlacierJobDescription>",
-            "simpleType" : "GlacierJobDescription",
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "GlacierJobDescription",
+            "templateType" : "java.util.List<GlacierJobDescription>",
+            "templateImplType" : "java.util.ArrayList<GlacierJobDescription>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18520,11 +18528,12 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "java.util.ArrayList<String>",
-          "simpleType" : "String",
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
-          "map" : false
+          "map" : false,
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "java.util.ArrayList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18661,11 +18670,12 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "java.util.ArrayList<String>",
-            "simpleType" : "String",
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
-            "map" : false
+            "map" : false,
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "java.util.ArrayList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21214,11 +21224,12 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<DescribeVaultOutput>",
-          "templateImplType" : "java.util.ArrayList<DescribeVaultOutput>",
-          "simpleType" : "DescribeVaultOutput",
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "DescribeVaultOutput",
+          "templateType" : "java.util.List<DescribeVaultOutput>",
+          "templateImplType" : "java.util.ArrayList<DescribeVaultOutput>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21407,11 +21418,12 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<DescribeVaultOutput>",
-            "templateImplType" : "java.util.ArrayList<DescribeVaultOutput>",
-            "simpleType" : "DescribeVaultOutput",
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "DescribeVaultOutput",
+            "templateType" : "java.util.List<DescribeVaultOutput>",
+            "templateImplType" : "java.util.ArrayList<DescribeVaultOutput>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -28611,11 +28623,12 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "templateType" : "java.util.List<DataRetrievalRule>",
-          "templateImplType" : "java.util.ArrayList<DataRetrievalRule>",
-          "simpleType" : "DataRetrievalRule",
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
-          "map" : false
+          "map" : false,
+          "simpleType" : "DataRetrievalRule",
+          "templateType" : "java.util.List<DataRetrievalRule>",
+          "templateImplType" : "java.util.ArrayList<DataRetrievalRule>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -28752,11 +28765,12 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "templateType" : "java.util.List<DataRetrievalRule>",
-            "templateImplType" : "java.util.ArrayList<DataRetrievalRule>",
-            "simpleType" : "DataRetrievalRule",
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
-            "map" : false
+            "map" : false,
+            "simpleType" : "DataRetrievalRule",
+            "templateType" : "java.util.List<DataRetrievalRule>",
+            "templateImplType" : "java.util.ArrayList<DataRetrievalRule>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -29449,6 +29463,7 @@
     "simpleMethods" : null,
     "renameShapes" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
+    "sendExplicitlyEmptyListsForQuery" : false,
     "authPolicyActions" : null,
     "customServiceMetadata" : null,
     "customCodeTemplates" : {
@@ -29557,165 +29572,15 @@
     "convenienceTypeOverloads" : [ ],
     "skipSmokeTests" : false
   },
-  "waiters" : {
-    "VaultExists" : {
-      "waiterName" : "VaultExists",
-      "delay" : 3,
-      "maxAttempts" : 15,
-      "acceptors" : [ {
-        "matcher" : "status",
-        "argument" : null,
-        "state" : "success",
-        "expected" : 200,
-        "ast" : null,
-        "expectedAsCamelCase" : "200",
-        "expectedAsEscapedJson" : "200",
-        "expectedAsString" : null,
-        "expectedAsNumber" : 200,
-        "enumState" : "WaiterState.SUCCESS",
-        "isStatusMatcher" : true,
-        "isErrorMatcher" : false
-      }, {
-        "matcher" : "error",
-        "argument" : null,
-        "state" : "retry",
-        "expected" : "ResourceNotFoundException",
-        "ast" : null,
-        "expectedAsCamelCase" : "ResourceNotFoundException",
-        "expectedAsEscapedJson" : "\\\"ResourceNotFoundException\\\"",
-        "expectedAsString" : "\"ResourceNotFoundException\"",
-        "expectedAsNumber" : null,
-        "enumState" : "WaiterState.RETRY",
-        "isStatusMatcher" : false,
-        "isErrorMatcher" : true
-      } ],
-      "operationModel" : {
-        "documentation" : "<p>This operation returns information about a vault, including the vault's Amazon Resource Name (ARN), the date the vault was created, the number of archives it contains, and the total size of all the archives in the vault. The number of archives and their total size are as of the last inventory generation. This means that if you add or remove an archive from a vault, and then immediately use Describe Vault, the change in contents will not be immediately reflected. If you want to retrieve the latest inventory of the vault, use <a>InitiateJob</a>. Amazon Glacier generates vault inventories approximately daily. For more information, see <a href=\"http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html\">Downloading a Vault Inventory in Amazon Glacier</a>. </p> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href=\"http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html\">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p>For conceptual information and underlying REST API, go to <a href=\"http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html\">Retrieving Vault Metadata in Amazon Glacier</a> and <a href=\"http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html\">Describe Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p>",
-        "operationName" : "DescribeVault",
-        "deprecated" : false,
-        "input" : {
-          "variableName" : "describeVaultRequest",
-          "variableType" : "DescribeVaultRequest",
-          "variableDeclarationType" : "DescribeVaultRequest",
-          "documentation" : "<p>Provides options for retrieving metadata for a specific vault in Amazon Glacier.</p>",
-          "simpleType" : "DescribeVaultRequest",
-          "variableSetterType" : "DescribeVaultRequest"
-        },
-        "inputStreamPropertyName" : null,
-        "returnType" : {
-          "returnType" : "DescribeVaultResult",
-          "documentation" : "<p>Contains the Amazon Glacier response to your request.</p>"
-        },
-        "exceptions" : [ {
-          "exceptionName" : "ResourceNotFoundException",
-          "documentation" : "<p>Returned if the specified resource, such as a vault, upload ID, or job ID, does not exist.</p>"
-        }, {
-          "exceptionName" : "InvalidParameterValueException",
-          "documentation" : "<p>Returned if a parameter of the request is incorrectly specified. </p>"
-        }, {
-          "exceptionName" : "MissingParameterValueException",
-          "documentation" : "<p>Returned if a required header or parameter is missing from the request.</p>"
-        }, {
-          "exceptionName" : "ServiceUnavailableException",
-          "documentation" : "<p>Returned if the service cannot complete the request.</p>"
-        } ],
-        "hasBlobMemberAsPayload" : false,
-        "methodName" : "describeVault",
-        "authenticated" : true,
-        "syncReturnType" : "DescribeVaultResult",
-        "asyncReturnType" : "DescribeVaultResult",
-        "asyncFutureType" : "java.util.concurrent.Future<DescribeVaultResult>",
-        "asyncCallableType" : "java.util.concurrent.Callable<DescribeVaultResult>",
-        "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeVaultRequest, DescribeVaultResult>"
-      },
-      "operationName" : "DescribeVault",
-      "waiterMethodName" : "vaultExists",
-      "operationMethodName" : "describeVault"
-    },
-    "VaultNotExists" : {
-      "waiterName" : "VaultNotExists",
-      "delay" : 3,
-      "maxAttempts" : 15,
-      "acceptors" : [ {
-        "matcher" : "status",
-        "argument" : null,
-        "state" : "retry",
-        "expected" : 200,
-        "ast" : null,
-        "expectedAsCamelCase" : "200",
-        "expectedAsEscapedJson" : "200",
-        "expectedAsString" : null,
-        "expectedAsNumber" : 200,
-        "enumState" : "WaiterState.RETRY",
-        "isStatusMatcher" : true,
-        "isErrorMatcher" : false
-      }, {
-        "matcher" : "error",
-        "argument" : null,
-        "state" : "success",
-        "expected" : "ResourceNotFoundException",
-        "ast" : null,
-        "expectedAsCamelCase" : "ResourceNotFoundException",
-        "expectedAsEscapedJson" : "\\\"ResourceNotFoundException\\\"",
-        "expectedAsString" : "\"ResourceNotFoundException\"",
-        "expectedAsNumber" : null,
-        "enumState" : "WaiterState.SUCCESS",
-        "isStatusMatcher" : false,
-        "isErrorMatcher" : true
-      } ],
-      "operationModel" : {
-        "documentation" : "<p>This operation returns information about a vault, including the vault's Amazon Resource Name (ARN), the date the vault was created, the number of archives it contains, and the total size of all the archives in the vault. The number of archives and their total size are as of the last inventory generation. This means that if you add or remove an archive from a vault, and then immediately use Describe Vault, the change in contents will not be immediately reflected. If you want to retrieve the latest inventory of the vault, use <a>InitiateJob</a>. Amazon Glacier generates vault inventories approximately daily. For more information, see <a href=\"http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html\">Downloading a Vault Inventory in Amazon Glacier</a>. </p> <p>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href=\"http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html\">Access Control Using AWS Identity and Access Management (IAM)</a>.</p> <p>For conceptual information and underlying REST API, go to <a href=\"http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html\">Retrieving Vault Metadata in Amazon Glacier</a> and <a href=\"http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html\">Describe Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p>",
-        "operationName" : "DescribeVault",
-        "deprecated" : false,
-        "input" : {
-          "variableName" : "describeVaultRequest",
-          "variableType" : "DescribeVaultRequest",
-          "variableDeclarationType" : "DescribeVaultRequest",
-          "documentation" : "<p>Provides options for retrieving metadata for a specific vault in Amazon Glacier.</p>",
-          "simpleType" : "DescribeVaultRequest",
-          "variableSetterType" : "DescribeVaultRequest"
-        },
-        "inputStreamPropertyName" : null,
-        "returnType" : {
-          "returnType" : "DescribeVaultResult",
-          "documentation" : "<p>Contains the Amazon Glacier response to your request.</p>"
-        },
-        "exceptions" : [ {
-          "exceptionName" : "ResourceNotFoundException",
-          "documentation" : "<p>Returned if the specified resource, such as a vault, upload ID, or job ID, does not exist.</p>"
-        }, {
-          "exceptionName" : "InvalidParameterValueException",
-          "documentation" : "<p>Returned if a parameter of the request is incorrectly specified. </p>"
-        }, {
-          "exceptionName" : "MissingParameterValueException",
-          "documentation" : "<p>Returned if a required header or parameter is missing from the request.</p>"
-        }, {
-          "exceptionName" : "ServiceUnavailableException",
-          "documentation" : "<p>Returned if the service cannot complete the request.</p>"
-        } ],
-        "hasBlobMemberAsPayload" : false,
-        "methodName" : "describeVault",
-        "authenticated" : true,
-        "syncReturnType" : "DescribeVaultResult",
-        "asyncReturnType" : "DescribeVaultResult",
-        "asyncFutureType" : "java.util.concurrent.Future<DescribeVaultResult>",
-        "asyncCallableType" : "java.util.concurrent.Callable<DescribeVaultResult>",
-        "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeVaultRequest, DescribeVaultResult>"
-      },
-      "operationName" : "DescribeVault",
-      "waiterMethodName" : "vaultNotExists",
-      "operationMethodName" : "describeVault"
-    }
-  },
   "examples" : {
     "examples" : { },
     "version" : "1.0"
   },
+  "sdkModeledExceptionBaseClassName" : "AmazonGlacierException",
+  "exceptionUnmarshallerImpl" : null,
   "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.glacier.model.AmazonGlacierException",
-  "hasWaiters" : true,
-  "exceptionUnmarshallerImpl" : null,
-  "sdkModeledExceptionBaseClassName" : "AmazonGlacierException"
+  "hasWaiters" : true
 }

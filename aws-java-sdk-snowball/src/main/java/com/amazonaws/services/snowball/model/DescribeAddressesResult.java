@@ -23,6 +23,7 @@ public class DescribeAddressesResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Snowball shipping addresses that were created for this account.
      * </p>
      */
     private java.util.List<Address> addresses;
@@ -38,9 +39,11 @@ public class DescribeAddressesResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Snowball shipping addresses that were created for this account.
      * </p>
      * 
-     * @return
+     * @return The Snowball shipping addresses that were created for this
+     *         account.
      */
 
     public java.util.List<Address> getAddresses() {
@@ -49,9 +52,12 @@ public class DescribeAddressesResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Snowball shipping addresses that were created for this account.
      * </p>
      * 
      * @param addresses
+     *        The Snowball shipping addresses that were created for this
+     *        account.
      */
 
     public void setAddresses(java.util.Collection<Address> addresses) {
@@ -65,6 +71,7 @@ public class DescribeAddressesResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Snowball shipping addresses that were created for this account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -74,6 +81,8 @@ public class DescribeAddressesResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param addresses
+     *        The Snowball shipping addresses that were created for this
+     *        account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -90,9 +99,12 @@ public class DescribeAddressesResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Snowball shipping addresses that were created for this account.
      * </p>
      * 
      * @param addresses
+     *        The Snowball shipping addresses that were created for this
+     *        account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

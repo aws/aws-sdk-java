@@ -82,6 +82,9 @@ public class UpdateStackRequestMarshaller implements
 
         com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) updateStackRequest
                 .getParameters();
+        if (parametersList.isEmpty() && !parametersList.isAutoConstruct()) {
+            request.addParameter("Parameters", "");
+        }
         if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
             int parametersListIndex = 1;
 
@@ -113,6 +116,9 @@ public class UpdateStackRequestMarshaller implements
 
         com.amazonaws.internal.SdkInternalList<String> capabilitiesList = (com.amazonaws.internal.SdkInternalList<String>) updateStackRequest
                 .getCapabilities();
+        if (capabilitiesList.isEmpty() && !capabilitiesList.isAutoConstruct()) {
+            request.addParameter("Capabilities", "");
+        }
         if (!capabilitiesList.isEmpty() || !capabilitiesList.isAutoConstruct()) {
             int capabilitiesListIndex = 1;
 
@@ -128,6 +134,9 @@ public class UpdateStackRequestMarshaller implements
 
         com.amazonaws.internal.SdkInternalList<String> resourceTypesList = (com.amazonaws.internal.SdkInternalList<String>) updateStackRequest
                 .getResourceTypes();
+        if (resourceTypesList.isEmpty() && !resourceTypesList.isAutoConstruct()) {
+            request.addParameter("ResourceTypes", "");
+        }
         if (!resourceTypesList.isEmpty()
                 || !resourceTypesList.isAutoConstruct()) {
             int resourceTypesListIndex = 1;
@@ -154,6 +163,10 @@ public class UpdateStackRequestMarshaller implements
 
         com.amazonaws.internal.SdkInternalList<String> notificationARNsList = (com.amazonaws.internal.SdkInternalList<String>) updateStackRequest
                 .getNotificationARNs();
+        if (notificationARNsList.isEmpty()
+                && !notificationARNsList.isAutoConstruct()) {
+            request.addParameter("NotificationARNs", "");
+        }
         if (!notificationARNsList.isEmpty()
                 || !notificationARNsList.isAutoConstruct()) {
             int notificationARNsListIndex = 1;
@@ -170,6 +183,9 @@ public class UpdateStackRequestMarshaller implements
 
         com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) updateStackRequest
                 .getTags();
+        if (tagsList.isEmpty() && !tagsList.isAutoConstruct()) {
+            request.addParameter("Tags", "");
+        }
         if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
             int tagsListIndex = 1;
 

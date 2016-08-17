@@ -71,6 +71,12 @@ public class ContainerDefinitionJsonUnmarshaller implements
                     containerDefinition.setMemory(context.getUnmarshaller(
                             Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("memoryReservation", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition
+                            .setMemoryReservation(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("links", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setLinks(new ListUnmarshaller<String>(

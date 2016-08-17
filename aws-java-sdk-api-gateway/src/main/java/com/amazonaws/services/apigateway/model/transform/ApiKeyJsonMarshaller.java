@@ -47,6 +47,10 @@ public class ApiKeyJsonMarshaller {
             if (apiKey.getId() != null) {
                 jsonGenerator.writeFieldName("id").writeValue(apiKey.getId());
             }
+            if (apiKey.getValue() != null) {
+                jsonGenerator.writeFieldName("value").writeValue(
+                        apiKey.getValue());
+            }
             if (apiKey.getName() != null) {
                 jsonGenerator.writeFieldName("name").writeValue(
                         apiKey.getName());
@@ -59,6 +63,14 @@ public class ApiKeyJsonMarshaller {
                 jsonGenerator.writeFieldName("enabled").writeValue(
                         apiKey.getEnabled());
             }
+            if (apiKey.getCreatedDate() != null) {
+                jsonGenerator.writeFieldName("createdDate").writeValue(
+                        apiKey.getCreatedDate());
+            }
+            if (apiKey.getLastUpdatedDate() != null) {
+                jsonGenerator.writeFieldName("lastUpdatedDate").writeValue(
+                        apiKey.getLastUpdatedDate());
+            }
 
             java.util.List<String> stageKeysList = apiKey.getStageKeys();
             if (stageKeysList != null) {
@@ -70,14 +82,6 @@ public class ApiKeyJsonMarshaller {
                     }
                 }
                 jsonGenerator.writeEndArray();
-            }
-            if (apiKey.getCreatedDate() != null) {
-                jsonGenerator.writeFieldName("createdDate").writeValue(
-                        apiKey.getCreatedDate());
-            }
-            if (apiKey.getLastUpdatedDate() != null) {
-                jsonGenerator.writeFieldName("lastUpdatedDate").writeValue(
-                        apiKey.getLastUpdatedDate());
             }
 
             jsonGenerator.writeEndObject();

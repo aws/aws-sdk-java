@@ -39,13 +39,13 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
     private String resourceId;
     /**
      * <p>
-     * The HTTP verb identifier for the parent <a>Method</a> resource.
+     * The HTTP verb of the <a>Method</a> resource.
      * </p>
      */
     private String httpMethod;
     /**
      * <p>
-     * The status code identifier for the <a>MethodResponse</a> resource.
+     * The status code for the <a>MethodResponse</a> resource.
      * </p>
      */
     private String statusCode;
@@ -140,11 +140,11 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The HTTP verb identifier for the parent <a>Method</a> resource.
+     * The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb identifier for the parent <a>Method</a> resource.
+     *        The HTTP verb of the <a>Method</a> resource.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -153,10 +153,10 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The HTTP verb identifier for the parent <a>Method</a> resource.
+     * The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
-     * @return The HTTP verb identifier for the parent <a>Method</a> resource.
+     * @return The HTTP verb of the <a>Method</a> resource.
      */
 
     public String getHttpMethod() {
@@ -165,11 +165,11 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The HTTP verb identifier for the parent <a>Method</a> resource.
+     * The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb identifier for the parent <a>Method</a> resource.
+     *        The HTTP verb of the <a>Method</a> resource.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -181,11 +181,11 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The status code identifier for the <a>MethodResponse</a> resource.
+     * The status code for the <a>MethodResponse</a> resource.
      * </p>
      * 
      * @param statusCode
-     *        The status code identifier for the <a>MethodResponse</a> resource.
+     *        The status code for the <a>MethodResponse</a> resource.
      */
 
     public void setStatusCode(String statusCode) {
@@ -194,11 +194,10 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The status code identifier for the <a>MethodResponse</a> resource.
+     * The status code for the <a>MethodResponse</a> resource.
      * </p>
      * 
-     * @return The status code identifier for the <a>MethodResponse</a>
-     *         resource.
+     * @return The status code for the <a>MethodResponse</a> resource.
      */
 
     public String getStatusCode() {
@@ -207,11 +206,11 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The status code identifier for the <a>MethodResponse</a> resource.
+     * The status code for the <a>MethodResponse</a> resource.
      * </p>
      * 
      * @param statusCode
-     *        The status code identifier for the <a>MethodResponse</a> resource.
+     *        The status code for the <a>MethodResponse</a> resource.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

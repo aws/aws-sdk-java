@@ -164,6 +164,36 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUsagePlanResult> createUsagePlanAsync(
+            CreateUsagePlanRequest request) {
+
+        return createUsagePlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUsagePlanResult> createUsagePlanAsync(
+            CreateUsagePlanRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateUsagePlanRequest, CreateUsagePlanResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUsagePlanKeyResult> createUsagePlanKeyAsync(
+            CreateUsagePlanKeyRequest request) {
+
+        return createUsagePlanKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUsagePlanKeyResult> createUsagePlanKeyAsync(
+            CreateUsagePlanKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateUsagePlanKeyRequest, CreateUsagePlanKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteApiKeyResult> deleteApiKeyAsync(
             DeleteApiKeyRequest request) {
 
@@ -369,6 +399,36 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway
     public java.util.concurrent.Future<DeleteStageResult> deleteStageAsync(
             DeleteStageRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteStageRequest, DeleteStageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsagePlanResult> deleteUsagePlanAsync(
+            DeleteUsagePlanRequest request) {
+
+        return deleteUsagePlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsagePlanResult> deleteUsagePlanAsync(
+            DeleteUsagePlanRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteUsagePlanRequest, DeleteUsagePlanResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsagePlanKeyResult> deleteUsagePlanKeyAsync(
+            DeleteUsagePlanKeyRequest request) {
+
+        return deleteUsagePlanKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsagePlanKeyResult> deleteUsagePlanKeyAsync(
+            DeleteUsagePlanKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteUsagePlanKeyRequest, DeleteUsagePlanKeyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -839,6 +899,96 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway
     }
 
     @Override
+    public java.util.concurrent.Future<GetUsageResult> getUsageAsync(
+            GetUsageRequest request) {
+
+        return getUsageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsageResult> getUsageAsync(
+            GetUsageRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetUsageRequest, GetUsageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlanResult> getUsagePlanAsync(
+            GetUsagePlanRequest request) {
+
+        return getUsagePlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlanResult> getUsagePlanAsync(
+            GetUsagePlanRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetUsagePlanRequest, GetUsagePlanResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlanKeyResult> getUsagePlanKeyAsync(
+            GetUsagePlanKeyRequest request) {
+
+        return getUsagePlanKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlanKeyResult> getUsagePlanKeyAsync(
+            GetUsagePlanKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetUsagePlanKeyRequest, GetUsagePlanKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlanKeysResult> getUsagePlanKeysAsync(
+            GetUsagePlanKeysRequest request) {
+
+        return getUsagePlanKeysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlanKeysResult> getUsagePlanKeysAsync(
+            GetUsagePlanKeysRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetUsagePlanKeysRequest, GetUsagePlanKeysResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlansResult> getUsagePlansAsync(
+            GetUsagePlansRequest request) {
+
+        return getUsagePlansAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlansResult> getUsagePlansAsync(
+            GetUsagePlansRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetUsagePlansRequest, GetUsagePlansResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportApiKeysResult> importApiKeysAsync(
+            ImportApiKeysRequest request) {
+
+        return importApiKeysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportApiKeysResult> importApiKeysAsync(
+            ImportApiKeysRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportApiKeysRequest, ImportApiKeysResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ImportRestApiResult> importRestApiAsync(
             ImportRestApiRequest request) {
 
@@ -1179,6 +1329,36 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway
     public java.util.concurrent.Future<UpdateStageResult> updateStageAsync(
             UpdateStageRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateStageRequest, UpdateStageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUsageResult> updateUsageAsync(
+            UpdateUsageRequest request) {
+
+        return updateUsageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUsageResult> updateUsageAsync(
+            UpdateUsageRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateUsageRequest, UpdateUsageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUsagePlanResult> updateUsagePlanAsync(
+            UpdateUsagePlanRequest request) {
+
+        return updateUsagePlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUsagePlanResult> updateUsagePlanAsync(
+            UpdateUsagePlanRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateUsagePlanRequest, UpdateUsagePlanResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

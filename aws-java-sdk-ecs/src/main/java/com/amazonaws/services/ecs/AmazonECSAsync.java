@@ -1166,7 +1166,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * Developer Guide</i>.
      * </p>
      * <p>
-     * You may also specify an IAM role for your task with the
+     * You can specify an IAM role for your task with the
      * <code>taskRoleArn</code> parameter. When you specify an IAM role for a
      * task, its containers can then use the latest versions of the AWS CLI or
      * SDKs to make API requests to the AWS services that are specified in the
@@ -1174,6 +1174,13 @@ public interface AmazonECSAsync extends AmazonECS {
      * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html"
      * >IAM Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.
+     * </p>
+     * <p>
+     * You can specify a Docker networking mode for the containers in your task
+     * definition with the <code>networkMode</code> parameter. The available
+     * network modes correspond to those described in <a
+     * href="https://docs.docker.com/engine/reference/run/#/network-settings"
+     * >Network settings</a> in the Docker run reference.
      * </p>
      * 
      * @param registerTaskDefinitionRequest
@@ -1195,7 +1202,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * Developer Guide</i>.
      * </p>
      * <p>
-     * You may also specify an IAM role for your task with the
+     * You can specify an IAM role for your task with the
      * <code>taskRoleArn</code> parameter. When you specify an IAM role for a
      * task, its containers can then use the latest versions of the AWS CLI or
      * SDKs to make API requests to the AWS services that are specified in the
@@ -1203,6 +1210,13 @@ public interface AmazonECSAsync extends AmazonECS {
      * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html"
      * >IAM Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.
+     * </p>
+     * <p>
+     * You can specify a Docker networking mode for the containers in your task
+     * definition with the <code>networkMode</code> parameter. The available
+     * network modes correspond to those described in <a
+     * href="https://docs.docker.com/engine/reference/run/#/network-settings"
+     * >Network settings</a> in the Docker run reference.
      * </p>
      * 
      * @param registerTaskDefinitionRequest

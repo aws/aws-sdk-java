@@ -23,20 +23,27 @@ public class GetSnowballUsageResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The service limit for number of Snowballs this account can have at once.
+     * The default service limit is 1 (one).
      * </p>
      */
     private Integer snowballLimit;
     /**
      * <p>
+     * The number of Snowballs that this account is currently using.
      * </p>
      */
     private Integer snowballsInUse;
 
     /**
      * <p>
+     * The service limit for number of Snowballs this account can have at once.
+     * The default service limit is 1 (one).
      * </p>
      * 
      * @param snowballLimit
+     *        The service limit for number of Snowballs this account can have at
+     *        once. The default service limit is 1 (one).
      */
 
     public void setSnowballLimit(Integer snowballLimit) {
@@ -45,9 +52,12 @@ public class GetSnowballUsageResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The service limit for number of Snowballs this account can have at once.
+     * The default service limit is 1 (one).
      * </p>
      * 
-     * @return
+     * @return The service limit for number of Snowballs this account can have
+     *         at once. The default service limit is 1 (one).
      */
 
     public Integer getSnowballLimit() {
@@ -56,9 +66,13 @@ public class GetSnowballUsageResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The service limit for number of Snowballs this account can have at once.
+     * The default service limit is 1 (one).
      * </p>
      * 
      * @param snowballLimit
+     *        The service limit for number of Snowballs this account can have at
+     *        once. The default service limit is 1 (one).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -70,9 +84,11 @@ public class GetSnowballUsageResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The number of Snowballs that this account is currently using.
      * </p>
      * 
      * @param snowballsInUse
+     *        The number of Snowballs that this account is currently using.
      */
 
     public void setSnowballsInUse(Integer snowballsInUse) {
@@ -81,9 +97,10 @@ public class GetSnowballUsageResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The number of Snowballs that this account is currently using.
      * </p>
      * 
-     * @return
+     * @return The number of Snowballs that this account is currently using.
      */
 
     public Integer getSnowballsInUse() {
@@ -92,9 +109,11 @@ public class GetSnowballUsageResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The number of Snowballs that this account is currently using.
      * </p>
      * 
      * @param snowballsInUse
+     *        The number of Snowballs that this account is currently using.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

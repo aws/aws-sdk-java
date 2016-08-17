@@ -39,7 +39,7 @@ public class GetMethodRequest extends AmazonWebServiceRequest implements
     private String resourceId;
     /**
      * <p>
-     * Specifies the put method request's HTTP method type.
+     * Specifies the method request's HTTP method type.
      * </p>
      */
     private String httpMethod;
@@ -128,11 +128,11 @@ public class GetMethodRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the put method request's HTTP method type.
+     * Specifies the method request's HTTP method type.
      * </p>
      * 
      * @param httpMethod
-     *        Specifies the put method request's HTTP method type.
+     *        Specifies the method request's HTTP method type.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -141,10 +141,10 @@ public class GetMethodRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the put method request's HTTP method type.
+     * Specifies the method request's HTTP method type.
      * </p>
      * 
-     * @return Specifies the put method request's HTTP method type.
+     * @return Specifies the method request's HTTP method type.
      */
 
     public String getHttpMethod() {
@@ -153,11 +153,11 @@ public class GetMethodRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the put method request's HTTP method type.
+     * Specifies the method request's HTTP method type.
      * </p>
      * 
      * @param httpMethod
-     *        Specifies the put method request's HTTP method type.
+     *        Specifies the method request's HTTP method type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

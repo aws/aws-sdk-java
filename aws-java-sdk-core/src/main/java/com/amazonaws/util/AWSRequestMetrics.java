@@ -47,6 +47,10 @@ public class AWSRequestMetrics {
     public enum Field implements RequestMetricType {
         AWSErrorCode,
         AWSRequestID,
+        /**
+         * The specific request subtype, such as PutItemRequest, PutObjectRequest, etc.
+         */
+        RequestType,
         BytesProcessed,
         /**
          * Total number of milliseconds taken for a request/response including
@@ -61,11 +65,6 @@ public class AWSRequestMetrics {
          * Used to count and preserve the throttle related exceptions.
          */
         ThrottleException,
-        // Comment out for now. Ref: CR2662349
-//        /**
-//         * Used to preserve the transient exceptions that lead to the retries.
-//         */
-//        RetryCause,
         /**
          * Number of milliseconds taken for a request/response round trip to AWS.
          */
@@ -143,8 +142,6 @@ public class AWSRequestMetrics {
          */
         HttpClientPoolPendingCount,
         RetryPauseTime,
-//      S3DownloadThroughput, // migrated to S3RequestMetric in the S3 client library
-//      S3UploadThroughput,   // migrated to S3RequestMetric in the S3 client library
         ServiceEndpoint,
         ServiceName,
         StatusCode, // The http status code

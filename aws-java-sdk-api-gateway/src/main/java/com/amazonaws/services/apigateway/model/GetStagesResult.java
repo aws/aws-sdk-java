@@ -18,9 +18,12 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A list of <a>Stage</a> resource that are associated with the <a>ApiKey</a>
+ * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
  * resource.
  * </p>
+ * <div class="seeAlso"><a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/stages.html"
+ * >Deploying API in Stages</a></div>
  */
 public class GetStagesResult implements Serializable, Cloneable {
 

@@ -24,8 +24,8 @@ import com.amazonaws.services.apigateway.model.*;
  * <p>
  * <fullname>Amazon API Gateway</fullname>
  * <p>
- * Amazon API Gateway helps developers deliver robust, secure and scalable
- * mobile and web application backends. Amazon API Gateway allows developers to
+ * Amazon API Gateway helps developers deliver robust, secure, and scalable
+ * mobile and web application back ends. Amazon API Gateway allows developers to
  * securely connect mobile and web applications to APIs that run on AWS Lambda,
  * Amazon EC2, or other publicly addressable web services that are hosted
  * outside of AWS.
@@ -37,6 +37,9 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * <p>
      * Create an <a>ApiKey</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html"
+     * >AWS CLI</a></div>
      * 
      * @param createApiKeyRequest
      *        Request to create an <a>ApiKey</a> resource.
@@ -51,6 +54,9 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * <p>
      * Create an <a>ApiKey</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html"
+     * >AWS CLI</a></div>
      * 
      * @param createApiKeyRequest
      *        Request to create an <a>ApiKey</a> resource.
@@ -72,6 +78,9 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
      * resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param createAuthorizerRequest
      *        Request to add a new <a>Authorizer</a> to an existing
@@ -88,6 +97,9 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
      * resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param createAuthorizerRequest
      *        Request to add a new <a>Authorizer</a> to an existing
@@ -357,6 +369,82 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
+     * Creates a usage plan with the throttle and quota limits, as well as the
+     * associated API stages, specified in the payload.
+     * </p>
+     * 
+     * @param createUsagePlanRequest
+     *        The POST request to create a usage plan with the name,
+     *        description, throttle limits and quota limits, as well as the
+     *        associated API stages, specified in the payload.
+     * @return A Java Future containing the result of the CreateUsagePlan
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.CreateUsagePlan
+     */
+    java.util.concurrent.Future<CreateUsagePlanResult> createUsagePlanAsync(
+            CreateUsagePlanRequest createUsagePlanRequest);
+
+    /**
+     * <p>
+     * Creates a usage plan with the throttle and quota limits, as well as the
+     * associated API stages, specified in the payload.
+     * </p>
+     * 
+     * @param createUsagePlanRequest
+     *        The POST request to create a usage plan with the name,
+     *        description, throttle limits and quota limits, as well as the
+     *        associated API stages, specified in the payload.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateUsagePlan
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.CreateUsagePlan
+     */
+    java.util.concurrent.Future<CreateUsagePlanResult> createUsagePlanAsync(
+            CreateUsagePlanRequest createUsagePlanRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateUsagePlanRequest, CreateUsagePlanResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a usage plan key for adding an existing API key to a usage plan.
+     * </p>
+     * 
+     * @param createUsagePlanKeyRequest
+     *        The POST request to create a usage plan key for adding an existing
+     *        API key to a usage plan.
+     * @return A Java Future containing the result of the CreateUsagePlanKey
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.CreateUsagePlanKey
+     */
+    java.util.concurrent.Future<CreateUsagePlanKeyResult> createUsagePlanKeyAsync(
+            CreateUsagePlanKeyRequest createUsagePlanKeyRequest);
+
+    /**
+     * <p>
+     * Creates a usage plan key for adding an existing API key to a usage plan.
+     * </p>
+     * 
+     * @param createUsagePlanKeyRequest
+     *        The POST request to create a usage plan key for adding an existing
+     *        API key to a usage plan.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateUsagePlanKey
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.CreateUsagePlanKey
+     */
+    java.util.concurrent.Future<CreateUsagePlanKeyResult> createUsagePlanKeyAsync(
+            CreateUsagePlanKeyRequest createUsagePlanKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateUsagePlanKeyRequest, CreateUsagePlanKeyResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the <a>ApiKey</a> resource.
      * </p>
      * 
@@ -393,6 +481,9 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * <p>
      * Deletes an existing <a>Authorizer</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param deleteAuthorizerRequest
      *        Request to delete an existing <a>Authorizer</a> resource.
@@ -407,6 +498,9 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * <p>
      * Deletes an existing <a>Authorizer</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param deleteAuthorizerRequest
      *        Request to delete an existing <a>Authorizer</a> resource.
@@ -839,6 +933,78 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
+     * Deletes a usage plan of a given plan Id.
+     * </p>
+     * 
+     * @param deleteUsagePlanRequest
+     *        The DELETE request to delete a uasge plan of a given plan Id.
+     * @return A Java Future containing the result of the DeleteUsagePlan
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.DeleteUsagePlan
+     */
+    java.util.concurrent.Future<DeleteUsagePlanResult> deleteUsagePlanAsync(
+            DeleteUsagePlanRequest deleteUsagePlanRequest);
+
+    /**
+     * <p>
+     * Deletes a usage plan of a given plan Id.
+     * </p>
+     * 
+     * @param deleteUsagePlanRequest
+     *        The DELETE request to delete a uasge plan of a given plan Id.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUsagePlan
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteUsagePlan
+     */
+    java.util.concurrent.Future<DeleteUsagePlanResult> deleteUsagePlanAsync(
+            DeleteUsagePlanRequest deleteUsagePlanRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteUsagePlanRequest, DeleteUsagePlanResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a usage plan key and remove the underlying API key from the
+     * associated usage plan.
+     * </p>
+     * 
+     * @param deleteUsagePlanKeyRequest
+     *        The DELETE request to delete a usage plan key and remove the
+     *        underlying API key from the associated usage plan.
+     * @return A Java Future containing the result of the DeleteUsagePlanKey
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.DeleteUsagePlanKey
+     */
+    java.util.concurrent.Future<DeleteUsagePlanKeyResult> deleteUsagePlanKeyAsync(
+            DeleteUsagePlanKeyRequest deleteUsagePlanKeyRequest);
+
+    /**
+     * <p>
+     * Deletes a usage plan key and remove the underlying API key from the
+     * associated usage plan.
+     * </p>
+     * 
+     * @param deleteUsagePlanKeyRequest
+     *        The DELETE request to delete a usage plan key and remove the
+     *        underlying API key from the associated usage plan.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUsagePlanKey
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteUsagePlanKey
+     */
+    java.util.concurrent.Future<DeleteUsagePlanKeyResult> deleteUsagePlanKeyAsync(
+            DeleteUsagePlanKeyRequest deleteUsagePlanKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteUsagePlanKeyRequest, DeleteUsagePlanKeyResult> asyncHandler);
+
+    /**
+     * <p>
      * Flushes all authorizer cache entries on a stage.
      * </p>
      * 
@@ -1051,6 +1217,9 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * <p>
      * Describe an existing <a>Authorizer</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param getAuthorizerRequest
      *        Request to describe an existing <a>Authorizer</a> resource.
@@ -1065,6 +1234,9 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * <p>
      * Describe an existing <a>Authorizer</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param getAuthorizerRequest
      *        Request to describe an existing <a>Authorizer</a> resource.
@@ -1085,6 +1257,9 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * <p>
      * Describe an existing <a>Authorizers</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html"
+     * >AWS CLI</a></div>
      * 
      * @param getAuthorizersRequest
      *        Request to describe an existing <a>Authorizers</a> resource.
@@ -1099,6 +1274,9 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * <p>
      * Describe an existing <a>Authorizers</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html"
+     * >AWS CLI</a></div>
      * 
      * @param getAuthorizersRequest
      *        Request to describe an existing <a>Authorizers</a> resource.
@@ -1931,6 +2109,220 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
+     * Gets the usage data of a usage plan in a specified time interval.
+     * </p>
+     * 
+     * @param getUsageRequest
+     *        The GET request to get the usage data of a usage plan in a
+     *        specified time interval.
+     * @return A Java Future containing the result of the GetUsage operation
+     *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetUsage
+     */
+    java.util.concurrent.Future<GetUsageResult> getUsageAsync(
+            GetUsageRequest getUsageRequest);
+
+    /**
+     * <p>
+     * Gets the usage data of a usage plan in a specified time interval.
+     * </p>
+     * 
+     * @param getUsageRequest
+     *        The GET request to get the usage data of a usage plan in a
+     *        specified time interval.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetUsage operation
+     *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetUsage
+     */
+    java.util.concurrent.Future<GetUsageResult> getUsageAsync(
+            GetUsageRequest getUsageRequest,
+            com.amazonaws.handlers.AsyncHandler<GetUsageRequest, GetUsageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a usage plan of a given plan identifier.
+     * </p>
+     * 
+     * @param getUsagePlanRequest
+     *        The GET request to get a usage plan of a given plan identifier.
+     * @return A Java Future containing the result of the GetUsagePlan operation
+     *         returned by the service.
+     * @sample AmazonApiGatewayAsync.GetUsagePlan
+     */
+    java.util.concurrent.Future<GetUsagePlanResult> getUsagePlanAsync(
+            GetUsagePlanRequest getUsagePlanRequest);
+
+    /**
+     * <p>
+     * Gets a usage plan of a given plan identifier.
+     * </p>
+     * 
+     * @param getUsagePlanRequest
+     *        The GET request to get a usage plan of a given plan identifier.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetUsagePlan operation
+     *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetUsagePlan
+     */
+    java.util.concurrent.Future<GetUsagePlanResult> getUsagePlanAsync(
+            GetUsagePlanRequest getUsagePlanRequest,
+            com.amazonaws.handlers.AsyncHandler<GetUsagePlanRequest, GetUsagePlanResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a usage plan key of a given key identifier.
+     * </p>
+     * 
+     * @param getUsagePlanKeyRequest
+     *        The GET request to get a usage plan key of a given key identifier.
+     * @return A Java Future containing the result of the GetUsagePlanKey
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetUsagePlanKey
+     */
+    java.util.concurrent.Future<GetUsagePlanKeyResult> getUsagePlanKeyAsync(
+            GetUsagePlanKeyRequest getUsagePlanKeyRequest);
+
+    /**
+     * <p>
+     * Gets a usage plan key of a given key identifier.
+     * </p>
+     * 
+     * @param getUsagePlanKeyRequest
+     *        The GET request to get a usage plan key of a given key identifier.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetUsagePlanKey
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetUsagePlanKey
+     */
+    java.util.concurrent.Future<GetUsagePlanKeyResult> getUsagePlanKeyAsync(
+            GetUsagePlanKeyRequest getUsagePlanKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetUsagePlanKeyRequest, GetUsagePlanKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets all the usage plan keys representing the API keys added to a
+     * specified usage plan.
+     * </p>
+     * 
+     * @param getUsagePlanKeysRequest
+     *        The GET request to get all the usage plan keys representing the
+     *        API keys added to a specified usage plan.
+     * @return A Java Future containing the result of the GetUsagePlanKeys
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetUsagePlanKeys
+     */
+    java.util.concurrent.Future<GetUsagePlanKeysResult> getUsagePlanKeysAsync(
+            GetUsagePlanKeysRequest getUsagePlanKeysRequest);
+
+    /**
+     * <p>
+     * Gets all the usage plan keys representing the API keys added to a
+     * specified usage plan.
+     * </p>
+     * 
+     * @param getUsagePlanKeysRequest
+     *        The GET request to get all the usage plan keys representing the
+     *        API keys added to a specified usage plan.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetUsagePlanKeys
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetUsagePlanKeys
+     */
+    java.util.concurrent.Future<GetUsagePlanKeysResult> getUsagePlanKeysAsync(
+            GetUsagePlanKeysRequest getUsagePlanKeysRequest,
+            com.amazonaws.handlers.AsyncHandler<GetUsagePlanKeysRequest, GetUsagePlanKeysResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets all the usage plans of the caller's account.
+     * </p>
+     * 
+     * @param getUsagePlansRequest
+     *        The GET request to get all the usage plans of the caller's
+     *        account.
+     * @return A Java Future containing the result of the GetUsagePlans
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetUsagePlans
+     */
+    java.util.concurrent.Future<GetUsagePlansResult> getUsagePlansAsync(
+            GetUsagePlansRequest getUsagePlansRequest);
+
+    /**
+     * <p>
+     * Gets all the usage plans of the caller's account.
+     * </p>
+     * 
+     * @param getUsagePlansRequest
+     *        The GET request to get all the usage plans of the caller's
+     *        account.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetUsagePlans
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetUsagePlans
+     */
+    java.util.concurrent.Future<GetUsagePlansResult> getUsagePlansAsync(
+            GetUsagePlansRequest getUsagePlansRequest,
+            com.amazonaws.handlers.AsyncHandler<GetUsagePlansRequest, GetUsagePlansResult> asyncHandler);
+
+    /**
+     * <p>
+     * Import API keys from an external source, such as a CSV-formatted file.
+     * </p>
+     * 
+     * @param importApiKeysRequest
+     *        The POST request to import API keys from an external source, such
+     *        as a CSV-formatted file.
+     * @return A Java Future containing the result of the ImportApiKeys
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.ImportApiKeys
+     */
+    java.util.concurrent.Future<ImportApiKeysResult> importApiKeysAsync(
+            ImportApiKeysRequest importApiKeysRequest);
+
+    /**
+     * <p>
+     * Import API keys from an external source, such as a CSV-formatted file.
+     * </p>
+     * 
+     * @param importApiKeysRequest
+     *        The POST request to import API keys from an external source, such
+     *        as a CSV-formatted file.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportApiKeys
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.ImportApiKeys
+     */
+    java.util.concurrent.Future<ImportApiKeysResult> importApiKeysAsync(
+            ImportApiKeysRequest importApiKeysRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportApiKeysRequest, ImportApiKeysResult> asyncHandler);
+
+    /**
+     * <p>
      * A feature of the Amazon API Gateway control service for creating a new
      * API from an external API definition file.
      * </p>
@@ -2152,6 +2544,9 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a>
      * with headers, parameters, and an incoming request body.
      * </p>
+     * <div class="seeAlso"> <a href=
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html"
+     * >Enable custom authorizers</a> </div>
      * 
      * @param testInvokeAuthorizerRequest
      *        Make a request to simulate the execution of an <a>Authorizer</a>.
@@ -2167,6 +2562,9 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a>
      * with headers, parameters, and an incoming request body.
      * </p>
+     * <div class="seeAlso"> <a href=
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html"
+     * >Enable custom authorizers</a> </div>
      * 
      * @param testInvokeAuthorizerRequest
      *        Make a request to simulate the execution of an <a>Authorizer</a>.
@@ -2293,6 +2691,9 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * <p>
      * Updates an existing <a>Authorizer</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param updateAuthorizerRequest
      *        Request to update an existing <a>Authorizer</a> resource.
@@ -2307,6 +2708,9 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * <p>
      * Updates an existing <a>Authorizer</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param updateAuthorizerRequest
      *        Request to update an existing <a>Authorizer</a> resource.
@@ -2744,5 +3148,77 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
     java.util.concurrent.Future<UpdateStageResult> updateStageAsync(
             UpdateStageRequest updateStageRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateStageRequest, UpdateStageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Grants a temporary extension to the reamining quota of a usage plan
+     * associated with a specified API key.
+     * </p>
+     * 
+     * @param updateUsageRequest
+     *        The PATCH request to grant a temporary extension to the reamining
+     *        quota of a usage plan associated with a specified API key.
+     * @return A Java Future containing the result of the UpdateUsage operation
+     *         returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateUsage
+     */
+    java.util.concurrent.Future<UpdateUsageResult> updateUsageAsync(
+            UpdateUsageRequest updateUsageRequest);
+
+    /**
+     * <p>
+     * Grants a temporary extension to the reamining quota of a usage plan
+     * associated with a specified API key.
+     * </p>
+     * 
+     * @param updateUsageRequest
+     *        The PATCH request to grant a temporary extension to the reamining
+     *        quota of a usage plan associated with a specified API key.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateUsage operation
+     *         returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateUsage
+     */
+    java.util.concurrent.Future<UpdateUsageResult> updateUsageAsync(
+            UpdateUsageRequest updateUsageRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateUsageRequest, UpdateUsageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a usage plan of a given plan Id.
+     * </p>
+     * 
+     * @param updateUsagePlanRequest
+     *        The PATCH request to update a usage plan of a given plan Id.
+     * @return A Java Future containing the result of the UpdateUsagePlan
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateUsagePlan
+     */
+    java.util.concurrent.Future<UpdateUsagePlanResult> updateUsagePlanAsync(
+            UpdateUsagePlanRequest updateUsagePlanRequest);
+
+    /**
+     * <p>
+     * Updates a usage plan of a given plan Id.
+     * </p>
+     * 
+     * @param updateUsagePlanRequest
+     *        The PATCH request to update a usage plan of a given plan Id.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateUsagePlan
+     *         operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateUsagePlan
+     */
+    java.util.concurrent.Future<UpdateUsagePlanResult> updateUsagePlanAsync(
+            UpdateUsagePlanRequest updateUsagePlanRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateUsagePlanRequest, UpdateUsagePlanResult> asyncHandler);
 
 }

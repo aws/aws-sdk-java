@@ -38,6 +38,19 @@ public class GetApiKeysRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private Integer limit;
+    /**
+     * <p>
+     * The name of queried API keys.
+     * </p>
+     */
+    private String nameQuery;
+    /**
+     * <p>
+     * A boolean flag to specify whether (<code>true</code>) or not (
+     * <code>false</code>) the result contains key values.
+     * </p>
+     */
+    private Boolean includeValues;
 
     /**
      * <p>
@@ -128,6 +141,108 @@ public class GetApiKeysRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The name of queried API keys.
+     * </p>
+     * 
+     * @param nameQuery
+     *        The name of queried API keys.
+     */
+
+    public void setNameQuery(String nameQuery) {
+        this.nameQuery = nameQuery;
+    }
+
+    /**
+     * <p>
+     * The name of queried API keys.
+     * </p>
+     * 
+     * @return The name of queried API keys.
+     */
+
+    public String getNameQuery() {
+        return this.nameQuery;
+    }
+
+    /**
+     * <p>
+     * The name of queried API keys.
+     * </p>
+     * 
+     * @param nameQuery
+     *        The name of queried API keys.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public GetApiKeysRequest withNameQuery(String nameQuery) {
+        setNameQuery(nameQuery);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean flag to specify whether (<code>true</code>) or not (
+     * <code>false</code>) the result contains key values.
+     * </p>
+     * 
+     * @param includeValues
+     *        A boolean flag to specify whether (<code>true</code>) or not (
+     *        <code>false</code>) the result contains key values.
+     */
+
+    public void setIncludeValues(Boolean includeValues) {
+        this.includeValues = includeValues;
+    }
+
+    /**
+     * <p>
+     * A boolean flag to specify whether (<code>true</code>) or not (
+     * <code>false</code>) the result contains key values.
+     * </p>
+     * 
+     * @return A boolean flag to specify whether (<code>true</code>) or not (
+     *         <code>false</code>) the result contains key values.
+     */
+
+    public Boolean getIncludeValues() {
+        return this.includeValues;
+    }
+
+    /**
+     * <p>
+     * A boolean flag to specify whether (<code>true</code>) or not (
+     * <code>false</code>) the result contains key values.
+     * </p>
+     * 
+     * @param includeValues
+     *        A boolean flag to specify whether (<code>true</code>) or not (
+     *        <code>false</code>) the result contains key values.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public GetApiKeysRequest withIncludeValues(Boolean includeValues) {
+        setIncludeValues(includeValues);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean flag to specify whether (<code>true</code>) or not (
+     * <code>false</code>) the result contains key values.
+     * </p>
+     * 
+     * @return A boolean flag to specify whether (<code>true</code>) or not (
+     *         <code>false</code>) the result contains key values.
+     */
+
+    public Boolean isIncludeValues() {
+        return this.includeValues;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -142,7 +257,11 @@ public class GetApiKeysRequest extends AmazonWebServiceRequest implements
         if (getPosition() != null)
             sb.append("Position: " + getPosition() + ",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: " + getLimit() + ",");
+        if (getNameQuery() != null)
+            sb.append("NameQuery: " + getNameQuery() + ",");
+        if (getIncludeValues() != null)
+            sb.append("IncludeValues: " + getIncludeValues());
         sb.append("}");
         return sb.toString();
     }
@@ -167,6 +286,16 @@ public class GetApiKeysRequest extends AmazonWebServiceRequest implements
         if (other.getLimit() != null
                 && other.getLimit().equals(this.getLimit()) == false)
             return false;
+        if (other.getNameQuery() == null ^ this.getNameQuery() == null)
+            return false;
+        if (other.getNameQuery() != null
+                && other.getNameQuery().equals(this.getNameQuery()) == false)
+            return false;
+        if (other.getIncludeValues() == null ^ this.getIncludeValues() == null)
+            return false;
+        if (other.getIncludeValues() != null
+                && other.getIncludeValues().equals(this.getIncludeValues()) == false)
+            return false;
         return true;
     }
 
@@ -179,6 +308,12 @@ public class GetApiKeysRequest extends AmazonWebServiceRequest implements
                 + ((getPosition() == null) ? 0 : getPosition().hashCode());
         hashCode = prime * hashCode
                 + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode
+                + ((getNameQuery() == null) ? 0 : getNameQuery().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getIncludeValues() == null) ? 0 : getIncludeValues()
+                        .hashCode());
         return hashCode;
     }
 

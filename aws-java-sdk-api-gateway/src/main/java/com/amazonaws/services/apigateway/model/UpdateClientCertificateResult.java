@@ -18,34 +18,39 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a Client Certificate used to configure client-side SSL
+ * Represents a client certificate used to configure client-side SSL
  * authentication while sending requests to the integration endpoint.
  * </p>
+ * <div class="remarks">Client certificates are used authenticate an API by the
+ * back-end server. To authenticate an API client (or user), use a custom
+ * <a>Authorizer</a>.</div> <div class="seeAlso"> <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html"
+ * >Use Client-Side Certificate</a> </div>
  */
 public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Client Certificate.
+     * The identifier of the client certificate.
      * </p>
      */
     private String clientCertificateId;
     /**
      * <p>
-     * The description of the Client Certificate.
+     * The description of the client certificate.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The PEM-encoded public key of the Client Certificate, that can be used to
-     * configure certificate authentication in the integration endpoint .
+     * The PEM-encoded public key of the client certificate, which can be used
+     * to configure certificate authentication in the integration endpoint .
      * </p>
      */
     private String pemEncodedCertificate;
     /**
      * <p>
-     * The date when the Client Certificate was created, in <a
+     * The date when the client certificate was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
@@ -53,7 +58,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
     private java.util.Date createdDate;
     /**
      * <p>
-     * The date when the Client Certificate will expire, in <a
+     * The date when the client certificate will expire, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
@@ -62,11 +67,11 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Client Certificate.
+     * The identifier of the client certificate.
      * </p>
      * 
      * @param clientCertificateId
-     *        The identifier of the Client Certificate.
+     *        The identifier of the client certificate.
      */
 
     public void setClientCertificateId(String clientCertificateId) {
@@ -75,10 +80,10 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Client Certificate.
+     * The identifier of the client certificate.
      * </p>
      * 
-     * @return The identifier of the Client Certificate.
+     * @return The identifier of the client certificate.
      */
 
     public String getClientCertificateId() {
@@ -87,11 +92,11 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the Client Certificate.
+     * The identifier of the client certificate.
      * </p>
      * 
      * @param clientCertificateId
-     *        The identifier of the Client Certificate.
+     *        The identifier of the client certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -104,11 +109,11 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the Client Certificate.
+     * The description of the client certificate.
      * </p>
      * 
      * @param description
-     *        The description of the Client Certificate.
+     *        The description of the client certificate.
      */
 
     public void setDescription(String description) {
@@ -117,10 +122,10 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the Client Certificate.
+     * The description of the client certificate.
      * </p>
      * 
-     * @return The description of the Client Certificate.
+     * @return The description of the client certificate.
      */
 
     public String getDescription() {
@@ -129,11 +134,11 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the Client Certificate.
+     * The description of the client certificate.
      * </p>
      * 
      * @param description
-     *        The description of the Client Certificate.
+     *        The description of the client certificate.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -145,12 +150,12 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The PEM-encoded public key of the Client Certificate, that can be used to
-     * configure certificate authentication in the integration endpoint .
+     * The PEM-encoded public key of the client certificate, which can be used
+     * to configure certificate authentication in the integration endpoint .
      * </p>
      * 
      * @param pemEncodedCertificate
-     *        The PEM-encoded public key of the Client Certificate, that can be
+     *        The PEM-encoded public key of the client certificate, which can be
      *        used to configure certificate authentication in the integration
      *        endpoint .
      */
@@ -161,13 +166,13 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The PEM-encoded public key of the Client Certificate, that can be used to
-     * configure certificate authentication in the integration endpoint .
+     * The PEM-encoded public key of the client certificate, which can be used
+     * to configure certificate authentication in the integration endpoint .
      * </p>
      * 
-     * @return The PEM-encoded public key of the Client Certificate, that can be
-     *         used to configure certificate authentication in the integration
-     *         endpoint .
+     * @return The PEM-encoded public key of the client certificate, which can
+     *         be used to configure certificate authentication in the
+     *         integration endpoint .
      */
 
     public String getPemEncodedCertificate() {
@@ -176,12 +181,12 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The PEM-encoded public key of the Client Certificate, that can be used to
-     * configure certificate authentication in the integration endpoint .
+     * The PEM-encoded public key of the client certificate, which can be used
+     * to configure certificate authentication in the integration endpoint .
      * </p>
      * 
      * @param pemEncodedCertificate
-     *        The PEM-encoded public key of the Client Certificate, that can be
+     *        The PEM-encoded public key of the client certificate, which can be
      *        used to configure certificate authentication in the integration
      *        endpoint .
      * @return Returns a reference to this object so that method calls can be
@@ -196,13 +201,13 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the Client Certificate was created, in <a
+     * The date when the client certificate was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
-     *        The date when the Client Certificate was created, in <a
+     *        The date when the client certificate was created, in <a
      *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *        target="_blank">ISO 8601 format</a>.
      */
@@ -213,12 +218,12 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the Client Certificate was created, in <a
+     * The date when the client certificate was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
-     * @return The date when the Client Certificate was created, in <a
+     * @return The date when the client certificate was created, in <a
      *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *         target="_blank">ISO 8601 format</a>.
      */
@@ -229,13 +234,13 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the Client Certificate was created, in <a
+     * The date when the client certificate was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
-     *        The date when the Client Certificate was created, in <a
+     *        The date when the client certificate was created, in <a
      *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *        target="_blank">ISO 8601 format</a>.
      * @return Returns a reference to this object so that method calls can be
@@ -250,13 +255,13 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the Client Certificate will expire, in <a
+     * The date when the client certificate will expire, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param expirationDate
-     *        The date when the Client Certificate will expire, in <a
+     *        The date when the client certificate will expire, in <a
      *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *        target="_blank">ISO 8601 format</a>.
      */
@@ -267,12 +272,12 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the Client Certificate will expire, in <a
+     * The date when the client certificate will expire, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
-     * @return The date when the Client Certificate will expire, in <a
+     * @return The date when the client certificate will expire, in <a
      *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *         target="_blank">ISO 8601 format</a>.
      */
@@ -283,13 +288,13 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the Client Certificate will expire, in <a
+     * The date when the client certificate will expire, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param expirationDate
-     *        The date when the Client Certificate will expire, in <a
+     *        The date when the client certificate will expire, in <a
      *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *        target="_blank">ISO 8601 format</a>.
      * @return Returns a reference to this object so that method calls can be

@@ -18,14 +18,60 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a method.
+ * Represents a client-facing interface by which the client calls the API to
+ * access back-end resources. A <b>Method</b> resource is integrated with an
+ * <a>Integration</a> resource. Both consist of a request and one or more
+ * responses. The method request takes the client input that is passed to the
+ * back end through the integration request. A method response returns the
+ * output from the back end to the client through an integration response. A
+ * method request is embodied in a <b>Method</b> resource, whereas an
+ * integration request is embodied in an <a>Integration</a> resource. On the
+ * other hand, a method response is represented by a <a>MethodResponse</a>
+ * resource, whereas an integration response is represented by an
+ * <a>IntegrationResponse</a> resource.
  * </p>
+ * <div class="remarks">
+ * <p/>
+ * <h4>Example: Retrive the GET method on a specified resource</h4>
+ * <h5>Request</h5>
+ * <p>
+ * The following example request retrieves the information about the GET method
+ * on an API resource (<code>3kzxbg5sa2</code>) of an API (
+ * <code>fugvjdxtri</code>).
+ * </p>
+ * 
+ * <pre>
+ * <code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date: 20160603T210259Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160603/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+ * </pre>
+ * 
+ * <h5>Response</h5>
+ * <p>
+ * The successful response returns a <code>200 OK</code> status code and a
+ * payload similar to the following:
+ * </p>
+ * 
+ * <pre>
+ * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html", "name": "method", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true } ], "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title": "GET" }, "integration:put": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "method:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET" }, "method:integration": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "method:responses": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200", "name": "200", "title": "200" }, "method:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET" }, "methodresponse:put": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/{status_code}", "templated": true } }, "apiKeyRequired": true, "authorizationType": "NONE", "httpMethod": "GET", "_embedded": { "method:integration": { "_links": { "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "integration:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "integration:responses": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "3kzxbg5sa2", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestParameters": { "integration.request.header.Content-Type": "'application/x-amz-json-1.1'" }, "requestTemplates": { "application/json": "{\n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-east-1:kinesis:action/ListStreams", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E%23foreach(%24stream%20in%20%24input.path(%27%24.StreamNames%27))%3Cstream%3E%3Cname%3E%24stream%3C%2Fname%3E%3C%2Fstream%3E%23end%3C%2FkinesisStreams%3E\")" }, "statusCode": "200" } } }, "method:responses": { "_links": { "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200", "name": "200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.Content-Type": false }, "statusCode": "200" } } }</code>
+ * </pre>
+ * <p>
+ * In the example above, the response template for the <code>200 OK</code>
+ * response maps the JSON output from the <code>ListStreams</code> action in the
+ * back end to an XML output. The mapping template is URL-encoded as
+ * <code>%3CkinesisStreams%3E%23foreach(%24stream%20in%20%24input.path(%27%24.StreamNames%27))%3Cstream%3E%3Cname%3E%24stream%3C%2Fname%3E%3C%2Fstream%3E%23end%3C%2FkinesisStreams%3E</code>
+ * and the output is decoded using the <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#util-templat-reference"
+ * >$util.urlDecode()</a> helper function.
+ * </p>
+ * </div> <div class="seeAlso"> <a>MethodResponse</a>, <a>Integration</a>,
+ * <a>IntegrationResponse</a>, <a>Resource</a>, <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings.html"
+ * >Set up an API's method</a> </div>
  */
 public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP method.
+     * The method's HTTP verb.
      * </p>
      */
     private String httpMethod;
@@ -37,62 +83,114 @@ public class UpdateMethodResult implements Serializable, Cloneable {
     private String authorizationType;
     /**
      * <p>
-     * Specifies the identifier of an <a>Authorizer</a> to use on this Method.
-     * The authorizationType must be CUSTOM.
+     * The identifier of an <a>Authorizer</a> to use on this method. The
+     * <code>authorizationType</code> must be <code>CUSTOM</code>.
      * </p>
      */
     private String authorizerId;
     /**
      * <p>
-     * Specifies whether the method requires a valid <a>ApiKey</a>.
+     * A boolean flag specifying whether a valid <a>ApiKey</a> is required to
+     * invoke this method.
      * </p>
      */
     private Boolean apiKeyRequired;
     /**
      * <p>
-     * Represents request parameters that can be accepted by Amazon API Gateway.
-     * Request parameters are represented as a key/value map, with a source as
-     * the key and a Boolean flag as the value. The Boolean flag is used to
-     * specify whether the parameter is required. A source must match the
-     * pattern <code>method.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header.
-     * <code>name</code> is a valid, unique parameter name. Sources specified
-     * here are available to the integration for mapping to integration request
+     * A key-value map defining required or optional method request parameters
+     * that can be accepted by Amazon API Gateway. A key is a method request
+     * parameter name matching the pattern of
+     * <code>method.request.{location}.{name}</code>, where
+     * <code>location</code> is <code>querystring</code>, <code>path</code>, or
+     * <code>header</code> and <code>name</code> is a valid and unique parameter
+     * name. The value associated with the key is a Boolean flag indicating
+     * whether the parameter is required (<code>true</code>) or optional (
+     * <code>false</code>). The method request parameter names defined here are
+     * available in <a>Integration</a> to be mapped to integration request
      * parameters or templates.
      * </p>
      */
     private java.util.Map<String, Boolean> requestParameters;
     /**
      * <p>
-     * Specifies the <a>Model</a> resources used for the request's content type.
-     * Request models are represented as a key/value map, with a content type as
-     * the key and a <a>Model</a> name as the value.
+     * A key-value map specifying data schemas, represented by <a>Model</a>
+     * resources, (as the mapped value) of the request payloads of given content
+     * types (as the mapping key).
      * </p>
      */
     private java.util.Map<String, String> requestModels;
     /**
      * <p>
-     * Represents available responses that can be sent to the caller. Method
-     * responses are represented as a key/value map, with an HTTP status code as
-     * the key and a <a>MethodResponse</a> as the value. The status codes are
-     * available for the <a>Integration</a> responses to map to.
+     * Gets a method response associated with a given HTTP status code.
      * </p>
+     * <div class="remarks">
+     * <p>
+     * The collection of method responses are encapsulated in a key-value map,
+     * where the key is a response's HTTP status code and the value is a
+     * <a>MethodResponse</a> resource that specifies the response returned to
+     * the caller from the back end through the integration response.
+     * </p>
+     * <h4>Example: Get a 200 OK response of a GET method</h4> <h5>Request</h5>
+     * <p/>
+     * 
+     * <pre>
+     * <code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com Content-Length: 117 X-Amz-Date: 20160613T215008Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+     * </pre>
+     * 
+     * <h5>Response</h5>
+     * <p>
+     * The successful response returns a <code>200 OK</code> status code and a
+     * payload similar to the following:
+     * </p>
+     * 
+     * <pre>
+     * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
+     * </pre>
+     * <p/>
+     * </div> <div class="seeAlso"> <a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html"
+     * >AWS CLI</a> </div>
      */
     private java.util.Map<String, MethodResponse> methodResponses;
     /**
      * <p>
-     * The method's integration.
+     * Gets the method's integration responsible for passing the
+     * client-submitted request to the back end and performing necessary
+     * transformations to make the request compliant with the back end.
      * </p>
+     * <div class="remarks">
+     * <p/>
+     * <h4>Example:</h4>
+     * <h5>Request</h5>
+     * <p/>
+     * 
+     * <pre>
+     * <code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com Content-Length: 117 X-Amz-Date: 20160613T213210Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+     * </pre>
+     * 
+     * <h5>Response</h5>
+     * <p>
+     * The successful response returns a <code>200 OK</code> status code and a
+     * payload similar to the following:
+     * </p>
+     * 
+     * <pre>
+     * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
+     * </pre>
+     * <p/>
+     * </div> <div class="seeAlso"> <a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html"
+     * >AWS CLI</a> </div>
      */
     private Integration methodIntegration;
 
     /**
      * <p>
-     * The HTTP method.
+     * The method's HTTP verb.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP method.
+     *        The method's HTTP verb.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -101,10 +199,10 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP method.
+     * The method's HTTP verb.
      * </p>
      * 
-     * @return The HTTP method.
+     * @return The method's HTTP verb.
      */
 
     public String getHttpMethod() {
@@ -113,11 +211,11 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP method.
+     * The method's HTTP verb.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP method.
+     *        The method's HTTP verb.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -170,13 +268,13 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the identifier of an <a>Authorizer</a> to use on this Method.
-     * The authorizationType must be CUSTOM.
+     * The identifier of an <a>Authorizer</a> to use on this method. The
+     * <code>authorizationType</code> must be <code>CUSTOM</code>.
      * </p>
      * 
      * @param authorizerId
-     *        Specifies the identifier of an <a>Authorizer</a> to use on this
-     *        Method. The authorizationType must be CUSTOM.
+     *        The identifier of an <a>Authorizer</a> to use on this method. The
+     *        <code>authorizationType</code> must be <code>CUSTOM</code>.
      */
 
     public void setAuthorizerId(String authorizerId) {
@@ -185,12 +283,12 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the identifier of an <a>Authorizer</a> to use on this Method.
-     * The authorizationType must be CUSTOM.
+     * The identifier of an <a>Authorizer</a> to use on this method. The
+     * <code>authorizationType</code> must be <code>CUSTOM</code>.
      * </p>
      * 
-     * @return Specifies the identifier of an <a>Authorizer</a> to use on this
-     *         Method. The authorizationType must be CUSTOM.
+     * @return The identifier of an <a>Authorizer</a> to use on this method. The
+     *         <code>authorizationType</code> must be <code>CUSTOM</code>.
      */
 
     public String getAuthorizerId() {
@@ -199,13 +297,13 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the identifier of an <a>Authorizer</a> to use on this Method.
-     * The authorizationType must be CUSTOM.
+     * The identifier of an <a>Authorizer</a> to use on this method. The
+     * <code>authorizationType</code> must be <code>CUSTOM</code>.
      * </p>
      * 
      * @param authorizerId
-     *        Specifies the identifier of an <a>Authorizer</a> to use on this
-     *        Method. The authorizationType must be CUSTOM.
+     *        The identifier of an <a>Authorizer</a> to use on this method. The
+     *        <code>authorizationType</code> must be <code>CUSTOM</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -217,11 +315,13 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the method requires a valid <a>ApiKey</a>.
+     * A boolean flag specifying whether a valid <a>ApiKey</a> is required to
+     * invoke this method.
      * </p>
      * 
      * @param apiKeyRequired
-     *        Specifies whether the method requires a valid <a>ApiKey</a>.
+     *        A boolean flag specifying whether a valid <a>ApiKey</a> is
+     *        required to invoke this method.
      */
 
     public void setApiKeyRequired(Boolean apiKeyRequired) {
@@ -230,10 +330,12 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the method requires a valid <a>ApiKey</a>.
+     * A boolean flag specifying whether a valid <a>ApiKey</a> is required to
+     * invoke this method.
      * </p>
      * 
-     * @return Specifies whether the method requires a valid <a>ApiKey</a>.
+     * @return A boolean flag specifying whether a valid <a>ApiKey</a> is
+     *         required to invoke this method.
      */
 
     public Boolean getApiKeyRequired() {
@@ -242,11 +344,13 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the method requires a valid <a>ApiKey</a>.
+     * A boolean flag specifying whether a valid <a>ApiKey</a> is required to
+     * invoke this method.
      * </p>
      * 
      * @param apiKeyRequired
-     *        Specifies whether the method requires a valid <a>ApiKey</a>.
+     *        A boolean flag specifying whether a valid <a>ApiKey</a> is
+     *        required to invoke this method.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -258,10 +362,12 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the method requires a valid <a>ApiKey</a>.
+     * A boolean flag specifying whether a valid <a>ApiKey</a> is required to
+     * invoke this method.
      * </p>
      * 
-     * @return Specifies whether the method requires a valid <a>ApiKey</a>.
+     * @return A boolean flag specifying whether a valid <a>ApiKey</a> is
+     *         required to invoke this method.
      */
 
     public Boolean isApiKeyRequired() {
@@ -270,27 +376,31 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents request parameters that can be accepted by Amazon API Gateway.
-     * Request parameters are represented as a key/value map, with a source as
-     * the key and a Boolean flag as the value. The Boolean flag is used to
-     * specify whether the parameter is required. A source must match the
-     * pattern <code>method.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header.
-     * <code>name</code> is a valid, unique parameter name. Sources specified
-     * here are available to the integration for mapping to integration request
+     * A key-value map defining required or optional method request parameters
+     * that can be accepted by Amazon API Gateway. A key is a method request
+     * parameter name matching the pattern of
+     * <code>method.request.{location}.{name}</code>, where
+     * <code>location</code> is <code>querystring</code>, <code>path</code>, or
+     * <code>header</code> and <code>name</code> is a valid and unique parameter
+     * name. The value associated with the key is a Boolean flag indicating
+     * whether the parameter is required (<code>true</code>) or optional (
+     * <code>false</code>). The method request parameter names defined here are
+     * available in <a>Integration</a> to be mapped to integration request
      * parameters or templates.
      * </p>
      * 
-     * @return Represents request parameters that can be accepted by Amazon API
-     *         Gateway. Request parameters are represented as a key/value map,
-     *         with a source as the key and a Boolean flag as the value. The
-     *         Boolean flag is used to specify whether the parameter is
-     *         required. A source must match the pattern
+     * @return A key-value map defining required or optional method request
+     *         parameters that can be accepted by Amazon API Gateway. A key is a
+     *         method request parameter name matching the pattern of
      *         <code>method.request.{location}.{name}</code>, where
-     *         <code>location</code> is either querystring, path, or header.
-     *         <code>name</code> is a valid, unique parameter name. Sources
-     *         specified here are available to the integration for mapping to
-     *         integration request parameters or templates.
+     *         <code>location</code> is <code>querystring</code>,
+     *         <code>path</code>, or <code>header</code> and <code>name</code>
+     *         is a valid and unique parameter name. The value associated with
+     *         the key is a Boolean flag indicating whether the parameter is
+     *         required (<code>true</code>) or optional (<code>false</code>).
+     *         The method request parameter names defined here are available in
+     *         <a>Integration</a> to be mapped to integration request parameters
+     *         or templates.
      */
 
     public java.util.Map<String, Boolean> getRequestParameters() {
@@ -299,28 +409,32 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents request parameters that can be accepted by Amazon API Gateway.
-     * Request parameters are represented as a key/value map, with a source as
-     * the key and a Boolean flag as the value. The Boolean flag is used to
-     * specify whether the parameter is required. A source must match the
-     * pattern <code>method.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header.
-     * <code>name</code> is a valid, unique parameter name. Sources specified
-     * here are available to the integration for mapping to integration request
+     * A key-value map defining required or optional method request parameters
+     * that can be accepted by Amazon API Gateway. A key is a method request
+     * parameter name matching the pattern of
+     * <code>method.request.{location}.{name}</code>, where
+     * <code>location</code> is <code>querystring</code>, <code>path</code>, or
+     * <code>header</code> and <code>name</code> is a valid and unique parameter
+     * name. The value associated with the key is a Boolean flag indicating
+     * whether the parameter is required (<code>true</code>) or optional (
+     * <code>false</code>). The method request parameter names defined here are
+     * available in <a>Integration</a> to be mapped to integration request
      * parameters or templates.
      * </p>
      * 
      * @param requestParameters
-     *        Represents request parameters that can be accepted by Amazon API
-     *        Gateway. Request parameters are represented as a key/value map,
-     *        with a source as the key and a Boolean flag as the value. The
-     *        Boolean flag is used to specify whether the parameter is required.
-     *        A source must match the pattern
+     *        A key-value map defining required or optional method request
+     *        parameters that can be accepted by Amazon API Gateway. A key is a
+     *        method request parameter name matching the pattern of
      *        <code>method.request.{location}.{name}</code>, where
-     *        <code>location</code> is either querystring, path, or header.
-     *        <code>name</code> is a valid, unique parameter name. Sources
-     *        specified here are available to the integration for mapping to
-     *        integration request parameters or templates.
+     *        <code>location</code> is <code>querystring</code>,
+     *        <code>path</code>, or <code>header</code> and <code>name</code> is
+     *        a valid and unique parameter name. The value associated with the
+     *        key is a Boolean flag indicating whether the parameter is required
+     *        (<code>true</code>) or optional (<code>false</code>). The method
+     *        request parameter names defined here are available in
+     *        <a>Integration</a> to be mapped to integration request parameters
+     *        or templates.
      */
 
     public void setRequestParameters(
@@ -330,28 +444,32 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents request parameters that can be accepted by Amazon API Gateway.
-     * Request parameters are represented as a key/value map, with a source as
-     * the key and a Boolean flag as the value. The Boolean flag is used to
-     * specify whether the parameter is required. A source must match the
-     * pattern <code>method.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header.
-     * <code>name</code> is a valid, unique parameter name. Sources specified
-     * here are available to the integration for mapping to integration request
+     * A key-value map defining required or optional method request parameters
+     * that can be accepted by Amazon API Gateway. A key is a method request
+     * parameter name matching the pattern of
+     * <code>method.request.{location}.{name}</code>, where
+     * <code>location</code> is <code>querystring</code>, <code>path</code>, or
+     * <code>header</code> and <code>name</code> is a valid and unique parameter
+     * name. The value associated with the key is a Boolean flag indicating
+     * whether the parameter is required (<code>true</code>) or optional (
+     * <code>false</code>). The method request parameter names defined here are
+     * available in <a>Integration</a> to be mapped to integration request
      * parameters or templates.
      * </p>
      * 
      * @param requestParameters
-     *        Represents request parameters that can be accepted by Amazon API
-     *        Gateway. Request parameters are represented as a key/value map,
-     *        with a source as the key and a Boolean flag as the value. The
-     *        Boolean flag is used to specify whether the parameter is required.
-     *        A source must match the pattern
+     *        A key-value map defining required or optional method request
+     *        parameters that can be accepted by Amazon API Gateway. A key is a
+     *        method request parameter name matching the pattern of
      *        <code>method.request.{location}.{name}</code>, where
-     *        <code>location</code> is either querystring, path, or header.
-     *        <code>name</code> is a valid, unique parameter name. Sources
-     *        specified here are available to the integration for mapping to
-     *        integration request parameters or templates.
+     *        <code>location</code> is <code>querystring</code>,
+     *        <code>path</code>, or <code>header</code> and <code>name</code> is
+     *        a valid and unique parameter name. The value associated with the
+     *        key is a Boolean flag indicating whether the parameter is required
+     *        (<code>true</code>) or optional (<code>false</code>). The method
+     *        request parameter names defined here are available in
+     *        <a>Integration</a> to be mapped to integration request parameters
+     *        or templates.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -386,15 +504,14 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the <a>Model</a> resources used for the request's content type.
-     * Request models are represented as a key/value map, with a content type as
-     * the key and a <a>Model</a> name as the value.
+     * A key-value map specifying data schemas, represented by <a>Model</a>
+     * resources, (as the mapped value) of the request payloads of given content
+     * types (as the mapping key).
      * </p>
      * 
-     * @return Specifies the <a>Model</a> resources used for the request's
-     *         content type. Request models are represented as a key/value map,
-     *         with a content type as the key and a <a>Model</a> name as the
-     *         value.
+     * @return A key-value map specifying data schemas, represented by
+     *         <a>Model</a> resources, (as the mapped value) of the request
+     *         payloads of given content types (as the mapping key).
      */
 
     public java.util.Map<String, String> getRequestModels() {
@@ -403,16 +520,15 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the <a>Model</a> resources used for the request's content type.
-     * Request models are represented as a key/value map, with a content type as
-     * the key and a <a>Model</a> name as the value.
+     * A key-value map specifying data schemas, represented by <a>Model</a>
+     * resources, (as the mapped value) of the request payloads of given content
+     * types (as the mapping key).
      * </p>
      * 
      * @param requestModels
-     *        Specifies the <a>Model</a> resources used for the request's
-     *        content type. Request models are represented as a key/value map,
-     *        with a content type as the key and a <a>Model</a> name as the
-     *        value.
+     *        A key-value map specifying data schemas, represented by
+     *        <a>Model</a> resources, (as the mapped value) of the request
+     *        payloads of given content types (as the mapping key).
      */
 
     public void setRequestModels(java.util.Map<String, String> requestModels) {
@@ -421,16 +537,15 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the <a>Model</a> resources used for the request's content type.
-     * Request models are represented as a key/value map, with a content type as
-     * the key and a <a>Model</a> name as the value.
+     * A key-value map specifying data schemas, represented by <a>Model</a>
+     * resources, (as the mapped value) of the request payloads of given content
+     * types (as the mapping key).
      * </p>
      * 
      * @param requestModels
-     *        Specifies the <a>Model</a> resources used for the request's
-     *        content type. Request models are represented as a key/value map,
-     *        with a content type as the key and a <a>Model</a> name as the
-     *        value.
+     *        A key-value map specifying data schemas, represented by
+     *        <a>Model</a> resources, (as the mapped value) of the request
+     *        payloads of given content types (as the mapping key).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -464,17 +579,67 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents available responses that can be sent to the caller. Method
-     * responses are represented as a key/value map, with an HTTP status code as
-     * the key and a <a>MethodResponse</a> as the value. The status codes are
-     * available for the <a>Integration</a> responses to map to.
+     * Gets a method response associated with a given HTTP status code.
+     * </p>
+     * <div class="remarks">
+     * <p>
+     * The collection of method responses are encapsulated in a key-value map,
+     * where the key is a response's HTTP status code and the value is a
+     * <a>MethodResponse</a> resource that specifies the response returned to
+     * the caller from the back end through the integration response.
+     * </p>
+     * <h4>Example: Get a 200 OK response of a GET method</h4> <h5>Request</h5>
+     * <p/>
+     * 
+     * <pre>
+     * <code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com Content-Length: 117 X-Amz-Date: 20160613T215008Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+     * </pre>
+     * 
+     * <h5>Response</h5>
+     * <p>
+     * The successful response returns a <code>200 OK</code> status code and a
+     * payload similar to the following:
      * </p>
      * 
-     * @return Represents available responses that can be sent to the caller.
-     *         Method responses are represented as a key/value map, with an HTTP
-     *         status code as the key and a <a>MethodResponse</a> as the value.
-     *         The status codes are available for the <a>Integration</a>
-     *         responses to map to.
+     * <pre>
+     * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
+     * </pre>
+     * <p/>
+     * </div> <div class="seeAlso"> <a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html"
+     * >AWS CLI</a> </div>
+     * 
+     * @return Gets a method response associated with a given HTTP status code.
+     *         </p>
+     *         <div class="remarks">
+     *         <p>
+     *         The collection of method responses are encapsulated in a
+     *         key-value map, where the key is a response's HTTP status code and
+     *         the value is a <a>MethodResponse</a> resource that specifies the
+     *         response returned to the caller from the back end through the
+     *         integration response.
+     *         </p>
+     *         <h4>Example: Get a 200 OK response of a GET method</h4> <h5>
+     *         Request</h5>
+     *         <p/>
+     * 
+     *         <pre>
+     * <code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com Content-Length: 117 X-Amz-Date: 20160613T215008Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+     * </pre>
+     * 
+     *         <h5>Response</h5>
+     *         <p>
+     *         The successful response returns a <code>200 OK</code> status code
+     *         and a payload similar to the following:
+     *         </p>
+     * 
+     *         <pre>
+     * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
+     * </pre>
+     *         <p/>
+     *         </div> <div class="seeAlso"> <a href=
+     *         "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html"
+     *         >AWS CLI</a>
      */
 
     public java.util.Map<String, MethodResponse> getMethodResponses() {
@@ -483,18 +648,68 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents available responses that can be sent to the caller. Method
-     * responses are represented as a key/value map, with an HTTP status code as
-     * the key and a <a>MethodResponse</a> as the value. The status codes are
-     * available for the <a>Integration</a> responses to map to.
+     * Gets a method response associated with a given HTTP status code.
+     * </p>
+     * <div class="remarks">
+     * <p>
+     * The collection of method responses are encapsulated in a key-value map,
+     * where the key is a response's HTTP status code and the value is a
+     * <a>MethodResponse</a> resource that specifies the response returned to
+     * the caller from the back end through the integration response.
+     * </p>
+     * <h4>Example: Get a 200 OK response of a GET method</h4> <h5>Request</h5>
+     * <p/>
+     * 
+     * <pre>
+     * <code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com Content-Length: 117 X-Amz-Date: 20160613T215008Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+     * </pre>
+     * 
+     * <h5>Response</h5>
+     * <p>
+     * The successful response returns a <code>200 OK</code> status code and a
+     * payload similar to the following:
      * </p>
      * 
+     * <pre>
+     * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
+     * </pre>
+     * <p/>
+     * </div> <div class="seeAlso"> <a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html"
+     * >AWS CLI</a> </div>
+     * 
      * @param methodResponses
-     *        Represents available responses that can be sent to the caller.
-     *        Method responses are represented as a key/value map, with an HTTP
-     *        status code as the key and a <a>MethodResponse</a> as the value.
-     *        The status codes are available for the <a>Integration</a>
-     *        responses to map to.
+     *        Gets a method response associated with a given HTTP status code.
+     *        </p>
+     *        <div class="remarks">
+     *        <p>
+     *        The collection of method responses are encapsulated in a key-value
+     *        map, where the key is a response's HTTP status code and the value
+     *        is a <a>MethodResponse</a> resource that specifies the response
+     *        returned to the caller from the back end through the integration
+     *        response.
+     *        </p>
+     *        <h4>Example: Get a 200 OK response of a GET method</h4> <h5>
+     *        Request</h5>
+     *        <p/>
+     * 
+     *        <pre>
+     * <code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com Content-Length: 117 X-Amz-Date: 20160613T215008Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+     * </pre>
+     * 
+     *        <h5>Response</h5>
+     *        <p>
+     *        The successful response returns a <code>200 OK</code> status code
+     *        and a payload similar to the following:
+     *        </p>
+     * 
+     *        <pre>
+     * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
+     * </pre>
+     *        <p/>
+     *        </div> <div class="seeAlso"> <a href=
+     *        "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html"
+     *        >AWS CLI</a>
      */
 
     public void setMethodResponses(
@@ -504,18 +719,68 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents available responses that can be sent to the caller. Method
-     * responses are represented as a key/value map, with an HTTP status code as
-     * the key and a <a>MethodResponse</a> as the value. The status codes are
-     * available for the <a>Integration</a> responses to map to.
+     * Gets a method response associated with a given HTTP status code.
+     * </p>
+     * <div class="remarks">
+     * <p>
+     * The collection of method responses are encapsulated in a key-value map,
+     * where the key is a response's HTTP status code and the value is a
+     * <a>MethodResponse</a> resource that specifies the response returned to
+     * the caller from the back end through the integration response.
+     * </p>
+     * <h4>Example: Get a 200 OK response of a GET method</h4> <h5>Request</h5>
+     * <p/>
+     * 
+     * <pre>
+     * <code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com Content-Length: 117 X-Amz-Date: 20160613T215008Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+     * </pre>
+     * 
+     * <h5>Response</h5>
+     * <p>
+     * The successful response returns a <code>200 OK</code> status code and a
+     * payload similar to the following:
      * </p>
      * 
+     * <pre>
+     * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
+     * </pre>
+     * <p/>
+     * </div> <div class="seeAlso"> <a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html"
+     * >AWS CLI</a> </div>
+     * 
      * @param methodResponses
-     *        Represents available responses that can be sent to the caller.
-     *        Method responses are represented as a key/value map, with an HTTP
-     *        status code as the key and a <a>MethodResponse</a> as the value.
-     *        The status codes are available for the <a>Integration</a>
-     *        responses to map to.
+     *        Gets a method response associated with a given HTTP status code.
+     *        </p>
+     *        <div class="remarks">
+     *        <p>
+     *        The collection of method responses are encapsulated in a key-value
+     *        map, where the key is a response's HTTP status code and the value
+     *        is a <a>MethodResponse</a> resource that specifies the response
+     *        returned to the caller from the back end through the integration
+     *        response.
+     *        </p>
+     *        <h4>Example: Get a 200 OK response of a GET method</h4> <h5>
+     *        Request</h5>
+     *        <p/>
+     * 
+     *        <pre>
+     * <code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com Content-Length: 117 X-Amz-Date: 20160613T215008Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+     * </pre>
+     * 
+     *        <h5>Response</h5>
+     *        <p>
+     *        The successful response returns a <code>200 OK</code> status code
+     *        and a payload similar to the following:
+     *        </p>
+     * 
+     *        <pre>
+     * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
+     * </pre>
+     *        <p/>
+     *        </div> <div class="seeAlso"> <a href=
+     *        "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html"
+     *        >AWS CLI</a>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -550,11 +815,62 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The method's integration.
+     * Gets the method's integration responsible for passing the
+     * client-submitted request to the back end and performing necessary
+     * transformations to make the request compliant with the back end.
+     * </p>
+     * <div class="remarks">
+     * <p/>
+     * <h4>Example:</h4>
+     * <h5>Request</h5>
+     * <p/>
+     * 
+     * <pre>
+     * <code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com Content-Length: 117 X-Amz-Date: 20160613T213210Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+     * </pre>
+     * 
+     * <h5>Response</h5>
+     * <p>
+     * The successful response returns a <code>200 OK</code> status code and a
+     * payload similar to the following:
      * </p>
      * 
+     * <pre>
+     * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
+     * </pre>
+     * <p/>
+     * </div> <div class="seeAlso"> <a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html"
+     * >AWS CLI</a> </div>
+     * 
      * @param methodIntegration
-     *        The method's integration.
+     *        Gets the method's integration responsible for passing the
+     *        client-submitted request to the back end and performing necessary
+     *        transformations to make the request compliant with the back end.
+     *        </p>
+     *        <div class="remarks">
+     *        <p/>
+     *        <h4>Example:</h4>
+     *        <h5>Request</h5>
+     *        <p/>
+     * 
+     *        <pre>
+     * <code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com Content-Length: 117 X-Amz-Date: 20160613T213210Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+     * </pre>
+     * 
+     *        <h5>Response</h5>
+     *        <p>
+     *        The successful response returns a <code>200 OK</code> status code
+     *        and a payload similar to the following:
+     *        </p>
+     * 
+     *        <pre>
+     * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
+     * </pre>
+     *        <p/>
+     *        </div> <div class="seeAlso"> <a href=
+     *        "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html"
+     *        >AWS CLI</a>
      */
 
     public void setMethodIntegration(Integration methodIntegration) {
@@ -563,10 +879,61 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The method's integration.
+     * Gets the method's integration responsible for passing the
+     * client-submitted request to the back end and performing necessary
+     * transformations to make the request compliant with the back end.
+     * </p>
+     * <div class="remarks">
+     * <p/>
+     * <h4>Example:</h4>
+     * <h5>Request</h5>
+     * <p/>
+     * 
+     * <pre>
+     * <code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com Content-Length: 117 X-Amz-Date: 20160613T213210Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+     * </pre>
+     * 
+     * <h5>Response</h5>
+     * <p>
+     * The successful response returns a <code>200 OK</code> status code and a
+     * payload similar to the following:
      * </p>
      * 
-     * @return The method's integration.
+     * <pre>
+     * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
+     * </pre>
+     * <p/>
+     * </div> <div class="seeAlso"> <a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html"
+     * >AWS CLI</a> </div>
+     * 
+     * @return Gets the method's integration responsible for passing the
+     *         client-submitted request to the back end and performing necessary
+     *         transformations to make the request compliant with the back end.
+     *         </p>
+     *         <div class="remarks">
+     *         <p/>
+     *         <h4>Example:</h4>
+     *         <h5>Request</h5>
+     *         <p/>
+     * 
+     *         <pre>
+     * <code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com Content-Length: 117 X-Amz-Date: 20160613T213210Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+     * </pre>
+     * 
+     *         <h5>Response</h5>
+     *         <p>
+     *         The successful response returns a <code>200 OK</code> status code
+     *         and a payload similar to the following:
+     *         </p>
+     * 
+     *         <pre>
+     * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
+     * </pre>
+     *         <p/>
+     *         </div> <div class="seeAlso"> <a href=
+     *         "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html"
+     *         >AWS CLI</a>
      */
 
     public Integration getMethodIntegration() {
@@ -575,11 +942,62 @@ public class UpdateMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The method's integration.
+     * Gets the method's integration responsible for passing the
+     * client-submitted request to the back end and performing necessary
+     * transformations to make the request compliant with the back end.
+     * </p>
+     * <div class="remarks">
+     * <p/>
+     * <h4>Example:</h4>
+     * <h5>Request</h5>
+     * <p/>
+     * 
+     * <pre>
+     * <code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com Content-Length: 117 X-Amz-Date: 20160613T213210Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+     * </pre>
+     * 
+     * <h5>Response</h5>
+     * <p>
+     * The successful response returns a <code>200 OK</code> status code and a
+     * payload similar to the following:
      * </p>
      * 
+     * <pre>
+     * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
+     * </pre>
+     * <p/>
+     * </div> <div class="seeAlso"> <a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html"
+     * >AWS CLI</a> </div>
+     * 
      * @param methodIntegration
-     *        The method's integration.
+     *        Gets the method's integration responsible for passing the
+     *        client-submitted request to the back end and performing necessary
+     *        transformations to make the request compliant with the back end.
+     *        </p>
+     *        <div class="remarks">
+     *        <p/>
+     *        <h4>Example:</h4>
+     *        <h5>Request</h5>
+     *        <p/>
+     * 
+     *        <pre>
+     * <code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com Content-Length: 117 X-Amz-Date: 20160613T213210Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code>
+     * </pre>
+     * 
+     *        <h5>Response</h5>
+     *        <p>
+     *        The successful response returns a <code>200 OK</code> status code
+     *        and a payload similar to the following:
+     *        </p>
+     * 
+     *        <pre>
+     * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
+     * </pre>
+     *        <p/>
+     *        </div> <div class="seeAlso"> <a href=
+     *        "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html"
+     *        >AWS CLI</a>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

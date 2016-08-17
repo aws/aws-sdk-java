@@ -55,6 +55,11 @@ public class ApiKeyJsonUnmarshaller implements
                     apiKey.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
+                if (context.testExpression("value", targetDepth)) {
+                    context.nextToken();
+                    apiKey.setValue(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     apiKey.setName(context.getUnmarshaller(String.class)
@@ -70,11 +75,6 @@ public class ApiKeyJsonUnmarshaller implements
                     apiKey.setEnabled(context.getUnmarshaller(Boolean.class)
                             .unmarshall(context));
                 }
-                if (context.testExpression("stageKeys", targetDepth)) {
-                    context.nextToken();
-                    apiKey.setStageKeys(new ListUnmarshaller<String>(context
-                            .getUnmarshaller(String.class)).unmarshall(context));
-                }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
                     apiKey.setCreatedDate(context.getUnmarshaller(
@@ -84,6 +84,11 @@ public class ApiKeyJsonUnmarshaller implements
                     context.nextToken();
                     apiKey.setLastUpdatedDate(context.getUnmarshaller(
                             java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("stageKeys", targetDepth)) {
+                    context.nextToken();
+                    apiKey.setStageKeys(new ListUnmarshaller<String>(context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

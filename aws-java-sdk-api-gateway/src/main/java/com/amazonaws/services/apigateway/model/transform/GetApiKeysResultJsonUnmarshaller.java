@@ -51,6 +51,12 @@ public class GetApiKeysResultJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("warnings", targetDepth)) {
+                    context.nextToken();
+                    getApiKeysResult.setWarnings(new ListUnmarshaller<String>(
+                            context.getUnmarshaller(String.class))
+                            .unmarshall(context));
+                }
                 if (context.testExpression("position", targetDepth)) {
                     context.nextToken();
                     getApiKeysResult.setPosition(context.getUnmarshaller(

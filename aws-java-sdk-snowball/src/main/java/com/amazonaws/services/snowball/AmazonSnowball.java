@@ -148,7 +148,7 @@ public interface AmazonSnowball {
      * <p>
      * Creates a job to import or export data between Amazon S3 and your
      * on-premises data center. Note that your AWS account must have the right
-     * trust policies and permissions in place to create job for Snowball. For
+     * trust policies and permissions in place to create a job for Snowball. For
      * more information, see <a>api-reference-policies</a>.
      * </p>
      * 
@@ -216,7 +216,7 @@ public interface AmazonSnowball {
 
     /**
      * <p>
-     * Returns a link to an Amazon S3 pre-signed URL for the manifest file
+     * Returns a link to an Amazon S3 presigned URL for the manifest file
      * associated with the specified <code>JobId</code> value. You can access
      * the manifest file for up to 60 minutes after this request has been made.
      * To access the manifest file after 60 minutes have passed, you'll have to
@@ -308,9 +308,10 @@ public interface AmazonSnowball {
      * <p>
      * Returns an array of <code>JobListEntry</code> objects of the specified
      * length. Each <code>JobListEntry</code> object contains a job's state, a
-     * job's ID, and whether or not the job is a job part in the case of export
-     * jobs. Calling this API in one of the US regions will return jobs from the
-     * list of all jobs associated with this account in all US regions.
+     * job's ID, and a value that indicates whether the job is a job part, in
+     * the case of export jobs. Calling this API action in one of the US regions
+     * will return jobs from the list of all jobs associated with this account
+     * in all US regions.
      * </p>
      * 
      * @param listJobsRequest

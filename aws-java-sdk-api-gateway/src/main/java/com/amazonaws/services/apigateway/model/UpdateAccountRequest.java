@@ -28,21 +28,20 @@ public class UpdateAccountRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and
+     * in the order specified in this list.
      * </p>
      */
     private java.util.List<PatchOperation> patchOperations;
 
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and
+     * in the order specified in this list.
      * </p>
      * 
-     * @return A list of operations describing the updates to apply to the
-     *         specified resource. The patches are applied in the order
-     *         specified in the list.
+     * @return A list of update operations to be applied to the specified
+     *         resource and in the order specified in this list.
      */
 
     public java.util.List<PatchOperation> getPatchOperations() {
@@ -51,14 +50,13 @@ public class UpdateAccountRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and
+     * in the order specified in this list.
      * </p>
      * 
      * @param patchOperations
-     *        A list of operations describing the updates to apply to the
-     *        specified resource. The patches are applied in the order specified
-     *        in the list.
+     *        A list of update operations to be applied to the specified
+     *        resource and in the order specified in this list.
      */
 
     public void setPatchOperations(
@@ -74,8 +72,8 @@ public class UpdateAccountRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and
+     * in the order specified in this list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -85,9 +83,8 @@ public class UpdateAccountRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param patchOperations
-     *        A list of operations describing the updates to apply to the
-     *        specified resource. The patches are applied in the order specified
-     *        in the list.
+     *        A list of update operations to be applied to the specified
+     *        resource and in the order specified in this list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -106,14 +103,13 @@ public class UpdateAccountRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and
+     * in the order specified in this list.
      * </p>
      * 
      * @param patchOperations
-     *        A list of operations describing the updates to apply to the
-     *        specified resource. The patches are applied in the order specified
-     *        in the list.
+     *        A list of update operations to be applied to the specified
+     *        resource and in the order specified in this list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

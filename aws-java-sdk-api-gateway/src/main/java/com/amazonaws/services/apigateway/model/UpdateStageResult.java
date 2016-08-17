@@ -21,6 +21,9 @@ import java.io.Serializable;
  * Represents a unique identifier for a version of a deployed <a>RestApi</a>
  * that is callable by users.
  * </p>
+ * <div class="seeAlso"> <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html"
+ * >Deploy an API</a> </div>
  */
 public class UpdateStageResult implements Serializable, Cloneable {
 
@@ -30,7 +33,11 @@ public class UpdateStageResult implements Serializable, Cloneable {
      * </p>
      */
     private String deploymentId;
-
+    /**
+     * <p>
+     * The identifier of a client certificate for an API stage.
+     * </p>
+     */
     private String clientCertificateId;
     /**
      * <p>
@@ -66,17 +73,20 @@ public class UpdateStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the method settings for a <a>Stage</a> resource. Keys
-     * are defined as <code>{resource_path}/{http_method}</code> for an
-     * individual method override, or <code>\*&#47;\*</code> for the settings
-     * applied to all methods in the stage.
+     * (designated as <code>/{method_setting_key</code> below) are method paths
+     * defined as <code>{resource_path}/{http_method}</code> for an individual
+     * method override, or <code>/\*&#47;\*</code> for overriding all methods in
+     * the stage. Any forward slash ("/") characters in the
+     * <code>resource_path</code> part must be encoded as "~1" as in, for
+     * example, <code>~1resource~1sub-resource/GET</code>.
      * </p>
      */
     private java.util.Map<String, MethodSetting> methodSettings;
     /**
      * <p>
      * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphanumeric characters, and the values must
-     * match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * Variable names can have alphanumeric and underscore characters, and the
+     * values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      */
     private java.util.Map<String, String> variables;
@@ -139,7 +149,12 @@ public class UpdateStageResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The identifier of a client certificate for an API stage.
+     * </p>
+     * 
      * @param clientCertificateId
+     *        The identifier of a client certificate for an API stage.
      */
 
     public void setClientCertificateId(String clientCertificateId) {
@@ -147,7 +162,11 @@ public class UpdateStageResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of a client certificate for an API stage.
+     * </p>
+     * 
+     * @return The identifier of a client certificate for an API stage.
      */
 
     public String getClientCertificateId() {
@@ -155,7 +174,12 @@ public class UpdateStageResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The identifier of a client certificate for an API stage.
+     * </p>
+     * 
      * @param clientCertificateId
+     *        The identifier of a client certificate for an API stage.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -426,16 +450,22 @@ public class UpdateStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the method settings for a <a>Stage</a> resource. Keys
-     * are defined as <code>{resource_path}/{http_method}</code> for an
-     * individual method override, or <code>\*&#47;\*</code> for the settings
-     * applied to all methods in the stage.
+     * (designated as <code>/{method_setting_key</code> below) are method paths
+     * defined as <code>{resource_path}/{http_method}</code> for an individual
+     * method override, or <code>/\*&#47;\*</code> for overriding all methods in
+     * the stage. Any forward slash ("/") characters in the
+     * <code>resource_path</code> part must be encoded as "~1" as in, for
+     * example, <code>~1resource~1sub-resource/GET</code>.
      * </p>
      * 
      * @return A map that defines the method settings for a <a>Stage</a>
-     *         resource. Keys are defined as
+     *         resource. Keys (designated as <code>/{method_setting_key</code>
+     *         below) are method paths defined as
      *         <code>{resource_path}/{http_method}</code> for an individual
-     *         method override, or <code>\*&#47;\*</code> for the settings
-     *         applied to all methods in the stage.
+     *         method override, or <code>/\*&#47;\*</code> for overriding all
+     *         methods in the stage. Any forward slash ("/") characters in the
+     *         <code>resource_path</code> part must be encoded as "~1" as in,
+     *         for example, <code>~1resource~1sub-resource/GET</code>.
      */
 
     public java.util.Map<String, MethodSetting> getMethodSettings() {
@@ -445,17 +475,23 @@ public class UpdateStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the method settings for a <a>Stage</a> resource. Keys
-     * are defined as <code>{resource_path}/{http_method}</code> for an
-     * individual method override, or <code>\*&#47;\*</code> for the settings
-     * applied to all methods in the stage.
+     * (designated as <code>/{method_setting_key</code> below) are method paths
+     * defined as <code>{resource_path}/{http_method}</code> for an individual
+     * method override, or <code>/\*&#47;\*</code> for overriding all methods in
+     * the stage. Any forward slash ("/") characters in the
+     * <code>resource_path</code> part must be encoded as "~1" as in, for
+     * example, <code>~1resource~1sub-resource/GET</code>.
      * </p>
      * 
      * @param methodSettings
      *        A map that defines the method settings for a <a>Stage</a>
-     *        resource. Keys are defined as
+     *        resource. Keys (designated as <code>/{method_setting_key</code>
+     *        below) are method paths defined as
      *        <code>{resource_path}/{http_method}</code> for an individual
-     *        method override, or <code>\*&#47;\*</code> for the settings
-     *        applied to all methods in the stage.
+     *        method override, or <code>/\*&#47;\*</code> for overriding all
+     *        methods in the stage. Any forward slash ("/") characters in the
+     *        <code>resource_path</code> part must be encoded as "~1" as in, for
+     *        example, <code>~1resource~1sub-resource/GET</code>.
      */
 
     public void setMethodSettings(
@@ -466,17 +502,23 @@ public class UpdateStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the method settings for a <a>Stage</a> resource. Keys
-     * are defined as <code>{resource_path}/{http_method}</code> for an
-     * individual method override, or <code>\*&#47;\*</code> for the settings
-     * applied to all methods in the stage.
+     * (designated as <code>/{method_setting_key</code> below) are method paths
+     * defined as <code>{resource_path}/{http_method}</code> for an individual
+     * method override, or <code>/\*&#47;\*</code> for overriding all methods in
+     * the stage. Any forward slash ("/") characters in the
+     * <code>resource_path</code> part must be encoded as "~1" as in, for
+     * example, <code>~1resource~1sub-resource/GET</code>.
      * </p>
      * 
      * @param methodSettings
      *        A map that defines the method settings for a <a>Stage</a>
-     *        resource. Keys are defined as
+     *        resource. Keys (designated as <code>/{method_setting_key</code>
+     *        below) are method paths defined as
      *        <code>{resource_path}/{http_method}</code> for an individual
-     *        method override, or <code>\*&#47;\*</code> for the settings
-     *        applied to all methods in the stage.
+     *        method override, or <code>/\*&#47;\*</code> for overriding all
+     *        methods in the stage. Any forward slash ("/") characters in the
+     *        <code>resource_path</code> part must be encoded as "~1" as in, for
+     *        example, <code>~1resource~1sub-resource/GET</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -512,13 +554,14 @@ public class UpdateStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphanumeric characters, and the values must
-     * match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * Variable names can have alphanumeric and underscore characters, and the
+     * values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @return A map that defines the stage variables for a <a>Stage</a>
-     *         resource. Variable names can have alphanumeric characters, and
-     *         the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     *         resource. Variable names can have alphanumeric and underscore
+     *         characters, and the values must match
+     *         <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
 
     public java.util.Map<String, String> getVariables() {
@@ -528,14 +571,15 @@ public class UpdateStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphanumeric characters, and the values must
-     * match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * Variable names can have alphanumeric and underscore characters, and the
+     * values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
      *        A map that defines the stage variables for a <a>Stage</a>
-     *        resource. Variable names can have alphanumeric characters, and the
-     *        values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     *        resource. Variable names can have alphanumeric and underscore
+     *        characters, and the values must match
+     *        <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
 
     public void setVariables(java.util.Map<String, String> variables) {
@@ -545,14 +589,15 @@ public class UpdateStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphanumeric characters, and the values must
-     * match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     * Variable names can have alphanumeric and underscore characters, and the
+     * values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
      *        A map that defines the stage variables for a <a>Stage</a>
-     *        resource. Variable names can have alphanumeric characters, and the
-     *        values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     *        resource. Variable names can have alphanumeric and underscore
+     *        characters, and the values must match
+     *        <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

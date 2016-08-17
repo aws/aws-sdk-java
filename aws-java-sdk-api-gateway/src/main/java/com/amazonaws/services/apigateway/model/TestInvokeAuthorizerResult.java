@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the response of the test invoke request in for a custom
+ * Represents the response of the test invoke request for a custom
  * <a>Authorizer</a>
  * </p>
  */
@@ -39,7 +39,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
     private String log;
     /**
      * <p>
-     * The execution latency of the test authorizer request
+     * The execution latency of the test authorizer request.
      * </p>
      */
     private Long latency;
@@ -51,13 +51,20 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
     private String principalId;
     /**
      * <p>
-     * The policy JSON document returned by the <a>Authorizer</a>
+     * The JSON policy document returned by the <a>Authorizer</a>
      * </p>
      */
     private String policy;
 
     private java.util.Map<String, java.util.List<String>> authorization;
-
+    /**
+     * <p>
+     * The <a href=
+     * "http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims"
+     * >open identity claims</a>, with any supported custom attributes, returned
+     * from the Cognito Your User Pool configured for the API.
+     * </p>
+     */
     private java.util.Map<String, String> claims;
 
     /**
@@ -153,11 +160,11 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The execution latency of the test authorizer request
+     * The execution latency of the test authorizer request.
      * </p>
      * 
      * @param latency
-     *        The execution latency of the test authorizer request
+     *        The execution latency of the test authorizer request.
      */
 
     public void setLatency(Long latency) {
@@ -166,10 +173,10 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The execution latency of the test authorizer request
+     * The execution latency of the test authorizer request.
      * </p>
      * 
-     * @return The execution latency of the test authorizer request
+     * @return The execution latency of the test authorizer request.
      */
 
     public Long getLatency() {
@@ -178,11 +185,11 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The execution latency of the test authorizer request
+     * The execution latency of the test authorizer request.
      * </p>
      * 
      * @param latency
-     *        The execution latency of the test authorizer request
+     *        The execution latency of the test authorizer request.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -235,11 +242,11 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy JSON document returned by the <a>Authorizer</a>
+     * The JSON policy document returned by the <a>Authorizer</a>
      * </p>
      * 
      * @param policy
-     *        The policy JSON document returned by the <a>Authorizer</a>
+     *        The JSON policy document returned by the <a>Authorizer</a>
      */
 
     public void setPolicy(String policy) {
@@ -248,10 +255,10 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy JSON document returned by the <a>Authorizer</a>
+     * The JSON policy document returned by the <a>Authorizer</a>
      * </p>
      * 
-     * @return The policy JSON document returned by the <a>Authorizer</a>
+     * @return The JSON policy document returned by the <a>Authorizer</a>
      */
 
     public String getPolicy() {
@@ -260,11 +267,11 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy JSON document returned by the <a>Authorizer</a>
+     * The JSON policy document returned by the <a>Authorizer</a>
      * </p>
      * 
      * @param policy
-     *        The policy JSON document returned by the <a>Authorizer</a>
+     *        The JSON policy document returned by the <a>Authorizer</a>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -326,7 +333,17 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The <a href=
+     * "http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims"
+     * >open identity claims</a>, with any supported custom attributes, returned
+     * from the Cognito Your User Pool configured for the API.
+     * </p>
+     * 
+     * @return The <a href=
+     *         "http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims"
+     *         >open identity claims</a>, with any supported custom attributes,
+     *         returned from the Cognito Your User Pool configured for the API.
      */
 
     public java.util.Map<String, String> getClaims() {
@@ -334,7 +351,18 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The <a href=
+     * "http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims"
+     * >open identity claims</a>, with any supported custom attributes, returned
+     * from the Cognito Your User Pool configured for the API.
+     * </p>
+     * 
      * @param claims
+     *        The <a href=
+     *        "http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims"
+     *        >open identity claims</a>, with any supported custom attributes,
+     *        returned from the Cognito Your User Pool configured for the API.
      */
 
     public void setClaims(java.util.Map<String, String> claims) {
@@ -342,7 +370,18 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The <a href=
+     * "http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims"
+     * >open identity claims</a>, with any supported custom attributes, returned
+     * from the Cognito Your User Pool configured for the API.
+     * </p>
+     * 
      * @param claims
+     *        The <a href=
+     *        "http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims"
+     *        >open identity claims</a>, with any supported custom attributes,
+     *        returned from the Cognito Your User Pool configured for the API.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

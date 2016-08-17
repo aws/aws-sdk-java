@@ -20,6 +20,9 @@ import java.io.Serializable;
  * <p>
  * Represents a collection of <a>DomainName</a> resources.
  * </p>
+ * <div class="seeAlso"> <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html"
+ * >Use Client-Side Certificate</a> </div>
  */
 public class GetDomainNamesResult implements Serializable, Cloneable {
 

@@ -79,6 +79,16 @@ public class GetApiKeysRequestMarshaller implements
                     StringUtils.fromInteger(getApiKeysRequest.getLimit()));
         }
 
+        if (getApiKeysRequest.getNameQuery() != null) {
+            request.addParameter("name",
+                    StringUtils.fromString(getApiKeysRequest.getNameQuery()));
+        }
+
+        if (getApiKeysRequest.getIncludeValues() != null) {
+            request.addParameter("includeValues", StringUtils
+                    .fromBoolean(getApiKeysRequest.getIncludeValues()));
+        }
+
         request.setContent(new ByteArrayInputStream(new byte[0]));
         if (!request.getHeaders().containsKey("Content-Type")) {
             request.addHeader("Content-Type", protocolFactory.getContentType());

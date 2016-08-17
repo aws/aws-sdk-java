@@ -19,7 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "firehose",
     "signingName" : "firehose",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonKinesisFirehoseClientBuilder",
     "asyncClientBuilderClassName" : "AmazonKinesisFirehoseAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AmazonKinesisFirehoseModuleInjector",
@@ -29,7 +29,7 @@
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "jsonProtocol" : true
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "CreateDeliveryStream" : {
@@ -60,12 +60,12 @@
         "documentation" : "<p>The resource is already in use and not available for this operation.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateDeliveryStreamResult",
       "asyncReturnType" : "CreateDeliveryStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateDeliveryStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateDeliveryStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateDeliveryStreamRequest, CreateDeliveryStreamResult>",
-      "authenticated" : true,
       "methodName" : "createDeliveryStream"
     },
     "DeleteDeliveryStream" : {
@@ -93,12 +93,12 @@
         "documentation" : "<p>The specified resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteDeliveryStreamResult",
       "asyncReturnType" : "DeleteDeliveryStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteDeliveryStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteDeliveryStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDeliveryStreamRequest, DeleteDeliveryStreamResult>",
-      "authenticated" : true,
       "methodName" : "deleteDeliveryStream"
     },
     "DescribeDeliveryStream" : {
@@ -123,12 +123,12 @@
         "documentation" : "<p>The specified resource could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeDeliveryStreamResult",
       "asyncReturnType" : "DescribeDeliveryStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeDeliveryStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeDeliveryStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeDeliveryStreamRequest, DescribeDeliveryStreamResult>",
-      "authenticated" : true,
       "methodName" : "describeDeliveryStream"
     },
     "ListDeliveryStreams" : {
@@ -150,12 +150,12 @@
       },
       "exceptions" : null,
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListDeliveryStreamsResult",
       "asyncReturnType" : "ListDeliveryStreamsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDeliveryStreamsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDeliveryStreamsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDeliveryStreamsRequest, ListDeliveryStreamsResult>",
-      "authenticated" : true,
       "methodName" : "listDeliveryStreams"
     },
     "PutRecord" : {
@@ -186,12 +186,12 @@
         "documentation" : "<p>The service is unavailable, back off and retry the operation. If you continue to see the exception, throughput limits for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutRecordResult",
       "asyncReturnType" : "PutRecordResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRecordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRecordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRecordRequest, PutRecordResult>",
-      "authenticated" : true,
       "methodName" : "putRecord"
     },
     "PutRecordBatch" : {
@@ -222,12 +222,12 @@
         "documentation" : "<p>The service is unavailable, back off and retry the operation. If you continue to see the exception, throughput limits for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see <a href=\"http://docs.aws.amazon.com/firehose/latest/dev/limits.html\">Amazon Kinesis Firehose Limits</a>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutRecordBatchResult",
       "asyncReturnType" : "PutRecordBatchResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRecordBatchResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRecordBatchResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRecordBatchRequest, PutRecordBatchResult>",
-      "authenticated" : true,
       "methodName" : "putRecordBatch"
     },
     "UpdateDestination" : {
@@ -261,12 +261,12 @@
         "documentation" : "<p>Another modification has already happened. Fetch <b>VersionId</b> again and use it to update the destination.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateDestinationResult",
       "asyncReturnType" : "UpdateDestinationResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDestinationResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateDestinationResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDestinationRequest, UpdateDestinationResult>",
-      "authenticated" : true,
       "methodName" : "updateDestination"
     }
   },
@@ -3816,6 +3816,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "DestinationDescription",
@@ -4221,6 +4222,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "DestinationDescription",
@@ -7772,6 +7774,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
@@ -7965,6 +7968,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
@@ -8375,6 +8379,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "Record",
@@ -8573,6 +8578,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "Record",
@@ -11102,6 +11108,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "PutRecordBatchResponseEntry",
@@ -11296,6 +11303,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "PutRecordBatchResponseEntry",
@@ -16269,6 +16277,7 @@
     "simpleMethods" : null,
     "renameShapes" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
+    "sendExplicitlyEmptyListsForQuery" : false,
     "authPolicyActions" : {
       "skip" : true,
       "actionPrefix" : null,
@@ -16287,16 +16296,15 @@
     "convenienceTypeOverloads" : [ ],
     "skipSmokeTests" : false
   },
-  "waiters" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"
   },
+  "sdkModeledExceptionBaseClassName" : "AmazonKinesisFirehoseException",
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException",
-  "hasWaiters" : false,
-  "sdkModeledExceptionBaseClassName" : "AmazonKinesisFirehoseException",
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
+  "hasWaiters" : false
 }

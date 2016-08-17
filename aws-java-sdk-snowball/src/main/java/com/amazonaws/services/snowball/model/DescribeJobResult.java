@@ -23,20 +23,28 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Information about a specific job, including shipping information, job
+     * status, and other important metadata.
      * </p>
      */
     private JobMetadata jobMetadata;
     /**
      * <p>
+     * Information about a specific job part (in the case of an export job),
+     * including shipping information, job status, and other important metadata.
      * </p>
      */
     private java.util.List<JobMetadata> subJobMetadata;
 
     /**
      * <p>
+     * Information about a specific job, including shipping information, job
+     * status, and other important metadata.
      * </p>
      * 
      * @param jobMetadata
+     *        Information about a specific job, including shipping information,
+     *        job status, and other important metadata.
      */
 
     public void setJobMetadata(JobMetadata jobMetadata) {
@@ -45,9 +53,12 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Information about a specific job, including shipping information, job
+     * status, and other important metadata.
      * </p>
      * 
-     * @return
+     * @return Information about a specific job, including shipping information,
+     *         job status, and other important metadata.
      */
 
     public JobMetadata getJobMetadata() {
@@ -56,9 +67,13 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Information about a specific job, including shipping information, job
+     * status, and other important metadata.
      * </p>
      * 
      * @param jobMetadata
+     *        Information about a specific job, including shipping information,
+     *        job status, and other important metadata.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -70,9 +85,13 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Information about a specific job part (in the case of an export job),
+     * including shipping information, job status, and other important metadata.
      * </p>
      * 
-     * @return
+     * @return Information about a specific job part (in the case of an export
+     *         job), including shipping information, job status, and other
+     *         important metadata.
      */
 
     public java.util.List<JobMetadata> getSubJobMetadata() {
@@ -81,9 +100,14 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Information about a specific job part (in the case of an export job),
+     * including shipping information, job status, and other important metadata.
      * </p>
      * 
      * @param subJobMetadata
+     *        Information about a specific job part (in the case of an export
+     *        job), including shipping information, job status, and other
+     *        important metadata.
      */
 
     public void setSubJobMetadata(
@@ -99,6 +123,8 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Information about a specific job part (in the case of an export job),
+     * including shipping information, job status, and other important metadata.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -108,6 +134,9 @@ public class DescribeJobResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param subJobMetadata
+     *        Information about a specific job part (in the case of an export
+     *        job), including shipping information, job status, and other
+     *        important metadata.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -125,9 +154,14 @@ public class DescribeJobResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Information about a specific job part (in the case of an export job),
+     * including shipping information, job status, and other important metadata.
      * </p>
      * 
      * @param subJobMetadata
+     *        Information about a specific job part (in the case of an export
+     *        job), including shipping information, job status, and other
+     *        important metadata.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

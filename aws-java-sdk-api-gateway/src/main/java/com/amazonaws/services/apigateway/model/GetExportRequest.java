@@ -46,20 +46,24 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger',
-     * any combination of the following parameters are supported: 'integrations'
-     * will export x-amazon-apigateway-integration extensions 'authorizers' will
-     * export x-amazon-apigateway-authorizer extensions 'postman' will export
-     * with Postman extensions, allowing for import to the Postman tool
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the
+     * following parameters are supported: <code>integrations</code> will export
+     * the API with x-amazon-apigateway-integration extensions.
+     * <code>authorizers</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will
+     * export the API with Postman extensions, allowing for import to the
+     * Postman tool
      * </p>
      */
     private java.util.Map<String, String> parameters;
     /**
      * <p>
-     * The content-type of the export, for example 'application/json'. Currently
-     * 'application/json' and 'application/yaml' are supported for exportType
-     * 'swagger'. Should be specifed in the 'Accept' header for direct API
-     * requests.
+     * The content-type of the export, for example <code>application/json</code>
+     * . Currently <code>application/json</code> and
+     * <code>application/yaml</code> are supported for <code>exportType</code>
+     * of <code>swagger</code>. This should be specified in the
+     * <code>Accept</code> header for direct API requests.
      * </p>
      */
     private String accepts;
@@ -190,21 +194,26 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger',
-     * any combination of the following parameters are supported: 'integrations'
-     * will export x-amazon-apigateway-integration extensions 'authorizers' will
-     * export x-amazon-apigateway-authorizer extensions 'postman' will export
-     * with Postman extensions, allowing for import to the Postman tool
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the
+     * following parameters are supported: <code>integrations</code> will export
+     * the API with x-amazon-apigateway-integration extensions.
+     * <code>authorizers</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will
+     * export the API with Postman extensions, allowing for import to the
+     * Postman tool
      * </p>
      * 
      * @return A key-value map of query string parameters that specify
-     *         properties of the export, depending on the requested exportType.
-     *         For exportType 'swagger', any combination of the following
-     *         parameters are supported: 'integrations' will export
-     *         x-amazon-apigateway-integration extensions 'authorizers' will
-     *         export x-amazon-apigateway-authorizer extensions 'postman' will
-     *         export with Postman extensions, allowing for import to the
-     *         Postman tool
+     *         properties of the export, depending on the requested
+     *         <code>exportType</code>. For <code>exportType</code>
+     *         <code>swagger</code>, any combination of the following parameters
+     *         are supported: <code>integrations</code> will export the API with
+     *         x-amazon-apigateway-integration extensions.
+     *         <code>authorizers</code> will export the API with
+     *         x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     *         will export the API with Postman extensions, allowing for import
+     *         to the Postman tool
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -214,22 +223,27 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger',
-     * any combination of the following parameters are supported: 'integrations'
-     * will export x-amazon-apigateway-integration extensions 'authorizers' will
-     * export x-amazon-apigateway-authorizer extensions 'postman' will export
-     * with Postman extensions, allowing for import to the Postman tool
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the
+     * following parameters are supported: <code>integrations</code> will export
+     * the API with x-amazon-apigateway-integration extensions.
+     * <code>authorizers</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will
+     * export the API with Postman extensions, allowing for import to the
+     * Postman tool
      * </p>
      * 
      * @param parameters
      *        A key-value map of query string parameters that specify properties
-     *        of the export, depending on the requested exportType. For
-     *        exportType 'swagger', any combination of the following parameters
-     *        are supported: 'integrations' will export
-     *        x-amazon-apigateway-integration extensions 'authorizers' will
-     *        export x-amazon-apigateway-authorizer extensions 'postman' will
-     *        export with Postman extensions, allowing for import to the Postman
-     *        tool
+     *        of the export, depending on the requested <code>exportType</code>.
+     *        For <code>exportType</code> <code>swagger</code>, any combination
+     *        of the following parameters are supported:
+     *        <code>integrations</code> will export the API with
+     *        x-amazon-apigateway-integration extensions.
+     *        <code>authorizers</code> will export the API with
+     *        x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     *        will export the API with Postman extensions, allowing for import
+     *        to the Postman tool
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -239,22 +253,27 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A key-value map of query string parameters that specify properties of the
-     * export, depending on the requested exportType. For exportType 'swagger',
-     * any combination of the following parameters are supported: 'integrations'
-     * will export x-amazon-apigateway-integration extensions 'authorizers' will
-     * export x-amazon-apigateway-authorizer extensions 'postman' will export
-     * with Postman extensions, allowing for import to the Postman tool
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>swagger</code>, any combination of the
+     * following parameters are supported: <code>integrations</code> will export
+     * the API with x-amazon-apigateway-integration extensions.
+     * <code>authorizers</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will
+     * export the API with Postman extensions, allowing for import to the
+     * Postman tool
      * </p>
      * 
      * @param parameters
      *        A key-value map of query string parameters that specify properties
-     *        of the export, depending on the requested exportType. For
-     *        exportType 'swagger', any combination of the following parameters
-     *        are supported: 'integrations' will export
-     *        x-amazon-apigateway-integration extensions 'authorizers' will
-     *        export x-amazon-apigateway-authorizer extensions 'postman' will
-     *        export with Postman extensions, allowing for import to the Postman
-     *        tool
+     *        of the export, depending on the requested <code>exportType</code>.
+     *        For <code>exportType</code> <code>swagger</code>, any combination
+     *        of the following parameters are supported:
+     *        <code>integrations</code> will export the API with
+     *        x-amazon-apigateway-integration extensions.
+     *        <code>authorizers</code> will export the API with
+     *        x-amazon-apigateway-authorizer extensions. <code>postman</code>
+     *        will export the API with Postman extensions, allowing for import
+     *        to the Postman tool
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -288,17 +307,20 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The content-type of the export, for example 'application/json'. Currently
-     * 'application/json' and 'application/yaml' are supported for exportType
-     * 'swagger'. Should be specifed in the 'Accept' header for direct API
-     * requests.
+     * The content-type of the export, for example <code>application/json</code>
+     * . Currently <code>application/json</code> and
+     * <code>application/yaml</code> are supported for <code>exportType</code>
+     * of <code>swagger</code>. This should be specified in the
+     * <code>Accept</code> header for direct API requests.
      * </p>
      * 
      * @param accepts
-     *        The content-type of the export, for example 'application/json'.
-     *        Currently 'application/json' and 'application/yaml' are supported
-     *        for exportType 'swagger'. Should be specifed in the 'Accept'
-     *        header for direct API requests.
+     *        The content-type of the export, for example
+     *        <code>application/json</code>. Currently
+     *        <code>application/json</code> and <code>application/yaml</code>
+     *        are supported for <code>exportType</code> of <code>swagger</code>.
+     *        This should be specified in the <code>Accept</code> header for
+     *        direct API requests.
      */
 
     public void setAccepts(String accepts) {
@@ -307,16 +329,19 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The content-type of the export, for example 'application/json'. Currently
-     * 'application/json' and 'application/yaml' are supported for exportType
-     * 'swagger'. Should be specifed in the 'Accept' header for direct API
-     * requests.
+     * The content-type of the export, for example <code>application/json</code>
+     * . Currently <code>application/json</code> and
+     * <code>application/yaml</code> are supported for <code>exportType</code>
+     * of <code>swagger</code>. This should be specified in the
+     * <code>Accept</code> header for direct API requests.
      * </p>
      * 
-     * @return The content-type of the export, for example 'application/json'.
-     *         Currently 'application/json' and 'application/yaml' are supported
-     *         for exportType 'swagger'. Should be specifed in the 'Accept'
-     *         header for direct API requests.
+     * @return The content-type of the export, for example
+     *         <code>application/json</code>. Currently
+     *         <code>application/json</code> and <code>application/yaml</code>
+     *         are supported for <code>exportType</code> of <code>swagger</code>
+     *         . This should be specified in the <code>Accept</code> header for
+     *         direct API requests.
      */
 
     public String getAccepts() {
@@ -325,17 +350,20 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The content-type of the export, for example 'application/json'. Currently
-     * 'application/json' and 'application/yaml' are supported for exportType
-     * 'swagger'. Should be specifed in the 'Accept' header for direct API
-     * requests.
+     * The content-type of the export, for example <code>application/json</code>
+     * . Currently <code>application/json</code> and
+     * <code>application/yaml</code> are supported for <code>exportType</code>
+     * of <code>swagger</code>. This should be specified in the
+     * <code>Accept</code> header for direct API requests.
      * </p>
      * 
      * @param accepts
-     *        The content-type of the export, for example 'application/json'.
-     *        Currently 'application/json' and 'application/yaml' are supported
-     *        for exportType 'swagger'. Should be specifed in the 'Accept'
-     *        header for direct API requests.
+     *        The content-type of the export, for example
+     *        <code>application/json</code>. Currently
+     *        <code>application/json</code> and <code>application/yaml</code>
+     *        are supported for <code>exportType</code> of <code>swagger</code>.
+     *        This should be specified in the <code>Accept</code> header for
+     *        direct API requests.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

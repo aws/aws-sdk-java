@@ -23,6 +23,9 @@ import java.io.Serializable;
  * on any <a>RestApi</a>, which indicates that the callers with the API key can
  * make requests to that stage.
  * </p>
+ * <div class="seeAlso"> <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html"
+ * >Use API Keys</a> </div>
  */
 public class ApiKey implements Serializable, Cloneable {
 
@@ -32,6 +35,12 @@ public class ApiKey implements Serializable, Cloneable {
      * </p>
      */
     private String id;
+    /**
+     * <p>
+     * The value of the API Key.
+     * </p>
+     */
+    private String value;
     /**
      * <p>
      * The name of the API Key.
@@ -52,13 +61,6 @@ public class ApiKey implements Serializable, Cloneable {
     private Boolean enabled;
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the
-     * <a>ApiKey</a> resource.
-     * </p>
-     */
-    private java.util.List<String> stageKeys;
-    /**
-     * <p>
      * The date when the API Key was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
@@ -71,6 +73,13 @@ public class ApiKey implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date lastUpdatedDate;
+    /**
+     * <p>
+     * A list of <a>Stage</a> resources that are associated with the
+     * <a>ApiKey</a> resource.
+     * </p>
+     */
+    private java.util.List<String> stageKeys;
 
     /**
      * <p>
@@ -110,6 +119,47 @@ public class ApiKey implements Serializable, Cloneable {
 
     public ApiKey withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value of the API Key.
+     * </p>
+     * 
+     * @param value
+     *        The value of the API Key.
+     */
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    /**
+     * <p>
+     * The value of the API Key.
+     * </p>
+     * 
+     * @return The value of the API Key.
+     */
+
+    public String getValue() {
+        return this.value;
+    }
+
+    /**
+     * <p>
+     * The value of the API Key.
+     * </p>
+     * 
+     * @param value
+     *        The value of the API Key.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ApiKey withValue(String value) {
+        setValue(value);
         return this;
     }
 
@@ -250,87 +300,6 @@ public class ApiKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the
-     * <a>ApiKey</a> resource.
-     * </p>
-     * 
-     * @return A list of <a>Stage</a> resources that are associated with the
-     *         <a>ApiKey</a> resource.
-     */
-
-    public java.util.List<String> getStageKeys() {
-        return stageKeys;
-    }
-
-    /**
-     * <p>
-     * A list of <a>Stage</a> resources that are associated with the
-     * <a>ApiKey</a> resource.
-     * </p>
-     * 
-     * @param stageKeys
-     *        A list of <a>Stage</a> resources that are associated with the
-     *        <a>ApiKey</a> resource.
-     */
-
-    public void setStageKeys(java.util.Collection<String> stageKeys) {
-        if (stageKeys == null) {
-            this.stageKeys = null;
-            return;
-        }
-
-        this.stageKeys = new java.util.ArrayList<String>(stageKeys);
-    }
-
-    /**
-     * <p>
-     * A list of <a>Stage</a> resources that are associated with the
-     * <a>ApiKey</a> resource.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setStageKeys(java.util.Collection)} or
-     * {@link #withStageKeys(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param stageKeys
-     *        A list of <a>Stage</a> resources that are associated with the
-     *        <a>ApiKey</a> resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public ApiKey withStageKeys(String... stageKeys) {
-        if (this.stageKeys == null) {
-            setStageKeys(new java.util.ArrayList<String>(stageKeys.length));
-        }
-        for (String ele : stageKeys) {
-            this.stageKeys.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * A list of <a>Stage</a> resources that are associated with the
-     * <a>ApiKey</a> resource.
-     * </p>
-     * 
-     * @param stageKeys
-     *        A list of <a>Stage</a> resources that are associated with the
-     *        <a>ApiKey</a> resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-
-    public ApiKey withStageKeys(java.util.Collection<String> stageKeys) {
-        setStageKeys(stageKeys);
-        return this;
-    }
-
-    /**
-     * <p>
      * The date when the API Key was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm"
      * target="_blank">ISO 8601 format</a>.
@@ -424,6 +393,87 @@ public class ApiKey implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of <a>Stage</a> resources that are associated with the
+     * <a>ApiKey</a> resource.
+     * </p>
+     * 
+     * @return A list of <a>Stage</a> resources that are associated with the
+     *         <a>ApiKey</a> resource.
+     */
+
+    public java.util.List<String> getStageKeys() {
+        return stageKeys;
+    }
+
+    /**
+     * <p>
+     * A list of <a>Stage</a> resources that are associated with the
+     * <a>ApiKey</a> resource.
+     * </p>
+     * 
+     * @param stageKeys
+     *        A list of <a>Stage</a> resources that are associated with the
+     *        <a>ApiKey</a> resource.
+     */
+
+    public void setStageKeys(java.util.Collection<String> stageKeys) {
+        if (stageKeys == null) {
+            this.stageKeys = null;
+            return;
+        }
+
+        this.stageKeys = new java.util.ArrayList<String>(stageKeys);
+    }
+
+    /**
+     * <p>
+     * A list of <a>Stage</a> resources that are associated with the
+     * <a>ApiKey</a> resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setStageKeys(java.util.Collection)} or
+     * {@link #withStageKeys(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param stageKeys
+     *        A list of <a>Stage</a> resources that are associated with the
+     *        <a>ApiKey</a> resource.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ApiKey withStageKeys(String... stageKeys) {
+        if (this.stageKeys == null) {
+            setStageKeys(new java.util.ArrayList<String>(stageKeys.length));
+        }
+        for (String ele : stageKeys) {
+            this.stageKeys.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of <a>Stage</a> resources that are associated with the
+     * <a>ApiKey</a> resource.
+     * </p>
+     * 
+     * @param stageKeys
+     *        A list of <a>Stage</a> resources that are associated with the
+     *        <a>ApiKey</a> resource.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ApiKey withStageKeys(java.util.Collection<String> stageKeys) {
+        setStageKeys(stageKeys);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -437,18 +487,20 @@ public class ApiKey implements Serializable, Cloneable {
         sb.append("{");
         if (getId() != null)
             sb.append("Id: " + getId() + ",");
+        if (getValue() != null)
+            sb.append("Value: " + getValue() + ",");
         if (getName() != null)
             sb.append("Name: " + getName() + ",");
         if (getDescription() != null)
             sb.append("Description: " + getDescription() + ",");
         if (getEnabled() != null)
             sb.append("Enabled: " + getEnabled() + ",");
-        if (getStageKeys() != null)
-            sb.append("StageKeys: " + getStageKeys() + ",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: " + getCreatedDate() + ",");
         if (getLastUpdatedDate() != null)
-            sb.append("LastUpdatedDate: " + getLastUpdatedDate());
+            sb.append("LastUpdatedDate: " + getLastUpdatedDate() + ",");
+        if (getStageKeys() != null)
+            sb.append("StageKeys: " + getStageKeys());
         sb.append("}");
         return sb.toString();
     }
@@ -468,6 +520,11 @@ public class ApiKey implements Serializable, Cloneable {
         if (other.getId() != null
                 && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getValue() == null ^ this.getValue() == null)
+            return false;
+        if (other.getValue() != null
+                && other.getValue().equals(this.getValue()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null
@@ -483,11 +540,6 @@ public class ApiKey implements Serializable, Cloneable {
         if (other.getEnabled() != null
                 && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
-        if (other.getStageKeys() == null ^ this.getStageKeys() == null)
-            return false;
-        if (other.getStageKeys() != null
-                && other.getStageKeys().equals(this.getStageKeys()) == false)
-            return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
         if (other.getCreatedDate() != null
@@ -498,6 +550,11 @@ public class ApiKey implements Serializable, Cloneable {
             return false;
         if (other.getLastUpdatedDate() != null
                 && other.getLastUpdatedDate().equals(this.getLastUpdatedDate()) == false)
+            return false;
+        if (other.getStageKeys() == null ^ this.getStageKeys() == null)
+            return false;
+        if (other.getStageKeys() != null
+                && other.getStageKeys().equals(this.getStageKeys()) == false)
             return false;
         return true;
     }
@@ -510,14 +567,14 @@ public class ApiKey implements Serializable, Cloneable {
         hashCode = prime * hashCode
                 + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode
+                + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode
                 + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode
                 + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
-        hashCode = prime * hashCode
-                + ((getStageKeys() == null) ? 0 : getStageKeys().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
@@ -525,6 +582,8 @@ public class ApiKey implements Serializable, Cloneable {
                 * hashCode
                 + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getStageKeys() == null) ? 0 : getStageKeys().hashCode());
         return hashCode;
     }
 

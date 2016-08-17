@@ -48,8 +48,8 @@ import com.amazonaws.services.apigateway.model.transform.*;
  * <p>
  * <fullname>Amazon API Gateway</fullname>
  * <p>
- * Amazon API Gateway helps developers deliver robust, secure and scalable
- * mobile and web application backends. Amazon API Gateway allows developers to
+ * Amazon API Gateway helps developers deliver robust, secure, and scalable
+ * mobile and web application back ends. Amazon API Gateway allows developers to
  * securely connect mobile and web applications to APIs that run on AWS Lambda,
  * Amazon EC2, or other publicly addressable web services that are hosted
  * outside of AWS.
@@ -79,6 +79,11 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                     .withContentTypeOverride("")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.apigateway.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("NotFoundException")
                                     .withModeledClass(
                                             com.amazonaws.services.apigateway.model.NotFoundException.class))
@@ -87,11 +92,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                                     .withErrorCode("UnauthorizedException")
                                     .withModeledClass(
                                             com.amazonaws.services.apigateway.model.UnauthorizedException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode("LimitExceededException")
-                                    .withModeledClass(
-                                            com.amazonaws.services.apigateway.model.LimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode("ConflictException")
@@ -307,6 +307,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * <p>
      * Create an <a>ApiKey</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html"
+     * >AWS CLI</a></div>
      * 
      * @param createApiKeyRequest
      *        Request to create an <a>ApiKey</a> resource.
@@ -316,6 +319,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws TooManyRequestsException
      * @throws LimitExceededException
      * @throws BadRequestException
+     * @throws ConflictException
      * @sample AmazonApiGateway.CreateApiKey
      */
     @Override
@@ -359,6 +363,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
      * resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param createAuthorizerRequest
      *        Request to add a new <a>Authorizer</a> to an existing
@@ -779,6 +786,115 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Creates a usage plan with the throttle and quota limits, as well as the
+     * associated API stages, specified in the payload.
+     * </p>
+     * 
+     * @param createUsagePlanRequest
+     *        The POST request to create a usage plan with the name,
+     *        description, throttle limits and quota limits, as well as the
+     *        associated API stages, specified in the payload.
+     * @return Result of the CreateUsagePlan operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws LimitExceededException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.CreateUsagePlan
+     */
+    @Override
+    public CreateUsagePlanResult createUsagePlan(
+            CreateUsagePlanRequest createUsagePlanRequest) {
+        ExecutionContext executionContext = createExecutionContext(createUsagePlanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUsagePlanRequest> request = null;
+        Response<CreateUsagePlanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUsagePlanRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createUsagePlanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateUsagePlanResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateUsagePlanResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a usage plan key for adding an existing API key to a usage plan.
+     * </p>
+     * 
+     * @param createUsagePlanKeyRequest
+     *        The POST request to create a usage plan key for adding an existing
+     *        API key to a usage plan.
+     * @return Result of the CreateUsagePlanKey operation returned by the
+     *         service.
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateUsagePlanKey
+     */
+    @Override
+    public CreateUsagePlanKeyResult createUsagePlanKey(
+            CreateUsagePlanKeyRequest createUsagePlanKeyRequest) {
+        ExecutionContext executionContext = createExecutionContext(createUsagePlanKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUsagePlanKeyRequest> request = null;
+        Response<CreateUsagePlanKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUsagePlanKeyRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createUsagePlanKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateUsagePlanKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateUsagePlanKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the <a>ApiKey</a> resource.
      * </p>
      * 
@@ -830,6 +946,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * <p>
      * Deletes an existing <a>Authorizer</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param deleteAuthorizerRequest
      *        Request to delete an existing <a>Authorizer</a> resource.
@@ -1096,6 +1215,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.DeleteIntegration
      */
     @Override
@@ -1148,6 +1268,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @throws BadRequestException
+     * @throws ConflictException
      * @sample AmazonApiGateway.DeleteIntegrationResponse
      */
     @Override
@@ -1198,6 +1319,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.DeleteMethod
      */
     @Override
@@ -1249,6 +1371,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @throws BadRequestException
+     * @throws ConflictException
      * @sample AmazonApiGateway.DeleteMethodResponse
      */
     @Override
@@ -1480,6 +1603,112 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new DeleteStageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a usage plan of a given plan Id.
+     * </p>
+     * 
+     * @param deleteUsagePlanRequest
+     *        The DELETE request to delete a uasge plan of a given plan Id.
+     * @return Result of the DeleteUsagePlan operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws BadRequestException
+     * @throws NotFoundException
+     * @sample AmazonApiGateway.DeleteUsagePlan
+     */
+    @Override
+    public DeleteUsagePlanResult deleteUsagePlan(
+            DeleteUsagePlanRequest deleteUsagePlanRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteUsagePlanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUsagePlanRequest> request = null;
+        Response<DeleteUsagePlanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUsagePlanRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deleteUsagePlanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteUsagePlanResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteUsagePlanResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a usage plan key and remove the underlying API key from the
+     * associated usage plan.
+     * </p>
+     * 
+     * @param deleteUsagePlanKeyRequest
+     *        The DELETE request to delete a usage plan key and remove the
+     *        underlying API key from the associated usage plan.
+     * @return Result of the DeleteUsagePlanKey operation returned by the
+     *         service.
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteUsagePlanKey
+     */
+    @Override
+    public DeleteUsagePlanKeyResult deleteUsagePlanKey(
+            DeleteUsagePlanKeyRequest deleteUsagePlanKeyRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteUsagePlanKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUsagePlanKeyRequest> request = null;
+        Response<DeleteUsagePlanKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUsagePlanKeyRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteUsagePlanKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteUsagePlanKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteUsagePlanKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1795,6 +2024,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * <p>
      * Describe an existing <a>Authorizer</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param getAuthorizerRequest
      *        Request to describe an existing <a>Authorizer</a> resource.
@@ -1844,6 +2076,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * <p>
      * Describe an existing <a>Authorizers</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html"
+     * >AWS CLI</a></div>
      * 
      * @param getAuthorizersRequest
      *        Request to describe an existing <a>Authorizers</a> resource.
@@ -3050,6 +3285,314 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Gets the usage data of a usage plan in a specified time interval.
+     * </p>
+     * 
+     * @param getUsageRequest
+     *        The GET request to get the usage data of a usage plan in a
+     *        specified time interval.
+     * @return Result of the GetUsage operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetUsage
+     */
+    @Override
+    public GetUsageResult getUsage(GetUsageRequest getUsageRequest) {
+        ExecutionContext executionContext = createExecutionContext(getUsageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetUsageRequest> request = null;
+        Response<GetUsageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetUsageRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getUsageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetUsageResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetUsageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a usage plan of a given plan identifier.
+     * </p>
+     * 
+     * @param getUsagePlanRequest
+     *        The GET request to get a usage plan of a given plan identifier.
+     * @return Result of the GetUsagePlan operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetUsagePlan
+     */
+    @Override
+    public GetUsagePlanResult getUsagePlan(
+            GetUsagePlanRequest getUsagePlanRequest) {
+        ExecutionContext executionContext = createExecutionContext(getUsagePlanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetUsagePlanRequest> request = null;
+        Response<GetUsagePlanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetUsagePlanRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getUsagePlanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetUsagePlanResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetUsagePlanResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a usage plan key of a given key identifier.
+     * </p>
+     * 
+     * @param getUsagePlanKeyRequest
+     *        The GET request to get a usage plan key of a given key identifier.
+     * @return Result of the GetUsagePlanKey operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetUsagePlanKey
+     */
+    @Override
+    public GetUsagePlanKeyResult getUsagePlanKey(
+            GetUsagePlanKeyRequest getUsagePlanKeyRequest) {
+        ExecutionContext executionContext = createExecutionContext(getUsagePlanKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetUsagePlanKeyRequest> request = null;
+        Response<GetUsagePlanKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetUsagePlanKeyRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getUsagePlanKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetUsagePlanKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetUsagePlanKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets all the usage plan keys representing the API keys added to a
+     * specified usage plan.
+     * </p>
+     * 
+     * @param getUsagePlanKeysRequest
+     *        The GET request to get all the usage plan keys representing the
+     *        API keys added to a specified usage plan.
+     * @return Result of the GetUsagePlanKeys operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetUsagePlanKeys
+     */
+    @Override
+    public GetUsagePlanKeysResult getUsagePlanKeys(
+            GetUsagePlanKeysRequest getUsagePlanKeysRequest) {
+        ExecutionContext executionContext = createExecutionContext(getUsagePlanKeysRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetUsagePlanKeysRequest> request = null;
+        Response<GetUsagePlanKeysResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetUsagePlanKeysRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getUsagePlanKeysRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetUsagePlanKeysResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetUsagePlanKeysResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets all the usage plans of the caller's account.
+     * </p>
+     * 
+     * @param getUsagePlansRequest
+     *        The GET request to get all the usage plans of the caller's
+     *        account.
+     * @return Result of the GetUsagePlans operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.GetUsagePlans
+     */
+    @Override
+    public GetUsagePlansResult getUsagePlans(
+            GetUsagePlansRequest getUsagePlansRequest) {
+        ExecutionContext executionContext = createExecutionContext(getUsagePlansRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetUsagePlansRequest> request = null;
+        Response<GetUsagePlansResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetUsagePlansRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getUsagePlansRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetUsagePlansResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetUsagePlansResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Import API keys from an external source, such as a CSV-formatted file.
+     * </p>
+     * 
+     * @param importApiKeysRequest
+     *        The POST request to import API keys from an external source, such
+     *        as a CSV-formatted file.
+     * @return Result of the ImportApiKeys operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @throws LimitExceededException
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.ImportApiKeys
+     */
+    @Override
+    public ImportApiKeysResult importApiKeys(
+            ImportApiKeysRequest importApiKeysRequest) {
+        ExecutionContext executionContext = createExecutionContext(importApiKeysRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportApiKeysRequest> request = null;
+        Response<ImportApiKeysResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportApiKeysRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(importApiKeysRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportApiKeysResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ImportApiKeysResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * A feature of the Amazon API Gateway control service for creating a new
      * API from an external API definition file.
      * </p>
@@ -3062,6 +3605,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.ImportRestApi
      */
     @Override
@@ -3372,6 +3916,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a>
      * with headers, parameters, and an incoming request body.
      * </p>
+     * <div class="seeAlso"> <a href=
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html"
+     * >Enable custom authorizers</a> </div>
      * 
      * @param testInvokeAuthorizerRequest
      *        Make a request to simulate the execution of an <a>Authorizer</a>.
@@ -3535,6 +4082,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.UpdateApiKey
      */
     @Override
@@ -3577,6 +4125,9 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * <p>
      * Updates an existing <a>Authorizer</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param updateAuthorizerRequest
      *        Request to update an existing <a>Authorizer</a> resource.
@@ -4244,6 +4795,109 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                             .withPayloadJson(true)
                             .withHasStreamingSuccessResponse(false),
                             new UpdateStageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Grants a temporary extension to the reamining quota of a usage plan
+     * associated with a specified API key.
+     * </p>
+     * 
+     * @param updateUsageRequest
+     *        The PATCH request to grant a temporary extension to the reamining
+     *        quota of a usage plan associated with a specified API key.
+     * @return Result of the UpdateUsage operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws BadRequestException
+     * @throws NotFoundException
+     * @sample AmazonApiGateway.UpdateUsage
+     */
+    @Override
+    public UpdateUsageResult updateUsage(UpdateUsageRequest updateUsageRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateUsageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateUsageRequest> request = null;
+        Response<UpdateUsageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateUsageRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateUsageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateUsageResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateUsageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a usage plan of a given plan Id.
+     * </p>
+     * 
+     * @param updateUsagePlanRequest
+     *        The PATCH request to update a usage plan of a given plan Id.
+     * @return Result of the UpdateUsagePlan operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws BadRequestException
+     * @throws NotFoundException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.UpdateUsagePlan
+     */
+    @Override
+    public UpdateUsagePlanResult updateUsagePlan(
+            UpdateUsagePlanRequest updateUsagePlanRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateUsagePlanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateUsagePlanRequest> request = null;
+        Response<UpdateUsagePlanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateUsagePlanRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(updateUsagePlanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateUsagePlanResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateUsagePlanResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

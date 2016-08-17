@@ -20,6 +20,9 @@ import java.io.Serializable;
  * <p>
  * Represents a collection of <a>ClientCertificate</a> resources.
  * </p>
+ * <div class="seeAlso"> <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html"
+ * >Use Client-Side Certificate</a> </div>
  */
 public class GetClientCertificatesResult implements Serializable, Cloneable {
 

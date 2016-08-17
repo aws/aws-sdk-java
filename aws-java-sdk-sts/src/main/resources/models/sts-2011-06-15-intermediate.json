@@ -19,7 +19,6 @@
     "jsonVersion" : null,
     "endpointPrefix" : "sts",
     "signingName" : "sts",
-    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
     "jsonProtocol" : false,
     "syncClientBuilderClassName" : "AWSSecurityTokenServiceClientBuilder",
     "asyncClientBuilderClassName" : "AWSSecurityTokenServiceAsyncClientBuilder",
@@ -29,7 +28,8 @@
     "cborProtocol" : false,
     "xmlProtocol" : true,
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
-    "unmarshallerClassSuffix" : "StaxUnmarshaller"
+    "unmarshallerClassSuffix" : "StaxUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller"
   },
   "operations" : {
     "AssumeRole" : {
@@ -7302,6 +7302,7 @@
     },
     "renameShapes" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
+    "sendExplicitlyEmptyListsForQuery" : false,
     "authPolicyActions" : {
       "skip" : false,
       "actionPrefix" : null,
@@ -7320,7 +7321,6 @@
     "convenienceTypeOverloads" : [ ],
     "skipSmokeTests" : false
   },
-  "waiters" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

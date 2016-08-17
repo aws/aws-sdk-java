@@ -61,6 +61,9 @@ public class EstimateTemplateCostRequestMarshaller
 
         com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) estimateTemplateCostRequest
                 .getParameters();
+        if (parametersList.isEmpty() && !parametersList.isAutoConstruct()) {
+            request.addParameter("Parameters", "");
+        }
         if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
             int parametersListIndex = 1;
 

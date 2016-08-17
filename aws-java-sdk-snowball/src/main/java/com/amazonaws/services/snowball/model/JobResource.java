@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains an array of <code>S3Resources</code> objects. Each
+ * Contains an array of <code>S3Resource</code> objects. Each
  * <code>S3Resource</code> object represents an Amazon S3 bucket that your
  * transferred data will be exported from or imported into.
  * </p>
@@ -27,15 +27,17 @@ public class JobResource implements Serializable, Cloneable {
 
     /**
      * <p>
+     * An array of <code>S3Resource</code> objects.
      * </p>
      */
     private java.util.List<S3Resource> s3Resources;
 
     /**
      * <p>
+     * An array of <code>S3Resource</code> objects.
      * </p>
      * 
-     * @return
+     * @return An array of <code>S3Resource</code> objects.
      */
 
     public java.util.List<S3Resource> getS3Resources() {
@@ -44,9 +46,11 @@ public class JobResource implements Serializable, Cloneable {
 
     /**
      * <p>
+     * An array of <code>S3Resource</code> objects.
      * </p>
      * 
      * @param s3Resources
+     *        An array of <code>S3Resource</code> objects.
      */
 
     public void setS3Resources(java.util.Collection<S3Resource> s3Resources) {
@@ -60,6 +64,7 @@ public class JobResource implements Serializable, Cloneable {
 
     /**
      * <p>
+     * An array of <code>S3Resource</code> objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -69,6 +74,7 @@ public class JobResource implements Serializable, Cloneable {
      * </p>
      * 
      * @param s3Resources
+     *        An array of <code>S3Resource</code> objects.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -86,9 +92,11 @@ public class JobResource implements Serializable, Cloneable {
 
     /**
      * <p>
+     * An array of <code>S3Resource</code> objects.
      * </p>
      * 
      * @param s3Resources
+     *        An array of <code>S3Resource</code> objects.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

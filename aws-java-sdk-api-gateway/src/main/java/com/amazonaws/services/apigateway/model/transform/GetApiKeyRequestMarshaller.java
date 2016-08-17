@@ -73,6 +73,11 @@ public class GetApiKeyRequestMarshaller implements
                                 .getApiKey()), false) : "");
         request.setResourcePath(uriResourcePath);
 
+        if (getApiKeyRequest.getIncludeValue() != null) {
+            request.addParameter("includeValue",
+                    StringUtils.fromBoolean(getApiKeyRequest.getIncludeValue()));
+        }
+
         request.setContent(new ByteArrayInputStream(new byte[0]));
         if (!request.getHeaders().containsKey("Content-Type")) {
             request.addHeader("Content-Type", protocolFactory.getContentType());

@@ -28,13 +28,13 @@ import com.amazonaws.http.apache.request.impl.ApacheHttpRequestFactory;
 import com.amazonaws.http.request.HttpRequestFactory;
 import com.amazonaws.http.settings.HttpClientSettings;
 import org.apache.http.ProtocolVersion;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.entity.BasicHttpEntity;
 import org.apache.http.message.BasicHttpResponse;
 import org.apache.http.protocol.HttpContext;
+import org.easymock.Capture;
 import org.easymock.EasyMock;
 import org.easymock.IAnswer;
 import org.junit.Assert;
@@ -123,14 +123,7 @@ public class AmazonHttpClientTest {
 
         EasyMock.replay(handler);
 
-        BasicHttpEntity entity = new BasicHttpEntity();
-        entity.setContent(new ByteArrayInputStream(new byte[0]));
-
-        BasicHttpResponse response = new BasicHttpResponse(
-                new ProtocolVersion("http", 1, 1),
-                200,
-                "OK");
-        response.setEntity(entity);
+        BasicHttpResponse response = createBasicHttpResponse();
 
         EasyMock.reset(httpClient);
 
@@ -214,6 +207,63 @@ public class AmazonHttpClientTest {
     public void testPostRetryCL() throws Exception {
         Request<?> request = mockRequest(SERVER_NAME, HttpMethodName.POST, URI_NAME, true);
         testRetries(request, 100);
+    }
+
+    @Test
+    public void testUserAgentPrefixAndSuffixAreAdded() throws Exception {
+        String prefix = "somePrefix", suffix = "someSuffix";
+        Request<?> request = mockRequest(SERVER_NAME, HttpMethodName.PUT, URI_NAME, true);
+
+        HttpResponseHandler<AmazonWebServiceResponse<Object>> handler = createStubResponseHandler();
+        EasyMock.replay(handler);
+        ClientConfiguration config =
+                new ClientConfiguration().withUserAgentPrefix(prefix).withUserAgentSuffix(suffix);
+
+        Capture<HttpRequestBase> capturedRequest = new Capture<HttpRequestBase>();
+
+        EasyMock.reset(httpClient);
+        EasyMock
+                .expect(httpClient.execute(
+                        EasyMock.capture(capturedRequest), EasyMock.<HttpContext>anyObject()))
+                .andReturn(createBasicHttpResponse())
+                .once();
+        EasyMock.replay(httpClient);
+
+        AmazonHttpClient client = new AmazonHttpClient(config, httpClient, null);
+
+        client.execute(request, handler, null, new ExecutionContext());
+
+        String userAgent = capturedRequest.getValue().getFirstHeader("User-Agent").getValue();
+        Assert.assertTrue(userAgent.startsWith(prefix));
+        Assert.assertTrue(userAgent.endsWith(suffix));
+    }
+
+    private BasicHttpResponse createBasicHttpResponse() {
+        BasicHttpEntity entity = new BasicHttpEntity();
+        entity.setContent(new ByteArrayInputStream(new byte[0]));
+
+        BasicHttpResponse response = new BasicHttpResponse(
+                new ProtocolVersion("http", 1, 1),
+                200,
+                "OK");
+        response.setEntity(entity);
+        return response;
+    }
+
+    private HttpResponseHandler<AmazonWebServiceResponse<Object>> createStubResponseHandler() throws Exception {
+        HttpResponseHandler<AmazonWebServiceResponse<Object>> handler =
+                EasyMock.createMock(HttpResponseHandler.class);
+        AmazonWebServiceResponse<Object> response = new AmazonWebServiceResponse<Object>();
+        EasyMock
+                .expect(handler.needsConnectionLeftOpen())
+                .andReturn(false)
+                .anyTimes();
+
+        EasyMock
+                .expect(handler.handle(EasyMock.<HttpResponse>anyObject()))
+                .andReturn(response)
+                .anyTimes();
+        return handler;
     }
 
     private void testRetries(Request<?> request, int contentLength)

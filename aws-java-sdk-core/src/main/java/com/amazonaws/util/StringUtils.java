@@ -190,10 +190,14 @@ public class StringUtils {
      * @return true if the given value is either null or the empty string
      */
     public static boolean isNullOrEmpty(String value) {
-        if (value == null) {
-            return true;
-        }
-        return value.isEmpty();
+        return value == null || value.isEmpty();
+    }
+
+    /**
+     * @return true if the given value is non-null and non-empty
+     */
+    public static boolean hasValue(String str) {
+        return !isNullOrEmpty(str);
     }
 
     /**

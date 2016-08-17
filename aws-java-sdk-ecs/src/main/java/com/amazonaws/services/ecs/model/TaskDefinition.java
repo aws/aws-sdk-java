@@ -56,6 +56,27 @@ public class TaskDefinition implements Serializable, Cloneable {
     private String taskRoleArn;
     /**
      * <p>
+     * The Docker networking mode to use for the containers in the task. The
+     * valid values are <code>none</code>, <code>bridge</code>, and
+     * <code>host</code>.
+     * </p>
+     * <p>
+     * If the network mode is <code>none</code>, the containers do not have
+     * external connectivity. The default Docker network mode is
+     * <code>bridge</code>. The <code>host</code> network mode offers the
+     * highest networking performance for containers because it uses the host
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings"
+     * >Network settings</a> in the <i>Docker run reference</i>.
+     * </p>
+     */
+    private String networkMode;
+    /**
+     * <p>
      * The revision of the task in a particular family. The revision is a
      * version number of a task definition in a family. When you register a task
      * definition for the first time, the revision is <code>1</code>; each time
@@ -341,6 +362,226 @@ public class TaskDefinition implements Serializable, Cloneable {
 
     public TaskDefinition withTaskRoleArn(String taskRoleArn) {
         setTaskRoleArn(taskRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Docker networking mode to use for the containers in the task. The
+     * valid values are <code>none</code>, <code>bridge</code>, and
+     * <code>host</code>.
+     * </p>
+     * <p>
+     * If the network mode is <code>none</code>, the containers do not have
+     * external connectivity. The default Docker network mode is
+     * <code>bridge</code>. The <code>host</code> network mode offers the
+     * highest networking performance for containers because it uses the host
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings"
+     * >Network settings</a> in the <i>Docker run reference</i>.
+     * </p>
+     * 
+     * @param networkMode
+     *        The Docker networking mode to use for the containers in the task.
+     *        The valid values are <code>none</code>, <code>bridge</code>, and
+     *        <code>host</code>. </p>
+     *        <p>
+     *        If the network mode is <code>none</code>, the containers do not
+     *        have external connectivity. The default Docker network mode is
+     *        <code>bridge</code>. The <code>host</code> network mode offers the
+     *        highest networking performance for containers because it uses the
+     *        host network stack instead of the virtualized network stack
+     *        provided by the <code>bridge</code> mode.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.docker.com/engine/reference/run/#network-settings"
+     *        >Network settings</a> in the <i>Docker run reference</i>.
+     * @see NetworkMode
+     */
+
+    public void setNetworkMode(String networkMode) {
+        this.networkMode = networkMode;
+    }
+
+    /**
+     * <p>
+     * The Docker networking mode to use for the containers in the task. The
+     * valid values are <code>none</code>, <code>bridge</code>, and
+     * <code>host</code>.
+     * </p>
+     * <p>
+     * If the network mode is <code>none</code>, the containers do not have
+     * external connectivity. The default Docker network mode is
+     * <code>bridge</code>. The <code>host</code> network mode offers the
+     * highest networking performance for containers because it uses the host
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings"
+     * >Network settings</a> in the <i>Docker run reference</i>.
+     * </p>
+     * 
+     * @return The Docker networking mode to use for the containers in the task.
+     *         The valid values are <code>none</code>, <code>bridge</code>, and
+     *         <code>host</code>. </p>
+     *         <p>
+     *         If the network mode is <code>none</code>, the containers do not
+     *         have external connectivity. The default Docker network mode is
+     *         <code>bridge</code>. The <code>host</code> network mode offers
+     *         the highest networking performance for containers because it uses
+     *         the host network stack instead of the virtualized network stack
+     *         provided by the <code>bridge</code> mode.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.docker.com/engine/reference/run/#network-settings"
+     *         >Network settings</a> in the <i>Docker run reference</i>.
+     * @see NetworkMode
+     */
+
+    public String getNetworkMode() {
+        return this.networkMode;
+    }
+
+    /**
+     * <p>
+     * The Docker networking mode to use for the containers in the task. The
+     * valid values are <code>none</code>, <code>bridge</code>, and
+     * <code>host</code>.
+     * </p>
+     * <p>
+     * If the network mode is <code>none</code>, the containers do not have
+     * external connectivity. The default Docker network mode is
+     * <code>bridge</code>. The <code>host</code> network mode offers the
+     * highest networking performance for containers because it uses the host
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings"
+     * >Network settings</a> in the <i>Docker run reference</i>.
+     * </p>
+     * 
+     * @param networkMode
+     *        The Docker networking mode to use for the containers in the task.
+     *        The valid values are <code>none</code>, <code>bridge</code>, and
+     *        <code>host</code>. </p>
+     *        <p>
+     *        If the network mode is <code>none</code>, the containers do not
+     *        have external connectivity. The default Docker network mode is
+     *        <code>bridge</code>. The <code>host</code> network mode offers the
+     *        highest networking performance for containers because it uses the
+     *        host network stack instead of the virtualized network stack
+     *        provided by the <code>bridge</code> mode.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.docker.com/engine/reference/run/#network-settings"
+     *        >Network settings</a> in the <i>Docker run reference</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see NetworkMode
+     */
+
+    public TaskDefinition withNetworkMode(String networkMode) {
+        setNetworkMode(networkMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Docker networking mode to use for the containers in the task. The
+     * valid values are <code>none</code>, <code>bridge</code>, and
+     * <code>host</code>.
+     * </p>
+     * <p>
+     * If the network mode is <code>none</code>, the containers do not have
+     * external connectivity. The default Docker network mode is
+     * <code>bridge</code>. The <code>host</code> network mode offers the
+     * highest networking performance for containers because it uses the host
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings"
+     * >Network settings</a> in the <i>Docker run reference</i>.
+     * </p>
+     * 
+     * @param networkMode
+     *        The Docker networking mode to use for the containers in the task.
+     *        The valid values are <code>none</code>, <code>bridge</code>, and
+     *        <code>host</code>. </p>
+     *        <p>
+     *        If the network mode is <code>none</code>, the containers do not
+     *        have external connectivity. The default Docker network mode is
+     *        <code>bridge</code>. The <code>host</code> network mode offers the
+     *        highest networking performance for containers because it uses the
+     *        host network stack instead of the virtualized network stack
+     *        provided by the <code>bridge</code> mode.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.docker.com/engine/reference/run/#network-settings"
+     *        >Network settings</a> in the <i>Docker run reference</i>.
+     * @see NetworkMode
+     */
+
+    public void setNetworkMode(NetworkMode networkMode) {
+        this.networkMode = networkMode.toString();
+    }
+
+    /**
+     * <p>
+     * The Docker networking mode to use for the containers in the task. The
+     * valid values are <code>none</code>, <code>bridge</code>, and
+     * <code>host</code>.
+     * </p>
+     * <p>
+     * If the network mode is <code>none</code>, the containers do not have
+     * external connectivity. The default Docker network mode is
+     * <code>bridge</code>. The <code>host</code> network mode offers the
+     * highest networking performance for containers because it uses the host
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings"
+     * >Network settings</a> in the <i>Docker run reference</i>.
+     * </p>
+     * 
+     * @param networkMode
+     *        The Docker networking mode to use for the containers in the task.
+     *        The valid values are <code>none</code>, <code>bridge</code>, and
+     *        <code>host</code>. </p>
+     *        <p>
+     *        If the network mode is <code>none</code>, the containers do not
+     *        have external connectivity. The default Docker network mode is
+     *        <code>bridge</code>. The <code>host</code> network mode offers the
+     *        highest networking performance for containers because it uses the
+     *        host network stack instead of the virtualized network stack
+     *        provided by the <code>bridge</code> mode.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.docker.com/engine/reference/run/#network-settings"
+     *        >Network settings</a> in the <i>Docker run reference</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see NetworkMode
+     */
+
+    public TaskDefinition withNetworkMode(NetworkMode networkMode) {
+        setNetworkMode(networkMode);
         return this;
     }
 
@@ -705,6 +946,8 @@ public class TaskDefinition implements Serializable, Cloneable {
             sb.append("Family: " + getFamily() + ",");
         if (getTaskRoleArn() != null)
             sb.append("TaskRoleArn: " + getTaskRoleArn() + ",");
+        if (getNetworkMode() != null)
+            sb.append("NetworkMode: " + getNetworkMode() + ",");
         if (getRevision() != null)
             sb.append("Revision: " + getRevision() + ",");
         if (getVolumes() != null)
@@ -751,6 +994,11 @@ public class TaskDefinition implements Serializable, Cloneable {
         if (other.getTaskRoleArn() != null
                 && other.getTaskRoleArn().equals(this.getTaskRoleArn()) == false)
             return false;
+        if (other.getNetworkMode() == null ^ this.getNetworkMode() == null)
+            return false;
+        if (other.getNetworkMode() != null
+                && other.getNetworkMode().equals(this.getNetworkMode()) == false)
+            return false;
         if (other.getRevision() == null ^ this.getRevision() == null)
             return false;
         if (other.getRevision() != null
@@ -794,6 +1042,9 @@ public class TaskDefinition implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getTaskRoleArn() == null) ? 0 : getTaskRoleArn().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNetworkMode() == null) ? 0 : getNetworkMode().hashCode());
         hashCode = prime * hashCode
                 + ((getRevision() == null) ? 0 : getRevision().hashCode());
         hashCode = prime * hashCode

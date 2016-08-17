@@ -39,6 +39,8 @@ public class ListModel {
      */
     private boolean sendEmptyQueryString;
 
+    private boolean marshallNonAutoConstructedEmptyLists;
+
     public ListModel(
             @JsonProperty("memberType") String memberType,
             @JsonProperty("memberLocationName") String memberLocationName,
@@ -98,6 +100,15 @@ public class ListModel {
 
     public void setSendEmptyQueryString(boolean sendEmptyQueryString) {
         this.sendEmptyQueryString = sendEmptyQueryString;
+    }
+
+    public boolean isMarshallNonAutoConstructedEmptyLists() {
+        return marshallNonAutoConstructedEmptyLists;
+    }
+
+    public void setMarshallNonAutoConstructedEmptyLists(
+            boolean marshallNonAutoConstructedEmptyLists) {
+        this.marshallNonAutoConstructedEmptyLists = marshallNonAutoConstructedEmptyLists;
     }
 
     public boolean isSimple() {

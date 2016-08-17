@@ -25,47 +25,60 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A patch operation whose value indicates the operation to perform. Its
-     * value MUST be one of "add", "remove", "replace", "move", "copy", or
-     * "test"; other values are errors.
+     * An update operation to be performed with this PATCH request. The valid
+     * value can be "add", "remove", or "replace". Not all valid operations are
+     * supported for a given resource. Support of the operations depends on
+     * specific operational contexts. Attempts to apply an unsupported operation
+     * on a resource will return an error message.
      * </p>
      */
     private String op;
     /**
      * <p>
-     * Operation objects MUST have exactly one "path" member. That member's
-     * value is a string containing a `JSON-Pointer` value that references a
-     * location within the target document (the "target location") where the
-     * operation is performed.
+     * The <code>op</code> operation's target, as identified by a <a
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08"
+     * >JSON Pointer</a> value that references a location within the targeted
+     * resource. For example, if the target resource has an updateable property
+     * of <code>{"name":"value"}</code>, the path for this property is
+     * <code>/name</code>. If the <code>name</code> property value is a JSON
+     * object (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the
+     * path for the <code>child/name</code> property will be
+     * <code>/name/child~1name</code>. Any slash ("/") character appearing in
+     * path names must be escaped with "~1", as shown in the example above. Each
+     * <code>op</code> operation can have only one <code>path</code> associated
+     * with it.
      * </p>
      */
     private String path;
     /**
      * <p>
-     * The actual value content.
+     * The new target value of the update operation.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * The "move" and "copy" operation object MUST contain a "from" member,
-     * which is a string containing a <code>JSON Pointer</code> value that
-     * references the location in the target document to move the value from.
+     * Not supported.
      * </p>
      */
     private String from;
 
     /**
      * <p>
-     * A patch operation whose value indicates the operation to perform. Its
-     * value MUST be one of "add", "remove", "replace", "move", "copy", or
-     * "test"; other values are errors.
+     * An update operation to be performed with this PATCH request. The valid
+     * value can be "add", "remove", or "replace". Not all valid operations are
+     * supported for a given resource. Support of the operations depends on
+     * specific operational contexts. Attempts to apply an unsupported operation
+     * on a resource will return an error message.
      * </p>
      * 
      * @param op
-     *        A patch operation whose value indicates the operation to perform.
-     *        Its value MUST be one of "add", "remove", "replace", "move",
-     *        "copy", or "test"; other values are errors.
+     *        An update operation to be performed with this PATCH request. The
+     *        valid value can be "add", "remove", or "replace". Not all valid
+     *        operations are supported for a given resource. Support of the
+     *        operations depends on specific operational contexts. Attempts to
+     *        apply an unsupported operation on a resource will return an error
+     *        message.
      * @see Op
      */
 
@@ -75,14 +88,19 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A patch operation whose value indicates the operation to perform. Its
-     * value MUST be one of "add", "remove", "replace", "move", "copy", or
-     * "test"; other values are errors.
+     * An update operation to be performed with this PATCH request. The valid
+     * value can be "add", "remove", or "replace". Not all valid operations are
+     * supported for a given resource. Support of the operations depends on
+     * specific operational contexts. Attempts to apply an unsupported operation
+     * on a resource will return an error message.
      * </p>
      * 
-     * @return A patch operation whose value indicates the operation to perform.
-     *         Its value MUST be one of "add", "remove", "replace", "move",
-     *         "copy", or "test"; other values are errors.
+     * @return An update operation to be performed with this PATCH request. The
+     *         valid value can be "add", "remove", or "replace". Not all valid
+     *         operations are supported for a given resource. Support of the
+     *         operations depends on specific operational contexts. Attempts to
+     *         apply an unsupported operation on a resource will return an error
+     *         message.
      * @see Op
      */
 
@@ -92,15 +110,20 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A patch operation whose value indicates the operation to perform. Its
-     * value MUST be one of "add", "remove", "replace", "move", "copy", or
-     * "test"; other values are errors.
+     * An update operation to be performed with this PATCH request. The valid
+     * value can be "add", "remove", or "replace". Not all valid operations are
+     * supported for a given resource. Support of the operations depends on
+     * specific operational contexts. Attempts to apply an unsupported operation
+     * on a resource will return an error message.
      * </p>
      * 
      * @param op
-     *        A patch operation whose value indicates the operation to perform.
-     *        Its value MUST be one of "add", "remove", "replace", "move",
-     *        "copy", or "test"; other values are errors.
+     *        An update operation to be performed with this PATCH request. The
+     *        valid value can be "add", "remove", or "replace". Not all valid
+     *        operations are supported for a given resource. Support of the
+     *        operations depends on specific operational contexts. Attempts to
+     *        apply an unsupported operation on a resource will return an error
+     *        message.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Op
@@ -113,15 +136,20 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A patch operation whose value indicates the operation to perform. Its
-     * value MUST be one of "add", "remove", "replace", "move", "copy", or
-     * "test"; other values are errors.
+     * An update operation to be performed with this PATCH request. The valid
+     * value can be "add", "remove", or "replace". Not all valid operations are
+     * supported for a given resource. Support of the operations depends on
+     * specific operational contexts. Attempts to apply an unsupported operation
+     * on a resource will return an error message.
      * </p>
      * 
      * @param op
-     *        A patch operation whose value indicates the operation to perform.
-     *        Its value MUST be one of "add", "remove", "replace", "move",
-     *        "copy", or "test"; other values are errors.
+     *        An update operation to be performed with this PATCH request. The
+     *        valid value can be "add", "remove", or "replace". Not all valid
+     *        operations are supported for a given resource. Support of the
+     *        operations depends on specific operational contexts. Attempts to
+     *        apply an unsupported operation on a resource will return an error
+     *        message.
      * @see Op
      */
 
@@ -131,15 +159,20 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A patch operation whose value indicates the operation to perform. Its
-     * value MUST be one of "add", "remove", "replace", "move", "copy", or
-     * "test"; other values are errors.
+     * An update operation to be performed with this PATCH request. The valid
+     * value can be "add", "remove", or "replace". Not all valid operations are
+     * supported for a given resource. Support of the operations depends on
+     * specific operational contexts. Attempts to apply an unsupported operation
+     * on a resource will return an error message.
      * </p>
      * 
      * @param op
-     *        A patch operation whose value indicates the operation to perform.
-     *        Its value MUST be one of "add", "remove", "replace", "move",
-     *        "copy", or "test"; other values are errors.
+     *        An update operation to be performed with this PATCH request. The
+     *        valid value can be "add", "remove", or "replace". Not all valid
+     *        operations are supported for a given resource. Support of the
+     *        operations depends on specific operational contexts. Attempts to
+     *        apply an unsupported operation on a resource will return an error
+     *        message.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Op
@@ -152,17 +185,35 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operation objects MUST have exactly one "path" member. That member's
-     * value is a string containing a `JSON-Pointer` value that references a
-     * location within the target document (the "target location") where the
-     * operation is performed.
+     * The <code>op</code> operation's target, as identified by a <a
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08"
+     * >JSON Pointer</a> value that references a location within the targeted
+     * resource. For example, if the target resource has an updateable property
+     * of <code>{"name":"value"}</code>, the path for this property is
+     * <code>/name</code>. If the <code>name</code> property value is a JSON
+     * object (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the
+     * path for the <code>child/name</code> property will be
+     * <code>/name/child~1name</code>. Any slash ("/") character appearing in
+     * path names must be escaped with "~1", as shown in the example above. Each
+     * <code>op</code> operation can have only one <code>path</code> associated
+     * with it.
      * </p>
      * 
      * @param path
-     *        Operation objects MUST have exactly one "path" member. That
-     *        member's value is a string containing a `JSON-Pointer` value that
-     *        references a location within the target document (the
-     *        "target location") where the operation is performed.
+     *        The <code>op</code> operation's target, as identified by a <a
+     *        href=
+     *        "https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08"
+     *        >JSON Pointer</a> value that references a location within the
+     *        targeted resource. For example, if the target resource has an
+     *        updateable property of <code>{"name":"value"}</code>, the path for
+     *        this property is <code>/name</code>. If the <code>name</code>
+     *        property value is a JSON object (e.g.,
+     *        <code>{"name": {"child/name": "child-value"}}</code>), the path
+     *        for the <code>child/name</code> property will be
+     *        <code>/name/child~1name</code>. Any slash ("/") character
+     *        appearing in path names must be escaped with "~1", as shown in the
+     *        example above. Each <code>op</code> operation can have only one
+     *        <code>path</code> associated with it.
      */
 
     public void setPath(String path) {
@@ -171,16 +222,34 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operation objects MUST have exactly one "path" member. That member's
-     * value is a string containing a `JSON-Pointer` value that references a
-     * location within the target document (the "target location") where the
-     * operation is performed.
+     * The <code>op</code> operation's target, as identified by a <a
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08"
+     * >JSON Pointer</a> value that references a location within the targeted
+     * resource. For example, if the target resource has an updateable property
+     * of <code>{"name":"value"}</code>, the path for this property is
+     * <code>/name</code>. If the <code>name</code> property value is a JSON
+     * object (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the
+     * path for the <code>child/name</code> property will be
+     * <code>/name/child~1name</code>. Any slash ("/") character appearing in
+     * path names must be escaped with "~1", as shown in the example above. Each
+     * <code>op</code> operation can have only one <code>path</code> associated
+     * with it.
      * </p>
      * 
-     * @return Operation objects MUST have exactly one "path" member. That
-     *         member's value is a string containing a `JSON-Pointer` value that
-     *         references a location within the target document (the
-     *         "target location") where the operation is performed.
+     * @return The <code>op</code> operation's target, as identified by a <a
+     *         href=
+     *         "https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08"
+     *         >JSON Pointer</a> value that references a location within the
+     *         targeted resource. For example, if the target resource has an
+     *         updateable property of <code>{"name":"value"}</code>, the path
+     *         for this property is <code>/name</code>. If the <code>name</code>
+     *         property value is a JSON object (e.g.,
+     *         <code>{"name": {"child/name": "child-value"}}</code>), the path
+     *         for the <code>child/name</code> property will be
+     *         <code>/name/child~1name</code>. Any slash ("/") character
+     *         appearing in path names must be escaped with "~1", as shown in
+     *         the example above. Each <code>op</code> operation can have only
+     *         one <code>path</code> associated with it.
      */
 
     public String getPath() {
@@ -189,17 +258,35 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Operation objects MUST have exactly one "path" member. That member's
-     * value is a string containing a `JSON-Pointer` value that references a
-     * location within the target document (the "target location") where the
-     * operation is performed.
+     * The <code>op</code> operation's target, as identified by a <a
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08"
+     * >JSON Pointer</a> value that references a location within the targeted
+     * resource. For example, if the target resource has an updateable property
+     * of <code>{"name":"value"}</code>, the path for this property is
+     * <code>/name</code>. If the <code>name</code> property value is a JSON
+     * object (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the
+     * path for the <code>child/name</code> property will be
+     * <code>/name/child~1name</code>. Any slash ("/") character appearing in
+     * path names must be escaped with "~1", as shown in the example above. Each
+     * <code>op</code> operation can have only one <code>path</code> associated
+     * with it.
      * </p>
      * 
      * @param path
-     *        Operation objects MUST have exactly one "path" member. That
-     *        member's value is a string containing a `JSON-Pointer` value that
-     *        references a location within the target document (the
-     *        "target location") where the operation is performed.
+     *        The <code>op</code> operation's target, as identified by a <a
+     *        href=
+     *        "https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08"
+     *        >JSON Pointer</a> value that references a location within the
+     *        targeted resource. For example, if the target resource has an
+     *        updateable property of <code>{"name":"value"}</code>, the path for
+     *        this property is <code>/name</code>. If the <code>name</code>
+     *        property value is a JSON object (e.g.,
+     *        <code>{"name": {"child/name": "child-value"}}</code>), the path
+     *        for the <code>child/name</code> property will be
+     *        <code>/name/child~1name</code>. Any slash ("/") character
+     *        appearing in path names must be escaped with "~1", as shown in the
+     *        example above. Each <code>op</code> operation can have only one
+     *        <code>path</code> associated with it.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -211,11 +298,11 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The actual value content.
+     * The new target value of the update operation.
      * </p>
      * 
      * @param value
-     *        The actual value content.
+     *        The new target value of the update operation.
      */
 
     public void setValue(String value) {
@@ -224,10 +311,10 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The actual value content.
+     * The new target value of the update operation.
      * </p>
      * 
-     * @return The actual value content.
+     * @return The new target value of the update operation.
      */
 
     public String getValue() {
@@ -236,11 +323,11 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The actual value content.
+     * The new target value of the update operation.
      * </p>
      * 
      * @param value
-     *        The actual value content.
+     *        The new target value of the update operation.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -252,16 +339,11 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The "move" and "copy" operation object MUST contain a "from" member,
-     * which is a string containing a <code>JSON Pointer</code> value that
-     * references the location in the target document to move the value from.
+     * Not supported.
      * </p>
      * 
      * @param from
-     *        The "move" and "copy" operation object MUST contain a "from"
-     *        member, which is a string containing a <code>JSON Pointer</code>
-     *        value that references the location in the target document to move
-     *        the value from.
+     *        Not supported.
      */
 
     public void setFrom(String from) {
@@ -270,15 +352,10 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The "move" and "copy" operation object MUST contain a "from" member,
-     * which is a string containing a <code>JSON Pointer</code> value that
-     * references the location in the target document to move the value from.
+     * Not supported.
      * </p>
      * 
-     * @return The "move" and "copy" operation object MUST contain a "from"
-     *         member, which is a string containing a <code>JSON Pointer</code>
-     *         value that references the location in the target document to move
-     *         the value from.
+     * @return Not supported.
      */
 
     public String getFrom() {
@@ -287,16 +364,11 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The "move" and "copy" operation object MUST contain a "from" member,
-     * which is a string containing a <code>JSON Pointer</code> value that
-     * references the location in the target document to move the value from.
+     * Not supported.
      * </p>
      * 
      * @param from
-     *        The "move" and "copy" operation object MUST contain a "from"
-     *        member, which is a string containing a <code>JSON Pointer</code>
-     *        value that references the location in the target document to move
-     *        the value from.
+     *        Not supported.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

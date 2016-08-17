@@ -55,6 +55,10 @@ public class ListStacksRequestMarshaller implements
 
         com.amazonaws.internal.SdkInternalList<String> stackStatusFiltersList = (com.amazonaws.internal.SdkInternalList<String>) listStacksRequest
                 .getStackStatusFilters();
+        if (stackStatusFiltersList.isEmpty()
+                && !stackStatusFiltersList.isAutoConstruct()) {
+            request.addParameter("StackStatusFilter", "");
+        }
         if (!stackStatusFiltersList.isEmpty()
                 || !stackStatusFiltersList.isAutoConstruct()) {
             int stackStatusFiltersListIndex = 1;

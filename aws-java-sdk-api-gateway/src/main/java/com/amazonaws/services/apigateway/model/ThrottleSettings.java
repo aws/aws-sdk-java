@@ -18,31 +18,37 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns the throttle settings.
+ * The API request rate limits.
  * </p>
  */
 public class ThrottleSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the burstLimit when <b>ThrottleSettings</b> is called.
+     * The API request burst limit, the maximum rate limit over a time ranging
+     * from one to a few seconds, depending upon whether the underlying token
+     * bucket is at its full capacity.
      * </p>
      */
     private Integer burstLimit;
     /**
      * <p>
-     * Returns the rateLimit when <b>ThrottleSettings</b> is called.
+     * The API request steady-state rate limit.
      * </p>
      */
     private Double rateLimit;
 
     /**
      * <p>
-     * Returns the burstLimit when <b>ThrottleSettings</b> is called.
+     * The API request burst limit, the maximum rate limit over a time ranging
+     * from one to a few seconds, depending upon whether the underlying token
+     * bucket is at its full capacity.
      * </p>
      * 
      * @param burstLimit
-     *        Returns the burstLimit when <b>ThrottleSettings</b> is called.
+     *        The API request burst limit, the maximum rate limit over a time
+     *        ranging from one to a few seconds, depending upon whether the
+     *        underlying token bucket is at its full capacity.
      */
 
     public void setBurstLimit(Integer burstLimit) {
@@ -51,10 +57,14 @@ public class ThrottleSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the burstLimit when <b>ThrottleSettings</b> is called.
+     * The API request burst limit, the maximum rate limit over a time ranging
+     * from one to a few seconds, depending upon whether the underlying token
+     * bucket is at its full capacity.
      * </p>
      * 
-     * @return Returns the burstLimit when <b>ThrottleSettings</b> is called.
+     * @return The API request burst limit, the maximum rate limit over a time
+     *         ranging from one to a few seconds, depending upon whether the
+     *         underlying token bucket is at its full capacity.
      */
 
     public Integer getBurstLimit() {
@@ -63,11 +73,15 @@ public class ThrottleSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the burstLimit when <b>ThrottleSettings</b> is called.
+     * The API request burst limit, the maximum rate limit over a time ranging
+     * from one to a few seconds, depending upon whether the underlying token
+     * bucket is at its full capacity.
      * </p>
      * 
      * @param burstLimit
-     *        Returns the burstLimit when <b>ThrottleSettings</b> is called.
+     *        The API request burst limit, the maximum rate limit over a time
+     *        ranging from one to a few seconds, depending upon whether the
+     *        underlying token bucket is at its full capacity.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -79,11 +93,11 @@ public class ThrottleSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the rateLimit when <b>ThrottleSettings</b> is called.
+     * The API request steady-state rate limit.
      * </p>
      * 
      * @param rateLimit
-     *        Returns the rateLimit when <b>ThrottleSettings</b> is called.
+     *        The API request steady-state rate limit.
      */
 
     public void setRateLimit(Double rateLimit) {
@@ -92,10 +106,10 @@ public class ThrottleSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the rateLimit when <b>ThrottleSettings</b> is called.
+     * The API request steady-state rate limit.
      * </p>
      * 
-     * @return Returns the rateLimit when <b>ThrottleSettings</b> is called.
+     * @return The API request steady-state rate limit.
      */
 
     public Double getRateLimit() {
@@ -104,11 +118,11 @@ public class ThrottleSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Returns the rateLimit when <b>ThrottleSettings</b> is called.
+     * The API request steady-state rate limit.
      * </p>
      * 
      * @param rateLimit
-     *        Returns the rateLimit when <b>ThrottleSettings</b> is called.
+     *        The API request steady-state rate limit.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

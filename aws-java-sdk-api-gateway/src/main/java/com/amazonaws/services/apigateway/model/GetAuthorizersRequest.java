@@ -34,7 +34,7 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specificy where to start the next page of results.
+     * position will specify where to start the next page of results.
      * </p>
      */
     private String position;
@@ -90,13 +90,13 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specificy where to start the next page of results.
+     * position will specify where to start the next page of results.
      * </p>
      * 
      * @param position
      *        If not all <a>Authorizer</a> resources in the response were
-     *        present, the position will specificy where to start the next page
-     *        of results.
+     *        present, the position will specify where to start the next page of
+     *        results.
      */
 
     public void setPosition(String position) {
@@ -106,11 +106,11 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specificy where to start the next page of results.
+     * position will specify where to start the next page of results.
      * </p>
      * 
      * @return If not all <a>Authorizer</a> resources in the response were
-     *         present, the position will specificy where to start the next page
+     *         present, the position will specify where to start the next page
      *         of results.
      */
 
@@ -121,13 +121,13 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * If not all <a>Authorizer</a> resources in the response were present, the
-     * position will specificy where to start the next page of results.
+     * position will specify where to start the next page of results.
      * </p>
      * 
      * @param position
      *        If not all <a>Authorizer</a> resources in the response were
-     *        present, the position will specificy where to start the next page
-     *        of results.
+     *        present, the position will specify where to start the next page of
+     *        results.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

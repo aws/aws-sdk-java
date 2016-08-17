@@ -112,6 +112,7 @@ import com.amazonaws.util.ImmutableMapParameter;
 import com.amazonaws.util.MetadataCache;
 import com.amazonaws.util.NullResponseMetadataCache;
 import com.amazonaws.util.ResponseMetadataCache;
+import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.TimingInfo;
 import com.amazonaws.util.UnreliableFilterInputStream;
@@ -309,17 +310,6 @@ public class AmazonHttpClient {
         int throttledRetryMaxCapacity = clientConfig.useThrottledRetries()
                 ? THROTTLED_RETRY_COST * THROTTLED_RETRIES : -1;
         this.retryCapacity = new CapacityManager(throttledRetryMaxCapacity);
-    }
-
-    /**
-     * Appends the given user-agent string to the existing one and returns it.
-     */
-    private static String createUserAgentString(String existingUserAgentString, String userAgent) {
-        if (existingUserAgentString.contains(userAgent)) {
-            return existingUserAgentString;
-        } else {
-            return existingUserAgentString.trim() + " " + userAgent.trim();
-        }
     }
 
     private static boolean isTemporaryRedirect(org.apache.http.HttpResponse response) {
@@ -671,6 +661,7 @@ public class AmazonHttpClient {
          * add the service endpoint to the logs. You can infer service name from service endpoint
          */
         final AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics()
+                .addPropertyWith(Field.RequestType, request.getOriginalRequest().getClass().getSimpleName())
                 .addPropertyWith(Field.ServiceName, request.getServiceName())
                 .addPropertyWith(Field.ServiceEndpoint, request.getEndpoint());
         // Make a copy of the original request params and headers so that we can
@@ -1097,20 +1088,11 @@ public class AmazonHttpClient {
      * Sets a User-Agent for the specified request, taking into account any custom data.
      */
     private void setUserAgent(Request<?> request) {
-        String userAgent = config.getUserAgent();
-        if (!userAgent.equals(ClientConfiguration.DEFAULT_USER_AGENT)) {
-            userAgent += ", " + ClientConfiguration.DEFAULT_USER_AGENT;
-        }
-        if (userAgent != null) {
-            request.addHeader(HEADER_USER_AGENT, userAgent);
-        }
-        AmazonWebServiceRequest awsreq = request.getOriginalRequest();
-        RequestClientOptions opts = awsreq.getRequestClientOptions();
+        RequestClientOptions opts = request.getOriginalRequest().getRequestClientOptions();
         if (opts != null) {
-            String userAgentMarker = opts.getClientMarker(Marker.USER_AGENT);
-            if (userAgentMarker != null) {
-                request.addHeader(HEADER_USER_AGENT, createUserAgentString(userAgent, userAgentMarker));
-            }
+            request.addHeader(HEADER_USER_AGENT, RuntimeHttpUtils.getUserAgent(config, opts.getClientMarker(Marker.USER_AGENT)));
+        } else {
+            request.addHeader(HEADER_USER_AGENT, RuntimeHttpUtils.getUserAgent(config, null));
         }
     }
 

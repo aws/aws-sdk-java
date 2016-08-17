@@ -4049,7 +4049,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                     String region = ase.getAdditionalDetails().get(Headers.S3_BUCKET_REGION);
                     bucketRegionCache.put(bucket, region);
                     ase.setErrorMessage("The bucket is in this region: " + region +
-                                        ".Please use this region to retry the request");
+                                        ". Please use this region to retry the request");
                 }
             }
             throw ase;

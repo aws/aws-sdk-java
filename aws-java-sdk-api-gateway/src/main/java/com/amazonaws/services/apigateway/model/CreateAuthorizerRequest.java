@@ -45,7 +45,11 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String type;
-
+    /**
+     * <p>
+     * A list of the Cognito Your User Pool authorizer's provider ARNs.
+     * </p>
+     */
     private java.util.List<String> providerARNs;
     /**
      * <p>
@@ -249,7 +253,11 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * @return
+     * <p>
+     * A list of the Cognito Your User Pool authorizer's provider ARNs.
+     * </p>
+     * 
+     * @return A list of the Cognito Your User Pool authorizer's provider ARNs.
      */
 
     public java.util.List<String> getProviderARNs() {
@@ -257,7 +265,12 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A list of the Cognito Your User Pool authorizer's provider ARNs.
+     * </p>
+     * 
      * @param providerARNs
+     *        A list of the Cognito Your User Pool authorizer's provider ARNs.
      */
 
     public void setProviderARNs(java.util.Collection<String> providerARNs) {
@@ -271,6 +284,9 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
+     * A list of the Cognito Your User Pool authorizer's provider ARNs.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setProviderARNs(java.util.Collection)} or
      * {@link #withProviderARNs(java.util.Collection)} if you want to override
@@ -278,6 +294,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param providerARNs
+     *        A list of the Cognito Your User Pool authorizer's provider ARNs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -293,7 +310,12 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * A list of the Cognito Your User Pool authorizer's provider ARNs.
+     * </p>
+     * 
      * @param providerARNs
+     *        A list of the Cognito Your User Pool authorizer's provider ARNs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

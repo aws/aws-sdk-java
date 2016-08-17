@@ -30,10 +30,10 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The time to wait for
-     * in-flight requests to complete while deregistering a target. The state of
-     * a deregistering target is <code>draining</code>. The range is 0-3600
-     * seconds. The default value is 300 seconds.
+     * <code>deregistration_delay.timeout_seconds</code> - The amount time for
+     * Elastic Load Balancing to wait before changing the state of a
+     * deregistering target from <code>draining</code> to <code>unused</code>.
+     * The range is 0-3600 seconds. The default value is 300 seconds.
      * </p>
      * </li>
      * <li>
@@ -74,10 +74,10 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The time to wait for
-     * in-flight requests to complete while deregistering a target. The state of
-     * a deregistering target is <code>draining</code>. The range is 0-3600
-     * seconds. The default value is 300 seconds.
+     * <code>deregistration_delay.timeout_seconds</code> - The amount time for
+     * Elastic Load Balancing to wait before changing the state of a
+     * deregistering target from <code>draining</code> to <code>unused</code>.
+     * The range is 0-3600 seconds. The default value is 300 seconds.
      * </p>
      * </li>
      * <li>
@@ -108,10 +108,10 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>deregistration_delay.timeout_seconds</code> - The time to
-     *        wait for in-flight requests to complete while deregistering a
-     *        target. The state of a deregistering target is
-     *        <code>draining</code>. The range is 0-3600 seconds. The default
+     *        <code>deregistration_delay.timeout_seconds</code> - The amount
+     *        time for Elastic Load Balancing to wait before changing the state
+     *        of a deregistering target from <code>draining</code> to
+     *        <code>unused</code>. The range is 0-3600 seconds. The default
      *        value is 300 seconds.
      *        </p>
      *        </li>
@@ -150,10 +150,10 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The time to wait for
-     * in-flight requests to complete while deregistering a target. The state of
-     * a deregistering target is <code>draining</code>. The range is 0-3600
-     * seconds. The default value is 300 seconds.
+     * <code>deregistration_delay.timeout_seconds</code> - The amount time for
+     * Elastic Load Balancing to wait before changing the state of a
+     * deregistering target from <code>draining</code> to <code>unused</code>.
+     * The range is 0-3600 seconds. The default value is 300 seconds.
      * </p>
      * </li>
      * <li>
@@ -183,10 +183,10 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>deregistration_delay.timeout_seconds</code> - The time to
-     *         wait for in-flight requests to complete while deregistering a
-     *         target. The state of a deregistering target is
-     *         <code>draining</code>. The range is 0-3600 seconds. The default
+     *         <code>deregistration_delay.timeout_seconds</code> - The amount
+     *         time for Elastic Load Balancing to wait before changing the state
+     *         of a deregistering target from <code>draining</code> to
+     *         <code>unused</code>. The range is 0-3600 seconds. The default
      *         value is 300 seconds.
      *         </p>
      *         </li>
@@ -225,10 +225,10 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The time to wait for
-     * in-flight requests to complete while deregistering a target. The state of
-     * a deregistering target is <code>draining</code>. The range is 0-3600
-     * seconds. The default value is 300 seconds.
+     * <code>deregistration_delay.timeout_seconds</code> - The amount time for
+     * Elastic Load Balancing to wait before changing the state of a
+     * deregistering target from <code>draining</code> to <code>unused</code>.
+     * The range is 0-3600 seconds. The default value is 300 seconds.
      * </p>
      * </li>
      * <li>
@@ -259,10 +259,10 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>deregistration_delay.timeout_seconds</code> - The time to
-     *        wait for in-flight requests to complete while deregistering a
-     *        target. The state of a deregistering target is
-     *        <code>draining</code>. The range is 0-3600 seconds. The default
+     *        <code>deregistration_delay.timeout_seconds</code> - The amount
+     *        time for Elastic Load Balancing to wait before changing the state
+     *        of a deregistering target from <code>draining</code> to
+     *        <code>unused</code>. The range is 0-3600 seconds. The default
      *        value is 300 seconds.
      *        </p>
      *        </li>

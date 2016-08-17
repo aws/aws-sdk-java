@@ -54,12 +54,12 @@
         "documentation" : "This exception is thrown when an internal service error occurs."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GenerateDataSetResult",
       "asyncReturnType" : "GenerateDataSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<GenerateDataSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GenerateDataSetResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GenerateDataSetRequest, GenerateDataSetResult>",
-      "authenticated" : true,
       "methodName" : "generateDataSet"
     },
     "StartSupportDataExport" : {
@@ -84,12 +84,12 @@
         "documentation" : "This exception is thrown when an internal service error occurs."
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "StartSupportDataExportResult",
       "asyncReturnType" : "StartSupportDataExportResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartSupportDataExportResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartSupportDataExportResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartSupportDataExportRequest, StartSupportDataExportResult>",
-      "authenticated" : true,
       "methodName" : "startSupportDataExport"
     }
   },
@@ -2373,6 +2373,7 @@
     "simpleMethods" : null,
     "renameShapes" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
+    "sendExplicitlyEmptyListsForQuery" : false,
     "authPolicyActions" : {
       "skip" : true,
       "actionPrefix" : null,
@@ -2391,7 +2392,6 @@
     "convenienceTypeOverloads" : [ ],
     "skipSmokeTests" : false
   },
-  "waiters" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

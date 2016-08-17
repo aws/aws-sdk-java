@@ -65,8 +65,8 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use use the certificate when making the HTTPS request to the
-     * defined backend endpoint.
+     * Gateway will use the certificate when making the HTTPS request to the
+     * defined back-end endpoint.
      * </p>
      */
     private String clientCertificateId;
@@ -362,14 +362,14 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use use the certificate when making the HTTPS request to the
-     * defined backend endpoint.
+     * Gateway will use the certificate when making the HTTPS request to the
+     * defined back-end endpoint.
      * </p>
      * 
      * @param clientCertificateId
      *        A <a>ClientCertificate</a> identifier to use in the test
-     *        invocation. API Gateway will use use the certificate when making
-     *        the HTTPS request to the defined backend endpoint.
+     *        invocation. API Gateway will use the certificate when making the
+     *        HTTPS request to the defined back-end endpoint.
      */
 
     public void setClientCertificateId(String clientCertificateId) {
@@ -379,13 +379,13 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use use the certificate when making the HTTPS request to the
-     * defined backend endpoint.
+     * Gateway will use the certificate when making the HTTPS request to the
+     * defined back-end endpoint.
      * </p>
      * 
      * @return A <a>ClientCertificate</a> identifier to use in the test
-     *         invocation. API Gateway will use use the certificate when making
-     *         the HTTPS request to the defined backend endpoint.
+     *         invocation. API Gateway will use the certificate when making the
+     *         HTTPS request to the defined back-end endpoint.
      */
 
     public String getClientCertificateId() {
@@ -395,14 +395,14 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use use the certificate when making the HTTPS request to the
-     * defined backend endpoint.
+     * Gateway will use the certificate when making the HTTPS request to the
+     * defined back-end endpoint.
      * </p>
      * 
      * @param clientCertificateId
      *        A <a>ClientCertificate</a> identifier to use in the test
-     *        invocation. API Gateway will use use the certificate when making
-     *        the HTTPS request to the defined backend endpoint.
+     *        invocation. API Gateway will use the certificate when making the
+     *        HTTPS request to the defined back-end endpoint.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

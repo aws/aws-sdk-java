@@ -47,25 +47,35 @@ public class JobLogs implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A link to an Amazon S3 presigned URL where the job completion report is
+     * located.
      * </p>
      */
     private String jobCompletionReportURI;
     /**
      * <p>
+     * A link to an Amazon S3 presigned URL where the job success log is
+     * located.
      * </p>
      */
     private String jobSuccessLogURI;
     /**
      * <p>
+     * A link to an Amazon S3 presigned URL where the job failure log is
+     * located.
      * </p>
      */
     private String jobFailureLogURI;
 
     /**
      * <p>
+     * A link to an Amazon S3 presigned URL where the job completion report is
+     * located.
      * </p>
      * 
      * @param jobCompletionReportURI
+     *        A link to an Amazon S3 presigned URL where the job completion
+     *        report is located.
      */
 
     public void setJobCompletionReportURI(String jobCompletionReportURI) {
@@ -74,9 +84,12 @@ public class JobLogs implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A link to an Amazon S3 presigned URL where the job completion report is
+     * located.
      * </p>
      * 
-     * @return
+     * @return A link to an Amazon S3 presigned URL where the job completion
+     *         report is located.
      */
 
     public String getJobCompletionReportURI() {
@@ -85,9 +98,13 @@ public class JobLogs implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A link to an Amazon S3 presigned URL where the job completion report is
+     * located.
      * </p>
      * 
      * @param jobCompletionReportURI
+     *        A link to an Amazon S3 presigned URL where the job completion
+     *        report is located.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -99,9 +116,13 @@ public class JobLogs implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A link to an Amazon S3 presigned URL where the job success log is
+     * located.
      * </p>
      * 
      * @param jobSuccessLogURI
+     *        A link to an Amazon S3 presigned URL where the job success log is
+     *        located.
      */
 
     public void setJobSuccessLogURI(String jobSuccessLogURI) {
@@ -110,9 +131,12 @@ public class JobLogs implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A link to an Amazon S3 presigned URL where the job success log is
+     * located.
      * </p>
      * 
-     * @return
+     * @return A link to an Amazon S3 presigned URL where the job success log is
+     *         located.
      */
 
     public String getJobSuccessLogURI() {
@@ -121,9 +145,13 @@ public class JobLogs implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A link to an Amazon S3 presigned URL where the job success log is
+     * located.
      * </p>
      * 
      * @param jobSuccessLogURI
+     *        A link to an Amazon S3 presigned URL where the job success log is
+     *        located.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -135,9 +163,13 @@ public class JobLogs implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A link to an Amazon S3 presigned URL where the job failure log is
+     * located.
      * </p>
      * 
      * @param jobFailureLogURI
+     *        A link to an Amazon S3 presigned URL where the job failure log is
+     *        located.
      */
 
     public void setJobFailureLogURI(String jobFailureLogURI) {
@@ -146,9 +178,12 @@ public class JobLogs implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A link to an Amazon S3 presigned URL where the job failure log is
+     * located.
      * </p>
      * 
-     * @return
+     * @return A link to an Amazon S3 presigned URL where the job failure log is
+     *         located.
      */
 
     public String getJobFailureLogURI() {
@@ -157,9 +192,13 @@ public class JobLogs implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A link to an Amazon S3 presigned URL where the job failure log is
+     * located.
      * </p>
      * 
      * @param jobFailureLogURI
+     *        A link to an Amazon S3 presigned URL where the job failure log is
+     *        located.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

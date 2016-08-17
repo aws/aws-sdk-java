@@ -63,6 +63,11 @@
                 request.addParameter("${parameterRootPath}", "");
             }
         </#if>
+        <#if listModel.marshallNonAutoConstructedEmptyLists>
+            if (${listVariable}.isEmpty() && !${listVariable}.isAutoConstruct()) {
+                request.addParameter("${parameterRootPath}", "");
+            }
+        </#if>
         if (!${listVariable}.isEmpty() || !${listVariable}.isAutoConstruct()) {
     <#else>
         ${listModel.templateType} ${listVariable} = ${getMember}();

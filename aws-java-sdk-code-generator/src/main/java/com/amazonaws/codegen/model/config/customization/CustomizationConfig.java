@@ -121,6 +121,12 @@ public class CustomizationConfig {
     private Map<String, List<String>> sendEmptyAutoConstructedListAsEmptyList;
 
     /**
+     * Marshalls empty lists on the wire. This customization does not send empty lists created by
+     * the autoconstruct customization and is only applicable to AWS Query services.
+     */
+    private boolean sendExplicitlyEmptyListsForQuery;
+
+    /**
      * Configuration for generating policy action enums.
      */
     private AuthPolicyActions authPolicyActions;
@@ -450,5 +456,13 @@ public class CustomizationConfig {
 
     public void setSkipSmokeTests(boolean skipSmokeTests) {
         this.skipSmokeTests = skipSmokeTests;
+    }
+
+    public boolean isSendExplicitlyEmptyListsForQuery() {
+        return sendExplicitlyEmptyListsForQuery;
+    }
+
+    public void setSendExplicitlyEmptyListsForQuery(boolean sendExplicitlyEmptyListsForQuery) {
+        this.sendExplicitlyEmptyListsForQuery = sendExplicitlyEmptyListsForQuery;
     }
 }

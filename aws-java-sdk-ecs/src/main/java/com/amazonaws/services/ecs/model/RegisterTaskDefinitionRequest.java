@@ -43,6 +43,31 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
     private String taskRoleArn;
     /**
      * <p>
+     * The Docker networking mode to use for the containers in the task. The
+     * valid values are <code>none</code>, <code>bridge</code>, and
+     * <code>host</code>.
+     * </p>
+     * <p>
+     * The default Docker network mode is <code>bridge</code>. If the network
+     * mode is set to <code>none</code>, you cannot specify port mappings in
+     * your container definitions, and the task's containers do not have
+     * external connectivity. The <code>host</code> network mode offers the
+     * highest networking performance for containers because they use the host
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode; however, exposed container ports are mapped
+     * directly to the corresponding host port, so you cannot take advantage of
+     * dynamic host port mappings or run multiple instantiations of the same
+     * task on a single container instance if port mappings are used.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings"
+     * >Network settings</a> in the <i>Docker run reference</i>.
+     * </p>
+     */
+    private String networkMode;
+    /**
+     * <p>
      * A list of container definitions in JSON format that describe the
      * different containers that make up your task.
      * </p>
@@ -171,6 +196,271 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
 
     public RegisterTaskDefinitionRequest withTaskRoleArn(String taskRoleArn) {
         setTaskRoleArn(taskRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Docker networking mode to use for the containers in the task. The
+     * valid values are <code>none</code>, <code>bridge</code>, and
+     * <code>host</code>.
+     * </p>
+     * <p>
+     * The default Docker network mode is <code>bridge</code>. If the network
+     * mode is set to <code>none</code>, you cannot specify port mappings in
+     * your container definitions, and the task's containers do not have
+     * external connectivity. The <code>host</code> network mode offers the
+     * highest networking performance for containers because they use the host
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode; however, exposed container ports are mapped
+     * directly to the corresponding host port, so you cannot take advantage of
+     * dynamic host port mappings or run multiple instantiations of the same
+     * task on a single container instance if port mappings are used.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings"
+     * >Network settings</a> in the <i>Docker run reference</i>.
+     * </p>
+     * 
+     * @param networkMode
+     *        The Docker networking mode to use for the containers in the task.
+     *        The valid values are <code>none</code>, <code>bridge</code>, and
+     *        <code>host</code>. </p>
+     *        <p>
+     *        The default Docker network mode is <code>bridge</code>. If the
+     *        network mode is set to <code>none</code>, you cannot specify port
+     *        mappings in your container definitions, and the task's containers
+     *        do not have external connectivity. The <code>host</code> network
+     *        mode offers the highest networking performance for containers
+     *        because they use the host network stack instead of the virtualized
+     *        network stack provided by the <code>bridge</code> mode; however,
+     *        exposed container ports are mapped directly to the corresponding
+     *        host port, so you cannot take advantage of dynamic host port
+     *        mappings or run multiple instantiations of the same task on a
+     *        single container instance if port mappings are used.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.docker.com/engine/reference/run/#network-settings"
+     *        >Network settings</a> in the <i>Docker run reference</i>.
+     * @see NetworkMode
+     */
+
+    public void setNetworkMode(String networkMode) {
+        this.networkMode = networkMode;
+    }
+
+    /**
+     * <p>
+     * The Docker networking mode to use for the containers in the task. The
+     * valid values are <code>none</code>, <code>bridge</code>, and
+     * <code>host</code>.
+     * </p>
+     * <p>
+     * The default Docker network mode is <code>bridge</code>. If the network
+     * mode is set to <code>none</code>, you cannot specify port mappings in
+     * your container definitions, and the task's containers do not have
+     * external connectivity. The <code>host</code> network mode offers the
+     * highest networking performance for containers because they use the host
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode; however, exposed container ports are mapped
+     * directly to the corresponding host port, so you cannot take advantage of
+     * dynamic host port mappings or run multiple instantiations of the same
+     * task on a single container instance if port mappings are used.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings"
+     * >Network settings</a> in the <i>Docker run reference</i>.
+     * </p>
+     * 
+     * @return The Docker networking mode to use for the containers in the task.
+     *         The valid values are <code>none</code>, <code>bridge</code>, and
+     *         <code>host</code>. </p>
+     *         <p>
+     *         The default Docker network mode is <code>bridge</code>. If the
+     *         network mode is set to <code>none</code>, you cannot specify port
+     *         mappings in your container definitions, and the task's containers
+     *         do not have external connectivity. The <code>host</code> network
+     *         mode offers the highest networking performance for containers
+     *         because they use the host network stack instead of the
+     *         virtualized network stack provided by the <code>bridge</code>
+     *         mode; however, exposed container ports are mapped directly to the
+     *         corresponding host port, so you cannot take advantage of dynamic
+     *         host port mappings or run multiple instantiations of the same
+     *         task on a single container instance if port mappings are used.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.docker.com/engine/reference/run/#network-settings"
+     *         >Network settings</a> in the <i>Docker run reference</i>.
+     * @see NetworkMode
+     */
+
+    public String getNetworkMode() {
+        return this.networkMode;
+    }
+
+    /**
+     * <p>
+     * The Docker networking mode to use for the containers in the task. The
+     * valid values are <code>none</code>, <code>bridge</code>, and
+     * <code>host</code>.
+     * </p>
+     * <p>
+     * The default Docker network mode is <code>bridge</code>. If the network
+     * mode is set to <code>none</code>, you cannot specify port mappings in
+     * your container definitions, and the task's containers do not have
+     * external connectivity. The <code>host</code> network mode offers the
+     * highest networking performance for containers because they use the host
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode; however, exposed container ports are mapped
+     * directly to the corresponding host port, so you cannot take advantage of
+     * dynamic host port mappings or run multiple instantiations of the same
+     * task on a single container instance if port mappings are used.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings"
+     * >Network settings</a> in the <i>Docker run reference</i>.
+     * </p>
+     * 
+     * @param networkMode
+     *        The Docker networking mode to use for the containers in the task.
+     *        The valid values are <code>none</code>, <code>bridge</code>, and
+     *        <code>host</code>. </p>
+     *        <p>
+     *        The default Docker network mode is <code>bridge</code>. If the
+     *        network mode is set to <code>none</code>, you cannot specify port
+     *        mappings in your container definitions, and the task's containers
+     *        do not have external connectivity. The <code>host</code> network
+     *        mode offers the highest networking performance for containers
+     *        because they use the host network stack instead of the virtualized
+     *        network stack provided by the <code>bridge</code> mode; however,
+     *        exposed container ports are mapped directly to the corresponding
+     *        host port, so you cannot take advantage of dynamic host port
+     *        mappings or run multiple instantiations of the same task on a
+     *        single container instance if port mappings are used.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.docker.com/engine/reference/run/#network-settings"
+     *        >Network settings</a> in the <i>Docker run reference</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see NetworkMode
+     */
+
+    public RegisterTaskDefinitionRequest withNetworkMode(String networkMode) {
+        setNetworkMode(networkMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Docker networking mode to use for the containers in the task. The
+     * valid values are <code>none</code>, <code>bridge</code>, and
+     * <code>host</code>.
+     * </p>
+     * <p>
+     * The default Docker network mode is <code>bridge</code>. If the network
+     * mode is set to <code>none</code>, you cannot specify port mappings in
+     * your container definitions, and the task's containers do not have
+     * external connectivity. The <code>host</code> network mode offers the
+     * highest networking performance for containers because they use the host
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode; however, exposed container ports are mapped
+     * directly to the corresponding host port, so you cannot take advantage of
+     * dynamic host port mappings or run multiple instantiations of the same
+     * task on a single container instance if port mappings are used.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings"
+     * >Network settings</a> in the <i>Docker run reference</i>.
+     * </p>
+     * 
+     * @param networkMode
+     *        The Docker networking mode to use for the containers in the task.
+     *        The valid values are <code>none</code>, <code>bridge</code>, and
+     *        <code>host</code>. </p>
+     *        <p>
+     *        The default Docker network mode is <code>bridge</code>. If the
+     *        network mode is set to <code>none</code>, you cannot specify port
+     *        mappings in your container definitions, and the task's containers
+     *        do not have external connectivity. The <code>host</code> network
+     *        mode offers the highest networking performance for containers
+     *        because they use the host network stack instead of the virtualized
+     *        network stack provided by the <code>bridge</code> mode; however,
+     *        exposed container ports are mapped directly to the corresponding
+     *        host port, so you cannot take advantage of dynamic host port
+     *        mappings or run multiple instantiations of the same task on a
+     *        single container instance if port mappings are used.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.docker.com/engine/reference/run/#network-settings"
+     *        >Network settings</a> in the <i>Docker run reference</i>.
+     * @see NetworkMode
+     */
+
+    public void setNetworkMode(NetworkMode networkMode) {
+        this.networkMode = networkMode.toString();
+    }
+
+    /**
+     * <p>
+     * The Docker networking mode to use for the containers in the task. The
+     * valid values are <code>none</code>, <code>bridge</code>, and
+     * <code>host</code>.
+     * </p>
+     * <p>
+     * The default Docker network mode is <code>bridge</code>. If the network
+     * mode is set to <code>none</code>, you cannot specify port mappings in
+     * your container definitions, and the task's containers do not have
+     * external connectivity. The <code>host</code> network mode offers the
+     * highest networking performance for containers because they use the host
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode; however, exposed container ports are mapped
+     * directly to the corresponding host port, so you cannot take advantage of
+     * dynamic host port mappings or run multiple instantiations of the same
+     * task on a single container instance if port mappings are used.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings"
+     * >Network settings</a> in the <i>Docker run reference</i>.
+     * </p>
+     * 
+     * @param networkMode
+     *        The Docker networking mode to use for the containers in the task.
+     *        The valid values are <code>none</code>, <code>bridge</code>, and
+     *        <code>host</code>. </p>
+     *        <p>
+     *        The default Docker network mode is <code>bridge</code>. If the
+     *        network mode is set to <code>none</code>, you cannot specify port
+     *        mappings in your container definitions, and the task's containers
+     *        do not have external connectivity. The <code>host</code> network
+     *        mode offers the highest networking performance for containers
+     *        because they use the host network stack instead of the virtualized
+     *        network stack provided by the <code>bridge</code> mode; however,
+     *        exposed container ports are mapped directly to the corresponding
+     *        host port, so you cannot take advantage of dynamic host port
+     *        mappings or run multiple instantiations of the same task on a
+     *        single container instance if port mappings are used.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.docker.com/engine/reference/run/#network-settings"
+     *        >Network settings</a> in the <i>Docker run reference</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see NetworkMode
+     */
+
+    public RegisterTaskDefinitionRequest withNetworkMode(NetworkMode networkMode) {
+        setNetworkMode(networkMode);
         return this;
     }
 
@@ -366,6 +656,8 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
             sb.append("Family: " + getFamily() + ",");
         if (getTaskRoleArn() != null)
             sb.append("TaskRoleArn: " + getTaskRoleArn() + ",");
+        if (getNetworkMode() != null)
+            sb.append("NetworkMode: " + getNetworkMode() + ",");
         if (getContainerDefinitions() != null)
             sb.append("ContainerDefinitions: " + getContainerDefinitions()
                     + ",");
@@ -395,6 +687,11 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
         if (other.getTaskRoleArn() != null
                 && other.getTaskRoleArn().equals(this.getTaskRoleArn()) == false)
             return false;
+        if (other.getNetworkMode() == null ^ this.getNetworkMode() == null)
+            return false;
+        if (other.getNetworkMode() != null
+                && other.getNetworkMode().equals(this.getNetworkMode()) == false)
+            return false;
         if (other.getContainerDefinitions() == null
                 ^ this.getContainerDefinitions() == null)
             return false;
@@ -420,6 +717,9 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
         hashCode = prime
                 * hashCode
                 + ((getTaskRoleArn() == null) ? 0 : getTaskRoleArn().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNetworkMode() == null) ? 0 : getNetworkMode().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getContainerDefinitions() == null) ? 0

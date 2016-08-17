@@ -43,11 +43,10 @@ public class MethodSetting implements Serializable, Cloneable {
     private String loggingLevel;
     /**
      * <p>
-     * Specifies the whether data trace logging is enabled for this method,
-     * which effects the log entries pushed to Amazon CloudWatch Logs. The PATCH
-     * path for this setting is
-     * <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a
-     * Boolean.
+     * Specifies whether data trace logging is enabled for this method, which
+     * effects the log entries pushed to Amazon CloudWatch Logs. The PATCH path
+     * for this setting is <code>/{method_setting_key}/logging/dataTrace</code>,
+     * and the value is a Boolean.
      * </p>
      */
     private Boolean dataTraceEnabled;
@@ -79,8 +78,8 @@ public class MethodSetting implements Serializable, Cloneable {
     private Boolean cachingEnabled;
     /**
      * <p>
-     * Specifies the time to live (TTL) in seconds, for cached responses. The
-     * higher a the TTL, the longer the response will be cached. The PATCH path
+     * Specifies the time to live (TTL), in seconds, for cached responses. The
+     * higher the TTL, the longer the response will be cached. The PATCH path
      * for this setting is
      * <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the value is
      * an integer.
@@ -106,8 +105,8 @@ public class MethodSetting implements Serializable, Cloneable {
     private Boolean requireAuthorizationForCacheControl;
     /**
      * <p>
-     * Specifies the strategy on how to handle the unauthorized requests for
-     * cache invalidation. The PATCH path for this setting is
+     * Specifies how to handle unauthorized requests for cache invalidation. The
+     * PATCH path for this setting is
      * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
      * , and the available values are <code>FAIL_WITH_403</code>,
      * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
@@ -258,17 +257,16 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the whether data trace logging is enabled for this method,
-     * which effects the log entries pushed to Amazon CloudWatch Logs. The PATCH
-     * path for this setting is
-     * <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a
-     * Boolean.
+     * Specifies whether data trace logging is enabled for this method, which
+     * effects the log entries pushed to Amazon CloudWatch Logs. The PATCH path
+     * for this setting is <code>/{method_setting_key}/logging/dataTrace</code>,
+     * and the value is a Boolean.
      * </p>
      * 
      * @param dataTraceEnabled
-     *        Specifies the whether data trace logging is enabled for this
-     *        method, which effects the log entries pushed to Amazon CloudWatch
-     *        Logs. The PATCH path for this setting is
+     *        Specifies whether data trace logging is enabled for this method,
+     *        which effects the log entries pushed to Amazon CloudWatch Logs.
+     *        The PATCH path for this setting is
      *        <code>/{method_setting_key}/logging/dataTrace</code>, and the
      *        value is a Boolean.
      */
@@ -279,16 +277,15 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the whether data trace logging is enabled for this method,
-     * which effects the log entries pushed to Amazon CloudWatch Logs. The PATCH
-     * path for this setting is
-     * <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a
-     * Boolean.
+     * Specifies whether data trace logging is enabled for this method, which
+     * effects the log entries pushed to Amazon CloudWatch Logs. The PATCH path
+     * for this setting is <code>/{method_setting_key}/logging/dataTrace</code>,
+     * and the value is a Boolean.
      * </p>
      * 
-     * @return Specifies the whether data trace logging is enabled for this
-     *         method, which effects the log entries pushed to Amazon CloudWatch
-     *         Logs. The PATCH path for this setting is
+     * @return Specifies whether data trace logging is enabled for this method,
+     *         which effects the log entries pushed to Amazon CloudWatch Logs.
+     *         The PATCH path for this setting is
      *         <code>/{method_setting_key}/logging/dataTrace</code>, and the
      *         value is a Boolean.
      */
@@ -299,17 +296,16 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the whether data trace logging is enabled for this method,
-     * which effects the log entries pushed to Amazon CloudWatch Logs. The PATCH
-     * path for this setting is
-     * <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a
-     * Boolean.
+     * Specifies whether data trace logging is enabled for this method, which
+     * effects the log entries pushed to Amazon CloudWatch Logs. The PATCH path
+     * for this setting is <code>/{method_setting_key}/logging/dataTrace</code>,
+     * and the value is a Boolean.
      * </p>
      * 
      * @param dataTraceEnabled
-     *        Specifies the whether data trace logging is enabled for this
-     *        method, which effects the log entries pushed to Amazon CloudWatch
-     *        Logs. The PATCH path for this setting is
+     *        Specifies whether data trace logging is enabled for this method,
+     *        which effects the log entries pushed to Amazon CloudWatch Logs.
+     *        The PATCH path for this setting is
      *        <code>/{method_setting_key}/logging/dataTrace</code>, and the
      *        value is a Boolean.
      * @return Returns a reference to this object so that method calls can be
@@ -323,16 +319,15 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the whether data trace logging is enabled for this method,
-     * which effects the log entries pushed to Amazon CloudWatch Logs. The PATCH
-     * path for this setting is
-     * <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a
-     * Boolean.
+     * Specifies whether data trace logging is enabled for this method, which
+     * effects the log entries pushed to Amazon CloudWatch Logs. The PATCH path
+     * for this setting is <code>/{method_setting_key}/logging/dataTrace</code>,
+     * and the value is a Boolean.
      * </p>
      * 
-     * @return Specifies the whether data trace logging is enabled for this
-     *         method, which effects the log entries pushed to Amazon CloudWatch
-     *         Logs. The PATCH path for this setting is
+     * @return Specifies whether data trace logging is enabled for this method,
+     *         which effects the log entries pushed to Amazon CloudWatch Logs.
+     *         The PATCH path for this setting is
      *         <code>/{method_setting_key}/logging/dataTrace</code>, and the
      *         value is a Boolean.
      */
@@ -538,17 +533,17 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time to live (TTL) in seconds, for cached responses. The
-     * higher a the TTL, the longer the response will be cached. The PATCH path
+     * Specifies the time to live (TTL), in seconds, for cached responses. The
+     * higher the TTL, the longer the response will be cached. The PATCH path
      * for this setting is
      * <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the value is
      * an integer.
      * </p>
      * 
      * @param cacheTtlInSeconds
-     *        Specifies the time to live (TTL) in seconds, for cached responses.
-     *        The higher a the TTL, the longer the response will be cached. The
-     *        PATCH path for this setting is
+     *        Specifies the time to live (TTL), in seconds, for cached
+     *        responses. The higher the TTL, the longer the response will be
+     *        cached. The PATCH path for this setting is
      *        <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the
      *        value is an integer.
      */
@@ -559,15 +554,15 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time to live (TTL) in seconds, for cached responses. The
-     * higher a the TTL, the longer the response will be cached. The PATCH path
+     * Specifies the time to live (TTL), in seconds, for cached responses. The
+     * higher the TTL, the longer the response will be cached. The PATCH path
      * for this setting is
      * <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the value is
      * an integer.
      * </p>
      * 
-     * @return Specifies the time to live (TTL) in seconds, for cached
-     *         responses. The higher a the TTL, the longer the response will be
+     * @return Specifies the time to live (TTL), in seconds, for cached
+     *         responses. The higher the TTL, the longer the response will be
      *         cached. The PATCH path for this setting is
      *         <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the
      *         value is an integer.
@@ -579,17 +574,17 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time to live (TTL) in seconds, for cached responses. The
-     * higher a the TTL, the longer the response will be cached. The PATCH path
+     * Specifies the time to live (TTL), in seconds, for cached responses. The
+     * higher the TTL, the longer the response will be cached. The PATCH path
      * for this setting is
      * <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the value is
      * an integer.
      * </p>
      * 
      * @param cacheTtlInSeconds
-     *        Specifies the time to live (TTL) in seconds, for cached responses.
-     *        The higher a the TTL, the longer the response will be cached. The
-     *        PATCH path for this setting is
+     *        Specifies the time to live (TTL), in seconds, for cached
+     *        responses. The higher the TTL, the longer the response will be
+     *        cached. The PATCH path for this setting is
      *        <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the
      *        value is an integer.
      * @return Returns a reference to this object so that method calls can be
@@ -755,8 +750,8 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the strategy on how to handle the unauthorized requests for
-     * cache invalidation. The PATCH path for this setting is
+     * Specifies how to handle unauthorized requests for cache invalidation. The
+     * PATCH path for this setting is
      * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
      * , and the available values are <code>FAIL_WITH_403</code>,
      * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
@@ -764,8 +759,8 @@ public class MethodSetting implements Serializable, Cloneable {
      * </p>
      * 
      * @param unauthorizedCacheControlHeaderStrategy
-     *        Specifies the strategy on how to handle the unauthorized requests
-     *        for cache invalidation. The PATCH path for this setting is
+     *        Specifies how to handle unauthorized requests for cache
+     *        invalidation. The PATCH path for this setting is
      *        <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
      *        , and the available values are <code>FAIL_WITH_403</code>,
      *        <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
@@ -780,16 +775,16 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the strategy on how to handle the unauthorized requests for
-     * cache invalidation. The PATCH path for this setting is
+     * Specifies how to handle unauthorized requests for cache invalidation. The
+     * PATCH path for this setting is
      * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
      * , and the available values are <code>FAIL_WITH_403</code>,
      * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
      * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
      * </p>
      * 
-     * @return Specifies the strategy on how to handle the unauthorized requests
-     *         for cache invalidation. The PATCH path for this setting is
+     * @return Specifies how to handle unauthorized requests for cache
+     *         invalidation. The PATCH path for this setting is
      *         <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
      *         , and the available values are <code>FAIL_WITH_403</code>,
      *         <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
@@ -803,8 +798,8 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the strategy on how to handle the unauthorized requests for
-     * cache invalidation. The PATCH path for this setting is
+     * Specifies how to handle unauthorized requests for cache invalidation. The
+     * PATCH path for this setting is
      * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
      * , and the available values are <code>FAIL_WITH_403</code>,
      * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
@@ -812,8 +807,8 @@ public class MethodSetting implements Serializable, Cloneable {
      * </p>
      * 
      * @param unauthorizedCacheControlHeaderStrategy
-     *        Specifies the strategy on how to handle the unauthorized requests
-     *        for cache invalidation. The PATCH path for this setting is
+     *        Specifies how to handle unauthorized requests for cache
+     *        invalidation. The PATCH path for this setting is
      *        <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
      *        , and the available values are <code>FAIL_WITH_403</code>,
      *        <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
@@ -831,8 +826,8 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the strategy on how to handle the unauthorized requests for
-     * cache invalidation. The PATCH path for this setting is
+     * Specifies how to handle unauthorized requests for cache invalidation. The
+     * PATCH path for this setting is
      * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
      * , and the available values are <code>FAIL_WITH_403</code>,
      * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
@@ -840,8 +835,8 @@ public class MethodSetting implements Serializable, Cloneable {
      * </p>
      * 
      * @param unauthorizedCacheControlHeaderStrategy
-     *        Specifies the strategy on how to handle the unauthorized requests
-     *        for cache invalidation. The PATCH path for this setting is
+     *        Specifies how to handle unauthorized requests for cache
+     *        invalidation. The PATCH path for this setting is
      *        <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
      *        , and the available values are <code>FAIL_WITH_403</code>,
      *        <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
@@ -857,8 +852,8 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the strategy on how to handle the unauthorized requests for
-     * cache invalidation. The PATCH path for this setting is
+     * Specifies how to handle unauthorized requests for cache invalidation. The
+     * PATCH path for this setting is
      * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
      * , and the available values are <code>FAIL_WITH_403</code>,
      * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
@@ -866,8 +861,8 @@ public class MethodSetting implements Serializable, Cloneable {
      * </p>
      * 
      * @param unauthorizedCacheControlHeaderStrategy
-     *        Specifies the strategy on how to handle the unauthorized requests
-     *        for cache invalidation. The PATCH path for this setting is
+     *        Specifies how to handle unauthorized requests for cache
+     *        invalidation. The PATCH path for this setting is
      *        <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>
      *        , and the available values are <code>FAIL_WITH_403</code>,
      *        <code>SUCCEED_WITH_RESPONSE_HEADER</code>,

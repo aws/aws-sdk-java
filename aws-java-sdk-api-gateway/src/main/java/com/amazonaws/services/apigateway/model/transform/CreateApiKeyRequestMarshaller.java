@@ -86,6 +86,14 @@ public class CreateApiKeyRequestMarshaller implements
                 jsonGenerator.writeFieldName("enabled").writeValue(
                         createApiKeyRequest.getEnabled());
             }
+            if (createApiKeyRequest.getGenerateDistinctId() != null) {
+                jsonGenerator.writeFieldName("generateDistinctId").writeValue(
+                        createApiKeyRequest.getGenerateDistinctId());
+            }
+            if (createApiKeyRequest.getValue() != null) {
+                jsonGenerator.writeFieldName("value").writeValue(
+                        createApiKeyRequest.getValue());
+            }
 
             java.util.List<StageKey> stageKeysList = createApiKeyRequest
                     .getStageKeys();

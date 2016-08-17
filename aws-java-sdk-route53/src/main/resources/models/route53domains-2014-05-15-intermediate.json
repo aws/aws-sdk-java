@@ -19,6 +19,7 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "route53domains",
     "signingName" : "route53domains",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AmazonRoute53DomainsClientBuilder",
     "asyncClientBuilderClassName" : "AmazonRoute53DomainsAsyncClientBuilder",
@@ -28,8 +29,7 @@
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "CheckDomainAvailability" : {
@@ -57,12 +57,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CheckDomainAvailabilityResult",
       "asyncReturnType" : "CheckDomainAvailabilityResult",
       "asyncFutureType" : "java.util.concurrent.Future<CheckDomainAvailabilityResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CheckDomainAvailabilityResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CheckDomainAvailabilityRequest, CheckDomainAvailabilityResult>",
-      "authenticated" : true,
       "methodName" : "checkDomainAvailability"
     },
     "DeleteTagsForDomain" : {
@@ -93,12 +93,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteTagsForDomainResult",
       "asyncReturnType" : "DeleteTagsForDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteTagsForDomainResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteTagsForDomainResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteTagsForDomainRequest, DeleteTagsForDomainResult>",
-      "authenticated" : true,
       "methodName" : "deleteTagsForDomain"
     },
     "DisableDomainAutoRenew" : {
@@ -126,12 +126,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DisableDomainAutoRenewResult",
       "asyncReturnType" : "DisableDomainAutoRenewResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableDomainAutoRenewResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableDomainAutoRenewResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableDomainAutoRenewRequest, DisableDomainAutoRenewResult>",
-      "authenticated" : true,
       "methodName" : "disableDomainAutoRenew"
     },
     "DisableDomainTransferLock" : {
@@ -168,12 +168,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DisableDomainTransferLockResult",
       "asyncReturnType" : "DisableDomainTransferLockResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableDomainTransferLockResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableDomainTransferLockResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableDomainTransferLockRequest, DisableDomainTransferLockResult>",
-      "authenticated" : true,
       "methodName" : "disableDomainTransferLock"
     },
     "EnableDomainAutoRenew" : {
@@ -204,12 +204,12 @@
         "documentation" : "<p>The top-level domain does not support this operation.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "EnableDomainAutoRenewResult",
       "asyncReturnType" : "EnableDomainAutoRenewResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableDomainAutoRenewResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnableDomainAutoRenewResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableDomainAutoRenewRequest, EnableDomainAutoRenewResult>",
-      "authenticated" : true,
       "methodName" : "enableDomainAutoRenew"
     },
     "EnableDomainTransferLock" : {
@@ -246,12 +246,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "EnableDomainTransferLockResult",
       "asyncReturnType" : "EnableDomainTransferLockResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableDomainTransferLockResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnableDomainTransferLockResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableDomainTransferLockRequest, EnableDomainTransferLockResult>",
-      "authenticated" : true,
       "methodName" : "enableDomainTransferLock"
     },
     "GetContactReachabilityStatus" : {
@@ -282,12 +282,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetContactReachabilityStatusResult",
       "asyncReturnType" : "GetContactReachabilityStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetContactReachabilityStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetContactReachabilityStatusResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetContactReachabilityStatusRequest, GetContactReachabilityStatusResult>",
-      "authenticated" : true,
       "methodName" : "getContactReachabilityStatus"
     },
     "GetDomainDetail" : {
@@ -315,12 +315,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetDomainDetailResult",
       "asyncReturnType" : "GetDomainDetailResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDomainDetailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDomainDetailResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDomainDetailRequest, GetDomainDetailResult>",
-      "authenticated" : true,
       "methodName" : "getDomainDetail"
     },
     "GetDomainSuggestions" : {
@@ -348,12 +348,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetDomainSuggestionsResult",
       "asyncReturnType" : "GetDomainSuggestionsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetDomainSuggestionsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetDomainSuggestionsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetDomainSuggestionsRequest, GetDomainSuggestionsResult>",
-      "authenticated" : true,
       "methodName" : "getDomainSuggestions"
     },
     "GetOperationDetail" : {
@@ -378,12 +378,12 @@
         "documentation" : "<p>The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an operation that is already completed. For a domain name, it may not be a valid domain name or belong to the requester account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetOperationDetailResult",
       "asyncReturnType" : "GetOperationDetailResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetOperationDetailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetOperationDetailResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetOperationDetailRequest, GetOperationDetailResult>",
-      "authenticated" : true,
       "methodName" : "getOperationDetail"
     },
     "ListDomains" : {
@@ -408,12 +408,12 @@
         "documentation" : "<p>The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an operation that is already completed. For a domain name, it may not be a valid domain name or belong to the requester account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListDomainsResult",
       "asyncReturnType" : "ListDomainsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListDomainsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListDomainsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult>",
-      "authenticated" : true,
       "methodName" : "listDomains"
     },
     "ListOperations" : {
@@ -438,12 +438,12 @@
         "documentation" : "<p>The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an operation that is already completed. For a domain name, it may not be a valid domain name or belong to the requester account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListOperationsResult",
       "asyncReturnType" : "ListOperationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListOperationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListOperationsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListOperationsRequest, ListOperationsResult>",
-      "authenticated" : true,
       "methodName" : "listOperations"
     },
     "ListTagsForDomain" : {
@@ -474,12 +474,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTagsForDomainResult",
       "asyncReturnType" : "ListTagsForDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForDomainResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForDomainResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForDomainRequest, ListTagsForDomainResult>",
-      "authenticated" : true,
       "methodName" : "listTagsForDomain"
     },
     "RegisterDomain" : {
@@ -519,12 +519,12 @@
         "documentation" : "<p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RegisterDomainResult",
       "asyncReturnType" : "RegisterDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<RegisterDomainResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RegisterDomainResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RegisterDomainRequest, RegisterDomainResult>",
-      "authenticated" : true,
       "methodName" : "registerDomain"
     },
     "RenewDomain" : {
@@ -561,12 +561,12 @@
         "documentation" : "<p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RenewDomainResult",
       "asyncReturnType" : "RenewDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<RenewDomainResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RenewDomainResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RenewDomainRequest, RenewDomainResult>",
-      "authenticated" : true,
       "methodName" : "renewDomain"
     },
     "ResendContactReachabilityEmail" : {
@@ -597,12 +597,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ResendContactReachabilityEmailResult",
       "asyncReturnType" : "ResendContactReachabilityEmailResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResendContactReachabilityEmailResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ResendContactReachabilityEmailResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResendContactReachabilityEmailRequest, ResendContactReachabilityEmailResult>",
-      "authenticated" : true,
       "methodName" : "resendContactReachabilityEmail"
     },
     "RetrieveDomainAuthCode" : {
@@ -630,12 +630,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RetrieveDomainAuthCodeResult",
       "asyncReturnType" : "RetrieveDomainAuthCodeResult",
       "asyncFutureType" : "java.util.concurrent.Future<RetrieveDomainAuthCodeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RetrieveDomainAuthCodeResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RetrieveDomainAuthCodeRequest, RetrieveDomainAuthCodeResult>",
-      "authenticated" : true,
       "methodName" : "retrieveDomainAuthCode"
     },
     "TransferDomain" : {
@@ -675,12 +675,12 @@
         "documentation" : "<p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "TransferDomainResult",
       "asyncReturnType" : "TransferDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<TransferDomainResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TransferDomainResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TransferDomainRequest, TransferDomainResult>",
-      "authenticated" : true,
       "methodName" : "transferDomain"
     },
     "UpdateDomainContact" : {
@@ -717,12 +717,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateDomainContactResult",
       "asyncReturnType" : "UpdateDomainContactResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDomainContactResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateDomainContactResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDomainContactRequest, UpdateDomainContactResult>",
-      "authenticated" : true,
       "methodName" : "updateDomainContact"
     },
     "UpdateDomainContactPrivacy" : {
@@ -759,12 +759,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateDomainContactPrivacyResult",
       "asyncReturnType" : "UpdateDomainContactPrivacyResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDomainContactPrivacyResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateDomainContactPrivacyResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDomainContactPrivacyRequest, UpdateDomainContactPrivacyResult>",
-      "authenticated" : true,
       "methodName" : "updateDomainContactPrivacy"
     },
     "UpdateDomainNameservers" : {
@@ -801,12 +801,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateDomainNameserversResult",
       "asyncReturnType" : "UpdateDomainNameserversResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDomainNameserversResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateDomainNameserversResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateDomainNameserversRequest, UpdateDomainNameserversResult>",
-      "authenticated" : true,
       "methodName" : "updateDomainNameservers"
     },
     "UpdateTagsForDomain" : {
@@ -837,12 +837,12 @@
         "documentation" : "<p>Amazon Route 53 does not support this top-level domain.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "UpdateTagsForDomainResult",
       "asyncReturnType" : "UpdateTagsForDomainResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateTagsForDomainResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateTagsForDomainResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateTagsForDomainRequest, UpdateTagsForDomainResult>",
-      "authenticated" : true,
       "methodName" : "updateTagsForDomain"
     },
     "ViewBilling" : {
@@ -867,12 +867,12 @@
         "documentation" : "<p>The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an operation that is already completed. For a domain name, it may not be a valid domain name or belong to the requester account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ViewBillingResult",
       "asyncReturnType" : "ViewBillingResult",
       "asyncFutureType" : "java.util.concurrent.Future<ViewBillingResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ViewBillingResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ViewBillingRequest, ViewBillingResult>",
-      "authenticated" : true,
       "methodName" : "viewBilling"
     }
   },
@@ -3597,6 +3597,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "Nameserver",
@@ -3795,6 +3796,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "Nameserver",
@@ -5109,6 +5111,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
@@ -5250,6 +5253,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
@@ -5467,6 +5471,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "DomainSuggestion",
@@ -5608,6 +5613,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "DomainSuggestion",
@@ -6889,6 +6895,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "Nameserver",
@@ -7943,6 +7950,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
@@ -8190,6 +8198,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "Nameserver",
@@ -8468,6 +8477,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
@@ -10205,6 +10215,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "DomainSummary",
@@ -10398,6 +10409,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "DomainSummary",
@@ -10739,6 +10751,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "Nameserver",
@@ -11459,6 +11472,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "Nameserver",
@@ -12261,6 +12275,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "Tag",
@@ -12402,6 +12417,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "Tag",
@@ -13086,6 +13102,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
@@ -13231,6 +13248,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
@@ -15094,6 +15112,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "Tag",
@@ -15292,6 +15311,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "Tag",
@@ -15424,6 +15444,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "OperationSummary",
@@ -15670,6 +15691,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "OperationSummary",
@@ -15854,6 +15876,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "BillingRecord",
@@ -16048,6 +16071,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "BillingRecord",
@@ -17306,6 +17330,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "ExtraParam",
@@ -17871,6 +17896,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "ExtraParam",
@@ -21460,6 +21486,7 @@
     },
     "renameShapes" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
+    "sendExplicitlyEmptyListsForQuery" : false,
     "authPolicyActions" : {
       "skip" : true,
       "actionPrefix" : null,
@@ -21478,16 +21505,15 @@
     "convenienceTypeOverloads" : [ ],
     "skipSmokeTests" : false
   },
-  "waiters" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"
   },
-  "sdkModeledExceptionBaseClassName" : "AmazonRoute53DomainsException",
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException",
-  "hasWaiters" : false
+  "hasWaiters" : false,
+  "sdkModeledExceptionBaseClassName" : "AmazonRoute53DomainsException",
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
 }

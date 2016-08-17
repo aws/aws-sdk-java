@@ -19,30 +19,33 @@ import java.io.Serializable;
 /**
  * <p>
  * Each <code>JobListEntry</code> object contains a job's state, a job's ID, and
- * whether or not the job is a job part, in the case of an export job.
+ * a value that indicates whether the job is a job part, in the case of an
+ * export job.
  * </p>
  */
 public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The automatically generated ID for a job. For example
+     * The automatically generated ID for a job, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      */
     private String jobId;
     /**
      * <p>
+     * The current state of this job.
      * </p>
      */
     private String jobState;
     /**
      * <p>
-     * A master job represents a successful request to create an export job.
-     * Master jobs aren't associated with any Snowballs, instead each master job
-     * will have at least 1 job part. All job parts are associated with a
-     * Snowball. It may take some time before the job parts associated with the
-     * master job are listed, as they are created after the master job is
+     * A value that indicates that this job is a master job. A master job
+     * represents a successful request to create an export job. Master jobs
+     * aren't associated with any Snowballs. Instead, each master job will have
+     * at least one job part, and each job part is associated with a Snowball.
+     * It might take some time before the job parts associated with a particular
+     * master job are listed, because they are created after the master job is
      * created.
      * </p>
      */
@@ -50,12 +53,12 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The automatically generated ID for a job. For example
+     * The automatically generated ID for a job, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
      * @param jobId
-     *        The automatically generated ID for a job. For example
+     *        The automatically generated ID for a job, for example
      *        <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      */
 
@@ -65,11 +68,11 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The automatically generated ID for a job. For example
+     * The automatically generated ID for a job, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
-     * @return The automatically generated ID for a job. For example
+     * @return The automatically generated ID for a job, for example
      *         <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      */
 
@@ -79,12 +82,12 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The automatically generated ID for a job. For example
+     * The automatically generated ID for a job, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
      * @param jobId
-     *        The automatically generated ID for a job. For example
+     *        The automatically generated ID for a job, for example
      *        <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -97,9 +100,11 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The current state of this job.
      * </p>
      * 
      * @param jobState
+     *        The current state of this job.
      * @see JobState
      */
 
@@ -109,9 +114,10 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The current state of this job.
      * </p>
      * 
-     * @return
+     * @return The current state of this job.
      * @see JobState
      */
 
@@ -121,9 +127,11 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The current state of this job.
      * </p>
      * 
      * @param jobState
+     *        The current state of this job.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobState
@@ -136,9 +144,11 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The current state of this job.
      * </p>
      * 
      * @param jobState
+     *        The current state of this job.
      * @see JobState
      */
 
@@ -148,9 +158,11 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The current state of this job.
      * </p>
      * 
      * @param jobState
+     *        The current state of this job.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobState
@@ -163,21 +175,23 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A master job represents a successful request to create an export job.
-     * Master jobs aren't associated with any Snowballs, instead each master job
-     * will have at least 1 job part. All job parts are associated with a
-     * Snowball. It may take some time before the job parts associated with the
-     * master job are listed, as they are created after the master job is
+     * A value that indicates that this job is a master job. A master job
+     * represents a successful request to create an export job. Master jobs
+     * aren't associated with any Snowballs. Instead, each master job will have
+     * at least one job part, and each job part is associated with a Snowball.
+     * It might take some time before the job parts associated with a particular
+     * master job are listed, because they are created after the master job is
      * created.
      * </p>
      * 
      * @param isMaster
-     *        A master job represents a successful request to create an export
-     *        job. Master jobs aren't associated with any Snowballs, instead
-     *        each master job will have at least 1 job part. All job parts are
-     *        associated with a Snowball. It may take some time before the job
-     *        parts associated with the master job are listed, as they are
-     *        created after the master job is created.
+     *        A value that indicates that this job is a master job. A master job
+     *        represents a successful request to create an export job. Master
+     *        jobs aren't associated with any Snowballs. Instead, each master
+     *        job will have at least one job part, and each job part is
+     *        associated with a Snowball. It might take some time before the job
+     *        parts associated with a particular master job are listed, because
+     *        they are created after the master job is created.
      */
 
     public void setIsMaster(Boolean isMaster) {
@@ -186,20 +200,22 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A master job represents a successful request to create an export job.
-     * Master jobs aren't associated with any Snowballs, instead each master job
-     * will have at least 1 job part. All job parts are associated with a
-     * Snowball. It may take some time before the job parts associated with the
-     * master job are listed, as they are created after the master job is
+     * A value that indicates that this job is a master job. A master job
+     * represents a successful request to create an export job. Master jobs
+     * aren't associated with any Snowballs. Instead, each master job will have
+     * at least one job part, and each job part is associated with a Snowball.
+     * It might take some time before the job parts associated with a particular
+     * master job are listed, because they are created after the master job is
      * created.
      * </p>
      * 
-     * @return A master job represents a successful request to create an export
-     *         job. Master jobs aren't associated with any Snowballs, instead
-     *         each master job will have at least 1 job part. All job parts are
-     *         associated with a Snowball. It may take some time before the job
-     *         parts associated with the master job are listed, as they are
-     *         created after the master job is created.
+     * @return A value that indicates that this job is a master job. A master
+     *         job represents a successful request to create an export job.
+     *         Master jobs aren't associated with any Snowballs. Instead, each
+     *         master job will have at least one job part, and each job part is
+     *         associated with a Snowball. It might take some time before the
+     *         job parts associated with a particular master job are listed,
+     *         because they are created after the master job is created.
      */
 
     public Boolean getIsMaster() {
@@ -208,21 +224,23 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A master job represents a successful request to create an export job.
-     * Master jobs aren't associated with any Snowballs, instead each master job
-     * will have at least 1 job part. All job parts are associated with a
-     * Snowball. It may take some time before the job parts associated with the
-     * master job are listed, as they are created after the master job is
+     * A value that indicates that this job is a master job. A master job
+     * represents a successful request to create an export job. Master jobs
+     * aren't associated with any Snowballs. Instead, each master job will have
+     * at least one job part, and each job part is associated with a Snowball.
+     * It might take some time before the job parts associated with a particular
+     * master job are listed, because they are created after the master job is
      * created.
      * </p>
      * 
      * @param isMaster
-     *        A master job represents a successful request to create an export
-     *        job. Master jobs aren't associated with any Snowballs, instead
-     *        each master job will have at least 1 job part. All job parts are
-     *        associated with a Snowball. It may take some time before the job
-     *        parts associated with the master job are listed, as they are
-     *        created after the master job is created.
+     *        A value that indicates that this job is a master job. A master job
+     *        represents a successful request to create an export job. Master
+     *        jobs aren't associated with any Snowballs. Instead, each master
+     *        job will have at least one job part, and each job part is
+     *        associated with a Snowball. It might take some time before the job
+     *        parts associated with a particular master job are listed, because
+     *        they are created after the master job is created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -234,20 +252,22 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A master job represents a successful request to create an export job.
-     * Master jobs aren't associated with any Snowballs, instead each master job
-     * will have at least 1 job part. All job parts are associated with a
-     * Snowball. It may take some time before the job parts associated with the
-     * master job are listed, as they are created after the master job is
+     * A value that indicates that this job is a master job. A master job
+     * represents a successful request to create an export job. Master jobs
+     * aren't associated with any Snowballs. Instead, each master job will have
+     * at least one job part, and each job part is associated with a Snowball.
+     * It might take some time before the job parts associated with a particular
+     * master job are listed, because they are created after the master job is
      * created.
      * </p>
      * 
-     * @return A master job represents a successful request to create an export
-     *         job. Master jobs aren't associated with any Snowballs, instead
-     *         each master job will have at least 1 job part. All job parts are
-     *         associated with a Snowball. It may take some time before the job
-     *         parts associated with the master job are listed, as they are
-     *         created after the master job is created.
+     * @return A value that indicates that this job is a master job. A master
+     *         job represents a successful request to create an export job.
+     *         Master jobs aren't associated with any Snowballs. Instead, each
+     *         master job will have at least one job part, and each job part is
+     *         associated with a Snowball. It might take some time before the
+     *         job parts associated with a particular master job are listed,
+     *         because they are created after the master job is created.
      */
 
     public Boolean isMaster() {

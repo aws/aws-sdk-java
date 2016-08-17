@@ -74,6 +74,10 @@ public class TaskDefinitionJsonMarshaller {
                 jsonGenerator.writeFieldName("taskRoleArn").writeValue(
                         taskDefinition.getTaskRoleArn());
             }
+            if (taskDefinition.getNetworkMode() != null) {
+                jsonGenerator.writeFieldName("networkMode").writeValue(
+                        taskDefinition.getNetworkMode());
+            }
             if (taskDefinition.getRevision() != null) {
                 jsonGenerator.writeFieldName("revision").writeValue(
                         taskDefinition.getRevision());

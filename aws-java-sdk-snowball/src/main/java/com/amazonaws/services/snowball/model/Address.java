@@ -18,86 +18,106 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The address that you want the Snowball(s) associated with a specific job to
- * be shipped to. Addresses are validated at the time of creation. The address
- * you provide must be located within the serviceable area of your region.
- * Although no individual elements of the <code>Address</code> are required, if
- * the address is invalid or unsupported, then an exception is thrown.
+ * The address that you want the Snowball or Snowballs associated with a
+ * specific job to be shipped to. Addresses are validated at the time of
+ * creation. The address you provide must be located within the serviceable area
+ * of your region. Although no individual elements of the <code>Address</code>
+ * are required, if the address is invalid or unsupported, then an exception is
+ * thrown.
  * </p>
  */
 public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The unique ID for an address.
      * </p>
      */
     private String addressId;
     /**
      * <p>
+     * The name of a person to receive a Snowball at an address.
      * </p>
      */
     private String name;
     /**
      * <p>
+     * The name of the company to receive a Snowball at an address.
      * </p>
      */
     private String company;
     /**
      * <p>
+     * The first line in a street address that a Snowball is to be delivered to.
      * </p>
      */
     private String street1;
     /**
      * <p>
+     * The second line in a street address that a Snowball is to be delivered
+     * to.
      * </p>
      */
     private String street2;
     /**
      * <p>
+     * The third line in a street address that a Snowball is to be delivered to.
      * </p>
      */
     private String street3;
     /**
      * <p>
+     * The city in an address that a Snowball is to be delivered to.
      * </p>
      */
     private String city;
     /**
      * <p>
+     * The state or province in an address that a Snowball is to be delivered
+     * to.
      * </p>
      */
     private String stateOrProvince;
     /**
      * <p>
+     * The prefecture or district in an address that a Snowball is to be
+     * delivered to.
      * </p>
      */
     private String prefectureOrDistrict;
     /**
      * <p>
+     * A landmark listed in an address that a Snowball is to be delivered to.
      * </p>
      */
     private String landmark;
     /**
      * <p>
+     * The country in an address that a Snowball is to be delivered to.
      * </p>
      */
     private String country;
     /**
      * <p>
+     * The postal code in an address that a Snowball is to be delivered to.
      * </p>
      */
     private String postalCode;
     /**
      * <p>
+     * The phone number associated with an address that a Snowball is to be
+     * delivered to.
      * </p>
      */
     private String phoneNumber;
 
     /**
      * <p>
+     * The unique ID for an address.
      * </p>
      * 
      * @param addressId
+     *        The unique ID for an address.
      */
 
     public void setAddressId(String addressId) {
@@ -106,9 +126,10 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The unique ID for an address.
      * </p>
      * 
-     * @return
+     * @return The unique ID for an address.
      */
 
     public String getAddressId() {
@@ -117,9 +138,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The unique ID for an address.
      * </p>
      * 
      * @param addressId
+     *        The unique ID for an address.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -131,9 +154,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The name of a person to receive a Snowball at an address.
      * </p>
      * 
      * @param name
+     *        The name of a person to receive a Snowball at an address.
      */
 
     public void setName(String name) {
@@ -142,9 +167,10 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The name of a person to receive a Snowball at an address.
      * </p>
      * 
-     * @return
+     * @return The name of a person to receive a Snowball at an address.
      */
 
     public String getName() {
@@ -153,9 +179,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The name of a person to receive a Snowball at an address.
      * </p>
      * 
      * @param name
+     *        The name of a person to receive a Snowball at an address.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -167,9 +195,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The name of the company to receive a Snowball at an address.
      * </p>
      * 
      * @param company
+     *        The name of the company to receive a Snowball at an address.
      */
 
     public void setCompany(String company) {
@@ -178,9 +208,10 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The name of the company to receive a Snowball at an address.
      * </p>
      * 
-     * @return
+     * @return The name of the company to receive a Snowball at an address.
      */
 
     public String getCompany() {
@@ -189,9 +220,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The name of the company to receive a Snowball at an address.
      * </p>
      * 
      * @param company
+     *        The name of the company to receive a Snowball at an address.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -203,9 +236,12 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The first line in a street address that a Snowball is to be delivered to.
      * </p>
      * 
      * @param street1
+     *        The first line in a street address that a Snowball is to be
+     *        delivered to.
      */
 
     public void setStreet1(String street1) {
@@ -214,9 +250,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The first line in a street address that a Snowball is to be delivered to.
      * </p>
      * 
-     * @return
+     * @return The first line in a street address that a Snowball is to be
+     *         delivered to.
      */
 
     public String getStreet1() {
@@ -225,9 +263,12 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The first line in a street address that a Snowball is to be delivered to.
      * </p>
      * 
      * @param street1
+     *        The first line in a street address that a Snowball is to be
+     *        delivered to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -239,9 +280,13 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The second line in a street address that a Snowball is to be delivered
+     * to.
      * </p>
      * 
      * @param street2
+     *        The second line in a street address that a Snowball is to be
+     *        delivered to.
      */
 
     public void setStreet2(String street2) {
@@ -250,9 +295,12 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The second line in a street address that a Snowball is to be delivered
+     * to.
      * </p>
      * 
-     * @return
+     * @return The second line in a street address that a Snowball is to be
+     *         delivered to.
      */
 
     public String getStreet2() {
@@ -261,9 +309,13 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The second line in a street address that a Snowball is to be delivered
+     * to.
      * </p>
      * 
      * @param street2
+     *        The second line in a street address that a Snowball is to be
+     *        delivered to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -275,9 +327,12 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The third line in a street address that a Snowball is to be delivered to.
      * </p>
      * 
      * @param street3
+     *        The third line in a street address that a Snowball is to be
+     *        delivered to.
      */
 
     public void setStreet3(String street3) {
@@ -286,9 +341,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The third line in a street address that a Snowball is to be delivered to.
      * </p>
      * 
-     * @return
+     * @return The third line in a street address that a Snowball is to be
+     *         delivered to.
      */
 
     public String getStreet3() {
@@ -297,9 +354,12 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The third line in a street address that a Snowball is to be delivered to.
      * </p>
      * 
      * @param street3
+     *        The third line in a street address that a Snowball is to be
+     *        delivered to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -311,9 +371,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The city in an address that a Snowball is to be delivered to.
      * </p>
      * 
      * @param city
+     *        The city in an address that a Snowball is to be delivered to.
      */
 
     public void setCity(String city) {
@@ -322,9 +384,10 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The city in an address that a Snowball is to be delivered to.
      * </p>
      * 
-     * @return
+     * @return The city in an address that a Snowball is to be delivered to.
      */
 
     public String getCity() {
@@ -333,9 +396,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The city in an address that a Snowball is to be delivered to.
      * </p>
      * 
      * @param city
+     *        The city in an address that a Snowball is to be delivered to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -347,9 +412,13 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The state or province in an address that a Snowball is to be delivered
+     * to.
      * </p>
      * 
      * @param stateOrProvince
+     *        The state or province in an address that a Snowball is to be
+     *        delivered to.
      */
 
     public void setStateOrProvince(String stateOrProvince) {
@@ -358,9 +427,12 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The state or province in an address that a Snowball is to be delivered
+     * to.
      * </p>
      * 
-     * @return
+     * @return The state or province in an address that a Snowball is to be
+     *         delivered to.
      */
 
     public String getStateOrProvince() {
@@ -369,9 +441,13 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The state or province in an address that a Snowball is to be delivered
+     * to.
      * </p>
      * 
      * @param stateOrProvince
+     *        The state or province in an address that a Snowball is to be
+     *        delivered to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -383,9 +459,13 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The prefecture or district in an address that a Snowball is to be
+     * delivered to.
      * </p>
      * 
      * @param prefectureOrDistrict
+     *        The prefecture or district in an address that a Snowball is to be
+     *        delivered to.
      */
 
     public void setPrefectureOrDistrict(String prefectureOrDistrict) {
@@ -394,9 +474,12 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The prefecture or district in an address that a Snowball is to be
+     * delivered to.
      * </p>
      * 
-     * @return
+     * @return The prefecture or district in an address that a Snowball is to be
+     *         delivered to.
      */
 
     public String getPrefectureOrDistrict() {
@@ -405,9 +488,13 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The prefecture or district in an address that a Snowball is to be
+     * delivered to.
      * </p>
      * 
      * @param prefectureOrDistrict
+     *        The prefecture or district in an address that a Snowball is to be
+     *        delivered to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -419,9 +506,12 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A landmark listed in an address that a Snowball is to be delivered to.
      * </p>
      * 
      * @param landmark
+     *        A landmark listed in an address that a Snowball is to be delivered
+     *        to.
      */
 
     public void setLandmark(String landmark) {
@@ -430,9 +520,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A landmark listed in an address that a Snowball is to be delivered to.
      * </p>
      * 
-     * @return
+     * @return A landmark listed in an address that a Snowball is to be
+     *         delivered to.
      */
 
     public String getLandmark() {
@@ -441,9 +533,12 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A landmark listed in an address that a Snowball is to be delivered to.
      * </p>
      * 
      * @param landmark
+     *        A landmark listed in an address that a Snowball is to be delivered
+     *        to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -455,9 +550,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The country in an address that a Snowball is to be delivered to.
      * </p>
      * 
      * @param country
+     *        The country in an address that a Snowball is to be delivered to.
      */
 
     public void setCountry(String country) {
@@ -466,9 +563,10 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The country in an address that a Snowball is to be delivered to.
      * </p>
      * 
-     * @return
+     * @return The country in an address that a Snowball is to be delivered to.
      */
 
     public String getCountry() {
@@ -477,9 +575,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The country in an address that a Snowball is to be delivered to.
      * </p>
      * 
      * @param country
+     *        The country in an address that a Snowball is to be delivered to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -491,9 +591,12 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The postal code in an address that a Snowball is to be delivered to.
      * </p>
      * 
      * @param postalCode
+     *        The postal code in an address that a Snowball is to be delivered
+     *        to.
      */
 
     public void setPostalCode(String postalCode) {
@@ -502,9 +605,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The postal code in an address that a Snowball is to be delivered to.
      * </p>
      * 
-     * @return
+     * @return The postal code in an address that a Snowball is to be delivered
+     *         to.
      */
 
     public String getPostalCode() {
@@ -513,9 +618,12 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The postal code in an address that a Snowball is to be delivered to.
      * </p>
      * 
      * @param postalCode
+     *        The postal code in an address that a Snowball is to be delivered
+     *        to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -527,9 +635,13 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The phone number associated with an address that a Snowball is to be
+     * delivered to.
      * </p>
      * 
      * @param phoneNumber
+     *        The phone number associated with an address that a Snowball is to
+     *        be delivered to.
      */
 
     public void setPhoneNumber(String phoneNumber) {
@@ -538,9 +650,12 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The phone number associated with an address that a Snowball is to be
+     * delivered to.
      * </p>
      * 
-     * @return
+     * @return The phone number associated with an address that a Snowball is to
+     *         be delivered to.
      */
 
     public String getPhoneNumber() {
@@ -549,9 +664,13 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The phone number associated with an address that a Snowball is to be
+     * delivered to.
      * </p>
      * 
      * @param phoneNumber
+     *        The phone number associated with an address that a Snowball is to
+     *        be delivered to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

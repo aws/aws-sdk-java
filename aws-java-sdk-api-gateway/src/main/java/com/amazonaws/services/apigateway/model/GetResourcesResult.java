@@ -20,6 +20,9 @@ import java.io.Serializable;
  * <p>
  * Represents a collection of <a>Resource</a> resources.
  * </p>
+ * <div class="seeAlso"> <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html"
+ * >Create an API</a> </div>
  */
 public class GetResourcesResult implements Serializable, Cloneable {
 

@@ -39,7 +39,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * With <code>EXPORT</code> jobs, you specify the bucket or buckets that
-     * your transferred data will be exported from and optionally, you can
+     * your transferred data will be exported from. Optionally, you can also
      * specify a <code>KeyRange</code> value. If you choose to export a range,
      * you define the length of the range by providing either an inclusive
      * <code>BeginMarker</code> value, an inclusive <code>EndMarker</code>
@@ -214,7 +214,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * With <code>EXPORT</code> jobs, you specify the bucket or buckets that
-     * your transferred data will be exported from and optionally, you can
+     * your transferred data will be exported from. Optionally, you can also
      * specify a <code>KeyRange</code> value. If you choose to export a range,
      * you define the length of the range by providing either an inclusive
      * <code>BeginMarker</code> value, an inclusive <code>EndMarker</code>
@@ -229,8 +229,8 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        <p>
      *        With <code>EXPORT</code> jobs, you specify the bucket or buckets
-     *        that your transferred data will be exported from and optionally,
-     *        you can specify a <code>KeyRange</code> value. If you choose to
+     *        that your transferred data will be exported from. Optionally, you
+     *        can also specify a <code>KeyRange</code> value. If you choose to
      *        export a range, you define the length of the range by providing
      *        either an inclusive <code>BeginMarker</code> value, an inclusive
      *        <code>EndMarker</code> value, or both. Ranges are UTF-8 binary
@@ -251,7 +251,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * With <code>EXPORT</code> jobs, you specify the bucket or buckets that
-     * your transferred data will be exported from and optionally, you can
+     * your transferred data will be exported from. Optionally, you can also
      * specify a <code>KeyRange</code> value. If you choose to export a range,
      * you define the length of the range by providing either an inclusive
      * <code>BeginMarker</code> value, an inclusive <code>EndMarker</code>
@@ -265,8 +265,8 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         <p>
      *         With <code>EXPORT</code> jobs, you specify the bucket or buckets
-     *         that your transferred data will be exported from and optionally,
-     *         you can specify a <code>KeyRange</code> value. If you choose to
+     *         that your transferred data will be exported from. Optionally, you
+     *         can also specify a <code>KeyRange</code> value. If you choose to
      *         export a range, you define the length of the range by providing
      *         either an inclusive <code>BeginMarker</code> value, an inclusive
      *         <code>EndMarker</code> value, or both. Ranges are UTF-8 binary
@@ -287,7 +287,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * With <code>EXPORT</code> jobs, you specify the bucket or buckets that
-     * your transferred data will be exported from and optionally, you can
+     * your transferred data will be exported from. Optionally, you can also
      * specify a <code>KeyRange</code> value. If you choose to export a range,
      * you define the length of the range by providing either an inclusive
      * <code>BeginMarker</code> value, an inclusive <code>EndMarker</code>
@@ -302,8 +302,8 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        <p>
      *        With <code>EXPORT</code> jobs, you specify the bucket or buckets
-     *        that your transferred data will be exported from and optionally,
-     *        you can specify a <code>KeyRange</code> value. If you choose to
+     *        that your transferred data will be exported from. Optionally, you
+     *        can also specify a <code>KeyRange</code> value. If you choose to
      *        export a range, you define the length of the range by providing
      *        either an inclusive <code>BeginMarker</code> value, an inclusive
      *        <code>EndMarker</code> value, or both. Ranges are UTF-8 binary

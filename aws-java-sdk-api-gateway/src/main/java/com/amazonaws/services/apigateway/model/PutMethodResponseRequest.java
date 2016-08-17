@@ -39,7 +39,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
     private String resourceId;
     /**
      * <p>
-     * The HTTP verb that identifies the <a>Method</a> resource.
+     * The HTTP verb of the <a>Method</a> resource.
      * </p>
      */
     private String httpMethod;
@@ -51,14 +51,21 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
     private String statusCode;
     /**
      * <p>
-     * Represents response parameters that can be sent back to the caller by
-     * Amazon API Gateway. Response parameters are represented as a key/value
-     * map, with a destination as the key and a Boolean flag as the value. The
-     * Boolean flag is used to specify whether the parameter is required. A
-     * destination must match the pattern
+     * A key-value map specifying required or optional response parameters that
+     * Amazon API Gateway can send back to the caller. A key defines a method
+     * response header name and the associated value is a Boolean flag
+     * indicating whether the method response parameter is required or not. The
+     * method response header names must match the pattern of
      * <code>method.response.header.{name}</code>, where <code>name</code> is a
-     * valid, unique header name. Destinations specified here are available to
-     * the integration for mapping from integration response parameters.
+     * valid and unique header name. The response parameter names defined here
+     * are available in the integration response to be mapped from an
+     * integration response header expressed in
+     * <code>integration.response.header.{name}</code>, a static value enclosed
+     * within a pair of single quotes (e.g., <code>'application/json'</code>),
+     * or a JSON expression from the back-end response payload in the form of
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.)
      * </p>
      */
     private java.util.Map<String, Boolean> responseParameters;
@@ -155,11 +162,11 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The HTTP verb that identifies the <a>Method</a> resource.
+     * The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb that identifies the <a>Method</a> resource.
+     *        The HTTP verb of the <a>Method</a> resource.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -168,10 +175,10 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The HTTP verb that identifies the <a>Method</a> resource.
+     * The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
-     * @return The HTTP verb that identifies the <a>Method</a> resource.
+     * @return The HTTP verb of the <a>Method</a> resource.
      */
 
     public String getHttpMethod() {
@@ -180,11 +187,11 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The HTTP verb that identifies the <a>Method</a> resource.
+     * The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb that identifies the <a>Method</a> resource.
+     *        The HTTP verb of the <a>Method</a> resource.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -237,25 +244,40 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Represents response parameters that can be sent back to the caller by
-     * Amazon API Gateway. Response parameters are represented as a key/value
-     * map, with a destination as the key and a Boolean flag as the value. The
-     * Boolean flag is used to specify whether the parameter is required. A
-     * destination must match the pattern
+     * A key-value map specifying required or optional response parameters that
+     * Amazon API Gateway can send back to the caller. A key defines a method
+     * response header name and the associated value is a Boolean flag
+     * indicating whether the method response parameter is required or not. The
+     * method response header names must match the pattern of
      * <code>method.response.header.{name}</code>, where <code>name</code> is a
-     * valid, unique header name. Destinations specified here are available to
-     * the integration for mapping from integration response parameters.
+     * valid and unique header name. The response parameter names defined here
+     * are available in the integration response to be mapped from an
+     * integration response header expressed in
+     * <code>integration.response.header.{name}</code>, a static value enclosed
+     * within a pair of single quotes (e.g., <code>'application/json'</code>),
+     * or a JSON expression from the back-end response payload in the form of
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.)
      * </p>
      * 
-     * @return Represents response parameters that can be sent back to the
-     *         caller by Amazon API Gateway. Response parameters are represented
-     *         as a key/value map, with a destination as the key and a Boolean
-     *         flag as the value. The Boolean flag is used to specify whether
-     *         the parameter is required. A destination must match the pattern
+     * @return A key-value map specifying required or optional response
+     *         parameters that Amazon API Gateway can send back to the caller. A
+     *         key defines a method response header name and the associated
+     *         value is a Boolean flag indicating whether the method response
+     *         parameter is required or not. The method response header names
+     *         must match the pattern of
      *         <code>method.response.header.{name}</code>, where
-     *         <code>name</code> is a valid, unique header name. Destinations
-     *         specified here are available to the integration for mapping from
-     *         integration response parameters.
+     *         <code>name</code> is a valid and unique header name. The response
+     *         parameter names defined here are available in the integration
+     *         response to be mapped from an integration response header
+     *         expressed in <code>integration.response.header.{name}</code>, a
+     *         static value enclosed within a pair of single quotes (e.g.,
+     *         <code>'application/json'</code>), or a JSON expression from the
+     *         back-end response payload in the form of
+     *         <code>integration.response.body.{JSON-expression}</code>, where
+     *         <code>JSON-expression</code> is a valid JSON expression without
+     *         the <code>$</code> prefix.)
      */
 
     public java.util.Map<String, Boolean> getResponseParameters() {
@@ -264,26 +286,40 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Represents response parameters that can be sent back to the caller by
-     * Amazon API Gateway. Response parameters are represented as a key/value
-     * map, with a destination as the key and a Boolean flag as the value. The
-     * Boolean flag is used to specify whether the parameter is required. A
-     * destination must match the pattern
+     * A key-value map specifying required or optional response parameters that
+     * Amazon API Gateway can send back to the caller. A key defines a method
+     * response header name and the associated value is a Boolean flag
+     * indicating whether the method response parameter is required or not. The
+     * method response header names must match the pattern of
      * <code>method.response.header.{name}</code>, where <code>name</code> is a
-     * valid, unique header name. Destinations specified here are available to
-     * the integration for mapping from integration response parameters.
+     * valid and unique header name. The response parameter names defined here
+     * are available in the integration response to be mapped from an
+     * integration response header expressed in
+     * <code>integration.response.header.{name}</code>, a static value enclosed
+     * within a pair of single quotes (e.g., <code>'application/json'</code>),
+     * or a JSON expression from the back-end response payload in the form of
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.)
      * </p>
      * 
      * @param responseParameters
-     *        Represents response parameters that can be sent back to the caller
-     *        by Amazon API Gateway. Response parameters are represented as a
-     *        key/value map, with a destination as the key and a Boolean flag as
-     *        the value. The Boolean flag is used to specify whether the
-     *        parameter is required. A destination must match the pattern
-     *        <code>method.response.header.{name}</code>, where
-     *        <code>name</code> is a valid, unique header name. Destinations
-     *        specified here are available to the integration for mapping from
-     *        integration response parameters.
+     *        A key-value map specifying required or optional response
+     *        parameters that Amazon API Gateway can send back to the caller. A
+     *        key defines a method response header name and the associated value
+     *        is a Boolean flag indicating whether the method response parameter
+     *        is required or not. The method response header names must match
+     *        the pattern of <code>method.response.header.{name}</code>, where
+     *        <code>name</code> is a valid and unique header name. The response
+     *        parameter names defined here are available in the integration
+     *        response to be mapped from an integration response header
+     *        expressed in <code>integration.response.header.{name}</code>, a
+     *        static value enclosed within a pair of single quotes (e.g.,
+     *        <code>'application/json'</code>), or a JSON expression from the
+     *        back-end response payload in the form of
+     *        <code>integration.response.body.{JSON-expression}</code>, where
+     *        <code>JSON-expression</code> is a valid JSON expression without
+     *        the <code>$</code> prefix.)
      */
 
     public void setResponseParameters(
@@ -293,26 +329,40 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Represents response parameters that can be sent back to the caller by
-     * Amazon API Gateway. Response parameters are represented as a key/value
-     * map, with a destination as the key and a Boolean flag as the value. The
-     * Boolean flag is used to specify whether the parameter is required. A
-     * destination must match the pattern
+     * A key-value map specifying required or optional response parameters that
+     * Amazon API Gateway can send back to the caller. A key defines a method
+     * response header name and the associated value is a Boolean flag
+     * indicating whether the method response parameter is required or not. The
+     * method response header names must match the pattern of
      * <code>method.response.header.{name}</code>, where <code>name</code> is a
-     * valid, unique header name. Destinations specified here are available to
-     * the integration for mapping from integration response parameters.
+     * valid and unique header name. The response parameter names defined here
+     * are available in the integration response to be mapped from an
+     * integration response header expressed in
+     * <code>integration.response.header.{name}</code>, a static value enclosed
+     * within a pair of single quotes (e.g., <code>'application/json'</code>),
+     * or a JSON expression from the back-end response payload in the form of
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.)
      * </p>
      * 
      * @param responseParameters
-     *        Represents response parameters that can be sent back to the caller
-     *        by Amazon API Gateway. Response parameters are represented as a
-     *        key/value map, with a destination as the key and a Boolean flag as
-     *        the value. The Boolean flag is used to specify whether the
-     *        parameter is required. A destination must match the pattern
-     *        <code>method.response.header.{name}</code>, where
-     *        <code>name</code> is a valid, unique header name. Destinations
-     *        specified here are available to the integration for mapping from
-     *        integration response parameters.
+     *        A key-value map specifying required or optional response
+     *        parameters that Amazon API Gateway can send back to the caller. A
+     *        key defines a method response header name and the associated value
+     *        is a Boolean flag indicating whether the method response parameter
+     *        is required or not. The method response header names must match
+     *        the pattern of <code>method.response.header.{name}</code>, where
+     *        <code>name</code> is a valid and unique header name. The response
+     *        parameter names defined here are available in the integration
+     *        response to be mapped from an integration response header
+     *        expressed in <code>integration.response.header.{name}</code>, a
+     *        static value enclosed within a pair of single quotes (e.g.,
+     *        <code>'application/json'</code>), or a JSON expression from the
+     *        back-end response payload in the form of
+     *        <code>integration.response.body.{JSON-expression}</code>, where
+     *        <code>JSON-expression</code> is a valid JSON expression without
+     *        the <code>$</code> prefix.)
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

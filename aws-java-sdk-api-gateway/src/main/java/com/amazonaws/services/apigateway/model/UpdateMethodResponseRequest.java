@@ -39,20 +39,20 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
     private String resourceId;
     /**
      * <p>
-     * The HTTP verb identifier for the parent <a>Method</a> resource.
+     * The HTTP verb of the <a>Method</a> resource.
      * </p>
      */
     private String httpMethod;
     /**
      * <p>
-     * The status code identifier for the <a>MethodResponse</a> resource.
+     * The status code for the <a>MethodResponse</a> resource.
      * </p>
      */
     private String statusCode;
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and
+     * in the order specified in this list.
      * </p>
      */
     private java.util.List<PatchOperation> patchOperations;
@@ -147,11 +147,11 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The HTTP verb identifier for the parent <a>Method</a> resource.
+     * The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb identifier for the parent <a>Method</a> resource.
+     *        The HTTP verb of the <a>Method</a> resource.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -160,10 +160,10 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The HTTP verb identifier for the parent <a>Method</a> resource.
+     * The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
-     * @return The HTTP verb identifier for the parent <a>Method</a> resource.
+     * @return The HTTP verb of the <a>Method</a> resource.
      */
 
     public String getHttpMethod() {
@@ -172,11 +172,11 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The HTTP verb identifier for the parent <a>Method</a> resource.
+     * The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb identifier for the parent <a>Method</a> resource.
+     *        The HTTP verb of the <a>Method</a> resource.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -188,11 +188,11 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The status code identifier for the <a>MethodResponse</a> resource.
+     * The status code for the <a>MethodResponse</a> resource.
      * </p>
      * 
      * @param statusCode
-     *        The status code identifier for the <a>MethodResponse</a> resource.
+     *        The status code for the <a>MethodResponse</a> resource.
      */
 
     public void setStatusCode(String statusCode) {
@@ -201,11 +201,10 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The status code identifier for the <a>MethodResponse</a> resource.
+     * The status code for the <a>MethodResponse</a> resource.
      * </p>
      * 
-     * @return The status code identifier for the <a>MethodResponse</a>
-     *         resource.
+     * @return The status code for the <a>MethodResponse</a> resource.
      */
 
     public String getStatusCode() {
@@ -214,11 +213,11 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The status code identifier for the <a>MethodResponse</a> resource.
+     * The status code for the <a>MethodResponse</a> resource.
      * </p>
      * 
      * @param statusCode
-     *        The status code identifier for the <a>MethodResponse</a> resource.
+     *        The status code for the <a>MethodResponse</a> resource.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -230,13 +229,12 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and
+     * in the order specified in this list.
      * </p>
      * 
-     * @return A list of operations describing the updates to apply to the
-     *         specified resource. The patches are applied in the order
-     *         specified in the list.
+     * @return A list of update operations to be applied to the specified
+     *         resource and in the order specified in this list.
      */
 
     public java.util.List<PatchOperation> getPatchOperations() {
@@ -245,14 +243,13 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and
+     * in the order specified in this list.
      * </p>
      * 
      * @param patchOperations
-     *        A list of operations describing the updates to apply to the
-     *        specified resource. The patches are applied in the order specified
-     *        in the list.
+     *        A list of update operations to be applied to the specified
+     *        resource and in the order specified in this list.
      */
 
     public void setPatchOperations(
@@ -268,8 +265,8 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and
+     * in the order specified in this list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -279,9 +276,8 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param patchOperations
-     *        A list of operations describing the updates to apply to the
-     *        specified resource. The patches are applied in the order specified
-     *        in the list.
+     *        A list of update operations to be applied to the specified
+     *        resource and in the order specified in this list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -300,14 +296,13 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.
+     * A list of update operations to be applied to the specified resource and
+     * in the order specified in this list.
      * </p>
      * 
      * @param patchOperations
-     *        A list of operations describing the updates to apply to the
-     *        specified resource. The patches are applied in the order specified
-     *        in the list.
+     *        A list of update operations to be applied to the specified
+     *        resource and in the order specified in this list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

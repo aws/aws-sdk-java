@@ -25,7 +25,7 @@ public class DescribeJobRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The automatically generated ID for a job. For example
+     * The automatically generated ID for a job, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      */
@@ -33,12 +33,12 @@ public class DescribeJobRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The automatically generated ID for a job. For example
+     * The automatically generated ID for a job, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
      * @param jobId
-     *        The automatically generated ID for a job. For example
+     *        The automatically generated ID for a job, for example
      *        <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      */
 
@@ -48,11 +48,11 @@ public class DescribeJobRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The automatically generated ID for a job. For example
+     * The automatically generated ID for a job, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
-     * @return The automatically generated ID for a job. For example
+     * @return The automatically generated ID for a job, for example
      *         <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      */
 
@@ -62,12 +62,12 @@ public class DescribeJobRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The automatically generated ID for a job. For example
+     * The automatically generated ID for a job, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
      * @param jobId
-     *        The automatically generated ID for a job. For example
+     *        The automatically generated ID for a job, for example
      *        <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

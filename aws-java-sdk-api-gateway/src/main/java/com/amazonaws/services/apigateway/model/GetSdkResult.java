@@ -31,7 +31,7 @@ public class GetSdkResult implements Serializable, Cloneable {
     private String contentType;
     /**
      * <p>
-     * The content-disposition header value in the HTTP reseponse.
+     * The content-disposition header value in the HTTP response.
      * </p>
      */
     private String contentDisposition;
@@ -86,11 +86,11 @@ public class GetSdkResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The content-disposition header value in the HTTP reseponse.
+     * The content-disposition header value in the HTTP response.
      * </p>
      * 
      * @param contentDisposition
-     *        The content-disposition header value in the HTTP reseponse.
+     *        The content-disposition header value in the HTTP response.
      */
 
     public void setContentDisposition(String contentDisposition) {
@@ -99,10 +99,10 @@ public class GetSdkResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The content-disposition header value in the HTTP reseponse.
+     * The content-disposition header value in the HTTP response.
      * </p>
      * 
-     * @return The content-disposition header value in the HTTP reseponse.
+     * @return The content-disposition header value in the HTTP response.
      */
 
     public String getContentDisposition() {
@@ -111,11 +111,11 @@ public class GetSdkResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The content-disposition header value in the HTTP reseponse.
+     * The content-disposition header value in the HTTP response.
      * </p>
      * 
      * @param contentDisposition
-     *        The content-disposition header value in the HTTP reseponse.
+     *        The content-disposition header value in the HTTP response.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

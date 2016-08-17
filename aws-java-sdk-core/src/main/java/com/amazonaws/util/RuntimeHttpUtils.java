@@ -32,9 +32,10 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
 
 import com.amazonaws.ClientConfiguration;
-import com.amazonaws.Request;
 
 public class RuntimeHttpUtils {
+    private static final String COMMA = ", ";
+    private static final String SPACE = " ";
 
     /**
      * Fetches a file from the URI given and returns an input stream to it.
@@ -51,7 +52,7 @@ public class RuntimeHttpUtils {
 
         HttpParams httpClientParams = new BasicHttpParams();
         HttpProtocolParams.setUserAgent(
-                httpClientParams, getUserAgent(config));
+                httpClientParams, getUserAgent(config, null));
 
         HttpConnectionParams.setConnectionTimeout(
                 httpClientParams, getConnectionTimeout(config));
@@ -95,20 +96,25 @@ public class RuntimeHttpUtils {
                 response.getEntity().getContent());
     }
 
-    private static String getUserAgent(final ClientConfiguration config) {
-        String userAgent = null;
+    public static String getUserAgent(final ClientConfiguration config, final String userAgentMarker) {
+        String prefix = config != null ? config.getUserAgentPrefix() : "";
+        String suffix = config != null ? config.getUserAgentSuffix() : "";
 
-        if (config != null) {
-            userAgent = config.getUserAgent();
+        StringBuilder userAgent = new StringBuilder(prefix.trim());
+
+        if(!ClientConfiguration.DEFAULT_USER_AGENT.equals(prefix)) {
+            userAgent.append(COMMA).append(ClientConfiguration.DEFAULT_USER_AGENT);
         }
 
-        if (userAgent == null) {
-            userAgent = ClientConfiguration.DEFAULT_USER_AGENT;
-        } else if (!ClientConfiguration.DEFAULT_USER_AGENT.equals(userAgent)) {
-            userAgent += ", " + ClientConfiguration.DEFAULT_USER_AGENT;
+        if(StringUtils.hasValue(suffix)) {
+            userAgent.append(COMMA).append(suffix.trim());
         }
 
-        return userAgent;
+        if(StringUtils.hasValue(userAgentMarker)) {
+            userAgent.append(SPACE).append(userAgentMarker.trim());
+        }
+
+        return userAgent.toString();
     }
 
     private static int getConnectionTimeout(final ClientConfiguration config) {

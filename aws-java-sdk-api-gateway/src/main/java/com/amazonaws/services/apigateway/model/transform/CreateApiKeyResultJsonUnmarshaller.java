@@ -56,6 +56,11 @@ public class CreateApiKeyResultJsonUnmarshaller implements
                     createApiKeyResult.setId(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("value", targetDepth)) {
+                    context.nextToken();
+                    createApiKeyResult.setValue(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     createApiKeyResult.setName(context.getUnmarshaller(
@@ -71,13 +76,6 @@ public class CreateApiKeyResultJsonUnmarshaller implements
                     createApiKeyResult.setEnabled(context.getUnmarshaller(
                             Boolean.class).unmarshall(context));
                 }
-                if (context.testExpression("stageKeys", targetDepth)) {
-                    context.nextToken();
-                    createApiKeyResult
-                            .setStageKeys(new ListUnmarshaller<String>(context
-                                    .getUnmarshaller(String.class))
-                                    .unmarshall(context));
-                }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
                     createApiKeyResult.setCreatedDate(context.getUnmarshaller(
@@ -88,6 +86,13 @@ public class CreateApiKeyResultJsonUnmarshaller implements
                     createApiKeyResult.setLastUpdatedDate(context
                             .getUnmarshaller(java.util.Date.class).unmarshall(
                                     context));
+                }
+                if (context.testExpression("stageKeys", targetDepth)) {
+                    context.nextToken();
+                    createApiKeyResult
+                            .setStageKeys(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
+                                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

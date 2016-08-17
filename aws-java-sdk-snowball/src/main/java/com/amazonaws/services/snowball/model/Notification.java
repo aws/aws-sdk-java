@@ -50,11 +50,13 @@ public class Notification implements Serializable, Cloneable {
     private String snsTopicARN;
     /**
      * <p>
+     * The list of job states that will trigger a notification for this job.
      * </p>
      */
     private java.util.List<String> jobStatesToNotify;
     /**
      * <p>
+     * Any change in job state will trigger a notification for this job.
      * </p>
      */
     private Boolean notifyAll;
@@ -157,9 +159,11 @@ public class Notification implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The list of job states that will trigger a notification for this job.
      * </p>
      * 
-     * @return
+     * @return The list of job states that will trigger a notification for this
+     *         job.
      * @see JobState
      */
 
@@ -169,9 +173,12 @@ public class Notification implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The list of job states that will trigger a notification for this job.
      * </p>
      * 
      * @param jobStatesToNotify
+     *        The list of job states that will trigger a notification for this
+     *        job.
      * @see JobState
      */
 
@@ -188,6 +195,7 @@ public class Notification implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The list of job states that will trigger a notification for this job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -197,6 +205,8 @@ public class Notification implements Serializable, Cloneable {
      * </p>
      * 
      * @param jobStatesToNotify
+     *        The list of job states that will trigger a notification for this
+     *        job.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobState
@@ -215,9 +225,12 @@ public class Notification implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The list of job states that will trigger a notification for this job.
      * </p>
      * 
      * @param jobStatesToNotify
+     *        The list of job states that will trigger a notification for this
+     *        job.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobState
@@ -231,9 +244,12 @@ public class Notification implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The list of job states that will trigger a notification for this job.
      * </p>
      * 
      * @param jobStatesToNotify
+     *        The list of job states that will trigger a notification for this
+     *        job.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see JobState
@@ -255,9 +271,11 @@ public class Notification implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Any change in job state will trigger a notification for this job.
      * </p>
      * 
      * @param notifyAll
+     *        Any change in job state will trigger a notification for this job.
      */
 
     public void setNotifyAll(Boolean notifyAll) {
@@ -266,9 +284,10 @@ public class Notification implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Any change in job state will trigger a notification for this job.
      * </p>
      * 
-     * @return
+     * @return Any change in job state will trigger a notification for this job.
      */
 
     public Boolean getNotifyAll() {
@@ -277,9 +296,11 @@ public class Notification implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Any change in job state will trigger a notification for this job.
      * </p>
      * 
      * @param notifyAll
+     *        Any change in job state will trigger a notification for this job.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -291,9 +312,10 @@ public class Notification implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Any change in job state will trigger a notification for this job.
      * </p>
      * 
-     * @return
+     * @return Any change in job state will trigger a notification for this job.
      */
 
     public Boolean isNotifyAll() {

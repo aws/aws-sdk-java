@@ -87,6 +87,17 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public CreateUsagePlanResult createUsagePlan(CreateUsagePlanRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateUsagePlanKeyResult createUsagePlanKey(
+            CreateUsagePlanKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteApiKeyResult deleteApiKey(DeleteApiKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -161,6 +172,17 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public DeleteStageResult deleteStage(DeleteStageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteUsagePlanResult deleteUsagePlan(DeleteUsagePlanRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteUsagePlanKeyResult deleteUsagePlanKey(
+            DeleteUsagePlanKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -329,6 +351,37 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public GetUsageResult getUsage(GetUsageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetUsagePlanResult getUsagePlan(GetUsagePlanRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetUsagePlanKeyResult getUsagePlanKey(GetUsagePlanKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetUsagePlanKeysResult getUsagePlanKeys(
+            GetUsagePlanKeysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetUsagePlansResult getUsagePlans(GetUsagePlansRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportApiKeysResult importApiKeys(ImportApiKeysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ImportRestApiResult importRestApi(ImportRestApiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -452,6 +505,16 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public UpdateStageResult updateStage(UpdateStageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateUsageResult updateUsage(UpdateUsageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateUsagePlanResult updateUsagePlan(UpdateUsagePlanRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

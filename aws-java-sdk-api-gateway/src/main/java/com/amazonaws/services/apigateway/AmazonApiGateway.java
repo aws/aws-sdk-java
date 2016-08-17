@@ -24,8 +24,8 @@ import com.amazonaws.services.apigateway.model.*;
  * <p>
  * <fullname>Amazon API Gateway</fullname>
  * <p>
- * Amazon API Gateway helps developers deliver robust, secure and scalable
- * mobile and web application backends. Amazon API Gateway allows developers to
+ * Amazon API Gateway helps developers deliver robust, secure, and scalable
+ * mobile and web application back ends. Amazon API Gateway allows developers to
  * securely connect mobile and web applications to APIs that run on AWS Lambda,
  * Amazon EC2, or other publicly addressable web services that are hosted
  * outside of AWS.
@@ -104,6 +104,9 @@ public interface AmazonApiGateway {
      * <p>
      * Create an <a>ApiKey</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html"
+     * >AWS CLI</a></div>
      * 
      * @param createApiKeyRequest
      *        Request to create an <a>ApiKey</a> resource.
@@ -113,6 +116,7 @@ public interface AmazonApiGateway {
      * @throws TooManyRequestsException
      * @throws LimitExceededException
      * @throws BadRequestException
+     * @throws ConflictException
      * @sample AmazonApiGateway.CreateApiKey
      */
     CreateApiKeyResult createApiKey(CreateApiKeyRequest createApiKeyRequest);
@@ -122,6 +126,9 @@ public interface AmazonApiGateway {
      * Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
      * resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param createAuthorizerRequest
      *        Request to add a new <a>Authorizer</a> to an existing
@@ -272,6 +279,47 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
+     * Creates a usage plan with the throttle and quota limits, as well as the
+     * associated API stages, specified in the payload.
+     * </p>
+     * 
+     * @param createUsagePlanRequest
+     *        The POST request to create a usage plan with the name,
+     *        description, throttle limits and quota limits, as well as the
+     *        associated API stages, specified in the payload.
+     * @return Result of the CreateUsagePlan operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws LimitExceededException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.CreateUsagePlan
+     */
+    CreateUsagePlanResult createUsagePlan(
+            CreateUsagePlanRequest createUsagePlanRequest);
+
+    /**
+     * <p>
+     * Creates a usage plan key for adding an existing API key to a usage plan.
+     * </p>
+     * 
+     * @param createUsagePlanKeyRequest
+     *        The POST request to create a usage plan key for adding an existing
+     *        API key to a usage plan.
+     * @return Result of the CreateUsagePlanKey operation returned by the
+     *         service.
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateUsagePlanKey
+     */
+    CreateUsagePlanKeyResult createUsagePlanKey(
+            CreateUsagePlanKeyRequest createUsagePlanKeyRequest);
+
+    /**
+     * <p>
      * Deletes the <a>ApiKey</a> resource.
      * </p>
      * 
@@ -289,6 +337,9 @@ public interface AmazonApiGateway {
      * <p>
      * Deletes an existing <a>Authorizer</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param deleteAuthorizerRequest
      *        Request to delete an existing <a>Authorizer</a> resource.
@@ -385,6 +436,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.DeleteIntegration
      */
     DeleteIntegrationResult deleteIntegration(
@@ -403,6 +455,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @throws BadRequestException
+     * @throws ConflictException
      * @sample AmazonApiGateway.DeleteIntegrationResponse
      */
     DeleteIntegrationResponseResult deleteIntegrationResponse(
@@ -419,6 +472,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.DeleteMethod
      */
     DeleteMethodResult deleteMethod(DeleteMethodRequest deleteMethodRequest);
@@ -436,6 +490,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @throws BadRequestException
+     * @throws ConflictException
      * @sample AmazonApiGateway.DeleteMethodResponse
      */
     DeleteMethodResponseResult deleteMethodResponse(
@@ -508,6 +563,44 @@ public interface AmazonApiGateway {
      * @sample AmazonApiGateway.DeleteStage
      */
     DeleteStageResult deleteStage(DeleteStageRequest deleteStageRequest);
+
+    /**
+     * <p>
+     * Deletes a usage plan of a given plan Id.
+     * </p>
+     * 
+     * @param deleteUsagePlanRequest
+     *        The DELETE request to delete a uasge plan of a given plan Id.
+     * @return Result of the DeleteUsagePlan operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws BadRequestException
+     * @throws NotFoundException
+     * @sample AmazonApiGateway.DeleteUsagePlan
+     */
+    DeleteUsagePlanResult deleteUsagePlan(
+            DeleteUsagePlanRequest deleteUsagePlanRequest);
+
+    /**
+     * <p>
+     * Deletes a usage plan key and remove the underlying API key from the
+     * associated usage plan.
+     * </p>
+     * 
+     * @param deleteUsagePlanKeyRequest
+     *        The DELETE request to delete a usage plan key and remove the
+     *        underlying API key from the associated usage plan.
+     * @return Result of the DeleteUsagePlanKey operation returned by the
+     *         service.
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.DeleteUsagePlanKey
+     */
+    DeleteUsagePlanKeyResult deleteUsagePlanKey(
+            DeleteUsagePlanKeyRequest deleteUsagePlanKeyRequest);
 
     /**
      * <p>
@@ -613,6 +706,9 @@ public interface AmazonApiGateway {
      * <p>
      * Describe an existing <a>Authorizer</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param getAuthorizerRequest
      *        Request to describe an existing <a>Authorizer</a> resource.
@@ -628,6 +724,9 @@ public interface AmazonApiGateway {
      * <p>
      * Describe an existing <a>Authorizers</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html"
+     * >AWS CLI</a></div>
      * 
      * @param getAuthorizersRequest
      *        Request to describe an existing <a>Authorizers</a> resource.
@@ -1028,6 +1127,111 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
+     * Gets the usage data of a usage plan in a specified time interval.
+     * </p>
+     * 
+     * @param getUsageRequest
+     *        The GET request to get the usage data of a usage plan in a
+     *        specified time interval.
+     * @return Result of the GetUsage operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetUsage
+     */
+    GetUsageResult getUsage(GetUsageRequest getUsageRequest);
+
+    /**
+     * <p>
+     * Gets a usage plan of a given plan identifier.
+     * </p>
+     * 
+     * @param getUsagePlanRequest
+     *        The GET request to get a usage plan of a given plan identifier.
+     * @return Result of the GetUsagePlan operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetUsagePlan
+     */
+    GetUsagePlanResult getUsagePlan(GetUsagePlanRequest getUsagePlanRequest);
+
+    /**
+     * <p>
+     * Gets a usage plan key of a given key identifier.
+     * </p>
+     * 
+     * @param getUsagePlanKeyRequest
+     *        The GET request to get a usage plan key of a given key identifier.
+     * @return Result of the GetUsagePlanKey operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetUsagePlanKey
+     */
+    GetUsagePlanKeyResult getUsagePlanKey(
+            GetUsagePlanKeyRequest getUsagePlanKeyRequest);
+
+    /**
+     * <p>
+     * Gets all the usage plan keys representing the API keys added to a
+     * specified usage plan.
+     * </p>
+     * 
+     * @param getUsagePlanKeysRequest
+     *        The GET request to get all the usage plan keys representing the
+     *        API keys added to a specified usage plan.
+     * @return Result of the GetUsagePlanKeys operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetUsagePlanKeys
+     */
+    GetUsagePlanKeysResult getUsagePlanKeys(
+            GetUsagePlanKeysRequest getUsagePlanKeysRequest);
+
+    /**
+     * <p>
+     * Gets all the usage plans of the caller's account.
+     * </p>
+     * 
+     * @param getUsagePlansRequest
+     *        The GET request to get all the usage plans of the caller's
+     *        account.
+     * @return Result of the GetUsagePlans operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.GetUsagePlans
+     */
+    GetUsagePlansResult getUsagePlans(GetUsagePlansRequest getUsagePlansRequest);
+
+    /**
+     * <p>
+     * Import API keys from an external source, such as a CSV-formatted file.
+     * </p>
+     * 
+     * @param importApiKeysRequest
+     *        The POST request to import API keys from an external source, such
+     *        as a CSV-formatted file.
+     * @return Result of the ImportApiKeys operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @throws LimitExceededException
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.ImportApiKeys
+     */
+    ImportApiKeysResult importApiKeys(ImportApiKeysRequest importApiKeysRequest);
+
+    /**
+     * <p>
      * A feature of the Amazon API Gateway control service for creating a new
      * API from an external API definition file.
      * </p>
@@ -1040,6 +1244,7 @@ public interface AmazonApiGateway {
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.ImportRestApi
      */
     ImportRestApiResult importRestApi(ImportRestApiRequest importRestApiRequest);
@@ -1148,6 +1353,9 @@ public interface AmazonApiGateway {
      * Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a>
      * with headers, parameters, and an incoming request body.
      * </p>
+     * <div class="seeAlso"> <a href=
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html"
+     * >Enable custom authorizers</a> </div>
      * 
      * @param testInvokeAuthorizerRequest
      *        Make a request to simulate the execution of an <a>Authorizer</a>.
@@ -1209,6 +1417,7 @@ public interface AmazonApiGateway {
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.UpdateApiKey
      */
     UpdateApiKeyResult updateApiKey(UpdateApiKeyRequest updateApiKeyRequest);
@@ -1217,6 +1426,9 @@ public interface AmazonApiGateway {
      * <p>
      * Updates an existing <a>Authorizer</a> resource.
      * </p>
+     * <div class="seeAlso"><a href=
+     * "http://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html"
+     * >AWS CLI</a></div>
      * 
      * @param updateAuthorizerRequest
      *        Request to update an existing <a>Authorizer</a> resource.
@@ -1453,6 +1665,42 @@ public interface AmazonApiGateway {
      * @sample AmazonApiGateway.UpdateStage
      */
     UpdateStageResult updateStage(UpdateStageRequest updateStageRequest);
+
+    /**
+     * <p>
+     * Grants a temporary extension to the reamining quota of a usage plan
+     * associated with a specified API key.
+     * </p>
+     * 
+     * @param updateUsageRequest
+     *        The PATCH request to grant a temporary extension to the reamining
+     *        quota of a usage plan associated with a specified API key.
+     * @return Result of the UpdateUsage operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws BadRequestException
+     * @throws NotFoundException
+     * @sample AmazonApiGateway.UpdateUsage
+     */
+    UpdateUsageResult updateUsage(UpdateUsageRequest updateUsageRequest);
+
+    /**
+     * <p>
+     * Updates a usage plan of a given plan Id.
+     * </p>
+     * 
+     * @param updateUsagePlanRequest
+     *        The PATCH request to update a usage plan of a given plan Id.
+     * @return Result of the UpdateUsagePlan operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @throws BadRequestException
+     * @throws NotFoundException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.UpdateUsagePlan
+     */
+    UpdateUsagePlanResult updateUsagePlan(
+            UpdateUsagePlanRequest updateUsagePlanRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held

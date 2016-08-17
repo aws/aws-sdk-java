@@ -110,8 +110,12 @@ public class ClientConfiguration {
      */
     public static final int DEFAULT_RESPONSE_METADATA_CACHE_SIZE = 50;
 
-    /** The HTTP user agent header passed with all HTTP requests. */
-    private String userAgent = DEFAULT_USER_AGENT;
+
+    /** A prefix to the HTTP user agent header passed with all HTTP requests.  */
+    private String userAgentPrefix = DEFAULT_USER_AGENT;
+
+    /** A suffix to the HTTP user agent header. */
+    private String userAgentSuffix;
 
     /**
      * The maximum number of times that a retryable failed request (ex: a 5xx response from a
@@ -314,7 +318,8 @@ public class ClientConfiguration {
         this.socketTimeout = other.socketTimeout;
         this.requestTimeout = other.requestTimeout;
         this.clientExecutionTimeout = other.clientExecutionTimeout;
-        this.userAgent = other.userAgent;
+        this.userAgentPrefix = other.userAgentPrefix;
+        this.userAgentSuffix = other.userAgentSuffix;
         this.useReaper = other.useReaper;
         this.useGzip = other.useGzip;
         this.socketReceiveBufferSizeHint = other.socketReceiveBufferSizeHint;
@@ -408,34 +413,96 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the HTTP user agent header to send with all requests.
-     *
+     * @deprecated Replaced by {@link #getUserAgentPrefix()} and {@link #getUserAgentSuffix()}
      * @return The user agent string to use when sending requests.
      */
+    @Deprecated
     public String getUserAgent() {
-        return userAgent;
+        return getUserAgentPrefix();
     }
 
     /**
-     * Sets the HTTP user agent header to send with all requests.
-     *
+     * @deprecated Replaced by {@link #setUserAgentPrefix(String)} and {@link #setUserAgentSuffix(String)}
      * @param userAgent
      *            The user agent string to use when sending requests.
      */
+    @Deprecated
     public void setUserAgent(String userAgent) {
-        this.userAgent = userAgent;
+        setUserAgentPrefix(userAgent);
     }
 
     /**
-     * Sets the HTTP user agent header used in requests and returns the updated ClientConfiguration
-     * object.
-     *
+     * @deprecated Replaced by {@link #withUserAgentPrefix(String)} and {@link #withUserAgentSuffix(String)}
      * @param userAgent
      *            The user agent string to use when sending requests.
      * @return The updated ClientConfiguration object.
      */
+    @Deprecated
     public ClientConfiguration withUserAgent(String userAgent) {
-        setUserAgent(userAgent);
+        return withUserAgentPrefix(userAgent);
+    }
+
+    /**
+     * Returns the HTTP user agent header prefix to send with all requests.
+     *
+     * @return The user agent string prefix to use when sending requests.
+     */
+    public String getUserAgentPrefix() {
+        return userAgentPrefix;
+    }
+
+    /**
+     * Sets the HTTP user agent prefix to send with all requests.
+     *
+     * @param prefix
+     *            The string to prefix to user agent to use when sending requests.
+     */
+    public void setUserAgentPrefix(String prefix) {
+        this.userAgentPrefix = prefix;
+    }
+
+    /**
+     * Sets the HTTP user agent prefix header used in requests and returns the updated ClientConfiguration
+     * object.
+     *
+     * @param prefix
+     *            The string to prefix to user agent to use when sending requests.
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withUserAgentPrefix(String prefix) {
+        setUserAgentPrefix(prefix);
+        return this;
+    }
+
+    /**
+     * Returns the HTTP user agent header suffix to add to the end of the user agent header on all requests.
+     *
+     * @return The user agent string suffix to use when sending requests.
+     */
+    public String getUserAgentSuffix() {
+        return userAgentSuffix;
+    }
+
+    /**
+     * Sets the HTTP user agent suffix to send with all requests.
+     *
+     * @param suffix
+     *            The string to suffix to user agent to use when sending requests.
+     */
+    public void setUserAgentSuffix(String suffix) {
+        this.userAgentSuffix = suffix;
+    }
+
+    /**
+     * Sets the HTTP user agent suffix header used in requests and returns the updated ClientConfiguration
+     * object.
+     *
+     * @param suffix
+     *            The string to suffix to user agent to use when sending requests.
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withUserAgentSuffix(String suffix) {
+        setUserAgentSuffix(suffix);
         return this;
     }
 

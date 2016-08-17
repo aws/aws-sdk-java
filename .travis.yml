@@ -19,5 +19,6 @@ matrix:
       env: MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin
 
 install: /bin/true
-sudo: false
+sudo: required
+dist: precise
 script: mvn install -pl ${MODULES_TO_SKIP}

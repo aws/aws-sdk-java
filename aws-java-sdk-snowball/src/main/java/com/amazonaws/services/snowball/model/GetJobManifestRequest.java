@@ -25,7 +25,7 @@ public class GetJobManifestRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID for a job that you want to get the manifest file for. For example
+     * The ID for a job that you want to get the manifest file for, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      */
@@ -33,12 +33,12 @@ public class GetJobManifestRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID for a job that you want to get the manifest file for. For example
+     * The ID for a job that you want to get the manifest file for, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
      * @param jobId
-     *        The ID for a job that you want to get the manifest file for. For
+     *        The ID for a job that you want to get the manifest file for, for
      *        example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      */
 
@@ -48,11 +48,11 @@ public class GetJobManifestRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID for a job that you want to get the manifest file for. For example
+     * The ID for a job that you want to get the manifest file for, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
-     * @return The ID for a job that you want to get the manifest file for. For
+     * @return The ID for a job that you want to get the manifest file for, for
      *         example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      */
 
@@ -62,12 +62,12 @@ public class GetJobManifestRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID for a job that you want to get the manifest file for. For example
+     * The ID for a job that you want to get the manifest file for, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
      * @param jobId
-     *        The ID for a job that you want to get the manifest file for. For
+     *        The ID for a job that you want to get the manifest file for, for
      *        example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

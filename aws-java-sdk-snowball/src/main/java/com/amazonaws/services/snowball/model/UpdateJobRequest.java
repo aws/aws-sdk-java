@@ -25,7 +25,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The job ID of the job that you want to update. For example
+     * The job ID of the job that you want to update, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      */
@@ -83,12 +83,12 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The job ID of the job that you want to update. For example
+     * The job ID of the job that you want to update, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
      * @param jobId
-     *        The job ID of the job that you want to update. For example
+     *        The job ID of the job that you want to update, for example
      *        <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      */
 
@@ -98,11 +98,11 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The job ID of the job that you want to update. For example
+     * The job ID of the job that you want to update, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
-     * @return The job ID of the job that you want to update. For example
+     * @return The job ID of the job that you want to update, for example
      *         <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      */
 
@@ -112,12 +112,12 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The job ID of the job that you want to update. For example
+     * The job ID of the job that you want to update, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
      * @param jobId
-     *        The job ID of the job that you want to update. For example
+     *        The job ID of the job that you want to update, for example
      *        <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

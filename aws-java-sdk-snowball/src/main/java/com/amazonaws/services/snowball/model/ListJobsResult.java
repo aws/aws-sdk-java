@@ -23,6 +23,9 @@ public class ListJobsResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Each <code>JobListEntry</code> object contains a job's state, a job's ID,
+     * and a value that indicates whether the job is a job part, in the case of
+     * export jobs.
      * </p>
      */
     private java.util.List<JobListEntry> jobListEntries;
@@ -38,9 +41,14 @@ public class ListJobsResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Each <code>JobListEntry</code> object contains a job's state, a job's ID,
+     * and a value that indicates whether the job is a job part, in the case of
+     * export jobs.
      * </p>
      * 
-     * @return
+     * @return Each <code>JobListEntry</code> object contains a job's state, a
+     *         job's ID, and a value that indicates whether the job is a job
+     *         part, in the case of export jobs.
      */
 
     public java.util.List<JobListEntry> getJobListEntries() {
@@ -49,9 +57,15 @@ public class ListJobsResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Each <code>JobListEntry</code> object contains a job's state, a job's ID,
+     * and a value that indicates whether the job is a job part, in the case of
+     * export jobs.
      * </p>
      * 
      * @param jobListEntries
+     *        Each <code>JobListEntry</code> object contains a job's state, a
+     *        job's ID, and a value that indicates whether the job is a job
+     *        part, in the case of export jobs.
      */
 
     public void setJobListEntries(
@@ -67,6 +81,9 @@ public class ListJobsResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Each <code>JobListEntry</code> object contains a job's state, a job's ID,
+     * and a value that indicates whether the job is a job part, in the case of
+     * export jobs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -76,6 +93,9 @@ public class ListJobsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param jobListEntries
+     *        Each <code>JobListEntry</code> object contains a job's state, a
+     *        job's ID, and a value that indicates whether the job is a job
+     *        part, in the case of export jobs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -93,9 +113,15 @@ public class ListJobsResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Each <code>JobListEntry</code> object contains a job's state, a job's ID,
+     * and a value that indicates whether the job is a job part, in the case of
+     * export jobs.
      * </p>
      * 
      * @param jobListEntries
+     *        Each <code>JobListEntry</code> object contains a job's state, a
+     *        job's ID, and a value that indicates whether the job is a job
+     *        part, in the case of export jobs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

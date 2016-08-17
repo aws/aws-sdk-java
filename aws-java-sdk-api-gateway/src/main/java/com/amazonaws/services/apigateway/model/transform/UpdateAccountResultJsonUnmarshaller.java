@@ -62,6 +62,18 @@ public class UpdateAccountResultJsonUnmarshaller implements
                             .setThrottleSettings(ThrottleSettingsJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("features", targetDepth)) {
+                    context.nextToken();
+                    updateAccountResult
+                            .setFeatures(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
+                                    .unmarshall(context));
+                }
+                if (context.testExpression("apiKeyVersion", targetDepth)) {
+                    context.nextToken();
+                    updateAccountResult.setApiKeyVersion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

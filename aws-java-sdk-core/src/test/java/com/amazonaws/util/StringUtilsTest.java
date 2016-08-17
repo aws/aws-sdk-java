@@ -173,4 +173,10 @@ public class StringUtilsTest {
         Assert.assertFalse(StringUtils.beginsWithIgnoreCase("foobar", "baz"));
     }
 
+    @Test
+    public void hasValue() {
+        Assert.assertTrue(StringUtils.hasValue("something"));
+        Assert.assertFalse(StringUtils.hasValue(null));
+        Assert.assertFalse(StringUtils.hasValue(""));
+    }
 }

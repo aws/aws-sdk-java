@@ -20,6 +20,9 @@ import java.io.Serializable;
  * <p>
  * Represents a collection of <a>BasePathMapping</a> resources.
  * </p>
+ * <div class="seeAlso"> <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html"
+ * >Use Custom Domain Names</a> </div>
  */
 public class GetBasePathMappingsResult implements Serializable, Cloneable {
 

@@ -22,12 +22,15 @@ import com.amazonaws.util.IOUtils;
 
 import com.amazonaws.util.ValidationUtils;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import org.joda.time.DateTime;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collections;
 import java.util.Map;
 
 public class IntermediateModel {
@@ -47,16 +50,27 @@ public class IntermediateModel {
 
     private final ServiceExamples examples;
 
+    @JsonIgnore
     private final Map<String, WaiterDefinitionModel> waiters;
 
+    @JsonCreator
     public IntermediateModel(
             @JsonProperty("metadata") Metadata metadata,
             @JsonProperty("operations") Map<String, OperationModel> operations,
             @JsonProperty("shapes") Map<String, ShapeModel> shapes,
             @JsonProperty("customizationConfig") CustomizationConfig customizationConfig,
-            @JsonProperty("serviceExamples") ServiceExamples examples,
-            @JsonProperty("waiters") Map<String, WaiterDefinitionModel> waiters) {
+            @JsonProperty("serviceExamples") ServiceExamples examples) {
 
+        this(metadata, operations, shapes, customizationConfig, examples, Collections.emptyMap());
+    }
+
+    public IntermediateModel(
+            Metadata metadata,
+            Map<String, OperationModel> operations,
+            Map<String, ShapeModel> shapes,
+            CustomizationConfig customizationConfig,
+            ServiceExamples examples,
+            Map<String, WaiterDefinitionModel> waiters) {
         this.metadata = metadata;
         this.operations = operations;
         this.shapes = shapes;

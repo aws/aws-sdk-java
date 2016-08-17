@@ -26,8 +26,8 @@ import com.amazonaws.annotation.ThreadSafe;
  * <p>
  * <fullname>Amazon API Gateway</fullname>
  * <p>
- * Amazon API Gateway helps developers deliver robust, secure and scalable
- * mobile and web application backends. Amazon API Gateway allows developers to
+ * Amazon API Gateway helps developers deliver robust, secure, and scalable
+ * mobile and web application back ends. Amazon API Gateway allows developers to
  * securely connect mobile and web applications to APIs that run on AWS Lambda,
  * Amazon EC2, or other publicly addressable web services that are hosted
  * outside of AWS.
@@ -591,6 +591,76 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUsagePlanResult> createUsagePlanAsync(
+            CreateUsagePlanRequest request) {
+
+        return createUsagePlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUsagePlanResult> createUsagePlanAsync(
+            final CreateUsagePlanRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateUsagePlanRequest, CreateUsagePlanResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateUsagePlanResult>() {
+                    @Override
+                    public CreateUsagePlanResult call() throws Exception {
+                        CreateUsagePlanResult result;
+
+                        try {
+                            result = createUsagePlan(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUsagePlanKeyResult> createUsagePlanKeyAsync(
+            CreateUsagePlanKeyRequest request) {
+
+        return createUsagePlanKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUsagePlanKeyResult> createUsagePlanKeyAsync(
+            final CreateUsagePlanKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateUsagePlanKeyRequest, CreateUsagePlanKeyResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateUsagePlanKeyResult>() {
+                    @Override
+                    public CreateUsagePlanKeyResult call() throws Exception {
+                        CreateUsagePlanKeyResult result;
+
+                        try {
+                            result = createUsagePlanKey(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteApiKeyResult> deleteApiKeyAsync(
             DeleteApiKeyRequest request) {
 
@@ -1067,6 +1137,76 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
 
                         try {
                             result = deleteStage(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsagePlanResult> deleteUsagePlanAsync(
+            DeleteUsagePlanRequest request) {
+
+        return deleteUsagePlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsagePlanResult> deleteUsagePlanAsync(
+            final DeleteUsagePlanRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteUsagePlanRequest, DeleteUsagePlanResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteUsagePlanResult>() {
+                    @Override
+                    public DeleteUsagePlanResult call() throws Exception {
+                        DeleteUsagePlanResult result;
+
+                        try {
+                            result = deleteUsagePlan(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsagePlanKeyResult> deleteUsagePlanKeyAsync(
+            DeleteUsagePlanKeyRequest request) {
+
+        return deleteUsagePlanKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsagePlanKeyResult> deleteUsagePlanKeyAsync(
+            final DeleteUsagePlanKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteUsagePlanKeyRequest, DeleteUsagePlanKeyResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteUsagePlanKeyResult>() {
+                    @Override
+                    public DeleteUsagePlanKeyResult call() throws Exception {
+                        DeleteUsagePlanKeyResult result;
+
+                        try {
+                            result = deleteUsagePlanKey(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2170,6 +2310,216 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
     }
 
     @Override
+    public java.util.concurrent.Future<GetUsageResult> getUsageAsync(
+            GetUsageRequest request) {
+
+        return getUsageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsageResult> getUsageAsync(
+            final GetUsageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetUsageRequest, GetUsageResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetUsageResult>() {
+                    @Override
+                    public GetUsageResult call() throws Exception {
+                        GetUsageResult result;
+
+                        try {
+                            result = getUsage(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlanResult> getUsagePlanAsync(
+            GetUsagePlanRequest request) {
+
+        return getUsagePlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlanResult> getUsagePlanAsync(
+            final GetUsagePlanRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetUsagePlanRequest, GetUsagePlanResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetUsagePlanResult>() {
+                    @Override
+                    public GetUsagePlanResult call() throws Exception {
+                        GetUsagePlanResult result;
+
+                        try {
+                            result = getUsagePlan(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlanKeyResult> getUsagePlanKeyAsync(
+            GetUsagePlanKeyRequest request) {
+
+        return getUsagePlanKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlanKeyResult> getUsagePlanKeyAsync(
+            final GetUsagePlanKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetUsagePlanKeyRequest, GetUsagePlanKeyResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetUsagePlanKeyResult>() {
+                    @Override
+                    public GetUsagePlanKeyResult call() throws Exception {
+                        GetUsagePlanKeyResult result;
+
+                        try {
+                            result = getUsagePlanKey(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlanKeysResult> getUsagePlanKeysAsync(
+            GetUsagePlanKeysRequest request) {
+
+        return getUsagePlanKeysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlanKeysResult> getUsagePlanKeysAsync(
+            final GetUsagePlanKeysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetUsagePlanKeysRequest, GetUsagePlanKeysResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetUsagePlanKeysResult>() {
+                    @Override
+                    public GetUsagePlanKeysResult call() throws Exception {
+                        GetUsagePlanKeysResult result;
+
+                        try {
+                            result = getUsagePlanKeys(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlansResult> getUsagePlansAsync(
+            GetUsagePlansRequest request) {
+
+        return getUsagePlansAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUsagePlansResult> getUsagePlansAsync(
+            final GetUsagePlansRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetUsagePlansRequest, GetUsagePlansResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetUsagePlansResult>() {
+                    @Override
+                    public GetUsagePlansResult call() throws Exception {
+                        GetUsagePlansResult result;
+
+                        try {
+                            result = getUsagePlans(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportApiKeysResult> importApiKeysAsync(
+            ImportApiKeysRequest request) {
+
+        return importApiKeysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportApiKeysResult> importApiKeysAsync(
+            final ImportApiKeysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportApiKeysRequest, ImportApiKeysResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ImportApiKeysResult>() {
+                    @Override
+                    public ImportApiKeysResult call() throws Exception {
+                        ImportApiKeysResult result;
+
+                        try {
+                            result = importApiKeys(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<ImportRestApiResult> importRestApiAsync(
             ImportRestApiRequest request) {
 
@@ -2961,6 +3311,76 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient
 
                         try {
                             result = updateStage(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUsageResult> updateUsageAsync(
+            UpdateUsageRequest request) {
+
+        return updateUsageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUsageResult> updateUsageAsync(
+            final UpdateUsageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateUsageRequest, UpdateUsageResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateUsageResult>() {
+                    @Override
+                    public UpdateUsageResult call() throws Exception {
+                        UpdateUsageResult result;
+
+                        try {
+                            result = updateUsage(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUsagePlanResult> updateUsagePlanAsync(
+            UpdateUsagePlanRequest request) {
+
+        return updateUsagePlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUsagePlanResult> updateUsagePlanAsync(
+            final UpdateUsagePlanRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateUsagePlanRequest, UpdateUsagePlanResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateUsagePlanResult>() {
+                    @Override
+                    public UpdateUsagePlanResult call() throws Exception {
+                        UpdateUsagePlanResult result;
+
+                        try {
+                            result = updateUsagePlan(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

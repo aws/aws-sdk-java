@@ -19,17 +19,17 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "support",
     "signingName" : "support",
-    "xmlProtocol" : false,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSSupportClientBuilder",
     "asyncClientBuilderClassName" : "AWSSupportAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AWSSupportModuleInjector",
     "smokeTestsPackageName" : "com.amazonaws.services.support.smoketests",
     "serviceName" : "AWS Support",
     "cborProtocol" : false,
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "jsonProtocol" : true
+    "xmlProtocol" : false,
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "AddAttachmentsToSet" : {
@@ -66,13 +66,13 @@
         "documentation" : "<p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "addAttachmentsToSet",
       "authenticated" : true,
       "syncReturnType" : "AddAttachmentsToSetResult",
       "asyncReturnType" : "AddAttachmentsToSetResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddAttachmentsToSetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddAttachmentsToSetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddAttachmentsToSetRequest, AddAttachmentsToSetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddAttachmentsToSetRequest, AddAttachmentsToSetResult>",
+      "methodName" : "addAttachmentsToSet"
     },
     "AddCommunicationToCase" : {
       "documentation" : "<p>Adds additional customer communication to an AWS Support case. You use the <code>CaseId</code> value to identify the case to add communication to. You can list a set of email addresses to copy on the communication using the <code>CcEmailAddresses</code> value. The <code>CommunicationBody</code> value contains the text of the communication.</p> <p>The response indicates the success or failure of the request.</p> <p>This operation implements a subset of the features of the AWS Support Center.</p>",
@@ -105,13 +105,13 @@
         "documentation" : "<p>The expiration time of the attachment set has passed. The set expires 1 hour after it is created.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "addCommunicationToCase",
       "authenticated" : true,
       "syncReturnType" : "AddCommunicationToCaseResult",
       "asyncReturnType" : "AddCommunicationToCaseResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddCommunicationToCaseResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddCommunicationToCaseResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddCommunicationToCaseRequest, AddCommunicationToCaseResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddCommunicationToCaseRequest, AddCommunicationToCaseResult>",
+      "methodName" : "addCommunicationToCase"
     },
     "CreateCase" : {
       "documentation" : "<p>Creates a new case in the AWS Support Center. This operation is modeled on the behavior of the AWS Support Center <a href=\"https://console.aws.amazon.com/support/home#/case/create\">Create Case</a> page. Its parameters require you to specify the following information: </p> <ol> <li> <b>IssueType.</b> The type of issue for the case. You can specify either \"customer-service\" or \"technical.\" If you do not indicate a value, the default is \"technical.\" </li> <li> <b>ServiceCode.</b> The code for an AWS service. You obtain the <code>ServiceCode</code> by calling <a>DescribeServices</a>. </li> <li> <b>CategoryCode.</b> The category for the service defined for the <code>ServiceCode</code> value. You also obtain the category code for a service by calling <a>DescribeServices</a>. Each AWS service defines its own set of category codes. </li> <li> <b>SeverityCode.</b> A value that indicates the urgency of the case, which in turn determines the response time according to your service level agreement with AWS Support. You obtain the SeverityCode by calling <a>DescribeSeverityLevels</a>.</li> <li> <b>Subject.</b> The <b>Subject</b> field on the AWS Support Center <a href=\"https://console.aws.amazon.com/support/home#/case/create\">Create Case</a> page.</li> <li> <b>CommunicationBody.</b> The <b>Description</b> field on the AWS Support Center <a href=\"https://console.aws.amazon.com/support/home#/case/create\">Create Case</a> page.</li> <li> <b>AttachmentSetId.</b> The ID of a set of attachments that has been created by using <a>AddAttachmentsToSet</a>.</li> <li> <b>Language.</b> The human language in which AWS Support handles the case. English and Japanese are currently supported.</li> <li> <b>CcEmailAddresses.</b> The AWS Support Center <b>CC</b> field on the <a href=\"https://console.aws.amazon.com/support/home#/case/create\">Create Case</a> page. You can list email addresses to be copied on any correspondence about the case. The account that opens the case is already identified by passing the AWS Credentials in the HTTP POST method or in a method or function call from one of the programming languages supported by an <a href=\"http://aws.amazon.com/tools/\">AWS SDK</a>. </li> </ol> <note><p>To add additional communication or attachments to an existing case, use <a>AddCommunicationToCase</a>.</p> </note> <p>A successful <a>CreateCase</a> request returns an AWS Support case number. Case numbers are used by the <a>DescribeCases</a> operation to retrieve existing AWS Support cases. </p>",
@@ -144,13 +144,13 @@
         "documentation" : "<p>The expiration time of the attachment set has passed. The set expires 1 hour after it is created.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createCase",
       "authenticated" : true,
       "syncReturnType" : "CreateCaseResult",
       "asyncReturnType" : "CreateCaseResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateCaseResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateCaseResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCaseRequest, CreateCaseResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCaseRequest, CreateCaseResult>",
+      "methodName" : "createCase"
     },
     "DescribeAttachment" : {
       "documentation" : "<p>Returns the attachment that has the specified ID. Attachment IDs are generated by the case management system when you add an attachment to a case or case communication. Attachment IDs are returned in the <a>AttachmentDetails</a> objects that are returned by the <a>DescribeCommunications</a> operation.</p>",
@@ -180,13 +180,13 @@
         "documentation" : "<p>An attachment with the specified ID could not be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeAttachment",
       "authenticated" : true,
       "syncReturnType" : "DescribeAttachmentResult",
       "asyncReturnType" : "DescribeAttachmentResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeAttachmentResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeAttachmentResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAttachmentRequest, DescribeAttachmentResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAttachmentRequest, DescribeAttachmentResult>",
+      "methodName" : "describeAttachment"
     },
     "DescribeCases" : {
       "documentation" : "<p>Returns a list of cases that you specify by passing one or more case IDs. In addition, you can filter the cases by date by setting values for the <code>AfterTime</code> and <code>BeforeTime</code> request parameters. You can set values for the <code>IncludeResolvedCases</code> and <code>IncludeCommunications</code> request parameters to control how much information is returned. </p> <p>Case data is available for 12 months after creation. If a case was created more than 12 months ago, a request for data might cause an error. </p> <p>The response returns the following in JSON format:</p> <ol> <li>One or more <a>CaseDetails</a> data types. </li> <li>One or more <code>NextToken</code> values, which specify where to paginate the returned records represented by the <code>CaseDetails</code> objects.</li> </ol>",
@@ -213,13 +213,13 @@
         "documentation" : "<p>The requested <code>CaseId</code> could not be located.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeCases",
       "authenticated" : true,
       "syncReturnType" : "DescribeCasesResult",
       "asyncReturnType" : "DescribeCasesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCasesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCasesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCasesRequest, DescribeCasesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCasesRequest, DescribeCasesResult>",
+      "methodName" : "describeCases"
     },
     "DescribeCommunications" : {
       "documentation" : "<p>Returns communications (and attachments) for one or more support cases. You can use the <code>AfterTime</code> and <code>BeforeTime</code> parameters to filter by date. You can use the <code>CaseId</code> parameter to restrict the results to a particular case.</p> <p>Case data is available for 12 months after creation. If a case was created more than 12 months ago, a request for data might cause an error. </p> <p>You can use the <code>MaxResults</code> and <code>NextToken</code> parameters to control the pagination of the result set. Set <code>MaxResults</code> to the number of cases you want displayed on each page, and use <code>NextToken</code> to specify the resumption of pagination.</p>",
@@ -246,13 +246,13 @@
         "documentation" : "<p>The requested <code>CaseId</code> could not be located.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeCommunications",
       "authenticated" : true,
       "syncReturnType" : "DescribeCommunicationsResult",
       "asyncReturnType" : "DescribeCommunicationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeCommunicationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeCommunicationsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCommunicationsRequest, DescribeCommunicationsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeCommunicationsRequest, DescribeCommunicationsResult>",
+      "methodName" : "describeCommunications"
     },
     "DescribeServices" : {
       "documentation" : "<p>Returns the current list of AWS services and a list of service categories that applies to each one. You then use service names and categories in your <a>CreateCase</a> requests. Each AWS service has its own set of categories.</p> <p>The service codes and category codes correspond to the values that are displayed in the <b>Service</b> and <b>Category</b> drop-down lists on the AWS Support Center <a href=\"https://console.aws.amazon.com/support/home#/case/create\">Create Case</a> page. The values in those fields, however, do not necessarily match the service codes and categories returned by the <code>DescribeServices</code> request. Always use the service codes and categories obtained programmatically. This practice ensures that you always have the most recent set of service and category codes.</p>",
@@ -276,13 +276,13 @@
         "documentation" : "<p>An internal server error occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeServices",
       "authenticated" : true,
       "syncReturnType" : "DescribeServicesResult",
       "asyncReturnType" : "DescribeServicesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeServicesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeServicesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeServicesRequest, DescribeServicesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeServicesRequest, DescribeServicesResult>",
+      "methodName" : "describeServices"
     },
     "DescribeSeverityLevels" : {
       "documentation" : "<p>Returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is also a field in the <a>CaseDetails</a> data type included in any <a>CreateCase</a> request. </p>",
@@ -306,13 +306,13 @@
         "documentation" : "<p>An internal server error occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeSeverityLevels",
       "authenticated" : true,
       "syncReturnType" : "DescribeSeverityLevelsResult",
       "asyncReturnType" : "DescribeSeverityLevelsResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeSeverityLevelsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeSeverityLevelsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSeverityLevelsRequest, DescribeSeverityLevelsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeSeverityLevelsRequest, DescribeSeverityLevelsResult>",
+      "methodName" : "describeSeverityLevels"
     },
     "DescribeTrustedAdvisorCheckRefreshStatuses" : {
       "documentation" : "<p>Returns the refresh status of the Trusted Advisor checks that have the specified check IDs. Check IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.</p>",
@@ -336,13 +336,13 @@
         "documentation" : "<p>An internal server error occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeTrustedAdvisorCheckRefreshStatuses",
       "authenticated" : true,
       "syncReturnType" : "DescribeTrustedAdvisorCheckRefreshStatusesResult",
       "asyncReturnType" : "DescribeTrustedAdvisorCheckRefreshStatusesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTrustedAdvisorCheckRefreshStatusesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTrustedAdvisorCheckRefreshStatusesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrustedAdvisorCheckRefreshStatusesRequest, DescribeTrustedAdvisorCheckRefreshStatusesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrustedAdvisorCheckRefreshStatusesRequest, DescribeTrustedAdvisorCheckRefreshStatusesResult>",
+      "methodName" : "describeTrustedAdvisorCheckRefreshStatuses"
     },
     "DescribeTrustedAdvisorCheckResult" : {
       "documentation" : "<p>Returns the results of the Trusted Advisor check that has the specified check ID. Check IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.</p> <p>The response contains a <a>TrustedAdvisorCheckResult</a> object, which contains these three objects:</p> <ul> <li><a>TrustedAdvisorCategorySpecificSummary</a></li> <li><a>TrustedAdvisorResourceDetail</a></li> <li><a>TrustedAdvisorResourcesSummary</a></li> </ul> <p>In addition, the response contains these fields:</p> <ul> <li> <b>Status.</b> The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".</li> <li> <b>Timestamp.</b> The time of the last refresh of the check.</li> <li> <b>CheckId.</b> The unique identifier for the check.</li> </ul>",
@@ -366,13 +366,13 @@
         "documentation" : "<p>An internal server error occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeTrustedAdvisorCheckResult",
       "authenticated" : true,
       "syncReturnType" : "DescribeTrustedAdvisorCheckResultResult",
       "asyncReturnType" : "DescribeTrustedAdvisorCheckResultResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTrustedAdvisorCheckResultResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTrustedAdvisorCheckResultResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrustedAdvisorCheckResultRequest, DescribeTrustedAdvisorCheckResultResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrustedAdvisorCheckResultRequest, DescribeTrustedAdvisorCheckResultResult>",
+      "methodName" : "describeTrustedAdvisorCheckResult"
     },
     "DescribeTrustedAdvisorCheckSummaries" : {
       "documentation" : "<p>Returns the summaries of the results of the Trusted Advisor checks that have the specified check IDs. Check IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.</p> <p>The response contains an array of <a>TrustedAdvisorCheckSummary</a> objects.</p>",
@@ -396,13 +396,13 @@
         "documentation" : "<p>An internal server error occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeTrustedAdvisorCheckSummaries",
       "authenticated" : true,
       "syncReturnType" : "DescribeTrustedAdvisorCheckSummariesResult",
       "asyncReturnType" : "DescribeTrustedAdvisorCheckSummariesResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTrustedAdvisorCheckSummariesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTrustedAdvisorCheckSummariesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrustedAdvisorCheckSummariesRequest, DescribeTrustedAdvisorCheckSummariesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrustedAdvisorCheckSummariesRequest, DescribeTrustedAdvisorCheckSummariesResult>",
+      "methodName" : "describeTrustedAdvisorCheckSummaries"
     },
     "DescribeTrustedAdvisorChecks" : {
       "documentation" : "<p>Returns information about all available Trusted Advisor checks, including name, ID, category, description, and metadata. You must specify a language code; English (\"en\") and Japanese (\"ja\") are currently supported. The response contains a <a>TrustedAdvisorCheckDescription</a> for each check.</p>",
@@ -426,13 +426,13 @@
         "documentation" : "<p>An internal server error occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "describeTrustedAdvisorChecks",
       "authenticated" : true,
       "syncReturnType" : "DescribeTrustedAdvisorChecksResult",
       "asyncReturnType" : "DescribeTrustedAdvisorChecksResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeTrustedAdvisorChecksResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeTrustedAdvisorChecksResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrustedAdvisorChecksRequest, DescribeTrustedAdvisorChecksResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeTrustedAdvisorChecksRequest, DescribeTrustedAdvisorChecksResult>",
+      "methodName" : "describeTrustedAdvisorChecks"
     },
     "RefreshTrustedAdvisorCheck" : {
       "documentation" : "<p>Requests a refresh of the Trusted Advisor check that has the specified check ID. Check IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.</p> <p>The response contains a <a>TrustedAdvisorCheckRefreshStatus</a> object, which contains these fields:</p> <ul> <li> <b>Status.</b> The refresh status of the check: \"none\", \"enqueued\", \"processing\", \"success\", or \"abandoned\".</li> <li> <b>MillisUntilNextRefreshable.</b> The amount of time, in milliseconds, until the check is eligible for refresh.</li> <li> <b>CheckId.</b> The unique identifier for the check.</li> </ul>",
@@ -456,13 +456,13 @@
         "documentation" : "<p>An internal server error occurred.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "refreshTrustedAdvisorCheck",
       "authenticated" : true,
       "syncReturnType" : "RefreshTrustedAdvisorCheckResult",
       "asyncReturnType" : "RefreshTrustedAdvisorCheckResult",
       "asyncFutureType" : "java.util.concurrent.Future<RefreshTrustedAdvisorCheckResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RefreshTrustedAdvisorCheckResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RefreshTrustedAdvisorCheckRequest, RefreshTrustedAdvisorCheckResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RefreshTrustedAdvisorCheckRequest, RefreshTrustedAdvisorCheckResult>",
+      "methodName" : "refreshTrustedAdvisorCheck"
     },
     "ResolveCase" : {
       "documentation" : "<p>Takes a <code>CaseId</code> and returns the initial state of the case along with the state of the case after the call to <a>ResolveCase</a> completed.</p>",
@@ -489,13 +489,13 @@
         "documentation" : "<p>The requested <code>CaseId</code> could not be located.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "resolveCase",
       "authenticated" : true,
       "syncReturnType" : "ResolveCaseResult",
       "asyncReturnType" : "ResolveCaseResult",
       "asyncFutureType" : "java.util.concurrent.Future<ResolveCaseResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ResolveCaseResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResolveCaseRequest, ResolveCaseResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ResolveCaseRequest, ResolveCaseResult>",
+      "methodName" : "resolveCase"
     }
   },
   "shapes" : {
@@ -611,6 +611,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "CaseDetails",
@@ -857,6 +858,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "CaseDetails",
@@ -1997,6 +1999,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
@@ -2508,6 +2511,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
@@ -3464,6 +3468,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
@@ -3711,6 +3716,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
@@ -4895,6 +4901,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
@@ -5195,6 +5202,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
@@ -5412,6 +5420,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
@@ -5973,6 +5982,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
@@ -7340,6 +7350,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
@@ -7590,6 +7601,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
@@ -7722,6 +7734,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "Communication",
@@ -7968,6 +7981,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "Communication",
@@ -8519,6 +8533,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "TrustedAdvisorCheckSummary",
@@ -8660,6 +8675,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "TrustedAdvisorCheckSummary",
@@ -8792,6 +8808,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "SeverityLevel",
@@ -8933,6 +8950,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "SeverityLevel",
@@ -9568,6 +9586,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "Attachment",
@@ -9713,6 +9732,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "Attachment",
@@ -10690,6 +10710,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "TrustedAdvisorResourceDetail",
@@ -11043,6 +11064,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "TrustedAdvisorResourceDetail",
@@ -11915,6 +11937,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
@@ -12375,6 +12398,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
@@ -12945,6 +12969,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
@@ -13090,6 +13115,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
@@ -13222,6 +13248,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "Service",
@@ -13363,6 +13390,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "Service",
@@ -13599,6 +13627,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
@@ -13796,6 +13825,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
@@ -14232,6 +14262,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "Communication",
@@ -14478,6 +14509,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "Communication",
@@ -14818,6 +14850,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "AttachmentDetails",
@@ -15012,6 +15045,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "AttachmentDetails",
@@ -16218,6 +16252,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "Category",
@@ -16359,6 +16394,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "Category",
@@ -16883,6 +16919,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "TrustedAdvisorCheckRefreshStatus",
@@ -17024,6 +17061,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "TrustedAdvisorCheckRefreshStatus",
@@ -17156,6 +17194,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : true,
           "map" : false,
           "simpleType" : "String",
@@ -17301,6 +17340,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : true,
             "map" : false,
             "simpleType" : "String",
@@ -17433,6 +17473,7 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
           "simple" : false,
           "map" : false,
           "simpleType" : "TrustedAdvisorCheckDescription",
@@ -17574,6 +17615,7 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
             "simple" : false,
             "map" : false,
             "simpleType" : "TrustedAdvisorCheckDescription",
@@ -17829,6 +17871,7 @@
     },
     "renameShapes" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
+    "sendExplicitlyEmptyListsForQuery" : false,
     "authPolicyActions" : {
       "skip" : true,
       "actionPrefix" : null,
@@ -17847,16 +17890,15 @@
     "convenienceTypeOverloads" : [ ],
     "skipSmokeTests" : false
   },
-  "waiters" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"
   },
-  "sdkModeledExceptionBaseClassName" : "AWSSupportException",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.support.model.AWSSupportException",
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
-  "hasWaiters" : false
+  "hasWaiters" : false,
+  "sdkModeledExceptionBaseClassName" : "AWSSupportException",
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
 }

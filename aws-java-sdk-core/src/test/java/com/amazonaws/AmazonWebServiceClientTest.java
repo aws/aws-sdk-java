@@ -87,6 +87,8 @@ public class AmazonWebServiceClientTest {
      */
     @Test
     public void connectionManagersAreUnregisteredFromIdleConnectionReaper() {
+        // Clears out the IdleConnectionReaper. This is helpful when there are open registered connections from previous tests.
+        IdleConnectionReaper.shutdown();
         for (int count = 0; count < 100; count++) {
             new AmazonWebServiceClient(new ClientConfiguration()) {
             }.shutdown();

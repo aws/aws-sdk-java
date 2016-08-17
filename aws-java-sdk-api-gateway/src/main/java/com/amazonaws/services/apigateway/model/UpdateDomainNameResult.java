@@ -21,6 +21,9 @@ import java.io.Serializable;
  * Represents a domain name that is contained in a simpler, more intuitive URL
  * that can be called.
  * </p>
+ * <div class="seeAlso"> <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html"
+ * >Use Client-Side Certificate</a> </div>
  */
 public class UpdateDomainNameResult implements Serializable, Cloneable {
 

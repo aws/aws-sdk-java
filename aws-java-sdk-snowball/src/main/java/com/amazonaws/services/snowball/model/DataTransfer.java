@@ -28,30 +28,40 @@ public class DataTransfer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The number of bytes transferred between a Snowball and Amazon S3.
      * </p>
      */
     private Long bytesTransferred;
     /**
      * <p>
+     * The number of objects transferred between a Snowball and Amazon S3.
      * </p>
      */
     private Long objectsTransferred;
     /**
      * <p>
+     * The total bytes of data for a transfer between a Snowball and Amazon S3.
+     * This value is set to 0 (zero) until all the keys that will be transferred
+     * have been listed.
      * </p>
      */
     private Long totalBytes;
     /**
      * <p>
+     * The total number of objects for a transfer between a Snowball and Amazon
+     * S3. This value is set to 0 (zero) until all the keys that will be
+     * transferred have been listed.
      * </p>
      */
     private Long totalObjects;
 
     /**
      * <p>
+     * The number of bytes transferred between a Snowball and Amazon S3.
      * </p>
      * 
      * @param bytesTransferred
+     *        The number of bytes transferred between a Snowball and Amazon S3.
      */
 
     public void setBytesTransferred(Long bytesTransferred) {
@@ -60,9 +70,10 @@ public class DataTransfer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The number of bytes transferred between a Snowball and Amazon S3.
      * </p>
      * 
-     * @return
+     * @return The number of bytes transferred between a Snowball and Amazon S3.
      */
 
     public Long getBytesTransferred() {
@@ -71,9 +82,11 @@ public class DataTransfer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The number of bytes transferred between a Snowball and Amazon S3.
      * </p>
      * 
      * @param bytesTransferred
+     *        The number of bytes transferred between a Snowball and Amazon S3.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -85,9 +98,12 @@ public class DataTransfer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The number of objects transferred between a Snowball and Amazon S3.
      * </p>
      * 
      * @param objectsTransferred
+     *        The number of objects transferred between a Snowball and Amazon
+     *        S3.
      */
 
     public void setObjectsTransferred(Long objectsTransferred) {
@@ -96,9 +112,11 @@ public class DataTransfer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The number of objects transferred between a Snowball and Amazon S3.
      * </p>
      * 
-     * @return
+     * @return The number of objects transferred between a Snowball and Amazon
+     *         S3.
      */
 
     public Long getObjectsTransferred() {
@@ -107,9 +125,12 @@ public class DataTransfer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The number of objects transferred between a Snowball and Amazon S3.
      * </p>
      * 
      * @param objectsTransferred
+     *        The number of objects transferred between a Snowball and Amazon
+     *        S3.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -121,9 +142,15 @@ public class DataTransfer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The total bytes of data for a transfer between a Snowball and Amazon S3.
+     * This value is set to 0 (zero) until all the keys that will be transferred
+     * have been listed.
      * </p>
      * 
      * @param totalBytes
+     *        The total bytes of data for a transfer between a Snowball and
+     *        Amazon S3. This value is set to 0 (zero) until all the keys that
+     *        will be transferred have been listed.
      */
 
     public void setTotalBytes(Long totalBytes) {
@@ -132,9 +159,14 @@ public class DataTransfer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The total bytes of data for a transfer between a Snowball and Amazon S3.
+     * This value is set to 0 (zero) until all the keys that will be transferred
+     * have been listed.
      * </p>
      * 
-     * @return
+     * @return The total bytes of data for a transfer between a Snowball and
+     *         Amazon S3. This value is set to 0 (zero) until all the keys that
+     *         will be transferred have been listed.
      */
 
     public Long getTotalBytes() {
@@ -143,9 +175,15 @@ public class DataTransfer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The total bytes of data for a transfer between a Snowball and Amazon S3.
+     * This value is set to 0 (zero) until all the keys that will be transferred
+     * have been listed.
      * </p>
      * 
      * @param totalBytes
+     *        The total bytes of data for a transfer between a Snowball and
+     *        Amazon S3. This value is set to 0 (zero) until all the keys that
+     *        will be transferred have been listed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -157,9 +195,15 @@ public class DataTransfer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The total number of objects for a transfer between a Snowball and Amazon
+     * S3. This value is set to 0 (zero) until all the keys that will be
+     * transferred have been listed.
      * </p>
      * 
      * @param totalObjects
+     *        The total number of objects for a transfer between a Snowball and
+     *        Amazon S3. This value is set to 0 (zero) until all the keys that
+     *        will be transferred have been listed.
      */
 
     public void setTotalObjects(Long totalObjects) {
@@ -168,9 +212,14 @@ public class DataTransfer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The total number of objects for a transfer between a Snowball and Amazon
+     * S3. This value is set to 0 (zero) until all the keys that will be
+     * transferred have been listed.
      * </p>
      * 
-     * @return
+     * @return The total number of objects for a transfer between a Snowball and
+     *         Amazon S3. This value is set to 0 (zero) until all the keys that
+     *         will be transferred have been listed.
      */
 
     public Long getTotalObjects() {
@@ -179,9 +228,15 @@ public class DataTransfer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The total number of objects for a transfer between a Snowball and Amazon
+     * S3. This value is set to 0 (zero) until all the keys that will be
+     * transferred have been listed.
      * </p>
      * 
      * @param totalObjects
+     *        The total number of objects for a transfer between a Snowball and
+     *        Amazon S3. This value is set to 0 (zero) until all the keys that
+     *        will be transferred have been listed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

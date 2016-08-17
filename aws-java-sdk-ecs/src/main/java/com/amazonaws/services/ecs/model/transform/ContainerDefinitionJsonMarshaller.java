@@ -61,6 +61,10 @@ public class ContainerDefinitionJsonMarshaller {
                 jsonGenerator.writeFieldName("memory").writeValue(
                         containerDefinition.getMemory());
             }
+            if (containerDefinition.getMemoryReservation() != null) {
+                jsonGenerator.writeFieldName("memoryReservation").writeValue(
+                        containerDefinition.getMemoryReservation());
+            }
 
             com.amazonaws.internal.SdkInternalList<String> linksList = (com.amazonaws.internal.SdkInternalList<String>) containerDefinition
                     .getLinks();

@@ -78,8 +78,11 @@ public class WaiterImpl<Input extends AmazonWebServiceRequest, Output> implement
             throws AmazonServiceException, WaiterTimedOutException, WaiterUnrecoverableException {
 
         ValidationUtils.assertNotNull(waiterParameters, "waiterParameters");
+        @SuppressWarnings("unchecked")
+        Input request = (Input) ValidationUtils.assertNotNull(waiterParameters.getRequest(), "request").clone();
+        request.getRequestClientOptions().appendUserAgent("waiter-request");
         WaiterExecution<Input, Output> waiterExecution = new WaiterExecutionBuilder<Input, Output>()
-                .withRequest(ValidationUtils.assertNotNull(waiterParameters.getRequest(), "request"))
+                .withRequest(request)
                 .withPollingStrategy(waiterParameters.getPollingStrategy() != null ? waiterParameters.getPollingStrategy() : defaultPollingStrategy)
                 .withAcceptors(acceptors)
                 .withSdkFunction(sdkFunction)

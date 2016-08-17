@@ -26,7 +26,7 @@ public class GetJobUnlockCodeRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The ID for the job that you want to get the <code>UnlockCode</code> value
-     * for. For example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+     * for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      */
     private String jobId;
@@ -34,12 +34,12 @@ public class GetJobUnlockCodeRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The ID for the job that you want to get the <code>UnlockCode</code> value
-     * for. For example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+     * for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
      * @param jobId
      *        The ID for the job that you want to get the
-     *        <code>UnlockCode</code> value for. For example
+     *        <code>UnlockCode</code> value for, for example
      *        <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      */
 
@@ -50,11 +50,11 @@ public class GetJobUnlockCodeRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The ID for the job that you want to get the <code>UnlockCode</code> value
-     * for. For example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+     * for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
      * @return The ID for the job that you want to get the
-     *         <code>UnlockCode</code> value for. For example
+     *         <code>UnlockCode</code> value for, for example
      *         <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      */
 
@@ -65,12 +65,12 @@ public class GetJobUnlockCodeRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The ID for the job that you want to get the <code>UnlockCode</code> value
-     * for. For example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+     * for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * </p>
      * 
      * @param jobId
      *        The ID for the job that you want to get the
-     *        <code>UnlockCode</code> value for. For example
+     *        <code>UnlockCode</code> value for, for example
      *        <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

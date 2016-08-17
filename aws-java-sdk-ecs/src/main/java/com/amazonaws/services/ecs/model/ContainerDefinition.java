@@ -32,9 +32,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * containers. Up to 255 letters (uppercase and lowercase), numbers,
      * hyphens, and underscores are allowed. This parameter maps to
      * <code>name</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--name</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -49,9 +49,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * letters (uppercase and lowercase), numbers, hyphens, underscores, colons,
      * periods, forward slashes, and number signs are allowed. This parameter
      * maps to <code>Image</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -85,9 +85,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * container, and containers share unallocated CPU units with other
      * containers on the instance with the same ratio as their allocated amount.
      * This parameter maps to <code>CpuShares</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -141,20 +141,66 @@ public class ContainerDefinition implements Serializable, Cloneable {
     private Integer cpu;
     /**
      * <p>
-     * The number of MiB of memory to reserve for the container. You must
-     * specify a non-zero integer for this parameter; the Docker daemon reserves
-     * a minimum of 4 MiB of memory for a container, so you should not specify
-     * fewer than 4 MiB of memory for your containers. If your container
-     * attempts to exceed the memory allocated here, the container is killed.
-     * This parameter maps to <code>Memory</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * The hard limit (in MiB) of memory to present to the container. If your
+     * container attempts to exceed the memory specified here, the container is
+     * killed. This parameter maps to <code>Memory</code> in the <a href=
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <p>
+     * You must specify a non-zero integer for one or both of
+     * <code>memory</code> or <code>memoryReservation</code> in container
+     * definitions. If you specify both, <code>memory</code> must be greater
+     * than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the
+     * available memory resources for the container instance on which the
+     * container is placed; otherwise, the value of <code>memory</code> is used.
+     * </p>
+     * <p>
+     * The Docker daemon reserves a minimum of 4 MiB of memory for a container,
+     * so you should not specify fewer than 4 MiB of memory for your containers.
+     * </p>
      */
     private Integer memory;
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory to reserve for the container. When
+     * system memory is under heavy contention, Docker attempts to keep the
+     * container memory to this soft limit; however, your container can consume
+     * more memory when it needs to, up to either the hard limit specified with
+     * the <code>memory</code> parameter (if applicable), or all of the
+     * available memory on the container instance, whichever comes first. This
+     * parameter maps to <code>MemoryReservation</code> in the <a href=
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
+     * >Create a container</a> section of the <a
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
+     * >Docker Remote API</a> and the <code>--memory-reservation</code> option
+     * to <a href="https://docs.docker.com/reference/commandline/run/">docker
+     * run</a>.
+     * </p>
+     * <p>
+     * You must specify a non-zero integer for one or both of
+     * <code>memory</code> or <code>memoryReservation</code> in container
+     * definitions. If you specify both, <code>memory</code> must be greater
+     * than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the
+     * available memory resources for the container instance on which the
+     * container is placed; otherwise, the value of <code>memory</code> is used.
+     * </p>
+     * <p>
+     * For example, if your container normally uses 128 MiB of memory, but
+     * occasionally bursts to 256 MiB of memory for short periods of time, you
+     * can set a <code>memoryReservation</code> of 128 MiB, and a
+     * <code>memory</code> hard limit of 300 MiB. This configuration would allow
+     * the container to only reserve 128 MiB of memory from the remaining
+     * resources on the container instance, but also allow the container to
+     * consume more memory resources when needed.
+     * </p>
+     */
+    private Integer memoryReservation;
     /**
      * <p>
      * The <code>link</code> parameter allows containers to communicate with
@@ -167,9 +213,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/userguide/dockerlinks/"
      * >https://docs.docker.com/userguide/dockerlinks/</a>. This parameter maps
      * to <code>Links</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -189,11 +235,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * containers to access ports on the host container instance to send or
      * receive traffic. This parameter maps to <code>PortBindings</code> in the
      * <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
+     * If the network mode of a task definition is set to <code>none</code>,
+     * then you cannot specify port mappings. If the network mode of a task
+     * definition is set to <code>host</code>, then host ports must either be
+     * undefined or they must match the container port in the port mapping.
      * </p>
      * <note>
      * <p>
@@ -240,9 +290,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The entry point that is passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--entrypoint</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * For more information, see <a
@@ -255,9 +305,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The command that is passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * For more information, see <a
@@ -270,9 +320,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The environment variables to pass to a container. This parameter maps to
      * <code>Env</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -288,9 +338,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The mount points for data volumes in your container. This parameter maps
      * to <code>Volumes</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -300,9 +350,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * Data volumes to mount from another container. This parameter maps to
      * <code>VolumesFrom</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -312,9 +362,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The hostname to use for your container. This parameter maps to
      * <code>Hostname</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--hostname</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -324,9 +374,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -336,9 +386,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The working directory in which to run commands inside the container. This
      * parameter maps to <code>WorkingDir</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--workdir</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -348,9 +398,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * When this parameter is true, networking is disabled within the container.
      * This parameter maps to <code>NetworkDisabled</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a>.
      * </p>
      */
@@ -360,9 +410,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * When this parameter is true, the container is given elevated privileges
      * on the host container instance (similar to the <code>root</code> user).
      * This parameter maps to <code>Privileged</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--privileged</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -373,9 +423,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * When this parameter is true, the container is given read-only access to
      * its root file system. This parameter maps to <code>ReadonlyRootfs</code>
      * in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--read-only</code> option to
      * <code>docker run</code>.
      * </p>
@@ -385,9 +435,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of DNS servers that are presented to the container. This parameter
      * maps to <code>Dns</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -397,9 +447,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of DNS search domains that are presented to the container. This
      * parameter maps to <code>DnsSearch</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -410,9 +460,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. This parameter maps to
      * <code>ExtraHosts</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -423,9 +473,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This parameter maps to
      * <code>SecurityOpt</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--security-opt</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -447,9 +497,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * This parameter requires version 1.18 of the Docker Remote API or greater
@@ -464,9 +514,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of <code>ulimits</code> to set in the container. This parameter
      * maps to <code>Ulimits</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * Valid naming values are displayed in the <a>Ulimit</a> data type. This
@@ -482,9 +532,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The log configuration specification for the container. This parameter
      * maps to <code>LogConfig</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * By default, containers use the same logging driver that the Docker daemon
@@ -535,9 +585,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * containers. Up to 255 letters (uppercase and lowercase), numbers,
      * hyphens, and underscores are allowed. This parameter maps to
      * <code>name</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--name</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -549,9 +599,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        container to connect the containers. Up to 255 letters (uppercase
      *        and lowercase), numbers, hyphens, and underscores are allowed.
      *        This parameter maps to <code>name</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--name</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
@@ -569,9 +619,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * containers. Up to 255 letters (uppercase and lowercase), numbers,
      * hyphens, and underscores are allowed. This parameter maps to
      * <code>name</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--name</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -582,9 +632,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         container to connect the containers. Up to 255 letters (uppercase
      *         and lowercase), numbers, hyphens, and underscores are allowed.
      *         This parameter maps to <code>name</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--name</code> option to <a
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>.
@@ -602,9 +652,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * containers. Up to 255 letters (uppercase and lowercase), numbers,
      * hyphens, and underscores are allowed. This parameter maps to
      * <code>name</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--name</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -616,9 +666,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        container to connect the containers. Up to 255 letters (uppercase
      *        and lowercase), numbers, hyphens, and underscores are allowed.
      *        This parameter maps to <code>name</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--name</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
@@ -640,9 +690,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * letters (uppercase and lowercase), numbers, hyphens, underscores, colons,
      * periods, forward slashes, and number signs are allowed. This parameter
      * maps to <code>Image</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -676,9 +726,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        underscores, colons, periods, forward slashes, and number signs
      *        are allowed. This parameter maps to <code>Image</code> in the <a
      *        href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.</p>
@@ -718,9 +768,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * letters (uppercase and lowercase), numbers, hyphens, underscores, colons,
      * periods, forward slashes, and number signs are allowed. This parameter
      * maps to <code>Image</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -753,9 +803,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         underscores, colons, periods, forward slashes, and number signs
      *         are allowed. This parameter maps to <code>Image</code> in the <a
      *         href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>.</p>
@@ -795,9 +845,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * letters (uppercase and lowercase), numbers, hyphens, underscores, colons,
      * periods, forward slashes, and number signs are allowed. This parameter
      * maps to <code>Image</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -831,9 +881,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        underscores, colons, periods, forward slashes, and number signs
      *        are allowed. This parameter maps to <code>Image</code> in the <a
      *        href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>IMAGE</code> parameter of <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.</p>
@@ -875,9 +925,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * container, and containers share unallocated CPU units with other
      * containers on the instance with the same ratio as their allocated amount.
      * This parameter maps to <code>CpuShares</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -936,9 +986,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        units with other containers on the instance with the same ratio as
      *        their allocated amount. This parameter maps to
      *        <code>CpuShares</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--cpu-shares</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -1004,9 +1054,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * container, and containers share unallocated CPU units with other
      * containers on the instance with the same ratio as their allocated amount.
      * This parameter maps to <code>CpuShares</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -1064,9 +1114,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         units with other containers on the instance with the same ratio
      *         as their allocated amount. This parameter maps to
      *         <code>CpuShares</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--cpu-shares</code> option
      *         to <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.</p> <note>
@@ -1131,9 +1181,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * container, and containers share unallocated CPU units with other
      * containers on the instance with the same ratio as their allocated amount.
      * This parameter maps to <code>CpuShares</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -1192,9 +1242,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        units with other containers on the instance with the same ratio as
      *        their allocated amount. This parameter maps to
      *        <code>CpuShares</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--cpu-shares</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -1257,33 +1307,54 @@ public class ContainerDefinition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of MiB of memory to reserve for the container. You must
-     * specify a non-zero integer for this parameter; the Docker daemon reserves
-     * a minimum of 4 MiB of memory for a container, so you should not specify
-     * fewer than 4 MiB of memory for your containers. If your container
-     * attempts to exceed the memory allocated here, the container is killed.
-     * This parameter maps to <code>Memory</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * The hard limit (in MiB) of memory to present to the container. If your
+     * container attempts to exceed the memory specified here, the container is
+     * killed. This parameter maps to <code>Memory</code> in the <a href=
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <p>
+     * You must specify a non-zero integer for one or both of
+     * <code>memory</code> or <code>memoryReservation</code> in container
+     * definitions. If you specify both, <code>memory</code> must be greater
+     * than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the
+     * available memory resources for the container instance on which the
+     * container is placed; otherwise, the value of <code>memory</code> is used.
+     * </p>
+     * <p>
+     * The Docker daemon reserves a minimum of 4 MiB of memory for a container,
+     * so you should not specify fewer than 4 MiB of memory for your containers.
+     * </p>
      * 
      * @param memory
-     *        The number of MiB of memory to reserve for the container. You must
-     *        specify a non-zero integer for this parameter; the Docker daemon
-     *        reserves a minimum of 4 MiB of memory for a container, so you
-     *        should not specify fewer than 4 MiB of memory for your containers.
-     *        If your container attempts to exceed the memory allocated here,
-     *        the container is killed. This parameter maps to
-     *        <code>Memory</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        The hard limit (in MiB) of memory to present to the container. If
+     *        your container attempts to exceed the memory specified here, the
+     *        container is killed. This parameter maps to <code>Memory</code> in
+     *        the <a href=
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--memory</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>.
+     *        run</a>.</p>
+     *        <p>
+     *        You must specify a non-zero integer for one or both of
+     *        <code>memory</code> or <code>memoryReservation</code> in container
+     *        definitions. If you specify both, <code>memory</code> must be
+     *        greater than <code>memoryReservation</code>. If you specify
+     *        <code>memoryReservation</code>, then that value is subtracted from
+     *        the available memory resources for the container instance on which
+     *        the container is placed; otherwise, the value of
+     *        <code>memory</code> is used.
+     *        </p>
+     *        <p>
+     *        The Docker daemon reserves a minimum of 4 MiB of memory for a
+     *        container, so you should not specify fewer than 4 MiB of memory
+     *        for your containers.
      */
 
     public void setMemory(Integer memory) {
@@ -1292,32 +1363,53 @@ public class ContainerDefinition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of MiB of memory to reserve for the container. You must
-     * specify a non-zero integer for this parameter; the Docker daemon reserves
-     * a minimum of 4 MiB of memory for a container, so you should not specify
-     * fewer than 4 MiB of memory for your containers. If your container
-     * attempts to exceed the memory allocated here, the container is killed.
-     * This parameter maps to <code>Memory</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * The hard limit (in MiB) of memory to present to the container. If your
+     * container attempts to exceed the memory specified here, the container is
+     * killed. This parameter maps to <code>Memory</code> in the <a href=
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <p>
+     * You must specify a non-zero integer for one or both of
+     * <code>memory</code> or <code>memoryReservation</code> in container
+     * definitions. If you specify both, <code>memory</code> must be greater
+     * than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the
+     * available memory resources for the container instance on which the
+     * container is placed; otherwise, the value of <code>memory</code> is used.
+     * </p>
+     * <p>
+     * The Docker daemon reserves a minimum of 4 MiB of memory for a container,
+     * so you should not specify fewer than 4 MiB of memory for your containers.
+     * </p>
      * 
-     * @return The number of MiB of memory to reserve for the container. You
-     *         must specify a non-zero integer for this parameter; the Docker
-     *         daemon reserves a minimum of 4 MiB of memory for a container, so
-     *         you should not specify fewer than 4 MiB of memory for your
-     *         containers. If your container attempts to exceed the memory
-     *         allocated here, the container is killed. This parameter maps to
-     *         <code>Memory</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * @return The hard limit (in MiB) of memory to present to the container. If
+     *         your container attempts to exceed the memory specified here, the
+     *         container is killed. This parameter maps to <code>Memory</code>
+     *         in the <a href=
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--memory</code> option to <a
      *         href="https://docs.docker.com/reference/commandline/run/">docker
-     *         run</a>.
+     *         run</a>.</p>
+     *         <p>
+     *         You must specify a non-zero integer for one or both of
+     *         <code>memory</code> or <code>memoryReservation</code> in
+     *         container definitions. If you specify both, <code>memory</code>
+     *         must be greater than <code>memoryReservation</code>. If you
+     *         specify <code>memoryReservation</code>, then that value is
+     *         subtracted from the available memory resources for the container
+     *         instance on which the container is placed; otherwise, the value
+     *         of <code>memory</code> is used.
+     *         </p>
+     *         <p>
+     *         The Docker daemon reserves a minimum of 4 MiB of memory for a
+     *         container, so you should not specify fewer than 4 MiB of memory
+     *         for your containers.
      */
 
     public Integer getMemory() {
@@ -1326,39 +1418,288 @@ public class ContainerDefinition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of MiB of memory to reserve for the container. You must
-     * specify a non-zero integer for this parameter; the Docker daemon reserves
-     * a minimum of 4 MiB of memory for a container, so you should not specify
-     * fewer than 4 MiB of memory for your containers. If your container
-     * attempts to exceed the memory allocated here, the container is killed.
-     * This parameter maps to <code>Memory</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * The hard limit (in MiB) of memory to present to the container. If your
+     * container attempts to exceed the memory specified here, the container is
+     * killed. This parameter maps to <code>Memory</code> in the <a href=
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
+     * <p>
+     * You must specify a non-zero integer for one or both of
+     * <code>memory</code> or <code>memoryReservation</code> in container
+     * definitions. If you specify both, <code>memory</code> must be greater
+     * than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the
+     * available memory resources for the container instance on which the
+     * container is placed; otherwise, the value of <code>memory</code> is used.
+     * </p>
+     * <p>
+     * The Docker daemon reserves a minimum of 4 MiB of memory for a container,
+     * so you should not specify fewer than 4 MiB of memory for your containers.
+     * </p>
      * 
      * @param memory
-     *        The number of MiB of memory to reserve for the container. You must
-     *        specify a non-zero integer for this parameter; the Docker daemon
-     *        reserves a minimum of 4 MiB of memory for a container, so you
-     *        should not specify fewer than 4 MiB of memory for your containers.
-     *        If your container attempts to exceed the memory allocated here,
-     *        the container is killed. This parameter maps to
-     *        <code>Memory</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        The hard limit (in MiB) of memory to present to the container. If
+     *        your container attempts to exceed the memory specified here, the
+     *        container is killed. This parameter maps to <code>Memory</code> in
+     *        the <a href=
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--memory</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>.
+     *        run</a>.</p>
+     *        <p>
+     *        You must specify a non-zero integer for one or both of
+     *        <code>memory</code> or <code>memoryReservation</code> in container
+     *        definitions. If you specify both, <code>memory</code> must be
+     *        greater than <code>memoryReservation</code>. If you specify
+     *        <code>memoryReservation</code>, then that value is subtracted from
+     *        the available memory resources for the container instance on which
+     *        the container is placed; otherwise, the value of
+     *        <code>memory</code> is used.
+     *        </p>
+     *        <p>
+     *        The Docker daemon reserves a minimum of 4 MiB of memory for a
+     *        container, so you should not specify fewer than 4 MiB of memory
+     *        for your containers.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
 
     public ContainerDefinition withMemory(Integer memory) {
         setMemory(memory);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory to reserve for the container. When
+     * system memory is under heavy contention, Docker attempts to keep the
+     * container memory to this soft limit; however, your container can consume
+     * more memory when it needs to, up to either the hard limit specified with
+     * the <code>memory</code> parameter (if applicable), or all of the
+     * available memory on the container instance, whichever comes first. This
+     * parameter maps to <code>MemoryReservation</code> in the <a href=
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
+     * >Create a container</a> section of the <a
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
+     * >Docker Remote API</a> and the <code>--memory-reservation</code> option
+     * to <a href="https://docs.docker.com/reference/commandline/run/">docker
+     * run</a>.
+     * </p>
+     * <p>
+     * You must specify a non-zero integer for one or both of
+     * <code>memory</code> or <code>memoryReservation</code> in container
+     * definitions. If you specify both, <code>memory</code> must be greater
+     * than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the
+     * available memory resources for the container instance on which the
+     * container is placed; otherwise, the value of <code>memory</code> is used.
+     * </p>
+     * <p>
+     * For example, if your container normally uses 128 MiB of memory, but
+     * occasionally bursts to 256 MiB of memory for short periods of time, you
+     * can set a <code>memoryReservation</code> of 128 MiB, and a
+     * <code>memory</code> hard limit of 300 MiB. This configuration would allow
+     * the container to only reserve 128 MiB of memory from the remaining
+     * resources on the container instance, but also allow the container to
+     * consume more memory resources when needed.
+     * </p>
+     * 
+     * @param memoryReservation
+     *        The soft limit (in MiB) of memory to reserve for the container.
+     *        When system memory is under heavy contention, Docker attempts to
+     *        keep the container memory to this soft limit; however, your
+     *        container can consume more memory when it needs to, up to either
+     *        the hard limit specified with the <code>memory</code> parameter
+     *        (if applicable), or all of the available memory on the container
+     *        instance, whichever comes first. This parameter maps to
+     *        <code>MemoryReservation</code> in the <a href=
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
+     *        >Create a container</a> section of the <a href=
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
+     *        >Docker Remote API</a> and the <code>--memory-reservation</code>
+     *        option to <a
+     *        href="https://docs.docker.com/reference/commandline/run/">docker
+     *        run</a>.</p>
+     *        <p>
+     *        You must specify a non-zero integer for one or both of
+     *        <code>memory</code> or <code>memoryReservation</code> in container
+     *        definitions. If you specify both, <code>memory</code> must be
+     *        greater than <code>memoryReservation</code>. If you specify
+     *        <code>memoryReservation</code>, then that value is subtracted from
+     *        the available memory resources for the container instance on which
+     *        the container is placed; otherwise, the value of
+     *        <code>memory</code> is used.
+     *        </p>
+     *        <p>
+     *        For example, if your container normally uses 128 MiB of memory,
+     *        but occasionally bursts to 256 MiB of memory for short periods of
+     *        time, you can set a <code>memoryReservation</code> of 128 MiB, and
+     *        a <code>memory</code> hard limit of 300 MiB. This configuration
+     *        would allow the container to only reserve 128 MiB of memory from
+     *        the remaining resources on the container instance, but also allow
+     *        the container to consume more memory resources when needed.
+     */
+
+    public void setMemoryReservation(Integer memoryReservation) {
+        this.memoryReservation = memoryReservation;
+    }
+
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory to reserve for the container. When
+     * system memory is under heavy contention, Docker attempts to keep the
+     * container memory to this soft limit; however, your container can consume
+     * more memory when it needs to, up to either the hard limit specified with
+     * the <code>memory</code> parameter (if applicable), or all of the
+     * available memory on the container instance, whichever comes first. This
+     * parameter maps to <code>MemoryReservation</code> in the <a href=
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
+     * >Create a container</a> section of the <a
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
+     * >Docker Remote API</a> and the <code>--memory-reservation</code> option
+     * to <a href="https://docs.docker.com/reference/commandline/run/">docker
+     * run</a>.
+     * </p>
+     * <p>
+     * You must specify a non-zero integer for one or both of
+     * <code>memory</code> or <code>memoryReservation</code> in container
+     * definitions. If you specify both, <code>memory</code> must be greater
+     * than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the
+     * available memory resources for the container instance on which the
+     * container is placed; otherwise, the value of <code>memory</code> is used.
+     * </p>
+     * <p>
+     * For example, if your container normally uses 128 MiB of memory, but
+     * occasionally bursts to 256 MiB of memory for short periods of time, you
+     * can set a <code>memoryReservation</code> of 128 MiB, and a
+     * <code>memory</code> hard limit of 300 MiB. This configuration would allow
+     * the container to only reserve 128 MiB of memory from the remaining
+     * resources on the container instance, but also allow the container to
+     * consume more memory resources when needed.
+     * </p>
+     * 
+     * @return The soft limit (in MiB) of memory to reserve for the container.
+     *         When system memory is under heavy contention, Docker attempts to
+     *         keep the container memory to this soft limit; however, your
+     *         container can consume more memory when it needs to, up to either
+     *         the hard limit specified with the <code>memory</code> parameter
+     *         (if applicable), or all of the available memory on the container
+     *         instance, whichever comes first. This parameter maps to
+     *         <code>MemoryReservation</code> in the <a href=
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
+     *         >Create a container</a> section of the <a href=
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
+     *         >Docker Remote API</a> and the <code>--memory-reservation</code>
+     *         option to <a
+     *         href="https://docs.docker.com/reference/commandline/run/">docker
+     *         run</a>.</p>
+     *         <p>
+     *         You must specify a non-zero integer for one or both of
+     *         <code>memory</code> or <code>memoryReservation</code> in
+     *         container definitions. If you specify both, <code>memory</code>
+     *         must be greater than <code>memoryReservation</code>. If you
+     *         specify <code>memoryReservation</code>, then that value is
+     *         subtracted from the available memory resources for the container
+     *         instance on which the container is placed; otherwise, the value
+     *         of <code>memory</code> is used.
+     *         </p>
+     *         <p>
+     *         For example, if your container normally uses 128 MiB of memory,
+     *         but occasionally bursts to 256 MiB of memory for short periods of
+     *         time, you can set a <code>memoryReservation</code> of 128 MiB,
+     *         and a <code>memory</code> hard limit of 300 MiB. This
+     *         configuration would allow the container to only reserve 128 MiB
+     *         of memory from the remaining resources on the container instance,
+     *         but also allow the container to consume more memory resources
+     *         when needed.
+     */
+
+    public Integer getMemoryReservation() {
+        return this.memoryReservation;
+    }
+
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory to reserve for the container. When
+     * system memory is under heavy contention, Docker attempts to keep the
+     * container memory to this soft limit; however, your container can consume
+     * more memory when it needs to, up to either the hard limit specified with
+     * the <code>memory</code> parameter (if applicable), or all of the
+     * available memory on the container instance, whichever comes first. This
+     * parameter maps to <code>MemoryReservation</code> in the <a href=
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
+     * >Create a container</a> section of the <a
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
+     * >Docker Remote API</a> and the <code>--memory-reservation</code> option
+     * to <a href="https://docs.docker.com/reference/commandline/run/">docker
+     * run</a>.
+     * </p>
+     * <p>
+     * You must specify a non-zero integer for one or both of
+     * <code>memory</code> or <code>memoryReservation</code> in container
+     * definitions. If you specify both, <code>memory</code> must be greater
+     * than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the
+     * available memory resources for the container instance on which the
+     * container is placed; otherwise, the value of <code>memory</code> is used.
+     * </p>
+     * <p>
+     * For example, if your container normally uses 128 MiB of memory, but
+     * occasionally bursts to 256 MiB of memory for short periods of time, you
+     * can set a <code>memoryReservation</code> of 128 MiB, and a
+     * <code>memory</code> hard limit of 300 MiB. This configuration would allow
+     * the container to only reserve 128 MiB of memory from the remaining
+     * resources on the container instance, but also allow the container to
+     * consume more memory resources when needed.
+     * </p>
+     * 
+     * @param memoryReservation
+     *        The soft limit (in MiB) of memory to reserve for the container.
+     *        When system memory is under heavy contention, Docker attempts to
+     *        keep the container memory to this soft limit; however, your
+     *        container can consume more memory when it needs to, up to either
+     *        the hard limit specified with the <code>memory</code> parameter
+     *        (if applicable), or all of the available memory on the container
+     *        instance, whichever comes first. This parameter maps to
+     *        <code>MemoryReservation</code> in the <a href=
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
+     *        >Create a container</a> section of the <a href=
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
+     *        >Docker Remote API</a> and the <code>--memory-reservation</code>
+     *        option to <a
+     *        href="https://docs.docker.com/reference/commandline/run/">docker
+     *        run</a>.</p>
+     *        <p>
+     *        You must specify a non-zero integer for one or both of
+     *        <code>memory</code> or <code>memoryReservation</code> in container
+     *        definitions. If you specify both, <code>memory</code> must be
+     *        greater than <code>memoryReservation</code>. If you specify
+     *        <code>memoryReservation</code>, then that value is subtracted from
+     *        the available memory resources for the container instance on which
+     *        the container is placed; otherwise, the value of
+     *        <code>memory</code> is used.
+     *        </p>
+     *        <p>
+     *        For example, if your container normally uses 128 MiB of memory,
+     *        but occasionally bursts to 256 MiB of memory for short periods of
+     *        time, you can set a <code>memoryReservation</code> of 128 MiB, and
+     *        a <code>memory</code> hard limit of 300 MiB. This configuration
+     *        would allow the container to only reserve 128 MiB of memory from
+     *        the remaining resources on the container instance, but also allow
+     *        the container to consume more memory resources when needed.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ContainerDefinition withMemoryReservation(Integer memoryReservation) {
+        setMemoryReservation(memoryReservation);
         return this;
     }
 
@@ -1374,9 +1715,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/userguide/dockerlinks/"
      * >https://docs.docker.com/userguide/dockerlinks/</a>. This parameter maps
      * to <code>Links</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -1400,9 +1741,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         href="https://docs.docker.com/userguide/dockerlinks/"
      *         >https://docs.docker.com/userguide/dockerlinks/</a>. This
      *         parameter maps to <code>Links</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--link</code> option to <a
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>.</p> <important>
@@ -1433,9 +1774,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/userguide/dockerlinks/"
      * >https://docs.docker.com/userguide/dockerlinks/</a>. This parameter maps
      * to <code>Links</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -1460,9 +1801,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/userguide/dockerlinks/"
      *        >https://docs.docker.com/userguide/dockerlinks/</a>. This
      *        parameter maps to <code>Links</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--link</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.</p> <important>
@@ -1495,9 +1836,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/userguide/dockerlinks/"
      * >https://docs.docker.com/userguide/dockerlinks/</a>. This parameter maps
      * to <code>Links</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -1528,9 +1869,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/userguide/dockerlinks/"
      *        >https://docs.docker.com/userguide/dockerlinks/</a>. This
      *        parameter maps to <code>Links</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--link</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.</p> <important>
@@ -1567,9 +1908,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/userguide/dockerlinks/"
      * >https://docs.docker.com/userguide/dockerlinks/</a>. This parameter maps
      * to <code>Links</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -1594,9 +1935,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/userguide/dockerlinks/"
      *        >https://docs.docker.com/userguide/dockerlinks/</a>. This
      *        parameter maps to <code>Links</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--link</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.</p> <important>
@@ -1621,11 +1962,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * containers to access ports on the host container instance to send or
      * receive traffic. This parameter maps to <code>PortBindings</code> in the
      * <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
+     * If the network mode of a task definition is set to <code>none</code>,
+     * then you cannot specify port mappings. If the network mode of a task
+     * definition is set to <code>host</code>, then host ports must either be
+     * undefined or they must match the container port in the port mapping.
      * </p>
      * <note>
      * <p>
@@ -1641,12 +1986,16 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         containers to access ports on the host container instance to send
      *         or receive traffic. This parameter maps to
      *         <code>PortBindings</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--publish</code> option to
      *         <a href="https://docs.docker.com/reference/commandline/run/">
-     *         docker run</a>.</p> <note>
+     *         docker run</a>. If the network mode of a task definition is set
+     *         to <code>none</code>, then you cannot specify port mappings. If
+     *         the network mode of a task definition is set to <code>host</code>
+     *         , then host ports must either be undefined or they must match the
+     *         container port in the port mapping.</p> <note>
      *         <p>
      *         After a task reaches the <code>RUNNING</code> status, manual and
      *         automatic host and container port assignments are visible in the
@@ -1670,11 +2019,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * containers to access ports on the host container instance to send or
      * receive traffic. This parameter maps to <code>PortBindings</code> in the
      * <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
+     * If the network mode of a task definition is set to <code>none</code>,
+     * then you cannot specify port mappings. If the network mode of a task
+     * definition is set to <code>host</code>, then host ports must either be
+     * undefined or they must match the container port in the port mapping.
      * </p>
      * <note>
      * <p>
@@ -1691,12 +2044,16 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        containers to access ports on the host container instance to send
      *        or receive traffic. This parameter maps to
      *        <code>PortBindings</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--publish</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>.</p> <note>
+     *        run</a>. If the network mode of a task definition is set to
+     *        <code>none</code>, then you cannot specify port mappings. If the
+     *        network mode of a task definition is set to <code>host</code>,
+     *        then host ports must either be undefined or they must match the
+     *        container port in the port mapping.</p> <note>
      *        <p>
      *        After a task reaches the <code>RUNNING</code> status, manual and
      *        automatic host and container port assignments are visible in the
@@ -1723,11 +2080,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * containers to access ports on the host container instance to send or
      * receive traffic. This parameter maps to <code>PortBindings</code> in the
      * <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
+     * If the network mode of a task definition is set to <code>none</code>,
+     * then you cannot specify port mappings. If the network mode of a task
+     * definition is set to <code>host</code>, then host ports must either be
+     * undefined or they must match the container port in the port mapping.
      * </p>
      * <note>
      * <p>
@@ -1750,12 +2111,16 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        containers to access ports on the host container instance to send
      *        or receive traffic. This parameter maps to
      *        <code>PortBindings</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--publish</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>.</p> <note>
+     *        run</a>. If the network mode of a task definition is set to
+     *        <code>none</code>, then you cannot specify port mappings. If the
+     *        network mode of a task definition is set to <code>host</code>,
+     *        then host ports must either be undefined or they must match the
+     *        container port in the port mapping.</p> <note>
      *        <p>
      *        After a task reaches the <code>RUNNING</code> status, manual and
      *        automatic host and container port assignments are visible in the
@@ -1785,11 +2150,15 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * containers to access ports on the host container instance to send or
      * receive traffic. This parameter maps to <code>PortBindings</code> in the
      * <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--publish</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
+     * If the network mode of a task definition is set to <code>none</code>,
+     * then you cannot specify port mappings. If the network mode of a task
+     * definition is set to <code>host</code>, then host ports must either be
+     * undefined or they must match the container port in the port mapping.
      * </p>
      * <note>
      * <p>
@@ -1806,12 +2175,16 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        containers to access ports on the host container instance to send
      *        or receive traffic. This parameter maps to
      *        <code>PortBindings</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--publish</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>.</p> <note>
+     *        run</a>. If the network mode of a task definition is set to
+     *        <code>none</code>, then you cannot specify port mappings. If the
+     *        network mode of a task definition is set to <code>host</code>,
+     *        then host ports must either be undefined or they must match the
+     *        container port in the port mapping.</p> <note>
      *        <p>
      *        After a task reaches the <code>RUNNING</code> status, manual and
      *        automatic host and container port assignments are visible in the
@@ -2019,9 +2392,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The entry point that is passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--entrypoint</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * For more information, see <a
@@ -2040,9 +2413,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         <p>
      *         The entry point that is passed to the container. This parameter
      *         maps to <code>Entrypoint</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--entrypoint</code> option
      *         to <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>. For more information, see <a
@@ -2069,9 +2442,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The entry point that is passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--entrypoint</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * For more information, see <a
@@ -2091,9 +2464,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        <p>
      *        The entry point that is passed to the container. This parameter
      *        maps to <code>Entrypoint</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--entrypoint</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -2124,9 +2497,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The entry point that is passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--entrypoint</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * For more information, see <a
@@ -2152,9 +2525,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        <p>
      *        The entry point that is passed to the container. This parameter
      *        maps to <code>Entrypoint</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--entrypoint</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -2188,9 +2561,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The entry point that is passed to the container. This parameter maps to
      * <code>Entrypoint</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--entrypoint</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * For more information, see <a
@@ -2210,9 +2583,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        <p>
      *        The entry point that is passed to the container. This parameter
      *        maps to <code>Entrypoint</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--entrypoint</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -2233,9 +2606,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The command that is passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * For more information, see <a
@@ -2245,9 +2618,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * 
      * @return The command that is passed to the container. This parameter maps
      *         to <code>Cmd</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>COMMAND</code> parameter to
      *         <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>. For more information, see <a
@@ -2266,9 +2639,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The command that is passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * For more information, see <a
@@ -2279,9 +2652,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param command
      *        The command that is passed to the container. This parameter maps
      *        to <code>Cmd</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>COMMAND</code> parameter to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -2304,9 +2677,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The command that is passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * For more information, see <a
@@ -2323,9 +2696,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param command
      *        The command that is passed to the container. This parameter maps
      *        to <code>Cmd</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>COMMAND</code> parameter to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -2351,9 +2724,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The command that is passed to the container. This parameter maps to
      * <code>Cmd</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * For more information, see <a
@@ -2364,9 +2737,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param command
      *        The command that is passed to the container. This parameter maps
      *        to <code>Cmd</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>COMMAND</code> parameter to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -2386,9 +2759,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The environment variables to pass to a container. This parameter maps to
      * <code>Env</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2401,9 +2774,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * 
      * @return The environment variables to pass to a container. This parameter
      *         maps to <code>Env</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--env</code> option to <a
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>.</p> <important>
@@ -2424,9 +2797,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The environment variables to pass to a container. This parameter maps to
      * <code>Env</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2440,9 +2813,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param environment
      *        The environment variables to pass to a container. This parameter
      *        maps to <code>Env</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--env</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.</p> <important>
@@ -2466,9 +2839,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The environment variables to pass to a container. This parameter maps to
      * <code>Env</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2488,9 +2861,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param environment
      *        The environment variables to pass to a container. This parameter
      *        maps to <code>Env</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--env</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.</p> <important>
@@ -2517,9 +2890,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The environment variables to pass to a container. This parameter maps to
      * <code>Env</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--env</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2533,9 +2906,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param environment
      *        The environment variables to pass to a container. This parameter
      *        maps to <code>Env</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--env</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.</p> <important>
@@ -2557,18 +2930,18 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The mount points for data volumes in your container. This parameter maps
      * to <code>Volumes</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * 
      * @return The mount points for data volumes in your container. This
      *         parameter maps to <code>Volumes</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--volume</code> option to <a
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>.
@@ -2585,9 +2958,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The mount points for data volumes in your container. This parameter maps
      * to <code>Volumes</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2595,9 +2968,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param mountPoints
      *        The mount points for data volumes in your container. This
      *        parameter maps to <code>Volumes</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--volume</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
@@ -2617,9 +2990,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The mount points for data volumes in your container. This parameter maps
      * to <code>Volumes</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2633,9 +3006,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param mountPoints
      *        The mount points for data volumes in your container. This
      *        parameter maps to <code>Volumes</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--volume</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
@@ -2658,9 +3031,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The mount points for data volumes in your container. This parameter maps
      * to <code>Volumes</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2668,9 +3041,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param mountPoints
      *        The mount points for data volumes in your container. This
      *        parameter maps to <code>Volumes</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--volume</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
@@ -2688,18 +3061,18 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * Data volumes to mount from another container. This parameter maps to
      * <code>VolumesFrom</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * 
      * @return Data volumes to mount from another container. This parameter maps
      *         to <code>VolumesFrom</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--volumes-from</code> option
      *         to <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.
@@ -2716,9 +3089,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * Data volumes to mount from another container. This parameter maps to
      * <code>VolumesFrom</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2726,9 +3099,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param volumesFrom
      *        Data volumes to mount from another container. This parameter maps
      *        to <code>VolumesFrom</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--volumes-from</code> option
      *        to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -2749,9 +3122,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * Data volumes to mount from another container. This parameter maps to
      * <code>VolumesFrom</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2765,9 +3138,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param volumesFrom
      *        Data volumes to mount from another container. This parameter maps
      *        to <code>VolumesFrom</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--volumes-from</code> option
      *        to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -2791,9 +3164,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * Data volumes to mount from another container. This parameter maps to
      * <code>VolumesFrom</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--volumes-from</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2801,9 +3174,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param volumesFrom
      *        Data volumes to mount from another container. This parameter maps
      *        to <code>VolumesFrom</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--volumes-from</code> option
      *        to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -2822,9 +3195,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The hostname to use for your container. This parameter maps to
      * <code>Hostname</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--hostname</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2832,9 +3205,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param hostname
      *        The hostname to use for your container. This parameter maps to
      *        <code>Hostname</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--hostname</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -2849,18 +3222,18 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The hostname to use for your container. This parameter maps to
      * <code>Hostname</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--hostname</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * 
      * @return The hostname to use for your container. This parameter maps to
      *         <code>Hostname</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--hostname</code> option to
      *         <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.
@@ -2874,9 +3247,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The hostname to use for your container. This parameter maps to
      * <code>Hostname</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--hostname</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2884,9 +3257,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param hostname
      *        The hostname to use for your container. This parameter maps to
      *        <code>Hostname</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--hostname</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -2904,9 +3277,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2914,9 +3287,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param user
      *        The user name to use inside the container. This parameter maps to
      *        <code>User</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--user</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
@@ -2930,18 +3303,18 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * 
      * @return The user name to use inside the container. This parameter maps to
      *         <code>User</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--user</code> option to <a
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>.
@@ -2955,9 +3328,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2965,9 +3338,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param user
      *        The user name to use inside the container. This parameter maps to
      *        <code>User</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--user</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
@@ -2984,9 +3357,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The working directory in which to run commands inside the container. This
      * parameter maps to <code>WorkingDir</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--workdir</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -2995,9 +3368,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        The working directory in which to run commands inside the
      *        container. This parameter maps to <code>WorkingDir</code> in the
      *        <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--workdir</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
@@ -3011,9 +3384,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The working directory in which to run commands inside the container. This
      * parameter maps to <code>WorkingDir</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--workdir</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3021,9 +3394,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return The working directory in which to run commands inside the
      *         container. This parameter maps to <code>WorkingDir</code> in the
      *         <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--workdir</code> option to
      *         <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.
@@ -3037,9 +3410,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The working directory in which to run commands inside the container. This
      * parameter maps to <code>WorkingDir</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--workdir</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3048,9 +3421,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        The working directory in which to run commands inside the
      *        container. This parameter maps to <code>WorkingDir</code> in the
      *        <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--workdir</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
@@ -3067,9 +3440,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * When this parameter is true, networking is disabled within the container.
      * This parameter maps to <code>NetworkDisabled</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a>.
      * </p>
      * 
@@ -3077,9 +3450,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        When this parameter is true, networking is disabled within the
      *        container. This parameter maps to <code>NetworkDisabled</code> in
      *        the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a>.
      */
 
@@ -3091,18 +3464,18 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * When this parameter is true, networking is disabled within the container.
      * This parameter maps to <code>NetworkDisabled</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a>.
      * </p>
      * 
      * @return When this parameter is true, networking is disabled within the
      *         container. This parameter maps to <code>NetworkDisabled</code> in
      *         the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a>.
      */
 
@@ -3114,9 +3487,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * When this parameter is true, networking is disabled within the container.
      * This parameter maps to <code>NetworkDisabled</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a>.
      * </p>
      * 
@@ -3124,9 +3497,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        When this parameter is true, networking is disabled within the
      *        container. This parameter maps to <code>NetworkDisabled</code> in
      *        the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -3141,18 +3514,18 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * When this parameter is true, networking is disabled within the container.
      * This parameter maps to <code>NetworkDisabled</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a>.
      * </p>
      * 
      * @return When this parameter is true, networking is disabled within the
      *         container. This parameter maps to <code>NetworkDisabled</code> in
      *         the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a>.
      */
 
@@ -3165,9 +3538,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * When this parameter is true, the container is given elevated privileges
      * on the host container instance (similar to the <code>root</code> user).
      * This parameter maps to <code>Privileged</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--privileged</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3177,9 +3550,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        privileges on the host container instance (similar to the
      *        <code>root</code> user). This parameter maps to
      *        <code>Privileged</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--privileged</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -3195,9 +3568,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * When this parameter is true, the container is given elevated privileges
      * on the host container instance (similar to the <code>root</code> user).
      * This parameter maps to <code>Privileged</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--privileged</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3206,9 +3579,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         privileges on the host container instance (similar to the
      *         <code>root</code> user). This parameter maps to
      *         <code>Privileged</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--privileged</code> option
      *         to <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.
@@ -3223,9 +3596,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * When this parameter is true, the container is given elevated privileges
      * on the host container instance (similar to the <code>root</code> user).
      * This parameter maps to <code>Privileged</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--privileged</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3235,9 +3608,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        privileges on the host container instance (similar to the
      *        <code>root</code> user). This parameter maps to
      *        <code>Privileged</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--privileged</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -3256,9 +3629,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * When this parameter is true, the container is given elevated privileges
      * on the host container instance (similar to the <code>root</code> user).
      * This parameter maps to <code>Privileged</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--privileged</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3267,9 +3640,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         privileges on the host container instance (similar to the
      *         <code>root</code> user). This parameter maps to
      *         <code>Privileged</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--privileged</code> option
      *         to <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.
@@ -3284,9 +3657,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * When this parameter is true, the container is given read-only access to
      * its root file system. This parameter maps to <code>ReadonlyRootfs</code>
      * in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--read-only</code> option to
      * <code>docker run</code>.
      * </p>
@@ -3295,9 +3668,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        When this parameter is true, the container is given read-only
      *        access to its root file system. This parameter maps to
      *        <code>ReadonlyRootfs</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--read-only</code> option to
      *        <code>docker run</code>.
      */
@@ -3311,9 +3684,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * When this parameter is true, the container is given read-only access to
      * its root file system. This parameter maps to <code>ReadonlyRootfs</code>
      * in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--read-only</code> option to
      * <code>docker run</code>.
      * </p>
@@ -3321,9 +3694,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return When this parameter is true, the container is given read-only
      *         access to its root file system. This parameter maps to
      *         <code>ReadonlyRootfs</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--read-only</code> option to
      *         <code>docker run</code>.
      */
@@ -3337,9 +3710,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * When this parameter is true, the container is given read-only access to
      * its root file system. This parameter maps to <code>ReadonlyRootfs</code>
      * in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--read-only</code> option to
      * <code>docker run</code>.
      * </p>
@@ -3348,9 +3721,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        When this parameter is true, the container is given read-only
      *        access to its root file system. This parameter maps to
      *        <code>ReadonlyRootfs</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--read-only</code> option to
      *        <code>docker run</code>.
      * @return Returns a reference to this object so that method calls can be
@@ -3368,9 +3741,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * When this parameter is true, the container is given read-only access to
      * its root file system. This parameter maps to <code>ReadonlyRootfs</code>
      * in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--read-only</code> option to
      * <code>docker run</code>.
      * </p>
@@ -3378,9 +3751,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return When this parameter is true, the container is given read-only
      *         access to its root file system. This parameter maps to
      *         <code>ReadonlyRootfs</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--read-only</code> option to
      *         <code>docker run</code>.
      */
@@ -3393,18 +3766,18 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of DNS servers that are presented to the container. This parameter
      * maps to <code>Dns</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * 
      * @return A list of DNS servers that are presented to the container. This
      *         parameter maps to <code>Dns</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--dns</code> option to <a
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>.
@@ -3421,9 +3794,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of DNS servers that are presented to the container. This parameter
      * maps to <code>Dns</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3431,9 +3804,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param dnsServers
      *        A list of DNS servers that are presented to the container. This
      *        parameter maps to <code>Dns</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--dns</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
@@ -3453,9 +3826,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of DNS servers that are presented to the container. This parameter
      * maps to <code>Dns</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3469,9 +3842,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param dnsServers
      *        A list of DNS servers that are presented to the container. This
      *        parameter maps to <code>Dns</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--dns</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
@@ -3494,9 +3867,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of DNS servers that are presented to the container. This parameter
      * maps to <code>Dns</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--dns</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3504,9 +3877,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param dnsServers
      *        A list of DNS servers that are presented to the container. This
      *        parameter maps to <code>Dns</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--dns</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
@@ -3524,18 +3897,18 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of DNS search domains that are presented to the container. This
      * parameter maps to <code>DnsSearch</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * 
      * @return A list of DNS search domains that are presented to the container.
      *         This parameter maps to <code>DnsSearch</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--dns-search</code> option
      *         to <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.
@@ -3552,9 +3925,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of DNS search domains that are presented to the container. This
      * parameter maps to <code>DnsSearch</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3562,9 +3935,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param dnsSearchDomains
      *        A list of DNS search domains that are presented to the container.
      *        This parameter maps to <code>DnsSearch</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--dns-search</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -3586,9 +3959,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of DNS search domains that are presented to the container. This
      * parameter maps to <code>DnsSearch</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3602,9 +3975,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param dnsSearchDomains
      *        A list of DNS search domains that are presented to the container.
      *        This parameter maps to <code>DnsSearch</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--dns-search</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -3628,9 +4001,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of DNS search domains that are presented to the container. This
      * parameter maps to <code>DnsSearch</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3638,9 +4011,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param dnsSearchDomains
      *        A list of DNS search domains that are presented to the container.
      *        This parameter maps to <code>DnsSearch</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--dns-search</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -3660,9 +4033,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. This parameter maps to
      * <code>ExtraHosts</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3670,9 +4043,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return A list of hostnames and IP address mappings to append to the
      *         <code>/etc/hosts</code> file on the container. This parameter
      *         maps to <code>ExtraHosts</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--add-host</code> option to
      *         <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.
@@ -3690,9 +4063,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. This parameter maps to
      * <code>ExtraHosts</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3701,9 +4074,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        A list of hostnames and IP address mappings to append to the
      *        <code>/etc/hosts</code> file on the container. This parameter maps
      *        to <code>ExtraHosts</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--add-host</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -3725,9 +4098,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. This parameter maps to
      * <code>ExtraHosts</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3742,9 +4115,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        A list of hostnames and IP address mappings to append to the
      *        <code>/etc/hosts</code> file on the container. This parameter maps
      *        to <code>ExtraHosts</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--add-host</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -3769,9 +4142,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * A list of hostnames and IP address mappings to append to the
      * <code>/etc/hosts</code> file on the container. This parameter maps to
      * <code>ExtraHosts</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--add-host</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3780,9 +4153,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        A list of hostnames and IP address mappings to append to the
      *        <code>/etc/hosts</code> file on the container. This parameter maps
      *        to <code>ExtraHosts</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--add-host</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -3802,9 +4175,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This parameter maps to
      * <code>SecurityOpt</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--security-opt</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3824,9 +4197,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return A list of strings to provide custom labels for SELinux and
      *         AppArmor multi-level security systems. This parameter maps to
      *         <code>SecurityOpt</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--security-opt</code> option
      *         to <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.</p> <note>
@@ -3854,9 +4227,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This parameter maps to
      * <code>SecurityOpt</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--security-opt</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3877,9 +4250,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        A list of strings to provide custom labels for SELinux and
      *        AppArmor multi-level security systems. This parameter maps to
      *        <code>SecurityOpt</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--security-opt</code> option
      *        to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -3912,9 +4285,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This parameter maps to
      * <code>SecurityOpt</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--security-opt</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -3941,9 +4314,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        A list of strings to provide custom labels for SELinux and
      *        AppArmor multi-level security systems. This parameter maps to
      *        <code>SecurityOpt</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--security-opt</code> option
      *        to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -3979,9 +4352,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This parameter maps to
      * <code>SecurityOpt</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--security-opt</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
@@ -4002,9 +4375,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        A list of strings to provide custom labels for SELinux and
      *        AppArmor multi-level security systems. This parameter maps to
      *        <code>SecurityOpt</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--security-opt</code> option
      *        to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -4033,9 +4406,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * This parameter requires version 1.18 of the Docker Remote API or greater
@@ -4047,9 +4420,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * 
      * @return A key/value map of labels to add to the container. This parameter
      *         maps to <code>Labels</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--label</code> option to <a
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>. This parameter requires version 1.18 of the Docker
@@ -4067,9 +4440,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * This parameter requires version 1.18 of the Docker Remote API or greater
@@ -4082,9 +4455,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param dockerLabels
      *        A key/value map of labels to add to the container. This parameter
      *        maps to <code>Labels</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--label</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>. This parameter requires version 1.18 of the Docker Remote
@@ -4102,9 +4475,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A key/value map of labels to add to the container. This parameter maps to
      * <code>Labels</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--label</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * This parameter requires version 1.18 of the Docker Remote API or greater
@@ -4117,9 +4490,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param dockerLabels
      *        A key/value map of labels to add to the container. This parameter
      *        maps to <code>Labels</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--label</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>. This parameter requires version 1.18 of the Docker Remote
@@ -4162,9 +4535,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of <code>ulimits</code> to set in the container. This parameter
      * maps to <code>Ulimits</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * Valid naming values are displayed in the <a>Ulimit</a> data type. This
@@ -4177,9 +4550,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * 
      * @return A list of <code>ulimits</code> to set in the container. This
      *         parameter maps to <code>Ulimits</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--ulimit</code> option to <a
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>. Valid naming values are displayed in the <a>Ulimit</a>
@@ -4201,9 +4574,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of <code>ulimits</code> to set in the container. This parameter
      * maps to <code>Ulimits</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * Valid naming values are displayed in the <a>Ulimit</a> data type. This
@@ -4217,9 +4590,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param ulimits
      *        A list of <code>ulimits</code> to set in the container. This
      *        parameter maps to <code>Ulimits</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--ulimit</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>. Valid naming values are displayed in the <a>Ulimit</a>
@@ -4244,9 +4617,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of <code>ulimits</code> to set in the container. This parameter
      * maps to <code>Ulimits</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * Valid naming values are displayed in the <a>Ulimit</a> data type. This
@@ -4266,9 +4639,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param ulimits
      *        A list of <code>ulimits</code> to set in the container. This
      *        parameter maps to <code>Ulimits</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--ulimit</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>. Valid naming values are displayed in the <a>Ulimit</a>
@@ -4296,9 +4669,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * A list of <code>ulimits</code> to set in the container. This parameter
      * maps to <code>Ulimits</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * Valid naming values are displayed in the <a>Ulimit</a> data type. This
@@ -4312,9 +4685,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param ulimits
      *        A list of <code>ulimits</code> to set in the container. This
      *        parameter maps to <code>Ulimits</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--ulimit</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>. Valid naming values are displayed in the <a>Ulimit</a>
@@ -4336,9 +4709,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The log configuration specification for the container. This parameter
      * maps to <code>LogConfig</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * By default, containers use the same logging driver that the Docker daemon
@@ -4382,9 +4755,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param logConfiguration
      *        The log configuration specification for the container. This
      *        parameter maps to <code>LogConfig</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--log-driver</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -4435,9 +4808,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The log configuration specification for the container. This parameter
      * maps to <code>LogConfig</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * By default, containers use the same logging driver that the Docker daemon
@@ -4480,9 +4853,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * 
      * @return The log configuration specification for the container. This
      *         parameter maps to <code>LogConfig</code> in the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *         >Create a container</a> section of the <a href=
-     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *         "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *         >Docker Remote API</a> and the <code>--log-driver</code> option
      *         to <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>. By default, containers use the same logging
@@ -4533,9 +4906,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <p>
      * The log configuration specification for the container. This parameter
      * maps to <code>LogConfig</code> in the <a href=
-     * "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     * "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      * >Create a container</a> section of the <a
-     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     * href="https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      * >Docker Remote API</a> and the <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * By default, containers use the same logging driver that the Docker daemon
@@ -4579,9 +4952,9 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @param logConfiguration
      *        The log configuration specification for the container. This
      *        parameter maps to <code>LogConfig</code> in the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/#create-a-container"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/#create-a-container"
      *        >Create a container</a> section of the <a href=
-     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
+     *        "https://docs.docker.com/reference/api/docker_remote_api_v1.23/"
      *        >Docker Remote API</a> and the <code>--log-driver</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
@@ -4652,6 +5025,8 @@ public class ContainerDefinition implements Serializable, Cloneable {
             sb.append("Cpu: " + getCpu() + ",");
         if (getMemory() != null)
             sb.append("Memory: " + getMemory() + ",");
+        if (getMemoryReservation() != null)
+            sb.append("MemoryReservation: " + getMemoryReservation() + ",");
         if (getLinks() != null)
             sb.append("Links: " + getLinks() + ",");
         if (getPortMappings() != null)
@@ -4729,6 +5104,13 @@ public class ContainerDefinition implements Serializable, Cloneable {
             return false;
         if (other.getMemory() != null
                 && other.getMemory().equals(this.getMemory()) == false)
+            return false;
+        if (other.getMemoryReservation() == null
+                ^ this.getMemoryReservation() == null)
+            return false;
+        if (other.getMemoryReservation() != null
+                && other.getMemoryReservation().equals(
+                        this.getMemoryReservation()) == false)
             return false;
         if (other.getLinks() == null ^ this.getLinks() == null)
             return false;
@@ -4863,6 +5245,10 @@ public class ContainerDefinition implements Serializable, Cloneable {
                 + ((getCpu() == null) ? 0 : getCpu().hashCode());
         hashCode = prime * hashCode
                 + ((getMemory() == null) ? 0 : getMemory().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getMemoryReservation() == null) ? 0
+                        : getMemoryReservation().hashCode());
         hashCode = prime * hashCode
                 + ((getLinks() == null) ? 0 : getLinks().hashCode());
         hashCode = prime

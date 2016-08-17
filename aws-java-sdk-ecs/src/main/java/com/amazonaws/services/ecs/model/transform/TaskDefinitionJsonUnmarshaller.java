@@ -73,6 +73,11 @@ public class TaskDefinitionJsonUnmarshaller implements
                     taskDefinition.setTaskRoleArn(context.getUnmarshaller(
                             String.class).unmarshall(context));
                 }
+                if (context.testExpression("networkMode", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setNetworkMode(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("revision", targetDepth)) {
                     context.nextToken();
                     taskDefinition.setRevision(context.getUnmarshaller(

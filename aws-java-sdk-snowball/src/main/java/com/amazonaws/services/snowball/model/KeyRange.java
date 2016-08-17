@@ -29,20 +29,28 @@ public class KeyRange implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The key that starts an optional key range for an export job. Ranges are
+     * inclusive and UTF-8 binary sorted.
      * </p>
      */
     private String beginMarker;
     /**
      * <p>
+     * The key that ends an optional key range for an export job. Ranges are
+     * inclusive and UTF-8 binary sorted.
      * </p>
      */
     private String endMarker;
 
     /**
      * <p>
+     * The key that starts an optional key range for an export job. Ranges are
+     * inclusive and UTF-8 binary sorted.
      * </p>
      * 
      * @param beginMarker
+     *        The key that starts an optional key range for an export job.
+     *        Ranges are inclusive and UTF-8 binary sorted.
      */
 
     public void setBeginMarker(String beginMarker) {
@@ -51,9 +59,12 @@ public class KeyRange implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The key that starts an optional key range for an export job. Ranges are
+     * inclusive and UTF-8 binary sorted.
      * </p>
      * 
-     * @return
+     * @return The key that starts an optional key range for an export job.
+     *         Ranges are inclusive and UTF-8 binary sorted.
      */
 
     public String getBeginMarker() {
@@ -62,9 +73,13 @@ public class KeyRange implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The key that starts an optional key range for an export job. Ranges are
+     * inclusive and UTF-8 binary sorted.
      * </p>
      * 
      * @param beginMarker
+     *        The key that starts an optional key range for an export job.
+     *        Ranges are inclusive and UTF-8 binary sorted.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -76,9 +91,13 @@ public class KeyRange implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The key that ends an optional key range for an export job. Ranges are
+     * inclusive and UTF-8 binary sorted.
      * </p>
      * 
      * @param endMarker
+     *        The key that ends an optional key range for an export job. Ranges
+     *        are inclusive and UTF-8 binary sorted.
      */
 
     public void setEndMarker(String endMarker) {
@@ -87,9 +106,12 @@ public class KeyRange implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The key that ends an optional key range for an export job. Ranges are
+     * inclusive and UTF-8 binary sorted.
      * </p>
      * 
-     * @return
+     * @return The key that ends an optional key range for an export job. Ranges
+     *         are inclusive and UTF-8 binary sorted.
      */
 
     public String getEndMarker() {
@@ -98,9 +120,13 @@ public class KeyRange implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The key that ends an optional key range for an export job. Ranges are
+     * inclusive and UTF-8 binary sorted.
      * </p>
      * 
      * @param endMarker
+     *        The key that ends an optional key range for an export job. Ranges
+     *        are inclusive and UTF-8 binary sorted.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

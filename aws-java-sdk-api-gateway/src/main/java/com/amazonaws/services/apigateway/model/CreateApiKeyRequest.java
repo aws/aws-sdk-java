@@ -45,7 +45,21 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
     private Boolean enabled;
     /**
      * <p>
-     * Specifies whether the <a>ApiKey</a> can be used by callers.
+     * Specifies whether (<code>true</code>) or not (<code>false</code>) the key
+     * identifier is distinct from the created API key value.
+     * </p>
+     */
+    private Boolean generateDistinctId;
+    /**
+     * <p>
+     * Specifies a value of the API key.
+     * </p>
+     */
+    private String value;
+    /**
+     * <p>
+     * DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
+     * key.
      * </p>
      */
     private java.util.List<StageKey> stageKeys;
@@ -187,10 +201,114 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the <a>ApiKey</a> can be used by callers.
+     * Specifies whether (<code>true</code>) or not (<code>false</code>) the key
+     * identifier is distinct from the created API key value.
      * </p>
      * 
-     * @return Specifies whether the <a>ApiKey</a> can be used by callers.
+     * @param generateDistinctId
+     *        Specifies whether (<code>true</code>) or not (<code>false</code>)
+     *        the key identifier is distinct from the created API key value.
+     */
+
+    public void setGenerateDistinctId(Boolean generateDistinctId) {
+        this.generateDistinctId = generateDistinctId;
+    }
+
+    /**
+     * <p>
+     * Specifies whether (<code>true</code>) or not (<code>false</code>) the key
+     * identifier is distinct from the created API key value.
+     * </p>
+     * 
+     * @return Specifies whether (<code>true</code>) or not (<code>false</code>)
+     *         the key identifier is distinct from the created API key value.
+     */
+
+    public Boolean getGenerateDistinctId() {
+        return this.generateDistinctId;
+    }
+
+    /**
+     * <p>
+     * Specifies whether (<code>true</code>) or not (<code>false</code>) the key
+     * identifier is distinct from the created API key value.
+     * </p>
+     * 
+     * @param generateDistinctId
+     *        Specifies whether (<code>true</code>) or not (<code>false</code>)
+     *        the key identifier is distinct from the created API key value.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateApiKeyRequest withGenerateDistinctId(Boolean generateDistinctId) {
+        setGenerateDistinctId(generateDistinctId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether (<code>true</code>) or not (<code>false</code>) the key
+     * identifier is distinct from the created API key value.
+     * </p>
+     * 
+     * @return Specifies whether (<code>true</code>) or not (<code>false</code>)
+     *         the key identifier is distinct from the created API key value.
+     */
+
+    public Boolean isGenerateDistinctId() {
+        return this.generateDistinctId;
+    }
+
+    /**
+     * <p>
+     * Specifies a value of the API key.
+     * </p>
+     * 
+     * @param value
+     *        Specifies a value of the API key.
+     */
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    /**
+     * <p>
+     * Specifies a value of the API key.
+     * </p>
+     * 
+     * @return Specifies a value of the API key.
+     */
+
+    public String getValue() {
+        return this.value;
+    }
+
+    /**
+     * <p>
+     * Specifies a value of the API key.
+     * </p>
+     * 
+     * @param value
+     *        Specifies a value of the API key.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateApiKeyRequest withValue(String value) {
+        setValue(value);
+        return this;
+    }
+
+    /**
+     * <p>
+     * DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
+     * key.
+     * </p>
+     * 
+     * @return DEPRECATED FOR USAGE PLANS - Specifies stages associated with the
+     *         API key.
      */
 
     public java.util.List<StageKey> getStageKeys() {
@@ -199,11 +317,13 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the <a>ApiKey</a> can be used by callers.
+     * DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
+     * key.
      * </p>
      * 
      * @param stageKeys
-     *        Specifies whether the <a>ApiKey</a> can be used by callers.
+     *        DEPRECATED FOR USAGE PLANS - Specifies stages associated with the
+     *        API key.
      */
 
     public void setStageKeys(java.util.Collection<StageKey> stageKeys) {
@@ -217,7 +337,8 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the <a>ApiKey</a> can be used by callers.
+     * DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
+     * key.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -227,7 +348,8 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param stageKeys
-     *        Specifies whether the <a>ApiKey</a> can be used by callers.
+     *        DEPRECATED FOR USAGE PLANS - Specifies stages associated with the
+     *        API key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -244,11 +366,13 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies whether the <a>ApiKey</a> can be used by callers.
+     * DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
+     * key.
      * </p>
      * 
      * @param stageKeys
-     *        Specifies whether the <a>ApiKey</a> can be used by callers.
+     *        DEPRECATED FOR USAGE PLANS - Specifies stages associated with the
+     *        API key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -277,6 +401,10 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
             sb.append("Description: " + getDescription() + ",");
         if (getEnabled() != null)
             sb.append("Enabled: " + getEnabled() + ",");
+        if (getGenerateDistinctId() != null)
+            sb.append("GenerateDistinctId: " + getGenerateDistinctId() + ",");
+        if (getValue() != null)
+            sb.append("Value: " + getValue() + ",");
         if (getStageKeys() != null)
             sb.append("StageKeys: " + getStageKeys());
         sb.append("}");
@@ -308,6 +436,18 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
         if (other.getEnabled() != null
                 && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
+        if (other.getGenerateDistinctId() == null
+                ^ this.getGenerateDistinctId() == null)
+            return false;
+        if (other.getGenerateDistinctId() != null
+                && other.getGenerateDistinctId().equals(
+                        this.getGenerateDistinctId()) == false)
+            return false;
+        if (other.getValue() == null ^ this.getValue() == null)
+            return false;
+        if (other.getValue() != null
+                && other.getValue().equals(this.getValue()) == false)
+            return false;
         if (other.getStageKeys() == null ^ this.getStageKeys() == null)
             return false;
         if (other.getStageKeys() != null
@@ -328,6 +468,12 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
                 + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode
                 + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getGenerateDistinctId() == null) ? 0
+                        : getGenerateDistinctId().hashCode());
+        hashCode = prime * hashCode
+                + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode
                 + ((getStageKeys() == null) ? 0 : getStageKeys().hashCode());
         return hashCode;

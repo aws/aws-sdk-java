@@ -28,6 +28,7 @@ import com.amazonaws.auth.profile.internal.securitytoken.ProfileCredentialsServi
 import com.amazonaws.auth.profile.internal.securitytoken.STSProfileCredentialsServiceLoader;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.profile.path.AwsProfileFileLocationProvider;
+import com.amazonaws.util.ValidationUtils;
 
 import java.io.File;
 import java.util.HashMap;
@@ -138,7 +139,7 @@ public class ProfilesConfigFile {
      */
     public ProfilesConfigFile(File file, ProfileCredentialsService credentialsService) throws
                                                                                        AmazonClientException {
-        profileFile = file;
+        profileFile = ValidationUtils.assertNotNull(file, "profile file");
         profileCredentialsService = credentialsService;
         profileFileLastModified = file.lastModified();
         allProfiles = loadProfiles(profileFile);

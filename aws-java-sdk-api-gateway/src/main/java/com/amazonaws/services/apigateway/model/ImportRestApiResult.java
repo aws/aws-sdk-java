@@ -20,6 +20,9 @@ import java.io.Serializable;
  * <p>
  * Represents a REST API.
  * </p>
+ * <div class="seeAlso"> <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html"
+ * >Create an API</a> </div>
  */
 public class ImportRestApiResult implements Serializable, Cloneable {
 
@@ -50,7 +53,12 @@ public class ImportRestApiResult implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date createdDate;
-
+    /**
+     * <p>
+     * The warning messages reported when <code>failonwarnings</code> is turned
+     * on during API import.
+     * </p>
+     */
     private java.util.List<String> warnings;
 
     /**
@@ -236,7 +244,13 @@ public class ImportRestApiResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The warning messages reported when <code>failonwarnings</code> is turned
+     * on during API import.
+     * </p>
+     * 
+     * @return The warning messages reported when <code>failonwarnings</code> is
+     *         turned on during API import.
      */
 
     public java.util.List<String> getWarnings() {
@@ -244,7 +258,14 @@ public class ImportRestApiResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The warning messages reported when <code>failonwarnings</code> is turned
+     * on during API import.
+     * </p>
+     * 
      * @param warnings
+     *        The warning messages reported when <code>failonwarnings</code> is
+     *        turned on during API import.
      */
 
     public void setWarnings(java.util.Collection<String> warnings) {
@@ -258,6 +279,10 @@ public class ImportRestApiResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The warning messages reported when <code>failonwarnings</code> is turned
+     * on during API import.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setWarnings(java.util.Collection)} or
      * {@link #withWarnings(java.util.Collection)} if you want to override the
@@ -265,6 +290,8 @@ public class ImportRestApiResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param warnings
+     *        The warning messages reported when <code>failonwarnings</code> is
+     *        turned on during API import.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -280,7 +307,14 @@ public class ImportRestApiResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The warning messages reported when <code>failonwarnings</code> is turned
+     * on during API import.
+     * </p>
+     * 
      * @param warnings
+     *        The warning messages reported when <code>failonwarnings</code> is
+     *        turned on during API import.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -39,7 +39,7 @@ public class CreateRestApiRequest extends AmazonWebServiceRequest implements
     private String description;
     /**
      * <p>
-     * The Id of the <a>RestApi</a> that you want to clone from.
+     * The ID of the <a>RestApi</a> that you want to clone from.
      * </p>
      */
     private String cloneFrom;
@@ -128,11 +128,11 @@ public class CreateRestApiRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Id of the <a>RestApi</a> that you want to clone from.
+     * The ID of the <a>RestApi</a> that you want to clone from.
      * </p>
      * 
      * @param cloneFrom
-     *        The Id of the <a>RestApi</a> that you want to clone from.
+     *        The ID of the <a>RestApi</a> that you want to clone from.
      */
 
     public void setCloneFrom(String cloneFrom) {
@@ -141,10 +141,10 @@ public class CreateRestApiRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Id of the <a>RestApi</a> that you want to clone from.
+     * The ID of the <a>RestApi</a> that you want to clone from.
      * </p>
      * 
-     * @return The Id of the <a>RestApi</a> that you want to clone from.
+     * @return The ID of the <a>RestApi</a> that you want to clone from.
      */
 
     public String getCloneFrom() {
@@ -153,11 +153,11 @@ public class CreateRestApiRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Id of the <a>RestApi</a> that you want to clone from.
+     * The ID of the <a>RestApi</a> that you want to clone from.
      * </p>
      * 
      * @param cloneFrom
-     *        The Id of the <a>RestApi</a> that you want to clone from.
+     *        The ID of the <a>RestApi</a> that you want to clone from.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

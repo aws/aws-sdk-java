@@ -18,8 +18,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the response of the test invoke request in HTTP method.
+ * Represents the response of the test invoke request in the HTTP method.
  * </p>
+ * <div class="seeAlso"> <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-test-method.html#how-to-test-method-console"
+ * >Test API using the API Gateway console</a> </div>
  */
 public class TestInvokeMethodResult implements Serializable, Cloneable {
 
@@ -31,13 +34,13 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
     private Integer status;
     /**
      * <p>
-     * The body of HTTP response.
+     * The body of the HTTP response.
      * </p>
      */
     private String body;
     /**
      * <p>
-     * The headers of HTTP response.
+     * The headers of the HTTP response.
      * </p>
      */
     private java.util.Map<String, String> headers;
@@ -97,11 +100,11 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The body of HTTP response.
+     * The body of the HTTP response.
      * </p>
      * 
      * @param body
-     *        The body of HTTP response.
+     *        The body of the HTTP response.
      */
 
     public void setBody(String body) {
@@ -110,10 +113,10 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The body of HTTP response.
+     * The body of the HTTP response.
      * </p>
      * 
-     * @return The body of HTTP response.
+     * @return The body of the HTTP response.
      */
 
     public String getBody() {
@@ -122,11 +125,11 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The body of HTTP response.
+     * The body of the HTTP response.
      * </p>
      * 
      * @param body
-     *        The body of HTTP response.
+     *        The body of the HTTP response.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -138,10 +141,10 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The headers of HTTP response.
+     * The headers of the HTTP response.
      * </p>
      * 
-     * @return The headers of HTTP response.
+     * @return The headers of the HTTP response.
      */
 
     public java.util.Map<String, String> getHeaders() {
@@ -150,11 +153,11 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The headers of HTTP response.
+     * The headers of the HTTP response.
      * </p>
      * 
      * @param headers
-     *        The headers of HTTP response.
+     *        The headers of the HTTP response.
      */
 
     public void setHeaders(java.util.Map<String, String> headers) {
@@ -163,11 +166,11 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The headers of HTTP response.
+     * The headers of the HTTP response.
      * </p>
      * 
      * @param headers
-     *        The headers of HTTP response.
+     *        The headers of the HTTP response.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

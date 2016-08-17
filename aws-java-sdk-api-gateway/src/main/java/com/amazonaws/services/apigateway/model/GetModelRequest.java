@@ -40,8 +40,9 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
     private String modelName;
     /**
      * <p>
-     * Resolves all external model references and returns a flattened model
-     * schema.
+     * A query parameter of a Boolean value to resolve (<code>true</code>) all
+     * external model references and returns a flattened model schema or not (
+     * <code>false</code>) The default is <code>false</code>.
      * </p>
      */
     private Boolean flatten;
@@ -131,13 +132,16 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Resolves all external model references and returns a flattened model
-     * schema.
+     * A query parameter of a Boolean value to resolve (<code>true</code>) all
+     * external model references and returns a flattened model schema or not (
+     * <code>false</code>) The default is <code>false</code>.
      * </p>
      * 
      * @param flatten
-     *        Resolves all external model references and returns a flattened
-     *        model schema.
+     *        A query parameter of a Boolean value to resolve (<code>true</code>
+     *        ) all external model references and returns a flattened model
+     *        schema or not (<code>false</code>) The default is
+     *        <code>false</code>.
      */
 
     public void setFlatten(Boolean flatten) {
@@ -146,12 +150,15 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Resolves all external model references and returns a flattened model
-     * schema.
+     * A query parameter of a Boolean value to resolve (<code>true</code>) all
+     * external model references and returns a flattened model schema or not (
+     * <code>false</code>) The default is <code>false</code>.
      * </p>
      * 
-     * @return Resolves all external model references and returns a flattened
-     *         model schema.
+     * @return A query parameter of a Boolean value to resolve (
+     *         <code>true</code>) all external model references and returns a
+     *         flattened model schema or not (<code>false</code>) The default is
+     *         <code>false</code>.
      */
 
     public Boolean getFlatten() {
@@ -160,13 +167,16 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Resolves all external model references and returns a flattened model
-     * schema.
+     * A query parameter of a Boolean value to resolve (<code>true</code>) all
+     * external model references and returns a flattened model schema or not (
+     * <code>false</code>) The default is <code>false</code>.
      * </p>
      * 
      * @param flatten
-     *        Resolves all external model references and returns a flattened
-     *        model schema.
+     *        A query parameter of a Boolean value to resolve (<code>true</code>
+     *        ) all external model references and returns a flattened model
+     *        schema or not (<code>false</code>) The default is
+     *        <code>false</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -178,12 +188,15 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Resolves all external model references and returns a flattened model
-     * schema.
+     * A query parameter of a Boolean value to resolve (<code>true</code>) all
+     * external model references and returns a flattened model schema or not (
+     * <code>false</code>) The default is <code>false</code>.
      * </p>
      * 
-     * @return Resolves all external model references and returns a flattened
-     *         model schema.
+     * @return A query parameter of a Boolean value to resolve (
+     *         <code>true</code>) all external model references and returns a
+     *         flattened model schema or not (<code>false</code>) The default is
+     *         <code>false</code>.
      */
 
     public Boolean isFlatten() {

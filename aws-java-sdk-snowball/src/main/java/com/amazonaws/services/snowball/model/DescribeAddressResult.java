@@ -23,15 +23,21 @@ public class DescribeAddressResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The address that you want the Snowball or Snowballs associated with a
+     * specific job to be shipped to.
      * </p>
      */
     private Address address;
 
     /**
      * <p>
+     * The address that you want the Snowball or Snowballs associated with a
+     * specific job to be shipped to.
      * </p>
      * 
      * @param address
+     *        The address that you want the Snowball or Snowballs associated
+     *        with a specific job to be shipped to.
      */
 
     public void setAddress(Address address) {
@@ -40,9 +46,12 @@ public class DescribeAddressResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The address that you want the Snowball or Snowballs associated with a
+     * specific job to be shipped to.
      * </p>
      * 
-     * @return
+     * @return The address that you want the Snowball or Snowballs associated
+     *         with a specific job to be shipped to.
      */
 
     public Address getAddress() {
@@ -51,9 +60,13 @@ public class DescribeAddressResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The address that you want the Snowball or Snowballs associated with a
+     * specific job to be shipped to.
      * </p>
      * 
      * @param address
+     *        The address that you want the Snowball or Snowballs associated
+     *        with a specific job to be shipped to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

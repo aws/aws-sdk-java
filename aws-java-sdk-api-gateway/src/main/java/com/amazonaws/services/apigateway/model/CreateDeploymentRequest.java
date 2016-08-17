@@ -70,7 +70,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * <p>
      * A map that defines the stage variables for the <a>Stage</a> resource that
      * is associated with the new deployment. Variable names can have
-     * alphanumeric characters, and the values must match
+     * alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      */
@@ -371,14 +371,14 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * <p>
      * A map that defines the stage variables for the <a>Stage</a> resource that
      * is associated with the new deployment. Variable names can have
-     * alphanumeric characters, and the values must match
+     * alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @return A map that defines the stage variables for the <a>Stage</a>
      *         resource that is associated with the new deployment. Variable
-     *         names can have alphanumeric characters, and the values must match
-     *         <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     *         names can have alphanumeric and underscore characters, and the
+     *         values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
 
     public java.util.Map<String, String> getVariables() {
@@ -389,15 +389,15 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * <p>
      * A map that defines the stage variables for the <a>Stage</a> resource that
      * is associated with the new deployment. Variable names can have
-     * alphanumeric characters, and the values must match
+     * alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
      *        A map that defines the stage variables for the <a>Stage</a>
      *        resource that is associated with the new deployment. Variable
-     *        names can have alphanumeric characters, and the values must match
-     *        <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     *        names can have alphanumeric and underscore characters, and the
+     *        values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
 
     public void setVariables(java.util.Map<String, String> variables) {
@@ -408,15 +408,15 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * <p>
      * A map that defines the stage variables for the <a>Stage</a> resource that
      * is associated with the new deployment. Variable names can have
-     * alphanumeric characters, and the values must match
+     * alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
      *        A map that defines the stage variables for the <a>Stage</a>
      *        resource that is associated with the new deployment. Variable
-     *        names can have alphanumeric characters, and the values must match
-     *        <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+     *        names can have alphanumeric and underscore characters, and the
+     *        values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

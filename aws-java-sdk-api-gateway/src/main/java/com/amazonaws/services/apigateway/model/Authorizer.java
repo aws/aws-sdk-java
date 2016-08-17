@@ -21,6 +21,9 @@ import java.io.Serializable;
  * Represents an authorization layer for methods. If enabled on a method, API
  * Gateway will activate the authorizer when a client calls the method.
  * </p>
+ * <div class="seeAlso"> <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html"
+ * >Enable custom authorization</a> </div>
  */
 public class Authorizer implements Serializable, Cloneable {
 
@@ -43,7 +46,11 @@ public class Authorizer implements Serializable, Cloneable {
      * </p>
      */
     private String type;
-
+    /**
+     * <p>
+     * A list of the provider ARNs of the authorizer.
+     * </p>
+     */
     private java.util.List<String> providerARNs;
     /**
      * <p>
@@ -69,7 +76,7 @@ public class Authorizer implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the credentials required for the authorizer, if any. Two
-     * options are available. To specify an IAM Role for Amazon API Gateway to
+     * options are available. To specify an IAM role for Amazon API Gateway to
      * assume, use the role's Amazon Resource Name (ARN). To use resource-based
      * permissions on the Lambda function, specify null.
      * </p>
@@ -273,7 +280,11 @@ public class Authorizer implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * A list of the provider ARNs of the authorizer.
+     * </p>
+     * 
+     * @return A list of the provider ARNs of the authorizer.
      */
 
     public java.util.List<String> getProviderARNs() {
@@ -281,7 +292,12 @@ public class Authorizer implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of the provider ARNs of the authorizer.
+     * </p>
+     * 
      * @param providerARNs
+     *        A list of the provider ARNs of the authorizer.
      */
 
     public void setProviderARNs(java.util.Collection<String> providerARNs) {
@@ -295,6 +311,9 @@ public class Authorizer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A list of the provider ARNs of the authorizer.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setProviderARNs(java.util.Collection)} or
      * {@link #withProviderARNs(java.util.Collection)} if you want to override
@@ -302,6 +321,7 @@ public class Authorizer implements Serializable, Cloneable {
      * </p>
      * 
      * @param providerARNs
+     *        A list of the provider ARNs of the authorizer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -317,7 +337,12 @@ public class Authorizer implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of the provider ARNs of the authorizer.
+     * </p>
+     * 
      * @param providerARNs
+     *        A list of the provider ARNs of the authorizer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -469,14 +494,14 @@ public class Authorizer implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the credentials required for the authorizer, if any. Two
-     * options are available. To specify an IAM Role for Amazon API Gateway to
+     * options are available. To specify an IAM role for Amazon API Gateway to
      * assume, use the role's Amazon Resource Name (ARN). To use resource-based
      * permissions on the Lambda function, specify null.
      * </p>
      * 
      * @param authorizerCredentials
      *        Specifies the credentials required for the authorizer, if any. Two
-     *        options are available. To specify an IAM Role for Amazon API
+     *        options are available. To specify an IAM role for Amazon API
      *        Gateway to assume, use the role's Amazon Resource Name (ARN). To
      *        use resource-based permissions on the Lambda function, specify
      *        null.
@@ -489,13 +514,13 @@ public class Authorizer implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the credentials required for the authorizer, if any. Two
-     * options are available. To specify an IAM Role for Amazon API Gateway to
+     * options are available. To specify an IAM role for Amazon API Gateway to
      * assume, use the role's Amazon Resource Name (ARN). To use resource-based
      * permissions on the Lambda function, specify null.
      * </p>
      * 
      * @return Specifies the credentials required for the authorizer, if any.
-     *         Two options are available. To specify an IAM Role for Amazon API
+     *         Two options are available. To specify an IAM role for Amazon API
      *         Gateway to assume, use the role's Amazon Resource Name (ARN). To
      *         use resource-based permissions on the Lambda function, specify
      *         null.
@@ -508,14 +533,14 @@ public class Authorizer implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the credentials required for the authorizer, if any. Two
-     * options are available. To specify an IAM Role for Amazon API Gateway to
+     * options are available. To specify an IAM role for Amazon API Gateway to
      * assume, use the role's Amazon Resource Name (ARN). To use resource-based
      * permissions on the Lambda function, specify null.
      * </p>
      * 
      * @param authorizerCredentials
      *        Specifies the credentials required for the authorizer, if any. Two
-     *        options are available. To specify an IAM Role for Amazon API
+     *        options are available. To specify an IAM role for Amazon API
      *        Gateway to assume, use the role's Amazon Resource Name (ARN). To
      *        use resource-based permissions on the Lambda function, specify
      *        null.

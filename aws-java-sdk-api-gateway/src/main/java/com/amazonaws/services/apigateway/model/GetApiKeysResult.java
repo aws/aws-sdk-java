@@ -18,10 +18,22 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents a collection of <a>ApiKey</a> resources.
+ * Represents a collection of API keys as represented by an <a>ApiKeys</a>
+ * resource.
  * </p>
+ * <div class="seeAlso"> <a href=
+ * "http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html"
+ * >Use API Keys</a> </div>
  */
 public class GetApiKeysResult implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * A list of warning messages logged during the import of API keys when the
+     * <code>failOnWarnings</code> option is set to true.
+     * </p>
+     */
+    private java.util.List<String> warnings;
 
     private String position;
     /**
@@ -31,6 +43,87 @@ public class GetApiKeysResult implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<ApiKey> items;
+
+    /**
+     * <p>
+     * A list of warning messages logged during the import of API keys when the
+     * <code>failOnWarnings</code> option is set to true.
+     * </p>
+     * 
+     * @return A list of warning messages logged during the import of API keys
+     *         when the <code>failOnWarnings</code> option is set to true.
+     */
+
+    public java.util.List<String> getWarnings() {
+        return warnings;
+    }
+
+    /**
+     * <p>
+     * A list of warning messages logged during the import of API keys when the
+     * <code>failOnWarnings</code> option is set to true.
+     * </p>
+     * 
+     * @param warnings
+     *        A list of warning messages logged during the import of API keys
+     *        when the <code>failOnWarnings</code> option is set to true.
+     */
+
+    public void setWarnings(java.util.Collection<String> warnings) {
+        if (warnings == null) {
+            this.warnings = null;
+            return;
+        }
+
+        this.warnings = new java.util.ArrayList<String>(warnings);
+    }
+
+    /**
+     * <p>
+     * A list of warning messages logged during the import of API keys when the
+     * <code>failOnWarnings</code> option is set to true.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setWarnings(java.util.Collection)} or
+     * {@link #withWarnings(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param warnings
+     *        A list of warning messages logged during the import of API keys
+     *        when the <code>failOnWarnings</code> option is set to true.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public GetApiKeysResult withWarnings(String... warnings) {
+        if (this.warnings == null) {
+            setWarnings(new java.util.ArrayList<String>(warnings.length));
+        }
+        for (String ele : warnings) {
+            this.warnings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of warning messages logged during the import of API keys when the
+     * <code>failOnWarnings</code> option is set to true.
+     * </p>
+     * 
+     * @param warnings
+     *        A list of warning messages logged during the import of API keys
+     *        when the <code>failOnWarnings</code> option is set to true.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public GetApiKeysResult withWarnings(java.util.Collection<String> warnings) {
+        setWarnings(warnings);
+        return this;
+    }
 
     /**
      * @param position
@@ -152,6 +245,8 @@ public class GetApiKeysResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getWarnings() != null)
+            sb.append("Warnings: " + getWarnings() + ",");
         if (getPosition() != null)
             sb.append("Position: " + getPosition() + ",");
         if (getItems() != null)
@@ -170,6 +265,11 @@ public class GetApiKeysResult implements Serializable, Cloneable {
         if (obj instanceof GetApiKeysResult == false)
             return false;
         GetApiKeysResult other = (GetApiKeysResult) obj;
+        if (other.getWarnings() == null ^ this.getWarnings() == null)
+            return false;
+        if (other.getWarnings() != null
+                && other.getWarnings().equals(this.getWarnings()) == false)
+            return false;
         if (other.getPosition() == null ^ this.getPosition() == null)
             return false;
         if (other.getPosition() != null
@@ -188,6 +288,8 @@ public class GetApiKeysResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode
+                + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
         hashCode = prime * hashCode
                 + ((getPosition() == null) ? 0 : getPosition().hashCode());
         hashCode = prime * hashCode
