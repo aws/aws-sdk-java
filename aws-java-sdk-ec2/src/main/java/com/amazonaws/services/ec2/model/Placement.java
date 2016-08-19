@@ -54,7 +54,7 @@ public class Placement implements Serializable, Cloneable {
     private String hostId;
     /**
      * <p>
-     * The affinity setting for the instance on the Dedicated host. This
+     * The affinity setting for the instance on the Dedicated Host. This
      * parameter is not supported for the <a>ImportInstance</a> command.
      * </p>
      */
@@ -322,12 +322,12 @@ public class Placement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The affinity setting for the instance on the Dedicated host. This
+     * The affinity setting for the instance on the Dedicated Host. This
      * parameter is not supported for the <a>ImportInstance</a> command.
      * </p>
      * 
      * @param affinity
-     *        The affinity setting for the instance on the Dedicated host. This
+     *        The affinity setting for the instance on the Dedicated Host. This
      *        parameter is not supported for the <a>ImportInstance</a> command.
      */
 
@@ -337,11 +337,11 @@ public class Placement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The affinity setting for the instance on the Dedicated host. This
+     * The affinity setting for the instance on the Dedicated Host. This
      * parameter is not supported for the <a>ImportInstance</a> command.
      * </p>
      * 
-     * @return The affinity setting for the instance on the Dedicated host. This
+     * @return The affinity setting for the instance on the Dedicated Host. This
      *         parameter is not supported for the <a>ImportInstance</a> command.
      */
 
@@ -351,12 +351,12 @@ public class Placement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The affinity setting for the instance on the Dedicated host. This
+     * The affinity setting for the instance on the Dedicated Host. This
      * parameter is not supported for the <a>ImportInstance</a> command.
      * </p>
      * 
      * @param affinity
-     *        The affinity setting for the instance on the Dedicated host. This
+     *        The affinity setting for the instance on the Dedicated Host. This
      *        parameter is not supported for the <a>ImportInstance</a> command.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

@@ -23,9 +23,6 @@ import org.apache.commons.lang3.StringEscapeUtils;
 
 import java.math.BigDecimal;
 
-/**
- * Created by meghbyar on 7/22/16.
- */
 public class AcceptorModel {
 
     private String matcher;

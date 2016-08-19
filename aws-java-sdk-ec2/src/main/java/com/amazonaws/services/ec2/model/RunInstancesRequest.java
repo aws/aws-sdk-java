@@ -163,6 +163,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * <p>
      * The block device mapping.
      * </p>
+     * <important>
+     * <p>
+     * Supplying both a snapshot ID and an encryption value as arguments for
+     * block-device mapping results in an error. This is because only blank
+     * volumes can be encrypted on start, and these are not created from a
+     * snapshot. If a snapshot is the basis for the volume, it contains data by
+     * definition and its encryption status cannot be changed using this action.
+     * </p>
+     * </important>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
     /**
@@ -1294,8 +1303,25 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * <p>
      * The block device mapping.
      * </p>
+     * <important>
+     * <p>
+     * Supplying both a snapshot ID and an encryption value as arguments for
+     * block-device mapping results in an error. This is because only blank
+     * volumes can be encrypted on start, and these are not created from a
+     * snapshot. If a snapshot is the basis for the volume, it contains data by
+     * definition and its encryption status cannot be changed using this action.
+     * </p>
+     * </important>
      * 
-     * @return The block device mapping.
+     * @return The block device mapping.</p> <important>
+     *         <p>
+     *         Supplying both a snapshot ID and an encryption value as arguments
+     *         for block-device mapping results in an error. This is because
+     *         only blank volumes can be encrypted on start, and these are not
+     *         created from a snapshot. If a snapshot is the basis for the
+     *         volume, it contains data by definition and its encryption status
+     *         cannot be changed using this action.
+     *         </p>
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -1309,9 +1335,26 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * <p>
      * The block device mapping.
      * </p>
+     * <important>
+     * <p>
+     * Supplying both a snapshot ID and an encryption value as arguments for
+     * block-device mapping results in an error. This is because only blank
+     * volumes can be encrypted on start, and these are not created from a
+     * snapshot. If a snapshot is the basis for the volume, it contains data by
+     * definition and its encryption status cannot be changed using this action.
+     * </p>
+     * </important>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping.
+     *        The block device mapping.</p> <important>
+     *        <p>
+     *        Supplying both a snapshot ID and an encryption value as arguments
+     *        for block-device mapping results in an error. This is because only
+     *        blank volumes can be encrypted on start, and these are not created
+     *        from a snapshot. If a snapshot is the basis for the volume, it
+     *        contains data by definition and its encryption status cannot be
+     *        changed using this action.
+     *        </p>
      */
 
     public void setBlockDeviceMappings(
@@ -1329,6 +1372,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * <p>
      * The block device mapping.
      * </p>
+     * <important>
+     * <p>
+     * Supplying both a snapshot ID and an encryption value as arguments for
+     * block-device mapping results in an error. This is because only blank
+     * volumes can be encrypted on start, and these are not created from a
+     * snapshot. If a snapshot is the basis for the volume, it contains data by
+     * definition and its encryption status cannot be changed using this action.
+     * </p>
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
@@ -1337,7 +1389,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping.
+     *        The block device mapping.</p> <important>
+     *        <p>
+     *        Supplying both a snapshot ID and an encryption value as arguments
+     *        for block-device mapping results in an error. This is because only
+     *        blank volumes can be encrypted on start, and these are not created
+     *        from a snapshot. If a snapshot is the basis for the volume, it
+     *        contains data by definition and its encryption status cannot be
+     *        changed using this action.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -1358,9 +1418,26 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * <p>
      * The block device mapping.
      * </p>
+     * <important>
+     * <p>
+     * Supplying both a snapshot ID and an encryption value as arguments for
+     * block-device mapping results in an error. This is because only blank
+     * volumes can be encrypted on start, and these are not created from a
+     * snapshot. If a snapshot is the basis for the volume, it contains data by
+     * definition and its encryption status cannot be changed using this action.
+     * </p>
+     * </important>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping.
+     *        The block device mapping.</p> <important>
+     *        <p>
+     *        Supplying both a snapshot ID and an encryption value as arguments
+     *        for block-device mapping results in an error. This is because only
+     *        blank volumes can be encrypted on start, and these are not created
+     *        from a snapshot. If a snapshot is the basis for the volume, it
+     *        contains data by definition and its encryption status cannot be
+     *        changed using this action.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

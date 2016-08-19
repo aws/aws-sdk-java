@@ -16,13 +16,8 @@
 package com.amazonaws.jmespath;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
-
-/**
- * Created by meghbyar on 6/22/16.
- */
 
 /**
  * Class definition for literal expression that represents

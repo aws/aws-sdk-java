@@ -17,9 +17,6 @@ package com.amazonaws.codegen.model.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-/**
- * Created by meghbyar on 6/28/16.
- */
 public class Acceptor {
 
     private String matcher;

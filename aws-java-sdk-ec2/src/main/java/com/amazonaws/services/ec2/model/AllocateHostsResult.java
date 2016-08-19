@@ -25,7 +25,7 @@ public class AllocateHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the allocated Dedicated host. This is used when you want to
+     * The ID of the allocated Dedicated Host. This is used when you want to
      * launch an instance onto a specific host.
      * </p>
      */
@@ -33,11 +33,11 @@ public class AllocateHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the allocated Dedicated host. This is used when you want to
+     * The ID of the allocated Dedicated Host. This is used when you want to
      * launch an instance onto a specific host.
      * </p>
      * 
-     * @return The ID of the allocated Dedicated host. This is used when you
+     * @return The ID of the allocated Dedicated Host. This is used when you
      *         want to launch an instance onto a specific host.
      */
 
@@ -50,12 +50,12 @@ public class AllocateHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the allocated Dedicated host. This is used when you want to
+     * The ID of the allocated Dedicated Host. This is used when you want to
      * launch an instance onto a specific host.
      * </p>
      * 
      * @param hostIds
-     *        The ID of the allocated Dedicated host. This is used when you want
+     *        The ID of the allocated Dedicated Host. This is used when you want
      *        to launch an instance onto a specific host.
      */
 
@@ -71,7 +71,7 @@ public class AllocateHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the allocated Dedicated host. This is used when you want to
+     * The ID of the allocated Dedicated Host. This is used when you want to
      * launch an instance onto a specific host.
      * </p>
      * <p>
@@ -82,7 +82,7 @@ public class AllocateHostsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param hostIds
-     *        The ID of the allocated Dedicated host. This is used when you want
+     *        The ID of the allocated Dedicated Host. This is used when you want
      *        to launch an instance onto a specific host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -101,12 +101,12 @@ public class AllocateHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the allocated Dedicated host. This is used when you want to
+     * The ID of the allocated Dedicated Host. This is used when you want to
      * launch an instance onto a specific host.
      * </p>
      * 
      * @param hostIds
-     *        The ID of the allocated Dedicated host. This is used when you want
+     *        The ID of the allocated Dedicated Host. This is used when you want
      *        to launch an instance onto a specific host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

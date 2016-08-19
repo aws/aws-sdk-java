@@ -15,12 +15,9 @@
 
 package com.amazonaws.waiters;
 
-import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.fasterxml.jackson.databind.JsonNode;
-/**
- * Created by meghbyar on 7/1/16.
- */
+
 @SdkProtectedApi
 public class AcceptorPathMatcher {
 

@@ -16,10 +16,6 @@
 package com.amazonaws.jmespath;
 
 /**
- * Created by meghbyar on 6/22/16.
- */
-
-/**
  * Class definition for projection expression that allows
  * you to apply an expression to a collection of elements.
  * Implements list projection.

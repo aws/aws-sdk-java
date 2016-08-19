@@ -24,9 +24,8 @@ import com.amazonaws.services.workspaces.model.*;
  * <p>
  * <fullname>Amazon WorkSpaces Service</fullname>
  * <p>
- * This is the <i>Amazon WorkSpaces API Reference</i>. This guide provides
- * detailed information about Amazon WorkSpaces operations, data types,
- * parameters, and errors.
+ * This reference provides detailed information about the Amazon WorkSpaces
+ * operations.
  * </p>
  */
 public interface AmazonWorkspaces {
@@ -104,7 +103,7 @@ public interface AmazonWorkspaces {
      * </p>
      * 
      * @param createTagsRequest
-     *        The request of the create tags action.
+     *        The request of the <a>CreateTags</a> operation.
      * @return Result of the CreateTags operation returned by the service.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
@@ -145,7 +144,7 @@ public interface AmazonWorkspaces {
      * </p>
      * 
      * @param deleteTagsRequest
-     *        The request of the delete tags action.
+     *        The request of the <a>DeleteTags</a> operation.
      * @return Result of the DeleteTags operation returned by the service.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
@@ -161,7 +160,7 @@ public interface AmazonWorkspaces {
      * </p>
      * 
      * @param describeTagsRequest
-     *        The request of the describe tags action.
+     *        The request of the <a>DescribeTags</a> operation.
      * @return Result of the DescribeTags operation returned by the service.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
@@ -279,6 +278,52 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
+     * Describes the connection status of a specified WorkSpace.
+     * </p>
+     * 
+     * @param describeWorkspacesConnectionStatusRequest
+     * @return Result of the DescribeWorkspacesConnectionStatus operation
+     *         returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @sample AmazonWorkspaces.DescribeWorkspacesConnectionStatus
+     */
+    DescribeWorkspacesConnectionStatusResult describeWorkspacesConnectionStatus(
+            DescribeWorkspacesConnectionStatusRequest describeWorkspacesConnectionStatusRequest);
+
+    /**
+     * <p>
+     * Modifies the WorkSpace properties, including the RunningMode and AutoStop
+     * time.
+     * </p>
+     * 
+     * @param modifyWorkspacePropertiesRequest
+     * @return Result of the ModifyWorkspaceProperties operation returned by the
+     *         service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws InvalidResourceStateException
+     *         The specified WorkSpace has an invalid state for this operation.
+     * @throws OperationInProgressException
+     *         The properties of this WorkSpace are currently being modified.
+     *         Try again in a moment.
+     * @throws UnsupportedWorkspaceConfigurationException
+     *         The WorkSpace does not have the supported configuration for this
+     *         operation. For more information, see the <a
+     *         href="http://docs.aws.amazon.com/workspaces/latest/adminguide"
+     *         >Amazon WorkSpaces Administration Guide</a>.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available.
+     * @sample AmazonWorkspaces.ModifyWorkspaceProperties
+     */
+    ModifyWorkspacePropertiesResult modifyWorkspaceProperties(
+            ModifyWorkspacePropertiesRequest modifyWorkspacePropertiesRequest);
+
+    /**
+     * <p>
      * Reboots the specified WorkSpaces.
      * </p>
      * <p>
@@ -288,7 +333,7 @@ public interface AmazonWorkspaces {
      * </p>
      * <note>
      * <p>
-     * This operation is asynchronous and will return before the WorkSpaces have
+     * This operation is asynchronous and returns before the WorkSpaces have
      * rebooted.
      * </p>
      * </note>
@@ -311,14 +356,22 @@ public interface AmazonWorkspaces {
      * to occur:
      * </p>
      * <ul>
-     * <li>The system is restored to the image of the bundle that the WorkSpace
-     * is created from. Any applications that have been installed, or system
+     * <li>
+     * <p>
+     * The system is restored to the image of the bundle that the WorkSpace is
+     * created from. Any applications that have been installed, or system
      * settings that have been made since the WorkSpace was created will be
-     * lost.</li>
-     * <li>The data drive (D drive) is re-created from the last automatic
-     * snapshot taken of the data drive. The current contents of the data drive
-     * are overwritten. Automatic snapshots of the data drive are taken every 12
-     * hours, so the snapshot can be as much as 12 hours old.</li>
+     * lost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The data drive (D drive) is re-created from the last automatic snapshot
+     * taken of the data drive. The current contents of the data drive are
+     * overwritten. Automatic snapshots of the data drive are taken every 12
+     * hours, so the snapshot can be as much as 12 hours old.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b>
@@ -326,7 +379,7 @@ public interface AmazonWorkspaces {
      * </p>
      * <note>
      * <p>
-     * This operation is asynchronous and will return before the WorkSpaces have
+     * This operation is asynchronous and returns before the WorkSpaces have
      * been completely rebuilt.
      * </p>
      * </note>
@@ -339,6 +392,33 @@ public interface AmazonWorkspaces {
      */
     RebuildWorkspacesResult rebuildWorkspaces(
             RebuildWorkspacesRequest rebuildWorkspacesRequest);
+
+    /**
+     * <p>
+     * Starts the specified WorkSpaces. The API only works with WorkSpaces that
+     * have RunningMode configured as AutoStop and the State set to “STOPPED.”
+     * </p>
+     * 
+     * @param startWorkspacesRequest
+     * @return Result of the StartWorkspaces operation returned by the service.
+     * @sample AmazonWorkspaces.StartWorkspaces
+     */
+    StartWorkspacesResult startWorkspaces(
+            StartWorkspacesRequest startWorkspacesRequest);
+
+    /**
+     * <p>
+     * Stops the specified WorkSpaces. The API only works with WorkSpaces that
+     * have RunningMode configured as AutoStop and the State set to AVAILABLE,
+     * IMPAIRED, UNHEALTHY, or ERROR.
+     * </p>
+     * 
+     * @param stopWorkspacesRequest
+     * @return Result of the StopWorkspaces operation returned by the service.
+     * @sample AmazonWorkspaces.StopWorkspaces
+     */
+    StopWorkspacesResult stopWorkspaces(
+            StopWorkspacesRequest stopWorkspacesRequest);
 
     /**
      * <p>
@@ -356,7 +436,7 @@ public interface AmazonWorkspaces {
      * </p>
      * <note>
      * <p>
-     * This operation is asynchronous and will return before the WorkSpaces have
+     * This operation is asynchronous and returns before the WorkSpaces have
      * been completely terminated.
      * </p>
      * </note>

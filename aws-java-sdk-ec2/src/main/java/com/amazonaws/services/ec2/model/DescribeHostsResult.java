@@ -25,7 +25,7 @@ public class DescribeHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the Dedicated hosts.
+     * Information about the Dedicated Hosts.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Host> hosts;
@@ -39,10 +39,10 @@ public class DescribeHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the Dedicated hosts.
+     * Information about the Dedicated Hosts.
      * </p>
      * 
-     * @return Information about the Dedicated hosts.
+     * @return Information about the Dedicated Hosts.
      */
 
     public java.util.List<Host> getHosts() {
@@ -54,11 +54,11 @@ public class DescribeHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the Dedicated hosts.
+     * Information about the Dedicated Hosts.
      * </p>
      * 
      * @param hosts
-     *        Information about the Dedicated hosts.
+     *        Information about the Dedicated Hosts.
      */
 
     public void setHosts(java.util.Collection<Host> hosts) {
@@ -72,7 +72,7 @@ public class DescribeHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the Dedicated hosts.
+     * Information about the Dedicated Hosts.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -82,7 +82,7 @@ public class DescribeHostsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param hosts
-     *        Information about the Dedicated hosts.
+     *        Information about the Dedicated Hosts.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -100,11 +100,11 @@ public class DescribeHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the Dedicated hosts.
+     * Information about the Dedicated Hosts.
      * </p>
      * 
      * @param hosts
-     *        Information about the Dedicated hosts.
+     *        Information about the Dedicated Hosts.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

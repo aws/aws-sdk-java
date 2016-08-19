@@ -23,9 +23,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 
-/**
- * Created by meghbyar on 7/29/16.
- */
 @SdkProtectedApi
 public class WaiterBuilder<Input extends AmazonWebServiceRequest, Output> {
 

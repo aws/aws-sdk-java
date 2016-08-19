@@ -18,9 +18,6 @@ package com.amazonaws.waiters;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.annotation.SdkInternalApi;
 
-/**
- * Created by meghbyar on 7/8/16.
- */
 @SdkInternalApi
 public class NoOpWaiterHandler extends WaiterHandler<AmazonWebServiceRequest>{
 

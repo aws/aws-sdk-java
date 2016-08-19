@@ -17,9 +17,6 @@ package com.amazonaws.jmespath;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-/**
- * Created by meghbyar on 8/1/16.
- */
 public final class ObjectMapperSingleton {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();

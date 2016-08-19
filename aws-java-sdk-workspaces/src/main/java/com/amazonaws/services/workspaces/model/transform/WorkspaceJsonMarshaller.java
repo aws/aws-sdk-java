@@ -97,6 +97,11 @@ public class WorkspaceJsonMarshaller {
                 jsonGenerator.writeFieldName("RootVolumeEncryptionEnabled")
                         .writeValue(workspace.getRootVolumeEncryptionEnabled());
             }
+            if (workspace.getWorkspaceProperties() != null) {
+                jsonGenerator.writeFieldName("WorkspaceProperties");
+                WorkspacePropertiesJsonMarshaller.getInstance().marshall(
+                        workspace.getWorkspaceProperties(), jsonGenerator);
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

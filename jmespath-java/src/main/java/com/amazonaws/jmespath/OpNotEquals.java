@@ -18,10 +18,6 @@ package com.amazonaws.jmespath;
 import com.fasterxml.jackson.databind.JsonNode;
 
 /**
- * Created by meghbyar on 6/24/16.
- */
-
-/**
  * Implements not-equal-to comparison on different expressions
  */
 public class OpNotEquals extends Comparator {

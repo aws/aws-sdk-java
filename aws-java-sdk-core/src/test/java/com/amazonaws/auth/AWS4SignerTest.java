@@ -1,32 +1,24 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
- * Reserved.
+ * Copyright (c) 2016. Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
  *
- *  http://aws.amazon.com/apache2.0
+ * http://aws.amazon.com/apache2.0
  *
- * or in the "license" file accompanying this file. This file is
- * distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either
- * express or implied. See the License for the specific language
- * governing
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
 package com.amazonaws.auth;
 
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.Request;
+import com.amazonaws.SignableRequest;
 import com.amazonaws.auth.internal.AWS4SignerUtils;
-
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
-import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -36,6 +28,7 @@ import java.util.TimeZone;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit tests for the
@@ -81,7 +74,7 @@ public class AWS4SignerTest {
     @Test
     public void testDoubleURLEncode() {
         // Sanity-check that doubleUrlEncode is true by default.
-        Assert.assertTrue(signer.doubleUrlEncode);
+        assertTrue(signer.doubleUrlEncode);
     }
 
     @Test
@@ -96,7 +89,7 @@ public class AWS4SignerTest {
 
         AWSCredentials credentials = new BasicAWSCredentials("access", "secret");
         // Test request without 'x-amz-sha256' header
-        Request<?> request = generateBasicRequest();
+        SignableRequest<?> request = generateBasicRequest();
 
         Calendar c = new GregorianCalendar();
         c.set(1981, 1, 16, 6, 30, 0);
@@ -128,7 +121,8 @@ public class AWS4SignerTest {
 
         AWSCredentials credentials = new BasicAWSCredentials("access", "secret");
         // Test request without 'x-amz-sha256' header
-        Request<?> request = generateBasicRequest();
+
+        SignableRequest<?> request = generateBasicRequest();
 
         Calendar c = new GregorianCalendar();
         c.set(1981, 1, 16, 6, 30, 0);
@@ -151,7 +145,7 @@ public class AWS4SignerTest {
     @Test
     public void testAnonymous() throws Exception {
         AWSCredentials credentials = new AnonymousAWSCredentials();
-        Request<?> request = generateBasicRequest();
+        SignableRequest<?> request = generateBasicRequest();
 
         Calendar c = new GregorianCalendar();
         c.set(1981, 1, 16, 6, 30, 0);
@@ -164,15 +158,13 @@ public class AWS4SignerTest {
         assertNull(request.getHeaders().get("Authorization"));
     }
 
-    private Request<?> generateBasicRequest() {
-        Request<?> request = new DefaultRequest<Void>("Foo");
-        request.setContent(new ByteArrayInputStream("{\"TableName\": \"foo\"}".getBytes()));
-        request.addHeader("Host", "demo.us-east-1.amazonaws.com");
-        // HTTP header containing multiple spaces in a row.
-        request.addHeader("x-amz-archive-description", "test  test");
-        request.setResourcePath("/");
-        request.setEndpoint(URI.create("http://demo.us-east-1.amazonaws.com"));
-        return request;
+    private SignableRequest<?> generateBasicRequest() {
+        return MockRequestBuilder.create()
+                .withContent(new ByteArrayInputStream("{\"TableName\": \"foo\"}".getBytes()))
+                .withHeader("Host", "demo.us-east-1.amazonaws.com")
+                .withHeader("x-amz-archive-description", "test  test")
+                .withPath("/")
+                .withEndpoint("http://demo.us-east-1.amazonaws.com").build();
     }
 
     private String getOldTimeStamp(Date date) {

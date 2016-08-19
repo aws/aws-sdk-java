@@ -48,7 +48,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
     private String affinity;
     /**
      * <p>
-     * The ID of the Dedicated host that the instance will have affinity with.
+     * The ID of the Dedicated Host that the instance will have affinity with.
      * </p>
      */
     private String hostId;
@@ -246,11 +246,11 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Dedicated host that the instance will have affinity with.
+     * The ID of the Dedicated Host that the instance will have affinity with.
      * </p>
      * 
      * @param hostId
-     *        The ID of the Dedicated host that the instance will have affinity
+     *        The ID of the Dedicated Host that the instance will have affinity
      *        with.
      */
 
@@ -260,10 +260,10 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Dedicated host that the instance will have affinity with.
+     * The ID of the Dedicated Host that the instance will have affinity with.
      * </p>
      * 
-     * @return The ID of the Dedicated host that the instance will have affinity
+     * @return The ID of the Dedicated Host that the instance will have affinity
      *         with.
      */
 
@@ -273,11 +273,11 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Dedicated host that the instance will have affinity with.
+     * The ID of the Dedicated Host that the instance will have affinity with.
      * </p>
      * 
      * @param hostId
-     *        The ID of the Dedicated host that the instance will have affinity
+     *        The ID of the Dedicated Host that the instance will have affinity
      *        with.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

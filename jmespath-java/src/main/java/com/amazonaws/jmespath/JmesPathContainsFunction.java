@@ -18,14 +18,9 @@ package com.amazonaws.jmespath;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.BooleanNode;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-
-/**
- * Created by meghbyar on 6/29/16.
- */
 
 /**
  * Implements the contains function that checks if the given

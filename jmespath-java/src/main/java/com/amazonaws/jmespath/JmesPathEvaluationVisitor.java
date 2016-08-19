@@ -17,16 +17,12 @@ package com.amazonaws.jmespath;
 
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * Created by meghbyar on 6/20/16.
- */
 public class JmesPathEvaluationVisitor implements JmesPathVisitor<JsonNode, JsonNode> {
 
     /**

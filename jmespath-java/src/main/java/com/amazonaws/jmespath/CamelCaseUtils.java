@@ -15,9 +15,6 @@
 
 package com.amazonaws.jmespath;
 
-/**
- * Created by meghbyar on 6/24/16.
- */
 final class CamelCaseUtils {
 
     private CamelCaseUtils() {

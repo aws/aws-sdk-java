@@ -48,9 +48,8 @@ import com.amazonaws.services.workspaces.model.transform.*;
  * <p>
  * <fullname>Amazon WorkSpaces Service</fullname>
  * <p>
- * This is the <i>Amazon WorkSpaces API Reference</i>. This guide provides
- * detailed information about Amazon WorkSpaces operations, data types,
- * parameters, and errors.
+ * This reference provides detailed information about the Amazon WorkSpaces
+ * operations.
  * </p>
  */
 @ThreadSafe
@@ -76,6 +75,23 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
+                                    .withErrorCode("AccessDeniedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.workspaces.model.AccessDeniedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UnsupportedWorkspaceConfigurationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.workspaces.model.UnsupportedWorkspaceConfigurationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidResourceStateException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.workspaces.model.InvalidResourceStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
                                     .withErrorCode("ResourceNotFoundException")
                                     .withModeledClass(
                                             com.amazonaws.services.workspaces.model.ResourceNotFoundException.class))
@@ -88,15 +104,21 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
-                                            "ResourceLimitExceededException")
+                                            "OperationInProgressException")
                                     .withModeledClass(
-                                            com.amazonaws.services.workspaces.model.ResourceLimitExceededException.class))
+                                            com.amazonaws.services.workspaces.model.OperationInProgressException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata()
                                     .withErrorCode(
                                             "ResourceUnavailableException")
                                     .withModeledClass(
                                             com.amazonaws.services.workspaces.model.ResourceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ResourceLimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.workspaces.model.ResourceLimitExceededException.class))
                     .withBaseServiceExceptionClass(
                             com.amazonaws.services.workspaces.model.AmazonWorkspacesException.class));
 
@@ -293,7 +315,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createTagsRequest
-     *        The request of the create tags action.
+     *        The request of the <a>CreateTags</a> operation.
      * @return Result of the CreateTags operation returned by the service.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
@@ -401,7 +423,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteTagsRequest
-     *        The request of the delete tags action.
+     *        The request of the <a>DeleteTags</a> operation.
      * @return Result of the DeleteTags operation returned by the service.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
@@ -450,7 +472,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeTagsRequest
-     *        The request of the describe tags action.
+     *        The request of the <a>DescribeTags</a> operation.
      * @return Result of the DescribeTags operation returned by the service.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
@@ -697,6 +719,121 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Describes the connection status of a specified WorkSpace.
+     * </p>
+     * 
+     * @param describeWorkspacesConnectionStatusRequest
+     * @return Result of the DescribeWorkspacesConnectionStatus operation
+     *         returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @sample AmazonWorkspaces.DescribeWorkspacesConnectionStatus
+     */
+    @Override
+    public DescribeWorkspacesConnectionStatusResult describeWorkspacesConnectionStatus(
+            DescribeWorkspacesConnectionStatusRequest describeWorkspacesConnectionStatusRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeWorkspacesConnectionStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeWorkspacesConnectionStatusRequest> request = null;
+        Response<DescribeWorkspacesConnectionStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeWorkspacesConnectionStatusRequestMarshaller(
+                        protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(describeWorkspacesConnectionStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeWorkspacesConnectionStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeWorkspacesConnectionStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the WorkSpace properties, including the RunningMode and AutoStop
+     * time.
+     * </p>
+     * 
+     * @param modifyWorkspacePropertiesRequest
+     * @return Result of the ModifyWorkspaceProperties operation returned by the
+     *         service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws InvalidResourceStateException
+     *         The specified WorkSpace has an invalid state for this operation.
+     * @throws OperationInProgressException
+     *         The properties of this WorkSpace are currently being modified.
+     *         Try again in a moment.
+     * @throws UnsupportedWorkspaceConfigurationException
+     *         The WorkSpace does not have the supported configuration for this
+     *         operation. For more information, see the <a
+     *         href="http://docs.aws.amazon.com/workspaces/latest/adminguide"
+     *         >Amazon WorkSpaces Administration Guide</a>.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available.
+     * @sample AmazonWorkspaces.ModifyWorkspaceProperties
+     */
+    @Override
+    public ModifyWorkspacePropertiesResult modifyWorkspaceProperties(
+            ModifyWorkspacePropertiesRequest modifyWorkspacePropertiesRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyWorkspacePropertiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyWorkspacePropertiesRequest> request = null;
+        Response<ModifyWorkspacePropertiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyWorkspacePropertiesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(modifyWorkspacePropertiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ModifyWorkspacePropertiesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new ModifyWorkspacePropertiesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Reboots the specified WorkSpaces.
      * </p>
      * <p>
@@ -706,7 +843,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      * </p>
      * <note>
      * <p>
-     * This operation is asynchronous and will return before the WorkSpaces have
+     * This operation is asynchronous and returns before the WorkSpaces have
      * rebooted.
      * </p>
      * </note>
@@ -763,14 +900,22 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      * to occur:
      * </p>
      * <ul>
-     * <li>The system is restored to the image of the bundle that the WorkSpace
-     * is created from. Any applications that have been installed, or system
+     * <li>
+     * <p>
+     * The system is restored to the image of the bundle that the WorkSpace is
+     * created from. Any applications that have been installed, or system
      * settings that have been made since the WorkSpace was created will be
-     * lost.</li>
-     * <li>The data drive (D drive) is re-created from the last automatic
-     * snapshot taken of the data drive. The current contents of the data drive
-     * are overwritten. Automatic snapshots of the data drive are taken every 12
-     * hours, so the snapshot can be as much as 12 hours old.</li>
+     * lost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The data drive (D drive) is re-created from the last automatic snapshot
+     * taken of the data drive. The current contents of the data drive are
+     * overwritten. Automatic snapshots of the data drive are taken every 12
+     * hours, so the snapshot can be as much as 12 hours old.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b>
@@ -778,7 +923,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      * </p>
      * <note>
      * <p>
-     * This operation is asynchronous and will return before the WorkSpaces have
+     * This operation is asynchronous and returns before the WorkSpaces have
      * been completely rebuilt.
      * </p>
      * </note>
@@ -828,6 +973,101 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Starts the specified WorkSpaces. The API only works with WorkSpaces that
+     * have RunningMode configured as AutoStop and the State set to “STOPPED.”
+     * </p>
+     * 
+     * @param startWorkspacesRequest
+     * @return Result of the StartWorkspaces operation returned by the service.
+     * @sample AmazonWorkspaces.StartWorkspaces
+     */
+    @Override
+    public StartWorkspacesResult startWorkspaces(
+            StartWorkspacesRequest startWorkspacesRequest) {
+        ExecutionContext executionContext = createExecutionContext(startWorkspacesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartWorkspacesRequest> request = null;
+        Response<StartWorkspacesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartWorkspacesRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(startWorkspacesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartWorkspacesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StartWorkspacesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops the specified WorkSpaces. The API only works with WorkSpaces that
+     * have RunningMode configured as AutoStop and the State set to AVAILABLE,
+     * IMPAIRED, UNHEALTHY, or ERROR.
+     * </p>
+     * 
+     * @param stopWorkspacesRequest
+     * @return Result of the StopWorkspaces operation returned by the service.
+     * @sample AmazonWorkspaces.StopWorkspaces
+     */
+    @Override
+    public StopWorkspacesResult stopWorkspaces(
+            StopWorkspacesRequest stopWorkspacesRequest) {
+        ExecutionContext executionContext = createExecutionContext(stopWorkspacesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopWorkspacesRequest> request = null;
+        Response<StopWorkspacesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopWorkspacesRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(stopWorkspacesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopWorkspacesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StopWorkspacesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Terminates the specified WorkSpaces.
      * </p>
      * <p>
@@ -842,7 +1082,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      * </p>
      * <note>
      * <p>
-     * This operation is asynchronous and will return before the WorkSpaces have
+     * This operation is asynchronous and returns before the WorkSpaces have
      * been completely terminated.
      * </p>
      * </note>

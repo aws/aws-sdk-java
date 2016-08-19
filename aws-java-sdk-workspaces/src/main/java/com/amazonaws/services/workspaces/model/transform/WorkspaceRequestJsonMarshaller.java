@@ -73,6 +73,12 @@ public class WorkspaceRequestJsonMarshaller {
                                 workspaceRequest
                                         .getRootVolumeEncryptionEnabled());
             }
+            if (workspaceRequest.getWorkspaceProperties() != null) {
+                jsonGenerator.writeFieldName("WorkspaceProperties");
+                WorkspacePropertiesJsonMarshaller.getInstance().marshall(
+                        workspaceRequest.getWorkspaceProperties(),
+                        jsonGenerator);
+            }
 
             com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) workspaceRequest
                     .getTags();

@@ -18,30 +18,30 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The capacity information for instances launched onto the Dedicated host.
+ * The capacity information for instances launched onto the Dedicated Host.
  * </p>
  */
 public class AvailableCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total number of instances that the Dedicated host supports.
+     * The total number of instances that the Dedicated Host supports.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceCapacity> availableInstanceCapacity;
     /**
      * <p>
-     * The number of vCPUs available on the Dedicated host.
+     * The number of vCPUs available on the Dedicated Host.
      * </p>
      */
     private Integer availableVCpus;
 
     /**
      * <p>
-     * The total number of instances that the Dedicated host supports.
+     * The total number of instances that the Dedicated Host supports.
      * </p>
      * 
-     * @return The total number of instances that the Dedicated host supports.
+     * @return The total number of instances that the Dedicated Host supports.
      */
 
     public java.util.List<InstanceCapacity> getAvailableInstanceCapacity() {
@@ -53,11 +53,11 @@ public class AvailableCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total number of instances that the Dedicated host supports.
+     * The total number of instances that the Dedicated Host supports.
      * </p>
      * 
      * @param availableInstanceCapacity
-     *        The total number of instances that the Dedicated host supports.
+     *        The total number of instances that the Dedicated Host supports.
      */
 
     public void setAvailableInstanceCapacity(
@@ -73,7 +73,7 @@ public class AvailableCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total number of instances that the Dedicated host supports.
+     * The total number of instances that the Dedicated Host supports.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -83,7 +83,7 @@ public class AvailableCapacity implements Serializable, Cloneable {
      * </p>
      * 
      * @param availableInstanceCapacity
-     *        The total number of instances that the Dedicated host supports.
+     *        The total number of instances that the Dedicated Host supports.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -102,11 +102,11 @@ public class AvailableCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total number of instances that the Dedicated host supports.
+     * The total number of instances that the Dedicated Host supports.
      * </p>
      * 
      * @param availableInstanceCapacity
-     *        The total number of instances that the Dedicated host supports.
+     *        The total number of instances that the Dedicated Host supports.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -119,11 +119,11 @@ public class AvailableCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of vCPUs available on the Dedicated host.
+     * The number of vCPUs available on the Dedicated Host.
      * </p>
      * 
      * @param availableVCpus
-     *        The number of vCPUs available on the Dedicated host.
+     *        The number of vCPUs available on the Dedicated Host.
      */
 
     public void setAvailableVCpus(Integer availableVCpus) {
@@ -132,10 +132,10 @@ public class AvailableCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of vCPUs available on the Dedicated host.
+     * The number of vCPUs available on the Dedicated Host.
      * </p>
      * 
-     * @return The number of vCPUs available on the Dedicated host.
+     * @return The number of vCPUs available on the Dedicated Host.
      */
 
     public Integer getAvailableVCpus() {
@@ -144,11 +144,11 @@ public class AvailableCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of vCPUs available on the Dedicated host.
+     * The number of vCPUs available on the Dedicated Host.
      * </p>
      * 
      * @param availableVCpus
-     *        The number of vCPUs available on the Dedicated host.
+     *        The number of vCPUs available on the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

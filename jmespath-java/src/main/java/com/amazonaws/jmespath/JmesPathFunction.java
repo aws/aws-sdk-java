@@ -20,10 +20,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import java.util.List;
 
 /**
- * Created by meghbyar on 6/22/16.
- */
-
-/**
  * Abstract class definition for function expressions that are
  * used to transform and filter data in powerful ways.
  */

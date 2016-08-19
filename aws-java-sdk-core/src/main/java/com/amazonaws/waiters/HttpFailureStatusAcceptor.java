@@ -18,9 +18,6 @@ package com.amazonaws.waiters;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkProtectedApi;
 
-/**
- * Created by meghbyar on 7/15/16.
- */
 @SdkProtectedApi
 public class HttpFailureStatusAcceptor<Output> extends WaiterAcceptor<Output> {
 

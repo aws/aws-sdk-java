@@ -18,31 +18,32 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an instance running on a Dedicated host.
+ * Describes an instance running on a Dedicated Host.
  * </p>
  */
 public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * the IDs of instances that are running on the Dedicated host.
+     * the IDs of instances that are running on the Dedicated Host.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
-     * The instance type size (for example, m3.medium) of the running instance.
+     * The instance type size (for example, <code>m3.medium</code>) of the
+     * running instance.
      * </p>
      */
     private String instanceType;
 
     /**
      * <p>
-     * the IDs of instances that are running on the Dedicated host.
+     * the IDs of instances that are running on the Dedicated Host.
      * </p>
      * 
      * @param instanceId
-     *        the IDs of instances that are running on the Dedicated host.
+     *        the IDs of instances that are running on the Dedicated Host.
      */
 
     public void setInstanceId(String instanceId) {
@@ -51,10 +52,10 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * the IDs of instances that are running on the Dedicated host.
+     * the IDs of instances that are running on the Dedicated Host.
      * </p>
      * 
-     * @return the IDs of instances that are running on the Dedicated host.
+     * @return the IDs of instances that are running on the Dedicated Host.
      */
 
     public String getInstanceId() {
@@ -63,11 +64,11 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * the IDs of instances that are running on the Dedicated host.
+     * the IDs of instances that are running on the Dedicated Host.
      * </p>
      * 
      * @param instanceId
-     *        the IDs of instances that are running on the Dedicated host.
+     *        the IDs of instances that are running on the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -79,12 +80,13 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size (for example, m3.medium) of the running instance.
+     * The instance type size (for example, <code>m3.medium</code>) of the
+     * running instance.
      * </p>
      * 
      * @param instanceType
-     *        The instance type size (for example, m3.medium) of the running
-     *        instance.
+     *        The instance type size (for example, <code>m3.medium</code>) of
+     *        the running instance.
      */
 
     public void setInstanceType(String instanceType) {
@@ -93,11 +95,12 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size (for example, m3.medium) of the running instance.
+     * The instance type size (for example, <code>m3.medium</code>) of the
+     * running instance.
      * </p>
      * 
-     * @return The instance type size (for example, m3.medium) of the running
-     *         instance.
+     * @return The instance type size (for example, <code>m3.medium</code>) of
+     *         the running instance.
      */
 
     public String getInstanceType() {
@@ -106,12 +109,13 @@ public class HostInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size (for example, m3.medium) of the running instance.
+     * The instance type size (for example, <code>m3.medium</code>) of the
+     * running instance.
      * </p>
      * 
      * @param instanceType
-     *        The instance type size (for example, m3.medium) of the running
-     *        instance.
+     *        The instance type size (for example, <code>m3.medium</code>) of
+     *        the running instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

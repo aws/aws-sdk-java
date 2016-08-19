@@ -14,6 +14,12 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.annotation.SdkTestInternalApi;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.model.ScanRequest;
+import com.amazonaws.services.dynamodbv2.model.ScanResult;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -23,11 +29,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
-import com.amazonaws.services.dynamodbv2.model.ScanRequest;
-import com.amazonaws.services.dynamodbv2.model.ScanResult;
 
 public class ParallelScanTask {
 
@@ -65,15 +66,23 @@ public class ParallelScanTask {
     }
 
     ParallelScanTask(AmazonDynamoDB dynamo, List<ScanRequest> parallelScanRequests) {
+        this(dynamo, parallelScanRequests, Executors.newCachedThreadPool());
+    }
+
+    @SdkTestInternalApi
+    ParallelScanTask(AmazonDynamoDB dynamo, List<ScanRequest> parallelScanRequests,
+                     ExecutorService executorService) {
         this.dynamo = dynamo;
         this.parallelScanRequests = parallelScanRequests;
         this.totalSegments = parallelScanRequests.size();
-        executorService = Executors.newCachedThreadPool();
+        this.executorService = executorService;
 
         // Create synchronized views of the list to guarantee any changes are visible across all threads.
-        segmentScanFutureTasks = Collections.synchronizedList(new ArrayList<Future<ScanResult>>(totalSegments));
+        segmentScanFutureTasks = Collections
+                .synchronizedList(new ArrayList<Future<ScanResult>>(totalSegments));
         segmentScanResults = Collections.synchronizedList(new ArrayList<ScanResult>(totalSegments));
-        segmentScanStates = Collections.synchronizedList(new ArrayList<SegmentScanState>(totalSegments));
+        segmentScanStates = Collections
+                .synchronizedList(new ArrayList<SegmentScanState>(totalSegments));
 
         initSegmentScanStates();
     }
@@ -160,7 +169,7 @@ public class ParallelScanTask {
                                 throw new AmazonClientException("Should not start a new future task");
                             }
                         } catch (Exception e) {
-                            synchronized(segmentScanStates) {
+                            synchronized (segmentScanStates) {
                                 segmentScanStates.set(currentSegment, SegmentScanState.Failed);
                                 segmentScanStates.notifyAll();
                                 executorService.shutdown();

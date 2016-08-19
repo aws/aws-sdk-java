@@ -16,10 +16,6 @@
 package com.amazonaws.jmespath;
 
 /**
- * Created by meghbyar on 6/28/16.
- */
-
-/**
  * Visitor interface for delegating the Jmespath expression to its
  * corresponding type for evaluation
  *

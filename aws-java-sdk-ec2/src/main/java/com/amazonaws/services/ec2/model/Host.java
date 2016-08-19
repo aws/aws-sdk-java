@@ -18,14 +18,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the properties of the Dedicated host.
+ * Describes the properties of the Dedicated Host.
  * </p>
  */
 public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Dedicated host.
+     * The ID of the Dedicated Host.
      * </p>
      */
     private String hostId;
@@ -37,8 +37,8 @@ public class Host implements Serializable, Cloneable {
     private String autoPlacement;
     /**
      * <p>
-     * The reservation ID of the Dedicated host. This returns a
-     * <code>null</code> response if the Dedicated host doesn't have an
+     * The reservation ID of the Dedicated Host. This returns a
+     * <code>null</code> response if the Dedicated Host doesn't have an
      * associated reservation.
      * </p>
      */
@@ -55,43 +55,43 @@ public class Host implements Serializable, Cloneable {
     private String clientToken;
     /**
      * <p>
-     * The hardware specifications of the Dedicated host.
+     * The hardware specifications of the Dedicated Host.
      * </p>
      */
     private HostProperties hostProperties;
     /**
      * <p>
-     * The Dedicated host's state.
+     * The Dedicated Host's state.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The Availability Zone of the Dedicated host.
+     * The Availability Zone of the Dedicated Host.
      * </p>
      */
     private String availabilityZone;
     /**
      * <p>
      * The IDs and instance type that are currently running on the Dedicated
-     * host.
+     * Host.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<HostInstance> instances;
     /**
      * <p>
-     * The number of new instances that can be launched onto the Dedicated host.
+     * The number of new instances that can be launched onto the Dedicated Host.
      * </p>
      */
     private AvailableCapacity availableCapacity;
 
     /**
      * <p>
-     * The ID of the Dedicated host.
+     * The ID of the Dedicated Host.
      * </p>
      * 
      * @param hostId
-     *        The ID of the Dedicated host.
+     *        The ID of the Dedicated Host.
      */
 
     public void setHostId(String hostId) {
@@ -100,10 +100,10 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Dedicated host.
+     * The ID of the Dedicated Host.
      * </p>
      * 
-     * @return The ID of the Dedicated host.
+     * @return The ID of the Dedicated Host.
      */
 
     public String getHostId() {
@@ -112,11 +112,11 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Dedicated host.
+     * The ID of the Dedicated Host.
      * </p>
      * 
      * @param hostId
-     *        The ID of the Dedicated host.
+     *        The ID of the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -203,14 +203,14 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reservation ID of the Dedicated host. This returns a
-     * <code>null</code> response if the Dedicated host doesn't have an
+     * The reservation ID of the Dedicated Host. This returns a
+     * <code>null</code> response if the Dedicated Host doesn't have an
      * associated reservation.
      * </p>
      * 
      * @param hostReservationId
-     *        The reservation ID of the Dedicated host. This returns a
-     *        <code>null</code> response if the Dedicated host doesn't have an
+     *        The reservation ID of the Dedicated Host. This returns a
+     *        <code>null</code> response if the Dedicated Host doesn't have an
      *        associated reservation.
      */
 
@@ -220,13 +220,13 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reservation ID of the Dedicated host. This returns a
-     * <code>null</code> response if the Dedicated host doesn't have an
+     * The reservation ID of the Dedicated Host. This returns a
+     * <code>null</code> response if the Dedicated Host doesn't have an
      * associated reservation.
      * </p>
      * 
-     * @return The reservation ID of the Dedicated host. This returns a
-     *         <code>null</code> response if the Dedicated host doesn't have an
+     * @return The reservation ID of the Dedicated Host. This returns a
+     *         <code>null</code> response if the Dedicated Host doesn't have an
      *         associated reservation.
      */
 
@@ -236,14 +236,14 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reservation ID of the Dedicated host. This returns a
-     * <code>null</code> response if the Dedicated host doesn't have an
+     * The reservation ID of the Dedicated Host. This returns a
+     * <code>null</code> response if the Dedicated Host doesn't have an
      * associated reservation.
      * </p>
      * 
      * @param hostReservationId
-     *        The reservation ID of the Dedicated host. This returns a
-     *        <code>null</code> response if the Dedicated host doesn't have an
+     *        The reservation ID of the Dedicated Host. This returns a
+     *        <code>null</code> response if the Dedicated Host doesn't have an
      *        associated reservation.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -321,11 +321,11 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hardware specifications of the Dedicated host.
+     * The hardware specifications of the Dedicated Host.
      * </p>
      * 
      * @param hostProperties
-     *        The hardware specifications of the Dedicated host.
+     *        The hardware specifications of the Dedicated Host.
      */
 
     public void setHostProperties(HostProperties hostProperties) {
@@ -334,10 +334,10 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hardware specifications of the Dedicated host.
+     * The hardware specifications of the Dedicated Host.
      * </p>
      * 
-     * @return The hardware specifications of the Dedicated host.
+     * @return The hardware specifications of the Dedicated Host.
      */
 
     public HostProperties getHostProperties() {
@@ -346,11 +346,11 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hardware specifications of the Dedicated host.
+     * The hardware specifications of the Dedicated Host.
      * </p>
      * 
      * @param hostProperties
-     *        The hardware specifications of the Dedicated host.
+     *        The hardware specifications of the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -362,11 +362,11 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Dedicated host's state.
+     * The Dedicated Host's state.
      * </p>
      * 
      * @param state
-     *        The Dedicated host's state.
+     *        The Dedicated Host's state.
      * @see AllocationState
      */
 
@@ -376,10 +376,10 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Dedicated host's state.
+     * The Dedicated Host's state.
      * </p>
      * 
-     * @return The Dedicated host's state.
+     * @return The Dedicated Host's state.
      * @see AllocationState
      */
 
@@ -389,11 +389,11 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Dedicated host's state.
+     * The Dedicated Host's state.
      * </p>
      * 
      * @param state
-     *        The Dedicated host's state.
+     *        The Dedicated Host's state.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see AllocationState
@@ -406,11 +406,11 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Dedicated host's state.
+     * The Dedicated Host's state.
      * </p>
      * 
      * @param state
-     *        The Dedicated host's state.
+     *        The Dedicated Host's state.
      * @see AllocationState
      */
 
@@ -420,11 +420,11 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Dedicated host's state.
+     * The Dedicated Host's state.
      * </p>
      * 
      * @param state
-     *        The Dedicated host's state.
+     *        The Dedicated Host's state.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see AllocationState
@@ -437,11 +437,11 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zone of the Dedicated host.
+     * The Availability Zone of the Dedicated Host.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone of the Dedicated host.
+     *        The Availability Zone of the Dedicated Host.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -450,10 +450,10 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zone of the Dedicated host.
+     * The Availability Zone of the Dedicated Host.
      * </p>
      * 
-     * @return The Availability Zone of the Dedicated host.
+     * @return The Availability Zone of the Dedicated Host.
      */
 
     public String getAvailabilityZone() {
@@ -462,11 +462,11 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zone of the Dedicated host.
+     * The Availability Zone of the Dedicated Host.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone of the Dedicated host.
+     *        The Availability Zone of the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -479,11 +479,11 @@ public class Host implements Serializable, Cloneable {
     /**
      * <p>
      * The IDs and instance type that are currently running on the Dedicated
-     * host.
+     * Host.
      * </p>
      * 
      * @return The IDs and instance type that are currently running on the
-     *         Dedicated host.
+     *         Dedicated Host.
      */
 
     public java.util.List<HostInstance> getInstances() {
@@ -496,12 +496,12 @@ public class Host implements Serializable, Cloneable {
     /**
      * <p>
      * The IDs and instance type that are currently running on the Dedicated
-     * host.
+     * Host.
      * </p>
      * 
      * @param instances
      *        The IDs and instance type that are currently running on the
-     *        Dedicated host.
+     *        Dedicated Host.
      */
 
     public void setInstances(java.util.Collection<HostInstance> instances) {
@@ -517,7 +517,7 @@ public class Host implements Serializable, Cloneable {
     /**
      * <p>
      * The IDs and instance type that are currently running on the Dedicated
-     * host.
+     * Host.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -528,7 +528,7 @@ public class Host implements Serializable, Cloneable {
      * 
      * @param instances
      *        The IDs and instance type that are currently running on the
-     *        Dedicated host.
+     *        Dedicated Host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -547,12 +547,12 @@ public class Host implements Serializable, Cloneable {
     /**
      * <p>
      * The IDs and instance type that are currently running on the Dedicated
-     * host.
+     * Host.
      * </p>
      * 
      * @param instances
      *        The IDs and instance type that are currently running on the
-     *        Dedicated host.
+     *        Dedicated Host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -564,12 +564,12 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of new instances that can be launched onto the Dedicated host.
+     * The number of new instances that can be launched onto the Dedicated Host.
      * </p>
      * 
      * @param availableCapacity
      *        The number of new instances that can be launched onto the
-     *        Dedicated host.
+     *        Dedicated Host.
      */
 
     public void setAvailableCapacity(AvailableCapacity availableCapacity) {
@@ -578,11 +578,11 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of new instances that can be launched onto the Dedicated host.
+     * The number of new instances that can be launched onto the Dedicated Host.
      * </p>
      * 
      * @return The number of new instances that can be launched onto the
-     *         Dedicated host.
+     *         Dedicated Host.
      */
 
     public AvailableCapacity getAvailableCapacity() {
@@ -591,12 +591,12 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of new instances that can be launched onto the Dedicated host.
+     * The number of new instances that can be launched onto the Dedicated Host.
      * </p>
      * 
      * @param availableCapacity
      *        The number of new instances that can be launched onto the
-     *        Dedicated host.
+     *        Dedicated Host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -18,10 +18,6 @@ package com.amazonaws.jmespath;
 import java.math.BigDecimal;
 
 /**
- * Created by meghbyar on 6/24/16.
- */
-
-/**
  * Implements less-than comparison on Numbers
  */
 public class OpLessThan extends NumericComparator {

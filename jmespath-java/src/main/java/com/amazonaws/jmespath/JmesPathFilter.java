@@ -16,10 +16,6 @@
 package com.amazonaws.jmespath;
 
 /**
- * Created by meghbyar on 6/23/16.
- */
-
-/**
  * Class definition for filter expression that provides a way
  * to select JSON elements based on a comparison to another
  * expression.

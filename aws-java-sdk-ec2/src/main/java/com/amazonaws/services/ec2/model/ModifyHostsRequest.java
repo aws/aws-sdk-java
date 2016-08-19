@@ -29,7 +29,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The host IDs of the Dedicated hosts you want to modify.
+     * The host IDs of the Dedicated Hosts you want to modify.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> hostIds;
@@ -42,10 +42,10 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The host IDs of the Dedicated hosts you want to modify.
+     * The host IDs of the Dedicated Hosts you want to modify.
      * </p>
      * 
-     * @return The host IDs of the Dedicated hosts you want to modify.
+     * @return The host IDs of the Dedicated Hosts you want to modify.
      */
 
     public java.util.List<String> getHostIds() {
@@ -57,11 +57,11 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The host IDs of the Dedicated hosts you want to modify.
+     * The host IDs of the Dedicated Hosts you want to modify.
      * </p>
      * 
      * @param hostIds
-     *        The host IDs of the Dedicated hosts you want to modify.
+     *        The host IDs of the Dedicated Hosts you want to modify.
      */
 
     public void setHostIds(java.util.Collection<String> hostIds) {
@@ -76,7 +76,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The host IDs of the Dedicated hosts you want to modify.
+     * The host IDs of the Dedicated Hosts you want to modify.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -86,7 +86,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param hostIds
-     *        The host IDs of the Dedicated hosts you want to modify.
+     *        The host IDs of the Dedicated Hosts you want to modify.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -104,11 +104,11 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The host IDs of the Dedicated hosts you want to modify.
+     * The host IDs of the Dedicated Hosts you want to modify.
      * </p>
      * 
      * @param hostIds
-     *        The host IDs of the Dedicated hosts you want to modify.
+     *        The host IDs of the Dedicated Hosts you want to modify.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

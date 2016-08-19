@@ -227,14 +227,14 @@ class DBInstanceAvailable {
         }
     }
 
-    static class IsIncompatibleparametersMatcher extends
+    static class IsIncompatiblerestoreMatcher extends
             WaiterAcceptor<DescribeDBInstancesResult> {
         private static final JsonNode expectedResult;
 
         static {
             try {
                 expectedResult = ObjectMapperSingleton.getObjectMapper()
-                        .readTree("\"incompatible-parameters\"");
+                        .readTree("\"incompatible-restore\"");
             } catch (IOException ioe) {
                 throw new RuntimeException(ioe);
             }
@@ -276,14 +276,14 @@ class DBInstanceAvailable {
         }
     }
 
-    static class IsIncompatiblerestoreMatcher extends
+    static class IsIncompatibleparametersMatcher extends
             WaiterAcceptor<DescribeDBInstancesResult> {
         private static final JsonNode expectedResult;
 
         static {
             try {
                 expectedResult = ObjectMapperSingleton.getObjectMapper()
-                        .readTree("\"incompatible-restore\"");
+                        .readTree("\"incompatible-parameters\"");
             } catch (IOException ioe) {
                 throw new RuntimeException(ioe);
             }

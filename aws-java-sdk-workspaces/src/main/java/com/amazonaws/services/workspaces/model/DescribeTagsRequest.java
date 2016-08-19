@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The request of the describe tags action.
+ * The request of the <a>DescribeTags</a> operation.
  * </p>
  */
 public class DescribeTagsRequest extends AmazonWebServiceRequest implements

@@ -30,7 +30,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated hosts, when you are
+     * automatically placed onto available Dedicated Hosts, when you are
      * launching instances without specifying a host ID.
      * </p>
      * <p>
@@ -50,7 +50,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
     private String clientToken;
     /**
      * <p>
-     * Specify the instance type that you want your Dedicated hosts to be
+     * Specify the instance type that you want your Dedicated Hosts to be
      * configured for. When you specify the instance type, that is the only
      * instance type that you can launch onto that host.
      * </p>
@@ -58,14 +58,14 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
     private String instanceType;
     /**
      * <p>
-     * The number of Dedicated hosts you want to allocate to your account with
+     * The number of Dedicated Hosts you want to allocate to your account with
      * these parameters.
      * </p>
      */
     private Integer quantity;
     /**
      * <p>
-     * The Availability Zone for the Dedicated hosts.
+     * The Availability Zone for the Dedicated Hosts.
      * </p>
      */
     private String availabilityZone;
@@ -73,7 +73,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated hosts, when you are
+     * automatically placed onto available Dedicated Hosts, when you are
      * launching instances without specifying a host ID.
      * </p>
      * <p>
@@ -82,7 +82,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      * 
      * @param autoPlacement
      *        This is enabled by default. This property allows instances to be
-     *        automatically placed onto available Dedicated hosts, when you are
+     *        automatically placed onto available Dedicated Hosts, when you are
      *        launching instances without specifying a host ID.</p>
      *        <p>
      *        Default: Enabled
@@ -96,7 +96,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated hosts, when you are
+     * automatically placed onto available Dedicated Hosts, when you are
      * launching instances without specifying a host ID.
      * </p>
      * <p>
@@ -104,7 +104,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @return This is enabled by default. This property allows instances to be
-     *         automatically placed onto available Dedicated hosts, when you are
+     *         automatically placed onto available Dedicated Hosts, when you are
      *         launching instances without specifying a host ID.</p>
      *         <p>
      *         Default: Enabled
@@ -118,7 +118,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated hosts, when you are
+     * automatically placed onto available Dedicated Hosts, when you are
      * launching instances without specifying a host ID.
      * </p>
      * <p>
@@ -127,7 +127,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      * 
      * @param autoPlacement
      *        This is enabled by default. This property allows instances to be
-     *        automatically placed onto available Dedicated hosts, when you are
+     *        automatically placed onto available Dedicated Hosts, when you are
      *        launching instances without specifying a host ID.</p>
      *        <p>
      *        Default: Enabled
@@ -144,7 +144,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated hosts, when you are
+     * automatically placed onto available Dedicated Hosts, when you are
      * launching instances without specifying a host ID.
      * </p>
      * <p>
@@ -153,7 +153,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      * 
      * @param autoPlacement
      *        This is enabled by default. This property allows instances to be
-     *        automatically placed onto available Dedicated hosts, when you are
+     *        automatically placed onto available Dedicated Hosts, when you are
      *        launching instances without specifying a host ID.</p>
      *        <p>
      *        Default: Enabled
@@ -167,7 +167,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * This is enabled by default. This property allows instances to be
-     * automatically placed onto available Dedicated hosts, when you are
+     * automatically placed onto available Dedicated Hosts, when you are
      * launching instances without specifying a host ID.
      * </p>
      * <p>
@@ -176,7 +176,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      * 
      * @param autoPlacement
      *        This is enabled by default. This property allows instances to be
-     *        automatically placed onto available Dedicated hosts, when you are
+     *        automatically placed onto available Dedicated Hosts, when you are
      *        launching instances without specifying a host ID.</p>
      *        <p>
      *        Default: Enabled
@@ -257,13 +257,13 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify the instance type that you want your Dedicated hosts to be
+     * Specify the instance type that you want your Dedicated Hosts to be
      * configured for. When you specify the instance type, that is the only
      * instance type that you can launch onto that host.
      * </p>
      * 
      * @param instanceType
-     *        Specify the instance type that you want your Dedicated hosts to be
+     *        Specify the instance type that you want your Dedicated Hosts to be
      *        configured for. When you specify the instance type, that is the
      *        only instance type that you can launch onto that host.
      */
@@ -274,12 +274,12 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify the instance type that you want your Dedicated hosts to be
+     * Specify the instance type that you want your Dedicated Hosts to be
      * configured for. When you specify the instance type, that is the only
      * instance type that you can launch onto that host.
      * </p>
      * 
-     * @return Specify the instance type that you want your Dedicated hosts to
+     * @return Specify the instance type that you want your Dedicated Hosts to
      *         be configured for. When you specify the instance type, that is
      *         the only instance type that you can launch onto that host.
      */
@@ -290,13 +290,13 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specify the instance type that you want your Dedicated hosts to be
+     * Specify the instance type that you want your Dedicated Hosts to be
      * configured for. When you specify the instance type, that is the only
      * instance type that you can launch onto that host.
      * </p>
      * 
      * @param instanceType
-     *        Specify the instance type that you want your Dedicated hosts to be
+     *        Specify the instance type that you want your Dedicated Hosts to be
      *        configured for. When you specify the instance type, that is the
      *        only instance type that you can launch onto that host.
      * @return Returns a reference to this object so that method calls can be
@@ -310,12 +310,12 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The number of Dedicated hosts you want to allocate to your account with
+     * The number of Dedicated Hosts you want to allocate to your account with
      * these parameters.
      * </p>
      * 
      * @param quantity
-     *        The number of Dedicated hosts you want to allocate to your account
+     *        The number of Dedicated Hosts you want to allocate to your account
      *        with these parameters.
      */
 
@@ -325,11 +325,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The number of Dedicated hosts you want to allocate to your account with
+     * The number of Dedicated Hosts you want to allocate to your account with
      * these parameters.
      * </p>
      * 
-     * @return The number of Dedicated hosts you want to allocate to your
+     * @return The number of Dedicated Hosts you want to allocate to your
      *         account with these parameters.
      */
 
@@ -339,12 +339,12 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The number of Dedicated hosts you want to allocate to your account with
+     * The number of Dedicated Hosts you want to allocate to your account with
      * these parameters.
      * </p>
      * 
      * @param quantity
-     *        The number of Dedicated hosts you want to allocate to your account
+     *        The number of Dedicated Hosts you want to allocate to your account
      *        with these parameters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -357,11 +357,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Availability Zone for the Dedicated hosts.
+     * The Availability Zone for the Dedicated Hosts.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone for the Dedicated hosts.
+     *        The Availability Zone for the Dedicated Hosts.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -370,10 +370,10 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Availability Zone for the Dedicated hosts.
+     * The Availability Zone for the Dedicated Hosts.
      * </p>
      * 
-     * @return The Availability Zone for the Dedicated hosts.
+     * @return The Availability Zone for the Dedicated Hosts.
      */
 
     public String getAvailabilityZone() {
@@ -382,11 +382,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Availability Zone for the Dedicated hosts.
+     * The Availability Zone for the Dedicated Hosts.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone for the Dedicated hosts.
+     *        The Availability Zone for the Dedicated Hosts.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The result of the describe tags action.
+ * The result of the <a>DescribeTags</a> operation.
  * </p>
  */
 public class DescribeTagsResult implements Serializable, Cloneable {

@@ -52,7 +52,9 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * following characters: =,.@-. User names are not distinguished by case.
+     * For example, you cannot create users named both "TESTUSER" and
+     * "testuser".
      * </p>
      */
     private String userName;
@@ -76,7 +78,9 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      *        for this parameter is a string of characters consisting of upper
      *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        include any of the following characters: =,.@-. User names are not
+     *        distinguished by case. For example, you cannot create users named
+     *        both "TESTUSER" and "testuser".
      */
     public CreateUserRequest(String userName) {
         setUserName(userName);
@@ -218,7 +222,9 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * following characters: =,.@-. User names are not distinguished by case.
+     * For example, you cannot create users named both "TESTUSER" and
+     * "testuser".
      * </p>
      * 
      * @param userName
@@ -227,7 +233,9 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      *        for this parameter is a string of characters consisting of upper
      *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        include any of the following characters: =,.@-. User names are not
+     *        distinguished by case. For example, you cannot create users named
+     *        both "TESTUSER" and "testuser".
      */
 
     public void setUserName(String userName) {
@@ -242,7 +250,9 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * following characters: =,.@-. User names are not distinguished by case.
+     * For example, you cannot create users named both "TESTUSER" and
+     * "testuser".
      * </p>
      * 
      * @return The name of the user to create.</p>
@@ -250,7 +260,9 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      *         for this parameter is a string of characters consisting of upper
      *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-
+     *         also include any of the following characters: =,.@-. User names
+     *         are not distinguished by case. For example, you cannot create
+     *         users named both "TESTUSER" and "testuser".
      */
 
     public String getUserName() {
@@ -265,7 +277,9 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * following characters: =,.@-. User names are not distinguished by case.
+     * For example, you cannot create users named both "TESTUSER" and
+     * "testuser".
      * </p>
      * 
      * @param userName
@@ -274,7 +288,9 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      *        for this parameter is a string of characters consisting of upper
      *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        include any of the following characters: =,.@-. User names are not
+     *        distinguished by case. For example, you cannot create users named
+     *        both "TESTUSER" and "testuser".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

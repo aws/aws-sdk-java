@@ -19,13 +19,9 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.ValidationUtils;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by meghbyar on 6/10/16.
- */
 @SdkInternalApi
 class CompositeAcceptor<Output> {
 

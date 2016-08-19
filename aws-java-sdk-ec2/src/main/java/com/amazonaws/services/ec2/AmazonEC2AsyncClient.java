@@ -3745,6 +3745,78 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeHostReservationOfferingsResult> describeHostReservationOfferingsAsync(
+            DescribeHostReservationOfferingsRequest request) {
+
+        return describeHostReservationOfferingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHostReservationOfferingsResult> describeHostReservationOfferingsAsync(
+            final DescribeHostReservationOfferingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeHostReservationOfferingsRequest, DescribeHostReservationOfferingsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeHostReservationOfferingsResult>() {
+                    @Override
+                    public DescribeHostReservationOfferingsResult call()
+                            throws Exception {
+                        DescribeHostReservationOfferingsResult result;
+
+                        try {
+                            result = describeHostReservationOfferings(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHostReservationsResult> describeHostReservationsAsync(
+            DescribeHostReservationsRequest request) {
+
+        return describeHostReservationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHostReservationsResult> describeHostReservationsAsync(
+            final DescribeHostReservationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeHostReservationsRequest, DescribeHostReservationsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeHostReservationsResult>() {
+                    @Override
+                    public DescribeHostReservationsResult call()
+                            throws Exception {
+                        DescribeHostReservationsResult result;
+
+                        try {
+                            result = describeHostReservations(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeHostsResult> describeHostsAsync(
             DescribeHostsRequest request) {
 
@@ -7092,6 +7164,42 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetHostReservationPurchasePreviewResult> getHostReservationPurchasePreviewAsync(
+            GetHostReservationPurchasePreviewRequest request) {
+
+        return getHostReservationPurchasePreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHostReservationPurchasePreviewResult> getHostReservationPurchasePreviewAsync(
+            final GetHostReservationPurchasePreviewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetHostReservationPurchasePreviewRequest, GetHostReservationPurchasePreviewResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetHostReservationPurchasePreviewResult>() {
+                    @Override
+                    public GetHostReservationPurchasePreviewResult call()
+                            throws Exception {
+                        GetHostReservationPurchasePreviewResult result;
+
+                        try {
+                            result = getHostReservationPurchasePreview(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPasswordDataResult> getPasswordDataAsync(
             GetPasswordDataRequest request) {
 
@@ -7935,6 +8043,42 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements
 
                         try {
                             result = moveAddressToVpc(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurchaseHostReservationResult> purchaseHostReservationAsync(
+            PurchaseHostReservationRequest request) {
+
+        return purchaseHostReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurchaseHostReservationResult> purchaseHostReservationAsync(
+            final PurchaseHostReservationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PurchaseHostReservationRequest, PurchaseHostReservationResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<PurchaseHostReservationResult>() {
+                    @Override
+                    public PurchaseHostReservationResult call()
+                            throws Exception {
+                        PurchaseHostReservationResult result;
+
+                        try {
+                            result = purchaseHostReservation(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

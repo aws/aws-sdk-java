@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The result of the delete tags action.
+ * The result of the <a>DeleteTags</a> operation.
  * </p>
  */
 public class DeleteTagsResult implements Serializable, Cloneable {

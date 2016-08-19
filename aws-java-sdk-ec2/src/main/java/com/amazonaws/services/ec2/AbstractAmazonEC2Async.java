@@ -1740,6 +1740,36 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeHostReservationOfferingsResult> describeHostReservationOfferingsAsync(
+            DescribeHostReservationOfferingsRequest request) {
+
+        return describeHostReservationOfferingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHostReservationOfferingsResult> describeHostReservationOfferingsAsync(
+            DescribeHostReservationOfferingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeHostReservationOfferingsRequest, DescribeHostReservationOfferingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHostReservationsResult> describeHostReservationsAsync(
+            DescribeHostReservationsRequest request) {
+
+        return describeHostReservationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHostReservationsResult> describeHostReservationsAsync(
+            DescribeHostReservationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeHostReservationsRequest, DescribeHostReservationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeHostsResult> describeHostsAsync(
             DescribeHostsRequest request) {
 
@@ -3695,6 +3725,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetHostReservationPurchasePreviewResult> getHostReservationPurchasePreviewAsync(
+            GetHostReservationPurchasePreviewRequest request) {
+
+        return getHostReservationPurchasePreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHostReservationPurchasePreviewResult> getHostReservationPurchasePreviewAsync(
+            GetHostReservationPurchasePreviewRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetHostReservationPurchasePreviewRequest, GetHostReservationPurchasePreviewResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPasswordDataResult> getPasswordDataAsync(
             GetPasswordDataRequest request) {
 
@@ -4083,6 +4128,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements
     public java.util.concurrent.Future<MoveAddressToVpcResult> moveAddressToVpcAsync(
             MoveAddressToVpcRequest request,
             com.amazonaws.handlers.AsyncHandler<MoveAddressToVpcRequest, MoveAddressToVpcResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurchaseHostReservationResult> purchaseHostReservationAsync(
+            PurchaseHostReservationRequest request) {
+
+        return purchaseHostReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurchaseHostReservationResult> purchaseHostReservationAsync(
+            PurchaseHostReservationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PurchaseHostReservationRequest, PurchaseHostReservationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

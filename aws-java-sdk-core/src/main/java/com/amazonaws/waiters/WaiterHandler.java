@@ -18,10 +18,6 @@ package com.amazonaws.waiters;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Created by meghbyar on 6/16/16.
- */
-
-/**
  * Callbacks are executed synchronously. That is the same thread the waiter
  * completes on and it's not submitted back to the executor.
  */

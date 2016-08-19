@@ -18,44 +18,44 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes properties of a Dedicated host.
+ * Describes properties of a Dedicated Host.
  * </p>
  */
 public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of sockets on the Dedicated host.
+     * The number of sockets on the Dedicated Host.
      * </p>
      */
     private Integer sockets;
     /**
      * <p>
-     * The number of cores on the Dedicated host.
+     * The number of cores on the Dedicated Host.
      * </p>
      */
     private Integer cores;
     /**
      * <p>
-     * The number of vCPUs on the Dedicated host.
+     * The number of vCPUs on the Dedicated Host.
      * </p>
      */
     private Integer totalVCpus;
     /**
      * <p>
-     * The instance type size that the Dedicated host supports (for example,
-     * m3.medium).
+     * The instance type size that the Dedicated Host supports (for example,
+     * <code>m3.medium</code>).
      * </p>
      */
     private String instanceType;
 
     /**
      * <p>
-     * The number of sockets on the Dedicated host.
+     * The number of sockets on the Dedicated Host.
      * </p>
      * 
      * @param sockets
-     *        The number of sockets on the Dedicated host.
+     *        The number of sockets on the Dedicated Host.
      */
 
     public void setSockets(Integer sockets) {
@@ -64,10 +64,10 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of sockets on the Dedicated host.
+     * The number of sockets on the Dedicated Host.
      * </p>
      * 
-     * @return The number of sockets on the Dedicated host.
+     * @return The number of sockets on the Dedicated Host.
      */
 
     public Integer getSockets() {
@@ -76,11 +76,11 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of sockets on the Dedicated host.
+     * The number of sockets on the Dedicated Host.
      * </p>
      * 
      * @param sockets
-     *        The number of sockets on the Dedicated host.
+     *        The number of sockets on the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -92,11 +92,11 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of cores on the Dedicated host.
+     * The number of cores on the Dedicated Host.
      * </p>
      * 
      * @param cores
-     *        The number of cores on the Dedicated host.
+     *        The number of cores on the Dedicated Host.
      */
 
     public void setCores(Integer cores) {
@@ -105,10 +105,10 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of cores on the Dedicated host.
+     * The number of cores on the Dedicated Host.
      * </p>
      * 
-     * @return The number of cores on the Dedicated host.
+     * @return The number of cores on the Dedicated Host.
      */
 
     public Integer getCores() {
@@ -117,11 +117,11 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of cores on the Dedicated host.
+     * The number of cores on the Dedicated Host.
      * </p>
      * 
      * @param cores
-     *        The number of cores on the Dedicated host.
+     *        The number of cores on the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -133,11 +133,11 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of vCPUs on the Dedicated host.
+     * The number of vCPUs on the Dedicated Host.
      * </p>
      * 
      * @param totalVCpus
-     *        The number of vCPUs on the Dedicated host.
+     *        The number of vCPUs on the Dedicated Host.
      */
 
     public void setTotalVCpus(Integer totalVCpus) {
@@ -146,10 +146,10 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of vCPUs on the Dedicated host.
+     * The number of vCPUs on the Dedicated Host.
      * </p>
      * 
-     * @return The number of vCPUs on the Dedicated host.
+     * @return The number of vCPUs on the Dedicated Host.
      */
 
     public Integer getTotalVCpus() {
@@ -158,11 +158,11 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of vCPUs on the Dedicated host.
+     * The number of vCPUs on the Dedicated Host.
      * </p>
      * 
      * @param totalVCpus
-     *        The number of vCPUs on the Dedicated host.
+     *        The number of vCPUs on the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -174,13 +174,13 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size that the Dedicated host supports (for example,
-     * m3.medium).
+     * The instance type size that the Dedicated Host supports (for example,
+     * <code>m3.medium</code>).
      * </p>
      * 
      * @param instanceType
-     *        The instance type size that the Dedicated host supports (for
-     *        example, m3.medium).
+     *        The instance type size that the Dedicated Host supports (for
+     *        example, <code>m3.medium</code>).
      */
 
     public void setInstanceType(String instanceType) {
@@ -189,12 +189,12 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size that the Dedicated host supports (for example,
-     * m3.medium).
+     * The instance type size that the Dedicated Host supports (for example,
+     * <code>m3.medium</code>).
      * </p>
      * 
-     * @return The instance type size that the Dedicated host supports (for
-     *         example, m3.medium).
+     * @return The instance type size that the Dedicated Host supports (for
+     *         example, <code>m3.medium</code>).
      */
 
     public String getInstanceType() {
@@ -203,13 +203,13 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size that the Dedicated host supports (for example,
-     * m3.medium).
+     * The instance type size that the Dedicated Host supports (for example,
+     * <code>m3.medium</code>).
      * </p>
      * 
      * @param instanceType
-     *        The instance type size that the Dedicated host supports (for
-     *        example, m3.medium).
+     *        The instance type size that the Dedicated Host supports (for
+     *        example, <code>m3.medium</code>).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

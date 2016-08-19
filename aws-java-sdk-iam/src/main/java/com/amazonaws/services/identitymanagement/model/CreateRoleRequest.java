@@ -51,7 +51,9 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * following characters: =,.@-. Role names are not distinguished by case.
+     * For example, you cannot create roles named both "PRODROLE" and
+     * "prodrole".
      * </p>
      */
     private String roleName;
@@ -203,7 +205,9 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * following characters: =,.@-. Role names are not distinguished by case.
+     * For example, you cannot create roles named both "PRODROLE" and
+     * "prodrole".
      * </p>
      * 
      * @param roleName
@@ -212,7 +216,9 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      *        for this parameter is a string of characters consisting of upper
      *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        include any of the following characters: =,.@-. Role names are not
+     *        distinguished by case. For example, you cannot create roles named
+     *        both "PRODROLE" and "prodrole".
      */
 
     public void setRoleName(String roleName) {
@@ -227,7 +233,9 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * following characters: =,.@-. Role names are not distinguished by case.
+     * For example, you cannot create roles named both "PRODROLE" and
+     * "prodrole".
      * </p>
      * 
      * @return The name of the role to create.</p>
@@ -235,7 +243,9 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      *         for this parameter is a string of characters consisting of upper
      *         and lowercase alphanumeric characters with no spaces. You can
-     *         also include any of the following characters: =,.@-
+     *         also include any of the following characters: =,.@-. Role names
+     *         are not distinguished by case. For example, you cannot create
+     *         roles named both "PRODROLE" and "prodrole".
      */
 
     public String getRoleName() {
@@ -250,7 +260,9 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * following characters: =,.@-. Role names are not distinguished by case.
+     * For example, you cannot create roles named both "PRODROLE" and
+     * "prodrole".
      * </p>
      * 
      * @param roleName
@@ -259,7 +271,9 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
      *        for this parameter is a string of characters consisting of upper
      *        and lowercase alphanumeric characters with no spaces. You can also
-     *        include any of the following characters: =,.@-
+     *        include any of the following characters: =,.@-. Role names are not
+     *        distinguished by case. For example, you cannot create roles named
+     *        both "PRODROLE" and "prodrole".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

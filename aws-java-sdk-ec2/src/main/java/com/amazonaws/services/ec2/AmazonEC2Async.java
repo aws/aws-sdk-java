@@ -159,7 +159,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Allocates a Dedicated host to your account. At minimum you need to
+     * Allocates a Dedicated Host to your account. At minimum you need to
      * specify the instance size type, Availability Zone, and quantity of hosts
      * you want to allocate.
      * </p>
@@ -175,7 +175,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Allocates a Dedicated host to your account. At minimum you need to
+     * Allocates a Dedicated Host to your account. At minimum you need to
      * specify the instance size type, Availability Zone, and quantity of hosts
      * you want to allocate.
      * </p>
@@ -1063,9 +1063,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"
-     * >Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * "http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html"
+     * >Importing a Virtual Machine Using the Amazon EC2 CLI</a>.
      * </p>
      * 
      * @param cancelConversionTaskRequest
@@ -1087,9 +1086,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"
-     * >Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * "http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html"
+     * >Importing a Virtual Machine Using the Amazon EC2 CLI</a>.
      * </p>
      * 
      * @param cancelConversionTaskRequest
@@ -1927,9 +1925,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For information about the supported operating systems, image formats, and
      * known limitations for the types of instances you can export, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html"
-     * >Exporting EC2 Instances</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html"
+     * >Exporting an Instance as a VM Using VM Import/Export</a> in the <i>VM
+     * Import/Export User Guide</i>.
      * </p>
      * 
      * @param createInstanceExportTaskRequest
@@ -1948,9 +1946,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For information about the supported operating systems, image formats, and
      * known limitations for the types of instances you can export, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html"
-     * >Exporting EC2 Instances</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html"
+     * >Exporting an Instance as a VM Using VM Import/Export</a> in the <i>VM
+     * Import/Export User Guide</i>.
      * </p>
      * 
      * @param createInstanceExportTaskRequest
@@ -4968,10 +4966,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes one or more of your conversion tasks. For more information, see
-     * <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"
-     * >Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * the <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+     * Import/Export User Guide</a>.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action,
@@ -4992,10 +4988,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes one or more of your conversion tasks. For more information, see
-     * <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"
-     * >Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * the <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+     * Import/Export User Guide</a>.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action,
@@ -5272,12 +5266,102 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your Dedicated hosts.
+     * Describes the Dedicated Host Reservations that are available to purchase.
      * </p>
      * <p>
-     * The results describe only the Dedicated hosts in the region you're
+     * The results describe all the Dedicated Host Reservation offerings,
+     * including offerings that may not match the instance family and region of
+     * your Dedicated Hosts. When purchasing an offering, ensure that the the
+     * instance family and region of the offering matches that of the Dedicated
+     * Host/s it will be associated with. For an overview of supported instance
+     * types, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html"
+     * >Dedicated Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param describeHostReservationOfferingsRequest
+     * @return A Java Future containing the result of the
+     *         DescribeHostReservationOfferings operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeHostReservationOfferings
+     */
+    java.util.concurrent.Future<DescribeHostReservationOfferingsResult> describeHostReservationOfferingsAsync(
+            DescribeHostReservationOfferingsRequest describeHostReservationOfferingsRequest);
+
+    /**
+     * <p>
+     * Describes the Dedicated Host Reservations that are available to purchase.
+     * </p>
+     * <p>
+     * The results describe all the Dedicated Host Reservation offerings,
+     * including offerings that may not match the instance family and region of
+     * your Dedicated Hosts. When purchasing an offering, ensure that the the
+     * instance family and region of the offering matches that of the Dedicated
+     * Host/s it will be associated with. For an overview of supported instance
+     * types, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html"
+     * >Dedicated Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param describeHostReservationOfferingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeHostReservationOfferings operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeHostReservationOfferings
+     */
+    java.util.concurrent.Future<DescribeHostReservationOfferingsResult> describeHostReservationOfferingsAsync(
+            DescribeHostReservationOfferingsRequest describeHostReservationOfferingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeHostReservationOfferingsRequest, DescribeHostReservationOfferingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes Dedicated Host Reservations which are associated with Dedicated
+     * Hosts in your account.
+     * </p>
+     * 
+     * @param describeHostReservationsRequest
+     * @return A Java Future containing the result of the
+     *         DescribeHostReservations operation returned by the service.
+     * @sample AmazonEC2Async.DescribeHostReservations
+     */
+    java.util.concurrent.Future<DescribeHostReservationsResult> describeHostReservationsAsync(
+            DescribeHostReservationsRequest describeHostReservationsRequest);
+
+    /**
+     * <p>
+     * Describes Dedicated Host Reservations which are associated with Dedicated
+     * Hosts in your account.
+     * </p>
+     * 
+     * @param describeHostReservationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeHostReservations operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeHostReservations
+     */
+    java.util.concurrent.Future<DescribeHostReservationsResult> describeHostReservationsAsync(
+            DescribeHostReservationsRequest describeHostReservationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeHostReservationsRequest, DescribeHostReservationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more of your Dedicated Hosts.
+     * </p>
+     * <p>
+     * The results describe only the Dedicated Hosts in the region you're
      * currently using. All listed instances consume capacity on your Dedicated
-     * host. Dedicated hosts that have recently been released will be listed
+     * Host. Dedicated Hosts that have recently been released will be listed
      * with the state <code>released</code>.
      * </p>
      * 
@@ -5292,12 +5376,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your Dedicated hosts.
+     * Describes one or more of your Dedicated Hosts.
      * </p>
      * <p>
-     * The results describe only the Dedicated hosts in the region you're
+     * The results describe only the Dedicated Hosts in the region you're
      * currently using. All listed instances consume capacity on your Dedicated
-     * host. Dedicated hosts that have recently been released will be listed
+     * Host. Dedicated Hosts that have recently been released will be listed
      * with the state <code>released</code>.
      * </p>
      * 
@@ -8723,13 +8807,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Detaches an EBS volume from an instance. Make sure to unmount any file
      * systems on the device within your operating system before detaching the
-     * volume. Failure to do so results in the volume being stuck in a busy
-     * state while detaching.
-     * </p>
-     * <p>
-     * If an Amazon EBS volume is the root device of an instance, it can't be
-     * detached while the instance is running. To detach the root volume, stop
-     * the instance first.
+     * volume. Failure to do so can result in the volume becoming stuck in the
+     * <code>busy</code> state while detaching. If this happens, detachment can
+     * be delayed indefinitely until you unmount the volume, force detachment,
+     * reboot the instance, or all three. If an EBS volume is the root device of
+     * an instance, it can't be detached while the instance is running. To
+     * detach the root volume, stop the instance first.
      * </p>
      * <p>
      * When a volume with an AWS Marketplace product code is detached from an
@@ -8755,13 +8838,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Detaches an EBS volume from an instance. Make sure to unmount any file
      * systems on the device within your operating system before detaching the
-     * volume. Failure to do so results in the volume being stuck in a busy
-     * state while detaching.
-     * </p>
-     * <p>
-     * If an Amazon EBS volume is the root device of an instance, it can't be
-     * detached while the instance is running. To detach the root volume, stop
-     * the instance first.
+     * volume. Failure to do so can result in the volume becoming stuck in the
+     * <code>busy</code> state while detaching. If this happens, detachment can
+     * be delayed indefinitely until you unmount the volume, force detachment,
+     * reboot the instance, or all three. If an EBS volume is the root device of
+     * an instance, it can't be detached while the instance is running. To
+     * detach the root volume, stop the instance first.
      * </p>
      * <p>
      * When a volume with an AWS Marketplace product code is detached from an
@@ -9361,6 +9443,52 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Preview a reservation purchase with configurations that match those of
+     * your Dedicated Host. You must have active Dedicated Hosts in your account
+     * before you purchase a reservation.
+     * </p>
+     * <p>
+     * This is a preview of the <a>PurchaseHostReservation</a> action and does
+     * not result in the offering being purchased.
+     * </p>
+     * 
+     * @param getHostReservationPurchasePreviewRequest
+     * @return A Java Future containing the result of the
+     *         GetHostReservationPurchasePreview operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.GetHostReservationPurchasePreview
+     */
+    java.util.concurrent.Future<GetHostReservationPurchasePreviewResult> getHostReservationPurchasePreviewAsync(
+            GetHostReservationPurchasePreviewRequest getHostReservationPurchasePreviewRequest);
+
+    /**
+     * <p>
+     * Preview a reservation purchase with configurations that match those of
+     * your Dedicated Host. You must have active Dedicated Hosts in your account
+     * before you purchase a reservation.
+     * </p>
+     * <p>
+     * This is a preview of the <a>PurchaseHostReservation</a> action and does
+     * not result in the offering being purchased.
+     * </p>
+     * 
+     * @param getHostReservationPurchasePreviewRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         GetHostReservationPurchasePreview operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.GetHostReservationPurchasePreview
+     */
+    java.util.concurrent.Future<GetHostReservationPurchasePreviewResult> getHostReservationPurchasePreviewAsync(
+            GetHostReservationPurchasePreviewRequest getHostReservationPurchasePreviewRequest,
+            com.amazonaws.handlers.AsyncHandler<GetHostReservationPurchasePreviewRequest, GetHostReservationPurchasePreviewResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the encrypted administrator password for an instance running
      * Windows.
      * </p>
@@ -9432,7 +9560,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Import single or multi-volume disk images or EBS snapshots into an Amazon
-     * Machine Image (AMI).
+     * Machine Image (AMI). For more information, see <a href=
+     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html"
+     * >Importing a VM as an Image Using VM Import/Export</a> in the <i>VM
+     * Import/Export User Guide</i>.
      * </p>
      * 
      * @param importImageRequest
@@ -9447,7 +9578,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Import single or multi-volume disk images or EBS snapshots into an Amazon
-     * Machine Image (AMI).
+     * Machine Image (AMI). For more information, see <a href=
+     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html"
+     * >Importing a VM as an Image Using VM Import/Export</a> in the <i>VM
+     * Import/Export User Guide</i>.
      * </p>
      * 
      * @param importImageRequest
@@ -9486,12 +9620,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates an import instance task using metadata from the specified disk
      * image. <code>ImportInstance</code> only supports single-volume VMs. To
-     * import multi-volume VMs, use <a>ImportImage</a>. After importing the
-     * image, you then upload it using the <code>ec2-import-volume</code>
-     * command in the EC2 command line tools. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"
-     * >Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * import multi-volume VMs, use <a>ImportImage</a>. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html"
+     * >Importing a Virtual Machine Using the Amazon EC2 CLI</a>.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action,
@@ -9513,12 +9645,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates an import instance task using metadata from the specified disk
      * image. <code>ImportInstance</code> only supports single-volume VMs. To
-     * import multi-volume VMs, use <a>ImportImage</a>. After importing the
-     * image, you then upload it using the <code>ec2-import-volume</code>
-     * command in the EC2 command line tools. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"
-     * >Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * import multi-volume VMs, use <a>ImportImage</a>. For more information,
+     * see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html"
+     * >Importing a Virtual Machine Using the Amazon EC2 CLI</a>.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action,
@@ -9650,12 +9780,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Creates an import volume task using metadata from the specified disk
-     * image. After importing the image, you then upload it using the
-     * <code>ec2-import-volume</code> command in the Amazon EC2 command-line
-     * interface (CLI) tools. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"
-     * >Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * image.For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html"
+     * >Importing Disks to Amazon EBS</a>.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action,
@@ -9676,12 +9803,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Creates an import volume task using metadata from the specified disk
-     * image. After importing the image, you then upload it using the
-     * <code>ec2-import-volume</code> command in the Amazon EC2 command-line
-     * interface (CLI) tools. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"
-     * >Using the Command Line Tools to Import Your Virtual Machine to Amazon
-     * EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * image.For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html"
+     * >Importing Disks to Amazon EBS</a>.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action,
@@ -9707,10 +9831,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modify the auto-placement setting of a Dedicated host. When
+     * Modify the auto-placement setting of a Dedicated Host. When
      * auto-placement is enabled, AWS will place instances that you launch with
      * a tenancy of <code>host</code>, but without targeting a specific host ID,
-     * onto any available Dedicated host in your account which has
+     * onto any available Dedicated Host in your account which has
      * auto-placement enabled. When auto-placement is disabled, you need to
      * provide a host ID if you want the instance to launch onto a specific
      * host. If no host ID is provided, the instance will be launched onto a
@@ -9728,10 +9852,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modify the auto-placement setting of a Dedicated host. When
+     * Modify the auto-placement setting of a Dedicated Host. When
      * auto-placement is enabled, AWS will place instances that you launch with
      * a tenancy of <code>host</code>, but without targeting a specific host ID,
-     * onto any available Dedicated host in your account which has
+     * onto any available Dedicated Host in your account which has
      * auto-placement enabled. When auto-placement is disabled, you need to
      * provide a host ID if you want the instance to launch onto a specific
      * host. If no host ID is provided, the instance will be launched onto a
@@ -10011,7 +10135,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Instance affinity is disabled by default. When instance affinity is
      * <code>host</code> and it is not associated with a specific Dedicated
-     * host, the next time it is launched it will automatically be associated
+     * Host, the next time it is launched it will automatically be associated
      * with the host it lands on. This relationship will persist if the instance
      * is stopped/started, or rebooted.
      * </p>
@@ -10048,7 +10172,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Instance affinity is disabled by default. When instance affinity is
      * <code>host</code> and it is not associated with a specific Dedicated
-     * host, the next time it is launched it will automatically be associated
+     * Host, the next time it is launched it will automatically be associated
      * with the host it lands on. This relationship will persist if the instance
      * is stopped/started, or rebooted.
      * </p>
@@ -10679,6 +10803,44 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Purchase a reservation with configurations that match those of your
+     * Dedicated Host. You must have active Dedicated Hosts in your account
+     * before you purchase a reservation. This action results in the specified
+     * reservation being purchased and charged to your account.
+     * </p>
+     * 
+     * @param purchaseHostReservationRequest
+     * @return A Java Future containing the result of the
+     *         PurchaseHostReservation operation returned by the service.
+     * @sample AmazonEC2Async.PurchaseHostReservation
+     */
+    java.util.concurrent.Future<PurchaseHostReservationResult> purchaseHostReservationAsync(
+            PurchaseHostReservationRequest purchaseHostReservationRequest);
+
+    /**
+     * <p>
+     * Purchase a reservation with configurations that match those of your
+     * Dedicated Host. You must have active Dedicated Hosts in your account
+     * before you purchase a reservation. This action results in the specified
+     * reservation being purchased and charged to your account.
+     * </p>
+     * 
+     * @param purchaseHostReservationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         PurchaseHostReservation operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.PurchaseHostReservation
+     */
+    java.util.concurrent.Future<PurchaseHostReservationResult> purchaseHostReservationAsync(
+            PurchaseHostReservationRequest purchaseHostReservationRequest,
+            com.amazonaws.handlers.AsyncHandler<PurchaseHostReservationRequest, PurchaseHostReservationResult> asyncHandler);
+
+    /**
+     * <p>
      * Purchases a Reserved Instance for use with your account. With Reserved
      * Instances, you obtain a capacity reservation for a certain instance
      * configuration over a specified period of time and pay a lower hourly rate
@@ -11119,20 +11281,21 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * When you no longer want to use a Dedicated host it can be released.
-     * On-Demand billing is stopped and the host goes into <code>released</code>
-     * state. The host ID of Dedicated hosts that have been released can no
-     * longer be specified in another request, e.g., ModifyHosts. You must stop
-     * or terminate all instances on a host before it can be released.
+     * When you no longer want to use an On-Demand Dedicated Host it can be
+     * released. On-Demand billing is stopped and the host goes into
+     * <code>released</code> state. The host ID of Dedicated Hosts that have
+     * been released can no longer be specified in another request, e.g.,
+     * ModifyHosts. You must stop or terminate all instances on a host before it
+     * can be released.
      * </p>
      * <p>
-     * When Dedicated hosts are released, it make take some time for them to
+     * When Dedicated Hosts are released, it make take some time for them to
      * stop counting toward your limit and you may receive capacity errors when
      * trying to allocate new Dedicated hosts. Try waiting a few minutes, and
      * then try again.
      * </p>
      * <p>
-     * Released hosts will still appear in a DescribeHosts response.
+     * Released hosts will still appear in a <a>DescribeHosts</a> response.
      * </p>
      * 
      * @param releaseHostsRequest
@@ -11146,20 +11309,21 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * When you no longer want to use a Dedicated host it can be released.
-     * On-Demand billing is stopped and the host goes into <code>released</code>
-     * state. The host ID of Dedicated hosts that have been released can no
-     * longer be specified in another request, e.g., ModifyHosts. You must stop
-     * or terminate all instances on a host before it can be released.
+     * When you no longer want to use an On-Demand Dedicated Host it can be
+     * released. On-Demand billing is stopped and the host goes into
+     * <code>released</code> state. The host ID of Dedicated Hosts that have
+     * been released can no longer be specified in another request, e.g.,
+     * ModifyHosts. You must stop or terminate all instances on a host before it
+     * can be released.
      * </p>
      * <p>
-     * When Dedicated hosts are released, it make take some time for them to
+     * When Dedicated Hosts are released, it make take some time for them to
      * stop counting toward your limit and you may receive capacity errors when
      * trying to allocate new Dedicated hosts. Try waiting a few minutes, and
      * then try again.
      * </p>
      * <p>
-     * Released hosts will still appear in a DescribeHosts response.
+     * Released hosts will still appear in a <a>DescribeHosts</a> response.
      * </p>
      * 
      * @param releaseHostsRequest

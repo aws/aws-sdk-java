@@ -25,8 +25,8 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>WorkspaceRequest</a> object that contains the information about the
-     * WorkSpace that could not be created.
+     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that
+     * contains the information about the WorkSpace that could not be created.
      * </p>
      */
     private WorkspaceRequest workspaceRequest;
@@ -45,13 +45,14 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>WorkspaceRequest</a> object that contains the information about the
-     * WorkSpace that could not be created.
+     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that
+     * contains the information about the WorkSpace that could not be created.
      * </p>
      * 
      * @param workspaceRequest
-     *        A <a>WorkspaceRequest</a> object that contains the information
-     *        about the WorkSpace that could not be created.
+     *        A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that
+     *        contains the information about the WorkSpace that could not be
+     *        created.
      */
 
     public void setWorkspaceRequest(WorkspaceRequest workspaceRequest) {
@@ -60,12 +61,13 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>WorkspaceRequest</a> object that contains the information about the
-     * WorkSpace that could not be created.
+     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that
+     * contains the information about the WorkSpace that could not be created.
      * </p>
      * 
-     * @return A <a>WorkspaceRequest</a> object that contains the information
-     *         about the WorkSpace that could not be created.
+     * @return A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object
+     *         that contains the information about the WorkSpace that could not
+     *         be created.
      */
 
     public WorkspaceRequest getWorkspaceRequest() {
@@ -74,13 +76,14 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A <a>WorkspaceRequest</a> object that contains the information about the
-     * WorkSpace that could not be created.
+     * A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that
+     * contains the information about the WorkSpace that could not be created.
      * </p>
      * 
      * @param workspaceRequest
-     *        A <a>WorkspaceRequest</a> object that contains the information
-     *        about the WorkSpace that could not be created.
+     *        A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that
+     *        contains the information about the WorkSpace that could not be
+     *        created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

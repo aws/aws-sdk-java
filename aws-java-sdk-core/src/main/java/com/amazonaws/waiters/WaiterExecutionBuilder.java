@@ -21,9 +21,6 @@ import com.amazonaws.annotation.SdkProtectedApi;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by meghbyar on 6/6/16.
- */
 @SdkProtectedApi
 public class WaiterExecutionBuilder<Input extends AmazonWebServiceRequest, Output> {
 

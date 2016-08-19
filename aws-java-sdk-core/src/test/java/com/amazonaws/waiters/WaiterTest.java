@@ -29,9 +29,6 @@ import java.util.List;
 
 import static org.mockito.Mockito.*;
 
-/**
- * Created by meghbyar on 7/5/16.
- */
 @RunWith(MockitoJUnitRunner.class)
 public class WaiterTest {
 

@@ -48,9 +48,8 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * <b>Note:</b> You may only use BYOL if you have existing licenses with
      * rights to use these licenses in a third party cloud like AWS. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     * >VM Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.
+     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
      * Valid values: <code>AWS</code> | <code>BYOL</code>
@@ -234,9 +233,8 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * <b>Note:</b> You may only use BYOL if you have existing licenses with
      * rights to use these licenses in a third party cloud like AWS. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     * >VM Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.
+     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
      * Valid values: <code>AWS</code> | <code>BYOL</code>
@@ -249,9 +247,8 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *        <b>Note:</b> You may only use BYOL if you have existing licenses
      *        with rights to use these licenses in a third party cloud like AWS.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     *        >VM Import/Export Prerequisites</a> in the <i>Amazon Elastic
-     *        Compute Cloud User Guide</i>.
+     *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     *        >Prerequisites</a> in the VM Import/Export User Guide.
      *        </p>
      *        <p>
      *        Valid values: <code>AWS</code> | <code>BYOL</code>
@@ -270,9 +267,8 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * <b>Note:</b> You may only use BYOL if you have existing licenses with
      * rights to use these licenses in a third party cloud like AWS. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     * >VM Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.
+     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
      * Valid values: <code>AWS</code> | <code>BYOL</code>
@@ -284,9 +280,8 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *         <b>Note:</b> You may only use BYOL if you have existing licenses
      *         with rights to use these licenses in a third party cloud like
      *         AWS. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     *         >VM Import/Export Prerequisites</a> in the <i>Amazon Elastic
-     *         Compute Cloud User Guide</i>.
+     *         "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     *         >Prerequisites</a> in the VM Import/Export User Guide.
      *         </p>
      *         <p>
      *         Valid values: <code>AWS</code> | <code>BYOL</code>
@@ -305,9 +300,8 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * <b>Note:</b> You may only use BYOL if you have existing licenses with
      * rights to use these licenses in a third party cloud like AWS. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     * >VM Import/Export Prerequisites</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.
+     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
      * Valid values: <code>AWS</code> | <code>BYOL</code>
@@ -320,9 +314,8 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *        <b>Note:</b> You may only use BYOL if you have existing licenses
      *        with rights to use these licenses in a third party cloud like AWS.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     *        >VM Import/Export Prerequisites</a> in the <i>Amazon Elastic
-     *        Compute Cloud User Guide</i>.
+     *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     *        >Prerequisites</a> in the VM Import/Export User Guide.
      *        </p>
      *        <p>
      *        Valid values: <code>AWS</code> | <code>BYOL</code>

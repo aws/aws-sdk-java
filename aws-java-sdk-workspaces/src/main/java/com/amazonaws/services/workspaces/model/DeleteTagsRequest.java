@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The request of the delete tags action.
+ * The request of the <a>DeleteTags</a> operation.
  * </p>
  */
 public class DeleteTagsRequest extends AmazonWebServiceRequest implements

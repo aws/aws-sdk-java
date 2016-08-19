@@ -22,11 +22,6 @@ import com.fasterxml.jackson.databind.node.NullNode;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.IOException;
-
-/**
- * Created by meghbyar on 7/7/16.
- */
 public class AcceptorPathMatcherTest {
     ObjectMapper mapper = new ObjectMapper();
 

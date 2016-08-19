@@ -29,7 +29,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts. The IDs are used for targeted instance
+     * The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.
      * </p>
      */
@@ -59,7 +59,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>instance-type</code> - The instance type size that the Dedicated
-     * host is configured to support.
+     * Host is configured to support.
      * </p>
      * </li>
      * <li>
@@ -70,8 +70,8 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>host-reservation-id</code> - The ID of the reservation associated
-     * with this host.
+     * <code>host-reservation-id</code> - The ID of the reservation assigned to
+     * this host.
      * </p>
      * </li>
      * <li>
@@ -82,7 +82,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>state</code>- The allocation state of the Dedicated host (
+     * <code>state</code>- The allocation state of the Dedicated Host (
      * <code>available</code> | <code>under-assessment</code> |
      * <code>permanent-failure</code> | <code>released</code> |
      * <code>released-permanent-failure</code>).
@@ -99,11 +99,11 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts. The IDs are used for targeted instance
+     * The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.
      * </p>
      * 
-     * @return The IDs of the Dedicated hosts. The IDs are used for targeted
+     * @return The IDs of the Dedicated Hosts. The IDs are used for targeted
      *         instance launches.
      */
 
@@ -116,12 +116,12 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts. The IDs are used for targeted instance
+     * The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.
      * </p>
      * 
      * @param hostIds
-     *        The IDs of the Dedicated hosts. The IDs are used for targeted
+     *        The IDs of the Dedicated Hosts. The IDs are used for targeted
      *        instance launches.
      */
 
@@ -137,7 +137,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts. The IDs are used for targeted instance
+     * The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.
      * </p>
      * <p>
@@ -148,7 +148,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param hostIds
-     *        The IDs of the Dedicated hosts. The IDs are used for targeted
+     *        The IDs of the Dedicated Hosts. The IDs are used for targeted
      *        instance launches.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -167,12 +167,12 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts. The IDs are used for targeted instance
+     * The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.
      * </p>
      * 
      * @param hostIds
-     *        The IDs of the Dedicated hosts. The IDs are used for targeted
+     *        The IDs of the Dedicated Hosts. The IDs are used for targeted
      *        instance launches.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -306,7 +306,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>instance-type</code> - The instance type size that the Dedicated
-     * host is configured to support.
+     * Host is configured to support.
      * </p>
      * </li>
      * <li>
@@ -317,8 +317,8 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>host-reservation-id</code> - The ID of the reservation associated
-     * with this host.
+     * <code>host-reservation-id</code> - The ID of the reservation assigned to
+     * this host.
      * </p>
      * </li>
      * <li>
@@ -329,7 +329,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>state</code>- The allocation state of the Dedicated host (
+     * <code>state</code>- The allocation state of the Dedicated Host (
      * <code>available</code> | <code>under-assessment</code> |
      * <code>permanent-failure</code> | <code>released</code> |
      * <code>released-permanent-failure</code>).
@@ -347,7 +347,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>instance-type</code> - The instance type size that the
-     *         Dedicated host is configured to support.
+     *         Dedicated Host is configured to support.
      *         </p>
      *         </li>
      *         <li>
@@ -359,7 +359,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>host-reservation-id</code> - The ID of the reservation
-     *         associated with this host.
+     *         assigned to this host.
      *         </p>
      *         </li>
      *         <li>
@@ -370,7 +370,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>state</code>- The allocation state of the Dedicated host (
+     *         <code>state</code>- The allocation state of the Dedicated Host (
      *         <code>available</code> | <code>under-assessment</code> |
      *         <code>permanent-failure</code> | <code>released</code> |
      *         <code>released-permanent-failure</code>).
@@ -399,7 +399,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>instance-type</code> - The instance type size that the Dedicated
-     * host is configured to support.
+     * Host is configured to support.
      * </p>
      * </li>
      * <li>
@@ -410,8 +410,8 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>host-reservation-id</code> - The ID of the reservation associated
-     * with this host.
+     * <code>host-reservation-id</code> - The ID of the reservation assigned to
+     * this host.
      * </p>
      * </li>
      * <li>
@@ -422,7 +422,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>state</code>- The allocation state of the Dedicated host (
+     * <code>state</code>- The allocation state of the Dedicated Host (
      * <code>available</code> | <code>under-assessment</code> |
      * <code>permanent-failure</code> | <code>released</code> |
      * <code>released-permanent-failure</code>).
@@ -441,7 +441,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>instance-type</code> - The instance type size that the
-     *        Dedicated host is configured to support.
+     *        Dedicated Host is configured to support.
      *        </p>
      *        </li>
      *        <li>
@@ -453,7 +453,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>host-reservation-id</code> - The ID of the reservation
-     *        associated with this host.
+     *        assigned to this host.
      *        </p>
      *        </li>
      *        <li>
@@ -464,7 +464,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code>- The allocation state of the Dedicated host (
+     *        <code>state</code>- The allocation state of the Dedicated Host (
      *        <code>available</code> | <code>under-assessment</code> |
      *        <code>permanent-failure</code> | <code>released</code> |
      *        <code>released-permanent-failure</code>).
@@ -495,7 +495,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>instance-type</code> - The instance type size that the Dedicated
-     * host is configured to support.
+     * Host is configured to support.
      * </p>
      * </li>
      * <li>
@@ -506,8 +506,8 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>host-reservation-id</code> - The ID of the reservation associated
-     * with this host.
+     * <code>host-reservation-id</code> - The ID of the reservation assigned to
+     * this host.
      * </p>
      * </li>
      * <li>
@@ -518,7 +518,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>state</code>- The allocation state of the Dedicated host (
+     * <code>state</code>- The allocation state of the Dedicated Host (
      * <code>available</code> | <code>under-assessment</code> |
      * <code>permanent-failure</code> | <code>released</code> |
      * <code>released-permanent-failure</code>).
@@ -543,7 +543,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>instance-type</code> - The instance type size that the
-     *        Dedicated host is configured to support.
+     *        Dedicated Host is configured to support.
      *        </p>
      *        </li>
      *        <li>
@@ -555,7 +555,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>host-reservation-id</code> - The ID of the reservation
-     *        associated with this host.
+     *        assigned to this host.
      *        </p>
      *        </li>
      *        <li>
@@ -566,7 +566,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code>- The allocation state of the Dedicated host (
+     *        <code>state</code>- The allocation state of the Dedicated Host (
      *        <code>available</code> | <code>under-assessment</code> |
      *        <code>permanent-failure</code> | <code>released</code> |
      *        <code>released-permanent-failure</code>).
@@ -601,7 +601,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>instance-type</code> - The instance type size that the Dedicated
-     * host is configured to support.
+     * Host is configured to support.
      * </p>
      * </li>
      * <li>
@@ -612,8 +612,8 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>host-reservation-id</code> - The ID of the reservation associated
-     * with this host.
+     * <code>host-reservation-id</code> - The ID of the reservation assigned to
+     * this host.
      * </p>
      * </li>
      * <li>
@@ -624,7 +624,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>state</code>- The allocation state of the Dedicated host (
+     * <code>state</code>- The allocation state of the Dedicated Host (
      * <code>available</code> | <code>under-assessment</code> |
      * <code>permanent-failure</code> | <code>released</code> |
      * <code>released-permanent-failure</code>).
@@ -643,7 +643,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>instance-type</code> - The instance type size that the
-     *        Dedicated host is configured to support.
+     *        Dedicated Host is configured to support.
      *        </p>
      *        </li>
      *        <li>
@@ -655,7 +655,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>host-reservation-id</code> - The ID of the reservation
-     *        associated with this host.
+     *        assigned to this host.
      *        </p>
      *        </li>
      *        <li>
@@ -666,7 +666,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code>- The allocation state of the Dedicated host (
+     *        <code>state</code>- The allocation state of the Dedicated Host (
      *        <code>available</code> | <code>under-assessment</code> |
      *        <code>permanent-failure</code> | <code>released</code> |
      *        <code>released-permanent-failure</code>).

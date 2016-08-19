@@ -20,6 +20,7 @@
     "endpointPrefix" : "kms",
     "signingName" : "kms",
     "jsonProtocol" : true,
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "syncClientBuilderClassName" : "AWSKMSClientBuilder",
     "asyncClientBuilderClassName" : "AWSKMSAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AWSKMSModuleInjector",
@@ -28,8 +29,7 @@
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "CancelKeyDeletion" : {

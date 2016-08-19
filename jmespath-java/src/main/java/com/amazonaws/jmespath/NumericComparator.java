@@ -19,9 +19,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 import java.math.BigDecimal;
 
-/**
- * Created by meghbyar on 6/27/16.
- */
 public abstract class NumericComparator extends Comparator {
 
     /**

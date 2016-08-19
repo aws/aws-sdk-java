@@ -33,9 +33,9 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Because the <a>CreateWorkspaces</a> operation is asynchronous, the
-     * identifier returned by <a>CreateWorkspaces</a> is not immediately
-     * available. If you immediately call <a>DescribeWorkspaces</a> with this
-     * identifier, no information will be returned.
+     * identifier it returns is not immediately available. If you immediately
+     * call <a>DescribeWorkspaces</a> with this identifier, no information is
+     * returned.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> workspaceIds;
@@ -51,7 +51,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for which to obtain the WorkSpace.
+     * user for whom to obtain the WorkSpace.
      * </p>
      */
     private String userName;
@@ -85,9 +85,9 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Because the <a>CreateWorkspaces</a> operation is asynchronous, the
-     * identifier returned by <a>CreateWorkspaces</a> is not immediately
-     * available. If you immediately call <a>DescribeWorkspaces</a> with this
-     * identifier, no information will be returned.
+     * identifier it returns is not immediately available. If you immediately
+     * call <a>DescribeWorkspaces</a> with this identifier, no information is
+     * returned.
      * </p>
      * 
      * @return An array of strings that contain the identifiers of the
@@ -95,10 +95,9 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      *         cannot be combined with any other filter parameter.</p>
      *         <p>
      *         Because the <a>CreateWorkspaces</a> operation is asynchronous,
-     *         the identifier returned by <a>CreateWorkspaces</a> is not
-     *         immediately available. If you immediately call
-     *         <a>DescribeWorkspaces</a> with this identifier, no information
-     *         will be returned.
+     *         the identifier it returns is not immediately available. If you
+     *         immediately call <a>DescribeWorkspaces</a> with this identifier,
+     *         no information is returned.
      */
 
     public java.util.List<String> getWorkspaceIds() {
@@ -116,9 +115,9 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Because the <a>CreateWorkspaces</a> operation is asynchronous, the
-     * identifier returned by <a>CreateWorkspaces</a> is not immediately
-     * available. If you immediately call <a>DescribeWorkspaces</a> with this
-     * identifier, no information will be returned.
+     * identifier it returns is not immediately available. If you immediately
+     * call <a>DescribeWorkspaces</a> with this identifier, no information is
+     * returned.
      * </p>
      * 
      * @param workspaceIds
@@ -127,9 +126,9 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      *        combined with any other filter parameter.</p>
      *        <p>
      *        Because the <a>CreateWorkspaces</a> operation is asynchronous, the
-     *        identifier returned by <a>CreateWorkspaces</a> is not immediately
-     *        available. If you immediately call <a>DescribeWorkspaces</a> with
-     *        this identifier, no information will be returned.
+     *        identifier it returns is not immediately available. If you
+     *        immediately call <a>DescribeWorkspaces</a> with this identifier,
+     *        no information is returned.
      */
 
     public void setWorkspaceIds(java.util.Collection<String> workspaceIds) {
@@ -150,9 +149,9 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Because the <a>CreateWorkspaces</a> operation is asynchronous, the
-     * identifier returned by <a>CreateWorkspaces</a> is not immediately
-     * available. If you immediately call <a>DescribeWorkspaces</a> with this
-     * identifier, no information will be returned.
+     * identifier it returns is not immediately available. If you immediately
+     * call <a>DescribeWorkspaces</a> with this identifier, no information is
+     * returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -167,9 +166,9 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      *        combined with any other filter parameter.</p>
      *        <p>
      *        Because the <a>CreateWorkspaces</a> operation is asynchronous, the
-     *        identifier returned by <a>CreateWorkspaces</a> is not immediately
-     *        available. If you immediately call <a>DescribeWorkspaces</a> with
-     *        this identifier, no information will be returned.
+     *        identifier it returns is not immediately available. If you
+     *        immediately call <a>DescribeWorkspaces</a> with this identifier,
+     *        no information is returned.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -193,9 +192,9 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * </p>
      * <p>
      * Because the <a>CreateWorkspaces</a> operation is asynchronous, the
-     * identifier returned by <a>CreateWorkspaces</a> is not immediately
-     * available. If you immediately call <a>DescribeWorkspaces</a> with this
-     * identifier, no information will be returned.
+     * identifier it returns is not immediately available. If you immediately
+     * call <a>DescribeWorkspaces</a> with this identifier, no information is
+     * returned.
      * </p>
      * 
      * @param workspaceIds
@@ -204,9 +203,9 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      *        combined with any other filter parameter.</p>
      *        <p>
      *        Because the <a>CreateWorkspaces</a> operation is asynchronous, the
-     *        identifier returned by <a>CreateWorkspaces</a> is not immediately
-     *        available. If you immediately call <a>DescribeWorkspaces</a> with
-     *        this identifier, no information will be returned.
+     *        identifier it returns is not immediately available. If you
+     *        immediately call <a>DescribeWorkspaces</a> with this identifier,
+     *        no information is returned.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -279,12 +278,12 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for which to obtain the WorkSpace.
+     * user for whom to obtain the WorkSpace.
      * </p>
      * 
      * @param userName
      *        Used with the <code>DirectoryId</code> parameter to specify the
-     *        directory user for which to obtain the WorkSpace.
+     *        directory user for whom to obtain the WorkSpace.
      */
 
     public void setUserName(String userName) {
@@ -294,11 +293,11 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for which to obtain the WorkSpace.
+     * user for whom to obtain the WorkSpace.
      * </p>
      * 
      * @return Used with the <code>DirectoryId</code> parameter to specify the
-     *         directory user for which to obtain the WorkSpace.
+     *         directory user for whom to obtain the WorkSpace.
      */
 
     public String getUserName() {
@@ -308,12 +307,12 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for which to obtain the WorkSpace.
+     * user for whom to obtain the WorkSpace.
      * </p>
      * 
      * @param userName
      *        Used with the <code>DirectoryId</code> parameter to specify the
-     *        directory user for which to obtain the WorkSpace.
+     *        directory user for whom to obtain the WorkSpace.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -25,7 +25,7 @@ public class TerminateWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * terminated.
      * </p>
      */
@@ -33,12 +33,12 @@ public class TerminateWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * terminated.
      * </p>
      * 
-     * @return An array of structures that represent any WorkSpaces that could
-     *         not be terminated.
+     * @return An array of structures representing any WorkSpaces that could not
+     *         be terminated.
      */
 
     public java.util.List<FailedWorkspaceChangeRequest> getFailedRequests() {
@@ -50,13 +50,13 @@ public class TerminateWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * terminated.
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures that represent any WorkSpaces that could
-     *        not be terminated.
+     *        An array of structures representing any WorkSpaces that could not
+     *        be terminated.
      */
 
     public void setFailedRequests(
@@ -72,7 +72,7 @@ public class TerminateWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * terminated.
      * </p>
      * <p>
@@ -83,8 +83,8 @@ public class TerminateWorkspacesResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures that represent any WorkSpaces that could
-     *        not be terminated.
+     *        An array of structures representing any WorkSpaces that could not
+     *        be terminated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -103,13 +103,13 @@ public class TerminateWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * terminated.
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures that represent any WorkSpaces that could
-     *        not be terminated.
+     *        An array of structures representing any WorkSpaces that could not
+     *        be terminated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

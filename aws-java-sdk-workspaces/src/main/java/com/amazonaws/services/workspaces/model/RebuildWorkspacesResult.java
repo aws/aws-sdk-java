@@ -25,7 +25,7 @@ public class RebuildWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * rebuilt.
      * </p>
      */
@@ -33,12 +33,12 @@ public class RebuildWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * rebuilt.
      * </p>
      * 
-     * @return An array of structures that represent any WorkSpaces that could
-     *         not be rebuilt.
+     * @return An array of structures representing any WorkSpaces that could not
+     *         be rebuilt.
      */
 
     public java.util.List<FailedWorkspaceChangeRequest> getFailedRequests() {
@@ -50,13 +50,13 @@ public class RebuildWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * rebuilt.
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures that represent any WorkSpaces that could
-     *        not be rebuilt.
+     *        An array of structures representing any WorkSpaces that could not
+     *        be rebuilt.
      */
 
     public void setFailedRequests(
@@ -72,7 +72,7 @@ public class RebuildWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * rebuilt.
      * </p>
      * <p>
@@ -83,8 +83,8 @@ public class RebuildWorkspacesResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures that represent any WorkSpaces that could
-     *        not be rebuilt.
+     *        An array of structures representing any WorkSpaces that could not
+     *        be rebuilt.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -103,13 +103,13 @@ public class RebuildWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * rebuilt.
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures that represent any WorkSpaces that could
-     *        not be rebuilt.
+     *        An array of structures representing any WorkSpaces that could not
+     *        be rebuilt.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

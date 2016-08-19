@@ -211,6 +211,36 @@ public class AbstractAmazonWorkspacesAsync extends AbstractAmazonWorkspaces
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeWorkspacesConnectionStatusResult> describeWorkspacesConnectionStatusAsync(
+            DescribeWorkspacesConnectionStatusRequest request) {
+
+        return describeWorkspacesConnectionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWorkspacesConnectionStatusResult> describeWorkspacesConnectionStatusAsync(
+            DescribeWorkspacesConnectionStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeWorkspacesConnectionStatusRequest, DescribeWorkspacesConnectionStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyWorkspacePropertiesResult> modifyWorkspacePropertiesAsync(
+            ModifyWorkspacePropertiesRequest request) {
+
+        return modifyWorkspacePropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyWorkspacePropertiesResult> modifyWorkspacePropertiesAsync(
+            ModifyWorkspacePropertiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyWorkspacePropertiesRequest, ModifyWorkspacePropertiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RebootWorkspacesResult> rebootWorkspacesAsync(
             RebootWorkspacesRequest request) {
 
@@ -236,6 +266,36 @@ public class AbstractAmazonWorkspacesAsync extends AbstractAmazonWorkspaces
     public java.util.concurrent.Future<RebuildWorkspacesResult> rebuildWorkspacesAsync(
             RebuildWorkspacesRequest request,
             com.amazonaws.handlers.AsyncHandler<RebuildWorkspacesRequest, RebuildWorkspacesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartWorkspacesResult> startWorkspacesAsync(
+            StartWorkspacesRequest request) {
+
+        return startWorkspacesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartWorkspacesResult> startWorkspacesAsync(
+            StartWorkspacesRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartWorkspacesRequest, StartWorkspacesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopWorkspacesResult> stopWorkspacesAsync(
+            StopWorkspacesRequest request) {
+
+        return stopWorkspacesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopWorkspacesResult> stopWorkspacesAsync(
+            StopWorkspacesRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopWorkspacesRequest, StopWorkspacesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

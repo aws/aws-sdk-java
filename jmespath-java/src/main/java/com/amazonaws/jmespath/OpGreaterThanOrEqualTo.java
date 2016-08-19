@@ -18,10 +18,6 @@ package com.amazonaws.jmespath;
 import java.math.BigDecimal;
 
 /**
- * Created by meghbyar on 6/24/16.
- */
-
-/**
  * Implements less-than-or-equal-to comparison on Numbers
  */
 public class OpGreaterThanOrEqualTo extends NumericComparator {

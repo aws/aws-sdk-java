@@ -15,9 +15,6 @@
 
 package com.amazonaws.jmespath;
 
-/**
- * Created by meghbyar on 6/24/16.
- */
 public class InvalidTypeException extends RuntimeException {
 
     public InvalidTypeException(String message, Throwable t) {

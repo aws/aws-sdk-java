@@ -17,9 +17,6 @@ package com.amazonaws.waiters;
 
 import com.amazonaws.annotation.SdkProtectedApi;
 
-/**
- * Created by meghbyar on 6/3/16.
- */
 @SdkProtectedApi
 public interface SdkFunction<Input, Output> {
 

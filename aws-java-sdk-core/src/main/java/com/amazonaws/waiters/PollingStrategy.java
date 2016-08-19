@@ -15,9 +15,6 @@
 
 package com.amazonaws.waiters;
 
-/**
- * Created by meghbyar on 7/6/16.
- */
 public class PollingStrategy{
 
     /**

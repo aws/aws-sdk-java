@@ -24,9 +24,8 @@ import com.amazonaws.services.workspaces.model.*;
  * <p>
  * <fullname>Amazon WorkSpaces Service</fullname>
  * <p>
- * This is the <i>Amazon WorkSpaces API Reference</i>. This guide provides
- * detailed information about Amazon WorkSpaces operations, data types,
- * parameters, and errors.
+ * This reference provides detailed information about the Amazon WorkSpaces
+ * operations.
  * </p>
  */
 public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
@@ -37,7 +36,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * </p>
      * 
      * @param createTagsRequest
-     *        The request of the create tags action.
+     *        The request of the <a>CreateTags</a> operation.
      * @return A Java Future containing the result of the CreateTags operation
      *         returned by the service.
      * @sample AmazonWorkspacesAsync.CreateTags
@@ -51,7 +50,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * </p>
      * 
      * @param createTagsRequest
-     *        The request of the create tags action.
+     *        The request of the <a>CreateTags</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -117,7 +116,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * </p>
      * 
      * @param deleteTagsRequest
-     *        The request of the delete tags action.
+     *        The request of the <a>DeleteTags</a> operation.
      * @return A Java Future containing the result of the DeleteTags operation
      *         returned by the service.
      * @sample AmazonWorkspacesAsync.DeleteTags
@@ -131,7 +130,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * </p>
      * 
      * @param deleteTagsRequest
-     *        The request of the delete tags action.
+     *        The request of the <a>DeleteTags</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -151,7 +150,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * </p>
      * 
      * @param describeTagsRequest
-     *        The request of the describe tags action.
+     *        The request of the <a>DescribeTags</a> operation.
      * @return A Java Future containing the result of the DescribeTags operation
      *         returned by the service.
      * @sample AmazonWorkspacesAsync.DescribeTags
@@ -165,7 +164,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * </p>
      * 
      * @param describeTagsRequest
-     *        The request of the describe tags action.
+     *        The request of the <a>DescribeTags</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -406,6 +405,74 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
+     * Describes the connection status of a specified WorkSpace.
+     * </p>
+     * 
+     * @param describeWorkspacesConnectionStatusRequest
+     * @return A Java Future containing the result of the
+     *         DescribeWorkspacesConnectionStatus operation returned by the
+     *         service.
+     * @sample AmazonWorkspacesAsync.DescribeWorkspacesConnectionStatus
+     */
+    java.util.concurrent.Future<DescribeWorkspacesConnectionStatusResult> describeWorkspacesConnectionStatusAsync(
+            DescribeWorkspacesConnectionStatusRequest describeWorkspacesConnectionStatusRequest);
+
+    /**
+     * <p>
+     * Describes the connection status of a specified WorkSpace.
+     * </p>
+     * 
+     * @param describeWorkspacesConnectionStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeWorkspacesConnectionStatus operation returned by the
+     *         service.
+     * @sample AmazonWorkspacesAsyncHandler.DescribeWorkspacesConnectionStatus
+     */
+    java.util.concurrent.Future<DescribeWorkspacesConnectionStatusResult> describeWorkspacesConnectionStatusAsync(
+            DescribeWorkspacesConnectionStatusRequest describeWorkspacesConnectionStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeWorkspacesConnectionStatusRequest, DescribeWorkspacesConnectionStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the WorkSpace properties, including the RunningMode and AutoStop
+     * time.
+     * </p>
+     * 
+     * @param modifyWorkspacePropertiesRequest
+     * @return A Java Future containing the result of the
+     *         ModifyWorkspaceProperties operation returned by the service.
+     * @sample AmazonWorkspacesAsync.ModifyWorkspaceProperties
+     */
+    java.util.concurrent.Future<ModifyWorkspacePropertiesResult> modifyWorkspacePropertiesAsync(
+            ModifyWorkspacePropertiesRequest modifyWorkspacePropertiesRequest);
+
+    /**
+     * <p>
+     * Modifies the WorkSpace properties, including the RunningMode and AutoStop
+     * time.
+     * </p>
+     * 
+     * @param modifyWorkspacePropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ModifyWorkspaceProperties operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.ModifyWorkspaceProperties
+     */
+    java.util.concurrent.Future<ModifyWorkspacePropertiesResult> modifyWorkspacePropertiesAsync(
+            ModifyWorkspacePropertiesRequest modifyWorkspacePropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyWorkspacePropertiesRequest, ModifyWorkspacePropertiesResult> asyncHandler);
+
+    /**
+     * <p>
      * Reboots the specified WorkSpaces.
      * </p>
      * <p>
@@ -415,7 +482,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * </p>
      * <note>
      * <p>
-     * This operation is asynchronous and will return before the WorkSpaces have
+     * This operation is asynchronous and returns before the WorkSpaces have
      * rebooted.
      * </p>
      * </note>
@@ -440,7 +507,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * </p>
      * <note>
      * <p>
-     * This operation is asynchronous and will return before the WorkSpaces have
+     * This operation is asynchronous and returns before the WorkSpaces have
      * rebooted.
      * </p>
      * </note>
@@ -470,14 +537,22 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * to occur:
      * </p>
      * <ul>
-     * <li>The system is restored to the image of the bundle that the WorkSpace
-     * is created from. Any applications that have been installed, or system
+     * <li>
+     * <p>
+     * The system is restored to the image of the bundle that the WorkSpace is
+     * created from. Any applications that have been installed, or system
      * settings that have been made since the WorkSpace was created will be
-     * lost.</li>
-     * <li>The data drive (D drive) is re-created from the last automatic
-     * snapshot taken of the data drive. The current contents of the data drive
-     * are overwritten. Automatic snapshots of the data drive are taken every 12
-     * hours, so the snapshot can be as much as 12 hours old.</li>
+     * lost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The data drive (D drive) is re-created from the last automatic snapshot
+     * taken of the data drive. The current contents of the data drive are
+     * overwritten. Automatic snapshots of the data drive are taken every 12
+     * hours, so the snapshot can be as much as 12 hours old.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b>
@@ -485,7 +560,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * </p>
      * <note>
      * <p>
-     * This operation is asynchronous and will return before the WorkSpaces have
+     * This operation is asynchronous and returns before the WorkSpaces have
      * been completely rebuilt.
      * </p>
      * </note>
@@ -509,14 +584,22 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * to occur:
      * </p>
      * <ul>
-     * <li>The system is restored to the image of the bundle that the WorkSpace
-     * is created from. Any applications that have been installed, or system
+     * <li>
+     * <p>
+     * The system is restored to the image of the bundle that the WorkSpace is
+     * created from. Any applications that have been installed, or system
      * settings that have been made since the WorkSpace was created will be
-     * lost.</li>
-     * <li>The data drive (D drive) is re-created from the last automatic
-     * snapshot taken of the data drive. The current contents of the data drive
-     * are overwritten. Automatic snapshots of the data drive are taken every 12
-     * hours, so the snapshot can be as much as 12 hours old.</li>
+     * lost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The data drive (D drive) is re-created from the last automatic snapshot
+     * taken of the data drive. The current contents of the data drive are
+     * overwritten. Automatic snapshots of the data drive are taken every 12
+     * hours, so the snapshot can be as much as 12 hours old.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b>
@@ -524,7 +607,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * </p>
      * <note>
      * <p>
-     * This operation is asynchronous and will return before the WorkSpaces have
+     * This operation is asynchronous and returns before the WorkSpaces have
      * been completely rebuilt.
      * </p>
      * </note>
@@ -546,6 +629,76 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
+     * Starts the specified WorkSpaces. The API only works with WorkSpaces that
+     * have RunningMode configured as AutoStop and the State set to “STOPPED.”
+     * </p>
+     * 
+     * @param startWorkspacesRequest
+     * @return A Java Future containing the result of the StartWorkspaces
+     *         operation returned by the service.
+     * @sample AmazonWorkspacesAsync.StartWorkspaces
+     */
+    java.util.concurrent.Future<StartWorkspacesResult> startWorkspacesAsync(
+            StartWorkspacesRequest startWorkspacesRequest);
+
+    /**
+     * <p>
+     * Starts the specified WorkSpaces. The API only works with WorkSpaces that
+     * have RunningMode configured as AutoStop and the State set to “STOPPED.”
+     * </p>
+     * 
+     * @param startWorkspacesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartWorkspaces
+     *         operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.StartWorkspaces
+     */
+    java.util.concurrent.Future<StartWorkspacesResult> startWorkspacesAsync(
+            StartWorkspacesRequest startWorkspacesRequest,
+            com.amazonaws.handlers.AsyncHandler<StartWorkspacesRequest, StartWorkspacesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops the specified WorkSpaces. The API only works with WorkSpaces that
+     * have RunningMode configured as AutoStop and the State set to AVAILABLE,
+     * IMPAIRED, UNHEALTHY, or ERROR.
+     * </p>
+     * 
+     * @param stopWorkspacesRequest
+     * @return A Java Future containing the result of the StopWorkspaces
+     *         operation returned by the service.
+     * @sample AmazonWorkspacesAsync.StopWorkspaces
+     */
+    java.util.concurrent.Future<StopWorkspacesResult> stopWorkspacesAsync(
+            StopWorkspacesRequest stopWorkspacesRequest);
+
+    /**
+     * <p>
+     * Stops the specified WorkSpaces. The API only works with WorkSpaces that
+     * have RunningMode configured as AutoStop and the State set to AVAILABLE,
+     * IMPAIRED, UNHEALTHY, or ERROR.
+     * </p>
+     * 
+     * @param stopWorkspacesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopWorkspaces
+     *         operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.StopWorkspaces
+     */
+    java.util.concurrent.Future<StopWorkspacesResult> stopWorkspacesAsync(
+            StopWorkspacesRequest stopWorkspacesRequest,
+            com.amazonaws.handlers.AsyncHandler<StopWorkspacesRequest, StopWorkspacesResult> asyncHandler);
+
+    /**
+     * <p>
      * Terminates the specified WorkSpaces.
      * </p>
      * <p>
@@ -560,7 +713,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * </p>
      * <note>
      * <p>
-     * This operation is asynchronous and will return before the WorkSpaces have
+     * This operation is asynchronous and returns before the WorkSpaces have
      * been completely terminated.
      * </p>
      * </note>
@@ -590,7 +743,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * </p>
      * <note>
      * <p>
-     * This operation is asynchronous and will return before the WorkSpaces have
+     * This operation is asynchronous and returns before the WorkSpaces have
      * been completely terminated.
      * </p>
      * </note>

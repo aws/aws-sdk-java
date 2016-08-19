@@ -16,11 +16,7 @@
 package com.amazonaws.waiters;
 
 import com.amazonaws.annotation.SdkProtectedApi;
-import org.apache.http.HttpStatus;
 
-/**
- * Created by meghbyar on 7/14/16.
- */
 @SdkProtectedApi
 public class HttpSuccessStatusAcceptor<Output> extends WaiterAcceptor<Output>{
 

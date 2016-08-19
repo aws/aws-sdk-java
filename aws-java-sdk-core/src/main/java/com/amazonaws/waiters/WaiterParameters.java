@@ -16,11 +16,7 @@
 package com.amazonaws.waiters;
 
 import com.amazonaws.AmazonWebServiceRequest;
-import com.amazonaws.util.ValidationUtils;
 
-/**
- * Created by meghbyar on 6/16/16.
- */
 public final class WaiterParameters<Input extends AmazonWebServiceRequest> {
 
     /**

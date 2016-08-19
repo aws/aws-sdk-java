@@ -15,11 +15,6 @@
 
 package com.amazonaws.waiters;
 
-import com.amazonaws.annotation.SdkProtectedApi;
-
-/**
- * Created by meghbyar on 7/27/16.
- */
 public class FixedDelayStrategy implements PollingStrategy.DelayStrategy{
 
     /**

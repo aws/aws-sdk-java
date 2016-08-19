@@ -14,8 +14,8 @@
  */
 package com.amazonaws.http.apache.client.impl;
 
-import java.io.IOException;
-import java.io.InputStream;
+import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
+import com.amazonaws.util.IOUtils;
 
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -25,7 +25,9 @@ import org.apache.http.HttpResponseInterceptor;
 import org.apache.http.entity.HttpEntityWrapper;
 import org.apache.http.protocol.HttpContext;
 
-import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class CRC32ChecksumResponseInterceptor implements HttpResponseInterceptor {
 
@@ -41,16 +43,39 @@ public class CRC32ChecksumResponseInterceptor implements HttpResponseInterceptor
         }
         HttpEntity crc32ResponseEntity = new HttpEntityWrapper(entity) {
 
-            private final InputStream content = new CRC32ChecksumCalculatingInputStream(wrappedEntity.getContent());
+            private final InputStream content = new CRC32ChecksumCalculatingInputStream(
+                    wrappedEntity.getContent());
 
             @Override
             public InputStream getContent() throws IOException {
                 return content;
             }
+
+            /**
+             * It's important to override writeTo. Some versions of Apache HTTP
+             * client use writeTo for {@link org.apache.http.entity.BufferedHttpEntity}
+             * and the default implementation just delegates to the wrapped entity
+             * which completely bypasses our CRC32 calculating input stream. The
+             * {@link org.apache.http.entity.BufferedHttpEntity} is used for the
+             * request timeout and client execution timeout features.
+             *
+             * @see <a href="https://github.com/aws/aws-sdk-java/issues/526">Issue #526</a>
+             *
+             * @param outstream OutputStream to write contents to
+             */
+            @Override
+            public void writeTo(OutputStream outstream) throws IOException {
+                try {
+                    IOUtils.copy(this.getContent(), outstream);
+                } finally {
+                    this.getContent().close();
+                }
+            }
         };
 
         response.setEntity(crc32ResponseEntity);
-        context.setAttribute(CRC32ChecksumCalculatingInputStream.class.getName(), crc32ResponseEntity.getContent());
+        context.setAttribute(CRC32ChecksumCalculatingInputStream.class.getName(),
+                             crc32ResponseEntity.getContent());
     }
 
 }

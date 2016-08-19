@@ -15,11 +15,6 @@
 
 package com.amazonaws.jmespath;
 
-/**
- * Created by meghbyar on 7/14/16.
- */
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

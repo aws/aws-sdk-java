@@ -16,10 +16,6 @@
 package com.amazonaws.jmespath;
 
 /**
- * Created by meghbyar on 6/20/16.
- */
-
-/**
  * Interface for accessing JmesPath expression. Different
  * types of JmesPath expressions are supported.
  */

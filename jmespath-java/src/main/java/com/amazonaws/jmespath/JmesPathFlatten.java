@@ -16,10 +16,6 @@
 package com.amazonaws.jmespath;
 
 /**
- * Created by meghbyar on 6/22/16.
- */
-
-/**
  * Class definition for flatten expression. It will merge
  * sub-lists in the current result into a single list.
  */

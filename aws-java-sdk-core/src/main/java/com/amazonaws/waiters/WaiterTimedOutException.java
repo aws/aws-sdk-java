@@ -16,11 +16,7 @@
 package com.amazonaws.waiters;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
 
-/**
- * Created by meghbyar on 6/16/16.
- */
 public class WaiterTimedOutException extends AmazonClientException {
 
     /**

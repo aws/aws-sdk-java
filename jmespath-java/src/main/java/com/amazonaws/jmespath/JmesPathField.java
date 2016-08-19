@@ -16,10 +16,6 @@
 package com.amazonaws.jmespath;
 
 /**
- * Created by meghbyar on 6/20/16.
- */
-
-/**
  * Class definition for a single field in a JmesPath expression
  * Example : { "a": { "b": "c"}}
  * Expression : a.b

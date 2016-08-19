@@ -16,10 +16,6 @@
 package com.amazonaws.jmespath;
 
 /**
- * Created by meghbyar on 7/13/16.
- */
-
-/**
  * Implements logical NOT on the given expression
  */
 public class JmesPathNotExpression implements JmesPathExpression{

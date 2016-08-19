@@ -87,6 +87,12 @@ public class WorkspaceRequestJsonUnmarshaller implements
                                     .getUnmarshaller(Boolean.class).unmarshall(
                                             context));
                 }
+                if (context.testExpression("WorkspaceProperties", targetDepth)) {
+                    context.nextToken();
+                    workspaceRequest
+                            .setWorkspaceProperties(WorkspacePropertiesJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     workspaceRequest.setTags(new ListUnmarshaller<Tag>(

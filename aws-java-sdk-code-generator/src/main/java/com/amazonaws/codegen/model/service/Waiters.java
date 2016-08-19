@@ -18,9 +18,6 @@ package com.amazonaws.codegen.model.service;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by meghbyar on 6/28/16.
- */
 public class Waiters {
 
     private final Map<String, WaiterDefinition> waiters;

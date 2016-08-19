@@ -17,16 +17,9 @@ package com.amazonaws.waiters;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
-import com.amazonaws.annotation.SdkProtectedApi;
-import com.amazonaws.util.ValidationUtils;
 
-import java.util.List;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
-/**
- * Created by meghbyar on 7/29/16.
- */
 public interface Waiter<Input extends AmazonWebServiceRequest> {
 
     /**

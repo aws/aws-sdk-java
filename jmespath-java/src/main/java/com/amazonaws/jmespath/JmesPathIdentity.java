@@ -16,10 +16,6 @@
 package com.amazonaws.jmespath;
 
 /**
- * Created by meghbyar on 6/22/16.
- */
-
-/**
  * Class definition for identity expression. It represents
  * the current node being evaluated
  */

@@ -25,13 +25,13 @@ public class ModifyHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that were successfully modified.
+     * The IDs of the Dedicated Hosts that were successfully modified.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> successful;
     /**
      * <p>
-     * The IDs of the Dedicated hosts that could not be modified. Check whether
+     * The IDs of the Dedicated Hosts that could not be modified. Check whether
      * the setting you requested can be used.
      * </p>
      */
@@ -39,10 +39,10 @@ public class ModifyHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that were successfully modified.
+     * The IDs of the Dedicated Hosts that were successfully modified.
      * </p>
      * 
-     * @return The IDs of the Dedicated hosts that were successfully modified.
+     * @return The IDs of the Dedicated Hosts that were successfully modified.
      */
 
     public java.util.List<String> getSuccessful() {
@@ -54,11 +54,11 @@ public class ModifyHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that were successfully modified.
+     * The IDs of the Dedicated Hosts that were successfully modified.
      * </p>
      * 
      * @param successful
-     *        The IDs of the Dedicated hosts that were successfully modified.
+     *        The IDs of the Dedicated Hosts that were successfully modified.
      */
 
     public void setSuccessful(java.util.Collection<String> successful) {
@@ -73,7 +73,7 @@ public class ModifyHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that were successfully modified.
+     * The IDs of the Dedicated Hosts that were successfully modified.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -83,7 +83,7 @@ public class ModifyHostsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param successful
-     *        The IDs of the Dedicated hosts that were successfully modified.
+     *        The IDs of the Dedicated Hosts that were successfully modified.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -101,11 +101,11 @@ public class ModifyHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that were successfully modified.
+     * The IDs of the Dedicated Hosts that were successfully modified.
      * </p>
      * 
      * @param successful
-     *        The IDs of the Dedicated hosts that were successfully modified.
+     *        The IDs of the Dedicated Hosts that were successfully modified.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -118,11 +118,11 @@ public class ModifyHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that could not be modified. Check whether
+     * The IDs of the Dedicated Hosts that could not be modified. Check whether
      * the setting you requested can be used.
      * </p>
      * 
-     * @return The IDs of the Dedicated hosts that could not be modified. Check
+     * @return The IDs of the Dedicated Hosts that could not be modified. Check
      *         whether the setting you requested can be used.
      */
 
@@ -135,12 +135,12 @@ public class ModifyHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that could not be modified. Check whether
+     * The IDs of the Dedicated Hosts that could not be modified. Check whether
      * the setting you requested can be used.
      * </p>
      * 
      * @param unsuccessful
-     *        The IDs of the Dedicated hosts that could not be modified. Check
+     *        The IDs of the Dedicated Hosts that could not be modified. Check
      *        whether the setting you requested can be used.
      */
 
@@ -157,7 +157,7 @@ public class ModifyHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that could not be modified. Check whether
+     * The IDs of the Dedicated Hosts that could not be modified. Check whether
      * the setting you requested can be used.
      * </p>
      * <p>
@@ -168,7 +168,7 @@ public class ModifyHostsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param unsuccessful
-     *        The IDs of the Dedicated hosts that could not be modified. Check
+     *        The IDs of the Dedicated Hosts that could not be modified. Check
      *        whether the setting you requested can be used.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -187,12 +187,12 @@ public class ModifyHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that could not be modified. Check whether
+     * The IDs of the Dedicated Hosts that could not be modified. Check whether
      * the setting you requested can be used.
      * </p>
      * 
      * @param unsuccessful
-     *        The IDs of the Dedicated hosts that could not be modified. Check
+     *        The IDs of the Dedicated Hosts that could not be modified. Check
      *        whether the setting you requested can be used.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

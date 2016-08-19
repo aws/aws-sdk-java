@@ -16,10 +16,6 @@
 package com.amazonaws.jmespath;
 
 /**
- * Created by meghbyar on 6/22/16.
- */
-
-/**
  * Class definition for value(object) projection that
  * allows you to apply an expression over a JSON object
  */

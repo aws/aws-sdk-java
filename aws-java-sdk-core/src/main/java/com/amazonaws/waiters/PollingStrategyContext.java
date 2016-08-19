@@ -18,9 +18,6 @@ package com.amazonaws.waiters;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.annotation.SdkProtectedApi;
 
-/**
- * Created by meghbyar on 7/8/16.
- */
 @SdkProtectedApi
 public class PollingStrategyContext {
 

@@ -25,13 +25,13 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that were successfully released.
+     * The IDs of the Dedicated Hosts that were successfully released.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> successful;
     /**
      * <p>
-     * The IDs of the Dedicated hosts that could not be released, including an
+     * The IDs of the Dedicated Hosts that could not be released, including an
      * error message.
      * </p>
      */
@@ -39,10 +39,10 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that were successfully released.
+     * The IDs of the Dedicated Hosts that were successfully released.
      * </p>
      * 
-     * @return The IDs of the Dedicated hosts that were successfully released.
+     * @return The IDs of the Dedicated Hosts that were successfully released.
      */
 
     public java.util.List<String> getSuccessful() {
@@ -54,11 +54,11 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that were successfully released.
+     * The IDs of the Dedicated Hosts that were successfully released.
      * </p>
      * 
      * @param successful
-     *        The IDs of the Dedicated hosts that were successfully released.
+     *        The IDs of the Dedicated Hosts that were successfully released.
      */
 
     public void setSuccessful(java.util.Collection<String> successful) {
@@ -73,7 +73,7 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that were successfully released.
+     * The IDs of the Dedicated Hosts that were successfully released.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -83,7 +83,7 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param successful
-     *        The IDs of the Dedicated hosts that were successfully released.
+     *        The IDs of the Dedicated Hosts that were successfully released.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -101,11 +101,11 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that were successfully released.
+     * The IDs of the Dedicated Hosts that were successfully released.
      * </p>
      * 
      * @param successful
-     *        The IDs of the Dedicated hosts that were successfully released.
+     *        The IDs of the Dedicated Hosts that were successfully released.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -118,11 +118,11 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that could not be released, including an
+     * The IDs of the Dedicated Hosts that could not be released, including an
      * error message.
      * </p>
      * 
-     * @return The IDs of the Dedicated hosts that could not be released,
+     * @return The IDs of the Dedicated Hosts that could not be released,
      *         including an error message.
      */
 
@@ -135,12 +135,12 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that could not be released, including an
+     * The IDs of the Dedicated Hosts that could not be released, including an
      * error message.
      * </p>
      * 
      * @param unsuccessful
-     *        The IDs of the Dedicated hosts that could not be released,
+     *        The IDs of the Dedicated Hosts that could not be released,
      *        including an error message.
      */
 
@@ -157,7 +157,7 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that could not be released, including an
+     * The IDs of the Dedicated Hosts that could not be released, including an
      * error message.
      * </p>
      * <p>
@@ -168,7 +168,7 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param unsuccessful
-     *        The IDs of the Dedicated hosts that could not be released,
+     *        The IDs of the Dedicated Hosts that could not be released,
      *        including an error message.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -187,12 +187,12 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IDs of the Dedicated hosts that could not be released, including an
+     * The IDs of the Dedicated Hosts that could not be released, including an
      * error message.
      * </p>
      * 
      * @param unsuccessful
-     *        The IDs of the Dedicated hosts that could not be released,
+     *        The IDs of the Dedicated Hosts that could not be released,
      *        including an error message.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

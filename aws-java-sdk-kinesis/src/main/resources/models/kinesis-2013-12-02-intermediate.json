@@ -63,12 +63,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "AddTagsToStreamResult",
       "asyncReturnType" : "AddTagsToStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<AddTagsToStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AddTagsToStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AddTagsToStreamRequest, AddTagsToStreamResult>",
-      "authenticated" : true,
       "methodName" : "addTagsToStream"
     },
     "CreateStream" : {
@@ -99,12 +99,12 @@
         "documentation" : "<p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "CreateStreamResult",
       "asyncReturnType" : "CreateStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, CreateStreamResult>",
-      "authenticated" : true,
       "methodName" : "createStream"
     },
     "DecreaseStreamRetentionPeriod" : {
@@ -138,12 +138,12 @@
         "documentation" : "<p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DecreaseStreamRetentionPeriodResult",
       "asyncReturnType" : "DecreaseStreamRetentionPeriodResult",
       "asyncFutureType" : "java.util.concurrent.Future<DecreaseStreamRetentionPeriodResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DecreaseStreamRetentionPeriodResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DecreaseStreamRetentionPeriodRequest, DecreaseStreamRetentionPeriodResult>",
-      "authenticated" : true,
       "methodName" : "decreaseStreamRetentionPeriod"
     },
     "DeleteStream" : {
@@ -171,12 +171,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DeleteStreamResult",
       "asyncReturnType" : "DeleteStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, DeleteStreamResult>",
-      "authenticated" : true,
       "methodName" : "deleteStream"
     },
     "DescribeStream" : {
@@ -204,12 +204,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeStreamResult",
       "asyncReturnType" : "DescribeStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult>",
-      "authenticated" : true,
       "methodName" : "describeStream"
     },
     "DisableEnhancedMonitoring" : {
@@ -243,12 +243,12 @@
         "documentation" : "<p>The requested resource could not be found. The stream might not be specified correctly, or it might not be in the <code>ACTIVE</code> state if the operation requires it.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DisableEnhancedMonitoringResult",
       "asyncReturnType" : "DisableEnhancedMonitoringResult",
       "asyncFutureType" : "java.util.concurrent.Future<DisableEnhancedMonitoringResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DisableEnhancedMonitoringResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableEnhancedMonitoringRequest, DisableEnhancedMonitoringResult>",
-      "authenticated" : true,
       "methodName" : "disableEnhancedMonitoring"
     },
     "EnableEnhancedMonitoring" : {
@@ -282,12 +282,12 @@
         "documentation" : "<p>The requested resource could not be found. The stream might not be specified correctly, or it might not be in the <code>ACTIVE</code> state if the operation requires it.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "EnableEnhancedMonitoringResult",
       "asyncReturnType" : "EnableEnhancedMonitoringResult",
       "asyncFutureType" : "java.util.concurrent.Future<EnableEnhancedMonitoringResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<EnableEnhancedMonitoringResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableEnhancedMonitoringRequest, EnableEnhancedMonitoringResult>",
-      "authenticated" : true,
       "methodName" : "enableEnhancedMonitoring"
     },
     "GetRecords" : {
@@ -321,12 +321,12 @@
         "documentation" : "<p>The provided iterator exceeds the maximum age allowed.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetRecordsResult",
       "asyncReturnType" : "GetRecordsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRecordsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRecordsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRecordsRequest, GetRecordsResult>",
-      "authenticated" : true,
       "methodName" : "getRecords"
     },
     "GetShardIterator" : {
@@ -357,12 +357,12 @@
         "documentation" : "<p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html\">Streams Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>, and <a href=\"http://docs.aws.amazon.com/general/latest/gr/api-retries.html\">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetShardIteratorResult",
       "asyncReturnType" : "GetShardIteratorResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetShardIteratorResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetShardIteratorResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetShardIteratorRequest, GetShardIteratorResult>",
-      "authenticated" : true,
       "methodName" : "getShardIterator"
     },
     "IncreaseStreamRetentionPeriod" : {
@@ -396,12 +396,12 @@
         "documentation" : "<p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "IncreaseStreamRetentionPeriodResult",
       "asyncReturnType" : "IncreaseStreamRetentionPeriodResult",
       "asyncFutureType" : "java.util.concurrent.Future<IncreaseStreamRetentionPeriodResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<IncreaseStreamRetentionPeriodResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<IncreaseStreamRetentionPeriodRequest, IncreaseStreamRetentionPeriodResult>",
-      "authenticated" : true,
       "methodName" : "increaseStreamRetentionPeriod"
     },
     "ListStreams" : {
@@ -426,12 +426,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListStreamsResult",
       "asyncReturnType" : "ListStreamsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListStreamsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListStreamsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult>",
-      "authenticated" : true,
       "methodName" : "listStreams"
     },
     "ListTagsForStream" : {
@@ -462,12 +462,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListTagsForStreamResult",
       "asyncReturnType" : "ListTagsForStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListTagsForStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListTagsForStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsForStreamRequest, ListTagsForStreamResult>",
-      "authenticated" : true,
       "methodName" : "listTagsForStream"
     },
     "MergeShards" : {
@@ -501,12 +501,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "MergeShardsResult",
       "asyncReturnType" : "MergeShardsResult",
       "asyncFutureType" : "java.util.concurrent.Future<MergeShardsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<MergeShardsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<MergeShardsRequest, MergeShardsResult>",
-      "authenticated" : true,
       "methodName" : "mergeShards"
     },
     "PutRecord" : {
@@ -537,12 +537,12 @@
         "documentation" : "<p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html\">Streams Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>, and <a href=\"http://docs.aws.amazon.com/general/latest/gr/api-retries.html\">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutRecordResult",
       "asyncReturnType" : "PutRecordResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRecordResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRecordResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRecordRequest, PutRecordResult>",
-      "authenticated" : true,
       "methodName" : "putRecord"
     },
     "PutRecords" : {
@@ -573,12 +573,12 @@
         "documentation" : "<p>The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html\">Streams Limits</a> in the <i>Amazon Kinesis Streams Developer Guide</i>, and <a href=\"http://docs.aws.amazon.com/general/latest/gr/api-retries.html\">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "PutRecordsResult",
       "asyncReturnType" : "PutRecordsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutRecordsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutRecordsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutRecordsRequest, PutRecordsResult>",
-      "authenticated" : true,
       "methodName" : "putRecords"
     },
     "RemoveTagsFromStream" : {
@@ -612,12 +612,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "RemoveTagsFromStreamResult",
       "asyncReturnType" : "RemoveTagsFromStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTagsFromStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTagsFromStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemoveTagsFromStreamRequest, RemoveTagsFromStreamResult>",
-      "authenticated" : true,
       "methodName" : "removeTagsFromStream"
     },
     "SplitShard" : {
@@ -651,12 +651,12 @@
         "documentation" : "<p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed (5).</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "SplitShardResult",
       "asyncReturnType" : "SplitShardResult",
       "asyncFutureType" : "java.util.concurrent.Future<SplitShardResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<SplitShardResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<SplitShardRequest, SplitShardResult>",
-      "authenticated" : true,
       "methodName" : "splitShard"
     }
   },
@@ -774,10 +774,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String"
         },
         "mapModel" : null,
@@ -916,10 +916,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String"
           },
           "mapModel" : null,
@@ -1349,10 +1349,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Record>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>",
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Record"
         },
         "mapModel" : null,
@@ -1701,10 +1701,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Record>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Record>",
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Record"
           },
           "mapModel" : null,
@@ -1834,10 +1834,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Tag>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag"
         },
         "mapModel" : null,
@@ -2081,10 +2081,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Tag>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag"
           },
           "mapModel" : null,
@@ -2867,10 +2867,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<PutRecordsResultEntry>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsResultEntry>",
+          "simple" : false,
+          "map" : false,
           "simpleType" : "PutRecordsResultEntry"
         },
         "mapModel" : null,
@@ -3062,10 +3062,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<PutRecordsResultEntry>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsResultEntry>",
+            "simple" : false,
+            "map" : false,
             "simpleType" : "PutRecordsResultEntry"
           },
           "mapModel" : null,
@@ -3487,10 +3487,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String"
         },
         "mapModel" : null,
@@ -3606,10 +3606,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String"
         },
         "mapModel" : null,
@@ -3748,10 +3748,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String"
           },
           "mapModel" : null,
@@ -3921,10 +3921,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String"
           },
           "mapModel" : null,
@@ -4721,10 +4721,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String"
         },
         "mapModel" : null,
@@ -4867,10 +4867,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String"
           },
           "mapModel" : null,
@@ -6463,10 +6463,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String"
         },
         "mapModel" : null,
@@ -6662,10 +6662,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String"
           },
           "mapModel" : null,
@@ -7330,10 +7330,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String"
         },
         "mapModel" : null,
@@ -7577,10 +7577,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String"
           },
           "mapModel" : null,
@@ -8254,8 +8254,8 @@
           "valueSimple" : true,
           "valueList" : false,
           "templateType" : "java.util.Map<String,String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-          "entryType" : "Map.Entry<String, String>"
+          "entryType" : "Map.Entry<String, String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -8453,8 +8453,8 @@
             "valueSimple" : true,
             "valueList" : false,
             "templateType" : "java.util.Map<String,String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
-            "entryType" : "Map.Entry<String, String>"
+            "entryType" : "Map.Entry<String, String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -8582,10 +8582,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<PutRecordsRequestEntry>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsRequestEntry>",
+          "simple" : false,
+          "map" : false,
           "simpleType" : "PutRecordsRequestEntry"
         },
         "mapModel" : null,
@@ -8833,10 +8833,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<PutRecordsRequestEntry>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<PutRecordsRequestEntry>",
+            "simple" : false,
+            "map" : false,
             "simpleType" : "PutRecordsRequestEntry"
           },
           "mapModel" : null,
@@ -10539,10 +10539,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String"
         },
         "mapModel" : null,
@@ -10685,10 +10685,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String"
           },
           "mapModel" : null,
@@ -10923,10 +10923,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String"
         },
         "mapModel" : null,
@@ -11042,10 +11042,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : true,
-          "map" : false,
           "templateType" : "java.util.List<String>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String"
         },
         "mapModel" : null,
@@ -11184,10 +11184,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String"
           },
           "mapModel" : null,
@@ -11357,10 +11357,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : true,
-            "map" : false,
             "templateType" : "java.util.List<String>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String"
           },
           "mapModel" : null,
@@ -11646,10 +11646,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<Shard>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<Shard>",
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Shard"
         },
         "mapModel" : null,
@@ -11869,10 +11869,10 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "simple" : false,
-          "map" : false,
           "templateType" : "java.util.List<EnhancedMetrics>",
           "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnhancedMetrics>",
+          "simple" : false,
+          "map" : false,
           "simpleType" : "EnhancedMetrics"
         },
         "mapModel" : null,
@@ -12011,10 +12011,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<EnhancedMetrics>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<EnhancedMetrics>",
+            "simple" : false,
+            "map" : false,
             "simpleType" : "EnhancedMetrics"
           },
           "mapModel" : null,
@@ -12343,10 +12343,10 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "simple" : false,
-            "map" : false,
             "templateType" : "java.util.List<Shard>",
             "templateImplType" : "com.amazonaws.internal.SdkInternalList<Shard>",
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Shard"
           },
           "mapModel" : null,
@@ -14489,11 +14489,11 @@
     "examples" : { },
     "version" : "1.0"
   },
-  "sdkModeledExceptionBaseClassName" : "AmazonKinesisException",
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.kinesis.model.AmazonKinesisException",
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
-  "hasWaiters" : true
+  "hasWaiters" : true,
+  "sdkModeledExceptionBaseClassName" : "AmazonKinesisException"
 }

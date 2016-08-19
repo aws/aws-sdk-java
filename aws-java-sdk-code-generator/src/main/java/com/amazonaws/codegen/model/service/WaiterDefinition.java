@@ -17,9 +17,6 @@ package com.amazonaws.codegen.model.service;
 
 import java.util.List;
 
-/**
- * Created by meghbyar on 6/28/16.
- */
 public class WaiterDefinition {
 
     private int delay;

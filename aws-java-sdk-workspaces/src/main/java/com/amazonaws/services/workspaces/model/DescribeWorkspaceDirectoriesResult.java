@@ -35,7 +35,7 @@ public class DescribeWorkspaceDirectoriesResult implements Serializable,
      * If not null, more results are available. Pass this value for the
      * <code>NextToken</code> parameter in a subsequent call to this operation
      * to retrieve the next set of items. This token is valid for one day and
-     * must be used within that timeframe.
+     * must be used within that time frame.
      * </p>
      */
     private String nextToken;
@@ -130,14 +130,14 @@ public class DescribeWorkspaceDirectoriesResult implements Serializable,
      * If not null, more results are available. Pass this value for the
      * <code>NextToken</code> parameter in a subsequent call to this operation
      * to retrieve the next set of items. This token is valid for one day and
-     * must be used within that timeframe.
+     * must be used within that time frame.
      * </p>
      * 
      * @param nextToken
      *        If not null, more results are available. Pass this value for the
      *        <code>NextToken</code> parameter in a subsequent call to this
      *        operation to retrieve the next set of items. This token is valid
-     *        for one day and must be used within that timeframe.
+     *        for one day and must be used within that time frame.
      */
 
     public void setNextToken(String nextToken) {
@@ -149,13 +149,13 @@ public class DescribeWorkspaceDirectoriesResult implements Serializable,
      * If not null, more results are available. Pass this value for the
      * <code>NextToken</code> parameter in a subsequent call to this operation
      * to retrieve the next set of items. This token is valid for one day and
-     * must be used within that timeframe.
+     * must be used within that time frame.
      * </p>
      * 
      * @return If not null, more results are available. Pass this value for the
      *         <code>NextToken</code> parameter in a subsequent call to this
      *         operation to retrieve the next set of items. This token is valid
-     *         for one day and must be used within that timeframe.
+     *         for one day and must be used within that time frame.
      */
 
     public String getNextToken() {
@@ -167,14 +167,14 @@ public class DescribeWorkspaceDirectoriesResult implements Serializable,
      * If not null, more results are available. Pass this value for the
      * <code>NextToken</code> parameter in a subsequent call to this operation
      * to retrieve the next set of items. This token is valid for one day and
-     * must be used within that timeframe.
+     * must be used within that time frame.
      * </p>
      * 
      * @param nextToken
      *        If not null, more results are available. Pass this value for the
      *        <code>NextToken</code> parameter in a subsequent call to this
      *        operation to retrieve the next set of items. This token is valid
-     *        for one day and must be used within that timeframe.
+     *        for one day and must be used within that time frame.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

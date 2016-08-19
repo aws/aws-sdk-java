@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The request of the create tags action.
+ * The request of the <a>CreateTags</a> operation.
  * </p>
  */
 public class CreateTagsRequest extends AmazonWebServiceRequest implements

@@ -92,6 +92,18 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
+    public DescribeWorkspacesConnectionStatusResult describeWorkspacesConnectionStatus(
+            DescribeWorkspacesConnectionStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyWorkspacePropertiesResult modifyWorkspaceProperties(
+            ModifyWorkspacePropertiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RebootWorkspacesResult rebootWorkspaces(
             RebootWorkspacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -100,6 +112,16 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     @Override
     public RebuildWorkspacesResult rebuildWorkspaces(
             RebuildWorkspacesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartWorkspacesResult startWorkspaces(StartWorkspacesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopWorkspacesResult stopWorkspaces(StopWorkspacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

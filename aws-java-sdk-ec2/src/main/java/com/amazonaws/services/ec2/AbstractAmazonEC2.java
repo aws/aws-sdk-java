@@ -617,6 +617,18 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeHostReservationOfferingsResult describeHostReservationOfferings(
+            DescribeHostReservationOfferingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeHostReservationsResult describeHostReservations(
+            DescribeHostReservationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeHostsResult describeHosts(DescribeHostsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1201,6 +1213,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public GetHostReservationPurchasePreviewResult getHostReservationPurchasePreview(
+            GetHostReservationPurchasePreviewRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPasswordDataResult getPasswordData(GetPasswordDataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1337,6 +1355,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     @Override
     public MoveAddressToVpcResult moveAddressToVpc(
             MoveAddressToVpcRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PurchaseHostReservationResult purchaseHostReservation(
+            PurchaseHostReservationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

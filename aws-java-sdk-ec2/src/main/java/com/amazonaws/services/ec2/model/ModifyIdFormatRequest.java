@@ -29,7 +29,8 @@ public class ModifyIdFormatRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of resource.
+     * The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code>
      * </p>
      */
     private String resource;
@@ -42,11 +43,14 @@ public class ModifyIdFormatRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of resource.
+     * The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code>
      * </p>
      * 
      * @param resource
-     *        The type of resource.
+     *        The type of resource: <code>instance</code> |
+     *        <code>reservation</code> | <code>snapshot</code> |
+     *        <code>volume</code>
      */
 
     public void setResource(String resource) {
@@ -55,10 +59,13 @@ public class ModifyIdFormatRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of resource.
+     * The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code>
      * </p>
      * 
-     * @return The type of resource.
+     * @return The type of resource: <code>instance</code> |
+     *         <code>reservation</code> | <code>snapshot</code> |
+     *         <code>volume</code>
      */
 
     public String getResource() {
@@ -67,11 +74,14 @@ public class ModifyIdFormatRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of resource.
+     * The type of resource: <code>instance</code> | <code>reservation</code> |
+     * <code>snapshot</code> | <code>volume</code>
      * </p>
      * 
      * @param resource
-     *        The type of resource.
+     *        The type of resource: <code>instance</code> |
+     *        <code>reservation</code> | <code>snapshot</code> |
+     *        <code>volume</code>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

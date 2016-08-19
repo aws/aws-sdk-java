@@ -18,39 +18,39 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about the instance type that the Dedicated host supports.
+ * Information about the instance type that the Dedicated Host supports.
  * </p>
  */
 public class InstanceCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size supported by the Dedicated host.
+     * The instance type size supported by the Dedicated Host.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
      * The number of instances that can still be launched onto the Dedicated
-     * host.
+     * Host.
      * </p>
      */
     private Integer availableCapacity;
     /**
      * <p>
      * The total number of instances that can be launched onto the Dedicated
-     * host.
+     * Host.
      * </p>
      */
     private Integer totalCapacity;
 
     /**
      * <p>
-     * The instance type size supported by the Dedicated host.
+     * The instance type size supported by the Dedicated Host.
      * </p>
      * 
      * @param instanceType
-     *        The instance type size supported by the Dedicated host.
+     *        The instance type size supported by the Dedicated Host.
      */
 
     public void setInstanceType(String instanceType) {
@@ -59,10 +59,10 @@ public class InstanceCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size supported by the Dedicated host.
+     * The instance type size supported by the Dedicated Host.
      * </p>
      * 
-     * @return The instance type size supported by the Dedicated host.
+     * @return The instance type size supported by the Dedicated Host.
      */
 
     public String getInstanceType() {
@@ -71,11 +71,11 @@ public class InstanceCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size supported by the Dedicated host.
+     * The instance type size supported by the Dedicated Host.
      * </p>
      * 
      * @param instanceType
-     *        The instance type size supported by the Dedicated host.
+     *        The instance type size supported by the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -88,12 +88,12 @@ public class InstanceCapacity implements Serializable, Cloneable {
     /**
      * <p>
      * The number of instances that can still be launched onto the Dedicated
-     * host.
+     * Host.
      * </p>
      * 
      * @param availableCapacity
      *        The number of instances that can still be launched onto the
-     *        Dedicated host.
+     *        Dedicated Host.
      */
 
     public void setAvailableCapacity(Integer availableCapacity) {
@@ -103,11 +103,11 @@ public class InstanceCapacity implements Serializable, Cloneable {
     /**
      * <p>
      * The number of instances that can still be launched onto the Dedicated
-     * host.
+     * Host.
      * </p>
      * 
      * @return The number of instances that can still be launched onto the
-     *         Dedicated host.
+     *         Dedicated Host.
      */
 
     public Integer getAvailableCapacity() {
@@ -117,12 +117,12 @@ public class InstanceCapacity implements Serializable, Cloneable {
     /**
      * <p>
      * The number of instances that can still be launched onto the Dedicated
-     * host.
+     * Host.
      * </p>
      * 
      * @param availableCapacity
      *        The number of instances that can still be launched onto the
-     *        Dedicated host.
+     *        Dedicated Host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -135,12 +135,12 @@ public class InstanceCapacity implements Serializable, Cloneable {
     /**
      * <p>
      * The total number of instances that can be launched onto the Dedicated
-     * host.
+     * Host.
      * </p>
      * 
      * @param totalCapacity
      *        The total number of instances that can be launched onto the
-     *        Dedicated host.
+     *        Dedicated Host.
      */
 
     public void setTotalCapacity(Integer totalCapacity) {
@@ -150,11 +150,11 @@ public class InstanceCapacity implements Serializable, Cloneable {
     /**
      * <p>
      * The total number of instances that can be launched onto the Dedicated
-     * host.
+     * Host.
      * </p>
      * 
      * @return The total number of instances that can be launched onto the
-     *         Dedicated host.
+     *         Dedicated Host.
      */
 
     public Integer getTotalCapacity() {
@@ -164,12 +164,12 @@ public class InstanceCapacity implements Serializable, Cloneable {
     /**
      * <p>
      * The total number of instances that can be launched onto the Dedicated
-     * host.
+     * Host.
      * </p>
      * 
      * @param totalCapacity
      *        The total number of instances that can be launched onto the
-     *        Dedicated host.
+     *        Dedicated Host.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

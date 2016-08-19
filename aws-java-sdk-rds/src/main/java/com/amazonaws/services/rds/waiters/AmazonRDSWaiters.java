@@ -59,8 +59,8 @@ public class AmazonRDSWaiters {
                         new DBInstanceAvailable.IsDeletedMatcher(),
                         new DBInstanceAvailable.IsDeletingMatcher(),
                         new DBInstanceAvailable.IsFailedMatcher(),
-                        new DBInstanceAvailable.IsIncompatibleparametersMatcher(),
-                        new DBInstanceAvailable.IsIncompatiblerestoreMatcher())
+                        new DBInstanceAvailable.IsIncompatiblerestoreMatcher(),
+                        new DBInstanceAvailable.IsIncompatibleparametersMatcher())
                 .withDefaultPollingStrategy(
                         new PollingStrategy(new MaxAttemptsRetryStrategy(60),
                                 new FixedDelayStrategy(30)))

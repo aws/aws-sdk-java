@@ -19,10 +19,6 @@ import com.amazonaws.*;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.util.ValidationUtils;
 
-/**
- * Created by meghbyar on 6/2/16.
- */
-
 @SdkProtectedApi
 public class WaiterExecution<Input extends AmazonWebServiceRequest, Output> {
 

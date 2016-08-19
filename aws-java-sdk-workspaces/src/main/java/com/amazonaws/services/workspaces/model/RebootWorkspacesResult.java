@@ -25,7 +25,7 @@ public class RebootWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * rebooted.
      * </p>
      */
@@ -33,12 +33,12 @@ public class RebootWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * rebooted.
      * </p>
      * 
-     * @return An array of structures that represent any WorkSpaces that could
-     *         not be rebooted.
+     * @return An array of structures representing any WorkSpaces that could not
+     *         be rebooted.
      */
 
     public java.util.List<FailedWorkspaceChangeRequest> getFailedRequests() {
@@ -50,13 +50,13 @@ public class RebootWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * rebooted.
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures that represent any WorkSpaces that could
-     *        not be rebooted.
+     *        An array of structures representing any WorkSpaces that could not
+     *        be rebooted.
      */
 
     public void setFailedRequests(
@@ -72,7 +72,7 @@ public class RebootWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * rebooted.
      * </p>
      * <p>
@@ -83,8 +83,8 @@ public class RebootWorkspacesResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures that represent any WorkSpaces that could
-     *        not be rebooted.
+     *        An array of structures representing any WorkSpaces that could not
+     *        be rebooted.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -103,13 +103,13 @@ public class RebootWorkspacesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of structures that represent any WorkSpaces that could not be
+     * An array of structures representing any WorkSpaces that could not be
      * rebooted.
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures that represent any WorkSpaces that could
-     *        not be rebooted.
+     *        An array of structures representing any WorkSpaces that could not
+     *        be rebooted.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

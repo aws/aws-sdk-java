@@ -26,9 +26,8 @@ import com.amazonaws.annotation.ThreadSafe;
  * <p>
  * <fullname>Amazon WorkSpaces Service</fullname>
  * <p>
- * This is the <i>Amazon WorkSpaces API Reference</i>. This guide provides
- * detailed information about Amazon WorkSpaces operations, data types,
- * parameters, and errors.
+ * This reference provides detailed information about the Amazon WorkSpaces
+ * operations.
  * </p>
  */
 @ThreadSafe
@@ -598,6 +597,78 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeWorkspacesConnectionStatusResult> describeWorkspacesConnectionStatusAsync(
+            DescribeWorkspacesConnectionStatusRequest request) {
+
+        return describeWorkspacesConnectionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWorkspacesConnectionStatusResult> describeWorkspacesConnectionStatusAsync(
+            final DescribeWorkspacesConnectionStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeWorkspacesConnectionStatusRequest, DescribeWorkspacesConnectionStatusResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeWorkspacesConnectionStatusResult>() {
+                    @Override
+                    public DescribeWorkspacesConnectionStatusResult call()
+                            throws Exception {
+                        DescribeWorkspacesConnectionStatusResult result;
+
+                        try {
+                            result = describeWorkspacesConnectionStatus(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyWorkspacePropertiesResult> modifyWorkspacePropertiesAsync(
+            ModifyWorkspacePropertiesRequest request) {
+
+        return modifyWorkspacePropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyWorkspacePropertiesResult> modifyWorkspacePropertiesAsync(
+            final ModifyWorkspacePropertiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyWorkspacePropertiesRequest, ModifyWorkspacePropertiesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ModifyWorkspacePropertiesResult>() {
+                    @Override
+                    public ModifyWorkspacePropertiesResult call()
+                            throws Exception {
+                        ModifyWorkspacePropertiesResult result;
+
+                        try {
+                            result = modifyWorkspaceProperties(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<RebootWorkspacesResult> rebootWorkspacesAsync(
             RebootWorkspacesRequest request) {
 
@@ -652,6 +723,76 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient
 
                         try {
                             result = rebuildWorkspaces(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartWorkspacesResult> startWorkspacesAsync(
+            StartWorkspacesRequest request) {
+
+        return startWorkspacesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartWorkspacesResult> startWorkspacesAsync(
+            final StartWorkspacesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartWorkspacesRequest, StartWorkspacesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<StartWorkspacesResult>() {
+                    @Override
+                    public StartWorkspacesResult call() throws Exception {
+                        StartWorkspacesResult result;
+
+                        try {
+                            result = startWorkspaces(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopWorkspacesResult> stopWorkspacesAsync(
+            StopWorkspacesRequest request) {
+
+        return stopWorkspacesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopWorkspacesResult> stopWorkspacesAsync(
+            final StopWorkspacesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopWorkspacesRequest, StopWorkspacesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<StopWorkspacesResult>() {
+                    @Override
+                    public StopWorkspacesResult call() throws Exception {
+                        StopWorkspacesResult result;
+
+                        try {
+                            result = stopWorkspaces(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

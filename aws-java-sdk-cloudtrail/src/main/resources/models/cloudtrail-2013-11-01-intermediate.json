@@ -20,6 +20,7 @@
     "endpointPrefix" : "cloudtrail",
     "signingName" : "cloudtrail",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "jsonProtocol" : true,
     "syncClientBuilderClassName" : "AWSCloudTrailClientBuilder",
     "asyncClientBuilderClassName" : "AWSCloudTrailAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AWSCloudTrailModuleInjector",
@@ -28,8 +29,7 @@
     "cborProtocol" : false,
     "xmlProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
-    "jsonProtocol" : true
+    "unmarshallerClassSuffix" : "JsonUnmarshaller"
   },
   "operations" : {
     "AddTags" : {
@@ -658,10 +658,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -703,10 +703,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -726,11 +726,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "PublicKey",
           "templateType" : "java.util.List<PublicKey>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -777,10 +777,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -852,10 +852,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -905,10 +905,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -950,10 +950,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -973,11 +973,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "PublicKey",
             "templateType" : "java.util.List<PublicKey>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PublicKey>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1134,10 +1134,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1213,10 +1213,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -1279,10 +1279,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1331,10 +1331,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -1376,10 +1376,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -1399,11 +1399,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1477,10 +1477,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -1530,10 +1530,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -1575,10 +1575,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -1598,11 +1598,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -1663,10 +1663,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -1708,10 +1708,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -1731,11 +1731,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -1782,10 +1782,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -1861,10 +1861,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -1914,10 +1914,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -1959,10 +1959,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -1982,11 +1982,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2129,10 +2129,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -2174,10 +2174,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -2197,11 +2197,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Trail",
           "templateType" : "java.util.List<Trail>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -2271,10 +2271,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -2316,10 +2316,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -2339,11 +2339,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Trail",
             "templateType" : "java.util.List<Trail>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Trail>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -2404,10 +2404,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2456,10 +2456,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2508,10 +2508,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2587,10 +2587,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2640,10 +2640,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2693,10 +2693,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2791,10 +2791,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2843,10 +2843,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -2918,10 +2918,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -2971,10 +2971,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -3037,10 +3037,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3116,10 +3116,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -3281,10 +3281,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -3326,10 +3326,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -3349,11 +3349,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : true,
+          "map" : false,
           "simpleType" : "String",
           "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-          "simple" : true,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3400,10 +3400,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3479,10 +3479,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -3524,10 +3524,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -3547,11 +3547,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : true,
+            "map" : false,
             "simpleType" : "String",
             "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
-            "simple" : true,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -3599,10 +3599,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -3665,10 +3665,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3717,10 +3717,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3769,10 +3769,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3821,10 +3821,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3873,10 +3873,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3925,10 +3925,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -3977,10 +3977,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4029,10 +4029,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4081,10 +4081,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4133,10 +4133,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4212,10 +4212,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4265,10 +4265,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4318,10 +4318,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4371,10 +4371,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4424,10 +4424,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4477,10 +4477,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4530,10 +4530,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4583,10 +4583,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4636,10 +4636,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4689,10 +4689,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -4755,10 +4755,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4807,10 +4807,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4859,10 +4859,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4911,10 +4911,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -4986,10 +4986,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5039,10 +5039,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5092,10 +5092,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5145,10 +5145,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5243,10 +5243,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5295,10 +5295,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5370,10 +5370,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5423,10 +5423,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -5521,10 +5521,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5573,10 +5573,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5625,10 +5625,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5677,10 +5677,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5729,10 +5729,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5781,10 +5781,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5833,10 +5833,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5885,10 +5885,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5937,10 +5937,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -5989,10 +5989,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6068,10 +6068,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6121,10 +6121,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6174,10 +6174,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6227,10 +6227,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6280,10 +6280,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6333,10 +6333,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6386,10 +6386,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6439,10 +6439,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6492,10 +6492,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6545,10 +6545,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -6611,10 +6611,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6663,10 +6663,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6715,10 +6715,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6767,10 +6767,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : true,
         "listModel" : null,
@@ -6819,10 +6819,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6871,10 +6871,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6923,10 +6923,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -6975,10 +6975,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7027,10 +7027,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7079,10 +7079,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7131,10 +7131,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7183,10 +7183,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7235,10 +7235,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -7310,10 +7310,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7363,10 +7363,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7416,10 +7416,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7469,10 +7469,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7522,10 +7522,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7575,10 +7575,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7628,10 +7628,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7681,10 +7681,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : true,
           "listModel" : null,
@@ -7734,10 +7734,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7787,10 +7787,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7840,10 +7840,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7893,10 +7893,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -7946,10 +7946,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8044,10 +8044,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -8089,10 +8089,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -8112,11 +8112,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "ResourceTag",
           "templateType" : "java.util.List<ResourceTag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8163,10 +8163,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8238,10 +8238,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8291,10 +8291,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -8336,10 +8336,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -8359,11 +8359,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "ResourceTag",
             "templateType" : "java.util.List<ResourceTag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<ResourceTag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8456,10 +8456,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8535,10 +8535,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8636,10 +8636,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -8681,10 +8681,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -8704,11 +8704,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Event",
           "templateType" : "java.util.List<Event>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8755,10 +8755,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -8830,10 +8830,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -8883,10 +8883,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -8928,10 +8928,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -8951,11 +8951,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Event",
             "templateType" : "java.util.List<Event>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Event>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9243,10 +9243,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -9288,10 +9288,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -9311,11 +9311,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "LookupAttribute",
           "templateType" : "java.util.List<LookupAttribute>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -9362,10 +9362,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -9414,10 +9414,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -9466,10 +9466,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -9518,10 +9518,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -9597,10 +9597,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -9650,10 +9650,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -9703,10 +9703,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -9756,10 +9756,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -9809,10 +9809,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -9854,10 +9854,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -9877,11 +9877,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "LookupAttribute",
             "templateType" : "java.util.List<LookupAttribute>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<LookupAttribute>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9942,10 +9942,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -9994,10 +9994,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10046,10 +10046,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10098,10 +10098,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : true,
         "listModel" : null,
@@ -10150,10 +10150,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10202,10 +10202,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10254,10 +10254,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10306,10 +10306,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10358,10 +10358,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10410,10 +10410,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10462,10 +10462,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10514,10 +10514,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -10589,10 +10589,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -10642,10 +10642,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -10695,10 +10695,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : true,
           "listModel" : null,
@@ -10748,10 +10748,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -10801,10 +10801,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -10854,10 +10854,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -10907,10 +10907,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -10960,10 +10960,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -11013,10 +11013,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -11066,10 +11066,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -11119,10 +11119,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -11172,10 +11172,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -11238,10 +11238,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11290,10 +11290,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11342,10 +11342,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11394,10 +11394,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : true,
         "listModel" : null,
@@ -11446,10 +11446,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11498,10 +11498,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11550,10 +11550,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11602,10 +11602,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11654,10 +11654,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11706,10 +11706,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11758,10 +11758,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11810,10 +11810,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -11885,10 +11885,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -11938,10 +11938,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -11991,10 +11991,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : true,
           "listModel" : null,
@@ -12044,10 +12044,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -12097,10 +12097,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -12150,10 +12150,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -12203,10 +12203,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -12256,10 +12256,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -12309,10 +12309,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -12362,10 +12362,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -12415,10 +12415,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -12468,10 +12468,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -12761,10 +12761,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -12813,10 +12813,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -12865,10 +12865,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -12917,10 +12917,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -12969,10 +12969,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13021,10 +13021,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13073,10 +13073,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13125,10 +13125,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13177,10 +13177,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13229,10 +13229,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13281,10 +13281,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13333,10 +13333,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13385,10 +13385,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13437,10 +13437,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13489,10 +13489,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13541,10 +13541,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13593,10 +13593,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -13668,10 +13668,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -13721,10 +13721,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -13774,10 +13774,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -13827,10 +13827,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -13880,10 +13880,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -13933,10 +13933,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -13986,10 +13986,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14039,10 +14039,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14092,10 +14092,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14145,10 +14145,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14198,10 +14198,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14251,10 +14251,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14304,10 +14304,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14357,10 +14357,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14410,10 +14410,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14463,10 +14463,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14516,10 +14516,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14678,10 +14678,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -14730,10 +14730,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -14775,10 +14775,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -14798,11 +14798,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14876,10 +14876,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -14929,10 +14929,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -14974,10 +14974,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -14997,11 +14997,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15094,10 +15094,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -15173,10 +15173,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -15239,10 +15239,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -15291,10 +15291,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -15336,10 +15336,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -15359,11 +15359,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Tag",
           "templateType" : "java.util.List<Tag>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15433,10 +15433,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -15486,10 +15486,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -15531,10 +15531,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -15554,11 +15554,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Tag",
             "templateType" : "java.util.List<Tag>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Tag>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15718,10 +15718,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -15770,10 +15770,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -15822,10 +15822,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -15874,10 +15874,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -15926,10 +15926,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : {
@@ -15971,10 +15971,10 @@
               "isStreaming" : false,
               "location" : null,
               "flattened" : false,
+              "header" : false,
               "uri" : false,
               "statusCode" : false,
-              "queryString" : false,
-              "header" : false
+              "queryString" : false
             },
             "deprecated" : false,
             "listModel" : null,
@@ -15994,11 +15994,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
+          "simple" : false,
+          "map" : false,
           "simpleType" : "Resource",
           "templateType" : "java.util.List<Resource>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
-          "simple" : false,
-          "map" : false
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -16045,10 +16045,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -16120,10 +16120,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -16173,10 +16173,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -16226,10 +16226,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -16279,10 +16279,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -16332,10 +16332,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : {
@@ -16377,10 +16377,10 @@
                 "isStreaming" : false,
                 "location" : null,
                 "flattened" : false,
+                "header" : false,
                 "uri" : false,
                 "statusCode" : false,
-                "queryString" : false,
-                "header" : false
+                "queryString" : false
               },
               "deprecated" : false,
               "listModel" : null,
@@ -16400,11 +16400,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
+            "simple" : false,
+            "map" : false,
             "simpleType" : "Resource",
             "templateType" : "java.util.List<Resource>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>",
-            "simple" : false,
-            "map" : false
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Resource>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16452,10 +16452,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -16550,10 +16550,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -16602,10 +16602,10 @@
           "isStreaming" : false,
           "location" : null,
           "flattened" : false,
+          "header" : false,
           "uri" : false,
           "statusCode" : false,
-          "queryString" : false,
-          "header" : false
+          "queryString" : false
         },
         "deprecated" : false,
         "listModel" : null,
@@ -16677,10 +16677,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -16730,10 +16730,10 @@
             "isStreaming" : false,
             "location" : null,
             "flattened" : false,
+            "header" : false,
             "uri" : false,
             "statusCode" : false,
-            "queryString" : false,
-            "header" : false
+            "queryString" : false
           },
           "deprecated" : false,
           "listModel" : null,
@@ -16897,11 +16897,11 @@
     "examples" : { },
     "version" : "1.0"
   },
-  "clientConfigFactory" : "ClientConfigurationFactory",
   "sdkModeledExceptionBaseClassName" : "AWSCloudTrailException",
-  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.cloudtrail.model.AWSCloudTrailException",
-  "hasWaiters" : false
+  "hasWaiters" : false,
+  "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */"
 }

@@ -16,9 +16,8 @@
 /**
  * <fullname>Amazon WorkSpaces Service</fullname>
  * <p>
- * This is the <i>Amazon WorkSpaces API Reference</i>. This guide provides
- * detailed information about Amazon WorkSpaces operations, data types,
- * parameters, and errors.
+ * This reference provides detailed information about the Amazon WorkSpaces
+ * operations.
  * </p>
  */
 package com.amazonaws.services.workspaces;

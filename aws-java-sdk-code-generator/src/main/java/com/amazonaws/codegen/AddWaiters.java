@@ -33,9 +33,6 @@ import java.util.Map;
 
 import static com.amazonaws.codegen.AstJsonToAstJava.fromAstJsonToAstJava;
 
-/**
- * Created by meghbyar on 7/8/16.
- */
 class AddWaiters {
 
     private static final ObjectMapper mapper = new ObjectMapper();

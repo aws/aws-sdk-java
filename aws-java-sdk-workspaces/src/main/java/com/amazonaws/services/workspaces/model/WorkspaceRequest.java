@@ -67,6 +67,8 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * </p>
      */
     private Boolean rootVolumeEncryptionEnabled;
+
+    private WorkspaceProperties workspaceProperties;
     /**
      * <p>
      * The tags of the WorkSpace request.
@@ -404,6 +406,34 @@ public class WorkspaceRequest implements Serializable, Cloneable {
     }
 
     /**
+     * @param workspaceProperties
+     */
+
+    public void setWorkspaceProperties(WorkspaceProperties workspaceProperties) {
+        this.workspaceProperties = workspaceProperties;
+    }
+
+    /**
+     * @return
+     */
+
+    public WorkspaceProperties getWorkspaceProperties() {
+        return this.workspaceProperties;
+    }
+
+    /**
+     * @param workspaceProperties
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public WorkspaceRequest withWorkspaceProperties(
+            WorkspaceProperties workspaceProperties) {
+        setWorkspaceProperties(workspaceProperties);
+        return this;
+    }
+
+    /**
      * <p>
      * The tags of the WorkSpace request.
      * </p>
@@ -505,6 +535,8 @@ public class WorkspaceRequest implements Serializable, Cloneable {
         if (getRootVolumeEncryptionEnabled() != null)
             sb.append("RootVolumeEncryptionEnabled: "
                     + getRootVolumeEncryptionEnabled() + ",");
+        if (getWorkspaceProperties() != null)
+            sb.append("WorkspaceProperties: " + getWorkspaceProperties() + ",");
         if (getTags() != null)
             sb.append("Tags: " + getTags());
         sb.append("}");
@@ -557,6 +589,13 @@ public class WorkspaceRequest implements Serializable, Cloneable {
                 && other.getRootVolumeEncryptionEnabled().equals(
                         this.getRootVolumeEncryptionEnabled()) == false)
             return false;
+        if (other.getWorkspaceProperties() == null
+                ^ this.getWorkspaceProperties() == null)
+            return false;
+        if (other.getWorkspaceProperties() != null
+                && other.getWorkspaceProperties().equals(
+                        this.getWorkspaceProperties()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null
@@ -589,6 +628,10 @@ public class WorkspaceRequest implements Serializable, Cloneable {
                 * hashCode
                 + ((getRootVolumeEncryptionEnabled() == null) ? 0
                         : getRootVolumeEncryptionEnabled().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getWorkspaceProperties() == null) ? 0
+                        : getWorkspaceProperties().hashCode());
         hashCode = prime * hashCode
                 + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

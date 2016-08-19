@@ -93,7 +93,7 @@ public class AmazonKinesisFirehoseToRedshiftSample extends AbstractAmazonKinesis
         // Validate AccountId parameter is set
         if (StringUtils.isNullOrEmpty(accountId)) {
             throw new IllegalArgumentException("AccountId is empty. Please enter the accountId in "
-                    + CONFIG_FILE + " file");
+                    + CONFIG_FILE +  " file");
         }
     }
 

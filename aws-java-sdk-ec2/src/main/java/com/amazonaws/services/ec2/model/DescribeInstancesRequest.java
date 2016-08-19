@@ -45,7 +45,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>affinity</code> - The affinity setting for an instance running on a
-     * Dedicated host (<code>default</code> | <code>host</code>).
+     * Dedicated Host (<code>default</code> | <code>host</code>).
      * </p>
      * </li>
      * <li>
@@ -116,7 +116,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>host-Id</code> - The ID of the Dedicated host on which the instance
+     * <code>host-id</code> - The ID of the Dedicated Host on which the instance
      * is running, if applicable.
      * </p>
      * </li>
@@ -678,7 +678,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>affinity</code> - The affinity setting for an instance running on a
-     * Dedicated host (<code>default</code> | <code>host</code>).
+     * Dedicated Host (<code>default</code> | <code>host</code>).
      * </p>
      * </li>
      * <li>
@@ -749,7 +749,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>host-Id</code> - The ID of the Dedicated host on which the instance
+     * <code>host-id</code> - The ID of the Dedicated Host on which the instance
      * is running, if applicable.
      * </p>
      * </li>
@@ -1191,7 +1191,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>affinity</code> - The affinity setting for an instance
-     *         running on a Dedicated host (<code>default</code> |
+     *         running on a Dedicated Host (<code>default</code> |
      *         <code>host</code>).
      *         </p>
      *         </li>
@@ -1266,7 +1266,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>host-Id</code> - The ID of the Dedicated host on which the
+     *         <code>host-id</code> - The ID of the Dedicated Host on which the
      *         instance is running, if applicable.
      *         </p>
      *         </li>
@@ -1739,7 +1739,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>affinity</code> - The affinity setting for an instance running on a
-     * Dedicated host (<code>default</code> | <code>host</code>).
+     * Dedicated Host (<code>default</code> | <code>host</code>).
      * </p>
      * </li>
      * <li>
@@ -1810,7 +1810,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>host-Id</code> - The ID of the Dedicated host on which the instance
+     * <code>host-id</code> - The ID of the Dedicated Host on which the instance
      * is running, if applicable.
      * </p>
      * </li>
@@ -2253,7 +2253,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>affinity</code> - The affinity setting for an instance
-     *        running on a Dedicated host (<code>default</code> |
+     *        running on a Dedicated Host (<code>default</code> |
      *        <code>host</code>).
      *        </p>
      *        </li>
@@ -2328,7 +2328,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>host-Id</code> - The ID of the Dedicated host on which the
+     *        <code>host-id</code> - The ID of the Dedicated Host on which the
      *        instance is running, if applicable.
      *        </p>
      *        </li>
@@ -2802,7 +2802,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>affinity</code> - The affinity setting for an instance running on a
-     * Dedicated host (<code>default</code> | <code>host</code>).
+     * Dedicated Host (<code>default</code> | <code>host</code>).
      * </p>
      * </li>
      * <li>
@@ -2873,7 +2873,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>host-Id</code> - The ID of the Dedicated host on which the instance
+     * <code>host-id</code> - The ID of the Dedicated Host on which the instance
      * is running, if applicable.
      * </p>
      * </li>
@@ -3322,7 +3322,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>affinity</code> - The affinity setting for an instance
-     *        running on a Dedicated host (<code>default</code> |
+     *        running on a Dedicated Host (<code>default</code> |
      *        <code>host</code>).
      *        </p>
      *        </li>
@@ -3397,7 +3397,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>host-Id</code> - The ID of the Dedicated host on which the
+     *        <code>host-id</code> - The ID of the Dedicated Host on which the
      *        instance is running, if applicable.
      *        </p>
      *        </li>
@@ -3874,7 +3874,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>affinity</code> - The affinity setting for an instance running on a
-     * Dedicated host (<code>default</code> | <code>host</code>).
+     * Dedicated Host (<code>default</code> | <code>host</code>).
      * </p>
      * </li>
      * <li>
@@ -3945,7 +3945,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>host-Id</code> - The ID of the Dedicated host on which the instance
+     * <code>host-id</code> - The ID of the Dedicated Host on which the instance
      * is running, if applicable.
      * </p>
      * </li>
@@ -4388,7 +4388,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>affinity</code> - The affinity setting for an instance
-     *        running on a Dedicated host (<code>default</code> |
+     *        running on a Dedicated Host (<code>default</code> |
      *        <code>host</code>).
      *        </p>
      *        </li>
@@ -4463,7 +4463,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>host-Id</code> - The ID of the Dedicated host on which the
+     *        <code>host-id</code> - The ID of the Dedicated Host on which the
      *        instance is running, if applicable.
      *        </p>
      *        </li>

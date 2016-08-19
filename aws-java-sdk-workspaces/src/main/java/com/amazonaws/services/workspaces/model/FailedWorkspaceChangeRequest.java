@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * <p>
  * Contains information about a WorkSpace that could not be rebooted
- * (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), or terminated
- * (<a>TerminateWorkspaces</a>).
+ * (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), terminated
+ * (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped
+ * (<a>StopWorkspaces</a>).
  * </p>
  */
 public class FailedWorkspaceChangeRequest implements Serializable, Cloneable {

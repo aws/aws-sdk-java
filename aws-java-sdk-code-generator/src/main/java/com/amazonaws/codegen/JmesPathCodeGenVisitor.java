@@ -20,9 +20,6 @@ import org.apache.commons.lang3.StringEscapeUtils;
 
 import java.util.stream.Collectors;
 
-/**
- * Created by meghbyar on 6/20/16.
- */
 public class JmesPathCodeGenVisitor implements JmesPathVisitor<Void, String> {
 
     /**

@@ -18,11 +18,6 @@ package com.amazonaws.waiters;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkProtectedApi;
 
-import java.io.IOException;
-
-/**
- * Created by meghbyar on 6/7/16.
- */
 @SdkProtectedApi
 public abstract class WaiterAcceptor<Output> {
 

@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The result of the create tags action.
+ * The result of the <a>CreateTags</a> operation.
  * </p>
  */
 public class CreateTagsResult implements Serializable, Cloneable {

@@ -12,9 +12,9 @@ matrix:
     - jdk: openjdk6
       env: MODULES_TO_SKIP=\!aws-java-sdk-osgi
     - jdk: openjdk7
-      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin
+      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi
     - jdk: oraclejdk7
-      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin
+      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi
     - jdk: oraclejdk8
       env: MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin
 

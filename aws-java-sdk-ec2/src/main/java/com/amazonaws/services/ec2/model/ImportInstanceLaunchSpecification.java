@@ -61,9 +61,8 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * <p>
      * The instance type. For more information about the instance types that you
      * can import, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     * >Before You Get Started</a> in the Amazon Elastic Compute Cloud User
-     * Guide.
+     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     * >Instance Types</a> in the VM Import/Export User Guide.
      * </p>
      */
     private String instanceType;
@@ -442,17 +441,15 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * <p>
      * The instance type. For more information about the instance types that you
      * can import, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     * >Before You Get Started</a> in the Amazon Elastic Compute Cloud User
-     * Guide.
+     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     * >Instance Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
      *        The instance type. For more information about the instance types
      *        that you can import, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     *        >Before You Get Started</a> in the Amazon Elastic Compute Cloud
-     *        User Guide.
+     *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     *        >Instance Types</a> in the VM Import/Export User Guide.
      * @see InstanceType
      */
 
@@ -464,16 +461,14 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * <p>
      * The instance type. For more information about the instance types that you
      * can import, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     * >Before You Get Started</a> in the Amazon Elastic Compute Cloud User
-     * Guide.
+     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     * >Instance Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @return The instance type. For more information about the instance types
      *         that you can import, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     *         >Before You Get Started</a> in the Amazon Elastic Compute Cloud
-     *         User Guide.
+     *         "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     *         >Instance Types</a> in the VM Import/Export User Guide.
      * @see InstanceType
      */
 
@@ -485,17 +480,15 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * <p>
      * The instance type. For more information about the instance types that you
      * can import, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     * >Before You Get Started</a> in the Amazon Elastic Compute Cloud User
-     * Guide.
+     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     * >Instance Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
      *        The instance type. For more information about the instance types
      *        that you can import, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     *        >Before You Get Started</a> in the Amazon Elastic Compute Cloud
-     *        User Guide.
+     *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     *        >Instance Types</a> in the VM Import/Export User Guide.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstanceType
@@ -511,17 +504,15 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * <p>
      * The instance type. For more information about the instance types that you
      * can import, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     * >Before You Get Started</a> in the Amazon Elastic Compute Cloud User
-     * Guide.
+     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     * >Instance Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
      *        The instance type. For more information about the instance types
      *        that you can import, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     *        >Before You Get Started</a> in the Amazon Elastic Compute Cloud
-     *        User Guide.
+     *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     *        >Instance Types</a> in the VM Import/Export User Guide.
      * @see InstanceType
      */
 
@@ -533,17 +524,15 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * <p>
      * The instance type. For more information about the instance types that you
      * can import, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     * >Before You Get Started</a> in the Amazon Elastic Compute Cloud User
-     * Guide.
+     * "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     * >Instance Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
      *        The instance type. For more information about the instance types
      *        that you can import, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html"
-     *        >Before You Get Started</a> in the Amazon Elastic Compute Cloud
-     *        User Guide.
+     *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types"
+     *        >Instance Types</a> in the VM Import/Export User Guide.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstanceType

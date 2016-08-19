@@ -122,6 +122,12 @@ public class WorkspaceJsonUnmarshaller implements
                                     .getUnmarshaller(Boolean.class).unmarshall(
                                             context));
                 }
+                if (context.testExpression("WorkspaceProperties", targetDepth)) {
+                    context.nextToken();
+                    workspace
+                            .setWorkspaceProperties(WorkspacePropertiesJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(
