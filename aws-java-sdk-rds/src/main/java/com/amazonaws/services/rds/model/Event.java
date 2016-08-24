@@ -55,6 +55,8 @@ public class Event implements Serializable, Cloneable {
      */
     private java.util.Date dateValue;
 
+    private String sourceArn;
+
     /**
      * <p>
      * Provides the identifier for the source of the event.
@@ -333,6 +335,33 @@ public class Event implements Serializable, Cloneable {
     }
 
     /**
+     * @param sourceArn
+     */
+
+    public void setSourceArn(String sourceArn) {
+        this.sourceArn = sourceArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getSourceArn() {
+        return this.sourceArn;
+    }
+
+    /**
+     * @param sourceArn
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Event withSourceArn(String sourceArn) {
+        setSourceArn(sourceArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -353,7 +382,9 @@ public class Event implements Serializable, Cloneable {
         if (getEventCategories() != null)
             sb.append("EventCategories: " + getEventCategories() + ",");
         if (getDate() != null)
-            sb.append("Date: " + getDate());
+            sb.append("Date: " + getDate() + ",");
+        if (getSourceArn() != null)
+            sb.append("SourceArn: " + getSourceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -396,6 +427,11 @@ public class Event implements Serializable, Cloneable {
         if (other.getDate() != null
                 && other.getDate().equals(this.getDate()) == false)
             return false;
+        if (other.getSourceArn() == null ^ this.getSourceArn() == null)
+            return false;
+        if (other.getSourceArn() != null
+                && other.getSourceArn().equals(this.getSourceArn()) == false)
+            return false;
         return true;
     }
 
@@ -418,6 +454,8 @@ public class Event implements Serializable, Cloneable {
                         .hashCode());
         hashCode = prime * hashCode
                 + ((getDate() == null) ? 0 : getDate().hashCode());
+        hashCode = prime * hashCode
+                + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode());
         return hashCode;
     }
 

@@ -228,7 +228,9 @@ import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.ServiceClientHolderInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.ValidationUtils;
 
+import com.amazonaws.util.json.Jackson;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.client.methods.HttpRequestBase;
@@ -1269,12 +1271,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     @Override
     public S3Object getObject(GetObjectRequest getObjectRequest)
             throws AmazonClientException, AmazonServiceException {
-        rejectNull(getObjectRequest,
-                "The GetObjectRequest parameter must be specified when requesting an object");
-        rejectNull(getObjectRequest.getBucketName(),
-                "The bucket name parameter must be specified when requesting an object");
-        rejectNull(getObjectRequest.getKey(),
-                "The key parameter must be specified when requesting an object");
+        ValidationUtils.assertNotNull(getObjectRequest, "GetObjectRequest");
+        ValidationUtils.assertStringNotEmpty(getObjectRequest.getBucketName(), "BucketName");
+        ValidationUtils.assertStringNotEmpty(getObjectRequest.getKey(), "Key");
 
         Request<GetObjectRequest> request = createRequest(getObjectRequest.getBucketName(), getObjectRequest.getKey(), getObjectRequest, HttpMethodName.GET);
 
@@ -3882,6 +3881,21 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
     }
 
+    @Override
+    public String getRegionName() {
+        String authority = super.endpoint.getAuthority();
+        if(Constants.S3_HOSTNAME.equals(authority)) {
+            return "us-east-1";
+        }
+        Matcher m = Region.S3_REGIONAL_ENDPOINT_PATTERN.matcher(authority);
+        try {
+            m.matches();
+            return RegionUtils.getRegion(m.group(1)).getName();
+        } catch (Exception e) {
+            throw new IllegalStateException("No valid region has been specified. Unable to return region name", e);
+        }
+    }
+
     /**
      * Creates and initializes a new request object for the specified S3
      * resource. This method is responsible for determining the right way to
@@ -3976,7 +3990,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             String bucket, String key) {
-        
+
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         checkHttps(originalRequest);
         S3SignerProvider signerProvider = new S3SignerProvider(this, getSigner());

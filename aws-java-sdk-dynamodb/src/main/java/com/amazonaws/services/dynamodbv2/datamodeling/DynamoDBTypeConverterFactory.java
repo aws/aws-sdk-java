@@ -16,67 +16,87 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 
 import com.amazonaws.annotation.NotThreadSafe;
 
-import java.util.AbstractMap.SimpleImmutableEntry;
+import java.util.AbstractMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 /**
  * Interface for converting types.
- *
- * @param <S> The DynamoDB standard type.
- * @param <T> The object's field/property type.
  */
-public interface DynamoDBTypeConverterFactory<S extends Object, T extends Object> {
+public interface DynamoDBTypeConverterFactory {
 
     /**
      * Gets the type-converter matching the target conversion type.
+     * @param <S> The DynamoDB standard type.
+     * @param <T> The object's field/property type.
      * @param sourceType The source conversion type.
      * @param targetType The target conversion type.
      * @return The type-converter, or null if no match.
      */
-    DynamoDBTypeConverter<S,T> getConverter(Class<S> sourceType, Class<T> targetType);
-
-    /**
-     * Delegate factory.
-     */
-    public static class DelegateFactory<S,T> implements DynamoDBTypeConverterFactory<S,T> {
-        private static final DynamoDBTypeConverterFactory<?,?> NIL = new DynamoDBTypeConverterFactory<Object,Object>() {
-            public final DynamoDBTypeConverter<Object,Object> getConverter(final Class<Object> sourceType, final Class<Object> targetType) {
-                return null;
-            }
-        };
-        private final DynamoDBTypeConverterFactory<S,T> delegate;
-        public DelegateFactory(final DynamoDBTypeConverterFactory<S,T> delegate) {
-            this.delegate = delegate == null ? (DynamoDBTypeConverterFactory<S,T>)NIL : delegate;
-        }
-        @Override
-        public DynamoDBTypeConverter<S,T> getConverter(final Class<S> sourceType, final Class<T> targetType) {
-            return this.delegate.getConverter(sourceType, targetType);
-        }
-    }
+    <S,T> DynamoDBTypeConverter<S,T> getConverter(Class<S> sourceType, Class<T> targetType);
 
     /**
      * Delegate factory to allow selected types to be overriden.
      */
     @NotThreadSafe
-    public static class OverrideFactory<S,T> extends DelegateFactory<S,T> {
-        private final Map<Entry<Class<S>,Class<T>>,DynamoDBTypeConverter<S,T>> overrides = new LinkedHashMap<Entry<Class<S>,Class<T>>,DynamoDBTypeConverter<S,T>>();
-        public OverrideFactory(final DynamoDBTypeConverterFactory<S,T> delegate) {
-            super(delegate);
+    public static class OverrideFactory implements DynamoDBTypeConverterFactory {
+        private final Map<Key<?,?>,DynamoDBTypeConverter<?,?>> overrides = new LinkedHashMap<Key<?,?>,DynamoDBTypeConverter<?,?>>();
+        private final DynamoDBTypeConverterFactory delegate;
+
+        /**
+         * Constructs a new override factory with the delegate as fallback.
+         */
+        public OverrideFactory(final DynamoDBTypeConverterFactory delegate) {
+            this.delegate = delegate;
         }
-        public <s extends S,t extends T> OverrideFactory<S,T> with(final Class<s> sourceType, final Class<t> targetType, final DynamoDBTypeConverter<s,t> converter) {
-            this.overrides.put(new SimpleImmutableEntry((Class<S>)sourceType, (Class<T>)targetType), (DynamoDBTypeConverter<S,T>)converter);
+
+        /**
+         * Adds or replaces the source to target conversion override.
+         */
+        public <S,T> OverrideFactory with(final Class<S> sourceType, final Class<T> targetType, final DynamoDBTypeConverter<S,T> converter) {
+            this.overrides.put(new Key(sourceType, targetType), converter);
             return this;
         }
+
+        /**
+         * {@inheritDoc}
+         */
         @Override
-        public DynamoDBTypeConverter<S,T> getConverter(final Class<S> sourceType, final Class<T> targetType) {
-            for (final Entry<Entry<Class<S>,Class<T>>,DynamoDBTypeConverter<S,T>> entry : this.overrides.entrySet()) {
-                if (entry.getKey().getKey().isAssignableFrom(sourceType) && entry.getKey().getValue().isAssignableFrom(targetType)) {
-                    return entry.getValue();
+        public <S,T> DynamoDBTypeConverter<S,T> getConverter(final Class<S> sourceType, final Class<T> targetType) {
+            for (final Map.Entry<Key<?,?>,DynamoDBTypeConverter<?,?>> entry : this.overrides.entrySet()) {
+                if (entry.getKey().isAssignableFrom(sourceType, targetType)) {
+                    return (DynamoDBTypeConverter<S,T>)entry.getValue();
                 }
             }
-            return super.getConverter(sourceType, targetType);
+            return this.delegate.getConverter(sourceType, targetType);
+        }
+
+        /**
+         * Joins the source and target converters.
+         */
+        public static final <S,T,U> DynamoDBTypeConverter<S,U> join(final DynamoDBTypeConverter<S,T> source, final DynamoDBTypeConverter<T,U> target) {
+            return new DynamoDBTypeConverter<S,U>() {
+                public final S convert(final U o) {
+                    final T object = o == null ? null : target.convert(o);
+                    return object == null ? null : source.convert(object);
+                }
+                public final U unconvert(final S o) {
+                    final T object = o == null ? null : source.unconvert(o);
+                    return object == null ? null : target.unconvert(object);
+                }
+            };
+        }
+
+        /**
+         * Source and target conversion type pair.
+         */
+        public static final class Key<S,T> extends AbstractMap.SimpleImmutableEntry<Class<S>,Class<T>> {
+            public Key(final Class<S> sourceType, final Class<T> targetType) {
+                super(sourceType, targetType);
+            }
+            public boolean isAssignableFrom(final Class<?> sourceType, final Class<?> targetType) {
+                return getKey().isAssignableFrom(sourceType) && getValue().isAssignableFrom(targetType);
+            }
         }
     }
 

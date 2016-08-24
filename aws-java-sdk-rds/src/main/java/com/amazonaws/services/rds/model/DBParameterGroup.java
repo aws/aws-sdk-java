@@ -49,6 +49,8 @@ public class DBParameterGroup implements Serializable, Cloneable {
      */
     private String description;
 
+    private String dBParameterGroupArn;
+
     /**
      * <p>
      * Provides the name of the DB parameter group.
@@ -183,6 +185,33 @@ public class DBParameterGroup implements Serializable, Cloneable {
     }
 
     /**
+     * @param dBParameterGroupArn
+     */
+
+    public void setDBParameterGroupArn(String dBParameterGroupArn) {
+        this.dBParameterGroupArn = dBParameterGroupArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDBParameterGroupArn() {
+        return this.dBParameterGroupArn;
+    }
+
+    /**
+     * @param dBParameterGroupArn
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBParameterGroup withDBParameterGroupArn(String dBParameterGroupArn) {
+        setDBParameterGroupArn(dBParameterGroupArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -201,7 +230,9 @@ public class DBParameterGroup implements Serializable, Cloneable {
             sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily()
                     + ",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: " + getDescription() + ",");
+        if (getDBParameterGroupArn() != null)
+            sb.append("DBParameterGroupArn: " + getDBParameterGroupArn());
         sb.append("}");
         return sb.toString();
     }
@@ -235,6 +266,13 @@ public class DBParameterGroup implements Serializable, Cloneable {
         if (other.getDescription() != null
                 && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getDBParameterGroupArn() == null
+                ^ this.getDBParameterGroupArn() == null)
+            return false;
+        if (other.getDBParameterGroupArn() != null
+                && other.getDBParameterGroupArn().equals(
+                        this.getDBParameterGroupArn()) == false)
+            return false;
         return true;
     }
 
@@ -254,6 +292,10 @@ public class DBParameterGroup implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDBParameterGroupArn() == null) ? 0
+                        : getDBParameterGroupArn().hashCode());
         return hashCode;
     }
 

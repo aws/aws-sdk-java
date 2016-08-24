@@ -247,6 +247,8 @@ public class DBCluster implements Serializable, Cloneable {
      */
     private String dbClusterResourceId;
 
+    private String dBClusterArn;
+
     /**
      * <p>
      * Specifies the allocated storage size in gigabytes (GB).
@@ -1747,6 +1749,33 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * @param dBClusterArn
+     */
+
+    public void setDBClusterArn(String dBClusterArn) {
+        this.dBClusterArn = dBClusterArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDBClusterArn() {
+        return this.dBClusterArn;
+    }
+
+    /**
+     * @param dBClusterArn
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBCluster withDBClusterArn(String dBClusterArn) {
+        setDBClusterArn(dBClusterArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1822,7 +1851,9 @@ public class DBCluster implements Serializable, Cloneable {
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: " + getKmsKeyId() + ",");
         if (getDbClusterResourceId() != null)
-            sb.append("DbClusterResourceId: " + getDbClusterResourceId());
+            sb.append("DbClusterResourceId: " + getDbClusterResourceId() + ",");
+        if (getDBClusterArn() != null)
+            sb.append("DBClusterArn: " + getDBClusterArn());
         sb.append("}");
         return sb.toString();
     }
@@ -2013,6 +2044,11 @@ public class DBCluster implements Serializable, Cloneable {
                 && other.getDbClusterResourceId().equals(
                         this.getDbClusterResourceId()) == false)
             return false;
+        if (other.getDBClusterArn() == null ^ this.getDBClusterArn() == null)
+            return false;
+        if (other.getDBClusterArn() != null
+                && other.getDBClusterArn().equals(this.getDBClusterArn()) == false)
+            return false;
         return true;
     }
 
@@ -2123,6 +2159,10 @@ public class DBCluster implements Serializable, Cloneable {
                 * hashCode
                 + ((getDbClusterResourceId() == null) ? 0
                         : getDbClusterResourceId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDBClusterArn() == null) ? 0 : getDBClusterArn()
+                        .hashCode());
         return hashCode;
     }
 

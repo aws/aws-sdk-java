@@ -76,4 +76,14 @@ public class ValidationUtils {
         }
         return collection;
     }
+
+    public static String assertStringNotEmpty(String string, String fieldName) throws IllegalArgumentException {
+        if (string == null) {
+            throw new IllegalArgumentException(String.format("%s cannot be null", fieldName));
+        }
+        if (string.isEmpty()) {
+            throw new IllegalArgumentException(String.format("%s cannot be empty", fieldName));
+        }
+        return string;
+    }
 }

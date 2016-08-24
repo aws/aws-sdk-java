@@ -141,6 +141,13 @@ public class ReservedDBInstanceStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context
+                        .testExpression("ReservedDBInstanceArn", targetDepth)) {
+                    reservedDBInstance
+                            .setReservedDBInstanceArn(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return reservedDBInstance;

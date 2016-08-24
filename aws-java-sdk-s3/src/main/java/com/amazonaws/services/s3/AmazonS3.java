@@ -4573,6 +4573,15 @@ public interface AmazonS3 extends S3DirectSpi {
     Region getRegion();
 
     /**
+     * Returns a string representation of the region with which this
+     * client is configured
+     *
+     * @return String value representing the region this client will
+     * communicate with
+     */
+    String getRegionName();
+
+    /**
      * Returns an URL for the object stored in the specified bucket and
      * key.
      * <p>

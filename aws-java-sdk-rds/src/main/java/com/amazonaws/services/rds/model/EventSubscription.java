@@ -93,6 +93,8 @@ public class EventSubscription implements Serializable, Cloneable {
      */
     private Boolean enabled;
 
+    private String eventSubscriptionArn;
+
     /**
      * <p>
      * The AWS customer account associated with the RDS event notification
@@ -644,6 +646,34 @@ public class EventSubscription implements Serializable, Cloneable {
     }
 
     /**
+     * @param eventSubscriptionArn
+     */
+
+    public void setEventSubscriptionArn(String eventSubscriptionArn) {
+        this.eventSubscriptionArn = eventSubscriptionArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getEventSubscriptionArn() {
+        return this.eventSubscriptionArn;
+    }
+
+    /**
+     * @param eventSubscriptionArn
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public EventSubscription withEventSubscriptionArn(
+            String eventSubscriptionArn) {
+        setEventSubscriptionArn(eventSubscriptionArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -673,7 +703,9 @@ public class EventSubscription implements Serializable, Cloneable {
         if (getEventCategoriesList() != null)
             sb.append("EventCategoriesList: " + getEventCategoriesList() + ",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled());
+            sb.append("Enabled: " + getEnabled() + ",");
+        if (getEventSubscriptionArn() != null)
+            sb.append("EventSubscriptionArn: " + getEventSubscriptionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -739,6 +771,13 @@ public class EventSubscription implements Serializable, Cloneable {
         if (other.getEnabled() != null
                 && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
+        if (other.getEventSubscriptionArn() == null
+                ^ this.getEventSubscriptionArn() == null)
+            return false;
+        if (other.getEventSubscriptionArn() != null
+                && other.getEventSubscriptionArn().equals(
+                        this.getEventSubscriptionArn()) == false)
+            return false;
         return true;
     }
 
@@ -776,6 +815,10 @@ public class EventSubscription implements Serializable, Cloneable {
                         : getEventCategoriesList().hashCode());
         hashCode = prime * hashCode
                 + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEventSubscriptionArn() == null) ? 0
+                        : getEventSubscriptionArn().hashCode());
         return hashCode;
     }
 

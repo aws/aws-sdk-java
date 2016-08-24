@@ -41,8 +41,8 @@
         "variableType" : "DescribeStreamRequest",
         "variableDeclarationType" : "DescribeStreamRequest",
         "documentation" : "<p>Represents the input of a <i>DescribeStream</i> operation.</p>",
-        "simpleType" : "DescribeStreamRequest",
-        "variableSetterType" : "DescribeStreamRequest"
+        "variableSetterType" : "DescribeStreamRequest",
+        "simpleType" : "DescribeStreamRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -57,12 +57,12 @@
         "documentation" : "<p>An error occurred on the server side.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "DescribeStreamResult",
       "asyncReturnType" : "DescribeStreamResult",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeStreamResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeStreamResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult>",
-      "authenticated" : true,
       "methodName" : "describeStream"
     },
     "GetRecords" : {
@@ -74,8 +74,8 @@
         "variableType" : "GetRecordsRequest",
         "variableDeclarationType" : "GetRecordsRequest",
         "documentation" : "<p>Represents the input of a <i>GetRecords</i> operation.</p>",
-        "simpleType" : "GetRecordsRequest",
-        "variableSetterType" : "GetRecordsRequest"
+        "variableSetterType" : "GetRecordsRequest",
+        "simpleType" : "GetRecordsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -99,12 +99,12 @@
         "documentation" : "<p>The operation attempted to read past the oldest stream record in a shard.</p> <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> <ul> <li><p>You request a shard iterator with a sequence number older than the trim point (24 hours).</p> </li> <li><p>You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</p> </li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetRecordsResult",
       "asyncReturnType" : "GetRecordsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetRecordsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetRecordsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetRecordsRequest, GetRecordsResult>",
-      "authenticated" : true,
       "methodName" : "getRecords"
     },
     "GetShardIterator" : {
@@ -116,8 +116,8 @@
         "variableType" : "GetShardIteratorRequest",
         "variableDeclarationType" : "GetShardIteratorRequest",
         "documentation" : "<p>Represents the input of a <i>GetShardIterator</i> operation.</p>",
-        "simpleType" : "GetShardIteratorRequest",
-        "variableSetterType" : "GetShardIteratorRequest"
+        "variableSetterType" : "GetShardIteratorRequest",
+        "simpleType" : "GetShardIteratorRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -135,12 +135,12 @@
         "documentation" : "<p>The operation attempted to read past the oldest stream record in a shard.</p> <p>In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException if:</p> <ul> <li><p>You request a shard iterator with a sequence number older than the trim point (24 hours).</p> </li> <li><p>You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</p> </li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "GetShardIteratorResult",
       "asyncReturnType" : "GetShardIteratorResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetShardIteratorResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetShardIteratorResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetShardIteratorRequest, GetShardIteratorResult>",
-      "authenticated" : true,
       "methodName" : "getShardIterator"
     },
     "ListStreams" : {
@@ -152,8 +152,8 @@
         "variableType" : "ListStreamsRequest",
         "variableDeclarationType" : "ListStreamsRequest",
         "documentation" : "<p>Represents the input of a <i>ListStreams</i> operation.</p>",
-        "simpleType" : "ListStreamsRequest",
-        "variableSetterType" : "ListStreamsRequest"
+        "variableSetterType" : "ListStreamsRequest",
+        "simpleType" : "ListStreamsRequest"
       },
       "inputStreamPropertyName" : null,
       "returnType" : {
@@ -168,12 +168,12 @@
         "documentation" : "<p>An error occurred on the server side.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
+      "authenticated" : true,
       "syncReturnType" : "ListStreamsResult",
       "asyncReturnType" : "ListStreamsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListStreamsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListStreamsResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult>",
-      "authenticated" : true,
       "methodName" : "listStreams"
     }
   },
@@ -199,16 +199,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A String data type.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "s",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -251,16 +251,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A Number data type.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "n",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -303,16 +303,16 @@
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "<p>A Binary data type.</p>",
-          "simpleType" : "ByteBuffer",
-          "variableSetterType" : "java.nio.ByteBuffer"
+          "variableSetterType" : "java.nio.ByteBuffer",
+          "simpleType" : "ByteBuffer"
         },
         "setterModel" : {
           "variableName" : "b",
           "variableType" : "java.nio.ByteBuffer",
           "variableDeclarationType" : "java.nio.ByteBuffer",
           "documentation" : "",
-          "simpleType" : "ByteBuffer",
-          "variableSetterType" : "java.nio.ByteBuffer"
+          "variableSetterType" : "java.nio.ByteBuffer",
+          "simpleType" : "ByteBuffer"
         },
         "getterModel" : {
           "returnType" : "java.nio.ByteBuffer",
@@ -355,16 +355,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>A String Set data type.</p>",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
+          "variableSetterType" : "java.util.Collection<String>",
+          "simpleType" : "List<String>"
         },
         "setterModel" : {
           "variableName" : "sS",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
+          "variableSetterType" : "java.util.Collection<String>",
+          "simpleType" : "List<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -400,16 +400,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "simpleType" : "String",
-              "variableSetterType" : "String"
+              "variableSetterType" : "String",
+              "simpleType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "simpleType" : "String",
-              "variableSetterType" : "String"
+              "variableSetterType" : "String",
+              "simpleType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -474,16 +474,16 @@
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "<p>A Number Set data type.</p>",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
+          "variableSetterType" : "java.util.Collection<String>",
+          "simpleType" : "List<String>"
         },
         "setterModel" : {
           "variableName" : "nS",
           "variableType" : "java.util.List<String>",
           "variableDeclarationType" : "java.util.List<String>",
           "documentation" : "",
-          "simpleType" : "List<String>",
-          "variableSetterType" : "java.util.Collection<String>"
+          "variableSetterType" : "java.util.Collection<String>",
+          "simpleType" : "List<String>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -519,16 +519,16 @@
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "simpleType" : "String",
-              "variableSetterType" : "String"
+              "variableSetterType" : "String",
+              "simpleType" : "String"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "String",
               "variableDeclarationType" : "String",
               "documentation" : "",
-              "simpleType" : "String",
-              "variableSetterType" : "String"
+              "variableSetterType" : "String",
+              "simpleType" : "String"
             },
             "getterModel" : {
               "returnType" : "String",
@@ -593,16 +593,16 @@
           "variableType" : "java.util.List<java.nio.ByteBuffer>",
           "variableDeclarationType" : "java.util.List<java.nio.ByteBuffer>",
           "documentation" : "<p>A Binary Set data type.</p>",
-          "simpleType" : "ByteBuffer>",
-          "variableSetterType" : "java.util.Collection<java.nio.ByteBuffer>"
+          "variableSetterType" : "java.util.Collection<java.nio.ByteBuffer>",
+          "simpleType" : "ByteBuffer>"
         },
         "setterModel" : {
           "variableName" : "bS",
           "variableType" : "java.util.List<java.nio.ByteBuffer>",
           "variableDeclarationType" : "java.util.List<java.nio.ByteBuffer>",
           "documentation" : "",
-          "simpleType" : "ByteBuffer>",
-          "variableSetterType" : "java.util.Collection<java.nio.ByteBuffer>"
+          "variableSetterType" : "java.util.Collection<java.nio.ByteBuffer>",
+          "simpleType" : "ByteBuffer>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<java.nio.ByteBuffer>",
@@ -638,16 +638,16 @@
               "variableType" : "java.nio.ByteBuffer",
               "variableDeclarationType" : "java.nio.ByteBuffer",
               "documentation" : "",
-              "simpleType" : "ByteBuffer",
-              "variableSetterType" : "java.nio.ByteBuffer"
+              "variableSetterType" : "java.nio.ByteBuffer",
+              "simpleType" : "ByteBuffer"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "java.nio.ByteBuffer",
               "variableDeclarationType" : "java.nio.ByteBuffer",
               "documentation" : "",
-              "simpleType" : "ByteBuffer",
-              "variableSetterType" : "java.nio.ByteBuffer"
+              "variableSetterType" : "java.nio.ByteBuffer",
+              "simpleType" : "ByteBuffer"
             },
             "getterModel" : {
               "returnType" : "java.nio.ByteBuffer",
@@ -712,16 +712,16 @@
           "variableType" : "java.util.Map<String,AttributeValue>",
           "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
           "documentation" : "<p>A Map data type.</p>",
-          "simpleType" : "Map<String,AttributeValue>",
-          "variableSetterType" : "java.util.Map<String,AttributeValue>"
+          "variableSetterType" : "java.util.Map<String,AttributeValue>",
+          "simpleType" : "Map<String,AttributeValue>"
         },
         "setterModel" : {
           "variableName" : "m",
           "variableType" : "java.util.Map<String,AttributeValue>",
           "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
           "documentation" : "",
-          "simpleType" : "Map<String,AttributeValue>",
-          "variableSetterType" : "java.util.Map<String,AttributeValue>"
+          "variableSetterType" : "java.util.Map<String,AttributeValue>",
+          "simpleType" : "Map<String,AttributeValue>"
         },
         "getterModel" : {
           "returnType" : "java.util.Map<String,AttributeValue>",
@@ -761,16 +761,16 @@
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
               "documentation" : "",
-              "simpleType" : "AttributeValue",
-              "variableSetterType" : "AttributeValue"
+              "variableSetterType" : "AttributeValue",
+              "simpleType" : "AttributeValue"
             },
             "setterModel" : {
               "variableName" : "value",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
               "documentation" : "",
-              "simpleType" : "AttributeValue",
-              "variableSetterType" : "AttributeValue"
+              "variableSetterType" : "AttributeValue",
+              "simpleType" : "AttributeValue"
             },
             "getterModel" : {
               "returnType" : "AttributeValue",
@@ -804,12 +804,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, AttributeValue>"
+          "entryType" : "Map.Entry<String, AttributeValue>",
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -831,16 +831,16 @@
           "variableType" : "java.util.List<AttributeValue>",
           "variableDeclarationType" : "java.util.List<AttributeValue>",
           "documentation" : "<p>A List data type.</p>",
-          "simpleType" : "List<AttributeValue>",
-          "variableSetterType" : "java.util.Collection<AttributeValue>"
+          "variableSetterType" : "java.util.Collection<AttributeValue>",
+          "simpleType" : "List<AttributeValue>"
         },
         "setterModel" : {
           "variableName" : "l",
           "variableType" : "java.util.List<AttributeValue>",
           "variableDeclarationType" : "java.util.List<AttributeValue>",
           "documentation" : "",
-          "simpleType" : "List<AttributeValue>",
-          "variableSetterType" : "java.util.Collection<AttributeValue>"
+          "variableSetterType" : "java.util.Collection<AttributeValue>",
+          "simpleType" : "List<AttributeValue>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<AttributeValue>",
@@ -876,16 +876,16 @@
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
               "documentation" : "",
-              "simpleType" : "AttributeValue",
-              "variableSetterType" : "AttributeValue"
+              "variableSetterType" : "AttributeValue",
+              "simpleType" : "AttributeValue"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
               "documentation" : "",
-              "simpleType" : "AttributeValue",
-              "variableSetterType" : "AttributeValue"
+              "variableSetterType" : "AttributeValue",
+              "simpleType" : "AttributeValue"
             },
             "getterModel" : {
               "returnType" : "AttributeValue",
@@ -950,16 +950,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "<p>A Null data type.</p>",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "nULLValue",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -1002,16 +1002,16 @@
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "<p>A Boolean data type.</p>",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "setterModel" : {
           "variableName" : "bOOL",
           "variableType" : "Boolean",
           "variableDeclarationType" : "Boolean",
           "documentation" : "",
-          "simpleType" : "Boolean",
-          "variableSetterType" : "Boolean"
+          "variableSetterType" : "Boolean",
+          "simpleType" : "Boolean"
         },
         "getterModel" : {
           "returnType" : "Boolean",
@@ -1051,8 +1051,8 @@
         "variableType" : "AttributeValue",
         "variableDeclarationType" : "AttributeValue",
         "documentation" : null,
-        "simpleType" : "AttributeValue",
-        "variableSetterType" : "AttributeValue"
+        "variableSetterType" : "AttributeValue",
+        "simpleType" : "AttributeValue"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -1077,16 +1077,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>A String Set data type.</p>",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
+            "variableSetterType" : "java.util.Collection<String>",
+            "simpleType" : "List<String>"
           },
           "setterModel" : {
             "variableName" : "sS",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
+            "variableSetterType" : "java.util.Collection<String>",
+            "simpleType" : "List<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -1122,16 +1122,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "simpleType" : "String",
-                "variableSetterType" : "String"
+                "variableSetterType" : "String",
+                "simpleType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "simpleType" : "String",
-                "variableSetterType" : "String"
+                "variableSetterType" : "String",
+                "simpleType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -1197,16 +1197,16 @@
             "variableType" : "java.util.List<java.nio.ByteBuffer>",
             "variableDeclarationType" : "java.util.List<java.nio.ByteBuffer>",
             "documentation" : "<p>A Binary Set data type.</p>",
-            "simpleType" : "ByteBuffer>",
-            "variableSetterType" : "java.util.Collection<java.nio.ByteBuffer>"
+            "variableSetterType" : "java.util.Collection<java.nio.ByteBuffer>",
+            "simpleType" : "ByteBuffer>"
           },
           "setterModel" : {
             "variableName" : "bS",
             "variableType" : "java.util.List<java.nio.ByteBuffer>",
             "variableDeclarationType" : "java.util.List<java.nio.ByteBuffer>",
             "documentation" : "",
-            "simpleType" : "ByteBuffer>",
-            "variableSetterType" : "java.util.Collection<java.nio.ByteBuffer>"
+            "variableSetterType" : "java.util.Collection<java.nio.ByteBuffer>",
+            "simpleType" : "ByteBuffer>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<java.nio.ByteBuffer>",
@@ -1242,16 +1242,16 @@
                 "variableType" : "java.nio.ByteBuffer",
                 "variableDeclarationType" : "java.nio.ByteBuffer",
                 "documentation" : "",
-                "simpleType" : "ByteBuffer",
-                "variableSetterType" : "java.nio.ByteBuffer"
+                "variableSetterType" : "java.nio.ByteBuffer",
+                "simpleType" : "ByteBuffer"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "java.nio.ByteBuffer",
                 "variableDeclarationType" : "java.nio.ByteBuffer",
                 "documentation" : "",
-                "simpleType" : "ByteBuffer",
-                "variableSetterType" : "java.nio.ByteBuffer"
+                "variableSetterType" : "java.nio.ByteBuffer",
+                "simpleType" : "ByteBuffer"
               },
               "getterModel" : {
                 "returnType" : "java.nio.ByteBuffer",
@@ -1317,16 +1317,16 @@
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "<p>A Binary data type.</p>",
-            "simpleType" : "ByteBuffer",
-            "variableSetterType" : "java.nio.ByteBuffer"
+            "variableSetterType" : "java.nio.ByteBuffer",
+            "simpleType" : "ByteBuffer"
           },
           "setterModel" : {
             "variableName" : "b",
             "variableType" : "java.nio.ByteBuffer",
             "variableDeclarationType" : "java.nio.ByteBuffer",
             "documentation" : "",
-            "simpleType" : "ByteBuffer",
-            "variableSetterType" : "java.nio.ByteBuffer"
+            "variableSetterType" : "java.nio.ByteBuffer",
+            "simpleType" : "ByteBuffer"
           },
           "getterModel" : {
             "returnType" : "java.nio.ByteBuffer",
@@ -1370,16 +1370,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A String data type.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "s",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1423,16 +1423,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "<p>A Null data type.</p>",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "nULLValue",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -1476,16 +1476,16 @@
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "<p>A Number Set data type.</p>",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
+            "variableSetterType" : "java.util.Collection<String>",
+            "simpleType" : "List<String>"
           },
           "setterModel" : {
             "variableName" : "nS",
             "variableType" : "java.util.List<String>",
             "variableDeclarationType" : "java.util.List<String>",
             "documentation" : "",
-            "simpleType" : "List<String>",
-            "variableSetterType" : "java.util.Collection<String>"
+            "variableSetterType" : "java.util.Collection<String>",
+            "simpleType" : "List<String>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -1521,16 +1521,16 @@
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "simpleType" : "String",
-                "variableSetterType" : "String"
+                "variableSetterType" : "String",
+                "simpleType" : "String"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "String",
                 "variableDeclarationType" : "String",
                 "documentation" : "",
-                "simpleType" : "String",
-                "variableSetterType" : "String"
+                "variableSetterType" : "String",
+                "simpleType" : "String"
               },
               "getterModel" : {
                 "returnType" : "String",
@@ -1596,16 +1596,16 @@
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "<p>A Boolean data type.</p>",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "setterModel" : {
             "variableName" : "bOOL",
             "variableType" : "Boolean",
             "variableDeclarationType" : "Boolean",
             "documentation" : "",
-            "simpleType" : "Boolean",
-            "variableSetterType" : "Boolean"
+            "variableSetterType" : "Boolean",
+            "simpleType" : "Boolean"
           },
           "getterModel" : {
             "returnType" : "Boolean",
@@ -1649,16 +1649,16 @@
             "variableType" : "java.util.List<AttributeValue>",
             "variableDeclarationType" : "java.util.List<AttributeValue>",
             "documentation" : "<p>A List data type.</p>",
-            "simpleType" : "List<AttributeValue>",
-            "variableSetterType" : "java.util.Collection<AttributeValue>"
+            "variableSetterType" : "java.util.Collection<AttributeValue>",
+            "simpleType" : "List<AttributeValue>"
           },
           "setterModel" : {
             "variableName" : "l",
             "variableType" : "java.util.List<AttributeValue>",
             "variableDeclarationType" : "java.util.List<AttributeValue>",
             "documentation" : "",
-            "simpleType" : "List<AttributeValue>",
-            "variableSetterType" : "java.util.Collection<AttributeValue>"
+            "variableSetterType" : "java.util.Collection<AttributeValue>",
+            "simpleType" : "List<AttributeValue>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<AttributeValue>",
@@ -1694,16 +1694,16 @@
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
                 "documentation" : "",
-                "simpleType" : "AttributeValue",
-                "variableSetterType" : "AttributeValue"
+                "variableSetterType" : "AttributeValue",
+                "simpleType" : "AttributeValue"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
                 "documentation" : "",
-                "simpleType" : "AttributeValue",
-                "variableSetterType" : "AttributeValue"
+                "variableSetterType" : "AttributeValue",
+                "simpleType" : "AttributeValue"
               },
               "getterModel" : {
                 "returnType" : "AttributeValue",
@@ -1769,16 +1769,16 @@
             "variableType" : "java.util.Map<String,AttributeValue>",
             "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
             "documentation" : "<p>A Map data type.</p>",
-            "simpleType" : "Map<String,AttributeValue>",
-            "variableSetterType" : "java.util.Map<String,AttributeValue>"
+            "variableSetterType" : "java.util.Map<String,AttributeValue>",
+            "simpleType" : "Map<String,AttributeValue>"
           },
           "setterModel" : {
             "variableName" : "m",
             "variableType" : "java.util.Map<String,AttributeValue>",
             "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
             "documentation" : "",
-            "simpleType" : "Map<String,AttributeValue>",
-            "variableSetterType" : "java.util.Map<String,AttributeValue>"
+            "variableSetterType" : "java.util.Map<String,AttributeValue>",
+            "simpleType" : "Map<String,AttributeValue>"
           },
           "getterModel" : {
             "returnType" : "java.util.Map<String,AttributeValue>",
@@ -1818,16 +1818,16 @@
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
                 "documentation" : "",
-                "simpleType" : "AttributeValue",
-                "variableSetterType" : "AttributeValue"
+                "variableSetterType" : "AttributeValue",
+                "simpleType" : "AttributeValue"
               },
               "setterModel" : {
                 "variableName" : "value",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
                 "documentation" : "",
-                "simpleType" : "AttributeValue",
-                "variableSetterType" : "AttributeValue"
+                "variableSetterType" : "AttributeValue",
+                "simpleType" : "AttributeValue"
               },
               "getterModel" : {
                 "returnType" : "AttributeValue",
@@ -1861,12 +1861,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, AttributeValue>"
+            "entryType" : "Map.Entry<String, AttributeValue>",
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -1889,16 +1889,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A Number data type.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "n",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -1964,8 +1964,8 @@
         "variableType" : "ShardIteratorType",
         "variableDeclarationType" : "ShardIteratorType",
         "documentation" : null,
-        "simpleType" : "ShardIteratorType",
-        "variableSetterType" : "ShardIteratorType"
+        "variableSetterType" : "ShardIteratorType",
+        "simpleType" : "ShardIteratorType"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2002,16 +2002,16 @@
           "variableType" : "java.util.List<Record>",
           "variableDeclarationType" : "java.util.List<Record>",
           "documentation" : "<p>The stream records from the shard, which were retrieved using the shard iterator.</p>",
-          "simpleType" : "List<Record>",
-          "variableSetterType" : "java.util.Collection<Record>"
+          "variableSetterType" : "java.util.Collection<Record>",
+          "simpleType" : "List<Record>"
         },
         "setterModel" : {
           "variableName" : "records",
           "variableType" : "java.util.List<Record>",
           "variableDeclarationType" : "java.util.List<Record>",
           "documentation" : "",
-          "simpleType" : "List<Record>",
-          "variableSetterType" : "java.util.Collection<Record>"
+          "variableSetterType" : "java.util.Collection<Record>",
+          "simpleType" : "List<Record>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Record>",
@@ -2047,16 +2047,16 @@
               "variableType" : "Record",
               "variableDeclarationType" : "Record",
               "documentation" : "",
-              "simpleType" : "Record",
-              "variableSetterType" : "Record"
+              "variableSetterType" : "Record",
+              "simpleType" : "Record"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Record",
               "variableDeclarationType" : "Record",
               "documentation" : "",
-              "simpleType" : "Record",
-              "variableSetterType" : "Record"
+              "variableSetterType" : "Record",
+              "simpleType" : "Record"
             },
             "getterModel" : {
               "returnType" : "Record",
@@ -2121,16 +2121,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "nextShardIterator",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2170,8 +2170,8 @@
         "variableType" : "GetRecordsResult",
         "variableDeclarationType" : "GetRecordsResult",
         "documentation" : null,
-        "simpleType" : "GetRecordsResult",
-        "variableSetterType" : "GetRecordsResult"
+        "variableSetterType" : "GetRecordsResult",
+        "simpleType" : "GetRecordsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2196,16 +2196,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "nextShardIterator",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2249,16 +2249,16 @@
             "variableType" : "java.util.List<Record>",
             "variableDeclarationType" : "java.util.List<Record>",
             "documentation" : "<p>The stream records from the shard, which were retrieved using the shard iterator.</p>",
-            "simpleType" : "List<Record>",
-            "variableSetterType" : "java.util.Collection<Record>"
+            "variableSetterType" : "java.util.Collection<Record>",
+            "simpleType" : "List<Record>"
           },
           "setterModel" : {
             "variableName" : "records",
             "variableType" : "java.util.List<Record>",
             "variableDeclarationType" : "java.util.List<Record>",
             "documentation" : "",
-            "simpleType" : "List<Record>",
-            "variableSetterType" : "java.util.Collection<Record>"
+            "variableSetterType" : "java.util.Collection<Record>",
+            "simpleType" : "List<Record>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Record>",
@@ -2294,16 +2294,16 @@
                 "variableType" : "Record",
                 "variableDeclarationType" : "Record",
                 "documentation" : "",
-                "simpleType" : "Record",
-                "variableSetterType" : "Record"
+                "variableSetterType" : "Record",
+                "simpleType" : "Record"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Record",
                 "variableDeclarationType" : "Record",
                 "documentation" : "",
-                "simpleType" : "Record",
-                "variableSetterType" : "Record"
+                "variableSetterType" : "Record",
+                "simpleType" : "Record"
               },
               "getterModel" : {
                 "returnType" : "Record",
@@ -2385,8 +2385,8 @@
         "variableType" : "KeyType",
         "variableDeclarationType" : "KeyType",
         "documentation" : null,
-        "simpleType" : "KeyType",
-        "variableSetterType" : "KeyType"
+        "variableSetterType" : "KeyType",
+        "simpleType" : "KeyType"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2420,8 +2420,8 @@
         "variableType" : "TrimmedDataAccessException",
         "variableDeclarationType" : "TrimmedDataAccessException",
         "documentation" : null,
-        "simpleType" : "TrimmedDataAccessException",
-        "variableSetterType" : "TrimmedDataAccessException"
+        "variableSetterType" : "TrimmedDataAccessException",
+        "simpleType" : "TrimmedDataAccessException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -2464,8 +2464,8 @@
         "variableType" : "StreamViewType",
         "variableDeclarationType" : "StreamViewType",
         "documentation" : null,
-        "simpleType" : "StreamViewType",
-        "variableSetterType" : "StreamViewType"
+        "variableSetterType" : "StreamViewType",
+        "simpleType" : "StreamViewType"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2511,8 +2511,8 @@
         "variableType" : "StreamStatus",
         "variableDeclarationType" : "StreamStatus",
         "documentation" : null,
-        "simpleType" : "StreamStatus",
-        "variableSetterType" : "StreamStatus"
+        "variableSetterType" : "StreamStatus",
+        "simpleType" : "StreamStatus"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -2549,16 +2549,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>If this parameter is provided, then only the streams associated with this table name are returned.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "tableName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2601,16 +2601,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The maximum number of streams to return. The upper limit is 100.</p>",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "limit",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -2653,16 +2653,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "exclusiveStartStreamArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2702,8 +2702,8 @@
         "variableType" : "ListStreamsRequest",
         "variableDeclarationType" : "ListStreamsRequest",
         "documentation" : null,
-        "simpleType" : "ListStreamsRequest",
-        "variableSetterType" : "ListStreamsRequest"
+        "variableSetterType" : "ListStreamsRequest",
+        "simpleType" : "ListStreamsRequest"
       },
       "marshaller" : {
         "action" : "ListStreams",
@@ -2732,16 +2732,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>If this parameter is provided, then only the streams associated with this table name are returned.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "tableName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2785,16 +2785,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "exclusiveStartStreamArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -2838,16 +2838,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The maximum number of streams to return. The upper limit is 100.</p>",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "limit",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -2904,16 +2904,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Amazon Resource Name (ARN) for the stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "streamArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -2956,16 +2956,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The maximum number of shard objects to return. The upper limit is 100.</p>",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "limit",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -3008,16 +3008,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "exclusiveStartShardId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3057,8 +3057,8 @@
         "variableType" : "DescribeStreamRequest",
         "variableDeclarationType" : "DescribeStreamRequest",
         "documentation" : null,
-        "simpleType" : "DescribeStreamRequest",
-        "variableSetterType" : "DescribeStreamRequest"
+        "variableSetterType" : "DescribeStreamRequest",
+        "simpleType" : "DescribeStreamRequest"
       },
       "marshaller" : {
         "action" : "DescribeStream",
@@ -3087,16 +3087,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "exclusiveStartShardId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3140,16 +3140,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The maximum number of shard objects to return. The upper limit is 100.</p>",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "limit",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -3193,16 +3193,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) for the stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "streamArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3259,16 +3259,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "shardIterator",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3311,16 +3311,16 @@
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "<p>The maximum number of records to return from the shard. The upper limit is 1000.</p>",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "setterModel" : {
           "variableName" : "limit",
           "variableType" : "Integer",
           "variableDeclarationType" : "Integer",
           "documentation" : "",
-          "simpleType" : "Integer",
-          "variableSetterType" : "Integer"
+          "variableSetterType" : "Integer",
+          "simpleType" : "Integer"
         },
         "getterModel" : {
           "returnType" : "Integer",
@@ -3360,8 +3360,8 @@
         "variableType" : "GetRecordsRequest",
         "variableDeclarationType" : "GetRecordsRequest",
         "documentation" : null,
-        "simpleType" : "GetRecordsRequest",
-        "variableSetterType" : "GetRecordsRequest"
+        "variableSetterType" : "GetRecordsRequest",
+        "simpleType" : "GetRecordsRequest"
       },
       "marshaller" : {
         "action" : "GetRecords",
@@ -3390,16 +3390,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "shardIterator",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3443,16 +3443,16 @@
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "<p>The maximum number of records to return from the shard. The upper limit is 1000.</p>",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "setterModel" : {
             "variableName" : "limit",
             "variableType" : "Integer",
             "variableDeclarationType" : "Integer",
             "documentation" : "",
-            "simpleType" : "Integer",
-            "variableSetterType" : "Integer"
+            "variableSetterType" : "Integer",
+            "simpleType" : "Integer"
           },
           "getterModel" : {
             "returnType" : "Integer",
@@ -3509,16 +3509,16 @@
           "variableType" : "java.util.List<Stream>",
           "variableDeclarationType" : "java.util.List<Stream>",
           "documentation" : "<p>A list of stream descriptors associated with the current account and endpoint.</p>",
-          "simpleType" : "List<Stream>",
-          "variableSetterType" : "java.util.Collection<Stream>"
+          "variableSetterType" : "java.util.Collection<Stream>",
+          "simpleType" : "List<Stream>"
         },
         "setterModel" : {
           "variableName" : "streams",
           "variableType" : "java.util.List<Stream>",
           "variableDeclarationType" : "java.util.List<Stream>",
           "documentation" : "",
-          "simpleType" : "List<Stream>",
-          "variableSetterType" : "java.util.Collection<Stream>"
+          "variableSetterType" : "java.util.Collection<Stream>",
+          "simpleType" : "List<Stream>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Stream>",
@@ -3554,16 +3554,16 @@
               "variableType" : "Stream",
               "variableDeclarationType" : "Stream",
               "documentation" : "",
-              "simpleType" : "Stream",
-              "variableSetterType" : "Stream"
+              "variableSetterType" : "Stream",
+              "simpleType" : "Stream"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Stream",
               "variableDeclarationType" : "Stream",
               "documentation" : "",
-              "simpleType" : "Stream",
-              "variableSetterType" : "Stream"
+              "variableSetterType" : "Stream",
+              "simpleType" : "Stream"
             },
             "getterModel" : {
               "returnType" : "Stream",
@@ -3628,16 +3628,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedStreamArn</code> is empty, then the \"last page\" of results has been processed and there is no more data to be retrieved.</p> <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "lastEvaluatedStreamArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3677,8 +3677,8 @@
         "variableType" : "ListStreamsResult",
         "variableDeclarationType" : "ListStreamsResult",
         "documentation" : null,
-        "simpleType" : "ListStreamsResult",
-        "variableSetterType" : "ListStreamsResult"
+        "variableSetterType" : "ListStreamsResult",
+        "simpleType" : "ListStreamsResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -3703,16 +3703,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The stream ARN of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedStreamArn</code> is empty, then the \"last page\" of results has been processed and there is no more data to be retrieved.</p> <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "lastEvaluatedStreamArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -3756,16 +3756,16 @@
             "variableType" : "java.util.List<Stream>",
             "variableDeclarationType" : "java.util.List<Stream>",
             "documentation" : "<p>A list of stream descriptors associated with the current account and endpoint.</p>",
-            "simpleType" : "List<Stream>",
-            "variableSetterType" : "java.util.Collection<Stream>"
+            "variableSetterType" : "java.util.Collection<Stream>",
+            "simpleType" : "List<Stream>"
           },
           "setterModel" : {
             "variableName" : "streams",
             "variableType" : "java.util.List<Stream>",
             "variableDeclarationType" : "java.util.List<Stream>",
             "documentation" : "",
-            "simpleType" : "List<Stream>",
-            "variableSetterType" : "java.util.Collection<Stream>"
+            "variableSetterType" : "java.util.Collection<Stream>",
+            "simpleType" : "List<Stream>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Stream>",
@@ -3801,16 +3801,16 @@
                 "variableType" : "Stream",
                 "variableDeclarationType" : "Stream",
                 "documentation" : "",
-                "simpleType" : "Stream",
-                "variableSetterType" : "Stream"
+                "variableSetterType" : "Stream",
+                "simpleType" : "Stream"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Stream",
                 "variableDeclarationType" : "Stream",
                 "documentation" : "",
-                "simpleType" : "Stream",
-                "variableSetterType" : "Stream"
+                "variableSetterType" : "Stream",
+                "simpleType" : "Stream"
               },
               "getterModel" : {
                 "returnType" : "Stream",
@@ -3889,16 +3889,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "shardIterator",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -3938,8 +3938,8 @@
         "variableType" : "GetShardIteratorResult",
         "variableDeclarationType" : "GetShardIteratorResult",
         "documentation" : null,
-        "simpleType" : "GetShardIteratorResult",
-        "variableSetterType" : "GetShardIteratorResult"
+        "variableSetterType" : "GetShardIteratorResult",
+        "simpleType" : "GetShardIteratorResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -3964,16 +3964,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "shardIterator",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4030,16 +4030,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A globally unique identifier for the event that was recorded in this stream record.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "eventID",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4082,16 +4082,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The type of data modification that was performed on the DynamoDB table:</p> <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li> <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li> </ul>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "eventName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4134,16 +4134,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The version number of the stream record format. This number is updated whenever the structure of <i>Record</i> is modified.</p> <p>Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this number is subject to change at any time. In general, <i>eventVersion</i> will only increase as the low-level DynamoDB Streams API evolves.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "eventVersion",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4186,16 +4186,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <i>aws:dynamodb</i>.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "eventSource",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4238,16 +4238,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The region in which the <i>GetRecords</i> request was received.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "awsRegion",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4290,16 +4290,16 @@
           "variableType" : "StreamRecord",
           "variableDeclarationType" : "StreamRecord",
           "documentation" : "<p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>",
-          "simpleType" : "StreamRecord",
-          "variableSetterType" : "StreamRecord"
+          "variableSetterType" : "StreamRecord",
+          "simpleType" : "StreamRecord"
         },
         "setterModel" : {
           "variableName" : "dynamodb",
           "variableType" : "StreamRecord",
           "variableDeclarationType" : "StreamRecord",
           "documentation" : "",
-          "simpleType" : "StreamRecord",
-          "variableSetterType" : "StreamRecord"
+          "variableSetterType" : "StreamRecord",
+          "simpleType" : "StreamRecord"
         },
         "getterModel" : {
           "returnType" : "StreamRecord",
@@ -4339,8 +4339,8 @@
         "variableType" : "Record",
         "variableDeclarationType" : "Record",
         "documentation" : null,
-        "simpleType" : "Record",
-        "variableSetterType" : "Record"
+        "variableSetterType" : "Record",
+        "simpleType" : "Record"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -4365,16 +4365,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The AWS service from which the stream record originated. For DynamoDB Streams, this is <i>aws:dynamodb</i>.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "eventSource",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4418,16 +4418,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The region in which the <i>GetRecords</i> request was received.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "awsRegion",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4471,16 +4471,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A globally unique identifier for the event that was recorded in this stream record.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "eventID",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4524,16 +4524,16 @@
             "variableType" : "StreamRecord",
             "variableDeclarationType" : "StreamRecord",
             "documentation" : "<p>The main body of the stream record, containing all of the DynamoDB-specific fields.</p>",
-            "simpleType" : "StreamRecord",
-            "variableSetterType" : "StreamRecord"
+            "variableSetterType" : "StreamRecord",
+            "simpleType" : "StreamRecord"
           },
           "setterModel" : {
             "variableName" : "dynamodb",
             "variableType" : "StreamRecord",
             "variableDeclarationType" : "StreamRecord",
             "documentation" : "",
-            "simpleType" : "StreamRecord",
-            "variableSetterType" : "StreamRecord"
+            "variableSetterType" : "StreamRecord",
+            "simpleType" : "StreamRecord"
           },
           "getterModel" : {
             "returnType" : "StreamRecord",
@@ -4577,16 +4577,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The type of data modification that was performed on the DynamoDB table:</p> <ul> <li> <p> <code>INSERT</code> - a new item was added to the table.</p> </li> <li> <p> <code>MODIFY</code> - one or more of an existing item's attributes were modified.</p> </li> <li> <p> <code>REMOVE</code> - the item was deleted from the table</p> </li> </ul>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "eventName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4630,16 +4630,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The version number of the stream record format. This number is updated whenever the structure of <i>Record</i> is modified.</p> <p>Client applications must not assume that <i>eventVersion</i> will remain at a particular value, as this number is subject to change at any time. In general, <i>eventVersion</i> will only increase as the low-level DynamoDB Streams API evolves.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "eventVersion",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4696,16 +4696,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Amazon Resource Name (ARN) for the stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "streamArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4748,16 +4748,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The DynamoDB table with which the stream is associated.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "tableName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4800,16 +4800,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <i>StreamLabel</i> </p> </li> </ul>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "streamLabel",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -4849,8 +4849,8 @@
         "variableType" : "Stream",
         "variableDeclarationType" : "Stream",
         "documentation" : null,
-        "simpleType" : "Stream",
-        "variableSetterType" : "Stream"
+        "variableSetterType" : "Stream",
+        "simpleType" : "Stream"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -4875,16 +4875,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The DynamoDB table with which the stream is associated.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "tableName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4928,16 +4928,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <i>StreamLabel</i> </p> </li> </ul>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "streamLabel",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -4981,16 +4981,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) for the stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "streamArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5044,8 +5044,8 @@
         "variableType" : "ResourceNotFoundException",
         "variableDeclarationType" : "ResourceNotFoundException",
         "documentation" : null,
-        "simpleType" : "ResourceNotFoundException",
-        "variableSetterType" : "ResourceNotFoundException"
+        "variableSetterType" : "ResourceNotFoundException",
+        "simpleType" : "ResourceNotFoundException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -5079,16 +5079,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The name of a key attribute.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "attributeName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5131,16 +5131,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The attribute data, consisting of the data type and the attribute value itself.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "keyType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5180,8 +5180,8 @@
         "variableType" : "KeySchemaElement",
         "variableDeclarationType" : "KeySchemaElement",
         "documentation" : null,
-        "simpleType" : "KeySchemaElement",
-        "variableSetterType" : "KeySchemaElement"
+        "variableSetterType" : "KeySchemaElement",
+        "simpleType" : "KeySchemaElement"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -5206,16 +5206,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The attribute data, consisting of the data type and the attribute value itself.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "keyType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5259,16 +5259,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The name of a key attribute.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "attributeName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -5325,16 +5325,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>The approximate date and time when the stream record was created, in <a href=\"http://www.epochconverter.com/\">UNIX epoch time</a> format.</p>",
-          "simpleType" : "Date",
-          "variableSetterType" : "java.util.Date"
+          "variableSetterType" : "java.util.Date",
+          "simpleType" : "Date"
         },
         "setterModel" : {
           "variableName" : "approximateCreationDateTime",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "simpleType" : "Date",
-          "variableSetterType" : "java.util.Date"
+          "variableSetterType" : "java.util.Date",
+          "simpleType" : "Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -5377,16 +5377,16 @@
           "variableType" : "java.util.Map<String,AttributeValue>",
           "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
           "documentation" : "<p>The primary key attribute(s) for the DynamoDB item that was modified.</p>",
-          "simpleType" : "Map<String,AttributeValue>",
-          "variableSetterType" : "java.util.Map<String,AttributeValue>"
+          "variableSetterType" : "java.util.Map<String,AttributeValue>",
+          "simpleType" : "Map<String,AttributeValue>"
         },
         "setterModel" : {
           "variableName" : "keys",
           "variableType" : "java.util.Map<String,AttributeValue>",
           "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
           "documentation" : "",
-          "simpleType" : "Map<String,AttributeValue>",
-          "variableSetterType" : "java.util.Map<String,AttributeValue>"
+          "variableSetterType" : "java.util.Map<String,AttributeValue>",
+          "simpleType" : "Map<String,AttributeValue>"
         },
         "getterModel" : {
           "returnType" : "java.util.Map<String,AttributeValue>",
@@ -5426,16 +5426,16 @@
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
               "documentation" : "",
-              "simpleType" : "AttributeValue",
-              "variableSetterType" : "AttributeValue"
+              "variableSetterType" : "AttributeValue",
+              "simpleType" : "AttributeValue"
             },
             "setterModel" : {
               "variableName" : "value",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
               "documentation" : "",
-              "simpleType" : "AttributeValue",
-              "variableSetterType" : "AttributeValue"
+              "variableSetterType" : "AttributeValue",
+              "simpleType" : "AttributeValue"
             },
             "getterModel" : {
               "returnType" : "AttributeValue",
@@ -5469,12 +5469,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, AttributeValue>"
+          "entryType" : "Map.Entry<String, AttributeValue>",
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -5496,16 +5496,16 @@
           "variableType" : "java.util.Map<String,AttributeValue>",
           "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
           "documentation" : "<p>The item in the DynamoDB table as it appeared after it was modified.</p>",
-          "simpleType" : "Map<String,AttributeValue>",
-          "variableSetterType" : "java.util.Map<String,AttributeValue>"
+          "variableSetterType" : "java.util.Map<String,AttributeValue>",
+          "simpleType" : "Map<String,AttributeValue>"
         },
         "setterModel" : {
           "variableName" : "newImage",
           "variableType" : "java.util.Map<String,AttributeValue>",
           "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
           "documentation" : "",
-          "simpleType" : "Map<String,AttributeValue>",
-          "variableSetterType" : "java.util.Map<String,AttributeValue>"
+          "variableSetterType" : "java.util.Map<String,AttributeValue>",
+          "simpleType" : "Map<String,AttributeValue>"
         },
         "getterModel" : {
           "returnType" : "java.util.Map<String,AttributeValue>",
@@ -5545,16 +5545,16 @@
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
               "documentation" : "",
-              "simpleType" : "AttributeValue",
-              "variableSetterType" : "AttributeValue"
+              "variableSetterType" : "AttributeValue",
+              "simpleType" : "AttributeValue"
             },
             "setterModel" : {
               "variableName" : "value",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
               "documentation" : "",
-              "simpleType" : "AttributeValue",
-              "variableSetterType" : "AttributeValue"
+              "variableSetterType" : "AttributeValue",
+              "simpleType" : "AttributeValue"
             },
             "getterModel" : {
               "returnType" : "AttributeValue",
@@ -5588,12 +5588,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, AttributeValue>"
+          "entryType" : "Map.Entry<String, AttributeValue>",
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -5615,16 +5615,16 @@
           "variableType" : "java.util.Map<String,AttributeValue>",
           "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
           "documentation" : "<p>The item in the DynamoDB table as it appeared before it was modified.</p>",
-          "simpleType" : "Map<String,AttributeValue>",
-          "variableSetterType" : "java.util.Map<String,AttributeValue>"
+          "variableSetterType" : "java.util.Map<String,AttributeValue>",
+          "simpleType" : "Map<String,AttributeValue>"
         },
         "setterModel" : {
           "variableName" : "oldImage",
           "variableType" : "java.util.Map<String,AttributeValue>",
           "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
           "documentation" : "",
-          "simpleType" : "Map<String,AttributeValue>",
-          "variableSetterType" : "java.util.Map<String,AttributeValue>"
+          "variableSetterType" : "java.util.Map<String,AttributeValue>",
+          "simpleType" : "Map<String,AttributeValue>"
         },
         "getterModel" : {
           "returnType" : "java.util.Map<String,AttributeValue>",
@@ -5664,16 +5664,16 @@
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
               "documentation" : "",
-              "simpleType" : "AttributeValue",
-              "variableSetterType" : "AttributeValue"
+              "variableSetterType" : "AttributeValue",
+              "simpleType" : "AttributeValue"
             },
             "setterModel" : {
               "variableName" : "value",
               "variableType" : "AttributeValue",
               "variableDeclarationType" : "AttributeValue",
               "documentation" : "",
-              "simpleType" : "AttributeValue",
-              "variableSetterType" : "AttributeValue"
+              "variableSetterType" : "AttributeValue",
+              "simpleType" : "AttributeValue"
             },
             "getterModel" : {
               "returnType" : "AttributeValue",
@@ -5707,12 +5707,12 @@
             "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
-          "templateType" : "java.util.Map<String,AttributeValue>",
-          "templateImplType" : "java.util.HashMap<String,AttributeValue>",
           "keySimple" : true,
           "valueSimple" : false,
           "valueList" : false,
-          "entryType" : "Map.Entry<String, AttributeValue>"
+          "entryType" : "Map.Entry<String, AttributeValue>",
+          "templateType" : "java.util.Map<String,AttributeValue>",
+          "templateImplType" : "java.util.HashMap<String,AttributeValue>"
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -5734,16 +5734,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The sequence number of the stream record.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "sequenceNumber",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5786,16 +5786,16 @@
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
           "documentation" : "<p>The size of the stream record, in bytes.</p>",
-          "simpleType" : "Long",
-          "variableSetterType" : "Long"
+          "variableSetterType" : "Long",
+          "simpleType" : "Long"
         },
         "setterModel" : {
           "variableName" : "sizeBytes",
           "variableType" : "Long",
           "variableDeclarationType" : "Long",
           "documentation" : "",
-          "simpleType" : "Long",
-          "variableSetterType" : "Long"
+          "variableSetterType" : "Long",
+          "simpleType" : "Long"
         },
         "getterModel" : {
           "returnType" : "Long",
@@ -5838,16 +5838,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The type of data from the modified DynamoDB item that was captured in this stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li> </ul>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "streamViewType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -5887,8 +5887,8 @@
         "variableType" : "StreamRecord",
         "variableDeclarationType" : "StreamRecord",
         "documentation" : null,
-        "simpleType" : "StreamRecord",
-        "variableSetterType" : "StreamRecord"
+        "variableSetterType" : "StreamRecord",
+        "simpleType" : "StreamRecord"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -5913,16 +5913,16 @@
             "variableType" : "java.util.Map<String,AttributeValue>",
             "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
             "documentation" : "<p>The item in the DynamoDB table as it appeared after it was modified.</p>",
-            "simpleType" : "Map<String,AttributeValue>",
-            "variableSetterType" : "java.util.Map<String,AttributeValue>"
+            "variableSetterType" : "java.util.Map<String,AttributeValue>",
+            "simpleType" : "Map<String,AttributeValue>"
           },
           "setterModel" : {
             "variableName" : "newImage",
             "variableType" : "java.util.Map<String,AttributeValue>",
             "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
             "documentation" : "",
-            "simpleType" : "Map<String,AttributeValue>",
-            "variableSetterType" : "java.util.Map<String,AttributeValue>"
+            "variableSetterType" : "java.util.Map<String,AttributeValue>",
+            "simpleType" : "Map<String,AttributeValue>"
           },
           "getterModel" : {
             "returnType" : "java.util.Map<String,AttributeValue>",
@@ -5962,16 +5962,16 @@
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
                 "documentation" : "",
-                "simpleType" : "AttributeValue",
-                "variableSetterType" : "AttributeValue"
+                "variableSetterType" : "AttributeValue",
+                "simpleType" : "AttributeValue"
               },
               "setterModel" : {
                 "variableName" : "value",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
                 "documentation" : "",
-                "simpleType" : "AttributeValue",
-                "variableSetterType" : "AttributeValue"
+                "variableSetterType" : "AttributeValue",
+                "simpleType" : "AttributeValue"
               },
               "getterModel" : {
                 "returnType" : "AttributeValue",
@@ -6005,12 +6005,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, AttributeValue>"
+            "entryType" : "Map.Entry<String, AttributeValue>",
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -6033,16 +6033,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>The approximate date and time when the stream record was created, in <a href=\"http://www.epochconverter.com/\">UNIX epoch time</a> format.</p>",
-            "simpleType" : "Date",
-            "variableSetterType" : "java.util.Date"
+            "variableSetterType" : "java.util.Date",
+            "simpleType" : "Date"
           },
           "setterModel" : {
             "variableName" : "approximateCreationDateTime",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "simpleType" : "Date",
-            "variableSetterType" : "java.util.Date"
+            "variableSetterType" : "java.util.Date",
+            "simpleType" : "Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -6086,16 +6086,16 @@
             "variableType" : "java.util.Map<String,AttributeValue>",
             "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
             "documentation" : "<p>The primary key attribute(s) for the DynamoDB item that was modified.</p>",
-            "simpleType" : "Map<String,AttributeValue>",
-            "variableSetterType" : "java.util.Map<String,AttributeValue>"
+            "variableSetterType" : "java.util.Map<String,AttributeValue>",
+            "simpleType" : "Map<String,AttributeValue>"
           },
           "setterModel" : {
             "variableName" : "keys",
             "variableType" : "java.util.Map<String,AttributeValue>",
             "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
             "documentation" : "",
-            "simpleType" : "Map<String,AttributeValue>",
-            "variableSetterType" : "java.util.Map<String,AttributeValue>"
+            "variableSetterType" : "java.util.Map<String,AttributeValue>",
+            "simpleType" : "Map<String,AttributeValue>"
           },
           "getterModel" : {
             "returnType" : "java.util.Map<String,AttributeValue>",
@@ -6135,16 +6135,16 @@
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
                 "documentation" : "",
-                "simpleType" : "AttributeValue",
-                "variableSetterType" : "AttributeValue"
+                "variableSetterType" : "AttributeValue",
+                "simpleType" : "AttributeValue"
               },
               "setterModel" : {
                 "variableName" : "value",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
                 "documentation" : "",
-                "simpleType" : "AttributeValue",
-                "variableSetterType" : "AttributeValue"
+                "variableSetterType" : "AttributeValue",
+                "simpleType" : "AttributeValue"
               },
               "getterModel" : {
                 "returnType" : "AttributeValue",
@@ -6178,12 +6178,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, AttributeValue>"
+            "entryType" : "Map.Entry<String, AttributeValue>",
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -6206,16 +6206,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The sequence number of the stream record.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "sequenceNumber",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6259,16 +6259,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The type of data from the modified DynamoDB item that was captured in this stream record:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of the modified item.</p> </li> <li> <p> <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.</p> </li> </ul>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "streamViewType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6312,16 +6312,16 @@
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
             "documentation" : "<p>The size of the stream record, in bytes.</p>",
-            "simpleType" : "Long",
-            "variableSetterType" : "Long"
+            "variableSetterType" : "Long",
+            "simpleType" : "Long"
           },
           "setterModel" : {
             "variableName" : "sizeBytes",
             "variableType" : "Long",
             "variableDeclarationType" : "Long",
             "documentation" : "",
-            "simpleType" : "Long",
-            "variableSetterType" : "Long"
+            "variableSetterType" : "Long",
+            "simpleType" : "Long"
           },
           "getterModel" : {
             "returnType" : "Long",
@@ -6365,16 +6365,16 @@
             "variableType" : "java.util.Map<String,AttributeValue>",
             "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
             "documentation" : "<p>The item in the DynamoDB table as it appeared before it was modified.</p>",
-            "simpleType" : "Map<String,AttributeValue>",
-            "variableSetterType" : "java.util.Map<String,AttributeValue>"
+            "variableSetterType" : "java.util.Map<String,AttributeValue>",
+            "simpleType" : "Map<String,AttributeValue>"
           },
           "setterModel" : {
             "variableName" : "oldImage",
             "variableType" : "java.util.Map<String,AttributeValue>",
             "variableDeclarationType" : "java.util.Map<String,AttributeValue>",
             "documentation" : "",
-            "simpleType" : "Map<String,AttributeValue>",
-            "variableSetterType" : "java.util.Map<String,AttributeValue>"
+            "variableSetterType" : "java.util.Map<String,AttributeValue>",
+            "simpleType" : "Map<String,AttributeValue>"
           },
           "getterModel" : {
             "returnType" : "java.util.Map<String,AttributeValue>",
@@ -6414,16 +6414,16 @@
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
                 "documentation" : "",
-                "simpleType" : "AttributeValue",
-                "variableSetterType" : "AttributeValue"
+                "variableSetterType" : "AttributeValue",
+                "simpleType" : "AttributeValue"
               },
               "setterModel" : {
                 "variableName" : "value",
                 "variableType" : "AttributeValue",
                 "variableDeclarationType" : "AttributeValue",
                 "documentation" : "",
-                "simpleType" : "AttributeValue",
-                "variableSetterType" : "AttributeValue"
+                "variableSetterType" : "AttributeValue",
+                "simpleType" : "AttributeValue"
               },
               "getterModel" : {
                 "returnType" : "AttributeValue",
@@ -6457,12 +6457,12 @@
               "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
-            "templateType" : "java.util.Map<String,AttributeValue>",
-            "templateImplType" : "java.util.HashMap<String,AttributeValue>",
             "keySimple" : true,
             "valueSimple" : false,
             "valueList" : false,
-            "entryType" : "Map.Entry<String, AttributeValue>"
+            "entryType" : "Map.Entry<String, AttributeValue>",
+            "templateType" : "java.util.Map<String,AttributeValue>",
+            "templateImplType" : "java.util.HashMap<String,AttributeValue>"
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -6498,16 +6498,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The first sequence number.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "startingSequenceNumber",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6550,16 +6550,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The last sequence number.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "endingSequenceNumber",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6599,8 +6599,8 @@
         "variableType" : "SequenceNumberRange",
         "variableDeclarationType" : "SequenceNumberRange",
         "documentation" : null,
-        "simpleType" : "SequenceNumberRange",
-        "variableSetterType" : "SequenceNumberRange"
+        "variableSetterType" : "SequenceNumberRange",
+        "simpleType" : "SequenceNumberRange"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -6625,16 +6625,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The first sequence number.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "startingSequenceNumber",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6678,16 +6678,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The last sequence number.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "endingSequenceNumber",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -6744,16 +6744,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Amazon Resource Name (ARN) for the stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "streamArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6796,16 +6796,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The identifier of the shard. The iterator will be returned for this shard ID.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "shardId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6848,16 +6848,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Determines how the shard iterator is used to start reading stream records from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li> </ul>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "shardIteratorType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6900,16 +6900,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The sequence number of a stream record in the shard from which to start reading.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "sequenceNumber",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -6949,8 +6949,8 @@
         "variableType" : "GetShardIteratorRequest",
         "variableDeclarationType" : "GetShardIteratorRequest",
         "documentation" : null,
-        "simpleType" : "GetShardIteratorRequest",
-        "variableSetterType" : "GetShardIteratorRequest"
+        "variableSetterType" : "GetShardIteratorRequest",
+        "simpleType" : "GetShardIteratorRequest"
       },
       "marshaller" : {
         "action" : "GetShardIterator",
@@ -6979,16 +6979,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The identifier of the shard. The iterator will be returned for this shard ID.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "shardId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7032,16 +7032,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Determines how the shard iterator is used to start reading stream records from the shard:</p> <ul> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li> </ul>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "shardIteratorType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7085,16 +7085,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The sequence number of a stream record in the shard from which to start reading.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "sequenceNumber",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7138,16 +7138,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) for the stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "streamArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7201,8 +7201,8 @@
         "variableType" : "ExpiredIteratorException",
         "variableDeclarationType" : "ExpiredIteratorException",
         "documentation" : null,
-        "simpleType" : "ExpiredIteratorException",
-        "variableSetterType" : "ExpiredIteratorException"
+        "variableSetterType" : "ExpiredIteratorException",
+        "simpleType" : "ExpiredIteratorException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -7236,16 +7236,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The Amazon Resource Name (ARN) for the stream.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "streamArn",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7288,16 +7288,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <i>StreamLabel</i> </p> </li> </ul>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "streamLabel",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7340,16 +7340,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Indicates the current status of the stream:</p> <ul> <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li> <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li> <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li> </ul>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "streamStatus",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7392,16 +7392,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>Indicates the format of the records within this stream:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li> <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li> </ul>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "streamViewType",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7444,16 +7444,16 @@
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "<p>The date and time when the request to create this stream was issued.</p>",
-          "simpleType" : "Date",
-          "variableSetterType" : "java.util.Date"
+          "variableSetterType" : "java.util.Date",
+          "simpleType" : "Date"
         },
         "setterModel" : {
           "variableName" : "creationRequestDateTime",
           "variableType" : "java.util.Date",
           "variableDeclarationType" : "java.util.Date",
           "documentation" : "",
-          "simpleType" : "Date",
-          "variableSetterType" : "java.util.Date"
+          "variableSetterType" : "java.util.Date",
+          "simpleType" : "Date"
         },
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -7496,16 +7496,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The DynamoDB table with which the stream is associated.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "tableName",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7548,16 +7548,16 @@
           "variableType" : "java.util.List<KeySchemaElement>",
           "variableDeclarationType" : "java.util.List<KeySchemaElement>",
           "documentation" : "<p>The key attribute(s) of the stream's DynamoDB table.</p>",
-          "simpleType" : "List<KeySchemaElement>",
-          "variableSetterType" : "java.util.Collection<KeySchemaElement>"
+          "variableSetterType" : "java.util.Collection<KeySchemaElement>",
+          "simpleType" : "List<KeySchemaElement>"
         },
         "setterModel" : {
           "variableName" : "keySchema",
           "variableType" : "java.util.List<KeySchemaElement>",
           "variableDeclarationType" : "java.util.List<KeySchemaElement>",
           "documentation" : "",
-          "simpleType" : "List<KeySchemaElement>",
-          "variableSetterType" : "java.util.Collection<KeySchemaElement>"
+          "variableSetterType" : "java.util.Collection<KeySchemaElement>",
+          "simpleType" : "List<KeySchemaElement>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<KeySchemaElement>",
@@ -7593,16 +7593,16 @@
               "variableType" : "KeySchemaElement",
               "variableDeclarationType" : "KeySchemaElement",
               "documentation" : "",
-              "simpleType" : "KeySchemaElement",
-              "variableSetterType" : "KeySchemaElement"
+              "variableSetterType" : "KeySchemaElement",
+              "simpleType" : "KeySchemaElement"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "KeySchemaElement",
               "variableDeclarationType" : "KeySchemaElement",
               "documentation" : "",
-              "simpleType" : "KeySchemaElement",
-              "variableSetterType" : "KeySchemaElement"
+              "variableSetterType" : "KeySchemaElement",
+              "simpleType" : "KeySchemaElement"
             },
             "getterModel" : {
               "returnType" : "KeySchemaElement",
@@ -7667,16 +7667,16 @@
           "variableType" : "java.util.List<Shard>",
           "variableDeclarationType" : "java.util.List<Shard>",
           "documentation" : "<p>The shards that comprise the stream.</p>",
-          "simpleType" : "List<Shard>",
-          "variableSetterType" : "java.util.Collection<Shard>"
+          "variableSetterType" : "java.util.Collection<Shard>",
+          "simpleType" : "List<Shard>"
         },
         "setterModel" : {
           "variableName" : "shards",
           "variableType" : "java.util.List<Shard>",
           "variableDeclarationType" : "java.util.List<Shard>",
           "documentation" : "",
-          "simpleType" : "List<Shard>",
-          "variableSetterType" : "java.util.Collection<Shard>"
+          "variableSetterType" : "java.util.Collection<Shard>",
+          "simpleType" : "List<Shard>"
         },
         "getterModel" : {
           "returnType" : "java.util.List<Shard>",
@@ -7712,16 +7712,16 @@
               "variableType" : "Shard",
               "variableDeclarationType" : "Shard",
               "documentation" : "",
-              "simpleType" : "Shard",
-              "variableSetterType" : "Shard"
+              "variableSetterType" : "Shard",
+              "simpleType" : "Shard"
             },
             "setterModel" : {
               "variableName" : "member",
               "variableType" : "Shard",
               "variableDeclarationType" : "Shard",
               "documentation" : "",
-              "simpleType" : "Shard",
-              "variableSetterType" : "Shard"
+              "variableSetterType" : "Shard",
+              "simpleType" : "Shard"
             },
             "getterModel" : {
               "returnType" : "Shard",
@@ -7786,16 +7786,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedShardId</code> is empty, then the \"last page\" of results has been processed and there is currently no more data to be retrieved.</p> <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "lastEvaluatedShardId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -7835,8 +7835,8 @@
         "variableType" : "StreamDescription",
         "variableDeclarationType" : "StreamDescription",
         "documentation" : null,
-        "simpleType" : "StreamDescription",
-        "variableSetterType" : "StreamDescription"
+        "variableSetterType" : "StreamDescription",
+        "simpleType" : "StreamDescription"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -7861,16 +7861,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The DynamoDB table with which the stream is associated.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "tableName",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7914,16 +7914,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the <i>StreamLabel</i> </p> </li> </ul>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "streamLabel",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -7967,16 +7967,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Indicates the format of the records within this stream:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li> <li> <p> <code>NEW_IMAGE</code> - entire items from the table, as they appeared after they were modified.</p> </li> <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li> </ul>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "streamViewType",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8020,16 +8020,16 @@
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "<p>The date and time when the request to create this stream was issued.</p>",
-            "simpleType" : "Date",
-            "variableSetterType" : "java.util.Date"
+            "variableSetterType" : "java.util.Date",
+            "simpleType" : "Date"
           },
           "setterModel" : {
             "variableName" : "creationRequestDateTime",
             "variableType" : "java.util.Date",
             "variableDeclarationType" : "java.util.Date",
             "documentation" : "",
-            "simpleType" : "Date",
-            "variableSetterType" : "java.util.Date"
+            "variableSetterType" : "java.util.Date",
+            "simpleType" : "Date"
           },
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -8073,16 +8073,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p> <p>If <code>LastEvaluatedShardId</code> is empty, then the \"last page\" of results has been processed and there is currently no more data to be retrieved.</p> <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "lastEvaluatedShardId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8126,16 +8126,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>Indicates the current status of the stream:</p> <ul> <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li> <li> <p> <code>ENABLED</code> - the stream is enabled.</p> </li> <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li> <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li> </ul>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "streamStatus",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8179,16 +8179,16 @@
             "variableType" : "java.util.List<KeySchemaElement>",
             "variableDeclarationType" : "java.util.List<KeySchemaElement>",
             "documentation" : "<p>The key attribute(s) of the stream's DynamoDB table.</p>",
-            "simpleType" : "List<KeySchemaElement>",
-            "variableSetterType" : "java.util.Collection<KeySchemaElement>"
+            "variableSetterType" : "java.util.Collection<KeySchemaElement>",
+            "simpleType" : "List<KeySchemaElement>"
           },
           "setterModel" : {
             "variableName" : "keySchema",
             "variableType" : "java.util.List<KeySchemaElement>",
             "variableDeclarationType" : "java.util.List<KeySchemaElement>",
             "documentation" : "",
-            "simpleType" : "List<KeySchemaElement>",
-            "variableSetterType" : "java.util.Collection<KeySchemaElement>"
+            "variableSetterType" : "java.util.Collection<KeySchemaElement>",
+            "simpleType" : "List<KeySchemaElement>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<KeySchemaElement>",
@@ -8224,16 +8224,16 @@
                 "variableType" : "KeySchemaElement",
                 "variableDeclarationType" : "KeySchemaElement",
                 "documentation" : "",
-                "simpleType" : "KeySchemaElement",
-                "variableSetterType" : "KeySchemaElement"
+                "variableSetterType" : "KeySchemaElement",
+                "simpleType" : "KeySchemaElement"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "KeySchemaElement",
                 "variableDeclarationType" : "KeySchemaElement",
                 "documentation" : "",
-                "simpleType" : "KeySchemaElement",
-                "variableSetterType" : "KeySchemaElement"
+                "variableSetterType" : "KeySchemaElement",
+                "simpleType" : "KeySchemaElement"
               },
               "getterModel" : {
                 "returnType" : "KeySchemaElement",
@@ -8299,16 +8299,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) for the stream.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "streamArn",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8352,16 +8352,16 @@
             "variableType" : "java.util.List<Shard>",
             "variableDeclarationType" : "java.util.List<Shard>",
             "documentation" : "<p>The shards that comprise the stream.</p>",
-            "simpleType" : "List<Shard>",
-            "variableSetterType" : "java.util.Collection<Shard>"
+            "variableSetterType" : "java.util.Collection<Shard>",
+            "simpleType" : "List<Shard>"
           },
           "setterModel" : {
             "variableName" : "shards",
             "variableType" : "java.util.List<Shard>",
             "variableDeclarationType" : "java.util.List<Shard>",
             "documentation" : "",
-            "simpleType" : "List<Shard>",
-            "variableSetterType" : "java.util.Collection<Shard>"
+            "variableSetterType" : "java.util.Collection<Shard>",
+            "simpleType" : "List<Shard>"
           },
           "getterModel" : {
             "returnType" : "java.util.List<Shard>",
@@ -8397,16 +8397,16 @@
                 "variableType" : "Shard",
                 "variableDeclarationType" : "Shard",
                 "documentation" : "",
-                "simpleType" : "Shard",
-                "variableSetterType" : "Shard"
+                "variableSetterType" : "Shard",
+                "simpleType" : "Shard"
               },
               "setterModel" : {
                 "variableName" : "member",
                 "variableType" : "Shard",
                 "variableDeclarationType" : "Shard",
                 "documentation" : "",
-                "simpleType" : "Shard",
-                "variableSetterType" : "Shard"
+                "variableSetterType" : "Shard",
+                "simpleType" : "Shard"
               },
               "getterModel" : {
                 "returnType" : "Shard",
@@ -8482,8 +8482,8 @@
         "variableType" : "InternalServerErrorException",
         "variableDeclarationType" : "InternalServerErrorException",
         "documentation" : null,
-        "simpleType" : "InternalServerErrorException",
-        "variableSetterType" : "InternalServerErrorException"
+        "variableSetterType" : "InternalServerErrorException",
+        "simpleType" : "InternalServerErrorException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -8514,8 +8514,8 @@
         "variableType" : "LimitExceededException",
         "variableDeclarationType" : "LimitExceededException",
         "documentation" : null,
-        "simpleType" : "LimitExceededException",
-        "variableSetterType" : "LimitExceededException"
+        "variableSetterType" : "LimitExceededException",
+        "simpleType" : "LimitExceededException"
       },
       "marshaller" : null,
       "unmarshaller" : null,
@@ -8555,8 +8555,8 @@
         "variableType" : "OperationType",
         "variableDeclarationType" : "OperationType",
         "documentation" : null,
-        "simpleType" : "OperationType",
-        "variableSetterType" : "OperationType"
+        "variableSetterType" : "OperationType",
+        "simpleType" : "OperationType"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -8593,16 +8593,16 @@
           "variableType" : "StreamDescription",
           "variableDeclarationType" : "StreamDescription",
           "documentation" : "<p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>",
-          "simpleType" : "StreamDescription",
-          "variableSetterType" : "StreamDescription"
+          "variableSetterType" : "StreamDescription",
+          "simpleType" : "StreamDescription"
         },
         "setterModel" : {
           "variableName" : "streamDescription",
           "variableType" : "StreamDescription",
           "variableDeclarationType" : "StreamDescription",
           "documentation" : "",
-          "simpleType" : "StreamDescription",
-          "variableSetterType" : "StreamDescription"
+          "variableSetterType" : "StreamDescription",
+          "simpleType" : "StreamDescription"
         },
         "getterModel" : {
           "returnType" : "StreamDescription",
@@ -8642,8 +8642,8 @@
         "variableType" : "DescribeStreamResult",
         "variableDeclarationType" : "DescribeStreamResult",
         "documentation" : null,
-        "simpleType" : "DescribeStreamResult",
-        "variableSetterType" : "DescribeStreamResult"
+        "variableSetterType" : "DescribeStreamResult",
+        "simpleType" : "DescribeStreamResult"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -8668,16 +8668,16 @@
             "variableType" : "StreamDescription",
             "variableDeclarationType" : "StreamDescription",
             "documentation" : "<p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>",
-            "simpleType" : "StreamDescription",
-            "variableSetterType" : "StreamDescription"
+            "variableSetterType" : "StreamDescription",
+            "simpleType" : "StreamDescription"
           },
           "setterModel" : {
             "variableName" : "streamDescription",
             "variableType" : "StreamDescription",
             "variableDeclarationType" : "StreamDescription",
             "documentation" : "",
-            "simpleType" : "StreamDescription",
-            "variableSetterType" : "StreamDescription"
+            "variableSetterType" : "StreamDescription",
+            "simpleType" : "StreamDescription"
           },
           "getterModel" : {
             "returnType" : "StreamDescription",
@@ -8734,16 +8734,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The system-generated identifier for this shard.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "shardId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8786,16 +8786,16 @@
           "variableType" : "SequenceNumberRange",
           "variableDeclarationType" : "SequenceNumberRange",
           "documentation" : "<p>The range of possible sequence numbers for the shard.</p>",
-          "simpleType" : "SequenceNumberRange",
-          "variableSetterType" : "SequenceNumberRange"
+          "variableSetterType" : "SequenceNumberRange",
+          "simpleType" : "SequenceNumberRange"
         },
         "setterModel" : {
           "variableName" : "sequenceNumberRange",
           "variableType" : "SequenceNumberRange",
           "variableDeclarationType" : "SequenceNumberRange",
           "documentation" : "",
-          "simpleType" : "SequenceNumberRange",
-          "variableSetterType" : "SequenceNumberRange"
+          "variableSetterType" : "SequenceNumberRange",
+          "simpleType" : "SequenceNumberRange"
         },
         "getterModel" : {
           "returnType" : "SequenceNumberRange",
@@ -8838,16 +8838,16 @@
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "<p>The shard ID of the current shard's parent.</p>",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "setterModel" : {
           "variableName" : "parentShardId",
           "variableType" : "String",
           "variableDeclarationType" : "String",
           "documentation" : "",
-          "simpleType" : "String",
-          "variableSetterType" : "String"
+          "variableSetterType" : "String",
+          "simpleType" : "String"
         },
         "getterModel" : {
           "returnType" : "String",
@@ -8887,8 +8887,8 @@
         "variableType" : "Shard",
         "variableDeclarationType" : "Shard",
         "documentation" : null,
-        "simpleType" : "Shard",
-        "variableSetterType" : "Shard"
+        "variableSetterType" : "Shard",
+        "simpleType" : "Shard"
       },
       "marshaller" : null,
       "unmarshaller" : {
@@ -8913,16 +8913,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The system-generated identifier for this shard.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "shardId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -8966,16 +8966,16 @@
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "<p>The shard ID of the current shard's parent.</p>",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "setterModel" : {
             "variableName" : "parentShardId",
             "variableType" : "String",
             "variableDeclarationType" : "String",
             "documentation" : "",
-            "simpleType" : "String",
-            "variableSetterType" : "String"
+            "variableSetterType" : "String",
+            "simpleType" : "String"
           },
           "getterModel" : {
             "returnType" : "String",
@@ -9019,16 +9019,16 @@
             "variableType" : "SequenceNumberRange",
             "variableDeclarationType" : "SequenceNumberRange",
             "documentation" : "<p>The range of possible sequence numbers for the shard.</p>",
-            "simpleType" : "SequenceNumberRange",
-            "variableSetterType" : "SequenceNumberRange"
+            "variableSetterType" : "SequenceNumberRange",
+            "simpleType" : "SequenceNumberRange"
           },
           "setterModel" : {
             "variableName" : "sequenceNumberRange",
             "variableType" : "SequenceNumberRange",
             "variableDeclarationType" : "SequenceNumberRange",
             "documentation" : "",
-            "simpleType" : "SequenceNumberRange",
-            "variableSetterType" : "SequenceNumberRange"
+            "variableSetterType" : "SequenceNumberRange",
+            "simpleType" : "SequenceNumberRange"
           },
           "getterModel" : {
             "returnType" : "SequenceNumberRange",
@@ -9147,11 +9147,11 @@
     "examples" : { },
     "version" : "1.0"
   },
-  "sdkModeledExceptionBaseClassName" : "AmazonDynamoDBException",
   "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "clientConfigFactory" : "ClientConfigurationFactory",
   "exceptionUnmarshallerImpl" : null,
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
   "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException",
-  "hasWaiters" : false
+  "hasWaiters" : false,
+  "sdkModeledExceptionBaseClassName" : "AmazonDynamoDBException"
 }

@@ -14,16 +14,13 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.Id;
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties.Bean;
-import com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties.Builder;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardBeanProperties.Beans;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-
-import java.util.Map;
 import java.util.regex.Pattern;
 
 /**
@@ -136,22 +133,25 @@ public @interface DynamoDBDelimited {
          * @param annotation The annotation.
          */
         public Converter(final Class<T> targetType, final DynamoDBDelimited annotation) {
+            final Beans<T> beans = StandardBeanProperties.of(targetType, true);
+
             final String[] names = annotation.attributeNames();
             if (names.length <= 1) {
-                throw new DynamoDBMappingException("@DynamoDBDelimited missing attributeNames" +
-                    "; must specify two or more attribute names");
+                throw new DynamoDBMappingException(beans.id().err(
+                    "missing attributeNames in @DynamoDBDelimited; must specify two or more attribute names"));
             }
-            final Map<String,Bean<T,Object>> beans = new Builder(targetType, true).build();
-            this.fields = new Field[names.length];
-            for (int i = 0; i < fields.length; i ++) {
-                if (!beans.containsKey(names[i])) {
-                    throw new DynamoDBMappingException(new Id(targetType, names[i])
-                        .format("not mapped on object model %s", beans.keySet()));
-                }
-                this.fields[i] = new Field<T,Object>(targetType, beans.get(names[i]));
-            }
+
             this.delimiter = String.valueOf(annotation.delimiter());
+            this.fields = new Field[names.length];
             this.targetType = targetType;
+
+            for (int i = 0; i < fields.length; i ++) {
+                if (beans.map().containsKey(names[i]) == false) {
+                    throw new DynamoDBMappingException(beans.id().err(
+                        "does not map %s on model", names[i]));
+                }
+                this.fields[i] = new Field<T,Object>(targetType, beans.map().get(names[i]));
+            }
         }
 
         /**
@@ -167,8 +167,8 @@ public @interface DynamoDBDelimited {
                 final String value = fields[i].get(object);
                 if (value != null) {
                     if (value.contains(delimiter)) {
-                        throw new DynamoDBMappingException(fields[i].bean.id()
-                            .format("must not contain delimiter %s" + delimiter));
+                        throw new DynamoDBMappingException(fields[i].bean.id().err(
+                            "must not contain delimiter %s" + delimiter));
                     }
                     string.append(value);
                 }
@@ -202,10 +202,10 @@ public @interface DynamoDBDelimited {
             private final Bean<T,V> bean;
 
             private Field(final Class<T> type, final Bean<T,V> bean) {
-                if (bean.annotations().typeConverted() == null) {
-                    this.converter = StandardTypeConverters.converter(String.class, bean.type().type());
+                if (bean.typeConverter() == null) {
+                    this.converter = StandardTypeConverters.Scalar.STRING.join(bean.targetType());
                 } else {
-                    this.converter = bean.annotations().typeConverter();
+                    this.converter = bean.typeConverter();
                 }
                 this.bean = bean;
             }

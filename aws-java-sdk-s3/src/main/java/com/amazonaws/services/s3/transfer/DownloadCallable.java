@@ -67,6 +67,7 @@ final class DownloadCallable implements Callable<File> {
     private final List<Future<File>> futureFiles;
     private final boolean isDownloadParallel;
     private Integer lastFullyMergedPartNumber;
+    private final boolean resumeOnRetry;
 
     private long expectedFileLength;
 
@@ -76,7 +77,7 @@ final class DownloadCallable implements Callable<File> {
             long expectedFileLength, long timeout,
             ScheduledExecutorService timedExecutor,
             ExecutorService executor,
-            Integer lastFullyDownloadedPartNumber, boolean isDownloadParallel)
+            Integer lastFullyDownloadedPartNumber, boolean isDownloadParallel, boolean resumeOnRetry)
     {
         if (s3 == null || latch == null || req == null || dstfile == null || download == null)
             throw new IllegalArgumentException();
@@ -94,6 +95,7 @@ final class DownloadCallable implements Callable<File> {
         this.futureFiles = new ArrayList<Future<File>>();
         this.lastFullyMergedPartNumber = lastFullyDownloadedPartNumber;
         this.isDownloadParallel = isDownloadParallel;
+        this.resumeOnRetry = resumeOnRetry;
     }
 
     /**
@@ -130,8 +132,7 @@ final class DownloadCallable implements Callable<File> {
                 download.setState(TransferState.Completed);
             } else {
                 S3Object s3Object = retryableDownloadS3ObjectToFile(dstfile,
-                        new DownloadTaskImpl(s3, download, req),
-                        resumeExistingDownload);
+                        new DownloadTaskImpl(s3, download, req));
                 updateDownloadStatus(s3Object);
             }
             return dstfile;
@@ -276,11 +277,12 @@ final class DownloadCallable implements Callable<File> {
 
 
     private S3Object retryableDownloadS3ObjectToFile(File file,
-            RetryableS3DownloadTask retryableS3DownloadTask, boolean appendData) {
+            RetryableS3DownloadTask retryableS3DownloadTask) {
         boolean hasRetried = false;
         S3Object s3Object;
         for (;;) {
-            if (resumeExistingDownload && hasRetried) {
+            final boolean appendData = resumeExistingDownload || (resumeOnRetry && hasRetried);
+            if (appendData && hasRetried) {
                 // Need to adjust the get range or else we risk corrupting the downloaded file
                 adjustRequest(req);
             }
@@ -303,8 +305,11 @@ final class DownloadCallable implements Callable<File> {
                 //      1) SocketException or SSLProtocolException when writing to disk (e.g. when user aborts the download)
                 //      2) Other IOException when writing to disk
                 //      3) MD5 hashes don't match
-                // The current code will retry the download only when case 2) or 3) happens.
-                if (ace.getCause() instanceof SocketException || ace.getCause() instanceof SSLProtocolException) {
+                // For 1) If SocketException is the result of the client side resetting the connection, this is retried
+                // Cases 2) and 3) will always be retried
+                final Throwable cause = ace.getCause();
+                if ((cause instanceof SocketException && !cause.getMessage().equals("Connection reset"))
+                    || (cause instanceof SSLProtocolException)) {
                     throw ace;
                 } else {
                     if (hasRetried)

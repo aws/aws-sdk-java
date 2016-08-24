@@ -49,5 +49,10 @@ public class GenerateDeleteTableRequestTest {
 
     @DynamoDBTable(tableName = TABLE_NAME)
     private static class ObjectORMExample {
+        private String id;
+
+        @DynamoDBHashKey
+        public final String getId() { return this.id; }
+        public final void setId(String id) { this.id = id; }
     }
 }

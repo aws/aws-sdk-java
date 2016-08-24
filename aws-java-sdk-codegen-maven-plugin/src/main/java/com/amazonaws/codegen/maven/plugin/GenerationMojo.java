@@ -34,6 +34,7 @@ import com.amazonaws.codegen.ant.task.CodeGeneratorTask;
 public class GenerationMojo extends AbstractMojo {
 
     private static final String P_MODEL_FILE = "modelFile";
+    private static final String P_WAITERS_FILE = "waiterFile";
     private static final String P_EXAMPLES_FILE = "examplesFile";
     private static final String P_CODEGEN_CONFIG_FILE = "codeGenConfigFile";
     private static final String P_CUSTOMIZATION_CONFIG_FILE = "customizationConfigFile";
@@ -44,6 +45,9 @@ public class GenerationMojo extends AbstractMojo {
 
     @Parameter(property = P_CODEGEN_CONFIG_FILE, required = true, defaultValue = "code-gen/codegen.config")
     private String codeGenConfigLocation;
+
+    @Parameter(property = P_WAITERS_FILE, required = false, defaultValue = "code-gen/waiters.json")
+    private String waitersModelLocation;
 
     @Parameter(property = P_CUSTOMIZATION_CONFIG_FILE, required = false, defaultValue = "code-gen/customization.config")
     private String customizationConfigLocation;
@@ -69,6 +73,7 @@ public class GenerationMojo extends AbstractMojo {
         }
 
         setPropertyIfFileExists(P_MODEL_FILE, resourcesDirectory, serviceModelLocation);
+        setPropertyIfFileExists(P_WAITERS_FILE, resourcesDirectory, waitersModelLocation);
         setPropertyIfFileExists(P_CODEGEN_CONFIG_FILE, resourcesDirectory, codeGenConfigLocation);
         setPropertyIfFileExists(P_CUSTOMIZATION_CONFIG_FILE, resourcesDirectory, customizationConfigLocation);
         setPropertyIfFileExists(P_EXAMPLES_FILE, resourcesDirectory, serviceExamplesLocation);

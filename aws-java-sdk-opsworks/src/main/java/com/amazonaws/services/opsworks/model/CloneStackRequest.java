@@ -37,8 +37,8 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
     private String name;
     /**
      * <p>
-     * The cloned stack AWS region, such as "us-east-1". For more information
-     * about AWS regions, see <a
+     * The cloned stack AWS region, such as "ap-northeast-2". For more
+     * information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
      * </p>
@@ -530,14 +530,14 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The cloned stack AWS region, such as "us-east-1". For more information
-     * about AWS regions, see <a
+     * The cloned stack AWS region, such as "ap-northeast-2". For more
+     * information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
      * </p>
      * 
      * @param region
-     *        The cloned stack AWS region, such as "us-east-1". For more
+     *        The cloned stack AWS region, such as "ap-northeast-2". For more
      *        information about AWS regions, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *        >Regions and Endpoints</a>.
@@ -549,13 +549,13 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The cloned stack AWS region, such as "us-east-1". For more information
-     * about AWS regions, see <a
+     * The cloned stack AWS region, such as "ap-northeast-2". For more
+     * information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
      * </p>
      * 
-     * @return The cloned stack AWS region, such as "us-east-1". For more
+     * @return The cloned stack AWS region, such as "ap-northeast-2". For more
      *         information about AWS regions, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *         >Regions and Endpoints</a>.
@@ -567,14 +567,14 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The cloned stack AWS region, such as "us-east-1". For more information
-     * about AWS regions, see <a
+     * The cloned stack AWS region, such as "ap-northeast-2". For more
+     * information about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
      * </p>
      * 
      * @param region
-     *        The cloned stack AWS region, such as "us-east-1". For more
+     *        The cloned stack AWS region, such as "ap-northeast-2". For more
      *        information about AWS regions, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *        >Regions and Endpoints</a>.

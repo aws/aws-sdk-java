@@ -3323,7 +3323,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Modify settings for a DB instance. You can change one or more database
+     * Modifies settings for a DB instance. You can change one or more database
      * configuration parameters by specifying these parameters and the new
      * values in the request.
      * </p>
@@ -3338,7 +3338,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Modify settings for a DB instance. You can change one or more database
+     * Modifies settings for a DB instance. You can change one or more database
      * configuration parameters by specifying these parameters and the new
      * values in the request.
      * </p>

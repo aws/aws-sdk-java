@@ -16,7 +16,7 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 
 import java.util.UUID;
 
-public class RandomUUIDMarshaller implements DynamoDBMarshaller<Object> {
+public class RandomUUIDMarshaller implements DynamoDBMarshaller<Object>, DynamoDBTypeConverter<String,Object> {
 
     public static final String randomUUID = UUID.randomUUID().toString();
 
@@ -29,4 +29,15 @@ public class RandomUUIDMarshaller implements DynamoDBMarshaller<Object> {
     public Object unmarshall(Class<Object> clazz, String obj) {
         return null;
     }
+
+    @Override
+    public String convert(final Object object) {
+        return randomUUID;
+    }
+
+    @Override
+    public Object unconvert(final String object) {
+        return null;
+    }
+
 }

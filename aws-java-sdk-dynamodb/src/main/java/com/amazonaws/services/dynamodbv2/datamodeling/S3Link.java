@@ -21,6 +21,7 @@ import java.io.OutputStream;
 import java.net.URL;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
@@ -501,4 +502,43 @@ public class S3Link {
             return regionId;
         }
     }
+
+    /**
+     * {@link S3Link} factory.
+     */
+    public static final class Factory implements DynamoDBTypeConverter<String,S3Link> {
+        static final Factory DEFAULT = new Factory((S3ClientCache)null);
+
+        public static final Factory of(final AWSCredentialsProvider provider) {
+            return provider == null ? DEFAULT : new Factory(new S3ClientCache(provider));
+        }
+
+        private final S3ClientCache s3cc;
+
+        public Factory(final S3ClientCache s3cc) {
+            this.s3cc = s3cc;
+        }
+
+        public S3Link createS3Link(Region s3region, String bucketName, String key) {
+            if (getS3ClientCache() == null) {
+                throw new IllegalStateException("Mapper must be constructed with S3 AWS Credentials to create S3Link");
+            }
+            return new S3Link(getS3ClientCache(), s3region, bucketName, key);
+        }
+
+        public S3ClientCache getS3ClientCache() {
+            return this.s3cc;
+        }
+
+        @Override
+        public String convert(final S3Link o) {
+            return o.getBucketName() == null || o.getKey() == null ? null : o.toJson();
+        }
+
+        @Override
+        public S3Link unconvert(final String o) {
+            return S3Link.fromJson(getS3ClientCache(), o);
+        }
+    }
+
 }

@@ -86,6 +86,8 @@ public class DBSecurityGroup implements Serializable, Cloneable {
      */
     private com.amazonaws.internal.SdkInternalList<IPRange> iPRanges;
 
+    private String dBSecurityGroupArn;
+
     /**
      * <p>
      * Provides the AWS ID of the owner of a specific DB security group.
@@ -411,6 +413,33 @@ public class DBSecurityGroup implements Serializable, Cloneable {
     }
 
     /**
+     * @param dBSecurityGroupArn
+     */
+
+    public void setDBSecurityGroupArn(String dBSecurityGroupArn) {
+        this.dBSecurityGroupArn = dBSecurityGroupArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDBSecurityGroupArn() {
+        return this.dBSecurityGroupArn;
+    }
+
+    /**
+     * @param dBSecurityGroupArn
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBSecurityGroup withDBSecurityGroupArn(String dBSecurityGroupArn) {
+        setDBSecurityGroupArn(dBSecurityGroupArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -434,7 +463,9 @@ public class DBSecurityGroup implements Serializable, Cloneable {
         if (getEC2SecurityGroups() != null)
             sb.append("EC2SecurityGroups: " + getEC2SecurityGroups() + ",");
         if (getIPRanges() != null)
-            sb.append("IPRanges: " + getIPRanges());
+            sb.append("IPRanges: " + getIPRanges() + ",");
+        if (getDBSecurityGroupArn() != null)
+            sb.append("DBSecurityGroupArn: " + getDBSecurityGroupArn());
         sb.append("}");
         return sb.toString();
     }
@@ -485,6 +516,13 @@ public class DBSecurityGroup implements Serializable, Cloneable {
         if (other.getIPRanges() != null
                 && other.getIPRanges().equals(this.getIPRanges()) == false)
             return false;
+        if (other.getDBSecurityGroupArn() == null
+                ^ this.getDBSecurityGroupArn() == null)
+            return false;
+        if (other.getDBSecurityGroupArn() != null
+                && other.getDBSecurityGroupArn().equals(
+                        this.getDBSecurityGroupArn()) == false)
+            return false;
         return true;
     }
 
@@ -511,6 +549,10 @@ public class DBSecurityGroup implements Serializable, Cloneable {
                         : getEC2SecurityGroups().hashCode());
         hashCode = prime * hashCode
                 + ((getIPRanges() == null) ? 0 : getIPRanges().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDBSecurityGroupArn() == null) ? 0
+                        : getDBSecurityGroupArn().hashCode());
         return hashCode;
     }
 

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodbv2.pojos;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMarshalling;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBNativeBoolean;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
@@ -32,6 +33,10 @@ import java.util.UUID;
 
 @DynamoDBTable(tableName="nonexisting-test-tablename")
 public class TestClass {
+
+    @DynamoDBHashKey
+    public String getId() { return null; }
+    public void setId(String id) { }
 
     public boolean getBoolean() { return false; }
     public void setBoolean(boolean value) { }

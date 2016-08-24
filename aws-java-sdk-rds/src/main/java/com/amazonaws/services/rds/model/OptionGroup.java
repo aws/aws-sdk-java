@@ -72,6 +72,8 @@ public class OptionGroup implements Serializable, Cloneable {
      */
     private String vpcId;
 
+    private String optionGroupArn;
+
     /**
      * <p>
      * Specifies the name of the option group.
@@ -469,6 +471,33 @@ public class OptionGroup implements Serializable, Cloneable {
     }
 
     /**
+     * @param optionGroupArn
+     */
+
+    public void setOptionGroupArn(String optionGroupArn) {
+        this.optionGroupArn = optionGroupArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getOptionGroupArn() {
+        return this.optionGroupArn;
+    }
+
+    /**
+     * @param optionGroupArn
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public OptionGroup withOptionGroupArn(String optionGroupArn) {
+        setOptionGroupArn(optionGroupArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -495,7 +524,9 @@ public class OptionGroup implements Serializable, Cloneable {
             sb.append("AllowsVpcAndNonVpcInstanceMemberships: "
                     + getAllowsVpcAndNonVpcInstanceMemberships() + ",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId());
+            sb.append("VpcId: " + getVpcId() + ",");
+        if (getOptionGroupArn() != null)
+            sb.append("OptionGroupArn: " + getOptionGroupArn());
         sb.append("}");
         return sb.toString();
     }
@@ -552,6 +583,12 @@ public class OptionGroup implements Serializable, Cloneable {
         if (other.getVpcId() != null
                 && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getOptionGroupArn() == null
+                ^ this.getOptionGroupArn() == null)
+            return false;
+        if (other.getOptionGroupArn() != null
+                && other.getOptionGroupArn().equals(this.getOptionGroupArn()) == false)
+            return false;
         return true;
     }
 
@@ -582,6 +619,10 @@ public class OptionGroup implements Serializable, Cloneable {
                         : getAllowsVpcAndNonVpcInstanceMemberships().hashCode());
         hashCode = prime * hashCode
                 + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getOptionGroupArn() == null) ? 0 : getOptionGroupArn()
+                        .hashCode());
         return hashCode;
     }
 

@@ -18,6 +18,8 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDeleteExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBSaveExpression;
 import com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException;
+import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
+import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
 import com.amazonaws.services.dynamodbv2.model.ResourceInUseException;
 import com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException;
@@ -136,6 +138,7 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
     private final DynamoDBMapperTableModel<T> model;
     private final DynamoDBMapperFieldModel<T,H> hk;
     private final DynamoDBMapperFieldModel<T,R> rk;
+    private final DynamoDBMapperConfig config;
     private final DynamoDBMapper mapper;
     private final AmazonDynamoDB db;
 
@@ -145,10 +148,11 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
      * @param mapper The DynamoDB mapper.
      * @param db The service object to use for all service calls.
      */
-    protected DynamoDBTableMapper(final DynamoDBMapperTableModel<T> model, final DynamoDBMapper mapper, final AmazonDynamoDB db) {
+    protected DynamoDBTableMapper(final AmazonDynamoDB db, final DynamoDBMapper mapper, final DynamoDBMapperConfig config, final DynamoDBMapperTableModel<T> model) {
         this.rk = model.rangeKeyIfExists();
         this.hk = model.hashKey();
         this.model = model;
+        this.config = config;
         this.mapper = mapper;
         this.db = db;
     }
@@ -184,6 +188,14 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
     }
 
     /**
+     * Gets the underlying DynamoDB config used to initialize this mapper.
+     * @return The DynamoDB config.
+     */
+    public DynamoDBMapperConfig config() {
+        return this.config;
+    }
+
+    /**
      * Retrieves multiple items from the table using their primary keys.
      * @param itemsToGet The items to get.
      * @return The list of objects.
@@ -191,7 +203,7 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
      */
     public final List<T> batchLoad(final Iterable<T> itemsToGet) {
         final Map<String,List<Object>> results = mapper.batchLoad(itemsToGet);
-        return results.isEmpty() ? Collections.<T>emptyList() : (List<T>)results.get(model.tableName());
+        return results.isEmpty() ? Collections.<T>emptyList() : (List<T>)results.get(mapper.getTableName(model.targetType(), config));
     }
 
     /**
@@ -386,7 +398,7 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
      * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTableMapper#queryPage
      */
     public final DynamoDBQueryExpression<T> expressionForKey(final H hashKey) {
-        return new DynamoDBQueryExpression<T>().withHashKeyValues(model.newKey(hashKey, (R)null));
+        return new DynamoDBQueryExpression<T>().withHashKeyValues(model.asKey(hashKey, (R)null));
     }
 
     /**
@@ -436,39 +448,6 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
     }
 
     /**
-     * Creates an S3Link with the specified region, bucket name and key.
-     * @param s3region The S3 region.
-     * @param bucketName The bucket name.
-     * @param key The key.
-     * @return The created S3Link.
-     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper#createS3Link
-     */
-    public final S3Link createS3Link(final Region s3region, final String bucketName, final String key) {
-        return mapper.createS3Link(s3region, bucketName, key);
-    }
-
-    /**
-     * Creates an S3Link with the specified bucket name and key using the
-     * default S3 region.
-     * @param bucketName The bucket name.
-     * @param key The key.
-     * @return The created S3Link.
-     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper#createS3Link
-     */
-    public final S3Link createS3Link(final String bucketName, final String key) {
-        return mapper.createS3Link(bucketName, key);
-    }
-
-    /**
-     * Returns the underlying S3ClientCache for accessing S3.
-     * @return The underlying S3ClientCache.
-     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper#getS3ClientCache
-     */
-    public final S3ClientCache getS3ClientCache() {
-        return mapper.getS3ClientCache();
-    }
-
-    /**
      * Returns information about the table, including the current status of the
      * table, when it was created, the primary key schema, and any indexes on
      * the table.
@@ -476,7 +455,7 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
      * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#describeTable
      */
     public final TableDescription describeTable() {
-        return db.describeTable(model.tableName()).getTable();
+        return db.describeTable(mapper.getTableName(model.targetType(), config)).getTable();
     }
 
     /**
@@ -488,11 +467,13 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
      * @see com.amazonaws.services.dynamodbv2.model.CreateTableRequest
      */
     public final boolean createTableIfNotExists(final ProvisionedThroughput throughput) {
+        final CreateTableRequest request = mapper.generateCreateTableRequest(model.targetType());
+        request.setProvisionedThroughput(throughput);
         try {
-            db.createTable(mapper.generateCreateTableRequest(model.targetType()).withProvisionedThroughput(throughput));
+            db.createTable(request);
         } catch (final ResourceInUseException e) {
             if (LOG.isTraceEnabled()) {
-                LOG.trace("Table " + model.tableName() + " already exists, no need to create", e);
+                LOG.trace("Table " + request.getTableName() + " already exists, no need to create", e);
             }
             return false;
         }
@@ -507,11 +488,12 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
      * @see com.amazonaws.services.dynamodbv2.model.DeleteTableRequest
      */
     public final boolean deleteTableIfExists() {
+        final DeleteTableRequest request = mapper.generateDeleteTableRequest(model.targetType());
         try {
-            db.deleteTable(mapper.generateDeleteTableRequest(model.targetType()));
+            db.deleteTable(request);
         } catch (final ResourceNotFoundException e) {
             if (LOG.isTraceEnabled()) {
-                LOG.trace("Table " + model.tableName() + " does not exist, no need to delete", e);
+                LOG.trace("Table " + request.getTableName() + " does not exist, no need to delete", e);
             }
             return false;
         }

@@ -80,6 +80,8 @@ public class DBSubnetGroup implements Serializable, Cloneable {
      */
     private com.amazonaws.internal.SdkInternalList<Subnet> subnets;
 
+    private String dBSubnetGroupArn;
+
     /**
      * <p>
      * The name of the DB subnet group.
@@ -324,6 +326,33 @@ public class DBSubnetGroup implements Serializable, Cloneable {
     }
 
     /**
+     * @param dBSubnetGroupArn
+     */
+
+    public void setDBSubnetGroupArn(String dBSubnetGroupArn) {
+        this.dBSubnetGroupArn = dBSubnetGroupArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDBSubnetGroupArn() {
+        return this.dBSubnetGroupArn;
+    }
+
+    /**
+     * @param dBSubnetGroupArn
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBSubnetGroup withDBSubnetGroupArn(String dBSubnetGroupArn) {
+        setDBSubnetGroupArn(dBSubnetGroupArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -345,7 +374,9 @@ public class DBSubnetGroup implements Serializable, Cloneable {
         if (getSubnetGroupStatus() != null)
             sb.append("SubnetGroupStatus: " + getSubnetGroupStatus() + ",");
         if (getSubnets() != null)
-            sb.append("Subnets: " + getSubnets());
+            sb.append("Subnets: " + getSubnets() + ",");
+        if (getDBSubnetGroupArn() != null)
+            sb.append("DBSubnetGroupArn: " + getDBSubnetGroupArn());
         sb.append("}");
         return sb.toString();
     }
@@ -391,6 +422,13 @@ public class DBSubnetGroup implements Serializable, Cloneable {
         if (other.getSubnets() != null
                 && other.getSubnets().equals(this.getSubnets()) == false)
             return false;
+        if (other.getDBSubnetGroupArn() == null
+                ^ this.getDBSubnetGroupArn() == null)
+            return false;
+        if (other.getDBSubnetGroupArn() != null
+                && other.getDBSubnetGroupArn().equals(
+                        this.getDBSubnetGroupArn()) == false)
+            return false;
         return true;
     }
 
@@ -415,6 +453,10 @@ public class DBSubnetGroup implements Serializable, Cloneable {
                         : getSubnetGroupStatus().hashCode());
         hashCode = prime * hashCode
                 + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDBSubnetGroupArn() == null) ? 0 : getDBSubnetGroupArn()
+                        .hashCode());
         return hashCode;
     }
 

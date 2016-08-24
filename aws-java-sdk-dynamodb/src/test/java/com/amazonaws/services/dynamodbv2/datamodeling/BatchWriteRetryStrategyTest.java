@@ -190,6 +190,7 @@ public class BatchWriteRetryStrategyTest {
             this.hash = hash;
         }
 
+        @DynamoDBHashKey
         @DynamoDBAttribute(attributeName = HASH_ATTR)
         public String getHash() {
             return hash;

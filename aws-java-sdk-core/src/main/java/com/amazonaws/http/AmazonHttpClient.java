@@ -501,7 +501,7 @@ public class AmazonHttpClient {
             return new ClientExecutionTimeoutException();
         } else {
             Thread.currentThread().interrupt();
-            return new AmazonClientException(e);
+            return new AbortedException(e);
         }
     }
 

@@ -400,6 +400,8 @@ public class DBInstance implements Serializable, Cloneable {
      */
     private Integer promotionTier;
 
+    private String dBInstanceArn;
+
     /**
      * <p>
      * Contains a user-supplied database identifier. This identifier is the
@@ -3194,6 +3196,33 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * @param dBInstanceArn
+     */
+
+    public void setDBInstanceArn(String dBInstanceArn) {
+        this.dBInstanceArn = dBInstanceArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDBInstanceArn() {
+        return this.dBInstanceArn;
+    }
+
+    /**
+     * @param dBInstanceArn
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBInstance withDBInstanceArn(String dBInstanceArn) {
+        setDBInstanceArn(dBInstanceArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -3307,7 +3336,9 @@ public class DBInstance implements Serializable, Cloneable {
         if (getMonitoringRoleArn() != null)
             sb.append("MonitoringRoleArn: " + getMonitoringRoleArn() + ",");
         if (getPromotionTier() != null)
-            sb.append("PromotionTier: " + getPromotionTier());
+            sb.append("PromotionTier: " + getPromotionTier() + ",");
+        if (getDBInstanceArn() != null)
+            sb.append("DBInstanceArn: " + getDBInstanceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -3608,6 +3639,11 @@ public class DBInstance implements Serializable, Cloneable {
         if (other.getPromotionTier() != null
                 && other.getPromotionTier().equals(this.getPromotionTier()) == false)
             return false;
+        if (other.getDBInstanceArn() == null ^ this.getDBInstanceArn() == null)
+            return false;
+        if (other.getDBInstanceArn() != null
+                && other.getDBInstanceArn().equals(this.getDBInstanceArn()) == false)
+            return false;
         return true;
     }
 
@@ -3781,6 +3817,10 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getPromotionTier() == null) ? 0 : getPromotionTier()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDBInstanceArn() == null) ? 0 : getDBInstanceArn()
                         .hashCode());
         return hashCode;
     }

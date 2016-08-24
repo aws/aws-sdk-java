@@ -90,6 +90,12 @@ public class DBSecurityGroupStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("DBSecurityGroupArn", targetDepth)) {
+                    dBSecurityGroup
+                            .setDBSecurityGroupArn(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBSecurityGroup;

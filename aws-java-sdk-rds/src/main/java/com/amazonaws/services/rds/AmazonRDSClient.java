@@ -775,6 +775,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      *         DB cluster snapshot.
      * @throws InvalidDBClusterStateException
      *         The DB cluster is not in a valid state.
+     * @throws InvalidDBClusterSnapshotStateException
+     *         The supplied value is not a valid DB cluster snapshot state.
      * @sample AmazonRDS.CopyDBClusterSnapshot
      */
     @Override
@@ -4202,7 +4204,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Modify settings for a DB instance. You can change one or more database
+     * Modifies settings for a DB instance. You can change one or more database
      * configuration parameters by specifying these parameters and the new
      * values in the request.
      * </p>
@@ -5109,6 +5111,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @throws DBClusterNotFoundException
      *         <i>DBClusterIdentifier</i> does not refer to an existing DB
      *         cluster.
+     * @throws InsufficientStorageClusterCapacityException
+     *         There is insufficient storage available for the current action.
+     *         You may be able to resolve this error by updating your subnet
+     *         group to use different Availability Zones that have more storage
+     *         available.
      * @sample AmazonRDS.RestoreDBClusterFromS3
      */
     @Override
@@ -5282,6 +5289,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements
      * @throws InsufficientDBClusterCapacityException
      *         The DB cluster does not have enough capacity for the current
      *         operation.
+     * @throws InsufficientStorageClusterCapacityException
+     *         There is insufficient storage available for the current action.
+     *         You may be able to resolve this error by updating your subnet
+     *         group to use different Availability Zones that have more storage
+     *         available.
      * @throws InvalidDBSnapshotStateException
      *         The state of the DB snapshot does not allow deletion.
      * @throws InvalidDBClusterSnapshotStateException

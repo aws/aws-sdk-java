@@ -62,7 +62,7 @@ public @interface DynamoDBTypeConvertedEnum {
         private final DynamoDBTypeConverter<String,T> converter;
 
         public Converter(final Class<T> targetType, final DynamoDBTypeConvertedEnum annotation) {
-            this.converter = StandardTypeConverters.converter(String.class, targetType);
+            this.converter = StandardTypeConverters.Scalar.STRING.join(targetType);
         }
 
         @Override

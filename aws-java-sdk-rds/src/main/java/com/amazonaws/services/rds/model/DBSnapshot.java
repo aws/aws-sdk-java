@@ -187,6 +187,8 @@ public class DBSnapshot implements Serializable, Cloneable {
      */
     private String kmsKeyId;
 
+    private String dBSnapshotArn;
+
     /**
      * <p>
      * Specifies the identifier for the DB snapshot.
@@ -1198,6 +1200,33 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * @param dBSnapshotArn
+     */
+
+    public void setDBSnapshotArn(String dBSnapshotArn) {
+        this.dBSnapshotArn = dBSnapshotArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDBSnapshotArn() {
+        return this.dBSnapshotArn;
+    }
+
+    /**
+     * @param dBSnapshotArn
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBSnapshot withDBSnapshotArn(String dBSnapshotArn) {
+        setDBSnapshotArn(dBSnapshotArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1257,7 +1286,9 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (getEncrypted() != null)
             sb.append("Encrypted: " + getEncrypted() + ",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId());
+            sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+        if (getDBSnapshotArn() != null)
+            sb.append("DBSnapshotArn: " + getDBSnapshotArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1406,6 +1437,11 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (other.getKmsKeyId() != null
                 && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getDBSnapshotArn() == null ^ this.getDBSnapshotArn() == null)
+            return false;
+        if (other.getDBSnapshotArn() != null
+                && other.getDBSnapshotArn().equals(this.getDBSnapshotArn()) == false)
+            return false;
         return true;
     }
 
@@ -1491,6 +1527,10 @@ public class DBSnapshot implements Serializable, Cloneable {
                 + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         hashCode = prime * hashCode
                 + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDBSnapshotArn() == null) ? 0 : getDBSnapshotArn()
+                        .hashCode());
         return hashCode;
     }
 

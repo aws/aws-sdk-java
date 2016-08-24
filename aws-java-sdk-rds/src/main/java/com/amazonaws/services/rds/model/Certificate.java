@@ -54,6 +54,8 @@ public class Certificate implements Serializable, Cloneable {
      */
     private java.util.Date validTill;
 
+    private String certificateArn;
+
     /**
      * <p>
      * The unique key that identifies a certificate.
@@ -260,6 +262,33 @@ public class Certificate implements Serializable, Cloneable {
     }
 
     /**
+     * @param certificateArn
+     */
+
+    public void setCertificateArn(String certificateArn) {
+        this.certificateArn = certificateArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getCertificateArn() {
+        return this.certificateArn;
+    }
+
+    /**
+     * @param certificateArn
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Certificate withCertificateArn(String certificateArn) {
+        setCertificateArn(certificateArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -281,7 +310,9 @@ public class Certificate implements Serializable, Cloneable {
         if (getValidFrom() != null)
             sb.append("ValidFrom: " + getValidFrom() + ",");
         if (getValidTill() != null)
-            sb.append("ValidTill: " + getValidTill());
+            sb.append("ValidTill: " + getValidTill() + ",");
+        if (getCertificateArn() != null)
+            sb.append("CertificateArn: " + getCertificateArn());
         sb.append("}");
         return sb.toString();
     }
@@ -324,6 +355,12 @@ public class Certificate implements Serializable, Cloneable {
         if (other.getValidTill() != null
                 && other.getValidTill().equals(this.getValidTill()) == false)
             return false;
+        if (other.getCertificateArn() == null
+                ^ this.getCertificateArn() == null)
+            return false;
+        if (other.getCertificateArn() != null
+                && other.getCertificateArn().equals(this.getCertificateArn()) == false)
+            return false;
         return true;
     }
 
@@ -346,6 +383,10 @@ public class Certificate implements Serializable, Cloneable {
                 + ((getValidFrom() == null) ? 0 : getValidFrom().hashCode());
         hashCode = prime * hashCode
                 + ((getValidTill() == null) ? 0 : getValidTill().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCertificateArn() == null) ? 0 : getCertificateArn()
+                        .hashCode());
         return hashCode;
     }
 

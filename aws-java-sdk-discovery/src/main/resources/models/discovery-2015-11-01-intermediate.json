@@ -24,12 +24,12 @@
     "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null,
     "syncClientBuilderClassName" : "AWSApplicationDiscoveryClientBuilder",
     "asyncClientBuilderClassName" : "AWSApplicationDiscoveryAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AWSApplicationDiscoveryModuleInjector",
     "smokeTestsPackageName" : "com.amazonaws.services.applicationdiscovery.smoketests",
-    "serviceName" : "AWS Application Discovery Service",
-    "protocolDefaultExceptionUmarshallerImpl" : null
+    "serviceName" : "AWS Application Discovery Service"
   },
   "operations" : {
     "CreateTags" : {

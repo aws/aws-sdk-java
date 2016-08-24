@@ -31,7 +31,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
     private String name;
     /**
      * <p>
-     * The stack's AWS region, such as "us-east-1". For more information about
+     * The stack's AWS region, such as "ap-south-1". For more information about
      * Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
@@ -460,14 +460,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The stack's AWS region, such as "us-east-1". For more information about
+     * The stack's AWS region, such as "ap-south-1". For more information about
      * Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
      * </p>
      * 
      * @param region
-     *        The stack's AWS region, such as "us-east-1". For more information
+     *        The stack's AWS region, such as "ap-south-1". For more information
      *        about Amazon regions, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *        >Regions and Endpoints</a>.
@@ -479,14 +479,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The stack's AWS region, such as "us-east-1". For more information about
+     * The stack's AWS region, such as "ap-south-1". For more information about
      * Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
      * </p>
      * 
-     * @return The stack's AWS region, such as "us-east-1". For more information
-     *         about Amazon regions, see <a
+     * @return The stack's AWS region, such as "ap-south-1". For more
+     *         information about Amazon regions, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *         >Regions and Endpoints</a>.
      */
@@ -497,14 +497,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The stack's AWS region, such as "us-east-1". For more information about
+     * The stack's AWS region, such as "ap-south-1". For more information about
      * Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
      * </p>
      * 
      * @param region
-     *        The stack's AWS region, such as "us-east-1". For more information
+     *        The stack's AWS region, such as "ap-south-1". For more information
      *        about Amazon regions, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *        >Regions and Endpoints</a>.

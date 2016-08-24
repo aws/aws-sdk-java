@@ -188,6 +188,12 @@ public class DBSnapshotStaxUnmarshaller implements
                             .unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("DBSnapshotArn", targetDepth)) {
+                    dBSnapshot.setDBSnapshotArn(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBSnapshot;

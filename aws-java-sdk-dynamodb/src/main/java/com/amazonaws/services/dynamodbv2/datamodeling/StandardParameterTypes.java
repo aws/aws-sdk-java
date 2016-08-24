@@ -16,16 +16,64 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Scalar;
+import com.amazonaws.services.dynamodbv2.datamodeling.StandardTypeConverters.Vector;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.util.Set;
 
 /**
  * Generic type helper.
  */
 @SdkInternalApi
 final class StandardParameterTypes {
+
+    /**
+     * Creates a new parameter type given the generic type.
+     */
+    static final <T> ParamType<T> of(final Type type, Type ... paramTypes) {
+        if (type instanceof Class) {
+            if (paramTypes.length == 0 && Vector.SET.is((Class<?>)type)) {
+                paramTypes = new Type[]{Object.class};
+            }
+            return new ParamType((Class<T>)type, type, paramTypes);
+        } else if (type instanceof ParameterizedType) {
+            if (paramTypes.length == 0) {
+                paramTypes = ((ParameterizedType)type).getActualTypeArguments();
+            }
+            return new ParamType((Class<T>)((ParameterizedType)type).getRawType(), type, paramTypes);
+        } else if (type.toString().equals("byte[]")) {
+            return new ParamType((Class<T>)byte[].class, type, paramTypes);
+        } else {
+            return new ParamType((Class<T>)Object.class, type, paramTypes);
+        }
+    }
+
+    /**
+     * Creates a new parameter type based on the generic source type of the
+     * type-converter instance.
+     */
+    static final <T> ParamType<T> of(final DynamoDBTypeConverter<?,T> converter) {
+        final Class<?> converterType = converter.getClass();
+        if (!converterType.isInterface()) {
+            for (Class<?> c = converterType; Object.class != c; c = c.getSuperclass()) {
+                for (final Type genericType : c.getGenericInterfaces()) {
+                    final ParamType<T> t = StandardParameterTypes.of(genericType);
+                    if (DynamoDBTypeConverter.class.isAssignableFrom(t.type())) {
+                        if (t.params.length == 2 && t.param(0).type() != Object.class) {
+                            return t.param(0);
+                        }
+                    }
+                }
+            }
+            final ParamType<T> t = StandardParameterTypes.of(converterType.getGenericSuperclass());
+            if (DynamoDBTypeConverter.class.isAssignableFrom(t.type())) {
+                if (t.params.length > 0 && t.param(0).type() != Object.class) {
+                    return t.param(0);
+                }
+            }
+        }
+        throw new DynamoDBMappingException("could not resolve type of " + converterType);
+    }
 
     /**
      * Parameterized type.
@@ -42,7 +90,7 @@ final class StandardParameterTypes {
         private ParamType(final Class<T> type, final Type genericType, final Type ... paramTypes) {
             this.params = new ParamType[paramTypes.length];
             for (int i = 0; i < paramTypes.length; i++) {
-                this.params[i] = ParamType.of(paramTypes[i]);
+                this.params[i] = StandardParameterTypes.of(paramTypes[i]);
             }
             this.genericType = genericType;
             this.type = type;
@@ -52,8 +100,8 @@ final class StandardParameterTypes {
         /**
          * Gets the scalar parameter types.
          */
-        final ParamType<T> param(final int index) {
-            return this.params.length > index ? this.params[index] : null;
+        final <t> ParamType<t> param(final int index) {
+            return this.params.length > index ? (ParamType<t>)this.params[index] : null;
         }
 
         /**
@@ -76,53 +124,6 @@ final class StandardParameterTypes {
         @Override
         public String toString() {
             return new StringBuilder().append(scalar).append("[").append(genericType).append("]").toString();
-        }
-
-        /**
-         * Creates a new parameter type given the generic type.
-         */
-        static final <T> ParamType<T> of(final Type type, Type ... paramTypes) {
-            if (type instanceof Class) {
-                if (paramTypes.length == 0 && Set.class.isAssignableFrom((Class<?>)type)) {
-                    paramTypes = new Type[]{Object.class};
-                }
-                return new ParamType((Class<T>)type, type, paramTypes);
-            } else if (type instanceof ParameterizedType) {
-                if (paramTypes.length == 0) {
-                    paramTypes = ((ParameterizedType)type).getActualTypeArguments();
-                }
-                return new ParamType((Class<T>)((ParameterizedType)type).getRawType(), type, paramTypes);
-            } else if (type.toString().equals("byte[]")) {
-                return new ParamType((Class<T>)byte[].class, type, paramTypes);
-            } else {
-                return new ParamType((Class<T>)Object.class, type, paramTypes);
-            }
-        }
-
-        /**
-         * Creates a new parameter type based on the generic source type of the
-         * type-converter instance.
-         */
-        static final <T> ParamType<T> of(final DynamoDBTypeConverter<?,T> converter) {
-            if (!converter.getClass().isInterface()) {
-                for (Class<?> c = converter.getClass(); Object.class != c; c = c.getSuperclass()) {
-                    for (final Type genericType : c.getGenericInterfaces()) {
-                        final ParamType<T> t = ParamType.of(genericType);
-                        if (DynamoDBTypeConverter.class.isAssignableFrom(t.type())) {
-                            if (t.params.length == 2 && t.param(0).type() != Object.class) {
-                                return t.param(0);
-                            }
-                        }
-                    }
-                }
-                final ParamType<T> t = ParamType.of(converter.getClass().getGenericSuperclass());
-                if (DynamoDBTypeConverter.class.isAssignableFrom(t.type())) {
-                    if (t.params.length > 0 && t.param(0).type() != Object.class) {
-                        return t.param(0);
-                    }
-                }
-            }
-            throw new DynamoDBMappingException("could not resolve type of " + converter.getClass());
         }
     }
 

@@ -110,6 +110,8 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      */
     private com.amazonaws.internal.SdkInternalList<RecurringCharge> recurringCharges;
 
+    private String reservedDBInstanceArn;
+
     /**
      * <p>
      * The unique identifier for the reservation.
@@ -740,6 +742,34 @@ public class ReservedDBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * @param reservedDBInstanceArn
+     */
+
+    public void setReservedDBInstanceArn(String reservedDBInstanceArn) {
+        this.reservedDBInstanceArn = reservedDBInstanceArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getReservedDBInstanceArn() {
+        return this.reservedDBInstanceArn;
+    }
+
+    /**
+     * @param reservedDBInstanceArn
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ReservedDBInstance withReservedDBInstanceArn(
+            String reservedDBInstanceArn) {
+        setReservedDBInstanceArn(reservedDBInstanceArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -780,7 +810,9 @@ public class ReservedDBInstance implements Serializable, Cloneable {
         if (getState() != null)
             sb.append("State: " + getState() + ",");
         if (getRecurringCharges() != null)
-            sb.append("RecurringCharges: " + getRecurringCharges());
+            sb.append("RecurringCharges: " + getRecurringCharges() + ",");
+        if (getReservedDBInstanceArn() != null)
+            sb.append("ReservedDBInstanceArn: " + getReservedDBInstanceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -875,6 +907,13 @@ public class ReservedDBInstance implements Serializable, Cloneable {
                 && other.getRecurringCharges().equals(
                         this.getRecurringCharges()) == false)
             return false;
+        if (other.getReservedDBInstanceArn() == null
+                ^ this.getReservedDBInstanceArn() == null)
+            return false;
+        if (other.getReservedDBInstanceArn() != null
+                && other.getReservedDBInstanceArn().equals(
+                        this.getReservedDBInstanceArn()) == false)
+            return false;
         return true;
     }
 
@@ -927,6 +966,10 @@ public class ReservedDBInstance implements Serializable, Cloneable {
                 * hashCode
                 + ((getRecurringCharges() == null) ? 0 : getRecurringCharges()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getReservedDBInstanceArn() == null) ? 0
+                        : getReservedDBInstanceArn().hashCode());
         return hashCode;
     }
 

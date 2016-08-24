@@ -67,24 +67,23 @@ public class OptionGroupOption implements Serializable, Cloneable {
     private Integer defaultPort;
     /**
      * <p>
-     * List of all options that are prerequisites for this option.
+     * The options that are prerequisites for this option.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> optionsDependedOn;
     /**
      * <p>
-     * A persistent option cannot be removed from the option group once the
-     * option group is used, but this option can be removed from the db instance
-     * while modifying the related data and assigning another option group
-     * without this option.
+     * Persistent options can't be removed from an option group while DB
+     * instances are associated with the option group. If you disassociate all
+     * DB instances from the option group, your can remove the persistent option
+     * from the option group.
      * </p>
      */
     private Boolean persistent;
     /**
      * <p>
-     * A permanent option cannot be removed from the option group once the
-     * option group is used, and it cannot be removed from the db instance after
-     * assigning an option group with this permanent option.
+     * Permanent options can never be removed from an option group. An option
+     * group containing a permanent option can't be removed from a DB instance.
      * </p>
      */
     private Boolean permanent;
@@ -97,7 +96,7 @@ public class OptionGroupOption implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<OptionGroupOptionSetting> optionGroupOptionSettings;
     /**
      * <p>
-     * Specifies the versions that are available for the option.
+     * The versions that are available for the option.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OptionVersion> optionGroupOptionVersions;
@@ -411,10 +410,10 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of all options that are prerequisites for this option.
+     * The options that are prerequisites for this option.
      * </p>
      * 
-     * @return List of all options that are prerequisites for this option.
+     * @return The options that are prerequisites for this option.
      */
 
     public java.util.List<String> getOptionsDependedOn() {
@@ -426,11 +425,11 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of all options that are prerequisites for this option.
+     * The options that are prerequisites for this option.
      * </p>
      * 
      * @param optionsDependedOn
-     *        List of all options that are prerequisites for this option.
+     *        The options that are prerequisites for this option.
      */
 
     public void setOptionsDependedOn(
@@ -446,7 +445,7 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of all options that are prerequisites for this option.
+     * The options that are prerequisites for this option.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -456,7 +455,7 @@ public class OptionGroupOption implements Serializable, Cloneable {
      * </p>
      * 
      * @param optionsDependedOn
-     *        List of all options that are prerequisites for this option.
+     *        The options that are prerequisites for this option.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -474,11 +473,11 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of all options that are prerequisites for this option.
+     * The options that are prerequisites for this option.
      * </p>
      * 
      * @param optionsDependedOn
-     *        List of all options that are prerequisites for this option.
+     *        The options that are prerequisites for this option.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -491,17 +490,17 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A persistent option cannot be removed from the option group once the
-     * option group is used, but this option can be removed from the db instance
-     * while modifying the related data and assigning another option group
-     * without this option.
+     * Persistent options can't be removed from an option group while DB
+     * instances are associated with the option group. If you disassociate all
+     * DB instances from the option group, your can remove the persistent option
+     * from the option group.
      * </p>
      * 
      * @param persistent
-     *        A persistent option cannot be removed from the option group once
-     *        the option group is used, but this option can be removed from the
-     *        db instance while modifying the related data and assigning another
-     *        option group without this option.
+     *        Persistent options can't be removed from an option group while DB
+     *        instances are associated with the option group. If you
+     *        disassociate all DB instances from the option group, your can
+     *        remove the persistent option from the option group.
      */
 
     public void setPersistent(Boolean persistent) {
@@ -510,16 +509,16 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A persistent option cannot be removed from the option group once the
-     * option group is used, but this option can be removed from the db instance
-     * while modifying the related data and assigning another option group
-     * without this option.
+     * Persistent options can't be removed from an option group while DB
+     * instances are associated with the option group. If you disassociate all
+     * DB instances from the option group, your can remove the persistent option
+     * from the option group.
      * </p>
      * 
-     * @return A persistent option cannot be removed from the option group once
-     *         the option group is used, but this option can be removed from the
-     *         db instance while modifying the related data and assigning
-     *         another option group without this option.
+     * @return Persistent options can't be removed from an option group while DB
+     *         instances are associated with the option group. If you
+     *         disassociate all DB instances from the option group, your can
+     *         remove the persistent option from the option group.
      */
 
     public Boolean getPersistent() {
@@ -528,17 +527,17 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A persistent option cannot be removed from the option group once the
-     * option group is used, but this option can be removed from the db instance
-     * while modifying the related data and assigning another option group
-     * without this option.
+     * Persistent options can't be removed from an option group while DB
+     * instances are associated with the option group. If you disassociate all
+     * DB instances from the option group, your can remove the persistent option
+     * from the option group.
      * </p>
      * 
      * @param persistent
-     *        A persistent option cannot be removed from the option group once
-     *        the option group is used, but this option can be removed from the
-     *        db instance while modifying the related data and assigning another
-     *        option group without this option.
+     *        Persistent options can't be removed from an option group while DB
+     *        instances are associated with the option group. If you
+     *        disassociate all DB instances from the option group, your can
+     *        remove the persistent option from the option group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -550,16 +549,16 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A persistent option cannot be removed from the option group once the
-     * option group is used, but this option can be removed from the db instance
-     * while modifying the related data and assigning another option group
-     * without this option.
+     * Persistent options can't be removed from an option group while DB
+     * instances are associated with the option group. If you disassociate all
+     * DB instances from the option group, your can remove the persistent option
+     * from the option group.
      * </p>
      * 
-     * @return A persistent option cannot be removed from the option group once
-     *         the option group is used, but this option can be removed from the
-     *         db instance while modifying the related data and assigning
-     *         another option group without this option.
+     * @return Persistent options can't be removed from an option group while DB
+     *         instances are associated with the option group. If you
+     *         disassociate all DB instances from the option group, your can
+     *         remove the persistent option from the option group.
      */
 
     public Boolean isPersistent() {
@@ -568,16 +567,14 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A permanent option cannot be removed from the option group once the
-     * option group is used, and it cannot be removed from the db instance after
-     * assigning an option group with this permanent option.
+     * Permanent options can never be removed from an option group. An option
+     * group containing a permanent option can't be removed from a DB instance.
      * </p>
      * 
      * @param permanent
-     *        A permanent option cannot be removed from the option group once
-     *        the option group is used, and it cannot be removed from the db
-     *        instance after assigning an option group with this permanent
-     *        option.
+     *        Permanent options can never be removed from an option group. An
+     *        option group containing a permanent option can't be removed from a
+     *        DB instance.
      */
 
     public void setPermanent(Boolean permanent) {
@@ -586,15 +583,13 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A permanent option cannot be removed from the option group once the
-     * option group is used, and it cannot be removed from the db instance after
-     * assigning an option group with this permanent option.
+     * Permanent options can never be removed from an option group. An option
+     * group containing a permanent option can't be removed from a DB instance.
      * </p>
      * 
-     * @return A permanent option cannot be removed from the option group once
-     *         the option group is used, and it cannot be removed from the db
-     *         instance after assigning an option group with this permanent
-     *         option.
+     * @return Permanent options can never be removed from an option group. An
+     *         option group containing a permanent option can't be removed from
+     *         a DB instance.
      */
 
     public Boolean getPermanent() {
@@ -603,16 +598,14 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A permanent option cannot be removed from the option group once the
-     * option group is used, and it cannot be removed from the db instance after
-     * assigning an option group with this permanent option.
+     * Permanent options can never be removed from an option group. An option
+     * group containing a permanent option can't be removed from a DB instance.
      * </p>
      * 
      * @param permanent
-     *        A permanent option cannot be removed from the option group once
-     *        the option group is used, and it cannot be removed from the db
-     *        instance after assigning an option group with this permanent
-     *        option.
+     *        Permanent options can never be removed from an option group. An
+     *        option group containing a permanent option can't be removed from a
+     *        DB instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -624,15 +617,13 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A permanent option cannot be removed from the option group once the
-     * option group is used, and it cannot be removed from the db instance after
-     * assigning an option group with this permanent option.
+     * Permanent options can never be removed from an option group. An option
+     * group containing a permanent option can't be removed from a DB instance.
      * </p>
      * 
-     * @return A permanent option cannot be removed from the option group once
-     *         the option group is used, and it cannot be removed from the db
-     *         instance after assigning an option group with this permanent
-     *         option.
+     * @return Permanent options can never be removed from an option group. An
+     *         option group containing a permanent option can't be removed from
+     *         a DB instance.
      */
 
     public Boolean isPermanent() {
@@ -730,10 +721,10 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the versions that are available for the option.
+     * The versions that are available for the option.
      * </p>
      * 
-     * @return Specifies the versions that are available for the option.
+     * @return The versions that are available for the option.
      */
 
     public java.util.List<OptionVersion> getOptionGroupOptionVersions() {
@@ -745,11 +736,11 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the versions that are available for the option.
+     * The versions that are available for the option.
      * </p>
      * 
      * @param optionGroupOptionVersions
-     *        Specifies the versions that are available for the option.
+     *        The versions that are available for the option.
      */
 
     public void setOptionGroupOptionVersions(
@@ -765,7 +756,7 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the versions that are available for the option.
+     * The versions that are available for the option.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -775,7 +766,7 @@ public class OptionGroupOption implements Serializable, Cloneable {
      * </p>
      * 
      * @param optionGroupOptionVersions
-     *        Specifies the versions that are available for the option.
+     *        The versions that are available for the option.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -794,11 +785,11 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the versions that are available for the option.
+     * The versions that are available for the option.
      * </p>
      * 
      * @param optionGroupOptionVersions
-     *        Specifies the versions that are available for the option.
+     *        The versions that are available for the option.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

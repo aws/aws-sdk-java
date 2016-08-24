@@ -75,6 +75,16 @@ public class ValidationUtilsTest {
         ValidationUtils.assertNotEmpty(testList, "testList");
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void assertStringNotEmpty_NullString() {
+        ValidationUtils.assertStringNotEmpty(null, "someString");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void assertStringNotEmpty_EmptyString() {
+        ValidationUtils.assertStringNotEmpty("", "someString");
+    }
+
     @Test
     public void assertNotEmpty_NonNullCollection_ReturnsSameObject(){
         List<String> testList = new ArrayList<String>();

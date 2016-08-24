@@ -94,6 +94,16 @@ public class AWSCucumberStepdefs {
         assertTrue(member instanceof java.util.List);
     }
 
+    @Then("^the value at \"(.*?)\" should be a map")
+    public void then_the_value_at_should_be_a_map(String memberName) {
+
+        String[] path = memberName.split("[.]");
+
+        Object member = ReflectionUtils.getByPath(result, Arrays.asList(path));
+
+        assertTrue(member instanceof java.util.Map);
+    }
+
     @Then("^I expect the response error code to be \"(.+?)\"$")
     public void then_I_expect_response_error_code(String expected) {
         assertNotNull(exception);
@@ -131,11 +141,12 @@ public class AWSCucumberStepdefs {
         if (args != null && !args.isEmpty()) {
             for (Map.Entry<String, String> entry : args.entrySet()) {
 
+                String key = entry.getKey().substring(0, 1).toUpperCase() + entry.getKey().substring(1);
                 Object value = convertTo(
-                        ReflectionUtils.getParameterTypes(requestObject, Arrays.asList(entry.getKey())),
+                        ReflectionUtils.getParameterTypes(requestObject, Arrays.asList(key)),
                         entry.getValue());
 
-                ReflectionUtils.setByPath(requestObject, value, Arrays.asList(entry.getKey()));
+                ReflectionUtils.setByPath(requestObject, value, Arrays.asList(key));
             }
         }
 

@@ -89,7 +89,9 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      *
      * @param roleArn         The ARN of the Role to be assumed.
      * @param roleSessionName An identifier for the assumed role session.
+     * @deprecated Use the {@link Builder} instead.
      */
+    @Deprecated
     public STSAssumeRoleSessionCredentialsProvider(String roleArn, String roleSessionName) {
         this(new Builder(roleArn, roleSessionName));
     }
@@ -104,7 +106,9 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      * @param longLivedCredentials The main AWS credentials for a user's account.
      * @param roleArn              The ARN of the Role to be assumed.
      * @param roleSessionName      An identifier for the assumed role session.
+     * @deprecated Use the {@link Builder} instead.
      */
+    @Deprecated
     public STSAssumeRoleSessionCredentialsProvider(AWSCredentials longLivedCredentials,
                                                    String roleArn, String roleSessionName) {
         this(longLivedCredentials, roleArn, roleSessionName, new ClientConfiguration());
@@ -120,7 +124,9 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      * @param roleArn              The ARN of the Role to be assumed.
      * @param roleSessionName      An identifier for the assumed role session.
      * @param clientConfiguration  Client configuration connection parameters.
+     * @deprecated Use the {@link Builder} instead.
      */
+    @Deprecated
     public STSAssumeRoleSessionCredentialsProvider(AWSCredentials longLivedCredentials,
                                                    String roleArn, String roleSessionName,
                                                    ClientConfiguration clientConfiguration) {
@@ -140,7 +146,9 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      *                                     user's account.
      * @param roleArn                      The ARN of the Role to be assumed.
      * @param roleSessionName              An identifier for the assumed role session.
+     * @deprecated Use the {@link Builder} instead.
      */
+    @Deprecated
     public STSAssumeRoleSessionCredentialsProvider(
             AWSCredentialsProvider longLivedCredentialsProvider, String roleArn,
             String roleSessionName) {
@@ -160,7 +168,9 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      * @param roleArn                      The ARN of the Role to be assumed.
      * @param roleSessionName              An identifier for the assumed role session.
      * @param clientConfiguration          Client configuration connection parameters.
+     * @deprecated Use the {@link Builder} instead.
      */
+    @Deprecated
     public STSAssumeRoleSessionCredentialsProvider(
             AWSCredentialsProvider longLivedCredentialsProvider, String roleArn,
             String roleSessionName, ClientConfiguration clientConfiguration) {
@@ -348,7 +358,11 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
          *
          * @param longLivedCredentials Credentials used to generate sessions in the assumed role
          * @return the builder itself for chained calls
+         * @deprecated Supply a configured STS client via the {@link #withStsClient(AWSSecurityTokenService)}
+         * setter. Use {@link com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClientBuilder}
+         * to create an STS client.
          */
+        @Deprecated
         public Builder withLongLivedCredentials(AWSCredentials longLivedCredentials) {
             this.longLivedCredentials = longLivedCredentials;
             return this;
@@ -360,7 +374,11 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
          * @param longLivedCredentialsProvider A credentials provider used to generate sessions in
          *                                     the assumed role
          * @return the builder itself for chained calls
+         * @deprecated Supply a configured STS client via the {@link #withStsClient(AWSSecurityTokenService)}
+         * setter. Use {@link com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClientBuilder}
+         * to create an STS client.
          */
+        @Deprecated
         public Builder withLongLivedCredentialsProvider(
                 AWSCredentialsProvider longLivedCredentialsProvider) {
             this.longLivedCredentialsProvider = longLivedCredentialsProvider;
@@ -372,7 +390,11 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
          *
          * @param clientConfiguration ClientConfiguration for the AWSSecurityTokenService client
          * @return the builder itself for chained calls
+         * @deprecated Supply a configured STS client via the {@link #withStsClient(AWSSecurityTokenService)}
+         * setter. Use {@link com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClientBuilder}
+         * to create an STS client.
          */
+        @Deprecated
         public Builder withClientConfiguration(ClientConfiguration clientConfiguration) {
             this.clientConfiguration = clientConfiguration;
             return this;
@@ -415,7 +437,11 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
          * GovCloud. You only need to change the endpoint to "sts.cn-north-1.amazonaws.com.cn" when
          * you are requesting session credentials for services in China(Beijing) region or
          * "sts.us-gov-west-1.amazonaws.com" for GovCloud. <p></p>
+         * @deprecated Supply a configured STS client via the {@link #withStsClient(AWSSecurityTokenService)}
+         * setter. Use {@link com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClientBuilder}
+         * to create an STS client.
          */
+        @Deprecated
         public Builder withServiceEndpoint(String serviceEndpoint) {
             this.serviceEndpoint = serviceEndpoint;
             return this;
@@ -496,10 +522,16 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
         }
 
         /**
-         * Sets a preconfigured STS client to use for the credentials provider. A custom client is
-         * mutually exclusive to any other client related settings ({@link
+         * Sets a preconfigured STS client to use for the credentials provider. See {@link
+         * com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClientBuilder} for an easy
+         * way to configure and create an STS client.
+         *
+         * <p><b>Note:</b> This setter is mutually exclusive to the deprecated {@link
          * #withClientConfiguration(ClientConfiguration)}, {@link #withLongLivedCredentials(AWSCredentials)},
-         * {@link #withServiceEndpoint(String)}, etc).
+         * {@link #withLongLivedCredentialsProvider(AWSCredentialsProvider)}, and {@link
+         * #withServiceEndpoint(String)} setters. Construct a fully configured STS client via the
+         * {@link com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClientBuilder} and
+         * pass it to this setter.</p>
          *
          * @param sts Custom STS client to use.
          * @return This object for chained calls.

@@ -928,6 +928,11 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     }
 
     @Override
+    public String getRegionName() {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
     public URL getUrl(String bucketName, String key) {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }

@@ -148,6 +148,8 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      */
     private String kmsKeyId;
 
+    private String dBClusterSnapshotArn;
+
     /**
      * <p>
      * Provides the list of EC2 Availability Zones that instances in the DB
@@ -948,6 +950,34 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * @param dBClusterSnapshotArn
+     */
+
+    public void setDBClusterSnapshotArn(String dBClusterSnapshotArn) {
+        this.dBClusterSnapshotArn = dBClusterSnapshotArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDBClusterSnapshotArn() {
+        return this.dBClusterSnapshotArn;
+    }
+
+    /**
+     * @param dBClusterSnapshotArn
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBClusterSnapshot withDBClusterSnapshotArn(
+            String dBClusterSnapshotArn) {
+        setDBClusterSnapshotArn(dBClusterSnapshotArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -993,7 +1023,9 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (getStorageEncrypted() != null)
             sb.append("StorageEncrypted: " + getStorageEncrypted() + ",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId());
+            sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+        if (getDBClusterSnapshotArn() != null)
+            sb.append("DBClusterSnapshotArn: " + getDBClusterSnapshotArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1109,6 +1141,13 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (other.getKmsKeyId() != null
                 && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getDBClusterSnapshotArn() == null
+                ^ this.getDBClusterSnapshotArn() == null)
+            return false;
+        if (other.getDBClusterSnapshotArn() != null
+                && other.getDBClusterSnapshotArn().equals(
+                        this.getDBClusterSnapshotArn()) == false)
+            return false;
         return true;
     }
 
@@ -1175,6 +1214,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
                         .hashCode());
         hashCode = prime * hashCode
                 + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDBClusterSnapshotArn() == null) ? 0
+                        : getDBClusterSnapshotArn().hashCode());
         return hashCode;
     }
 

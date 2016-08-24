@@ -428,7 +428,7 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * @see #withRange(long)
      */
     public void setRange(long start) {
-        setRange(start, Long.MAX_VALUE);
+        setRange(start, Long.MAX_VALUE - 1);
     }
 
     /**
@@ -491,7 +491,8 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * @see #setRange(long)
      */
     public GetObjectRequest withRange(long start) {
-        return withRange(start, Long.MAX_VALUE);
+        setRange(start);
+        return this;
     }
 
     /**

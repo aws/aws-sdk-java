@@ -561,14 +561,13 @@ public class DynamoDBMapperConfig {
                 }
             }
 
-            final String tableName = StandardAnnotationMaps.of(clazz).tableName();
-            if (tableName == null) {
-                throw new DynamoDBMappingException("@DynamoDBTable not present on " + clazz);
+            final StandardBeanProperties.Beans<?> beans = StandardBeanProperties.of(clazz);
+            if (beans.tableName() == null) {
+                throw new DynamoDBMappingException(beans.id().err("not annotated with @DynamoDBTable"));
             }
 
-            final String prefix = override == null
-                ? null : override.getTableNamePrefix();
-            return prefix == null ? tableName : prefix + tableName;
+            final String prefix = override == null ? null : override.getTableNamePrefix();
+            return prefix == null ? beans.tableName() : prefix + beans.tableName();
         }
     }
 

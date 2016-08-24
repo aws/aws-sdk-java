@@ -51,6 +51,8 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
      */
     private String description;
 
+    private String dBClusterParameterGroupArn;
+
     /**
      * <p>
      * Provides the name of the DB cluster parameter group.
@@ -190,6 +192,34 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
     }
 
     /**
+     * @param dBClusterParameterGroupArn
+     */
+
+    public void setDBClusterParameterGroupArn(String dBClusterParameterGroupArn) {
+        this.dBClusterParameterGroupArn = dBClusterParameterGroupArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDBClusterParameterGroupArn() {
+        return this.dBClusterParameterGroupArn;
+    }
+
+    /**
+     * @param dBClusterParameterGroupArn
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DBClusterParameterGroup withDBClusterParameterGroupArn(
+            String dBClusterParameterGroupArn) {
+        setDBClusterParameterGroupArn(dBClusterParameterGroupArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -208,7 +238,10 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
             sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily()
                     + ",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: " + getDescription() + ",");
+        if (getDBClusterParameterGroupArn() != null)
+            sb.append("DBClusterParameterGroupArn: "
+                    + getDBClusterParameterGroupArn());
         sb.append("}");
         return sb.toString();
     }
@@ -242,6 +275,13 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
         if (other.getDescription() != null
                 && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getDBClusterParameterGroupArn() == null
+                ^ this.getDBClusterParameterGroupArn() == null)
+            return false;
+        if (other.getDBClusterParameterGroupArn() != null
+                && other.getDBClusterParameterGroupArn().equals(
+                        this.getDBClusterParameterGroupArn()) == false)
+            return false;
         return true;
     }
 
@@ -261,6 +301,10 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDBClusterParameterGroupArn() == null) ? 0
+                        : getDBClusterParameterGroupArn().hashCode());
         return hashCode;
     }
 

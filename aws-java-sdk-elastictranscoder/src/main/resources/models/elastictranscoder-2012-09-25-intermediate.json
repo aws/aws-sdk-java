@@ -19,17 +19,17 @@
     "jsonVersion" : "1.1",
     "endpointPrefix" : "elastictranscoder",
     "signingName" : "elastictranscoder",
-    "jsonProtocol" : true,
-    "xmlProtocol" : false,
-    "cborProtocol" : false,
-    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
-    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "syncClientBuilderClassName" : "AmazonElasticTranscoderClientBuilder",
+    "asyncClientBuilderClassName" : "AmazonElasticTranscoderAsyncClientBuilder",
     "cucumberModuleInjectorClassName" : "AmazonElasticTranscoderModuleInjector",
     "smokeTestsPackageName" : "com.amazonaws.services.elastictranscoder.smoketests",
     "serviceName" : "Amazon Elastic Transcoder",
-    "protocolDefaultExceptionUmarshallerImpl" : null,
-    "syncClientBuilderClassName" : "AmazonElasticTranscoderClientBuilder",
-    "asyncClientBuilderClassName" : "AmazonElasticTranscoderAsyncClientBuilder"
+    "unmarshallerContextClassName" : "JsonUnmarshallerContext",
+    "jsonProtocol" : true,
+    "xmlProtocol" : false,
+    "cborProtocol" : false,
+    "unmarshallerClassSuffix" : "JsonUnmarshaller",
+    "protocolDefaultExceptionUmarshallerImpl" : null
   },
   "operations" : {
     "CancelJob" : {
@@ -69,13 +69,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "cancelJob",
       "authenticated" : true,
       "syncReturnType" : "CancelJobResult",
       "asyncReturnType" : "CancelJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<CancelJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CancelJobResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult>",
+      "methodName" : "cancelJob"
     },
     "CreateJob" : {
       "documentation" : "<p> When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the job that is created. </p> <p>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).</p>",
@@ -114,13 +114,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createJob",
       "authenticated" : true,
       "syncReturnType" : "CreateJobResult",
       "asyncReturnType" : "CreateJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateJobResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult>",
+      "methodName" : "createJob"
     },
     "CreatePipeline" : {
       "documentation" : "<p>The CreatePipeline operation creates a pipeline with settings that you specify.</p>",
@@ -159,13 +159,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createPipeline",
       "authenticated" : true,
       "syncReturnType" : "CreatePipelineResult",
       "asyncReturnType" : "CreatePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult>",
+      "methodName" : "createPipeline"
     },
     "CreatePreset" : {
       "documentation" : "<p>The CreatePreset operation creates a preset with settings that you specify.</p> <important>Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264 standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (<code>ValidationException</code>) and does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine whether your settings comply with the H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder produces.</important> <p>Elastic Transcoder uses the H.264 video-compression format. For more information, see the International Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i>.</p>",
@@ -201,13 +201,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createPreset",
       "authenticated" : true,
       "syncReturnType" : "CreatePresetResult",
       "asyncReturnType" : "CreatePresetResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePresetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePresetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePresetRequest, CreatePresetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePresetRequest, CreatePresetResult>",
+      "methodName" : "createPreset"
     },
     "DeletePipeline" : {
       "documentation" : "<p>The DeletePipeline operation removes a pipeline.</p> <p> You can only delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <code>DeletePipeline</code> returns an error. </p>",
@@ -246,13 +246,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deletePipeline",
       "authenticated" : true,
       "syncReturnType" : "DeletePipelineResult",
       "asyncReturnType" : "DeletePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeletePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeletePipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult>",
+      "methodName" : "deletePipeline"
     },
     "DeletePreset" : {
       "documentation" : "<p>The DeletePreset operation removes a preset that you've added in an AWS region.</p> <note> <p>You can't delete the default presets that are included with Elastic Transcoder.</p> </note>",
@@ -288,13 +288,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deletePreset",
       "authenticated" : true,
       "syncReturnType" : "DeletePresetResult",
       "asyncReturnType" : "DeletePresetResult",
       "asyncFutureType" : "java.util.concurrent.Future<DeletePresetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeletePresetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePresetRequest, DeletePresetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePresetRequest, DeletePresetResult>",
+      "methodName" : "deletePreset"
     },
     "ListJobsByPipeline" : {
       "documentation" : "<p>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</p> <p>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</p>",
@@ -330,13 +330,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listJobsByPipeline",
       "authenticated" : true,
       "syncReturnType" : "ListJobsByPipelineResult",
       "asyncReturnType" : "ListJobsByPipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListJobsByPipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListJobsByPipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsByPipelineRequest, ListJobsByPipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsByPipelineRequest, ListJobsByPipelineResult>",
+      "methodName" : "listJobsByPipeline"
     },
     "ListJobsByStatus" : {
       "documentation" : "<p>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job that satisfies the search criteria.</p>",
@@ -372,13 +372,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listJobsByStatus",
       "authenticated" : true,
       "syncReturnType" : "ListJobsByStatusResult",
       "asyncReturnType" : "ListJobsByStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListJobsByStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListJobsByStatusResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsByStatusRequest, ListJobsByStatusResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListJobsByStatusRequest, ListJobsByStatusResult>",
+      "methodName" : "listJobsByStatus"
     },
     "ListPipelines" : {
       "documentation" : "<p>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</p>",
@@ -411,13 +411,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listPipelines",
       "authenticated" : true,
       "syncReturnType" : "ListPipelinesResult",
       "asyncReturnType" : "ListPipelinesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPipelinesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPipelinesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult>",
+      "methodName" : "listPipelines"
     },
     "ListPresets" : {
       "documentation" : "<p>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an AWS region.</p>",
@@ -450,13 +450,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listPresets",
       "authenticated" : true,
       "syncReturnType" : "ListPresetsResult",
       "asyncReturnType" : "ListPresetsResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPresetsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPresetsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPresetsRequest, ListPresetsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPresetsRequest, ListPresetsResult>",
+      "methodName" : "listPresets"
     },
     "ReadJob" : {
       "documentation" : "<p>The ReadJob operation returns detailed information about a job.</p>",
@@ -492,13 +492,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "readJob",
       "authenticated" : true,
       "syncReturnType" : "ReadJobResult",
       "asyncReturnType" : "ReadJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReadJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReadJobResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadJobRequest, ReadJobResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadJobRequest, ReadJobResult>",
+      "methodName" : "readJob"
     },
     "ReadPipeline" : {
       "documentation" : "<p>The ReadPipeline operation gets detailed information about a pipeline.</p>",
@@ -534,13 +534,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "readPipeline",
       "authenticated" : true,
       "syncReturnType" : "ReadPipelineResult",
       "asyncReturnType" : "ReadPipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReadPipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReadPipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadPipelineRequest, ReadPipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadPipelineRequest, ReadPipelineResult>",
+      "methodName" : "readPipeline"
     },
     "ReadPreset" : {
       "documentation" : "<p>The ReadPreset operation gets detailed information about a preset.</p>",
@@ -576,13 +576,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "readPreset",
       "authenticated" : true,
       "syncReturnType" : "ReadPresetResult",
       "asyncReturnType" : "ReadPresetResult",
       "asyncFutureType" : "java.util.concurrent.Future<ReadPresetResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ReadPresetResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadPresetRequest, ReadPresetResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ReadPresetRequest, ReadPresetResult>",
+      "methodName" : "readPreset"
     },
     "TestRole" : {
       "documentation" : "<p>The TestRole operation tests the IAM role used to create the pipeline.</p> <p>The <code>TestRole</code> action lets you determine whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test notification to Amazon SNS topics that you specify.</p>",
@@ -618,13 +618,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "testRole",
       "authenticated" : true,
       "syncReturnType" : "TestRoleResult",
       "asyncReturnType" : "TestRoleResult",
       "asyncFutureType" : "java.util.concurrent.Future<TestRoleResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<TestRoleResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestRoleRequest, TestRoleResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TestRoleRequest, TestRoleResult>",
+      "methodName" : "testRole"
     },
     "UpdatePipeline" : {
       "documentation" : "<p> Use the <code>UpdatePipeline</code> operation to update settings for a pipeline. <important>When you change pipeline settings, your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are affected in addition to jobs that you submit after you change settings. </important> </p>",
@@ -663,13 +663,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updatePipeline",
       "authenticated" : true,
       "syncReturnType" : "UpdatePipelineResult",
       "asyncReturnType" : "UpdatePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResult>",
+      "methodName" : "updatePipeline"
     },
     "UpdatePipelineNotifications" : {
       "documentation" : "<p>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline.</p> <p>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>",
@@ -708,13 +708,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updatePipelineNotifications",
       "authenticated" : true,
       "syncReturnType" : "UpdatePipelineNotificationsResult",
       "asyncReturnType" : "UpdatePipelineNotificationsResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineNotificationsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineNotificationsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineNotificationsRequest, UpdatePipelineNotificationsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineNotificationsRequest, UpdatePipelineNotificationsResult>",
+      "methodName" : "updatePipelineNotifications"
     },
     "UpdatePipelineStatus" : {
       "documentation" : "<p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of jobs.</p> <p>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a <a>CancelJob</a> request. </p>",
@@ -753,13 +753,13 @@
         "documentation" : "<p>Elastic Transcoder encountered an unexpected exception while trying to fulfill the request.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updatePipelineStatus",
       "authenticated" : true,
       "syncReturnType" : "UpdatePipelineStatusResult",
       "asyncReturnType" : "UpdatePipelineStatusResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineStatusResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineStatusResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineStatusRequest, UpdatePipelineStatusResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineStatusRequest, UpdatePipelineStatusResult>",
+      "methodName" : "updatePipelineStatus"
     }
   },
   "shapes" : {
@@ -2929,11 +2929,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<Warning>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Warning"
+          "simpleType" : "Warning",
+          "templateType" : "java.util.List<Warning>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -3071,11 +3071,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<Warning>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Warning"
+            "simpleType" : "Warning",
+            "templateType" : "java.util.List<Warning>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -5435,11 +5435,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -5944,11 +5944,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6424,11 +6424,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -6676,11 +6676,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -6966,11 +6966,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7214,11 +7214,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -7399,11 +7399,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -7541,11 +7541,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -8019,11 +8019,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<JobOutput>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobOutput>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "JobOutput"
+          "simpleType" : "JobOutput",
+          "templateType" : "java.util.List<JobOutput>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobOutput>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8190,11 +8190,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<Playlist>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Playlist>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Playlist"
+          "simpleType" : "Playlist",
+          "templateType" : "java.util.List<Playlist>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Playlist>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -8767,11 +8767,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<JobOutput>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobOutput>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "JobOutput"
+            "simpleType" : "JobOutput",
+            "templateType" : "java.util.List<JobOutput>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobOutput>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -9060,11 +9060,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<Playlist>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Playlist>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Playlist"
+            "simpleType" : "Playlist",
+            "templateType" : "java.util.List<Playlist>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Playlist>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -13471,11 +13471,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<Preset>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Preset>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Preset"
+          "simpleType" : "Preset",
+          "templateType" : "java.util.List<Preset>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Preset>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -13665,11 +13665,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<Preset>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Preset>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Preset"
+            "simpleType" : "Preset",
+            "templateType" : "java.util.List<Preset>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Preset>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14007,11 +14007,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<CreateJobOutput>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobOutput>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "CreateJobOutput"
+          "simpleType" : "CreateJobOutput",
+          "templateType" : "java.util.List<CreateJobOutput>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobOutput>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14178,11 +14178,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<CreateJobPlaylist>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "CreateJobPlaylist"
+          "simpleType" : "CreateJobPlaylist",
+          "templateType" : "java.util.List<CreateJobPlaylist>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -14602,11 +14602,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<CreateJobOutput>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobOutput>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "CreateJobOutput"
+            "simpleType" : "CreateJobOutput",
+            "templateType" : "java.util.List<CreateJobOutput>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobOutput>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -14895,11 +14895,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<CreateJobPlaylist>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "CreateJobPlaylist"
+            "simpleType" : "CreateJobPlaylist",
+            "templateType" : "java.util.List<CreateJobPlaylist>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -15340,11 +15340,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<JobWatermark>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "JobWatermark"
+          "simpleType" : "JobWatermark",
+          "templateType" : "java.util.List<JobWatermark>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15511,11 +15511,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<Clip>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Clip"
+          "simpleType" : "Clip",
+          "templateType" : "java.util.List<Clip>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -15757,11 +15757,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<Clip>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Clip"
+            "simpleType" : "Clip",
+            "templateType" : "java.util.List<Clip>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -16142,11 +16142,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<JobWatermark>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "JobWatermark"
+            "simpleType" : "JobWatermark",
+            "templateType" : "java.util.List<JobWatermark>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17205,11 +17205,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<CaptionSource>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionSource>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "CaptionSource"
+          "simpleType" : "CaptionSource",
+          "templateType" : "java.util.List<CaptionSource>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionSource>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17324,11 +17324,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<CaptionFormat>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionFormat>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "CaptionFormat"
+          "simpleType" : "CaptionFormat",
+          "templateType" : "java.util.List<CaptionFormat>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionFormat>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -17519,11 +17519,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<CaptionFormat>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionFormat>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "CaptionFormat"
+            "simpleType" : "CaptionFormat",
+            "templateType" : "java.util.List<CaptionFormat>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionFormat>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -17639,11 +17639,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<CaptionSource>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionSource>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "CaptionSource"
+            "simpleType" : "CaptionSource",
+            "templateType" : "java.util.List<CaptionSource>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<CaptionSource>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -18250,11 +18250,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<Warning>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Warning"
+          "simpleType" : "Warning",
+          "templateType" : "java.util.List<Warning>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -18392,11 +18392,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<Warning>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Warning"
+            "simpleType" : "Warning",
+            "templateType" : "java.util.List<Warning>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19074,11 +19074,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<Job>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Job"
+          "simpleType" : "Job",
+          "templateType" : "java.util.List<Job>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -19268,11 +19268,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<Job>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Job"
+            "simpleType" : "Job",
+            "templateType" : "java.util.List<Job>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -19962,11 +19962,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<Warning>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Warning"
+          "simpleType" : "Warning",
+          "templateType" : "java.util.List<Warning>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -20104,11 +20104,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<Warning>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Warning"
+            "simpleType" : "Warning",
+            "templateType" : "java.util.List<Warning>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Warning>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -21584,11 +21584,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<Permission>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Permission>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Permission"
+          "simpleType" : "Permission",
+          "templateType" : "java.util.List<Permission>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Permission>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -21832,11 +21832,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<Permission>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Permission>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Permission"
+            "simpleType" : "Permission",
+            "templateType" : "java.util.List<Permission>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Permission>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22465,11 +22465,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<Job>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Job"
+          "simpleType" : "Job",
+          "templateType" : "java.util.List<Job>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -22659,11 +22659,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<Job>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Job"
+            "simpleType" : "Job",
+            "templateType" : "java.util.List<Job>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Job>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -22845,11 +22845,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<Pipeline>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Pipeline>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Pipeline"
+          "simpleType" : "Pipeline",
+          "templateType" : "java.util.List<Pipeline>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Pipeline>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -23039,11 +23039,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<Pipeline>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Pipeline>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Pipeline"
+            "simpleType" : "Pipeline",
+            "templateType" : "java.util.List<Pipeline>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Pipeline>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -24365,11 +24365,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<Artwork>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artwork>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Artwork"
+          "simpleType" : "Artwork",
+          "templateType" : "java.util.List<Artwork>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artwork>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -24507,11 +24507,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<Artwork>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artwork>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Artwork"
+            "simpleType" : "Artwork",
+            "templateType" : "java.util.List<Artwork>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Artwork>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -25488,11 +25488,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<PresetWatermark>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PresetWatermark>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "PresetWatermark"
+          "simpleType" : "PresetWatermark",
+          "templateType" : "java.util.List<PresetWatermark>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<PresetWatermark>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -26174,11 +26174,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<PresetWatermark>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PresetWatermark>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "PresetWatermark"
+            "simpleType" : "PresetWatermark",
+            "templateType" : "java.util.List<PresetWatermark>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<PresetWatermark>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -31668,11 +31668,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<String>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
           "simple" : true,
           "map" : false,
-          "simpleType" : "String"
+          "simpleType" : "String",
+          "templateType" : "java.util.List<String>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -32020,11 +32020,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<String>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
             "simple" : true,
             "map" : false,
-            "simpleType" : "String"
+            "simpleType" : "String",
+            "templateType" : "java.util.List<String>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -33212,11 +33212,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<JobWatermark>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "JobWatermark"
+          "simpleType" : "JobWatermark",
+          "templateType" : "java.util.List<JobWatermark>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -33383,11 +33383,11 @@
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
           "marshallNonAutoConstructedEmptyLists" : false,
-          "templateType" : "java.util.List<Clip>",
-          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>",
           "simple" : false,
           "map" : false,
-          "simpleType" : "Clip"
+          "simpleType" : "Clip",
+          "templateType" : "java.util.List<Clip>",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>"
         },
         "mapModel" : null,
         "enumType" : null,
@@ -33787,11 +33787,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<Clip>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "Clip"
+            "simpleType" : "Clip",
+            "templateType" : "java.util.List<Clip>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<Clip>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34437,11 +34437,11 @@
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
             "marshallNonAutoConstructedEmptyLists" : false,
-            "templateType" : "java.util.List<JobWatermark>",
-            "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>",
             "simple" : false,
             "map" : false,
-            "simpleType" : "JobWatermark"
+            "simpleType" : "JobWatermark",
+            "templateType" : "java.util.List<JobWatermark>",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<JobWatermark>"
           },
           "mapModel" : null,
           "enumType" : null,
@@ -34876,10 +34876,10 @@
     "version" : "1.0"
   },
   "sdkModeledExceptionBaseClassName" : "AmazonElasticTranscoderException",
-  "exceptionUnmarshallerImpl" : null,
-  "hasWaiters" : true,
   "fileHeader" : "/*\n * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "exceptionUnmarshallerImpl" : null,
   "clientConfigFactory" : "ClientConfigurationFactory",
   "serviceBaseExceptionFqcn" : "com.amazonaws.AmazonServiceException",
-  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException"
+  "sdkModeledExceptionBaseFqcn" : "com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException",
+  "hasWaiters" : true
 }

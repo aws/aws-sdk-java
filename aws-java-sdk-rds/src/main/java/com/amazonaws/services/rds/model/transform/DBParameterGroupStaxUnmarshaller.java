@@ -69,6 +69,13 @@ public class DBParameterGroupStaxUnmarshaller implements
                             .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("DBParameterGroupArn", targetDepth)) {
+                    dBParameterGroup
+                            .setDBParameterGroupArn(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBParameterGroup;

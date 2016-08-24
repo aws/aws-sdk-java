@@ -906,6 +906,59 @@ public class TransferManager {
     }
 
     /**
+     * Schedules a new transfer to download data from Amazon S3 and save it to
+     * the specified file. This method is non-blocking and returns immediately
+     * (i.e. before the data has been fully downloaded).
+     * <p>
+     * Use the returned Download object to query the progress of the transfer,
+     * add listeners for progress events, and wait for the download to complete.
+     * </p>
+     * <p>
+     * If you are downloading <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
+     *
+     * @param getObjectRequest
+     *            The request containing all the parameters for the download.
+     * @param file
+     *            The file to download the object data to.
+     * @param progressListener
+     *            An optional callback listener to get the progress of the
+     *            download.
+     * @param timeoutMillis
+     *            Timeout, in milliseconds, for waiting for this download to
+     *            complete.  Note that the timeout time will be approximate
+     *            and is not strictly guaranteed.  As a result this timeout
+     *            should not be relied on in cases where exact precision is
+     *            required.
+     * @param resumeOnRetry
+     *            If set to true, upon an immediate retry of a failed object
+     *            download, the <code>TransferManager</code> will resume the
+     *            download from the current end of the file on disk.
+     * @return A new <code>Download</code> object to use to check the state of
+     *         the download, listen for progress notifications, and otherwise
+     *         manage the download.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+
+    public Download download(final GetObjectRequest getObjectRequest,
+                             final File file, final S3ProgressListener progressListener,
+                             final long timeoutMillis, final boolean resumeOnRetry) {
+        return doDownload(getObjectRequest, file, null, progressListener,
+                OVERWRITE_MODE, timeoutMillis, null, 0L, resumeOnRetry);
+    }
+
+    /**
      * Same as public interface, but adds a state listener so that callers can
      * be notified of state changes to the download.
      *
@@ -918,6 +971,26 @@ public class TransferManager {
             final long timeoutMillis,
             final Integer lastFullyDownloadedPart,
             final long lastModifiedTimeRecordedDuringPause)
+    {
+        return doDownload(getObjectRequest, file, stateListener, s3progressListener,
+                resumeExistingDownload, timeoutMillis, lastFullyDownloadedPart,
+                lastModifiedTimeRecordedDuringPause, false);
+    }
+
+    /**
+     * Same as public interface, but adds a state listener so that callers can
+     * be notified of state changes to the download.
+     *
+     * @see TransferManager#download(GetObjectRequest, File)
+     */
+    private Download doDownload(final GetObjectRequest getObjectRequest,
+            final File file, final TransferStateChangeListener stateListener,
+            final S3ProgressListener s3progressListener,
+            final boolean resumeExistingDownload,
+            final long timeoutMillis,
+            final Integer lastFullyDownloadedPart,
+            final long lastModifiedTimeRecordedDuringPause,
+            final boolean resumeOnRetry)
     {
         assertParameterNotNull(getObjectRequest,
                 "A valid GetObjectRequest must be provided to initiate download");
@@ -1011,9 +1084,9 @@ public class TransferManager {
         final CountDownLatch latch = new CountDownLatch(1);
         Future<?> future = executorService.submit(
             new DownloadCallable(s3, latch,
-                getObjectRequest, resumeExistingDownload, download, file,
-                origStartingByte, fileLength, timeoutMillis, timedThreadPool,
-                executorService, lastFullyDownloadedPart, isDownloadParallel));
+                getObjectRequest, resumeExistingDownload,
+                download, file, origStartingByte, fileLength, timeoutMillis, timedThreadPool,
+                executorService, lastFullyDownloadedPart, isDownloadParallel, resumeOnRetry));
         download.setMonitor(new DownloadMonitor(download, future));
         latch.countDown();
         return download;
@@ -1024,6 +1097,9 @@ public class TransferManager {
         return lastModifiedTimeRecordedDuringResume != lastModifiedTimeRecordedDuringPause;
     }
 
+    public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory) {
+        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, false);
+    }
     /**
      * Downloads all objects in the virtual directory designated by the
      * keyPrefix given to the destination directory given. All virtual
@@ -1046,8 +1122,13 @@ public class TransferManager {
      * @param destinationDirectory
      *            The directory to place downloaded files. Subdirectories will
      *            be created as necessary.
+     * @param resumeOnRetry
+     *            If set to true, upon an immediate retry of a failed object
+     *            download, the <code>TransferManager</code> will resume the
+     *            download from the current end of the file on disk.
      */
-    public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory) {
+    public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory,
+            boolean resumeOnRetry) {
         if ( keyPrefix == null )
             keyPrefix = "";
         List<S3ObjectSummary> objectSummaries = new LinkedList<S3ObjectSummary>();
@@ -1122,14 +1203,15 @@ public class TransferManager {
             // All the single-file downloads share the same
             // MultipleFileTransferProgressUpdatingListener and
             // MultipleFileTransferStateChangeListener
+            GetObjectRequest req = new GetObjectRequest(summary.getBucketName(), summary.getKey())
+                    .<GetObjectRequest>withGeneralProgressListener(
+                                            listener)
+                    .withRange(0L);
             downloads.add((DownloadImpl) doDownload(
-                            new GetObjectRequest(summary.getBucketName(),
-                                    summary.getKey())
-                                    .<GetObjectRequest>withGeneralProgressListener(
-                                            listener),
+                            req,
                             f,
                             transferListener, null, false, 0,
-                            null, 0L));
+                            null, 0L, resumeOnRetry));
         }
 
         if ( downloads.isEmpty() ) {
